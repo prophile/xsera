@@ -1,0 +1,419 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 44;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		496924020EBE4CD500930DDD /* Colour.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 496923FE0EBE4CD500930DDD /* Colour.cpp */; };
+		496924210EBE4CEA00930DDD /* callbacks.c in Sources */ = {isa = PBXBuildFile; fileRef = 496924050EBE4CEA00930DDD /* callbacks.c */; };
+		496924220EBE4CEA00930DDD /* host.c in Sources */ = {isa = PBXBuildFile; fileRef = 496924100EBE4CEA00930DDD /* host.c */; };
+		496924230EBE4CEA00930DDD /* list.c in Sources */ = {isa = PBXBuildFile; fileRef = 496924110EBE4CEA00930DDD /* list.c */; };
+		496924240EBE4CEA00930DDD /* packet.c in Sources */ = {isa = PBXBuildFile; fileRef = 496924120EBE4CEA00930DDD /* packet.c */; };
+		496924250EBE4CEA00930DDD /* peer.c in Sources */ = {isa = PBXBuildFile; fileRef = 496924130EBE4CEA00930DDD /* peer.c */; };
+		496924260EBE4CEA00930DDD /* protocol.c in Sources */ = {isa = PBXBuildFile; fileRef = 496924140EBE4CEA00930DDD /* protocol.c */; };
+		496924270EBE4CEA00930DDD /* unix.c in Sources */ = {isa = PBXBuildFile; fileRef = 496924150EBE4CEA00930DDD /* unix.c */; };
+		496924280EBE4CEA00930DDD /* win32.c in Sources */ = {isa = PBXBuildFile; fileRef = 496924160EBE4CEA00930DDD /* win32.c */; };
+		496924290EBE4CEA00930DDD /* SDL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 496924170EBE4CEA00930DDD /* SDL.framework */; };
+		4969242A0EBE4CEA00930DDD /* SDL_image.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 496924180EBE4CEA00930DDD /* SDL_image.framework */; };
+		4969242B0EBE4CEA00930DDD /* SDL_mixer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 496924190EBE4CEA00930DDD /* SDL_mixer.framework */; };
+		4969242C0EBE4CEA00930DDD /* SDL_ttf.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4969241A0EBE4CEA00930DDD /* SDL_ttf.framework */; };
+		4969242D0EBE4CEA00930DDD /* SDLMain.m in Sources */ = {isa = PBXBuildFile; fileRef = 4969241B0EBE4CEA00930DDD /* SDLMain.m */; };
+		4969242E0EBE4CEA00930DDD /* tinyxml.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4969241D0EBE4CEA00930DDD /* tinyxml.cpp */; };
+		4969242F0EBE4CEA00930DDD /* tinyxmlerror.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4969241F0EBE4CEA00930DDD /* tinyxmlerror.cpp */; };
+		496924300EBE4CEA00930DDD /* tinyxmlparser.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 496924200EBE4CEA00930DDD /* tinyxmlparser.cpp */; };
+		496924660EBE4D0600930DDD /* SDL.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 496924170EBE4CEA00930DDD /* SDL.framework */; };
+		496924670EBE4D0600930DDD /* SDL_image.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 496924180EBE4CEA00930DDD /* SDL_image.framework */; };
+		496924680EBE4D0600930DDD /* SDL_mixer.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 496924190EBE4CEA00930DDD /* SDL_mixer.framework */; };
+		496924690EBE4D0600930DDD /* SDL_ttf.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 4969241A0EBE4CEA00930DDD /* SDL_ttf.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		496924030EBE4CD600930DDD /* Copy Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				496924660EBE4D0600930DDD /* SDL.framework in Copy Frameworks */,
+				496924670EBE4D0600930DDD /* SDL_image.framework in Copy Frameworks */,
+				496924680EBE4D0600930DDD /* SDL_mixer.framework in Copy Frameworks */,
+				496924690EBE4D0600930DDD /* SDL_ttf.framework in Copy Frameworks */,
+			);
+			name = "Copy Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		496923DB0EBE4BC300930DDD /* Ares X.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Ares X.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		496923DE0EBE4BC300930DDD /* Ares X-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Ares X-Info.plist"; sourceTree = "<group>"; };
+		496923F80EBE4CD500930DDD /* Graphics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Graphics.h; sourceTree = "<group>"; };
+		496923FA0EBE4CD500930DDD /* Net.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Net.h; sourceTree = "<group>"; };
+		496923FC0EBE4CD500930DDD /* Sound.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Sound.h; sourceTree = "<group>"; };
+		496923FE0EBE4CD500930DDD /* Colour.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Colour.cpp; sourceTree = "<group>"; };
+		496923FF0EBE4CD500930DDD /* Colour.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Colour.h; sourceTree = "<group>"; };
+		496924000EBE4CD500930DDD /* ResourceManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResourceManager.h; sourceTree = "<group>"; };
+		496924010EBE4CD500930DDD /* Vec2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Vec2.h; sourceTree = "<group>"; };
+		496924050EBE4CEA00930DDD /* callbacks.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = callbacks.c; sourceTree = "<group>"; };
+		496924070EBE4CEA00930DDD /* callbacks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = callbacks.h; sourceTree = "<group>"; };
+		496924080EBE4CEA00930DDD /* enet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = enet.h; sourceTree = "<group>"; };
+		496924090EBE4CEA00930DDD /* list.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = list.h; sourceTree = "<group>"; };
+		4969240A0EBE4CEA00930DDD /* protocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = protocol.h; sourceTree = "<group>"; };
+		4969240B0EBE4CEA00930DDD /* time.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = time.h; sourceTree = "<group>"; };
+		4969240C0EBE4CEA00930DDD /* types.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = types.h; sourceTree = "<group>"; };
+		4969240D0EBE4CEA00930DDD /* unix.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = unix.h; sourceTree = "<group>"; };
+		4969240E0EBE4CEA00930DDD /* utility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = utility.h; sourceTree = "<group>"; };
+		4969240F0EBE4CEA00930DDD /* win32.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = win32.h; sourceTree = "<group>"; };
+		496924100EBE4CEA00930DDD /* host.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = host.c; sourceTree = "<group>"; };
+		496924110EBE4CEA00930DDD /* list.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = list.c; sourceTree = "<group>"; };
+		496924120EBE4CEA00930DDD /* packet.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = packet.c; sourceTree = "<group>"; };
+		496924130EBE4CEA00930DDD /* peer.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = peer.c; sourceTree = "<group>"; };
+		496924140EBE4CEA00930DDD /* protocol.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = protocol.c; sourceTree = "<group>"; };
+		496924150EBE4CEA00930DDD /* unix.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = unix.c; sourceTree = "<group>"; };
+		496924160EBE4CEA00930DDD /* win32.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = win32.c; sourceTree = "<group>"; };
+		496924170EBE4CEA00930DDD /* SDL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SDL.framework; sourceTree = "<group>"; };
+		496924180EBE4CEA00930DDD /* SDL_image.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SDL_image.framework; sourceTree = "<group>"; };
+		496924190EBE4CEA00930DDD /* SDL_mixer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SDL_mixer.framework; sourceTree = "<group>"; };
+		4969241A0EBE4CEA00930DDD /* SDL_ttf.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SDL_ttf.framework; sourceTree = "<group>"; };
+		4969241B0EBE4CEA00930DDD /* SDLMain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDLMain.m; sourceTree = "<group>"; };
+		4969241D0EBE4CEA00930DDD /* tinyxml.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = tinyxml.cpp; sourceTree = "<group>"; };
+		4969241E0EBE4CEA00930DDD /* tinyxml.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tinyxml.h; sourceTree = "<group>"; };
+		4969241F0EBE4CEA00930DDD /* tinyxmlerror.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = tinyxmlerror.cpp; sourceTree = "<group>"; };
+		496924200EBE4CEA00930DDD /* tinyxmlparser.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = tinyxmlparser.cpp; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		496923D90EBE4BC300930DDD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				496924290EBE4CEA00930DDD /* SDL.framework in Frameworks */,
+				4969242A0EBE4CEA00930DDD /* SDL_image.framework in Frameworks */,
+				4969242B0EBE4CEA00930DDD /* SDL_mixer.framework in Frameworks */,
+				4969242C0EBE4CEA00930DDD /* SDL_ttf.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		496923C90EBE4B7600930DDD = {
+			isa = PBXGroup;
+			children = (
+				496923E40EBE4C4000930DDD /* Source */,
+				496923E30EBE4C3900930DDD /* External */,
+				496923E20EBE4C3500930DDD /* Resources */,
+				496923DC0EBE4BC300930DDD /* Products */,
+				496923DE0EBE4BC300930DDD /* Ares X-Info.plist */,
+			);
+			sourceTree = "<group>";
+		};
+		496923DC0EBE4BC300930DDD /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				496923DB0EBE4BC300930DDD /* Ares X.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		496923E20EBE4C3500930DDD /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		496923E30EBE4C3900930DDD /* External */ = {
+			isa = PBXGroup;
+			children = (
+				496924040EBE4CEA00930DDD /* eNet */,
+				496924170EBE4CEA00930DDD /* SDL.framework */,
+				496924180EBE4CEA00930DDD /* SDL_image.framework */,
+				496924190EBE4CEA00930DDD /* SDL_mixer.framework */,
+				4969241A0EBE4CEA00930DDD /* SDL_ttf.framework */,
+				4969241B0EBE4CEA00930DDD /* SDLMain.m */,
+				4969241C0EBE4CEA00930DDD /* TinyXML */,
+			);
+			name = External;
+			path = ../External;
+			sourceTree = "<group>";
+		};
+		496923E40EBE4C4000930DDD /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				496923F70EBE4CD500930DDD /* Graphics */,
+				496923F90EBE4CD500930DDD /* Net */,
+				496923FB0EBE4CD500930DDD /* Sound */,
+				496923FD0EBE4CD500930DDD /* Utilities */,
+			);
+			name = Source;
+			path = ../Source;
+			sourceTree = "<group>";
+		};
+		496923F70EBE4CD500930DDD /* Graphics */ = {
+			isa = PBXGroup;
+			children = (
+				496923F80EBE4CD500930DDD /* Graphics.h */,
+			);
+			path = Graphics;
+			sourceTree = "<group>";
+		};
+		496923F90EBE4CD500930DDD /* Net */ = {
+			isa = PBXGroup;
+			children = (
+				496923FA0EBE4CD500930DDD /* Net.h */,
+			);
+			path = Net;
+			sourceTree = "<group>";
+		};
+		496923FB0EBE4CD500930DDD /* Sound */ = {
+			isa = PBXGroup;
+			children = (
+				496923FC0EBE4CD500930DDD /* Sound.h */,
+			);
+			path = Sound;
+			sourceTree = "<group>";
+		};
+		496923FD0EBE4CD500930DDD /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				496923FE0EBE4CD500930DDD /* Colour.cpp */,
+				496923FF0EBE4CD500930DDD /* Colour.h */,
+				496924000EBE4CD500930DDD /* ResourceManager.h */,
+				496924010EBE4CD500930DDD /* Vec2.h */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		496924040EBE4CEA00930DDD /* eNet */ = {
+			isa = PBXGroup;
+			children = (
+				496924050EBE4CEA00930DDD /* callbacks.c */,
+				496924060EBE4CEA00930DDD /* enet */,
+				496924100EBE4CEA00930DDD /* host.c */,
+				496924110EBE4CEA00930DDD /* list.c */,
+				496924120EBE4CEA00930DDD /* packet.c */,
+				496924130EBE4CEA00930DDD /* peer.c */,
+				496924140EBE4CEA00930DDD /* protocol.c */,
+				496924150EBE4CEA00930DDD /* unix.c */,
+				496924160EBE4CEA00930DDD /* win32.c */,
+			);
+			path = eNet;
+			sourceTree = "<group>";
+		};
+		496924060EBE4CEA00930DDD /* enet */ = {
+			isa = PBXGroup;
+			children = (
+				496924070EBE4CEA00930DDD /* callbacks.h */,
+				496924080EBE4CEA00930DDD /* enet.h */,
+				496924090EBE4CEA00930DDD /* list.h */,
+				4969240A0EBE4CEA00930DDD /* protocol.h */,
+				4969240B0EBE4CEA00930DDD /* time.h */,
+				4969240C0EBE4CEA00930DDD /* types.h */,
+				4969240D0EBE4CEA00930DDD /* unix.h */,
+				4969240E0EBE4CEA00930DDD /* utility.h */,
+				4969240F0EBE4CEA00930DDD /* win32.h */,
+			);
+			path = enet;
+			sourceTree = "<group>";
+		};
+		4969241C0EBE4CEA00930DDD /* TinyXML */ = {
+			isa = PBXGroup;
+			children = (
+				4969241D0EBE4CEA00930DDD /* tinyxml.cpp */,
+				4969241E0EBE4CEA00930DDD /* tinyxml.h */,
+				4969241F0EBE4CEA00930DDD /* tinyxmlerror.cpp */,
+				496924200EBE4CEA00930DDD /* tinyxmlparser.cpp */,
+			);
+			path = TinyXML;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		496923DA0EBE4BC300930DDD /* Ares X */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 496923E10EBE4BC400930DDD /* Build configuration list for PBXNativeTarget "Ares X" */;
+			buildPhases = (
+				496923D70EBE4BC300930DDD /* Resources */,
+				496924030EBE4CD600930DDD /* Copy Frameworks */,
+				496923D80EBE4BC300930DDD /* Sources */,
+				496923D90EBE4BC300930DDD /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Ares X";
+			productName = "Ares X";
+			productReference = 496923DB0EBE4BC300930DDD /* Ares X.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		496923CB0EBE4B7600930DDD /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = 496923CE0EBE4B7600930DDD /* Build configuration list for PBXProject "Ares X" */;
+			compatibilityVersion = "Xcode 3.0";
+			hasScannedForEncodings = 0;
+			mainGroup = 496923C90EBE4B7600930DDD;
+			productRefGroup = 496923DC0EBE4BC300930DDD /* Products */;
+			projectDirPath = "";
+			projectRoot = ..;
+			targets = (
+				496923DA0EBE4BC300930DDD /* Ares X */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		496923D70EBE4BC300930DDD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		496923D80EBE4BC300930DDD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				496924020EBE4CD500930DDD /* Colour.cpp in Sources */,
+				496924210EBE4CEA00930DDD /* callbacks.c in Sources */,
+				496924220EBE4CEA00930DDD /* host.c in Sources */,
+				496924230EBE4CEA00930DDD /* list.c in Sources */,
+				496924240EBE4CEA00930DDD /* packet.c in Sources */,
+				496924250EBE4CEA00930DDD /* peer.c in Sources */,
+				496924260EBE4CEA00930DDD /* protocol.c in Sources */,
+				496924270EBE4CEA00930DDD /* unix.c in Sources */,
+				496924280EBE4CEA00930DDD /* win32.c in Sources */,
+				4969242D0EBE4CEA00930DDD /* SDLMain.m in Sources */,
+				4969242E0EBE4CEA00930DDD /* tinyxml.cpp in Sources */,
+				4969242F0EBE4CEA00930DDD /* tinyxmlerror.cpp in Sources */,
+				496924300EBE4CEA00930DDD /* tinyxmlparser.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		496923CC0EBE4B7600930DDD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+				SDKROOT = "$(DEVELOPER_SDK_DIR)/MacOSX10.5.sdk";
+			};
+			name = Debug;
+		};
+		496923CD0EBE4B7600930DDD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = YES;
+				SDKROOT = "$(DEVELOPER_SDK_DIR)/MacOSX10.5.sdk";
+			};
+			name = Release;
+		};
+		496923DF0EBE4BC400930DDD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ONLY_ACTIVE_ARCH_PRE_XCODE_3_1)";
+				COPY_PHASE_STRIP = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../External\"",
+				);
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_MODEL_TUNING = G5;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = NO;
+				GCC_PREFIX_HEADER = "";
+				GCC_VERSION = 4.2;
+				HEADER_SEARCH_PATHS = (
+					"$(SRCROOT)/../External",
+					"$(SRCROOT)/../External/SDL.framework/Headers",
+					"$(SRCROOT)/../External/eNet",
+				);
+				INFOPLIST_FILE = "Ares X-Info.plist";
+				INSTALL_PATH = "$(HOME)/Applications";
+				ONLY_ACTIVE_ARCH_PRE_XCODE_3_1 = "$(NATIVE_ARCH)";
+				OTHER_LDFLAGS = (
+					"-framework",
+					Foundation,
+					"-framework",
+					AppKit,
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = "Ares X";
+			};
+			name = Debug;
+		};
+		496923E00EBE4BC400930DDD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT_PRE_XCODE_3_1)";
+				ARCHS_STANDARD_32_BIT_PRE_XCODE_3_1 = "ppc i386";
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../External\"",
+				);
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_MODEL_TUNING = G5;
+				GCC_PRECOMPILE_PREFIX_HEADER = NO;
+				GCC_PREFIX_HEADER = "";
+				GCC_VERSION = 4.2;
+				HEADER_SEARCH_PATHS = (
+					"$(SRCROOT)/../External",
+					"$(SRCROOT)/../External/SDL.framework/Headers",
+					"$(SRCROOT)/../External/eNet",
+				);
+				INFOPLIST_FILE = "Ares X-Info.plist";
+				INSTALL_PATH = "$(HOME)/Applications";
+				OTHER_LDFLAGS = (
+					"-framework",
+					Foundation,
+					"-framework",
+					AppKit,
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = "Ares X";
+				ZERO_LINK = NO;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		496923CE0EBE4B7600930DDD /* Build configuration list for PBXProject "Ares X" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				496923CC0EBE4B7600930DDD /* Debug */,
+				496923CD0EBE4B7600930DDD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		496923E10EBE4BC400930DDD /* Build configuration list for PBXNativeTarget "Ares X" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				496923DF0EBE4BC400930DDD /* Debug */,
+				496923E00EBE4BC400930DDD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 496923CB0EBE4B7600930DDD /* Project object */;
+}
