@@ -28,6 +28,7 @@
 		496924670EBE4D0600930DDD /* SDL_image.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 496924180EBE4CEA00930DDD /* SDL_image.framework */; };
 		496924680EBE4D0600930DDD /* SDL_mixer.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 496924190EBE4CEA00930DDD /* SDL_mixer.framework */; };
 		496924690EBE4D0600930DDD /* SDL_ttf.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 4969241A0EBE4CEA00930DDD /* SDL_ttf.framework */; };
+		496924830EBE516100930DDD /* Ares.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 496924820EBE516100930DDD /* Ares.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -83,6 +84,8 @@
 		4969241E0EBE4CEA00930DDD /* tinyxml.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tinyxml.h; sourceTree = "<group>"; };
 		4969241F0EBE4CEA00930DDD /* tinyxmlerror.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = tinyxmlerror.cpp; sourceTree = "<group>"; };
 		496924200EBE4CEA00930DDD /* tinyxmlparser.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = tinyxmlparser.cpp; sourceTree = "<group>"; };
+		496924820EBE516100930DDD /* Ares.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Ares.cpp; sourceTree = "<group>"; };
+		496924850EBE516A00930DDD /* ModeManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModeManager.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,6 +147,8 @@
 		496923E40EBE4C4000930DDD /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				496924840EBE516A00930DDD /* Modes */,
+				496924820EBE516100930DDD /* Ares.cpp */,
 				496923F70EBE4CD500930DDD /* Graphics */,
 				496923F90EBE4CD500930DDD /* Net */,
 				496923FB0EBE4CD500930DDD /* Sound */,
@@ -231,6 +236,14 @@
 			path = TinyXML;
 			sourceTree = "<group>";
 		};
+		496924840EBE516A00930DDD /* Modes */ = {
+			isa = PBXGroup;
+			children = (
+				496924850EBE516A00930DDD /* ModeManager.h */,
+			);
+			path = Modes;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -298,6 +311,7 @@
 				4969242E0EBE4CEA00930DDD /* tinyxml.cpp in Sources */,
 				4969242F0EBE4CEA00930DDD /* tinyxmlerror.cpp in Sources */,
 				496924300EBE4CEA00930DDD /* tinyxmlparser.cpp in Sources */,
+				496924830EBE516100930DDD /* Ares.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
