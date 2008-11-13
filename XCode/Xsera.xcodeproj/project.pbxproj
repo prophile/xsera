@@ -29,6 +29,9 @@
 		496924680EBE4D0600930DDD /* SDL_mixer.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 496924190EBE4CEA00930DDD /* SDL_mixer.framework */; };
 		496924690EBE4D0600930DDD /* SDL_ttf.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 4969241A0EBE4CEA00930DDD /* SDL_ttf.framework */; };
 		496924830EBE516100930DDD /* Xsera.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 496924820EBE516100930DDD /* Xsera.cpp */; };
+		49A0E6940ECC3887007F3458 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49A0E6930ECC3887007F3458 /* OpenGL.framework */; };
+		49F348830ECC222C00983EE6 /* Sound.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 49F348820ECC222C00983EE6 /* Sound.cpp */; };
+		49F348850ECC223A00983EE6 /* Graphics.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 49F348840ECC223A00983EE6 /* Graphics.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -86,6 +89,9 @@
 		496924200EBE4CEA00930DDD /* tinyxmlparser.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = tinyxmlparser.cpp; sourceTree = "<group>"; };
 		496924820EBE516100930DDD /* Xsera.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Xsera.cpp; sourceTree = "<group>"; };
 		496924850EBE516A00930DDD /* ModeManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModeManager.h; sourceTree = "<group>"; };
+		49A0E6930ECC3887007F3458 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = /System/Library/Frameworks/OpenGL.framework; sourceTree = "<absolute>"; };
+		49F348820ECC222C00983EE6 /* Sound.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Sound.cpp; sourceTree = "<group>"; };
+		49F348840ECC223A00983EE6 /* Graphics.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Graphics.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +103,7 @@
 				4969242A0EBE4CEA00930DDD /* SDL_image.framework in Frameworks */,
 				4969242B0EBE4CEA00930DDD /* SDL_mixer.framework in Frameworks */,
 				4969242C0EBE4CEA00930DDD /* SDL_ttf.framework in Frameworks */,
+				49A0E6940ECC3887007F3458 /* OpenGL.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -132,6 +139,7 @@
 		496923E30EBE4C3900930DDD /* External */ = {
 			isa = PBXGroup;
 			children = (
+				49A0E6930ECC3887007F3458 /* OpenGL.framework */,
 				496924040EBE4CEA00930DDD /* eNet */,
 				496924170EBE4CEA00930DDD /* SDL.framework */,
 				496924180EBE4CEA00930DDD /* SDL_image.framework */,
@@ -161,6 +169,7 @@
 		496923F70EBE4CD500930DDD /* Graphics */ = {
 			isa = PBXGroup;
 			children = (
+				49F348840ECC223A00983EE6 /* Graphics.cpp */,
 				496923F80EBE4CD500930DDD /* Graphics.h */,
 			);
 			path = Graphics;
@@ -177,6 +186,7 @@
 		496923FB0EBE4CD500930DDD /* Sound */ = {
 			isa = PBXGroup;
 			children = (
+				49F348820ECC222C00983EE6 /* Sound.cpp */,
 				496923FC0EBE4CD500930DDD /* Sound.h */,
 			);
 			path = Sound;
@@ -312,6 +322,8 @@
 				4969242F0EBE4CEA00930DDD /* tinyxmlerror.cpp in Sources */,
 				496924300EBE4CEA00930DDD /* tinyxmlparser.cpp in Sources */,
 				496924830EBE516100930DDD /* Xsera.cpp in Sources */,
+				49F348830ECC222C00983EE6 /* Sound.cpp in Sources */,
+				49F348850ECC223A00983EE6 /* Graphics.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -355,6 +367,7 @@
 					"$(SRCROOT)/../External",
 					"$(SRCROOT)/../External/SDL.framework/Headers",
 					"$(SRCROOT)/../External/eNet",
+					"$(SRCROOT)/../Source",
 				);
 				INFOPLIST_FILE = "Xsera-Info.plist";
 				INSTALL_PATH = "$(HOME)/Applications";
@@ -391,6 +404,7 @@
 					"$(SRCROOT)/../External",
 					"$(SRCROOT)/../External/SDL.framework/Headers",
 					"$(SRCROOT)/../External/eNet",
+					"$(SRCROOT)/../Source",
 				);
 				INFOPLIST_FILE = "Xsera-Info.plist";
 				INSTALL_PATH = "$(HOME)/Applications";

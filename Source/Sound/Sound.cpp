@@ -5,6 +5,27 @@
 namespace Sound
 {
 
+namespace Internal
+{
+
+void ClearSoundAndMusic ()
+{
+}
+
+Mix_Chunk* SoundNamed ( const std::string& name )
+{
+	return NULL;
+}
+
+Mix_Music* MusicNamed ( const std::string& name )
+{
+	return NULL;
+}
+
+}
+
+using namespace Internal;
+
 void Init ( int frequency, int resolution, int sources )
 {
 	int volume_sound = MIX_MAX_VOLUME / 2, volume_music = MIX_MAX_VOLUME / 2;

@@ -1,18 +1,18 @@
 #include "Colour.h"
 
-col::col ()
+colour::colour ()
 {
 	data.array[0] = data.array[1] = data.array[2] = 0.0f;
 	data.array[3] = 1.0f;
 }
 
-col::col ( float l, float a )
+colour::colour ( float l, float a )
 {
 	data.array[0] = data.array[1] = data.array[2] = l;
 	data.array[3] = a;
 }
 
-col::col ( float r, float g, float b )
+colour::colour ( float r, float g, float b )
 {
 	data.array[0] = r;
 	data.array[1] = g;
@@ -20,7 +20,7 @@ col::col ( float r, float g, float b )
 	data.array[3] = 1.0f;
 }
 
-col::col ( float r, float g, float b, float a )
+colour::colour ( float r, float g, float b, float a )
 {
 	data.array[0] = r;
 	data.array[1] = g;
@@ -28,25 +28,25 @@ col::col ( float r, float g, float b, float a )
 	data.array[3] = a;
 }
 
-col::col ( const float vec[4] )
+colour::colour ( const float vec[4] )
 {
 	memcpy(data.array, vec, sizeof(vec));
 }
 
 #ifdef COLOUR_VECTOR_SUPPORT
-col::col ( const col& ocol )
+colour::colour ( const colour& ocol )
 {
 	data.vector = ocol.data.vector;
 }
 #else
-col::col ( const col& ocol )
+colour::colour ( const colour& ocol )
 {
 	memcpy(data.array, ocol.data.array, sizeof(data.array));
 }
 #endif
 
 #ifndef COLOUR_VECTOR_SUPPORT
-col& col::operator= ( const col& ocol )
+colour& colour::operator= ( const col& ocol )
 {
 	data.array[0] = ocol.data.array[0];
 	data.array[1] = ocol.data.array[1];
@@ -56,25 +56,25 @@ col& col::operator= ( const col& ocol )
 }
 #endif
 
-col col::operator- () const
+colour colour::operator- () const
 {
-	static const col def ( 1.0f, 1.0f, 1.0f, 1.0f );
+	static const colour def ( 1.0f, 1.0f, 1.0f, 1.0f );
 	return def - *this;
 }
 
-col col::operator+ ( const col& ocol ) const
+colour colour::operator+ ( const colour& ocol ) const
 {
 #ifdef COLOUR_VECTOR_SUPPORT
-	return col(data.vector + ocol.data.vector);
+	return colour(data.vector + ocol.data.vector);
 #else
-	return col(red() + ocol.red(),
-	           green() + ocol.green(),
-	           blue() + ocol.blue(),
-			   alpha() + ocol.alpha());
+	return colour(red() + ocol.red(),
+	              green() + ocol.green(),
+	              blue() + ocol.blue(),
+			      alpha() + ocol.alpha());
 #endif
 }
 
-col& col::operator+= ( const col& ocol )
+colour& colour::operator+= ( const colour& ocol )
 {
 #ifdef COLOUR_VECTOR_SUPPORT
 	data.vector += ocol.data.vector;
@@ -87,19 +87,19 @@ col& col::operator+= ( const col& ocol )
 	return *this;
 }
 
-col col::operator- ( const col& ocol ) const
+colour colour::operator- ( const colour& ocol ) const
 {
 #ifdef COLOUR_VECTOR_SUPPORT
-	return col(data.vector - ocol.data.vector);
+	return colour(data.vector - ocol.data.vector);
 #else
-	return col(red() - ocol.red(),
-	           green() - ocol.green(),
-	           blue() - ocol.blue(),
-			   alpha() - ocol.alpha());
+	return colour(red() - ocol.red(),
+	              green() - ocol.green(),
+	              blue() - ocol.blue(),
+			      alpha() - ocol.alpha());
 #endif
 }
 
-col& col::operator-= ( const col& ocol )
+colour& colour::operator-= ( const colour& ocol )
 {
 #ifdef COLOUR_VECTOR_SUPPORT
 	data.vector -= ocol.data.vector;
@@ -112,19 +112,19 @@ col& col::operator-= ( const col& ocol )
 	return *this;
 }
 
-col col::operator* ( const col& ocol ) const
+colour colour::operator* ( const colour& ocol ) const
 {
 #ifdef COLOUR_VECTOR_SUPPORT
-	return col(data.vector * ocol.data.vector);
+	return colour(data.vector * ocol.data.vector);
 #else
-	return col(red() * ocol.red(),
-	           green() * ocol.green(),
-	           blue() * ocol.blue(),
-			   alpha() * ocol.alpha());
+	return colour(red() * ocol.red(),
+	              green() * ocol.green(),
+	              blue() * ocol.blue(),
+			      alpha() * ocol.alpha());
 #endif
 }
 
-col& col::operator*= ( const col& ocol )
+colour& colour::operator*= ( const colour& ocol )
 {
 #ifdef COLOUR_VECTOR_SUPPORT
 	data.vector *= ocol.data.vector;
@@ -137,19 +137,19 @@ col& col::operator*= ( const col& ocol )
 	return *this;
 }
 
-col col::operator/ ( const col& ocol ) const
+colour colour::operator/ ( const colour& ocol ) const
 {
 #ifdef COLOUR_VECTOR_SUPPORT
-	return col(data.vector / ocol.data.vector);
+	return colour(data.vector / ocol.data.vector);
 #else
-	return col(red() / ocol.red(),
-	           green() / ocol.green(),
-	           blue() / ocol.blue(),
-			   alpha() / ocol.alpha());
+	return colour(red() / ocol.red(),
+	              green() / ocol.green(),
+	              blue() / ocol.blue(),
+			      alpha() / ocol.alpha());
 #endif
 }
 
-col& col::operator/= ( const col& ocol )
+colour& colour::operator/= ( const colour& ocol )
 {
 #ifdef COLOUR_VECTOR_SUPPORT
 	data.vector /= ocol.data.vector;
@@ -162,15 +162,15 @@ col& col::operator/= ( const col& ocol )
 	return *this;
 }
 
-col col::operator* ( float factor ) const
+colour colour::operator* ( float factor ) const
 {
-	return col(data.array[0] * factor,
-	           data.array[1] * factor,
-	           data.array[2] * factor,
-			   data.array[3] * factor);
+	return colour(data.array[0] * factor,
+	              data.array[1] * factor,
+	              data.array[2] * factor,
+			      data.array[3] * factor);
 }
 
-col& col::operator*= ( float factor )
+colour& colour::operator*= ( float factor )
 {
 	data.array[0] *= factor;
 	data.array[1] *= factor;
@@ -179,15 +179,15 @@ col& col::operator*= ( float factor )
 	return *this;
 }
 
-col col::operator/ ( float factor ) const
+colour colour::operator/ ( float factor ) const
 {
-	return col(data.array[0] / factor,
-	           data.array[1] / factor,
-	           data.array[2] / factor,
-			   data.array[3] / factor);
+	return colour(data.array[0] / factor,
+	              data.array[1] / factor,
+	              data.array[2] / factor,
+			  	  data.array[3] / factor);
 }
 
-col& col::operator/= ( float factor )
+colour& colour::operator/= ( float factor )
 {
 	data.array[0] /= factor;
 	data.array[1] /= factor;

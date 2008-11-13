@@ -9,7 +9,7 @@
 #warning Vector support unavailable on this platform, using scalar fallbacks for colour
 #endif
 
-class col
+class colour
 {
 public:
 	#ifdef COLOUR_VECTOR_SUPPORT
@@ -31,17 +31,17 @@ public:
 private:
 	v4 data;
 public:
-	col ();
-	col ( float l, float a );
-	col ( float r, float g, float b );
-	col ( float r, float g, float b, float a );
-	col ( const col& ocol );
-	col ( const float vec[4] );
+	colour ();
+	colour ( float l, float a );
+	colour ( float r, float g, float b );
+	colour ( float r, float g, float b, float a );
+	colour ( const colour& ocol );
+	colour ( const float vec[4] );
 #ifdef COLOUR_VECTOR_SUPPORT
-	col ( const v4f vec ) { data.vector = vec; }
-	col& operator= ( const col& ocol ) { data.vector = ocol.data.vector; return *this; }
+	colour ( const v4f vec ) { data.vector = vec; }
+	colour& operator= ( const colour& ocol ) { data.vector = ocol.data.vector; return *this; }
 #else
-	col& operator= ( const col& ocol );
+	colour& operator= ( const colour& ocol );
 #endif
 	
 	float red   () const { return data.array[0]; }
@@ -54,19 +54,19 @@ public:
 	float& blue  () { return data.array[2]; }
 	float& alpha () { return data.array[3]; }
 	
-	col operator- () const;
-	col operator+ ( const col& ocol ) const;
-	col& operator+= ( const col& ocol );
-	col operator- ( const col& ocol ) const;
-	col& operator-= ( const col& ocol );
-	col operator* ( const col& ocol ) const;
-	col& operator*= ( const col& ocol );
-	col operator/ ( const col& ocol ) const;
-	col& operator/= ( const col& ocol );
-	col operator* ( float factor ) const;
-	col& operator*= ( float factor );
-	col operator/ ( float factor ) const;
-	col& operator/= ( float factor );
+	colour operator- () const;
+	colour operator+ ( const colour& ocol ) const;
+	colour& operator+= ( const colour& ocol );
+	colour operator- ( const colour& ocol ) const;
+	colour& operator-= ( const colour& ocol );
+	colour operator* ( const colour& ocol ) const;
+	colour& operator*= ( const colour& ocol );
+	colour operator/ ( const colour& ocol ) const;
+	colour& operator/= ( const colour& ocol );
+	colour operator* ( float factor ) const;
+	colour& operator*= ( float factor );
+	colour operator/ ( float factor ) const;
+	colour& operator/= ( float factor );
 };
 
 #endif

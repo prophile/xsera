@@ -136,7 +136,7 @@ static void SetColour ( const colour& col )
 {
 	if (sizeof(col) == sizeof(float) * 4)
 	{
-		glColor4fv((void*)&col);
+		glColor4fv((const GLfloat*)&col);
 	}
 	else
 	{
@@ -147,7 +147,7 @@ static void SetColour ( const colour& col )
 static void ClearColour ()
 {
 	const uint32_t white = 0xFFFFFFFF;
-	glColor4ubv(&white);
+	glColor4ubv((const GLubyte*)&white);
 }
 
 void DrawSprite ( const std::string& sheetname, int sheet_x, int sheet_y, vec2 location, vec2 size, float rotation )
@@ -173,7 +173,6 @@ void DrawLine ( vec2 coordinate1, vec2 coordinate2, float width, colour col )
 
 void DrawCircle ( vec2 centre, float radius, float width, colour col )
 {
-	const float circlePoints[]
 	DisableTexturing ();
 	glLineWidth(width);
 	glPushMatrix ();
