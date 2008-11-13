@@ -1,5 +1,5 @@
-#ifndef __aresx_utilities_colour_h
-#define __aresx_utilities_colour_h
+#ifndef __xsera_utilities_colour_h
+#define __xsera_utilities_colour_h
 
 #include <string.h>
 

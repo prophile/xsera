@@ -1,5 +1,5 @@
-#ifndef __aresx_utilities_resourcemanager_h
-#define __aresx_utilities_resourcemanager_h
+#ifndef __xsera_utilities_resourcemanager_h
+#define __xsera_utilities_resourcemanager_h
 
 #include <SDL/SDL.h>
 

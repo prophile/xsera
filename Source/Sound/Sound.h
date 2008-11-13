@@ -1,5 +1,5 @@
-#ifndef __aresx_sound_sound_h
-#define __aresx_sound_sound_h
+#ifndef __xsera_sound_sound_h
+#define __xsera_sound_sound_h
 
 #include <string>
 

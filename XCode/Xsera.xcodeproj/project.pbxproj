@@ -49,7 +49,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		496923DB0EBE4BC300930DDD /* Xsera.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Xsera.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		496923DB0EBE4BC300930DDD /* Xsera.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Xsera.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		496923DE0EBE4BC300930DDD /* Xsera-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Xsera-Info.plist"; sourceTree = "<group>"; };
 		496923F80EBE4CD500930DDD /* Graphics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Graphics.h; sourceTree = "<group>"; };
 		496923FA0EBE4CD500930DDD /* Net.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Net.h; sourceTree = "<group>"; };
@@ -260,8 +260,8 @@
 			);
 			dependencies = (
 			);
-			name = "Xsera";
-			productName = "Xsera";
+			name = Xsera;
+			productName = Xsera;
 			productReference = 496923DB0EBE4BC300930DDD /* Xsera.app */;
 			productType = "com.apple.product-type.application";
 		};
@@ -311,7 +311,7 @@
 				4969242E0EBE4CEA00930DDD /* tinyxml.cpp in Sources */,
 				4969242F0EBE4CEA00930DDD /* tinyxmlerror.cpp in Sources */,
 				496924300EBE4CEA00930DDD /* tinyxmlparser.cpp in Sources */,
-				496924830EBE516100930DDD /* Xsera.cpp in Sources */
+				496924830EBE516100930DDD /* Xsera.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -366,7 +366,7 @@
 					AppKit,
 				);
 				PREBINDING = NO;
-				PRODUCT_NAME = "Xsera";
+				PRODUCT_NAME = Xsera;
 			};
 			name = Debug;
 		};
@@ -401,7 +401,7 @@
 					AppKit,
 				);
 				PREBINDING = NO;
-				PRODUCT_NAME = "Xsera";
+				PRODUCT_NAME = Xsera;
 				ZERO_LINK = NO;
 			};
 			name = Release;

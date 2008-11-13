@@ -1,5 +1,5 @@
-#ifndef __aresx_graphics_graphics_h
-#define __aresx_graphics_graphics_h
+#ifndef __xsera_graphics_graphics_h
+#define __xsera_graphics_graphics_h
 
 #include <string>
 

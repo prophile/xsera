@@ -1,5 +1,5 @@
-#ifndef __aresx_modes_modemanager_h
-#define __aresx_modes_modemanager_h
+#ifndef __xsera_modes_modemanager_h
+#define __xsera_modes_modemanager_h
 
 class Mode
 {
