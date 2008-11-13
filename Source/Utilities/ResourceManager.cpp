@@ -16,7 +16,10 @@ std::string userDirectoryPath;
 
 bool FileExists ( const std::string& path )
 {
-	return false;
+	FILE* fp = fopen(path.c_str(), "rb");
+	if (fp)
+		fclose(fp);
+	return fp != NULL;
 }
 
 }
