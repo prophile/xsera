@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		490CDB280ECCE572004B7D04 /* Music in Resources */ = {isa = PBXBuildFile; fileRef = 490CDB270ECCE572004B7D04 /* Music */; };
 		496924020EBE4CD500930DDD /* Colour.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 496923FE0EBE4CD500930DDD /* Colour.cpp */; };
 		496924210EBE4CEA00930DDD /* callbacks.c in Sources */ = {isa = PBXBuildFile; fileRef = 496924050EBE4CEA00930DDD /* callbacks.c */; };
 		496924220EBE4CEA00930DDD /* host.c in Sources */ = {isa = PBXBuildFile; fileRef = 496924100EBE4CEA00930DDD /* host.c */; };
@@ -53,6 +54,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		490CDB270ECCE572004B7D04 /* Music */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Music; path = ../Resources/Music; sourceTree = SOURCE_ROOT; };
 		496923DB0EBE4BC300930DDD /* Xsera.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Xsera.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		496923DE0EBE4BC300930DDD /* Xsera-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Xsera-Info.plist"; sourceTree = "<group>"; };
 		496923F80EBE4CD500930DDD /* Graphics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Graphics.h; sourceTree = "<group>"; };
@@ -134,6 +136,7 @@
 		496923E20EBE4C3500930DDD /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				490CDB270ECCE572004B7D04 /* Music */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -301,6 +304,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				490CDB280ECCE572004B7D04 /* Music in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -31,6 +31,7 @@ void Startup ()
 	ResourceManager::Init();
 	Graphics::Init(640, 480, false); // 640x480 resolution, non-fullscreen
 	Sound::Init(48000, 24, 128); // init with 48 kHz sampling rate, 24-bit resolution, 128 channels
+	Sound::PlayMusic("Doomtroopers");
 }
 
 void MainLoop ()
