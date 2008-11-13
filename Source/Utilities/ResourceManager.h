@@ -2,6 +2,7 @@
 #define __xsera_utilities_resourcemanager_h
 
 #include <SDL/SDL.h>
+#include <string>
 
 namespace ResourceManager
 {

@@ -30,6 +30,7 @@
 		496924690EBE4D0600930DDD /* SDL_ttf.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 4969241A0EBE4CEA00930DDD /* SDL_ttf.framework */; };
 		496924830EBE516100930DDD /* Xsera.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 496924820EBE516100930DDD /* Xsera.cpp */; };
 		49A0E6940ECC3887007F3458 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49A0E6930ECC3887007F3458 /* OpenGL.framework */; };
+		49A0E69B0ECC39FD007F3458 /* ResourceManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 49A0E69A0ECC39FD007F3458 /* ResourceManager.cpp */; };
 		49F348830ECC222C00983EE6 /* Sound.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 49F348820ECC222C00983EE6 /* Sound.cpp */; };
 		49F348850ECC223A00983EE6 /* Graphics.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 49F348840ECC223A00983EE6 /* Graphics.cpp */; };
 /* End PBXBuildFile section */
@@ -90,6 +91,7 @@
 		496924820EBE516100930DDD /* Xsera.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Xsera.cpp; sourceTree = "<group>"; };
 		496924850EBE516A00930DDD /* ModeManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModeManager.h; sourceTree = "<group>"; };
 		49A0E6930ECC3887007F3458 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = /System/Library/Frameworks/OpenGL.framework; sourceTree = "<absolute>"; };
+		49A0E69A0ECC39FD007F3458 /* ResourceManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ResourceManager.cpp; sourceTree = "<group>"; };
 		49F348820ECC222C00983EE6 /* Sound.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Sound.cpp; sourceTree = "<group>"; };
 		49F348840ECC223A00983EE6 /* Graphics.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Graphics.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -195,6 +197,7 @@
 		496923FD0EBE4CD500930DDD /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				49A0E69A0ECC39FD007F3458 /* ResourceManager.cpp */,
 				496923FE0EBE4CD500930DDD /* Colour.cpp */,
 				496923FF0EBE4CD500930DDD /* Colour.h */,
 				496924000EBE4CD500930DDD /* ResourceManager.h */,
@@ -324,6 +327,7 @@
 				496924830EBE516100930DDD /* Xsera.cpp in Sources */,
 				49F348830ECC222C00983EE6 /* Sound.cpp in Sources */,
 				49F348850ECC223A00983EE6 /* Graphics.cpp in Sources */,
+				49A0E69B0ECC39FD007F3458 /* ResourceManager.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
