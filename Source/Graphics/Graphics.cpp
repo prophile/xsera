@@ -1,6 +1,8 @@
 #include "Graphics.h"
 #include <OpenGL/gl.h>
 #include <SDL/SDL.h>
+#include "SpriteSheet.h"
+#include <map>
 
 const static float circlePoints[] = {
    0.000, 1.000,
@@ -68,6 +70,9 @@ const static float circlePoints[] = {
    -0.195, 0.981,
    -0.098, 0.995,
    -0.000, 1.000};
+
+typedef std::map<std::string, Graphics::SpriteSheet*> SheetMap;
+static SheetMap spriteSheets;
 
 namespace Graphics
 {
@@ -152,7 +157,25 @@ static void ClearColour ()
 
 void DrawSprite ( const std::string& sheetname, int sheet_x, int sheet_y, vec2 location, vec2 size, float rotation )
 {
-	// TODO
+	EnableTexturing();
+	ClearColour();
+	SpriteSheet* sheet;
+	SheetMap::iterator iter = spriteSheets.find(sheetname);
+	if (iter == spriteSheets.end())
+	{
+		// load it
+		sheet = new SpriteSheet(sheetname);
+		spriteSheets[sheetname] = sheet;
+	}
+	else
+	{
+		sheet = iter->second;
+	}
+	glPushMatrix();
+	glTranslatef(location.X(), location.Y(), 0.0f);
+	glRotatef(rotation, 0.0f, 0.0f, 1.0f);
+	sheet->Draw(sheet_x, sheet_y, size);
+	glPopMatrix();
 }
 
 void DrawText ( const std::string& text, const std::string& font, int fontsize, colour col, float rotation )
