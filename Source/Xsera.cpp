@@ -3,7 +3,7 @@
 #include "Graphics/Graphics.h"
 #include "Sound/Sound.h"
 
-namespace
+namespace XseraMain
 {
 
 void DispatchEvent ( const SDL_Event& evt )
@@ -19,6 +19,10 @@ void DispatchEvent ( const SDL_Event& evt )
 void RunLoop ()
 {
 	// do stuff
+	Graphics::BeginFrame();
+	Graphics::SetCamera(vec2(0.0f, 0.0f), vec2(1.0f, 1.0f), 0.0f);
+	Graphics::DrawCircle(vec2(0.5f, 0.5f), 0.4f, 3.0f, colour(1.0f, 1.0f, 1.0f, 1.0f));
+	Graphics::EndFrame();
 }
 
 void Startup ()
@@ -42,6 +46,8 @@ void MainLoop ()
 }
 
 }
+
+using namespace XseraMain;
 
 int main ( int argc, char** argv )
 {
