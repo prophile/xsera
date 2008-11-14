@@ -41,11 +41,14 @@ void* ReadFull ( size_t* length, SDL_RWops* ops, int autoclose )
 
 SDL_RWops* OpenFile ( const std::string& name )
 {
+	if (name == "")
+		return NULL;
 	for (std::vector<std::string>::iterator iter = searchPaths.begin(); iter != searchPaths.end(); iter++)
 	{
 		std::string fullPath = (*iter) + '/' + name;
 		if (FileExists(fullPath))
 		{
+			printf("[ResourceManager] loaded file %s\n", name.c_str());
 			return SDL_RWFromFile(fullPath.c_str(), "r");
 		}
 	}
