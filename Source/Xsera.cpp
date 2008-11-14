@@ -21,7 +21,8 @@ void RunLoop ()
 	// do stuff
 	Graphics::BeginFrame();
 	Graphics::SetCamera(vec2(0.0f, 0.0f), vec2(1.0f, 1.0f), 0.0f);
-	Graphics::DrawCircle(vec2(0.5f, 0.5f), 0.4f, 3.0f, colour(1.0f, 1.0f, 1.0f, 1.0f));
+	Graphics::DrawLine(vec2(0.0f, 0.0f), vec2(1.0f, 1.0f), 1.0f, colour(1.0f, 1.0f, 1.0f, 1.0f));
+	//Graphics::DrawCircle(vec2(0.5f, 0.5f), 0.4f, 3.0f, colour(1.0f, 1.0f, 1.0f, 1.0f));
 	Graphics::EndFrame();
 }
 
@@ -31,7 +32,7 @@ void Startup ()
 	ResourceManager::Init();
 	Graphics::Init(640, 480, false); // 640x480 resolution, non-fullscreen
 	Sound::Init(48000, 24, 128); // init with 48 kHz sampling rate, 24-bit resolution, 128 channels
-	Sound::PlayMusic("Doomtroopers");
+	Sound::PlayMusic("Yesterday");
 }
 
 void MainLoop ()
