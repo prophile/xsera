@@ -1,5 +1,9 @@
-#include "shipdef.h"
+#include "ShipDef.h"
 
-ShipDef::ShipDef(){};
+ShipDef::ShipDef()
+{
+}
 
-ShipDef::~ShipDef(){};
+ShipDef::~ShipDef()
+{
+}

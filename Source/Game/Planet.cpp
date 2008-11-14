@@ -1,5 +1,9 @@
-#include "planet.h"
+#include "Planet.h"
 
-Planet::Planet(){};
+Planet::Planet()
+{
+}
 
-Planet::~Planet(){};
+Planet::~Planet()
+{
+}

@@ -1,8 +1,10 @@
-#include "planetdef.h"
+#include "PlanetDef.h"
 
-PlanetDef::PlanetDef(){};
+PlanetDef::PlanetDef()
+{
+}
 
-PlanetDef::~PlanetDef(){};
+PlanetDef::~PlanetDef()
+{
+}
 
-PlanetDef FlacDrone;
-PlanetDef RegPlanet;

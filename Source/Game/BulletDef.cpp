@@ -1,5 +1,9 @@
-#include "bulletdef.h"
+#include "BulletDef.h"
 
-BulletDef::BulletDef(){};
+BulletDef::BulletDef()
+{
+}
 
-BulletDef::~BulletDef(){};
+BulletDef::~BulletDef()
+{
+}

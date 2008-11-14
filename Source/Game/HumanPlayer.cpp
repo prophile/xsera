@@ -1,5 +1,9 @@
-#include "humanplayer.h"
+#include "HumanPlayer.h"
 
-HumanPlayer::HumanPlayer(){};
+HumanPlayer::HumanPlayer()
+{
+}
 
-HumanPlayer::~HumanPlayer(){};
+HumanPlayer::~HumanPlayer()
+{
+}
