@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		490CDB280ECCE572004B7D04 /* Music in Resources */ = {isa = PBXBuildFile; fileRef = 490CDB270ECCE572004B7D04 /* Music */; };
 		490CDB540ECCE757004B7D04 /* SpriteSheet.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 490CDB520ECCE757004B7D04 /* SpriteSheet.cpp */; };
+		4930D74F0ECE22990053CC8B /* Images in Resources */ = {isa = PBXBuildFile; fileRef = 4930D74A0ECE22990053CC8B /* Images */; };
 		496924020EBE4CD500930DDD /* Colour.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 496923FE0EBE4CD500930DDD /* Colour.cpp */; };
 		496924210EBE4CEA00930DDD /* callbacks.c in Sources */ = {isa = PBXBuildFile; fileRef = 496924050EBE4CEA00930DDD /* callbacks.c */; };
 		496924220EBE4CEA00930DDD /* host.c in Sources */ = {isa = PBXBuildFile; fileRef = 496924100EBE4CEA00930DDD /* host.c */; };
@@ -58,6 +59,7 @@
 		490CDB270ECCE572004B7D04 /* Music */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Music; path = ../Resources/Music; sourceTree = SOURCE_ROOT; };
 		490CDB520ECCE757004B7D04 /* SpriteSheet.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SpriteSheet.cpp; sourceTree = "<group>"; };
 		490CDB530ECCE757004B7D04 /* SpriteSheet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpriteSheet.h; sourceTree = "<group>"; };
+		4930D74A0ECE22990053CC8B /* Images */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Images; path = ../Resources/Images; sourceTree = SOURCE_ROOT; };
 		496923DB0EBE4BC300930DDD /* Xsera.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Xsera.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		496923DE0EBE4BC300930DDD /* Xsera-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Xsera-Info.plist"; sourceTree = "<group>"; };
 		496923F80EBE4CD500930DDD /* Graphics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Graphics.h; sourceTree = "<group>"; };
@@ -139,6 +141,7 @@
 		496923E20EBE4C3500930DDD /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				4930D74A0ECE22990053CC8B /* Images */,
 				490CDB270ECCE572004B7D04 /* Music */,
 			);
 			name = Resources;
@@ -310,6 +313,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				490CDB280ECCE572004B7D04 /* Music in Resources */,
+				4930D74F0ECE22990053CC8B /* Images in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

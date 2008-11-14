@@ -20,9 +20,14 @@ void RunLoop ()
 {
 	// do stuff
 	Graphics::BeginFrame();
+	
 	Graphics::SetCamera(vec2(0.0f, 0.0f), vec2(1.0f, 1.0f), 0.0f);
 	Graphics::DrawLine(vec2(0.0f, 0.0f), vec2(1.0f, 1.0f), 1.0f, colour(1.0f, 1.0f, 1.0f, 1.0f));
-	//Graphics::DrawCircle(vec2(0.5f, 0.5f), 0.4f, 3.0f, colour(1.0f, 1.0f, 1.0f, 1.0f));
+	Graphics::DrawCircle(vec2(0.5f, 0.5f), 0.4f, 3.0f, colour(1.0f, 1.0f, 1.0f, 1.0f));
+	
+	Graphics::SetCamera(vec2(-500.0f, -240.0f), vec2(500.0f, 240.0f), 0.0f);
+	Graphics::DrawImage("Bootloader/Ares", vec2(0.0f, 0.0f), vec2(1000.0f, 480.0f));
+	
 	Graphics::EndFrame();
 }
 

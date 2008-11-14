@@ -25,8 +25,17 @@ void SpriteSheet::MakeResident ()
 
 SpriteSheet::SpriteSheet ( const std::string& name )
 {
-	std::string configPath = "Sprites/" + name + ".xml";
-	std::string imagePath = "Sprites/" + name + ".png";
+	std::string configPath, imagePath;
+	if (name[0] == '+')
+	{
+		configPath = "";
+		imagePath = "Images/" + name.substr(1, std::string::npos) + ".png";
+	}
+	else
+	{
+		configPath = "Sprites/" + name + ".xml";
+		imagePath = "Sprites/" + name + ".png";
+	}
 	SDL_RWops* configRWOps = ResourceManager::OpenFile(configPath);
 	SDL_RWops* imageRWOps = ResourceManager::OpenFile(imagePath);
 	assert(imageRWOps);
