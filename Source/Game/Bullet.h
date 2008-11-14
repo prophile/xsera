@@ -1,17 +1,17 @@
-#ifndef _BULLET_H_
-#define _BULLET_H_
+#ifndef __xsera_game_bullet_h
+#define __xsera_game_bullet_h
 
-#include "bulletdef.h"
+#include "Entity.h"
+#include "BulletDef.h"
 
 class Bullet : public BulletDef
 {
-	public:
-	
+private:
 	bool seeking;
 	float maxlife;
 	
+public:
 	Bullet();
-	
 	~Bullet();
 };
 

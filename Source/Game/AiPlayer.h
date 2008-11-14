@@ -1,14 +1,12 @@
-#ifndef _AIPLAYER_H_
-#define _AIPLAYER_H_
+#ifndef __xsera_game_aiplayer_h
+#define __xsera_game_aiplayer_h
 
-#include "player.h"
+#include "Player.h"
 
 class AiPlayer : public Player
 {
-	public:
-	
+public:
 	AiPlayer();
-	
 	~AiPlayer();
 };
 

@@ -1,14 +1,10 @@
-#ifndef _BULLETDEF_H_
-#define _BULLETDEF_H_
+#ifndef __xsera_game_bulletdef_h
+#define __xsera_game_bulletdef_h
 
-#include "entity.h"
-
-class BulletDef : public Entity
+class BulletDef
 {
-	public:
-	
+public:
 	BulletDef();
-	
 	~BulletDef();
 };
 

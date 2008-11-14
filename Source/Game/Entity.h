@@ -1,18 +1,15 @@
-#ifndef _ENTITY_H_
-#define _ENTITY_H_
+#ifndef __xsera_game_entity_h
+#define __xsera_game_entity_h
 
-#include "SDL_OpenGL.h"
+#include "Utilities/Vec2.h"
 
 class Entity
 {
-	public:
-	
-	int position_x;
-	int position_y;
-	GLfloat rotation;
-	
+protected:
+	vec2 position;
+
+public:
 	Entity();
-	
 	~Entity();
 };
 

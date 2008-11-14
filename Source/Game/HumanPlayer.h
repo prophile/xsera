@@ -1,14 +1,12 @@
-#ifndef _HUMANPLAYER_H_
-#define _HUMANPLAYER_H_
+#ifndef __xsera_game_humanplayer_h
+#define __xsera_game_humanplayer_h
 
-#include "player.h"
+#include "Player.h"
 
 class HumanPlayer : public Player
 {
-	public:
-		
+public:
 	HumanPlayer();
-		
 	~HumanPlayer();
 };
 

@@ -1,25 +1,19 @@
-#ifndef _PLANET_H_
-#define _PLANET_H_
+#ifndef __xsera_game_planet_h
+#define __xsera_game_planet_h
 
 #include <string>
-#include "entity.h"
-#include "planetdef.h"
-#include "bullet.h"
+#include "Entity.h"
+#include "PlanetDef.h"
+#include "Bullet.h"
+#include "Player.h"
 
-using namespace std;
-
-typedef unsigned short int PlanetName;
-const PlanetName EARTH = 1;
-
-const std::string S_EARTH = "Earth";
-//continue above two lines for all planets
-
-class Planet : public PlanetDef
+class Planet : public Entity
 {
-	public:
-	
-	Planet();
-	
+private:
+    PlanetDef* definition;
+    Player* owner;
+public:
+	Planet(Player* _owner, PlanetDef* _definition);
 	~Planet();
 };
 

@@ -1,15 +1,16 @@
-#ifndef _PLAYER_H_
-#define _PLAYER_H_
+#ifndef __xsera_game_player_h
+#define __xsera_game_player_h
 
-#include "race.h"
+#include "Race.h"
 
-class Player : public Race
+class Player
 {
-	public:
-		
-	Player();
-		
-	~Player();
+private:
+    Race* race;
+    unsigned long id;
+public:
+	Player ( unsigned long id, Race* race );
+	virtual ~Player();
 };
 
 #endif

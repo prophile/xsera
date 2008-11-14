@@ -1,17 +1,30 @@
-#ifndef _SHIPDEF_H_
-#define _SHIPDEF_H_
+#ifndef __xsera_game_shipdef_h
+#define __xsera_game_shipdef_h
 
-#include "entity.h"
+#include "Entity.h"
 
-typedef unsigned short int ShipType;
-const ShipType Hum_Heavy_Cruiser = 1;
-
-class ShipDef : public Entity
+enum ShipRadarSymbol
 {
-	public:
-	
+    SYMBOL_SMALL,
+    SYMBOL_MEDIUM,
+    SYMBOL_LARGE
+};
+
+class ShipDef
+{
+private:
+    float maxTurnRate;
+    float turnAcceleration;
+    float maxVelocity;
+    float maxWarpVelocity;
+    float startingHealth;
+    float startingEnergy;
+    unsigned cost;
+    unsigned buildTime;
+    float engageRange;
+    ShipRadarSymbol radarSymbol;
+public:
 	ShipDef();
-	
 	~ShipDef();
 };
 

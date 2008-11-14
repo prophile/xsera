@@ -1,16 +1,14 @@
-#ifndef _EED_H_
-#define _EED_H_
+#ifndef __xsera_game_environmententdef_h
+#define __xsera_game_environmententdef_h
 
 class EnvironmentEntDef
 {
-	public:
-	
+private:
 	int speed;
-	GLfloat rotation_speed;
-	GLfloat direction;
-	
+	float rotation_speed;
+	float direction;
+public:
 	EnvironmentEntDef();
-	
 	~EnvironmentEntDef();
 };
 

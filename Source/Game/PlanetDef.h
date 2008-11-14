@@ -1,12 +1,9 @@
-#ifndef _PLANETDEF_H_
-#define _PLANETDEF_H_
+#ifndef __xsera_game_planetdef_h
+#define __xsera_game_planetdef_h
 
-#include "entity.h"
+#include "Entity.h"
 
-typedef unsigned int weap_type;
-typedef double reload_time;
-
-typedef struct
+/*typedef struct
 {
 	int pulse_ammo;
 	int beam_ammo;
@@ -17,19 +14,18 @@ typedef struct
 	reload_time pulse_rt;
 	reload_time beam_rt;
 	reload_time special_rt;
-} weapons;
+} weapons;*/
 
-class PlanetDef : public Entity 	//definitions for different types of planets? If only declaring one class, 
-{									//couldn't I just lump it in with Planet? If declaring 2 versions of that
-	public:							//class, how do I translate that to class Planet?
-	
+class PlanetDef
+{
+private:
 	bool invincible;
-	int resources;
-	weapons weapon;
-	int capture;	//which ship you can capture this with
-	
+	float resourceRate;
+	//weapons weapon;
+	//int capture;	//which ship you can capture this with
+
+public:
 	PlanetDef();
-	
 	~PlanetDef();
 };
 
