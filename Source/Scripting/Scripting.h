@@ -1,6 +1,8 @@
 #ifndef __xsera_scripting_scripting_h
 #define __xsera_scripting_scripting_h
 
+#include <stdarg.h>
+
 extern "C"
 {
 #include "lua.h"
@@ -18,7 +20,9 @@ public:
     LuaScript ( const std::string& filename );
     ~LuaScript ();
     
-    void InvokeSubroutine ( const std::string& name ); // can use dot syntax
+    void InvokeSubroutine ( const std::string& name );
+	void InvokeSubroutine ( const std::string& name, char p );
+	void InvokeSubroutine ( const std::string& name, float x, float y );
 };
 
 #endif

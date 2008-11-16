@@ -36,11 +36,17 @@ LuaScript::LuaScript ( const std::string& filename )
     SDL_RWops* rwops = ResourceManager::OpenFile(filename + ".lua");
     if (rwops)
     {
-        lua_load(L, luaReader, (void*)rwops, filename.c_str());
-        int rc = lua_pcall(L, 0, 0, 0);
+        int rc = lua_load(L, luaReader, (void*)rwops, filename.c_str());
+		if (rc != 0)
+		{
+			luaHandleError(L);
+			return;
+		}
+        rc = lua_pcall(L, 0, 0, 0);
         if (rc != 0)
         {
             luaHandleError(L);
+			return;
         }
     }
     else
@@ -56,9 +62,47 @@ LuaScript::~LuaScript ()
 
 void LuaScript::InvokeSubroutine ( const std::string& name )
 {
-    lua_getglobal(L, name.c_str());
+	lua_getglobal(L, name.c_str());
     if (!lua_isnoneornil(L, -1))
     {
+        int rc = lua_pcall(L, 0, 0, 0);
+        if (rc > 0)
+        {
+            luaHandleError(L);
+        }
+    }
+    else
+    {
+        lua_pop(L, 1);
+    }
+}
+
+void LuaScript::InvokeSubroutine ( const std::string& name, char p )
+{
+	lua_getglobal(L, name.c_str());
+    if (!lua_isnoneornil(L, -1))
+    {
+		char kb[2] = { p, 0 };
+		lua_pushstring(L, kb);
+        int rc = lua_pcall(L, 1, 0, 0);
+        if (rc > 0)
+        {
+            luaHandleError(L);
+        }
+    }
+    else
+    {
+        lua_pop(L, 1);
+    }
+}
+
+void LuaScript::InvokeSubroutine ( const std::string& name, float x, float y )
+{
+	lua_getglobal(L, name.c_str());
+    if (!lua_isnoneornil(L, -1))
+    {
+		lua_pushnumber(L, x);
+		lua_pushnumber(L, y);
         int rc = lua_pcall(L, 0, 0, 0);
         if (rc > 0)
         {

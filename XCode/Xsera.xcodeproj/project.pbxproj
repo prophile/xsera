@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4905545F0ED0D345007BEAD5 /* ModeManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4905545E0ED0D345007BEAD5 /* ModeManager.cpp */; };
 		490CDB280ECCE572004B7D04 /* Music in Resources */ = {isa = PBXBuildFile; fileRef = 490CDB270ECCE572004B7D04 /* Music */; };
 		490CDB540ECCE757004B7D04 /* SpriteSheet.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 490CDB520ECCE757004B7D04 /* SpriteSheet.cpp */; };
 		4930D74F0ECE22990053CC8B /* Images in Resources */ = {isa = PBXBuildFile; fileRef = 4930D74A0ECE22990053CC8B /* Images */; };
@@ -89,6 +90,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		4905545E0ED0D345007BEAD5 /* ModeManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ModeManager.cpp; sourceTree = "<group>"; };
 		490CDB270ECCE572004B7D04 /* Music */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Music; path = ../Resources/Music; sourceTree = SOURCE_ROOT; };
 		490CDB520ECCE757004B7D04 /* SpriteSheet.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SpriteSheet.cpp; sourceTree = "<group>"; };
 		490CDB530ECCE757004B7D04 /* SpriteSheet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpriteSheet.h; sourceTree = "<group>"; };
@@ -426,6 +428,7 @@
 		496924840EBE516A00930DDD /* Modes */ = {
 			isa = PBXGroup;
 			children = (
+				4905545E0ED0D345007BEAD5 /* ModeManager.cpp */,
 				496924850EBE516A00930DDD /* ModeManager.h */,
 			);
 			path = Modes;
@@ -538,6 +541,7 @@
 				4960388B0ED097D5003BA716 /* print.c in Sources */,
 				4960390F0ED09CD6003BA716 /* LuaBind.cpp in Sources */,
 				496039100ED09CD6003BA716 /* Scripting.cpp in Sources */,
+				4905545F0ED0D345007BEAD5 /* ModeManager.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

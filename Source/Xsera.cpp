@@ -3,16 +3,20 @@
 #include "Graphics/Graphics.h"
 #include "Sound/Sound.h"
 #include "Scripting/Scripting.h"
+#include "Modes/ModeManager.h"
 
 namespace XseraMain
 {
-
-LuaScript* mainMenuScript;
 
 void DispatchEvent ( const SDL_Event& evt )
 {
 	switch (evt.type)
 	{
+		case SDL_KEYDOWN:
+			{
+				ActiveMode()->InvokeSubroutine("key", (char)evt.key.keysym.unicode);
+			}
+			break;
 		case SDL_QUIT:
 			exit(0);
 			break;
@@ -21,29 +25,20 @@ void DispatchEvent ( const SDL_Event& evt )
 
 void RunLoop ()
 {
-	// do stuff
-	/*Graphics::BeginFrame();
-	
-	Graphics::SetCamera(vec2(0.0f, 0.0f), vec2(1.0f, 1.0f), 0.0f);
-	Graphics::DrawLine(vec2(0.0f, 0.0f), vec2(1.0f, 1.0f), 1.0f, colour(1.0f, 1.0f, 1.0f, 1.0f));
-	Graphics::DrawCircle(vec2(0.5f, 0.5f), 0.4f, 3.0f, colour(1.0f, 1.0f, 1.0f, 1.0f));
-	
-	Graphics::SetCamera(vec2(-500.0f, -240.0f), vec2(500.0f, 240.0f), 0.0f);
-	Graphics::DrawImage("Bootloader/Ares", vec2(0.0f, 0.0f), vec2(1000.0f, 480.0f));
-	
-	Graphics::EndFrame();*/
-	mainMenuScript->InvokeSubroutine("render");
+	UpdateModeManager();
+	ActiveMode()->InvokeSubroutine("render");
 }
 
 void Startup ()
 {
 	// do init stuff
+	SDL_EnableUNICODE(1);
+	InitModeManager();
 	ResourceManager::Init();
 	Graphics::Init(640, 480, false); // 640x480 resolution, non-fullscreen
 	Sound::Init(48000, 24, 128); // init with 48 kHz sampling rate, 24-bit resolution, 128 channels
-	//Sound::PlayMusic("Yesterday");
 	LuaScript bootScript ( "Scripts/Boot" );
-	mainMenuScript = new LuaScript ( "Scripts/MainMenu" );
+	SwitchMode("MainMenu");
 }
 
 void MainLoop ()

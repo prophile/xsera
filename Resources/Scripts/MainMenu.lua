@@ -7,3 +7,7 @@ function render ()
     
     graphics.end_frame()
 end
+
+function key ( k )
+    print(k)
+end

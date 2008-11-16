@@ -1,7 +1,14 @@
 #ifndef __xsera_modes_modemanager_h
 #define __xsera_modes_modemanager_h
 
-class Mode
+#include "Scripting/Scripting.h"
+
+void InitModeManager ();
+void UpdateModeManager ();
+LuaScript* ActiveMode ();
+void SwitchMode ( const std::string& newmode );
+
+/*class Mode
 {
 public:
 	Mode () {}
@@ -25,6 +32,6 @@ public:
 	static ModeManager* SharedModeManager ();
 
 	void SwitchMode ( Mode* newMode );
-};
+};*/
 
 #endif
