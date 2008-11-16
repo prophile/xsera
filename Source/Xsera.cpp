@@ -7,6 +7,8 @@
 namespace XseraMain
 {
 
+LuaScript* mainMenuScript;
+
 void DispatchEvent ( const SDL_Event& evt )
 {
 	switch (evt.type)
@@ -20,7 +22,7 @@ void DispatchEvent ( const SDL_Event& evt )
 void RunLoop ()
 {
 	// do stuff
-	Graphics::BeginFrame();
+	/*Graphics::BeginFrame();
 	
 	Graphics::SetCamera(vec2(0.0f, 0.0f), vec2(1.0f, 1.0f), 0.0f);
 	Graphics::DrawLine(vec2(0.0f, 0.0f), vec2(1.0f, 1.0f), 1.0f, colour(1.0f, 1.0f, 1.0f, 1.0f));
@@ -29,7 +31,8 @@ void RunLoop ()
 	Graphics::SetCamera(vec2(-500.0f, -240.0f), vec2(500.0f, 240.0f), 0.0f);
 	Graphics::DrawImage("Bootloader/Ares", vec2(0.0f, 0.0f), vec2(1000.0f, 480.0f));
 	
-	Graphics::EndFrame();
+	Graphics::EndFrame();*/
+	mainMenuScript->InvokeSubroutine("render");
 }
 
 void Startup ()
@@ -40,6 +43,7 @@ void Startup ()
 	Sound::Init(48000, 24, 128); // init with 48 kHz sampling rate, 24-bit resolution, 128 channels
 	//Sound::PlayMusic("Yesterday");
 	LuaScript bootScript ( "Scripts/Boot" );
+	mainMenuScript = new LuaScript ( "Scripts/MainMenu" );
 }
 
 void MainLoop ()

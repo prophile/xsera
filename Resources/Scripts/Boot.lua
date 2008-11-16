@@ -1,2 +1,2 @@
 -- Play some music
-sound.play_music("Technobee")
+sound.play_music("Doomtroopers")

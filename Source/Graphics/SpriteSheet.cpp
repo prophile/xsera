@@ -24,6 +24,7 @@ void SpriteSheet::MakeResident ()
 }
 
 SpriteSheet::SpriteSheet ( const std::string& name )
+: texID(0)
 {
 	std::string configPath, imagePath;
 	if (name[0] == '+')

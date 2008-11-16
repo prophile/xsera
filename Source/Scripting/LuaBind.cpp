@@ -1,6 +1,7 @@
 #include "Scripting.h"
 #include "Utilities/ResourceManager.h"
 #include "Sound/Sound.h"
+#include "Graphics/Graphics.h"
 
 namespace
 {
@@ -49,8 +50,70 @@ luaL_Reg registryResourceManager[] =
     NULL, NULL
 };
 
+int GFX_BeginFrame ( lua_State* L )
+{
+	Graphics::BeginFrame();
+	return 0;
+}
+
+int GFX_EndFrame ( lua_State* L )
+{
+	Graphics::EndFrame();
+	return 0;
+}
+
+int GFX_SetCamera ( lua_State* L )
+{
+	float ll_x, ll_y, tr_x, tr_y, rot = 0.0f;
+	int nargs = lua_gettop(L);
+	ll_x = luaL_checknumber(L, 1);
+	ll_y = luaL_checknumber(L, 2);
+	tr_x = luaL_checknumber(L, 3);
+	tr_y = luaL_checknumber(L, 4);
+	if (nargs > 4)
+		rot = luaL_checknumber(L, 5);
+	Graphics::SetCamera(vec2(ll_x, ll_y), vec2(tr_x, tr_y), rot);
+	return 0;
+}
+
+int GFX_DrawImage ( lua_State* L )
+{
+	const char* imgName;
+	float loc_x, loc_y, size_x, size_y;
+	imgName = luaL_checkstring(L, 1);
+	loc_x = luaL_checknumber(L, 2);
+	loc_y = luaL_checknumber(L, 3);
+	size_x = luaL_checknumber(L, 4);
+	size_y = luaL_checknumber(L, 5);
+	Graphics::DrawImage(imgName, vec2(loc_x, loc_y), vec2(size_x, size_y));
+	return 0;
+}
+
+int GFX_DrawSprite ( lua_State* L )
+{
+	const char* spritesheet;
+	int sheet_x, sheet_y, nargs = lua_gettop(L);
+	float loc_x, loc_y, size_x, size_y, rot = 0.0f;
+	spritesheet = luaL_checkstring(L, 1);
+	sheet_x = luaL_checkinteger(L, 2);
+	sheet_y = luaL_checkinteger(L, 3);
+	loc_x = luaL_checknumber(L, 4);
+	loc_y = luaL_checknumber(L, 5);
+	size_x = luaL_checknumber(L, 6);
+	size_y = luaL_checknumber(L, 7);
+	if (nargs > 7)
+		rot = luaL_checknumber(L, 8);
+	Graphics::DrawSprite(spritesheet, sheet_x, sheet_y, vec2(loc_x, loc_y), vec2(size_x, size_y), rot);
+	return 0;
+}
+
 luaL_Reg registryGraphics[] =
 {
+	"begin_frame", GFX_BeginFrame,
+	"end_frame", GFX_EndFrame,
+	"set_camera", GFX_SetCamera,
+	"draw_image", GFX_DrawImage,
+	"draw_sprite", GFX_DrawSprite,
     NULL, NULL
 };
 
