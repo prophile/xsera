@@ -86,7 +86,7 @@ void Init ( int frequency, int resolution, int sources )
 #endif
 			break;*/
 		default:
-			printf("Unsupported audio format, defaulting to 16-bit");
+			printf("Unsupported audio format, defaulting to 16-bit\n");
 			format = AUDIO_S16SYS;
 			break;
 	}

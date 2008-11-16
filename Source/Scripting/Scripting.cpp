@@ -33,7 +33,7 @@ LuaScript::LuaScript ( const std::string& filename )
     L = luaL_newstate();
     luaL_openlibs(L);
     __LuaBind(L);
-    SDL_RWops* rwops = ResourceManager::OpenFile(filename);
+    SDL_RWops* rwops = ResourceManager::OpenFile(filename + ".lua");
     if (rwops)
     {
         lua_load(L, luaReader, (void*)rwops, filename.c_str());

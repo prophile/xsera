@@ -42,6 +42,7 @@
 		4960388B0ED097D5003BA716 /* print.c in Sources */ = {isa = PBXBuildFile; fileRef = 496038220ED097D5003BA716 /* print.c */; };
 		4960390F0ED09CD6003BA716 /* LuaBind.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4960390C0ED09CD6003BA716 /* LuaBind.cpp */; };
 		496039100ED09CD6003BA716 /* Scripting.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4960390D0ED09CD6003BA716 /* Scripting.cpp */; };
+		496039280ED0B555003BA716 /* Scripts in Resources */ = {isa = PBXBuildFile; fileRef = 496039250ED0B555003BA716 /* Scripts */; };
 		496924020EBE4CD500930DDD /* Colour.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 496923FE0EBE4CD500930DDD /* Colour.cpp */; };
 		496924210EBE4CEA00930DDD /* callbacks.c in Sources */ = {isa = PBXBuildFile; fileRef = 496924050EBE4CEA00930DDD /* callbacks.c */; };
 		496924220EBE4CEA00930DDD /* host.c in Sources */ = {isa = PBXBuildFile; fileRef = 496924100EBE4CEA00930DDD /* host.c */; };
@@ -148,6 +149,7 @@
 		4960390C0ED09CD6003BA716 /* LuaBind.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LuaBind.cpp; sourceTree = "<group>"; };
 		4960390D0ED09CD6003BA716 /* Scripting.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Scripting.cpp; sourceTree = "<group>"; };
 		4960390E0ED09CD6003BA716 /* Scripting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Scripting.h; sourceTree = "<group>"; };
+		496039250ED0B555003BA716 /* Scripts */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Scripts; path = ../Resources/Scripts; sourceTree = SOURCE_ROOT; };
 		496923DB0EBE4BC300930DDD /* Xsera.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Xsera.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		496923DE0EBE4BC300930DDD /* Xsera-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Xsera-Info.plist"; sourceTree = "<group>"; };
 		496923F80EBE4CD500930DDD /* Graphics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Graphics.h; sourceTree = "<group>"; };
@@ -299,6 +301,7 @@
 		496923E20EBE4C3500930DDD /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				496039250ED0B555003BA716 /* Scripts */,
 				4930D74A0ECE22990053CC8B /* Images */,
 				490CDB270ECCE572004B7D04 /* Music */,
 			);
@@ -474,6 +477,7 @@
 			files = (
 				490CDB280ECCE572004B7D04 /* Music in Resources */,
 				4930D74F0ECE22990053CC8B /* Images in Resources */,
+				496039280ED0B555003BA716 /* Scripts in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

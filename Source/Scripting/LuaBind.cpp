@@ -7,7 +7,7 @@ namespace
 
 int RM_Load ( lua_State* L )
 {
-    const char* file = luaL_checkstring(L, 0);
+    const char* file = luaL_checkstring(L, 1);
     SDL_RWops* ptr = ResourceManager::OpenFile(file);
     if (ptr)
     {
@@ -26,7 +26,7 @@ int RM_Load ( lua_State* L )
 
 int RM_FileExists ( lua_State* L )
 {
-    const char* file = luaL_checkstring(L, 0);
+    const char* file = luaL_checkstring(L, 1);
     bool exists = ResourceManager::FileExists(file);
     lua_pushboolean(L, exists ? 1 : 0);
     return 1;
@@ -34,9 +34,9 @@ int RM_FileExists ( lua_State* L )
 
 int RM_Write ( lua_State* L )
 {
-    const char* file = luaL_checkstring(L, 0);
+    const char* file = luaL_checkstring(L, 1);
     size_t len;
-    const char* data = luaL_checklstring(L, 1, &len);
+    const char* data = luaL_checklstring(L, 2, &len);
     ResourceManager::WriteFile(file, (const void*)data, len);
     return 0;
 }
@@ -60,18 +60,18 @@ int Sound_Play ( lua_State* L )
     float pan = 0.0f;
     float volume = 1.0f;
     int nargs = lua_gettop(L);
-    sound = luaL_checkstring(L, 0);
+    sound = luaL_checkstring(L, 1);
     if (nargs > 1)
-        volume = luaL_checknumber(L, 1);
+        volume = luaL_checknumber(L, 2);
     if (nargs > 2)
-        pan = luaL_checknumber(L, 2);
+        pan = luaL_checknumber(L, 3);
     Sound::PlaySound(sound, volume, pan);
     return 0;
 }
 
 int Sound_PlayMusic ( lua_State* L )
 {
-    const char* mus = luaL_checkstring(L, 0);
+    const char* mus = luaL_checkstring(L, 1);
     Sound::PlayMusic(mus);
     return 0;
 }
