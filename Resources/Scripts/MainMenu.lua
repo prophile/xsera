@@ -9,13 +9,12 @@ function render ()
 end
 
 function init ()
-    local myComponent = component.create("TestComponent")
-    local myResult = component.invoke(myComponent, "myTest", 3, 4)
-    if myResult ~= 5 then
-        print("Component system failed!")
-	else
-		print("Component system worked!")
-    end
+    local xmlData = xml.load("Config/Version.xml")
+	local versionData = xmlData[1]
+	print("Xsera " .. versionData[1][1] .. " <" .. versionData[2][1] .. ">")
+	if versionData.n == 3 then
+		print("Signed off by: " .. versionData[3][1])
+	end
 end
 
 function key ( k )

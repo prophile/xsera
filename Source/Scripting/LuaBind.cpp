@@ -3,9 +3,99 @@
 #include "Sound/Sound.h"
 #include "Graphics/Graphics.h"
 #include "Modes/ModeManager.h"
+#include "TinyXML/tinyxml.h"
 
 namespace
 {
+
+// XML code based on code from lua-users.org
+void XML_ParseNode (lua_State* L, TiXmlNode* xmlNode)
+{
+	if (!xmlNode) return;
+	// resize stack if neccessary
+	luaL_checkstack(L, 5, "XML_ParseNode : recursion too deep");
+	
+	TiXmlElement* xmlElement = xmlNode->ToElement();
+	if (xmlElement)
+	{
+		// element name
+		lua_pushstring(L, "name");
+		lua_pushstring(L, xmlElement->Value());
+		lua_settable(L, -3);
+		
+		// parse attributes
+		TiXmlAttribute* xmlAttribute = xmlElement->FirstAttribute();
+		if (xmlAttribute)
+		{
+			lua_pushstring(L,"attr");
+			lua_newtable(L);
+			for (; xmlAttribute; xmlAttribute = xmlAttribute->Next())
+			{
+				lua_pushstring(L, xmlAttribute->Name());
+				lua_pushstring(L, xmlAttribute->Value());
+				lua_settable(L, -3);
+				
+			}
+			lua_settable(L, -3);
+		}
+	}
+	
+	// children
+	TiXmlNode *child = xmlNode->FirstChild();
+	if (child)
+	{
+		int childCount = 0;
+		for(; child; child = child->NextSibling())
+		{
+			switch (child->Type())
+			{
+				case TiXmlNode::DOCUMENT:
+					break;
+				case TiXmlNode::ELEMENT: 
+					// normal element, parse recursive
+					lua_newtable(L);
+					XML_ParseNode(L, child);
+					lua_rawseti(L, -2, ++childCount);
+				break;
+				case TiXmlNode::COMMENT: break;
+				case TiXmlNode::TEXT: 
+					// plaintext, push raw
+					lua_pushstring(L, child->Value());
+					lua_rawseti(L, -2, ++childCount);
+				break;
+				case TiXmlNode::DECLARATION: break;
+				case TiXmlNode::UNKNOWN: break;
+			};
+		}
+		lua_pushstring(L,"n");
+		lua_pushnumber(L,childCount);
+		lua_settable(L,-3);
+	}
+}
+
+static int XML_ParseFile (lua_State *L)
+{
+	const char* fileName = luaL_checkstring(L, 1);
+	SDL_RWops* ops = ResourceManager::OpenFile(fileName);
+	size_t len;
+	void* dataPointer = ResourceManager::ReadFull(&len, ops, 1);
+	char* fullDataPointer = (char*)malloc(len + 1);
+	fullDataPointer[len] = 0;
+	memcpy(fullDataPointer, dataPointer, len);
+	free(dataPointer);
+	TiXmlDocument doc ( fileName );
+	doc.Parse(fullDataPointer);
+	lua_newtable(L);
+	XML_ParseNode(L, &doc);
+	free((void*)fullDataPointer);
+	return 1;
+}
+
+luaL_Reg registryXML[] =
+{
+	"load", XML_ParseFile,
+	NULL, NULL
+};
 
 int MM_Switch ( lua_State* L )
 {
@@ -258,6 +348,7 @@ int luaopen_component ( lua_State* L )
 void __LuaBind ( lua_State* L )
 {
 	lua_cpcall(L, luaopen_component, NULL);
+	luaL_register(L, "xml", registryXML);
 	luaL_register(L, "mode_manager", registryModeManager);
     luaL_register(L, "resource_manager", registryResourceManager);
     luaL_register(L, "graphics", registryGraphics);

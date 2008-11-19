@@ -11,6 +11,7 @@
 		490CDB280ECCE572004B7D04 /* Music in Resources */ = {isa = PBXBuildFile; fileRef = 490CDB270ECCE572004B7D04 /* Music */; };
 		490CDB540ECCE757004B7D04 /* SpriteSheet.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 490CDB520ECCE757004B7D04 /* SpriteSheet.cpp */; };
 		4930D74F0ECE22990053CC8B /* Images in Resources */ = {isa = PBXBuildFile; fileRef = 4930D74A0ECE22990053CC8B /* Images */; };
+		49597A130ED4D47C00173D17 /* Config in Resources */ = {isa = PBXBuildFile; fileRef = 49597A0B0ED4D47C00173D17 /* Config */; };
 		4960386E0ED097D5003BA716 /* lapi.c in Sources */ = {isa = PBXBuildFile; fileRef = 496037EE0ED097D5003BA716 /* lapi.c */; };
 		4960386F0ED097D5003BA716 /* lauxlib.c in Sources */ = {isa = PBXBuildFile; fileRef = 496037F00ED097D5003BA716 /* lauxlib.c */; };
 		496038700ED097D5003BA716 /* lbaselib.c in Sources */ = {isa = PBXBuildFile; fileRef = 496037F20ED097D5003BA716 /* lbaselib.c */; };
@@ -95,6 +96,7 @@
 		490CDB520ECCE757004B7D04 /* SpriteSheet.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SpriteSheet.cpp; sourceTree = "<group>"; };
 		490CDB530ECCE757004B7D04 /* SpriteSheet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpriteSheet.h; sourceTree = "<group>"; };
 		4930D74A0ECE22990053CC8B /* Images */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Images; path = ../Resources/Images; sourceTree = SOURCE_ROOT; };
+		49597A0B0ED4D47C00173D17 /* Config */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Config; path = ../Resources/Config; sourceTree = SOURCE_ROOT; };
 		496037EE0ED097D5003BA716 /* lapi.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = lapi.c; sourceTree = "<group>"; };
 		496037EF0ED097D5003BA716 /* lapi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lapi.h; sourceTree = "<group>"; };
 		496037F00ED097D5003BA716 /* lauxlib.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = lauxlib.c; sourceTree = "<group>"; };
@@ -303,6 +305,7 @@
 		496923E20EBE4C3500930DDD /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				49597A0B0ED4D47C00173D17 /* Config */,
 				496039250ED0B555003BA716 /* Scripts */,
 				4930D74A0ECE22990053CC8B /* Images */,
 				490CDB270ECCE572004B7D04 /* Music */,
@@ -481,6 +484,7 @@
 				490CDB280ECCE572004B7D04 /* Music in Resources */,
 				4930D74F0ECE22990053CC8B /* Images in Resources */,
 				496039280ED0B555003BA716 /* Scripts in Resources */,
+				49597A130ED4D47C00173D17 /* Config in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
