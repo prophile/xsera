@@ -2,9 +2,23 @@
 #include "Utilities/ResourceManager.h"
 #include "Sound/Sound.h"
 #include "Graphics/Graphics.h"
+#include "Modes/ModeManager.h"
 
 namespace
 {
+
+int MM_Switch ( lua_State* L )
+{
+	const char* newmode = luaL_checkstring(L, 1);
+	SwitchMode(std::string(newmode));
+	return 0;
+}
+
+luaL_Reg registryModeManager[] =
+{
+	"switch", MM_Switch,
+	NULL, NULL
+};
 
 int RM_Load ( lua_State* L )
 {
@@ -157,6 +171,7 @@ luaL_Reg registrySound[] =
 
 void __LuaBind ( lua_State* L )
 {
+	luaL_register(L, "mode_manager", registryModeManager);
     luaL_register(L, "resource_manager", registryResourceManager);
     luaL_register(L, "graphics", registryGraphics);
     luaL_register(L, "sound", registrySound);
