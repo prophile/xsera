@@ -23,6 +23,8 @@ public:
     void InvokeSubroutine ( const std::string& name );
 	void InvokeSubroutine ( const std::string& name, char p );
 	void InvokeSubroutine ( const std::string& name, float x, float y );
+	
+	lua_State* RawState () { return L; }
 };
 
 #endif

@@ -167,10 +167,97 @@ luaL_Reg registrySound[] =
     NULL, NULL
 };
 
+typedef struct Component
+{
+	LuaScript* script;
+};
+
+int CPT_Create ( lua_State* L )
+{
+	const char* name = luaL_checkstring(L, 1);
+	Component* cpt = (Component*)lua_newuserdata(L, sizeof(Component));
+	cpt->script = new LuaScript ( std::string("Scripts/") + name );
+	cpt->script->InvokeSubroutine("component_init");
+	luaL_getmetatable(L, "Xsera.Component");
+	lua_setmetatable(L, -2);
+	return 1;
+}
+
+int CPT_Cleanup ( lua_State* L )
+{
+	Component* cpt = (Component*)luaL_checkudata(L, 1, "Xsera.Component");
+	if (cpt->script)
+	{
+		cpt->script->InvokeSubroutine("component_quit");
+		delete cpt->script;
+		cpt->script = NULL;
+	}
+	return 0;
+}
+
+int CPT_Invoke ( lua_State* L )
+{
+	Component* cpt = (Component*)luaL_checkudata(L, 1, "Xsera.Component");
+	LuaScript* script = cpt->script;
+	luaL_argcheck(L, script, 1, "Component already freed");
+	const char* routine = luaL_checkstring(L, 2);
+	lua_State* componentState = script->RawState();
+	int nargs = lua_gettop(L);
+	int oldBase = lua_gettop(componentState);
+	lua_getglobal(componentState, routine);
+	if (!lua_isfunction(componentState, -1))
+	{
+		char errorBuffer[512];
+		sprintf(errorBuffer, "Component has no routine named '%s'", routine);
+		lua_pushstring(L, errorBuffer);
+		return lua_error(L);
+	}
+	if (nargs > 2)
+	{
+		lua_xmove(L, componentState, nargs - 2);
+	}
+	int rc = lua_pcall(componentState, nargs - 2, LUA_MULTRET, 0);
+	if (rc != 0)
+	{
+		lua_xmove(componentState, L, 1);
+		return lua_error(L);
+	}
+	int newBase = lua_gettop(componentState);
+	int nresults = newBase - oldBase;
+	lua_xmove(componentState, L, nresults);
+	lua_settop(componentState, oldBase);
+	return nresults;
+}
+
+luaL_Reg registryComponent[] =
+{
+	"create", CPT_Create,
+	"invoke", CPT_Invoke,
+	NULL, NULL
+};
+
+luaL_Reg registryObjectComponent[] =
+{
+	"invoke", CPT_Invoke,
+	"__gc", CPT_Cleanup,
+	NULL, NULL
+};
+
+int luaopen_component ( lua_State* L )
+{
+	luaL_newmetatable(L, "Xsera.Component");
+	lua_pushvalue(L, -1);
+	lua_setfield(L, -2, "__index");
+	luaL_register(L, NULL, registryObjectComponent);
+	luaL_register(L, "component", registryComponent);
+	return 1;
+}
+
 }
 
 void __LuaBind ( lua_State* L )
 {
+	lua_cpcall(L, luaopen_component, NULL);
 	luaL_register(L, "mode_manager", registryModeManager);
     luaL_register(L, "resource_manager", registryResourceManager);
     luaL_register(L, "graphics", registryGraphics);
