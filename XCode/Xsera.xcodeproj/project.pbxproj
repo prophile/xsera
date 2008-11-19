@@ -12,6 +12,8 @@
 		490CDB540ECCE757004B7D04 /* SpriteSheet.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 490CDB520ECCE757004B7D04 /* SpriteSheet.cpp */; };
 		4930D74F0ECE22990053CC8B /* Images in Resources */ = {isa = PBXBuildFile; fileRef = 4930D74A0ECE22990053CC8B /* Images */; };
 		49597A130ED4D47C00173D17 /* Config in Resources */ = {isa = PBXBuildFile; fileRef = 49597A0B0ED4D47C00173D17 /* Config */; };
+		49597A750ED4D92E00173D17 /* Client.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 49597A730ED4D92E00173D17 /* Client.cpp */; };
+		49597A760ED4D92E00173D17 /* Server.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 49597A740ED4D92E00173D17 /* Server.cpp */; };
 		4960386E0ED097D5003BA716 /* lapi.c in Sources */ = {isa = PBXBuildFile; fileRef = 496037EE0ED097D5003BA716 /* lapi.c */; };
 		4960386F0ED097D5003BA716 /* lauxlib.c in Sources */ = {isa = PBXBuildFile; fileRef = 496037F00ED097D5003BA716 /* lauxlib.c */; };
 		496038700ED097D5003BA716 /* lbaselib.c in Sources */ = {isa = PBXBuildFile; fileRef = 496037F20ED097D5003BA716 /* lbaselib.c */; };
@@ -97,6 +99,8 @@
 		490CDB530ECCE757004B7D04 /* SpriteSheet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpriteSheet.h; sourceTree = "<group>"; };
 		4930D74A0ECE22990053CC8B /* Images */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Images; path = ../Resources/Images; sourceTree = SOURCE_ROOT; };
 		49597A0B0ED4D47C00173D17 /* Config */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Config; path = ../Resources/Config; sourceTree = SOURCE_ROOT; };
+		49597A730ED4D92E00173D17 /* Client.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Client.cpp; sourceTree = "<group>"; };
+		49597A740ED4D92E00173D17 /* Server.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Server.cpp; sourceTree = "<group>"; };
 		496037EE0ED097D5003BA716 /* lapi.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = lapi.c; sourceTree = "<group>"; };
 		496037EF0ED097D5003BA716 /* lapi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lapi.h; sourceTree = "<group>"; };
 		496037F00ED097D5003BA716 /* lauxlib.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = lauxlib.c; sourceTree = "<group>"; };
@@ -359,6 +363,8 @@
 		496923F90EBE4CD500930DDD /* Net */ = {
 			isa = PBXGroup;
 			children = (
+				49597A730ED4D92E00173D17 /* Client.cpp */,
+				49597A740ED4D92E00173D17 /* Server.cpp */,
 				496923FA0EBE4CD500930DDD /* Net.h */,
 			);
 			path = Net;
@@ -546,6 +552,8 @@
 				4960390F0ED09CD6003BA716 /* LuaBind.cpp in Sources */,
 				496039100ED09CD6003BA716 /* Scripting.cpp in Sources */,
 				4905545F0ED0D345007BEAD5 /* ModeManager.cpp in Sources */,
+				49597A750ED4D92E00173D17 /* Client.cpp in Sources */,
+				49597A760ED4D92E00173D17 /* Server.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
