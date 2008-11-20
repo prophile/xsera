@@ -122,7 +122,7 @@ void Init ( int w, int h, bool fullscreen )
 	glHint ( GL_LINE_SMOOTH_HINT, GL_NICEST );
 	glHint ( GL_POINT_SMOOTH_HINT, GL_NICEST );
 	
-	glEnableClientState ( GL_TEXTURE_COORD_ARRAY );
+	glEnableClientState ( GL_VERTEX_ARRAY );
 }
 
 static void EnableTexturing ()
@@ -220,7 +220,8 @@ void SetCamera ( vec2 corner1, vec2 corner2, float rotation )
 	glMatrixMode(GL_PROJECTION);
 	glLoadIdentity();
 	glOrtho(corner1.X(), corner2.X(), corner1.Y(), corner2.Y(), 0.0, 1.0);
-	glRotatef(rotation, 0.0f, 0.0f, 1.0f);
+	if (fabs(rotation) > 0.00004f)
+		glRotatef(rotation, 0.0f, 0.0f, 1.0f);
 	glMatrixMode(GL_MODELVIEW);
 }
 

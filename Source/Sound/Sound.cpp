@@ -78,8 +78,15 @@ void Init ( int frequency, int resolution, int sources )
 		case 16:
 			format = AUDIO_S16SYS;
 			break;
+/*		case 24:
+#if SDL_BYTEORDER == SDL_LIL_ENDIAN
+			format = 0x8018;
+#else
+			format = 0x9018;
+#endif
+			break;*/
 		default:
-			printf("Unsupported audio format, defaulting to 16-bit");
+			printf("Unsupported audio format, defaulting to 16-bit\n");
 			format = AUDIO_S16SYS;
 			break;
 	}
