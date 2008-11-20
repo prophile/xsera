@@ -90,6 +90,7 @@ void Init ()
 	CFURLRef resourcePath = CFBundleCopyResourcesDirectoryURL(mainBundle);
 	CFURLGetFileSystemRepresentation(resourcePath, 1, (Uint8*)systemDirectory, sizeof(systemDirectory));
 	CFRelease(resourcePath);
+	printf("Search directories:\n\tSystem: %s\n\tUser: %s\n", systemDirectory, userDirectory);
 	searchPaths.push_back(systemDirectory);
 	searchPaths.push_back(userDirectory);
 	userDirectoryPath = userDirectory;
