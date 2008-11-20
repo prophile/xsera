@@ -73,6 +73,7 @@
 		49A0E6940ECC3887007F3458 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49A0E6930ECC3887007F3458 /* OpenGL.framework */; };
 		49A0E69B0ECC39FD007F3458 /* ResourceManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 49A0E69A0ECC39FD007F3458 /* ResourceManager.cpp */; };
 		49D543CB0ED5E222002FC38E /* Sprites in Resources */ = {isa = PBXBuildFile; fileRef = 49D543B80ED5E222002FC38E /* Sprites */; };
+		49D544220ED5E854002FC38E /* TestHarness.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 49D544200ED5E854002FC38E /* TestHarness.cpp */; };
 		49F348830ECC222C00983EE6 /* Sound.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 49F348820ECC222C00983EE6 /* Sound.cpp */; };
 		49F348850ECC223A00983EE6 /* Graphics.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 49F348840ECC223A00983EE6 /* Graphics.cpp */; };
 /* End PBXBuildFile section */
@@ -202,6 +203,9 @@
 		49A0E6930ECC3887007F3458 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = /System/Library/Frameworks/OpenGL.framework; sourceTree = "<absolute>"; };
 		49A0E69A0ECC39FD007F3458 /* ResourceManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ResourceManager.cpp; sourceTree = "<group>"; };
 		49D543B80ED5E222002FC38E /* Sprites */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Sprites; path = ../Resources/Sprites; sourceTree = SOURCE_ROOT; };
+		49D5441F0ED5E854002FC38E /* GameTime.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameTime.h; sourceTree = "<group>"; };
+		49D544200ED5E854002FC38E /* TestHarness.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TestHarness.cpp; sourceTree = "<group>"; };
+		49D544210ED5E854002FC38E /* TestHarness.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestHarness.h; sourceTree = "<group>"; };
 		49F348820ECC222C00983EE6 /* Sound.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Sound.cpp; sourceTree = "<group>"; };
 		49F348840ECC223A00983EE6 /* Graphics.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Graphics.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -390,6 +394,9 @@
 		496923FD0EBE4CD500930DDD /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				49D5441F0ED5E854002FC38E /* GameTime.h */,
+				49D544200ED5E854002FC38E /* TestHarness.cpp */,
+				49D544210ED5E854002FC38E /* TestHarness.h */,
 				49A0E69A0ECC39FD007F3458 /* ResourceManager.cpp */,
 				496923FE0EBE4CD500930DDD /* Colour.cpp */,
 				496923FF0EBE4CD500930DDD /* Colour.h */,
@@ -564,6 +571,7 @@
 				49597A750ED4D92E00173D17 /* Client.cpp in Sources */,
 				49597A760ED4D92E00173D17 /* Server.cpp in Sources */,
 				49597A7E0ED4DEE000173D17 /* MessageDecode.cpp in Sources */,
+				49D544220ED5E854002FC38E /* TestHarness.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

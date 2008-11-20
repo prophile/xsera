@@ -4,6 +4,7 @@
 #include "Sound/Sound.h"
 #include "Scripting/Scripting.h"
 #include "Modes/ModeManager.h"
+#include "Utilities/TestHarness.h"
 
 namespace XseraMain
 {
@@ -59,9 +60,30 @@ using namespace XseraMain;
 
 int main ( int argc, char** argv )
 {
-	(void)argc;
-	(void)argv;
 	Startup();
+	if (argc > 1)
+	{
+		assert(!strcmp(argv[1], "-test"));
+		assert(argc > 2);
+		std::string test = argv[2];
+		std::vector<std::string> testParameters;
+		if (argc > 3)
+		{
+			for (int i = 3; i < argc; i++)
+			{
+				testParameters.push_back(std::string(argv[i]));
+			}
+		}
+		bool testReturnCode = TestHarness::InvokeTest ( test, testParameters );
+		if (testReturnCode)
+		{
+			return 0;
+		}
+		else
+		{
+			return -1;
+		}
+	}
 	MainLoop();
 	return 0;
 }
