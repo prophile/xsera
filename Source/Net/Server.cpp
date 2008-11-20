@@ -1,7 +1,7 @@
 #include <enet/enet.h>
 #include <map>
 #include "Net.h"
-#include "MessageEncoding.h"
+#include "MessageDecode.h"
 
 namespace Net
 {
@@ -91,7 +91,7 @@ Message* GetMessage ()
 		unsigned int clientID = 0;
 		for (ClientMap::iterator iter = clients.begin(); iter != clients.end(); iter++)
 		{
-			if (iter->second == event.second)
+			if (iter->second == event.peer)
 			{
 				clientID = iter->first;
 			}
@@ -99,9 +99,18 @@ Message* GetMessage ()
 		switch (event.type)
 		{
 			case ENET_EVENT_TYPE_CONNECT:
-				// TODO: handle this
+				msg = new Message ( "CONNECT", NULL, 0 );
+				clientID = nextClientID++;
+				msg->clientID = clientID;
+				clients[clientID] = event.peer;
 				break;
 			case ENET_EVENT_TYPE_DISCONNECT:
+				{
+					msg = new Message ( "DISCONNECT", NULL, 0 );
+					msg->clientID = clientID;
+					ClientMap::iterator iter = clients.find(clientID);
+					clients.erase(iter);
+				}
 				break;
 			case ENET_EVENT_TYPE_RECEIVE:
 				msg = MessageEncoding::Decode(event.packet);

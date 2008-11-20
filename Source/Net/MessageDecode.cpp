@@ -19,7 +19,8 @@ ENetPacket* Encode ( const Message& msg )
 	uint32_t messagePayloadLength = msg.dataLength;
 	messagePayloadLength = htonl(messagePayloadLength);
 	memcpy(packetData + 2 + msg.message.length(), &messagePayloadLength, 4);
-	memcpy(packetData + 2 + msg.message.length() + 4, msg.data, msg.dataLength);
+	if (messagePayloadLength)
+		memcpy(packetData + 2 + msg.message.length() + 4, msg.data, msg.dataLength);
 	
 	ENetPacket* packet = enet_packet_create(packetData, packetLength, ENET_PACKET_FLAG_RELIABLE);
 	
@@ -41,8 +42,12 @@ Message* Decode ( ENetPacket* packet )
 	uint32_t messageLength;
 	memcpy(&messageLength, data + 2 + messageIDLength, 4);
 	messageLength = ntohl(messageLength);
-	void* messageBuffer = malloc(messageLength);
-	memcpy(messageBuffer, data + 2 + messageIDLength + 4, messageLength);
+	void* messageBuffer = NULL;
+	if (messageLength)
+	{
+		void* messageBuffer = malloc(messageLength);
+		memcpy(messageBuffer, data + 2 + messageIDLength + 4, messageLength);
+	}
 	Message* result = new Message(std::string(messageID, messageIDLength), messageBuffer, messageLength);
 	free(messageBuffer);
 	return result;
