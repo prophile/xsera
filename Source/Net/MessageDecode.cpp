@@ -45,7 +45,7 @@ Message* Decode ( ENetPacket* packet )
 	void* messageBuffer = NULL;
 	if (messageLength)
 	{
-		void* messageBuffer = malloc(messageLength);
+		messageBuffer = malloc(messageLength);
 		memcpy(messageBuffer, data + 2 + messageIDLength + 4, messageLength);
 	}
 	Message* result = new Message(std::string(messageID, messageIDLength), messageBuffer, messageLength);

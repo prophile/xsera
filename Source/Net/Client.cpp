@@ -19,11 +19,12 @@ void Connect ( const std::string& host, unsigned short port, const std::string& 
 	{
 		Disconnect();
 	}
-	clientHost = enet_host_create(NULL, 0, CLIENT_BANDWIDTH_LIMIT, CLIENT_BANDWIDTH_LIMIT);
+	clientHost = enet_host_create(NULL, 1, CLIENT_BANDWIDTH_LIMIT, CLIENT_BANDWIDTH_LIMIT);
 	ENetAddress addr;
 	addr.port = htons(port);
 	enet_address_set_host(&addr, host.c_str());
 	clientPeer = enet_host_connect(clientHost, &addr, 1);
+	assert(clientPeer);
 }
 
 void Disconnect ()
