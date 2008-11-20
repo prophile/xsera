@@ -1,0 +1,15 @@
+Xsera immediate TODO list:
+
+* Add bindings to Lua for the Net subsystem
+* Implement the text renderer [assigned: Alastair]
+* Add error-checking to the Net subsystem
+* Add security to the Net subsystem
+* Define the format of the XML configuration files
+* Add support for reading zip files in the resource manager
+* Create separate github account for the 'stable' and 'unstable' branches [assigned: Alastair]
+* Assemble the sprite configuration files and re-order the sprites [assigned: Adam]
+* Finish the OpenAL audio engine [assigned: Alastair]
+* Test the Net subsystem extensively
+* Design a testing framework
+* Assemble short technical demo
+* Tag release 0.0.1 once done [assigned: Alastair]
