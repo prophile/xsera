@@ -4,6 +4,7 @@ function render ()
     
     graphics.set_camera(-500, -240, 500, 240)
     graphics.draw_image("Bootloader/Ares", 0, 0, 1000, 480)
+	graphics.draw_sprite("Human/Gunship", 1, 2, 0, 0, 80, 80)
     
     graphics.end_frame()
 end

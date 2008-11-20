@@ -51,10 +51,14 @@ SpriteSheet::SpriteSheet ( const std::string& name )
 		confData[confLength] = '\0';
 		xmlDoc->Parse(confData);
 		free(confData);
-		assert(!xmlDoc->Error());
+		if (xmlDoc->Error())
+		{
+			printf("XML error: %s\b", xmlDoc->ErrorDesc());
+			assert(!"DIED");
+		}
 		TiXmlElement* root = xmlDoc->RootElement();
 		assert(root);
-		TiXmlElement* dimensions = xmlDoc->FirstChild("dimensions")->ToElement();
+		TiXmlElement* dimensions = root->FirstChild("dimensions")->ToElement();
 		assert(dimensions);
 		int rc;
 		rc = dimensions->QueryIntAttribute("x", &sheetTilesX);

@@ -72,6 +72,7 @@
 		496924830EBE516100930DDD /* Xsera.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 496924820EBE516100930DDD /* Xsera.cpp */; };
 		49A0E6940ECC3887007F3458 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49A0E6930ECC3887007F3458 /* OpenGL.framework */; };
 		49A0E69B0ECC39FD007F3458 /* ResourceManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 49A0E69A0ECC39FD007F3458 /* ResourceManager.cpp */; };
+		49D543CB0ED5E222002FC38E /* Sprites in Resources */ = {isa = PBXBuildFile; fileRef = 49D543B80ED5E222002FC38E /* Sprites */; };
 		49F348830ECC222C00983EE6 /* Sound.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 49F348820ECC222C00983EE6 /* Sound.cpp */; };
 		49F348850ECC223A00983EE6 /* Graphics.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 49F348840ECC223A00983EE6 /* Graphics.cpp */; };
 /* End PBXBuildFile section */
@@ -200,6 +201,7 @@
 		496924850EBE516A00930DDD /* ModeManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModeManager.h; sourceTree = "<group>"; };
 		49A0E6930ECC3887007F3458 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = /System/Library/Frameworks/OpenGL.framework; sourceTree = "<absolute>"; };
 		49A0E69A0ECC39FD007F3458 /* ResourceManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ResourceManager.cpp; sourceTree = "<group>"; };
+		49D543B80ED5E222002FC38E /* Sprites */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Sprites; path = ../Resources/Sprites; sourceTree = SOURCE_ROOT; };
 		49F348820ECC222C00983EE6 /* Sound.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Sound.cpp; sourceTree = "<group>"; };
 		49F348840ECC223A00983EE6 /* Graphics.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Graphics.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -312,6 +314,7 @@
 		496923E20EBE4C3500930DDD /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				49D543B80ED5E222002FC38E /* Sprites */,
 				49597A0B0ED4D47C00173D17 /* Config */,
 				496039250ED0B555003BA716 /* Scripts */,
 				4930D74A0ECE22990053CC8B /* Images */,
@@ -496,6 +499,7 @@
 				4930D74F0ECE22990053CC8B /* Images in Resources */,
 				496039280ED0B555003BA716 /* Scripts in Resources */,
 				49597A130ED4D47C00173D17 /* Config in Resources */,
+				49D543CB0ED5E222002FC38E /* Sprites in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
