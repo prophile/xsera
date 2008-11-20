@@ -5,6 +5,7 @@
 #include "Modes/ModeManager.h"
 #include "TinyXML/tinyxml.h"
 #include "Net/Net.h"
+#include "Utilities/GameTime.h"
 
 namespace
 {
@@ -298,9 +299,16 @@ int MM_Switch ( lua_State* L )
 	return 0;
 }
 
+int MM_Time ( lua_State* L )
+{
+	lua_pushnumber(L, GameTime());
+	return 1;
+}
+
 luaL_Reg registryModeManager[] =
 {
 	"switch", MM_Switch,
+	"time", MM_Time,
 	NULL, NULL
 };
 
