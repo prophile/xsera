@@ -9,7 +9,7 @@ namespace Net
 
 struct Message
 {
-	Message ( std::string _message, void* _data, size_t _len ) : message(_message), dataLength(_len), clientID(0), data(NULL) { if (_data) { data = malloc(_len); memcpy(data, _data, _len); } }
+	Message ( std::string _message, const void* _data, size_t _len ) : message(_message), dataLength(_len), clientID(0), data(NULL) { if (_data) { data = malloc(_len); memcpy(data, _data, _len); } }
 	~Message () { if (data) free(data); }
 	unsigned int clientID; // only for server use
 	std::string message;
