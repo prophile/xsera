@@ -14,6 +14,7 @@
 		49597A130ED4D47C00173D17 /* Config in Resources */ = {isa = PBXBuildFile; fileRef = 49597A0B0ED4D47C00173D17 /* Config */; };
 		49597A750ED4D92E00173D17 /* Client.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 49597A730ED4D92E00173D17 /* Client.cpp */; };
 		49597A760ED4D92E00173D17 /* Server.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 49597A740ED4D92E00173D17 /* Server.cpp */; };
+		49597A7E0ED4DEE000173D17 /* MessageDecode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 49597A7C0ED4DEE000173D17 /* MessageDecode.cpp */; };
 		4960386E0ED097D5003BA716 /* lapi.c in Sources */ = {isa = PBXBuildFile; fileRef = 496037EE0ED097D5003BA716 /* lapi.c */; };
 		4960386F0ED097D5003BA716 /* lauxlib.c in Sources */ = {isa = PBXBuildFile; fileRef = 496037F00ED097D5003BA716 /* lauxlib.c */; };
 		496038700ED097D5003BA716 /* lbaselib.c in Sources */ = {isa = PBXBuildFile; fileRef = 496037F20ED097D5003BA716 /* lbaselib.c */; };
@@ -101,6 +102,8 @@
 		49597A0B0ED4D47C00173D17 /* Config */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Config; path = ../Resources/Config; sourceTree = SOURCE_ROOT; };
 		49597A730ED4D92E00173D17 /* Client.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Client.cpp; sourceTree = "<group>"; };
 		49597A740ED4D92E00173D17 /* Server.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Server.cpp; sourceTree = "<group>"; };
+		49597A7C0ED4DEE000173D17 /* MessageDecode.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MessageDecode.cpp; sourceTree = "<group>"; };
+		49597A7D0ED4DEE000173D17 /* MessageDecode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageDecode.h; sourceTree = "<group>"; };
 		496037EE0ED097D5003BA716 /* lapi.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = lapi.c; sourceTree = "<group>"; };
 		496037EF0ED097D5003BA716 /* lapi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lapi.h; sourceTree = "<group>"; };
 		496037F00ED097D5003BA716 /* lauxlib.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = lauxlib.c; sourceTree = "<group>"; };
@@ -363,6 +366,8 @@
 		496923F90EBE4CD500930DDD /* Net */ = {
 			isa = PBXGroup;
 			children = (
+				49597A7C0ED4DEE000173D17 /* MessageDecode.cpp */,
+				49597A7D0ED4DEE000173D17 /* MessageDecode.h */,
 				49597A730ED4D92E00173D17 /* Client.cpp */,
 				49597A740ED4D92E00173D17 /* Server.cpp */,
 				496923FA0EBE4CD500930DDD /* Net.h */,
@@ -554,6 +559,7 @@
 				4905545F0ED0D345007BEAD5 /* ModeManager.cpp in Sources */,
 				49597A750ED4D92E00173D17 /* Client.cpp in Sources */,
 				49597A760ED4D92E00173D17 /* Server.cpp in Sources */,
+				49597A7E0ED4DEE000173D17 /* MessageDecode.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

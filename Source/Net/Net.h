@@ -38,6 +38,7 @@ bool IsRunning ();
 unsigned ClientCount ();
 
 void KillClient ( unsigned int clientID );
+bool IsConnected ( unsigned int clientID );
 
 void SendMessage ( unsigned int clientID, const Message& msg );
 void BroadcastMessage ( const Message& msg );
