@@ -2,6 +2,7 @@
 #include <OpenGL/gl.h>
 #include <SDL/SDL.h>
 #include "SpriteSheet.h"
+#include "TextRenderer.h"
 #include <map>
 
 const static float circlePoints[] = {
@@ -178,9 +179,25 @@ void DrawSprite ( const std::string& sheetname, int sheet_x, int sheet_y, vec2 l
 	glPopMatrix();
 }
 
-void DrawText ( const std::string& text, const std::string& font, int fontsize, colour col, float rotation )
+void DrawText ( const std::string& text, const std::string& font, vec2 location, float height, colour col, float rotation )
 {
 	// TODO
+	EnableTexturing();
+	SetColour(col);
+	GLuint texID = TextRenderer::TextObject(font, text);
+	glPushMatrix();
+	glTranslatef(location.X(), location.Y(), 0.0f);
+	glRotatef(rotation, 0.0f, 0.0f, 1.0f);
+	glBindTexture(GL_TEXTURE_RECTANGLE_ARB, texID);
+	vec2 dims = TextRenderer::TextDimensions(font, text);
+	vec2 halfSize = (dims * (height / dims.Y())) * 0.5f;
+	GLfloat textureArray[] = { 0.0f, 0.0f, halfSize.X(), 0.0f, halfSize.X(), halfSize.Y(), 0.0f, halfSize.Y() };
+	GLfloat vertexArray[] = { -halfSize.X(), -halfSize.Y(), halfSize.X(), -halfSize.Y(),
+	                          halfSize.X(), halfSize.Y(), -halfSize.X(), halfSize.Y() };
+	glVertexPointer(2, GL_FLOAT, 0, vertexArray);
+	glTexCoordPointer(2, GL_FLOAT, 0, textureArray);
+	glDrawArrays(GL_QUADS, 0, 4);
+	glPopMatrix();
 }
 
 void DrawLine ( vec2 coordinate1, vec2 coordinate2, float width, colour col )
@@ -234,6 +251,7 @@ void BeginFrame ()
 void EndFrame ()
 {
 	SDL_GL_SwapBuffers();
+	TextRenderer::Prune();
 }
 
 }

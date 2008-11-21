@@ -28,6 +28,7 @@ void RunLoop ()
 {
 	UpdateModeManager();
 	ActiveMode()->InvokeSubroutine("render");
+	Graphics::DrawText("FooText", "CrystalClear", vec2(0.0f, 0.0f), 100.0f, colour(1.0f, 1.0f, 1.0f, 1.0f), 0.0f);
 }
 
 void Startup ()
