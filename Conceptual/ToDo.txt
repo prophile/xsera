@@ -13,3 +13,4 @@ Xsera immediate TODO list:
 * Design a testing framework [complete]
 * Assemble short technical demo
 * Tag release 0.0.1 once done [assigned: Alastair]
+* Convert CrystalClear.suit to a TTF [assigned: Alastair]
