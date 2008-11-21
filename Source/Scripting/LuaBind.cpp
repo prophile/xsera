@@ -382,6 +382,72 @@ int GFX_SetCamera ( lua_State* L )
 	return 0;
 }
 
+static colour LoadColour ( lua_State* L, int index )
+{
+	lua_gettable(L, index);
+	float r = 1.0f, g = 1.0f, b = 1.0f, a = 1.0f;
+	
+	// get red
+	lua_getfield(L, -1, "r");
+	if (lua_isnumber(L, -1))
+	{
+		r = lua_tonumber(L, -1);
+	}
+	lua_pop(L, 1);
+	
+	// get green
+	lua_getfield(L, -1, "g");
+	if (lua_isnumber(L, -1))
+	{
+		g = lua_tonumber(L, -1);
+	}
+	lua_pop(L, 1);
+	
+	// get blue
+	lua_getfield(L, -1, "b");
+	if (lua_isnumber(L, -1))
+	{
+		b = lua_tonumber(L, -1);
+	}
+	lua_pop(L, 1);
+	
+	// get alpha
+	lua_getfield(L, -1, "a");
+	if (lua_isnumber(L, -1))
+	{
+		a = lua_tonumber(L, -1);
+	}
+	lua_pop(L, 1);
+	
+	lua_pop(L, 1);
+	return colour(r, g, b, a);
+}
+
+int GFX_DrawText ( lua_State* L )
+{
+	int nargs = lua_gettop(L);
+	const char* text = luaL_checkstring(L, 1);
+	const char* font = luaL_checkstring(L, 2);
+	float locx = luaL_checknumber(L, 3);
+	float locy = luaL_checknumber(L, 4);
+	float height = luaL_checknumber(L, 5);
+	float rotation = 0.0f;
+	if (nargs >= 7)
+	{
+		rotation = luaL_checknumber(L, 6);
+	}
+	if (nargs >= 6)
+	{
+		luaL_argcheck(L, lua_istable(L, 5), 5, "bad colour");
+		Graphics::DrawText(text, font, vec2(locx, locy), height, LoadColour(L, 5), rotation);
+	}
+	else
+	{
+		Graphics::DrawText(text, font, vec2(locx, locy), height, colour(1.0f, 1.0f, 1.0f, 1.0f), rotation);
+	}
+	return 0;
+}
+
 int GFX_DrawImage ( lua_State* L )
 {
 	const char* imgName;
@@ -433,6 +499,7 @@ luaL_Reg registryGraphics[] =
 	"set_camera", GFX_SetCamera,
 	"draw_image", GFX_DrawImage,
 	"draw_sprite", GFX_DrawSprite,
+	"draw_text", GFX_DrawText,
 	"sprite_dimensions", GFX_SpriteDimensions,
     NULL, NULL
 };

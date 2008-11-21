@@ -209,9 +209,9 @@ void DrawText ( const std::string& text, const std::string& font, vec2 location,
 	glBindTexture(GL_TEXTURE_RECTANGLE_ARB, texID);
 	vec2 dims = TextRenderer::TextDimensions(font, text);
 	vec2 halfSize = (dims * (height / dims.Y())) * 0.5f;
-	GLfloat textureArray[] = { 0.0f, 0.0f, halfSize.X(), 0.0f, halfSize.X(), halfSize.Y(), 0.0f, halfSize.Y() };
-	GLfloat vertexArray[] = { -halfSize.X(), -halfSize.Y(), halfSize.X(), -halfSize.Y(),
-	                          halfSize.X(), halfSize.Y(), -halfSize.X(), halfSize.Y() };
+	GLfloat textureArray[] = { 0.0f, 0.0f, dims.X(), 0.0f, dims.X(), dims.Y(), 0.0f, dims.Y() };
+	GLfloat vertexArray[] = { -halfSize.X(), halfSize.Y(), halfSize.X(), halfSize.Y(),
+	                          halfSize.X(), -halfSize.Y(), -halfSize.X(), -halfSize.Y() };
 	glVertexPointer(2, GL_FLOAT, 0, vertexArray);
 	glTexCoordPointer(2, GL_FLOAT, 0, textureArray);
 	glDrawArrays(GL_QUADS, 0, 4);

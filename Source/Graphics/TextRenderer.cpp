@@ -107,7 +107,7 @@ TextEntry* GetEntry ( const std::string& font, const std::string& text )
 		// generate textures
 		glGenTextures(1, &(newEntry->texID));
 		glBindTexture(GL_TEXTURE_RECTANGLE_ARB, newEntry->texID);
-		glTexImage2D(GL_TEXTURE_RECTANGLE_ARB, 0, GL_RGBA, newEntry->surface->w, newEntry->surface->h, 0, GL_RGBA, GL_UNSIGNED_BYTE, newEntry->surface->pixels);
+		glTexImage2D(GL_TEXTURE_RECTANGLE_ARB, 0, GL_RGBA, newEntry->surface->w, newEntry->surface->h, 0, GL_ABGR_EXT, GL_UNSIGNED_BYTE, newEntry->surface->pixels);
 		textEntries[hash] = newEntry;
 		return newEntry;
 	}
