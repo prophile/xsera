@@ -24,7 +24,7 @@ void UpdateModeManager ()
 			delete mode;
 		}
 		printf("[ModeManager] switching to mode %s\n", _next_mode.c_str());
-		mode = new LuaScript("Scripts/" + _next_mode);
+		mode = new LuaScript("Modes/" + _next_mode);
 		_next_mode = "";
 		mode->InvokeSubroutine("init");
 	}

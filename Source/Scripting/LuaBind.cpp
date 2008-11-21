@@ -468,7 +468,7 @@ int CPT_Create ( lua_State* L )
 {
 	const char* name = luaL_checkstring(L, 1);
 	Component* cpt = (Component*)lua_newuserdata(L, sizeof(Component));
-	cpt->script = new LuaScript ( std::string("Scripts/") + name );
+	cpt->script = new LuaScript ( std::string("Components/") + name );
 	cpt->script->InvokeSubroutine("component_init");
 	luaL_getmetatable(L, "Xsera.Component");
 	lua_setmetatable(L, -2);
@@ -545,10 +545,19 @@ int luaopen_component ( lua_State* L )
 	return 1;
 }
 
+int import ( lua_State* L )
+{
+	const char* modulename = luaL_checkstring(L, 1);
+	LuaScript::RawImport(L, modulename);
+	return 0;
+}
+
 }
 
 void __LuaBind ( lua_State* L )
 {
+	lua_pushcfunction(L, import);
+	lua_setglobal(L, "import");
 	lua_cpcall(L, luaopen_component, NULL);
 	luaL_register(L, "xml", registryXML);
 	luaL_register(L, "mode_manager", registryModeManager);

@@ -28,15 +28,12 @@ static void luaHandleError ( lua_State* L )
     lua_pop(L, 1);
 }
 
-LuaScript::LuaScript ( const std::string& filename )
+static void luaLoad ( lua_State* L, const std::string& path )
 {
-    L = luaL_newstate();
-    luaL_openlibs(L);
-    __LuaBind(L);
-    SDL_RWops* rwops = ResourceManager::OpenFile(filename + ".lua");
+	SDL_RWops* rwops = ResourceManager::OpenFile("Scripts/" + path + ".lua");
     if (rwops)
     {
-        int rc = lua_load(L, luaReader, (void*)rwops, filename.c_str());
+        int rc = lua_load(L, luaReader, (void*)rwops, path.c_str());
 		if (rc != 0)
 		{
 			luaHandleError(L);
@@ -51,8 +48,16 @@ LuaScript::LuaScript ( const std::string& filename )
     }
     else
     {
-        printf("[LuaScript] Unable to load script %s\n", filename.c_str());
+        printf("[LuaScript] Unable to load script %s\n", path.c_str());
     }
+}
+
+LuaScript::LuaScript ( const std::string& filename )
+{
+    L = luaL_newstate();
+    luaL_openlibs(L);
+    __LuaBind(L);
+    luaLoad(L, filename);
 }
 
 LuaScript::~LuaScript ()
@@ -113,4 +118,9 @@ void LuaScript::InvokeSubroutine ( const std::string& name, float x, float y )
     {
         lua_pop(L, 1);
     }
+}
+
+void LuaScript::RawImport ( lua_State* L, const std::string& module )
+{
+	luaLoad(L, "Modules/" + module);
 }

@@ -10,7 +10,7 @@ void Init ()
 {
 	if (!script)
 	{
-		script = new LuaScript ( "Scripts/Tests" );
+		script = new LuaScript ( "Tests/Tests" );
 	}
 }
 
