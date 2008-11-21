@@ -8,7 +8,7 @@ spriteSheetY = 3
 versionInformation = ""
 
 function sort_ships ()
-    table.sort(ships, function (a, b) return a[5] < b[5] end)
+    table.sort(ships, function (a, b) return a[4] > b[4] end)
 end
 
 function ship_speed ( type )
@@ -27,7 +27,7 @@ end
 
 for i=1,70 do
     local shipType = random_ship_type()
-    ships[i] = { random_real(-500, 500), random_real(-280, 220), shipType, random_real(-1, 1), ship_speed(shipType) }
+    ships[i] = { random_real(700, 1000), random_real(-580, 20), shipType, random_real(-1, 1), ship_speed(shipType) }
 end
 sort_ships()
 
