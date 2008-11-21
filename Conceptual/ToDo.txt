@@ -10,6 +10,7 @@ Xsera immediate TODO list:
 * Assemble the sprite configuration files and re-order the sprites [assigned: Adam]
 * Finish the OpenAL audio engine [assigned: Alastair]
 * Tag release 0.0.1 once done [assigned: Alastair]
+* Convert CrystalClear.suit to a TTF [assigned: Alastair]
 
 * Add bindings to Lua for the Net subsystem [complete]
 * Test the Net subsystem extensively [complete]
