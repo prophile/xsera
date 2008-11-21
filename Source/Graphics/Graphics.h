@@ -10,6 +10,7 @@ namespace Graphics
 
 void Init ( int w, int h, bool fullscreen );
 
+vec2 SpriteDimensions ( const std::string& sheetname, int sheet_x, int sheet_y );
 void DrawSprite ( const std::string& sheetname, int sheet_x, int sheet_y, vec2 location, vec2 size, float rotation );
 inline void DrawImage ( const std::string& imageName, vec2 location, vec2 size )
 	{ DrawSprite("+" + imageName, 0, 0, location, size, 0.0f); }

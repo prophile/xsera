@@ -25,6 +25,9 @@ public:
 	int SheetTilesX () const { return sheetTilesX; }
 	int SheetTilesY () const { return sheetTilesY; }
 	
+	int TileSizeX () const { return tileSizeX; }
+	int TileSizeY () const { return tileSizeY; }
+	
 	void Draw ( int x, int y, const vec2& size );
 };
 

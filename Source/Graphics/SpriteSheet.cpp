@@ -39,7 +39,11 @@ SpriteSheet::SpriteSheet ( const std::string& name )
 	}
 	SDL_RWops* configRWOps = ResourceManager::OpenFile(configPath);
 	SDL_RWops* imageRWOps = ResourceManager::OpenFile(imagePath);
-	assert(imageRWOps);
+	if (!imageRWOps)
+	{
+		printf("[SpriteSheet] failed to load image: %s\n", name.c_str());
+		exit(1);
+	}
 	surface = IMG_LoadTyped_RW(imageRWOps, 1, const_cast<char*>("PNG"));
 	if (configRWOps)
 	{

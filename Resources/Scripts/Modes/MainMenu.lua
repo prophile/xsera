@@ -1,12 +1,65 @@
 -- main menu script
+ships = {}
+lastTime = 0.0
+shipVelocity = { -10, 4 }
+spriteTypes = { "Human/Gunship", "Human/Fighter", "Human/Cruiser", "Human/Destroyer", "Human/Fighter", "Human/Gunship", "Human/AssaultTransport", "Ishiman/Fighter", "Ishiman/HeavyCruiser", "Ishiman/Gunship", "Ishiman/ResearchVessel", "Obish/Cruiser" }
+spriteSheetX = 2
+spriteSheetY = 3
+
+function ship_speed ( type )
+    local szx, szy = graphics.sprite_dimensions(type, spriteSheetX, spriteSheetY)
+    local szt = math.sqrt(szx*szx + szy*szy)
+    return 45.0 / szt
+end
+
+function random_real ( min, max )
+    return (math.random() * (max - min)) + min
+end
+
+function random_ship_type ()
+    return spriteTypes[math.random(1, #spriteTypes)]
+end
+
+for i=1,30 do
+    local shipType = random_ship_type()
+    ships[i] = { random_real(-500, 500), random_real(-280, 220), shipType, random_real(-1, 1), ship_speed(shipType) }
+end
+
+function distancefactor ( distance )
+    distance = distance + 1.3
+    return distance / 1.4
+end
+
 function render ()
     graphics.begin_frame()
     
     graphics.set_camera(-500, -240, 500, 240)
-    graphics.draw_image("Bootloader/Ares", 0, 0, 1000, 480)
-	graphics.draw_sprite("Human/Gunship", 1, 2, 0, 0, 80, 80)
+    graphics.draw_image("Bootloader/Xsera", 0, 0, 1000, 480)
+    for id, ship in ipairs(ships) do
+        local szx, szy = graphics.sprite_dimensions(ship[3], spriteSheetX, spriteSheetY)
+        graphics.draw_sprite(ship[3], spriteSheetX, spriteSheetY, ship[1], ship[2], szx * 1.6 * distancefactor(ship[4]), szy * 1.6 * distancefactor(ship[4]))
+    end
     
     graphics.end_frame()
+end
+
+function update ()
+	newTime = mode_manager.time()
+	local dt = newTime - lastTime
+	lastTime = newTime
+	local gvx = shipVelocity[1]
+	local gvy = shipVelocity[2]
+	-- print("Advancing simulation with timestep " .. dt .. " and velocity vector " .. gvx .. ", " .. gvy)
+	for ship in pairs(ships) do
+	   ships[ship][1] = ships[ship][1] + (shipVelocity[1] * distancefactor(ships[ship][4]) * ships[ship][5])
+	   ships[ship][2] = ships[ship][2] + (shipVelocity[2] * distancefactor(ships[ship][4]) * ships[ship][5])
+	   if (ships[ship][1] < -530) then
+	       ships[ship][1] = random_real(520, 800)
+	       ships[ship][2] = random_real(-450, 190)
+	       ships[ship][3] = random_ship_type()
+	       ships[ship][4] = random_real(-1, 1)
+	   end
+	end
 end
 
 function init ()

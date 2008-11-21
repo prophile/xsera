@@ -156,6 +156,24 @@ static void ClearColour ()
 	glColor4ubv((const GLubyte*)&white);
 }
 
+vec2 SpriteDimensions ( const std::string& sheetname, int sheet_x, int sheet_y )
+{
+	SpriteSheet* sheet;
+	SheetMap::iterator iter = spriteSheets.find(sheetname);
+	if (iter == spriteSheets.end())
+	{
+		// load it
+		sheet = new SpriteSheet(sheetname);
+		spriteSheets[sheetname] = sheet;
+	}
+	else
+	{
+		sheet = iter->second;
+	}
+	assert(sheet);
+	return vec2(sheet->TileSizeX(), sheet->TileSizeY());
+}
+
 void DrawSprite ( const std::string& sheetname, int sheet_x, int sheet_y, vec2 location, vec2 size, float rotation )
 {
 	EnableTexturing();
