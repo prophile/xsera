@@ -465,17 +465,30 @@ int GFX_DrawImage ( lua_State* L )
 int GFX_SpriteDimensions ( lua_State* L )
 {
 	const char* spritesheet;
-	int sheet_x, sheet_y;
 	spritesheet = luaL_checkstring(L, 1);
-	sheet_x = luaL_checkinteger(L, 2);
-	sheet_y = luaL_checkinteger(L, 3);
-	vec2 dims = Graphics::SpriteDimensions(spritesheet, sheet_x, sheet_y);
+	vec2 dims = Graphics::SpriteDimensions(spritesheet);
 	lua_pushnumber(L, dims.X());
 	lua_pushnumber(L, dims.Y());
 	return 2;
 }
 
 int GFX_DrawSprite ( lua_State* L )
+{
+	const char* spritesheet;
+	int nargs = lua_gettop(L);
+	float loc_x, loc_y, size_x, size_y, rot = 0.0f;
+	spritesheet = luaL_checkstring(L, 1);
+	loc_x = luaL_checknumber(L, 2);
+	loc_y = luaL_checknumber(L, 3);
+	size_x = luaL_checknumber(L, 4);
+	size_y = luaL_checknumber(L, 5);
+	if (nargs > 5)
+		rot = luaL_checknumber(L, 6);
+	Graphics::DrawSprite(spritesheet, 0, 0, vec2(loc_x, loc_y), vec2(size_x, size_y), rot);
+	return 0;
+}
+
+int GFX_DrawSpriteFromSheet ( lua_State* L )
 {
 	const char* spritesheet;
 	int sheet_x, sheet_y, nargs = lua_gettop(L);
@@ -500,6 +513,7 @@ luaL_Reg registryGraphics[] =
 	"set_camera", GFX_SetCamera,
 	"draw_image", GFX_DrawImage,
 	"draw_sprite", GFX_DrawSprite,
+	"draw_sheet_sprite", GFX_DrawSpriteFromSheet,
 	"draw_text", GFX_DrawText,
 	"sprite_dimensions", GFX_SpriteDimensions,
     NULL, NULL

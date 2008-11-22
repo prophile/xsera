@@ -156,7 +156,7 @@ static void ClearColour ()
 	glColor4ubv((const GLubyte*)&white);
 }
 
-vec2 SpriteDimensions ( const std::string& sheetname, int sheet_x, int sheet_y )
+vec2 SpriteDimensions ( const std::string& sheetname )
 {
 	SpriteSheet* sheet;
 	SheetMap::iterator iter = spriteSheets.find(sheetname);
@@ -192,8 +192,17 @@ void DrawSprite ( const std::string& sheetname, int sheet_x, int sheet_y, vec2 l
 	}
 	glPushMatrix();
 	glTranslatef(location.X(), location.Y(), 0.0f);
-	glRotatef(rotation, 0.0f, 0.0f, 1.0f);
-	sheet->Draw(sheet_x, sheet_y, size);
+	if (sheet->IsRotational())
+	{
+		assert(sheet_x == 0);
+		assert(sheet_y == 0);
+		sheet->DrawRotation(size, rotation);
+	}
+	else
+	{
+		glRotatef(rotation, 0.0f, 0.0f, 1.0f);
+		sheet->Draw(sheet_x, sheet_y, size);
+	}
 	glPopMatrix();
 }
 

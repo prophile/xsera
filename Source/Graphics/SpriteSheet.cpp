@@ -73,6 +73,10 @@ SpriteSheet::SpriteSheet ( const std::string& name )
 		assert(sheetTilesY > 0);
 		tileSizeX = surface->w / sheetTilesX;
 		tileSizeY = surface->h / sheetTilesY;
+		if (root->FirstChild("rotational"))
+			rotational = true;
+		else
+			rotational = false;
 		delete xmlDoc;
 	}
 	else
@@ -80,6 +84,7 @@ SpriteSheet::SpriteSheet ( const std::string& name )
 		// assume it's just one sprite
 		sheetTilesX = 1;
 		sheetTilesY = 1;
+		rotational = false;
 		tileSizeX = surface->w;
 		tileSizeY = surface->h;
 	}
@@ -111,6 +116,22 @@ void SpriteSheet::Draw ( int x, int y, const vec2& size )
 	glVertexPointer(2, GL_FLOAT, 0, vertices);
 	glTexCoordPointer(2, GL_FLOAT, 0, texCoords);
 	glDrawArrays(GL_QUADS, 0, 4);
+}
+
+void SpriteSheet::DrawRotation ( const vec2& size, float angle )
+{
+	int numObjects = sheetTilesX * sheetTilesY;
+	angle -= M_PI / 2.0;
+	if (angle < 0.0)
+		angle += 2.0*M_PI;
+	// angle is now 0 = north, 2π = north, anticlockwise
+	angle /= 2.0*M_PI;
+	// angle is now 0=north, 1=north, anticlockwise
+	angle = 1.0f - angle;
+	int index = (int)((angle - 0.00001f) * numObjects) + 1;
+	int x = index % sheetTilesX;
+	int y = (index - x) / sheetTilesX;
+	Draw(x, y, size);
 }
 
 }

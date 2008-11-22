@@ -1,20 +1,31 @@
 -- main menu script
 lastTime = 0
-goodShips = {}
-goodShipVelocity = { -300, 120 }
-goodShipType = { "Human/Gunship", "Human/Fighter", "Human/Cruiser", "Human/Destroyer", "Human/Fighter", "Human/Gunship", "Human/AssaultTransport", "Ishiman/Fighter", "Ishiman/HeavyCruiser", "Ishiman/Gunship", "Ishiman/ResearchVessel", "Obish/Cruiser", "Ishiman/AssaultTransport", "Ishiman/Engineer", "Human/AssaultTransport", "Elejeetian/Cruiser", "Human/GateShip", "Human/Destroyer", "Ishiman/Transport" }
-goodSpriteSheetX = 2
-goodSpriteSheetY = 3
+ships = {}
+math.randomseed(os.time())
+math.random()
+if (math.random() < 0.5) then
+    -- allied ships going to war
+    allies = true
+    shipVelocity = { -340, 70 }
+    shipType = { "Human/Gunship", "Human/Fighter", "Human/Cruiser", "Human/Destroyer", "Human/Fighter", "Human/Gunship", "Human/AssaultTransport", "Ishiman/Fighter", "Ishiman/HeavyCruiser", "Ishiman/Gunship", "Ishiman/ResearchVessel", "Obish/Cruiser", "Ishiman/AssaultTransport", "Ishiman/Engineer", "Human/AssaultTransport", "Elejeetian/Cruiser", "Human/GateShip", "Human/Destroyer", "Ishiman/Transport", "Human/Carrier", "Ishiman/Carrier", "Ishiman/Fighter", "Ishiman/HeavyCruiser", "Ishiman/Fighter", "Ishiman/Fighter", "Ishiman/HeavyCruiser", "Human/Cruiser", "Human/Fighter", "Human/Fighter", "Human/Fighter", "Human/Fighter", "Human/Fighter", "Human/Fighter", "Human/Fighter", "Human/Fighter", "Human/Fighter", "Human/Fighter", "Human/AssaultTransport" }
+    numShips = 500
+else
+    -- oppressive axis ships invading
+    shipVelocity = { 340, -70 }
+    allies = false
+    shipType = { "Gaitori/Gunship", "Gaitori/Fighter", "Gaitori/Cruiser", "Gaitori/Destroyer", "Gaitori/Fighter", "Gaitori/Gunship", "Gaitori/AssaultTransport", "Cantharan/Fighter", "Cantharan/HeavyCruiser", "Cantharan/Gunship", "Cantharan/Drone", "Cantharan/HeavyCruiser", "Cantharan/AssaultTransport", "Cantharan/Engineer", "Human/AssaultTransport", "Audemedon/Cruiser", "Cantharan/Engineer", "Audemedon/Destroyer", "Cantharan/Transport", "Salrilian/Carrier", "Audemedon/Carrier", "Cantharan/Fighter", "Cantharan/HeavyCruiser", "Salrilian/Fighter", "Gaitori/Fighter", "Cantharan/HeavyDestroyer", "Salrilian/Destroyer", "Cantharan/Fighter", "Cantharan/Fighter", "Salrilian/Fighter", "Audemedon/Fighter", "Audemedon/Fighter", "Cantharan/Fighter", "Cantharan/Schooner", "Salrilian/Fighter", "Salrilian/Fighter", "Salrilian/Fighter", "Salrilian/AssaultTransport" }
+    numShips = 50
+end
 versionInformation = ""
 timeFactor = 1.0
 
 function sort_ships ()
-    table.sort(goodShips, function (a, b) return a[4] < b[4] end)
-    -- print "Sorted goodShips!"
+    table.sort(ships, function (a, b) return a[4] < b[4] end)
+    -- print "Sorted ships!"
 end
 
 function ship_speed ( type )
-    local szx, szy = graphics.sprite_dimensions(type, goodSpriteSheetX, goodSpriteSheetY)
+    local szx, szy = graphics.sprite_dimensions(type)
     local szt = math.sqrt(szx*szx + szy*szy)
     return 45.0 / szt
 end
@@ -24,12 +35,16 @@ function random_real ( min, max )
 end
 
 function random_ship_type ()
-    return goodShipType[math.random(1, #goodShipType)]
+    return shipType[math.random(1, #shipType)]
 end
 
-for i=1,70 do
-    local goodShipType = random_ship_type()
-    goodShips[i] = { random_real(700, 1000), random_real(-580, 20), goodShipType, random_real(-1, 1), ship_speed(goodShipType) }
+for i=1,numShips do
+    local shipType = random_ship_type()
+    if allies then
+        ships[i] = { random_real(700, 1000), random_real(-580, 20), shipType, random_real(-1, 1), ship_speed(shipType) }
+    else
+        ships[i] = { random_real(-700, -1000), random_real(580, -20), shipType, random_real(-1, 1), ship_speed(shipType) }
+    end
 end
 sort_ships()
 
@@ -43,9 +58,9 @@ function render ()
     
     graphics.set_camera(-500, -240, 500, 240)
     graphics.draw_image("Bootloader/Xsera", 0, 0, 1000, 480)
-    for id, goodShip in ipairs(goodShips) do
-        local szx, szy = graphics.sprite_dimensions(goodShip[3], goodSpriteSheetX, goodSpriteSheetY)
-        graphics.draw_sprite(goodShip[3], goodSpriteSheetX, goodSpriteSheetY, goodShip[1], goodShip[2], szx * 1.6 * distancefactor(goodShip[4]), szy * 1.6 * distancefactor(goodShip[4]))
+    for id, ship in ipairs(ships) do
+        local szx, szy = graphics.sprite_dimensions(ship[3], goodSpriteSheetX, goodSpriteSheetY)
+        graphics.draw_sprite(ship[3], ship[1], ship[2], szx * 1.6 * distancefactor(ship[4]), szy * 1.6 * distancefactor(ship[4]), math.atan2(shipVelocity[2], shipVelocity[1]))
     end
     
     graphics.draw_text(versionInformation, "CrystalClear", -340, -200, 28)
@@ -68,19 +83,24 @@ function update ()
 	local dt = newTime - lastTime
 	lastTime = newTime
 	dt = dt * timeFactor
-	local gvx = goodShipVelocity[1]
-	local gvy = goodShipVelocity[2]
+	local gvx = shipVelocity[1]
+	local gvy = shipVelocity[2]
 	-- print("Advancing simulation with timestep " .. dt .. " and velocity vector " .. gvx .. ", " .. gvy)
 	local resortShips = false
-	for goodShip in pairs(goodShips) do
-	   goodShips[goodShip][1] = goodShips[goodShip][1] + (goodShipVelocity[1] * distancefactor(goodShips[goodShip][4]) * goodShips[goodShip][5]) * dt
-	   goodShips[goodShip][2] = goodShips[goodShip][2] + (goodShipVelocity[2] * distancefactor(goodShips[goodShip][4]) * goodShips[goodShip][5]) * dt
-	   if (goodShips[goodShip][1] < -560) then
+	for ship in pairs(ships) do
+	   ships[ship][1] = ships[ship][1] + (shipVelocity[1] * distancefactor(ships[ship][4]) * ships[ship][5]) * dt
+	   ships[ship][2] = ships[ship][2] + (shipVelocity[2] * distancefactor(ships[ship][4]) * ships[ship][5]) * dt
+	   if (ships[ship][1] < -800 or ships[ship][1] > 800) then
 	       resortShips = true
-	       goodShips[goodShip][1] = random_real(520, 800)
-	       goodShips[goodShip][2] = random_real(-450, 190)
-	       goodShips[goodShip][3] = random_ship_type()
-	       goodShips[goodShip][4] = random_real(-1, 1)
+	       if allies then
+	           ships[ship][1] = random_real(520, 800)
+	           ships[ship][2] = random_real(-450, 190)
+	       else
+	           ships[ship][1] = random_real(-520, -800)
+	           ships[ship][2] = random_real(450, -190)
+	       end
+	       ships[ship][3] = random_ship_type()
+	       ships[ship][4] = random_real(-1, 1)
 	   end
 	end
 	if resortShips then

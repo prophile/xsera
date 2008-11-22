@@ -17,10 +17,13 @@ private:
 	GLuint texID;
 	int sheetTilesX, sheetTilesY;
 	int tileSizeX, tileSizeY;
+	bool rotational;
 	void MakeResident ();
 public:
 	SpriteSheet ( const std::string& name );
 	~SpriteSheet ();
+	
+	bool IsRotational () const { return rotational; }
 	
 	int SheetTilesX () const { return sheetTilesX; }
 	int SheetTilesY () const { return sheetTilesY; }
@@ -29,6 +32,7 @@ public:
 	int TileSizeY () const { return tileSizeY; }
 	
 	void Draw ( int x, int y, const vec2& size );
+	void DrawRotation ( const vec2& size, float angle ); // 0...2π from east
 };
 
 }

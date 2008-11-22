@@ -63,6 +63,7 @@ using namespace XseraMain;
 
 int main ( int argc, char** argv )
 {
+	srand(time(NULL));
 	Startup();
 	if (argc > 1)
 	{
