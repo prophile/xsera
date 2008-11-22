@@ -74,6 +74,7 @@
 		49A0E69B0ECC39FD007F3458 /* ResourceManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 49A0E69A0ECC39FD007F3458 /* ResourceManager.cpp */; };
 		49A315480ED6B5AD0054BB8B /* TextRenderer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 49A315460ED6B5AD0054BB8B /* TextRenderer.cpp */; };
 		49A315530ED6BDD90054BB8B /* Fonts in Resources */ = {isa = PBXBuildFile; fileRef = 49A315500ED6BDD90054BB8B /* Fonts */; };
+		49A79EDF0ED7848F00517488 /* XarFile.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 49A79EDD0ED7848F00517488 /* XarFile.cpp */; };
 		49D543CB0ED5E222002FC38E /* Sprites in Resources */ = {isa = PBXBuildFile; fileRef = 49D543B80ED5E222002FC38E /* Sprites */; };
 		49D544220ED5E854002FC38E /* TestHarness.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 49D544200ED5E854002FC38E /* TestHarness.cpp */; };
 		49F348830ECC222C00983EE6 /* Sound.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 49F348820ECC222C00983EE6 /* Sound.cpp */; };
@@ -207,6 +208,8 @@
 		49A315460ED6B5AD0054BB8B /* TextRenderer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TextRenderer.cpp; sourceTree = "<group>"; };
 		49A315470ED6B5AD0054BB8B /* TextRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextRenderer.h; sourceTree = "<group>"; };
 		49A315500ED6BDD90054BB8B /* Fonts */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Fonts; path = ../Resources/Fonts; sourceTree = SOURCE_ROOT; };
+		49A79EDD0ED7848F00517488 /* XarFile.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = XarFile.cpp; sourceTree = "<group>"; };
+		49A79EDE0ED7848F00517488 /* XarFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XarFile.h; sourceTree = "<group>"; };
 		49D543B80ED5E222002FC38E /* Sprites */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Sprites; path = ../Resources/Sprites; sourceTree = SOURCE_ROOT; };
 		49D5441F0ED5E854002FC38E /* GameTime.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameTime.h; sourceTree = "<group>"; };
 		49D544200ED5E854002FC38E /* TestHarness.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TestHarness.cpp; sourceTree = "<group>"; };
@@ -402,6 +405,8 @@
 		496923FD0EBE4CD500930DDD /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				49A79EDD0ED7848F00517488 /* XarFile.cpp */,
+				49A79EDE0ED7848F00517488 /* XarFile.h */,
 				49D5441F0ED5E854002FC38E /* GameTime.h */,
 				49D544200ED5E854002FC38E /* TestHarness.cpp */,
 				49D544210ED5E854002FC38E /* TestHarness.h */,
@@ -582,6 +587,7 @@
 				49597A7E0ED4DEE000173D17 /* MessageDecode.cpp in Sources */,
 				49D544220ED5E854002FC38E /* TestHarness.cpp in Sources */,
 				49A315480ED6B5AD0054BB8B /* TextRenderer.cpp in Sources */,
+				49A79EDF0ED7848F00517488 /* XarFile.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
