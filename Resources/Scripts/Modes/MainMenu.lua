@@ -8,7 +8,7 @@ if (math.random() < 0.5) then
     allies = true
     shipVelocity = { -340, 70 }
     shipType = { "Human/Gunship", "Human/Fighter", "Human/Cruiser", "Human/Destroyer", "Human/Fighter", "Human/Gunship", "Human/AssaultTransport", "Ishiman/Fighter", "Ishiman/HeavyCruiser", "Ishiman/Gunship", "Ishiman/ResearchVessel", "Obish/Cruiser", "Ishiman/AssaultTransport", "Ishiman/Engineer", "Human/AssaultTransport", "Elejeetian/Cruiser", "Human/GateShip", "Human/Destroyer", "Ishiman/Transport", "Human/Carrier", "Ishiman/Carrier", "Ishiman/Fighter", "Ishiman/HeavyCruiser", "Ishiman/Fighter", "Ishiman/Fighter", "Ishiman/HeavyCruiser", "Human/Cruiser", "Human/Fighter", "Human/Fighter", "Human/Fighter", "Human/Fighter", "Human/Fighter", "Human/Fighter", "Human/Fighter", "Human/Fighter", "Human/Fighter", "Human/Fighter", "Human/AssaultTransport" }
-    numShips = 500
+    numShips = 150
 else
     -- oppressive axis ships invading
     shipVelocity = { 340, -70 }
@@ -18,6 +18,7 @@ else
 end
 versionInformation = ""
 timeFactor = 1.0
+sizeFactor = 1.0
 
 function sort_ships ()
     table.sort(ships, function (a, b) return a[4] < b[4] end)
@@ -60,7 +61,7 @@ function render ()
     graphics.draw_image("Bootloader/Xsera", 0, 0, 1000, 480)
     for id, ship in ipairs(ships) do
         local szx, szy = graphics.sprite_dimensions(ship[3], goodSpriteSheetX, goodSpriteSheetY)
-        graphics.draw_sprite(ship[3], ship[1], ship[2], szx * 1.6 * distancefactor(ship[4]), szy * 1.6 * distancefactor(ship[4]), math.atan2(shipVelocity[2], shipVelocity[1]))
+        graphics.draw_sprite(ship[3], ship[1], ship[2], szx * sizeFactor * distancefactor(ship[4]), szy * sizeFactor * distancefactor(ship[4]), math.atan2(shipVelocity[2], shipVelocity[1]))
     end
     
     graphics.draw_text(versionInformation, "CrystalClear", -340, -200, 28)
@@ -73,6 +74,10 @@ function key ( k )
         timeFactor = timeFactor + 0.05
     elseif k == "u" then
         timeFactor = timeFactor - 0.05
+	elseif k == "l" then
+		sizeFactor = sizeFactor + 0.1
+	elseif k == "k" then
+		sizeFactor = sizeFactor - 0.1
     else
         print("Uninterpreted keystroke " .. k)
     end
