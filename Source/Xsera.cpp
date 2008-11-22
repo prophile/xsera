@@ -35,10 +35,11 @@ void RunLoop ()
 void Startup ()
 {
 	// do init stuff
-	SDL_EnableUNICODE(1);
+	SDL_Init(SDL_INIT_TIMER);
 	InitModeManager();
 	ResourceManager::Init();
 	Graphics::Init(640, 480, false); // 640x480 resolution, non-fullscreen
+	SDL_EnableUNICODE(1);
 	Sound::Init(48000, 24, 128); // init with 48 kHz sampling rate, 24-bit resolution, 128 channels
 	LuaScript bootScript ( "System/Boot" );
 	SwitchMode("MainMenu");
