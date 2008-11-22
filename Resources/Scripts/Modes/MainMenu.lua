@@ -8,7 +8,8 @@ spriteSheetY = 3
 versionInformation = ""
 
 function sort_ships ()
-    table.sort(ships, function (a, b) return a[4] > b[4] end)
+    table.sort(ships, function (a, b) return a[4] < b[4] end)
+    -- print "Sorted ships!"
 end
 
 function ship_speed ( type )
@@ -63,7 +64,7 @@ function update ()
 	   ships[ship][1] = ships[ship][1] + (shipVelocity[1] * distancefactor(ships[ship][4]) * ships[ship][5])
 	   ships[ship][2] = ships[ship][2] + (shipVelocity[2] * distancefactor(ships[ship][4]) * ships[ship][5])
 	   if (ships[ship][1] < -560) then
-	       resportShips = true
+	       resortShips = true
 	       ships[ship][1] = random_real(520, 800)
 	       ships[ship][2] = random_real(-450, 190)
 	       ships[ship][3] = random_ship_type()
