@@ -46,7 +46,7 @@ colour::colour ( const colour& ocol )
 #endif
 
 #ifndef COLOUR_VECTOR_SUPPORT
-colour& colour::operator= ( const col& ocol )
+colour& colour::operator= ( const colour& ocol )
 {
 	data.array[0] = ocol.data.array[0];
 	data.array[1] = ocol.data.array[1];
