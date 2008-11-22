@@ -74,53 +74,55 @@ function key ( k )
         timeFactor = timeFactor + 0.05
     elseif k == "u" then
         timeFactor = timeFactor - 0.05
-	elseif k == "l" then
-		sizeFactor = sizeFactor + 0.1
-	elseif k == "k" then
-		sizeFactor = sizeFactor - 0.1
+    elseif k == "l" then
+        sizeFactor = sizeFactor + 0.1
+    elseif k == "k" then
+        sizeFactor = sizeFactor - 0.1
+    elseif k == "d" then
+        mode_manager.switch("Demo")
     else
         print("Uninterpreted keystroke " .. k)
     end
 end
 
 function update ()
-	newTime = mode_manager.time()
-	local dt = newTime - lastTime
-	lastTime = newTime
-	dt = dt * timeFactor
-	local gvx = shipVelocity[1]
-	local gvy = shipVelocity[2]
-	-- print("Advancing simulation with timestep " .. dt .. " and velocity vector " .. gvx .. ", " .. gvy)
-	local resortShips = false
-	for ship in pairs(ships) do
-	   ships[ship][1] = ships[ship][1] + (shipVelocity[1] * distancefactor(ships[ship][4]) * ships[ship][5]) * dt
-	   ships[ship][2] = ships[ship][2] + (shipVelocity[2] * distancefactor(ships[ship][4]) * ships[ship][5]) * dt
-	   if (ships[ship][1] < -800 or ships[ship][1] > 800) then
-	       resortShips = true
-	       if allies then
-	           ships[ship][1] = random_real(520, 800)
-	           ships[ship][2] = random_real(-450, 190)
-	       else
-	           ships[ship][1] = random_real(-520, -800)
-	           ships[ship][2] = random_real(450, -190)
-	       end
-	       ships[ship][3] = random_ship_type()
-	       ships[ship][4] = random_real(-1, 1)
-	   end
-	end
-	if resortShips then
-	   sort_ships()
+    newTime = mode_manager.time()
+    local dt = newTime - lastTime
+    lastTime = newTime
+    dt = dt * timeFactor
+    local gvx = shipVelocity[1]
+    local gvy = shipVelocity[2]
+    -- print("Advancing simulation with timestep " .. dt .. " and velocity vector " .. gvx .. ", " .. gvy)
+    local resortShips = false
+    for ship in pairs(ships) do
+        ships[ship][1] = ships[ship][1] + (shipVelocity[1] * distancefactor(ships[ship][4]) * ships[ship][5]) * dt
+        ships[ship][2] = ships[ship][2] + (shipVelocity[2] * distancefactor(ships[ship][4]) * ships[ship][5]) * dt
+        if (ships[ship][1] < -800 or ships[ship][1] > 800) then
+            resortShips = true
+            if allies then
+                ships[ship][1] = random_real(520, 800)
+                ships[ship][2] = random_real(-450, 190)
+            else
+                ships[ship][1] = random_real(-520, -800)
+                ships[ship][2] = random_real(450, -190)
+            end
+            ships[ship][3] = random_ship_type()
+            ships[ship][4] = random_real(-1, 1)
+        end
+    end
+    if resortShips then
+        sort_ships()
     end
 end
 
 function init ()
     local xmlData = xml.load("Config/Version.xml")
-	local versionData = xmlData[1]
-	versionInformation = "Xsera " .. versionData[1][1] .. " <" .. versionData[2][1] .. ">"
-	print(versionInformation)
-	if versionData.n == 3 then
-		print("Signed off by: " .. versionData[3][1])
-	end
-	lastTime = mode_manager.time()
+    local versionData = xmlData[1]
+    versionInformation = "Xsera " .. versionData[1][1] .. " <" .. versionData[2][1] .. ">"
+    print(versionInformation)
+    if versionData.n == 3 then
+        print("Signed off by: " .. versionData[3][1])
+    end
+    lastTime = mode_manager.time()
 end
 
