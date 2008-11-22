@@ -86,5 +86,8 @@ function init ()
 end
 
 function key ( k )
+	if (k == " ") then
+		mode_manager.switch("Demo")
+	end
     print(k)
 end
