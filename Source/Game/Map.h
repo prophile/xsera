@@ -1,5 +1,5 @@
-#ifndef _MAP_H_
-#define _MAP_H_
+#ifndef __xsera_game_map_h
+#define __xsera_game_map_h
 
 #include <string>
 #include <vector>

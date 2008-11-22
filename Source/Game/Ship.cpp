@@ -1,6 +1,6 @@
 #include "Ship.h"
 
-Ship::Ship()
+Ship::Ship(Player* _owner, ShipDef* _definition)
 {
 }
 
