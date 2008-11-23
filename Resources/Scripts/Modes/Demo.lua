@@ -12,22 +12,64 @@
 
 spriteSheetX = 2
 spriteSheetY = 3
-screenSizeX = { min = 0, max = 100 } -- temporary values
-screenSizeY = { min = 0, max = 100 } -- temporary values
+screenSizeX = { min = 0, max = 100 } -- temporary values, unused right now
+screenSizeY = { min = 0, max = 100 } -- temporary values, unused right now
 
 ships = {}
+camera = { -500, -500, 500, 500 }
 carrierLocation = { 100, 50 }
-carrierSize = { 100, 100 }
+carrierRotation = 0
+carrierSize = {}
+carrierSize[1], carrierSize[2] = graphics.sprite_dimensions("Gaitori/Carrier")
 hCruiserLocation = { 0, 0 }
-hCruiserSize = { 50, 50 }
+hCruiserRotation = 0
+hCruiserSize = {}
+hCruiserSize[1], hCruiserSize[2] = graphics.sprite_dimensions("Ishiman/HeavyCruiser")
 
 function render ()
     graphics.begin_frame()
     
-    graphics.set_camera(-500, -240, 500, 240)
-    
-    graphics.draw_sprite("Gaitori/Carrier", carrierLocation[1], carrierLocation[2], carrierSize[1], carrierSize[2])
-    graphics.draw_sprite("Ishiman/HeavyCruiser", hCruiserLocation[1], hCruiserLocation[2], hCruiserSize[1], hCruiserSize[2])
-    
+    graphics.set_camera(camera[1], camera[2], camera[3], camera[4])
+    graphics.draw_image("Panels/SideLeft", camera[1] + 68, camera[2] + 501, 129, 1000)
+    graphics.draw_image("Panels/SideRight", camera[3] - 14, camera[2] + 501, 27, 1000)
+    graphics.draw_sprite("Gaitori/Carrier", carrierLocation[1], carrierLocation[2], carrierSize[1], carrierSize[2], carrierRotation)
+    graphics.draw_sprite("Ishiman/HeavyCruiser", hCruiserLocation[1], hCruiserLocation[2], hCruiserSize[1], hCruiserSize[2], hCruiserRotation)
+	
     graphics.end_frame()
+end
+
+--[[function key ( k )
+	if k == "w" then
+		camera[2] = camera[2] + 1
+		camera[4] = camera[4] + 1
+		hCruiserLocation[2] = hCruiserLocation[2] + 1;
+	elseif k == "s" then
+		camera[2] = camera[2] - 1
+		camera[4] = camera[4] - 1
+		hCruiserLocation[2] = hCruiserLocation[2] - 1;
+	elseif k == "a" then
+		camera[1] = camera[1] - 1
+		camera[3] = camera[3] - 1
+		hCruiserLocation[1] = hCruiserLocation[1] - 1;
+	elseif k == "d" then
+		camera[1] = camera[1] + 1
+		camera[3] = camera[3] + 1
+		hCruiserLocation[1] = hCruiserLocation[1] + 1;
+	else
+        print("Uninterpreted keystroke '" .. k .. "'")
+	end
+end--]]
+
+function key ( k )
+	if k == "w" then
+		-- increase ship velocity
+	elseif k == "s" then
+		-- decrease ship velocity
+	elseif k == "a" then
+		hCruiserRotation = hCruiserRotation + .2
+	elseif k == "d" then
+		hCruiserRotation = hCruiserRotation - .2
+	elseif k == "q" then
+		hCruiserRotation = math.pi / 2
+	end
 end
