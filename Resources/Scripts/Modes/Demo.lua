@@ -18,15 +18,16 @@ screenSizeY = { min = 0, max = 100 } -- temporary values
 ships = {}
 camera = { -500, -240, 500, 240 }
 carrierLocation = { 100, 50 }
-carrierSize = { 100, 100 }
-hCruiserLocation = { 0, 0 }
-hCruiserSize = { 50, 50 }
+carrierSize = { 70, 49 }
+hCruiserLocation = { -100, 0 }
+hCruiserSize = { 35, 31 }
 
 function render ()
     graphics.begin_frame()
     
     graphics.set_camera(camera[1], camera[2], camera[3], camera[4])
-    graphics.draw_image("Panels/SideLeft", 0, 0, 500, 100)
+    graphics.draw_image("Panels/SideLeft", -430, 1, 129, 480)
+    graphics.draw_image("Panels/SideRight", 430, 1, 129, 480)
     graphics.draw_sprite("Gaitori/Carrier", carrierLocation[1], carrierLocation[2], carrierSize[1], carrierSize[2])
     graphics.draw_sprite("Ishiman/HeavyCruiser", hCruiserLocation[1], hCruiserLocation[2], hCruiserSize[1], hCruiserSize[2])
 	
