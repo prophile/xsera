@@ -202,24 +202,24 @@
 			<key>Content</key>
 			<dict>
 				<key>PBXProjectModuleGUID</key>
-				<string>7ADA57810ED89F2200669C98</string>
+				<string>7ADA577A0ED89F2200669C98</string>
 				<key>PBXProjectModuleLabel</key>
-				<string>MainMenu.lua</string>
+				<string>Xsera.cpp</string>
 				<key>PBXSplitModuleInNavigatorKey</key>
 				<dict>
 					<key>Split0</key>
 					<dict>
 						<key>PBXProjectModuleGUID</key>
-						<string>7ADA57820ED89F2200669C98</string>
+						<string>7ADA577B0ED89F2200669C98</string>
 						<key>PBXProjectModuleLabel</key>
-						<string>MainMenu.lua</string>
+						<string>Xsera.cpp</string>
 						<key>_historyCapacity</key>
 						<integer>0</integer>
 						<key>bookmark</key>
-						<string>7ADA57D40ED8C44B00669C98</string>
+						<string>7ADA58530ED8D6B100669C98</string>
 						<key>history</key>
 						<array>
-							<string>7ADA57830ED89F2200669C98</string>
+							<string>7ADA576A0ED89F1200669C98</string>
 						</array>
 					</dict>
 					<key>SplitCount</key>
@@ -235,47 +235,7 @@
 				<key>PBXModuleWindowStatusBarHidden2</key>
 				<false/>
 				<key>RubberWindowFrame</key>
-				<string>-2 51 710 727 0 0 1280 778 </string>
-			</dict>
-		</dict>
-		<dict>
-			<key>Content</key>
-			<dict>
-				<key>PBXProjectModuleGUID</key>
-				<string>7ADA57870ED89F2200669C98</string>
-				<key>PBXProjectModuleLabel</key>
-				<string>Demo.lua</string>
-				<key>PBXSplitModuleInNavigatorKey</key>
-				<dict>
-					<key>Split0</key>
-					<dict>
-						<key>PBXProjectModuleGUID</key>
-						<string>7ADA57880ED89F2200669C98</string>
-						<key>PBXProjectModuleLabel</key>
-						<string>Demo.lua</string>
-						<key>_historyCapacity</key>
-						<integer>0</integer>
-						<key>bookmark</key>
-						<string>7ADA57D50ED8C44B00669C98</string>
-						<key>history</key>
-						<array>
-							<string>7ADA57890ED89F2200669C98</string>
-						</array>
-					</dict>
-					<key>SplitCount</key>
-					<string>1</string>
-				</dict>
-				<key>StatusBarVisibility</key>
-				<true/>
-			</dict>
-			<key>Geometry</key>
-			<dict>
-				<key>Frame</key>
-				<string>{{0, 20}, {710, 686}}</string>
-				<key>PBXModuleWindowStatusBarHidden2</key>
-				<false/>
-				<key>RubberWindowFrame</key>
-				<string>568 51 710 727 0 0 1280 778 </string>
+				<string>0 51 710 727 0 0 1280 778 </string>
 			</dict>
 		</dict>
 		<dict>
@@ -296,7 +256,7 @@
 						<key>_historyCapacity</key>
 						<integer>0</integer>
 						<key>bookmark</key>
-						<string>7ADA57D60ED8C44B00669C98</string>
+						<string>7ADA58540ED8D6B100669C98</string>
 						<key>history</key>
 						<array>
 							<string>7ADA577F0ED89F2200669C98</string>
@@ -322,24 +282,24 @@
 			<key>Content</key>
 			<dict>
 				<key>PBXProjectModuleGUID</key>
-				<string>7ADA577A0ED89F2200669C98</string>
+				<string>7ADA57E30ED8D0B500669C98</string>
 				<key>PBXProjectModuleLabel</key>
-				<string>Xsera.cpp</string>
+				<string>Demo.lua</string>
 				<key>PBXSplitModuleInNavigatorKey</key>
 				<dict>
 					<key>Split0</key>
 					<dict>
 						<key>PBXProjectModuleGUID</key>
-						<string>7ADA577B0ED89F2200669C98</string>
+						<string>7ADA57E40ED8D0B500669C98</string>
 						<key>PBXProjectModuleLabel</key>
-						<string>Xsera.cpp</string>
+						<string>Demo.lua</string>
 						<key>_historyCapacity</key>
 						<integer>0</integer>
 						<key>bookmark</key>
-						<string>7ADA57D70ED8C44B00669C98</string>
+						<string>7ADA58550ED8D6B100669C98</string>
 						<key>history</key>
 						<array>
-							<string>7ADA576A0ED89F1200669C98</string>
+							<string>7ADA580D0ED8D26500669C98</string>
 						</array>
 					</dict>
 					<key>SplitCount</key>
@@ -355,7 +315,47 @@
 				<key>PBXModuleWindowStatusBarHidden2</key>
 				<false/>
 				<key>RubberWindowFrame</key>
-				<string>0 51 710 727 0 0 1280 778 </string>
+				<string>621 51 710 727 0 0 1280 778 </string>
+			</dict>
+		</dict>
+		<dict>
+			<key>Content</key>
+			<dict>
+				<key>PBXProjectModuleGUID</key>
+				<string>7ADA580F0ED8D26500669C98</string>
+				<key>PBXProjectModuleLabel</key>
+				<string>MainMenu.lua</string>
+				<key>PBXSplitModuleInNavigatorKey</key>
+				<dict>
+					<key>Split0</key>
+					<dict>
+						<key>PBXProjectModuleGUID</key>
+						<string>7ADA58100ED8D26500669C98</string>
+						<key>PBXProjectModuleLabel</key>
+						<string>MainMenu.lua</string>
+						<key>_historyCapacity</key>
+						<integer>0</integer>
+						<key>bookmark</key>
+						<string>7ADA58560ED8D6B100669C98</string>
+						<key>history</key>
+						<array>
+							<string>7ADA58110ED8D26500669C98</string>
+						</array>
+					</dict>
+					<key>SplitCount</key>
+					<string>1</string>
+				</dict>
+				<key>StatusBarVisibility</key>
+				<true/>
+			</dict>
+			<key>Geometry</key>
+			<dict>
+				<key>Frame</key>
+				<string>{{0, 20}, {710, 686}}</string>
+				<key>PBXModuleWindowStatusBarHidden2</key>
+				<false/>
+				<key>RubberWindowFrame</key>
+				<string>-2 51 710 727 0 0 1280 778 </string>
 			</dict>
 		</dict>
 	</array>
@@ -392,8 +392,6 @@
 			<key>Layout</key>
 			<array>
 				<dict>
-					<key>BecomeActive</key>
-					<true/>
 					<key>ContentConfiguration</key>
 					<dict>
 						<key>PBXBottomSmartGroupGIDs</key>
@@ -432,21 +430,20 @@
 								<string>496923C90EBE4B7600930DDD</string>
 								<string>496923E40EBE4C4000930DDD</string>
 								<string>496923E20EBE4C3500930DDD</string>
-								<string>496039250ED0B555003BA716</string>
-								<string>7ADA55B20ED86D7400669C98</string>
+								<string>49D543B80ED5E222002FC38E</string>
 								<string>1C37FABC05509CD000000102</string>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>19</integer>
-									<integer>14</integer>
+									<integer>24</integer>
+									<integer>12</integer>
 									<integer>10</integer>
 									<integer>0</integer>
 								</array>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateVisibleRectKey</key>
-							<string>{{0, 77}, {186, 282}}</string>
+							<string>{{0, 217}, {186, 282}}</string>
 						</dict>
 						<key>PBXTopSmartGroupGIDs</key>
 						<array/>
@@ -465,7 +462,7 @@
 							<real>186</real>
 						</array>
 						<key>RubberWindowFrame</key>
-						<string>452 128 775 341 0 0 1280 778 </string>
+						<string>35 198 775 341 0 0 1280 778 </string>
 					</dict>
 					<key>Module</key>
 					<string>PBXSmartGroupTreeModule</string>
@@ -502,7 +499,7 @@
 								<key>Frame</key>
 								<string>{{0, 0}, {567, 0}}</string>
 								<key>RubberWindowFrame</key>
-								<string>452 128 775 341 0 0 1280 778 </string>
+								<string>35 198 775 341 0 0 1280 778 </string>
 							</dict>
 							<key>Module</key>
 							<string>PBXNavigatorGroup</string>
@@ -510,6 +507,8 @@
 							<string>0pt</string>
 						</dict>
 						<dict>
+							<key>BecomeActive</key>
+							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
@@ -522,7 +521,7 @@
 								<key>Frame</key>
 								<string>{{0, 5}, {567, 295}}</string>
 								<key>RubberWindowFrame</key>
-								<string>452 128 775 341 0 0 1280 778 </string>
+								<string>35 198 775 341 0 0 1280 778 </string>
 							</dict>
 							<key>Module</key>
 							<string>XCDetailModule</string>
@@ -682,18 +681,18 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
+		<string>7ADA580F0ED8D26500669C98</string>
+		<string>7ADA57E30ED8D0B500669C98</string>
+		<string>1C78EAAD065D492600B07095</string>
 		<string>7A98B0B10ED5219E00E2B186</string>
+		<string>1C530D57069F1CE1000CFCEE</string>
+		<string>7ADA577D0ED89F2200669C98</string>
+		<string>7ADA577A0ED89F2200669C98</string>
 		<string>1CD10A99069EF8BA00B06720</string>
 		<string>/Users/atg/git/xsera/XCode/Xsera.xcodeproj</string>
-		<string>7ADA577A0ED89F2200669C98</string>
-		<string>7ADA577D0ED89F2200669C98</string>
-		<string>1C530D57069F1CE1000CFCEE</string>
-		<string>7ADA57870ED89F2200669C98</string>
-		<string>7ADA57810ED89F2200669C98</string>
-		<string>1C78EAAD065D492600B07095</string>
 	</array>
 	<key>WindowString</key>
-	<string>452 128 775 341 0 0 1280 778 </string>
+	<string>35 198 775 341 0 0 1280 778 </string>
 	<key>WindowToolsV3</key>
 	<array>
 		<dict>
@@ -930,7 +929,7 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CDD528C0622207200134675</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>LuaBind.cpp</string>
+										<string>Demo.lua</string>
 										<key>StatusBarVisibility</key>
 										<true/>
 									</dict>
@@ -996,7 +995,7 @@
 			<key>WindowToolGUID</key>
 			<string>1C530D57069F1CE1000CFCEE</string>
 			<key>WindowToolIsVisible</key>
-			<true/>
+			<false/>
 		</dict>
 		<dict>
 			<key>Identifier</key>
@@ -1062,7 +1061,7 @@
 			<key>WindowToolGUID</key>
 			<string>1C78EAAD065D492600B07095</string>
 			<key>WindowToolIsVisible</key>
-			<true/>
+			<false/>
 		</dict>
 		<dict>
 			<key>Identifier</key>
