@@ -478,6 +478,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 496923E10EBE4BC400930DDD /* Build configuration list for PBXNativeTarget "Xsera" */;
 			buildPhases = (
+				7ADA5A6E0ED8E6BE00669C98 /* ShellScript */,
 				496923D70EBE4BC300930DDD /* Resources */,
 				496924030EBE4CD600930DDD /* Copy Frameworks */,
 				496923D80EBE4BC300930DDD /* Sources */,
@@ -525,6 +526,22 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		7ADA5A6E0ED8E6BE00669C98 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "touch ~/git/xsera/Resources/*";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		496923D80EBE4BC300930DDD /* Sources */ = {
