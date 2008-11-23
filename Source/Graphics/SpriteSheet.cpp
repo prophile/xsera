@@ -129,6 +129,8 @@ void SpriteSheet::DrawRotation ( const vec2& size, float angle )
 	// angle is now 0=north, 1=north, anticlockwise
 	angle = 1.0f - angle;
 	int index = (int)((angle - 0.00001f) * numObjects) + 1;
+	if (index == sheetTilesX * sheetTilesY)
+		index = 0;
 	int x = index % sheetTilesX;
 	int y = (index - x) / sheetTilesX;
 	Draw(x, y, size);
