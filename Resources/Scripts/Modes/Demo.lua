@@ -18,9 +18,11 @@ screenSizeY = { min = 0, max = 100 } -- temporary values, unused right now
 ships = {}
 camera = { -500, -500, 500, 500 }
 carrierLocation = { 100, 50 }
-carrierSize = { 70, 49 }
+carrierSize = {}
+carrierSize[1], carrierSize[2] = graphics.sprite_dimensions("Gaitori/Carrier", goodSpriteSheetX, goodSpriteSheetY)
 hCruiserLocation = { 0, 0 }
-hCruiserSize = { 35, 31 }
+hCruiserSize = {}
+hCruiserSize[1], hCruiserSize[2] = graphics.sprite_dimensions("Ishiman/HeavyCruiser", goodSpriteSheetX, goodSpriteSheetY)
 
 function render ()
     graphics.begin_frame()
