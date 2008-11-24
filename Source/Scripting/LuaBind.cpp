@@ -449,6 +449,45 @@ int GFX_DrawText ( lua_State* L )
 	return 0;
 }
 
+int GFX_DrawLine ( lua_State* L )
+{
+	int nargs = lua_gettop(L);
+	float x1, y1, x2, y2, width;
+	x1 = luaL_checknumber(L, 1);
+	y1 = luaL_checknumber(L, 2);
+	x2 = luaL_checknumber(L, 3);
+	y2 = luaL_checknumber(L, 4);
+	width = luaL_checknumber(L, 5);
+	if (nargs > 5)
+	{
+		Graphics::DrawLine(vec2(x1, y1), vec2(x2, y2), width, LoadColour(L, 5));
+	}
+	else
+	{
+		Graphics::DrawLine(vec2(x1, y1), vec2(x2, y2), width, colour(0.0f, 1.0f, 0.0f, 1.0f));
+	}
+	return 0;
+}
+
+int GFX_DrawCircle ( lua_State* L )
+{
+	int nargs = lua_gettop(L);
+	float x, y, radius, width;
+	x = luaL_checknumber(L, 1);
+	y = luaL_checknumber(L, 2);
+	radius = luaL_checknumber(L, 3);
+	width = luaL_checknumber(L, 4);
+	if (nargs > 4)
+	{
+		Graphics::DrawCircle(vec2(x, y), radius, width, LoadColour(L, 4));
+	}
+	else
+	{
+		Graphics::DrawCircle(vec2(x, y), radius, width, colour(0.0f, 1.0f, 0.0f, 1.0f));
+	}
+	return 0;
+}
+
 int GFX_DrawImage ( lua_State* L )
 {
 	const char* imgName;
@@ -515,6 +554,8 @@ luaL_Reg registryGraphics[] =
 	"draw_sprite", GFX_DrawSprite,
 	"draw_sheet_sprite", GFX_DrawSpriteFromSheet,
 	"draw_text", GFX_DrawText,
+	"draw_line", GFX_DrawLine,
+	"draw_circle", GFX_DrawCircle,
 	"sprite_dimensions", GFX_SpriteDimensions,
     NULL, NULL
 };
