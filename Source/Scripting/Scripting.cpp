@@ -30,7 +30,12 @@ static void luaHandleError ( lua_State* L )
 
 static void luaLoad ( lua_State* L, const std::string& path )
 {
-	SDL_RWops* rwops = ResourceManager::OpenFile("Scripts/" + path + ".lua");
+	std::string fullpath = "Scripts/" + path + ".lua";
+	if (ResourceManager::FileExists("Scripts/" + path + ".lo"))
+	{
+		fullpath = "Scripts/" + path + ".lo";
+	}
+	SDL_RWops* rwops = ResourceManager::OpenFile(fullpath);
     if (rwops)
     {
         int rc = lua_load(L, luaReader, (void*)rwops, path.c_str());
@@ -57,6 +62,7 @@ LuaScript::LuaScript ( const std::string& filename )
     L = luaL_newstate();
     luaL_openlibs(L);
     __LuaBind(L);
+	luaLoad(L, "System/Class");
     luaLoad(L, filename);
 }
 
