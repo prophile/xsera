@@ -29,7 +29,13 @@ Mix_Chunk* SoundNamed ( const std::string& name )
 		std::string path = "Sounds/" + name + ".aiff";
 		SDL_RWops* ops = ResourceManager::OpenFile(path);
 		Mix_Chunk* newChunk = Mix_LoadWAV_RW(ops, 1);
-		effects[path] = newChunk;
+		if (!newChunk)
+		{
+			printf("Decoding sound '%s' failed! Error: %s\n", name.c_str(), Mix_GetError());
+			effects[name] = NULL;
+			return NULL;
+		}
+		effects[name] = newChunk;
 		return newChunk;
 	}
 	else
@@ -96,7 +102,7 @@ void Init ( int frequency, int resolution, int sources )
 	Mix_AllocateChannels(sources);
 	Mix_VolumeMusic(volume_music);
 	Mix_Volume(-1, volume_sound);
-	if (getenv("XSERA_MUSIC_DIABLE"))
+	if (getenv("XSERA_MUSIC_DISABLE"))
 		disable_music = true;
 }
 

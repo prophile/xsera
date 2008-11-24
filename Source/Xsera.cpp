@@ -14,9 +14,10 @@ void DispatchEvent ( const SDL_Event& evt )
 	switch (evt.type)
 	{
 		case SDL_KEYDOWN:
-			{
-				ActiveMode()->InvokeSubroutine("key", (char)evt.key.keysym.unicode);
-			}
+			ActiveMode()->InvokeSubroutine("key", (char)evt.key.keysym.unicode);
+			break;
+		case SDL_KEYUP:
+			ActiveMode()->InvokeSubroutine("keyup", (char)evt.key.keysym.unicode);
 			break;
 		case SDL_QUIT:
 			exit(0);
