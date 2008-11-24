@@ -1,3 +1,5 @@
 *.DS_Store
-XCode/Xsera.xcodeproj/atg.mode1v3
-XCode/Xsera.xcodeproj/atg.pbxuser
+*.mode1v3
+*.perspectivev3
+*.pbxuser
+build
