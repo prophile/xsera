@@ -16,59 +16,53 @@ screenSizeX = { min = 0, max = 100 } -- temporary values, unused right now
 screenSizeY = { min = 0, max = 100 } -- temporary values, unused right now
 
 ships = {}
-camera = { -500, -500, 500, 500 }
+camera = { width = 1000, height = 1000 }
 carrierLocation = { 100, 50 }
 carrierRotation = 0
 carrierSize = {}
 carrierSize[1], carrierSize[2] = graphics.sprite_dimensions("Gaitori/Carrier")
-hCruiserLocation = { 0, 0 }
 hCruiserRotation = 0
 hCruiserSize = {}
 hCruiserSize[1], hCruiserSize[2] = graphics.sprite_dimensions("Ishiman/HeavyCruiser")
+velocity = { increment = { current = 0, x = 0, y = 0 }, real = { speed = 0, x = 0, y = 0 }, increase = 0.5, decrease = -2, max = 5 }
+ship = { x = 0, y = 0 }
 
 function render ()
     graphics.begin_frame()
-    
-    graphics.set_camera(camera[1], camera[2], camera[3], camera[4])
-    graphics.draw_image("Panels/SideLeft", camera[1] + 68, camera[2] + 501, 129, 1000)
-    graphics.draw_image("Panels/SideRight", camera[3] - 14, camera[2] + 501, 27, 1000)
-    graphics.draw_sprite("Gaitori/Carrier", carrierLocation[1], carrierLocation[2], carrierSize[1], carrierSize[2], carrierRotation)
-    graphics.draw_sprite("Ishiman/HeavyCruiser", hCruiserLocation[1], hCruiserLocation[2], hCruiserSize[1], hCruiserSize[2], hCruiserRotation)
 	
+	velocity.increment.x = math.cos(hCruiserRotation) * velocity.increment.current
+	velocity.increment.y = math.sin(hCruiserRotation) * velocity.increment.current
+	
+	velocity.real.x = velocity.increment.x + velocity.real.x
+	velocity.real.y = velocity.increment.y + velocity.real.y
+	
+	ship.x = ship.x + velocity.real.x
+	ship.y = ship.y + velocity.real.y
+	
+	velocity.increment.current = 0;
+	
+	if velocity.real.speed > velocity.max then
+		velocity.real.speed = velocity.max
+	end
+	
+	graphics.set_camera(ship.x - (camera.width / 2.0), ship.y - (camera.height / 2.0), ship.x + (camera.width / 2.0), ship.y + (camera.width / 2.0))
+    graphics.draw_sprite("Gaitori/Carrier", carrierLocation[1], carrierLocation[2], carrierSize[1], carrierSize[2], carrierRotation)
+    graphics.draw_sprite("Ishiman/HeavyCruiser", ship.x, ship.y, hCruiserSize[1], hCruiserSize[2], hCruiserRotation)
+	
+    graphics.draw_image("Panels/SideLeft", -(camera.width / 2) + 68 + ship.x, -(camera.height / 2) + 501 + ship.y, 129, 1000)
+    graphics.draw_image("Panels/SideRight", 484 + ship.x, 1 + ship.y, 27, 1000)
     graphics.end_frame()
 end
 
---[[function key ( k )
-	if k == "w" then
-		camera[2] = camera[2] + 1
-		camera[4] = camera[4] + 1
-		hCruiserLocation[2] = hCruiserLocation[2] + 1;
-	elseif k == "s" then
-		camera[2] = camera[2] - 1
-		camera[4] = camera[4] - 1
-		hCruiserLocation[2] = hCruiserLocation[2] - 1;
-	elseif k == "a" then
-		camera[1] = camera[1] - 1
-		camera[3] = camera[3] - 1
-		hCruiserLocation[1] = hCruiserLocation[1] - 1;
-	elseif k == "d" then
-		camera[1] = camera[1] + 1
-		camera[3] = camera[3] + 1
-		hCruiserLocation[1] = hCruiserLocation[1] + 1;
-	else
-        print("Uninterpreted keystroke '" .. k .. "'")
-	end
-end--]]
-
 function key ( k )
 	if k == "w" then
-		-- increase ship velocity
+		velocity.increment.current = velocity.increase;
 	elseif k == "s" then
-		-- decrease ship velocity
+		velocity.increment.current = velocity.decrease;
 	elseif k == "a" then
-		hCruiserRotation = hCruiserRotation + .2
+		hCruiserRotation = (hCruiserRotation + .2) % (2 * math.pi)
 	elseif k == "d" then
-		hCruiserRotation = hCruiserRotation - .2
+		hCruiserRotation = (hCruiserRotation - .2) % (2 * math.pi)
 	elseif k == "q" then
 		hCruiserRotation = math.pi / 2
 	end
