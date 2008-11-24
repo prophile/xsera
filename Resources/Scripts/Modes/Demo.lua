@@ -24,14 +24,11 @@ carrierSize[1], carrierSize[2] = graphics.sprite_dimensions("Gaitori/Carrier")
 hCruiserRotation = 0
 hCruiserSize = {}
 hCruiserSize[1], hCruiserSize[2] = graphics.sprite_dimensions("Ishiman/HeavyCruiser")
-velocity = { increment = { current = 0, x = 0, y = 0 }, real = { speed = 0, x = 0, y = 0 }, increase = 0.5, decrease = -2, max = 5 }
+velocity = { increment = { x = 0, y = 0 }, real = { speed = 0, x = 0, y = 0, rot = 0 }, increase = 0.5, decrease = -2, max = 5 }
 ship = { x = 0, y = 0 }
 
 function render ()
     graphics.begin_frame()
-	
-	velocity.increment.x = math.cos(hCruiserRotation) * velocity.increment.current
-	velocity.increment.y = math.sin(hCruiserRotation) * velocity.increment.current
 	
 	velocity.real.x = velocity.increment.x + velocity.real.x
 	velocity.real.y = velocity.increment.y + velocity.real.y
@@ -39,7 +36,7 @@ function render ()
 	ship.x = ship.x + velocity.real.x
 	ship.y = ship.y + velocity.real.y
 	
-	velocity.increment.current = 0;
+	velocity.increment.current = 0
 	
 	if velocity.real.speed > velocity.max then
 		velocity.real.speed = velocity.max
@@ -56,9 +53,19 @@ end
 
 function key ( k )
 	if k == "w" then
-		velocity.increment.current = velocity.increase;
+		velocity.increment.x = math.cos(hCruiserRotation) * velocity.increase
+		velocity.increment.y = math.sin(hCruiserRotation) * velocity.increase
 	elseif k == "s" then
-		velocity.increment.current = velocity.decrease;
+		velocity.real.rot = math.atan2(velocity.real.y, velocity.real.x)
+		velocity.increment.x = math.cos(velocity.real.rot) * velocity.decrease
+		velocity.increment.y = math.sin(velocity.real.rot) * velocity.decrease
+		if math.abs(velocity.increment.x) > math.abs(velocity.real.x) then
+			velocity.real.x = 0
+			velocity.increment.x = 0
+		end
+		if math.abs(velocity.increment.y) > math.abs(velocity.real.y) then
+			velocity.increment.y = -(velocity.real.y)
+		end
 	elseif k == "a" then
 		hCruiserRotation = (hCruiserRotation + .2) % (2 * math.pi)
 	elseif k == "d" then
