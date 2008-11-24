@@ -66,6 +66,6 @@ function key ( k )
 	elseif k == "q" then
 		hCruiserRotation = math.pi / 2
 	elseif k == "e" then
-		sound.play("Resources/Sounds/ShotC.aiff")
+		sound.play("ShotC")
 	end
 end
