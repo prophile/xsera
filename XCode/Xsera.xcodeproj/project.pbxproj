@@ -79,6 +79,7 @@
 		49D544220ED5E854002FC38E /* TestHarness.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 49D544200ED5E854002FC38E /* TestHarness.cpp */; };
 		49F348830ECC222C00983EE6 /* Sound.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 49F348820ECC222C00983EE6 /* Sound.cpp */; };
 		49F348850ECC223A00983EE6 /* Graphics.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 49F348840ECC223A00983EE6 /* Graphics.cpp */; };
+		7A8C71560EDB0FB700CFE5D3 /* Sounds in Resources */ = {isa = PBXBuildFile; fileRef = 7A8C711F0EDB0FB700CFE5D3 /* Sounds */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -216,6 +217,7 @@
 		49D544210ED5E854002FC38E /* TestHarness.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestHarness.h; sourceTree = "<group>"; };
 		49F348820ECC222C00983EE6 /* Sound.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Sound.cpp; sourceTree = "<group>"; };
 		49F348840ECC223A00983EE6 /* Graphics.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Graphics.cpp; sourceTree = "<group>"; };
+		7A8C711F0EDB0FB700CFE5D3 /* Sounds */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Sounds; path = ../Resources/Sounds; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -326,6 +328,7 @@
 		496923E20EBE4C3500930DDD /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				7A8C711F0EDB0FB700CFE5D3 /* Sounds */,
 				49A315500ED6BDD90054BB8B /* Fonts */,
 				49D543B80ED5E222002FC38E /* Sprites */,
 				49597A0B0ED4D47C00173D17 /* Config */,
@@ -521,6 +524,7 @@
 				49597A130ED4D47C00173D17 /* Config in Resources */,
 				49D543CB0ED5E222002FC38E /* Sprites in Resources */,
 				49A315530ED6BDD90054BB8B /* Fonts in Resources */,
+				7A8C71560EDB0FB700CFE5D3 /* Sounds in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
