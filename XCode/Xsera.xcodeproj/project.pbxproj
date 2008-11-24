@@ -539,7 +539,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "touch ~/git/xsera/Resources/*\n";
+			shellScript = "touch ~/git/xsera/Resources/*";
 		};
 /* End PBXShellScriptBuildPhase section */
 
