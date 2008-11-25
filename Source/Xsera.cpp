@@ -77,6 +77,8 @@ const char* MapKey ( SDLKey k )
 
 void DispatchEvent ( const SDL_Event& evt )
 {
+	if (!ActiveMode())
+		return;
 	switch (evt.type)
 	{
 		case SDL_KEYDOWN:
@@ -94,6 +96,7 @@ void DispatchEvent ( const SDL_Event& evt )
 void RunLoop ()
 {
 	UpdateModeManager();
+	assert(ActiveMode());
 	ActiveMode()->InvokeSubroutine("render");
 	//Graphics::DrawText("FooText", "CrystalClear", vec2(0.0f, 0.0f), 100.0f, colour(1.0f, 1.0f, 1.0f, 1.0f), 0.0f);
 	ActiveMode()->InvokeSubroutine("update");
