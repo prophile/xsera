@@ -35,6 +35,10 @@ function PhysicsObject:set_rotational_drag ( rotational_drag )
     self._rotational_drag = rotational_drag
 end
 
+function PhysicsObject:speed ()
+    return math.sqrt(self._velocity.x*self._velocity.x + self._velocity.y*self._velocity.y)
+end
+
 function PhysicsObject:drag ()
     return self._drag
 end

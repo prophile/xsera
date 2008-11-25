@@ -60,6 +60,9 @@ function update ()
         thrust = -100000.0
     end
     
+    if thrust < 0 and ship:speed() < 2 then
+        thrust = 0
+    end
     local angle = ship:angle()
     local force = { x = thrust * math.cos(angle), y = thrust * math.sin(angle) }
     
