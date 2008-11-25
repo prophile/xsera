@@ -10,6 +10,9 @@
 -- Implement planets.
 -- Use other Heavy Cruisers (possibly built on planets) to destroy Carrier, using attack command.
 
+import('Physics')
+local playeruno = PhysicsObject()
+
 spriteSheetX = 2
 spriteSheetY = 3
 screenSizeX = { min = 0, max = 100 } -- temporary values, unused right now
@@ -30,48 +33,26 @@ ship = { x = 0, y = 0 }
 function render ()
     graphics.begin_frame()
 	
-	velocity.real.x = velocity.increment.x + velocity.real.x
-	velocity.real.y = velocity.increment.y + velocity.real.y
-	
-	ship.x = ship.x + velocity.real.x
-	ship.y = ship.y + velocity.real.y
-	
-	velocity.increment.current = 0
-	
-	if velocity.real.speed > velocity.max then
-		velocity.real.speed = velocity.max
-	end
-	
 	graphics.set_camera(ship.x - (camera.width / 2.0), ship.y - (camera.height / 2.0), ship.x + (camera.width / 2.0), ship.y + (camera.width / 2.0))
     graphics.draw_sprite("Gaitori/Carrier", carrierLocation[1], carrierLocation[2], carrierSize[1], carrierSize[2], carrierRotation)
     graphics.draw_sprite("Ishiman/HeavyCruiser", ship.x, ship.y, hCruiserSize[1], hCruiserSize[2], hCruiserRotation)
 	
-    graphics.draw_image("Panels/SideLeft", -(camera.width / 2) + 68 + ship.x, -(camera.height / 2) + 501 + ship.y, 129, 1000)
+    graphics.draw_image("Panels/SideLeft", -432 + ship.x, 1 + ship.y, 129, 1000)
     graphics.draw_image("Panels/SideRight", 484 + ship.x, 1 + ship.y, 27, 1000)
     graphics.end_frame()
 end
 
 function key ( k )
 	if k == "w" then
-		velocity.increment.x = math.cos(hCruiserRotation) * velocity.increase
-		velocity.increment.y = math.sin(hCruiserRotation) * velocity.increase
+		
 	elseif k == "s" then
-		velocity.real.rot = math.atan2(velocity.real.y, velocity.real.x)
-		velocity.increment.x = math.cos(velocity.real.rot) * velocity.decrease
-		velocity.increment.y = math.sin(velocity.real.rot) * velocity.decrease
-		if math.abs(velocity.increment.x) > math.abs(velocity.real.x) then
-			velocity.real.x = 0
-			velocity.increment.x = 0
-		end
-		if math.abs(velocity.increment.y) > math.abs(velocity.real.y) then
-			velocity.increment.y = -(velocity.real.y)
-		end
+		
 	elseif k == "a" then
-		hCruiserRotation = (hCruiserRotation + .2) % (2 * math.pi)
+		hCruiserRotation = hCruiserRotation + 0.5
+		player:update(velocity.real.speed, 0, hCruiserRotation)
 	elseif k == "d" then
-		hCruiserRotation = (hCruiserRotation - .2) % (2 * math.pi)
-	elseif k == "q" then
-		hCruiserRotation = math.pi / 2
+		hCruiserRotation = hCruiserRotation - 0.5
+		player:update(velocity.real.speed, 0, hCruiserRotation)
 	elseif k == "e" then
 		sound.play("ShotC")
 	end

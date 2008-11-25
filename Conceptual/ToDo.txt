@@ -4,7 +4,8 @@ Xsera immediate TODO list:
 * Add security to the Net subsystem
 * Define the format of the XML configuration files
 * Add support for reading zip files in the resource manager
-* Assemble short technical demo
+* Find replacement sounds and integrate [assigned: Adam]
+* Assemble short technical demo [assigned: Adam]
 * Finish the OpenAL audio engine [assigned: Alastair]
 * Tag release 0.0.1 once done [assigned: Alastair]
 
