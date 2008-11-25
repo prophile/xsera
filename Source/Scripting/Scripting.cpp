@@ -88,13 +88,12 @@ void LuaScript::InvokeSubroutine ( const std::string& name )
     }
 }
 
-void LuaScript::InvokeSubroutine ( const std::string& name, char p )
+void LuaScript::InvokeSubroutine ( const std::string& name, const char* p )
 {
 	lua_getglobal(L, name.c_str());
     if (!lua_isnoneornil(L, -1))
     {
-		char kb[2] = { p, 0 };
-		lua_pushstring(L, kb);
+		lua_pushstring(L, p);
         int rc = lua_pcall(L, 1, 0, 0);
         if (rc > 0)
         {

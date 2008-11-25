@@ -10,7 +10,7 @@
 -- Implement planets.
 -- Use other Heavy Cruisers (possibly built on planets) to destroy Carrier, using attack command.
 
--- import('Physics')
+import('Physics')
 -- import('Bullet4Demo')
 
 ships = {}
@@ -22,35 +22,60 @@ carrierSize[1], carrierSize[2] = graphics.sprite_dimensions("Gaitori/Carrier")
 hCruiserRotation = 0
 hCruiserSize = {}
 hCruiserSize[1], hCruiserSize[2] = graphics.sprite_dimensions("Ishiman/HeavyCruiser")
-velocity = { increment = { x = 0, y = 0 }, real = { speed = 0, x = 0, y = 0, rot = 0 }, increase = 0.1, decrease = -0.2, max = 5 }
-ship = { x = 0, y = 0, shift = { x = 0, y = 0, a = { x = 0, y = 0 }, b = { x = 0, y = 0 }, c = { x = 0, y = 0 } } }
-twothirdspi = 2 / 3 * math.pi
+--velocity = { increment = { x = 0, y = 0 }, real = { speed = 0, x = 0, y = 0, rot = 0 }, increase = 0.1, decrease = -0.2, max = 5 }
+ship = PhysicsObject(1000.0) -- a one thousand tonne ship
+twothirdspi = 2.0 / 3.0 * math.pi
 drawshot = false
 shotrot = 0
 shotfired = 0
 shot = { x = 0, y = 0, move = 0 }
 
+keysDown = { accelerate = false, reverse = false, left = false, right = false }
+
+lastTime = 0.0
+
+function init ()
+    lastTime = mode_manager.time()
+    ship:set_top_speed(400.0)
+    ship:set_top_angular_velocity(math.pi * 2 * 100)
+    ship:set_rotational_drag(0.5)
+    ship:set_drag(0.5)
+end
+
+function update ()
+    local newTime = mode_manager.time()
+    local dt = newTime - lastTime
+    lastTime = newTime
+    
+    local angularVelocity = 0.0
+    if keysDown.left then
+        angularVelocity = 4.0
+    elseif keysDown.right then
+        angularVelocity = -4.0
+    end
+    local thrust = 0.0
+    if keysDown.accelerate then
+        thrust = 1000000.0
+    elseif keysDown.reverse then
+        thrust = -100000.0
+    end
+    
+    local angle = ship:angle()
+    local force = { x = thrust * math.cos(angle), y = thrust * math.sin(angle) }
+    
+    ship:set_angular_velocity(angularVelocity)
+    ship:update(dt, force, 0.0)
+end
+
 function render ()
     graphics.begin_frame()
 	
-	velocity.real.x = velocity.increment.x + velocity.real.x
-	velocity.real.y = velocity.increment.y + velocity.real.y
-	
-	ship.x = ship.x + velocity.real.x
-	ship.y = ship.y + velocity.real.y
-	
-	velocity.increment.x = 0
-	velocity.increment.y = 0
-	
-	if velocity.real.speed > velocity.max then
-		velocity.real.speed = velocity.max
-	end
-	
-	graphics.set_camera(ship.x - (camera.width / 2.0), ship.y - (camera.height / 2.0), ship.x + (camera.width / 2.0), ship.y + (camera.width / 2.0))
+	local shipLocation = ship:location()
+	graphics.set_camera(shipLocation.x - (camera.width / 2.0), shipLocation.y - (camera.height / 2.0), shipLocation.x + (camera.width / 2.0), shipLocation.y + (camera.width / 2.0))
     graphics.draw_sprite("Gaitori/Carrier", carrierLocation[1], carrierLocation[2], carrierSize[1], carrierSize[2], carrierRotation)
-    graphics.draw_sprite("Ishiman/HeavyCruiser", ship.x, ship.y, hCruiserSize[1], hCruiserSize[2], hCruiserRotation)
+    graphics.draw_sprite("Ishiman/HeavyCruiser", shipLocation.x, shipLocation.y, hCruiserSize[1], hCruiserSize[2], ship:angle())
 	
-	ship.shift.x = ship.x + math.cos(hCruiserRotation) * 100
+	--[[ship.shift.x = ship.x + math.cos(hCruiserRotation) * 100
 	ship.shift.y = ship.y + math.sin(hCruiserRotation) * 100
 	ship.shift.a.x = ship.x + math.cos(hCruiserRotation) * 100 + math.cos(hCruiserRotation) * 6
 	ship.shift.a.y = ship.y + math.sin(hCruiserRotation) * 100 + math.sin(hCruiserRotation) * 6 
@@ -85,8 +110,11 @@ function render ()
 	graphics.draw_line(ship.shift.a.x, ship.shift.a.y, ship.shift.b.x, ship.shift.b.y, 2)
 	graphics.draw_line(ship.shift.b.x, ship.shift.b.y, ship.shift.c.x, ship.shift.c.y, 2)
 	graphics.draw_line(ship.shift.c.x, ship.shift.c.y, ship.shift.a.x, ship.shift.a.y, 2)
-    graphics.draw_image("Panels/SideLeft", -435 + ship.x, 3 + ship.y, 129, 1000)
-    graphics.draw_image("Panels/SideRight", 487 + ship.x, 2 + ship.y, 27, 1000)
+	--]]
+	-- this is hacky code, it should have a call to graphics.set_camera here
+	graphics.set_camera(0, 0, 640, 480)
+    graphics.draw_image("Panels/SideLeft", 31, 240, 69.29, 480)
+    graphics.draw_image("Panels/SideRight", 634, 240, 12.69, 480)
     graphics.end_frame()
 end
 
@@ -133,30 +161,27 @@ function moving_bullet()
 	graphics.draw_sprite("Weapons/WhiteYellowMissile", bullet.x, bullet.y, bullet.size.x, bullet.size.y, bullet.theta)
 end
 
-
+function keyup ( k )
+    if k == "w" then
+        keysDown.accelerate = false
+    elseif k == "s" then
+        keysDown.reverse = false
+    elseif k == "a" then
+        keysDown.left = false
+    elseif k == "d" then
+        keysDown.right = false
+    end
+end
 
 function key ( k )
 	if k == "w" then
-		velocity.increment.x = math.cos(hCruiserRotation) * velocity.increase
-		velocity.increment.y = math.sin(hCruiserRotation) * velocity.increase
+		keysDown.accelerate = true
 	elseif k == "s" then
-		velocity.real.rot = math.atan2(velocity.real.y, velocity.real.x)
-		velocity.increment.x = math.cos(velocity.real.rot) * velocity.decrease
-		velocity.increment.y = math.sin(velocity.real.rot) * velocity.decrease
-		if math.abs(velocity.increment.x) > math.abs(velocity.real.x) then
-			velocity.real.x = 0
-			velocity.increment.x = 0
-		end
-		if (math.abs(velocity.increment.y)) > (math.abs(velocity.real.y)) then
-			velocity.real.y = 0
-			velocity.increment.y = 0
-		end
+		keysDown.reverse = true
 	elseif k == "a" then
-		hCruiserRotation = (hCruiserRotation + .2) % (2 * math.pi)
+		keysDown.left = true
 	elseif k == "d" then
-		hCruiserRotation = (hCruiserRotation - .2) % (2 * math.pi)
-	elseif k == "q" then
-		hCruiserRotation = math.pi / 2
+		keysDown.right = true
 	elseif k == "z" then
 		firebullet = true
 	elseif k == "x" then
