@@ -11,7 +11,7 @@
 -- Use other Heavy Cruisers (possibly built on planets) to destroy Carrier, using attack command.
 
 -- import('Physics')
-import('Bullet4Demo')
+-- import('Bullet4Demo')
 
 ships = {}
 camera = { width = 1000, height = 1000 }
@@ -45,8 +45,13 @@ function render ()
     graphics.draw_sprite("Gaitori/Carrier", carrierLocation[1], carrierLocation[2], carrierSize[1], carrierSize[2], carrierRotation)
     graphics.draw_sprite("Ishiman/HeavyCruiser", ship.x, ship.y, hCruiserSize[1], hCruiserSize[2], hCruiserRotation)
 	
-    graphics.draw_image("Panels/SideLeft", -432 + ship.x, 1 + ship.y, 129, 1000)
-    graphics.draw_image("Panels/SideRight", 484 + ship.x, 1 + ship.y, 27, 1000)
+	graphics.set_camera(ship.x - (camera.width / 2.0), ship.y - (camera.height / 2.0), ship.x + (camera.width / 2.0), ship.y + (camera.width / 2.0), hCruiserRotation * 180 / math.pi)
+	graphics.draw_line(ship.x + 112, ship.y, ship.x + 94, ship.y - (6 * math.sqrt(3)), 2)
+	graphics.draw_line(ship.x + 94, ship.y - (6 * math.sqrt(3)), ship.x + 94, ship.y + (6 * math.sqrt(3)), 2)
+	graphics.draw_line(ship.x + 94, ship.y + (6 * math.sqrt(3)), ship.x + 112, ship.y, 2)
+	graphics.set_camera(ship.x - (camera.width / 2.0), ship.y - (camera.height / 2.0), ship.x + (camera.width / 2.0), ship.y + (camera.width / 2.0))	
+    graphics.draw_image("Panels/SideLeft", -435 + ship.x, 3 + ship.y, 129, 1000)
+    graphics.draw_image("Panels/SideRight", 487 + ship.x, 2 + ship.y, 27, 1000)
     graphics.end_frame()
 end
 
