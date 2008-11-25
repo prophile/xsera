@@ -94,6 +94,18 @@ function key ( k )
 		hCruiserRotation = math.pi / 2
 	elseif k == "z" then
 		fire_bullet (ship.x, ship.y, hCruiserRotation)
+	elseif k == "x" then
+		sound.play("Warp1")
+	elseif k == "c" then
+		sound.play("Warp2")
+	elseif k == "v" then
+		sound.play("Warp3")
+	elseif k == "b" then
+		sound.play("Warp4")
+	elseif k == "n" then
+		sound.play("WarpIn")
+	elseif k == "m" then
+		sound.play("WarpOut")
 	elseif k == " " then
 		sound.play("ShotC")
 		-- graphics.draw_line(ship.x + 50, ship.y + 50, ship.x + 100, ship.y + 100, 20)
