@@ -6,6 +6,9 @@
 #include <map>
 #include "Starfield.h"
 
+#define DEG2RAD(x) ((x / 180.0f) * M_PI)
+#define RAD2DEG(x) ((x / M_PI) * 180.0f)
+
 const static float circlePoints[] = {
    0.000, 1.000,
    0.098, 0.995,
@@ -201,7 +204,7 @@ void DrawSprite ( const std::string& sheetname, int sheet_x, int sheet_y, vec2 l
 	}
 	else
 	{
-		glRotatef(rotation, 0.0f, 0.0f, 1.0f);
+		glRotatef(RAD2DEG(rotation), 0.0f, 0.0f, 1.0f);
 		sheet->Draw(sheet_x, sheet_y, size);
 	}
 	glPopMatrix();
@@ -215,7 +218,7 @@ void DrawText ( const std::string& text, const std::string& font, vec2 location,
 	GLuint texID = TextRenderer::TextObject(font, text);
 	glPushMatrix();
 	glTranslatef(location.X(), location.Y(), 0.0f);
-	glRotatef(rotation, 0.0f, 0.0f, 1.0f);
+	glRotatef(RAD2DEG(rotation), 0.0f, 0.0f, 1.0f);
 	glBindTexture(GL_TEXTURE_RECTANGLE_ARB, texID);
 	vec2 dims = TextRenderer::TextDimensions(font, text);
 	vec2 halfSize = (dims * (height / dims.Y())) * 0.5f;
@@ -269,6 +272,7 @@ void DrawStarfield ( float depth )
 		sfld = new Starfield;
 	}
 	EnableTexturing();
+	ClearColour();
 	sfld->Draw(depth, vec2(0.0f, 0.0f));
 }
 
@@ -278,7 +282,7 @@ void SetCamera ( vec2 corner1, vec2 corner2, float rotation )
 	glLoadIdentity();
 	glOrtho(corner1.X(), corner2.X(), corner1.Y(), corner2.Y(), 0.0, 1.0);
 	if (fabs(rotation) > 0.00004f)
-		glRotatef(rotation, 0.0f, 0.0f, 1.0f);
+		glRotatef(RAD2DEG(rotation), 0.0f, 0.0f, 1.0f);
 	glMatrixMode(GL_MODELVIEW);
 }
 
