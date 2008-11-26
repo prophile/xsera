@@ -19,12 +19,15 @@ carrierLocation = { 100, 50 }
 carrierRotation = 0
 carrierSize = {}
 carrierSize[1], carrierSize[2] = graphics.sprite_dimensions("Gaitori/Carrier")
+carrierHealth = 10
+carrierExploded = false
 hCruiserRotation = 0
 hCruiserSize = {}
 hCruiserSize[1], hCruiserSize[2] = graphics.sprite_dimensions("Ishiman/HeavyCruiser")
 --velocity = { increment = { x = 0, y = 0 }, real = { speed = 0, x = 0, y = 0, rot = 0 }, increase = 0.1, decrease = -0.2, max = 5 }
 ship = PhysicsObject(1000.0) -- a one thousand tonne ship
 twothirdspi = 2.0 / 3.0 * math.pi
+fivesqrt3 = (5 * math.sqrt(3))
 drawshot = false
 shotrot = 0
 shotfired = 0
@@ -95,10 +98,37 @@ end
 function render ()
     graphics.begin_frame()
 	
+--	heavy_cruiser_rotation = ship:angle()
 	local shipLocation = ship:location()
 	graphics.set_camera(shipLocation.x - (camera.width / 2.0), shipLocation.y - (camera.height / 2.0), shipLocation.x + (camera.width / 2.0), shipLocation.y + (camera.width / 2.0))
-    graphics.draw_sprite("Gaitori/Carrier", carrierLocation[1], carrierLocation[2], carrierSize[1], carrierSize[2], carrierRotation)
-    graphics.draw_sprite("Ishiman/HeavyCruiser", shipLocation.x, shipLocation.y, hCruiserSize[1], hCruiserSize[2], ship:angle())
+    if carrierHealth ~= 0 then
+		graphics.draw_sprite("Gaitori/Carrier", carrierLocation[1], carrierLocation[2], carrierSize[1], carrierSize[2], carrierRotation)
+    else
+		if carrierExploded == false then -- I need a wait() or timer or something to delay the flash of the explosion
+			sound.play("New/ExplosionCombo")
+			local explosion = {}
+			explosion[1], explosion[2] = graphics.sprite_dimensions("Explosions/BestExplosion")
+			graphics.draw_sprite("Explosions/BestExplosion", carrierLocation[1], carrierLocation[2], explosion[1], explosion[2], 0)
+			graphics.draw_sprite("Explosions/BestExplosion", carrierLocation[1], carrierLocation[2], explosion[1], explosion[2], 1 / 6 * math.pi)
+			graphics.draw_sprite("Explosions/BestExplosion", carrierLocation[1], carrierLocation[2], explosion[1], explosion[2], 1 / 3 * math.pi)
+			graphics.draw_sprite("Explosions/BestExplosion", carrierLocation[1], carrierLocation[2], explosion[1], explosion[2], 1 / 2 * math.pi)
+			graphics.draw_sprite("Explosions/BestExplosion", carrierLocation[1], carrierLocation[2], explosion[1], explosion[2], 2 / 3 * math.pi)
+			graphics.draw_sprite("Explosions/BestExplosion", carrierLocation[1], carrierLocation[2], explosion[1], explosion[2], 5 / 6 * math.pi)
+			graphics.draw_sprite("Explosions/BestExplosion", carrierLocation[1], carrierLocation[2], explosion[1], explosion[2], math.pi)
+			graphics.draw_sprite("Explosions/BestExplosion", carrierLocation[1], carrierLocation[2], explosion[1], explosion[2], 7 / 6 * math.pi)
+			graphics.draw_sprite("Explosions/BestExplosion", carrierLocation[1], carrierLocation[2], explosion[1], explosion[2], 4 / 3 * math.pi)
+			graphics.draw_sprite("Explosions/BestExplosion", carrierLocation[1], carrierLocation[2], explosion[1], explosion[2], 3 / 2 * math.pi)
+			graphics.draw_sprite("Explosions/BestExplosion", carrierLocation[1], carrierLocation[2], explosion[1], explosion[2], 5 / 3 * math.pi)
+			graphics.draw_sprite("Explosions/BestExplosion", carrierLocation[1], carrierLocation[2], explosion[1], explosion[2], 11 / 6 * math.pi)
+			carrierExploded = true
+		end
+	end
+	graphics.draw_sprite("Ishiman/HeavyCruiser", shipLocation.x, shipLocation.y, hCruiserSize[1], hCruiserSize[2], ship:angle())
+
+--	these three lines cause errors???
+--	graphics.draw_line(100 + fivesqrt3, 0, 100 - fivesqrt3, -10, 3, ship:angle())
+--	graphics.draw_line(100 - fivesqrt3, -10, 100 - fivesqrt3, 10, 3, ship:angle())
+--	graphics.draw_line(100 - fivesqrt3, 10, 100 + fivesqrt3, 0, 3, ship:angle())
 	
 	--[[ship.shift.x = ship.x + math.cos(hCruiserRotation) * 100
 	ship.shift.y = ship.y + math.sin(hCruiserRotation) * 100
@@ -225,5 +255,7 @@ function key ( k )
 		sound.play("ShotC")
 		-- graphics.draw_line(ship.x + 50, ship.y + 50, ship.x + 100, ship.y + 100, 20)
 		drawshot = true;
+	elseif k == "p" then
+		carrierHealth = 0
 	end
 end
