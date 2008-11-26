@@ -139,7 +139,8 @@ function render ()
 	ship.shift.c.x = ship.x + math.cos(hCruiserRotation) * 100 + math.cos(hCruiserRotation - twothirdspi) * 6
 	ship.shift.c.y = ship.y + math.sin(hCruiserRotation) * 100 + math.sin(hCruiserRotation - twothirdspi) * 6
 	if drawshot == true then
-		shotrot = hCruiserRotation
+		-- shotrot = hCruiserRotation
+		-- How do I get this equal to the ship's rotation??
 		shot.x = ship.x
 		shot.y = ship.y
 		shot.move = 19
@@ -167,10 +168,15 @@ function render ()
 	graphics.draw_line(ship.shift.c.x, ship.shift.c.y, ship.shift.a.x, ship.shift.a.y, 2)
 	--]]
 	-- this is hacky code, it should have a call to graphics.set_camera here
-	graphics.set_camera(0, 0, 640, 480)
-    graphics.draw_image("Panels/SideLeft", 31, 240, 69.29, 480)
-    graphics.draw_image("Panels/SideRight", 634, 240, 12.69, 480)
-    graphics.end_frame()
+	--[[graphics.set_camera(0, 0, 640, 480)
+	graphics.draw_image("Panels/SideLeft", 31, 240, 69.29, 480)
+	graphics.draw_image("Panels/SideRight", 634, 240, 12.69, 480)
+	--]]
+	-- why did you change the dimensions to 640x480? They were fine before
+    graphics.set_camera(-500, -500, 500, 500)
+	graphics.draw_image("Panels/SideLeft", -435, 0, 129, 1000)
+    graphics.draw_image("Panels/SideRight", 487, 0, 27, 1000)
+	graphics.end_frame()
 end
 
 
@@ -180,7 +186,7 @@ bullet.size.x, bullet.size.y = graphics.sprite_dimensions("Weapons/WhiteYellowMi
 firebullet = false
 bulletfired = false
 
-function fire_bullet( x, y, angle)
+function fire_bullet(x, y, angle)
 	if bullet.ammo > 0 then
 		bullet.x = x
 		bullet.y = y
@@ -253,8 +259,7 @@ function key ( k )
 		sound.play("WarpOut")
 	elseif k == " " then
 		sound.play("ShotC")
-		-- graphics.draw_line(ship.x + 50, ship.y + 50, ship.x + 100, ship.y + 100, 20)
-		drawshot = true;
+		-- drawshot = true;
 	elseif k == "p" then
 		carrierHealth = 0
 	end
