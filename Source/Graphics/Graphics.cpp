@@ -4,6 +4,7 @@
 #include "SpriteSheet.h"
 #include "TextRenderer.h"
 #include <map>
+#include "Starfield.h"
 
 const static float circlePoints[] = {
    0.000, 1.000,
@@ -257,6 +258,16 @@ void DrawParticles ( const vec2* locations, unsigned int count, colour col )
 	glVertexPointer ( 2, GL_FLOAT, 0, locations );
 	SetColour(col);
 	glDrawArrays ( GL_POINTS, 0, count );
+}
+
+static Starfield* sfld = NULL;
+
+void DrawStarfield ( float depth )
+{
+	if (!sfld)
+		sfld = new Starfield;
+	EnableTexturing();
+	sfld->Draw(depth, vec2(0.0f, 0.0f));
 }
 
 void SetCamera ( vec2 corner1, vec2 corner2, float rotation )

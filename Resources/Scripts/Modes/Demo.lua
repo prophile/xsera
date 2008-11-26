@@ -174,6 +174,7 @@ function render ()
 	--]]
 	-- why did you change the dimensions to 640x480? They were fine before
     graphics.set_camera(-500, -500, 500, 500)
+    graphics.draw_starfield()
 	graphics.draw_image("Panels/SideLeft", -435, 0, 129, 1000)
     graphics.draw_image("Panels/SideRight", 487, 0, 27, 1000)
 	graphics.end_frame()
