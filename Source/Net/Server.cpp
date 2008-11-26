@@ -114,7 +114,7 @@ Message* GetMessage ()
 				break;
 			case ENET_EVENT_TYPE_RECEIVE:
 				msg = MessageEncoding::Decode(event.packet);
-				msg->clientID = clientID;
+				msg == 0 ? : msg->clientID = clientID;
 				enet_packet_destroy(event.packet);
 				break;
 		}

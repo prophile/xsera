@@ -35,22 +35,29 @@ Message* Decode ( ENetPacket* packet )
 	const unsigned char* data = (const unsigned char*)packet->data;
 	uint16_t messageIDLength;
 	memcpy(&messageIDLength, data, 2);
-	messageIDLength = ntohs(messageIDLength);
-	char* messageID = (char*)alloca(messageIDLength + 1);
-	messageID[messageIDLength] = 0;
-	memcpy(messageID, data + 2, messageIDLength);
+	messageIDLength = ntohs(messageIDLength); //find supposed length of messageID
 	uint32_t messageLength;
-	memcpy(&messageLength, data + 2 + messageIDLength, 4);
+	memcpy(&messageLength, data + 2 + messageIDLength, 4); //find supposed length of message data
 	messageLength = ntohl(messageLength);
-	void* messageBuffer = NULL;
-	if (messageLength)
+	
+	if(messageIDLength + messageLength == packet->dataLength && messageIDLength < (packet->dataLength - 6)) //if its a valid message, interpret
 	{
-		messageBuffer = malloc(messageLength);
-		memcpy(messageBuffer, data + 2 + messageIDLength + 4, messageLength);
+		char* messageID = (char*)alloca(messageIDLength + 1);
+		messageID[messageIDLength] = 0;
+		memcpy(messageID, data + 2, messageIDLength);
+		
+		void* messageBuffer = NULL;
+		if (messageLength)
+		{
+			messageBuffer = malloc(messageLength);
+			memcpy(messageBuffer, data + 2 + messageIDLength + 4, messageLength);
+		}
+		Message* result = new Message(std::string(messageID, messageIDLength), messageBuffer, messageLength);
+		free(messageBuffer);
+		return result;
+	} else {//prevent segfault;
+		return 0;
 	}
-	Message* result = new Message(std::string(messageID, messageIDLength), messageBuffer, messageLength);
-	free(messageBuffer);
-	return result;
 }
 
 }
