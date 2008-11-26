@@ -15,3 +15,4 @@ Xsera immediate TODO list:
 * Convert CrystalClear.suit to a TTF [complete]
 * Implement the text renderer [complete]
 * Assemble the sprite configuration files and re-order the sprites [complete]
+* Add anti-segfault code to the message decoder [commplete for server - LANS]
