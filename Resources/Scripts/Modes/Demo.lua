@@ -39,7 +39,11 @@ function init ()
     ship:set_top_speed(400.0)
     ship:set_top_angular_velocity(math.pi * 2 * 100)
     ship:set_rotational_drag(0.5)
-    ship:set_drag(0.5)
+    ship:set_drag(0.0)
+end
+
+function hypot(x, y)
+    return math.sqrt(x*x + y*y)
 end
 
 function update ()
@@ -57,11 +61,32 @@ function update ()
     if keysDown.accelerate then
         thrust = 1000000.0
     elseif keysDown.reverse then
-        thrust = -100000.0
+        thrust = -1000.0
+    end
+    
+    local opposeMotionWithThrust = false
+    local shipSpeed = ship:speed()
+    
+    if thrust < 0.0 then
+        if shipSpeed < 10.0 then
+            -- short circuit and just deny thrusting
+            thrust = 0
+        else
+            print("BRAKE")
+            opposeMotionWithThrust = true
+        end
     end
     
     local angle = ship:angle()
-    local force = { x = thrust * math.cos(angle), y = thrust * math.sin(angle) }
+    local force = {}
+    if opposeMotionWithThrust then
+        local unitVector = ship:velocity()
+        unitVector.x = unitVector.x / shipSpeed
+        unitVector.y = unitVector.y / shipSpeed
+        force = { x = unitVector.x * thrust, y = unitVector.y * thrust }
+    else
+        force = { x = thrust * math.cos(angle), y = thrust * math.sin(angle) }
+    end
     
     ship:set_angular_velocity(angularVelocity)
     ship:update(dt, force, 0.0)
