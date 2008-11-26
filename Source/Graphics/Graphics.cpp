@@ -265,7 +265,9 @@ static Starfield* sfld = NULL;
 void DrawStarfield ( float depth )
 {
 	if (!sfld)
+	{
 		sfld = new Starfield;
+	}
 	EnableTexturing();
 	sfld->Draw(depth, vec2(0.0f, 0.0f));
 }

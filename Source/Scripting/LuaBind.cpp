@@ -527,6 +527,20 @@ int GFX_DrawSprite ( lua_State* L )
 	return 0;
 }
 
+int GFX_DrawStarfield ( lua_State* L )
+{
+	if (lua_gettop(L) > 0)
+	{
+		float depth = luaL_checknumber(L, 1);
+		Graphics::DrawStarfield(depth);
+	}
+	else
+	{
+		Graphics::DrawStarfield(0.0f);
+	}
+	return 0;
+}
+
 int GFX_DrawSpriteFromSheet ( lua_State* L )
 {
 	const char* spritesheet;
@@ -557,6 +571,7 @@ luaL_Reg registryGraphics[] =
 	"draw_line", GFX_DrawLine,
 	"draw_circle", GFX_DrawCircle,
 	"sprite_dimensions", GFX_SpriteDimensions,
+	"draw_starfield", GFX_DrawStarfield,
     NULL, NULL
 };
 
