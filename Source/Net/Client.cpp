@@ -13,8 +13,9 @@ ENetHost* clientHost = NULL;
 ENetPeer* clientPeer = NULL;
 
 const uint32_t CLIENT_BANDWIDTH_LIMIT = 1024 * 16; // 16 kB/s
-unsigned int badMessages[5]; // client equivalent of server badMessage
-unsigned int badMessageCount = 0; // client equivalent of badMessageCount
+static unsigned int badMessages[5]; // client equivalent of server badMessage
+static unsigned int badMessageCount = 0; // client equivalent of badMessageCount
+static int lm_time = 0;
 	
 void Connect ( const std::string& host, unsigned short port, const std::string& password )
 {
@@ -57,18 +58,18 @@ void SendMessage ( const Message& msg )
 
 void BadMessage()
 {
-		time = int(GameTime());
+		unsigned int currentTime = (unsigned int)GameTime();
 		
 		if(badMessageCount > 1) 
 		{
-			if( (time - badMessage[badMessageCount]) < 10 || badMessageCount >= 4 ) 
+			if( (currentTime - badMessages[badMessageCount]) < 10 || badMessageCount >= 4 ) 
 			{
                 // kick on 5th bad message or 2nd in 10 seconds
 				Disconnect();
 				return;
 			}
 			badMessageCount++;
-			badMessage[badMessageCount] = time;
+			badMessages[badMessageCount] = currentTime;
 		}
 }
 	
