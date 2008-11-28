@@ -92,6 +92,7 @@ function update ()
     end
     
     ship:set_angular_velocity(angularVelocity)
+	if dt <= 0 then print("WARNING: ∆t = 0!") end
     ship:update(dt, force, 0.0)
 end
 
@@ -101,6 +102,7 @@ function render ()
 --	heavy_cruiser_rotation = ship:angle()
 	local shipLocation = ship:location()
 	graphics.set_camera(shipLocation.x - (camera.width / 2.0), shipLocation.y - (camera.height / 2.0), shipLocation.x + (camera.width / 2.0), shipLocation.y + (camera.width / 2.0))
+	graphics.draw_starfield()
     if carrierHealth ~= 0 then
 		graphics.draw_sprite("Gaitori/Carrier", carrierLocation[1], carrierLocation[2], carrierSize[1], carrierSize[2], carrierRotation)
     else
@@ -174,7 +176,6 @@ function render ()
 	--]]
 	-- why did you change the dimensions to 640x480? They were fine before
     graphics.set_camera(-500, -500, 500, 500)
-    graphics.draw_starfield()
 	graphics.draw_image("Panels/SideLeft", -435, 0, 129, 1000)
     graphics.draw_image("Panels/SideRight", 487, 0, 27, 1000)
 	graphics.end_frame()

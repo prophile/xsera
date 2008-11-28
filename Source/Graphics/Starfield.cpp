@@ -44,11 +44,19 @@ void InitStars ()
 	}
 }
 
+static SDL_Surface* surfaceTexture = NULL;
+
 void CreateStarfieldTexture ()
 {
 	void* base = calloc(4, STARFIELD_WIDTH * STARFIELD_HEIGHT);
-	glTexImage2D(GL_TEXTURE_RECTANGLE_ARB, 0, GL_RGBA, STARFIELD_WIDTH, STARFIELD_WIDTH, 0, SDL_BYTEORDER == SDL_BIG_ENDIAN ? GL_RGBA : GL_ABGR_EXT, GL_UNSIGNED_BYTE, base);
-	free(base);
+	surfaceTexture = SDL_CreateRGBSurfaceFrom(base, STARFIELD_WIDTH, STARFIELD_HEIGHT, 24, STARFIELD_WIDTH * 3, 0xFF0000, 0x00FF00, 0x0000FF, 0);
+}
+
+void UploadStarfieldTexture ()
+{
+	glTexImage2D(GL_TEXTURE_RECTANGLE_ARB, 0, GL_RGB, STARFIELD_WIDTH, STARFIELD_HEIGHT, 0, SDL_BYTEORDER == SDL_BIG_ENDIAN ? GL_BGR : GL_RGB, GL_UNSIGNED_BYTE, surfaceTexture->pixels);
+	SDL_FreeSurface(surfaceTexture);
+	surfaceTexture = NULL;
 }
 
 void SpatterStars ( SDL_Surface* source, float freq );
@@ -96,8 +104,8 @@ void SpatterStars ( SDL_Surface* source, float freq )
 		dstRect.y = (y - h_border);
 		dstRect.w = w_border * 2;
 		dstRect.h = h_border * 2;
-		glTexSubImage2D(GL_TEXTURE_RECTANGLE_ARB, 0, x - w_border, y - w_border, source->w, source->h, SDL_BYTEORDER == SDL_BIG_ENDIAN ? GL_RGBA : GL_ABGR_EXT, GL_UNSIGNED_BYTE, source->pixels);
-		//SDL_BlitSurface(source, NULL, target, &dstRect);
+		//glTexSubImage2D(GL_TEXTURE_RECTANGLE_ARB, 0, x - w_border, y - w_border, source->w, source->h, SDL_BYTEORDER == SDL_BIG_ENDIAN ? GL_RGBA : GL_ABGR_EXT, GL_UNSIGNED_BYTE, source->pixels);
+		SDL_BlitSurface(source, NULL, surfaceTexture, &dstRect);
 		//printf("Blitted star of dimensions (%d, %d) at position (%d, %d)\n", source->w, source->h, x, y);
 	}
 }
@@ -113,6 +121,7 @@ Starfield::Starfield ()
 	InitStars();
 	CreateStarfieldTexture();
 	SpatterAllStars();
+	UploadStarfieldTexture();
 }
 
 Starfield::~Starfield ()
@@ -126,8 +135,16 @@ vec2 Starfield::Dimensions ( float depth )
 	return vec2(STARFIELD_WIDTH, STARFIELD_HEIGHT);
 }
 
-const static float starfieldTexCoords[] = { 0.0f, 0.0f, STARFIELD_WIDTH, 0.0f, STARFIELD_WIDTH, STARFIELD_HEIGHT, 0.0f, STARFIELD_HEIGHT };
-const static float starfieldVertices[] = { -STARFIELD_WIDTH, -STARFIELD_HEIGHT, STARFIELD_WIDTH, -STARFIELD_HEIGHT, STARFIELD_WIDTH, STARFIELD_HEIGHT, -STARFIELD_WIDTH, STARFIELD_HEIGHT };
+const static float starfieldTexCoords[] =
+	{ 0.0f, 0.0f,
+	  (float)STARFIELD_WIDTH, 0.0f,
+	  (float)STARFIELD_WIDTH, (float)STARFIELD_HEIGHT,
+	  0.0f, (float)STARFIELD_HEIGHT };
+const static float starfieldVertices[] =
+	{ -(float)STARFIELD_WIDTH * 3.0f, -(float)STARFIELD_HEIGHT * 3.0f,
+	   (float)STARFIELD_WIDTH * 3.0f, -(float)STARFIELD_HEIGHT * 3.0f,
+	   (float)STARFIELD_WIDTH * 3.0f, (float)STARFIELD_HEIGHT * 3.0f,
+	   -(float)STARFIELD_WIDTH * 3.0f, (float)STARFIELD_HEIGHT * 3.0f };
 
 void Starfield::Draw ( float depth, vec2 centre )
 {

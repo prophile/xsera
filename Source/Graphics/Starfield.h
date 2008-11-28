@@ -7,8 +7,8 @@
 namespace Graphics
 {
 
-const unsigned STARFIELD_WIDTH  = 128;
-const unsigned STARFIELD_HEIGHT = 128;
+const unsigned STARFIELD_WIDTH  = 512;
+const unsigned STARFIELD_HEIGHT = 512;
 
 class Starfield
 {
