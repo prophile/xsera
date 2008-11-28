@@ -18,8 +18,9 @@ static unsigned int nextClientID = 1;
 const uint32_t SERVER_BANDWIDTH_LIMIT = 1024 * 64; // 64 kB/s
 const int SERVER_MAX_CLIENTS = 8; // plucked this one out of my arse.
 
-unsigned int badMessage[SERVER_MAX_CLIENTS+1][6]; //[clientID][0] = number of bad packets, [clientID][n>1] = time bad packet was sent
-	
+unsigned int badMessage[SERVER_MAX_CLIENTS+1][5]; //[clientID][n] = time bad packet was sent
+unsigned int badMessageCount[SERVER_MAX_CLIENTS]; //number of bad packets sent
+
 void Startup ( unsigned short port, const std::string& password )
 {
 	if (serverHost)
@@ -99,16 +100,19 @@ bool IsConnected ( unsigned int clientID )
 void badClient(unsigned int clientID) //deal with a bad message
 	{
 		time = int(GameTime());
+		unsigned int* count;
+		count = &badMessageCount[clientID]; //no need to take up new memory, just a pointer for simplicity
 		
-		if(badMessage[clientID][0] > 1) {
-			if((time - badMessage[clientID][badMessage[0]]) < 10) { //kick on 2nd in 10 seconds
+		if(count > 1) 
+		{
+			if((time - badMessage[clientID][count]) < 10) { //kick on 2nd in 10 seconds
 				KillClient(clientID);
 				return;
-			} else {
-				badMessage[clientID][badMessage[clientID][0]+1] = time;
-				badMessage[clientID][0]++;
-			}
+			}		
+		}
 		
+		badMessageCount[clientID]++;
+		badMessage[clientID][count] = time;
 	}
 	
 Message* GetMessage ()
@@ -146,7 +150,7 @@ Message* GetMessage ()
 				msg = MessageEncoding::Decode(event.packet);
 
 				if(msg == 0) { //handle bad message
-					badMessage[clientID][0] >= 4 ? KillClient[clientID] : badClient(clientID); 
+					badMessageCount[clientID] >= 4 ? KillClient[clientID] : badClient(clientID); 
 				} else {
 					msg->clientID = clientID;
 				}
