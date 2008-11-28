@@ -100,19 +100,17 @@ bool IsConnected ( unsigned int clientID )
 void badClient(unsigned int clientID) //deal with a bad message
 	{
 		time = int(GameTime());
-		unsigned int* count;
-		count = &badMessageCount[clientID]; //no need to take up new memory, just a pointer for simplicity
 		
 		if(count > 1) 
 		{
-			if((time - badMessage[clientID][count]) < 10) { //kick on 2nd in 10 seconds
+			if((time - badMessage[clientID][badMessageCount[clientID]]) < 10) { //kick on 2nd in 10 seconds
 				KillClient(clientID);
 				return;
 			}		
 		}
 		
 		badMessageCount[clientID]++;
-		badMessage[clientID][count] = time;
+		badMessage[clientID][badMessageCount[clientID]] = time;
 	}
 	
 Message* GetMessage ()
