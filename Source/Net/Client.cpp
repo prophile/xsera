@@ -1,6 +1,7 @@
 #include <enet/enet.h>
 #include "Net.h"
 #include "MessageDecode.h"
+#include "Utilities/GameTime.h"
 
 namespace Net
 {
@@ -12,7 +13,8 @@ ENetHost* clientHost = NULL;
 ENetPeer* clientPeer = NULL;
 
 const uint32_t CLIENT_BANDWIDTH_LIMIT = 1024 * 16; // 16 kB/s
-
+unsigned int badMsgs[6]; //client equivalent of server badMessage
+	
 void Connect ( const std::string& host, unsigned short port, const std::string& password )
 {
 	if (clientHost)
@@ -52,6 +54,23 @@ void SendMessage ( const Message& msg )
 	enet_peer_send(clientPeer, 0, packet);
 }
 
+void badMsg()
+{
+		time = int(GameTime());
+		
+		if(badMessage[0] > 1) {
+			if((time - badMessage[badMessage[0]]) < 10 || badMessage[0] >= 4) { //kick on 5th bad message or 2nd in 10 seconds
+				Disconnect();
+				return;
+				
+			} else {
+				badMessage[badMessage[0]+1] = time;
+				badMessage[0]++;
+			}
+			
+		}
+}
+	
 Message* GetMessage ()
 {
 	ENetEvent event;
@@ -67,6 +86,7 @@ Message* GetMessage ()
 				break;
 			case ENET_EVENT_TYPE_RECEIVE:
 				result = MessageEncoding::Decode(event.packet);
+				result == 0 ? badMsg() : ; //handle a bad message
 				enet_packet_destroy(event.packet);
 				break;
 		}

@@ -52,7 +52,10 @@ Message* Decode ( ENetPacket* packet )
 			messageBuffer = malloc(messageLength);
 			memcpy(messageBuffer, data + 2 + messageIDLength + 4, messageLength);
 		}
-		Message* result = new Message(std::string(messageID, messageIDLength), messageBuffer, messageLength);
+		messageIDstring = std::string(messageID, messageIDLength);
+		
+		
+		Message* result = new Message(messageIDstring, messageBuffer, messageLength);
 		free(messageBuffer);
 		return result;
 	} else {//prevent segfault;

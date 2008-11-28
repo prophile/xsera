@@ -2,6 +2,7 @@
 #include <map>
 #include "Net.h"
 #include "MessageDecode.h"
+#include "Utilities/GameTime.h"
 
 namespace Net
 {
@@ -17,6 +18,8 @@ static unsigned int nextClientID = 1;
 const uint32_t SERVER_BANDWIDTH_LIMIT = 1024 * 64; // 64 kB/s
 const int SERVER_MAX_CLIENTS = 8; // plucked this one out of my arse.
 
+unsigned int badMessage[SERVER_MAX_CLIENTS+1][6]; //[clientID][0] = number of bad packets, [clientID][n>1] = time bad packet was sent
+	
 void Startup ( unsigned short port, const std::string& password )
 {
 	if (serverHost)
@@ -49,7 +52,7 @@ unsigned ClientCount ()
 	return clients.size();
 }
 
-void KillClient ( unsigned int clientID )
+void KillClient ( unsigned int clientID ) //this is the nice disconnect
 {
 	ClientMap::iterator iter = clients.find(clientID);
 	if (iter != clients.end())
@@ -57,7 +60,18 @@ void KillClient ( unsigned int clientID )
 		enet_peer_disconnect_later(iter->second, 0);
 		clients.erase(iter);
 	}
+	
 }
+
+void ChopClient (unsigned int clientID) //do not confuse with killClient, this is a harsh disconnect
+	{
+		ClientMap::iterator iter = clients.find(clientID);
+		if (iter != clients.end())
+		{
+			enet_peer_reset(iter->second); //disconnect now, regardless of what the client does
+			clients.erase(iter);
+		}
+	}
 
 void SendMessage ( unsigned int clientID, const Message& msg )
 {
@@ -82,6 +96,21 @@ bool IsConnected ( unsigned int clientID )
 	return clients.find(clientID) != clients.end();
 }
 
+void badClient(unsigned int clientID) //deal with a bad message
+	{
+		time = int(GameTime());
+		
+		if(badMessage[clientID][0] > 1) {
+			if((time - badMessage[clientID][badMessage[0]]) < 10) { //kick on 2nd in 10 seconds
+				KillClient(clientID);
+				return;
+			} else {
+				badMessage[clientID][badMessage[clientID][0]+1] = time;
+				badMessage[clientID][0]++;
+			}
+		
+	}
+	
 Message* GetMessage ()
 {
 	ENetEvent event;
@@ -103,6 +132,7 @@ Message* GetMessage ()
 				clientID = nextClientID++;
 				msg->clientID = clientID;
 				clients[clientID] = event.peer;
+				badMessage[clientID][0] = 0; //clear bad-message entry so it can be used
 				break;
 			case ENET_EVENT_TYPE_DISCONNECT:
 				{
@@ -114,7 +144,13 @@ Message* GetMessage ()
 				break;
 			case ENET_EVENT_TYPE_RECEIVE:
 				msg = MessageEncoding::Decode(event.packet);
-				msg == 0 ? : msg->clientID = clientID;
+
+				if(msg == 0) { //handle bad message
+					badMessage[clientID][0] >= 4 ? KillClient[clientID] : badClient(clientID); 
+				} else {
+					msg->clientID = clientID;
+				}
+				
 				enet_packet_destroy(event.packet);
 				break;
 		}
