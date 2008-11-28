@@ -13,8 +13,8 @@ ENetHost* clientHost = NULL;
 ENetPeer* clientPeer = NULL;
 
 const uint32_t CLIENT_BANDWIDTH_LIMIT = 1024 * 16; // 16 kB/s
-unsigned int badMsgs[5]; //client equivalent of server badMessage
-unsigned int badMsgCount = 0; //client equivalent of badMessageCount
+unsigned int badMessages[5]; // client equivalent of server badMessage
+unsigned int badMessageCount = 0; // client equivalent of badMessageCount
 	
 void Connect ( const std::string& host, unsigned short port, const std::string& password )
 {
@@ -55,20 +55,20 @@ void SendMessage ( const Message& msg )
 	enet_peer_send(clientPeer, 0, packet);
 }
 
-void badMsg()
+void BadMessage()
 {
 		time = int(GameTime());
 		
-		if(badMsgCount > 1) 
+		if(badMessageCount > 1) 
 		{
-			if( (time - badMsg[badMsgCount]) < 10 || badMessageCount >= 4 ) 
-			{ //kick on 5th bad message or 2nd in 10 seconds
+			if( (time - badMessage[badMessageCount]) < 10 || badMessageCount >= 4 ) 
+			{
+                // kick on 5th bad message or 2nd in 10 seconds
 				Disconnect();
 				return;
-				
 			}
-			badMsgCount++;
-			badMsg[badMsgCount] = time;
+			badMessageCount++;
+			badMessage[badMessageCount] = time;
 		}
 }
 	
@@ -87,7 +87,10 @@ Message* GetMessage ()
 				break;
 			case ENET_EVENT_TYPE_RECEIVE:
 				result = MessageEncoding::Decode(event.packet);
-				result == 0 ? badMsg() : ; //handle a bad message
+				if (result == NULL)
+				{
+				    BadMessage();
+				}
 				enet_packet_destroy(event.packet);
 				break;
 		}

@@ -58,8 +58,10 @@ Message* Decode ( ENetPacket* packet )
 		Message* result = new Message(messageIDstring, messageBuffer, messageLength);
 		free(messageBuffer);
 		return result;
-	} else {//prevent segfault;
-		return 0;
+	}
+	else
+	{
+		return NULL; // invalid format
 	}
 }
 

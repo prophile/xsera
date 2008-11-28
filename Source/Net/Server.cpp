@@ -97,21 +97,22 @@ bool IsConnected ( unsigned int clientID )
 	return clients.find(clientID) != clients.end();
 }
 
-void badClient(unsigned int clientID) //deal with a bad message
-	{
-		time = int(GameTime());
-		
-		if(count > 1) 
-		{
-			if((time - badMessage[clientID][badMessageCount[clientID]]) < 10) { //kick on 2nd in 10 seconds
-				KillClient(clientID);
-				return;
-			}		
-		}
-		
-		badMessageCount[clientID]++;
-		badMessage[clientID][badMessageCount[clientID]] = time;
-	}
+static void BadClient(unsigned int clientID) //deal with a bad message
+{
+    time = int(GameTime());
+    
+    if(count > 1) 
+    {
+        if((time - badMessage[clientID][badMessageCount[clientID]]) < 10)
+        { // kick on 2nd in 10 seconds
+            KillClient(clientID);
+            return;
+        }		
+    }
+    
+    badMessageCount[clientID]++;
+    badMessage[clientID][badMessageCount[clientID]] = time;
+}
 	
 Message* GetMessage ()
 {
@@ -147,9 +148,12 @@ Message* GetMessage ()
 			case ENET_EVENT_TYPE_RECEIVE:
 				msg = MessageEncoding::Decode(event.packet);
 
-				if(msg == 0) { //handle bad message
-					badMessageCount[clientID] >= 4 ? KillClient[clientID] : badClient(clientID); 
-				} else {
+				if(msg == NULL)
+				{ //handle bad message
+					badMessageCount[clientID] >= 4 ? KillClient[clientID] : BadClient(clientID); 
+				}
+				else 
+                {
 					msg->clientID = clientID;
 				}
 				
