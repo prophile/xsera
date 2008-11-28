@@ -1,0 +1,7 @@
+<?xml version="1.0" ?>
+<starfield>
+	<star frequency="0.6">DistantStar1</star>
+	<star frequency="0.65">DistantStar2</star>
+	<star frequency="0.0003">BlueStar</star>
+	<star frequency="0.001">Sun</star>
+</starfield>

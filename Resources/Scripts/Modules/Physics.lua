@@ -18,7 +18,7 @@ function PhysicsObject:apply_impulse ( impulse )
 	self._velocity.x = self._velocity.x + (impulse.x / self._mass)
 	self._velocity.y = self._velocity.y + (impluse.y / self._mass)
 	-- cap _velocity to _top_speed
-	local speed_squared = self._velocity.x*self._velocity.x + self._velocity.y*self._velocity.y
+	local speed_squared = math.abs(self._velocity.x*self._velocity.x + self._velocity.y*self._velocity.y)
 	local _top_speed_squared = self._top_speed * self._top_speed
 	if speed_squared > _top_speed_squared then
 		local speed = math.sqrt(speed_squared)
@@ -107,7 +107,7 @@ function PhysicsObject:update ( dt, force, torque )
 	self._velocity.x = self._velocity.x + (acceleration.x * dt)
 	self._velocity.y = self._velocity.y + (acceleration.y * dt)
 	-- cap _velocity to _top_speed
-	local speed_squared = self._velocity.x*self._velocity.x + self._velocity.y*self._velocity.y
+	local speed_squared = math.abs(self._velocity.x*self._velocity.x + self._velocity.y*self._velocity.y)
 	local _top_speed_squared = self._top_speed * self._top_speed
 	if speed_squared > _top_speed_squared then
 		local speed = math.sqrt(speed_squared)

@@ -18,6 +18,7 @@ void DrawText ( const std::string& text, const std::string& font, vec2 location,
 void DrawLine ( vec2 coordinate1, vec2 coordinate2, float width, colour col );
 void DrawCircle ( vec2 centre, float radius, float width, colour col );
 void DrawParticles ( const vec2* locations, unsigned int count, colour col );
+void DrawStarfield ( float depth );
 
 void SetCamera ( vec2 corner1, vec2 corner2, float rotation );
 

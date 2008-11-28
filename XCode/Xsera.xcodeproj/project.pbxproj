@@ -11,6 +11,8 @@
 		490CDB280ECCE572004B7D04 /* Music in Resources */ = {isa = PBXBuildFile; fileRef = 490CDB270ECCE572004B7D04 /* Music */; };
 		490CDB540ECCE757004B7D04 /* SpriteSheet.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 490CDB520ECCE757004B7D04 /* SpriteSheet.cpp */; };
 		4930D74F0ECE22990053CC8B /* Images in Resources */ = {isa = PBXBuildFile; fileRef = 4930D74A0ECE22990053CC8B /* Images */; };
+		49554A130EDDB572009CA121 /* Starfield.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 49554A110EDDB572009CA121 /* Starfield.cpp */; };
+		49554A330EDDBD1F009CA121 /* Stars in Resources */ = {isa = PBXBuildFile; fileRef = 49554A300EDDBD1F009CA121 /* Stars */; };
 		49597A130ED4D47C00173D17 /* Config in Resources */ = {isa = PBXBuildFile; fileRef = 49597A0B0ED4D47C00173D17 /* Config */; };
 		49597A750ED4D92E00173D17 /* Client.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 49597A730ED4D92E00173D17 /* Client.cpp */; };
 		49597A760ED4D92E00173D17 /* Server.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 49597A740ED4D92E00173D17 /* Server.cpp */; };
@@ -105,6 +107,9 @@
 		490CDB520ECCE757004B7D04 /* SpriteSheet.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SpriteSheet.cpp; sourceTree = "<group>"; };
 		490CDB530ECCE757004B7D04 /* SpriteSheet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpriteSheet.h; sourceTree = "<group>"; };
 		4930D74A0ECE22990053CC8B /* Images */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Images; path = ../Resources/Images; sourceTree = SOURCE_ROOT; };
+		49554A110EDDB572009CA121 /* Starfield.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Starfield.cpp; sourceTree = "<group>"; };
+		49554A120EDDB572009CA121 /* Starfield.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Starfield.h; sourceTree = "<group>"; };
+		49554A300EDDBD1F009CA121 /* Stars */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Stars; path = ../Resources/Stars; sourceTree = SOURCE_ROOT; };
 		49597A0B0ED4D47C00173D17 /* Config */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Config; path = ../Resources/Config; sourceTree = SOURCE_ROOT; };
 		49597A730ED4D92E00173D17 /* Client.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Client.cpp; sourceTree = "<group>"; };
 		49597A740ED4D92E00173D17 /* Server.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Server.cpp; sourceTree = "<group>"; };
@@ -328,6 +333,7 @@
 		496923E20EBE4C3500930DDD /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				49554A300EDDBD1F009CA121 /* Stars */,
 				7A8C711F0EDB0FB700CFE5D3 /* Sounds */,
 				49A315500ED6BDD90054BB8B /* Fonts */,
 				49D543B80ED5E222002FC38E /* Sprites */,
@@ -374,6 +380,8 @@
 		496923F70EBE4CD500930DDD /* Graphics */ = {
 			isa = PBXGroup;
 			children = (
+				49554A110EDDB572009CA121 /* Starfield.cpp */,
+				49554A120EDDB572009CA121 /* Starfield.h */,
 				49A315460ED6B5AD0054BB8B /* TextRenderer.cpp */,
 				49A315470ED6B5AD0054BB8B /* TextRenderer.h */,
 				490CDB520ECCE757004B7D04 /* SpriteSheet.cpp */,
@@ -525,6 +533,7 @@
 				49D543CB0ED5E222002FC38E /* Sprites in Resources */,
 				49A315530ED6BDD90054BB8B /* Fonts in Resources */,
 				7A8C71560EDB0FB700CFE5D3 /* Sounds in Resources */,
+				49554A330EDDBD1F009CA121 /* Stars in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -592,6 +601,7 @@
 				49D544220ED5E854002FC38E /* TestHarness.cpp in Sources */,
 				49A315480ED6B5AD0054BB8B /* TextRenderer.cpp in Sources */,
 				49A79EDF0ED7848F00517488 /* XarFile.cpp in Sources */,
+				49554A130EDDB572009CA121 /* Starfield.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
