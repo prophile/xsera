@@ -129,7 +129,6 @@ vec2 Starfield::Dimensions ( float depth )
 const static float starfieldTexCoords[] = { 0.0f, 0.0f, STARFIELD_WIDTH, 0.0f, STARFIELD_WIDTH, STARFIELD_HEIGHT, 0.0f, STARFIELD_HEIGHT };
 const static float starfieldVertices[] = { -STARFIELD_WIDTH, -STARFIELD_HEIGHT, STARFIELD_WIDTH, -STARFIELD_HEIGHT, STARFIELD_WIDTH, STARFIELD_HEIGHT, -STARFIELD_WIDTH, STARFIELD_HEIGHT };
 
-
 void Starfield::Draw ( float depth, vec2 centre )
 {
 	(void)depth;
@@ -137,8 +136,8 @@ void Starfield::Draw ( float depth, vec2 centre )
 	glTranslatef(centre.X(), centre.Y(), 0.0f);
 	glBindTexture(GL_TEXTURE_RECTANGLE_ARB, texID);
 	
-	glVertexPointer ( 2, GL_FLOAT, 0, starfieldVertices );
-	glTexCoordPointer ( 2, GL_FLOAT, 0, starfieldTexCoords );
+	glVertexPointer(2, GL_FLOAT, 0, starfieldVertices);
+	glTexCoordPointer(2, GL_FLOAT, 0, starfieldTexCoords);
 	glDrawArrays(GL_QUADS, 0, 4);
 	
 	glPopMatrix();
