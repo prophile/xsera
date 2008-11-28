@@ -99,11 +99,11 @@ bool IsConnected ( unsigned int clientID )
 
 static void BadClient(unsigned int clientID) //deal with a bad message
 {
-    time = int(GameTime());
+	unsigned int currentTime = (unsigned int)GameTime();
     
-    if(count > 1) 
+    if(badMessageCount[clientID] > 1) 
     {
-        if((time - badMessage[clientID][badMessageCount[clientID]]) < 10)
+        if((currentTime - badMessage[clientID][badMessageCount[clientID]]) < 10)
         { // kick on 2nd in 10 seconds
             KillClient(clientID);
             return;
@@ -111,7 +111,7 @@ static void BadClient(unsigned int clientID) //deal with a bad message
     }
     
     badMessageCount[clientID]++;
-    badMessage[clientID][badMessageCount[clientID]] = time;
+    badMessage[clientID][badMessageCount[clientID]] = currentTime;
 }
 	
 Message* GetMessage ()
@@ -149,8 +149,15 @@ Message* GetMessage ()
 				msg = MessageEncoding::Decode(event.packet);
 
 				if(msg == NULL)
-				{ //handle bad message
-					badMessageCount[clientID] >= 4 ? KillClient[clientID] : BadClient(clientID); 
+				{
+					if (badMessageCount[clientID] >= 4)
+					{
+						KillClient(clientID);
+					}
+					else
+					{
+						BadClient(clientID);
+					}
 				}
 				else 
                 {
