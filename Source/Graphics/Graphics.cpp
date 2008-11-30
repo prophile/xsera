@@ -333,6 +333,23 @@ void DrawStarfield ( float depth )
 	sfld->Draw(depth, vec2(0.0f, 0.0f));
 }
 
+static vec2 cameraCorner1;
+static vec2 cameraCorner2;
+static float cameraRotation;
+
+bool IsCulled ( vec2 location, float radius )
+{
+	if ((location.X() + radius) < cameraCorner1.X())
+		return true;
+	if ((location.X() - radius) > cameraCorner2.X())
+		return true;
+	if ((location.Y() + radius) < cameraCorner1.Y())
+		return true;
+	if ((location.Y() - radius) > cameraCorner2.Y())
+		return true;
+	return false;
+}
+
 void SetCamera ( vec2 corner1, vec2 corner2, float rotation )
 {
 	glMatrixMode(GL_PROJECTION);
@@ -341,6 +358,8 @@ void SetCamera ( vec2 corner1, vec2 corner2, float rotation )
 	if (fabs(rotation) > 0.00004f)
 		glRotatef(RAD2DEG(rotation), 0.0f, 0.0f, 1.0f);
 	glMatrixMode(GL_MODELVIEW);
+	cameraCorner1 = corner1;
+	cameraCorner2 = corner2;
 }
 
 void BeginFrame ()

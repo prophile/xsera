@@ -135,7 +135,7 @@ vec2 Starfield::Dimensions ( float depth )
 	return vec2(STARFIELD_WIDTH, STARFIELD_HEIGHT);
 }
 
-const static float starfieldScale = 1.6f;
+const static float starfieldScale = 1.3f;
 const static float starfieldTexCoords[] =
 	{ 0.0f, 0.0f,
 	  (float)STARFIELD_WIDTH, 0.0f,

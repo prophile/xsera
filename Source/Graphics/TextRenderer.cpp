@@ -18,7 +18,7 @@ uint32_t Hash ( const std::string& input )
 	size_t len = input.length();
 	for (size_t i = 0; i < len; i++)
 	{
-		a << 5;
+		a <<= 5;
 		b ^= data[i];
 		a ^= b;
 		base ^= a;

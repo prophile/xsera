@@ -541,6 +541,16 @@ int GFX_DrawStarfield ( lua_State* L )
 	return 0;
 }
 
+int GFX_IsCulled ( lua_State* L )
+{
+	float x = luaL_checknumber(L, 1);
+	float y = luaL_checknumber(L, 2);
+	float radius = luaL_optnumber(L, 3, 0.0);
+	bool isCulled = Graphics::IsCulled(vec2(x, y), radius);
+	lua_pushboolean(L, isCulled ? 1 : 0);
+	return 1;
+}
+
 int GFX_DrawSpriteFromSheet ( lua_State* L )
 {
 	const char* spritesheet;
@@ -572,6 +582,7 @@ luaL_Reg registryGraphics[] =
 	"draw_circle", GFX_DrawCircle,
 	"sprite_dimensions", GFX_SpriteDimensions,
 	"draw_starfield", GFX_DrawStarfield,
+	"is_culled", GFX_IsCulled,
     NULL, NULL
 };
 

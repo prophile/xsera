@@ -20,6 +20,7 @@ void DrawCircle ( vec2 centre, float radius, float width, colour col );
 void DrawParticles ( const vec2* locations, unsigned int count, colour col );
 void DrawStarfield ( float depth );
 
+bool IsCulled ( vec2 location, float radius );
 void SetCamera ( vec2 corner1, vec2 corner2, float rotation );
 
 void BeginFrame ();
