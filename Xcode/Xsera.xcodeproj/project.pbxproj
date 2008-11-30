@@ -72,6 +72,7 @@
 		496924680EBE4D0600930DDD /* SDL_mixer.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 496924190EBE4CEA00930DDD /* SDL_mixer.framework */; };
 		496924690EBE4D0600930DDD /* SDL_ttf.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 4969241A0EBE4CEA00930DDD /* SDL_ttf.framework */; };
 		496924830EBE516100930DDD /* Xsera.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 496924820EBE516100930DDD /* Xsera.cpp */; };
+		4974F4BE0EE2E70800D56049 /* Compile.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4974F4BC0EE2E70800D56049 /* Compile.cpp */; };
 		49A0E6940ECC3887007F3458 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49A0E6930ECC3887007F3458 /* OpenGL.framework */; };
 		49A0E69B0ECC39FD007F3458 /* ResourceManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 49A0E69A0ECC39FD007F3458 /* ResourceManager.cpp */; };
 		49A315480ED6B5AD0054BB8B /* TextRenderer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 49A315460ED6B5AD0054BB8B /* TextRenderer.cpp */; };
@@ -209,6 +210,8 @@
 		496924200EBE4CEA00930DDD /* tinyxmlparser.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = tinyxmlparser.cpp; sourceTree = "<group>"; };
 		496924820EBE516100930DDD /* Xsera.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Xsera.cpp; sourceTree = "<group>"; };
 		496924850EBE516A00930DDD /* ModeManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModeManager.h; sourceTree = "<group>"; };
+		4974F4BC0EE2E70800D56049 /* Compile.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Compile.cpp; sourceTree = "<group>"; };
+		4974F4BD0EE2E70800D56049 /* Compile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Compile.h; sourceTree = "<group>"; };
 		49A0E6930ECC3887007F3458 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = /System/Library/Frameworks/OpenGL.framework; sourceTree = "<absolute>"; };
 		49A0E69A0ECC39FD007F3458 /* ResourceManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ResourceManager.cpp; sourceTree = "<group>"; };
 		49A315460ED6B5AD0054BB8B /* TextRenderer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TextRenderer.cpp; sourceTree = "<group>"; };
@@ -304,6 +307,8 @@
 		4960390B0ED09CD6003BA716 /* Scripting */ = {
 			isa = PBXGroup;
 			children = (
+				4974F4BC0EE2E70800D56049 /* Compile.cpp */,
+				4974F4BD0EE2E70800D56049 /* Compile.h */,
 				4960390C0ED09CD6003BA716 /* LuaBind.cpp */,
 				4960390D0ED09CD6003BA716 /* Scripting.cpp */,
 				4960390E0ED09CD6003BA716 /* Scripting.h */,
@@ -602,6 +607,7 @@
 				49A315480ED6B5AD0054BB8B /* TextRenderer.cpp in Sources */,
 				49A79EDF0ED7848F00517488 /* XarFile.cpp in Sources */,
 				49554A130EDDB572009CA121 /* Starfield.cpp in Sources */,
+				4974F4BE0EE2E70800D56049 /* Compile.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

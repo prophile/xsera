@@ -39,6 +39,7 @@ static void luaLoad ( lua_State* L, const std::string& path )
     if (rwops)
     {
         int rc = lua_load(L, luaReader, (void*)rwops, path.c_str());
+		SDL_RWclose(rwops);
 		if (rc != 0)
 		{
 			luaHandleError(L);

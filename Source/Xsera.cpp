@@ -5,6 +5,7 @@
 #include "Scripting/Scripting.h"
 #include "Modes/ModeManager.h"
 #include "Utilities/TestHarness.h"
+#include "Scripting/Compile.h"
 
 namespace XseraMain
 {
@@ -112,6 +113,8 @@ void Startup ()
 	Graphics::Init(960, 720, false); // 960x720 resolution, non-fullscreen
 	SDL_EnableUNICODE(1);
 	Sound::Init(48000, 24, 128); // init with 48 kHz sampling rate, 24-bit resolution, 128 channels
+	// compile class script
+	CompileScript("System/Class");
 	LuaScript bootScript ( "System/Boot" );
 	SwitchMode("MainMenu");
 }

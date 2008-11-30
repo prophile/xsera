@@ -12,6 +12,7 @@ void* ReadFull ( size_t* length, SDL_RWops* ops, int autoclose );
 
 bool FileExists ( const std::string& name );
 SDL_RWops* OpenFile ( const std::string& name ); // separate paths with /, they will be converted automatically
+SDL_RWops* WriteFile ( const std::string& name );
 void WriteFile ( const std::string& name, const void* data, size_t len );
 
 void Init ();
