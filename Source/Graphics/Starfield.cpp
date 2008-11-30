@@ -135,16 +135,17 @@ vec2 Starfield::Dimensions ( float depth )
 	return vec2(STARFIELD_WIDTH, STARFIELD_HEIGHT);
 }
 
+const static float starfieldScale = 1.6f;
 const static float starfieldTexCoords[] =
 	{ 0.0f, 0.0f,
 	  (float)STARFIELD_WIDTH, 0.0f,
 	  (float)STARFIELD_WIDTH, (float)STARFIELD_HEIGHT,
 	  0.0f, (float)STARFIELD_HEIGHT };
 const static float starfieldVertices[] =
-	{ -(float)STARFIELD_WIDTH * 3.0f, -(float)STARFIELD_HEIGHT * 3.0f,
-	   (float)STARFIELD_WIDTH * 3.0f, -(float)STARFIELD_HEIGHT * 3.0f,
-	   (float)STARFIELD_WIDTH * 3.0f, (float)STARFIELD_HEIGHT * 3.0f,
-	   -(float)STARFIELD_WIDTH * 3.0f, (float)STARFIELD_HEIGHT * 3.0f };
+	{ -(float)STARFIELD_WIDTH * starfieldScale, -(float)STARFIELD_HEIGHT * starfieldScale,
+	   (float)STARFIELD_WIDTH * starfieldScale, -(float)STARFIELD_HEIGHT * starfieldScale,
+	   (float)STARFIELD_WIDTH * starfieldScale, (float)STARFIELD_HEIGHT * starfieldScale,
+	   -(float)STARFIELD_WIDTH * starfieldScale, (float)STARFIELD_HEIGHT * starfieldScale };
 
 void Starfield::Draw ( float depth, vec2 centre )
 {

@@ -130,16 +130,46 @@ void Init ( int w, int h, bool fullscreen )
 	glEnableClientState ( GL_VERTEX_ARRAY );
 }
 
+static bool texturingEnabled = false;
+
 static void EnableTexturing ()
 {
-	glEnable ( GL_TEXTURE_RECTANGLE_ARB );
-	glEnableClientState ( GL_TEXTURE_COORD_ARRAY );
+	if (!texturingEnabled)
+	{
+		glEnable ( GL_TEXTURE_RECTANGLE_ARB );
+		glEnableClientState ( GL_TEXTURE_COORD_ARRAY );
+		texturingEnabled = true;
+	}
 }
 
 static void DisableTexturing ()
 {
-	glDisable ( GL_TEXTURE_RECTANGLE_ARB );
-	glDisableClientState ( GL_TEXTURE_COORD_ARRAY );
+	if (texturingEnabled)
+	{
+		glDisable ( GL_TEXTURE_RECTANGLE_ARB );
+		glDisableClientState ( GL_TEXTURE_COORD_ARRAY );
+		texturingEnabled = false;
+	}
+}
+
+static bool blendingEnabled = true;
+
+static void EnableBlending ()
+{
+	if (!blendingEnabled)
+	{
+		glEnable(GL_BLEND);
+		blendingEnabled = true;
+	}
+}
+
+static void DisableBlending ()
+{
+	if (blendingEnabled)
+	{
+		glDisable(GL_BLEND);
+		blendingEnabled = false;
+	}
 }
 
 static void SetColour ( const colour& col )
@@ -181,6 +211,7 @@ vec2 SpriteDimensions ( const std::string& sheetname )
 void DrawSprite ( const std::string& sheetname, int sheet_x, int sheet_y, vec2 location, vec2 size, float rotation )
 {
 	EnableTexturing();
+	EnableBlending();
 	ClearColour();
 	SpriteSheet* sheet;
 	SheetMap::iterator iter = spriteSheets.find(sheetname);
@@ -214,6 +245,7 @@ void DrawText ( const std::string& text, const std::string& font, vec2 location,
 {
 	// TODO
 	EnableTexturing();
+	EnableBlending();
 	SetColour(col);
 	GLuint texID = TextRenderer::TextObject(font, text);
 	glPushMatrix();
@@ -234,6 +266,14 @@ void DrawText ( const std::string& text, const std::string& font, vec2 location,
 void DrawLine ( vec2 coordinate1, vec2 coordinate2, float width, colour col )
 {
 	DisableTexturing();
+	if (col.alpha() < 1.0f)
+	{
+		DisableBlending();
+	}
+	else
+	{
+		EnableBlending();
+	}
 	glLineWidth(width);
 	SetColour(col);
 	float vertices[4] = { coordinate1.X(), coordinate1.Y(),
@@ -244,7 +284,15 @@ void DrawLine ( vec2 coordinate1, vec2 coordinate2, float width, colour col )
 
 void DrawCircle ( vec2 centre, float radius, float width, colour col )
 {
-	DisableTexturing ();
+	DisableTexturing();
+	if (col.alpha() < 1.0f)
+	{
+		DisableBlending();
+	}
+	else
+	{
+		EnableBlending();
+	}
 	glLineWidth(width);
 	glPushMatrix ();
 	glTranslatef ( centre.X(), centre.Y(), 0.0f );
@@ -258,6 +306,14 @@ void DrawCircle ( vec2 centre, float radius, float width, colour col )
 void DrawParticles ( const vec2* locations, unsigned int count, colour col )
 {
 	DisableTexturing();
+	if (col.alpha() < 1.0f)
+	{
+		DisableBlending();
+	}
+	else
+	{
+		EnableBlending();
+	}
 	glVertexPointer ( 2, GL_FLOAT, 0, locations );
 	SetColour(col);
 	glDrawArrays ( GL_POINTS, 0, count );
@@ -272,6 +328,7 @@ void DrawStarfield ( float depth )
 		sfld = new Starfield;
 	}
 	EnableTexturing();
+	DisableBlending();
 	ClearColour();
 	sfld->Draw(depth, vec2(0.0f, 0.0f));
 }
