@@ -1,11 +1,13 @@
 -- Bullet handling for demo. Initial versions will only allow one bullet, subsequent
 -- versions should allow more.
 
-bullet = { x = 0, y = 0, dest = { x = 100, y = 50 }, lock = { x = false, y = false }, force = 100, velocity = 1, beta = 0, theta = 0, size = { x = 0, y = 0 }, turn_rate = 0.01, ammo = 50 }
+bullet = { x = 0, y = 0, dest = { x = 100, y = 50 }, lock = { x = false, y = false }, force = 1000, velocity = 1, beta = 0, theta = 0, size = { x = 0, y = 0 }, turn_rate = 0.01, ammo = 50 }
 bullet.size.x, bullet.size.y = graphics.sprite_dimensions("Weapons/WhiteYellowMissile")
 firebullet = false
 
-function fire_bullet()
+local dt = 0
+
+function fire_bullet(dt)
 	if bullet.ammo > 0 then
 		local shipLocation = ship:location()
 		local shipVelocity = ship:speed()
@@ -42,8 +44,6 @@ function fire_bullet()
 		force = { x = 0, y = 0 }
 		force.x = math.cos(bullet.theta) * bullet.force
 		force.y = math.sin(bullet.theta) * bullet.force
---		force.x = math.cos(bullet.theta) * shipVelocity.x
---		force.y = math.sin(bullet.theta) * shipVelocity.y
 
 		physbullet:set_angle(bullet.theta)
 		physbullet:update(dt, force, 0.0)

@@ -225,6 +225,7 @@
 		49D544210ED5E854002FC38E /* TestHarness.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestHarness.h; sourceTree = "<group>"; };
 		49F348820ECC222C00983EE6 /* Sound.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Sound.cpp; sourceTree = "<group>"; };
 		49F348840ECC223A00983EE6 /* Graphics.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Graphics.cpp; sourceTree = "<group>"; };
+		7A39A06D0EE366C500B4A061 /* Math.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Math.lua; path = ../Resources/Scripts/Modules/Math.lua; sourceTree = SOURCE_ROOT; };
 		7A8C711F0EDB0FB700CFE5D3 /* Sounds */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Sounds; path = ../Resources/Sounds; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
@@ -319,6 +320,7 @@
 		496923C90EBE4B7600930DDD = {
 			isa = PBXGroup;
 			children = (
+				7A39A06D0EE366C500B4A061 /* Math.lua */,
 				496923E40EBE4C4000930DDD /* Source */,
 				496923E30EBE4C3900930DDD /* External */,
 				496923E20EBE4C3500930DDD /* Resources */,
