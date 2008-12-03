@@ -1,11 +1,11 @@
 -- physics engine
 class "PhysicsObject"
 
-function PhysicsObject:initialize(baseMass)
-	self._location = { x = 0.0, y = 0.0 }
-	self._velocity = { x = 0.0, y = 0.0 }
+function PhysicsObject:initialize(baseMass, location, velocity, angle)
+	self._location = location
+	self._velocity = velocity
 	self._top_speed = 1.0
-	self._angle = 0.0
+	self._angle = angle
 	self._angular_velocity = 0.0
 	self._top_angular_velocity = 1.0
 	self._mass = baseMass
@@ -18,7 +18,7 @@ function PhysicsObject:apply_impulse ( impulse )
 	self._velocity.x = self._velocity.x + (impulse.x / self._mass)
 	self._velocity.y = self._velocity.y + (impluse.y / self._mass)
 	-- cap _velocity to _top_speed
-	local speed_squared = math.abs(self._velocity.x*self._velocity.x + self._velocity.y*self._velocity.y)
+	local speed_squared = self._velocity.x*self._velocity.x + self._velocity.y*self._velocity.y
 	local _top_speed_squared = self._top_speed * self._top_speed
 	if speed_squared > _top_speed_squared then
 		local speed = math.sqrt(speed_squared)
@@ -36,7 +36,8 @@ function PhysicsObject:set_rotational_drag ( rotational_drag )
 end
 
 function PhysicsObject:speed ()
-    return math.sqrt(self._velocity.x*self._velocity.x + self._velocity.y*self._velocity.y)
+--	return math.sqrt(self._velocity.x * self._velocity.x + self._velocity.y * self._velocity.y)
+	return self._velocity.x, self._velocity.y
 end
 
 function PhysicsObject:drag ()
@@ -107,7 +108,7 @@ function PhysicsObject:update ( dt, force, torque )
 	self._velocity.x = self._velocity.x + (acceleration.x * dt)
 	self._velocity.y = self._velocity.y + (acceleration.y * dt)
 	-- cap _velocity to _top_speed
-	local speed_squared = math.abs(self._velocity.x*self._velocity.x + self._velocity.y*self._velocity.y)
+	local speed_squared = self._velocity.x*self._velocity.x + self._velocity.y*self._velocity.y
 	local _top_speed_squared = self._top_speed * self._top_speed
 	if speed_squared > _top_speed_squared then
 		local speed = math.sqrt(speed_squared)

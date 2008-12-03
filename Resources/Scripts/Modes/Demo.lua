@@ -13,8 +13,8 @@
 import('Physics')
 ship = PhysicsObject(1000.0, { x = 0, y = 0 }, { x = 0, y = 0 }, 0) -- a one thousand tonne ship
 
-import ('ShipLoad')
-import ('Math')
+import('ShipLoad')
+import('Math')
 import('Bullet4Demo')
 
 twothirdspi = 2.0 / 3.0 * math.pi
@@ -22,7 +22,7 @@ fivesqrt3 = (5.0 * math.sqrt(3))
 camera = { width = 1000, height = 1000 }
 
 ships = {}
-carrierLocation = { 100, 50 }
+carrierLocation = { 700, 500 }
 carrierRotation = 0
 carrierHealth = 10
 carrierExploded = false
@@ -89,19 +89,49 @@ function update ()
     else
         force = { x = thrust * math.cos(angle), y = thrust * math.sin(angle) }
     end
-    
+	
+	ship:set_angular_velocity(angularVelocity)
+	ship:update(dt, force, 0.0)
+	
 	if firebullet == true then
 		fire_bullet(dt)
 		firebullet = false
 		bulletFired = true
 	end
 	
-    ship:set_angular_velocity(angularVelocity)
-    ship:update(dt, force, 0.0)
-	
 	if bulletFired == true then
+		local bulletLocation = physbullet:location()
+		if math.floor(bulletLocation.x / 3) == math.floor(bullet.dest.x / 3) then
+			if math.floor(bulletLocation.y / 3) == math.floor(bullet.dest.y / 3) then
+				bulletFired = false
+			end
+		end
+		bullet.x = bullet.x + math.cos(physbullet:angle()) * physbullet:speed()
+		bullet.y = bullet.y + math.sin(physbullet:angle()) * physbullet:speed()
+		bullet.beta = find_angle(bullet.dest, physbullet:location())
+		print(bullet.beta)
+		print(bullet.theta)
+		
+		if bullet.theta ~= bullet.beta then
+			if math.abs(bullet.theta + math.pi * 2.0 - bullet.beta) < math.abs(bullet.theta - bullet.beta) then -- if clockwise angle is less than counter-clockwise
+				-- then go clockwise (subtract turn_rate)
+				if bullet.beta >= bullet.theta - bullet.turn_rate then -- the difference between the two is greater than the turn rate
+					bullet.theta = bullet.theta - bullet.turn_rate
+				else
+					bullet.theta = bullet.beta
+				end
+			else -- then go counter-clockwise (add turn_rate)
+				if bullet.beta >= bullet.theta + bullet.turn_rate then -- the difference between the two is greater than the turn rate
+					bullet.theta = bullet.theta + bullet.turn_rate
+				else
+					bullet.theta = bullet.beta
+				end
+			end
+		end
+		
+		--[[
 		if bullet.theta ~= bullet.beta then -- if the angles are the same, don't go through this if nest
-			if bullet.beta >= bullet.theta + bullet.turn_rate then
+			if bullet.beta >= bullet.theta + bullet.turn_rate then -- if the change angle is greater than the real angle by more than the turn rate
 				bullet.theta = bullet.theta + bullet.turn_rate
 			else -- if bullet.beta < bullet.theta + bullet.turn_rate then
 				if bullet.beta > bullet.theta then -- the difference between the two is less than the turn rate
@@ -114,14 +144,14 @@ function update ()
 				bullet.theta = bullet.theta - bullet.turn_rate
 			end
 		end
+		--]]
 		
-		bullet.theta = bullet.theta % (math.pi * 2)
-		force = { x = 0, y = 0 }
-		force.x = math.cos(bullet.theta) * bullet.force
-		force.y = math.sin(bullet.theta) * bullet.force
+		bullet.theta = bullet.theta % (math.pi * 2.0)
+		bullet.force.x = math.cos(bullet.theta) * bullet.power
+		bullet.force.y = math.sin(bullet.theta) * bullet.power
 		
 		physbullet:set_angle(bullet.theta)
-		physbullet:update(dt, force, 0.0)
+		physbullet:update(dt, bullet.force, 0.0)
 	end
 end
 
@@ -149,11 +179,6 @@ function render ()
 	end
 	graphics.draw_sprite("Ishiman/HeavyCruiser", shipLocation.x, shipLocation.y, Ish_hCruiser_Size[1], Ish_hCruiser_Size[2], ship:angle())
 	
-	if bulletFired == true then
-		local bulletLocation = physbullet:location()
-		graphics.draw_sprite("Weapons/WhiteYellowMissile", bulletLocation.x, bulletLocation.y, bullet.size.x, bullet.size.y, physbullet:angle())
-	end
-	
 	if shotfired == true then
 		shot.move = shot.move + 15
 		if shot.move >= 120 then
@@ -171,6 +196,11 @@ function render ()
 		shotfired = true
 	end
 	
+	if bulletFired == true then
+		local bulletLocation = physbullet:location()
+		graphics.draw_sprite("Weapons/WhiteYellowMissile", bulletLocation.x, bulletLocation.y, bullet.size.x, bullet.size.y, physbullet:angle())
+	end
+	
 	
 	graphics.set_camera(-camera.width / 2.0, -camera.height / 2.0, camera.width / 2.0, camera.width / 2.0)
 	
@@ -183,9 +213,8 @@ function render ()
 	graphics.draw_image("Panels/SideRight", 634, 240, 12.69, 480)
 	--]]
 	-- why did you change the dimensions to 640x480? They were fine before
-	graphics.set_camera(-camera.width / 2.0, -camera.height / 2.0, camera.width / 2.0, camera.width / 2.0)
-	graphics.draw_image("Panels/SideLeft", -435, 0, 129, 1000)
-    graphics.draw_image("Panels/SideRight", 487, 0, 27, 1000)
+	graphics.draw_image("Panels/SideLeft", -435, 0, 129, 1012)
+    graphics.draw_image("Panels/SideRight", 487, -2, 27, 1020)
 	graphics.end_frame()
 end
 

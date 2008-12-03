@@ -1,7 +1,7 @@
 -- Bullet handling for demo. Initial versions will only allow one bullet, subsequent
 -- versions should allow more.
 
-bullet = { x = 0, y = 0, dest = { x = 100, y = 50 }, lock = { x = false, y = false }, force = 1000, velocity = 1, beta = 0, theta = 0, size = { x = 0, y = 0 }, turn_rate = 0.01, ammo = 50 }
+bullet = { x = 0, y = 0, dest = { x = 100, y = 50 }, force = { x = 0, y = 0 }, power = 1000, velocity = 1, beta = 0, theta = 0, size = { x = 0, y = 0 }, turn_rate = 0.01, ammo = 50 }
 bullet.size.x, bullet.size.y = graphics.sprite_dimensions("Weapons/WhiteYellowMissile")
 firebullet = false
 
@@ -10,18 +10,25 @@ local dt = 0
 function fire_bullet(dt)
 	if bullet.ammo > 0 then
 		local shipLocation = ship:location()
-		local shipVelocity = ship:speed()
-		physbullet = PhysicsObject(1.0, ship:location(), ship:velocity(), ship:angle())
+		local shipVelocity = ship:velocity()
+		local shipAngle = ship:angle()
+--		physbullet = PhysicsObject(1.0, ship:location(), ship:velocity(), ship:angle())
+		physbullet = PhysicsObject(0.01, shipLocation, shipVelocity, shipAngle)
 		physbullet:set_top_speed(50.0)
 		physbullet:set_top_angular_velocity(bullet.turn_rate)
 		physbullet:set_rotational_drag(0.2)
 		physbullet:set_drag(0.0)
 		
-		bullet.x = shipLocation.x + math.cos(ship:angle()) * 100
-		bullet.y = shipLocation.y + math.sin(ship:angle()) * 100
-		bullet.dest.x = 100
-		bullet.dest.y = 50
-		bullet.beta = math.atan2(bullet.dest.y - bullet.y, bullet.dest.x - bullet.x)
+		bullet.x = shipLocation.x + math.cos(ship:angle()) * 1000
+		bullet.y = shipLocation.y + math.sin(ship:angle()) * 1000
+		print(shipLocation.x)
+		print(shipLocation.y)
+		print(bullet.x)
+		print(bullet.y)
+		bullet.dest.x = 700
+		bullet.dest.y = 500
+		bullet.beta = math.atan((bullet.dest.y - bullet.y) / (bullet.dest.x - bullet.x))
+		bullet.beta = 2
 		bullet.theta = ship:angle()
 		-- theta is the true angle of the bullet, and beta is the desired angle
 		
@@ -41,12 +48,11 @@ function fire_bullet(dt)
 		end
 		
 		bullet.theta = bullet.theta % (math.pi * 2)
-		force = { x = 0, y = 0 }
-		force.x = math.cos(bullet.theta) * bullet.force
-		force.y = math.sin(bullet.theta) * bullet.force
+		bullet.force.x = math.cos(bullet.theta) * bullet.power
+		bullet.force.y = math.sin(bullet.theta) * bullet.power
 
 		physbullet:set_angle(bullet.theta)
-		physbullet:update(dt, force, 0.0)
+		physbullet:update(dt, bullet.force, 0.0)
 
 		bullet.ammo = bullet.ammo - 1
 		sound.play("RocketLaunchr")
