@@ -45,19 +45,37 @@ Message* Decode ( ENetPacket* packet )
 		char* messageID = (char*)alloca(messageIDLength + 1);
 		messageID[messageIDLength] = 0;
 		memcpy(messageID, data + 2, messageIDLength);
-		
-		void* messageBuffer = NULL;
-		if (messageLength)
-		{
-			messageBuffer = malloc(messageLength);
-			memcpy(messageBuffer, data + 2 + messageIDLength + 4, messageLength);
+		//check if messageID contains A-Z, a-z, 0-9, and _ only
+		int i;
+		bool goodMessage = true;
+		for(i = 0; i <= messageIDLength; i++)
+		{//......................0........9....||...................A........Z....||...................a.........z....||................ _
+			if( (messageID[i] >= 48 && <= 57)  ||  (messageID[i] >= 65 && <= 90)  ||  (messageID[i] >= 97 && <= 122)  ||  (messageID == 95) )
+			{
+			}
+			else 
+			{
+				goodMessage = false;
+				break;
+			}
+	
 		}
-		std::string messageIDString = std::string(messageID, messageIDLength);
+		
+		if(goodMessage == true)	
+		{
+			void* messageBuffer = NULL;
+			if (messageLength)
+			{
+				messageBuffer = malloc(messageLength);
+				memcpy(messageBuffer, data + 2 + messageIDLength + 4, messageLength);
+			}
+			std::string messageIDString = std::string(messageID, messageIDLength);
 		
 		
-		Message* result = new Message(messageIDString, messageBuffer, messageLength);
-		free(messageBuffer);
-		return result;
+			Message* result = new Message(messageIDString, messageBuffer, messageLength);
+			free(messageBuffer);
+			return result;
+		}
 	}
 	else
 	{
