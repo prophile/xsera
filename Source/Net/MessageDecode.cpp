@@ -51,7 +51,7 @@ Message* Decode ( ENetPacket* packet )
 		for(i = 0; i <= messageIDLength; i++) //check messageID contents
 		{//......................0........9....||...................A........Z....||...................a.........z....||................ _
 			
-			if( (*messageID[i] >= 48 && *messageID[i]<= 57)  ||  (*messageID[i] >= 65 && *messageID[i] <= 90)  ||  (*messageID[i] >= 97 && *messageID[i] <= 122)  ||  (*messageID[i] == 95) )
+			if( (messageID[i] >= 48 && messageID[i]<= 57)  ||  (messageID[i] >= 65 && messageID[i] <= 90)  ||  (messageID[i] >= 97 && messageID[i] <= 122)  ||  (messageID[i] == 95) )
 			{
 			}
 			else 
