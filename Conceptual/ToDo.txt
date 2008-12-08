@@ -1,7 +1,7 @@
 Xsera immediate TODO list:
 
-* Add error-checking to the Net subsystem
-* Add security to the Net subsystem
+* Add error-checking to the Lua-side network handler
+* Add security to the Net subsystem [assigned: LANS]
 * Define the format of the XML configuration files
 * Add support for reading zip files in the resource manager
 * Find replacement sounds and integrate [assigned: Adam]
@@ -17,3 +17,5 @@ Xsera immediate TODO list:
 * Assemble the sprite configuration files and re-order the sprites [complete]
 * Add anti-segfault code to the message decoder [complete - LANS]
 * Add kick code for bad messages in the Net subsystem [complete -LANS]
+* Make sure messageIDs only contain alphanumeric [complete -LANS]
+* Add error-checking to the Net subsystem [I believe its done - LANS]
