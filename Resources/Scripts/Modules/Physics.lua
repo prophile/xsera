@@ -1,11 +1,11 @@
 -- physics engine
 class "PhysicsObject"
 
-function PhysicsObject:initialize(baseMass, location, velocity, angle)
-	self._location = location
-	self._velocity = velocity
+function PhysicsObject:initialize(baseMass)
+	self._location = { x = 0, y = 0 }
+	self._velocity = { x = 0, y = 0 }
 	self._top_speed = 1.0
-	self._angle = angle
+	self._angle = 0.0
 	self._angular_velocity = 0.0
 	self._top_angular_velocity = 1.0
 	self._mass = baseMass
@@ -36,8 +36,7 @@ function PhysicsObject:set_rotational_drag ( rotational_drag )
 end
 
 function PhysicsObject:speed ()
---	return math.sqrt(self._velocity.x * self._velocity.x + self._velocity.y * self._velocity.y)
-	return self._velocity.x, self._velocity.y
+	return math.sqrt(self._velocity.x * self._velocity.x + self._velocity.y * self._velocity.y)
 end
 
 function PhysicsObject:drag ()

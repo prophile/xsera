@@ -11,14 +11,13 @@
 -- Use other Heavy Cruisers (possibly built on planets) to destroy Carrier, using attack command.
 
 import('Physics')
-ship = PhysicsObject(1000.0, { x = 0, y = 0 }, { x = 0, y = 0 }, 0) -- a one thousand tonne ship
+ship = PhysicsObject(1000.0) -- a one thousand tonne ship
 
 import('ShipLoad')
 import('Math')
 import('Bullet4Demo')
 
 twothirdspi = 2.0 / 3.0 * math.pi
-fivesqrt3 = (5.0 * math.sqrt(3))
 camera = { width = 1000, height = 1000 }
 
 ships = {}
@@ -45,8 +44,9 @@ function init ()
     ship:set_drag(0.0)
 end
 
-local arrowDist = hypot(10, (100 - fivesqrt3))
-local arrowAlpha = math.atan2(10, arrowDist)
+local arrowVar = (5.5 * math.sqrt(3))
+local arrowDist = hypot(11, (300 - arrowVar))
+local arrowAlpha = math.atan2(11, arrowDist)
 
 function update ()
 	local newTime = mode_manager.time()
@@ -101,35 +101,64 @@ function update ()
 	
 	if bulletFired == true then
 		local bulletLocation = physbullet:location()
-		if math.floor(bulletLocation.x / 3) == math.floor(bullet.dest.x / 3) then
-			if math.floor(bulletLocation.y / 3) == math.floor(bullet.dest.y / 3) then
+		if math.floor(bulletLocation.x / 30) == math.floor(bullet.dest.x / 30) then
+			if math.floor(bulletLocation.y / 30) == math.floor(bullet.dest.y / 30) then
 				bulletFired = false
 			end
 		end
-		bullet.x = bullet.x + math.cos(physbullet:angle()) * physbullet:speed()
-		bullet.y = bullet.y + math.sin(physbullet:angle()) * physbullet:speed()
+		local bulletVelocity = physbullet:velocity()
+		bullet.x = bullet.x + bulletVelocity.x * bullet.power
+		bullet.y = bullet.y + bulletVelocity.y * bullet.power
 		bullet.beta = find_angle(bullet.dest, physbullet:location())
+		bullet.alpha = math.atan2(bulletVelocity.y, bulletVelocity.x)
+		print(bullet.alpha)
 		print(bullet.beta)
-		print(bullet.theta)
+--		print(bullet.theta)
 		
+		-- attempt 4 - use a math function
+		if bullet.alpha ~= bullet.beta then
+			guide_bullet(bullet.alpha, bullet.beta)
+		end
+		--]]
+		
+		--[[ attempt 3
+		-- I need to compare the bullet's velocity angle (alpha) to beta, not the actual angle
+		if bullet.alpha ~= bullet.beta then -- if the angles are the same, don't go through this if nest
+			if bullet.beta >= bullet.alpha + bullet.turn_rate then -- if the change angle is greater than the real angle by more than the turn rate
+				bullet.alpha = bullet.alpha + bullet.turn_rate
+			else -- if bullet.beta < bullet.alpha + bullet.turn_rate then
+				if bullet.beta > bullet.alpha then -- the difference between the two is less than the turn rate
+					bullet.alpha = bullet.beta -- make them equal
+				elseif bullet.beta > bullet.alpha - bullet.turn_rate then -- the difference between the two is less than the turn rate, on the other side
+					bullet.alpha = bullet.beta -- make them equal
+				end
+			end
+			if bullet.beta < bullet.alpha - bullet.turn_rate then -- alpha is less than beta by a difference more than the turn rate
+				bullet.alpha = bullet.alpha - bullet.turn_rate
+			end
+		end
+		--]]
+		
+		--[[ attempt 2
 		if bullet.theta ~= bullet.beta then
 			if math.abs(bullet.theta + math.pi * 2.0 - bullet.beta) < math.abs(bullet.theta - bullet.beta) then -- if clockwise angle is less than counter-clockwise
 				-- then go clockwise (subtract turn_rate)
-				if bullet.beta >= bullet.theta - bullet.turn_rate then -- the difference between the two is greater than the turn rate
+				if bullet.beta <= bullet.theta - bullet.turn_rate then -- the difference between the two is greater than the turn rate
 					bullet.theta = bullet.theta - bullet.turn_rate
 				else
 					bullet.theta = bullet.beta
 				end
 			else -- then go counter-clockwise (add turn_rate)
-				if bullet.beta >= bullet.theta + bullet.turn_rate then -- the difference between the two is greater than the turn rate
+				if bullet.beta <= bullet.theta + bullet.turn_rate then -- the difference between the two is greater than the turn rate
 					bullet.theta = bullet.theta + bullet.turn_rate
 				else
 					bullet.theta = bullet.beta
 				end
 			end
 		end
+		--]]
 		
-		--[[
+		--[[ attempt 1
 		if bullet.theta ~= bullet.beta then -- if the angles are the same, don't go through this if nest
 			if bullet.beta >= bullet.theta + bullet.turn_rate then -- if the change angle is greater than the real angle by more than the turn rate
 				bullet.theta = bullet.theta + bullet.turn_rate
@@ -159,7 +188,7 @@ function render ()
     graphics.begin_frame()
 	
 	shipLocation = ship:location()
-	graphics.set_camera(shipLocation.x - (camera.width / 2.0), shipLocation.y - (camera.height / 2.0), shipLocation.x + (camera.width / 2.0), shipLocation.y + (camera.width / 2.0))
+	graphics.set_camera(shipLocation.x - 46 - (camera.width / 2.0), shipLocation.y - (camera.height / 2.0), shipLocation.x - 46 + (camera.width / 2.0), shipLocation.y + (camera.width / 2.0))
     if carrierHealth ~= 0 then
 		graphics.draw_sprite("Gaitori/Carrier", carrierLocation[1], carrierLocation[2], Gai_Carrier_Size[1], Gai_Carrier_Size[2], carrierRotation)
     else
@@ -181,10 +210,10 @@ function render ()
 	
 	if shotfired == true then
 		shot.move = shot.move + 15
-		if shot.move >= 120 then
+		if shot.move >= 240 then
 			shotfired = false
 		end
-		graphics.draw_line(shot.x + math.cos(bulletRotation) * shot.move, shot.y + math.sin(bulletRotation) * shot.move, shot.x + math.cos(bulletRotation) * (40 + shot.move), shot.y + math.sin(bulletRotation) * (40 + shot.move), 2)
+		graphics.draw_line(shot.x + math.cos(bulletRotation) * shot.move, shot.y + math.sin(bulletRotation) * shot.move, shot.x + math.cos(bulletRotation) * (30 + shot.move), shot.y + math.sin(bulletRotation) * (30 + shot.move), 2)
 	end
 	if drawshot == true then
 		bulletRotation = ship:angle()
@@ -202,17 +231,17 @@ function render ()
 	end
 	
 	
-	graphics.set_camera(-camera.width / 2.0, -camera.height / 2.0, camera.width / 2.0, camera.width / 2.0)
-	
+	graphics.set_camera(-camera.width / 2.0 - 46, -camera.height / 2.0, camera.width / 2.0 - 46, camera.width / 2.0)
 	graphics.draw_line(math.cos(arrowAlpha + ship:angle()) * arrowDist, math.sin(arrowAlpha + ship:angle()) * arrowDist, math.cos(ship:angle() - arrowAlpha) * arrowDist, math.sin(ship:angle() - arrowAlpha) * arrowDist, 2)
-	graphics.draw_line(math.cos(ship:angle() - arrowAlpha) * arrowDist, math.sin(ship:angle() - arrowAlpha) * arrowDist, math.cos(ship:angle()) * (100 + fivesqrt3), math.sin(ship:angle()) * (100 + fivesqrt3), 2)
-	graphics.draw_line(math.cos(ship:angle()) * (100 + fivesqrt3), math.sin(ship:angle()) * (100 + fivesqrt3), math.cos(arrowAlpha + ship:angle()) * arrowDist, math.sin(arrowAlpha + ship:angle()) * arrowDist, 2)
-	-- graphics.draw_line(math.cos(ship:angle()) * (100 + fivesqrt3), math.sin(ship:angle()) * (100 + fivesqrt3), 0, 0, 2)
-	--[[graphics.set_camera(0, 0, 640, 480)
+	graphics.draw_line(math.cos(ship:angle() - arrowAlpha) * arrowDist, math.sin(ship:angle() - arrowAlpha) * arrowDist, math.cos(ship:angle()) * (300 + arrowVar), math.sin(ship:angle()) * (300 + arrowVar), 2)
+	graphics.draw_line(math.cos(ship:angle()) * (300 + arrowVar), math.sin(ship:angle()) * (300 + arrowVar), math.cos(arrowAlpha + ship:angle()) * arrowDist, math.sin(arrowAlpha + ship:angle()) * arrowDist, 2)
+	--[[
+	graphics.set_camera(0, 0, 640, 480)
 	graphics.draw_image("Panels/SideLeft", 31, 240, 69.29, 480)
 	graphics.draw_image("Panels/SideRight", 634, 240, 12.69, 480)
 	--]]
 	-- why did you change the dimensions to 640x480? They were fine before
+	graphics.set_camera(-camera.width / 2.0, -camera.height / 2.0, camera.width / 2.0, camera.width / 2.0)
 	graphics.draw_image("Panels/SideLeft", -435, 0, 129, 1012)
     graphics.draw_image("Panels/SideRight", 487, -2, 27, 1020)
 	graphics.end_frame()
