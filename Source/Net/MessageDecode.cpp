@@ -45,24 +45,40 @@ Message* Decode ( ENetPacket* packet )
 		char* messageID = (char*)alloca(messageIDLength + 1);
 		messageID[messageIDLength] = 0;
 		memcpy(messageID, data + 2, messageIDLength);
+		bool goodMessage = true;
+		int i;
 		
-		void* messageBuffer = NULL;
-			if (messageLength)
+		for(i = 0; i <= messageIDLength; i++) //check messageID contents
+		{//......................0........9....||...................A........Z....||...................a.........z....||................ _
+			
+			if( (messageID[i] >= 48 && messageID[i]<= 57)  ||  (messageID[i] >= 65 && messageID[i] <= 90)  ||  (messageID[i] >= 97 && messageID[i] <= 122)  ||  (messageID[i] == 95) )
 			{
-				messageBuffer = malloc(messageLength);
-				memcpy(messageBuffer, data + 2 + messageIDLength + 4, messageLength);
 			}
-			std::string messageIDString = std::string(messageID, messageIDLength);
+			else 
+			{
+				goodMessage = false;
+				break;
+			}
+			
+		}
+		
+		if(goodMessage == true)	
+		{
+			void* messageBuffer = NULL;
+				if (messageLength)
+				{
+					messageBuffer = malloc(messageLength);
+					memcpy(messageBuffer, data + 2 + messageIDLength + 4, messageLength);
+				}
+				std::string messageIDString = std::string(messageID, messageIDLength);
 		
 		
-			Message* result = new Message(messageIDString, messageBuffer, messageLength);
-			free(messageBuffer);
-			return result;
+				Message* result = new Message(messageIDString, messageBuffer, messageLength);
+				free(messageBuffer);
+				return result; //this is only reached if the message passes the tests
+		}
 	}
-	else
-	{
 		return NULL; // invalid format
-	}
 }
 
 }
