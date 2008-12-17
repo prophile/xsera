@@ -2,66 +2,138 @@ function hypot(x, y)
     return math.sqrt(x * x + y * y)
 end
 
---[[ what was I on when I made this code?
-function find_angle(origin, dest)
-	if dest.y > origin.y then
-		if dest.x > origin.x then -- QI
-			return (math.atan(diff.y / diff.x) + math.pi)
-		else -- Q2
-			return math.atan(diff.y / diff.x)
-		end
-	else
-		if dest.x > origin.x then -- Q3
-			return math.atan(diff.y / diff.x)
-		else -- Q4
-			return (math.atan(diff.y / diff.x) + math.pi)
-		end
-	end
-end
---]]
-
---[[ are we there yet?
+-- This function almost ate me alive. - Adam
 function find_angle(origin, dest)
 	local diff = { x = dest.x - origin.x, y = dest.y - origin.y }
 	if diff.y > 0 then -- the difference in y is positive
 		if diff.x > 0 then -- QI
 			return math.atan(diff.y / diff.x)
 		else -- QII
-			return (math.pi - math.atan(diff.y / diff.x))
+			return (math.pi + math.atan(diff.y / diff.x)) -- it's plus because tan is negative in QII
 		end
 	else -- the difference in y is negative
 		if diff.x > 0 then -- QIV
-			return (math.atan(diff.y / diff.x) + math.pi)
+			return ((2 * math.pi) + math.atan(diff.y / diff.x)) -- it's plus because tan is negative in QIV
 		else -- QIII
-			return ((2* math.pi) - math.atan(diff.y / diff.x))
+			return (math.pi + math.atan(diff.y / diff.x))
 		end
 	end
 end
---]]
 
--- find the angle NAO
-function guide_bullet(a, b)
-	local alpha = a + 2 * math.pi
-	local beta = b + 2 * math.pi
-	if beta > alpha then -- real angle is less than desired angle
-		if (beta - alpha) > bullet.turn_rate then
-			bullet.theta = bullet.theta + bullet.turn_rate
+function find_quadrant(angle)
+	if angle % (math.pi / 2) == 0 then
+		if angle == math.pi then
+			return 2.5
+		elseif angle == math.pi / 2 then
+			return 1.5
+		elseif angle == math.pi / 2 * 3 then
+			return 3.5
 		else
-			bullet.theta = bullet.beta
+			return 0
 		end
-	else -- real angle is greater than desired angle
-		if (beta - alpha) > bullet.turn_rate then
-			bullet.theta = bullet.theta + bullet.turn_rate
+	end
+	if angle > math.pi then
+		if angle < (3 / 2 * math.pi) then
+			return 3
 		else
-			bullet.theta = bullet.alpha
+			return 4
+		end
+	else
+		if angle < (math.pi / 2) then
+			return 1
+		else
+			return 2
 		end
 	end
 end
---]]
 
--- what the heck?
-function find_angle(origin, dest)
-	local diff = { x = dest.x - origin.x, y = dest.y - origin.y }
-	return math.atan(diff.y / diff.x)
+-- man, this function is a heckofalot neater than find_quadrant_range()-and if necessary, I could fix it easy
+function find_quadrant_range2(angle, range)
+	return find_quadrant(angle - range / 2), find_quadrant(angle), find_quadrant(angle + range / 2)
 end
---]]
+
+function find_quadrant_range(angle, range)
+	if angle > math.pi then	-- QIII
+		if angle < (3 / 2 * math.pi) then
+			if (angle + range / 2) > math.pi then
+				if (angle - range / 2) < (3 / 2 * math.pi) then
+					return 3
+				else
+					return 2.5
+				end
+			else
+				return 3.5
+			end
+		else -- QIV
+			if (angle + range / 2) > (3 / 2 * math.pi) then
+				if (angle - range / 2) < 2 * math.pi then
+					return 4
+				else
+					return 3.5
+				end
+			else
+				return 0
+			end
+		end
+	else -- QI
+		if angle < (math.pi / 2) then
+			if (angle + range / 2) < math.pi / 2 then
+				if angle > range / 2 then
+					-- special exception - if the range is greater than the angle, then it's leaning over
+					return 1
+				else
+					return 0
+				end
+			else
+				return 1.5
+			end
+		else -- QII
+			if (angle + range / 2) < math.pi then
+				if (angle - range / 2) > math.pi / 2 then
+					return 2
+				else
+					return 1.5
+				end
+			else
+				return 2.5
+			end
+		end
+	end
+end
+
+function reference_angle(angle)
+	local quad = find_quadrant(angle)
+	if quad == 2 then
+		angle = math.pi - angle
+	elseif quad == 3 then
+		angle = angle - math.pi
+	elseif quad == 4 then
+		angle = 2 * math.pi - angle
+	end
+	return angle
+end
+
+function bigger_angle(angle1, angle2)
+	if angle1 > angle2 then
+		return angle1
+	else
+		return angle2
+	end
+end
+
+function smaller_angle(angle1, angle2)
+	if angle1 < angle2 then
+		return angle1
+	else
+		return angle2
+	end
+end
+
+function radian_range(angle)
+	if angle < 0 then
+		angle = 2 * math.pi - angle
+	elseif angle > 2 * math.pi then
+		angle = angle - 2 * math.pi
+	end
+	return angle
+end
