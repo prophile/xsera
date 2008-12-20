@@ -11,7 +11,6 @@
 		490CDB280ECCE572004B7D04 /* Music in Resources */ = {isa = PBXBuildFile; fileRef = 490CDB270ECCE572004B7D04 /* Music */; };
 		490CDB540ECCE757004B7D04 /* SpriteSheet.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 490CDB520ECCE757004B7D04 /* SpriteSheet.cpp */; };
 		4930D74F0ECE22990053CC8B /* Images in Resources */ = {isa = PBXBuildFile; fileRef = 4930D74A0ECE22990053CC8B /* Images */; };
-		49554A130EDDB572009CA121 /* Starfield.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 49554A110EDDB572009CA121 /* Starfield.cpp */; };
 		49554A330EDDBD1F009CA121 /* Stars in Resources */ = {isa = PBXBuildFile; fileRef = 49554A300EDDBD1F009CA121 /* Stars */; };
 		49597A130ED4D47C00173D17 /* Config in Resources */ = {isa = PBXBuildFile; fileRef = 49597A0B0ED4D47C00173D17 /* Config */; };
 		49597A750ED4D92E00173D17 /* Client.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 49597A730ED4D92E00173D17 /* Client.cpp */; };
@@ -81,7 +80,8 @@
 		49D543CB0ED5E222002FC38E /* Sprites in Resources */ = {isa = PBXBuildFile; fileRef = 49D543B80ED5E222002FC38E /* Sprites */; };
 		49D544220ED5E854002FC38E /* TestHarness.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 49D544200ED5E854002FC38E /* TestHarness.cpp */; };
 		49F348830ECC222C00983EE6 /* Sound.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 49F348820ECC222C00983EE6 /* Sound.cpp */; };
-		49F348850ECC223A00983EE6 /* Graphics.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 49F348840ECC223A00983EE6 /* Graphics.cpp */; };
+		7A2DA5020EF9D4B2003CF28A /* Graphics.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 49F348840ECC223A00983EE6 /* Graphics.cpp */; };
+		7A2DA5030EF9D4B7003CF28A /* Starfield.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 49554A110EDDB572009CA121 /* Starfield.cpp */; };
 		7A8C71560EDB0FB700CFE5D3 /* Sounds in Resources */ = {isa = PBXBuildFile; fileRef = 7A8C711F0EDB0FB700CFE5D3 /* Sounds */; };
 /* End PBXBuildFile section */
 
@@ -226,6 +226,7 @@
 		49F348820ECC222C00983EE6 /* Sound.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Sound.cpp; sourceTree = "<group>"; };
 		49F348840ECC223A00983EE6 /* Graphics.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Graphics.cpp; sourceTree = "<group>"; };
 		7A39A06D0EE366C500B4A061 /* Math.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Math.lua; path = ../Resources/Scripts/Modules/Math.lua; sourceTree = SOURCE_ROOT; };
+		7A7DAD730EFC2C4E00746022 /* Credits.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Credits.lua; path = ../Resources/Scripts/Modes/Credits.lua; sourceTree = SOURCE_ROOT; };
 		7A8C711F0EDB0FB700CFE5D3 /* Sounds */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Sounds; path = ../Resources/Sounds; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
@@ -320,6 +321,7 @@
 		496923C90EBE4B7600930DDD = {
 			isa = PBXGroup;
 			children = (
+				7A7DAD730EFC2C4E00746022 /* Credits.lua */,
 				7A39A06D0EE366C500B4A061 /* Math.lua */,
 				496923E40EBE4C4000930DDD /* Source */,
 				496923E30EBE4C3900930DDD /* External */,
@@ -566,7 +568,6 @@
 				496924300EBE4CEA00930DDD /* tinyxmlparser.cpp in Sources */,
 				496924830EBE516100930DDD /* Xsera.cpp in Sources */,
 				49F348830ECC222C00983EE6 /* Sound.cpp in Sources */,
-				49F348850ECC223A00983EE6 /* Graphics.cpp in Sources */,
 				49A0E69B0ECC39FD007F3458 /* ResourceManager.cpp in Sources */,
 				490CDB540ECCE757004B7D04 /* SpriteSheet.cpp in Sources */,
 				4960386E0ED097D5003BA716 /* lapi.c in Sources */,
@@ -608,8 +609,9 @@
 				49D544220ED5E854002FC38E /* TestHarness.cpp in Sources */,
 				49A315480ED6B5AD0054BB8B /* TextRenderer.cpp in Sources */,
 				49A79EDF0ED7848F00517488 /* XarFile.cpp in Sources */,
-				49554A130EDDB572009CA121 /* Starfield.cpp in Sources */,
 				4974F4BE0EE2E70800D56049 /* Compile.cpp in Sources */,
+				7A2DA5020EF9D4B2003CF28A /* Graphics.cpp in Sources */,
+				7A2DA5030EF9D4B7003CF28A /* Starfield.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

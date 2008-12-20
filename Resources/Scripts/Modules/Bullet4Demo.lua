@@ -2,14 +2,14 @@
 -- versions should allow more.
 
 carrierLocation = { x = 200, y = 300 }
-bullet = { dest = { x = carrierLocation.x, y = carrierLocation.y }, force = { x = 0, y = 0 }, power = 0.5, velocity = 1, alpha = 0, beta = 0, delta = 0, theta = 0, size = { x = 0, y = 0 }, turn_rate = 0.1, max_seek_angle = .5, max_seek_dist = 20000, ammo = 50 }
+bullet = { dest = { x = carrierLocation.x, y = carrierLocation.y }, force = { x = 0, y = 0 }, power = 5000, velocity = 1, alpha = 0, beta = 0, delta = 0, theta = 0, size = { x = 0, y = 0 }, turn_rate = 0.1, max_seek_angle = 0.5, max_seek_dist = 20000, ammo = 50 }
 bullet.size.x, bullet.size.y = graphics.sprite_dimensions("Weapons/WhiteYellowMissile")
 firebullet = false
 
 function fire_bullet(dt)
 	if bullet.ammo > 0 then
-		physbullet = PhysicsObject(0.005)
-		physbullet:set_top_speed(60.0)
+		physbullet = PhysicsObject(0.5)
+		physbullet:set_top_speed(600.0)
 		physbullet:set_top_angular_velocity(bullet.turn_rate)
 		physbullet:set_rotational_drag(0.0)
 		physbullet:set_drag(0.0)

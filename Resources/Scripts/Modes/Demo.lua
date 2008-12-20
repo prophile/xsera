@@ -111,58 +111,18 @@ function update ()
 		print(bullet.alpha)
 		print(bullet.beta)
 		print(bullet.theta)
-		print("____________")
+		print("________________")
 		
-		-- attempt 4 - use a bullet4demo function
+		-- use a bullet4demo function
 		if bullet.alpha ~= bullet.beta then
 			guide_bullet()
-		--	bulletFired = false
 		end
-		--]]
 		
-		--[[ attempt 3
-		-- I need to compare the bullet's velocity angle (alpha) to beta, not the actual angle
-		if bullet.alpha ~= bullet.beta then -- if the angles are the same, don't go through this if nest
-			if bullet.beta >= bullet.alpha + bullet.turn_rate then -- if the change angle is greater than the real angle by more than the turn rate
-				bullet.alpha = bullet.alpha + bullet.turn_rate
-			else -- if bullet.beta < bullet.alpha + bullet.turn_rate then
-				if bullet.beta > bullet.alpha then -- the difference between the two is less than the turn rate
-					bullet.alpha = bullet.beta -- make them equal
-				elseif bullet.beta > bullet.alpha - bullet.turn_rate then -- the difference between the two is less than the turn rate, on the other side
-					bullet.alpha = bullet.beta -- make them equal
-				end
-			end
-			if bullet.beta < bullet.alpha - bullet.turn_rate then -- alpha is less than beta by a difference more than the turn rate
-				bullet.alpha = bullet.alpha - bullet.turn_rate
-			end
-		end
-		--]]
-		
-		-- attempt 2 was garbage... pay no attention
-		
-		--[[ attempt 1
-		if bullet.theta ~= bullet.beta then -- if the angles are the same, don't go through this if nest
-			if bullet.beta >= bullet.theta + bullet.turn_rate then -- if the change angle is greater than the real angle by more than the turn rate
-				bullet.theta = bullet.theta + bullet.turn_rate
-			else -- if bullet.beta < bullet.theta + bullet.turn_rate then
-				if bullet.beta > bullet.theta then -- the difference between the two is less than the turn rate
-					bullet.theta = bullet.beta -- make them equal
-				elseif bullet.beta > bullet.theta - bullet.turn_rate then -- the difference between the two is less than the turn rate, on the other side
-					bullet.theta = bullet.beta -- make them equal
-				end
-			end
-			if bullet.beta < bullet.theta - bullet.turn_rate then -- theta is less than beta by a difference more than the turn rate
-				bullet.theta = bullet.theta - bullet.turn_rate
-			end
-		end
-		--]]
-		
-		bullet.theta = radian_range(bullet.theta + bullet.delta)
 		bullet.force.x = math.cos(bullet.theta) * bullet.power
 		bullet.force.y = math.sin(bullet.theta) * bullet.power
 		
-		physbullet:set_angle(bullet.theta)
-		physbullet:update(dt, bullet.force, 0.0)
+	--	physbullet:set_angle(bullet.theta)
+		physbullet:update(dt, bullet.force, bullet.delta * 1000)
 	end
 end
 

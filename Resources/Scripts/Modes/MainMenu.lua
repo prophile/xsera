@@ -82,6 +82,8 @@ function key ( k )
         mode_manager.switch("Demo")
     elseif k == "t" then
         mode_manager.switch("AngleTest")
+    elseif k == "c" then
+        mode_manager.switch("Credits")
     else
         print("Uninterpreted keystroke " .. k)
     end
