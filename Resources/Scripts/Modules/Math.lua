@@ -2,22 +2,8 @@ function hypot(x, y)
     return math.sqrt(x * x + y * y)
 end
 
--- This function almost ate me alive. - Adam
 function find_angle(origin, dest)
-	local diff = { x = dest.x - origin.x, y = dest.y - origin.y }
-	if diff.y > 0 then -- the difference in y is positive
-		if diff.x > 0 then -- QI
-			return math.atan(diff.y / diff.x)
-		else -- QII
-			return (math.pi + math.atan(diff.y / diff.x)) -- it's plus because tan is negative in QII
-		end
-	else -- the difference in y is negative
-		if diff.x > 0 then -- QIV
-			return ((2 * math.pi) + math.atan(diff.y / diff.x)) -- it's plus because tan is negative in QIV
-		else -- QIII
-			return (math.pi + math.atan(diff.y / diff.x))
-		end
-	end
+	return math.atan2(dest.y - origin.y, dest.x - origin.x)
 end
 
 function find_quadrant(angle)

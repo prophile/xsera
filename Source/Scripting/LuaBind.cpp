@@ -80,7 +80,7 @@ struct PHYS_Object
 int PHYS_NewObject ( lua_State* L )
 {
 	float mass = luaL_checknumber(L, 1);
-	luaL_argcheck(L, mass <= 0.0f, 1, "you cannot have a zero or negative mass");
+	luaL_argcheck(L, mass > 0.0f, 1, "you cannot have a zero or negative mass");
 	Physics::Object* object = Physics::NewObject(mass);
 	if (!object)
 	{
@@ -1095,4 +1095,5 @@ void __LuaBind ( lua_State* L )
     luaL_register(L, "sound", registrySound);
 	luaL_register(L, "net_client", registryNetClient);
 	luaL_register(L, "net_server", registryNetServer);
+	lua_cpcall(L, luaopen_physics, NULL);
 }
