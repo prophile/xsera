@@ -23,6 +23,8 @@ public:
 	float ModulusSquared () const { return x*x + y*y; }
 	float Angle () const { return atan2f(y, x); }
 	
+	vec2 UnitVector () const { return (*this / Modulus()); }
+	
 	vec2 operator+ ( const vec2& ov2 ) const
 		{ return vec2(x + ov2.x, y + ov2.y); }
 	vec2& operator+= ( const vec2& ov2 )
@@ -46,6 +48,8 @@ public:
 		
 	static float Distance ( const vec2& v1, const vec2& v2 )
 		{ return (v2 - v1).Modulus(); }
+    static float DistanceSquared ( const vec2& v1, const vec2& v2 )
+        { return (v2 - v1).ModulusSquared(); }
 };
 
 #endif

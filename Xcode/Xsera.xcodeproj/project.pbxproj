@@ -11,6 +11,8 @@
 		490CDB280ECCE572004B7D04 /* Music in Resources */ = {isa = PBXBuildFile; fileRef = 490CDB270ECCE572004B7D04 /* Music */; };
 		490CDB540ECCE757004B7D04 /* SpriteSheet.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 490CDB520ECCE757004B7D04 /* SpriteSheet.cpp */; };
 		4930D74F0ECE22990053CC8B /* Images in Resources */ = {isa = PBXBuildFile; fileRef = 4930D74A0ECE22990053CC8B /* Images */; };
+		4943B8FC0EFE77E900831321 /* PhysicsContext.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4943B8F80EFE77E900831321 /* PhysicsContext.cpp */; };
+		4943B8FD0EFE77E900831321 /* PhysicsObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4943B8FA0EFE77E900831321 /* PhysicsObject.cpp */; };
 		49554A330EDDBD1F009CA121 /* Stars in Resources */ = {isa = PBXBuildFile; fileRef = 49554A300EDDBD1F009CA121 /* Stars */; };
 		49597A130ED4D47C00173D17 /* Config in Resources */ = {isa = PBXBuildFile; fileRef = 49597A0B0ED4D47C00173D17 /* Config */; };
 		49597A750ED4D92E00173D17 /* Client.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 49597A730ED4D92E00173D17 /* Client.cpp */; };
@@ -108,6 +110,10 @@
 		490CDB520ECCE757004B7D04 /* SpriteSheet.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SpriteSheet.cpp; sourceTree = "<group>"; };
 		490CDB530ECCE757004B7D04 /* SpriteSheet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpriteSheet.h; sourceTree = "<group>"; };
 		4930D74A0ECE22990053CC8B /* Images */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Images; path = ../Resources/Images; sourceTree = SOURCE_ROOT; };
+		4943B8F80EFE77E900831321 /* PhysicsContext.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PhysicsContext.cpp; sourceTree = "<group>"; };
+		4943B8F90EFE77E900831321 /* PhysicsContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhysicsContext.h; sourceTree = "<group>"; };
+		4943B8FA0EFE77E900831321 /* PhysicsObject.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PhysicsObject.cpp; sourceTree = "<group>"; };
+		4943B8FB0EFE77E900831321 /* PhysicsObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhysicsObject.h; sourceTree = "<group>"; };
 		49554A110EDDB572009CA121 /* Starfield.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Starfield.cpp; sourceTree = "<group>"; };
 		49554A120EDDB572009CA121 /* Starfield.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Starfield.h; sourceTree = "<group>"; };
 		49554A300EDDBD1F009CA121 /* Stars */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Stars; path = ../Resources/Stars; sourceTree = SOURCE_ROOT; };
@@ -246,6 +252,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4943B8F70EFE77E900831321 /* Physics */ = {
+			isa = PBXGroup;
+			children = (
+				4943B8F80EFE77E900831321 /* PhysicsContext.cpp */,
+				4943B8F90EFE77E900831321 /* PhysicsContext.h */,
+				4943B8FA0EFE77E900831321 /* PhysicsObject.cpp */,
+				4943B8FB0EFE77E900831321 /* PhysicsObject.h */,
+			);
+			path = Physics;
+			sourceTree = "<group>";
+		};
 		496037ED0ED097D5003BA716 /* Lua */ = {
 			isa = PBXGroup;
 			children = (
@@ -374,6 +391,7 @@
 		496923E40EBE4C4000930DDD /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				4943B8F70EFE77E900831321 /* Physics */,
 				4960390B0ED09CD6003BA716 /* Scripting */,
 				496924840EBE516A00930DDD /* Modes */,
 				496924820EBE516100930DDD /* Xsera.cpp */,
@@ -612,6 +630,8 @@
 				4974F4BE0EE2E70800D56049 /* Compile.cpp in Sources */,
 				7A2DA5020EF9D4B2003CF28A /* Graphics.cpp in Sources */,
 				7A2DA5030EF9D4B7003CF28A /* Starfield.cpp in Sources */,
+				4943B8FC0EFE77E900831321 /* PhysicsContext.cpp in Sources */,
+				4943B8FD0EFE77E900831321 /* PhysicsObject.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
