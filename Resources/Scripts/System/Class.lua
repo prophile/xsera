@@ -57,7 +57,7 @@ function u.assert(value,errmsg,...)
       error(errmsg,2)
     else
       --trying to call second arg
-      error(errmsg(unpack(arg)),2)
+      error(errmsg(...),2)
     end
   end
 end
@@ -65,8 +65,9 @@ end
 local assert = u.assert
 
 function u.fwrongarg(...)
+  local f = {...}
   return function()
-    return wrongarg(unpack(arg))
+    return unpack(f)
   end
 end
 
@@ -112,7 +113,7 @@ for _, name in ipairs(METAMETHODS) do
   local name = name
   metatable[name] = function(...)
     ----
-    local a, b = unpack(arg)
+    local a, b = ...
     local f
     if isobject(a) then
       f = a[name]
@@ -123,7 +124,7 @@ for _, name in ipairs(METAMETHODS) do
     if not f then
     ----
     local name = name..'__'
-    --local a, b = unpack(arg)
+    --local a, b = ...
     --local f
     if isobject(a) then
       f = a[name]
@@ -139,7 +140,7 @@ for _, name in ipairs(METAMETHODS) do
                  local cname = rawget(class,INFO).__name
                  return 'meta-method not found: '..cname..':'..name
                end)
-    return f(unpack(arg))
+    return f(...)
   end
 end
 
@@ -300,7 +301,7 @@ function makesupermethod(self,name,iscmethod)
       method = findmethod(super,name,iscmethod)
     end
     assert(method, "no super method for "..classinfo.__name..":"..name)
-    return method(self,unpack(arg))
+    return method(self,...)
   end
 end
 
@@ -317,7 +318,7 @@ function methodsmeta:__call(object,...)
   }
   setmetatable(fenv,metafenv)
   setfenv(self.__f,fenv)
-  local result = {self.__f(object,unpack(arg))}
+  local result = {self.__f(object,...)}
   setfenv(self.__f,env)
   return unpack(result)
 end
@@ -347,8 +348,8 @@ rawget(Class,INFO).__methods.__newindex =
 ---- CLASS METHODS ----
 
 function Class:__call__(...)
-  local instance = self:new(unpack(arg))
-  instance:initialize(unpack(arg))
+  local instance = self:new(...)
+  instance:initialize(...)
   return instance
 end
 
@@ -414,7 +415,7 @@ function Class:adopt(t,initialize,...)
   local o = table2object(t)
   setclass(o,self)
   if initialize then
-    o:initialize(unpack(arg))
+    o:initialize(...)
   end
   return o
 end
