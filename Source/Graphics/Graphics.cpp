@@ -126,6 +126,9 @@ void Init ( int w, int h, bool fullscreen )
 	
 	glHint ( GL_LINE_SMOOTH_HINT, GL_NICEST );
 	glHint ( GL_POINT_SMOOTH_HINT, GL_NICEST );
+#ifdef __MACH__
+    glHint ( GL_TRANSFORM_HINT_APPLE, GL_FASTEST );
+#endif
 	
 	glEnableClientState ( GL_VERTEX_ARRAY );
 }
@@ -370,7 +373,11 @@ void BeginFrame ()
 
 void EndFrame ()
 {
+#ifdef __MACH__
+    glSwapAPPLE();
+#else
 	SDL_GL_SwapBuffers();
+#endif
 	TextRenderer::Prune();
 }
 

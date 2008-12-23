@@ -7,9 +7,319 @@
 #include "Net/Net.h"
 #include "Utilities/GameTime.h"
 #include "Utilities/XarFile.h"
+#include "Physics/PhysicsObject.h"
+#include "Physics/PhysicsContext.h"
 
 namespace
 {
+
+vec2 luaL_checkvec2(lua_State* L, int narg)
+{
+	if (!lua_istable(L, narg))
+	{
+		luaL_argerror(L, narg, "must pass a vector table");
+	}
+	float x, y;
+	lua_getfield(L, narg, "x");
+	if (!lua_isnumber(L, -1))
+	{
+		luaL_argerror(L, narg, "must pass a vector table");
+	}
+	x = lua_tonumber(L, -1);
+	lua_getfield(L, narg, "y");
+	if (!lua_isnumber(L, -1))
+	{
+		luaL_argerror(L, narg, "must pass a vector table");
+	}
+	y = lua_tonumber(L, -1);
+	lua_pop(L, 2);
+	return vec2(x, y);
+}
+
+vec2 luaL_optvec2(lua_State* L, int narg, vec2 defaultValue)
+{
+	if (lua_isnoneornil(L, narg))
+		return defaultValue;
+	return luaL_checkvec2(L, narg);
+}
+
+void lua_pushvec2(lua_State* L, vec2 val)
+{
+	lua_createtable(L, 0, 2);
+	lua_pushnumber(L, val.X());
+	lua_setfield(L, -2, "x");
+	lua_pushnumber(L, val.Y());
+	lua_setfield(L, -2, "y");
+}
+
+int PHYS_Open ( lua_State* L )
+{
+	float resistance = luaL_optnumber(L, 1, 0.35);
+	Physics::Open(resistance);
+	return 0;
+}
+
+int PHYS_Close ( lua_State* L )
+{
+	Physics::Close();
+	return 0;
+}
+
+int PHYS_Update ( lua_State* L )
+{
+	float timestep = luaL_checknumber(L, 1);
+	Physics::Update(timestep);
+	return 0;
+}
+
+struct PHYS_Object
+{
+	Physics::Object* pob;
+};
+
+int PHYS_NewObject ( lua_State* L )
+{
+	float mass = luaL_checknumber(L, 1);
+	luaL_argcheck(L, mass > 0.0f, 1, "you cannot have a zero or negative mass");
+	Physics::Object* object = Physics::NewObject(mass);
+	if (!object)
+	{
+		lua_pushliteral(L, "could not create object");
+		return lua_error(L);
+	}
+	PHYS_Object* pob = (PHYS_Object*)lua_newuserdata(L, sizeof(PHYS_Object));
+	pob->pob = object;
+	luaL_getmetatable(L, "Xsera.PhysicsObject");
+	lua_setmetatable(L, -2);
+	return 1;
+}
+
+int PHYS_DestroyObject ( lua_State* L )
+{
+	PHYS_Object* obj = (PHYS_Object*)luaL_checkudata(L, 1, "Xsera.PhysicsObject");
+	if (obj->pob)
+	{
+		Physics::DestroyObject(obj->pob);
+		return 0;
+	}
+	else
+	{
+		lua_pushliteral(L, "double-destruction of physics object");
+		return lua_error(L);
+	}
+}
+
+int PHYS_ObjectFromID ( lua_State* L )
+{
+	unsigned id = luaL_checkinteger(L, 1);
+	if (id == 0)
+	{
+		lua_pushnil(L);
+		return 1;
+	}
+	Physics::Object* object = Physics::ObjectWithID(id);
+	if (!object)
+	{
+		lua_pushnil(L);
+		return 1;
+	}
+	PHYS_Object* pob = (PHYS_Object*)lua_newuserdata(L, sizeof(PHYS_Object));
+	pob->pob = object;
+	luaL_getmetatable(L, "Xsera.PhysicsObject");
+	lua_setmetatable(L, -2);
+	return 1;
+}
+
+int PHYS_Collisions ( lua_State* L )
+{
+	return 0;
+}
+
+int PHYS_Object_Impulse ( lua_State* L );
+int PHYS_Object_AngularImpulse ( lua_State* L );
+int PHYS_Object_Force ( lua_State* L );
+int PHYS_Object_Torque ( lua_State* L );
+
+int PHYS_Object_PropGet ( lua_State* L )
+{
+	PHYS_Object* obj = (PHYS_Object*)luaL_checkudata(L, 1, "Xsera.PhysicsObject");
+	if (obj->pob == NULL)
+	{
+		lua_pushliteral(L, "cannot access properties on destroyed physics object");
+		return lua_error(L);
+	}
+	std::string property = luaL_checkstring(L, 2);
+	if (property == "apply_impulse")
+	{
+		lua_pushcclosure(L, PHYS_Object_Impulse, 0);
+	}
+	else if (property == "apply_angular_impulse")
+	{
+		lua_pushcclosure(L, PHYS_Object_AngularImpulse, 0);
+	}
+	else if (property == "apply_force")
+	{
+		lua_pushcclosure(L, PHYS_Object_Force, 0);
+	}
+	else if (property == "apply_torque")
+	{
+		lua_pushcclosure(L, PHYS_Object_Torque, 0);
+	}
+	else if (property == "mass")
+	{
+		lua_pushnumber(L, obj->pob->mass);
+	}
+	else if (property == "position")
+	{
+		lua_pushvec2(L, obj->pob->position);
+	}
+	else if (property == "velocity")
+	{
+		lua_pushvec2(L, obj->pob->velocity);
+	}
+	else if (property == "angle")
+	{
+		lua_pushnumber(L, obj->pob->angle);
+	}
+	else if (property == "angular_velocity")
+	{
+		lua_pushnumber(L, obj->pob->angularVelocity);
+	}
+	else if (property == "collision_radius")
+	{
+		lua_pushnumber(L, obj->pob->collisionRadius);
+	}
+	else if (property == "object_id")
+	{
+		lua_pushinteger(L, obj->pob->objectID);
+	}
+	else
+	{
+		char buffer[1024];
+		sprintf(buffer, "unknown property: '%s'", property.c_str());
+		lua_pushstring(L, buffer);
+		return lua_error(L);
+	}
+	return 1;
+}
+
+int PHYS_Object_PropSet ( lua_State* L )
+{
+	PHYS_Object* obj = (PHYS_Object*)luaL_checkudata(L, 1, "Xsera.PhysicsObject");
+	if (obj->pob == NULL)
+	{
+		lua_pushliteral(L, "cannot access properties on destroyed physics object");
+		return lua_error(L);
+	}
+	std::string property = luaL_checkstring(L, 2);
+	if (property == "position")
+	{
+		obj->pob->position = luaL_checkvec2(L, 3);
+	}
+	else if (property == "velocity")
+	{
+		obj->pob->velocity = luaL_checkvec2(L, 3);
+	}
+	else if (property == "angle")
+	{
+		obj->pob->angle = luaL_checknumber(L, 3);
+	}
+	else if (property == "angular_velocity")
+	{
+		obj->pob->angularVelocity = luaL_checknumber(L, 3);
+	}
+	else if (property == "mass")
+	{
+		obj->pob->mass = luaL_checknumber(L, 3);
+	}
+	else if (property == "collision_radius")
+	{
+		obj->pob->collisionRadius = luaL_checknumber(L, 3);
+	}
+	else
+	{
+		lua_pushliteral(L, "unknown property on physics object");
+		return lua_error(L);
+	}
+	return 0;
+}
+
+int PHYS_Object_Impulse ( lua_State* L )
+{
+	PHYS_Object* obj = (PHYS_Object*)luaL_checkudata(L, 1, "Xsera.PhysicsObject");
+	if (obj->pob == NULL)
+	{
+		lua_pushliteral(L, "cannot access properties on destroyed physics object");
+		return lua_error(L);
+	}
+	obj->pob->ApplyImpulse(luaL_checkvec2(L, 2));
+	return 0;
+}
+
+int PHYS_Object_AngularImpulse ( lua_State* L )
+{
+	PHYS_Object* obj = (PHYS_Object*)luaL_checkudata(L, 1, "Xsera.PhysicsObject");
+	if (obj->pob == NULL)
+	{
+		lua_pushliteral(L, "cannot access properties on destroyed physics object");
+		return lua_error(L);
+	}
+	obj->pob->ApplyAngularImpulse(luaL_checknumber(L, 2));
+	return 0;
+}
+
+int PHYS_Object_Force ( lua_State* L )
+{
+	PHYS_Object* obj = (PHYS_Object*)luaL_checkudata(L, 1, "Xsera.PhysicsObject");
+	if (obj->pob == NULL)
+	{
+		lua_pushliteral(L, "cannot access properties on destroyed physics object");
+		return lua_error(L);
+	}
+	obj->pob->force += luaL_checkvec2(L, 2);
+	return 0;
+}
+
+int PHYS_Object_Torque ( lua_State* L )
+{
+	PHYS_Object* obj = (PHYS_Object*)luaL_checkudata(L, 1, "Xsera.PhysicsObject");
+	if (obj->pob == NULL)
+	{
+		lua_pushliteral(L, "cannot access properties on destroyed physics object");
+		return lua_error(L);
+	}
+	obj->pob->torque += luaL_checknumber(L, 2);
+	return 0;
+}
+
+luaL_Reg registryPhysics[] =
+{
+	"open", PHYS_Open,
+	"close", PHYS_Close,
+	"update", PHYS_Update,
+	"new_object", PHYS_NewObject,
+	"destroy_object", PHYS_DestroyObject,
+	"object_from_id", PHYS_ObjectFromID,
+	"collisions", PHYS_Collisions,
+	NULL, NULL
+};
+
+luaL_Reg registryObjectPhysics[] =
+{
+	"__index", PHYS_Object_PropGet,
+	"__newindex", PHYS_Object_PropSet,
+	NULL, NULL
+};
+
+int luaopen_physics ( lua_State* L )
+{
+	luaL_newmetatable(L, "Xsera.PhysicsObject");
+	lua_pushvalue(L, -1);
+	lua_setfield(L, -2, "__index");
+	luaL_register(L, NULL, registryObjectPhysics);
+	luaL_register(L, "physics", registryPhysics);
+	return 1;
+}
 
 int NetClient_Connected ( lua_State* L )
 {
@@ -798,4 +1108,5 @@ void __LuaBind ( lua_State* L )
     luaL_register(L, "sound", registrySound);
 	luaL_register(L, "net_client", registryNetClient);
 	luaL_register(L, "net_server", registryNetServer);
+	lua_cpcall(L, luaopen_physics, NULL);
 }
