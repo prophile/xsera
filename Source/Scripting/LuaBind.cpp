@@ -135,6 +135,10 @@ int PHYS_Collisions ( lua_State* L )
 	return 0;
 }
 
+int PHYS_Object_Impulse ( lua_State* L );
+int PHYS_Object_AngularImpulse ( lua_State* L );
+int PHYS_Object_Force ( lua_State* L );
+int PHYS_Object_Torque ( lua_State* L );
 
 int PHYS_Object_PropGet ( lua_State* L )
 {
@@ -145,46 +149,58 @@ int PHYS_Object_PropGet ( lua_State* L )
 		return lua_error(L);
 	}
 	std::string property = luaL_checkstring(L, 2);
-	if (property == "mass")
+	if (property == "apply_impulse")
+	{
+		lua_pushcclosure(L, PHYS_Object_Impulse, 0);
+	}
+	else if (property == "apply_angular_impulse")
+	{
+		lua_pushcclosure(L, PHYS_Object_AngularImpulse, 0);
+	}
+	else if (property == "apply_force")
+	{
+		lua_pushcclosure(L, PHYS_Object_Force, 0);
+	}
+	else if (property == "apply_torque")
+	{
+		lua_pushcclosure(L, PHYS_Object_Torque, 0);
+	}
+	else if (property == "mass")
 	{
 		lua_pushnumber(L, obj->pob->mass);
-		return 1;
 	}
 	else if (property == "position")
 	{
 		lua_pushvec2(L, obj->pob->position);
-		return 1;
 	}
 	else if (property == "velocity")
 	{
 		lua_pushvec2(L, obj->pob->velocity);
-		return 2;
 	}
 	else if (property == "angle")
 	{
 		lua_pushnumber(L, obj->pob->angle);
-		return 1;
 	}
 	else if (property == "angular_velocity")
 	{
 		lua_pushnumber(L, obj->pob->angularVelocity);
-		return 1;
 	}
 	else if (property == "collision_radius")
 	{
 		lua_pushnumber(L, obj->pob->collisionRadius);
-		return 1;
 	}
 	else if (property == "object_id")
 	{
 		lua_pushinteger(L, obj->pob->objectID);
-		return 1;
 	}
 	else
 	{
-		lua_pushliteral(L, "unknown property");
+		char buffer[1024];
+		sprintf(buffer, "unknown property: '%s'", property.c_str());
+		lua_pushstring(L, buffer);
 		return lua_error(L);
 	}
+	return 1;
 }
 
 int PHYS_Object_PropSet ( lua_State* L )
@@ -225,6 +241,7 @@ int PHYS_Object_PropSet ( lua_State* L )
 		lua_pushliteral(L, "unknown property on physics object");
 		return lua_error(L);
 	}
+	return 0;
 }
 
 int PHYS_Object_Impulse ( lua_State* L )
@@ -291,10 +308,6 @@ luaL_Reg registryObjectPhysics[] =
 {
 	"__index", PHYS_Object_PropGet,
 	"__newindex", PHYS_Object_PropSet,
-	"apply_impulse", PHYS_Object_Impulse,
-	"apply_angular_impulse", PHYS_Object_AngularImpulse,
-	"apply_torque", PHYS_Object_Torque,
-	"apply_force", PHYS_Object_Force,
 	NULL, NULL
 };
 
