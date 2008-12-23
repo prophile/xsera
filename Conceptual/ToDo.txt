@@ -5,10 +5,12 @@ Xsera immediate TODO list:
 * Define the format of the XML configuration files
 * Add support for reading zip files in the resource manager
 * Find replacement sounds and integrate [assigned: Adam]
+- Note: sounds are being a pain to find. Rickton said he might make sounds, but I have hardly seen him around, if ever. Last time I talked to him, he said he would redo the "laser sound", by which I assumed he meant the PK beam. :unsure:
 * Assemble short technical demo [assigned: Adam]
 * Finish the OpenAL audio engine [assigned: Alastair]
 * Tag release 0.0.1 once done [assigned: Alastair]
 
+* Add Credits [complete, will need expansion]
 * Add bindings to Lua for the Net subsystem [complete]
 * Test the Net subsystem extensively [complete]
 * Design a testing framework [complete]

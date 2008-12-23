@@ -126,11 +126,13 @@ function update ()
 	end
 end
 
+starfielddepth = 0
+
 function render ()
     graphics.begin_frame()
-	
 	shipLocation = ship:location()
 	graphics.set_camera(shipLocation.x - 46 - (camera.w / 2.0), shipLocation.y - (camera.h / 2.0), shipLocation.x - 46 + (camera.w / 2.0), shipLocation.y + (camera.w / 2.0))
+	graphics.draw_starfield(starfielddepth)
     if carrierHealth ~= 0 then
 		graphics.draw_sprite("Gaitori/Carrier", carrierLocation.x, carrierLocation.y, Gai_Carrier_Size[1], Gai_Carrier_Size[2], carrierRotation)
     else
@@ -213,6 +215,12 @@ function key ( k )
 		keysDown.right = true
 	elseif k == "z" then
 		firebullet = true
+	elseif k == "y" then
+		starfielddepth = starfielddepth + 10000.0
+		print(starfielddepth)
+	elseif k == "h" then
+		starfielddepth = starfielddepth - 10000.0
+		print(starfielddepth)
 	elseif k == "x" then
 		sound.play("Warp1")
 	elseif k == "c" then

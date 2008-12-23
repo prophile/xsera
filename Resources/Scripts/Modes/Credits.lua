@@ -1,8 +1,8 @@
 creditsRolling = true
 totalTime = 0.0
 initialDist = -200
-separationDist = 10
-speed = 25
+separationDist = 9
+speed = 30
 
 credits = {}
 creditSizes = {}
@@ -30,7 +30,7 @@ end
 
 function key ( k )
 	if k == 'p' then
-		if creditsRolling	 == true then
+		if creditsRolling == true then
 			creditsRolling = false
 		else
 			creditsRolling = true
