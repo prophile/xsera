@@ -28,6 +28,9 @@
 #define LUA_ANSI
 #endif
 
+#if defined(__MACH__)
+#define LUA_USE_MACOSX
+#endif
 
 #if !defined(LUA_ANSI) && defined(_WIN32)
 #define LUA_WIN
@@ -333,14 +336,14 @@
 ** CHANGE it to undefined as soon as your programs use only '...' to
 ** access vararg parameters (instead of the old 'arg' table).
 */
-#define LUA_COMPAT_VARARG
+#undef LUA_COMPAT_VARARG
 
 /*
 @@ LUA_COMPAT_MOD controls compatibility with old math.mod function.
 ** CHANGE it to undefined as soon as your programs use 'math.fmod' or
 ** the new '%' operator instead of 'math.mod'.
 */
-#define LUA_COMPAT_MOD
+#undef LUA_COMPAT_MOD
 
 /*
 @@ LUA_COMPAT_LSTR controls compatibility with old long string nesting
@@ -363,10 +366,10 @@
 ** CHANGE it to undefined as soon as you replace to 'luaL_register'
 ** your uses of 'luaL_openlib'
 */
-#define LUA_COMPAT_OPENLIB
+#undef LUA_COMPAT_OPENLIB
 
 
-
+#define LUA_USE_APICHECK
 /*
 @@ luai_apicheck is the assert macro used by the Lua-C API.
 ** CHANGE luai_apicheck if you want Lua to perform some checks in the

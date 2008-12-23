@@ -23,7 +23,7 @@ public:
 	float ModulusSquared () const { return x*x + y*y; }
 	float Angle () const { return atan2f(y, x); }
 	
-	vec2 UnitVector () const { return (*this / Modulus()); }
+	vec2 UnitVector () const { if (ModulusSquared() < 0.0001f) return vec2(0.0f, 0.0f); return (*this / Modulus()); }
 	
 	vec2 operator+ ( const vec2& ov2 ) const
 		{ return vec2(x + ov2.x, y + ov2.y); }
