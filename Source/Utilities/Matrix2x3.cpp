@@ -27,8 +27,8 @@ vec2 matrix2x3::operator* ( const vec2& srcv2 ) const
 	float ix, iy, ox, oy;
 	ix = srcv2.X();
 	iy = srcv2.Y();
-	ox = (ix * _m11) + (iy * _m12) * _tX;
-	oy = (ix * _m21) + (iy * _m22) * _tY;
+	ox = (ix * _m11) + (iy * _m12) + _tX;
+	oy = (ix * _m21) + (iy * _m22) + _tY;
 	return vec2(ox, oy);
 }
 
@@ -43,7 +43,7 @@ static void MatrixMultiply3 ( const float* inMatrix1, const float* inMatrix2, fl
 			MA(outMatrix,i,j) = 0.0f;
 			for (int k = 0; k < 3; k++)
 			{
-				MA(outMatrix,i,j) += MA(inMatrix1,k,j) * MA(inMatrix2,i,k);
+				MA(outMatrix,i,j) += MA(inMatrix1,i,k) * MA(inMatrix2,k,j);
 			}
 		}
 	}
@@ -95,4 +95,13 @@ matrix2x3& matrix2x3::operator= ( const matrix2x3& srcm2 )
 matrix2x3 matrix2x3::Rotation ( float angle )
 {
 	return matrix2x3(cosf(angle), -sinf(angle), sinf(angle), cosf(angle), 0.0f, 0.0f);
+}
+
+matrix2x3 matrix2x3::Ortho ( float left, float right, float bottom, float top )
+{
+	float tx = (right + left) / (right - left);
+	float ty = (top + bottom) / (top - bottom);
+	float m11 = 2.0f / (right - left);
+	float m22 = 2.0f / (top - bottom);
+	return matrix2x3(m11, 0.0f, 0.0f, m22, tx, ty);
 }

@@ -4,9 +4,19 @@
 #include <vector>
 #include "TinyXML/tinyxml.h"
 #include "Utilities/ResourceManager.h"
+#include "Utilities/Matrix2x3.h"
 
 namespace Graphics
 {
+
+namespace Matrices
+{
+
+void SetProjectionMatrix ( const matrix2x3& m );
+void SetViewMatrix ( const matrix2x3& m );
+void SetModelMatrix ( const matrix2x3& m );
+
+}
 
 namespace StarfieldBuilding
 {
@@ -150,15 +160,12 @@ const static float starfieldVertices[] =
 void Starfield::Draw ( float depth, vec2 centre )
 {
 	(void)depth;
-	glPushMatrix();
-	glTranslatef(centre.X(), centre.Y(), 0.0f);
+	Matrices::SetViewMatrix(matrix2x3::Translate(centre));
 	glBindTexture(GL_TEXTURE_RECTANGLE_ARB, texID);
 	
 	glVertexPointer(2, GL_FLOAT, 0, starfieldVertices);
 	glTexCoordPointer(2, GL_FLOAT, 0, starfieldTexCoords);
 	glDrawArrays(GL_QUADS, 0, 4);
-	
-	glPopMatrix();
 }
 
 }
