@@ -103,6 +103,7 @@ namespace Matrices
 static matrix2x3 projectionMatrix;
 static matrix2x3 viewMatrix;
 static matrix2x3 modelMatrix;
+static matrix2x3 mvpMatrix;
 
 static void LoadMatrix ( const matrix2x3& m )
 {
@@ -114,9 +115,6 @@ static void LoadMatrix ( const matrix2x3& m )
 void SetProjectionMatrix ( const matrix2x3& m )
 {
 	projectionMatrix = m;
-	glMatrixMode(GL_PROJECTION);
-	LoadMatrix(projectionMatrix);
-	glMatrixMode(GL_MODELVIEW);
 }
 
 void SetViewMatrix ( const matrix2x3& m )
@@ -128,8 +126,8 @@ void SetViewMatrix ( const matrix2x3& m )
 void SetModelMatrix ( const matrix2x3& m )
 {
 	modelMatrix = m;
-	LoadMatrix(viewMatrix);
-	//LoadMatrix(viewMatrix * modelMatrix);
+	mvpMatrix = modelMatrix * viewMatrix * projectionMatrix;
+	LoadMatrix(mvpMatrix);
 }
 
 }
