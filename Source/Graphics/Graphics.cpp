@@ -5,6 +5,8 @@
 #include "TextRenderer.h"
 #include <map>
 #include "Starfield.h"
+#include "Graphics.h"
+#include "Utilities/Matrix2x3.h"
 
 #define DEG2RAD(x) ((x / 180.0f) * M_PI)
 #define RAD2DEG(x) ((x / M_PI) * 180.0f)
@@ -81,6 +83,54 @@ static SheetMap spriteSheets;
 
 namespace Graphics
 {
+
+/*
+ Other files can use:
+ 
+ namespace Matrices
+ {
+ 
+ void SetProjectionMatrix ( const matrix2x3& m );
+ void SetViewMatrix ( const matrix2x3& m );
+ void SetModelMatrix ( const matrix2x3& m );
+ 
+ }
+ */
+
+namespace Matrices
+{
+
+static matrix2x3 projectionMatrix;
+static matrix2x3 viewMatrix;
+static matrix2x3 modelMatrix;
+static matrix2x3 mvpMatrix;
+
+static void LoadMatrix ( const matrix2x3& m )
+{
+	GLfloat array[16];
+	m.FillOpenGLMatrix(array);
+	glLoadMatrixf(array);
+}
+
+void SetProjectionMatrix ( const matrix2x3& m )
+{
+	projectionMatrix = m;
+}
+
+void SetViewMatrix ( const matrix2x3& m )
+{
+	viewMatrix = m;
+}
+
+// the state is only guaranteed after a SetModelMatrix call
+void SetModelMatrix ( const matrix2x3& m )
+{
+	modelMatrix = m;
+	mvpMatrix = modelMatrix * viewMatrix * projectionMatrix;
+	LoadMatrix(mvpMatrix);
+}
+
+}
 
 void Init ( int w, int h, bool fullscreen )
 {
@@ -228,8 +278,8 @@ void DrawSprite ( const std::string& sheetname, int sheet_x, int sheet_y, vec2 l
 	{
 		sheet = iter->second;
 	}
-	glPushMatrix();
-	glTranslatef(location.X(), location.Y(), 0.0f);
+	Matrices::SetViewMatrix(matrix2x3::Translate(location));
+	Matrices::SetModelMatrix(matrix2x3::Identity());
 	if (sheet->IsRotational())
 	{
 		assert(sheet_x == 0);
@@ -241,7 +291,6 @@ void DrawSprite ( const std::string& sheetname, int sheet_x, int sheet_y, vec2 l
 		glRotatef(RAD2DEG(rotation), 0.0f, 0.0f, 1.0f);
 		sheet->Draw(sheet_x, sheet_y, size);
 	}
-	glPopMatrix();
 }
 
 void DrawText ( const std::string& text, const std::string& font, vec2 location, float height, colour col, float rotation )
@@ -251,9 +300,8 @@ void DrawText ( const std::string& text, const std::string& font, vec2 location,
 	EnableBlending();
 	SetColour(col);
 	GLuint texID = TextRenderer::TextObject(font, text);
-	glPushMatrix();
-	glTranslatef(location.X(), location.Y(), 0.0f);
-	glRotatef(RAD2DEG(rotation), 0.0f, 0.0f, 1.0f);
+	Matrices::SetViewMatrix(matrix2x3::Translate(location));
+	Matrices::SetModelMatrix(matrix2x3::Rotation(rotation));
 	glBindTexture(GL_TEXTURE_RECTANGLE_ARB, texID);
 	vec2 dims = TextRenderer::TextDimensions(font, text);
 	vec2 halfSize = (dims * (height / dims.Y())) * 0.5f;
@@ -263,7 +311,6 @@ void DrawText ( const std::string& text, const std::string& font, vec2 location,
 	glVertexPointer(2, GL_FLOAT, 0, vertexArray);
 	glTexCoordPointer(2, GL_FLOAT, 0, textureArray);
 	glDrawArrays(GL_QUADS, 0, 4);
-	glPopMatrix();
 }
 
 void DrawLine ( vec2 coordinate1, vec2 coordinate2, float width, colour col )
@@ -278,6 +325,8 @@ void DrawLine ( vec2 coordinate1, vec2 coordinate2, float width, colour col )
 		EnableBlending();
 	}
 	glLineWidth(width);
+	Matrices::SetViewMatrix(matrix2x3::Identity());
+	Matrices::SetModelMatrix(matrix2x3::Identity());
 	SetColour(col);
 	float vertices[4] = { coordinate1.X(), coordinate1.Y(),
 	                      coordinate2.X(), coordinate2.Y() };
@@ -297,13 +346,11 @@ void DrawCircle ( vec2 centre, float radius, float width, colour col )
 		EnableBlending();
 	}
 	glLineWidth(width);
-	glPushMatrix ();
-	glTranslatef ( centre.X(), centre.Y(), 0.0f );
+	Matrices::SetViewMatrix(matrix2x3::Translate(centre));
+	Matrices::SetModelMatrix(matrix2x3::Scale(radius));
 	SetColour ( col );
-	glScalef ( radius, radius, 1.0f );
 	glVertexPointer(2, GL_FLOAT, 0, circlePoints);
 	glDrawArrays(GL_LINE_LOOP, 0, sizeof(circlePoints) / (2 * sizeof(float)));
-	glPopMatrix ();
 }
 
 void DrawParticles ( const vec2* locations, unsigned int count, colour col )
@@ -317,6 +364,8 @@ void DrawParticles ( const vec2* locations, unsigned int count, colour col )
 	{
 		EnableBlending();
 	}
+	Matrices::SetViewMatrix(matrix2x3::Identity());
+	Matrices::SetModelMatrix(matrix2x3::Identity());
 	glVertexPointer ( 2, GL_FLOAT, 0, locations );
 	SetColour(col);
 	glDrawArrays ( GL_POINTS, 0, count );
@@ -333,6 +382,8 @@ void DrawStarfield ( float depth )
 	EnableTexturing();
 	DisableBlending();
 	ClearColour();
+	Matrices::SetViewMatrix(matrix2x3::Identity());
+	Matrices::SetModelMatrix(matrix2x3::Identity());
 	sfld->Draw(depth, vec2(0.0f, 0.0f));
 }
 
@@ -355,12 +406,10 @@ bool IsCulled ( vec2 location, float radius )
 
 void SetCamera ( vec2 corner1, vec2 corner2, float rotation )
 {
-	glMatrixMode(GL_PROJECTION);
-	glLoadIdentity();
-	glOrtho(corner1.X(), corner2.X(), corner1.Y(), corner2.Y(), 0.0, 1.0);
+	matrix2x3 projection ( matrix2x3::Ortho(corner1.X(), corner2.X(), corner1.Y(), corner2.Y()) );
 	if (fabs(rotation) > 0.00004f)
-		glRotatef(RAD2DEG(rotation), 0.0f, 0.0f, 1.0f);
-	glMatrixMode(GL_MODELVIEW);
+		projection *= matrix2x3::Rotation(rotation);
+	Matrices::SetProjectionMatrix(projection);
 	cameraCorner1 = corner1;
 	cameraCorner2 = corner2;
 }
@@ -368,7 +417,8 @@ void SetCamera ( vec2 corner1, vec2 corner2, float rotation )
 void BeginFrame ()
 {
 	glClear(GL_COLOR_BUFFER_BIT);
-	glLoadIdentity();
+	Matrices::SetViewMatrix(matrix2x3::Identity());
+	Matrices::SetModelMatrix(matrix2x3::Identity());
 }
 
 void EndFrame ()

@@ -12,10 +12,6 @@ namespace ResourceManager
 namespace Internal
 {
 
-std::vector<std::string> searchPaths;
-std::string userDirectoryPath;
-SDL_mutex* mutex;
-
 bool _FileExists ( const std::string& path )
 {
 	FILE* fp = fopen(path.c_str(), "rb");
@@ -23,6 +19,57 @@ bool _FileExists ( const std::string& path )
 		fclose(fp);
 	return fp != NULL;
 }
+
+class ResourceDomain
+{
+public:
+	ResourceDomain () {}
+	virtual ~ResourceDomain () {}
+	
+	virtual SDL_RWops* OpenFile ( const std::string& path ) = 0;
+	virtual bool FileExists ( const std::string& path );
+};
+
+bool ResourceDomain::FileExists ( const std::string& path )
+{
+	SDL_RWops* ops = OpenFile(path);
+	if (ops)
+	{
+		SDL_RWclose(ops);
+		return true;
+	}
+	else
+	{
+		return false;
+	}
+}
+
+class ResourceDomainFilesystem : public ResourceDomain
+{
+private:
+	std::string _basePath;
+public:
+	ResourceDomainFilesystem ( const std::string& basePath ) : _basePath(basePath) {}
+	virtual ~ResourceDomainFilesystem () {}
+	
+	virtual bool FileExists ( const std::string& path );
+	virtual SDL_RWops* OpenFile ( const std::string& path );
+};
+
+bool ResourceDomainFilesystem::FileExists ( const std::string& path )
+{
+	std::string fullPath = _basePath + '/' + path;
+	return _FileExists(fullPath);
+}
+
+SDL_RWops* ResourceDomainFilesystem::OpenFile ( const std::string& path )
+{
+	return SDL_RWFromFile((_basePath + '/' + path).c_str(), "rb");
+}
+
+std::vector<ResourceDomain*> searchDomains;
+std::string userDirectoryPath;
+SDL_mutex* mutex;
 
 }
 
@@ -46,10 +93,10 @@ bool FileExists ( const std::string& name )
 	if (name == "")
 		return false;
 	SDL_LockMutex(mutex);
-	for (std::vector<std::string>::iterator iter = searchPaths.begin(); iter != searchPaths.end(); iter++)
+	for (std::vector<ResourceDomain*>::iterator iter = searchDomains.begin(); iter != searchDomains.end(); iter++)
 	{
-		std::string fullPath = (*iter) + '/' + name;
-		if (_FileExists(fullPath))
+		ResourceDomain* domain = *iter;
+		if (domain->FileExists(name))
 		{
 			SDL_UnlockMutex(mutex);
 			return true;
@@ -72,14 +119,14 @@ SDL_RWops* OpenFile ( const std::string& name )
 	if (name == "")
 		return NULL;
 	SDL_LockMutex(mutex);
-	for (std::vector<std::string>::iterator iter = searchPaths.begin(); iter != searchPaths.end(); iter++)
+	for (std::vector<ResourceDomain*>::iterator iter = searchDomains.begin(); iter != searchDomains.end(); iter++)
 	{
-		std::string fullPath = (*iter) + '/' + name;
-		if (_FileExists(fullPath))
+		ResourceDomain* domain = *iter;
+		if (domain->FileExists(name))
 		{
-			printf("[ResourceManager] loaded file %s\n", name.c_str());
+			SDL_RWops* ops = domain->OpenFile(name);
 			SDL_UnlockMutex(mutex);
-			return SDL_RWFromFile(fullPath.c_str(), "r");
+			return ops;
 		}
 	}
 	SDL_UnlockMutex(mutex);
@@ -105,7 +152,6 @@ void WriteFile ( const std::string& name, const void* data, size_t len )
 
 void Init ()
 {
-	searchPaths.clear();
 #ifdef __MACH__
 	char systemDirectory[1024];
 	char userDirectory[1024];
@@ -115,10 +161,19 @@ void Init ()
 	CFURLRef resourcePath = CFBundleCopyResourcesDirectoryURL(mainBundle);
 	CFURLGetFileSystemRepresentation(resourcePath, 1, (Uint8*)systemDirectory, sizeof(systemDirectory));
 	CFRelease(resourcePath);
-	printf("Search directories:\n\tSystem: %s\n\tUser: %s\n", systemDirectory, userDirectory);
-	searchPaths.push_back(systemDirectory);
-	searchPaths.push_back(userDirectory);
+	searchDomains.push_back(new ResourceDomainFilesystem(userDirectory));
+	searchDomains.push_back(new ResourceDomainFilesystem(systemDirectory));
 	userDirectoryPath = userDirectory;
+#elif defined(WIN32)
+#else
+	char userDirectory[1024];
+	char currentDirectory[1024];
+	sprintf(userDirectory, "%s/.xsera", getenv("HOME"));
+	CreateDirectoryWithIntermediates(userDirectory);
+	getcwd(currentDirectory);
+	searchDomains.push_back(new ResourceDomainFilesystem(userDirectory));
+	searchDomains.push_back(new ResourceDomainFilesystem("/usr/share/xsera"));
+	searchDomains.push_back(new ResourceDomainFilesystem(currentDirectory));
 #endif
 	mutex = SDL_CreateMutex();
 }

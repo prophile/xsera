@@ -74,6 +74,8 @@
 		496924690EBE4D0600930DDD /* SDL_ttf.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 4969241A0EBE4CEA00930DDD /* SDL_ttf.framework */; };
 		496924830EBE516100930DDD /* Xsera.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 496924820EBE516100930DDD /* Xsera.cpp */; };
 		4974F4BE0EE2E70800D56049 /* Compile.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4974F4BC0EE2E70800D56049 /* Compile.cpp */; };
+		49921B790F02946C0023E5FE /* neural-network.c in Sources */ = {isa = PBXBuildFile; fileRef = 49921B770F02946C0023E5FE /* neural-network.c */; };
+		49921B7C0F0294790023E5FE /* Matrix2x3.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 49921B7A0F0294790023E5FE /* Matrix2x3.cpp */; };
 		49A0E6940ECC3887007F3458 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49A0E6930ECC3887007F3458 /* OpenGL.framework */; };
 		49A0E69B0ECC39FD007F3458 /* ResourceManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 49A0E69A0ECC39FD007F3458 /* ResourceManager.cpp */; };
 		49A315480ED6B5AD0054BB8B /* TextRenderer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 49A315460ED6B5AD0054BB8B /* TextRenderer.cpp */; };
@@ -218,6 +220,10 @@
 		496924850EBE516A00930DDD /* ModeManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModeManager.h; sourceTree = "<group>"; };
 		4974F4BC0EE2E70800D56049 /* Compile.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Compile.cpp; sourceTree = "<group>"; };
 		4974F4BD0EE2E70800D56049 /* Compile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Compile.h; sourceTree = "<group>"; };
+		49921B770F02946C0023E5FE /* neural-network.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "neural-network.c"; sourceTree = "<group>"; };
+		49921B780F02946C0023E5FE /* neural-network.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "neural-network.h"; sourceTree = "<group>"; };
+		49921B7A0F0294790023E5FE /* Matrix2x3.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Matrix2x3.cpp; sourceTree = "<group>"; };
+		49921B7B0F0294790023E5FE /* Matrix2x3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Matrix2x3.h; sourceTree = "<group>"; };
 		49A0E6930ECC3887007F3458 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = /System/Library/Frameworks/OpenGL.framework; sourceTree = "<absolute>"; };
 		49A0E69A0ECC39FD007F3458 /* ResourceManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ResourceManager.cpp; sourceTree = "<group>"; };
 		49A315460ED6B5AD0054BB8B /* TextRenderer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TextRenderer.cpp; sourceTree = "<group>"; };
@@ -372,6 +378,7 @@
 		496923E30EBE4C3900930DDD /* External */ = {
 			isa = PBXGroup;
 			children = (
+				49921B760F02946C0023E5FE /* NeuralNetwork */,
 				496037ED0ED097D5003BA716 /* Lua */,
 				49A0E6930ECC3887007F3458 /* OpenGL.framework */,
 				496924040EBE4CEA00930DDD /* eNet */,
@@ -441,6 +448,8 @@
 		496923FD0EBE4CD500930DDD /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				49921B7A0F0294790023E5FE /* Matrix2x3.cpp */,
+				49921B7B0F0294790023E5FE /* Matrix2x3.h */,
 				49A79EDD0ED7848F00517488 /* XarFile.cpp */,
 				49A79EDE0ED7848F00517488 /* XarFile.h */,
 				49D5441F0ED5E854002FC38E /* GameTime.h */,
@@ -505,6 +514,15 @@
 				496924850EBE516A00930DDD /* ModeManager.h */,
 			);
 			path = Modes;
+			sourceTree = "<group>";
+		};
+		49921B760F02946C0023E5FE /* NeuralNetwork */ = {
+			isa = PBXGroup;
+			children = (
+				49921B770F02946C0023E5FE /* neural-network.c */,
+				49921B780F02946C0023E5FE /* neural-network.h */,
+			);
+			path = NeuralNetwork;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -630,6 +648,8 @@
 				7A2DA5030EF9D4B7003CF28A /* Starfield.cpp in Sources */,
 				4943B8FC0EFE77E900831321 /* PhysicsContext.cpp in Sources */,
 				4943B8FD0EFE77E900831321 /* PhysicsObject.cpp in Sources */,
+				49921B790F02946C0023E5FE /* neural-network.c in Sources */,
+				49921B7C0F0294790023E5FE /* Matrix2x3.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -664,6 +684,7 @@
 					"$(inherited)",
 					"\"$(SRCROOT)/../External\"",
 				);
+				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_FIX_AND_CONTINUE = YES;
 				GCC_MODEL_TUNING = G5;
@@ -705,6 +726,7 @@
 					"$(inherited)",
 					"\"$(SRCROOT)/../External\"",
 				);
+				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_ENABLE_FIX_AND_CONTINUE = NO;
 				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = NO;
