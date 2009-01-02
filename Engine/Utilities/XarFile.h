@@ -1,5 +1,5 @@
-#ifndef __xsera_utilities_xarfile_h
-#define __xsera_utilities_xarfile_h
+#ifndef __apollo_utilities_xarfile_h
+#define __apollo_utilities_xarfile_h
 
 #include <string>
 #include <SDL/SDL.h>

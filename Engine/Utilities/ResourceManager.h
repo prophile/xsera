@@ -1,5 +1,5 @@
-#ifndef __xsera_utilities_resourcemanager_h
-#define __xsera_utilities_resourcemanager_h
+#ifndef __apollo_utilities_resourcemanager_h
+#define __apollo_utilities_resourcemanager_h
 
 #include <SDL/SDL.h>
 #include <string>
@@ -15,7 +15,7 @@ SDL_RWops* OpenFile ( const std::string& name ); // separate paths with /, they 
 SDL_RWops* WriteFile ( const std::string& name );
 void WriteFile ( const std::string& name, const void* data, size_t len );
 
-void Init ();
+void Init ( const std::string& appname );
 
 }
 

@@ -108,7 +108,7 @@ void Startup ()
 	// do init stuff
 	SDL_Init(SDL_INIT_TIMER);
 	InitModeManager();
-	ResourceManager::Init();
+	ResourceManager::Init("Xsera");
 //	Graphics::Init(640, 480, false); // 640x480 resolution, non-fullscreen
 	Graphics::Init(960, 720, false); // 960x720 resolution, non-fullscreen
 	SDL_EnableUNICODE(1);

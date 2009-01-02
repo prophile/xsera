@@ -150,17 +150,25 @@ void WriteFile ( const std::string& name, const void* data, size_t len )
 	fclose(fp);
 }
 
-void Init ()
+void Init ( const std::string& appname )
 {
 #ifdef __MACH__
 	char systemDirectory[1024];
+	char frameworkDirectory[1024];
 	char userDirectory[1024];
-	sprintf(userDirectory, "%s/Library/Application Support/Xsera", getenv("HOME"));
+	sprintf(userDirectory, "%s/Library/Application Support/%s", getenv("HOME"), appname.c_str());
 	CreateDirectoryWithIntermediates(userDirectory);
+	
 	CFBundleRef mainBundle = CFBundleGetMainBundle();
-	CFURLRef resourcePath = CFBundleCopyResourcesDirectoryURL(mainBundle);
-	CFURLGetFileSystemRepresentation(resourcePath, 1, (Uint8*)systemDirectory, sizeof(systemDirectory));
-	CFRelease(resourcePath);
+	CFURLRef appResourcePath = CFBundleCopyResourcesDirectoryURL(mainBundle);
+	CFURLGetFileSystemRepresentation(appResourcePath, 1, (Uint8*)systemDirectory, sizeof(systemDirectory));
+	CFRelease(appResourcePath);
+	
+	CFBundleRef frameworkBundle = CFBundleGetBundleWithIdentifier(CFSTR("com.xsera.ApolloEngine"));
+	CFURLRef frameworkResourcePath = CFBundleCopyResourcesDirectoryURL(mainBundle);
+	CFURLGetFileSystemRepresentation(frameworkResourcePath, 1, (Uint8*)frameworkDirectory, sizeof(frameworkDirectory));
+	CFRelease(frameworkResourcePath);
+	
 	searchDomains.push_back(new ResourceDomainFilesystem(userDirectory));
 	searchDomains.push_back(new ResourceDomainFilesystem(systemDirectory));
 	userDirectoryPath = userDirectory;
@@ -168,12 +176,15 @@ void Init ()
 #else
 	char userDirectory[1024];
 	char currentDirectory[1024];
-	sprintf(userDirectory, "%s/.xsera", getenv("HOME"));
+	char appShareDirectory[1024];
+	sprintf(userDirectory, "%s/.%s", getenv("HOME"), appname.c_str());
 	CreateDirectoryWithIntermediates(userDirectory);
 	getcwd(currentDirectory);
+	sprintf(appShareDirectory, "/usr/share/%s", appname.c_str());
 	searchDomains.push_back(new ResourceDomainFilesystem(userDirectory));
-	searchDomains.push_back(new ResourceDomainFilesystem("/usr/share/xsera"));
 	searchDomains.push_back(new ResourceDomainFilesystem(currentDirectory));
+	searchDomains.push_back(new ResourceDomainFilesystem(shareDirectory));
+	searchDomains.push_back(new ResourceDomainFilesystem("/usr/share/apollo"));
 #endif
 	mutex = SDL_CreateMutex();
 }

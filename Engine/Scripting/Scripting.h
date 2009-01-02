@@ -1,5 +1,5 @@
-#ifndef __xsera_scripting_scripting_h
-#define __xsera_scripting_scripting_h
+#ifndef __apollo_scripting_scripting_h
+#define __apollo_scripting_scripting_h
 
 #include <stdarg.h>
 

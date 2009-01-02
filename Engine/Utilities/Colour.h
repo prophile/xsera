@@ -1,5 +1,5 @@
-#ifndef __xsera_utilities_colour_h
-#define __xsera_utilities_colour_h
+#ifndef __apollo_utilities_colour_h
+#define __apollo_utilities_colour_h
 
 #include <string.h>
 

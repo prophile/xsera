@@ -1,5 +1,5 @@
-#ifndef __xsera_graphics_spritesheet_h
-#define __xsera_graphics_spritesheet_h
+#ifndef __apollo_graphics_spritesheet_h
+#define __apollo_graphics_spritesheet_h
 
 #include <SDL/SDL.h>
 #include <SDL_image/SDL_image.h>

@@ -1,5 +1,5 @@
-#ifndef __xsera_utilities_gametime_h
-#define __xsera_utilities_gametime_h
+#ifndef __apollo_utilities_gametime_h
+#define __apollo_utilities_gametime_h
 
 #include <SDL/SDL.h>
 

@@ -1,5 +1,5 @@
-#ifndef __xsera_graphics_text_renderer_h
-#define __xsera_graphics_text_renderer_h
+#ifndef __apollo_graphics_text_renderer_h
+#define __apollo_graphics_text_renderer_h
 
 #include <string>
 #include <OpenGL/gl.h>

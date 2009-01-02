@@ -1,5 +1,5 @@
-#ifndef __xsera_modes_modemanager_h
-#define __xsera_modes_modemanager_h
+#ifndef __apollo_modes_modemanager_h
+#define __apollo_modes_modemanager_h
 
 #include "Scripting/Scripting.h"
 

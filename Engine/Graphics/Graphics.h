@@ -1,5 +1,5 @@
-#ifndef __xsera_graphics_graphics_h
-#define __xsera_graphics_graphics_h
+#ifndef __apollo_graphics_graphics_h
+#define __apollo_graphics_graphics_h
 
 #include <string>
 #include "Utilities/Vec2.h"

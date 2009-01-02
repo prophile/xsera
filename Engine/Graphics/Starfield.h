@@ -1,5 +1,5 @@
-#ifndef __xsera_graphics_starfield_h
-#define __xsera_graphics_starfield_h
+#ifndef __apollo_graphics_starfield_h
+#define __apollo_graphics_starfield_h
 
 #include <Utilities/Vec2.h>
 #include <OpenGL/gl.h>

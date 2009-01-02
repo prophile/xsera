@@ -89,14 +89,14 @@ int PHYS_NewObject ( lua_State* L )
 	}
 	PHYS_Object* pob = (PHYS_Object*)lua_newuserdata(L, sizeof(PHYS_Object));
 	pob->pob = object;
-	luaL_getmetatable(L, "Xsera.PhysicsObject");
+	luaL_getmetatable(L, "Apollo.PhysicsObject");
 	lua_setmetatable(L, -2);
 	return 1;
 }
 
 int PHYS_DestroyObject ( lua_State* L )
 {
-	PHYS_Object* obj = (PHYS_Object*)luaL_checkudata(L, 1, "Xsera.PhysicsObject");
+	PHYS_Object* obj = (PHYS_Object*)luaL_checkudata(L, 1, "Apollo.PhysicsObject");
 	if (obj->pob)
 	{
 		Physics::DestroyObject(obj->pob);
@@ -125,7 +125,7 @@ int PHYS_ObjectFromID ( lua_State* L )
 	}
 	PHYS_Object* pob = (PHYS_Object*)lua_newuserdata(L, sizeof(PHYS_Object));
 	pob->pob = object;
-	luaL_getmetatable(L, "Xsera.PhysicsObject");
+	luaL_getmetatable(L, "Apollo.PhysicsObject");
 	lua_setmetatable(L, -2);
 	return 1;
 }
@@ -142,7 +142,7 @@ int PHYS_Object_Torque ( lua_State* L );
 
 int PHYS_Object_PropGet ( lua_State* L )
 {
-	PHYS_Object* obj = (PHYS_Object*)luaL_checkudata(L, 1, "Xsera.PhysicsObject");
+	PHYS_Object* obj = (PHYS_Object*)luaL_checkudata(L, 1, "Apollo.PhysicsObject");
 	if (obj->pob == NULL)
 	{
 		lua_pushliteral(L, "cannot access properties on destroyed physics object");
@@ -205,7 +205,7 @@ int PHYS_Object_PropGet ( lua_State* L )
 
 int PHYS_Object_PropSet ( lua_State* L )
 {
-	PHYS_Object* obj = (PHYS_Object*)luaL_checkudata(L, 1, "Xsera.PhysicsObject");
+	PHYS_Object* obj = (PHYS_Object*)luaL_checkudata(L, 1, "Apollo.PhysicsObject");
 	if (obj->pob == NULL)
 	{
 		lua_pushliteral(L, "cannot access properties on destroyed physics object");
@@ -246,7 +246,7 @@ int PHYS_Object_PropSet ( lua_State* L )
 
 int PHYS_Object_Impulse ( lua_State* L )
 {
-	PHYS_Object* obj = (PHYS_Object*)luaL_checkudata(L, 1, "Xsera.PhysicsObject");
+	PHYS_Object* obj = (PHYS_Object*)luaL_checkudata(L, 1, "Apollo.PhysicsObject");
 	if (obj->pob == NULL)
 	{
 		lua_pushliteral(L, "cannot access properties on destroyed physics object");
@@ -258,7 +258,7 @@ int PHYS_Object_Impulse ( lua_State* L )
 
 int PHYS_Object_AngularImpulse ( lua_State* L )
 {
-	PHYS_Object* obj = (PHYS_Object*)luaL_checkudata(L, 1, "Xsera.PhysicsObject");
+	PHYS_Object* obj = (PHYS_Object*)luaL_checkudata(L, 1, "Apollo.PhysicsObject");
 	if (obj->pob == NULL)
 	{
 		lua_pushliteral(L, "cannot access properties on destroyed physics object");
@@ -270,7 +270,7 @@ int PHYS_Object_AngularImpulse ( lua_State* L )
 
 int PHYS_Object_Force ( lua_State* L )
 {
-	PHYS_Object* obj = (PHYS_Object*)luaL_checkudata(L, 1, "Xsera.PhysicsObject");
+	PHYS_Object* obj = (PHYS_Object*)luaL_checkudata(L, 1, "Apollo.PhysicsObject");
 	if (obj->pob == NULL)
 	{
 		lua_pushliteral(L, "cannot access properties on destroyed physics object");
@@ -282,7 +282,7 @@ int PHYS_Object_Force ( lua_State* L )
 
 int PHYS_Object_Torque ( lua_State* L )
 {
-	PHYS_Object* obj = (PHYS_Object*)luaL_checkudata(L, 1, "Xsera.PhysicsObject");
+	PHYS_Object* obj = (PHYS_Object*)luaL_checkudata(L, 1, "Apollo.PhysicsObject");
 	if (obj->pob == NULL)
 	{
 		lua_pushliteral(L, "cannot access properties on destroyed physics object");
@@ -313,7 +313,7 @@ luaL_Reg registryObjectPhysics[] =
 
 int luaopen_physics ( lua_State* L )
 {
-	luaL_newmetatable(L, "Xsera.PhysicsObject");
+	luaL_newmetatable(L, "Apollo.PhysicsObject");
 	lua_pushvalue(L, -1);
 	lua_setfield(L, -2, "__index");
 	luaL_register(L, NULL, registryObjectPhysics);
@@ -943,14 +943,14 @@ int CPT_Create ( lua_State* L )
 	Component* cpt = (Component*)lua_newuserdata(L, sizeof(Component));
 	cpt->script = new LuaScript ( std::string("Components/") + name );
 	cpt->script->InvokeSubroutine("component_init");
-	luaL_getmetatable(L, "Xsera.Component");
+	luaL_getmetatable(L, "Apollo.Component");
 	lua_setmetatable(L, -2);
 	return 1;
 }
 
 int CPT_Cleanup ( lua_State* L )
 {
-	Component* cpt = (Component*)luaL_checkudata(L, 1, "Xsera.Component");
+	Component* cpt = (Component*)luaL_checkudata(L, 1, "Apollo.Component");
 	if (cpt->script)
 	{
 		cpt->script->InvokeSubroutine("component_quit");
@@ -962,7 +962,7 @@ int CPT_Cleanup ( lua_State* L )
 
 int CPT_Invoke ( lua_State* L )
 {
-	Component* cpt = (Component*)luaL_checkudata(L, 1, "Xsera.Component");
+	Component* cpt = (Component*)luaL_checkudata(L, 1, "Apollo.Component");
 	LuaScript* script = cpt->script;
 	luaL_argcheck(L, script, 1, "Component already freed");
 	const char* routine = luaL_checkstring(L, 2);
@@ -1010,7 +1010,7 @@ luaL_Reg registryObjectComponent[] =
 
 int luaopen_component ( lua_State* L )
 {
-	luaL_newmetatable(L, "Xsera.Component");
+	luaL_newmetatable(L, "Apollo.Component");
 	lua_pushvalue(L, -1);
 	lua_setfield(L, -2, "__index");
 	luaL_register(L, NULL, registryObjectComponent);
@@ -1023,14 +1023,14 @@ int XAR_Open ( lua_State* L )
 	const char* filename = luaL_checkstring(L, 1);
 	XarFile* file = new XarFile ( filename );
 	lua_pushlightuserdata(L, (void*)file);
-	luaL_getmetatable(L, "Xsera.XarFile");
+	luaL_getmetatable(L, "Apollo.XarFile");
 	lua_setmetatable(L, -2);
 	return 1;
 }
 
 int XAR_Close ( lua_State* L )
 {
-	XarFile* file = (XarFile*)luaL_checkudata(L, 1, "Xsera.XarFile");
+	XarFile* file = (XarFile*)luaL_checkudata(L, 1, "Apollo.XarFile");
 	assert(file);
 	delete file;
 	return 0;
@@ -1038,7 +1038,7 @@ int XAR_Close ( lua_State* L )
 
 int XAR_FileExists ( lua_State* L )
 {
-	XarFile* file = (XarFile*)luaL_checkudata(L, 1, "Xsera.XarFile");
+	XarFile* file = (XarFile*)luaL_checkudata(L, 1, "Apollo.XarFile");
 	assert(file);
 	const char* path = luaL_checkstring(L, 2);
 	lua_pushboolean(L, file->FileExists(path) ? 1 : 0);
@@ -1047,7 +1047,7 @@ int XAR_FileExists ( lua_State* L )
 
 int XAR_Read ( lua_State* L )
 {
-	XarFile* file = (XarFile*)luaL_checkudata(L, 1, "Xsera.XarFile");
+	XarFile* file = (XarFile*)luaL_checkudata(L, 1, "Apollo.XarFile");
 	assert(file);
 	const char* path = luaL_checkstring(L, 2);
 	SDL_RWops* rwops = file->OpenFile(path);
@@ -1079,7 +1079,7 @@ luaL_Reg registryObjectXAR [] =
 
 int luaopen_xar ( lua_State* L )
 {
-	luaL_newmetatable(L, "Xsera.XarFile");
+	luaL_newmetatable(L, "Apollo.XarFile");
 	lua_pushvalue(L, -1);
 	lua_setfield(L, -2, "__index");
 	luaL_register(L, NULL, registryObjectXAR);

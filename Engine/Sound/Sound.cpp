@@ -102,7 +102,7 @@ void Init ( int frequency, int resolution, int sources )
 	Mix_AllocateChannels(sources);
 	Mix_VolumeMusic(volume_music);
 	Mix_Volume(-1, volume_sound);
-	if (getenv("XSERA_MUSIC_DISABLE"))
+	if (getenv("APOLLO_MUSIC_DISABLE"))
 		disable_music = true;
 }
 

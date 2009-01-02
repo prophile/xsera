@@ -1,5 +1,5 @@
-#ifndef __xsera_sound_sound_h
-#define __xsera_sound_sound_h
+#ifndef __apollo_sound_sound_h
+#define __apollo_sound_sound_h
 
 #include <string>
 

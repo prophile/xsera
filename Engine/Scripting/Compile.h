@@ -1,5 +1,5 @@
-#ifndef __xsera_scripting_compile_h
-#define __xsera_scripting_compile_h
+#ifndef __apollo_scripting_compile_h
+#define __apollo_scripting_compile_h
 
 extern "C"
 {

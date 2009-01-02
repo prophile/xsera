@@ -1,5 +1,5 @@
-#ifndef __xsera_utilities_vec2_h
-#define __xsera_utilities_vec2_h
+#ifndef __apollo_utilities_vec2_h
+#define __apollo_utilities_vec2_h
 
 #include <math.h>
 
