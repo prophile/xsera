@@ -35,14 +35,14 @@
 			isa = PBXContainerItemProxy;
 			containerPortal = 496A27300F0EC29C00C53BA1 /* Apollo.xcodeproj */;
 			proxyType = 2;
-			remoteGlobalIDString = 496A23E00F0EB22F00C53BA1 /* ApolloEngine.framework */;
+			remoteGlobalIDString = 496A23E00F0EB22F00C53BA1;
 			remoteInfo = ApolloEngine;
 		};
 		496A27370F0EC2BB00C53BA1 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 496A27300F0EC29C00C53BA1 /* Apollo.xcodeproj */;
 			proxyType = 1;
-			remoteGlobalIDString = 496A23DF0F0EB22E00C53BA1 /* ApolloEngine */;
+			remoteGlobalIDString = 496A23DF0F0EB22E00C53BA1;
 			remoteInfo = ApolloEngine;
 		};
 /* End PBXContainerItemProxy section */

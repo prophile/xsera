@@ -82,7 +82,7 @@ void UpdateMouse ( Sint16 px, Sint16 py )
 {
     SDL_Surface* screen = SDL_GetVideoSurface();
     mousePosition.X() = screen->w / float(px);
-    mousePosition.Y() = screen->h / float(py);
+    mousePosition.Y() = 1.0f - (screen->h / float(py));
 }
 
 }
@@ -113,7 +113,7 @@ void Pump ()
     }
 }
 
-Event* NextEvent ()
+Event* Next ()
 {
     if (currentEvent)
         delete currentEvent;

@@ -21,7 +21,7 @@ public:
     ~LuaScript ();
     
     void InvokeSubroutine ( const std::string& name );
-	void InvokeSubroutine ( const std::string& name, const char* p );
+	void InvokeSubroutine ( const std::string& name, const std::string& p );
 	void InvokeSubroutine ( const std::string& name, float x, float y );
 	
 	lua_State* RawState () { return L; }
