@@ -1,5 +1,6 @@
 #include "ModeManager.h"
 #include <SDL/SDL.h>
+#include "Logging.h"
 
 static LuaScript* mode = NULL;
 
@@ -23,7 +24,7 @@ void UpdateModeManager ()
 			mode->InvokeSubroutine("shutdown");
 			delete mode;
 		}
-		printf("[ModeManager] switching to mode %s\n", _next_mode.c_str());
+		LOG("ModeManager", LOG_MESSAGE, "Switching to mode %s", _next_mode.c_str());
 		mode = new LuaScript("Modes/" + _next_mode);
 		_next_mode = "";
 		mode->InvokeSubroutine("init");

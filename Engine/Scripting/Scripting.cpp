@@ -1,5 +1,6 @@
 #include "Scripting.h"
 #include "ResourceManager.h"
+#include "Logging.h"
 
 extern void __LuaBind ( lua_State* L );
 
@@ -24,7 +25,7 @@ static const char* luaReader ( lua_State* L, void* data, size_t* size )
 static void luaHandleError ( lua_State* L )
 {
     const char* message = lua_tostring(L, -1);
-    printf("[LuaScript] an error occured: %s\n", message);
+    LOG("Scripting::Driver", LOG_WARNING, "Script error: %s", message);
     lua_pop(L, 1);
 }
 
@@ -54,7 +55,7 @@ static void luaLoad ( lua_State* L, const std::string& path )
     }
     else
     {
-        printf("[LuaScript] Unable to load script %s\n", path.c_str());
+        LOG("Scripting::Driver", LOG_WARNING, "Unable to load script: %s", path.c_str());
     }
 }
 

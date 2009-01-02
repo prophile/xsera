@@ -116,7 +116,6 @@ void SpatterStars ( SDL_Surface* source, float freq )
 		dstRect.h = h_border * 2;
 		//glTexSubImage2D(GL_TEXTURE_RECTANGLE_ARB, 0, x - w_border, y - w_border, source->w, source->h, SDL_BYTEORDER == SDL_BIG_ENDIAN ? GL_RGBA : GL_ABGR_EXT, GL_UNSIGNED_BYTE, source->pixels);
 		SDL_BlitSurface(source, NULL, surfaceTexture, &dstRect);
-		//printf("Blitted star of dimensions (%d, %d) at position (%d, %d)\n", source->w, source->h, x, y);
 	}
 }
 

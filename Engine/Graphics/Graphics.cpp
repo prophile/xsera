@@ -6,6 +6,7 @@
 #include <map>
 #include "Starfield.h"
 #include "Graphics.h"
+#include "Logging.h"
 #include "Utilities/Matrix2x3.h"
 
 #define DEG2RAD(x) ((x / 180.0f) * M_PI)
@@ -151,16 +152,16 @@ void Init ( int w, int h, bool fullscreen )
 	{
 		SDL_GL_SetAttribute ( SDL_GL_MULTISAMPLESAMPLES, 0 );
 		SDL_GL_SetAttribute ( SDL_GL_MULTISAMPLEBUFFERS, 0 );
-		printf("[GRAPHICS] Warning: card does not support FSAA\n");
+		LOG("Graphics", LOG_WARNING, "Card does not support FSAA!");
 		if (!SDL_SetVideoMode(w, h, 0, flags))
 		{
-			printf("[GRAPHICS] Warning: card does not support normal video options\n");
+		    LOG("Graphics", LOG_WARNING, "Card does not support normal video options!");
 			SDL_GL_SetAttribute ( SDL_GL_RED_SIZE, 5 );
 			SDL_GL_SetAttribute ( SDL_GL_GREEN_SIZE, 5 );
 			SDL_GL_SetAttribute ( SDL_GL_BLUE_SIZE, 5 );
 			if (!SDL_SetVideoMode(w, h, 0, flags))
 			{
-				printf("[GRAPHICS] Error: bad graphics driver!\n");
+                LOG("Graphics", LOG_ERROR, "Bad graphics driver.");
 				exit(1);
 			}
 		}

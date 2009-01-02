@@ -5,6 +5,7 @@
 #include <CoreFoundation/CoreFoundation.h>
 #include <sys/stat.h>
 #endif
+#include "Logging.h"
 
 namespace ResourceManager
 {
@@ -108,7 +109,7 @@ bool FileExists ( const std::string& name )
 
 static void CreateDirectoryWithIntermediates ( const std::string& dir )
 {
-	printf("[ResourceManager] creating directory %s (including intermediates)\n", dir.c_str());
+    LOG("ResourceManager", LOG_MESSAGE, "creating directory %s with intermediates", dir.c_str());
 	char cmdBuf[1024];
 	sprintf(cmdBuf, "mkdir -p '%s'", dir.c_str());
 	system(cmdBuf);
@@ -118,6 +119,7 @@ SDL_RWops* OpenFile ( const std::string& name )
 {
 	if (name == "")
 		return NULL;
+    LOG("ResourceManager", LOG_NOTICE, "Reading file: %s", name.c_str());
 	SDL_LockMutex(mutex);
 	for (std::vector<ResourceDomain*>::iterator iter = searchDomains.begin(); iter != searchDomains.end(); iter++)
 	{

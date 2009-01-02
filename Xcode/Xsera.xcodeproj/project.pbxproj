@@ -34,14 +34,14 @@
 			isa = PBXContainerItemProxy;
 			containerPortal = 496A27300F0EC29C00C53BA1 /* Apollo.xcodeproj */;
 			proxyType = 2;
-			remoteGlobalIDString = 496A277E0F0EC9A000C53BA1 /* libApollo.a */;
+			remoteGlobalIDString = 496A277E0F0EC9A000C53BA1;
 			remoteInfo = Apollo;
 		};
 		496A28450F0ECB7200C53BA1 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 496A27300F0EC29C00C53BA1 /* Apollo.xcodeproj */;
 			proxyType = 1;
-			remoteGlobalIDString = 496A277D0F0EC9A000C53BA1 /* Apollo */;
+			remoteGlobalIDString = 496A277D0F0EC9A000C53BA1;
 			remoteInfo = Apollo;
 		};
 /* End PBXContainerItemProxy section */
@@ -217,10 +217,9 @@
 		496A27830F0EC9A300C53BA1 /* libApollo.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
-			name = libApollo.a;
-			path = build/Debug/libApollo.a;
+			path = libApollo.a;
 			remoteRef = 496A27820F0EC9A300C53BA1 /* PBXContainerItemProxy */;
-			sourceTree = "<group>";
+			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
 

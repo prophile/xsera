@@ -1,6 +1,7 @@
 #include "SpriteSheet.h"
 #include "Utilities/ResourceManager.h"
 #include "TinyXML/tinyxml.h"
+#include "Logging.h"
 
 namespace Graphics
 {
@@ -41,7 +42,8 @@ SpriteSheet::SpriteSheet ( const std::string& name )
 	SDL_RWops* imageRWOps = ResourceManager::OpenFile(imagePath);
 	if (!imageRWOps)
 	{
-		printf("[SpriteSheet] failed to load image: %s\n", name.c_str());
+        // TODO: make this work gracefully
+        LOG("Graphics::SpriteSheet", LOG_ERROR, "Failed to load image: %s", name.c_str());
 		exit(1);
 	}
 	surface = IMG_LoadTyped_RW(imageRWOps, 1, const_cast<char*>("PNG"));
@@ -57,8 +59,8 @@ SpriteSheet::SpriteSheet ( const std::string& name )
 		free(confData);
 		if (xmlDoc->Error())
 		{
-			printf("XML error: %s\b", xmlDoc->ErrorDesc());
-			assert(!"DIED");
+            LOG("Graphics::SpriteSheet", LOG_ERROR, "XML error: %s", xmlDoc->ErrorDesc());
+			exit(1);
 		}
 		TiXmlElement* root = xmlDoc->RootElement();
 		assert(root);

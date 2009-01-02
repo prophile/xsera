@@ -1,5 +1,6 @@
 #include "Compile.h"
 #include "Utilities/ResourceManager.h"
+#include "Logging.h"
 
 struct CompileInstructions
 {
@@ -41,13 +42,13 @@ static void luaLoad ( lua_State* L, const std::string& path )
 		SDL_RWclose(rwops);
 		if (rc != 0)
 		{
-			printf("[Compiler] Unable to load script %s\n", path.c_str());
+            LOG("Scripting::Compiler", LOG_WARNING, "Unable to load script %s", path.c_str());
 			return;
 		}
     }
     else
     {
-        printf("[Compiler] Unable to load script %s\n", path.c_str());
+        LOG("Scripting::Compiler", LOG_WARNING, "Unable to open script %s", path.c_str());
     }
 }
 

@@ -6,6 +6,7 @@
 #include <OpenGL/gl.h>
 #include "Utilities/ResourceManager.h"
 #include "Utilities/GameTime.h"
+#include "Logging.h"
 
 namespace
 {
@@ -75,12 +76,12 @@ TTF_Font* GetFont ( const std::string& name )
 loadFail:
 	if (name == DEFAULT_FONT)
 	{
-		printf("[TextRenderer] Unable to load default font: %s\n", DEFAULT_FONT);
+        LOG("Graphics::TextRenderer", LOG_ERROR, "Unable to load default font: %s", DEFAULT_FONT);
 		exit(1);
 	}
 	loadedFont = GetFont(DEFAULT_FONT);
 	fonts[name] = loadedFont;
-	printf("[TextRenderer] Unable to load font %s, defaulted to %s\n", name.c_str(), DEFAULT_FONT);
+	LOG("Graphics::TextRenderer", LOG_WARNING, "Unable to load font '%s', defaulted to '%s'", name.c_str(), DEFAULT_FONT);
 	return loadedFont;
 }
 

@@ -4,6 +4,7 @@
 #include <map>
 #include <math.h>
 #include "Utilities/ResourceManager.h"
+#include "Logging.h"
 
 namespace Sound
 {
@@ -31,7 +32,7 @@ Mix_Chunk* SoundNamed ( const std::string& name )
 		Mix_Chunk* newChunk = Mix_LoadWAV_RW(ops, 1);
 		if (!newChunk)
 		{
-			printf("Decoding sound '%s' failed! Error: %s\n", name.c_str(), Mix_GetError());
+            LOG("Sound", LOG_WARNING, "Decoding sound '%s' failed! Error: %s", name.c_str(), Mix_GetError());
 			effects[name] = NULL;
 			return NULL;
 		}
@@ -94,7 +95,7 @@ void Init ( int frequency, int resolution, int sources )
 #endif
 			break;*/
 		default:
-			printf("Unsupported audio format, defaulting to 16-bit\n");
+            LOG("Sound", LOG_NOTICE, "Unsupported audio format, defaulting to 16-bit");
 			format = AUDIO_S16SYS;
 			break;
 	}
