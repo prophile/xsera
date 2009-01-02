@@ -1,11 +1,11 @@
--- Bullet handling for demo. Initial versions will only allow one bullet, subsequent
--- versions should allow more.
+-- Bullet handling for demo. Initial versions will only allow one bullet, subsequent versions should allow more.
 
 carrierLocation = { x = 200, y = 300 }
 bullet = { dest = { x = carrierLocation.x, y = carrierLocation.y }, force = { x = 0, y = 0 }, power = 5000, velocity = 1, alpha = 0, beta = 0, delta = 0, theta = 0, size = { x = 0, y = 0 }, turn_rate = 0.1, max_seek_angle = 0.5, max_seek_dist = 20000, ammo = 50 }
 bullet.size.x, bullet.size.y = graphics.sprite_dimensions("Weapons/WhiteYellowMissile")
 firebullet = false
 
+--[[ old physics code
 function fire_bullet(dt)
 	if bullet.ammo > 0 then
 		physbullet = PhysicsObject(0.5)
@@ -16,7 +16,7 @@ function fire_bullet(dt)
 		
 		bullet.dest.x = carrierLocation.x
 		bullet.dest.y = carrierLocation.y
-		bullet.alpha = find_angle({ x = 0, y = 0 }, physbullet:velocity())
+		bullet.alpha = find_angle( { x = 0, y = 0 } , physbullet:velocity())
 		bullet.beta = find_angle(bullet.dest, physbullet:location())
 		bullet.theta = ship:angle()
 		-- theta is the true angle of the bullet, beta is the desired angle, and alpha is the velocity angle
@@ -33,9 +33,20 @@ function fire_bullet(dt)
 		-- temp sound file, should be "RocketLaunch" but for some reason, that file gets errors (file included in git for troubleshooting)
 	end
 end
+--]]
+
+function fire_bullet()
+	if bullet.ammo > 0 then
+		bullet.ammo = bullet.ammo - 1
+		cmissile = newBullet("WhiteYellowMissile")
+		
+		sound.play("RocketLaunchr")
+	end
+end
+
 
 function within_barrier(angle, dest)
-	local shipLocation = ship:location()
+	local shipLocation = playerShip.physicsObject.position
 	local partone = false -- test if it's within line one
 	local parttwo = false -- test if it's within line two
 	local partthree = false -- test if it's within line three
