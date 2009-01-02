@@ -22,8 +22,7 @@
 		496924680EBE4D0600930DDD /* SDL_mixer.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 496924190EBE4CEA00930DDD /* SDL_mixer.framework */; };
 		496924690EBE4D0600930DDD /* SDL_ttf.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 4969241A0EBE4CEA00930DDD /* SDL_ttf.framework */; };
 		496924830EBE516100930DDD /* Xsera.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 496924820EBE516100930DDD /* Xsera.cpp */; };
-		496A27360F0EC2AA00C53BA1 /* ApolloEngine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 496A27350F0EC29C00C53BA1 /* ApolloEngine.framework */; };
-		496A273A0F0EC2D000C53BA1 /* ApolloEngine.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 496A27350F0EC29C00C53BA1 /* ApolloEngine.framework */; };
+		496A28470F0ECB7B00C53BA1 /* libApollo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 496A27830F0EC9A300C53BA1 /* libApollo.a */; };
 		49A0E6940ECC3887007F3458 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49A0E6930ECC3887007F3458 /* OpenGL.framework */; };
 		49A315530ED6BDD90054BB8B /* Fonts in Resources */ = {isa = PBXBuildFile; fileRef = 49A315500ED6BDD90054BB8B /* Fonts */; };
 		49D543CB0ED5E222002FC38E /* Sprites in Resources */ = {isa = PBXBuildFile; fileRef = 49D543B80ED5E222002FC38E /* Sprites */; };
@@ -31,19 +30,19 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		496A27340F0EC29C00C53BA1 /* PBXContainerItemProxy */ = {
+		496A27820F0EC9A300C53BA1 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 496A27300F0EC29C00C53BA1 /* Apollo.xcodeproj */;
 			proxyType = 2;
-			remoteGlobalIDString = 496A23E00F0EB22F00C53BA1;
-			remoteInfo = ApolloEngine;
+			remoteGlobalIDString = 496A277E0F0EC9A000C53BA1 /* libApollo.a */;
+			remoteInfo = Apollo;
 		};
-		496A27370F0EC2BB00C53BA1 /* PBXContainerItemProxy */ = {
+		496A28450F0ECB7200C53BA1 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 496A27300F0EC29C00C53BA1 /* Apollo.xcodeproj */;
 			proxyType = 1;
-			remoteGlobalIDString = 496A23DF0F0EB22E00C53BA1;
-			remoteInfo = ApolloEngine;
+			remoteGlobalIDString = 496A277D0F0EC9A000C53BA1 /* Apollo */;
+			remoteInfo = Apollo;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -54,7 +53,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				496A273A0F0EC2D000C53BA1 /* ApolloEngine.framework in Copy Frameworks */,
 				496924660EBE4D0600930DDD /* SDL.framework in Copy Frameworks */,
 				496924670EBE4D0600930DDD /* SDL_image.framework in Copy Frameworks */,
 				496924680EBE4D0600930DDD /* SDL_mixer.framework in Copy Frameworks */,
@@ -91,7 +89,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				496A27360F0EC2AA00C53BA1 /* ApolloEngine.framework in Frameworks */,
+				496A28470F0ECB7B00C53BA1 /* libApollo.a in Frameworks */,
 				496924290EBE4CEA00930DDD /* SDL.framework in Frameworks */,
 				4969242A0EBE4CEA00930DDD /* SDL_image.framework in Frameworks */,
 				4969242B0EBE4CEA00930DDD /* SDL_mixer.framework in Frameworks */,
@@ -164,7 +162,7 @@
 		496A27310F0EC29C00C53BA1 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				496A27350F0EC29C00C53BA1 /* ApolloEngine.framework */,
+				496A27830F0EC9A300C53BA1 /* libApollo.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -184,7 +182,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				496A27380F0EC2BB00C53BA1 /* PBXTargetDependency */,
+				496A28460F0ECB7200C53BA1 /* PBXTargetDependency */,
 			);
 			name = Xsera;
 			productName = Xsera;
@@ -216,12 +214,13 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		496A27350F0EC29C00C53BA1 /* ApolloEngine.framework */ = {
+		496A27830F0EC9A300C53BA1 /* libApollo.a */ = {
 			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = ApolloEngine.framework;
-			remoteRef = 496A27340F0EC29C00C53BA1 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
+			fileType = archive.ar;
+			name = libApollo.a;
+			path = build/Debug/libApollo.a;
+			remoteRef = 496A27820F0EC9A300C53BA1 /* PBXContainerItemProxy */;
+			sourceTree = "<group>";
 		};
 /* End PBXReferenceProxy section */
 
@@ -256,10 +255,10 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		496A27380F0EC2BB00C53BA1 /* PBXTargetDependency */ = {
+		496A28460F0ECB7200C53BA1 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = ApolloEngine;
-			targetProxy = 496A27370F0EC2BB00C53BA1 /* PBXContainerItemProxy */;
+			name = Apollo;
+			targetProxy = 496A28450F0ECB7200C53BA1 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 

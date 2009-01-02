@@ -7,133 +7,131 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		496A23EB0F0EB31B00C53BA1 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 496A23EA0F0EB31B00C53BA1 /* Cocoa.framework */; };
-		496A23ED0F0EB31B00C53BA1 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 496A23EC0F0EB31B00C53BA1 /* OpenGL.framework */; };
-		496A23EF0F0EB31B00C53BA1 /* SDL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 496A23EE0F0EB31B00C53BA1 /* SDL.framework */; };
-		496A23F10F0EB31B00C53BA1 /* SDL_image.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 496A23F00F0EB31B00C53BA1 /* SDL_image.framework */; };
-		496A23F30F0EB31B00C53BA1 /* SDL_mixer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 496A23F20F0EB31B00C53BA1 /* SDL_mixer.framework */; };
-		496A23F50F0EB31B00C53BA1 /* SDL_ttf.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 496A23F40F0EB31B00C53BA1 /* SDL_ttf.framework */; };
-		496A24550F0EB35E00C53BA1 /* callbacks.c in Sources */ = {isa = PBXBuildFile; fileRef = 496A24050F0EB35E00C53BA1 /* callbacks.c */; };
-		496A24560F0EB35E00C53BA1 /* callbacks.h in Headers */ = {isa = PBXBuildFile; fileRef = 496A24070F0EB35E00C53BA1 /* callbacks.h */; };
-		496A24570F0EB35E00C53BA1 /* enet.h in Headers */ = {isa = PBXBuildFile; fileRef = 496A24080F0EB35E00C53BA1 /* enet.h */; };
-		496A24580F0EB35E00C53BA1 /* list.h in Headers */ = {isa = PBXBuildFile; fileRef = 496A24090F0EB35E00C53BA1 /* list.h */; };
-		496A24590F0EB35E00C53BA1 /* protocol.h in Headers */ = {isa = PBXBuildFile; fileRef = 496A240A0F0EB35E00C53BA1 /* protocol.h */; };
-		496A245A0F0EB35E00C53BA1 /* nettime.h in Headers */ = {isa = PBXBuildFile; fileRef = 496A240B0F0EB35E00C53BA1 /* nettime.h */; };
-		496A245B0F0EB35E00C53BA1 /* types.h in Headers */ = {isa = PBXBuildFile; fileRef = 496A240C0F0EB35E00C53BA1 /* types.h */; };
-		496A245C0F0EB35E00C53BA1 /* unix.h in Headers */ = {isa = PBXBuildFile; fileRef = 496A240D0F0EB35E00C53BA1 /* unix.h */; };
-		496A245D0F0EB35E00C53BA1 /* utility.h in Headers */ = {isa = PBXBuildFile; fileRef = 496A240E0F0EB35E00C53BA1 /* utility.h */; };
-		496A245E0F0EB35E00C53BA1 /* win32.h in Headers */ = {isa = PBXBuildFile; fileRef = 496A240F0F0EB35E00C53BA1 /* win32.h */; };
-		496A245F0F0EB35E00C53BA1 /* host.c in Sources */ = {isa = PBXBuildFile; fileRef = 496A24100F0EB35E00C53BA1 /* host.c */; };
-		496A24600F0EB35E00C53BA1 /* list.c in Sources */ = {isa = PBXBuildFile; fileRef = 496A24110F0EB35E00C53BA1 /* list.c */; };
-		496A24610F0EB35E00C53BA1 /* packet.c in Sources */ = {isa = PBXBuildFile; fileRef = 496A24120F0EB35E00C53BA1 /* packet.c */; };
-		496A24620F0EB35E00C53BA1 /* peer.c in Sources */ = {isa = PBXBuildFile; fileRef = 496A24130F0EB35E00C53BA1 /* peer.c */; };
-		496A24630F0EB35E00C53BA1 /* protocol.c in Sources */ = {isa = PBXBuildFile; fileRef = 496A24140F0EB35E00C53BA1 /* protocol.c */; };
-		496A24640F0EB35E00C53BA1 /* unix.c in Sources */ = {isa = PBXBuildFile; fileRef = 496A24150F0EB35E00C53BA1 /* unix.c */; };
-		496A24650F0EB35E00C53BA1 /* win32.c in Sources */ = {isa = PBXBuildFile; fileRef = 496A24160F0EB35E00C53BA1 /* win32.c */; };
-		496A24660F0EB35E00C53BA1 /* lapi.c in Sources */ = {isa = PBXBuildFile; fileRef = 496A24180F0EB35E00C53BA1 /* lapi.c */; };
-		496A24670F0EB35E00C53BA1 /* lapi.h in Headers */ = {isa = PBXBuildFile; fileRef = 496A24190F0EB35E00C53BA1 /* lapi.h */; };
-		496A24680F0EB35E00C53BA1 /* lauxlib.c in Sources */ = {isa = PBXBuildFile; fileRef = 496A241A0F0EB35E00C53BA1 /* lauxlib.c */; };
-		496A24690F0EB35E00C53BA1 /* lauxlib.h in Headers */ = {isa = PBXBuildFile; fileRef = 496A241B0F0EB35E00C53BA1 /* lauxlib.h */; };
-		496A246A0F0EB35E00C53BA1 /* lbaselib.c in Sources */ = {isa = PBXBuildFile; fileRef = 496A241C0F0EB35E00C53BA1 /* lbaselib.c */; };
-		496A246B0F0EB35E00C53BA1 /* lcode.c in Sources */ = {isa = PBXBuildFile; fileRef = 496A241D0F0EB35E00C53BA1 /* lcode.c */; };
-		496A246C0F0EB35E00C53BA1 /* lcode.h in Headers */ = {isa = PBXBuildFile; fileRef = 496A241E0F0EB35E00C53BA1 /* lcode.h */; };
-		496A246D0F0EB35E00C53BA1 /* ldblib.c in Sources */ = {isa = PBXBuildFile; fileRef = 496A241F0F0EB35E00C53BA1 /* ldblib.c */; };
-		496A246E0F0EB35E00C53BA1 /* ldebug.c in Sources */ = {isa = PBXBuildFile; fileRef = 496A24200F0EB35E00C53BA1 /* ldebug.c */; };
-		496A246F0F0EB35E00C53BA1 /* ldebug.h in Headers */ = {isa = PBXBuildFile; fileRef = 496A24210F0EB35E00C53BA1 /* ldebug.h */; };
-		496A24700F0EB35E00C53BA1 /* ldo.c in Sources */ = {isa = PBXBuildFile; fileRef = 496A24220F0EB35E00C53BA1 /* ldo.c */; };
-		496A24710F0EB35E00C53BA1 /* ldo.h in Headers */ = {isa = PBXBuildFile; fileRef = 496A24230F0EB35E00C53BA1 /* ldo.h */; };
-		496A24720F0EB35E00C53BA1 /* ldump.c in Sources */ = {isa = PBXBuildFile; fileRef = 496A24240F0EB35E00C53BA1 /* ldump.c */; };
-		496A24730F0EB35E00C53BA1 /* lfunc.c in Sources */ = {isa = PBXBuildFile; fileRef = 496A24250F0EB35E00C53BA1 /* lfunc.c */; };
-		496A24740F0EB35E00C53BA1 /* lfunc.h in Headers */ = {isa = PBXBuildFile; fileRef = 496A24260F0EB35E00C53BA1 /* lfunc.h */; };
-		496A24750F0EB35E00C53BA1 /* lgc.c in Sources */ = {isa = PBXBuildFile; fileRef = 496A24270F0EB35E00C53BA1 /* lgc.c */; };
-		496A24760F0EB35E00C53BA1 /* lgc.h in Headers */ = {isa = PBXBuildFile; fileRef = 496A24280F0EB35E00C53BA1 /* lgc.h */; };
-		496A24770F0EB35E00C53BA1 /* linit.c in Sources */ = {isa = PBXBuildFile; fileRef = 496A24290F0EB35E00C53BA1 /* linit.c */; };
-		496A24780F0EB35E00C53BA1 /* liolib.c in Sources */ = {isa = PBXBuildFile; fileRef = 496A242A0F0EB35E00C53BA1 /* liolib.c */; };
-		496A24790F0EB35E00C53BA1 /* llex.c in Sources */ = {isa = PBXBuildFile; fileRef = 496A242B0F0EB35E00C53BA1 /* llex.c */; };
-		496A247A0F0EB35E00C53BA1 /* llex.h in Headers */ = {isa = PBXBuildFile; fileRef = 496A242C0F0EB35E00C53BA1 /* llex.h */; };
-		496A247B0F0EB35E00C53BA1 /* llimits.h in Headers */ = {isa = PBXBuildFile; fileRef = 496A242D0F0EB35E00C53BA1 /* llimits.h */; };
-		496A247C0F0EB35E00C53BA1 /* lmathlib.c in Sources */ = {isa = PBXBuildFile; fileRef = 496A242E0F0EB35E00C53BA1 /* lmathlib.c */; };
-		496A247D0F0EB35E00C53BA1 /* lmem.c in Sources */ = {isa = PBXBuildFile; fileRef = 496A242F0F0EB35E00C53BA1 /* lmem.c */; };
-		496A247E0F0EB35E00C53BA1 /* lmem.h in Headers */ = {isa = PBXBuildFile; fileRef = 496A24300F0EB35E00C53BA1 /* lmem.h */; };
-		496A247F0F0EB35E00C53BA1 /* loadlib.c in Sources */ = {isa = PBXBuildFile; fileRef = 496A24310F0EB35E00C53BA1 /* loadlib.c */; };
-		496A24800F0EB35E00C53BA1 /* lobject.c in Sources */ = {isa = PBXBuildFile; fileRef = 496A24320F0EB35E00C53BA1 /* lobject.c */; };
-		496A24810F0EB35E00C53BA1 /* lobject.h in Headers */ = {isa = PBXBuildFile; fileRef = 496A24330F0EB35E00C53BA1 /* lobject.h */; };
-		496A24820F0EB35E00C53BA1 /* lopcodes.c in Sources */ = {isa = PBXBuildFile; fileRef = 496A24340F0EB35E00C53BA1 /* lopcodes.c */; };
-		496A24830F0EB35E00C53BA1 /* lopcodes.h in Headers */ = {isa = PBXBuildFile; fileRef = 496A24350F0EB35E00C53BA1 /* lopcodes.h */; };
-		496A24840F0EB35E00C53BA1 /* loslib.c in Sources */ = {isa = PBXBuildFile; fileRef = 496A24360F0EB35E00C53BA1 /* loslib.c */; };
-		496A24850F0EB35E00C53BA1 /* lparser.c in Sources */ = {isa = PBXBuildFile; fileRef = 496A24370F0EB35E00C53BA1 /* lparser.c */; };
-		496A24860F0EB35E00C53BA1 /* lparser.h in Headers */ = {isa = PBXBuildFile; fileRef = 496A24380F0EB35E00C53BA1 /* lparser.h */; };
-		496A24870F0EB35E00C53BA1 /* lstate.c in Sources */ = {isa = PBXBuildFile; fileRef = 496A24390F0EB35E00C53BA1 /* lstate.c */; };
-		496A24880F0EB35E00C53BA1 /* lstate.h in Headers */ = {isa = PBXBuildFile; fileRef = 496A243A0F0EB35E00C53BA1 /* lstate.h */; };
-		496A24890F0EB35E00C53BA1 /* lstring.c in Sources */ = {isa = PBXBuildFile; fileRef = 496A243B0F0EB35E00C53BA1 /* lstring.c */; };
-		496A248A0F0EB35E00C53BA1 /* lstring.h in Headers */ = {isa = PBXBuildFile; fileRef = 496A243C0F0EB35E00C53BA1 /* lstring.h */; };
-		496A248B0F0EB35E00C53BA1 /* lstrlib.c in Sources */ = {isa = PBXBuildFile; fileRef = 496A243D0F0EB35E00C53BA1 /* lstrlib.c */; };
-		496A248C0F0EB35E00C53BA1 /* ltable.c in Sources */ = {isa = PBXBuildFile; fileRef = 496A243E0F0EB35E00C53BA1 /* ltable.c */; };
-		496A248D0F0EB35E00C53BA1 /* ltable.h in Headers */ = {isa = PBXBuildFile; fileRef = 496A243F0F0EB35E00C53BA1 /* ltable.h */; };
-		496A248E0F0EB35E00C53BA1 /* ltablib.c in Sources */ = {isa = PBXBuildFile; fileRef = 496A24400F0EB35E00C53BA1 /* ltablib.c */; };
-		496A248F0F0EB35E00C53BA1 /* ltm.c in Sources */ = {isa = PBXBuildFile; fileRef = 496A24410F0EB35E00C53BA1 /* ltm.c */; };
-		496A24900F0EB35E00C53BA1 /* ltm.h in Headers */ = {isa = PBXBuildFile; fileRef = 496A24420F0EB35E00C53BA1 /* ltm.h */; };
-		496A24910F0EB35E00C53BA1 /* lua.h in Headers */ = {isa = PBXBuildFile; fileRef = 496A24430F0EB35E00C53BA1 /* lua.h */; };
-		496A24920F0EB35E00C53BA1 /* luaconf.h in Headers */ = {isa = PBXBuildFile; fileRef = 496A24440F0EB35E00C53BA1 /* luaconf.h */; };
-		496A24930F0EB35E00C53BA1 /* lualib.h in Headers */ = {isa = PBXBuildFile; fileRef = 496A24450F0EB35E00C53BA1 /* lualib.h */; };
-		496A24940F0EB35E00C53BA1 /* lundump.c in Sources */ = {isa = PBXBuildFile; fileRef = 496A24460F0EB35E00C53BA1 /* lundump.c */; };
-		496A24950F0EB35E00C53BA1 /* lundump.h in Headers */ = {isa = PBXBuildFile; fileRef = 496A24470F0EB35E00C53BA1 /* lundump.h */; };
-		496A24960F0EB35E00C53BA1 /* lvm.c in Sources */ = {isa = PBXBuildFile; fileRef = 496A24480F0EB35E00C53BA1 /* lvm.c */; };
-		496A24970F0EB35E00C53BA1 /* lvm.h in Headers */ = {isa = PBXBuildFile; fileRef = 496A24490F0EB35E00C53BA1 /* lvm.h */; };
-		496A24980F0EB35E00C53BA1 /* lzio.c in Sources */ = {isa = PBXBuildFile; fileRef = 496A244A0F0EB35E00C53BA1 /* lzio.c */; };
-		496A24990F0EB35E00C53BA1 /* lzio.h in Headers */ = {isa = PBXBuildFile; fileRef = 496A244B0F0EB35E00C53BA1 /* lzio.h */; };
-		496A249A0F0EB35E00C53BA1 /* print.c in Sources */ = {isa = PBXBuildFile; fileRef = 496A244C0F0EB35E00C53BA1 /* print.c */; };
-		496A249B0F0EB35E00C53BA1 /* neural-network.c in Sources */ = {isa = PBXBuildFile; fileRef = 496A244E0F0EB35E00C53BA1 /* neural-network.c */; };
-		496A249C0F0EB35E00C53BA1 /* neural-network.h in Headers */ = {isa = PBXBuildFile; fileRef = 496A244F0F0EB35E00C53BA1 /* neural-network.h */; };
-		496A249D0F0EB35E00C53BA1 /* tinyxml.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 496A24510F0EB35E00C53BA1 /* tinyxml.cpp */; };
-		496A249E0F0EB35E00C53BA1 /* tinyxml.h in Headers */ = {isa = PBXBuildFile; fileRef = 496A24520F0EB35E00C53BA1 /* tinyxml.h */; };
-		496A249F0F0EB35E00C53BA1 /* tinyxmlerror.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 496A24530F0EB35E00C53BA1 /* tinyxmlerror.cpp */; };
-		496A24A00F0EB35E00C53BA1 /* tinyxmlparser.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 496A24540F0EB35E00C53BA1 /* tinyxmlparser.cpp */; };
-		496A24CD0F0EB37900C53BA1 /* Graphics.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 496A24A20F0EB37900C53BA1 /* Graphics.cpp */; };
-		496A24CE0F0EB37900C53BA1 /* Graphics.h in Headers */ = {isa = PBXBuildFile; fileRef = 496A24A30F0EB37900C53BA1 /* Graphics.h */; };
-		496A24CF0F0EB37900C53BA1 /* SpriteSheet.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 496A24A40F0EB37900C53BA1 /* SpriteSheet.cpp */; };
-		496A24D00F0EB37900C53BA1 /* SpriteSheet.h in Headers */ = {isa = PBXBuildFile; fileRef = 496A24A50F0EB37900C53BA1 /* SpriteSheet.h */; };
-		496A24D10F0EB37900C53BA1 /* Starfield.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 496A24A60F0EB37900C53BA1 /* Starfield.cpp */; };
-		496A24D20F0EB37900C53BA1 /* Starfield.h in Headers */ = {isa = PBXBuildFile; fileRef = 496A24A70F0EB37900C53BA1 /* Starfield.h */; };
-		496A24D30F0EB37900C53BA1 /* TextRenderer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 496A24A80F0EB37900C53BA1 /* TextRenderer.cpp */; };
-		496A24D40F0EB37900C53BA1 /* TextRenderer.h in Headers */ = {isa = PBXBuildFile; fileRef = 496A24A90F0EB37900C53BA1 /* TextRenderer.h */; };
-		496A24D50F0EB37900C53BA1 /* Input.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 496A24AA0F0EB37900C53BA1 /* Input.cpp */; };
-		496A24D60F0EB37900C53BA1 /* Input.h in Headers */ = {isa = PBXBuildFile; fileRef = 496A24AB0F0EB37900C53BA1 /* Input.h */; };
-		496A24D70F0EB37900C53BA1 /* Client.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 496A24AD0F0EB37900C53BA1 /* Client.cpp */; };
-		496A24D80F0EB37900C53BA1 /* MessageDecode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 496A24AE0F0EB37900C53BA1 /* MessageDecode.cpp */; };
-		496A24D90F0EB37900C53BA1 /* MessageDecode.h in Headers */ = {isa = PBXBuildFile; fileRef = 496A24AF0F0EB37900C53BA1 /* MessageDecode.h */; };
-		496A24DA0F0EB37900C53BA1 /* Net.h in Headers */ = {isa = PBXBuildFile; fileRef = 496A24B00F0EB37900C53BA1 /* Net.h */; };
-		496A24DB0F0EB37900C53BA1 /* Server.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 496A24B10F0EB37900C53BA1 /* Server.cpp */; };
-		496A24DC0F0EB37900C53BA1 /* PhysicsContext.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 496A24B30F0EB37900C53BA1 /* PhysicsContext.cpp */; };
-		496A24DD0F0EB37900C53BA1 /* PhysicsContext.h in Headers */ = {isa = PBXBuildFile; fileRef = 496A24B40F0EB37900C53BA1 /* PhysicsContext.h */; };
-		496A24DE0F0EB37900C53BA1 /* PhysicsObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 496A24B50F0EB37900C53BA1 /* PhysicsObject.cpp */; };
-		496A24DF0F0EB37900C53BA1 /* PhysicsObject.h in Headers */ = {isa = PBXBuildFile; fileRef = 496A24B60F0EB37900C53BA1 /* PhysicsObject.h */; };
-		496A24E00F0EB37900C53BA1 /* Compile.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 496A24B80F0EB37900C53BA1 /* Compile.cpp */; };
-		496A24E10F0EB37900C53BA1 /* Compile.h in Headers */ = {isa = PBXBuildFile; fileRef = 496A24B90F0EB37900C53BA1 /* Compile.h */; };
-		496A24E20F0EB37900C53BA1 /* LuaBind.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 496A24BA0F0EB37900C53BA1 /* LuaBind.cpp */; };
-		496A24E30F0EB37900C53BA1 /* Scripting.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 496A24BB0F0EB37900C53BA1 /* Scripting.cpp */; };
-		496A24E40F0EB37900C53BA1 /* Scripting.h in Headers */ = {isa = PBXBuildFile; fileRef = 496A24BC0F0EB37900C53BA1 /* Scripting.h */; };
-		496A24E50F0EB37900C53BA1 /* Sound.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 496A24BE0F0EB37900C53BA1 /* Sound.cpp */; };
-		496A24E60F0EB37900C53BA1 /* Sound.h in Headers */ = {isa = PBXBuildFile; fileRef = 496A24BF0F0EB37900C53BA1 /* Sound.h */; };
-		496A24E70F0EB37900C53BA1 /* Colour.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 496A24C10F0EB37900C53BA1 /* Colour.cpp */; };
-		496A24E80F0EB37900C53BA1 /* Colour.h in Headers */ = {isa = PBXBuildFile; fileRef = 496A24C20F0EB37900C53BA1 /* Colour.h */; };
-		496A24E90F0EB37900C53BA1 /* GameTime.h in Headers */ = {isa = PBXBuildFile; fileRef = 496A24C30F0EB37900C53BA1 /* GameTime.h */; };
-		496A24EA0F0EB37900C53BA1 /* Matrix2x3.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 496A24C40F0EB37900C53BA1 /* Matrix2x3.cpp */; };
-		496A24EB0F0EB37900C53BA1 /* Matrix2x3.h in Headers */ = {isa = PBXBuildFile; fileRef = 496A24C50F0EB37900C53BA1 /* Matrix2x3.h */; };
-		496A24EC0F0EB37900C53BA1 /* ResourceManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 496A24C60F0EB37900C53BA1 /* ResourceManager.cpp */; };
-		496A24ED0F0EB37900C53BA1 /* ResourceManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 496A24C70F0EB37900C53BA1 /* ResourceManager.h */; };
-		496A24EE0F0EB37900C53BA1 /* TestHarness.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 496A24C80F0EB37900C53BA1 /* TestHarness.cpp */; };
-		496A24EF0F0EB37900C53BA1 /* TestHarness.h in Headers */ = {isa = PBXBuildFile; fileRef = 496A24C90F0EB37900C53BA1 /* TestHarness.h */; };
-		496A24F00F0EB37900C53BA1 /* Vec2.h in Headers */ = {isa = PBXBuildFile; fileRef = 496A24CA0F0EB37900C53BA1 /* Vec2.h */; };
-		496A24F10F0EB37900C53BA1 /* XarFile.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 496A24CB0F0EB37900C53BA1 /* XarFile.cpp */; };
-		496A24F20F0EB37900C53BA1 /* XarFile.h in Headers */ = {isa = PBXBuildFile; fileRef = 496A24CC0F0EB37900C53BA1 /* XarFile.h */; };
-		496A25100F0EB63200C53BA1 /* ModeManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 496A250E0F0EB63200C53BA1 /* ModeManager.cpp */; };
-		496A25110F0EB63200C53BA1 /* ModeManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 496A250F0F0EB63200C53BA1 /* ModeManager.h */; };
+		496A27850F0EC9D800C53BA1 /* callbacks.h in Headers */ = {isa = PBXBuildFile; fileRef = 496A24070F0EB35E00C53BA1 /* callbacks.h */; };
+		496A27860F0EC9D800C53BA1 /* enet.h in Headers */ = {isa = PBXBuildFile; fileRef = 496A24080F0EB35E00C53BA1 /* enet.h */; };
+		496A27870F0EC9D800C53BA1 /* list.h in Headers */ = {isa = PBXBuildFile; fileRef = 496A24090F0EB35E00C53BA1 /* list.h */; };
+		496A27880F0EC9D800C53BA1 /* protocol.h in Headers */ = {isa = PBXBuildFile; fileRef = 496A240A0F0EB35E00C53BA1 /* protocol.h */; };
+		496A27890F0EC9D800C53BA1 /* nettime.h in Headers */ = {isa = PBXBuildFile; fileRef = 496A240B0F0EB35E00C53BA1 /* nettime.h */; };
+		496A278A0F0EC9D800C53BA1 /* types.h in Headers */ = {isa = PBXBuildFile; fileRef = 496A240C0F0EB35E00C53BA1 /* types.h */; };
+		496A278B0F0EC9D800C53BA1 /* unix.h in Headers */ = {isa = PBXBuildFile; fileRef = 496A240D0F0EB35E00C53BA1 /* unix.h */; };
+		496A278C0F0EC9D800C53BA1 /* utility.h in Headers */ = {isa = PBXBuildFile; fileRef = 496A240E0F0EB35E00C53BA1 /* utility.h */; };
+		496A278D0F0EC9D800C53BA1 /* win32.h in Headers */ = {isa = PBXBuildFile; fileRef = 496A240F0F0EB35E00C53BA1 /* win32.h */; };
+		496A278E0F0EC9D800C53BA1 /* lapi.h in Headers */ = {isa = PBXBuildFile; fileRef = 496A24190F0EB35E00C53BA1 /* lapi.h */; };
+		496A278F0F0EC9D800C53BA1 /* lauxlib.h in Headers */ = {isa = PBXBuildFile; fileRef = 496A241B0F0EB35E00C53BA1 /* lauxlib.h */; };
+		496A27900F0EC9D800C53BA1 /* lcode.h in Headers */ = {isa = PBXBuildFile; fileRef = 496A241E0F0EB35E00C53BA1 /* lcode.h */; };
+		496A27910F0EC9D800C53BA1 /* ldebug.h in Headers */ = {isa = PBXBuildFile; fileRef = 496A24210F0EB35E00C53BA1 /* ldebug.h */; };
+		496A27920F0EC9D800C53BA1 /* ldo.h in Headers */ = {isa = PBXBuildFile; fileRef = 496A24230F0EB35E00C53BA1 /* ldo.h */; };
+		496A27930F0EC9D800C53BA1 /* lfunc.h in Headers */ = {isa = PBXBuildFile; fileRef = 496A24260F0EB35E00C53BA1 /* lfunc.h */; };
+		496A27940F0EC9D800C53BA1 /* lgc.h in Headers */ = {isa = PBXBuildFile; fileRef = 496A24280F0EB35E00C53BA1 /* lgc.h */; };
+		496A27950F0EC9D800C53BA1 /* llex.h in Headers */ = {isa = PBXBuildFile; fileRef = 496A242C0F0EB35E00C53BA1 /* llex.h */; };
+		496A27960F0EC9D800C53BA1 /* llimits.h in Headers */ = {isa = PBXBuildFile; fileRef = 496A242D0F0EB35E00C53BA1 /* llimits.h */; };
+		496A27970F0EC9D800C53BA1 /* lmem.h in Headers */ = {isa = PBXBuildFile; fileRef = 496A24300F0EB35E00C53BA1 /* lmem.h */; };
+		496A27980F0EC9D800C53BA1 /* lobject.h in Headers */ = {isa = PBXBuildFile; fileRef = 496A24330F0EB35E00C53BA1 /* lobject.h */; };
+		496A27990F0EC9D800C53BA1 /* lopcodes.h in Headers */ = {isa = PBXBuildFile; fileRef = 496A24350F0EB35E00C53BA1 /* lopcodes.h */; };
+		496A279A0F0EC9D800C53BA1 /* lparser.h in Headers */ = {isa = PBXBuildFile; fileRef = 496A24380F0EB35E00C53BA1 /* lparser.h */; };
+		496A279B0F0EC9D800C53BA1 /* lstate.h in Headers */ = {isa = PBXBuildFile; fileRef = 496A243A0F0EB35E00C53BA1 /* lstate.h */; };
+		496A279C0F0EC9D800C53BA1 /* lstring.h in Headers */ = {isa = PBXBuildFile; fileRef = 496A243C0F0EB35E00C53BA1 /* lstring.h */; };
+		496A279D0F0EC9D800C53BA1 /* ltable.h in Headers */ = {isa = PBXBuildFile; fileRef = 496A243F0F0EB35E00C53BA1 /* ltable.h */; };
+		496A279E0F0EC9D800C53BA1 /* ltm.h in Headers */ = {isa = PBXBuildFile; fileRef = 496A24420F0EB35E00C53BA1 /* ltm.h */; };
+		496A279F0F0EC9D800C53BA1 /* lua.h in Headers */ = {isa = PBXBuildFile; fileRef = 496A24430F0EB35E00C53BA1 /* lua.h */; };
+		496A27A00F0EC9D800C53BA1 /* luaconf.h in Headers */ = {isa = PBXBuildFile; fileRef = 496A24440F0EB35E00C53BA1 /* luaconf.h */; };
+		496A27A10F0EC9D800C53BA1 /* lualib.h in Headers */ = {isa = PBXBuildFile; fileRef = 496A24450F0EB35E00C53BA1 /* lualib.h */; };
+		496A27A20F0EC9D800C53BA1 /* lundump.h in Headers */ = {isa = PBXBuildFile; fileRef = 496A24470F0EB35E00C53BA1 /* lundump.h */; };
+		496A27A30F0EC9D800C53BA1 /* lvm.h in Headers */ = {isa = PBXBuildFile; fileRef = 496A24490F0EB35E00C53BA1 /* lvm.h */; };
+		496A27A40F0EC9D800C53BA1 /* lzio.h in Headers */ = {isa = PBXBuildFile; fileRef = 496A244B0F0EB35E00C53BA1 /* lzio.h */; };
+		496A27A50F0EC9D800C53BA1 /* neural-network.h in Headers */ = {isa = PBXBuildFile; fileRef = 496A244F0F0EB35E00C53BA1 /* neural-network.h */; };
+		496A27A60F0EC9D800C53BA1 /* tinyxml.h in Headers */ = {isa = PBXBuildFile; fileRef = 496A24520F0EB35E00C53BA1 /* tinyxml.h */; };
+		496A27A70F0EC9D800C53BA1 /* Graphics.h in Headers */ = {isa = PBXBuildFile; fileRef = 496A24A30F0EB37900C53BA1 /* Graphics.h */; };
+		496A27A80F0EC9D800C53BA1 /* SpriteSheet.h in Headers */ = {isa = PBXBuildFile; fileRef = 496A24A50F0EB37900C53BA1 /* SpriteSheet.h */; };
+		496A27A90F0EC9D800C53BA1 /* Starfield.h in Headers */ = {isa = PBXBuildFile; fileRef = 496A24A70F0EB37900C53BA1 /* Starfield.h */; };
+		496A27AA0F0EC9D800C53BA1 /* TextRenderer.h in Headers */ = {isa = PBXBuildFile; fileRef = 496A24A90F0EB37900C53BA1 /* TextRenderer.h */; };
+		496A27AB0F0EC9D800C53BA1 /* Input.h in Headers */ = {isa = PBXBuildFile; fileRef = 496A24AB0F0EB37900C53BA1 /* Input.h */; };
+		496A27AC0F0EC9D800C53BA1 /* MessageDecode.h in Headers */ = {isa = PBXBuildFile; fileRef = 496A24AF0F0EB37900C53BA1 /* MessageDecode.h */; };
+		496A27AD0F0EC9D800C53BA1 /* Net.h in Headers */ = {isa = PBXBuildFile; fileRef = 496A24B00F0EB37900C53BA1 /* Net.h */; };
+		496A27AE0F0EC9D800C53BA1 /* PhysicsContext.h in Headers */ = {isa = PBXBuildFile; fileRef = 496A24B40F0EB37900C53BA1 /* PhysicsContext.h */; };
+		496A27AF0F0EC9D800C53BA1 /* PhysicsObject.h in Headers */ = {isa = PBXBuildFile; fileRef = 496A24B60F0EB37900C53BA1 /* PhysicsObject.h */; };
+		496A27B00F0EC9D800C53BA1 /* Compile.h in Headers */ = {isa = PBXBuildFile; fileRef = 496A24B90F0EB37900C53BA1 /* Compile.h */; };
+		496A27B10F0EC9D800C53BA1 /* Scripting.h in Headers */ = {isa = PBXBuildFile; fileRef = 496A24BC0F0EB37900C53BA1 /* Scripting.h */; };
+		496A27B20F0EC9D800C53BA1 /* Sound.h in Headers */ = {isa = PBXBuildFile; fileRef = 496A24BF0F0EB37900C53BA1 /* Sound.h */; };
+		496A27B30F0EC9D800C53BA1 /* Colour.h in Headers */ = {isa = PBXBuildFile; fileRef = 496A24C20F0EB37900C53BA1 /* Colour.h */; };
+		496A27B40F0EC9D800C53BA1 /* GameTime.h in Headers */ = {isa = PBXBuildFile; fileRef = 496A24C30F0EB37900C53BA1 /* GameTime.h */; };
+		496A27B50F0EC9D800C53BA1 /* Matrix2x3.h in Headers */ = {isa = PBXBuildFile; fileRef = 496A24C50F0EB37900C53BA1 /* Matrix2x3.h */; };
+		496A27B60F0EC9D800C53BA1 /* ResourceManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 496A24C70F0EB37900C53BA1 /* ResourceManager.h */; };
+		496A27B70F0EC9D800C53BA1 /* TestHarness.h in Headers */ = {isa = PBXBuildFile; fileRef = 496A24C90F0EB37900C53BA1 /* TestHarness.h */; };
+		496A27B80F0EC9D800C53BA1 /* Vec2.h in Headers */ = {isa = PBXBuildFile; fileRef = 496A24CA0F0EB37900C53BA1 /* Vec2.h */; };
+		496A27B90F0EC9D800C53BA1 /* XarFile.h in Headers */ = {isa = PBXBuildFile; fileRef = 496A24CC0F0EB37900C53BA1 /* XarFile.h */; };
+		496A27BA0F0EC9D800C53BA1 /* ModeManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 496A250F0F0EB63200C53BA1 /* ModeManager.h */; };
+		496A27BB0F0EC9EE00C53BA1 /* callbacks.c in Sources */ = {isa = PBXBuildFile; fileRef = 496A24050F0EB35E00C53BA1 /* callbacks.c */; };
+		496A27BC0F0EC9EE00C53BA1 /* host.c in Sources */ = {isa = PBXBuildFile; fileRef = 496A24100F0EB35E00C53BA1 /* host.c */; };
+		496A27BD0F0EC9EE00C53BA1 /* list.c in Sources */ = {isa = PBXBuildFile; fileRef = 496A24110F0EB35E00C53BA1 /* list.c */; };
+		496A27BE0F0EC9EE00C53BA1 /* packet.c in Sources */ = {isa = PBXBuildFile; fileRef = 496A24120F0EB35E00C53BA1 /* packet.c */; };
+		496A27BF0F0EC9EE00C53BA1 /* peer.c in Sources */ = {isa = PBXBuildFile; fileRef = 496A24130F0EB35E00C53BA1 /* peer.c */; };
+		496A27C00F0EC9EE00C53BA1 /* protocol.c in Sources */ = {isa = PBXBuildFile; fileRef = 496A24140F0EB35E00C53BA1 /* protocol.c */; };
+		496A27C10F0EC9EE00C53BA1 /* unix.c in Sources */ = {isa = PBXBuildFile; fileRef = 496A24150F0EB35E00C53BA1 /* unix.c */; };
+		496A27C20F0EC9EE00C53BA1 /* win32.c in Sources */ = {isa = PBXBuildFile; fileRef = 496A24160F0EB35E00C53BA1 /* win32.c */; };
+		496A27C30F0EC9EE00C53BA1 /* lapi.c in Sources */ = {isa = PBXBuildFile; fileRef = 496A24180F0EB35E00C53BA1 /* lapi.c */; };
+		496A27C40F0EC9EE00C53BA1 /* lauxlib.c in Sources */ = {isa = PBXBuildFile; fileRef = 496A241A0F0EB35E00C53BA1 /* lauxlib.c */; };
+		496A27C50F0EC9EE00C53BA1 /* lbaselib.c in Sources */ = {isa = PBXBuildFile; fileRef = 496A241C0F0EB35E00C53BA1 /* lbaselib.c */; };
+		496A27C60F0EC9EE00C53BA1 /* lcode.c in Sources */ = {isa = PBXBuildFile; fileRef = 496A241D0F0EB35E00C53BA1 /* lcode.c */; };
+		496A27C70F0EC9EE00C53BA1 /* ldblib.c in Sources */ = {isa = PBXBuildFile; fileRef = 496A241F0F0EB35E00C53BA1 /* ldblib.c */; };
+		496A27C80F0EC9EE00C53BA1 /* ldebug.c in Sources */ = {isa = PBXBuildFile; fileRef = 496A24200F0EB35E00C53BA1 /* ldebug.c */; };
+		496A27C90F0EC9EE00C53BA1 /* ldo.c in Sources */ = {isa = PBXBuildFile; fileRef = 496A24220F0EB35E00C53BA1 /* ldo.c */; };
+		496A27CA0F0EC9EE00C53BA1 /* ldump.c in Sources */ = {isa = PBXBuildFile; fileRef = 496A24240F0EB35E00C53BA1 /* ldump.c */; };
+		496A27CB0F0EC9EE00C53BA1 /* lfunc.c in Sources */ = {isa = PBXBuildFile; fileRef = 496A24250F0EB35E00C53BA1 /* lfunc.c */; };
+		496A27CC0F0EC9EE00C53BA1 /* lgc.c in Sources */ = {isa = PBXBuildFile; fileRef = 496A24270F0EB35E00C53BA1 /* lgc.c */; };
+		496A27CD0F0EC9EE00C53BA1 /* linit.c in Sources */ = {isa = PBXBuildFile; fileRef = 496A24290F0EB35E00C53BA1 /* linit.c */; };
+		496A27CE0F0EC9EE00C53BA1 /* liolib.c in Sources */ = {isa = PBXBuildFile; fileRef = 496A242A0F0EB35E00C53BA1 /* liolib.c */; };
+		496A27CF0F0EC9EE00C53BA1 /* llex.c in Sources */ = {isa = PBXBuildFile; fileRef = 496A242B0F0EB35E00C53BA1 /* llex.c */; };
+		496A27D00F0EC9EE00C53BA1 /* lmathlib.c in Sources */ = {isa = PBXBuildFile; fileRef = 496A242E0F0EB35E00C53BA1 /* lmathlib.c */; };
+		496A27D10F0EC9EE00C53BA1 /* lmem.c in Sources */ = {isa = PBXBuildFile; fileRef = 496A242F0F0EB35E00C53BA1 /* lmem.c */; };
+		496A27D20F0EC9EE00C53BA1 /* loadlib.c in Sources */ = {isa = PBXBuildFile; fileRef = 496A24310F0EB35E00C53BA1 /* loadlib.c */; };
+		496A27D30F0EC9EE00C53BA1 /* lobject.c in Sources */ = {isa = PBXBuildFile; fileRef = 496A24320F0EB35E00C53BA1 /* lobject.c */; };
+		496A27D40F0EC9EE00C53BA1 /* lopcodes.c in Sources */ = {isa = PBXBuildFile; fileRef = 496A24340F0EB35E00C53BA1 /* lopcodes.c */; };
+		496A27D50F0EC9EE00C53BA1 /* loslib.c in Sources */ = {isa = PBXBuildFile; fileRef = 496A24360F0EB35E00C53BA1 /* loslib.c */; };
+		496A27D60F0EC9EE00C53BA1 /* lparser.c in Sources */ = {isa = PBXBuildFile; fileRef = 496A24370F0EB35E00C53BA1 /* lparser.c */; };
+		496A27D70F0EC9EE00C53BA1 /* lstate.c in Sources */ = {isa = PBXBuildFile; fileRef = 496A24390F0EB35E00C53BA1 /* lstate.c */; };
+		496A27D80F0EC9EE00C53BA1 /* lstring.c in Sources */ = {isa = PBXBuildFile; fileRef = 496A243B0F0EB35E00C53BA1 /* lstring.c */; };
+		496A27D90F0EC9EE00C53BA1 /* lstrlib.c in Sources */ = {isa = PBXBuildFile; fileRef = 496A243D0F0EB35E00C53BA1 /* lstrlib.c */; };
+		496A27DA0F0EC9EE00C53BA1 /* ltable.c in Sources */ = {isa = PBXBuildFile; fileRef = 496A243E0F0EB35E00C53BA1 /* ltable.c */; };
+		496A27DB0F0EC9EE00C53BA1 /* ltablib.c in Sources */ = {isa = PBXBuildFile; fileRef = 496A24400F0EB35E00C53BA1 /* ltablib.c */; };
+		496A27DC0F0EC9EE00C53BA1 /* ltm.c in Sources */ = {isa = PBXBuildFile; fileRef = 496A24410F0EB35E00C53BA1 /* ltm.c */; };
+		496A27DD0F0EC9EE00C53BA1 /* lundump.c in Sources */ = {isa = PBXBuildFile; fileRef = 496A24460F0EB35E00C53BA1 /* lundump.c */; };
+		496A27DE0F0EC9EE00C53BA1 /* lvm.c in Sources */ = {isa = PBXBuildFile; fileRef = 496A24480F0EB35E00C53BA1 /* lvm.c */; };
+		496A27DF0F0EC9EE00C53BA1 /* lzio.c in Sources */ = {isa = PBXBuildFile; fileRef = 496A244A0F0EB35E00C53BA1 /* lzio.c */; };
+		496A27E00F0EC9EE00C53BA1 /* print.c in Sources */ = {isa = PBXBuildFile; fileRef = 496A244C0F0EB35E00C53BA1 /* print.c */; };
+		496A27E10F0EC9EE00C53BA1 /* neural-network.c in Sources */ = {isa = PBXBuildFile; fileRef = 496A244E0F0EB35E00C53BA1 /* neural-network.c */; };
+		496A27E20F0EC9EE00C53BA1 /* tinyxml.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 496A24510F0EB35E00C53BA1 /* tinyxml.cpp */; };
+		496A27E30F0EC9EE00C53BA1 /* tinyxmlerror.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 496A24530F0EB35E00C53BA1 /* tinyxmlerror.cpp */; };
+		496A27E40F0EC9EE00C53BA1 /* tinyxmlparser.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 496A24540F0EB35E00C53BA1 /* tinyxmlparser.cpp */; };
+		496A27E50F0EC9EE00C53BA1 /* Graphics.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 496A24A20F0EB37900C53BA1 /* Graphics.cpp */; };
+		496A27E60F0EC9EE00C53BA1 /* SpriteSheet.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 496A24A40F0EB37900C53BA1 /* SpriteSheet.cpp */; };
+		496A27E70F0EC9EE00C53BA1 /* Starfield.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 496A24A60F0EB37900C53BA1 /* Starfield.cpp */; };
+		496A27E80F0EC9EE00C53BA1 /* TextRenderer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 496A24A80F0EB37900C53BA1 /* TextRenderer.cpp */; };
+		496A27E90F0EC9EE00C53BA1 /* Input.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 496A24AA0F0EB37900C53BA1 /* Input.cpp */; };
+		496A27EA0F0EC9EE00C53BA1 /* Client.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 496A24AD0F0EB37900C53BA1 /* Client.cpp */; };
+		496A27EB0F0EC9EE00C53BA1 /* MessageDecode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 496A24AE0F0EB37900C53BA1 /* MessageDecode.cpp */; };
+		496A27EC0F0EC9EE00C53BA1 /* Server.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 496A24B10F0EB37900C53BA1 /* Server.cpp */; };
+		496A27ED0F0EC9EE00C53BA1 /* PhysicsContext.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 496A24B30F0EB37900C53BA1 /* PhysicsContext.cpp */; };
+		496A27EE0F0EC9EE00C53BA1 /* PhysicsObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 496A24B50F0EB37900C53BA1 /* PhysicsObject.cpp */; };
+		496A27EF0F0EC9EE00C53BA1 /* Compile.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 496A24B80F0EB37900C53BA1 /* Compile.cpp */; };
+		496A27F00F0EC9EE00C53BA1 /* LuaBind.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 496A24BA0F0EB37900C53BA1 /* LuaBind.cpp */; };
+		496A27F10F0EC9EE00C53BA1 /* Scripting.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 496A24BB0F0EB37900C53BA1 /* Scripting.cpp */; };
+		496A27F20F0EC9EE00C53BA1 /* Sound.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 496A24BE0F0EB37900C53BA1 /* Sound.cpp */; };
+		496A27F30F0EC9EE00C53BA1 /* Colour.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 496A24C10F0EB37900C53BA1 /* Colour.cpp */; };
+		496A27F40F0EC9EE00C53BA1 /* Matrix2x3.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 496A24C40F0EB37900C53BA1 /* Matrix2x3.cpp */; };
+		496A27F50F0EC9EE00C53BA1 /* ResourceManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 496A24C60F0EB37900C53BA1 /* ResourceManager.cpp */; };
+		496A27F60F0EC9EE00C53BA1 /* TestHarness.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 496A24C80F0EB37900C53BA1 /* TestHarness.cpp */; };
+		496A27F70F0EC9EE00C53BA1 /* XarFile.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 496A24CB0F0EB37900C53BA1 /* XarFile.cpp */; };
+		496A27F80F0EC9EE00C53BA1 /* ModeManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 496A250E0F0EB63200C53BA1 /* ModeManager.cpp */; };
+		496A28380F0EC9F800C53BA1 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 496A23EA0F0EB31B00C53BA1 /* Cocoa.framework */; };
+		496A28390F0EC9F800C53BA1 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 496A23EC0F0EB31B00C53BA1 /* OpenGL.framework */; };
+		496A283A0F0EC9F800C53BA1 /* SDL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 496A23EE0F0EB31B00C53BA1 /* SDL.framework */; };
+		496A283B0F0EC9F800C53BA1 /* SDL_image.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 496A23F00F0EB31B00C53BA1 /* SDL_image.framework */; };
+		496A283C0F0EC9F800C53BA1 /* SDL_mixer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 496A23F20F0EB31B00C53BA1 /* SDL_mixer.framework */; };
+		496A283D0F0EC9F800C53BA1 /* SDL_ttf.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 496A23F40F0EB31B00C53BA1 /* SDL_ttf.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		496A23E00F0EB22F00C53BA1 /* ApolloEngine.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ApolloEngine.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		496A23E20F0EB22F00C53BA1 /* ApolloEngine-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ApolloEngine-Info.plist"; sourceTree = "<group>"; };
 		496A23EA0F0EB31B00C53BA1 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
 		496A23EC0F0EB31B00C53BA1 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = /System/Library/Frameworks/OpenGL.framework; sourceTree = "<absolute>"; };
 		496A23EE0F0EB31B00C53BA1 /* SDL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDL.framework; path = /Library/Frameworks/SDL.framework; sourceTree = "<absolute>"; };
@@ -256,19 +254,20 @@
 		496A24CC0F0EB37900C53BA1 /* XarFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XarFile.h; sourceTree = "<group>"; };
 		496A250E0F0EB63200C53BA1 /* ModeManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ModeManager.cpp; sourceTree = "<group>"; };
 		496A250F0F0EB63200C53BA1 /* ModeManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModeManager.h; sourceTree = "<group>"; };
+		496A277E0F0EC9A000C53BA1 /* libApollo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libApollo.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		496A23DE0F0EB22E00C53BA1 /* Frameworks */ = {
+		496A277C0F0EC9A000C53BA1 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				496A23EB0F0EB31B00C53BA1 /* Cocoa.framework in Frameworks */,
-				496A23ED0F0EB31B00C53BA1 /* OpenGL.framework in Frameworks */,
-				496A23EF0F0EB31B00C53BA1 /* SDL.framework in Frameworks */,
-				496A23F10F0EB31B00C53BA1 /* SDL_image.framework in Frameworks */,
-				496A23F30F0EB31B00C53BA1 /* SDL_mixer.framework in Frameworks */,
-				496A23F50F0EB31B00C53BA1 /* SDL_ttf.framework in Frameworks */,
+				496A28380F0EC9F800C53BA1 /* Cocoa.framework in Frameworks */,
+				496A28390F0EC9F800C53BA1 /* OpenGL.framework in Frameworks */,
+				496A283A0F0EC9F800C53BA1 /* SDL.framework in Frameworks */,
+				496A283B0F0EC9F800C53BA1 /* SDL_image.framework in Frameworks */,
+				496A283C0F0EC9F800C53BA1 /* SDL_mixer.framework in Frameworks */,
+				496A283D0F0EC9F800C53BA1 /* SDL_ttf.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -281,7 +280,6 @@
 				496A24030F0EB34000C53BA1 /* External */,
 				496A23DA0F0EB21700C53BA1 /* Source */,
 				496A23E10F0EB22F00C53BA1 /* Products */,
-				496A23E20F0EB22F00C53BA1 /* ApolloEngine-Info.plist */,
 				496A23EA0F0EB31B00C53BA1 /* Cocoa.framework */,
 				496A23EC0F0EB31B00C53BA1 /* OpenGL.framework */,
 				496A23EE0F0EB31B00C53BA1 /* SDL.framework */,
@@ -310,7 +308,7 @@
 		496A23E10F0EB22F00C53BA1 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				496A23E00F0EB22F00C53BA1 /* ApolloEngine.framework */,
+				496A277E0F0EC9A000C53BA1 /* libApollo.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -536,87 +534,86 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		496A23DB0F0EB22E00C53BA1 /* Headers */ = {
+		496A277A0F0EC9A000C53BA1 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				496A24560F0EB35E00C53BA1 /* callbacks.h in Headers */,
-				496A24570F0EB35E00C53BA1 /* enet.h in Headers */,
-				496A24580F0EB35E00C53BA1 /* list.h in Headers */,
-				496A24590F0EB35E00C53BA1 /* protocol.h in Headers */,
-				496A245A0F0EB35E00C53BA1 /* nettime.h in Headers */,
-				496A245B0F0EB35E00C53BA1 /* types.h in Headers */,
-				496A245C0F0EB35E00C53BA1 /* unix.h in Headers */,
-				496A245D0F0EB35E00C53BA1 /* utility.h in Headers */,
-				496A245E0F0EB35E00C53BA1 /* win32.h in Headers */,
-				496A24670F0EB35E00C53BA1 /* lapi.h in Headers */,
-				496A24690F0EB35E00C53BA1 /* lauxlib.h in Headers */,
-				496A246C0F0EB35E00C53BA1 /* lcode.h in Headers */,
-				496A246F0F0EB35E00C53BA1 /* ldebug.h in Headers */,
-				496A24710F0EB35E00C53BA1 /* ldo.h in Headers */,
-				496A24740F0EB35E00C53BA1 /* lfunc.h in Headers */,
-				496A24760F0EB35E00C53BA1 /* lgc.h in Headers */,
-				496A247A0F0EB35E00C53BA1 /* llex.h in Headers */,
-				496A247B0F0EB35E00C53BA1 /* llimits.h in Headers */,
-				496A247E0F0EB35E00C53BA1 /* lmem.h in Headers */,
-				496A24810F0EB35E00C53BA1 /* lobject.h in Headers */,
-				496A24830F0EB35E00C53BA1 /* lopcodes.h in Headers */,
-				496A24860F0EB35E00C53BA1 /* lparser.h in Headers */,
-				496A24880F0EB35E00C53BA1 /* lstate.h in Headers */,
-				496A248A0F0EB35E00C53BA1 /* lstring.h in Headers */,
-				496A248D0F0EB35E00C53BA1 /* ltable.h in Headers */,
-				496A24900F0EB35E00C53BA1 /* ltm.h in Headers */,
-				496A24910F0EB35E00C53BA1 /* lua.h in Headers */,
-				496A24920F0EB35E00C53BA1 /* luaconf.h in Headers */,
-				496A24930F0EB35E00C53BA1 /* lualib.h in Headers */,
-				496A24950F0EB35E00C53BA1 /* lundump.h in Headers */,
-				496A24970F0EB35E00C53BA1 /* lvm.h in Headers */,
-				496A24990F0EB35E00C53BA1 /* lzio.h in Headers */,
-				496A249C0F0EB35E00C53BA1 /* neural-network.h in Headers */,
-				496A249E0F0EB35E00C53BA1 /* tinyxml.h in Headers */,
-				496A24CE0F0EB37900C53BA1 /* Graphics.h in Headers */,
-				496A24D00F0EB37900C53BA1 /* SpriteSheet.h in Headers */,
-				496A24D20F0EB37900C53BA1 /* Starfield.h in Headers */,
-				496A24D40F0EB37900C53BA1 /* TextRenderer.h in Headers */,
-				496A24D60F0EB37900C53BA1 /* Input.h in Headers */,
-				496A24D90F0EB37900C53BA1 /* MessageDecode.h in Headers */,
-				496A24DA0F0EB37900C53BA1 /* Net.h in Headers */,
-				496A24DD0F0EB37900C53BA1 /* PhysicsContext.h in Headers */,
-				496A24DF0F0EB37900C53BA1 /* PhysicsObject.h in Headers */,
-				496A24E10F0EB37900C53BA1 /* Compile.h in Headers */,
-				496A24E40F0EB37900C53BA1 /* Scripting.h in Headers */,
-				496A24E60F0EB37900C53BA1 /* Sound.h in Headers */,
-				496A24E80F0EB37900C53BA1 /* Colour.h in Headers */,
-				496A24E90F0EB37900C53BA1 /* GameTime.h in Headers */,
-				496A24EB0F0EB37900C53BA1 /* Matrix2x3.h in Headers */,
-				496A24ED0F0EB37900C53BA1 /* ResourceManager.h in Headers */,
-				496A24EF0F0EB37900C53BA1 /* TestHarness.h in Headers */,
-				496A24F00F0EB37900C53BA1 /* Vec2.h in Headers */,
-				496A24F20F0EB37900C53BA1 /* XarFile.h in Headers */,
-				496A25110F0EB63200C53BA1 /* ModeManager.h in Headers */,
+				496A27850F0EC9D800C53BA1 /* callbacks.h in Headers */,
+				496A27860F0EC9D800C53BA1 /* enet.h in Headers */,
+				496A27870F0EC9D800C53BA1 /* list.h in Headers */,
+				496A27880F0EC9D800C53BA1 /* protocol.h in Headers */,
+				496A27890F0EC9D800C53BA1 /* nettime.h in Headers */,
+				496A278A0F0EC9D800C53BA1 /* types.h in Headers */,
+				496A278B0F0EC9D800C53BA1 /* unix.h in Headers */,
+				496A278C0F0EC9D800C53BA1 /* utility.h in Headers */,
+				496A278D0F0EC9D800C53BA1 /* win32.h in Headers */,
+				496A278E0F0EC9D800C53BA1 /* lapi.h in Headers */,
+				496A278F0F0EC9D800C53BA1 /* lauxlib.h in Headers */,
+				496A27900F0EC9D800C53BA1 /* lcode.h in Headers */,
+				496A27910F0EC9D800C53BA1 /* ldebug.h in Headers */,
+				496A27920F0EC9D800C53BA1 /* ldo.h in Headers */,
+				496A27930F0EC9D800C53BA1 /* lfunc.h in Headers */,
+				496A27940F0EC9D800C53BA1 /* lgc.h in Headers */,
+				496A27950F0EC9D800C53BA1 /* llex.h in Headers */,
+				496A27960F0EC9D800C53BA1 /* llimits.h in Headers */,
+				496A27970F0EC9D800C53BA1 /* lmem.h in Headers */,
+				496A27980F0EC9D800C53BA1 /* lobject.h in Headers */,
+				496A27990F0EC9D800C53BA1 /* lopcodes.h in Headers */,
+				496A279A0F0EC9D800C53BA1 /* lparser.h in Headers */,
+				496A279B0F0EC9D800C53BA1 /* lstate.h in Headers */,
+				496A279C0F0EC9D800C53BA1 /* lstring.h in Headers */,
+				496A279D0F0EC9D800C53BA1 /* ltable.h in Headers */,
+				496A279E0F0EC9D800C53BA1 /* ltm.h in Headers */,
+				496A279F0F0EC9D800C53BA1 /* lua.h in Headers */,
+				496A27A00F0EC9D800C53BA1 /* luaconf.h in Headers */,
+				496A27A10F0EC9D800C53BA1 /* lualib.h in Headers */,
+				496A27A20F0EC9D800C53BA1 /* lundump.h in Headers */,
+				496A27A30F0EC9D800C53BA1 /* lvm.h in Headers */,
+				496A27A40F0EC9D800C53BA1 /* lzio.h in Headers */,
+				496A27A50F0EC9D800C53BA1 /* neural-network.h in Headers */,
+				496A27A60F0EC9D800C53BA1 /* tinyxml.h in Headers */,
+				496A27A70F0EC9D800C53BA1 /* Graphics.h in Headers */,
+				496A27A80F0EC9D800C53BA1 /* SpriteSheet.h in Headers */,
+				496A27A90F0EC9D800C53BA1 /* Starfield.h in Headers */,
+				496A27AA0F0EC9D800C53BA1 /* TextRenderer.h in Headers */,
+				496A27AB0F0EC9D800C53BA1 /* Input.h in Headers */,
+				496A27AC0F0EC9D800C53BA1 /* MessageDecode.h in Headers */,
+				496A27AD0F0EC9D800C53BA1 /* Net.h in Headers */,
+				496A27AE0F0EC9D800C53BA1 /* PhysicsContext.h in Headers */,
+				496A27AF0F0EC9D800C53BA1 /* PhysicsObject.h in Headers */,
+				496A27B00F0EC9D800C53BA1 /* Compile.h in Headers */,
+				496A27B10F0EC9D800C53BA1 /* Scripting.h in Headers */,
+				496A27B20F0EC9D800C53BA1 /* Sound.h in Headers */,
+				496A27B30F0EC9D800C53BA1 /* Colour.h in Headers */,
+				496A27B40F0EC9D800C53BA1 /* GameTime.h in Headers */,
+				496A27B50F0EC9D800C53BA1 /* Matrix2x3.h in Headers */,
+				496A27B60F0EC9D800C53BA1 /* ResourceManager.h in Headers */,
+				496A27B70F0EC9D800C53BA1 /* TestHarness.h in Headers */,
+				496A27B80F0EC9D800C53BA1 /* Vec2.h in Headers */,
+				496A27B90F0EC9D800C53BA1 /* XarFile.h in Headers */,
+				496A27BA0F0EC9D800C53BA1 /* ModeManager.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		496A23DF0F0EB22E00C53BA1 /* ApolloEngine */ = {
+		496A277D0F0EC9A000C53BA1 /* Apollo */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 496A23E50F0EB23200C53BA1 /* Build configuration list for PBXNativeTarget "ApolloEngine" */;
+			buildConfigurationList = 496A27840F0EC9C100C53BA1 /* Build configuration list for PBXNativeTarget "Apollo" */;
 			buildPhases = (
-				496A23DB0F0EB22E00C53BA1 /* Headers */,
-				496A23DC0F0EB22E00C53BA1 /* Resources */,
-				496A23DD0F0EB22E00C53BA1 /* Sources */,
-				496A23DE0F0EB22E00C53BA1 /* Frameworks */,
+				496A277A0F0EC9A000C53BA1 /* Headers */,
+				496A277B0F0EC9A000C53BA1 /* Sources */,
+				496A277C0F0EC9A000C53BA1 /* Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = ApolloEngine;
-			productName = ApolloEngine;
-			productReference = 496A23E00F0EB22F00C53BA1 /* ApolloEngine.framework */;
-			productType = "com.apple.product-type.framework";
+			name = Apollo;
+			productName = Apollo;
+			productReference = 496A277E0F0EC9A000C53BA1 /* libApollo.a */;
+			productType = "com.apple.product-type.library.static";
 		};
 /* End PBXNativeTarget section */
 
@@ -631,88 +628,78 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				496A23DF0F0EB22E00C53BA1 /* ApolloEngine */,
+				496A277D0F0EC9A000C53BA1 /* Apollo */,
 			);
 		};
 /* End PBXProject section */
 
-/* Begin PBXResourcesBuildPhase section */
-		496A23DC0F0EB22E00C53BA1 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXResourcesBuildPhase section */
-
 /* Begin PBXSourcesBuildPhase section */
-		496A23DD0F0EB22E00C53BA1 /* Sources */ = {
+		496A277B0F0EC9A000C53BA1 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				496A24550F0EB35E00C53BA1 /* callbacks.c in Sources */,
-				496A245F0F0EB35E00C53BA1 /* host.c in Sources */,
-				496A24600F0EB35E00C53BA1 /* list.c in Sources */,
-				496A24610F0EB35E00C53BA1 /* packet.c in Sources */,
-				496A24620F0EB35E00C53BA1 /* peer.c in Sources */,
-				496A24630F0EB35E00C53BA1 /* protocol.c in Sources */,
-				496A24640F0EB35E00C53BA1 /* unix.c in Sources */,
-				496A24650F0EB35E00C53BA1 /* win32.c in Sources */,
-				496A24660F0EB35E00C53BA1 /* lapi.c in Sources */,
-				496A24680F0EB35E00C53BA1 /* lauxlib.c in Sources */,
-				496A246A0F0EB35E00C53BA1 /* lbaselib.c in Sources */,
-				496A246B0F0EB35E00C53BA1 /* lcode.c in Sources */,
-				496A246D0F0EB35E00C53BA1 /* ldblib.c in Sources */,
-				496A246E0F0EB35E00C53BA1 /* ldebug.c in Sources */,
-				496A24700F0EB35E00C53BA1 /* ldo.c in Sources */,
-				496A24720F0EB35E00C53BA1 /* ldump.c in Sources */,
-				496A24730F0EB35E00C53BA1 /* lfunc.c in Sources */,
-				496A24750F0EB35E00C53BA1 /* lgc.c in Sources */,
-				496A24770F0EB35E00C53BA1 /* linit.c in Sources */,
-				496A24780F0EB35E00C53BA1 /* liolib.c in Sources */,
-				496A24790F0EB35E00C53BA1 /* llex.c in Sources */,
-				496A247C0F0EB35E00C53BA1 /* lmathlib.c in Sources */,
-				496A247D0F0EB35E00C53BA1 /* lmem.c in Sources */,
-				496A247F0F0EB35E00C53BA1 /* loadlib.c in Sources */,
-				496A24800F0EB35E00C53BA1 /* lobject.c in Sources */,
-				496A24820F0EB35E00C53BA1 /* lopcodes.c in Sources */,
-				496A24840F0EB35E00C53BA1 /* loslib.c in Sources */,
-				496A24850F0EB35E00C53BA1 /* lparser.c in Sources */,
-				496A24870F0EB35E00C53BA1 /* lstate.c in Sources */,
-				496A24890F0EB35E00C53BA1 /* lstring.c in Sources */,
-				496A248B0F0EB35E00C53BA1 /* lstrlib.c in Sources */,
-				496A248C0F0EB35E00C53BA1 /* ltable.c in Sources */,
-				496A248E0F0EB35E00C53BA1 /* ltablib.c in Sources */,
-				496A248F0F0EB35E00C53BA1 /* ltm.c in Sources */,
-				496A24940F0EB35E00C53BA1 /* lundump.c in Sources */,
-				496A24960F0EB35E00C53BA1 /* lvm.c in Sources */,
-				496A24980F0EB35E00C53BA1 /* lzio.c in Sources */,
-				496A249A0F0EB35E00C53BA1 /* print.c in Sources */,
-				496A249B0F0EB35E00C53BA1 /* neural-network.c in Sources */,
-				496A249D0F0EB35E00C53BA1 /* tinyxml.cpp in Sources */,
-				496A249F0F0EB35E00C53BA1 /* tinyxmlerror.cpp in Sources */,
-				496A24A00F0EB35E00C53BA1 /* tinyxmlparser.cpp in Sources */,
-				496A24CD0F0EB37900C53BA1 /* Graphics.cpp in Sources */,
-				496A24CF0F0EB37900C53BA1 /* SpriteSheet.cpp in Sources */,
-				496A24D10F0EB37900C53BA1 /* Starfield.cpp in Sources */,
-				496A24D30F0EB37900C53BA1 /* TextRenderer.cpp in Sources */,
-				496A24D50F0EB37900C53BA1 /* Input.cpp in Sources */,
-				496A24D70F0EB37900C53BA1 /* Client.cpp in Sources */,
-				496A24D80F0EB37900C53BA1 /* MessageDecode.cpp in Sources */,
-				496A24DB0F0EB37900C53BA1 /* Server.cpp in Sources */,
-				496A24DC0F0EB37900C53BA1 /* PhysicsContext.cpp in Sources */,
-				496A24DE0F0EB37900C53BA1 /* PhysicsObject.cpp in Sources */,
-				496A24E00F0EB37900C53BA1 /* Compile.cpp in Sources */,
-				496A24E20F0EB37900C53BA1 /* LuaBind.cpp in Sources */,
-				496A24E30F0EB37900C53BA1 /* Scripting.cpp in Sources */,
-				496A24E50F0EB37900C53BA1 /* Sound.cpp in Sources */,
-				496A24E70F0EB37900C53BA1 /* Colour.cpp in Sources */,
-				496A24EA0F0EB37900C53BA1 /* Matrix2x3.cpp in Sources */,
-				496A24EC0F0EB37900C53BA1 /* ResourceManager.cpp in Sources */,
-				496A24EE0F0EB37900C53BA1 /* TestHarness.cpp in Sources */,
-				496A24F10F0EB37900C53BA1 /* XarFile.cpp in Sources */,
-				496A25100F0EB63200C53BA1 /* ModeManager.cpp in Sources */,
+				496A27BB0F0EC9EE00C53BA1 /* callbacks.c in Sources */,
+				496A27BC0F0EC9EE00C53BA1 /* host.c in Sources */,
+				496A27BD0F0EC9EE00C53BA1 /* list.c in Sources */,
+				496A27BE0F0EC9EE00C53BA1 /* packet.c in Sources */,
+				496A27BF0F0EC9EE00C53BA1 /* peer.c in Sources */,
+				496A27C00F0EC9EE00C53BA1 /* protocol.c in Sources */,
+				496A27C10F0EC9EE00C53BA1 /* unix.c in Sources */,
+				496A27C20F0EC9EE00C53BA1 /* win32.c in Sources */,
+				496A27C30F0EC9EE00C53BA1 /* lapi.c in Sources */,
+				496A27C40F0EC9EE00C53BA1 /* lauxlib.c in Sources */,
+				496A27C50F0EC9EE00C53BA1 /* lbaselib.c in Sources */,
+				496A27C60F0EC9EE00C53BA1 /* lcode.c in Sources */,
+				496A27C70F0EC9EE00C53BA1 /* ldblib.c in Sources */,
+				496A27C80F0EC9EE00C53BA1 /* ldebug.c in Sources */,
+				496A27C90F0EC9EE00C53BA1 /* ldo.c in Sources */,
+				496A27CA0F0EC9EE00C53BA1 /* ldump.c in Sources */,
+				496A27CB0F0EC9EE00C53BA1 /* lfunc.c in Sources */,
+				496A27CC0F0EC9EE00C53BA1 /* lgc.c in Sources */,
+				496A27CD0F0EC9EE00C53BA1 /* linit.c in Sources */,
+				496A27CE0F0EC9EE00C53BA1 /* liolib.c in Sources */,
+				496A27CF0F0EC9EE00C53BA1 /* llex.c in Sources */,
+				496A27D00F0EC9EE00C53BA1 /* lmathlib.c in Sources */,
+				496A27D10F0EC9EE00C53BA1 /* lmem.c in Sources */,
+				496A27D20F0EC9EE00C53BA1 /* loadlib.c in Sources */,
+				496A27D30F0EC9EE00C53BA1 /* lobject.c in Sources */,
+				496A27D40F0EC9EE00C53BA1 /* lopcodes.c in Sources */,
+				496A27D50F0EC9EE00C53BA1 /* loslib.c in Sources */,
+				496A27D60F0EC9EE00C53BA1 /* lparser.c in Sources */,
+				496A27D70F0EC9EE00C53BA1 /* lstate.c in Sources */,
+				496A27D80F0EC9EE00C53BA1 /* lstring.c in Sources */,
+				496A27D90F0EC9EE00C53BA1 /* lstrlib.c in Sources */,
+				496A27DA0F0EC9EE00C53BA1 /* ltable.c in Sources */,
+				496A27DB0F0EC9EE00C53BA1 /* ltablib.c in Sources */,
+				496A27DC0F0EC9EE00C53BA1 /* ltm.c in Sources */,
+				496A27DD0F0EC9EE00C53BA1 /* lundump.c in Sources */,
+				496A27DE0F0EC9EE00C53BA1 /* lvm.c in Sources */,
+				496A27DF0F0EC9EE00C53BA1 /* lzio.c in Sources */,
+				496A27E00F0EC9EE00C53BA1 /* print.c in Sources */,
+				496A27E10F0EC9EE00C53BA1 /* neural-network.c in Sources */,
+				496A27E20F0EC9EE00C53BA1 /* tinyxml.cpp in Sources */,
+				496A27E30F0EC9EE00C53BA1 /* tinyxmlerror.cpp in Sources */,
+				496A27E40F0EC9EE00C53BA1 /* tinyxmlparser.cpp in Sources */,
+				496A27E50F0EC9EE00C53BA1 /* Graphics.cpp in Sources */,
+				496A27E60F0EC9EE00C53BA1 /* SpriteSheet.cpp in Sources */,
+				496A27E70F0EC9EE00C53BA1 /* Starfield.cpp in Sources */,
+				496A27E80F0EC9EE00C53BA1 /* TextRenderer.cpp in Sources */,
+				496A27E90F0EC9EE00C53BA1 /* Input.cpp in Sources */,
+				496A27EA0F0EC9EE00C53BA1 /* Client.cpp in Sources */,
+				496A27EB0F0EC9EE00C53BA1 /* MessageDecode.cpp in Sources */,
+				496A27EC0F0EC9EE00C53BA1 /* Server.cpp in Sources */,
+				496A27ED0F0EC9EE00C53BA1 /* PhysicsContext.cpp in Sources */,
+				496A27EE0F0EC9EE00C53BA1 /* PhysicsObject.cpp in Sources */,
+				496A27EF0F0EC9EE00C53BA1 /* Compile.cpp in Sources */,
+				496A27F00F0EC9EE00C53BA1 /* LuaBind.cpp in Sources */,
+				496A27F10F0EC9EE00C53BA1 /* Scripting.cpp in Sources */,
+				496A27F20F0EC9EE00C53BA1 /* Sound.cpp in Sources */,
+				496A27F30F0EC9EE00C53BA1 /* Colour.cpp in Sources */,
+				496A27F40F0EC9EE00C53BA1 /* Matrix2x3.cpp in Sources */,
+				496A27F50F0EC9EE00C53BA1 /* ResourceManager.cpp in Sources */,
+				496A27F60F0EC9EE00C53BA1 /* TestHarness.cpp in Sources */,
+				496A27F70F0EC9EE00C53BA1 /* XarFile.cpp in Sources */,
+				496A27F80F0EC9EE00C53BA1 /* ModeManager.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -735,22 +722,17 @@
 			};
 			name = Release;
 		};
-		496A23E30F0EB23200C53BA1 /* Debug */ = {
+		496A277F0F0EC9A300C53BA1 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				COPY_PHASE_STRIP = NO;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
 				FRAMEWORK_SEARCH_PATHS = ../External;
-				FRAMEWORK_VERSION = A;
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_FIX_AND_CONTINUE = YES;
 				GCC_MODEL_TUNING = G5;
 				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PRECOMPILE_PREFIX_HEADER = NO;
-				GCC_PREFIX_HEADER = "";
 				GCC_VERSION = 4.2;
 				HEADER_SEARCH_PATHS = (
 					../Engine,
@@ -759,16 +741,13 @@
 					../External/eNet,
 					../External/SDL.framework/Headers,
 				);
-				INFOPLIST_FILE = "ApolloEngine-Info.plist";
-				INSTALL_PATH = "@executable_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.5;
-				OTHER_LDFLAGS = "";
+				INSTALL_PATH = /usr/local/lib;
 				PREBINDING = NO;
-				PRODUCT_NAME = ApolloEngine;
+				PRODUCT_NAME = Apollo;
 			};
 			name = Debug;
 		};
-		496A23E40F0EB23200C53BA1 /* Release */ = {
+		496A27800F0EC9A300C53BA1 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -776,15 +755,10 @@
 				ARCHS_STANDARD_32_BIT_PRE_XCODE_3_1 = "ppc i386";
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
 				FRAMEWORK_SEARCH_PATHS = ../External;
-				FRAMEWORK_VERSION = A;
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_ENABLE_FIX_AND_CONTINUE = NO;
 				GCC_MODEL_TUNING = G5;
-				GCC_PRECOMPILE_PREFIX_HEADER = NO;
-				GCC_PREFIX_HEADER = "";
 				GCC_VERSION = 4.2;
 				HEADER_SEARCH_PATHS = (
 					../Engine,
@@ -793,12 +767,9 @@
 					../External/eNet,
 					../External/SDL.framework/Headers,
 				);
-				INFOPLIST_FILE = "ApolloEngine-Info.plist";
-				INSTALL_PATH = "@executable_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.5;
-				OTHER_LDFLAGS = "";
+				INSTALL_PATH = /usr/local/lib;
 				PREBINDING = NO;
-				PRODUCT_NAME = ApolloEngine;
+				PRODUCT_NAME = Apollo;
 				ZERO_LINK = NO;
 			};
 			name = Release;
@@ -815,11 +786,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		496A23E50F0EB23200C53BA1 /* Build configuration list for PBXNativeTarget "ApolloEngine" */ = {
+		496A27840F0EC9C100C53BA1 /* Build configuration list for PBXNativeTarget "Apollo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				496A23E30F0EB23200C53BA1 /* Debug */,
-				496A23E40F0EB23200C53BA1 /* Release */,
+				496A277F0F0EC9A300C53BA1 /* Debug */,
+				496A27800F0EC9A300C53BA1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
