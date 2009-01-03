@@ -23,6 +23,7 @@ camera = { w = 1000, h = 1000 }
 
 playerShip = nil
 cmissile = nil
+pkbeam = nil
 
 ships = {}
 carrierRotation = 0
@@ -36,11 +37,11 @@ local frame = 0
 
 local warpStart = false
 local startTime = 0.0
-local startEngine = true
+local startEngine = false
 local soundStarted = false
 local timeSinceStart = 0.0
-local soundLength = 0.5
-local soundNum = 0.0
+local soundLength = 0.425
+local soundNum = 0
 local warping = false
 
 local bulletFired = false
@@ -57,6 +58,7 @@ function init ()
     physics.open(0.6)
     playerShip = NewShip("Ishiman/HeavyCruiser")
 	--cmissile = NewBullet("WhiteYellowMissile")
+	--cmissile = NewBullet("PKBeam")
 	sound.stop_music()
 end
 
@@ -66,24 +68,22 @@ function update ()
 	lastTime = newTime
 	
 	if warpStart == true then
-		if startEngine == true then
-			startEngine = false
+		if startEngine == false then -- once per warp init
+			startEngine = true
 			startTime = mode_manager.time()
 		end
 		timeSinceStart = mode_manager.time() - startTime
 		if soundStarted == true then
-			if timeSinceStart - soundNum >= soundLength then
+			if timeSinceStart - soundNum * soundLength >= soundLength then
 				soundStarted = false
 			end
-		else
+		elseif soundStarted == false then
 			soundStarted = true
 			soundNum = soundNum + 1
 			if soundNum <= 4 then
 				sound.play("Warp" .. soundNum)
-				print("Warp" .. soundNum)
 			elseif soundNum == 5 then
 				sound.play("WarpIn")
-				print("WarpIn")
 				warping = true
 				warpStart = false
 			end
@@ -103,17 +103,19 @@ function update ()
         local angle = playerShip.physicsObject.angle
         local thrust = playerShip.thrust
         local force = { x = thrust * math.cos(angle), y = thrust * math.sin(angle) }
-        playerShip.physicsObject:apply_force(force)
-    elseif keyControls.brake then
+		playerShip.physicsObject:apply_force(force)
+	elseif keyControls.brake then
         -- apply a reverse force in the direction opposite the direction the ship is MOVING
         local velocityVector = playerShip.physicsObject.velocity
-        local velocityMag = hypot(velocityVector.x, velocityVector.y)
-        velocityVector.x = -velocityVector.x / velocityMag
-        velocityVector.y = -velocityVector.y / velocityMag
-        local thrust = playerShip.reverseThrust
-        velocityVector.x = velocityVector.x * thrust
-        velocityVector.y = velocityVector.y * thrust
-        playerShip.physicsObject:apply_force(velocityVector)
+		if velocityVector.x ~= 0 or velocityVector.y ~= 0 then
+			local velocityMag = hypot(velocityVector.x, velocityVector.y)
+			velocityVector.x = -velocityVector.x / velocityMag
+			velocityVector.y = -velocityVector.y / velocityMag
+			local thrust = playerShip.reverseThrust
+			velocityVector.x = velocityVector.x * thrust
+			velocityVector.y = velocityVector.y * thrust
+			playerShip.physicsObject:apply_force(velocityVector)
+		end
     end
 	
 	--[[ old code
@@ -172,9 +174,9 @@ end
 
 function render ()
     graphics.begin_frame()
-	graphics.set_camera(playerShip.physicsObject.position.x - 66 - (camera.w / 2.0), playerShip.physicsObject.position.y - (camera.h / 2.0), playerShip.physicsObject.position.x - 46 + (camera.w / 2.0), playerShip.physicsObject.position.y + (camera.w / 2.0))
-	print(playerShip.physicsObject.position.x)
-	print(playerShip.physicsObject.position.y)
+	graphics.set_camera(playerShip.physicsObject.position.x - 56 - (camera.w / 2.0), playerShip.physicsObject.position.y - (camera.h / 2.0), playerShip.physicsObject.position.x - 46 + (camera.w / 2.0), playerShip.physicsObject.position.y + (camera.w / 2.0))
+--	print(playerShip.physicsObject.position.x)
+--	print(playerShip.physicsObject.position.y)
 	graphics.draw_starfield()
     if carrierHealth ~= 0 then
 		graphics.draw_sprite("Gaitori/Carrier", carrierLocation.x, carrierLocation.y, Gai_Carrier_Size[1], Gai_Carrier_Size[2], carrierRotation)
@@ -248,7 +250,7 @@ function keyup ( k )
     elseif k == "tab" then
 		warpStart = false
 		startTime = nil
-		startEngine = true
+		startEngine = false
 		soundStarted = false
 		timeSinceStart = 0.0
 		soundLength = 0.25
@@ -256,7 +258,6 @@ function keyup ( k )
 		if warping == true then
 			warping = false
 			sound.play("WarpOut")
-			print("WarpOut")
 		end
 	end
 end

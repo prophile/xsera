@@ -5,41 +5,17 @@ bullet = { dest = { x = carrierLocation.x, y = carrierLocation.y }, force = { x 
 bullet.size.x, bullet.size.y = graphics.sprite_dimensions("Weapons/WhiteYellowMissile")
 firebullet = false
 
---[[ old physics code
-function fire_bullet(dt)
+function fire_bullet()
+--[[ here's what this function should look like when finished:
+1- Find all possible targets in missile range
+2- Select best target and seek it
+(Update with new target if necessary when updating)
+--]]
 	if bullet.ammo > 0 then
-		physbullet = PhysicsObject(0.5)
-		physbullet:set_top_speed(600.0)
-		physbullet:set_top_angular_velocity(bullet.turn_rate)
-		physbullet:set_rotational_drag(0.0)
-		physbullet:set_drag(0.0)
 		
-		bullet.dest.x = carrierLocation.x
-		bullet.dest.y = carrierLocation.y
-		bullet.alpha = find_angle( { x = 0, y = 0 } , physbullet:velocity())
-		bullet.beta = find_angle(bullet.dest, physbullet:location())
-		bullet.theta = ship:angle()
-		-- theta is the true angle of the bullet, beta is the desired angle, and alpha is the velocity angle
-				
-		bullet.theta = bullet.theta % (math.pi * 2)
-		bullet.force.x = math.cos(bullet.theta) * bullet.power
-		bullet.force.y = math.sin(bullet.theta) * bullet.power
-
-		physbullet:set_angle(bullet.theta)
-		physbullet:update(0, bullet.force, 0.0)
-
 		bullet.ammo = bullet.ammo - 1
 		sound.play("RocketLaunchr")
 		-- temp sound file, should be "RocketLaunch" but for some reason, that file gets errors (file included in git for troubleshooting)
-	end
-end
---]]
-
-function fire_bullet()
-	if bullet.ammo > 0 then
-		bullet.ammo = bullet.ammo - 1
-		
-		sound.play("RocketLaunchr")
 	end
 end
 
@@ -104,5 +80,7 @@ function guide_bullet()
 				bullet.delta = bullet.turn_rate
 			end
 		end
+	else
+		bullet.delta = 0
 	end
 end

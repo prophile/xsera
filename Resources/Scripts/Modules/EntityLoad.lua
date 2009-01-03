@@ -51,6 +51,7 @@ function NewBullet (bulletType)
 	bulletObject.name = trueData.name
 	bulletObject.turningRate = tonumber(trueData.turnrate)
 	bulletObject.thrust = tronumber(truedata.thrust)
+	bulletObject.life = tonumber(trueData.life)
 	bulletObject.cooldown = tonumber(trueData.cooldown)
 	return bulletObject
 end
