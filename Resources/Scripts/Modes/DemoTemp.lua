@@ -13,7 +13,7 @@
 -- Implement planets.
 -- Use other Heavy Cruisers (possibly built on planets) to destroy Carrier, using attack command.
 
-import('ShipLoad')
+import('EntityLoad')
 import('Math')
 import('Bullet4Demo')
 
