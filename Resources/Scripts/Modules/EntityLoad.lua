@@ -1,14 +1,3 @@
--- old code
-Ish_hCruiser_Size = {}
-Ish_hCruiser_Size[1], Ish_hCruiser_Size[2] = graphics.sprite_dimensions("Ishiman/HeavyCruiser")
-
-Gai_Carrier_Size = {}
-Gai_Carrier_Size[1], Gai_Carrier_Size[2] = graphics.sprite_dimensions("Gaitori/Carrier")
-
-explosion = {}
-explosion[1], explosion[2] = graphics.sprite_dimensions("Explosions/BestExplosion")
-
--- new code
 import('PrintRecursive')
 
 function NewShip ( shipType )
@@ -34,7 +23,7 @@ function NewShip ( shipType )
 end
 
 function NewBullet (bulletType)
-	local rawData = xml.load("Config/Weapons/" .. bulletType .. ".xml")
+	local rawData = xml.load("Config/Bullets/" .. bulletType .. ".xml")
 	local bulletData = rawData[1]
 	local trueData = {}
 	for k, v in ipairs(bulletData) do
@@ -44,7 +33,7 @@ function NewBullet (bulletType)
 	end
 	local bulletObject = { size = {} }
 	bulletObject.image = trueData.sprite
-	bulletObject.size.x, bullet.size.y = graphics.sprite_dimensions(bulletObject.image)
+	bulletObject.size.x, bulletObject.size.y = graphics.sprite_dimensions(bulletObject.image)
 	local mass = trueData.mass
 	bulletObject.physicsObject = physics.newobject(tonumber(trueData.mass))
 	bulletObject.physicsObject.collision_radius = hypot(bulletObject.size.x, bulletObject.size.y)
