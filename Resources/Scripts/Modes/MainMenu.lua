@@ -83,7 +83,7 @@ function key ( k )
     elseif k == "k" then
         sizeFactor = sizeFactor - 0.1
     elseif k == "d" then
-        mode_manager.switch("DemoTemp")
+        mode_manager.switch("Demo")
     elseif k == "t" then
         mode_manager.switch("AngleTest")
     elseif k == "c" then
