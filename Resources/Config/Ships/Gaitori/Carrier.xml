@@ -1,0 +1,15 @@
+<?xml version="1.0" ?>
+<ship>
+	<!-- full name -->
+	<name>Gaitori Carrier</name>
+	<!-- sprite name -->
+	<sprite>Gaitori/Carrier</sprite>
+	<!-- mass, in kg -->
+	<mass>1000000000000</mass>
+	<!-- turning rate, in radians/second -->
+	<turnrate>3.2</turnrate>
+	<!-- thrust, in newtons -->
+	<thrust>10000</thrust> 
+	<!-- reverse thrust, in newtons -->
+	<reverse>5000</reverse>
+</ship>
