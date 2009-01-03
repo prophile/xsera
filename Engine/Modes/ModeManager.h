@@ -3,35 +3,23 @@
 
 #include "Scripting/Scripting.h"
 
+/**
+ * Initialises the mode manager
+ */
 void InitModeManager ();
+/**
+ * Updates the mode manager
+ */
 void UpdateModeManager ();
+/**
+ * Fetches the active mode
+ * @return A LuaScript which constitutes the active mode
+ */
 LuaScript* ActiveMode ();
+/**
+ * Switches to a new mode
+ * @param newmode The name of the new mode to which to switch
+ */
 void SwitchMode ( const std::string& newmode );
-
-/*class Mode
-{
-public:
-	Mode () {}
-	virtual ~Mode () {}
-
-	virtual void Activate () {}
-	virtual void Render () = 0;
-	virtual void Update () = 0;
-	virtual void Deactivate () {}
-};
-
-class ModeManager
-{
-private:
-	Mode* activeMode;
-public:
-	ModeManager ();
-	~ModeManager ();
-
-	Mode* ActiveMode ();
-	static ModeManager* SharedModeManager ();
-
-	void SwitchMode ( Mode* newMode );
-};*/
 
 #endif

@@ -1,8 +1,17 @@
 #ifndef __included_matrix2x3_h
 #define __included_matrix2x3_h
 
+/**
+ * @file Matrix2x3.h
+ * @brief A basic 2x3 matrix implementation
+ */
+
 #include "Vec2.h"
 
+/**
+ * A 2x3 matrix
+ * @todo Look into optimisation
+ */
 class matrix2x3
 {
 private:
@@ -14,6 +23,9 @@ public:
 	matrix2x3(const float* mat) : _m11(mat[0]), _m12(mat[1]), _m21(mat[3]), _m22(mat[4]), _tX(mat[2]), _tY(mat[5]) {}
 	matrix2x3(const matrix2x3& om2) : _m11(om2._m11), _m12(om2._m12), _m21(om2._m21), _m22(om2._m22), _tX(om2._tX), _tY(om2._tY) {}
 	
+	/**
+	 * This generates an OpenGL-style 16-value matrix for passing to glLoadMatrixf
+	 */
 	void FillOpenGLMatrix ( float* pointer ) const;
 	
 	vec2 operator* ( const vec2& srcv2 ) const;

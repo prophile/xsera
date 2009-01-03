@@ -9,6 +9,9 @@
 #warning Vector support unavailable on this platform, using scalar fallbacks for colour
 #endif
 
+/**
+ * A colour
+ */
 class colour
 {
 public:
