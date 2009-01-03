@@ -109,13 +109,13 @@ void Startup ()
 	SDL_Init(SDL_INIT_TIMER);
 	InitModeManager();
 	ResourceManager::Init();
-//	Graphics::Init(640, 480, false); // 640x480 resolution, non-fullscreen
-	Graphics::Init(960, 720, false); // 960x720 resolution, non-fullscreen
+//	Graphics::Init(640, 480, false); // 640x480 resolution, non-fullscreen (4:3 aspect ratio)
+	Graphics::Init(960, 720, false); // 960x720 resolution, non-fullscreen (4:3 aspect ratio)
 	SDL_EnableUNICODE(1);
 	Sound::Init(48000, 24, 128); // init with 48 kHz sampling rate, 24-bit resolution, 128 channels
 	// compile class script
 	CompileScript("System/Class");
-	LuaScript bootScript ( "System/Boot" );
+	LuaScript bootScript ("System/Boot");
 	SwitchMode("MainMenu");
 }
 

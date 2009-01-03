@@ -19,7 +19,10 @@ import('Bullet4Demo')
 
 twothirdspi = 2.0 / 3.0 * math.pi
 camera = { w = 1000, h = 1000 }
+-- PROBLEM: the camera is not according to the aspect ratio, should be fixed, but how will resolution affect where things should be drawn?
+
 playerShip = nil
+cmissile = nil
 
 ships = {}
 carrierRotation = 0
@@ -30,6 +33,15 @@ drawshot = false
 shotfired = 0
 shot = { x = 0, y = 0, move = 0 }
 local frame = 0
+
+local warpStart = false
+local startTime = 0.0
+local startEngine = true
+local soundStarted = false
+local timeSinceStart = 0.0
+local soundLength = 0.5
+local soundNum = 0.0
+local warping = false
 
 local bulletFired = false
 local bulletRotation = 0
@@ -44,11 +56,8 @@ function init ()
     lastTime = mode_manager.time()
     physics.open(0.6)
     playerShip = NewShip("Ishiman/HeavyCruiser")
+	--cmissile = NewBullet("WhiteYellowMissile")
 	sound.stop_music()
---	ship:set_top_speed(400.0)
---	ship:set_top_angular_velocity(math.pi * 2 * 100)
---	ship:set_rotational_drag(0.5)
---	ship:set_drag(0.0)
 end
 
 function update ()
@@ -56,27 +65,30 @@ function update ()
 	local dt = newTime - lastTime
 	lastTime = newTime
 	
-	--[[ old code!
-    local thrust = 0.0
-    if keysDown.accelerate then
-        thrust = 1000000.0
-    elseif keysDown.reverse then
-        thrust = -1000.0
-    end
-
-    local opposeMotionWithThrust = false
-    local shipSpeed = ship:speed()
-    
-    if thrust < 0.0 then
-        if shipSpeed < 10.0 then
-            -- short circuit and just deny thrusting
-            thrust = 0
-        else
-            print("BRAKE")
-            opposeMotionWithThrust = true
-        end
-    end
-    --]]
+	if warpStart == true then
+		if startEngine == true then
+			startEngine = false
+			startTime = mode_manager.time()
+		end
+		timeSinceStart = mode_manager.time() - startTime
+		if soundStarted == true then
+			if timeSinceStart - soundNum >= soundLength then
+				soundStarted = false
+			end
+		else
+			soundStarted = true
+			soundNum = soundNum + 1
+			if soundNum <= 4 then
+				sound.play("Warp" .. soundNum)
+				print("Warp" .. soundNum)
+			elseif soundNum == 5 then
+				sound.play("WarpIn")
+				print("WarpIn")
+				warping = true
+				warpStart = false
+			end
+		end
+	end
 	
     if keyControls.left then
         playerShip.physicsObject.angular_velocity = playerShip.turningRate
@@ -119,26 +131,6 @@ function update ()
 	ship:set_angular_velocity(angularVelocity)
 	ship:update(dt, force, 0.0)
 	--]]
-	
-	-- bleh-ish new code
-	
-    if keyControls.forward then
-        -- apply a forward force in the direction the ship is facing
-        local angle = playerShip.physicsObject.angle
-        local thrust = playerShip.thrust
-        local force = { x = thrust * math.cos(angle), y = thrust * math.sin(angle) }
-        playerShip.physicsObject:apply_force(force)
-    elseif keyControls.brake then
-        -- apply a reverse force in the direction opposite the direction the ship is MOVING
-        local velocityVector = playerShip.physicsObject.velocity
-        local velocityMag = hypot(velocityVector.x, velocityVector.y)
-        velocityVector.x = -velocityVector.x / velocityMag
-        velocityVector.y = -velocityVector.y / velocityMag
-        local thrust = playerShip.reverseThrust
-        velocityVector.x = velocityVector.x * thrust
-        velocityVector.y = velocityVector.y * thrust
-        playerShip.physicsObject:apply_force(velocityVector)
-    end
 
 	--[[ ADAM: change to new code!!!
 	if firebullet == true then
@@ -154,7 +146,8 @@ function update ()
 				bulletFired = false
 			end
 		end
-		local bulletVelocity = physbullet:velocity()
+		--ADAM: RIGHT HERE: PUT FOLLOWING CODE (FORMATTED CORRECTLY):
+				for a, b in physics.collisions() do yourCodeGoesHere() end		
 		bullet.alpha = find_angle({ x = 0, y = 0 }, physbullet:velocity())
 		bullet.beta = find_angle(physbullet:location(), bullet.dest)
 		print(bullet.alpha)
@@ -179,7 +172,9 @@ end
 
 function render ()
     graphics.begin_frame()
-	graphics.set_camera(playerShip.physicsObject.position.x - 46 - (camera.w / 2.0), playerShip.physicsObject.position.y - (camera.h / 2.0), playerShip.physicsObject.position.x - 46 + (camera.w / 2.0), playerShip.physicsObject.position.y + (camera.w / 2.0))
+	graphics.set_camera(playerShip.physicsObject.position.x - 66 - (camera.w / 2.0), playerShip.physicsObject.position.y - (camera.h / 2.0), playerShip.physicsObject.position.x - 46 + (camera.w / 2.0), playerShip.physicsObject.position.y + (camera.w / 2.0))
+	print(playerShip.physicsObject.position.x)
+	print(playerShip.physicsObject.position.y)
 	graphics.draw_starfield()
     if carrierHealth ~= 0 then
 		graphics.draw_sprite("Gaitori/Carrier", carrierLocation.x, carrierLocation.y, Gai_Carrier_Size[1], Gai_Carrier_Size[2], carrierRotation)
@@ -187,6 +182,7 @@ function render ()
 		if carrierExploded == false then
 			if frame == 0 then
 				sound.play("New/ExplosionCombo")
+				local startTime = mode_manager.time()
 			end
 			local explosion = {}
 			explosion[1], explosion[2] = graphics.sprite_dimensions("Explosions/BestExplosion")
@@ -194,7 +190,7 @@ function render ()
 			if frame == 12 then
 				carrierExploded = true
 			else
-				frame = frame + 1
+				frame = math.floor((mode_manager.time() - startTime + 1) % cmissile.cooldown)
 			end
 		end
 	end
@@ -209,7 +205,7 @@ function render ()
 	end
 	
 	if drawshot == true then
-		bulletRotation = ship:angle()
+		bulletRotation = playerShip.physicsObject.angle
 		shot.x = playerShip.physicsObject.position.x
 		shot.y = playerShip.physicsObject.position.y
 		shot.move = 19
@@ -223,11 +219,11 @@ function render ()
 		graphics.draw_sprite("Weapons/WhiteYellowMissile", bulletLocation.x, bulletLocation.y, bullet.size.x, bullet.size.y, physbullet:angle())
 	end
 	
---	local angle = playerShip.physicsObject.angle
---	graphics.set_camera(-camera.w / 2.0 - 46, -camera.h / 2.0, camera.w / 2.0 - 46, camera.w / 2.0)
---	graphics.draw_line(math.cos(arrowAlpha + angle) * arrowDist, math.sin(arrowAlpha + angle) * arrowDist, math.cos(angle - arrowAlpha) * arrowDist, math.sin(angle - arrowAlpha) * arrowDist, 2)
---	graphics.draw_line(math.cos(angle - arrowAlpha) * arrowDist, math.sin(angle - arrowAlpha) * arrowDist, math.cos(angle) * (300 + arrowVar), math.sin(angle) * (300 + arrowVar), 2)
---	graphics.draw_line(math.cos(angle) * (300 + arrowVar), math.sin(angle) * (300 + arrowVar), math.cos(arrowAlpha + angle) * arrowDist, math.sin(arrowAlpha + angle) * arrowDist, 2)
+	local angle = playerShip.physicsObject.angle
+	graphics.set_camera(-camera.w / 2.0 - 46, -camera.h / 2.0, camera.w / 2.0 - 46, camera.w / 2.0)
+	graphics.draw_line(math.cos(arrowAlpha + angle) * arrowDist, math.sin(arrowAlpha + angle) * arrowDist, math.cos(angle - arrowAlpha) * arrowDist, math.sin(angle - arrowAlpha) * arrowDist, 2)
+	graphics.draw_line(math.cos(angle - arrowAlpha) * arrowDist, math.sin(angle - arrowAlpha) * arrowDist, math.cos(angle) * (300 + arrowVar), math.sin(angle) * (300 + arrowVar), 2)
+	graphics.draw_line(math.cos(angle) * (300 + arrowVar), math.sin(angle) * (300 + arrowVar), math.cos(arrowAlpha + angle) * arrowDist, math.sin(arrowAlpha + angle) * arrowDist, 2)
 	--[[
 	graphics.set_camera(0, 0, 640, 480)
 	graphics.draw_image("Panels/SideLeft", 31, 240, 69.29, 480)
@@ -249,7 +245,20 @@ function keyup ( k )
         keyControls.left = false
     elseif k == "d" then
         keyControls.right = false
-    end
+    elseif k == "tab" then
+		warpStart = false
+		startTime = nil
+		startEngine = true
+		soundStarted = false
+		timeSinceStart = 0.0
+		soundLength = 0.25
+		soundNum = 0.0
+		if warping == true then
+			warping = false
+			sound.play("WarpOut")
+			print("WarpOut")
+		end
+	end
 end
 
 function key ( k )
@@ -263,25 +272,15 @@ function key ( k )
         keyControls.right = true
 	elseif k == "z" then
 		firebullet = true
-	elseif k == "x" then
-		sound.play("Warp1")
-	elseif k == "c" then
-		sound.play("Warp2")
-	elseif k == "v" then
-		sound.play("Warp3")
-	elseif k == "b" then
-		sound.play("Warp4")
-	elseif k == "n" then
-		sound.play("WarpIn")
-	elseif k == "m" then
-		sound.play("WarpOut")
+	elseif k == "tab" then
+		warpStart = true
 	elseif k == " " then
 		sound.play("ShotC")
 		drawshot = true;
 	elseif k == "p" then
 		carrierHealth = 0
 	elseif k == "escape" then
-		-- exit()
+		quit()
 	end
 end
 

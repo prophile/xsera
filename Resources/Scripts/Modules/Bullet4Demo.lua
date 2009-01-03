@@ -38,7 +38,6 @@ end
 function fire_bullet()
 	if bullet.ammo > 0 then
 		bullet.ammo = bullet.ammo - 1
-		cmissile = newBullet("WhiteYellowMissile")
 		
 		sound.play("RocketLaunchr")
 	end

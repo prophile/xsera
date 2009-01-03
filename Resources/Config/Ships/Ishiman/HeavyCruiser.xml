@@ -5,7 +5,7 @@
 	<!-- sprite name -->
 	<sprite>Ishiman/HeavyCruiser</sprite>
 	<!-- mass, in kg -->
-	<mass>10000</mass>
+	<mass>1000000000000</mass>
 	<!-- turning rate, in radians/second -->
 	<turnrate>4</turnrate>
 	<!-- thrust, in newtons -->

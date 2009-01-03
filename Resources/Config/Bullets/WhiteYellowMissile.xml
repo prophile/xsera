@@ -10,4 +10,6 @@
 	<turnrate>0.5</turnrate>
 	<!-- thrust, in newtons -->
 	<thrust>1000</thrust> 
+	<!-- cooldown time, in seconds -->
+	<cooldown>1</cooldown>
 </sprite>

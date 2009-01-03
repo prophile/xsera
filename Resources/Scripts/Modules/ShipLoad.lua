@@ -5,7 +5,6 @@ Ish_hCruiser_Size[1], Ish_hCruiser_Size[2] = graphics.sprite_dimensions("Ishiman
 Gai_Carrier_Size = {}
 Gai_Carrier_Size[1], Gai_Carrier_Size[2] = graphics.sprite_dimensions("Gaitori/Carrier")
 
--- still need following two lines
 explosion = {}
 explosion[1], explosion[2] = graphics.sprite_dimensions("Explosions/BestExplosion")
 
@@ -15,7 +14,6 @@ import('PrintRecursive')
 function NewShip ( shipType )
     local rawData = xml.load("Config/Ships/" .. shipType .. ".xml")
     local shipData = rawData[1]
-    --table.print_recursive(data)
     local trueData = {}
     for k, v in ipairs(shipData) do
         if type(v) == "table" then
@@ -38,25 +36,52 @@ end
 function NewBullet (bulletType)
 	local rawData = xml.load("Config/Weapons/" .. bulletType .. ".xml")
 	local bulletData = rawData[1]
-	--table.print_recursive(data)
 	local trueData = {}
-	for k, v in ipairs(shipData) do
+	for k, v in ipairs(bulletData) do
 		if type(v) == "table" then
 			trueData[v.name] = v[1]
 		end
 	end
 	local bulletObject = { size = {} }
 	bulletObject.image = trueData.sprite
-	bulletObject.size.x, bullet.object.y = graphics.sprite_dimensions(bulletObject.image)
+	bulletObject.size.x, bullet.size.y = graphics.sprite_dimensions(bulletObject.image)
 	local mass = trueData.mass
 	bulletObject.physicsObject = physics.newobject(tonumber(trueData.mass))
 	bulletObject.physicsObject.collision_radius = hypot(bulletObject.size.x, bulletObject.size.y)
 	bulletObject.name = trueData.name
 	bulletObject.turningRate = tonumber(trueData.turnrate)
 	bulletObject.thrust = tronumber(truedata.thrust)
+	bulletObject.cooldown = tonumber(trueData.cooldown)
 	return bulletObject
 end
 
 function NewScenario (scenarioType)
-	
+	local rawData = xml.load("Config/Scenarios/" .. scenarioType .. ".xml")
+	local scenarioData = rawData[1]
+	local trueData = {}
+	for k, v in ipairs(scenarioData) do
+		if type(v) == "table" then
+			trueData[v.name] = v[1]
+		end
+	end
+	local scenarioObject = {}
+	scenarioObject.name = trueData.name
+	return scenarioObject
+end
+
+function NewExplosion ( explosionType )
+    local rawData = xml.load("Config/Explosions/" .. explosionType .. ".xml")
+    local explosionData = rawData[1]
+    local trueData = {}
+    for k, v in ipairs(explosionData) do
+        if type(v) == "table" then
+            trueData[v.name] = v[1]
+        end
+    end
+    local explosionObject = {size = {}}
+    explosionObject.image = trueData.sprite
+    explosionObject.size.x, explosionObject.size.y = graphics.sprite_dimensions(explosionObject.image)
+    explosionObject.name = trueData.name
+    explosionObject.damage = tonumber(trueData.damage)
+    return explosionObject
 end
