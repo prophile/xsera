@@ -22,8 +22,9 @@ camera = { w = 1000, h = 1000 }
 --[[ SOLUTION:
 local aspectRatio = getAspectRatio()
 if aspectRatio == 4 / 3 then
-	camera = { w = 8000, h = 6000 }
-else if aspectRatio == 
+	camera = { w = 1024, h = 768 }
+else if aspectRatio == 8 / 5 then
+	camera = { w = 1280, h = 800 }
 end
 --]]
 

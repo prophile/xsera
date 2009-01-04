@@ -19,7 +19,6 @@ function fire_bullet()
 	end
 end
 
-
 function within_barrier(angle, dest)
 	local shipLocation = playerShip.physicsObject.position
 	local partone = false -- test if it's within line one
