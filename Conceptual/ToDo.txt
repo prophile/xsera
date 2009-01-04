@@ -4,6 +4,8 @@ Xsera immediate TODO list:
 * Add security to the Net subsystem [assigned: LANS]
 * Define the format of the XML configuration files
 * Add support for reading zip files in the resource manager
+* Change references of "bullet" to "projectile" [assigned: Adam]
+- Note: I'll probably be doing this after the demo, FYI.
 * Find replacement sounds and integrate [assigned: Adam]
 * Assemble short technical demo [assigned: Adam]
 * Finish the OpenAL audio engine [assigned: Alastair]

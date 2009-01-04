@@ -17,9 +17,15 @@ import('EntityLoad')
 import('Math')
 import('Bullet4Demo')
 
-twothirdspi = 2.0 / 3.0 * math.pi
 camera = { w = 1000, h = 1000 }
 -- PROBLEM: the camera is not according to the aspect ratio, should be fixed, but how will resolution affect where things should be drawn?
+--[[ SOLUTION:
+local aspectRatio = getAspectRatio()
+if aspectRatio == 4 / 3 then
+	camera = { w = 8000, h = 6000 }
+else if aspectRatio == 
+end
+--]]
 
 playerShip = nil
 cmissile = nil
@@ -29,7 +35,7 @@ ships = {}
 carrierRotation = 0
 carrierHealth = 10
 carrierExploded = false
-shipAdjust = 45
+shipAdjust = camera.w / 200 * 9
 
 drawshot = false
 shotfired = 0
