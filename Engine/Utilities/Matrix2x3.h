@@ -44,6 +44,8 @@ public:
 	static matrix2x3 ShearX ( float amount ) { return matrix2x3(1.0f, amount, 0.0f, 1.0f, 0.0f, 0.0f); }
 	static matrix2x3 ShearY ( float amount ) { return matrix2x3(1.0f, 0.0f, amount, 1.0f, 0.0f, 0.0f); }
 	static matrix2x3 Ortho ( float left, float right, float bottom, float top );
+	
+	matrix2x3 Inverse () const;
 };
 
 #endif

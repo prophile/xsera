@@ -70,6 +70,8 @@ std::string MapKey ( SDLKey k )
 		KEYCASE(RIGHT, "arrow_right");
 		KEYCASE(UP, "arrow_up");
 		KEYCASE(DOWN, "arrow_down");
+		KEYCASE(PLUS, "plus");
+		KEYCASE(MINUS, "minus");
 	}
 	return "unhandled";
 }
