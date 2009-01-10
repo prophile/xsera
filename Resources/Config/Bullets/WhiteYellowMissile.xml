@@ -10,8 +10,10 @@
 	<turnrate>0.5</turnrate>
 	<!-- thrust, in newtons -->
 	<thrust>1000</thrust> 
-	<!-- life, in screen distance -->
-	<life>1000</life> 
+	<!-- life, in miliseconds -->
+	<life>1000</life>
+	<!-- damage dealt -->
+	<damage>50</damage>
 	<!-- cooldown time, in seconds -->
 	<cooldown>1.0</cooldown>
 </sprite>

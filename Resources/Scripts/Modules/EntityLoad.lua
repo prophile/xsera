@@ -33,7 +33,7 @@ function NewBullet (bulletType)
 	end
 	local bulletObject = { size = {} }
 	bulletObject.image = trueData.sprite
-	if bulletObject.image ~= "nil" then
+	if bulletObject.image ~= nil then
 		bulletObject.size.x, bulletObject.size.y = graphics.sprite_dimensions(bulletObject.image)
 		bulletObject.physicsObject = physics.new_object(tonumber(trueData.mass))
 		bulletObject.physicsObject.collision_radius = hypot(bulletObject.size.x, bulletObject.size.y)
@@ -43,6 +43,7 @@ function NewBullet (bulletType)
 	bulletObject.turningRate = tonumber(trueData.turnrate)
 	bulletObject.thrust = tonumber(trueData.thrust)
 	bulletObject.life = tonumber(trueData.life)
+	bulletObject.damage = tonumber(trueData.damage)
 	bulletObject.cooldown = tonumber(trueData.cooldown)
 	return bulletObject
 end

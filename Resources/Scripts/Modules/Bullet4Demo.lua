@@ -86,7 +86,7 @@ function guide_bullet()
 	end
 end
 
-function collision()
+function bullet_collision(bulletObject, shipObject)
 	bulletFired = true
-	carrierHealth = 0
+	shipObject.health = shipObject.health - bulletObject.damage
 end

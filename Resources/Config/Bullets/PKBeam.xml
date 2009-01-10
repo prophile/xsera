@@ -2,16 +2,16 @@
 <sprite>
 	<!-- full name -->
 	<name>PKBeam</name>
-	<!-- sprite name -->
-	<sprite>nil</sprite>
 	<!-- mass, in kg -->
 	<mass>0</mass>
 	<!-- turning rate, in radians/second -->
 	<turnrate>0</turnrate>
 	<!-- thrust, in newtons -->
-	<thrust>0</thrust> 
-	<!-- life, in screen distance -->
-	<life>240</life> 
+	<thrust>0</thrust>
+	<!-- life, in miliseconds -->
+	<life>350</life>
+	<!-- damage dealt -->
+	<damage>50</damage>
 	<!-- cooldown time, in seconds -->
 	<cooldown>1</cooldown>
 </sprite>

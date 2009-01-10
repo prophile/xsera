@@ -15,26 +15,18 @@ import('Math')
 import('Bullet4Demo')
 import('Warping4Demo')
 
-camera = { w = 1000, h = 1000 }
-local shipAdjust = 45
---[[ SOLUTION:
-local aspectRatio = getAspectRatio()
-camera = { w = 640, h = camera.w / aspectRatio }
-PROBLEM: WHAT ABOUT shipAdjust?????
---]]
+local cameraRatio = 1
+--local aspectRatio = getAspectRatio()
+local aspectRatio = 4 / 3
+--camera = { w = 1000, h = 1000 }
+camera = { w = 640 / cameraRatio, h = 0 }
+camera.h = camera.w / aspectRatio / cameraRatio
+local shipAdjust = .045 * camera.w
 
 playerShip = nil
 cMissile = nil
 pkBeam = nil
 bestExplosion = nil
-
-ships = {}
-local frame = 0
-local lastFrame = 0
-
-drawshot = false
-shotfired = 0
-shot = { x = 0, y = 0, timeStart = 0 }
 
 local warpStart = false
 local startTime = 0.0
@@ -49,10 +41,13 @@ local warpSlow = 2.0
 local warpSpeed = 2.0
 
 local bulletFired = false
-local bulletRotation = 0
 
+drawShot = false
+shot = { x = 0, y = 0, rotate, timeStart = 0, fired = false }
+
+local arrowLength = 220
 local arrowVar = (5.5 * math.sqrt(3))
-local arrowDist = hypot(11, (300 - arrowVar))
+local arrowDist = hypot(11, (arrowLength - arrowVar))
 local arrowAlpha = math.atan2(11, arrowDist)
 
 keyControls = { left = false, right = false, forward = false, brake = false }
@@ -69,6 +64,7 @@ function init ()
 end
 
 function update ()
+	-- for final demo: put each section into its own function in THIS file, if possible
 	local newTime = mode_manager.time()
 	local dt = newTime - lastTime
 	lastTime = newTime
@@ -156,10 +152,11 @@ function update ()
 
 	if bulletFired == true then
 		local bulletLocation = playerShip.physicsObject.position
+		--[[ not yet implemented
 		for playerShip, cMissile in physics.collisions() do
-		--what is above madness?
-			collision()
-		end		
+			bullet_collision(cMissile, computerShip)
+		end
+		--]]	
 		bullet.alpha = find_angle({ x = 0, y = 0 }, cMissile.physicsObject.position)
 		bullet.beta = find_angle(cMissile.physicsObject.position, bullet.dest)
 		print(bullet.alpha)
@@ -174,9 +171,6 @@ function update ()
 		
 	--	bullet.force.x = math.cos(bullet.theta) * bullet.power
 	--	bullet.force.y = math.sin(bullet.theta) * bullet.power
-		
-	--	physbullet:set_angle(bullet.theta)
-	--	physbullet:update(dt, bullet.force, bullet.delta * 1000)
 	end
 	
 	physics.update(dt)
@@ -184,7 +178,7 @@ end
 
 function render ()
     graphics.begin_frame()
-	graphics.set_camera(playerShip.physicsObject.position.x + shipAdjust - (camera.w / 2.0), playerShip.physicsObject.position.y - (camera.h / 2.0), playerShip.physicsObject.position.x + shipAdjust + (camera.w / 2.0), playerShip.physicsObject.position.y + (camera.w / 2.0))
+	graphics.set_camera(playerShip.physicsObject.position.x + shipAdjust - (camera.w / 2.0), playerShip.physicsObject.position.y - (camera.h / 2.0), playerShip.physicsObject.position.x + shipAdjust + (camera.w / 2.0), playerShip.physicsObject.position.y + (camera.h / 2.0))
 --	print(playerShip.physicsObject.position.x)
 --	print(playerShip.physicsObject.position.y)
 	graphics.draw_starfield()
@@ -205,26 +199,25 @@ function render ()
 	end
 	graphics.draw_sprite(playerShip.image, playerShip.physicsObject.position.x, playerShip.physicsObject.position.y, playerShip.size.x, playerShip.size.y, playerShip.physicsObject.angle)
 	
-	if shotfired == true then
-		shot.move = shot.move + 15
-		if shot.move >= 240 then
-			shotfired = false
+	if shot.fired == true then
+		pkBeam.age = (mode_manager.time() * 1000) - pkBeam.start
+		if pkBeam.age >= pkBeam.life then
+			shot.fired = false
 		end
-	--	for playerShip, cMissile in physics.collisions() do
-	--		collision()
-	--	end		
-		--how do I make the above lines work for PKBeams, which are not attached to the physics system? should they be added to the physics system?
-		graphics.draw_line(shot.x + math.cos(bulletRotation) * shot.move, shot.y + math.sin(bulletRotation) * shot.move, shot.x + math.cos(bulletRotation) * (30 + shot.move), shot.y + math.sin(bulletRotation) * (30 + shot.move), 2)
+	--	for pkBeam, playerShip in physics.collisions() do
+	--		bullet_collision(pkBeam, playerShip)
+	--	end
+		graphics.draw_line(shot.x + math.cos(shot.rotate) * pkBeam.age, shot.y + math.sin(shot.rotate) * pkBeam.age, shot.x + math.cos(shot.rotate) * (30 + pkBeam.age), shot.y + math.sin(shot.rotate) * (30 + pkBeam.age), 2)
 	end
 	
-	if drawshot == true then
-		bulletRotation = playerShip.physicsObject.angle
+	if drawShot == true then
+		pkBeam.start = mode_manager.time() * 1000
+		shot.rotate = playerShip.physicsObject.angle
 		shot.x = playerShip.physicsObject.position.x
 		shot.y = playerShip.physicsObject.position.y
-		shot.move = 19
-		graphics.draw_line(shot.x + math.cos(bulletRotation) * 17, shot.y + math.sin(bulletRotation) * 17, shot.x + math.cos(bulletRotation) * 52, shot.y + math.sin(bulletRotation) * 52, 2)
-		drawshot = false
-		shotfired = true
+		graphics.draw_line(shot.x + math.cos(shot.rotate) * 17, shot.y + math.sin(shot.rotate) * 17, shot.x + math.cos(shot.rotate) * 52, shot.y + math.sin(shot.rotate) * 52, 2)
+		drawShot = false
+		shot.fired = true
 	end
 	
 	if bulletFired == true then
@@ -233,10 +226,10 @@ function render ()
 	end
 	
 	local angle = playerShip.physicsObject.angle
-	graphics.set_camera(-500 + shipAdjust, -500, 500 + shipAdjust, 500)
+	graphics.set_camera(-455, -500, 545, 500)
 	graphics.draw_line(math.cos(arrowAlpha + angle) * arrowDist, math.sin(arrowAlpha + angle) * arrowDist, math.cos(angle - arrowAlpha) * arrowDist, math.sin(angle - arrowAlpha) * arrowDist, 2)
-	graphics.draw_line(math.cos(angle - arrowAlpha) * arrowDist, math.sin(angle - arrowAlpha) * arrowDist, math.cos(angle) * (300 + arrowVar), math.sin(angle) * (300 + arrowVar), 2)
-	graphics.draw_line(math.cos(angle) * (300 + arrowVar), math.sin(angle) * (300 + arrowVar), math.cos(arrowAlpha + angle) * arrowDist, math.sin(arrowAlpha + angle) * arrowDist, 2)
+	graphics.draw_line(math.cos(angle - arrowAlpha) * arrowDist, math.sin(angle - arrowAlpha) * arrowDist, math.cos(angle) * (arrowLength + arrowVar), math.sin(angle) * (arrowLength + arrowVar), 2)
+	graphics.draw_line(math.cos(angle) * (arrowLength + arrowVar), math.sin(angle) * (arrowLength + arrowVar), math.cos(arrowAlpha + angle) * arrowDist, math.sin(arrowAlpha + angle) * arrowDist, 2)
 	graphics.set_camera(-500, -500, 500, 500)
 	graphics.draw_image("Panels/SideLeft", -435, 0, 129, 1012)
     graphics.draw_image("Panels/SideRight", 487, -2, 27, 1020)
@@ -282,7 +275,7 @@ function key ( k )
 		warpStart = true
 	elseif k == " " then
 		sound.play("ShotC")
-		drawshot = true;
+		drawShot = true
 	elseif k == "p" then
 		carrierHealth = 0
 	elseif k == "escape" then
