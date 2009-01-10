@@ -22,7 +22,7 @@ void __Log ( const char* subsystem, int level, const char* message, ... )
 	va_list va;
 	va_start(va, message);
 	char formatBuffer[512];
-	sprintf(formatBuffer, "[%%s] %%s: %s\n", message);
+	sprintf(formatBuffer, "[%s] %s: %s\n", subsystem, LogLevel(level), message);
 	vfprintf(stderr, formatBuffer, va);
 	va_end(va);
 }

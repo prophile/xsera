@@ -15,6 +15,7 @@ namespace Matrices
 void SetProjectionMatrix ( const matrix2x3& m );
 void SetViewMatrix ( const matrix2x3& m );
 void SetModelMatrix ( const matrix2x3& m );
+const matrix2x3& CurrentMatrix ();
 
 }
 
@@ -127,6 +128,8 @@ Starfield::Starfield ()
 {
 	glGenTextures(1, &texID);
 	glBindTexture(GL_TEXTURE_RECTANGLE_ARB, texID);
+	glTexParameteri(GL_TEXTURE_RECTANGLE_ARB, GL_TEXTURE_WRAP_S, GL_REPEAT);
+	glTexParameteri(GL_TEXTURE_RECTANGLE_ARB, GL_TEXTURE_WRAP_T, GL_REPEAT);
 	InitStars();
 	CreateStarfieldTexture();
 	SpatterAllStars();
@@ -145,16 +148,6 @@ vec2 Starfield::Dimensions ( float depth )
 }
 
 const static float starfieldScale = 1.3f;
-const static float starfieldTexCoords[] =
-	{ 0.0f, 0.0f,
-	  (float)STARFIELD_WIDTH, 0.0f,
-	  (float)STARFIELD_WIDTH, (float)STARFIELD_HEIGHT,
-	  0.0f, (float)STARFIELD_HEIGHT };
-const static float starfieldVertices[] =
-	{ -(float)STARFIELD_WIDTH * starfieldScale, -(float)STARFIELD_HEIGHT * starfieldScale,
-	   (float)STARFIELD_WIDTH * starfieldScale, -(float)STARFIELD_HEIGHT * starfieldScale,
-	   (float)STARFIELD_WIDTH * starfieldScale, (float)STARFIELD_HEIGHT * starfieldScale,
-	   -(float)STARFIELD_WIDTH * starfieldScale, (float)STARFIELD_HEIGHT * starfieldScale };
 
 void Starfield::Draw ( float depth, vec2 centre )
 {
@@ -162,8 +155,23 @@ void Starfield::Draw ( float depth, vec2 centre )
 	Matrices::SetViewMatrix(matrix2x3::Translate(centre));
 	glBindTexture(GL_TEXTURE_RECTANGLE_ARB, texID);
 	
-	glVertexPointer(2, GL_FLOAT, 0, starfieldVertices);
-	glTexCoordPointer(2, GL_FLOAT, 0, starfieldTexCoords);
+	const matrix2x3& mvpMatrix = Matrices::CurrentMatrix();
+	matrix2x3 mvpInverse = mvpMatrix.Inverse();
+	
+	vec2 coordinates[4];
+	coordinates[0] = mvpInverse * vec2(-1.0f, -1.0f);
+	coordinates[1] = mvpInverse * vec2(1.0f,  -1.0f);
+	coordinates[2] = mvpInverse * vec2(1.0f,  1.0f );
+	coordinates[3] = mvpInverse * vec2(-1.0f, 1.0f );
+	
+	vec2 textureReferences[4];
+	for (int i = 0; i < 4; i++)
+	{
+		textureReferences[i] = (coordinates[i] - centre) / starfieldScale;
+	}
+	
+	glVertexPointer(2, GL_FLOAT, 0, coordinates);
+	glTexCoordPointer(2, GL_FLOAT, 0, textureReferences);
 	glDrawArrays(GL_QUADS, 0, 4);
 }
 

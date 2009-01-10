@@ -131,6 +131,11 @@ void SetModelMatrix ( const matrix2x3& m )
 	LoadMatrix(mvpMatrix);
 }
 
+const matrix2x3& CurrentMatrix ()
+{
+	return mvpMatrix;
+}
+
 }
 
 void Init ( int w, int h, bool fullscreen )

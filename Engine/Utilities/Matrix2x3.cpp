@@ -105,3 +105,16 @@ matrix2x3 matrix2x3::Ortho ( float left, float right, float bottom, float top )
 	float m22 = 2.0f / (top - bottom);
 	return matrix2x3(m11, 0.0f, 0.0f, m22, tx, ty);
 }
+
+matrix2x3 matrix2x3::Inverse () const
+{
+	float det = (_m11 * _m22) - (_m21 * _m12);
+	float newMatrix[6];
+	newMatrix[0] = _m22 / det;
+	newMatrix[1] = -_m12 / det;
+	newMatrix[2] = ((_m12 * _tY) - (_tX * _m22)) / det;
+	newMatrix[3] = -_m21 / det;
+	newMatrix[4] = _m11 / det;
+	newMatrix[5] = ((_tX * _m21) - (_m11 * _tY)) / det;
+	return matrix2x3(newMatrix);
+}
