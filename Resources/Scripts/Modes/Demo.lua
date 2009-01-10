@@ -271,6 +271,14 @@ function key ( k )
         keyControls.right = true
 	elseif k == "z" then
 		firebullet = true
+	elseif k == "l" then
+		playerShip.physicsObject.angle = 0
+	elseif k == "i" then
+		playerShip.physicsObject.angle = math.pi / 2
+	elseif k == "j" then
+		playerShip.physicsObject.angle = math.pi
+	elseif k == "k" then
+		playerShip.physicsObject.angle = 3 * math.pi / 2
 	elseif k == "tab" then
 		warpStart = true
 	elseif k == " " then
