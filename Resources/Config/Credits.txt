@@ -7,6 +7,7 @@ Copyright 1997-2001, 2008
 Adam "adam_0" Hintz
 Alastair "prophile" Lynn
 Andrew "LANS" Moscoe
+Chris "Pallas Athene" Pickel
 
 *Coordinator
 Nick "nfreader" Farley
@@ -14,6 +15,14 @@ Nick "nfreader" Farley
 *Contact to Mr. Lamont
 Steven "RedSteven" Edwards
 
+*Sound
+Taylor "Rickton" Vaughn
+Alastair "prophile" Lynn
+Nick "nfreader" Farley
+All original sounds copyright Nathan Lamont
+See Read Me for more information
+
 *Graphics
 DarkRevenant
 All original graphics copyright Nathan Lamont
+See Read Me for more information

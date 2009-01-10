@@ -1,17 +1,17 @@
 <?xml version="1.0"?>
 <sprite>
 	<!-- full name -->
-	<name>Concussion Missile</name>
+	<name>PKBeam</name>
 	<!-- sprite name -->
-	<sprite>Weapons/WhiteYellowMissile</sprite>
+	<sprite>nil</sprite>
 	<!-- mass, in kg -->
-	<mass>500</mass>
+	<mass>0</mass>
 	<!-- turning rate, in radians/second -->
-	<turnrate>0.5</turnrate>
+	<turnrate>0</turnrate>
 	<!-- thrust, in newtons -->
-	<thrust>1000</thrust> 
+	<thrust>0</thrust> 
 	<!-- life, in screen distance -->
-	<life>1000</life> 
+	<life>240</life> 
 	<!-- cooldown time, in seconds -->
-	<cooldown>1.0</cooldown>
+	<cooldown>1</cooldown>
 </sprite>

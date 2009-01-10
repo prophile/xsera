@@ -46,13 +46,42 @@ void Startup ()
 	SDL_Init(SDL_INIT_TIMER);
 	InitModeManager();
 	ResourceManager::Init("Xsera");
-//	Graphics::Init(640, 480, false); // 640x480 resolution, non-fullscreen
-	Graphics::Init(960, 720, false); // 960x720 resolution, non-fullscreen
+/*	keep these other aspect ratios for later, when we will give the option to change resolution
+	ALASTAIR: please implement on your own time / when possible, should be an easy copy-paste
+	actually, there will probably be two variables when it is implemented, but keep the numbers for reference
+	code:
+	//this goes at the beginning of the file
+	bool isFullscreen = false;
+	
+	struct
+	{
+		w = 0;
+		h = 0;
+	} camera;
+	
+	//new function:
+	void FindResolution()
+	{
+		// I don't relly know the code for this part, basically just extract the resolution from an XML file
+		// named 'preferences.xml' or something like that
+	}
+	
+	//at this point in the file:
+	FindResolution();
+	Graphics::Init(camera.w, camera.h, isFullscreen);
+	//END! It's that easy
+	
+	//other resolutions
+	Graphics::Init(1280, 800, true); // 1280x800 resolution, fullscreen (8:5 aspect ratio) (MacBook res)
+	Graphics::Init(640, 480, false); // 640x480 resolution, non-fullscreen (4:3 aspect ratio)
+	Graphics::Init(800, 600, false); // 800x600 resolution, non-fullscreen (4:3 aspect ratio)
+	Graphics::Init(1024, 768, false); // 1024x768 resolution, non-fullscreen (4:3 aspect ratio)
+*/	Graphics::Init(960, 720, false); // 960x720 resolution, non-fullscreen (4:3 aspect ratio)
 	SDL_EnableUNICODE(1);
 	Sound::Init(48000, 24, 128); // init with 48 kHz sampling rate, 24-bit resolution, 128 channels
 	// compile class script
 	CompileScript("System/Class");
-	LuaScript bootScript ( "System/Boot" );
+	LuaScript bootScript ("System/Boot");
 	SwitchMode("MainMenu");
 }
 

@@ -10,14 +10,14 @@ function init ()
 end
 
 function key ( k )
-	if k == 't' then
+	if k == 'p' then
 		if doRotation then
 			doRotation = false
 			print("Froze rotation at " .. angle .. " radians")
 		else
 			doRotation = true
 		end
-	elseif k == 'm' then
+	elseif k == 'escape' then
 		mode_manager.switch('MainMenu')
 	end
 end

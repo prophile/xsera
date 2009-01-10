@@ -2,13 +2,14 @@ creditsRolling = true
 totalTime = 0.0
 initialDist = -200
 separationDist = 9
-speed = 30
+speed = 33
 
 credits = {}
 creditSizes = {}
 rowDist = {}
 
-function load_credits ()
+function init ()
+	oldTime = mode_manager.time()
 	local rawInput = resource_manager.load("Config/Credits.txt")
 	local i = 1
 	local lastDist = initialDist
@@ -19,13 +20,6 @@ function load_credits ()
 		lastDist = lastDist - separationDist - creditSizes[i]
 		i = i + 1
 	end
-end
-
-function init ()
-	sound.play_music("Doomtroopers")
-	oldTime = mode_manager.time()
-	-- load credits
-	load_credits()
 end
 
 function key ( k )
@@ -39,6 +33,8 @@ function key ( k )
 		speed = speed + 10
 	elseif k == 'a' then
 		speed = speed - 10
+	elseif k == 'escape' then
+		mode_manager.switch("MainMenu")
 	end
 end
 
