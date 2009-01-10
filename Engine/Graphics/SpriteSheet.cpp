@@ -123,6 +123,7 @@ void SpriteSheet::Draw ( int x, int y, const vec2& size )
 void SpriteSheet::DrawRotation ( const vec2& size, float angle )
 {
 	int numObjects = sheetTilesX * sheetTilesY;
+	angle += (M_PI / float(numObjects));
 	angle -= M_PI / 2.0;
 	if (angle < 0.0)
 		angle += 2.0*M_PI;
