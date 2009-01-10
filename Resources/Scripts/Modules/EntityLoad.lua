@@ -1,6 +1,6 @@
 import('PrintRecursive')
 
-function NewShip ( shipType )
+function NewShip (shipType)
     local rawData = xml.load("Config/Ships/" .. shipType .. ".xml")
     local shipData = rawData[1]
     local trueData = {}
@@ -33,13 +33,15 @@ function NewBullet (bulletType)
 	end
 	local bulletObject = { size = {} }
 	bulletObject.image = trueData.sprite
-	bulletObject.size.x, bulletObject.size.y = graphics.sprite_dimensions(bulletObject.image)
+	if bulletObject.image ~= "nil" then
+		bulletObject.size.x, bulletObject.size.y = graphics.sprite_dimensions(bulletObject.image)
+		bulletObject.physicsObject = physics.new_object(tonumber(trueData.mass))
+		bulletObject.physicsObject.collision_radius = hypot(bulletObject.size.x, bulletObject.size.y)
+	end
 	local mass = trueData.mass
-	bulletObject.physicsObject = physics.newobject(tonumber(trueData.mass))
-	bulletObject.physicsObject.collision_radius = hypot(bulletObject.size.x, bulletObject.size.y)
 	bulletObject.name = trueData.name
 	bulletObject.turningRate = tonumber(trueData.turnrate)
-	bulletObject.thrust = tronumber(truedata.thrust)
+	bulletObject.thrust = tonumber(trueData.thrust)
 	bulletObject.life = tonumber(trueData.life)
 	bulletObject.cooldown = tonumber(trueData.cooldown)
 	return bulletObject
@@ -59,7 +61,7 @@ function NewScenario (scenarioType)
 	return scenarioObject
 end
 
-function NewExplosion ( explosionType )
+function NewExplosion (explosionType)
     local rawData = xml.load("Config/Explosions/" .. explosionType .. ".xml")
     local explosionData = rawData[1]
     local trueData = {}
@@ -72,6 +74,6 @@ function NewExplosion ( explosionType )
     explosionObject.image = trueData.sprite
     explosionObject.size.x, explosionObject.size.y = graphics.sprite_dimensions(explosionObject.image)
     explosionObject.name = trueData.name
-    explosionObject.damage = tonumber(trueData.damage)
+    explosionObject.frameDuration = tonumber(trueData.frameDuration)
     return explosionObject
 end
