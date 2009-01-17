@@ -134,5 +134,8 @@ function init ()
         print("Signed off by: " .. versionData[3][1])
     end
     lastTime = mode_manager.time()
+	if sound.current_music() ~= "Doomtroopers" then
+		sound.play_music("Doomtroopers")
+	end
 end
 

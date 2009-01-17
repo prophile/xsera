@@ -924,11 +924,19 @@ int Sound_StopMusic ( lua_State* L )
     return 0;
 }
 
+int Sound_CurrentMusic ( lua_State* L )
+{
+	const char* name = Sound::MusicName();
+	int length = Sound::MusicNameLength();
+	lua_pushlstring(L, name, length);
+	return 1;
+}
 luaL_Reg registrySound[] =
 {
     "play", Sound_Play,
     "play_music", Sound_PlayMusic,
     "stop_music", Sound_StopMusic,
+    "current_music", Sound_CurrentMusic,
     NULL, NULL
 };
 

@@ -30,7 +30,14 @@ void PlayMusic ( const std::string& music );
  * Stops the music
  */
 void StopMusic ();
-
+/**
+ * Returns the name of the current song
+ */
+const char* MusicName ();
+/**
+ * Returns the length of the current song's name
+ */
+int MusicNameLength ();
 /**
  * Gets the current music volume
  */

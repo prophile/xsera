@@ -18,7 +18,6 @@ import('Warping4Demo')
 local cameraRatio = 1
 --local aspectRatio = getAspectRatio()
 local aspectRatio = 4 / 3
---camera = { w = 1000, h = 1000 }
 camera = { w = 640 / cameraRatio, h = 0 }
 camera.h = camera.w / aspectRatio
 local shipAdjust = .045 * camera.w
@@ -60,6 +59,7 @@ function init ()
 	computerShip = NewShip("Gaitori/Carrier")
 	cMissile = NewBullet("WhiteYellowMissile")
 	pkBeam = NewBullet("PKBeam")
+	pkBeam.width = 3 * cameraRatio;
 	bestExplosion = NewExplosion("BestExplosion")
 end
 
@@ -208,14 +208,14 @@ function render ()
 	--	for pkBeam, playerShip in physics.collisions() do
 	--		bullet_collision(pkBeam, playerShip)
 	--	end
-		graphics.draw_line(shot.x + math.cos(pkBeam.angle) * pkBeam.age, shot.y + math.sin(pkBeam.angle) * pkBeam.age, shot.x + math.cos(pkBeam.angle) * (shot.length + pkBeam.age), shot.y + math.sin(pkBeam.angle) * (shot.length + pkBeam.age), 2)
+		graphics.draw_line(shot.x + math.cos(pkBeam.angle) * pkBeam.age, shot.y + math.sin(pkBeam.angle) * pkBeam.age, shot.x + math.cos(pkBeam.angle) * (shot.length + pkBeam.age), shot.y + math.sin(pkBeam.angle) * (shot.length + pkBeam.age), pkBeam.width)
 	end
 	
 	if drawShot == true then
 		pkBeam.start = mode_manager.time() * 1000
 		pkBeam.angle = playerShip.physicsObject.angle
-		shot.x = playerShip.physicsObject.position.x + math.cos(pkBeam.angle) * 17
-		shot.y = playerShip.physicsObject.position.y + math.sin(pkBeam.angle) * 17
+		shot.x = playerShip.physicsObject.position.x + math.cos(pkBeam.angle) * shot.length
+		shot.y = playerShip.physicsObject.position.y + math.sin(pkBeam.angle) * shot.length
 		graphics.draw_line(shot.x, shot.y, shot.x + math.cos(angle) * (shot.length / 2), shot.y + math.sin(angle) * (shot.length / 2), 2)
 		drawShot = false
 		shot.fired = true
@@ -271,22 +271,44 @@ function key ( k )
 	elseif k == "z" then
 		firebullet = true
 	elseif k == "y" then
-		cameraRatio = cameraRatio * 2
-		camera = { w = 640 / cameraRatio, h = 0 }
-		camera.h = camera.w / aspectRatio
-		shipAdjust = .045 * camera.w
-		arrowLength = arrowLength / 2
-		arrowVar = arrowVar / 2
-		arrowDist = arrowDist / 2
+		if cameraRatio ~= 2 then
+			cameraRatio = cameraRatio * 2
+			if cameraRatio == 1 / 8 then -- there is no 1:8, make it 1:4
+				cameraRatio = cameraRatio * 2
+				arrowLength = arrowLength / 2
+				arrowVar = arrowVar / 2
+				arrowDist = arrowDist / 2
+			end
+			camera = { w = 640 / cameraRatio, h = 0 }
+			camera.h = camera.w / aspectRatio
+			shipAdjust = .045 * camera.w
+			arrowLength = arrowLength / 2
+			arrowVar = arrowVar / 2
+			arrowDist = arrowDist / 2
+			pkBeam.width = 3 * cameraRatio;
+			if pkBeam.width < 1 then
+				pkBeam.width = 1
+			end
+		end
 	elseif k == "h" then
-		if cameraRatio ~= 16 then
+		if cameraRatio ~= 1 / 16 then
 			cameraRatio = cameraRatio / 2
+			if cameraRatio == 1 / 8 then -- there is no 1:8, make it 1:16
+				cameraRatio = cameraRatio / 2
+				arrowLength = arrowLength * 2
+				arrowVar = arrowVar * 2
+				arrowDist = arrowDist * 2
+			end
 			camera = { w = 640 / cameraRatio, h = 0 }
 			camera.h = camera.w / aspectRatio
 			shipAdjust = .045 * camera.w
 			arrowLength = arrowLength * 2
 			arrowVar = arrowVar * 2
 			arrowDist = arrowDist * 2
+			pkBeam.width = 3 * cameraRatio;
+			if pkBeam.width < 1 then
+				pkBeam.width = 1
+			end
 		end
 	elseif k == "l" then
 		playerShip.physicsObject.angle = 0

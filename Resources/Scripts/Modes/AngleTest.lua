@@ -28,6 +28,7 @@ function render ()
 	graphics.set_camera(-320, -240, 320, 240)
 	graphics.draw_sprite("Cantharan/Schooner", 0, 0, szx * 2.2, szy * 2.2, angle)
 	graphics.draw_text(string.format("Angle: %.3f", angle), "CrystalClear", -200, -200, 30)
+	graphics.draw_text(sound.current_music(), "CrystalClear", 0, 200, 30)
 	graphics.end_frame()
 end
 

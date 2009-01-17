@@ -123,10 +123,13 @@ void PlaySound ( const std::string& name, float gain, float pan )
 	Mix_PlayChannel(channel, chunk, 0);
 }
 
+std::string SongName;
+
 void PlayMusic ( const std::string& music )
 {
 	if (disable_music)
 		return;
+	SongName = music;
 	Mix_Music* mus = MusicNamed(music);
 	if (mus)
 	{
@@ -136,7 +139,18 @@ void PlayMusic ( const std::string& music )
 
 void StopMusic ()
 {
+	SongName = "(no song)";
 	Mix_HaltMusic();
+}
+
+const char* MusicName ()
+{
+	return SongName.data();
+}
+
+int MusicNameLength ()
+{
+	return SongName.length();
 }
 
 float MusicVolume ()
