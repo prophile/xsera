@@ -1,0 +1,10 @@
+(1) Mac OS X
+
+Linking: -lApollo -framework SDL -framework SDL_image -framework SDL_ttf -framework SDL_mixer -framework OpenGL
+Compiling: -Ipath/to/apollo/Engine
+
+(2) Linux
+To-do.
+
+(3) Windows
+To-do.

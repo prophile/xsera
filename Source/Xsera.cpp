@@ -13,7 +13,7 @@ namespace XseraMain
 
 bool isFullscreen = false;
 
-struct
+static struct
 {
 	int w;
 	int h;
@@ -51,7 +51,6 @@ void RunLoop ()
 void Startup ()
 {
 	// do init stuff
-	SDL_Init(SDL_INIT_TIMER);
 	InitModeManager();
 	ResourceManager::Init("Xsera");
 /*	ALASTAIR: please implement on your own time / when possible, should be an easy copy-paste*
@@ -94,36 +93,18 @@ void MainLoop ()
 
 }
 
-using namespace XseraMain;
-
-int main ( int argc, char** argv )
+// standard setup functions
+void Init ()
 {
-	srand(time(NULL));
-	Startup();
-	if (argc > 1)
-	{
-		assert(!strcmp(argv[1], "-test"));
-		assert(argc > 2);
-		std::string test = argv[2];
-		std::vector<std::string> testParameters;
-		if (argc > 3)
-		{
-			for (int i = 3; i < argc; i++)
-			{
-				testParameters.push_back(std::string(argv[i]));
-			}
-		}
-		bool testReturnCode = TestHarness::InvokeTest ( test, testParameters );
-		if (testReturnCode)
-		{
-			return 0;
-		}
-		else
-		{
-			return -1;
-		}
-	}
-	MainLoop();
-	return 0;
+    XseraMain::Startup();
+}
+
+void MainLoop ()
+{
+    XseraMain::MainLoop();
+}
+
+void Shutdown ()
+{
 }
 
