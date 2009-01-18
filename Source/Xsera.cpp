@@ -1,12 +1,5 @@
 #include <SDL/SDL.h>
-#include "Utilities/ResourceManager.h"
-#include "Graphics/Graphics.h"
-#include "Sound/Sound.h"
-#include "Scripting/Scripting.h"
-#include "Modes/ModeManager.h"
-#include "Utilities/TestHarness.h"
-#include "Scripting/Compile.h"
-#include "Input.h"
+#include "Apollo.h"
 
 namespace XseraMain
 {
