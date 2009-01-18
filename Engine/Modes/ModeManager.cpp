@@ -2,9 +2,69 @@
 #include <SDL/SDL.h>
 #include "Logging.h"
 
-static LuaScript* mode = NULL;
+static AppMode* mode = NULL;
+static AppMode* nextMode = NULL;
 
-LuaScript* ActiveMode ()
+class LuaMode : public AppMode
+{
+private:
+	LuaScript* script;
+	std::string name;
+public:
+	LuaMode ( const std::string& _name )
+	: name(_name)
+	{
+		script = new LuaScript("Modes/" + _name);
+	}
+	
+	virtual ~LuaMode ()
+	{
+		delete script;
+	}
+	
+	virtual std::string Name ()
+	{
+		return name;
+	}
+	
+	virtual void Init ()
+	{
+		script->InvokeSubroutine("init");
+	}
+	
+	virtual void Shutdown ()
+	{
+		script->InvokeSubroutine("shutdown");
+	}
+	
+	virtual void Update ()
+	{
+		script->InvokeSubroutine("update");
+	}
+	
+	virtual void Render ()
+	{
+		script->InvokeSubroutine("render");
+	}
+	
+	virtual void HandleEvent ( const Input::Event& event )
+	{
+		switch (event.type)
+		{
+			case Input::Event::KEYDOWN:
+				script->InvokeSubroutine("key", event.object);
+				break;
+			case Input::Event::KEYUP:
+				script->InvokeSubroutine("keyup", event.object);
+				break;
+			case Input::Event::QUIT:
+				exit(0);
+				break;
+		}
+	}
+};
+
+AppMode* ActiveMode ()
 {
 	return mode;
 }
@@ -13,25 +73,45 @@ void InitModeManager ()
 {
 }
 
-std::string _next_mode = "";
-
 void UpdateModeManager ()
 {
-	if (_next_mode != "")
+	if (nextMode != NULL)
 	{
 		if (mode)
 		{
-			mode->InvokeSubroutine("shutdown");
+			mode->Shutdown();
 			delete mode;
 		}
-		LOG("ModeManager", LOG_MESSAGE, "Switching to mode %s", _next_mode.c_str());
-		mode = new LuaScript("Modes/" + _next_mode);
-		_next_mode = "";
-		mode->InvokeSubroutine("init");
+		LOG("ModeManager", LOG_MESSAGE, "Switching to mode %s", nextMode->Name().c_str());
+		mode = nextMode;
+		nextMode = NULL;
+		if (mode)
+		{
+			mode->Init();
+		}
+	}
+	if (mode)
+	{
+		mode->Update();
+		Input::Pump();
+		while (Input::Event* event = Input::Next())
+		{
+			mode->HandleEvent(*event);
+		}
+		mode->Render();
 	}
 }
 
 void SwitchMode ( const std::string& newmode )
 {
-	_next_mode = newmode;
+	LuaMode* newMode = new LuaMode ( newmode );
+	SwitchMode ( newMode );
 }
+
+void SwitchMode ( AppMode* newmode )
+{
+	if (nextMode) delete nextMode;
+	nextMode = newmode;
+}
+
+// 

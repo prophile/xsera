@@ -20,4 +20,13 @@
 #include "Scripting/Compile.h"
 #include "Sound/Sound.h"
 
+extern "C"
+{
+
+extern void Init ();
+extern void MainLoop ();
+extern void Shutdown ();
+
+}
+
 #endif

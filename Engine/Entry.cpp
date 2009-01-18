@@ -1,16 +1,4 @@
-#include <SDL/SDL.h>
-#include "Utilities/ResourceManager.h"
-#include "Graphics/Graphics.h"
-#include "Sound/Sound.h"
-#include "Scripting/Scripting.h"
-#include "Modes/ModeManager.h"
-#include "Utilities/TestHarness.h"
-#include "Scripting/Compile.h"
-#include "Input.h"
-
-extern void Init ();
-extern void MainLoop ();
-extern void Shutdown ();
+#include "Apollo.h"
 
 struct _automatic_terminator
 {
@@ -47,10 +35,14 @@ int main ( int argc, char** argv )
 			return -1;
 		}
     }
+#else
+	if (0)
+	{
+	}
+#endif
     else
     {
         MainLoop();
     }
-#endif
     return 0;
 }

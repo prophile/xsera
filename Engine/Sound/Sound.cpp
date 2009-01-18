@@ -45,22 +45,34 @@ Mix_Chunk* SoundNamed ( const std::string& name )
 	}
 }
 
+const char* extensions[] =
+{
+	".s3m",
+	".ogg",
+	".xm",
+	".mod",
+	".aiff",
+	NULL
+};
+
 Mix_Music* MusicNamed ( const std::string& name )
 {
 	MusicMap::iterator iter = musics.find(name);
 	if (iter == musics.end())
 	{
 		// load the sound
-		std::string path = "Music/" + name + ".s3m";
-		SDL_RWops* ops = ResourceManager::OpenFile(path);
-		Mix_Music* newMusic = Mix_LoadMUS_RW(ops);
-		if (!newMusic)
+		Mix_Music* newMusic = NULL;
+		for (unsigned i = 0; extensions[i] != NULL; i++)
 		{
-			std::string path = "Music/" + name + ".ogg";
+			std::string path = "Music/" + name + extensions[i];
 			SDL_RWops* ops = ResourceManager::OpenFile(path);
+			if (!ops)
+				continue;
 			newMusic = Mix_LoadMUS_RW(ops);
+			if (newMusic)
+				break;
 		}
-		musics[path] = newMusic;
+		musics[name] = newMusic;
 		return newMusic;
 	}
 	else
@@ -79,7 +91,7 @@ static bool disable_music = false;
 
 void Init ( int frequency, int resolution, int sources )
 {
-	int volume_sound = MIX_MAX_VOLUME / 2, volume_music = MIX_MAX_VOLUME / 2;
+	int volume_sound = MIX_MAX_VOLUME, volume_music = MIX_MAX_VOLUME;
 	Uint16 format;
 	switch (resolution)
 	{
