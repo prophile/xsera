@@ -12,33 +12,9 @@ static struct
 	int h;
 } camera;
 
-void HandleInput ()
-{
-	Input::Pump();
-	while (Input::Event* evt = Input::Next())
-	{
-		switch (evt->type)
-		{
-			case Input::Event::KEYDOWN:
-				ActiveMode()->InvokeSubroutine("key", evt->object);
-				break;
-			case Input::Event::KEYUP:
-				ActiveMode()->InvokeSubroutine("keyup", evt->object);
-				break;
-			case Input::Event::QUIT:
-				exit(0);
-				break;
-		}
-	}
-}
-
 void RunLoop ()
 {
 	UpdateModeManager();
-	assert(ActiveMode());
-	HandleInput();
-	ActiveMode()->InvokeSubroutine("update");
-	ActiveMode()->InvokeSubroutine("render");
 }
 
 void Startup ()
@@ -67,7 +43,6 @@ void Startup ()
 	Graphics::Init(camera.w, camera.h, isFullscreen);
 	//ALASTAIR: the above function should be taking values from within the Graphics namespace,
 	//simplifying this end of things and removing arguments
-	SDL_EnableUNICODE(1);
 	Sound::Init(48000, 24, 128); // init with 48 kHz sampling rate, 24-bit resolution, 128 channels
 	// compile class script
 	CompileScript("System/Class");

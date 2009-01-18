@@ -16,7 +16,6 @@
 		4969242A0EBE4CEA00930DDD /* SDL_image.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 496924180EBE4CEA00930DDD /* SDL_image.framework */; };
 		4969242B0EBE4CEA00930DDD /* SDL_mixer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 496924190EBE4CEA00930DDD /* SDL_mixer.framework */; };
 		4969242C0EBE4CEA00930DDD /* SDL_ttf.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4969241A0EBE4CEA00930DDD /* SDL_ttf.framework */; };
-		4969242D0EBE4CEA00930DDD /* SDLMain.m in Sources */ = {isa = PBXBuildFile; fileRef = 4969241B0EBE4CEA00930DDD /* SDLMain.m */; };
 		496924660EBE4D0600930DDD /* SDL.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 496924170EBE4CEA00930DDD /* SDL.framework */; };
 		496924670EBE4D0600930DDD /* SDL_image.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 496924180EBE4CEA00930DDD /* SDL_image.framework */; };
 		496924680EBE4D0600930DDD /* SDL_mixer.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 496924190EBE4CEA00930DDD /* SDL_mixer.framework */; };
@@ -75,7 +74,6 @@
 		496924180EBE4CEA00930DDD /* SDL_image.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SDL_image.framework; sourceTree = "<group>"; };
 		496924190EBE4CEA00930DDD /* SDL_mixer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SDL_mixer.framework; sourceTree = "<group>"; };
 		4969241A0EBE4CEA00930DDD /* SDL_ttf.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SDL_ttf.framework; sourceTree = "<group>"; };
-		4969241B0EBE4CEA00930DDD /* SDLMain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDLMain.m; sourceTree = "<group>"; };
 		496924820EBE516100930DDD /* Xsera.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Xsera.cpp; sourceTree = "<group>"; };
 		496A27300F0EC29C00C53BA1 /* Apollo.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = Apollo.xcodeproj; sourceTree = "<group>"; };
 		49A0E6930ECC3887007F3458 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = /System/Library/Frameworks/OpenGL.framework; sourceTree = "<absolute>"; };
@@ -144,7 +142,6 @@
 				496924180EBE4CEA00930DDD /* SDL_image.framework */,
 				496924190EBE4CEA00930DDD /* SDL_mixer.framework */,
 				4969241A0EBE4CEA00930DDD /* SDL_ttf.framework */,
-				4969241B0EBE4CEA00930DDD /* SDLMain.m */,
 			);
 			name = External;
 			path = ../External;
@@ -246,7 +243,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4969242D0EBE4CEA00930DDD /* SDLMain.m in Sources */,
 				496924830EBE516100930DDD /* Xsera.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
