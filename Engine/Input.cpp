@@ -92,6 +92,23 @@ void UpdateMouse ( Sint16 px, Sint16 py )
     mousePosition.Y() = 1.0f - (screen->h / float(py));
 }
 
+std::string MouseButtonName ( Uint32 button )
+{
+	switch (button)
+	{
+		case SDL_BUTTON_LEFT:
+			return "left";
+			break;
+		case SDL_BUTTON_MIDDLE:
+			return "middle";
+			break;
+		case SDL_BUTTON_RIGHT:
+			return "right";
+			break;
+	}
+	return "unknown";
+}
+
 }
 
 using namespace Internal;
@@ -117,32 +134,13 @@ void Pump ()
                 events.push(new Event(Event::MOUSEMOVE, "", mousePosition));
                 break;
 			case SDL_MOUSEBUTTONDOWN:
-			{
-				switch (evt.button.button)
-				{
-					case SDL_BUTTON_LEFT:
-					{
-						
-						int x_loc = evt.button.x;
-						int y_loc = evt.button.y;
-						GLdouble mv_matrix [16];
-						GLdouble prj_matrix [16];
-						GLint vp [4];
-						glGetDoublev(GL_MODELVIEW_MATRIX, mv_matrix);
-						glGetDoublev(GL_PROJECTION_MATRIX, prj_matrix);
-						glGetIntegerv(GL_VIEWPORT, vp);
-						gluUnProject(x_loc, y_loc, 0, mv_matrix, prj_matrix, vp,
-									 &xdest, &ydest, &zdest);
-					// ADAM: need to make new SCREENTH
-					//	ydest = SCREENTH - ydest;		//SDL --> OGL point conversion
-					//	fileout << "(" << xdest << ", " << ydest << ", "
-					//	<< zdest << ")" << endl;
-						break;
-					}
-					default: break;
-				}
-			}
-			default: break;
+				UpdateMouse(evt.button.x, evt.button.y);
+				events.push(new Event(Event::CLICK, MouseButtonName(evt.button.button), mousePosition));
+				break;
+			case SDL_MOUSEBUTTONUP:
+				UpdateMouse(evt.button.x, evt.button.y);
+				events.push(new Event(Event::RELEASE, MouseButtonName(evt.button.button), mousePosition));
+				break;
         }
     }
 }

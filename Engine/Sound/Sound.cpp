@@ -69,6 +69,8 @@ Mix_Music* MusicNamed ( const std::string& name )
 	}
 }
 
+std::string songName;
+
 }
 
 using namespace Internal;
@@ -121,36 +123,30 @@ void PlaySound ( const std::string& name, float gain, float pan )
 	if (fabs(gain - 1.0f) > 0.0003f)
 		Mix_SetDistance(channel, 1 / gain);
 	Mix_PlayChannel(channel, chunk, 0);
+	songName = "(no song)";
 }
-
-std::string SongName;
 
 void PlayMusic ( const std::string& music )
 {
 	if (disable_music)
 		return;
-	SongName = music;
 	Mix_Music* mus = MusicNamed(music);
 	if (mus)
 	{
 		Mix_PlayMusic(mus, -1);
+		songName = music;
 	}
 }
 
 void StopMusic ()
 {
-	SongName = "(no song)";
+	songName = "(no song)";
 	Mix_HaltMusic();
 }
 
-const char* MusicName ()
+std::string MusicName ()
 {
-	return SongName.data();
-}
-
-int MusicNameLength ()
-{
-	return SongName.length();
+	return songName;
 }
 
 float MusicVolume ()

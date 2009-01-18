@@ -33,11 +33,7 @@ void StopMusic ();
 /**
  * Returns the name of the current song
  */
-const char* MusicName ();
-/**
- * Returns the length of the current song's name
- */
-int MusicNameLength ();
+std::string MusicName ();
 /**
  * Gets the current music volume
  */

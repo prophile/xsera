@@ -964,9 +964,8 @@ int Sound_StopMusic ( lua_State* L )
 
 int Sound_CurrentMusic ( lua_State* L )
 {
-	const char* name = Sound::MusicName();
-	int length = Sound::MusicNameLength();
-	lua_pushlstring(L, name, length);
+	std::string name = Sound::MusicName();
+	lua_pushlstring(L, name.data(), name.length());
 	return 1;
 }
 

@@ -85,12 +85,8 @@ static SheetMap spriteSheets;
 namespace Graphics
 {
 
-struct
-{
-	int w;
-	int h;
-} camera;
-	
+int scw, sch;
+
 /*
  Other files can use:
  
@@ -148,8 +144,6 @@ const matrix2x3& CurrentMatrix ()
 
 void Init ( int w, int h, bool fullscreen )
 {
-	camera.w = w;
-	camera.h = h;
 	SDL_InitSubSystem ( SDL_INIT_VIDEO );
 	SDL_GL_SetAttribute ( SDL_GL_RED_SIZE, 8 );
 	SDL_GL_SetAttribute ( SDL_GL_BLUE_SIZE, 8 );
@@ -181,6 +175,9 @@ void Init ( int w, int h, bool fullscreen )
 			}
 		}
 	}
+	
+	scw = w;
+	sch = h;
 	
 	glClear ( GL_COLOR_BUFFER_BIT );
 	
@@ -406,6 +403,21 @@ void DrawStarfield ( float depth )
 static vec2 cameraCorner1;
 static vec2 cameraCorner2;
 static float cameraRotation;
+
+float AspectRatio ()
+{
+	return float(scw) / float(sch);
+}
+
+vec2 MapPoint ( vec2 windowCoords )
+{
+	matrix2x3 viewProjection ( Matrices::viewMatrix * Matrices::projectionMatrix );
+	matrix2x3 vpi = viewProjection.Inverse();
+	vec2 normalisedCoords = vpi * windowCoords;
+	normalisedCoords += vec2(1.0f, 1.0f);
+	normalisedCoords *= 0.5f;
+	return vec2(normalisedCoords.X() * scw, normalisedCoords.Y() * sch);
+}
 
 bool IsCulled ( vec2 location, float radius )
 {

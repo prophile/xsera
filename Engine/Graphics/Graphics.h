@@ -82,6 +82,17 @@ void DrawParticles ( const vec2* locations, unsigned int count, colour col );
 void DrawStarfield ( float depth );
 
 /**
+ * Gives the aspect ratio of the screen
+ * @return Aspect ratio, defined as width/height
+ */
+float AspectRatio ();
+/**
+ * Maps a point in window coordinates to a corresponding point in the current camera
+ * @param point The window point
+ * @return The point in the camera
+ */
+vec2 MapPoint ( vec2 windowCoords );
+/**
  * Checks if a circle lies entirely outside the current camera position
  * @param location The centre of the circle
  * @param radius The radius of the circle
