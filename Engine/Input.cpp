@@ -1,5 +1,6 @@
 #include "Input.h"
 #include <SDL/SDL.h>
+#include <SDL/SDL_OpenGL.h>
 #include <queue>
 
 namespace Input
@@ -79,6 +80,10 @@ std::string MapKey ( SDLKey k )
 std::queue<Event*> events;
 Event* currentEvent = NULL;
 vec2 mousePosition;
+double xdest = 0.0;
+double ydest = 0.0;
+double zdest = 0.0;
+bool lmbPressed = false;
 
 void UpdateMouse ( Sint16 px, Sint16 py )
 {
@@ -111,6 +116,33 @@ void Pump ()
                 UpdateMouse(evt.motion.x, evt.motion.y);
                 events.push(new Event(Event::MOUSEMOVE, "", mousePosition));
                 break;
+			case SDL_MOUSEBUTTONDOWN:
+			{
+				switch (evt.button.button)
+				{
+					case SDL_BUTTON_LEFT:
+					{
+						
+						int x_loc = evt.button.x;
+						int y_loc = evt.button.y;
+						GLdouble mv_matrix [16];
+						GLdouble prj_matrix [16];
+						GLint vp [4];
+						glGetDoublev(GL_MODELVIEW_MATRIX, mv_matrix);
+						glGetDoublev(GL_PROJECTION_MATRIX, prj_matrix);
+						glGetIntegerv(GL_VIEWPORT, vp);
+						gluUnProject(x_loc, y_loc, 0, mv_matrix, prj_matrix, vp,
+									 &xdest, &ydest, &zdest);
+					// ADAM: need to make new SCREENTH
+					//	ydest = SCREENTH - ydest;		//SDL --> OGL point conversion
+					//	fileout << "(" << xdest << ", " << ydest << ", "
+					//	<< zdest << ")" << endl;
+						break;
+					}
+					default: break;
+				}
+			}
+			default: break;
         }
     }
 }

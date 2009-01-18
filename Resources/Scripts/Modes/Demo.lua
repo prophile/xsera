@@ -13,10 +13,10 @@
 import('EntityLoad')
 import('Math')
 import('Bullet4Demo')
-import('Warping4Demo')
+import('MouseHandle')
 
 local cameraRatio = 1
---local aspectRatio = getAspectRatio()
+--local aspectRatio = get_aspect_ratio()
 local aspectRatio = 4 / 3
 camera = { w = 640 / cameraRatio, h = 0 }
 camera.h = camera.w / aspectRatio

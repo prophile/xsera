@@ -85,6 +85,12 @@ static SheetMap spriteSheets;
 namespace Graphics
 {
 
+struct
+{
+	int w;
+	int h;
+} camera;
+	
 /*
  Other files can use:
  
@@ -97,6 +103,8 @@ namespace Graphics
  
  }
  */
+
+
 
 namespace Matrices
 {
@@ -140,6 +148,8 @@ const matrix2x3& CurrentMatrix ()
 
 void Init ( int w, int h, bool fullscreen )
 {
+	camera.w = w;
+	camera.h = h;
 	SDL_InitSubSystem ( SDL_INIT_VIDEO );
 	SDL_GL_SetAttribute ( SDL_GL_RED_SIZE, 8 );
 	SDL_GL_SetAttribute ( SDL_GL_BLUE_SIZE, 8 );

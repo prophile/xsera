@@ -2,6 +2,7 @@
 #include "Utilities/ResourceManager.h"
 #include "Sound/Sound.h"
 #include "Graphics/Graphics.h"
+#include "Input.h"
 #include "Modes/ModeManager.h"
 #include "TinyXML/tinyxml.h"
 #include "Net/Net.h"
@@ -879,6 +880,13 @@ int GFX_DrawSpriteFromSheet ( lua_State* L )
 	return 0;
 }
 
+/*ADAM: ALASTAIR: Why doesn't this work?
+int GFX_AspectRatio ( lua_State* L )
+{
+	lua_pushvalue(L, Graphics::camera.w / Graphics::camera.h);
+	return 1;
+}*/
+
 luaL_Reg registryGraphics[] =
 {
 	"begin_frame", GFX_BeginFrame,
@@ -893,8 +901,38 @@ luaL_Reg registryGraphics[] =
 	"sprite_dimensions", GFX_SpriteDimensions,
 	"draw_starfield", GFX_DrawStarfield,
 	"is_culled", GFX_IsCulled,
+//	"get_aspect_ratio", GFX_AspectRatio,
     NULL, NULL
 };
+
+/*ALASTAIR: Here is the input stuff
+int IN_MouseClick ( lua_State* L )
+{
+	if (Input::Internal::lmbPressed == true)
+	{
+		lua_pushvalue(L, Input::Internal::xdest);
+		lua_pushvalue(L, Input::Internal::ydest);
+		lua_pushvalue(L, Input::Internal::zdest);
+		return 1;
+	} else
+	{
+		return 0;
+	}
+}
+
+int IN_MouseState ( lua_State* L )
+{
+	lua_pushboolean(L, Input::Internal::lmbPressed);
+	return 1;
+}
+
+luaL_Reg registryInput[] =
+{
+	"mouse_clicked", IN_MouseClick,
+    "mouse_state", IN_MouseState,
+	NULL, NULL
+};	
+*///ALASTAIR: End of input stuff
 
 int Sound_Play ( lua_State* L )
 {
@@ -931,6 +969,7 @@ int Sound_CurrentMusic ( lua_State* L )
 	lua_pushlstring(L, name, length);
 	return 1;
 }
+
 luaL_Reg registrySound[] =
 {
     "play", Sound_Play,
@@ -1113,6 +1152,8 @@ void __LuaBind ( lua_State* L )
 	luaL_register(L, "mode_manager", registryModeManager);
     luaL_register(L, "resource_manager", registryResourceManager);
     luaL_register(L, "graphics", registryGraphics);
+// ADAM: Re-add
+//	luaL_register(L, "input", registryInput);
     luaL_register(L, "sound", registrySound);
 	luaL_register(L, "net_client", registryNetClient);
 	luaL_register(L, "net_server", registryNetServer);
