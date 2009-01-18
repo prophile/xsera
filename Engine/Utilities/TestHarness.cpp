@@ -1,6 +1,11 @@
 #include "Scripting/Scripting.h"
 #include "TestHarness.h"
 
+extern "C"
+{
+#include "lua.h"
+}
+
 namespace TestHarness
 {
 

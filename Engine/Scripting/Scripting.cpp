@@ -2,6 +2,13 @@
 #include "ResourceManager.h"
 #include "Logging.h"
 
+extern "C"
+{
+#include "lua.h"
+#include "lauxlib.h"
+#include "lualib.h"
+}
+
 extern void __LuaBind ( lua_State* L );
 
 #define LUA_READER_BUFFER_SIZE 1024

@@ -11,6 +11,13 @@
 #include "Physics/PhysicsObject.h"
 #include "Physics/PhysicsContext.h"
 
+extern "C"
+{
+#include "lua.h"
+#include "lauxlib.h"
+#include "lualib.h"
+}
+
 namespace
 {
 

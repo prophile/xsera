@@ -2,6 +2,13 @@
 #include "Utilities/ResourceManager.h"
 #include "Logging.h"
 
+extern "C"
+{
+#include "lua.h"
+#include "lauxlib.h"
+#include "lualib.h"
+}
+
 struct CompileInstructions
 {
 	std::string sourcePath;

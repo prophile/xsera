@@ -3,14 +3,9 @@
 
 #include <stdarg.h>
 
-extern "C"
-{
-#include "lua.h"
-#include "lauxlib.h"
-#include "lualib.h"
-}
-
 #include <string>
+
+typedef struct lua_State lua_State;
 
 /**
  * A lua script
