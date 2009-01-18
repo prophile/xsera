@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		490CDB280ECCE572004B7D04 /* Music in Resources */ = {isa = PBXBuildFile; fileRef = 490CDB270ECCE572004B7D04 /* Music */; };
 		4930D74F0ECE22990053CC8B /* Images in Resources */ = {isa = PBXBuildFile; fileRef = 4930D74A0ECE22990053CC8B /* Images */; };
+		4932246F0F23E1970048495A /* Shaders in Resources */ = {isa = PBXBuildFile; fileRef = 493224690F23E1970048495A /* Shaders */; };
 		49554A330EDDBD1F009CA121 /* Stars in Resources */ = {isa = PBXBuildFile; fileRef = 49554A300EDDBD1F009CA121 /* Stars */; };
 		49597A130ED4D47C00173D17 /* Config in Resources */ = {isa = PBXBuildFile; fileRef = 49597A0B0ED4D47C00173D17 /* Config */; };
 		496039280ED0B555003BA716 /* Scripts in Resources */ = {isa = PBXBuildFile; fileRef = 496039250ED0B555003BA716 /* Scripts */; };
@@ -65,6 +66,7 @@
 /* Begin PBXFileReference section */
 		490CDB270ECCE572004B7D04 /* Music */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Music; path = ../Resources/Music; sourceTree = SOURCE_ROOT; };
 		4930D74A0ECE22990053CC8B /* Images */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Images; path = ../Resources/Images; sourceTree = SOURCE_ROOT; };
+		493224690F23E1970048495A /* Shaders */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Shaders; path = ../Resources/Shaders; sourceTree = SOURCE_ROOT; };
 		49554A300EDDBD1F009CA121 /* Stars */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Stars; path = ../Resources/Stars; sourceTree = SOURCE_ROOT; };
 		49597A0B0ED4D47C00173D17 /* Config */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Config; path = ../Resources/Config; sourceTree = SOURCE_ROOT; };
 		496039250ED0B555003BA716 /* Scripts */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Scripts; path = ../Resources/Scripts; sourceTree = SOURCE_ROOT; };
@@ -122,6 +124,7 @@
 		496923E20EBE4C3500930DDD /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				493224690F23E1970048495A /* Shaders */,
 				49554A300EDDBD1F009CA121 /* Stars */,
 				7A8C711F0EDB0FB700CFE5D3 /* Sounds */,
 				49A315500ED6BDD90054BB8B /* Fonts */,
@@ -233,6 +236,7 @@
 				49A315530ED6BDD90054BB8B /* Fonts in Resources */,
 				7A8C71560EDB0FB700CFE5D3 /* Sounds in Resources */,
 				49554A330EDDBD1F009CA121 /* Stars in Resources */,
+				4932246F0F23E1970048495A /* Shaders in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

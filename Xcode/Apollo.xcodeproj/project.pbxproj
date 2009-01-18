@@ -10,6 +10,8 @@
 		493223950F23B5C40048495A /* Entry.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 493223940F23B5C40048495A /* Entry.cpp */; };
 		493223BB0F23B9D60048495A /* Apollo.h in Headers */ = {isa = PBXBuildFile; fileRef = 493223BA0F23B9D60048495A /* Apollo.h */; };
 		493223CF0F23BB360048495A /* SDLMain.m in Sources */ = {isa = PBXBuildFile; fileRef = 493223CE0F23BB360048495A /* SDLMain.m */; };
+		493224610F23DE030048495A /* Shaders.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4932245F0F23DE030048495A /* Shaders.cpp */; };
+		493224620F23DE030048495A /* Shaders.h in Headers */ = {isa = PBXBuildFile; fileRef = 493224600F23DE030048495A /* Shaders.h */; };
 		493A3C280F0EDB3900F44530 /* Logging.h in Headers */ = {isa = PBXBuildFile; fileRef = 493A3C270F0EDB3900F44530 /* Logging.h */; };
 		493A3C2A0F0EDB4F00F44530 /* Logging.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 493A3C290F0EDB4F00F44530 /* Logging.cpp */; };
 		496A27850F0EC9D800C53BA1 /* callbacks.h in Headers */ = {isa = PBXBuildFile; fileRef = 496A24070F0EB35E00C53BA1 /* callbacks.h */; };
@@ -140,6 +142,8 @@
 		493223940F23B5C40048495A /* Entry.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Entry.cpp; path = ../Engine/Entry.cpp; sourceTree = SOURCE_ROOT; };
 		493223BA0F23B9D60048495A /* Apollo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Apollo.h; path = ../Engine/Apollo.h; sourceTree = SOURCE_ROOT; };
 		493223CE0F23BB360048495A /* SDLMain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDLMain.m; sourceTree = "<group>"; };
+		4932245F0F23DE030048495A /* Shaders.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Shaders.cpp; sourceTree = "<group>"; };
+		493224600F23DE030048495A /* Shaders.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Shaders.h; sourceTree = "<group>"; };
 		493A3C270F0EDB3900F44530 /* Logging.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Logging.h; path = ../Engine/Logging.h; sourceTree = SOURCE_ROOT; };
 		493A3C290F0EDB4F00F44530 /* Logging.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Logging.cpp; path = ../Engine/Logging.cpp; sourceTree = SOURCE_ROOT; };
 		496A23EA0F0EB31B00C53BA1 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
@@ -455,6 +459,8 @@
 		496A24A10F0EB37900C53BA1 /* Graphics */ = {
 			isa = PBXGroup;
 			children = (
+				4932245F0F23DE030048495A /* Shaders.cpp */,
+				493224600F23DE030048495A /* Shaders.h */,
 				496A24A20F0EB37900C53BA1 /* Graphics.cpp */,
 				496A24A30F0EB37900C53BA1 /* Graphics.h */,
 				496A24A40F0EB37900C53BA1 /* SpriteSheet.cpp */,
@@ -609,6 +615,7 @@
 				496A27BA0F0EC9D800C53BA1 /* ModeManager.h in Headers */,
 				493A3C280F0EDB3900F44530 /* Logging.h in Headers */,
 				493223BB0F23B9D60048495A /* Apollo.h in Headers */,
+				493224620F23DE030048495A /* Shaders.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -720,6 +727,7 @@
 				493A3C2A0F0EDB4F00F44530 /* Logging.cpp in Sources */,
 				493223950F23B5C40048495A /* Entry.cpp in Sources */,
 				493223CF0F23BB360048495A /* SDLMain.m in Sources */,
+				493224610F23DE030048495A /* Shaders.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -8,6 +8,7 @@
 #include "Graphics.h"
 #include "Logging.h"
 #include "Utilities/Matrix2x3.h"
+#include "Shaders.h"
 
 #define DEG2RAD(x) ((x / 180.0f) * M_PI)
 #define RAD2DEG(x) ((x / M_PI) * 180.0f)
@@ -84,6 +85,8 @@ static SheetMap spriteSheets;
 
 namespace Graphics
 {
+
+using namespace Shaders;
 
 int scw, sch;
 
@@ -202,7 +205,6 @@ static void EnableTexturing ()
 {
 	if (!texturingEnabled)
 	{
-		glEnable ( GL_TEXTURE_RECTANGLE_ARB );
 		glEnableClientState ( GL_TEXTURE_COORD_ARRAY );
 		texturingEnabled = true;
 	}
@@ -212,7 +214,6 @@ static void DisableTexturing ()
 {
 	if (texturingEnabled)
 	{
-		glDisable ( GL_TEXTURE_RECTANGLE_ARB );
 		glDisableClientState ( GL_TEXTURE_COORD_ARRAY );
 		texturingEnabled = false;
 	}
@@ -276,6 +277,7 @@ vec2 SpriteDimensions ( const std::string& sheetname )
 
 void DrawSprite ( const std::string& sheetname, int sheet_x, int sheet_y, vec2 location, vec2 size, float rotation )
 {
+	SetShader("Sprite");
 	EnableTexturing();
 	EnableBlending();
 	ClearColour();
@@ -308,7 +310,7 @@ void DrawSprite ( const std::string& sheetname, int sheet_x, int sheet_y, vec2 l
 
 void DrawText ( const std::string& text, const std::string& font, vec2 location, float height, colour col, float rotation )
 {
-	// TODO
+	SetShader("Sprite");
 	EnableTexturing();
 	EnableBlending();
 	SetColour(col);
@@ -328,6 +330,7 @@ void DrawText ( const std::string& text, const std::string& font, vec2 location,
 
 void DrawLine ( vec2 coordinate1, vec2 coordinate2, float width, colour col )
 {
+	SetShader("Primitive");
 	DisableTexturing();
 	if (col.alpha() < 1.0f)
 	{
@@ -349,6 +352,7 @@ void DrawLine ( vec2 coordinate1, vec2 coordinate2, float width, colour col )
 
 void DrawCircle ( vec2 centre, float radius, float width, colour col )
 {
+	SetShader("Primitive");
 	DisableTexturing();
 	if (col.alpha() < 1.0f)
 	{
@@ -368,6 +372,7 @@ void DrawCircle ( vec2 centre, float radius, float width, colour col )
 
 void DrawParticles ( const vec2* locations, unsigned int count, colour col )
 {
+	SetShader("Primitive");
 	DisableTexturing();
 	if (col.alpha() < 1.0f)
 	{
