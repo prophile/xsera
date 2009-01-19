@@ -12,6 +12,6 @@
 	<life>175</life>
 	<!-- damage dealt -->
 	<damage>50</damage>
-	<!-- cooldown time, in seconds -->
-	<cooldown>1</cooldown>
+	<!-- cooldown time, in miliseconds -->
+	<cooldown>150</cooldown>
 </sprite>

@@ -14,6 +14,8 @@
 	<life>1000</life>
 	<!-- damage dealt -->
 	<damage>50</damage>
-	<!-- cooldown time, in seconds -->
-	<cooldown>1.0</cooldown>
+	<!-- cooldown time, in miliseconds -->
+	<cooldown>1200</cooldown>
+	<!-- maximum seeking angle, in radians -->
+	<maxseekangle>0.5</maxseekangle>
 </sprite>
