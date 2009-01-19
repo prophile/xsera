@@ -334,11 +334,11 @@ void DrawLine ( vec2 coordinate1, vec2 coordinate2, float width, colour col )
 	DisableTexturing();
 	if (col.alpha() < 1.0f)
 	{
-		DisableBlending();
+		EnableBlending();
 	}
 	else
 	{
-		EnableBlending();
+		DisableBlending();
 	}
 	glLineWidth(width);
 	Matrices::SetViewMatrix(matrix2x3::Identity());
@@ -356,11 +356,11 @@ void DrawCircle ( vec2 centre, float radius, float width, colour col )
 	DisableTexturing();
 	if (col.alpha() < 1.0f)
 	{
-		DisableBlending();
+		EnableBlending();
 	}
 	else
 	{
-		EnableBlending();
+		DisableBlending();
 	}
 	glLineWidth(width);
 	Matrices::SetViewMatrix(matrix2x3::Translate(centre));
@@ -376,11 +376,11 @@ void DrawParticles ( const vec2* locations, unsigned int count, colour col )
 	DisableTexturing();
 	if (col.alpha() < 1.0f)
 	{
-		DisableBlending();
+		EnableBlending();
 	}
 	else
 	{
-		EnableBlending();
+		DisableBlending();
 	}
 	Matrices::SetViewMatrix(matrix2x3::Identity());
 	Matrices::SetModelMatrix(matrix2x3::Identity());

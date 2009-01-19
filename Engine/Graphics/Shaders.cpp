@@ -20,6 +20,8 @@ static void PrintLogProgram ( GLuint object )
 	char logBuffer[1024];
 	GLsizei len;
 	glGetProgramInfoLog(object, sizeof(logBuffer), &len, logBuffer);
+	if (!len)
+		return;
 	fwrite(logBuffer, len, 1, stdout);
 	putchar('\n');
 }
@@ -33,6 +35,8 @@ static void PrintLogShader ( GLuint object )
 	char logBuffer[1024];
 	GLsizei len;
 	glGetShaderInfoLog(object, sizeof(logBuffer), &len, logBuffer);
+	if (!len)
+		return;
 	fwrite(logBuffer, len, 1, stdout);
 	putchar('\n');
 }
@@ -65,7 +69,7 @@ public:
 		glAttachShader(programObject, vertexObject);
 		glAttachShader(programObject, fragmentObject);
 		glLinkProgram(programObject);
-		PrintLogProgram(vertexObject);
+		PrintLogProgram(programObject);
 	}
 	
 	~Shader ()

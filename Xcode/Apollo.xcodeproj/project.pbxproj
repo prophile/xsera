@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		49118E6B0F251D2B004710D9 /* Preferences.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 49118E690F251D2B004710D9 /* Preferences.cpp */; };
+		49118E6C0F251D2B004710D9 /* Preferences.h in Headers */ = {isa = PBXBuildFile; fileRef = 49118E6A0F251D2B004710D9 /* Preferences.h */; };
 		493223950F23B5C40048495A /* Entry.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 493223940F23B5C40048495A /* Entry.cpp */; };
 		493223BB0F23B9D60048495A /* Apollo.h in Headers */ = {isa = PBXBuildFile; fileRef = 493223BA0F23B9D60048495A /* Apollo.h */; };
 		493223CF0F23BB360048495A /* SDLMain.m in Sources */ = {isa = PBXBuildFile; fileRef = 493223CE0F23BB360048495A /* SDLMain.m */; };
@@ -139,6 +141,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		49118E690F251D2B004710D9 /* Preferences.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Preferences.cpp; path = ../Engine/Preferences.cpp; sourceTree = SOURCE_ROOT; };
+		49118E6A0F251D2B004710D9 /* Preferences.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Preferences.h; path = ../Engine/Preferences.h; sourceTree = SOURCE_ROOT; };
 		493223940F23B5C40048495A /* Entry.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Entry.cpp; path = ../Engine/Entry.cpp; sourceTree = SOURCE_ROOT; };
 		493223BA0F23B9D60048495A /* Apollo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Apollo.h; path = ../Engine/Apollo.h; sourceTree = SOURCE_ROOT; };
 		493223CE0F23BB360048495A /* SDLMain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDLMain.m; sourceTree = "<group>"; };
@@ -307,6 +311,8 @@
 			isa = PBXGroup;
 			children = (
 				493223BA0F23B9D60048495A /* Apollo.h */,
+				49118E690F251D2B004710D9 /* Preferences.cpp */,
+				49118E6A0F251D2B004710D9 /* Preferences.h */,
 				493223940F23B5C40048495A /* Entry.cpp */,
 				493A3C290F0EDB4F00F44530 /* Logging.cpp */,
 				493A3C270F0EDB3900F44530 /* Logging.h */,
@@ -616,6 +622,7 @@
 				493A3C280F0EDB3900F44530 /* Logging.h in Headers */,
 				493223BB0F23B9D60048495A /* Apollo.h in Headers */,
 				493224620F23DE030048495A /* Shaders.h in Headers */,
+				49118E6C0F251D2B004710D9 /* Preferences.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -728,6 +735,7 @@
 				493223950F23B5C40048495A /* Entry.cpp in Sources */,
 				493223CF0F23BB360048495A /* SDLMain.m in Sources */,
 				493224610F23DE030048495A /* Shaders.cpp in Sources */,
+				49118E6B0F251D2B004710D9 /* Preferences.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
