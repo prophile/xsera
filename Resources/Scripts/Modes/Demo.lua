@@ -65,13 +65,13 @@ function init ()
     playerShip = NewShip("Ishiman/HeavyCruiser")
 	computerShip = NewShip("Gaitori/Carrier")
 	cMissile = NewBullet("WhiteYellowMissile")
-	cMissile.dest = { x = carrierLocation.x, y = carrierLocation.y }
-	cMissile.size = { x, y }
-	cMissile.size.x, cMissile.size.y = graphics.sprite_dimensions("Weapons/WhiteYellowMissile")
-	cMissile.isSeeking = true
-	cMissile.fired = false
+		cMissile.dest = { x = carrierLocation.x, y = carrierLocation.y }
+		cMissile.size = { x, y }
+		cMissile.size.x, cMissile.size.y = graphics.sprite_dimensions("Weapons/WhiteYellowMissile")
+		cMissile.isSeeking = true
+		cMissile.fired = false
 	pkBeam = NewBullet("PKBeam")
-	pkBeam.width = 3 * cameraRatio;
+		pkBeam.width = 3 * cameraRatio;
 	bestExplosion = NewExplosion("BestExplosion")
 end
 
@@ -320,6 +320,7 @@ function key ( k )
 				pkBeam.width = 1
 			end
 		end
+	--[[ temporarily commented (currently unnecessary)
 	elseif k == "l" then
 		playerShip.physicsObject.angle = 0
 	elseif k == "i" then
@@ -328,6 +329,7 @@ function key ( k )
 		playerShip.physicsObject.angle = math.pi
 	elseif k == "k" then
 		playerShip.physicsObject.angle = 3 * math.pi / 2
+	--]]
 	elseif k == "tab" then
 		warpStart = true
 	elseif k == " " then
