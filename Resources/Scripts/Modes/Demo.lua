@@ -149,12 +149,6 @@ function bullet_collision(bulletObject, shipObject)
 	shipObject.health = shipObject.health - bulletObject.damage
 end
 
-function draw_grid()
-	while i > 10 do
-		
-	end
-end
-
 function init ()
 	sound.stop_music()
     lastTime = mode_manager.time()
@@ -316,7 +310,26 @@ function render ()
 	Grid Drawing
 ------------------]]--
 	
-	
+	local i = 0
+	while i > 10 do
+		i = i + 1
+		graphics.draw_line(-6000, -i * gridDistBlue, 6000, -i * gridDistBlue, 10)
+		graphics.draw_line(-6000, i * gridDistBlue, 6000, i * gridDistBlue, 10)
+		graphics.draw_line(-i * gridDistBlue, -6000, -i * gridDistBlue, 6000, 10)
+		graphics.draw_line(i * gridDistBlue, -6000, i * gridDistBlue, 6000, 10)
+		
+		--[[ for drawing lines with different colors, when I figure that out
+		if (i * gridDistBlue) % gridDistLightBlue == 0 then
+			if (i * gridDistBlue) % gridDistGreen == 0 then
+				
+			else
+				
+			end
+		else
+			
+		end
+		--]]
+	end
 	
 --[[------------------
 	Ship Drawing
