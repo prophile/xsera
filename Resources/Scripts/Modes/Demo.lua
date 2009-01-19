@@ -54,9 +54,9 @@ local arrowLength = 135
 local arrowVar = (3 * math.sqrt(3))
 local arrowDist = hypot(6, (arrowLength - arrowVar))
 local arrowAlpha = math.atan2(6, arrowDist)
-local gridDistBlue = 600
-local gridDistLightBlue = 2400
-local gridDistGreen = 9600
+local gridDistBlue = 300
+local gridDistLightBlue = 1200
+local gridDistGreen = 4800
 
 keyControls = { left = false, right = false, forward = false, brake = false }
 
@@ -311,12 +311,11 @@ function render ()
 ------------------]]--
 	
 	local i = 0
-	while i > 10 do
-		i = i + 1
-		graphics.draw_line(-6000, -i * gridDistBlue, 6000, -i * gridDistBlue, 10)
-		graphics.draw_line(-6000, i * gridDistBlue, 6000, i * gridDistBlue, 10)
-		graphics.draw_line(-i * gridDistBlue, -6000, -i * gridDistBlue, 6000, 10)
-		graphics.draw_line(i * gridDistBlue, -6000, i * gridDistBlue, 6000, 10)
+	while i ~= 10 do
+		graphics.draw_line(-6000, -i * gridDistBlue, 6000, -i * gridDistBlue, 2)
+		graphics.draw_line(-6000, i * gridDistBlue, 6000, i * gridDistBlue, 2)
+		graphics.draw_line(-i * gridDistBlue, -6000, -i * gridDistBlue, 6000, 2)
+		graphics.draw_line(i * gridDistBlue, -6000, i * gridDistBlue, 6000, 2)
 		
 		--[[ for drawing lines with different colors, when I figure that out
 		if (i * gridDistBlue) % gridDistLightBlue == 0 then
@@ -329,6 +328,7 @@ function render ()
 			
 		end
 		--]]
+		i = i + 1
 	end
 	
 --[[------------------
