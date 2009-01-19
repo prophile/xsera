@@ -20,7 +20,7 @@ function fire_bullet()
 		cMissileLauncher.ammo = cMissileLauncher.ammo - 1
 		sound.play("RocketLaunchr")
 		-- temp sound file, should be "RocketLaunch" but for some reason, that file gets errors (file included for troubleshooting)
-		cMissile.isSeeking = should_seek();
+		cMissile.isSeeking = should_seek()
 	--	cMissile.physicsObject.location = playerShip.physicsObject.location
 	--	cMissile.physicsObject.angle = playerShip.physicsObject.angle
 	end

@@ -28,6 +28,7 @@ carrierRotation = math.pi / 2
 carrierHealth = 10
 carrierExploded = false
 firebullet = false
+drawShot = false
 --/tempvars
 
 
@@ -48,7 +49,6 @@ local endWarp = 0.0
 local warpSlow = 2.0
 local warpSpeed = 2.0
 
-drawShot = false
 
 local arrowLength = 125
 local arrowVar = (3.5 * math.sqrt(3))
@@ -70,9 +70,12 @@ function init ()
 		cMissile.isSeeking = true
 		cMissile.fired = false
 	pkBeam = NewBullet("PKBeam")
-		pkBeam.width = 3 * cameraRatio;
-		pkBeam.fired = false;
-		pkBeam.length = 30;
+		pkBeam.width = 3 * cameraRatio
+		pkBeam.fired = false
+		pkBeam.length = 30
+		pkBeam.location = { x, y }
+		pkBeam.start = 0
+		pkBeam.firing = false
 	bestExplosion = NewExplosion("BestExplosion")
 end
 
@@ -185,6 +188,17 @@ function update ()
 		cMissile.fired = true
 	end
 	
+--[[------------------
+	PKBeam Firing
+------------------]]--
+	
+	if pkBeam.firing == true then
+		if pkBeam.start / 1000 + pkBeam.cooldown / 1000 <= mode_manager.time() then
+			sound.play("ShotC")
+			drawShot = true
+		end
+	end
+	
 	physics.update(dt)
 end
 
@@ -220,15 +234,15 @@ function render ()
 	--	for pkBeam, playerShip in physics.collisions() do
 	--		bullet_collision(pkBeam, playerShip)
 	--	end
-		graphics.draw_line(pkBeam.physicsObject.location.x + math.cos(pkBeam.angle) * pkBeam.age, pkBeam.physicsObject.location.y + math.sin(pkBeam.angle) * pkBeam.age, pkBeam.physicsObject.location.x + math.cos(pkBeam.angle) * (pkBeam.length + pkBeam.age), pkBeam.physicsObject.location.y + math.sin(pkBeam.angle) * (pkBeam.length + pkBeam.age), pkBeam.width)
+		graphics.draw_line(pkBeam.location.x + math.cos(pkBeam.angle) * pkBeam.age, pkBeam.location.y + math.sin(pkBeam.angle) * pkBeam.age, pkBeam.location.x + math.cos(pkBeam.angle) * (pkBeam.length + pkBeam.age), pkBeam.location.y + math.sin(pkBeam.angle) * (pkBeam.length + pkBeam.age), pkBeam.width)
 	end
 	
 	if drawShot == true then
 		pkBeam.start = mode_manager.time() * 1000
 		pkBeam.angle = playerShip.physicsObject.angle
-		pkBeam.physicsObject.location.x = playerShip.physicsObject.position.x + math.cos(pkBeam.angle) * pkBeam.length
-		pkBeam.physicsObject.location.y = playerShip.physicsObject.position.y + math.sin(pkBeam.angle) * pkBeam.length
-		graphics.draw_line(pkBeam.physicsObject.location.x, pkBeam.physicsObject.location.y, pkBeam.physicsObject.location.x + math.cos(angle) * (pkBeam.length / 2), pkBeam.physicsObject.location.y + math.sin(angle) * (pkBeam.length / 2), 2)
+		pkBeam.location.x = playerShip.physicsObject.position.x + math.cos(pkBeam.angle) * pkBeam.length
+		pkBeam.location.y = playerShip.physicsObject.position.y + math.sin(pkBeam.angle) * pkBeam.length
+		graphics.draw_line(pkBeam.location.x, pkBeam.location.y, pkBeam.location.x + math.cos(angle) * (pkBeam.length / 2), pkBeam.location.y + math.sin(angle) * (pkBeam.length / 2), 2)
 		drawShot = false
 		pkBeam.fired = true
 	end
@@ -256,6 +270,8 @@ function keyup ( k )
         keyControls.left = false
     elseif k == "d" then
         keyControls.right = false
+    elseif k == " " then
+        pkBeam.firing = false
     elseif k == "tab" then
 		warpStart = false
 		startTime = nil
@@ -297,7 +313,7 @@ function key ( k )
 			arrowLength = arrowLength / 2
 			arrowVar = arrowVar / 2
 			arrowDist = arrowDist / 2
-			pkBeam.width = 3 * cameraRatio;
+			pkBeam.width = 3 * cameraRatio
 			if pkBeam.width < 1 then
 				pkBeam.width = 1
 			end
@@ -317,7 +333,7 @@ function key ( k )
 			arrowLength = arrowLength * 2
 			arrowVar = arrowVar * 2
 			arrowDist = arrowDist * 2
-			pkBeam.width = 3 * cameraRatio;
+			pkBeam.width = 3 * cameraRatio
 			if pkBeam.width < 1 then
 				pkBeam.width = 1
 			end
@@ -335,8 +351,7 @@ function key ( k )
 	elseif k == "tab" then
 		warpStart = true
 	elseif k == " " then
-		sound.play("ShotC")
-		drawShot = true
+		pkBeam.firing = true
 	elseif k == "p" then
 		carrierHealth = 0
 	elseif k == "escape" then
