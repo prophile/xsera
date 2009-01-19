@@ -169,10 +169,10 @@ function update ()
 		end
 		--]]	
 		cMissile.theta = find_angle(cMissile.physicsObject.position, cMissile.dest)
-		print(cMissile.physicsObject.angle)
-		print(cMissile.delta)
-		print(cMissile.theta)
-		print("________________")
+	--	print(cMissile.physicsObject.angle)
+	--	print(cMissile.delta)
+	--	print(cMissile.theta)
+	--	print("________________")
 		
 		if cMissile.physicsObject.angle ~= cMissile.theta then
 			guide_bullet()
@@ -181,6 +181,7 @@ function update ()
 		
 	--	cMissile.force.x = math.cos(cMissile.theta) * cMissile.thrust
 	--	cMissile.force.y = math.sin(cMissile.theta) * cMissile.thrust
+	--	playerShip.physicsObject:apply_force(cMissile.force)
 	end
 	
 	if firebullet == true then
@@ -212,6 +213,11 @@ function render ()
 --	print(playerShip.physicsObject.position.x)
 --	print(playerShip.physicsObject.position.y)
 	graphics.draw_starfield()
+	
+--[[------------------
+	Ship Drawing
+------------------]]--
+
     if carrierHealth ~= 0 then
 		graphics.draw_sprite("Gaitori/Carrier", carrierLocation.x, carrierLocation.y, computerShip.size.x, computerShip.size.y, carrierRotation)
     else
@@ -229,14 +235,20 @@ function render ()
 	end
 	graphics.draw_sprite(playerShip.image, playerShip.physicsObject.position.x, playerShip.physicsObject.position.y, playerShip.size.x, playerShip.size.y, playerShip.physicsObject.angle)
 	
+--[[------------------
+	PKBeam Firing
+------------------]]--
+	
 	if pkBeam.fired == true then
 		pkBeam.age = (mode_manager.time() * 1000) - pkBeam.start
 		if pkBeam.age >= pkBeam.life then
 			pkBeam.fired = false
 		end
-	--	for pkBeam, playerShip in physics.collisions() do
-	--		bullet_collision(pkBeam, playerShip)
-	--	end
+		--[[ not yet implemented
+		for pkBeam, playerShip in physics.collisions() do
+			bullet_collision(pkBeam, playerShip)
+		end
+		--]]
 		graphics.draw_line(pkBeam.location.x + math.cos(pkBeam.angle) * pkBeam.age, pkBeam.location.y + math.sin(pkBeam.angle) * pkBeam.age, pkBeam.location.x + math.cos(pkBeam.angle) * (pkBeam.length + pkBeam.age), pkBeam.location.y + math.sin(pkBeam.angle) * (pkBeam.length + pkBeam.age), pkBeam.width)
 	end
 	
@@ -250,10 +262,18 @@ function render ()
 		pkBeam.fired = true
 	end
 	
+--[[------------------
+	C-Missile Firing
+------------------]]--
+	
 	if cMissile.fired == true then
 		local bulletLocation = cMissile.physicsObject.position
 		graphics.draw_sprite("Weapons/WhiteYellowMissile", bulletLocation.x, bulletLocation.y, cMissile.size.x, cMissile.size.y, cMissile.physicsObject.angle)
 	end
+	
+--[[------------------
+	Panels and Arrow
+------------------]]--
 	
 	graphics.draw_line(math.cos(arrowAlpha + angle) * arrowDist, math.sin(arrowAlpha + angle) * arrowDist, math.cos(angle - arrowAlpha) * arrowDist, math.sin(angle - arrowAlpha) * arrowDist, 2)
 	graphics.draw_line(math.cos(angle - arrowAlpha) * arrowDist, math.sin(angle - arrowAlpha) * arrowDist, math.cos(angle) * (arrowLength + arrowVar), math.sin(angle) * (arrowLength + arrowVar), 2)

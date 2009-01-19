@@ -15,7 +15,7 @@
 	<!-- damage dealt -->
 	<damage>50</damage>
 	<!-- cooldown time, in miliseconds -->
-	<cooldown>1000</cooldown>
+	<cooldown>1200</cooldown>
 	<!-- maximum seeking angle, in radians -->
 	<maxseekangle>0.5</maxseekangle>
 </sprite>
