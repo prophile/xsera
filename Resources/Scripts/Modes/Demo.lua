@@ -69,6 +69,7 @@ function init ()
 		cMissile.size.x, cMissile.size.y = graphics.sprite_dimensions("Weapons/WhiteYellowMissile")
 		cMissile.isSeeking = true
 		cMissile.fired = false
+		cMissile.start = 0
 	pkBeam = NewBullet("PKBeam")
 		pkBeam.width = 3 * cameraRatio
 		pkBeam.fired = false
@@ -183,9 +184,11 @@ function update ()
 	end
 	
 	if firebullet == true then
-		fire_bullet()
-		firebullet = false
-		cMissile.fired = true
+		if cMissile.start / 1000 + cMissile.cooldown / 1000 <= mode_manager.time() then
+			cMissile.start = mode_manager.time() * 1000
+			fire_bullet()
+			cMissile.fired = true
+		end
 	end
 	
 --[[------------------
@@ -272,6 +275,8 @@ function keyup ( k )
         keyControls.right = false
     elseif k == " " then
         pkBeam.firing = false
+    elseif k == "z" then
+		firebullet = false
     elseif k == "tab" then
 		warpStart = false
 		startTime = nil
