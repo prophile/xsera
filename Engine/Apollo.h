@@ -19,6 +19,7 @@
 #include "Scripting/Scripting.h"
 #include "Scripting/Compile.h"
 #include "Sound/Sound.h"
+#include "Preferences.h"
 
 extern "C"
 {
