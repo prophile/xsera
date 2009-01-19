@@ -49,7 +49,6 @@ local warpSlow = 2.0
 local warpSpeed = 2.0
 
 drawShot = false
-shot = { x = 0, y = 0, rotate = 0, timeStart = 0, fired = false, length = 30 }
 
 local arrowLength = 125
 local arrowVar = (3.5 * math.sqrt(3))
@@ -72,6 +71,8 @@ function init ()
 		cMissile.fired = false
 	pkBeam = NewBullet("PKBeam")
 		pkBeam.width = 3 * cameraRatio;
+		pkBeam.fired = false;
+		pkBeam.length = 30;
 	bestExplosion = NewExplosion("BestExplosion")
 end
 
@@ -171,6 +172,7 @@ function update ()
 		
 		if cMissile.physicsObject.angle ~= cMissile.theta then
 			guide_bullet()
+			cMissile.theta = cMissile.theta + cMissile.delta
 		end
 		
 	--	cMissile.force.x = math.cos(cMissile.theta) * cMissile.thrust
@@ -210,25 +212,25 @@ function render ()
 	end
 	graphics.draw_sprite(playerShip.image, playerShip.physicsObject.position.x, playerShip.physicsObject.position.y, playerShip.size.x, playerShip.size.y, playerShip.physicsObject.angle)
 	
-	if shot.fired == true then
+	if pkBeam.fired == true then
 		pkBeam.age = (mode_manager.time() * 1000) - pkBeam.start
 		if pkBeam.age >= pkBeam.life then
-			shot.fired = false
+			pkBeam.fired = false
 		end
 	--	for pkBeam, playerShip in physics.collisions() do
 	--		bullet_collision(pkBeam, playerShip)
 	--	end
-		graphics.draw_line(shot.x + math.cos(pkBeam.angle) * pkBeam.age, shot.y + math.sin(pkBeam.angle) * pkBeam.age, shot.x + math.cos(pkBeam.angle) * (shot.length + pkBeam.age), shot.y + math.sin(pkBeam.angle) * (shot.length + pkBeam.age), pkBeam.width)
+		graphics.draw_line(pkBeam.physicsObject.location.x + math.cos(pkBeam.angle) * pkBeam.age, pkBeam.physicsObject.location.y + math.sin(pkBeam.angle) * pkBeam.age, pkBeam.physicsObject.location.x + math.cos(pkBeam.angle) * (pkBeam.length + pkBeam.age), pkBeam.physicsObject.location.y + math.sin(pkBeam.angle) * (pkBeam.length + pkBeam.age), pkBeam.width)
 	end
 	
 	if drawShot == true then
 		pkBeam.start = mode_manager.time() * 1000
 		pkBeam.angle = playerShip.physicsObject.angle
-		shot.x = playerShip.physicsObject.position.x + math.cos(pkBeam.angle) * shot.length
-		shot.y = playerShip.physicsObject.position.y + math.sin(pkBeam.angle) * shot.length
-		graphics.draw_line(shot.x, shot.y, shot.x + math.cos(angle) * (shot.length / 2), shot.y + math.sin(angle) * (shot.length / 2), 2)
+		pkBeam.physicsObject.location.x = playerShip.physicsObject.position.x + math.cos(pkBeam.angle) * pkBeam.length
+		pkBeam.physicsObject.location.y = playerShip.physicsObject.position.y + math.sin(pkBeam.angle) * pkBeam.length
+		graphics.draw_line(pkBeam.physicsObject.location.x, pkBeam.physicsObject.location.y, pkBeam.physicsObject.location.x + math.cos(angle) * (pkBeam.length / 2), pkBeam.physicsObject.location.y + math.sin(angle) * (pkBeam.length / 2), 2)
 		drawShot = false
-		shot.fired = true
+		pkBeam.fired = true
 	end
 	
 	if cMissile.fired == true then

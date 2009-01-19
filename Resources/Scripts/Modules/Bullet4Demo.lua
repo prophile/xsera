@@ -82,7 +82,7 @@ function guide_bullet()
 			cMissile.delta = big_angle - small_angle
 		end
 		
-		if math.abs(cMissile.delta) > cMissile.turnrate then
+		if math.abs(cMissile.delta) > cMissile.turningRate then
 			if cMissile.delta > cMissile.turnrate then
 				cMissile.delta = -cMissile.turnrate
 			else

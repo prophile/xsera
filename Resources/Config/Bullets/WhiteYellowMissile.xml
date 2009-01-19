@@ -17,5 +17,5 @@
 	<!-- cooldown time, in seconds -->
 	<cooldown>1.0</cooldown>
 	<!-- maximum seeking angle, in radians -->
-	<max_seek_angle>0.5</max_seek_angle>
+	<maxseekangle>0.5</maxseekangle>
 </sprite>

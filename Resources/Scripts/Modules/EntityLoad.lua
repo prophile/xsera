@@ -45,7 +45,7 @@ function NewBullet (bulletType)
 	bulletObject.life = tonumber(trueData.life)
 	bulletObject.damage = tonumber(trueData.damage)
 	bulletObject.cooldown = tonumber(trueData.cooldown)
-	bulletObject.max_seek_angle = tonumber(trueData.max_seek_angle)
+	bulletObject.max_seek_angle = tonumber(trueData.maxseekangle)
 	return bulletObject
 end
 
