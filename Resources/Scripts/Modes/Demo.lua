@@ -16,11 +16,20 @@ import('Bullet4Demo')
 import('MouseHandle')
 
 local cameraRatio = 1
---local aspectRatio = get_aspect_ratio()
 local aspectRatio = 4 / 3
 camera = { w = 640 / cameraRatio, h = 0 }
 camera.h = camera.w / aspectRatio
 local shipAdjust = .045 * camera.w
+
+
+--tempvars
+carrierLocation = { x = 2200, y = 2700 }
+carrierRotation = math.pi / 2
+carrierHealth = 10
+carrierExploded = false
+firebullet = false
+--/tempvars
+
 
 playerShip = nil
 cMissile = nil
@@ -39,10 +48,8 @@ local endWarp = 0.0
 local warpSlow = 2.0
 local warpSpeed = 2.0
 
-local bulletFired = false
-
 drawShot = false
-shot = { x = 0, y = 0, rotate, timeStart = 0, fired = false, length = 30 }
+shot = { x = 0, y = 0, rotate = 0, timeStart = 0, fired = false, length = 30 }
 
 local arrowLength = 125
 local arrowVar = (3.5 * math.sqrt(3))
@@ -58,6 +65,11 @@ function init ()
     playerShip = NewShip("Ishiman/HeavyCruiser")
 	computerShip = NewShip("Gaitori/Carrier")
 	cMissile = NewBullet("WhiteYellowMissile")
+	cMissile.dest = { x = carrierLocation.x, y = carrierLocation.y }
+	cMissile.size = { x, y }
+	cMissile.size.x, cMissile.size.y = graphics.sprite_dimensions("Weapons/WhiteYellowMissile")
+	cMissile.isSeeking = true
+	cMissile.fired = false
 	pkBeam = NewBullet("PKBeam")
 	pkBeam.width = 3 * cameraRatio;
 	bestExplosion = NewExplosion("BestExplosion")
@@ -143,34 +155,32 @@ function update ()
 --[[------------------
 	C-Missile Firing
 ------------------]]--
-	
-	if firebullet == true then
-		fire_bullet()
-		firebullet = false
-		bulletFired = true
-	end
 
-	if bulletFired == true then
+	if cMissile.fired == true then
 		local bulletLocation = playerShip.physicsObject.position
 		--[[ not yet implemented
 		for playerShip, cMissile in physics.collisions() do
 			bullet_collision(cMissile, computerShip)
 		end
 		--]]	
-		bullet.alpha = find_angle({ x = 0, y = 0 }, cMissile.physicsObject.position)
-		bullet.beta = find_angle(cMissile.physicsObject.position, bullet.dest)
-		print(bullet.alpha)
-		print(bullet.beta)
-		print(bullet.theta)
+		cMissile.theta = find_angle(cMissile.physicsObject.position, cMissile.dest)
+		print(cMissile.physicsObject.angle)
+		print(cMissile.delta)
+		print(cMissile.theta)
 		print("________________")
 		
-		-- use a bullet4demo function (DEMOFINAL: merge?)
-		if bullet.alpha ~= bullet.beta then
+		if cMissile.physicsObject.angle ~= cMissile.theta then
 			guide_bullet()
 		end
 		
-	--	bullet.force.x = math.cos(bullet.theta) * bullet.power
-	--	bullet.force.y = math.sin(bullet.theta) * bullet.power
+	--	cMissile.force.x = math.cos(cMissile.theta) * cMissile.thrust
+	--	cMissile.force.y = math.sin(cMissile.theta) * cMissile.thrust
+	end
+	
+	if firebullet == true then
+		fire_bullet()
+		firebullet = false
+		cMissile.fired = true
 	end
 	
 	physics.update(dt)
@@ -221,9 +231,9 @@ function render ()
 		shot.fired = true
 	end
 	
-	if bulletFired == true then
+	if cMissile.fired == true then
 		local bulletLocation = cMissile.physicsObject.position
-		graphics.draw_sprite("Weapons/WhiteYellowMissile", bulletLocation.x, bulletLocation.y, bullet.size.x, bullet.size.y, cMissile.physicsObject.angle)
+		graphics.draw_sprite("Weapons/WhiteYellowMissile", bulletLocation.x, bulletLocation.y, cMissile.size.x, cMissile.size.y, cMissile.physicsObject.angle)
 	end
 	
 	graphics.draw_line(math.cos(arrowAlpha + angle) * arrowDist, math.sin(arrowAlpha + angle) * arrowDist, math.cos(angle - arrowAlpha) * arrowDist, math.sin(angle - arrowAlpha) * arrowDist, 2)
