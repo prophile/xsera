@@ -32,13 +32,6 @@ drawShot = false
 cMissileLauncher = { ammo = 50 }
 --/tempvars
 
---[[ Treatise on Crystospheres - also known as bullet angle theory
-There are three angles to any bullet - the angle it wants, the angle it has, the angle that it will change
-The angle it has is referred to as simply 'angle'. That should REALLY simplify my life, you freaking moron (talking to myself of course).
-The angle it wants will be referred to as theta. This is the angle between it and its target.
-The angle that it will change will be referred to as delta. Because delta means "change" in Greek, or some such nonsense :P. Also, delta is equal to the difference of angle and theta (not necessarily in that order)
---]]
-
 playerShip = nil
 cMissile = nil
 pkBeam = nil
@@ -57,10 +50,13 @@ local warpSlow = 2.0
 local warpSpeed = 2.0
 
 
-local arrowLength = 125
-local arrowVar = (3.5 * math.sqrt(3))
-local arrowDist = hypot(7, (arrowLength - arrowVar))
-local arrowAlpha = math.atan2(7, arrowDist)
+local arrowLength = 135
+local arrowVar = (3 * math.sqrt(3))
+local arrowDist = hypot(6, (arrowLength - arrowVar))
+local arrowAlpha = math.atan2(6, arrowDist)
+local gridDistBlue = 600
+local gridDistLightBlue = 2400
+local gridDistGreen = 9600
 
 keyControls = { left = false, right = false, forward = false, brake = false }
 
@@ -137,10 +133,10 @@ function guide_bullet()
 		end
 		
 		if math.abs(cMissile.delta) > cMissile.turningRate then
-			if cMissile.delta > cMissile.turnrate then
-				cMissile.delta = -cMissile.turnrate
+			if cMissile.delta > cMissile.turningRrate then
+				cMissile.delta = -cMissile.turningRate
 			else
-				cMissile.delta = cMissile.turnrate
+				cMissile.delta = cMissile.turningRate
 			end
 		end
 	else
@@ -151,6 +147,12 @@ end
 function bullet_collision(bulletObject, shipObject)
 	cMissile.fired = true
 	shipObject.health = shipObject.health - bulletObject.damage
+end
+
+function draw_grid()
+	while i > 10 do
+		
+	end
 end
 
 function init ()
@@ -309,6 +311,12 @@ function render ()
 --	print(playerShip.physicsObject.position.x)
 --	print(playerShip.physicsObject.position.y)
 	graphics.draw_starfield()
+	
+--[[------------------
+	Grid Drawing
+------------------]]--
+	
+	
 	
 --[[------------------
 	Ship Drawing
