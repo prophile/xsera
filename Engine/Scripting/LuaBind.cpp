@@ -778,7 +778,7 @@ int GFX_DrawLine ( lua_State* L )
 	width = luaL_checknumber(L, 5);
 	if (nargs > 5)
 	{
-		Graphics::DrawLine(vec2(x1, y1), vec2(x2, y2), width, LoadColour(L, 5));
+		Graphics::DrawLine(vec2(x1, y1), vec2(x2, y2), width, LoadColour(L, 6));
 	}
 	else
 	{

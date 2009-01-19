@@ -49,6 +49,21 @@ function NewBullet (bulletType)
 	return bulletObject
 end
 
+function NewWeapon (weaponType)
+	local rawData = xml.load("Config/Weapons/" .. weaponType .. ".xml")
+	local weaponData = rawData[1]
+	local trueData = {}
+	for k, v in ipairs(weaponData) do
+		if type(v) == "table" then
+			trueData[v.name] = v[1]
+		end
+	end
+	local weaponObject = { size = {} }
+	weaponObject.name = trueData.name
+	weaponObject.ammo = tonumber(trueData.ammo)
+	return weaponObject
+end
+
 function NewScenario (scenarioType)
 	local rawData = xml.load("Config/Scenarios/" .. scenarioType .. ".xml")
 	local scenarioData = rawData[1]

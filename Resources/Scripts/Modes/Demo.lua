@@ -12,7 +12,6 @@
 
 import('EntityLoad')
 import('Math')
-import('Bullet4Demo')
 import('MouseHandle')
 
 local cameraRatio = 1
@@ -25,12 +24,11 @@ local shipAdjust = .045 * camera.w
 --tempvars
 carrierLocation = { x = 2200, y = 2700 }
 carrierRotation = math.pi / 2
-carrierHealth = 10
 carrierExploded = false
 firebullet = false
 drawShot = false
-cMissileLauncher = { ammo = 50 }
 --/tempvars
+
 
 playerShip = nil
 cMissile = nil
@@ -66,8 +64,8 @@ function fire_bullet()
 2- Select best target and seek it
 (Update with new target if necessary when updating?)
 --]]
-	if cMissileLauncher.ammo > 0 then
-		cMissileLauncher.ammo = cMissileLauncher.ammo - 1
+	if playerShip.special.ammo > 0 then
+		playerShip.special.ammo = playerShip.special.ammo - 1
 		sound.play("RocketLaunchr")
 		-- temp sound file, should be "RocketLaunch" but for some reason, that file gets errors (file included for troubleshooting)
 		cMissile.isSeeking = should_seek()
@@ -154,6 +152,7 @@ function init ()
     lastTime = mode_manager.time()
     physics.open(0.6)
     playerShip = NewShip("Ishiman/HeavyCruiser")
+		playerShip.special = NewWeapon("Special/cMissile")
 	computerShip = NewShip("Gaitori/Carrier")
 	cMissile = NewBullet("WhiteYellowMissile")
 		cMissile.dest = { x = carrierLocation.x, y = carrierLocation.y }
@@ -312,22 +311,26 @@ function render ()
 	
 	local i = 0
 	while i ~= 10 do
-		graphics.draw_line(-6000, -i * gridDistBlue, 6000, -i * gridDistBlue, 2)
-		graphics.draw_line(-6000, i * gridDistBlue, 6000, i * gridDistBlue, 2)
-		graphics.draw_line(-i * gridDistBlue, -6000, -i * gridDistBlue, 6000, 2)
-		graphics.draw_line(i * gridDistBlue, -6000, i * gridDistBlue, 6000, 2)
-		
-		--[[ for drawing lines with different colors, when I figure that out
 		if (i * gridDistBlue) % gridDistLightBlue == 0 then
 			if (i * gridDistBlue) % gridDistGreen == 0 then
-				
+				graphics.draw_line(-6000, -i * gridDistBlue, 6000, -i * gridDistBlue, 1)
+				graphics.draw_line(-6000, i * gridDistBlue, 6000, i * gridDistBlue, 1)
+				graphics.draw_line(-i * gridDistBlue, -6000, -i * gridDistBlue, 6000, 1)
+				graphics.draw_line(i * gridDistBlue, -6000, i * gridDistBlue, 6000, 1)
 			else
-				
+				graphics.draw_line(-6000, -i * gridDistBlue, 6000, -i * gridDistBlue, 1)
+				graphics.draw_line(-6000, i * gridDistBlue, 6000, i * gridDistBlue, 1)
+				graphics.draw_line(-i * gridDistBlue, -6000, -i * gridDistBlue, 6000, 1)
+				graphics.draw_line(i * gridDistBlue, -6000, i * gridDistBlue, 6000, 1)
 			end
 		else
-			
+			if cameraRatio ~= 1 / 16 then
+				graphics.draw_line(-6000, -i * gridDistBlue, 6000, -i * gridDistBlue, 1)
+				graphics.draw_line(-6000, i * gridDistBlue, 6000, i * gridDistBlue, 1)
+				graphics.draw_line(-i * gridDistBlue, -6000, -i * gridDistBlue, 6000, 1)
+				graphics.draw_line(i * gridDistBlue, -6000, i * gridDistBlue, 6000, 1)
+			end
 		end
-		--]]
 		i = i + 1
 	end
 	
@@ -335,7 +338,7 @@ function render ()
 	Ship Drawing
 ------------------]]--
 
-    if carrierHealth ~= 0 then
+    if computerShip.life ~= 0 then
 		graphics.draw_sprite("Gaitori/Carrier", carrierLocation.x, carrierLocation.y, computerShip.size.x, computerShip.size.y, carrierRotation)
     else
 		if carrierExploded == false then
@@ -495,7 +498,7 @@ function key ( k )
 	elseif k == " " then
 		pkBeam.firing = true
 	elseif k == "p" then
-		carrierHealth = 0
+		computerShip.life = 0
 	elseif k == "escape" then
 		mode_manager.switch("MainMenu")
 	end

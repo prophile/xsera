@@ -1,0 +1,7 @@
+<?xml version="1.0" ?>
+<weapon>
+	<!-- full name -->
+	<name>Concussion Missile</name>
+	<!-- ammo -->
+	<ammo>100</ammo>
+</weapon>
