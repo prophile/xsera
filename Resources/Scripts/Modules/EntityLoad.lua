@@ -49,8 +49,9 @@ function NewBullet (bulletType)
 	return bulletObject
 end
 
-function NewWeapon (weaponType)
-	local rawData = xml.load("Config/Weapons/" .. weaponType .. ".xml")
+function NewWeapon (weaponClass, weaponType)
+--WEAPONS CLASS CAN BE USED TO SEPARATE INDIVIDUALITIES BETWEEN DIFFERENT CLASSES!! OH WOWOWOW!
+	local rawData = xml.load("Config/Weapons/" .. weaponClass .. "/" .. weaponType .. ".xml")
 	local weaponData = rawData[1]
 	local trueData = {}
 	for k, v in ipairs(weaponData) do
@@ -60,7 +61,15 @@ function NewWeapon (weaponType)
 	end
 	local weaponObject = { size = {} }
 	weaponObject.name = trueData.name
-	weaponObject.ammo = tonumber(trueData.ammo)
+	if weaponClass == "Beam" then
+		weaponObject.ammo = tonumber(trueData.ammo)
+	elseif weaponClass == "Special" then
+		weaponObject.energy = tonumber(trueData.energy)
+	elseif weaponClass == "Pulse" then
+		weaponObject.energy = tonumber(trueData.energy)
+	else
+		print("Unknown weapon class. See EntityLoad.lua, function NewWeapon")
+	end
 	return weaponObject
 end
 

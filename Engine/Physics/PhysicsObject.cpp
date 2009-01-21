@@ -19,8 +19,9 @@ const float fluidDragRho = 1.204; // this is the density of air at 20 degrees ce
 void Object::Update ( float timestep, float friction )
 {
     // step 1: apply resistive force
-    vec2 dragForce = -velocity.UnitVector() * fluidDragRho * velocity.ModulusSquared() * (2.0f * M_PI * collisionRadius) * friction;
-    force += dragForce;
+	vec2 dragForce = -velocity.UnitVector() * fluidDragRho * velocity.ModulusSquared() */* (2.0f * M_PI * collisionRadius) */ friction;
+	//ALASTAIR: what's this 2*pi*r stuff? It's what's causing the problem! Also, velocity.ModulusSquared() makes things very slow.
+//	force += dragForce;
     // step 2: update velocity from force
     velocity += (force * timestep);
     // step 3: update position from velocity

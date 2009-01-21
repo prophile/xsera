@@ -77,6 +77,7 @@ int PHYS_Update ( lua_State* L )
 {
 	float timestep = luaL_checknumber(L, 1);
 	Physics::Update(timestep);
+	//ALASTAIR: No second arg above (should be friction)? How does that work in C++?
 	return 0;
 }
 
@@ -276,6 +277,7 @@ int PHYS_Object_AngularImpulse ( lua_State* L )
 	return 0;
 }
 
+/*
 int PHYS_Object_Force ( lua_State* L )
 {
 	PHYS_Object* obj = (PHYS_Object*)luaL_checkudata(L, 1, "Apollo.PhysicsObject");
@@ -285,6 +287,18 @@ int PHYS_Object_Force ( lua_State* L )
 		return lua_error(L);
 	}
 	obj->pob->force += luaL_checkvec2(L, 2);
+	return 0;
+}*/
+
+int PHYS_Object_Force ( lua_State* L )
+{
+	PHYS_Object* obj = (PHYS_Object*)luaL_checkudata(L, 1, "Apollo.PhysicsObject");
+	if (obj->pob == NULL)
+	{
+		lua_pushliteral(L, "cannot access properties on destroyed physics object");
+		return lua_error(L);
+	}
+	obj->pob->force = luaL_checkvec2(L, 2);
 	return 0;
 }
 

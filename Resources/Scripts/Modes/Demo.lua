@@ -35,18 +35,8 @@ cMissile = nil
 pkBeam = nil
 bestExplosion = nil
 
-local warpStart = false
-local startTime = 0.0
-local startEngine = false
-local soundStarted = false
-local timeSinceStart = 0.0
+local warp = { warping = false, length = 0.5, start = { bool = false, time = 0.0, engine = false, sound = false }, endTime = 0.0, disengage = 2.0, speed = 2.0, soundNum = 0 }
 local soundLength = 0.5
-local soundNum = 0
-local warping = false
-local endWarp = 0.0
-local warpSlow = 2.0
-local warpSpeed = 2.0
-
 
 local arrowLength = 135
 local arrowVar = (3 * math.sqrt(3))
@@ -152,7 +142,9 @@ function init ()
     lastTime = mode_manager.time()
     physics.open(0.6)
     playerShip = NewShip("Ishiman/HeavyCruiser")
-		playerShip.special = NewWeapon("Special/cMissile")
+		playerShip.special = NewWeapon("Special", "cMissile")
+		playerShip.beam = NewWeapon("Beam", "pkBeam")
+		playerShip.energy = 50000
 	computerShip = NewShip("Gaitori/Carrier")
 	cMissile = NewBullet("WhiteYellowMissile")
 		cMissile.dest = { x = carrierLocation.x, y = carrierLocation.y }
@@ -162,7 +154,7 @@ function init ()
 		cMissile.fired = false
 		cMissile.start = 0
 	pkBeam = NewBullet("PKBeam")
-		pkBeam.width = 3 * cameraRatio
+		pkBeam.width = cameraRatio
 		pkBeam.fired = false
 		pkBeam.length = 30
 		pkBeam.location = { x, y }
@@ -176,44 +168,44 @@ function update ()
 	local newTime = mode_manager.time()
 	local dt = newTime - lastTime
 	lastTime = newTime
+--	print(1 / dt) -- fps counter! whoa...
 	
 --[[------------------
 	Warping Code
 ------------------]]-- it's a pair of lightsabers!
 
-	if endWarp ~= 0.0 then -- temporary code while I wait to be able to use deceleration...
-		if newTime - endWarp >= warpSlow then
-			endWarp = 0.0
+	if warp.endTime ~= 0.0 then -- temporary code while I wait to be able to use deceleration...
+		if newTime - warp.endTime >= warp.disengage then
+			warp.endTime = 0.0
 			sound.play("WarpOut")
 		end
 	end
 	
-	if warpStart == true then
-		if startEngine == false then -- once per warp init
-			startEngine = true
-			startTime = mode_manager.time()
+	if warp.start.bool== true then
+		if warp.start.engine == false then -- once per warp init
+			warp.start.engine = true
+			warp.start.time = mode_manager.time()
 		end
-		timeSinceStart = mode_manager.time() - startTime
-		if soundStarted == true then
-			if timeSinceStart - soundNum * soundLength >= soundLength then
-				soundStarted = false
+		if warp.start.isStarted == true then
+			if mode_manager.time() - warp.start.time - warp.soundNum * soundLength >= soundLength then
+				warp.start.isStarted = false
 			end
-		elseif soundStarted == false then
-			soundStarted = true
-			soundNum = soundNum + 1
-			if soundNum <= 4 then
-				sound.play("Warp" .. soundNum)
-			elseif soundNum == 5 then
+		elseif warp.start.isStarted == false then
+			warp.start.isStarted = true
+			warp.soundNum = warp.soundNum + 1
+			if warp.soundNum <= 4 then
+				sound.play("Warp" .. warp.soundNum)
+			elseif warp.soundNum == 5 then
 				sound.play("WarpIn")
-				warping = true
-				warpStart = false
+				warp.warping = true
+				warp.start.bool= false
 			end
 		end
 	end
 	
-	if warping == true then
-		local velocity = { x = warpSpeed * math.cos(playerShip.physicsObject.angle), y = warpSpeed * math.sin(playerShip.physicsObject.angle) }
-	--	playerShip.physicsObject:apply_force(force)
+	if warp.warping == true then
+		local velocity = { x = warp.speed * math.cos(playerShip.physicsObject.angle), y = warp.speed * math.sin(playerShip.physicsObject.angle) }
+		playerShip.physicsObject:apply_force(force)
 	end
 	
 --[[------------------
@@ -233,7 +225,7 @@ function update ()
         local angle = playerShip.physicsObject.angle
         local thrust = playerShip.thrust
         local force = { x = thrust * math.cos(angle), y = thrust * math.sin(angle) }
-	--	playerShip.physicsObject:apply_force(force)
+		playerShip.physicsObject:apply_force(force)
 	elseif keyControls.brake then
         -- apply a reverse force in the direction opposite the direction the ship is MOVING
         local velocityVector = playerShip.physicsObject.velocity
@@ -244,7 +236,7 @@ function update ()
 			local thrust = playerShip.reverseThrust
 			velocityVector.x = velocityVector.x * thrust
 			velocityVector.y = velocityVector.y * thrust
-		--	playerShip.physicsObject:apply_force(velocityVector)
+			playerShip.physicsObject:apply_force(velocityVector)
 		end
     end
 	
@@ -289,8 +281,11 @@ function update ()
 	
 	if pkBeam.firing == true then
 		if pkBeam.start / 1000 + pkBeam.cooldown / 1000 <= mode_manager.time() then
-			sound.play("ShotC")
-			drawShot = true
+			if playerShip.energy >= 10 then
+				playerShip.energy = playerShip.energy - 10
+				sound.play("ShotC")
+				drawShot = true
+			end
 		end
 	end
 	
@@ -300,7 +295,7 @@ end
 function render ()
 	local angle = playerShip.physicsObject.angle
     graphics.begin_frame()
-	graphics.set_camera(playerShip.physicsObject.position.x + shipAdjust - (camera.w / 2.0), playerShip.physicsObject.position.y - (camera.h / 2.0), playerShip.physicsObject.position.x + shipAdjust + (camera.w / 2.0), playerShip.physicsObject.position.y + (camera.h / 2.0))
+	graphics.set_camera(-playerShip.physicsObject.position.x + shipAdjust - (camera.w / 2.0), -playerShip.physicsObject.position.y - (camera.h / 2.0), -playerShip.physicsObject.position.x + shipAdjust + (camera.w / 2.0), -playerShip.physicsObject.position.y + (camera.h / 2.0))
 --	print(playerShip.physicsObject.position.x)
 --	print(playerShip.physicsObject.position.y)
 	graphics.draw_starfield()
@@ -377,7 +372,7 @@ function render ()
 		pkBeam.angle = playerShip.physicsObject.angle
 		pkBeam.location.x = playerShip.physicsObject.position.x + math.cos(pkBeam.angle) * pkBeam.length
 		pkBeam.location.y = playerShip.physicsObject.position.y + math.sin(pkBeam.angle) * pkBeam.length
-		graphics.draw_line(pkBeam.location.x, pkBeam.location.y, pkBeam.location.x + math.cos(angle) * (pkBeam.length / 2), pkBeam.location.y + math.sin(angle) * (pkBeam.length / 2), 2)
+		graphics.draw_line(pkBeam.location.x, pkBeam.location.y, pkBeam.location.x + math.cos(angle) * (pkBeam.length / 2), pkBeam.location.y + math.sin(angle) * (pkBeam.length / 2), pkBeam.width)
 		drawShot = false
 		pkBeam.fired = true
 	end
@@ -395,9 +390,9 @@ function render ()
 	Panels and Arrow
 ------------------]]--
 	
-	graphics.draw_line(math.cos(arrowAlpha + angle) * arrowDist, math.sin(arrowAlpha + angle) * arrowDist, math.cos(angle - arrowAlpha) * arrowDist, math.sin(angle - arrowAlpha) * arrowDist, 2)
-	graphics.draw_line(math.cos(angle - arrowAlpha) * arrowDist, math.sin(angle - arrowAlpha) * arrowDist, math.cos(angle) * (arrowLength + arrowVar), math.sin(angle) * (arrowLength + arrowVar), 2)
-	graphics.draw_line(math.cos(angle) * (arrowLength + arrowVar), math.sin(angle) * (arrowLength + arrowVar), math.cos(arrowAlpha + angle) * arrowDist, math.sin(arrowAlpha + angle) * arrowDist, 2)
+	graphics.draw_line(math.cos(arrowAlpha + angle) * arrowDist + playerShip.physicsObject.position.x, math.sin(arrowAlpha + angle) * arrowDist + playerShip.physicsObject.position.y, math.cos(angle - arrowAlpha) * arrowDist + playerShip.physicsObject.position.x, math.sin(angle - arrowAlpha) * arrowDist + playerShip.physicsObject.position.y, 1.5)
+	graphics.draw_line(math.cos(angle - arrowAlpha) * arrowDist + playerShip.physicsObject.position.x, math.sin(angle - arrowAlpha) * arrowDist + playerShip.physicsObject.position.y, math.cos(angle) * (arrowLength + arrowVar) + playerShip.physicsObject.position.x, math.sin(angle) * (arrowLength + arrowVar) + playerShip.physicsObject.position.y, 1.5)
+	graphics.draw_line(math.cos(angle) * (arrowLength + arrowVar) + playerShip.physicsObject.position.x, math.sin(angle) * (arrowLength + arrowVar) + playerShip.physicsObject.position.y, math.cos(arrowAlpha + angle) * arrowDist + playerShip.physicsObject.position.x, math.sin(arrowAlpha + angle) * arrowDist + playerShip.physicsObject.position.y, 1.5)
 	graphics.set_camera(-500, -500, 500, 500)
 	graphics.draw_image("Panels/SideLeft", -435, 0, 129, 1012)
     graphics.draw_image("Panels/SideRight", 487, -2, 27, 1020)
@@ -418,16 +413,15 @@ function keyup ( k )
     elseif k == "z" then
 		firebullet = false
     elseif k == "tab" then
-		warpStart = false
-		startTime = nil
-		startEngine = false
-		soundStarted = false
-		timeSinceStart = 0.0
+		warp.start.bool= false
+		warp.start.time = nil
+		warp.start.engine = false
+		warp.start.isStarted = false
 		soundLength = 0.25
-		soundNum = 0.0
-		if warping == true then
-			warping = false
-			endWarp = mode_manager.time()
+		warp.soundNum = 0.0
+		if warp.warping == true then
+			warp.warping = false
+			warp.endTime = mode_manager.time()
 		end
 	end
 end
@@ -458,10 +452,7 @@ function key ( k )
 			arrowLength = arrowLength / 2
 			arrowVar = arrowVar / 2
 			arrowDist = arrowDist / 2
-			pkBeam.width = 3 * cameraRatio
-			if pkBeam.width < 1 then
-				pkBeam.width = 1
-			end
+			pkBeam.width = cameraRatio
 		end
 	elseif k == "h" then
 		if cameraRatio ~= 1 / 16 then
@@ -478,10 +469,7 @@ function key ( k )
 			arrowLength = arrowLength * 2
 			arrowVar = arrowVar * 2
 			arrowDist = arrowDist * 2
-			pkBeam.width = 3 * cameraRatio
-			if pkBeam.width < 1 then
-				pkBeam.width = 1
-			end
+			pkBeam.width = cameraRatio
 		end
 	--[[ temporarily commented (currently unnecessary)
 	elseif k == "l" then
@@ -494,7 +482,7 @@ function key ( k )
 		playerShip.physicsObject.angle = 3 * math.pi / 2
 	--]]
 	elseif k == "tab" then
-		warpStart = true
+		warp.start.bool= true
 	elseif k == " " then
 		pkBeam.firing = true
 	elseif k == "p" then

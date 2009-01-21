@@ -1,0 +1,7 @@
+<?xml version="1.0" ?>
+<weapon>
+	<!-- full name -->
+	<name>P-K Beam</name>
+	<!-- energy usage -->
+	<energy>10</energy>
+</weapon>
