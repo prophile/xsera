@@ -19,6 +19,12 @@ function NewShip (shipType)
     shipObject.turningRate = tonumber(trueData.turnrate)
     shipObject.thrust = tonumber(trueData.thrust)
     shipObject.reverseThrust = tonumber(trueData.reverse)
+	if trueData.specialname ~= nil then
+		shipObject.special = NewWeapon("Special", trueData.specialname)
+	end
+	if trueData.beamname ~= nil then
+		shipObject.beam = NewWeapon("Beam", trueData.beamname)
+	end
     return shipObject
 end
 
@@ -50,7 +56,6 @@ function NewBullet (bulletType)
 end
 
 function NewWeapon (weaponClass, weaponType)
---WEAPONS CLASS CAN BE USED TO SEPARATE INDIVIDUALITIES BETWEEN DIFFERENT CLASSES!! OH WOWOWOW!
 	local rawData = xml.load("Config/Weapons/" .. weaponClass .. "/" .. weaponType .. ".xml")
 	local weaponData = rawData[1]
 	local trueData = {}
@@ -62,11 +67,11 @@ function NewWeapon (weaponClass, weaponType)
 	local weaponObject = { size = {} }
 	weaponObject.name = trueData.name
 	if weaponClass == "Beam" then
-		weaponObject.ammo = tonumber(trueData.ammo)
-	elseif weaponClass == "Special" then
 		weaponObject.energy = tonumber(trueData.energy)
 	elseif weaponClass == "Pulse" then
 		weaponObject.energy = tonumber(trueData.energy)
+	elseif weaponClass == "Special" then
+		weaponObject.ammo = tonumber(trueData.ammo)
 	else
 		print("Unknown weapon class. See EntityLoad.lua, function NewWeapon")
 	end

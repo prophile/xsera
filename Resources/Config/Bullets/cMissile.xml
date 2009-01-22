@@ -3,7 +3,7 @@
 	<!-- full name -->
 	<name>Concussion Missile</name>
 	<!-- sprite name -->
-	<sprite>Weapons/WhiteYellowMissile</sprite>
+	<sprite>Weapons/cMissile</sprite>
 	<!-- mass, in kg -->
 	<mass>500</mass>
 	<!-- turning rate, in radians/second -->

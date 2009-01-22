@@ -142,14 +142,12 @@ function init ()
     lastTime = mode_manager.time()
     physics.open(0.6)
     playerShip = NewShip("Ishiman/HeavyCruiser")
-		playerShip.special = NewWeapon("Special", "cMissile")
-		playerShip.beam = NewWeapon("Beam", "pkBeam")
 		playerShip.energy = 50000
 	computerShip = NewShip("Gaitori/Carrier")
-	cMissile = NewBullet("WhiteYellowMissile")
+	cMissile = NewBullet("cMissile")
 		cMissile.dest = { x = carrierLocation.x, y = carrierLocation.y }
 		cMissile.size = { x, y }
-		cMissile.size.x, cMissile.size.y = graphics.sprite_dimensions("Weapons/WhiteYellowMissile")
+		cMissile.size.x, cMissile.size.y = graphics.sprite_dimensions("Weapons/cMissile")
 		cMissile.isSeeking = true
 		cMissile.fired = false
 		cMissile.start = 0
@@ -383,7 +381,7 @@ function render ()
 	
 	if cMissile.fired == true then
 		local bulletLocation = cMissile.physicsObject.position
-		graphics.draw_sprite("Weapons/WhiteYellowMissile", bulletLocation.x, bulletLocation.y, cMissile.size.x, cMissile.size.y, cMissile.physicsObject.angle)
+		graphics.draw_sprite("Weapons/cMissile", bulletLocation.x, bulletLocation.y, cMissile.size.x, cMissile.size.y, cMissile.physicsObject.angle)
 	end
 	
 --[[------------------

@@ -12,4 +12,8 @@
 	<thrust>1000</thrust> 
 	<!-- reverse thrust, in newtons -->
 	<reverse>500</reverse>
+	<!-- special weapon -->
+	<specialname>cMissile</specialname>
+	<!-- beam weapon -->
+	<beamname>pkBeam</beamname>
 </ship>
