@@ -80,7 +80,7 @@ int PHYS_Update ( lua_State* L )
 	//ALASTAIR: No second arg above (should be friction)? How does that work in C++?
 	return 0;
 }
-
+	
 struct PHYS_Object
 {
 	Physics::Object* pob;

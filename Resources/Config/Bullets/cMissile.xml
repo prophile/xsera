@@ -7,7 +7,7 @@
 	<!-- mass, in kg -->
 	<mass>500</mass>
 	<!-- turning rate, in radians/second -->
-	<turnrate>0.5</turnrate>
+	<turnrate>0.2</turnrate>
 	<!-- thrust, in newtons -->
 	<thrust>1000</thrust> 
 	<!-- life, in miliseconds -->

@@ -14,6 +14,11 @@ void Object::ApplyAngularImpulse ( float impulse )
     angularVelocity += (impulse / mass);
 }
 
+void Object::SetVelocity ( vec2 velocityNew )
+{
+	velocity = velocityNew;
+}
+
 const float fluidDragRho = 1.204; // this is the density of air at 20 degrees celsius
 
 void Object::Update ( float timestep, float friction )

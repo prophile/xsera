@@ -27,6 +27,8 @@ carrierRotation = math.pi / 2
 carrierExploded = false
 firebullet = false
 drawShot = false
+showVelocity = false
+showAngles = false
 --/tempvars
 
 
@@ -35,7 +37,7 @@ cMissile = nil
 pkBeam = nil
 bestExplosion = nil
 
-local warp = { warping = false, length = 0.5, start = { bool = false, time = 0.0, engine = false, sound = false }, endTime = 0.0, disengage = 2.0, speed = 2.0, soundNum = 0 }
+local warp = { warping = false, length = 0.5, start = { bool = false, time = 0.0, engine = false, sound = false }, endTime = 0.0, disengage = 2.0, soundNum = 0 }
 local soundLength = 0.5
 
 local arrowLength = 135
@@ -59,8 +61,9 @@ function fire_bullet()
 		sound.play("RocketLaunchr")
 		-- temp sound file, should be "RocketLaunch" but for some reason, that file gets errors (file included for troubleshooting)
 		cMissile.isSeeking = should_seek()
-	--	cMissile.physicsObject.location = playerShip.physicsObject.location
-	--	cMissile.physicsObject.angle = playerShip.physicsObject.angle
+		cMissile.location = { x, y }
+		cMissile.physicsObject.position = playerShip.physicsObject.position
+		cMissile.physicsObject.angle = playerShip.physicsObject.angle
 	end
 end
 
@@ -122,9 +125,9 @@ function guide_bullet()
 		
 		if math.abs(cMissile.delta) > cMissile.turningRate then
 			if cMissile.delta > cMissile.turningRrate then
-				cMissile.delta = -cMissile.turningRate
+				cMissile.delta = -cMissile.turningRate / dt
 			else
-				cMissile.delta = cMissile.turningRate
+				cMissile.delta = cMissile.turningRate / dt
 			end
 		end
 	else
@@ -151,6 +154,7 @@ function init ()
 		cMissile.isSeeking = true
 		cMissile.fired = false
 		cMissile.start = 0
+		cMissile.force = { x, y }
 	pkBeam = NewBullet("PKBeam")
 		pkBeam.width = cameraRatio
 		pkBeam.fired = false
@@ -164,9 +168,9 @@ end
 function update ()
 	--DEMOFINAL: put each section into its own function in THIS file, if possible
 	local newTime = mode_manager.time()
-	local dt = newTime - lastTime
+	dt = newTime - lastTime
 	lastTime = newTime
---	print(1 / dt) -- fps counter! whoa...
+--	print(1 / dt) -- fps counter! whoa... o.0
 	
 --[[------------------
 	Warping Code
@@ -202,7 +206,7 @@ function update ()
 	end
 	
 	if warp.warping == true then
-		local velocity = { x = warp.speed * math.cos(playerShip.physicsObject.angle), y = warp.speed * math.sin(playerShip.physicsObject.angle) }
+		local force = { x = playerShip.warpThrust * math.cos(playerShip.physicsObject.angle), y = playerShip.warpThrust * math.sin(playerShip.physicsObject.angle) }
 		playerShip.physicsObject:apply_force(force)
 	end
 	
@@ -226,17 +230,28 @@ function update ()
 		playerShip.physicsObject:apply_force(force)
 	elseif keyControls.brake then
         -- apply a reverse force in the direction opposite the direction the ship is MOVING
-        local velocityVector = playerShip.physicsObject.velocity
-		if velocityVector.x ~= 0 or velocityVector.y ~= 0 then
-			local velocityMag = hypot(velocityVector.x, velocityVector.y)
-			velocityVector.x = -velocityVector.x / velocityMag
-			velocityVector.y = -velocityVector.y / velocityMag
-			local thrust = playerShip.reverseThrust
-			velocityVector.x = velocityVector.x * thrust
-			velocityVector.y = velocityVector.y * thrust
-			playerShip.physicsObject:apply_force(velocityVector)
+        local force = playerShip.physicsObject.velocity
+		if force.x ~= 0 or force.y ~= 0 then
+			if hypot(playerShip.physicsObject.velocity.x, playerShip.physicsObject.velocity.y) <= 1 then
+				playerShip.physicsObject.velocity.x = 0
+				playerShip.physicsObject.velocity.y = 0
+				-- the above does not work
+				print("!!!!!!!!!!!!!!!!!!!!!!!!!!")
+			else
+				local velocityMag = hypot(force.x, force.y)
+				force.x = -force.x / velocityMag
+				force.y = -force.y / velocityMag
+				local thrust = playerShip.reverseThrust
+				force.x = force.x * thrust
+				force.y = force.y * thrust
+				playerShip.physicsObject:apply_force(force)
+			end
 		end
     end
+	if showVelocity == true then
+		print(playerShip.physicsObject.velocity.x)
+		print(playerShip.physicsObject.velocity.y)
+	end
 	
 --[[------------------
 	C-Missile Firing
@@ -250,19 +265,21 @@ function update ()
 		end
 		--]]	
 		cMissile.theta = find_angle(cMissile.physicsObject.position, cMissile.dest)
-	--	print(cMissile.physicsObject.angle)
-	--	print(cMissile.delta)
-	--	print(cMissile.theta)
-	--	print("________________")
-		
+		if showAngles == true then
+			print(cMissile.physicsObject.angle)
+			print(cMissile.delta)
+			print(cMissile.theta)
+			print("________________")
+		end
 		if cMissile.physicsObject.angle ~= cMissile.theta then
 			guide_bullet()
 			cMissile.theta = cMissile.theta + cMissile.delta
 		end
 		
-	--	cMissile.force.x = math.cos(cMissile.theta) * cMissile.thrust
-	--	cMissile.force.y = math.sin(cMissile.theta) * cMissile.thrust
-	--	playerShip.physicsObject:apply_force(cMissile.force)
+		cMissile.force.x = math.cos(cMissile.physicsObject.angle) * cMissile.thrust
+		cMissile.force.y = math.sin(cMissile.physicsObject.angle) * cMissile.thrust
+		cMissile.physicsObject.angle = cMissile.theta
+		cMissile.physicsObject:apply_force(cMissile.force)
 	end
 	
 	if firebullet == true then
@@ -380,8 +397,7 @@ function render ()
 ------------------]]--
 	
 	if cMissile.fired == true then
-		local bulletLocation = cMissile.physicsObject.position
-		graphics.draw_sprite("Weapons/cMissile", bulletLocation.x, bulletLocation.y, cMissile.size.x, cMissile.size.y, cMissile.physicsObject.angle)
+		graphics.draw_sprite("Weapons/cMissile", cMissile.physicsObject.position.x, cMissile.physicsObject.position.y, cMissile.size.x, cMissile.size.y, cMissile.physicsObject.angle)
 	end
 	
 --[[------------------
@@ -435,6 +451,10 @@ function key ( k )
         keyControls.right = true
 	elseif k == "z" then
 		firebullet = true
+	elseif k == "r" then
+		showVelocity = true
+	elseif k == "t" then
+		showVelocity = false
 	elseif k == "y" then
 		if cameraRatio ~= 2 then
 			cameraRatio = cameraRatio * 2

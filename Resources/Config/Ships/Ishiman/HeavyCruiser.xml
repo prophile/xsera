@@ -5,13 +5,15 @@
 	<!-- sprite name -->
 	<sprite>Ishiman/HeavyCruiser</sprite>
 	<!-- mass, in kg -->
-	<mass>1000000000000</mass>
+	<mass>10000</mass>
 	<!-- turning rate, in radians/second -->
 	<turnrate>4</turnrate>
 	<!-- thrust, in newtons -->
-	<thrust>1000</thrust> 
+	<thrust>500</thrust> 
+	<!-- warping thrust, in newtons -->
+	<warp>1000</warp> 
 	<!-- reverse thrust, in newtons -->
-	<reverse>500</reverse>
+	<reverse>1000</reverse>
 	<!-- special weapon -->
 	<specialname>cMissile</specialname>
 	<!-- beam weapon -->

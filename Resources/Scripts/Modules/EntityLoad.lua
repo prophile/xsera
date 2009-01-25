@@ -18,6 +18,7 @@ function NewShip (shipType)
     shipObject.name = trueData.name
     shipObject.turningRate = tonumber(trueData.turnrate)
     shipObject.thrust = tonumber(trueData.thrust)
+    shipObject.warpThrust = tonumber(trueData.warp)
     shipObject.reverseThrust = tonumber(trueData.reverse)
 	if trueData.specialname ~= nil then
 		shipObject.special = NewWeapon("Special", trueData.specialname)

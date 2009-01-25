@@ -21,6 +21,7 @@ public:
     
     void ApplyImpulse ( vec2 impulse );
     void ApplyAngularImpulse ( float impulse );
+	void SetVelocity ( vec2 velocityNew );
     void Update ( float timestep, float friction );
 };
 
