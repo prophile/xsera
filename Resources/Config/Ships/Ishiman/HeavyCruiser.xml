@@ -10,8 +10,10 @@
 	<turnrate>4</turnrate>
 	<!-- thrust, in newtons -->
 	<thrust>500</thrust> 
-	<!-- warping thrust, in newtons -->
+	<!-- warping speed -->
 	<warp>1000</warp> 
+	<!-- maximum speed -->
+	<maxspeed>500</maxspeed> 
 	<!-- reverse thrust, in newtons -->
 	<reverse>1000</reverse>
 	<!-- special weapon -->

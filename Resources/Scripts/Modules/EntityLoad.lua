@@ -18,13 +18,20 @@ function NewShip (shipType)
     shipObject.name = trueData.name
     shipObject.turningRate = tonumber(trueData.turnrate)
     shipObject.thrust = tonumber(trueData.thrust)
-    shipObject.warpThrust = tonumber(trueData.warp)
+    shipObject.warpSpeed = tonumber(trueData.warp)
+    shipObject.maxSpeed = tonumber(trueData.maxspeed)
     shipObject.reverseThrust = tonumber(trueData.reverse)
-	if trueData.specialname ~= nil then
-		shipObject.special = NewWeapon("Special", trueData.specialname)
-	end
+    shipObject.beamName = trueData.beamname
+    shipObject.pulseName = trueData.pulsename
+    shipObject.specialName = trueData.specialname
 	if trueData.beamname ~= nil then
 		shipObject.beam = NewWeapon("Beam", trueData.beamname)
+	end
+	if trueData.pulsename ~= nil then
+		shipObject.pulse = NewWeapon("Pulse", trueData.pulsename)
+	end
+	if trueData.specialname ~= nil then
+		shipObject.special = NewWeapon("Special", trueData.specialname)
 	end
     return shipObject
 end

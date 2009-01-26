@@ -26,6 +26,7 @@ carrierLocation = { x = 2200, y = 2700 }
 carrierRotation = math.pi / 2
 carrierExploded = false
 firebullet = false
+firepulse = false
 drawShot = false
 showVelocity = false
 showAngles = false
@@ -37,7 +38,7 @@ cMissile = nil
 pkBeam = nil
 bestExplosion = nil
 
-local warp = { warping = false, length = 0.5, start = { bool = false, time = 0.0, engine = false, sound = false }, endTime = 0.0, disengage = 2.0, soundNum = 0 }
+local warp = { warping = false, length = 0.5, start = { bool = false, time = 0.0, engine = false, sound = false }, endTime = 0.0, disengage = 2.0, finished = true, soundNum = 0 }
 local soundLength = 0.5
 
 local arrowLength = 135
@@ -170,7 +171,7 @@ function update ()
 	local newTime = mode_manager.time()
 	dt = newTime - lastTime
 	lastTime = newTime
---	print(1 / dt) -- fps counter! whoa... o.0
+--	print(1 / dt) -- fps counter! whoa... o.O
 	
 --[[------------------
 	Warping Code
@@ -180,10 +181,11 @@ function update ()
 		if newTime - warp.endTime >= warp.disengage then
 			warp.endTime = 0.0
 			sound.play("WarpOut")
+			warp.finished = true
 		end
 	end
 	
-	if warp.start.bool== true then
+	if warp.start.bool == true then
 		if warp.start.engine == false then -- once per warp init
 			warp.start.engine = true
 			warp.start.time = mode_manager.time()
@@ -200,14 +202,20 @@ function update ()
 			elseif warp.soundNum == 5 then
 				sound.play("WarpIn")
 				warp.warping = true
-				warp.start.bool= false
+				warp.finished = false
+				warp.start.bool = false
 			end
 		end
 	end
 	
-	if warp.warping == true then
-		local force = { x = playerShip.warpThrust * math.cos(playerShip.physicsObject.angle), y = playerShip.warpThrust * math.sin(playerShip.physicsObject.angle) }
-		playerShip.physicsObject:apply_force(force)
+	if warp.finished == false then
+		playerShip.physicsObject.velocity = { x = playerShip.warpSpeed * math.cos(playerShip.physicsObject.angle), y = playerShip.warpSpeed * math.sin(playerShip.physicsObject.angle) }
+	else	
+		if hypot (playerShip.physicsObject.velocity.x, playerShip.physicsObject.velocity.y) > playerShip.maxSpeed then
+			local xNorm = normalize(playerShip.physicsObject.velocity.x, playerShip.physicsObject.velocity.y)
+			local yNorm = normalize(playerShip.physicsObject.velocity.y, playerShip.physicsObject.velocity.x)
+			playerShip.physicsObject.velocity = { x = playerShip.maxSpeed * xNorm, y = playerShip.maxSpeed * yNorm }
+		end
 	end
 	
 --[[------------------
@@ -233,10 +241,7 @@ function update ()
         local force = playerShip.physicsObject.velocity
 		if force.x ~= 0 or force.y ~= 0 then
 			if hypot(playerShip.physicsObject.velocity.x, playerShip.physicsObject.velocity.y) <= 1 then
-				playerShip.physicsObject.velocity.x = 0
-				playerShip.physicsObject.velocity.y = 0
-				-- the above does not work
-				print("!!!!!!!!!!!!!!!!!!!!!!!!!!")
+				playerShip.physicsObject.velocity = { x = 0, y = 0 }
 			else
 				local velocityMag = hypot(force.x, force.y)
 				force.x = -force.x / velocityMag
@@ -424,10 +429,12 @@ function keyup ( k )
         keyControls.right = false
     elseif k == " " then
         pkBeam.firing = false
+	elseif k == "x" then
+		firepulse = false
     elseif k == "z" then
 		firebullet = false
     elseif k == "tab" then
-		warp.start.bool= false
+		warp.start.bool = false
 		warp.start.time = nil
 		warp.start.engine = false
 		warp.start.isStarted = false
@@ -449,8 +456,6 @@ function key ( k )
         keyControls.left = true
     elseif k == "d" then
         keyControls.right = true
-	elseif k == "z" then
-		firebullet = true
 	elseif k == "r" then
 		showVelocity = true
 	elseif k == "t" then
@@ -500,9 +505,19 @@ function key ( k )
 		playerShip.physicsObject.angle = 3 * math.pi / 2
 	--]]
 	elseif k == "tab" then
-		warp.start.bool= true
+		warp.start.bool = true
 	elseif k == " " then
-		pkBeam.firing = true
+		if playerShip.beamName ~= nil then
+			pkBeam.firing = true
+		end
+	elseif k == "x" then
+		if playerShip.pulseName ~= nil then
+			firepulse = true
+		end
+	elseif k == "z" then
+		if playerShip.specialName ~= nil then
+			firebullet = true
+		end
 	elseif k == "p" then
 		computerShip.life = 0
 	elseif k == "escape" then

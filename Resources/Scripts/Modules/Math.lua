@@ -123,3 +123,7 @@ function radian_range(angle)
 	end
 	return angle
 end
+
+function normalize(componentA, componentB)
+	return componentA / hypot(componentA, componentB)
+end
