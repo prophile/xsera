@@ -240,7 +240,7 @@ function update ()
         -- apply a reverse force in the direction opposite the direction the ship is MOVING
         local force = playerShip.physicsObject.velocity
 		if force.x ~= 0 or force.y ~= 0 then
-			if hypot(playerShip.physicsObject.velocity.x, playerShip.physicsObject.velocity.y) <= 1 then
+			if hypot(playerShip.physicsObject.velocity.x, playerShip.physicsObject.velocity.y) <= 5 then
 				playerShip.physicsObject.velocity = { x = 0, y = 0 }
 			else
 				local velocityMag = hypot(force.x, force.y)
@@ -253,6 +253,7 @@ function update ()
 			end
 		end
     end
+	
 	if showVelocity == true then
 		print(playerShip.physicsObject.velocity.x)
 		print(playerShip.physicsObject.velocity.y)
