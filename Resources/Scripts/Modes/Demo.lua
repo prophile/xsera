@@ -182,6 +182,11 @@ function update ()
 			warp.endTime = 0.0
 			sound.play("WarpOut")
 			warp.finished = true
+			if hypot (playerShip.physicsObject.velocity.x, playerShip.physicsObject.velocity.y) > playerShip.maxSpeed then
+				local xNorm = normalize(playerShip.physicsObject.velocity.x, playerShip.physicsObject.velocity.y)
+				local yNorm = normalize(playerShip.physicsObject.velocity.y, playerShip.physicsObject.velocity.x)
+				playerShip.physicsObject.velocity = { x = playerShip.maxSpeed * xNorm, y = playerShip.maxSpeed * yNorm }
+			end
 		end
 	end
 	
