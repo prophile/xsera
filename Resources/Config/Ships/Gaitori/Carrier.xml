@@ -5,7 +5,7 @@
 	<!-- sprite name -->
 	<sprite>Gaitori/Carrier</sprite>
 	<!-- mass, in kg -->
-	<mass>1000000000000</mass>
+	<mass>100000</mass>
 	<!-- turning rate, in radians/second -->
 	<turnrate>3.2</turnrate>
 	<!-- thrust, in newtons -->

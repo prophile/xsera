@@ -12,7 +12,6 @@ function NewShip (shipType)
     local shipObject = {size = {}}
     shipObject.image = trueData.sprite
     shipObject.size.x, shipObject.size.y = graphics.sprite_dimensions(shipObject.image)
-    local mass = trueData.mass
     shipObject.physicsObject = physics.new_object(tonumber(trueData.mass))
     shipObject.physicsObject.collision_radius = hypot(shipObject.size.x, shipObject.size.y)
     shipObject.name = trueData.name

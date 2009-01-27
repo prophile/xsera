@@ -11,9 +11,9 @@
 	<!-- thrust, in newtons -->
 	<thrust>500</thrust> 
 	<!-- warping speed -->
-	<warp>1000</warp> 
+	<warp>1400</warp> 
 	<!-- maximum speed -->
-	<maxspeed>500</maxspeed> 
+	<maxspeed>450</maxspeed> 
 	<!-- reverse thrust, in newtons -->
 	<reverse>1000</reverse>
 	<!-- special weapon -->
