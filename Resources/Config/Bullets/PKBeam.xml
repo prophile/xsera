@@ -3,11 +3,11 @@
 	<!-- full name -->
 	<name>PKBeam</name>
 	<!-- mass, in kg -->
-	<mass>0</mass>
+	<mass>100</mass>
 	<!-- turning rate, in radians/second -->
 	<turnrate>0</turnrate>
 	<!-- thrust, in newtons -->
-	<thrust>0</thrust>
+	<thrust>150</thrust>
 	<!-- life, in miliseconds -->
 	<life>175</life>
 	<!-- damage dealt -->

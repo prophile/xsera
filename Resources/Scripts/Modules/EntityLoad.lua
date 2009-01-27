@@ -17,7 +17,12 @@ function NewShip (shipType)
     shipObject.name = trueData.name
     shipObject.turningRate = tonumber(trueData.turnrate)
     shipObject.thrust = tonumber(trueData.thrust)
-    shipObject.warpSpeed = tonumber(trueData.warp)
+	if trueData.warp ~= nil then
+		shipObject.warpSpeed = tonumber(trueData.warp)
+		shipObject.canWarp = true
+	else
+		shipObject.canWarp = false
+	end
     shipObject.maxSpeed = tonumber(trueData.maxspeed)
     shipObject.reverseThrust = tonumber(trueData.reverse)
     shipObject.beamName = trueData.beamname
@@ -46,12 +51,11 @@ function NewBullet (bulletType)
 	end
 	local bulletObject = { size = {} }
 	bulletObject.image = trueData.sprite
+	bulletObject.physicsObject = physics.new_object(tonumber(trueData.mass))
 	if bulletObject.image ~= nil then
 		bulletObject.size.x, bulletObject.size.y = graphics.sprite_dimensions(bulletObject.image)
-		bulletObject.physicsObject = physics.new_object(tonumber(trueData.mass))
 		bulletObject.physicsObject.collision_radius = hypot(bulletObject.size.x, bulletObject.size.y)
 	end
-	local mass = trueData.mass
 	bulletObject.name = trueData.name
 	bulletObject.turningRate = tonumber(trueData.turnrate)
 	bulletObject.thrust = tonumber(trueData.thrust)

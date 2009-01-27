@@ -38,7 +38,6 @@ cMissile = nil
 pkBeam = nil
 bestExplosion = nil
 
-local warp = { warping = false, length = 0.5, start = { bool = false, time = 0.0, engine = false, sound = false }, endTime = 0.0, disengage = 2.0, finished = true, soundNum = 0 }
 local soundLength = 0.5
 
 local arrowLength = 135
@@ -147,6 +146,7 @@ function init ()
     physics.open(0.6)
     playerShip = NewShip("Ishiman/HeavyCruiser")
 		playerShip.energy = 50000
+		playerShip.warp = { warping = false, start = { bool = false, time = 0.0, engine = false, sound = false }, endTime = 0.0, disengage = 2.0, finished = true, soundNum = 0 }
 	computerShip = NewShip("Gaitori/Carrier")
 	cMissile = NewBullet("cMissile")
 		cMissile.dest = { x = carrierLocation.x, y = carrierLocation.y }
@@ -177,11 +177,11 @@ function update ()
 	Warping Code
 ------------------]]-- it's a pair of lightsabers!
 
-	if warp.endTime ~= 0.0 then -- temporary code while I wait to be able to use deceleration...
-		if newTime - warp.endTime >= warp.disengage then
-			warp.endTime = 0.0
+	if playerShip.warp.endTime ~= 0.0 then -- temporary code while I wait to be able to use deceleration...
+		if newTime - playerShip.warp.endTime >= playerShip.warp.disengage then
+			playerShip.warp.endTime = 0.0
 			sound.play("WarpOut")
-			warp.finished = true
+			playerShip.warp.finished = true
 			if hypot (playerShip.physicsObject.velocity.x, playerShip.physicsObject.velocity.y) > playerShip.maxSpeed then
 				local xNorm = normalize(playerShip.physicsObject.velocity.x, playerShip.physicsObject.velocity.y)
 				local yNorm = normalize(playerShip.physicsObject.velocity.y, playerShip.physicsObject.velocity.x)
@@ -190,30 +190,30 @@ function update ()
 		end
 	end
 	
-	if warp.start.bool == true then
-		if warp.start.engine == false then -- once per warp init
-			warp.start.engine = true
-			warp.start.time = mode_manager.time()
+	if playerShip.warp.start.bool == true then
+		if playerShip.warp.start.engine == false then -- once per warp init
+			playerShip.warp.start.engine = true
+			playerShip.warp.start.time = mode_manager.time()
 		end
-		if warp.start.isStarted == true then
-			if mode_manager.time() - warp.start.time - warp.soundNum * soundLength >= soundLength then
-				warp.start.isStarted = false
+		if playerShip.warp.start.isStarted == true then
+			if mode_manager.time() - playerShip.warp.start.time - playerShip.warp.soundNum * soundLength >= soundLength then
+				playerShip.warp.start.isStarted = false
 			end
-		elseif warp.start.isStarted == false then
-			warp.start.isStarted = true
-			warp.soundNum = warp.soundNum + 1
-			if warp.soundNum <= 4 then
-				sound.play("Warp" .. warp.soundNum)
-			elseif warp.soundNum == 5 then
+		elseif playerShip.warp.start.isStarted == false then
+			playerShip.warp.start.isStarted = true
+			playerShip.warp.soundNum = playerShip.warp.soundNum + 1
+			if playerShip.warp.soundNum <= 4 then
+				sound.play("Warp" .. playerShip.warp.soundNum)
+			elseif playerShip.warp.soundNum == 5 then
 				sound.play("WarpIn")
-				warp.warping = true
-				warp.finished = false
-				warp.start.bool = false
+				playerShip.warp.warping = true
+				playerShip.warp.finished = false
+				playerShip.warp.start.bool = false
 			end
 		end
 	end
 	
-	if warp.finished == false then
+	if playerShip.warp.finished == false then
 		playerShip.physicsObject.velocity = { x = playerShip.warpSpeed * math.cos(playerShip.physicsObject.angle), y = playerShip.warpSpeed * math.sin(playerShip.physicsObject.angle) }
 	else	
 		if hypot (playerShip.physicsObject.velocity.x, playerShip.physicsObject.velocity.y) > playerShip.maxSpeed then
@@ -440,15 +440,15 @@ function keyup ( k )
     elseif k == "z" then
 		firebullet = false
     elseif k == "tab" then
-		warp.start.bool = false
-		warp.start.time = nil
-		warp.start.engine = false
-		warp.start.isStarted = false
+		playerShip.warp.start.bool = false
+		playerShip.warp.start.time = nil
+		playerShip.warp.start.engine = false
+		playerShip.warp.start.isStarted = false
 		soundLength = 0.25
-		warp.soundNum = 0.0
-		if warp.warping == true then
-			warp.warping = false
-			warp.endTime = mode_manager.time()
+		playerShip.warp.soundNum = 0.0
+		if playerShip.warp.warping == true then
+			playerShip.warp.warping = false
+			playerShip.warp.endTime = mode_manager.time()
 		end
 	end
 end
@@ -511,7 +511,7 @@ function key ( k )
 		playerShip.physicsObject.angle = 3 * math.pi / 2
 	--]]
 	elseif k == "tab" then
-		warp.start.bool = true
+		playerShip.warp.start.bool = true
 	elseif k == " " then
 		if playerShip.beamName ~= nil then
 			pkBeam.firing = true
