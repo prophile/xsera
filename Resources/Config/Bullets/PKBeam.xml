@@ -1,17 +1,13 @@
 <?xml version="1.0"?>
 <sprite>
 	<!-- full name -->
-	<name>PKBeam</name>
-	<!-- mass, in kg -->
-	<mass>100</mass>
-	<!-- turning rate, in radians/second -->
-	<turnrate>0</turnrate>
-	<!-- thrust, in newtons -->
-	<thrust>150</thrust>
+	<name>Photokinetic Beam</name>
 	<!-- life, in miliseconds -->
 	<life>175</life>
 	<!-- damage dealt -->
 	<damage>50</damage>
 	<!-- cooldown time, in miliseconds -->
 	<cooldown>150</cooldown>
+	<!-- velocity -->
+	<velocity>1050</velocity>
 </sprite>

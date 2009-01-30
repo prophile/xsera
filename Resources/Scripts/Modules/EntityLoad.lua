@@ -40,7 +40,7 @@ function NewShip (shipType)
     return shipObject
 end
 
-function NewBullet (bulletType)
+function NewBullet (bulletType, ownerShip)
 	local rawData = xml.load("Config/Bullets/" .. bulletType .. ".xml")
 	local bulletData = rawData[1]
 	local trueData = {}
@@ -50,19 +50,35 @@ function NewBullet (bulletType)
 		end
 	end
 	local bulletObject = { size = {} }
-	bulletObject.image = trueData.sprite
+	if trueData.name == nil then
+		print("ERROR: Bullet " .. bulletType .. " does not have a name.")
+	end
+	bulletObject.name = trueData.name
+	if trueData.sprite ~= nil then
+		bulletObject.image = trueData.sprite
+	end
+	if trueData.mass == nil then
+		trueData.mass = 1
+	end
 	bulletObject.physicsObject = physics.new_object(tonumber(trueData.mass))
 	if bulletObject.image ~= nil then
 		bulletObject.size.x, bulletObject.size.y = graphics.sprite_dimensions(bulletObject.image)
 		bulletObject.physicsObject.collision_radius = hypot(bulletObject.size.x, bulletObject.size.y)
 	end
-	bulletObject.name = trueData.name
-	bulletObject.turningRate = tonumber(trueData.turnrate)
-	bulletObject.thrust = tonumber(trueData.thrust)
+	if trueData.velocity ~= nil then
+		bulletObject.velocity = { total = trueData.velocity, x, y }
+	end
+	if trueData.turnrate ~= nil then
+		bulletObject.turningRate = tonumber(trueData.turnrate)
+		bulletObject.max_seek_angle = tonumber(trueData.maxseekangle)
+	end
+	if trueData.thrust ~= nil then
+		bulletObject.thrust = tonumber(trueData.thrust)
+	end
+	-- ADAM: add all these ifs for other entity loading, where necessary
 	bulletObject.life = tonumber(trueData.life)
 	bulletObject.damage = tonumber(trueData.damage)
 	bulletObject.cooldown = tonumber(trueData.cooldown)
-	bulletObject.max_seek_angle = tonumber(trueData.maxseekangle)
 	return bulletObject
 end
 

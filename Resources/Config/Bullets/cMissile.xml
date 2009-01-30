@@ -5,11 +5,11 @@
 	<!-- sprite name -->
 	<sprite>Weapons/cMissile</sprite>
 	<!-- mass, in kg -->
-	<mass>500</mass>
+	<mass>5000</mass>
 	<!-- turning rate, in radians/second -->
-	<turnrate>0.2</turnrate>
+	<turnrate>0.0</turnrate>
 	<!-- thrust, in newtons -->
-	<thrust>1000</thrust> 
+	<thrust>100</thrust> 
 	<!-- life, in miliseconds -->
 	<life>1000</life>
 	<!-- damage dealt -->

@@ -2,8 +2,18 @@ function hypot(x, y)
     return math.sqrt(x * x + y * y)
 end
 
+function normalize(componentA, componentB)
+	return componentA / hypot(componentA, componentB)
+end
+
+--[[
 function find_angle(origin, dest)
-	return math.atan2(dest.y - origin.y, dest.x - origin.x)
+	return math.atan2(math.abs(dest.y - origin.y), math.abs(dest.x - origin.x))
+end
+--]]
+
+function find_angle(origin, dest)
+	return math.atan2((origin.y - dest.y), (origin.x - dest.x))
 end
 
 function find_quadrant(angle)
@@ -33,58 +43,8 @@ function find_quadrant(angle)
 	end
 end
 
--- man, this function is a heckofalot neater than find_quadrant_range()-and if necessary, I could fix it easy
-function find_quadrant_range2(angle, range)
-	return find_quadrant(angle - range / 2), find_quadrant(angle), find_quadrant(angle + range / 2)
-end
-
 function find_quadrant_range(angle, range)
-	if angle > math.pi then	-- QIII
-		if angle < (3 / 2 * math.pi) then
-			if (angle + range / 2) > math.pi then
-				if (angle - range / 2) < (3 / 2 * math.pi) then
-					return 3
-				else
-					return 2.5
-				end
-			else
-				return 3.5
-			end
-		else -- QIV
-			if (angle + range / 2) > (3 / 2 * math.pi) then
-				if (angle - range / 2) < 2 * math.pi then
-					return 4
-				else
-					return 3.5
-				end
-			else
-				return 0
-			end
-		end
-	else -- QI
-		if angle < (math.pi / 2) then
-			if (angle + range / 2) < math.pi / 2 then
-				if angle > range / 2 then
-					-- special exception - if the range is greater than the angle, then it's leaning over
-					return 1
-				else
-					return 0
-				end
-			else
-				return 1.5
-			end
-		else -- QII
-			if (angle + range / 2) < math.pi then
-				if (angle - range / 2) > math.pi / 2 then
-					return 2
-				else
-					return 1.5
-				end
-			else
-				return 2.5
-			end
-		end
-	end
+	return find_quadrant(angle - range / 2), find_quadrant(angle), find_quadrant(angle + range / 2)
 end
 
 function reference_angle(angle)
@@ -122,8 +82,4 @@ function radian_range(angle)
 		angle = angle - 2 * math.pi
 	end
 	return angle
-end
-
-function normalize(componentA, componentB)
-	return componentA / hypot(componentA, componentB)
 end
