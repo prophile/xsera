@@ -141,6 +141,30 @@ int PHYS_ObjectFromID ( lua_State* L )
 
 int PHYS_Collisions ( lua_State* L )
 {
+	PHYS_Object* obj = (PHYS_Object*)luaL_checkudata(L, 1, "Apollo.PhysicsObject");
+	if (obj->pob == NULL)
+	{
+		lua_pushliteral(L, "cannot access properties on destroyed physics object");
+		return lua_error(L);
+	}
+	int nargs = lua_gettop(L);
+	vec2 obj1 = luaL_checkvec2(L, 1);
+	vec2 obj2 = luaL_checkvec2(L, 2);
+	bool collide = false;
+	if (nargs == 3)
+	{
+		float radius = luaL_checkint(L, 3);
+		collide = obj->pob->Collision(obj1, obj2, radius);
+	} else if (nargs == 4) 
+	{
+		float radius1 = luaL_checknumber(L, 3);
+		float radius2 = luaL_checknumber(L, 4);
+		collide = obj->pob->Collision(obj1, obj2, radius1, radius2);
+	} else
+	{
+		return 999; //there's a problem
+	}
+	lua_pushboolean(L, collide);
 	return 0;
 }
 

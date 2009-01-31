@@ -29,7 +29,7 @@ firebullet = false
 firepulse = false
 firespecial = false
 showVelocity = false
-showAngles = true
+showAngles = false
 --/tempvars
 
 
@@ -276,6 +276,10 @@ function update ()
 			bullet_collision(cMissile, computerShip)
 		end
 		--]]
+		if physics.collisions(computerShip.physicsObject.position, cMissile.physicsObject.position, computerShip.physicsObject.collisionRadius) == true then
+			bullet_collision(cMissile, computerShip)
+			print("COLLISION!!!!")
+		end
 	--	cMissile.theta = find_angle(cMissile.physicsObject.position, cMissile.dest)
 		cMissile.theta = find_angle(cMissile.dest, cMissile.physicsObject.position)
 		-- this is incorrect! it does not give me the true angle value!!!
@@ -285,7 +289,7 @@ function update ()
 		if showAngles == true then
 			print(cMissile.physicsObject.angle)
 			print(cMissile.theta)
-			print("________________")
+			print("----------------")
 		end
 		
 		cMissile.physicsObject.angle = cMissile.physicsObject.angle + cMissile.delta

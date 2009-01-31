@@ -46,4 +46,28 @@ void Object::Update ( float timestep, float friction )
     force = vec2(0.0f, 0.0f);
 }
 
+/*
+obj1 is the ship or planet, while obj2 is the projectile (which has an insignificant radius)
+*/
+bool Object::Collision( vec2 obj1, vec2 obj2, float radius )
+{
+	if (sqrt( (obj1.x + obj2.x) * (obj1.x + obj2.x) + (obj1.y + obj2.y) * (obj1.y + obj2.y) ) <= radius)
+	{
+		return true;
+	}
+	return false;
+}
+
+/*
+obj1 and obj2 both have radii (ship to ship, ship to planet collisions)
+*/
+bool Object::Collision( vec2 obj1, vec2 obj2, float radius1, float radius2 )
+{
+	if (sqrt( (obj1.x + obj2.x) * (obj1.x + obj2.x) + (obj1.y + obj2.y) * (obj1.y + obj2.y) ) <= radius1 + radius2)
+	{
+		return true;
+	}
+	return false;
+}
+
 }

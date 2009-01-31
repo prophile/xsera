@@ -23,6 +23,8 @@ public:
     void ApplyAngularImpulse ( float impulse );
 	void SetVelocity ( vec2 velocityNew );
     void Update ( float timestep, float friction );
+	bool Collision( vec2 obj1, vec2 obj2, float radius );
+	bool Collision( vec2 obj1, vec2 obj2, float radius1, float radius2 );
 };
 
 }

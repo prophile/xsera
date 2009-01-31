@@ -11,11 +11,19 @@
 /**
  * A 2-dimensional vector
  */
+ 
+/* ADAM/ALASTAIR: FIX THIS WHEN POSSIBLE
 class vec2
 {
 private:
 	float x, y;
 public:
+*/
+class vec2
+{
+public:
+	float x, y;
+	// end of modified lines
     /**
      * Generic constructor
      */
