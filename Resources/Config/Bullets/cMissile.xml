@@ -9,9 +9,9 @@
 	<!-- turning rate, in radians/second -->
 	<turnrate>0.0</turnrate>
 	<!-- thrust, in newtons -->
-	<thrust>100</thrust> 
+	<thrust>1000</thrust> 
 	<!-- life, in miliseconds -->
-	<life>1000</life>
+	<life>1200</life>
 	<!-- damage dealt -->
 	<damage>50</damage>
 	<!-- cooldown time, in miliseconds -->

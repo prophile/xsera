@@ -276,13 +276,20 @@ function update ()
 			bullet_collision(cMissile, computerShip)
 		end
 		--]]
-		if physics.collisions(computerShip.physicsObject.position, cMissile.physicsObject.position, computerShip.physicsObject.collisionRadius) == true then
+		-- ADAM/ALASTAIR: Why doesn't this work?????
+		if physics.collisions(computerShip.physicsObject, cMissile.physicsObject, 1) == true then
 			bullet_collision(cMissile, computerShip)
+			print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
+			print("~~~~~~~~~~~~~~~~~~~~~~~~~")
+			print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
 			print("COLLISION!!!!")
+			print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
+			print("~~~~~~~~~~~~~~~~~~~~~~~~~")
+			print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
 		end
 	--	cMissile.theta = find_angle(cMissile.physicsObject.position, cMissile.dest)
 		cMissile.theta = find_angle(cMissile.dest, cMissile.physicsObject.position)
-		-- this is incorrect! it does not give me the true angle value!!!
+		-- ADAM: this is incorrect! it does not give me the true angle value!!!
 		if cMissile.physicsObject.angle ~= cMissile.theta then
 			guide_bullet()
 		end
