@@ -154,6 +154,7 @@ function init ()
 		playerShip.energy = 50000
 		playerShip.warp = { warping = false, start = { bool = false, time = 0.0, engine = false, sound = false }, endTime = 0.0, disengage = 2.0, finished = true, soundNum = 0 }
 	computerShip = NewShip("Gaitori/Carrier")
+		computerShip.physicsObject.position = carrierLocation
 	cMissile = NewBullet("cMissile", playerShip)
 		cMissile.dest = { x = carrierLocation.x, y = carrierLocation.y }
 		cMissile.size = { x, y }
@@ -277,8 +278,6 @@ function update ()
 		end
 		--]]
 		-- ADAM/ALASTAIR: Why doesn't this work?????
-		print(computerShip.physicsObject.position.x .. ", " .. computerShip.physicsObject.position.y)
-		print(cMissile.physicsObject.position.x .. ", " .. cMissile.physicsObject.position.y)
 		if physics.collisions(computerShip.physicsObject, cMissile.physicsObject, 1) == true then
 			bullet_collision(cMissile, computerShip)
 			print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")

@@ -51,7 +51,7 @@ obj1 is the ship or planet, while obj2 is the projectile (which has an insignifi
 */
 bool Object::Collision( vec2 obj1, vec2 obj2, float radius )
 {
-	if (sqrt( (obj1.x + obj2.x) * (obj1.x + obj2.x) + (obj1.y + obj2.y) * (obj1.y + obj2.y) ) <= radius)
+	if ( ( (obj1.x - obj2.x) * (obj1.x - obj2.x) + (obj1.y - obj2.y) * (obj1.y - obj2.y) ) <= radius * radius)
 	{
 		return true;
 	}
@@ -63,7 +63,7 @@ obj1 and obj2 both have radii (ship to ship, ship to planet collisions)
 */
 bool Object::Collision( vec2 obj1, vec2 obj2, float radius1, float radius2 )
 {
-	if (sqrt( (obj1.x + obj2.x) * (obj1.x + obj2.x) + (obj1.y + obj2.y) * (obj1.y + obj2.y) ) <= radius1 + radius2)
+	if ( ( (obj1.x - obj2.x) * (obj1.x - obj2.x) + (obj1.y - obj2.y) * (obj1.y - obj2.y) ) <= (radius1 + radius2) * (radius1 + radius2))
 	{
 		return true;
 	}
