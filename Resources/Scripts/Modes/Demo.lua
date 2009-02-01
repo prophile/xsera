@@ -277,6 +277,8 @@ function update ()
 		end
 		--]]
 		-- ADAM/ALASTAIR: Why doesn't this work?????
+		print(computerShip.physicsObject.position.x .. ", " .. computerShip.physicsObject.position.y)
+		print(cMissile.physicsObject.position.x .. ", " .. cMissile.physicsObject.position.y)
 		if physics.collisions(computerShip.physicsObject, cMissile.physicsObject, 1) == true then
 			bullet_collision(cMissile, computerShip)
 			print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
