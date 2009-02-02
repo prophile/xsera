@@ -31,6 +31,7 @@ firespecial = false
 showVelocity = false
 showAngles = true
 frame = 0
+printFPS = false
 --/tempvars
 
 
@@ -62,6 +63,9 @@ RIGHT NOW:
 This is flawed for two reasons:
 <<FIXED>> Bullet does not start with ship's velocity
 2. Velocity is not taken into account when testing for seeking
+how to take velocity into account:
+- greatest possible velocity is during warping
+- if you take the velocity of the ship during warping, multiply that by the life of the bullet, plus the max distance already calculated, you will find its upper limit
 --]]
 	if ship.special.ammo > 0 then
 		sound.play("RocketLaunchr")
@@ -249,15 +253,14 @@ function update ()
         -- apply a reverse force in the direction opposite the direction the ship is MOVING
         local force = playerShip.physicsObject.velocity
 		if force.x ~= 0 or force.y ~= 0 then
-			if hypot(playerShip.physicsObject.velocity.x, playerShip.physicsObject.velocity.y) <= 5 then
+			if hypot(playerShip.physicsObject.velocity.x, playerShip.physicsObject.velocity.y) <= 10 then
 				playerShip.physicsObject.velocity = { x = 0, y = 0 }
 			else
 				local velocityMag = hypot(force.x, force.y)
 				force.x = -force.x / velocityMag
 				force.y = -force.y / velocityMag
-				local thrust = playerShip.reverseThrust
-				force.x = force.x * thrust
-				force.y = force.y * thrust
+				force.x = force.x * playerShip.reverseThrust
+				force.y = force.y * playerShip.reverseThrust
 				playerShip.physicsObject:apply_force(force)
 			end
 		end
@@ -274,11 +277,6 @@ function update ()
 
 	if cMissile.fired == true then
 		local bulletLocation = playerShip.physicsObject.position
-		--[[ not yet implemented
-		for playerShip, cMissile in physics.collisions() do
-			bullet_collision(cMissile, computerShip)
-		end
-		--]]
 		if carrierExploded == false then
 			--	ADAM/ALASTAIR: Why doesn't this work?
 			--	for demo: leave as is, this hypot thing works
@@ -401,11 +399,11 @@ function render ()
 		if pkBeam.age >= pkBeam.life then
 			pkBeam.fired = false
 		end
-		--[[ not yet implemented
-		for pkBeam, playerShip in physics.collisions() do
-			bullet_collision(pkBeam, playerShip)
+		local x = computerShip.physicsObject.position.x - pkBeam.physicsObject.position.x
+		local y = computerShip.physicsObject.position.y - pkBeam.physicsObject.position.y
+		if hypot (x, y) <= computerShip.physicsObject.collision_radius then
+			bullet_collision(pkBeam, computerShip)
 		end
-		--]]
 		graphics.draw_line(pkBeam.physicsObject.position.x, pkBeam.physicsObject.position.y, pkBeam.physicsObject.position.x + math.cos(pkBeam.angle) * pkBeam.length, pkBeam.physicsObject.position.y + math.sin(pkBeam.angle) * pkBeam.length, pkBeam.width)
 	end
 	
