@@ -29,7 +29,8 @@ firebullet = false
 firepulse = false
 firespecial = false
 showVelocity = false
-showAngles = false
+showAngles = true
+frame = 0
 --/tempvars
 
 
@@ -143,7 +144,7 @@ end
 
 function bullet_collision(bulletObject, shipObject)
 	cMissile.fired = false
-	shipObject.health = shipObject.health - bulletObject.damage
+	shipObject.life = shipObject.life - bulletObject.damage
 end
 
 function init ()
@@ -163,6 +164,7 @@ function init ()
 		cMissile.fired = false
 		cMissile.start = 0
 		cMissile.force = { x, y }
+		cMissile.damage = 10
 	pkBeam = NewBullet("PKBeam", playerShip)
 		pkBeam.width = cameraRatio
 		pkBeam.fired = false
@@ -277,27 +279,24 @@ function update ()
 			bullet_collision(cMissile, computerShip)
 		end
 		--]]
-		-- ADAM/ALASTAIR: Why doesn't this work?????
-		if physics.collisions(computerShip.physicsObject, cMissile.physicsObject, 1) == true then
-			bullet_collision(cMissile, computerShip)
-			print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
-			print("~~~~~~~~~~~~~~~~~~~~~~~~~")
-			print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
-			print("COLLISION!!!!")
-			print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
-			print("~~~~~~~~~~~~~~~~~~~~~~~~~")
-			print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
-		end
-	--	cMissile.theta = find_angle(cMissile.physicsObject.position, cMissile.dest)
-		cMissile.theta = find_angle(cMissile.dest, cMissile.physicsObject.position)
-		-- ADAM: this is incorrect! it does not give me the true angle value!!!
-		if cMissile.physicsObject.angle ~= cMissile.theta then
-			guide_bullet()
-		end
-		if showAngles == true then
-			print(cMissile.physicsObject.angle)
-			print(cMissile.theta)
-			print("----------------")
+		if carrierExploded == false then
+			--	ADAM/ALASTAIR: Why doesn't this work?
+			--	for demo: leave as is, this hypot thing works
+		--	if physics.collisions(computerShip.physicsObject, cMissile.physicsObject, 1) == true then
+			local x = computerShip.physicsObject.position.x - cMissile.physicsObject.position.x
+			local y = computerShip.physicsObject.position.y - cMissile.physicsObject.position.y
+			if hypot (x, y) <= computerShip.physicsObject.collision_radius then
+				bullet_collision(cMissile, computerShip)
+			end
+			cMissile.theta = find_angle(cMissile.physicsObject.position, cMissile.dest)
+			if cMissile.physicsObject.angle ~= cMissile.theta then
+				guide_bullet()
+			end
+			if showAngles == true then
+				print(cMissile.physicsObject.angle)
+				print(cMissile.theta)
+				print("----------------")
+			end
 		end
 		
 		cMissile.physicsObject.angle = cMissile.physicsObject.angle + cMissile.delta

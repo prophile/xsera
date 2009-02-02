@@ -12,11 +12,14 @@ function NewShip (shipType)
     local shipObject = {size = {}}
     shipObject.image = trueData.sprite
     shipObject.size.x, shipObject.size.y = graphics.sprite_dimensions(shipObject.image)
+	shipObject.life = tonumber(trueData.life)
     shipObject.physicsObject = physics.new_object(tonumber(trueData.mass))
     shipObject.physicsObject.collision_radius = hypot(shipObject.size.x, shipObject.size.y)
     shipObject.name = trueData.name
     shipObject.turningRate = tonumber(trueData.turnrate)
-    shipObject.thrust = tonumber(trueData.thrust)
+	if trueData.thrust ~= nil then
+		shipObject.thrust = tonumber(trueData.thrust)
+	end
 	if trueData.warp ~= nil then
 		shipObject.warpSpeed = tonumber(trueData.warp)
 		shipObject.canWarp = true
@@ -75,7 +78,6 @@ function NewBullet (bulletType, ownerShip)
 	if trueData.thrust ~= nil then
 		bulletObject.thrust = tonumber(trueData.thrust)
 	end
-	-- ADAM: add all these ifs for other entity loading, where necessary
 	bulletObject.life = tonumber(trueData.life)
 	bulletObject.damage = tonumber(trueData.damage)
 	bulletObject.cooldown = tonumber(trueData.cooldown)
