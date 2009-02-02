@@ -124,18 +124,21 @@ how to take velocity into account:
 	end
 end
 
+--function guide_bullet(missile, target)
 function guide_bullet()
 	if cMissile.isSeeking == true then
-		local big_angle = bigger_angle(cMissile.physicsObject.angle, cMissile.physicsObject.angle)
-		local small_angle = smaller_angle(cMissile.physicsObject.angle, cMissile.physicsObject.angle)
-		if big_angle - small_angle > math.pi then -- need to go through 0
-			cMissile.delta = 2 * math.pi - big_angle + small_angle
+		local angle_sep = cMissile.physicsObject.angle - cMissile.theta
+		if math.abs(angle_sep) > math.pi then -- need to go through 0
+			if angle_sep > 0.0 then
+				cMissile.delta = 2 * math.pi - angle_sep
+			else
+				cMissile.delta = -2 * math.pi + angle_sep
+			end
 		else
-			cMissile.delta = big_angle - small_angle
+			cMissile.delta = angle_sep
 		end
-		
 		if math.abs(cMissile.delta) > cMissile.turningRate * dt then
-			if cMissile.delta > cMissile.turningRrate then
+			if cMissile.delta > cMissile.turningRate then
 				cMissile.delta = -cMissile.turningRate * dt
 			else
 				cMissile.delta = cMissile.turningRate * dt
@@ -161,6 +164,7 @@ function init ()
 	computerShip = NewShip("Gaitori/Carrier")
 		computerShip.physicsObject.position = carrierLocation
 	cMissile = NewBullet("cMissile", playerShip)
+		cMissile.delta = 0.0
 		cMissile.dest = { x = carrierLocation.x, y = carrierLocation.y }
 		cMissile.size = { x, y }
 		cMissile.size.x, cMissile.size.y = graphics.sprite_dimensions("Weapons/cMissile")
@@ -279,11 +283,11 @@ function update ()
 		local bulletLocation = playerShip.physicsObject.position
 		if carrierExploded == false then
 			--	ADAM/ALASTAIR: Why doesn't this work?
-			--	for demo: leave as is, this hypot thing works
+			--	for demo: leave as is, hypot works
 		--	if physics.collisions(computerShip.physicsObject, cMissile.physicsObject, 1) == true then
 			local x = computerShip.physicsObject.position.x - cMissile.physicsObject.position.x
 			local y = computerShip.physicsObject.position.y - cMissile.physicsObject.position.y
-			if hypot (x, y) <= computerShip.physicsObject.collision_radius then
+			if hypot (x, y) <= computerShip.physicsObject.collision_radius * 2 / 7 then
 				bullet_collision(cMissile, computerShip)
 			end
 			cMissile.theta = find_angle(cMissile.physicsObject.position, cMissile.dest)
@@ -373,7 +377,7 @@ function render ()
 	Ship Drawing
 ------------------]]--
 
-    if computerShip.life ~= 0 then
+    if computerShip.life > 0 then
 		graphics.draw_sprite("Gaitori/Carrier", carrierLocation.x, carrierLocation.y, computerShip.size.x, computerShip.size.y, carrierRotation)
     else
 		if carrierExploded == false then

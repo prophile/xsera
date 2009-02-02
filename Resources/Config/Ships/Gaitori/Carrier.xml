@@ -5,7 +5,7 @@
 	<!-- sprite name -->
 	<sprite>Gaitori/Carrier</sprite>
 	<!-- amount of health -->
-	<life>50</life>
+	<life>500</life>
 	<!-- mass, in kg -->
 	<mass>100000</mass>
 	<!-- turning rate, in radians/second -->

@@ -57,22 +57,6 @@ function reference_angle(angle)
 	return angle
 end
 
-function bigger_angle(angle1, angle2)
-	if angle1 > angle2 then
-		return angle1
-	else
-		return angle2
-	end
-end
-
-function smaller_angle(angle1, angle2)
-	if angle1 < angle2 then
-		return angle1
-	else
-		return angle2
-	end
-end
-
 function radian_range(angle)
 	if angle < 0 then
 		angle = 2 * math.pi - angle
