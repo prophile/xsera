@@ -3,3 +3,10 @@
 *.perspectivev3
 *.pbxuser
 build
+Xsera.sln
+Xsera.vcproj
+Xsera.vcb
+*.ico
+Xsera.rc
+Xsera.vcproj.ADBOOKWINDOWS.Adam Hintz.user
+Xsera.suo
