@@ -1,3 +1,7 @@
+#ifdef WIN32
+#include <stdafx.h>
+#endif
+
 #include "Preferences.h"
 #include "Utilities/ResourceManager.h"
 #include <map>

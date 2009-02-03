@@ -1,3 +1,7 @@
+#ifdef WIN32
+#include <stdafx.h>
+#endif
+
 #include "Starfield.h"
 #include <SDL_image/SDL_image.h>
 #include <string>

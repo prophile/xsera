@@ -1,3 +1,7 @@
+#ifdef WIN32
+#include <stdafx.h>
+#endif
+
 #include "Input.h"
 #include <SDL/SDL.h>
 #include <SDL/SDL_OpenGL.h>

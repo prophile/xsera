@@ -1,3 +1,7 @@
+#ifdef WIN32
+#include <stdafx.h>
+#endif
+
 #include <SDL/SDL.h>
 #include "Apollo.h"
 

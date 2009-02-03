@@ -1,3 +1,7 @@
+#ifdef WIN32
+#include <stdafx.h>
+#endif
+
 #include "SpriteSheet.h"
 #include "Utilities/ResourceManager.h"
 #include "TinyXML/tinyxml.h"

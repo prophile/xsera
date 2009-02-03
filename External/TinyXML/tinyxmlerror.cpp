@@ -22,6 +22,11 @@ must not be misrepresented as being the original software.
 distribution.
 */
 
+//the following three lines are not original to this file:
+#ifdef WIN32
+#include <stdafx.h>
+#endif
+
 #include "tinyxml.h"
 
 // The goal of the seperate error file is to make the first

@@ -1,3 +1,7 @@
+#ifdef WIN32
+#include <stdafx.h>
+#endif
+
 #include "MessageDecode.h"
 #include <string.h>
 

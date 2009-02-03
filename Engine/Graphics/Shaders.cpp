@@ -1,3 +1,7 @@
+#ifdef WIN32
+#include <stdafx.h>
+#endif
+
 #include "Shaders.h"
 #include <OpenGL/gl.h>
 #include "Utilities/ResourceManager.h"

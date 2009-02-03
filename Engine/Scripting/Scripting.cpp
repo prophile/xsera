@@ -1,3 +1,7 @@
+#ifdef WIN32
+#include <stdafx.h>
+#endif
+
 #include "Scripting.h"
 #include "ResourceManager.h"
 #include "Logging.h"

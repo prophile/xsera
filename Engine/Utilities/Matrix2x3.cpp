@@ -1,3 +1,7 @@
+#ifdef WIN32
+#include <stdafx.h>
+#endif
+
 #include "Matrix2x3.h"
 #include "Vec2.h"
 #include <math.h>

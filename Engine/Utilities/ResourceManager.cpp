@@ -1,3 +1,7 @@
+#ifdef WIN32
+#include <stdafx.h>
+#endif
+
 #include "ResourceManager.h"
 #include <string>
 #include <vector>

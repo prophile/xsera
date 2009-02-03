@@ -1,3 +1,7 @@
+#ifdef WIN32
+#include <stdafx.h>
+#endif
+
 #include "ModeManager.h"
 #include <SDL/SDL.h>
 #include "Logging.h"

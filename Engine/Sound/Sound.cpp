@@ -1,3 +1,7 @@
+#ifdef WIN32
+#include <stdafx.h>
+#endif
+
 #include "Sound.h"
 #include <SDL/SDL.h>
 #include <SDL_mixer/SDL_mixer.h>

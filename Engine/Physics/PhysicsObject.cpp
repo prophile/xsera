@@ -1,3 +1,7 @@
+#ifdef WIN32
+#include <stdafx.h>
+#endif
+
 #include "PhysicsObject.h"
 #include <math.h>
 
