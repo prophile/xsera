@@ -3,7 +3,12 @@
 
 #include <SDL/SDL.h>
 #include <SDL_image/SDL_image.h>
+#include <string>
+#ifdef WIN32
+#include <gl/gl.h>
+#else
 #include <OpenGL/gl.h>
+#endif
 #include <Utilities/Vec2.h>
 #include <string>
 

@@ -7,7 +7,12 @@
 #include <SDL/SDL.h>
 #include <map>
 #include <SDL_ttf/SDL_ttf.h>
+#include <string>
+#ifdef WIN32
+#include <gl/gl.h>
+#else
 #include <OpenGL/gl.h>
+#endif
 #include "Utilities/ResourceManager.h"
 #include "Utilities/GameTime.h"
 #include "Logging.h"

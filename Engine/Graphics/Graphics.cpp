@@ -3,7 +3,12 @@
 #endif
 
 #include "Graphics.h"
+#include <string>
+#ifdef WIN32
+#include <gl/gl.h>
+#else
 #include <OpenGL/gl.h>
+#endif
 #include <SDL/SDL.h>
 #include "SpriteSheet.h"
 #include "TextRenderer.h"
