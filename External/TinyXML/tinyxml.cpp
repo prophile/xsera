@@ -24,7 +24,7 @@ distribution.
 
 //the following three lines are not original to this file:
 #ifdef WIN32
-#include <stdafx.h>
+#include "stdafx.h"
 #endif
 
 #include <ctype.h>
