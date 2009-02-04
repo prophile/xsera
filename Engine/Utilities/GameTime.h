@@ -1,7 +1,11 @@
 #ifndef __apollo_utilities_gametime_h
 #define __apollo_utilities_gametime_h
 
+#ifdef WIN32
+#include "SDL.h"
+#else
 #include <SDL/SDL.h>
+#endif
 
 /**
  * Returns the number of seconds since the start of the application

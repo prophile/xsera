@@ -3,7 +3,11 @@
 #endif
 
 #include "Input.h"
+#ifdef WIN32
+#include "SDL.h"
+#else
 #include <SDL/SDL.h>
+#endif
 #include <SDL/SDL_OpenGL.h>
 #include <queue>
 

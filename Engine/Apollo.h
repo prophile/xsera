@@ -1,7 +1,11 @@
 #ifndef __apollo_h
 #define __apollo_h
 
+#ifdef WIN32
+#include "SDL.h"
+#else
 #include <SDL/SDL.h>
+#endif
 #include "Logging.h"
 #include "Utilities/Colour.h"
 #include "Utilities/Matrix2x3.h"

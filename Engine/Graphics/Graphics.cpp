@@ -9,7 +9,11 @@
 #else
 #include <OpenGL/gl.h>
 #endif
+#ifdef WIN32
+#include "SDL.h"
+#else
 #include <SDL/SDL.h>
+#endif
 #include "SpriteSheet.h"
 #include "TextRenderer.h"
 #include <map>

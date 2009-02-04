@@ -1,7 +1,11 @@
 #ifndef __apollo_graphics_spritesheet_h
 #define __apollo_graphics_spritesheet_h
 
+#ifdef WIN32
+#include "SDL.h"
+#else
 #include <SDL/SDL.h>
+#endif
 #include <SDL_image/SDL_image.h>
 #include <string>
 #ifdef WIN32

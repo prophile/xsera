@@ -4,7 +4,11 @@
 
 #include "TextRenderer.h"
 
+#ifdef WIN32
+#include "SDL.h"
+#else
 #include <SDL/SDL.h>
+#endif
 #include <map>
 #include <SDL_ttf/SDL_ttf.h>
 #include <string>

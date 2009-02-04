@@ -6,7 +6,11 @@
  * @brief A generic resource manager
  */
 
+#ifdef WIN32
+#include "SDL.h"
+#else
 #include <SDL/SDL.h>
+#endif
 #include <string>
 
 namespace ResourceManager

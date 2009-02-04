@@ -3,7 +3,11 @@
 #endif
 
 #include "Sound.h"
+#ifdef WIN32
+#include "SDL.h"
+#else
 #include <SDL/SDL.h>
+#endif
 #include <SDL_mixer/SDL_mixer.h>
 #include <map>
 #include <math.h>
