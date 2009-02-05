@@ -11,7 +11,6 @@
 #endif
 #include <map>
 #include <SDL_ttf/SDL_ttf.h>
-#include <string>
 #ifdef WIN32
 #include <gl/gl.h>
 #else

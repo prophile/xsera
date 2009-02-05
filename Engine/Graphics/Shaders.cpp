@@ -3,7 +3,6 @@
 #endif
 
 #include "Shaders.h"
-#include <string>
 #ifdef WIN32
 #include <gl/gl.h>
 #else

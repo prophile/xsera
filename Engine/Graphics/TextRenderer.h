@@ -2,7 +2,6 @@
 #define __apollo_graphics_text_renderer_h
 
 #include <string>
-#include <string>
 #ifdef WIN32
 #include <gl/gl.h>
 #else

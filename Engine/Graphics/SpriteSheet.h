@@ -7,7 +7,6 @@
 #include <SDL/SDL.h>
 #endif
 #include <SDL_image/SDL_image.h>
-#include <string>
 #ifdef WIN32
 #include <gl/gl.h>
 #else
