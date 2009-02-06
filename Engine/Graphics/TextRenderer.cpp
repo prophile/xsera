@@ -1,21 +1,15 @@
-#ifdef WIN32
-#include "stdafx.h"
-#endif
-
 #include "TextRenderer.h"
 
 #ifdef WIN32
+#include "stdafx.h"
 #include "SDL.h"
+#include <gl/gl.h>
 #else
 #include <SDL/SDL.h>
+#include <OpenGL/gl.h>
 #endif
 #include <map>
 #include <SDL_ttf/SDL_ttf.h>
-#ifdef WIN32
-#include <gl/gl.h>
-#else
-#include <OpenGL/gl.h>
-#endif
 #include "Utilities/ResourceManager.h"
 #include "Utilities/GameTime.h"
 #include "Logging.h"

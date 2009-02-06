@@ -1,18 +1,14 @@
-#ifdef WIN32
-#include "stdafx.h"
-#endif
 
 #include "Graphics.h"
 #ifdef WIN32
+#include "SDL.h"
+#include "stdafx.h"
 #include <gl/gl.h>
 #else
 #include <OpenGL/gl.h>
-#endif
-#ifdef WIN32
-#include "SDL.h"
-#else
 #include <SDL/SDL.h>
 #endif
+
 #include "SpriteSheet.h"
 #include "TextRenderer.h"
 #include <map>

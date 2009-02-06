@@ -1,9 +1,6 @@
-#ifdef WIN32
-#include "stdafx.h"
-#endif
-
 #include "Sound.h"
 #ifdef WIN32
+#include "stdafx.h"
 #include "SDL.h"
 #else
 #include <SDL/SDL.h>

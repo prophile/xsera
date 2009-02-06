@@ -1,9 +1,6 @@
-#ifdef WIN32
-#include "stdafx.h"
-#endif
-
 #include "Shaders.h"
 #ifdef WIN32
+#include "stdafx.h"
 #include <gl/gl.h>
 #else
 #include <OpenGL/gl.h>
