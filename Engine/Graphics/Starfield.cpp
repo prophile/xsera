@@ -1,9 +1,11 @@
 #ifdef WIN32
 #include "stdafx.h"
+#include "SDL_image.h"
+#else
+#include <SDL_image/SDL_image.h>
 #endif
 
 #include "Starfield.h"
-#include <SDL_image/SDL_image.h>
 #include <string>
 #include <vector>
 #include "TinyXML/tinyxml.h"

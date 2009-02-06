@@ -4,12 +4,13 @@
 #include "stdafx.h"
 #include "SDL.h"
 #include <gl/gl.h>
+#include "SDL_ttf.h"
 #else
 #include <SDL/SDL.h>
 #include <OpenGL/gl.h>
+#include <SDL_ttf/SDL_ttf.h>
 #endif
 #include <map>
-#include <SDL_ttf/SDL_ttf.h>
 #include "Utilities/ResourceManager.h"
 #include "Utilities/GameTime.h"
 #include "Logging.h"

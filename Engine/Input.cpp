@@ -2,10 +2,11 @@
 #ifdef WIN32
 #include "stdafx.h"
 #include "SDL.h"
+#include "SDL_OpenGL.h"
 #else
 #include <SDL/SDL.h>
-#endif
 #include <SDL/SDL_OpenGL.h>
+#endif
 #include <queue>
 
 namespace Input
