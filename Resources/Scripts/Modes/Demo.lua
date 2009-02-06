@@ -40,7 +40,7 @@ cMissile = nil
 pkBeam = nil
 bestExplosion = nil
 
-local soundLength = 0.5
+local soundLength = 0.25
 
 local arrowLength = 135
 local arrowVar = (3 * math.sqrt(3))
@@ -160,7 +160,7 @@ function init ()
     physics.open(0.6)
     playerShip = NewShip("Ishiman/HeavyCruiser")
 		playerShip.energy = 50000
-		playerShip.warp = { warping = false, start = { bool = false, time = 0.0, engine = false, sound = false }, endTime = 0.0, disengage = 2.0, finished = true, soundNum = 0 }
+		playerShip.warp = { warping = false, start = { bool = false, time = nil, engine = false, sound = false, isStarted = false }, endTime = 0.0, disengage = 2.0, finished = true, soundNum = 0 }
 	computerShip = NewShip("Gaitori/Carrier")
 		computerShip.physicsObject.position = carrierLocation
 	cMissile = NewBullet("cMissile", playerShip)
@@ -456,7 +456,6 @@ function keyup ( k )
 		playerShip.warp.start.time = nil
 		playerShip.warp.start.engine = false
 		playerShip.warp.start.isStarted = false
-		soundLength = 0.25
 		playerShip.warp.soundNum = 0.0
 		if playerShip.warp.warping == true then
 			playerShip.warp.warping = false
