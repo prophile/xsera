@@ -3,8 +3,7 @@
 #ifdef WIN32
 #include "stdafx.h"
 #include "SDL.h"
-//#include <gl/gl.h>
-#include "gl.h"
+#include <gl/gl.h>
 #else
 #include <SDL/SDL.h>
 #include <OpenGL/gl.h>

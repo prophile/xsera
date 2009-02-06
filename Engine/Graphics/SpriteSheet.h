@@ -4,8 +4,7 @@
 #include <SDL_image/SDL_image.h>
 #ifdef WIN32
 #include "SDL.h"
-//#include <gl/gl.h>
-#include "gl.h"
+#include <gl/gl.h>
 #else
 #include <SDL/SDL.h>
 #include <OpenGL/gl.h>
