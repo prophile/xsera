@@ -327,7 +327,6 @@ function update ()
 				pkBeam.physicsObject.velocity = { x = pkBeam.velocity.total * math.cos(pkBeam.physicsObject.angle) + playerShip.physicsObject.velocity.x, y = pkBeam.velocity.total * math.sin(pkBeam.physicsObject.angle) + playerShip.physicsObject.velocity.y }
 				pkBeam.start = mode_manager.time() * 1000
 				pkBeam.angle = pkBeam.physicsObject.angle
-				graphics.draw_line(pkBeam.physicsObject.position.x, pkBeam.physicsObject.position.y, pkBeam.physicsObject.position.x + math.cos(pkBeam.angle) * (-pkBeam.length / 2), pkBeam.physicsObject.position.y + math.sin(pkBeam.angle) * (-pkBeam.length / 2), pkBeam.width)
 				pkBeam.fired = true
 			end
 		end
