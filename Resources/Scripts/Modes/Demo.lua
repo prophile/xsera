@@ -16,13 +16,14 @@ import('MouseHandle')
 
 local cameraRatio = 1
 local aspectRatio = 4 / 3
-camera = { w = 640 / cameraRatio, h = 0 }
+camera = { w = 640 / cameraRatio, h }
 camera.h = camera.w / aspectRatio
 local shipAdjust = .045 * camera.w
 
 
 --tempvars
-carrierLocation = { x = 2200, y = 2700 }
+--carrierLocation = { x = 2200, y = 2700 }
+carrierLocation = { x = 200, y = 250 }
 carrierRotation = math.pi / 2
 carrierExploded = false
 firebullet = false
@@ -150,7 +151,7 @@ function guide_bullet()
 end
 
 function bullet_collision(bulletObject, shipObject)
-	cMissile.fired = false
+	bulletObject.fired = false
 	shipObject.life = shipObject.life - bulletObject.damage
 end
 
@@ -338,9 +339,12 @@ end
 function render ()
 	local angle = playerShip.physicsObject.angle
     graphics.begin_frame()
-	graphics.set_camera(-playerShip.physicsObject.position.x + shipAdjust - (camera.w / 2.0), -playerShip.physicsObject.position.y - (camera.h / 2.0), -playerShip.physicsObject.position.x + shipAdjust + (camera.w / 2.0), -playerShip.physicsObject.position.y + (camera.h / 2.0))
+--	graphics.set_camera((-playerShip.physicsObject.position.x * 2.0 - camera.w) * cameraRatio, (-playerShip.physicsObject.position.y * 2.0 - camera.h) * cameraRatio, (-playerShip.physicsObject.position.x * 2.0 + camera.w) * cameraRatio, (-playerShip.physicsObject.position.y * 2.0 + camera.h) * cameraRatio)
+--	graphics.draw_starfield()
+--	graphics.draw_sprite("Gaitori/Carrier", carrierLocation.x, carrierLocation.y, computerShip.size.x, computerShip.size.y, carrierRotation)
 --	print(playerShip.physicsObject.position.x)
 --	print(playerShip.physicsObject.position.y)
+	graphics.set_camera(-playerShip.physicsObject.position.x + shipAdjust - (camera.w / 2.0), -playerShip.physicsObject.position.y - (camera.h / 2.0), -playerShip.physicsObject.position.x + shipAdjust + (camera.w / 2.0), -playerShip.physicsObject.position.y + (camera.h / 2.0))
 	graphics.draw_starfield()
 	
 --[[------------------
@@ -377,7 +381,7 @@ function render ()
 ------------------]]--
 
     if computerShip.life > 0 then
-		graphics.draw_sprite("Gaitori/Carrier", carrierLocation.x, carrierLocation.y, computerShip.size.x, computerShip.size.y, carrierRotation)
+	--	graphics.draw_sprite("Gaitori/Carrier", carrierLocation.x, carrierLocation.y, computerShip.size.x, computerShip.size.y, carrierRotation)
     else
 		if carrierExploded == false then
 			if frame == 0 then
@@ -485,7 +489,7 @@ function key ( k )
 				arrowVar = arrowVar / 2
 				arrowDist = arrowDist / 2
 			end
-			camera = { w = 640 / cameraRatio, h = 0 }
+			camera = { w = 640 / cameraRatio, h }
 			camera.h = camera.w / aspectRatio
 			shipAdjust = .045 * camera.w
 			arrowLength = arrowLength / 2
@@ -502,7 +506,7 @@ function key ( k )
 				arrowVar = arrowVar * 2
 				arrowDist = arrowDist * 2
 			end
-			camera = { w = 640 / cameraRatio, h = 0 }
+			camera = { w = 640 / cameraRatio, h }
 			camera.h = camera.w / aspectRatio
 			shipAdjust = .045 * camera.w
 			arrowLength = arrowLength * 2
