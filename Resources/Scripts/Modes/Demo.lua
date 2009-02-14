@@ -333,11 +333,24 @@ function update ()
 		end
 	end
 	
+	if pkBeam.fired == true then
+		pkBeam.age = (mode_manager.time() * 1000) - pkBeam.start
+		if pkBeam.age >= pkBeam.life then
+			pkBeam.fired = false
+		end
+		if carrierExploded == false then
+			local x = computerShip.physicsObject.position.x - pkBeam.physicsObject.position.x
+			local y = computerShip.physicsObject.position.y - pkBeam.physicsObject.position.y
+			if hypot (x, y) <= computerShip.physicsObject.collision_radius * 2 / 7 then
+				bullet_collision(pkBeam, computerShip)
+			end
+		end
+	end
+	
 	physics.update(dt)
 end
 
 function render ()
-	local angle = playerShip.physicsObject.angle
     graphics.begin_frame()
 --	print(playerShip.physicsObject.position.x)
 --	print(playerShip.physicsObject.position.y)
@@ -352,19 +365,19 @@ function render ()
 	while i ~= 10 do
 		if (i * gridDistBlue) % gridDistLightBlue == 0 then
 			if (i * gridDistBlue) % gridDistGreen == 0 then
-				graphics.draw_line(-6000, -i * gridDistBlue, 6000, -i * gridDistBlue, 1)
+				graphics.draw_line(-6000, -i * gridDistBlue, 6000, -i * gridDistBlue, 1) -- this green
 				graphics.draw_line(-6000, i * gridDistBlue, 6000, i * gridDistBlue, 1)
 				graphics.draw_line(-i * gridDistBlue, -6000, -i * gridDistBlue, 6000, 1)
 				graphics.draw_line(i * gridDistBlue, -6000, i * gridDistBlue, 6000, 1)
 			else
-				graphics.draw_line(-6000, -i * gridDistBlue, 6000, -i * gridDistBlue, 1)
+				graphics.draw_line(-6000, -i * gridDistBlue, 6000, -i * gridDistBlue, 1) -- this light blue
 				graphics.draw_line(-6000, i * gridDistBlue, 6000, i * gridDistBlue, 1)
 				graphics.draw_line(-i * gridDistBlue, -6000, -i * gridDistBlue, 6000, 1)
 				graphics.draw_line(i * gridDistBlue, -6000, i * gridDistBlue, 6000, 1)
 			end
 		else
 			if cameraRatio ~= 1 / 16 then
-				graphics.draw_line(-6000, -i * gridDistBlue, 6000, -i * gridDistBlue, 1)
+				graphics.draw_line(-6000, -i * gridDistBlue, 6000, -i * gridDistBlue, 1) -- this blue
 				graphics.draw_line(-6000, i * gridDistBlue, 6000, i * gridDistBlue, 1)
 				graphics.draw_line(-i * gridDistBlue, -6000, -i * gridDistBlue, 6000, 1)
 				graphics.draw_line(i * gridDistBlue, -6000, i * gridDistBlue, 6000, 1)
@@ -400,17 +413,6 @@ function render ()
 ------------------]]--
 	
 	if pkBeam.fired == true then
-		pkBeam.age = (mode_manager.time() * 1000) - pkBeam.start
-		if pkBeam.age >= pkBeam.life then
-			pkBeam.fired = false
-		end
-		if carrierExploded == false then
-			local x = computerShip.physicsObject.position.x - pkBeam.physicsObject.position.x
-			local y = computerShip.physicsObject.position.y - pkBeam.physicsObject.position.y
-			if hypot (x, y) <= computerShip.physicsObject.collision_radius * 2 / 7 then
-				bullet_collision(pkBeam, computerShip)
-			end
-		end
 		graphics.draw_line(pkBeam.physicsObject.position.x, pkBeam.physicsObject.position.y, pkBeam.physicsObject.position.x + math.cos(pkBeam.angle) * pkBeam.length, pkBeam.physicsObject.position.y + math.sin(pkBeam.angle) * pkBeam.length, pkBeam.width)
 	end
 	
@@ -427,9 +429,10 @@ function render ()
 	end
 	
 --[[------------------
-	Panels and Arrow
+	Arrow and Panels
 ------------------]]--
 	
+	local angle = playerShip.physicsObject.angle
 	graphics.draw_line(math.cos(arrowAlpha + angle) * arrowDist + playerShip.physicsObject.position.x, math.sin(arrowAlpha + angle) * arrowDist + playerShip.physicsObject.position.y, math.cos(angle - arrowAlpha) * arrowDist + playerShip.physicsObject.position.x, math.sin(angle - arrowAlpha) * arrowDist + playerShip.physicsObject.position.y, 1.5)
 	graphics.draw_line(math.cos(angle - arrowAlpha) * arrowDist + playerShip.physicsObject.position.x, math.sin(angle - arrowAlpha) * arrowDist + playerShip.physicsObject.position.y, math.cos(angle) * (arrowLength + arrowVar) + playerShip.physicsObject.position.x, math.sin(angle) * (arrowLength + arrowVar) + playerShip.physicsObject.position.y, 1.5)
 	graphics.draw_line(math.cos(angle) * (arrowLength + arrowVar) + playerShip.physicsObject.position.x, math.sin(angle) * (arrowLength + arrowVar) + playerShip.physicsObject.position.y, math.cos(arrowAlpha + angle) * arrowDist + playerShip.physicsObject.position.x, math.sin(arrowAlpha + angle) * arrowDist + playerShip.physicsObject.position.y, 1.5)
