@@ -10,6 +10,8 @@
 	<mass>10000</mass>
 	<!-- turning rate, in radians/second -->
 	<turnrate>4</turnrate>
+	<!-- energy (in energy units?) -->
+	<energy>500</energy> 
 	<!-- thrust, in newtons -->
 	<thrust>500</thrust> 
 	<!-- warping speed -->

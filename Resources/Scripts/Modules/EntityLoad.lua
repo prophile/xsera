@@ -1,6 +1,6 @@
 import('PrintRecursive')
 
-function NewShip (shipType)
+function NewShip (shipType, shipOwner)
     local rawData = xml.load("Config/Ships/" .. shipType .. ".xml")
     local shipData = rawData[1]
     local trueData = {}
@@ -17,6 +17,9 @@ function NewShip (shipType)
     shipObject.physicsObject.collision_radius = hypot(shipObject.size.x, shipObject.size.y)
     shipObject.name = trueData.name
     shipObject.turningRate = tonumber(trueData.turnrate)
+	if trueData.energy ~= nil then
+		shipObject.energy = tonumber(trueData.energy)
+	end
 	if trueData.thrust ~= nil then
 		shipObject.thrust = tonumber(trueData.thrust)
 	end
@@ -81,6 +84,7 @@ function NewBullet (bulletType, ownerShip)
 	bulletObject.life = tonumber(trueData.life)
 	bulletObject.damage = tonumber(trueData.damage)
 	bulletObject.cooldown = tonumber(trueData.cooldown)
+	bulletObject.owner = ownerShip.name
 	return bulletObject
 end
 

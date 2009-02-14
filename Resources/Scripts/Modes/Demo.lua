@@ -22,8 +22,8 @@ local shipAdjust = .045 * camera.w
 
 
 --tempvars
---carrierLocation = { x = 2200, y = 2700 }
-carrierLocation = { x = 200, y = 250 }
+carrierLocation = { x = 2200, y = 2700 }
+--carrierLocation = { x = 200, y = 250 }
 carrierRotation = math.pi / 2
 carrierExploded = false
 firebullet = false
@@ -126,27 +126,30 @@ how to take velocity into account:
 end
 
 --function guide_bullet(missile, target)
-function guide_bullet()
-	if cMissile.isSeeking == true then
-		local angle_sep = cMissile.physicsObject.angle - cMissile.theta
-		if math.abs(angle_sep) > math.pi then -- need to go through 0
-			if angle_sep > 0.0 then
-				cMissile.delta = 2 * math.pi - angle_sep
+function guide_bullet(missile)
+	if missile.isSeeking == true then
+		missile.theta = find_angle(missile.physicsObject.position, missile.dest)
+		if missile.physicsObject.angle ~= missile.theta then
+			local angle_sep = missile.physicsObject.angle - missile.theta
+			if math.abs(angle_sep) > math.pi then -- need to go through 0
+				if angle_sep > 0.0 then
+					missile.delta = 2 * math.pi - angle_sep
+				else
+					missile.delta = -2 * math.pi + angle_sep
+				end
 			else
-				cMissile.delta = -2 * math.pi + angle_sep
+				missile.delta = angle_sep
+			end
+			if math.abs(missile.delta) > missile.turningRate * dt then
+				if missile.delta > missile.turningRate then
+					missile.delta = -missile.turningRate * dt
+				else
+					missile.delta = missile.turningRate * dt
+				end
 			end
 		else
-			cMissile.delta = angle_sep
+			missile.delta = 0
 		end
-		if math.abs(cMissile.delta) > cMissile.turningRate * dt then
-			if cMissile.delta > cMissile.turningRate then
-				cMissile.delta = -cMissile.turningRate * dt
-			else
-				cMissile.delta = cMissile.turningRate * dt
-			end
-		end
-	else
-		cMissile.delta = 0
 	end
 end
 
@@ -160,7 +163,6 @@ function init ()
     lastTime = mode_manager.time()
     physics.open(0.6)
     playerShip = NewShip("Ishiman/HeavyCruiser")
-		playerShip.energy = 50000
 		playerShip.warp = { warping = false, start = { bool = false, time = nil, engine = false, sound = false, isStarted = false }, endTime = 0.0, disengage = 2.0, finished = true, soundNum = 0 }
 	computerShip = NewShip("Gaitori/Carrier")
 		computerShip.physicsObject.position = carrierLocation
@@ -291,10 +293,7 @@ function update ()
 			if hypot (x, y) <= computerShip.physicsObject.collision_radius * 2 / 7 then
 				bullet_collision(cMissile, computerShip)
 			end
-			cMissile.theta = find_angle(cMissile.physicsObject.position, cMissile.dest)
-			if cMissile.physicsObject.angle ~= cMissile.theta then
-				guide_bullet()
-			end
+			guide_bullet(cMissile)
 			if showAngles == true then
 				print(cMissile.physicsObject.angle)
 				print(cMissile.theta)
