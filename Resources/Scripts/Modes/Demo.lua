@@ -340,6 +340,7 @@ function render ()
 	local angle = playerShip.physicsObject.angle
     graphics.begin_frame()
 --	graphics.set_camera((-playerShip.physicsObject.position.x * 2.0 - camera.w) * cameraRatio, (-playerShip.physicsObject.position.y * 2.0 - camera.h) * cameraRatio, (-playerShip.physicsObject.position.x * 2.0 + camera.w) * cameraRatio, (-playerShip.physicsObject.position.y * 2.0 + camera.h) * cameraRatio)
+--	graphics.set_camera((-camera.w) * cameraRatio, (-camera.h) * cameraRatio, (camera.w) * cameraRatio, (camera.h) * cameraRatio)
 --	graphics.draw_starfield()
 --	graphics.draw_sprite("Gaitori/Carrier", carrierLocation.x, carrierLocation.y, computerShip.size.x, computerShip.size.y, carrierRotation)
 --	print(playerShip.physicsObject.position.x)
@@ -381,16 +382,16 @@ function render ()
 ------------------]]--
 
     if computerShip.life > 0 then
-	--	graphics.draw_sprite("Gaitori/Carrier", carrierLocation.x, carrierLocation.y, computerShip.size.x, computerShip.size.y, carrierRotation)
+		graphics.draw_sprite("Gaitori/Carrier", carrierLocation.x, carrierLocation.y, computerShip.size.x, computerShip.size.y, carrierRotation)
     else
 		if carrierExploded == false then
 			if frame == 0 then
 				sound.play("New/ExplosionCombo")
 			end
-			if frame == 12 then
+			if frame >= 12 then
 				carrierExploded = true
 			else
-				frame = frame + 0.5
+				frame = frame + dt * 50
 			end
 			graphics.draw_sprite("Explosions/BestExplosion", carrierLocation.x, carrierLocation.y, bestExplosion.size.x, bestExplosion.size.y, frame / 6 * math.pi)
 		end
@@ -408,8 +409,10 @@ function render ()
 		end
 		local x = computerShip.physicsObject.position.x - pkBeam.physicsObject.position.x
 		local y = computerShip.physicsObject.position.y - pkBeam.physicsObject.position.y
-		if hypot (x, y) <= computerShip.physicsObject.collision_radius then
-			bullet_collision(pkBeam, computerShip)
+		if carrierExploded == false then
+			if hypot (x, y) <= computerShip.physicsObject.collision_radius then
+				bullet_collision(pkBeam, computerShip)
+			end
 		end
 		graphics.draw_line(pkBeam.physicsObject.position.x, pkBeam.physicsObject.position.y, pkBeam.physicsObject.position.x + math.cos(pkBeam.angle) * pkBeam.length, pkBeam.physicsObject.position.y + math.sin(pkBeam.angle) * pkBeam.length, pkBeam.width)
 	end
