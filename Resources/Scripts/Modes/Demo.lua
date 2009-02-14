@@ -339,10 +339,6 @@ end
 function render ()
 	local angle = playerShip.physicsObject.angle
     graphics.begin_frame()
---	graphics.set_camera((-playerShip.physicsObject.position.x * 2.0 - camera.w) * cameraRatio, (-playerShip.physicsObject.position.y * 2.0 - camera.h) * cameraRatio, (-playerShip.physicsObject.position.x * 2.0 + camera.w) * cameraRatio, (-playerShip.physicsObject.position.y * 2.0 + camera.h) * cameraRatio)
---	graphics.set_camera((-camera.w) * cameraRatio, (-camera.h) * cameraRatio, (camera.w) * cameraRatio, (camera.h) * cameraRatio)
---	graphics.draw_starfield()
---	graphics.draw_sprite("Gaitori/Carrier", carrierLocation.x, carrierLocation.y, computerShip.size.x, computerShip.size.y, carrierRotation)
 --	print(playerShip.physicsObject.position.x)
 --	print(playerShip.physicsObject.position.y)
 	graphics.set_camera(-playerShip.physicsObject.position.x + shipAdjust - (camera.w / 2.0), -playerShip.physicsObject.position.y - (camera.h / 2.0), -playerShip.physicsObject.position.x + shipAdjust + (camera.w / 2.0), -playerShip.physicsObject.position.y + (camera.h / 2.0))
@@ -396,6 +392,7 @@ function render ()
 			graphics.draw_sprite("Explosions/BestExplosion", carrierLocation.x, carrierLocation.y, bestExplosion.size.x, bestExplosion.size.y, frame / 6 * math.pi)
 		end
 	end
+	
 	graphics.draw_sprite(playerShip.image, playerShip.physicsObject.position.x, playerShip.physicsObject.position.y, playerShip.size.x, playerShip.size.y, playerShip.physicsObject.angle)
 	
 --[[------------------
@@ -407,10 +404,10 @@ function render ()
 		if pkBeam.age >= pkBeam.life then
 			pkBeam.fired = false
 		end
-		local x = computerShip.physicsObject.position.x - pkBeam.physicsObject.position.x
-		local y = computerShip.physicsObject.position.y - pkBeam.physicsObject.position.y
 		if carrierExploded == false then
-			if hypot (x, y) <= computerShip.physicsObject.collision_radius then
+			local x = computerShip.physicsObject.position.x - pkBeam.physicsObject.position.x
+			local y = computerShip.physicsObject.position.y - pkBeam.physicsObject.position.y
+			if hypot (x, y) <= computerShip.physicsObject.collision_radius * 2 / 7 then
 				bullet_collision(pkBeam, computerShip)
 			end
 		end
