@@ -1,5 +1,6 @@
 #ifdef WIN32
 #include "stdafx.h"
+#include "stdint.h"
 #endif
 
 #include "MessageDecode.h"

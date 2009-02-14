@@ -69,6 +69,7 @@ bool InvokeTest ( const std::string& testName, const std::vector<std::string>& t
 		printf("Test %s FAILED: test is undefined!\n", testName.c_str());
 		return false;
 	}
+	return false;
 }
 
 }
