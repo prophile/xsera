@@ -5,6 +5,7 @@
 #include <SDL_image/SDL_image.h>
 #endif
 
+#include "Apollo.h"
 #include "Starfield.h"
 #include <string>
 #include <vector>

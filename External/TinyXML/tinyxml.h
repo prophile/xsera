@@ -22,6 +22,8 @@ must not be misrepresented as being the original software.
 distribution.
 */
 
+//the following line is not original to the code:
+#include "Apollo.h"
 
 #ifndef TINYXML_INCLUDED
 #define TINYXML_INCLUDED

@@ -2,6 +2,7 @@
 #include "stdafx.h"
 #endif
 
+#include "Apollo.h"
 #include "Compile.h"
 #include "Utilities/ResourceManager.h"
 #include "Logging.h"

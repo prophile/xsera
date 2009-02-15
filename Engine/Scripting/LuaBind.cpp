@@ -1,3 +1,4 @@
+#include "Apollo.h"
 #include "Scripting.h"
 #include "Utilities/ResourceManager.h"
 #include "Sound/Sound.h"

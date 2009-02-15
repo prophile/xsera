@@ -2,6 +2,7 @@
 #include "stdafx.h"
 #endif
 
+#include "Apollo.h"
 #include "SpriteSheet.h"
 #include "Utilities/ResourceManager.h"
 #include "TinyXML/tinyxml.h"
