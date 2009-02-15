@@ -49,6 +49,6 @@ void __Log ( const char* subsystem, int level, const char* messageFormat, ... );
 
 inline void LOG( const char* subsystem, int level, const char* format, ... ) { }
 
-#endif
+#endif /* WIN32 */
 
-#endif
+#endif /* __apollo_logging_h */

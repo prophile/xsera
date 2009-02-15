@@ -2,6 +2,7 @@
 #include "stdafx.h"
 #endif
 
+#include "Apollo.h"
 #include <enet/enet.h>
 #include "Net.h"
 #include "MessageDecode.h"
