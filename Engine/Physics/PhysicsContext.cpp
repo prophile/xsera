@@ -2,6 +2,7 @@
 #include "stdafx.h"
 #endif
 
+#include "Apollo.h"
 #include "PhysicsContext.h"
 #include "PhysicsObject.h"
 #include <vector>

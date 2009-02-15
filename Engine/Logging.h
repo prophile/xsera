@@ -50,3 +50,5 @@ void __Log ( const char* subsystem, int level, const char* messageFormat, ... );
 inline void log ( const char* subsystem, int level, const char* format, ... ) { }
 
 #endif
+
+#endif
