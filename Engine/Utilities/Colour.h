@@ -6,7 +6,8 @@
 #ifndef WIN32
 #define COLOUR_VECTOR_SUPPORT
 #else
-#warning Vector support unavailable on this platform, using scalar fallbacks for colour
+//commented by command of Alastair
+//#warning Vector support unavailable on this platform, using scalar fallbacks for colour
 #endif
 
 /**

@@ -1,6 +1,8 @@
 #ifndef __apollo_logging_h
 #define __apollo_logging_h
 
+#ifndef WIN32
+
 /**
  * A message - typically notifying that a file is loaded, changing state or level
  */
@@ -42,5 +44,9 @@ void __Log ( const char* subsystem, int level, const char* messageFormat, ... );
  * @param message A format string, followed by printf-style arguments
  */
 #define LOG(subsystem, level, messageFormat...) { if (level >= LOG_LEVEL) { __Log(subsystem, level, messageFormat , ## messageFormat); } }
+
+#else /* WIN32 */
+
+inline void log ( const char* subsystem, int level, const char* format, ... ) { }
 
 #endif
