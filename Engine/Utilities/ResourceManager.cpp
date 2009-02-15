@@ -2,6 +2,7 @@
 #include "stdafx.h"
 #endif
 
+#include "Apollo.h"
 #include "ResourceManager.h"
 #include <string>
 #include <vector>
