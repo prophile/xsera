@@ -10,6 +10,8 @@
 #include <OpenGL/gl.h>
 #include <SDL_ttf/SDL_ttf.h>
 #endif
+
+#include "Apollo.h"
 #include <map>
 #include "Utilities/ResourceManager.h"
 #include "Utilities/GameTime.h"

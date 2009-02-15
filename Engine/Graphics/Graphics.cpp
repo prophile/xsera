@@ -1,5 +1,3 @@
-
-#include "Graphics.h"
 #ifdef WIN32
 #include "SDL.h"
 #include "stdafx.h"
@@ -9,6 +7,8 @@
 #include <SDL/SDL.h>
 #endif
 
+#include "Apollo.h"
+#include "Graphics.h"
 #include "SpriteSheet.h"
 #include "TextRenderer.h"
 #include <map>
