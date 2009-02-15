@@ -39,6 +39,8 @@ printFPS = false
 playerShip = nil
 cMissile = nil
 pkBeam = nil
+pkBeam1 = nil
+pkBeam2 = nil
 bestExplosion = nil
 
 local soundLength = 0.25
@@ -179,10 +181,11 @@ function init ()
 	pkBeam = NewBullet("PKBeam", playerShip)
 		pkBeam.width = cameraRatio
 		pkBeam.fired = false
-		pkBeam.length = 30
-		pkBeam.location = { x, y }
 		pkBeam.start = 0
 		pkBeam.firing = false
+	pkBeamWeap = { }
+		table.insert(pkBeamWeap, pkBeam)
+		table.insert(pkBeamWeap, pkBeam)
 	bestExplosion = NewExplosion("BestExplosion")
 end
 
@@ -319,20 +322,20 @@ function update ()
 	
 	if pkBeam.firing == true then
 		if pkBeam.start / 1000 + pkBeam.cooldown / 1000 <= mode_manager.time() then
-			if playerShip.energy >= 10 then
+			if playerShip.energy >= 5 then
 				sound.play("ShotC")
-				playerShip.energy = playerShip.energy - 10
+				table.insert(pkBeamWeap, pkBeam)
+				playerShip.energy = playerShip.energy - 5
 				pkBeam.physicsObject.angle = playerShip.physicsObject.angle
-				pkBeam.physicsObject.position = playerShip.physicsObject.position
+				pkBeam.physicsObject.position = { x = playerShip.physicsObject.position.x + math.cos(pkBeam.physicsObject.angle) * pkBeam.length, y = playerShip.physicsObject.position.y + math.sin(pkBeam.physicsObject.angle) * pkBeam.length }
 				pkBeam.physicsObject.velocity = { x = pkBeam.velocity.total * math.cos(pkBeam.physicsObject.angle) + playerShip.physicsObject.velocity.x, y = pkBeam.velocity.total * math.sin(pkBeam.physicsObject.angle) + playerShip.physicsObject.velocity.y }
 				pkBeam.start = mode_manager.time() * 1000
-				pkBeam.angle = pkBeam.physicsObject.angle
 				pkBeam.fired = true
 			end
 		end
 	end
 	
-	if pkBeam.fired == true then
+	if pkBeamWeap[1] ~= nil then
 		pkBeam.age = (mode_manager.time() * 1000) - pkBeam.start
 		if pkBeam.age >= pkBeam.life then
 			pkBeam.fired = false
@@ -412,7 +415,7 @@ function render ()
 ------------------]]--
 	
 	if pkBeam.fired == true then
-		graphics.draw_line(pkBeam.physicsObject.position.x, pkBeam.physicsObject.position.y, pkBeam.physicsObject.position.x + math.cos(pkBeam.angle) * pkBeam.length, pkBeam.physicsObject.position.y + math.sin(pkBeam.angle) * pkBeam.length, pkBeam.width)
+		graphics.draw_line(pkBeam.physicsObject.position.x, pkBeam.physicsObject.position.y, pkBeam.physicsObject.position.x - math.cos(pkBeam.physicsObject.angle) * pkBeam.length, pkBeam.physicsObject.position.y - math.sin(pkBeam.physicsObject.angle) * pkBeam.length, pkBeam.width)
 	end
 	
 --[[------------------

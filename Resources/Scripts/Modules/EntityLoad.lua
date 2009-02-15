@@ -1,5 +1,9 @@
 import('PrintRecursive')
 
+--[[------------------
+	New Ship
+------------------]]--
+
 function NewShip (shipType, shipOwner)
     local rawData = xml.load("Config/Ships/" .. shipType .. ".xml")
     local shipData = rawData[1]
@@ -46,6 +50,10 @@ function NewShip (shipType, shipOwner)
     return shipObject
 end
 
+--[[------------------
+	New Bullet
+------------------]]--
+
 function NewBullet (bulletType, ownerShip)
 	local rawData = xml.load("Config/Bullets/" .. bulletType .. ".xml")
 	local bulletData = rawData[1]
@@ -85,8 +93,24 @@ function NewBullet (bulletType, ownerShip)
 	bulletObject.damage = tonumber(trueData.damage)
 	bulletObject.cooldown = tonumber(trueData.cooldown)
 	bulletObject.owner = ownerShip.name
+	bulletObject.class = trueData.class
+	if bulletObject.class == "beam" then
+		bulletObject.length = tonumber(trueData.length)
+	elseif bulletObject.class == "pulse" then
+		
+	elseif bulletObject.class == "special" then
+		
+	elseif bulletObject.class == nil then
+		print("[EntityLoad] ERROR: Bullet '" .. bulletObject.name .. "' has no class. See NewBullet")
+	else
+		print("[EntityLoad] ERROR: Unknown weapon class '" .. bulletObject.class .. "'. See NewBullet")
+	end
 	return bulletObject
 end
+
+--[[------------------
+	New Weapon
+------------------]]--
 
 function NewWeapon (weaponClass, weaponType)
 	local rawData = xml.load("Config/Weapons/" .. weaponClass .. "/" .. weaponType .. ".xml")
@@ -106,10 +130,14 @@ function NewWeapon (weaponClass, weaponType)
 	elseif weaponClass == "Special" then
 		weaponObject.ammo = tonumber(trueData.ammo)
 	else
-		print("Unknown weapon class. See EntityLoad.lua, function NewWeapon")
+		print("[EntityLoad] ERROR: Unknown weapon class '" .. bulletObject.type .. "'. See NewWeapon")
 	end
 	return weaponObject
 end
+
+--[[------------------
+	New Scenario
+------------------]]--
 
 function NewScenario (scenarioType)
 	local rawData = xml.load("Config/Scenarios/" .. scenarioType .. ".xml")
@@ -124,6 +152,10 @@ function NewScenario (scenarioType)
 	scenarioObject.name = trueData.name
 	return scenarioObject
 end
+
+--[[------------------
+	New Explosion
+------------------]]--
 
 function NewExplosion (explosionType)
     local rawData = xml.load("Config/Explosions/" .. explosionType .. ".xml")

@@ -10,4 +10,8 @@
 	<cooldown>150</cooldown>
 	<!-- velocity -->
 	<velocity>1050</velocity>
+	<!-- weapon class -->
+	<class>beam</class>
+	<!-- beam length -->
+	<length>30</length>
 </sprite>

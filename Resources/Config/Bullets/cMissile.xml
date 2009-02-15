@@ -18,4 +18,6 @@
 	<cooldown>1200</cooldown>
 	<!-- maximum seeking angle, in radians -->
 	<maxseekangle>0.5</maxseekangle>
+	<!-- weapon class -->
+	<class>special</class>
 </sprite>
