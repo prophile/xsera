@@ -326,19 +326,21 @@ function update ()
 				sound.play("ShotC")
 				table.insert(pkBeamWeap, pkBeam)
 				playerShip.energy = playerShip.energy - 5
-				pkBeam.physicsObject.angle = playerShip.physicsObject.angle
-				pkBeam.physicsObject.position = { x = playerShip.physicsObject.position.x + math.cos(pkBeam.physicsObject.angle) * pkBeam.length, y = playerShip.physicsObject.position.y + math.sin(pkBeam.physicsObject.angle) * pkBeam.length }
-				pkBeam.physicsObject.velocity = { x = pkBeam.velocity.total * math.cos(pkBeam.physicsObject.angle) + playerShip.physicsObject.velocity.x, y = pkBeam.velocity.total * math.sin(pkBeam.physicsObject.angle) + playerShip.physicsObject.velocity.y }
-				pkBeam.start = mode_manager.time() * 1000
-				pkBeam.fired = true
+				local wNum = #pkBeamWeap
+				pkBeamWeap[wNum].physicsObject.angle = playerShip.physicsObject.angle
+				pkBeamWeap[wNum].physicsObject.position = { x = playerShip.physicsObject.position.x + math.cos(pkBeamWeap[wNum].physicsObject.angle) * pkBeam.length, y = playerShip.physicsObject.position.y + math.sin(pkBeamWeap[wNum].physicsObject.angle) * pkBeam.length }
+				pkBeamWeap[wNum].physicsObject.velocity = { x = pkBeam.velocity.total * math.cos(pkBeamWeap[wNum].physicsObject.angle) + playerShip.physicsObject.velocity.x, y = pkBeam.velocity.total * math.sin(pkBeamWeap[wNum].physicsObject.angle) + playerShip.physicsObject.velocity.y }
+				pkBeamWeap[wNum].start = mode_manager.time() * 1000
 			end
 		end
 	end
-	
+	local num = 1
 	if pkBeamWeap[1] ~= nil then
+		firepkBeam(pkBeamWeap[1])
+		if(
 		pkBeam.age = (mode_manager.time() * 1000) - pkBeam.start
 		if pkBeam.age >= pkBeam.life then
-			pkBeam.fired = false
+			table.remove(pkBeamWeap, num)
 		end
 		if carrierExploded == false then
 			local x = computerShip.physicsObject.position.x - pkBeam.physicsObject.position.x
