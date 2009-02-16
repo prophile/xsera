@@ -2,6 +2,8 @@
 #include "SDL.h"
 #include "stdafx.h"
 #include <gl/gl.h>
+#define _USE_MATH_DEFINES
+#include <cmath>
 #else
 #include <OpenGL/gl.h>
 #include <SDL/SDL.h>
