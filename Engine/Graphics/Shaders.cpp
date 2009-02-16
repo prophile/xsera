@@ -1,10 +1,13 @@
 #include "Shaders.h"
 #ifdef WIN32
 #include "stdafx.h"
-#include <gl/gl.h>
+//note to Windows users: you must install GLEW for this to work:
+//http://glew.sourceforge.net/
+#include <gl/glew.h>
 #else
 #include <OpenGL/gl.h>
 #endif
+#include "Apollo.h"
 #include "Utilities/ResourceManager.h"
 #include <map>
 
