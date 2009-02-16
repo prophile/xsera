@@ -1,3 +1,6 @@
+#ifdef WIN32
+#include <malloc.h>
+#endif
 #include "neural-network.h"
 #include <stdlib.h>
 #include <math.h>
@@ -62,9 +65,13 @@ NeuralNetwork* NN_Create ( unsigned long layerCount, const unsigned long* layers
     #ifdef __MACH__
     unsigned char* block = valloc(totalSize);
     #else
-    unsigned char* block = malloc(totalSize);
+		#ifdef WIN32
+		unsigned char* block = (unsigned char*)malloc(totalSize);
+		#else
+		unsigned char* block = malloc(totalSize);
+		#endif
     #endif
-    assert(block);
+	assert(block);
     // first, set up the actual NeuralNetwork* structure
     NeuralNetwork* nn = (NeuralNetwork*)block;
     nn->memoryUsage = totalSize;
@@ -140,7 +147,7 @@ void* NN_Serialise ( NeuralNetwork* nn, size_t* len, int fast )
                 modelName = "unknown";
                 break;
         }
-        char* buffer = malloc(1024 * 32); // 32kb of storage space
+        char* buffer = (char*)malloc(1024 * 32); // 32kb of storage space
         unsigned lineIndex = 0;
         lineIndex += sprintf(buffer + lineIndex, "model:%s learnRate:%f layers:%u\n", modelName, nn->learningRate, nn->layerCount);
         for (unsigned long i = 0; i < nn->layerCount; i++)
@@ -168,11 +175,15 @@ NeuralNetwork* NN_Deserialise ( const void* data, size_t len, int fast )
 {
     if (fast)
     {
-#ifdef __MACH__
+		#ifdef __MACH__
         unsigned char* mem = valloc(len);
-#else
-        unsigned char* mem = malloc(len);
-#endif
+		#else
+			#ifdef WIN32
+			unsigned char* mem = (unsigned char*)malloc(len);
+			#else
+			unsigned char* mem = malloc(len);
+			#endif
+		#endif
         memcpy(mem, data, len);
         NeuralNetwork* nn = (NeuralNetwork*)mem;
         // now fix all the pointers
@@ -215,7 +226,11 @@ static void ClearNN ( NeuralNetwork* nn )
 void NN_Train ( NeuralNetwork* nn, unsigned long numInputs, const float* inputs, unsigned long numOutputs, const float* outputs )
 {
     // run a solution
-    float* givenOutputs = (float*)alloca(sizeof(float) * numOutputs);
+	#ifdef WIN32
+	float* givenOutputs = (float*)_alloca(sizeof(float) * numOutputs);
+	#else
+	float* givenOutputs = (float*)alloca(sizeof(float) * numOutputs);
+	#endif
     NN_Solve(nn, numInputs, inputs, numOutputs, givenOutputs);
     float learningRate = nn->learningRate;
     // update all deltas to the errors in the output layer
