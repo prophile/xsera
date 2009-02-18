@@ -93,6 +93,7 @@ function NewBullet (bulletType, ownerShip)
 	bulletObject.damage = tonumber(trueData.damage)
 	bulletObject.cooldown = tonumber(trueData.cooldown)
 	bulletObject.owner = ownerShip.name
+	bulletObject.cost = tonumber(trueData.energyCost)
 	bulletObject.class = trueData.class
 	if bulletObject.class == "beam" then
 		bulletObject.length = tonumber(trueData.length)

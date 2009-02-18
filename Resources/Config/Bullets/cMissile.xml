@@ -16,6 +16,8 @@
 	<damage>100</damage>
 	<!-- cooldown time, in miliseconds -->
 	<cooldown>1200</cooldown>
+	<!-- cost, in energy -->
+	<energyCost>100</energyCost>
 	<!-- maximum seeking angle, in radians -->
 	<maxseekangle>0.5</maxseekangle>
 	<!-- weapon class -->

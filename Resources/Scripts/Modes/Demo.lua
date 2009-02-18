@@ -322,10 +322,10 @@ function update ()
 	
 	if pkBeam.firing == true then
 		if pkBeam.start / 1000 + pkBeam.cooldown / 1000 <= mode_manager.time() then
-			if playerShip.energy >= 5 then
+			if playerShip.energy >= pkBeam.cost then
 				sound.play("ShotC")
 				table.insert(pkBeamWeap, pkBeam)
-				playerShip.energy = playerShip.energy - 5
+				playerShip.energy = playerShip.energy - pkBeam.cost
 				local wNum = #pkBeamWeap
 				pkBeamWeap[wNum].physicsObject.angle = playerShip.physicsObject.angle
 				pkBeamWeap[wNum].physicsObject.position = { x = playerShip.physicsObject.position.x + math.cos(pkBeamWeap[wNum].physicsObject.angle) * pkBeam.length, y = playerShip.physicsObject.position.y + math.sin(pkBeamWeap[wNum].physicsObject.angle) * pkBeam.length }
@@ -335,7 +335,7 @@ function update ()
 		end
 	end
 	local num = 1
-	if pkBeamWeap[1] ~= nil then
+	while pkBeamWeap[num] ~= nil do
 		firepkBeam(pkBeamWeap[1])
 		if(
 		pkBeam.age = (mode_manager.time() * 1000) - pkBeam.start
@@ -349,6 +349,7 @@ function update ()
 				bullet_collision(pkBeam, computerShip)
 			end
 		end
+		num = num + 1
 	end
 	
 	physics.update(dt)

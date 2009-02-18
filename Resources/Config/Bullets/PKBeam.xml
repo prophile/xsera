@@ -8,6 +8,8 @@
 	<damage>50</damage>
 	<!-- cooldown time, in miliseconds -->
 	<cooldown>150</cooldown>
+	<!-- cost, in energy -->
+	<energyCost>5</energyCost>
 	<!-- velocity -->
 	<velocity>1050</velocity>
 	<!-- weapon class -->
