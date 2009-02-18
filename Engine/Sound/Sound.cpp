@@ -127,7 +127,7 @@ void Init ( int frequency, int resolution, int sources )
 		disable_music = true;
 }
 
-void PlaySound ( const std::string& name, float gain, float pan )
+void PlaySoundSDL ( const std::string& name, float gain, float pan )
 {
 	Mix_Chunk* chunk = SoundNamed(name);
 	if (!chunk)
