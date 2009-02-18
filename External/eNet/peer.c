@@ -4,7 +4,7 @@
 */
 #include <string.h>
 #define ENET_BUILDING_LIB 1
-#include "enet/enet.h"
+#include "enetadapt.h"
 
 /** @defgroup peer ENet peer functions 
     @{

@@ -3,7 +3,7 @@
 #endif
 
 #include "Apollo.h"
-#include <enet/enet.h>
+#include "enetadapt.h"
 #include "Net.h"
 #include "MessageDecode.h"
 #include "Utilities/GameTime.h"

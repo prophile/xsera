@@ -318,7 +318,7 @@ void DrawSprite ( const std::string& sheetname, int sheet_x, int sheet_y, vec2 l
 	}
 }
 
-void DrawText ( const std::string& text, const std::string& font, vec2 location, float height, colour col, float rotation )
+void DrawTextSDL ( const std::string& text, const std::string& font, vec2 location, float height, colour col, float rotation )
 {
 	SetShader("Sprite");
 	EnableTexturing();

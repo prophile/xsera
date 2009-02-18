@@ -4,7 +4,7 @@
 */
 #define ENET_BUILDING_LIB 1
 #include <string.h>
-#include "enet/enet.h"
+#include "enetadapt.h"
 
 /** @defgroup host ENet host functions
     @{

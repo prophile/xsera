@@ -795,11 +795,11 @@ int GFX_DrawText ( lua_State* L )
 	if (nargs >= 6)
 	{
 		luaL_argcheck(L, lua_istable(L, 5), 5, "bad colour");
-		Graphics::DrawText(text, font, vec2(locx, locy), height, LoadColour(L, 5), rotation);
+		Graphics::DrawTextSDL(text, font, vec2(locx, locy), height, LoadColour(L, 5), rotation);
 	}
 	else
 	{
-		Graphics::DrawText(text, font, vec2(locx, locy), height, colour(1.0f, 1.0f, 1.0f, 1.0f), rotation);
+		Graphics::DrawTextSDL(text, font, vec2(locx, locy), height, colour(1.0f, 1.0f, 1.0f, 1.0f), rotation);
 	}
 	return 0;
 }

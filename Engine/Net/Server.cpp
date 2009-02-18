@@ -2,7 +2,7 @@
 #include "stdafx.h"
 #endif
 
-#include <enet/enet.h>
+#include "enetadapt.h"
 #include <map>
 #include "Net.h"
 #include "MessageDecode.h"

@@ -27,7 +27,7 @@
 #include "Scripting/Compile.h"
 #include "Sound/Sound.h"
 #include "Preferences.h"
-#include <enet/enet.h>
+#include "enetadapt.h"
 
 extern "C"
 {

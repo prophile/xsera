@@ -51,7 +51,7 @@ inline void DrawImage ( const std::string& imageName, vec2 location, vec2 size )
  * @param col The colour of the text
  * @param rotation The rotation of the text
  */
-void DrawText ( const std::string& text, const std::string& font, vec2 location, float height, colour col, float rotation );
+void DrawTextSDL ( const std::string& text, const std::string& font, vec2 location, float height, colour col, float rotation );
 /**
  * Draws a line between two points
  * @param coordinate1 The start of the line
