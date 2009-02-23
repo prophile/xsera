@@ -183,6 +183,7 @@ function init ()
 		pkBeam.fired = false
 		pkBeam.start = 0
 		pkBeam.firing = false
+		pkBeam.exists = false
 	pkBeamWeap = { }
 		table.insert(pkBeamWeap, pkBeam)
 		table.insert(pkBeamWeap, pkBeam)
@@ -288,9 +289,7 @@ function update ()
 	if cMissile.fired == true then
 		local bulletLocation = playerShip.physicsObject.position
 		if carrierExploded == false then
-			--	ADAM/ALASTAIR: Why doesn't this work?
-			--	for demo: leave as is, hypot works
-		--	if physics.collisions(computerShip.physicsObject, cMissile.physicsObject, 1) == true then
+		--	use physics collisions after demo
 			local x = computerShip.physicsObject.position.x - cMissile.physicsObject.position.x
 			local y = computerShip.physicsObject.position.y - cMissile.physicsObject.position.y
 			if hypot (x, y) <= computerShip.physicsObject.collision_radius * 2 / 7 then
@@ -327,29 +326,36 @@ function update ()
 				table.insert(pkBeamWeap, pkBeam)
 				playerShip.energy = playerShip.energy - pkBeam.cost
 				local wNum = #pkBeamWeap
+				pkBeamWeap[wNum].exists = true
 				pkBeamWeap[wNum].physicsObject.angle = playerShip.physicsObject.angle
 				pkBeamWeap[wNum].physicsObject.position = { x = playerShip.physicsObject.position.x + math.cos(pkBeamWeap[wNum].physicsObject.angle) * pkBeam.length, y = playerShip.physicsObject.position.y + math.sin(pkBeamWeap[wNum].physicsObject.angle) * pkBeam.length }
 				pkBeamWeap[wNum].physicsObject.velocity = { x = pkBeam.velocity.total * math.cos(pkBeamWeap[wNum].physicsObject.angle) + playerShip.physicsObject.velocity.x, y = pkBeam.velocity.total * math.sin(pkBeamWeap[wNum].physicsObject.angle) + playerShip.physicsObject.velocity.y }
 				pkBeamWeap[wNum].start = mode_manager.time() * 1000
 			end
 		end
-	end
-	local num = 1
-	while pkBeamWeap[num] ~= nil do
-		firepkBeam(pkBeamWeap[1])
-		if(
-		pkBeam.age = (mode_manager.time() * 1000) - pkBeam.start
-		if pkBeam.age >= pkBeam.life then
-			table.remove(pkBeamWeap, num)
-		end
-		if carrierExploded == false then
-			local x = computerShip.physicsObject.position.x - pkBeam.physicsObject.position.x
-			local y = computerShip.physicsObject.position.y - pkBeam.physicsObject.position.y
-			if hypot (x, y) <= computerShip.physicsObject.collision_radius * 2 / 7 then
-				bullet_collision(pkBeam, computerShip)
+		local wNum = 1
+		while pkBeamWeap[wNum].exists == true do
+			pkBeamWeap[wNum].age = (mode_manager.time() * 1000) - pkBeamWeap[wNum].start
+			if pkBeamWeap[wNum].age >= pkBeam.life then
+				table.remove(pkBeamWeap, wNum)
+				pkBeamWeap[wNum].exists = false
+				if pkBeamWeap[1].exists ~= true then
+					pkBeam.fired = false
+				end
 			end
+			if carrierExploded == false then
+				local x = computerShip.physicsObject.position.x - pkBeamWeap[wNum].physicsObject.position.x
+				local y = computerShip.physicsObject.position.y - pkBeamWeap[wNum].physicsObject.position.y
+				if hypot (x, y) <= computerShip.physicsObject.collision_radius * 2 / 7 then
+					bullet_collision(pkBeamWeap[wNum], computerShip)
+				end
+			end
+			wNum = wNum + 1
 		end
-		num = num + 1
+	end	
+	
+	if pkBeamWeap[1].exists == true then
+		pkBeam.fired = true
 	end
 	
 	physics.update(dt)
@@ -418,7 +424,11 @@ function render ()
 ------------------]]--
 	
 	if pkBeam.fired == true then
-		graphics.draw_line(pkBeam.physicsObject.position.x, pkBeam.physicsObject.position.y, pkBeam.physicsObject.position.x - math.cos(pkBeam.physicsObject.angle) * pkBeam.length, pkBeam.physicsObject.position.y - math.sin(pkBeam.physicsObject.angle) * pkBeam.length, pkBeam.width)
+		local wNum = 1
+		while pkBeamWeap[wNum].exists == true do
+			graphics.draw_line(pkBeamWeap[wNum].physicsObject.position.x, pkBeamWeap[wNum].physicsObject.position.y, pkBeamWeap[wNum].physicsObject.position.x - math.cos(pkBeamWeap[wNum].physicsObject.angle) * pkBeam.length, pkBeamWeap[wNum].physicsObject.position.y - math.sin(pkBeamWeap[wNum].physicsObject.angle) * pkBeam.length, pkBeam.width)
+			wNum = wNum + 1
+		end
 	end
 	
 --[[------------------
