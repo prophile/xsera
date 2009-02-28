@@ -184,9 +184,9 @@ function init ()
 		pkBeam.start = 0
 		pkBeam.firing = false
 		pkBeam.exists = false
-	pkBeamWeap = { }
-		table.insert(pkBeamWeap, pkBeam)
-		table.insert(pkBeamWeap, pkBeam)
+	pkBeamWeap = { { 0 }, { 0 }, { 0 }, { 0 }, { 0 } }
+	--	table.insert(pkBeamWeap, pkBeam)
+	--	table.insert(pkBeamWeap, pkBeam)
 	bestExplosion = NewExplosion("BestExplosion")
 end
 
@@ -335,7 +335,7 @@ function update ()
 		end
 		local wNum = 1
 		while pkBeamWeap[wNum].exists == true do
-			pkBeamWeap[wNum].age = (mode_manager.time() * 1000) - pkBeamWeap[wNum].start
+			pkBeamWeap[wNum].exists = (mode_manager.time() * 1000) - pkBeamWeap[wNum].start
 			if pkBeamWeap[wNum].age >= pkBeam.life then
 				table.remove(pkBeamWeap, wNum)
 				pkBeamWeap[wNum].exists = false
@@ -352,7 +352,7 @@ function update ()
 			end
 			wNum = wNum + 1
 		end
-	end	
+	end
 	
 	if pkBeamWeap[1].exists == true then
 		pkBeam.fired = true
