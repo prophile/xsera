@@ -32,7 +32,7 @@ void Startup ()
 	ResourceManager::Init("Xsera");
 	Preferences::Load();
 	Graphics::Init(ToInt(Preferences::Get("Screen/Width")), ToInt(Preferences::Get("Screen/Height")), ToBool(Preferences::Get("Screen/Fullscreen")));
-	Sound::Init(ToInt(Preferences::Get("Audio/SamplingRate")), ToInt(Preferences::Get("Audio/Resolution")), ToInt(Preferences::Get("Audio/Channels"))); // init with 48 kHz sampling rate, 24-bit resolution, 128 channels
+	Sound::Init(ToInt(Preferences::Get("Audio/SamplingRate")), ToInt(Preferences::Get("Audio/Resolution")), ToInt(Preferences::Get("Audio/Channels")));
 	// compile class script
 	CompileScript("System/Class");
 	LuaScript bootScript ("System/Boot");
