@@ -1,7 +1,3 @@
-#ifdef WIN32
-#include "stdafx.h"
-#endif
-
 #include "Logging.h"
 #include <stdarg.h>
 

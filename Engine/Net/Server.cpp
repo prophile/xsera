@@ -1,7 +1,3 @@
-#ifdef WIN32
-#include "stdafx.h"
-#endif
-
 #include "enetadapt.h"
 #include <map>
 #include "Net.h"

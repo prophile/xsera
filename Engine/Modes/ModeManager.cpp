@@ -1,10 +1,6 @@
 #include "ModeManager.h"
-#ifdef WIN32
-#include "stdafx.h"
-#include "SDL.h"
-#else
 #include <SDL/SDL.h>
-#endif
+
 #include "Logging.h"
 
 static AppMode* mode = NULL;

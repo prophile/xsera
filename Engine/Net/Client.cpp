@@ -1,7 +1,3 @@
-#ifdef WIN32
-#include "stdafx.h"
-#endif
-
 #include "Apollo.h"
 #include "enetadapt.h"
 #include "Net.h"

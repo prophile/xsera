@@ -1,12 +1,11 @@
 #include "Sound.h"
 #ifdef WIN32
-#include "stdafx.h"
-#include "SDL.h"
-#include "SDL_mixer.h"
+#include <SDL/SDL_mixer.h>
 #else
-#include <SDL/SDL.h>
 #include <SDL_mixer/SDL_mixer.h>
 #endif
+#include <SDL/SDL.h>
+
 #include <map>
 #include <math.h>
 #include "Utilities/ResourceManager.h"

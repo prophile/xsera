@@ -1,15 +1,14 @@
 #include "TextRenderer.h"
 
 #ifdef WIN32
-#include "stdafx.h"
-#include "SDL.h"
 #include <gl/gl.h>
-#include "SDL_ttf.h"
+#include <SDL/SDL_ttf.h>
 #else
-#include <SDL/SDL.h>
 #include <OpenGL/gl.h>
 #include <SDL_ttf/SDL_ttf.h>
 #endif
+
+#include <SDL/SDL.h>
 
 #include "Apollo.h"
 #include <map>

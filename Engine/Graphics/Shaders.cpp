@@ -1,7 +1,6 @@
 #include "Shaders.h"
 #ifdef WIN32
-#include "stdafx.h"
-//note to Windows users: you must install GLEW for this to work:
+//note to Windows users: you must install GLEW for this to work (and put it in the same directory as your GL headers):
 //http://glew.sourceforge.net/
 #include <gl/glew.h>
 #else

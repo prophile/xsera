@@ -64,11 +64,7 @@ public:
 	/**
 	 * Fetches the modulus of the vector (distance from the origin)
 	 */
-#ifdef WIN32
-	float Modulus () const { return _hypotf(y, x); }
-#else
 	float Modulus () const { return hypotf(y, x); }
-#endif
 	/**
 	 * Fetches the square modulus of the vector (distance from the origin squared)
 	 */

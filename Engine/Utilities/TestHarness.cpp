@@ -1,7 +1,3 @@
-#ifdef WIN32
-#include "stdafx.h"
-#endif
-
 #include "Scripting/Scripting.h"
 #include "TestHarness.h"
 

@@ -1,5 +1,4 @@
 #ifdef WIN32
-#include "stdafx.h"
 #define _USE_MATH_DEFINES
 #include <cmath>
 #endif

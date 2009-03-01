@@ -1,13 +1,11 @@
 #ifdef WIN32
-#include "SDL.h"
-#include "stdafx.h"
 #include <gl/gl.h>
 #define _USE_MATH_DEFINES
 #include <cmath>
 #else
 #include <OpenGL/gl.h>
-#include <SDL/SDL.h>
 #endif
+#include <SDL/SDL.h>
 
 #include "Apollo.h"
 #include "Graphics.h"

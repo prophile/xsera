@@ -2,13 +2,12 @@
 #define __apollo_h
 
 #ifdef WIN32
-#include "SDL.h"
 #define assert(x) { if (! ( x ) ) { printf("Assertion failure: %s\n\tFile: %s\n\tLine: %d\n", # x , __FILE__, __LINE__ ); exit(1); } }
 #undef SendMessage
 #undef GetMessage	//apparently, these are windows directives
-#else
-#include <SDL/SDL.h>
 #endif
+#include <SDL/SDL.h>
+
 #include "Logging.h"
 #include "Utilities/Colour.h"
 #include "Utilities/Matrix2x3.h"

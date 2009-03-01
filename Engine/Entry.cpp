@@ -1,5 +1,4 @@
 #ifdef WIN32
-#include "stdafx.h"
 #include <time.h>
 #endif
 

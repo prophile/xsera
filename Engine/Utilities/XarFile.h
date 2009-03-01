@@ -7,11 +7,7 @@
  */
 
 #include <string>
-#ifdef WIN32
-#include "SDL.h"
-#else
 #include <SDL/SDL.h>
-#endif
 #include <map>
 
 /**
