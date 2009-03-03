@@ -321,19 +321,16 @@ function update ()
 		local wNum = 0
 		if pkBeam.start / 1000 + pkBeam.cooldown / 1000 <= mode_manager.time() then
 			if playerShip.energy >= pkBeam.cost then
-				-- FIRE WEAPON
 				sound.play("ShotC")
 				pkBeam.start = mode_manager.time() * 1000
-				print("FIRE")
 			--	if pkBeam.initialize == true then
 			--		table.remove(pkBeamWeap, 1)
 			--		pkBeam.initialize = false
 			--	end
 				pkBeam.fired = true
 				wNum = 1
-				while wNum < 40 do -- 40 is arbitrary, figure out real number when it works?
+				while wNum < 40 do -- 40 is arbitrary, figure out real number?
 					if pkBeamWeap[wNum] == nil then
-						print("MAKING NEW WEAPON")
 						pkBeamWeap[wNum] = NewBullet("PKBeam", playerShip)
 						pkBeamWeap[wNum].exists = true
 						pkBeamWeap[wNum].physicsObject.angle = playerShip.physicsObject.angle
@@ -345,7 +342,6 @@ function update ()
 					wNum = wNum + 1
 				end
 				playerShip.energy = playerShip.energy - pkBeam.cost
-			--	wNum = #pkBeamWeap
 			end
 		end
 	end
@@ -353,9 +349,15 @@ function update ()
 	while wNum < 40 do
 		if pkBeamWeap[wNum] ~= nil then
 			if pkBeamWeap[wNum].exists == true then
+				if carrierExploded == false then
+					local x = computerShip.physicsObject.position.x - pkBeamWeap[wNum].physicsObject.position.x
+					local y = computerShip.physicsObject.position.y - pkBeamWeap[wNum].physicsObject.position.y
+					if hypot (x, y) <= computerShip.physicsObject.collision_radius * 2 / 7 then
+						bullet_collision(pkBeamWeap[wNum], computerShip)
+					end
+				end
 				if (mode_manager.time() * 1000) - pkBeamWeap[wNum].start >= pkBeam.life then
 					table.remove(pkBeamWeap, wNum)
-					pkBeamWeap[wNum].exists = false
 				--	if pkBeamWeap[1].exists ~= true then
 				--		pkBeam.fired = false
 				--		print("pkBeam.fired = false")
@@ -363,13 +365,6 @@ function update ()
 				--		pkBeam.fired = true
 				--		print("pkBeam.fired = true")
 				--	end
-				end
-				if carrierExploded == false then
-					local x = computerShip.physicsObject.position.x - pkBeamWeap[wNum].physicsObject.position.x
-					local y = computerShip.physicsObject.position.y - pkBeamWeap[wNum].physicsObject.position.y
-					if hypot (x, y) <= computerShip.physicsObject.collision_radius * 2 / 7 then
-						bullet_collision(pkBeamWeap[wNum], computerShip)
-					end
 				end
 			end
 		end
