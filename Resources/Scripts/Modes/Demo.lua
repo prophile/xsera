@@ -184,6 +184,7 @@ function init ()
 		pkBeam.start = 0
 		pkBeam.firing = false
 		pkBeam.exists = false
+		pkBeam.initialize = true
 	pkBeamWeap = { { {} } }
 	bestExplosion = NewExplosion("BestExplosion")
 end
@@ -317,27 +318,29 @@ function update ()
 	PKBeam Firing
 ------------------]]--
 	
+	-- this will be a template function, I just need to plug things in (and stick into another lua file, perhaps WeaponHandle.lua?)
 	if pkBeam.firing == true then
 		local wNum = 0
-		if pkBeam.start / 1000 + pkBeam.cooldown / 1000 <= mode_manager.time() then
-			if playerShip.energy >= pkBeam.cost then
+		if playerShip.energy >= pkBeam.cost then
+			if pkBeam.start / 1000 + pkBeam.cooldown / 1000 <= mode_manager.time() then
 				sound.play("ShotC")
 				pkBeam.start = mode_manager.time() * 1000
-			--	if pkBeam.initialize == true then
-			--		table.remove(pkBeamWeap, 1)
-			--		pkBeam.initialize = false
-			--	end
+				if pkBeam.initialize == true then
+					table.remove(pkBeamWeap, 1)
+					pkBeam.initialize = false
+				end
 				pkBeam.fired = true
 				wNum = 1
-				while wNum < 40 do -- 40 is arbitrary, figure out real number?
+				while wNum <= 2 do -- store 2 in constant in pkBeam
 					if pkBeamWeap[wNum] == nil then
+						-- I would rather load from memory, but we don't have a function that preloads yet. Oh well. [DEMO2, ADAM]
 						pkBeamWeap[wNum] = NewBullet("PKBeam", playerShip)
 						pkBeamWeap[wNum].exists = true
 						pkBeamWeap[wNum].physicsObject.angle = playerShip.physicsObject.angle
 						pkBeamWeap[wNum].physicsObject.position = { x = playerShip.physicsObject.position.x + math.cos(pkBeamWeap[wNum].physicsObject.angle) * pkBeam.length, y = playerShip.physicsObject.position.y + math.sin(pkBeamWeap[wNum].physicsObject.angle) * pkBeam.length }
 						pkBeamWeap[wNum].physicsObject.velocity = { x = pkBeam.velocity.total * math.cos(pkBeamWeap[wNum].physicsObject.angle) + playerShip.physicsObject.velocity.x, y = pkBeam.velocity.total * math.sin(pkBeamWeap[wNum].physicsObject.angle) + playerShip.physicsObject.velocity.y }
 						pkBeamWeap[wNum].start = mode_manager.time() * 1000
-						wNum = 41 -- exit while loop
+						wNum = 2 -- exit while loop [constant]
 					end
 					wNum = wNum + 1
 				end
@@ -346,7 +349,7 @@ function update ()
 		end
 	end
 	wNum = 1
-	while wNum < 40 do
+	while wNum <= 2 do -- should be constant
 		if pkBeamWeap[wNum] ~= nil then
 			if pkBeamWeap[wNum].exists == true then
 				if carrierExploded == false then
@@ -358,13 +361,11 @@ function update ()
 				end
 				if (mode_manager.time() * 1000) - pkBeamWeap[wNum].start >= pkBeam.life then
 					table.remove(pkBeamWeap, wNum)
-				--	if pkBeamWeap[1].exists ~= true then
-				--		pkBeam.fired = false
-				--		print("pkBeam.fired = false")
-				--	else
-				--		pkBeam.fired = true
-				--		print("pkBeam.fired = true")
-				--	end
+					if pkBeamWeap[1] ~= nil then
+						pkBeam.fired = false
+					else
+						pkBeam.fired = true
+					end
 				end
 			end
 		end
