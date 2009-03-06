@@ -68,6 +68,8 @@ Velocity is not taken into account when testing for seeking
 how to take velocity into account:
 - greatest possible velocity is during warping
 - if you take the velocity of the ship during warping, multiply that by the life of the bullet, plus the max distance already calculated, you will find its upper limit
+- the formula for finding distance is D = (F (t^2) ) / (2m) (do this for bullet)
+- the other formula for finding distance is D = v*t (do this for ship)
 --]]
 	if ship.special.ammo > 0 then
 		sound.play("RocketLaunchr")
@@ -154,10 +156,9 @@ function guide_bullet(missile)
 	end
 end
 
-function bullet_collision(bulletObject, shipObject)
--- ADAM: MODIFY TO CONTAIN THE ABILITY TO REMOVE TABLES, NOT MAKE FIRED FALSE
-	bulletObject.fired = false
-	shipObject.life = shipObject.life - bulletObject.damage
+function bullet_collision(bulletObject, bNum, bulletData, shipObject)
+	table.remove(bulletObject, bNum)
+	shipObject.life = shipObject.life - bulletData.damage
 end
 
 function init ()
@@ -359,7 +360,7 @@ function weapon_fire(weapon, weapData)
 					local x = computerShip.physicsObject.position.x - weapData[wNum].physicsObject.position.x
 					local y = computerShip.physicsObject.position.y - weapData[wNum].physicsObject.position.y
 					if hypot (x, y) <= computerShip.physicsObject.collision_radius * 2 / 7 then
-						bullet_collision(weapData[wNum], computerShip)
+						bullet_collision(weapData, wNum, weapon, computerShip)
 					end
 				end
 				if (mode_manager.time() * 1000) - weapData[wNum].start >= weapon.life then
