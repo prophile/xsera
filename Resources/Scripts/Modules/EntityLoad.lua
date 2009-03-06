@@ -92,6 +92,7 @@ function NewBullet (bulletType, ownerShip)
 	bulletObject.life = tonumber(trueData.life)
 	bulletObject.damage = tonumber(trueData.damage)
 	bulletObject.cooldown = tonumber(trueData.cooldown)
+	bulletObject.max_bullets = math.ceil(bulletObject.life / bulletObject.cooldown)
 	bulletObject.owner = ownerShip.name
 	bulletObject.cost = tonumber(trueData.energyCost)
 	bulletObject.class = trueData.class
