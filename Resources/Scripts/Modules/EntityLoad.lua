@@ -54,6 +54,16 @@ end
 	New Bullet
 ------------------]]--
 
+
+--[[ BULLETIN: [ADAM, ALASTAIR, DEMO2]
+- the functions of NewBullet and NewWeapon are mixed...
+- weapon should contain name, short name, firing sound, sprite, etc.
+- bullet should contain physics (anything else?)
+- haha, BULLETin, get it? BULLET? IN?
+
+- Also, I should make better use of ownerShip (heh, TURBOPUNS) by making angle, velocity, etc. equal
+--]]
+
 function NewBullet (bulletType, ownerShip)
 	local rawData = xml.load("Config/Bullets/" .. bulletType .. ".xml")
 	local bulletData = rawData[1]

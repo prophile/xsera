@@ -15,7 +15,7 @@
 	<!-- thrust, in newtons -->
 	<thrust>1000</thrust> 
 	<!-- life, in miliseconds -->
-	<life>1200</life>
+	<life>1500</life>
 	<!-- damage dealt -->
 	<damage>100</damage>
 	<!-- cooldown time, in miliseconds -->
