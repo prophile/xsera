@@ -4,6 +4,10 @@
 	<name>Concussion Missile</name>
 	<!-- sprite name -->
 	<sprite>Weapons/cMissile</sprite>
+	<!-- short name -->
+	<shortName>cMissile</shortName>
+	<!-- name of sound made when fired -->
+	<fireSound>RocketLaunchr</fireSound> <!-- This file is not original -->
 	<!-- mass, in kg -->
 	<mass>5000</mass>
 	<!-- turning rate, in radians/second -->

@@ -23,10 +23,9 @@ local shipAdjust = .045 * camera.w
 
 --tempvars
 carrierLocation = { x = 2200, y = 2700 }
---carrierLocation = { x = 200, y = 250 }
-carrierRotation = math.pi / 2
+carrierRotation = math.pi
 carrierExploded = false
-firebullet = false
+firebeam = false -- unused, but may be helpful
 firepulse = false
 firespecial = false
 showVelocity = false
@@ -35,13 +34,11 @@ frame = 0
 printFPS = false
 --/tempvars
 
-
-playerShip = nil
-cMissile = nil
+--[[
+playerShip = {}
 pkBeam = nil
-pkBeam1 = nil
-pkBeam2 = nil
 bestExplosion = nil
+--]]
 
 local soundLength = 0.25
 
@@ -54,6 +51,12 @@ local gridDistLightBlue = 1200
 local gridDistGreen = 4800
 
 keyControls = { left = false, right = false, forward = false, brake = false }
+
+--[[-------------------------
+	--{{-----------------
+		Bullet Firing
+	-----------------}}--
+-------------------------]]--
 
 function fire_bullet(missile, ship)
 --[[ here's what this function should look like when finished:
@@ -128,6 +131,12 @@ how to take velocity into account:
 	end
 end
 
+--[[------------------------
+	--{{----------------
+		Guide Bullet
+	----------------}}--
+------------------------]]--
+
 --function guide_bullet(missile, target)
 function guide_bullet(missile)
 	if missile.isSeeking == true then
@@ -156,10 +165,22 @@ function guide_bullet(missile)
 	end
 end
 
+--[[----------------------------
+	--{{--------------------
+		Bullet Collision
+	--------------------}}--
+----------------------------]]--
+
 function bullet_collision(bulletObject, bNum, bulletData, shipObject)
 	table.remove(bulletObject, bNum)
 	shipObject.life = shipObject.life - bulletData.damage
 end
+
+--[[--------------------------
+	--{{------------------
+		Initialization
+	------------------}}--
+--------------------------]]--
 
 function init ()
 	sound.stop_music()
@@ -167,9 +188,10 @@ function init ()
     physics.open(0.6)
     playerShip = NewShip("Ishiman/HeavyCruiser")
 		playerShip.warp = { warping = false, start = { bool = false, time = nil, engine = false, sound = false, isStarted = false }, endTime = 0.0, disengage = 2.0, finished = true, soundNum = 0 }
+		playerShip.pkBeamWeap = { { {} } }
 	computerShip = NewShip("Gaitori/Carrier")
 		computerShip.physicsObject.position = carrierLocation
-	cMissile = NewBullet("cMissile", playerShip)
+--[[	cMissile = NewBullet("cMissile", playerShip)
 		cMissile.delta = 0.0
 		cMissile.dest = { x = carrierLocation.x, y = carrierLocation.y }
 		cMissile.size = { x, y }
@@ -178,7 +200,18 @@ function init ()
 		cMissile.fired = false
 		cMissile.start = 0
 		cMissile.force = { x, y }
-		cMissile.damage = 10
+		cMissile.damage = 10--]]
+	playerShip.cMissile = NewBullet("cMissile", playerShip)
+		playerShip.cMissile.delta = 0.0
+		playerShip.cMissile.dest = { x = carrierLocation.x, y = carrierLocation.y }
+		playerShip.cMissile.size = { x, y }
+		playerShip.cMissile.size.x, playerShip.cMissile.size.y = graphics.sprite_dimensions("Weapons/cMissile")
+		playerShip.cMissile.isSeeking = true
+		playerShip.cMissile.fired = false
+		playerShip.cMissile.start = 0
+		playerShip.cMissile.force = { x, y }
+		playerShip.cMissile.damage = 10
+	playerShip.cMissileWeap = { { {} } }
 	pkBeam = NewBullet("PKBeam", playerShip)
 		pkBeam.width = cameraRatio
 		pkBeam.fired = false
@@ -186,9 +219,14 @@ function init ()
 		pkBeam.firing = false
 		pkBeam.exists = false
 		pkBeam.initialize = true
-	pkBeamWeap = { { {} } }
 	bestExplosion = NewExplosion("BestExplosion")
 end
+
+--[[--------------------
+	--{{------------
+		Updating
+	------------}}--
+--------------------]]--
 
 function update ()
 	--DEMOFINAL: put each section into its own function in THIS file, if possible
@@ -286,69 +324,91 @@ function update ()
 	C-Missile Firing
 ------------------]]--
 
-	if cMissile.fired == true then
-		local bulletLocation = playerShip.physicsObject.position
+	if playerShip.cMissile.fired == true then
 		if carrierExploded == false then
 		--	use physics collisions after demo
-			local x = computerShip.physicsObject.position.x - cMissile.physicsObject.position.x
-			local y = computerShip.physicsObject.position.y - cMissile.physicsObject.position.y
+			local x = computerShip.physicsObject.position.x - playerShip.cMissile.physicsObject.position.x
+			local y = computerShip.physicsObject.position.y - playerShip.cMissile.physicsObject.position.y
 			if hypot (x, y) <= computerShip.physicsObject.collision_radius * 2 / 7 then
-				bullet_collision(cMissile, computerShip)
+				bullet_collision(playerShip.cMissile, computerShip)
 			end
-			guide_bullet(cMissile)
+			guide_bullet(playerShip.cMissile)
 			if showAngles == true then
-				print(cMissile.physicsObject.angle)
-				print(cMissile.theta)
+				print(playerShip.cMissile.physicsObject.angle)
+				print(playerShip.cMissile.theta)
 				print("----------------")
 			end
 		end
 		
-		cMissile.physicsObject.angle = cMissile.physicsObject.angle + cMissile.delta
-		cMissile.force.x = math.cos(cMissile.physicsObject.angle) * cMissile.thrust
-		cMissile.force.y = math.sin(cMissile.physicsObject.angle) * cMissile.thrust
-		cMissile.physicsObject:apply_force(cMissile.force)
+		playerShip.cMissile.physicsObject.angle = playerShip.cMissile.physicsObject.angle + playerShip.cMissile.delta
+		playerShip.cMissile.force.x = math.cos(playerShip.cMissile.physicsObject.angle) * playerShip.cMissile.thrust
+		playerShip.cMissile.force.y = math.sin(playerShip.cMissile.physicsObject.angle) * playerShip.cMissile.thrust
+		playerShip.cMissile.physicsObject:apply_force(playerShip.cMissile.force)
 	end
 	
-	if firebullet == true then
-		if cMissile.start / 1000 + cMissile.cooldown / 1000 <= mode_manager.time() then
-			fire_bullet(cMissile, playerShip)
+	if firespecial == true then
+		if playerShip.cMissile.start / 1000 + playerShip.cMissile.cooldown / 1000 <= mode_manager.time() then
+			fire_bullet(playerShip.cMissile, playerShip)
 		end
 	end
 	
 -- PKBeam Firing
 	
-	weapon_fire(pkBeam, pkBeamWeap)
+	weapon_fire(pkBeam, playerShip.pkBeamWeap, playerShip)
 	
 	physics.update(dt)
 end
 
-function weapon_fire(weapon, weapData)
+--[[-------------------------
+	--{{-----------------
+		Weapon Firing
+	-----------------}}--
+-------------------------]]--
+
+function weapon_fire(weapon, weapData, weapOwner)
 	if weapon.firing == true then
 		local wNum = 0
-		if playerShip.energy >= weapon.cost then
-			if weapon.start / 1000 + weapon.cooldown / 1000 <= mode_manager.time() then
-				sound.play("ShotC")
-				weapon.start = mode_manager.time() * 1000
-				if weapon.initialize == true then
-					table.remove(weapData, 1)
-					weapon.initialize = false
+		if weapon.class == "beam" then
+			if playerShip.energy < weapon.cost then
+				return
+			end
+		elseif weapon.class == "pulse" then
+			return
+		elseif weapon.class == "special" then
+			if weapData.special.ammo == 0 then
+				return
+			end
+		end
+		
+		if weapon.start / 1000 + weapon.cooldown / 1000 <= mode_manager.time() then
+			sound.play(weapon.sound)
+			weapon.start = mode_manager.time() * 1000
+			if weapon.initialize == true then
+				table.remove(weapData, 1)
+				weapon.initialize = false
+			end
+			weapon.fired = true
+			wNum = 1
+			while wNum <= weapon.max_bullets do
+				if weapData[wNum] == nil then
+					-- I would rather load from memory, but we don't have a function that preloads yet. Oh well. [DEMO2, ADAM, ALASTAIR]
+					weapData[wNum] = NewBullet(weapon.shortName, weapOwner)
+					weapData[wNum].exists = true
+					weapData[wNum].angle = playerShip.physicsObject.angle
+					weapData[wNum].physicsObject.position = { x = playerShip.physicsObject.position.x + math.cos(weapData[wNum].angle) * weapon.length, y = playerShip.physicsObject.position.y + math.sin(weapData[wNum].angle) * weapon.length }
+					weapData[wNum].physicsObject.velocity = { x = weapon.velocity.total * math.cos(weapData[wNum].angle) + playerShip.physicsObject.velocity.x, y = weapon.velocity.total * math.sin(weapData[wNum].angle) + playerShip.physicsObject.velocity.y }
+					weapData[wNum].start = mode_manager.time() * 1000
+					wNum = weapon.max_bullets -- exit while loop
 				end
-				weapon.fired = true
-				wNum = 1
-				while wNum <= weapon.max_bullets do
-					if weapData[wNum] == nil then
-						-- I would rather load from memory, but we don't have a function that preloads yet. Oh well. [DEMO2, ADAM, ALASTAIR]
-						weapData[wNum] = NewBullet("PKBeam", playerShip)
-						weapData[wNum].exists = true
-						weapData[wNum].angle = playerShip.physicsObject.angle
-						weapData[wNum].physicsObject.position = { x = playerShip.physicsObject.position.x + math.cos(weapData[wNum].angle) * weapon.length, y = playerShip.physicsObject.position.y + math.sin(weapData[wNum].angle) * weapon.length }
-						weapData[wNum].physicsObject.velocity = { x = weapon.velocity.total * math.cos(weapData[wNum].angle) + playerShip.physicsObject.velocity.x, y = weapon.velocity.total * math.sin(weapData[wNum].angle) + playerShip.physicsObject.velocity.y }
-						weapData[wNum].start = mode_manager.time() * 1000
-						wNum = weapon.max_bullets -- exit while loop
-					end
-					wNum = wNum + 1
-				end
+				wNum = wNum + 1
+			end
+			-- weapon fired, take away cost
+			if weapon.class == "beam" then
 				playerShip.energy = playerShip.energy - weapon.cost
+			elseif weapon.class == "pulse" then
+				return
+			elseif weapon.class == "special" then
+				weapData.special.ammo = weapData.special.ammo - 1
 			end
 		end
 	end
@@ -361,6 +421,7 @@ function weapon_fire(weapon, weapData)
 					local y = computerShip.physicsObject.position.y - weapData[wNum].physicsObject.position.y
 					if hypot (x, y) <= computerShip.physicsObject.collision_radius * 2 / 7 then
 						bullet_collision(weapData, wNum, weapon, computerShip)
+						return
 					end
 				end
 				if (mode_manager.time() * 1000) - weapData[wNum].start >= weapon.life then
@@ -376,6 +437,12 @@ function weapon_fire(weapon, weapData)
 		wNum = wNum + 1
 	end
 end
+
+--[[---------------------
+	--{{-------------
+		Rendering
+	-------------}}--
+---------------------]]--
 
 function render ()
     graphics.begin_frame()
@@ -441,9 +508,9 @@ function render ()
 	
 	if pkBeam.fired == true then
 		local wNum = 1
-		while wNum < 5 do -- [constant]
-			if pkBeamWeap[wNum] ~= nil then
-				graphics.draw_line(pkBeamWeap[wNum].physicsObject.position.x, pkBeamWeap[wNum].physicsObject.position.y, pkBeamWeap[wNum].physicsObject.position.x - math.cos(pkBeamWeap[wNum].angle) * pkBeam.length, pkBeamWeap[wNum].physicsObject.position.y - math.sin(pkBeamWeap[wNum].angle) * pkBeam.length, pkBeam.width)
+		while wNum <= pkBeam.max_bullets do
+			if playerShip.pkBeamWeap[wNum] ~= nil then		
+				graphics.draw_line(playerShip.pkBeamWeap[wNum].physicsObject.position.x, playerShip.pkBeamWeap[wNum].physicsObject.position.y, playerShip.pkBeamWeap[wNum].physicsObject.position.x - math.cos(playerShip.pkBeamWeap[wNum].angle) * pkBeam.length, playerShip.pkBeamWeap[wNum].physicsObject.position.y - math.sin(playerShip.pkBeamWeap[wNum].angle) * pkBeam.length, pkBeam.width)
 			end
 			wNum = wNum + 1
 		end
@@ -453,12 +520,12 @@ function render ()
 	C-Missile Firing
 ------------------]]--
 	
-	if cMissile.fired == true then
-		cMissile.age = (mode_manager.time() * 1000) - cMissile.start
-		if cMissile.age >= cMissile.life then
-			cMissile.fired = false
+	if playerShip.cMissile.fired == true then
+		playerShip.cMissile.age = (mode_manager.time() * 1000) - playerShip.cMissile.start
+		if playerShip.cMissile.age >= playerShip.cMissile.life then
+			playerShip.cMissile.fired = false
 		end
-		graphics.draw_sprite("Weapons/cMissile", cMissile.physicsObject.position.x, cMissile.physicsObject.position.y, cMissile.size.x, cMissile.size.y, cMissile.physicsObject.angle)
+		graphics.draw_sprite("Weapons/cMissile", playerShip.cMissile.physicsObject.position.x, playerShip.cMissile.physicsObject.position.y, playerShip.cMissile.size.x, playerShip.cMissile.size.y, playerShip.cMissile.physicsObject.angle)
 	end
 	
 --[[------------------
@@ -475,6 +542,12 @@ function render ()
 	graphics.end_frame()
 end
 
+--[[------------------------
+	--{{----------------
+		Key Handling
+	----------------}}--
+------------------------]]--
+
 function keyup ( k )
     if k == "w" then
         keyControls.forward = false
@@ -489,7 +562,7 @@ function keyup ( k )
 	elseif k == "x" then
 		firepulse = false
     elseif k == "z" then
-		firebullet = false
+		firespecial = false
     elseif k == "tab" then
 		playerShip.warp.start.bool = false
 		playerShip.warp.start.time = nil
@@ -573,7 +646,7 @@ function key ( k )
 		end
 	elseif k == "z" then
 		if playerShip.specialName ~= nil then
-			firebullet = true
+			firespecial = true
 		end
 	elseif k == "p" then
 		computerShip.life = 0

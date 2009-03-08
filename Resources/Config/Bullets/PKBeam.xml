@@ -2,6 +2,10 @@
 <sprite>
 	<!-- full name -->
 	<name>Photokinetic Beam</name>
+	<!-- short name -->
+	<shortName>PKBeam</shortName>
+	<!-- name of sound made when fired -->
+	<fireSound>ShotC</fireSound>
 	<!-- life, in miliseconds -->
 	<life>175</life>
 	<!-- damage dealt -->

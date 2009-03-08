@@ -68,6 +68,8 @@ function NewBullet (bulletType, ownerShip)
 		print("ERROR: Bullet " .. bulletType .. " does not have a name.")
 	end
 	bulletObject.name = trueData.name
+	bulletObject.shortName = trueData.shortName
+	bulletObject.sound = trueData.fireSound
 	if trueData.sprite ~= nil then
 		bulletObject.image = trueData.sprite
 	end
