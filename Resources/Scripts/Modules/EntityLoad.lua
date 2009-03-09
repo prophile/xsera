@@ -96,7 +96,7 @@ function NewBullet (bulletType, ownerShip)
 	end
 	if trueData.turnrate ~= nil then
 		bulletObject.turningRate = tonumber(trueData.turnrate)
-		bulletObject.max_seek_angle = tonumber(trueData.maxseekangle)
+		bulletObject.maxSeekAngle = tonumber(trueData.maxseekangle)
 	end
 	if trueData.thrust ~= nil then
 		bulletObject.thrust = tonumber(trueData.thrust)
