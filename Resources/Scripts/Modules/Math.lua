@@ -7,7 +7,7 @@ function normalize(componentA, componentB)
 end
 
 function find_angle(origin, dest)
-	local angle =  math.atan2(dest.y - origin.y, dest.x - origin.x)
+	local angle =  math.atan2(origin.y - dest.y, origin.x - dest.x)
 	if angle < 0.0 then
 		angle = angle + 2 * math.pi
 	end

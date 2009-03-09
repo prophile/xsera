@@ -108,6 +108,7 @@ function NewBullet (bulletType, ownerShip)
 	bulletObject.owner = ownerShip.name
 	bulletObject.cost = tonumber(trueData.energyCost)
 	bulletObject.class = trueData.class
+	-- class specifics
 	if bulletObject.class == "beam" then
 		bulletObject.length = tonumber(trueData.length)
 	elseif bulletObject.class == "pulse" then

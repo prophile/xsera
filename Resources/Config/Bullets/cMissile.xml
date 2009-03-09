@@ -13,7 +13,7 @@
 	<!-- turning rate, in radians/second -->
 	<turnrate>0.2</turnrate>
 	<!-- thrust, in newtons -->
-	<thrust>1000</thrust> 
+	<thrust>1000</thrust>
 	<!-- life, in miliseconds -->
 	<life>1500</life>
 	<!-- damage dealt -->
