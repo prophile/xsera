@@ -11,7 +11,7 @@
 	<!-- mass, in kg -->
 	<mass>5000</mass>
 	<!-- turning rate, in radians/second -->
-	<turnrate>0.2</turnrate>
+	<turnrate>0.5</turnrate>
 	<!-- thrust, in newtons -->
 	<thrust>1000</thrust>
 	<!-- life, in miliseconds -->
@@ -22,8 +22,6 @@
 	<cooldown>1200</cooldown>
 	<!-- cost, in energy -->
 	<energyCost>100</energyCost>
-	<!-- maximum seeking angle, in radians -->
-	<maxseekangle>0.5</maxseekangle>
 	<!-- weapon class -->
 	<class>special</class>
 </sprite>

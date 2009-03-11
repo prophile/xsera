@@ -26,6 +26,8 @@ function NewShip (shipType, shipOwner)
 	end
 	if trueData.thrust ~= nil then
 		shipObject.thrust = tonumber(trueData.thrust)
+	else
+		print("[WARNING]: No thrust data to " .. trueData.name)
 	end
 	if trueData.warp ~= nil then
 		shipObject.warpSpeed = tonumber(trueData.warp)
@@ -62,6 +64,8 @@ end
 - haha, BULLETin, get it? BULLET? IN?
 
 - Also, I should make better use of ownerShip (heh, TURBOPUNS) by making angle, velocity, etc. equal
+
+^^the above was done late at night
 --]]
 
 function NewBullet (bulletType, ownerShip)
@@ -96,7 +100,9 @@ function NewBullet (bulletType, ownerShip)
 	end
 	if trueData.turnrate ~= nil then
 		bulletObject.turningRate = tonumber(trueData.turnrate)
-		bulletObject.maxSeekAngle = tonumber(trueData.maxseekangle)
+		bulletObject.isSeeking = true
+	else
+		bulletObject.isSeeking = false
 	end
 	if trueData.thrust ~= nil then
 		bulletObject.thrust = tonumber(trueData.thrust)
