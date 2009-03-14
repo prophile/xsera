@@ -354,9 +354,9 @@ function weapon_fire(weapon, weapData, weapOwner)
 			if (mode_manager.time() * 1000) - weapData[wNum].start >= weapon.life then
 				table.remove(weapData, wNum)
 				if weapData[1] ~= nil then
-					weapon.fired = false
-				else
 					weapon.fired = true
+				else
+					weapon.fired = false
 				end
 			end
 		end
