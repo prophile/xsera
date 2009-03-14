@@ -24,6 +24,15 @@ void Object::SetVelocity ( vec2 velocityNew )
 	velocity = velocityNew;
 }
 
+void Object::Init ()
+{
+	velocity.x = 0;
+	velocity.y = 0;
+	angle = 0;
+	angularVelocity = 0;
+	torque = 0;
+}
+
 const float fluidDragRho = 1.204; // this is the density of air at 20 degrees celsius
 
 void Object::Update ( float timestep, float friction )

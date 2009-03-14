@@ -296,7 +296,7 @@ function weapon_fire(weapon, weapData, weapOwner)
 						weapData[wNum].physicsObject.velocity = { x = weapon.velocity.total * math.cos(weapData[wNum].angle) + playerShip.physicsObject.velocity.x, y = weapon.velocity.total * math.sin(weapData[wNum].angle) + playerShip.physicsObject.velocity.y }
 					else
 						weapData[wNum].dest = { x = carrierLocation.x, y = carrierLocation.y }
-						weapData[wNum].angle = playerShip.physicsObject.angle
+						weapData[wNum].physicsObject.angle = playerShip.physicsObject.angle
 						weapData[wNum].physicsObject.position = { x = playerShip.physicsObject.position.x, y = playerShip.physicsObject.position.y }
 						weapData[wNum].physicsObject.velocity = { x = playerShip.physicsObject.velocity.x, y = playerShip.physicsObject.velocity.y }
 					end
