@@ -97,7 +97,7 @@ public:
 };
 
 typedef std::map<std::string, Shader*> ShaderMap;
-ShaderMap shaders;
+static ShaderMap shaders;
 
 void AddShader ( const std::string& name, const std::string& vertex, const std::string& fragment )
 {
