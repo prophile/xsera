@@ -1,7 +1,9 @@
 #ifdef WIN32
 #include <SDL/SDL_image.h>
+#include <GL/glu.h>
 #else
 #include <SDL_image/SDL_image.h>
+#include <OpenGL/glu.h>
 #endif
 
 #include "Apollo.h"
@@ -22,6 +24,9 @@ void SetProjectionMatrix ( const matrix2x3& m );
 void SetViewMatrix ( const matrix2x3& m );
 void SetModelMatrix ( const matrix2x3& m );
 const matrix2x3& CurrentMatrix ();
+const matrix2x3& ProjectionMatrix ();
+const matrix2x3& ViewMatrix ();
+const matrix2x3& ModelMatrix ();
 
 }
 
@@ -66,12 +71,12 @@ static SDL_Surface* surfaceTexture = NULL;
 void CreateStarfieldTexture ()
 {
 	void* base = calloc(4, STARFIELD_WIDTH * STARFIELD_HEIGHT);
-	surfaceTexture = SDL_CreateRGBSurfaceFrom(base, STARFIELD_WIDTH, STARFIELD_HEIGHT, 24, STARFIELD_WIDTH * 3, 0xFF0000, 0x00FF00, 0x0000FF, 0);
+	surfaceTexture = SDL_CreateRGBSurfaceFrom(base, STARFIELD_WIDTH, STARFIELD_HEIGHT, 32, STARFIELD_WIDTH * 4, 0xFF000000, 0x00FF0000, 0x0000FF00, 0x000000FF);
 }
 
 void UploadStarfieldTexture ()
 {
-	glTexImage2D(GL_TEXTURE_RECTANGLE_ARB, 0, GL_RGB, STARFIELD_WIDTH, STARFIELD_HEIGHT, 0, SDL_BYTEORDER == SDL_BIG_ENDIAN ? GL_BGR : GL_RGB, GL_UNSIGNED_BYTE, surfaceTexture->pixels);
+	gluBuild2DMipmaps(GL_TEXTURE_2D, GL_RGBA, STARFIELD_WIDTH, STARFIELD_HEIGHT, GL_BGRA, GL_UNSIGNED_BYTE, surfaceTexture->pixels);
 	SDL_FreeSurface(surfaceTexture);
 	surfaceTexture = NULL;
 }
@@ -133,9 +138,7 @@ using namespace StarfieldBuilding;
 Starfield::Starfield ()
 {
 	glGenTextures(1, &texID);
-	glBindTexture(GL_TEXTURE_RECTANGLE_ARB, texID);
-	glTexParameteri(GL_TEXTURE_RECTANGLE_ARB, GL_TEXTURE_WRAP_S, GL_REPEAT);
-	glTexParameteri(GL_TEXTURE_RECTANGLE_ARB, GL_TEXTURE_WRAP_T, GL_REPEAT);
+	glBindTexture(GL_TEXTURE_2D, texID);
 	InitStars();
 	CreateStarfieldTexture();
 	SpatterAllStars();
@@ -153,11 +156,38 @@ vec2 Starfield::Dimensions ( float depth )
 	return vec2(STARFIELD_WIDTH, STARFIELD_HEIGHT);
 }
 
-const static float starfieldScale = 1.3f;
+const static float starfieldScale = 1.0f;
+const static float starfieldSpeed = 0.0003f;
 
 void Starfield::Draw ( float depth, vec2 centre )
 {
-	(void)depth;
+	glBindTexture(GL_TEXTURE_2D, texID);
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
+	matrix2x3 oldProj = Matrices::ProjectionMatrix();
+	Matrices::SetProjectionMatrix(matrix2x3());
+	Matrices::SetViewMatrix(matrix2x3());
+	Matrices::SetModelMatrix(matrix2x3());
+	vec2 coordinates[4];
+	coordinates[0] = vec2(-1.0f, -1.0f);
+	coordinates[1] = vec2(1.0f,  -1.0f);
+	coordinates[2] = vec2(1.0f,  1.0f );
+	coordinates[3] = vec2(-1.0f, 1.0f );
+	
+	float depthTransform = (1.0f - depth);
+	
+	vec2 textureCoordinates[4];
+	textureCoordinates[0] = (-centre*starfieldSpeed + vec2(-1.0, -1.0)) * starfieldScale * depthTransform;
+	textureCoordinates[1] = (-centre*starfieldSpeed + vec2( 1.0, -1.0)) * starfieldScale * depthTransform;
+	textureCoordinates[2] = (-centre*starfieldSpeed + vec2( 1.0,  1.0)) * starfieldScale * depthTransform;
+	textureCoordinates[3] = (-centre*starfieldSpeed + vec2(-1.0,  1.0)) * starfieldScale * depthTransform;
+	
+	glVertexPointer(2, GL_FLOAT, 0, coordinates);
+	glTexCoordPointer(2, GL_FLOAT, 0, textureCoordinates);
+	glDrawArrays(GL_QUADS, 0, 4);
+	
+	Matrices::SetProjectionMatrix(oldProj);
+	/*(void)depth;
 	Matrices::SetViewMatrix(matrix2x3::Translate(centre));
 	glBindTexture(GL_TEXTURE_RECTANGLE_ARB, texID);
 	
@@ -178,7 +208,7 @@ void Starfield::Draw ( float depth, vec2 centre )
 	
 	glVertexPointer(2, GL_FLOAT, 0, coordinates);
 	glTexCoordPointer(2, GL_FLOAT, 0, textureReferences);
-	glDrawArrays(GL_QUADS, 0, 4);
+	glDrawArrays(GL_QUADS, 0, 4);*/
 }
 
 }

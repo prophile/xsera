@@ -108,6 +108,11 @@ int scw, sch;
  void SetViewMatrix ( const matrix2x3& m );
  void SetModelMatrix ( const matrix2x3& m );
  
+ const matrix2x3& CurrentMatrix ();
+ const matrix2x3& ProjectionMatrix ();
+ const matrix2x3& ViewMatrix ();
+ const matrix2x3& ModelMatrix ();
+
  }
  */
 
@@ -149,6 +154,21 @@ void SetModelMatrix ( const matrix2x3& m )
 const matrix2x3& CurrentMatrix ()
 {
 	return mvpMatrix;
+}
+
+const matrix2x3& ProjectionMatrix ()
+{
+	return projectionMatrix;
+}
+
+const matrix2x3& ViewMatrix ()
+{
+	return viewMatrix;
+}
+
+const matrix2x3& ModelMatrix ()
+{
+	return modelMatrix;
 }
 
 }
@@ -399,23 +419,24 @@ void DrawParticles ( const vec2* locations, unsigned int count, colour col )
 
 static Starfield* sfld = NULL;
 
+static vec2 cameraCorner1;
+static vec2 cameraCorner2;
+static float cameraRotation;
+
 void DrawStarfield ( float depth )
 {
 	if (!sfld)
 	{
 		sfld = new Starfield;
 	}
+	SetShader("Starfield");
 	EnableTexturing();
-	DisableBlending();
+	EnableBlending();
 	ClearColour();
 	Matrices::SetViewMatrix(matrix2x3::Identity());
 	Matrices::SetModelMatrix(matrix2x3::Identity());
-	sfld->Draw(depth, vec2(0.0f, 0.0f));
+	sfld->Draw(depth, (cameraCorner1 + cameraCorner2) / 2.0f);
 }
-
-static vec2 cameraCorner1;
-static vec2 cameraCorner2;
-static float cameraRotation;
 
 float AspectRatio ()
 {

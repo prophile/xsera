@@ -384,7 +384,8 @@ function render ()
 --	print(playerShip.physicsObject.position.x)
 --	print(playerShip.physicsObject.position.y)
 	graphics.set_camera(-playerShip.physicsObject.position.x + shipAdjust - (camera.w / 2.0), -playerShip.physicsObject.position.y - (camera.h / 2.0), -playerShip.physicsObject.position.x + shipAdjust + (camera.w / 2.0), -playerShip.physicsObject.position.y + (camera.h / 2.0))
-	graphics.draw_starfield()
+	graphics.draw_starfield(0.0)
+	graphics.draw_starfield(0.4)
 	
 --[[------------------
 	Grid Drawing
