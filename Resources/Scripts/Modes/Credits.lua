@@ -9,6 +9,10 @@ creditSizes = {}
 rowDist = {}
 
 function init ()
+	if sound.current_music() ~= "Doomtroopers" then
+		sound.stop_music()
+		sound.play_music("Doomtroopers")
+	end
 	oldTime = mode_manager.time()
 	local rawInput = resource_manager.load("Config/Credits.txt")
 	local i = 1

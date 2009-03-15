@@ -17,7 +17,7 @@
 	<!-- maximum seeking angle -->
 	<maxSeek>0.6</maxSeek>
 	<!-- thrust, in newtons -->
-	<thrust>10000000</thrust>
+	<thrust>4500000</thrust>
 	<!-- life, in miliseconds -->
 	<life>1500</life>
 	<!-- damage dealt -->

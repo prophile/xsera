@@ -32,6 +32,7 @@ showVelocity = false
 showAngles = false
 frame = 0
 printFPS = false
+waitTime = 0.0
 --/tempvars
 
 --[[
@@ -75,6 +76,7 @@ function init ()
     physics.open(0.6)
     playerShip = NewShip("Ishiman/HeavyCruiser")
 		playerShip.warp = { warping = false, start = { bool = false, time = nil, engine = false, sound = false, isStarted = false }, endTime = 0.0, disengage = 2.0, finished = true, soundNum = 0 }
+		playerShip.switch = true
 		playerShip.cMissile = NewBullet("cMissile", playerShip)
 			playerShip.cMissile.delta = 0.0
 			playerShip.cMissile.dest = { x = carrierLocation.x, y = carrierLocation.y }
@@ -108,12 +110,20 @@ end
 --------------------]]--
 
 function update ()
-	--DEMOFINAL: put each section into its own function in THIS file, if possible
+	--DEMO2: put each section (marked by small lightsaber braces) into its own function in THIS file, if possible
 	local newTime = mode_manager.time()
 	dt = newTime - lastTime
 	lastTime = newTime
 	if printFPS == true then
 		print(1 / dt) -- fps counter! whoa... o.O
+	end
+	
+	-- victory condition
+	if carrierExploded == true then
+		waitTime = waitTime + dt
+		if waitTime >= 2.5 then
+			mode_manager.switch("Credits")
+		end
 	end
 	
 --[[------------------
@@ -288,8 +298,14 @@ function weapon_manage(weapon, weapData, weapOwner)
 					-- I would rather load from memory, but we don't have a function that preloads yet. Oh well. [DEMO2, ADAM, ALASTAIR]
 					weapData[wNum] = NewBullet(weapon.shortName, weapOwner)
 					if weapon.class ~= "special" then
-						weapData[wNum].physicsObject.angle = playerShip.physicsObject.angle
-						weapData[wNum].physicsObject.position = { x = playerShip.physicsObject.position.x + math.cos(weapData[wNum].physicsObject.angle) * weapon.length, y = playerShip.physicsObject.position.y + math.sin(weapData[wNum].physicsObject.angle) * weapon.length }
+						weapData[wNum].physicsObject.angle = weapOwner.physicsObject.angle
+						if weapOwner.switch == true then
+							weapData[wNum].physicsObject.position = { x = playerShip.physicsObject.position.x + math.cos(weapData[wNum].physicsObject.angle + 0.17) * (weapon.length - 3), y = playerShip.physicsObject.position.y + math.sin(weapData[wNum].physicsObject.angle + 0.17) * (weapon.length - 3) }
+							weapOwner.switch = false
+						else
+							weapData[wNum].physicsObject.position = { x = playerShip.physicsObject.position.x + math.cos(weapData[wNum].physicsObject.angle - 0.17) * (weapon.length - 3), y = playerShip.physicsObject.position.y + math.sin(weapData[wNum].physicsObject.angle - 0.17) * (weapon.length - 3) }
+							weapOwner.switch = true
+						end
 						weapData[wNum].physicsObject.velocity = { x = weapon.velocity.total * math.cos(weapData[wNum].physicsObject.angle) + playerShip.physicsObject.velocity.x, y = weapon.velocity.total * math.sin(weapData[wNum].physicsObject.angle) + playerShip.physicsObject.velocity.y }
 					else
 						weapData[wNum].dest = { x = carrierLocation.x, y = carrierLocation.y }

@@ -9,15 +9,15 @@
 	<!-- mass, in kg -->
 	<mass>10000</mass>
 	<!-- turning rate, in radians/second -->
-	<turnrate>4</turnrate>
+	<turnrate>3.7</turnrate>
 	<!-- energy (in energy units?) -->
-	<energy>500</energy> 
+	<energy>5000</energy> 
 	<!-- thrust, in newtons -->
-	<thrust>500</thrust> 
+	<thrust>430</thrust> 
 	<!-- warping speed -->
-	<warp>1400</warp> 
+	<warp>1300</warp> 
 	<!-- maximum speed -->
-	<maxspeed>450</maxspeed> 
+	<maxspeed>350</maxspeed> 
 	<!-- reverse thrust, in newtons -->
 	<reverse>1000</reverse>
 	<!-- special weapon -->
