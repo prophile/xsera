@@ -22,9 +22,9 @@ local shipAdjust = .045 * camera.w
 
 
 --tempvars
-carrierLocation = { x = 2200, y = 2700 }
-carrierRotation = math.pi
-carrierExploded = false
+--computerShip.physicsObject.position = { x = 2200, y = 2700 }
+--computerShip.physicsObject.angle = math.pi
+--computerShip.exploded = false
 firebeam = false -- unused, but may be helpful
 firepulse = false
 firespecial = false
@@ -34,12 +34,6 @@ frame = 0
 printFPS = false
 waitTime = 0.0
 --/tempvars
-
---[[
-playerShip = {}
-pkBeam = nil
-bestExplosion = nil
---]]
 
 local soundLength = 0.25
 
@@ -70,6 +64,13 @@ end
 	------------------}}--
 --------------------------]]--
 
+-- ALISTAIR: REQUEST: could init run BEFORE update, and not simultaneously with it?
+-- When that's done, I'll re-add computerShip to init
+	computerShip = NewShip("Gaitori/Carrier")
+		computerShip.physicsObject.position = { x = 2200, y = 2700 }
+		computerShip.physicsObject.angle = math.pi - 0.2
+		computerShip.exploded = false
+
 function init ()
 	sound.stop_music()
     lastTime = mode_manager.time()
@@ -79,15 +80,12 @@ function init ()
 		playerShip.switch = true
 		playerShip.cMissile = NewBullet("cMissile", playerShip)
 			playerShip.cMissile.delta = 0.0
-			playerShip.cMissile.dest = { x = carrierLocation.x, y = carrierLocation.y }
+			playerShip.cMissile.dest = { x = computerShip.physicsObject.position.x, y = computerShip.physicsObject.position.y }
 			playerShip.cMissile.size = { x, y }
 			playerShip.cMissile.size.x, playerShip.cMissile.size.y = graphics.sprite_dimensions("Weapons/cMissile")
-			playerShip.cMissile.isSeeking = true
 			playerShip.cMissile.fired = false
 			playerShip.cMissile.start = 0
 			playerShip.cMissile.force = { x, y }
-			playerShip.cMissile.damage = 10
-			playerShip.cMissile.initialize = true
 		playerShip.cMissileWeap = { { {} } }
 		table.remove(playerShip.cMissileWeap, 1)
 		playerShip.pkBeam = NewBullet("PKBeam", playerShip)
@@ -95,11 +93,8 @@ function init ()
 			playerShip.pkBeam.fired = false
 			playerShip.pkBeam.start = 0
 			playerShip.pkBeam.firing = false
-			playerShip.pkBeam.initialize = true
 		playerShip.pkBeamWeap = { { {} } }
 		table.remove(playerShip.pkBeamWeap, 1)
-	computerShip = NewShip("Gaitori/Carrier")
-		computerShip.physicsObject.position = carrierLocation
 	bestExplosion = NewExplosion("BestExplosion")
 end
 
@@ -295,7 +290,7 @@ function weapon_manage(weapon, weapData, weapOwner)
 			wNum = 1
 			while wNum <= weapon.max_bullets do
 				if weapData[wNum] == nil then
-					-- I would rather load from memory, but we don't have a function that preloads yet. Oh well. [DEMO2, ADAM, ALASTAIR]
+					-- I would rather load from memory, but we don't have a function that preloads yet. Oh well. [DEMO2, ADAM, ALISTAIR]
 					weapData[wNum] = NewBullet(weapon.shortName, weapOwner)
 					if weapon.class ~= "special" then
 						weapData[wNum].physicsObject.angle = weapOwner.physicsObject.angle

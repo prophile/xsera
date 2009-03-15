@@ -57,7 +57,7 @@ end
 ------------------]]--
 
 
---[[ BULLETIN: [ADAM, ALASTAIR, DEMO2]
+--[[ BULLETIN: [ADAM, ALISTAIR, DEMO2]
 - the functions of NewBullet and NewWeapon are mixed...
 - weapon should contain name, short name, firing sound, sprite, etc.
 - bullet should contain physics (anything else?)
