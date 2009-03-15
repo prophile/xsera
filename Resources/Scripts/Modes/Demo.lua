@@ -114,7 +114,7 @@ function update ()
 	end
 	
 	-- victory condition
-	if carrierExploded == true then
+	if computerShip.exploded == true then
 		waitTime = waitTime + dt
 		if waitTime >= 2.5 then
 			mode_manager.switch("Credits")
@@ -303,7 +303,7 @@ function weapon_manage(weapon, weapData, weapOwner)
 						end
 						weapData[wNum].physicsObject.velocity = { x = weapon.velocity.total * math.cos(weapData[wNum].physicsObject.angle) + playerShip.physicsObject.velocity.x, y = weapon.velocity.total * math.sin(weapData[wNum].physicsObject.angle) + playerShip.physicsObject.velocity.y }
 					else
-						weapData[wNum].dest = { x = carrierLocation.x, y = carrierLocation.y }
+						weapData[wNum].dest = { x = computerShip.physicsObject.position.x, y = computerShip.physicsObject.position.y }
 						weapData[wNum].physicsObject.angle = playerShip.physicsObject.angle
 						weapData[wNum].physicsObject.position = { x = playerShip.physicsObject.position.x, y = playerShip.physicsObject.position.y }
 						weapData[wNum].physicsObject.velocity = { x = playerShip.physicsObject.velocity.x, y = playerShip.physicsObject.velocity.y }
@@ -324,7 +324,7 @@ function weapon_manage(weapon, weapData, weapOwner)
 				weapOwner.special.ammo = weapOwner.special.ammo - 1
 				sound.play("RocketLaunchr")
 				-- temp sound file, should be "RocketLaunch" but for some reason, that file gets errors (file included for troubleshooting)
-				if carrierExploded == true then
+				if computerShip.exploded == true then
 					weapData[cNum].isSeeking = false
 				end
 				
@@ -365,7 +365,7 @@ function weapon_manage(weapon, weapData, weapOwner)
 	wNum = 1
 	while wNum <= weapon.max_bullets do
 		if weapData[wNum] ~= nil then
-			if carrierExploded == false then
+			if computerShip.exploded == false then
 				local x = computerShip.physicsObject.position.x - weapData[wNum].physicsObject.position.x
 				local y = computerShip.physicsObject.position.y - weapData[wNum].physicsObject.position.y
 				if hypot (x, y) <= computerShip.physicsObject.collision_radius * 2 / 7 then
@@ -434,18 +434,18 @@ function render ()
 ------------------]]--
 
     if computerShip.life > 0 then
-		graphics.draw_sprite("Gaitori/Carrier", carrierLocation.x, carrierLocation.y, computerShip.size.x, computerShip.size.y, carrierRotation)
+		graphics.draw_sprite("Gaitori/Carrier", computerShip.physicsObject.position.x, computerShip.physicsObject.position.y, computerShip.size.x, computerShip.size.y, computerShip.physicsObject.angle)
     else
-		if carrierExploded == false then
+		if computerShip.exploded == false then
 			if frame == 0 then
 				sound.play("New/ExplosionCombo")
 			end
 			if frame >= 12 then
-				carrierExploded = true
+				computerShip.exploded = true
 			else
 				frame = frame + dt * 50
 			end
-			graphics.draw_sprite("Explosions/BestExplosion", carrierLocation.x, carrierLocation.y, bestExplosion.size.x, bestExplosion.size.y, frame / 6 * math.pi)
+			graphics.draw_sprite("Explosions/BestExplosion", computerShip.physicsObject.position.x, computerShip.physicsObject.position.y, bestExplosion.size.x, bestExplosion.size.y, frame / 6 * math.pi)
 		end
 	end
 	
