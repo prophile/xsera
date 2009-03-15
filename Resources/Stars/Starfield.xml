@@ -3,5 +3,5 @@
 	<star frequency="1.5">DistantStar1</star>
 	<star frequency="0.65">DistantStar2</star>
 	<!--<star frequency="0.0003">BlueStar</star>-->
-	<star frequency="0.001">Sun</star>
+	<!--<star frequency="0.001">Sun</star>-->
 </starfield>
