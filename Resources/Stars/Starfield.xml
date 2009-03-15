@@ -2,6 +2,10 @@
 <starfield>
 	<star frequency="1.5">DistantStar1</star>
 	<star frequency="0.65">DistantStar2</star>
+	<star frequency="0.3">DistantStar3</star>
+	<star frequency="0.6">DistantStar4</star>
+	<star frequency="0.25">DistantStar5</star>
+	<star frequency="0.03">BrightishStar</star>
 	<!--<star frequency="0.0003">BlueStar</star>-->
 	<!--<star frequency="0.001">Sun</star>-->
 </starfield>
