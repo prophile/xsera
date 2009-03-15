@@ -405,25 +405,25 @@ function render ()
 ------------------]]--
 	
 	local i = 0
-	while i ~= 10 do
+	while i ~= 500 do
 		if (i * gridDistBlue) % gridDistLightBlue == 0 then
 			if (i * gridDistBlue) % gridDistGreen == 0 then
-				graphics.draw_line(-6000, -i * gridDistBlue, 6000, -i * gridDistBlue, 1) -- this green
-				graphics.draw_line(-6000, i * gridDistBlue, 6000, i * gridDistBlue, 1)
-				graphics.draw_line(-i * gridDistBlue, -6000, -i * gridDistBlue, 6000, 1)
-				graphics.draw_line(i * gridDistBlue, -6000, i * gridDistBlue, 6000, 1)
+				graphics.draw_line(-60000, -i * gridDistBlue, 60000, -i * gridDistBlue, 1) -- this green
+				graphics.draw_line(-60000, i * gridDistBlue, 60000, i * gridDistBlue, 1)
+				graphics.draw_line(-i * gridDistBlue, -60000, -i * gridDistBlue, 60000, 1)
+				graphics.draw_line(i * gridDistBlue, -60000, i * gridDistBlue, 60000, 1)
 			else
-				graphics.draw_line(-6000, -i * gridDistBlue, 6000, -i * gridDistBlue, 1) -- this light blue
-				graphics.draw_line(-6000, i * gridDistBlue, 6000, i * gridDistBlue, 1)
-				graphics.draw_line(-i * gridDistBlue, -6000, -i * gridDistBlue, 6000, 1)
-				graphics.draw_line(i * gridDistBlue, -6000, i * gridDistBlue, 6000, 1)
+				graphics.draw_line(-60000, -i * gridDistBlue, 60000, -i * gridDistBlue, 1) -- this light blue
+				graphics.draw_line(-60000, i * gridDistBlue, 60000, i * gridDistBlue, 1)
+				graphics.draw_line(-i * gridDistBlue, -60000, -i * gridDistBlue, 60000, 1)
+				graphics.draw_line(i * gridDistBlue, -60000, i * gridDistBlue, 60000, 1)
 			end
 		else
 			if cameraRatio ~= 1 / 16 then
-				graphics.draw_line(-6000, -i * gridDistBlue, 6000, -i * gridDistBlue, 1) -- this blue
-				graphics.draw_line(-6000, i * gridDistBlue, 6000, i * gridDistBlue, 1)
-				graphics.draw_line(-i * gridDistBlue, -6000, -i * gridDistBlue, 6000, 1)
-				graphics.draw_line(i * gridDistBlue, -6000, i * gridDistBlue, 6000, 1)
+				graphics.draw_line(-60000, -i * gridDistBlue, 60000, -i * gridDistBlue, 1) -- this blue
+				graphics.draw_line(-60000, i * gridDistBlue, 60000, i * gridDistBlue, 1)
+				graphics.draw_line(-i * gridDistBlue, -60000, -i * gridDistBlue, 60000, 1)
+				graphics.draw_line(i * gridDistBlue, -60000, i * gridDistBlue, 60000, 1)
 			end
 		end
 		i = i + 1
