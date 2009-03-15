@@ -2,6 +2,14 @@
 <sprite>
 	<!-- full name -->
 	<name>Photokinetic Beam</name>
+	<!-- short name -->
+	<shortName>PKBeam</shortName>
+	<!-- name of sound made when fired -->
+	<fireSound>ShotC</fireSound>
+	<!-- weapon class -->
+	<class>beam</class>
+	<!-- beam length -->
+	<length>30</length>
 	<!-- life, in miliseconds -->
 	<life>175</life>
 	<!-- damage dealt -->
@@ -12,8 +20,4 @@
 	<energyCost>5</energyCost>
 	<!-- velocity -->
 	<velocity>1050</velocity>
-	<!-- weapon class -->
-	<class>beam</class>
-	<!-- beam length -->
-	<length>30</length>
 </sprite>

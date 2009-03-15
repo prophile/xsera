@@ -652,7 +652,7 @@
 		496A23C40F0EB1F700C53BA1 /* Project object */ = {
 			isa = PBXProject;
 			buildConfigurationList = 496A23C70F0EB1F700C53BA1 /* Build configuration list for PBXProject "Apollo" */;
-			compatibilityVersion = "Xcode 2.4";
+			compatibilityVersion = "Xcode 3.1";
 			hasScannedForEncodings = 0;
 			mainGroup = 496A23C20F0EB1F700C53BA1;
 			productRefGroup = 496A23E10F0EB22F00C53BA1 /* Products */;

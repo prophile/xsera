@@ -26,6 +26,8 @@ function NewShip (shipType, shipOwner)
 	end
 	if trueData.thrust ~= nil then
 		shipObject.thrust = tonumber(trueData.thrust)
+	else
+		print("[WARNING]: No thrust data to " .. trueData.name)
 	end
 	if trueData.warp ~= nil then
 		shipObject.warpSpeed = tonumber(trueData.warp)
@@ -54,6 +56,18 @@ end
 	New Bullet
 ------------------]]--
 
+
+--[[ BULLETIN: [ADAM, ALISTAIR, DEMO2]
+- the functions of NewBullet and NewWeapon are mixed...
+- weapon should contain name, short name, firing sound, sprite, etc.
+- bullet should contain physics (anything else?)
+- haha, BULLETin, get it? BULLET? IN?
+
+- Also, I should make better use of ownerShip (heh, TURBOPUNS) by making angle, velocity, etc. equal
+
+^^the above was done late at night
+--]]
+
 function NewBullet (bulletType, ownerShip)
 	local rawData = xml.load("Config/Bullets/" .. bulletType .. ".xml")
 	local bulletData = rawData[1]
@@ -68,6 +82,8 @@ function NewBullet (bulletType, ownerShip)
 		print("ERROR: Bullet " .. bulletType .. " does not have a name.")
 	end
 	bulletObject.name = trueData.name
+	bulletObject.shortName = trueData.shortName
+	bulletObject.sound = trueData.fireSound
 	if trueData.sprite ~= nil then
 		bulletObject.image = trueData.sprite
 	end
@@ -84,7 +100,10 @@ function NewBullet (bulletType, ownerShip)
 	end
 	if trueData.turnrate ~= nil then
 		bulletObject.turningRate = tonumber(trueData.turnrate)
-		bulletObject.max_seek_angle = tonumber(trueData.maxseekangle)
+		bulletObject.maxSeek = tonumber(trueData.maxSeek)
+		bulletObject.isSeeking = true
+	else
+		bulletObject.isSeeking = false
 	end
 	if trueData.thrust ~= nil then
 		bulletObject.thrust = tonumber(trueData.thrust)
@@ -92,9 +111,11 @@ function NewBullet (bulletType, ownerShip)
 	bulletObject.life = tonumber(trueData.life)
 	bulletObject.damage = tonumber(trueData.damage)
 	bulletObject.cooldown = tonumber(trueData.cooldown)
+	bulletObject.max_bullets = math.ceil(bulletObject.life / bulletObject.cooldown)
 	bulletObject.owner = ownerShip.name
 	bulletObject.cost = tonumber(trueData.energyCost)
 	bulletObject.class = trueData.class
+	-- class specifics
 	if bulletObject.class == "beam" then
 		bulletObject.length = tonumber(trueData.length)
 	elseif bulletObject.class == "pulse" then

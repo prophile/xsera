@@ -78,7 +78,7 @@ int PHYS_Update ( lua_State* L )
 {
 	float timestep = luaL_checknumber(L, 1);
 	Physics::Update(timestep);
-	//ALASTAIR: No second arg above (should be friction)? How does that work in C++?
+	//ALASTAIR: No second arg above (should be friction)? How does that work in C++ when you don't include all args?
 	return 0;
 }
 	
@@ -92,6 +92,7 @@ int PHYS_NewObject ( lua_State* L )
 	float mass = luaL_checknumber(L, 1);
 	luaL_argcheck(L, mass > 0.0f, 1, "you cannot have a zero or negative mass");
 	Physics::Object* object = Physics::NewObject(mass);
+	object->Init();
 	if (!object)
 	{
 		lua_pushliteral(L, "could not create object");

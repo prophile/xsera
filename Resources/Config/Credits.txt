@@ -1,3 +1,7 @@
+**Thank you for playing Xsera!
+**We hope you enjoyed
+**this demo!
+
 ***Xsera
 A Brainpen Production
 Based on "Ares" by Nathan Lamont
@@ -5,7 +9,7 @@ Copyright 1997-2001, 2008
 
 *Programmers
 Adam "adam_0" Hintz
-Alastair "prophile" Lynn
+Alistair "prophile" Lynn
 Andrew "LANS" Moscoe
 Chris "Pallas Athene" Pickel
 
@@ -17,12 +21,13 @@ Steven "RedSteven" Edwards
 
 *Sound
 Taylor "Rickton" Vaughn
-Alastair "prophile" Lynn
+Alistair "prophile" Lynn
 Nick "nfreader" Farley
 All original sounds copyright Nathan Lamont
 See Read Me for more information
 
 *Graphics
-DarkRevenant
+Shlimazel
+Dark.Revenant
 All original graphics copyright Nathan Lamont
 See Read Me for more information

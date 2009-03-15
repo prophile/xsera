@@ -4,22 +4,26 @@
 	<name>Concussion Missile</name>
 	<!-- sprite name -->
 	<sprite>Weapons/cMissile</sprite>
+	<!-- short name -->
+	<shortName>cMissile</shortName>
+	<!-- name of sound made when fired -->
+	<fireSound>RocketLaunchr</fireSound> <!-- This file is not original -->
+	<!-- weapon class -->
+	<class>special</class>
 	<!-- mass, in kg -->
 	<mass>5000</mass>
 	<!-- turning rate, in radians/second -->
-	<turnrate>0.2</turnrate>
+	<turnrate>1.5</turnrate>
+	<!-- maximum seeking angle -->
+	<maxSeek>0.6</maxSeek>
 	<!-- thrust, in newtons -->
-	<thrust>1000</thrust> 
+	<thrust>4500000</thrust>
 	<!-- life, in miliseconds -->
-	<life>1200</life>
+	<life>1500</life>
 	<!-- damage dealt -->
 	<damage>100</damage>
 	<!-- cooldown time, in miliseconds -->
 	<cooldown>1200</cooldown>
 	<!-- cost, in energy -->
 	<energyCost>100</energyCost>
-	<!-- maximum seeking angle, in radians -->
-	<maxseekangle>0.5</maxseekangle>
-	<!-- weapon class -->
-	<class>special</class>
 </sprite>
