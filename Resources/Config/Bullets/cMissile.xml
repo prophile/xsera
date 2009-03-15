@@ -8,12 +8,16 @@
 	<shortName>cMissile</shortName>
 	<!-- name of sound made when fired -->
 	<fireSound>RocketLaunchr</fireSound> <!-- This file is not original -->
+	<!-- weapon class -->
+	<class>special</class>
 	<!-- mass, in kg -->
 	<mass>5000</mass>
 	<!-- turning rate, in radians/second -->
-	<turnrate>0.5</turnrate>
+	<turnrate>1.5</turnrate>
+	<!-- maximum seeking angle -->
+	<maxSeek>0.6</maxSeek>
 	<!-- thrust, in newtons -->
-	<thrust>1000</thrust>
+	<thrust>10000000</thrust>
 	<!-- life, in miliseconds -->
 	<life>1500</life>
 	<!-- damage dealt -->
@@ -22,6 +26,4 @@
 	<cooldown>1200</cooldown>
 	<!-- cost, in energy -->
 	<energyCost>100</energyCost>
-	<!-- weapon class -->
-	<class>special</class>
 </sprite>

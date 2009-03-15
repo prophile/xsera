@@ -7,11 +7,15 @@ function normalize(componentA, componentB)
 end
 
 function find_angle(origin, dest)
-	local angle =  math.atan2(origin.y - dest.y, origin.x - dest.x)
-	if angle < 0.0 then
-		angle = angle + 2 * math.pi
-	end
+	local angle = math.atan2(origin.y - dest.y, origin.x - dest.x)
+--	if angle < 0.0 then
+--		angle = angle + 2 * math.pi
+--	end
 	return angle
+end
+
+function find_hypot(point1, point2)
+	return (math.sqrt((point1.y - point2.y) * (point1.y - point2.y) + (point1.x - point2.x) * (point1.x - point2.x)))
 end
 
 function find_quadrant(angle)

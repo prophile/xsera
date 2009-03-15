@@ -29,7 +29,7 @@ firebeam = false -- unused, but may be helpful
 firepulse = false
 firespecial = false
 showVelocity = false
-showAngles = true
+showAngles = false
 frame = 0
 printFPS = false
 --/tempvars
@@ -87,6 +87,7 @@ function init ()
 			playerShip.cMissile.damage = 10
 			playerShip.cMissile.initialize = true
 		playerShip.cMissileWeap = { { {} } }
+		table.remove(playerShip.cMissileWeap, 1)
 		playerShip.pkBeam = NewBullet("PKBeam", playerShip)
 			playerShip.pkBeam.width = cameraRatio
 			playerShip.pkBeam.fired = false
@@ -94,6 +95,7 @@ function init ()
 			playerShip.pkBeam.firing = false
 			playerShip.pkBeam.initialize = true
 		playerShip.pkBeamWeap = { { {} } }
+		table.remove(playerShip.pkBeamWeap, 1)
 	computerShip = NewShip("Gaitori/Carrier")
 		computerShip.physicsObject.position = carrierLocation
 	bestExplosion = NewExplosion("BestExplosion")
@@ -201,27 +203,24 @@ function update ()
 	C-Missile Firing
 ------------------]]--
 	
-	weapon_fire(playerShip.cMissile, playerShip.cMissileWeap, playerShip)
+	weapon_manage(playerShip.cMissile, playerShip.cMissileWeap, playerShip)
 	--seeking code
 	local wNum = 1
 	while wNum <= playerShip.cMissile.max_bullets do
 		if playerShip.cMissileWeap[wNum] ~= nil then
 			if playerShip.cMissileWeap[wNum].isSeeking == true then
-			-- ADAM: figure out why seeking isn't working
 				playerShip.cMissileWeap[wNum].theta = find_angle(playerShip.cMissileWeap[wNum].physicsObject.position, playerShip.cMissile.dest)
 				if playerShip.cMissileWeap[wNum].physicsObject.angle ~= playerShip.cMissileWeap[wNum].theta then
-					local angle_sep = playerShip.cMissileWeap[wNum].theta - playerShip.cMissileWeap[wNum].physicsObject.angle
-					if math.abs(angle_sep) > math.pi then -- need to go through 0
-						if angle_sep > 0.0 then
-							playerShip.cMissileWeap[wNum].delta = 2 * math.pi - angle_sep
+					playerShip.cMissileWeap[wNum].delta = playerShip.cMissileWeap[wNum].theta - playerShip.cMissileWeap[wNum].physicsObject.angle
+					if math.abs(playerShip.cMissileWeap[wNum].delta) > math.pi then -- need to go through 0
+						if playerShip.cMissileWeap[wNum].delta > 0.0 then
+							playerShip.cMissileWeap[wNum].delta = 2 * math.pi - playerShip.cMissileWeap[wNum].delta
 						else
-							playerShip.cMissileWeap[wNum].delta = -2 * math.pi + angle_sep
+							playerShip.cMissileWeap[wNum].delta = 2 * math.pi + playerShip.cMissileWeap[wNum].delta
 						end
-					else
-						playerShip.cMissileWeap[wNum].delta = angle_sep
 					end
 					if math.abs(playerShip.cMissileWeap[wNum].delta) > playerShip.cMissileWeap[wNum].turningRate * dt then
-						if playerShip.cMissileWeap[wNum].delta > playerShip.cMissileWeap[wNum].turningRate then
+						if playerShip.cMissileWeap[wNum].delta > playerShip.cMissileWeap[wNum].turningRate * dt then
 							playerShip.cMissileWeap[wNum].delta = -playerShip.cMissileWeap[wNum].turningRate * dt
 						else
 							playerShip.cMissileWeap[wNum].delta = playerShip.cMissileWeap[wNum].turningRate * dt
@@ -234,14 +233,15 @@ function update ()
 				playerShip.cMissileWeap[wNum].delta = 0.0
 			end
 			playerShip.cMissileWeap[wNum].physicsObject.angle = playerShip.cMissileWeap[wNum].physicsObject.angle + playerShip.cMissileWeap[wNum].delta
-			playerShip.cMissileWeap[wNum].force = { x = math.cos(playerShip.cMissileWeap[wNum].physicsObject.angle) * playerShip.cMissile.thrust, y = math.sin(playerShip.cMissileWeap[wNum].physicsObject.angle) * playerShip.cMissile.thrust }
+			playerShip.cMissileWeap[wNum].force = { x = math.cos(playerShip.cMissileWeap[wNum].physicsObject.angle) * playerShip.cMissile.thrust / playerShip.cMissile.physicsObject.mass, y = math.sin(playerShip.cMissileWeap[wNum].physicsObject.angle) * playerShip.cMissile.thrust / playerShip.cMissile.physicsObject.mass }
 			playerShip.cMissileWeap[wNum].physicsObject:apply_force(playerShip.cMissileWeap[wNum].force)
-		--	if showAngles == true then
-		--		print(playerShip.cMissileWeap[wNum].physicsObject.angle)
-		--		print(playerShip.cMissileWeap[wNum].theta)
-		--		print(playerShip.cMissileWeap[wNum].delta)
-		--		print("----------------")
-		--	end
+			if showAngles == true then
+				print("For cMissile #" .. wNum .. ":")
+				print(playerShip.cMissileWeap[wNum].physicsObject.angle)
+				print(playerShip.cMissileWeap[wNum].theta)
+				print(playerShip.cMissileWeap[wNum].delta)
+				print("----------------")
+			end
 			wNum = playerShip.cMissile.max_bullets
 		end
 		wNum = wNum + 1
@@ -250,7 +250,7 @@ function update ()
 	
 -- PKBeam Firing
 	
-	weapon_fire(playerShip.pkBeam, playerShip.pkBeamWeap, playerShip)
+	weapon_manage(playerShip.pkBeam, playerShip.pkBeamWeap, playerShip)
 	
 	physics.update(dt)
 end
@@ -261,11 +261,8 @@ end
 	-----------------}}--
 -------------------------]]--
 
-function weapon_fire(weapon, weapData, weapOwner)
-	if weapon.initialize == true then
-		table.remove(weapData, 1)
-		weapon.initialize = false
-	end
+function weapon_manage(weapon, weapData, weapOwner)
+-- handling of new projectile	
 	if weapon.firing == true then
 		local wNum = 0
 		if weapon.class == "beam" then
@@ -291,9 +288,9 @@ function weapon_fire(weapon, weapData, weapOwner)
 					-- I would rather load from memory, but we don't have a function that preloads yet. Oh well. [DEMO2, ADAM, ALASTAIR]
 					weapData[wNum] = NewBullet(weapon.shortName, weapOwner)
 					if weapon.class ~= "special" then
-						weapData[wNum].angle = playerShip.physicsObject.angle
-						weapData[wNum].physicsObject.position = { x = playerShip.physicsObject.position.x + math.cos(weapData[wNum].angle) * weapon.length, y = playerShip.physicsObject.position.y + math.sin(weapData[wNum].angle) * weapon.length }
-						weapData[wNum].physicsObject.velocity = { x = weapon.velocity.total * math.cos(weapData[wNum].angle) + playerShip.physicsObject.velocity.x, y = weapon.velocity.total * math.sin(weapData[wNum].angle) + playerShip.physicsObject.velocity.y }
+						weapData[wNum].physicsObject.angle = playerShip.physicsObject.angle
+						weapData[wNum].physicsObject.position = { x = playerShip.physicsObject.position.x + math.cos(weapData[wNum].physicsObject.angle) * weapon.length, y = playerShip.physicsObject.position.y + math.sin(weapData[wNum].physicsObject.angle) * weapon.length }
+						weapData[wNum].physicsObject.velocity = { x = weapon.velocity.total * math.cos(weapData[wNum].physicsObject.angle) + playerShip.physicsObject.velocity.x, y = weapon.velocity.total * math.sin(weapData[wNum].physicsObject.angle) + playerShip.physicsObject.velocity.y }
 					else
 						weapData[wNum].dest = { x = carrierLocation.x, y = carrierLocation.y }
 						weapData[wNum].physicsObject.angle = playerShip.physicsObject.angle
@@ -319,15 +316,27 @@ function weapon_fire(weapon, weapData, weapOwner)
 				if carrierExploded == true then
 					weapData[cNum].isSeeking = false
 				end
+				
 				if weapData[cNum].isSeeking == true then
-					if find_angle(weapData[cNum].physicsObject.position, weapData[cNum].dest) <= math.pi then
-						local bulletTravel = { x, y, dist }
-						bulletTravel.x = math.cos(weapData[cNum].physicsObject.angle) * (weapData[cNum].thrust * dt * dt) / (2 * weapData[cNum].physicsObject.mass) + weapData[cNum].physicsObject.velocity.x
-						bulletTravel.y = math.sin(weapData[cNum].physicsObject.angle) * (weapData[cNum].thrust * dt * dt) / (2 * weapData[cNum].physicsObject.mass) + weapData[cNum].physicsObject.velocity.y
-						bulletTravel.dist = hypot(bulletTravel.x, bulletTravel.y)
-						if bulletTravel.dist <= hypot(weapData[cNum].physicsObject.position.x - weapData[cNum].dest.x, weapData[cNum].physicsObject.position.y - weapData[cNum].dest.y) then
-							weapData[cNum].isSeeking = true
-						else
+					local bulletTravel = { x, y, dist }
+					bulletTravel.dist = (weapData[cNum].thrust * weapon.life * weapon.life / 1000000) / (2 * weapData[cNum].physicsObject.mass)
+					bulletTravel.x = math.cos(weapData[cNum].physicsObject.angle) * (bulletTravel.dist + weapData[cNum].physicsObject.velocity.x)
+					bulletTravel.y = math.sin(weapData[cNum].physicsObject.angle) * (bulletTravel.dist + weapData[cNum].physicsObject.velocity.y)
+					if find_hypot(weapData[cNum].physicsObject.position, weapData[cNum].dest) <= hypot(bulletTravel.x, bulletTravel.y) then
+						if showAngles == true then
+							print(find_angle(weapData[cNum].dest, weapData[cNum].physicsObject.position))
+							print(weapData[cNum].physicsObject.angle)
+							print(find_angle(weapData[cNum].dest, weapData[cNum].physicsObject.position) - weapData[cNum].physicsObject.angle)
+						end
+						local angle = find_angle(weapData[cNum].dest, weapData[cNum].physicsObject.position) - weapData[cNum].physicsObject.angle
+						if math.abs(angle) > math.pi then -- need to go through 0
+							if angle > 0.0 then
+								angle = 2 * math.pi - angle
+							else
+								angle = 2 * math.pi + angle
+							end
+						end
+						if math.abs(angle) > weapon.maxSeek then
 							weapData[cNum].isSeeking = false
 						end
 					else
@@ -336,10 +345,12 @@ function weapon_fire(weapon, weapData, weapOwner)
 				else
 					weapData[cNum].isSeeking = false
 				end
-				weapData[cNum].fired = true
 			end
 		end
 	end
+	
+-- handling for collisions and age
+
 	wNum = 1
 	while wNum <= weapon.max_bullets do
 		if weapData[wNum] ~= nil then
@@ -436,7 +447,7 @@ function render ()
 		local wNum = 1
 		while wNum <= playerShip.pkBeam.max_bullets do
 			if playerShip.pkBeamWeap[wNum] ~= nil then		
-				graphics.draw_line(playerShip.pkBeamWeap[wNum].physicsObject.position.x, playerShip.pkBeamWeap[wNum].physicsObject.position.y, playerShip.pkBeamWeap[wNum].physicsObject.position.x - math.cos(playerShip.pkBeamWeap[wNum].angle) * playerShip.pkBeam.length, playerShip.pkBeamWeap[wNum].physicsObject.position.y - math.sin(playerShip.pkBeamWeap[wNum].angle) * playerShip.pkBeam.length, playerShip.pkBeam.width)
+				graphics.draw_line(playerShip.pkBeamWeap[wNum].physicsObject.position.x, playerShip.pkBeamWeap[wNum].physicsObject.position.y, playerShip.pkBeamWeap[wNum].physicsObject.position.x - math.cos(playerShip.pkBeamWeap[wNum].physicsObject.angle) * playerShip.pkBeam.length, playerShip.pkBeamWeap[wNum].physicsObject.position.y - math.sin(playerShip.pkBeamWeap[wNum].physicsObject.angle) * playerShip.pkBeam.length, playerShip.pkBeam.width)
 			end
 			wNum = wNum + 1
 		end

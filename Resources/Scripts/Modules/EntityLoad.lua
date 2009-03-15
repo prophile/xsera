@@ -100,6 +100,7 @@ function NewBullet (bulletType, ownerShip)
 	end
 	if trueData.turnrate ~= nil then
 		bulletObject.turningRate = tonumber(trueData.turnrate)
+		bulletObject.maxSeek = tonumber(trueData.maxSeek)
 		bulletObject.isSeeking = true
 	else
 		bulletObject.isSeeking = false
