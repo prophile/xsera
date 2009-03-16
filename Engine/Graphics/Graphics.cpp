@@ -432,7 +432,7 @@ void DrawStarfield ( float depth )
 	}
 	SetShader("Starfield");
 	EnableTexturing();
-	EnableBlending();
+	DisableBlending();
 	ClearColour();
 	Matrices::SetViewMatrix(matrix2x3::Identity());
 	Matrices::SetModelMatrix(matrix2x3::Identity());
