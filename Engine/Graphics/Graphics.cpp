@@ -417,17 +417,18 @@ void DrawParticles ( const vec2* locations, unsigned int count, colour col )
 	glDrawArrays ( GL_POINTS, 0, count );
 }
 
-static Starfield* sfld = NULL;
-
 static vec2 cameraCorner1;
 static vec2 cameraCorner2;
 static float cameraRotation;
 
+std::vector<Starfield*> starfields;
+unsigned starfieldNumber;
+
 void DrawStarfield ( float depth )
 {
-	if (!sfld)
+	if (starfields.size() >= starfieldNumber)
 	{
-		sfld = new Starfield;
+		starfields.push_back(new Starfield);
 	}
 	SetShader("Starfield");
 	EnableTexturing();
@@ -435,7 +436,7 @@ void DrawStarfield ( float depth )
 	ClearColour();
 	Matrices::SetViewMatrix(matrix2x3::Identity());
 	Matrices::SetModelMatrix(matrix2x3::Identity());
-	sfld->Draw(depth, (cameraCorner1 + cameraCorner2) / 2.0f);
+	starfields[starfieldNumber++]->Draw(depth, (cameraCorner1 + cameraCorner2) / 2.0f);
 }
 
 float AspectRatio ()
@@ -481,6 +482,7 @@ void BeginFrame ()
 	glClear(GL_COLOR_BUFFER_BIT);
 	Matrices::SetViewMatrix(matrix2x3::Identity());
 	Matrices::SetModelMatrix(matrix2x3::Identity());
+	starfieldNumber = 0;
 }
 
 void EndFrame ()

@@ -72,11 +72,16 @@ void CreateStarfieldTexture ()
 {
 	void* base = calloc(4, STARFIELD_WIDTH * STARFIELD_HEIGHT);
 	surfaceTexture = SDL_CreateRGBSurfaceFrom(base, STARFIELD_WIDTH, STARFIELD_HEIGHT, 32, STARFIELD_WIDTH * 4, 0xFF000000, 0x00FF0000, 0x0000FF00, 0x000000FF);
+	uint8_t* components = (uint8_t*)surfaceTexture->pixels;
+	for (int i = 0; i < STARFIELD_WIDTH * STARFIELD_HEIGHT; i++)
+	{
+		components[(i*4)+3] = 0x00;
+	}
 }
 
 void UploadStarfieldTexture ()
 {
-	gluBuild2DMipmaps(GL_TEXTURE_2D, GL_RGBA, STARFIELD_WIDTH, STARFIELD_HEIGHT, GL_BGRA, GL_UNSIGNED_BYTE, surfaceTexture->pixels);
+	gluBuild2DMipmaps(GL_TEXTURE_2D, GL_RGBA, STARFIELD_WIDTH, STARFIELD_HEIGHT, GL_RGBA, GL_UNSIGNED_BYTE, surfaceTexture->pixels);
 	SDL_FreeSurface(surfaceTexture);
 	surfaceTexture = NULL;
 }
@@ -91,9 +96,11 @@ void SpatterAllStars ( )
 	}
 }
 
+static const float starfieldSparseness = 9.0f;
+
 void SpatterStars ( SDL_Surface* source, float freq )
 {
-	int count = freq * (STARFIELD_WIDTH);
+	int count = (freq / starfieldSparseness) * (STARFIELD_WIDTH);
 	count += (rand() % 3 - 1);
 	if (count < 0) count = 0;
 	int w_border = source->w / 2;
@@ -156,7 +163,7 @@ vec2 Starfield::Dimensions ( float depth )
 	return vec2(STARFIELD_WIDTH, STARFIELD_HEIGHT);
 }
 
-const static float starfieldScale = 1.0f;
+const static float starfieldScale = 1.98f;
 const static float starfieldSpeed = 0.0003f;
 
 void Starfield::Draw ( float depth, vec2 centre )
@@ -164,6 +171,7 @@ void Starfield::Draw ( float depth, vec2 centre )
 	glBindTexture(GL_TEXTURE_2D, texID);
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR_MIPMAP_LINEAR);
 	matrix2x3 oldProj = Matrices::ProjectionMatrix();
 	Matrices::SetProjectionMatrix(matrix2x3());
 	Matrices::SetViewMatrix(matrix2x3());
@@ -174,13 +182,13 @@ void Starfield::Draw ( float depth, vec2 centre )
 	coordinates[2] = vec2(1.0f,  1.0f );
 	coordinates[3] = vec2(-1.0f, 1.0f );
 	
-	float depthTransform = (1.0f - depth);
+	float depthTransform = depth + 1.0f;
 	
 	vec2 textureCoordinates[4];
-	textureCoordinates[0] = (-centre*starfieldSpeed + vec2(-1.0, -1.0)) * starfieldScale * depthTransform;
-	textureCoordinates[1] = (-centre*starfieldSpeed + vec2( 1.0, -1.0)) * starfieldScale * depthTransform;
-	textureCoordinates[2] = (-centre*starfieldSpeed + vec2( 1.0,  1.0)) * starfieldScale * depthTransform;
-	textureCoordinates[3] = (-centre*starfieldSpeed + vec2(-1.0,  1.0)) * starfieldScale * depthTransform;
+	textureCoordinates[0] = (-centre*starfieldSpeed*depthTransform + vec2(-1.0, -1.0)) * starfieldScale;
+	textureCoordinates[1] = (-centre*starfieldSpeed*depthTransform + vec2( 1.0, -1.0)) * starfieldScale;
+	textureCoordinates[2] = (-centre*starfieldSpeed*depthTransform + vec2( 1.0,  1.0)) * starfieldScale;
+	textureCoordinates[3] = (-centre*starfieldSpeed*depthTransform + vec2(-1.0,  1.0)) * starfieldScale;
 	
 	glVertexPointer(2, GL_FLOAT, 0, coordinates);
 	glTexCoordPointer(2, GL_FLOAT, 0, textureCoordinates);
