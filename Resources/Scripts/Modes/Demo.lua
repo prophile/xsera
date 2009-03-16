@@ -22,11 +22,8 @@ local shipAdjust = .045 * camera.w
 
 
 --tempvars
---computerShip.physicsObject.position = { x = 2200, y = 2700 }
---computerShip.physicsObject.angle = math.pi
---computerShip.exploded = false
 firebeam = false -- unused, but may be helpful
-firepulse = false
+firepulse = false -- ditto?
 firespecial = false
 showVelocity = false
 showAngles = false
