@@ -27,7 +27,7 @@ function NewShip (shipType, shipOwner)
 	if trueData.thrust ~= nil then
 		shipObject.thrust = tonumber(trueData.thrust)
 	else
-		print("[WARNING]: No thrust data to " .. trueData.name)
+		print("[WARNING]: No thrust data for ship " .. trueData.name)
 	end
 	if trueData.warp ~= nil then
 		shipObject.warpSpeed = tonumber(trueData.warp)

@@ -825,6 +825,32 @@ int GFX_DrawLine ( lua_State* L )
 	return 0;
 }
 
+/* I'm creating this to finish the demo. ALASTAIR: you can do it right on your own time [DEMO2] */
+int GFX_DrawLineTEMP ( lua_State* L )
+{
+	int nargs = lua_gettop(L);
+	float x1, y1, x2, y2, width;
+	x1 = luaL_checknumber(L, 1);
+	y1 = luaL_checknumber(L, 2);
+	x2 = luaL_checknumber(L, 3);
+	y2 = luaL_checknumber(L, 4);
+	width = luaL_checknumber(L, 5);
+	if (nargs > 5)
+	{
+		float r = 0.0, g = 1.0, b = 0.0, a = 1.0;
+		r = luaL_checknumber(L, 6);
+		g = luaL_checknumber(L, 7);
+		b = luaL_checknumber(L, 8);
+		a = luaL_checknumber(L, 9);
+		Graphics::DrawLine(vec2(x1, y1), vec2(x2, y2), width, colour(r, g, b, a));
+	}
+	else
+	{
+		Graphics::DrawLine(vec2(x1, y1), vec2(x2, y2), width, colour(0.0f, 1.0f, 0.0f, 1.0f));
+	}
+	return 0;
+}
+	
 int GFX_DrawCircle ( lua_State* L )
 {
 	int nargs = lua_gettop(L);
@@ -934,7 +960,7 @@ luaL_Reg registryGraphics[] =
 	"draw_sprite", GFX_DrawSprite,
 	"draw_sheet_sprite", GFX_DrawSpriteFromSheet,
 	"draw_text", GFX_DrawText,
-	"draw_line", GFX_DrawLine,
+	"draw_line", GFX_DrawLineTEMP,
 	"draw_circle", GFX_DrawCircle,
 	"sprite_dimensions", GFX_SpriteDimensions,
 	"draw_starfield", GFX_DrawStarfield,
