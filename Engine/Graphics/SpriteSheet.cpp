@@ -72,6 +72,8 @@ SpriteSheet::SpriteSheet ( const std::string& name )
 		assert(root);
 		TiXmlElement* dimensions = root->FirstChild("dimensions")->ToElement();
 		assert(dimensions);
+	//	TiXmlElement* resize2 = root->FirstChild("resize")->ToElement();
+		float resize;
 		int rc;
 		rc = dimensions->QueryIntAttribute("x", &sheetTilesX);
 		assert(rc == TIXML_SUCCESS);
@@ -85,6 +87,13 @@ SpriteSheet::SpriteSheet ( const std::string& name )
 			rotational = true;
 		else
 			rotational = false;
+		if (root->FirstChild("resize"))
+		{
+			resize = 1.5;
+		} else
+		{
+			resize = 1;
+		}
 		delete xmlDoc;
 	}
 	else
@@ -105,7 +114,7 @@ SpriteSheet::~SpriteSheet ()
 	SDL_FreeSurface(surface);
 }
 
-void SpriteSheet::Draw ( int x, int y, const vec2& size )
+void SpriteSheet::Draw ( int x, int y, const vec2& size, float resize )
 {
 	vec2 halfSize = size / 2.0f;
 	if (texID)
@@ -113,6 +122,12 @@ void SpriteSheet::Draw ( int x, int y, const vec2& size )
 	else
 		MakeResident();
 	float vx = halfSize.X(), vy = halfSize.Y();
+	if (resize)
+	{}else
+	{
+		resize = 2;
+	}
+//	GLfloat vertices[] = { -vx * resize, -vy * resize, vx * resize, -vy * resize, vx * resize, vy * resize, -vx * resize, vy * resize };
 	GLfloat vertices[] = { -vx, -vy, vx, -vy, vx, vy, -vx, vy };
 	float texBLX, texBLY, texWidth = tileSizeX, texHeight = tileSizeY;
 	texBLX = (tileSizeX * x);
@@ -126,7 +141,7 @@ void SpriteSheet::Draw ( int x, int y, const vec2& size )
 	glDrawArrays(GL_QUADS, 0, 4);
 }
 
-void SpriteSheet::DrawRotation ( const vec2& size, float angle )
+void SpriteSheet::DrawRotation ( const vec2& size, float angle, float resize )
 {
 	int numObjects = sheetTilesX * sheetTilesY;
 	angle += (M_PI / float(numObjects));
@@ -142,7 +157,7 @@ void SpriteSheet::DrawRotation ( const vec2& size, float angle )
 		index = 0;
 	int x = index % sheetTilesX;
 	int y = (index - x) / sheetTilesX;
-	Draw(x, y, size);
+	Draw(x, y, size, resize);
 }
 
 }

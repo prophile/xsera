@@ -305,6 +305,7 @@ vec2 SpriteDimensions ( const std::string& sheetname )
 
 void DrawSprite ( const std::string& sheetname, int sheet_x, int sheet_y, vec2 location, vec2 size, float rotation )
 {
+	int resize_factor = 0.0;
 	SetShader("Sprite");
 	EnableTexturing();
 	EnableBlending();
@@ -323,16 +324,31 @@ void DrawSprite ( const std::string& sheetname, int sheet_x, int sheet_y, vec2 l
 	}
 	Matrices::SetViewMatrix(matrix2x3::Translate(location));
 	Matrices::SetModelMatrix(matrix2x3::Identity());
+	if (sheet->NeedsResize())
+	{
+		if (sheet->NeedsResize() != 0)
+		{
+			resize_factor = sheet->NeedsResize();
+		} else
+		{
+			resize_factor = 1;
+		}
+	} else
+	{
+		resize_factor = 1;
+	}
+	printf("%f, \n", resize_factor);
+	resize_factor = 2;	//manual override
 	if (sheet->IsRotational())
 	{
 		assert(sheet_x == 0);
 		assert(sheet_y == 0);
-		sheet->DrawRotation(size, rotation);
+		sheet->DrawRotation(size, rotation, resize_factor);
 	}
 	else
 	{
 		glRotatef(RAD2DEG(rotation), 0.0f, 0.0f, 1.0f);
-		sheet->Draw(sheet_x, sheet_y, size);
+		sheet->Draw(sheet_x, sheet_y, size, resize_factor);
 	}
 }
 
