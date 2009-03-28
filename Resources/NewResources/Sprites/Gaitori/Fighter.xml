@@ -1,6 +1,5 @@
 <?xml version="1.0"?>
 <sprite>
-  <dimensions x="6" y="4" />
+  <dimensions x="6" y="8" />
   <rotational />
-  <resize>4</resize>
 </sprite>
