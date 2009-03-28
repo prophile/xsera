@@ -72,8 +72,10 @@ SpriteSheet::SpriteSheet ( const std::string& name )
 		assert(root);
 		TiXmlElement* dimensions = root->FirstChild("dimensions")->ToElement();
 		assert(dimensions);
-	//	TiXmlElement* resize2 = root->FirstChild("resize")->ToElement();
-		float resize;
+		TiXmlElement* resizeElem = root->FirstChild("resize")->ToElement();
+		assert(resizeElem);
+		float resizevar = resizeElem->QueryFloatAttribute("f", &resize);
+		assert(resizevar == TIXML_SUCCESS);
 		int rc;
 		rc = dimensions->QueryIntAttribute("x", &sheetTilesX);
 		assert(rc == TIXML_SUCCESS);
@@ -87,13 +89,13 @@ SpriteSheet::SpriteSheet ( const std::string& name )
 			rotational = true;
 		else
 			rotational = false;
-		if (root->FirstChild("resize"))
+	/*	if (root->FirstChild("resize"))
 		{
 			resize = 1.5;
 		} else
 		{
 			resize = 1;
-		}
+		}*/
 		delete xmlDoc;
 	}
 	else

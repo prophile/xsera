@@ -337,7 +337,7 @@ void DrawSprite ( const std::string& sheetname, int sheet_x, int sheet_y, vec2 l
 	{
 		resize_factor = 1;
 	}
-	printf("%f, \n", resize_factor);
+	printf("%f \n", resize_factor);
 	resize_factor = 2;	//manual override
 	if (sheet->IsRotational())
 	{
