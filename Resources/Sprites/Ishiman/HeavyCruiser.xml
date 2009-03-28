@@ -2,5 +2,5 @@
 <sprite>
   <dimensions x="6" y="4" />
   <rotational />
-  <resize f="4" />
+  <scale factor="0.25" />
 </sprite>

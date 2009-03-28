@@ -2,5 +2,4 @@
 <sprite>
   <dimensions x="6" y="4" />
   <rotational />
-  <resize f="4" />
 </sprite>

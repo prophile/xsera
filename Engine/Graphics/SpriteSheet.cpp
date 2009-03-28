@@ -72,11 +72,18 @@ SpriteSheet::SpriteSheet ( const std::string& name )
 		assert(root);
 		TiXmlElement* dimensions = root->FirstChild("dimensions")->ToElement();
 		assert(dimensions);
-		TiXmlElement* resizeElem = root->FirstChild("resize")->ToElement();
-		assert(resizeElem);
-		float resizevar = resizeElem->QueryFloatAttribute("f", &resize);
-		assert(resizevar == TIXML_SUCCESS);
+		TiXmlElement* scale = root->FirstChild("scale")->ToElement();
 		int rc;
+		if (scale)
+		{
+			rc = scale->QueryFloatAttribute("factor", &scaleFactor);
+			if (rc != TIXML_SUCCESS)
+				scaleFactor = 1.0f;
+		}
+		else
+		{
+			scaleFactor = 1.0f;
+		}
 		rc = dimensions->QueryIntAttribute("x", &sheetTilesX);
 		assert(rc == TIXML_SUCCESS);
 		rc = dimensions->QueryIntAttribute("y", &sheetTilesY);
@@ -89,13 +96,6 @@ SpriteSheet::SpriteSheet ( const std::string& name )
 			rotational = true;
 		else
 			rotational = false;
-	/*	if (root->FirstChild("resize"))
-		{
-			resize = 1.5;
-		} else
-		{
-			resize = 1;
-		}*/
 		delete xmlDoc;
 	}
 	else
@@ -106,6 +106,7 @@ SpriteSheet::SpriteSheet ( const std::string& name )
 		rotational = false;
 		tileSizeX = surface->w;
 		tileSizeY = surface->h;
+		scaleFactor = 1.0f;
 	}
 }
 
@@ -116,20 +117,14 @@ SpriteSheet::~SpriteSheet ()
 	SDL_FreeSurface(surface);
 }
 
-void SpriteSheet::Draw ( int x, int y, const vec2& size, float resize )
+void SpriteSheet::Draw ( int x, int y, const vec2& size )
 {
 	vec2 halfSize = size / 2.0f;
 	if (texID)
 		glBindTexture(GL_TEXTURE_RECTANGLE_ARB, texID);
 	else
 		MakeResident();
-	float vx = halfSize.X(), vy = halfSize.Y();
-	if (resize)
-	{}else
-	{
-		resize = 2;
-	}
-//	GLfloat vertices[] = { -vx * resize, -vy * resize, vx * resize, -vy * resize, vx * resize, vy * resize, -vx * resize, vy * resize };
+	float vx = halfSize.X() * scaleFactor, vy = halfSize.Y() * scaleFactor;
 	GLfloat vertices[] = { -vx, -vy, vx, -vy, vx, vy, -vx, vy };
 	float texBLX, texBLY, texWidth = tileSizeX, texHeight = tileSizeY;
 	texBLX = (tileSizeX * x);
@@ -143,7 +138,7 @@ void SpriteSheet::Draw ( int x, int y, const vec2& size, float resize )
 	glDrawArrays(GL_QUADS, 0, 4);
 }
 
-void SpriteSheet::DrawRotation ( const vec2& size, float angle, float resize )
+void SpriteSheet::DrawRotation ( const vec2& size, float angle )
 {
 	int numObjects = sheetTilesX * sheetTilesY;
 	angle += (M_PI / float(numObjects));
@@ -159,7 +154,7 @@ void SpriteSheet::DrawRotation ( const vec2& size, float angle, float resize )
 		index = 0;
 	int x = index % sheetTilesX;
 	int y = (index - x) / sheetTilesX;
-	Draw(x, y, size, resize);
+	Draw(x, y, size);
 }
 
 }
