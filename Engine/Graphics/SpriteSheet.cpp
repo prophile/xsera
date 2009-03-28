@@ -72,7 +72,18 @@ SpriteSheet::SpriteSheet ( const std::string& name )
 		assert(root);
 		TiXmlElement* dimensions = root->FirstChild("dimensions")->ToElement();
 		assert(dimensions);
+		TiXmlElement* scale = root->FirstChild("scale")->ToElement();
 		int rc;
+		if (scale)
+		{
+			rc = scale->QueryFloatAttribute("factor", &scaleFactor);
+			if (rc != TIXML_SUCCESS)
+				scaleFactor = 1.0f;
+		}
+		else
+		{
+			scaleFactor = 1.0f;
+		}
 		rc = dimensions->QueryIntAttribute("x", &sheetTilesX);
 		assert(rc == TIXML_SUCCESS);
 		rc = dimensions->QueryIntAttribute("y", &sheetTilesY);
@@ -95,6 +106,7 @@ SpriteSheet::SpriteSheet ( const std::string& name )
 		rotational = false;
 		tileSizeX = surface->w;
 		tileSizeY = surface->h;
+		scaleFactor = 1.0f;
 	}
 }
 
@@ -112,7 +124,7 @@ void SpriteSheet::Draw ( int x, int y, const vec2& size )
 		glBindTexture(GL_TEXTURE_RECTANGLE_ARB, texID);
 	else
 		MakeResident();
-	float vx = halfSize.X(), vy = halfSize.Y();
+	float vx = halfSize.X() * scaleFactor, vy = halfSize.Y() * scaleFactor;
 	GLfloat vertices[] = { -vx, -vy, vx, -vy, vx, vy, -vx, vy };
 	float texBLX, texBLY, texWidth = tileSizeX, texHeight = tileSizeY;
 	texBLX = (tileSizeX * x);

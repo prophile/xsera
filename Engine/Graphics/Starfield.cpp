@@ -96,7 +96,7 @@ void SpatterAllStars ( )
 	}
 }
 
-static const float starfieldSparseness = 9.0f;
+static const float starfieldSparseness = 16.0f;
 
 void SpatterStars ( SDL_Surface* source, float freq )
 {
