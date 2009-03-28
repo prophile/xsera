@@ -21,6 +21,16 @@ const int SERVER_MAX_CLIENTS = 8; // plucked this one out of my arse.
 unsigned int badMessage[SERVER_MAX_CLIENTS+1][5]; //[clientID][n] = time bad packet was sent
 unsigned int badMessageCount[SERVER_MAX_CLIENTS]; //number of bad packets sent
 
+map<int, BlowfishKey> sessionKey;
+map<int, BlowfishIV> sessionIV;
+void makeBlowKey(int clientID)
+{
+	sessionKey[clientID];
+	sessionIV[clientID];
+	// add a random number generator for this
+}
+	
+	
 void Startup ( unsigned short port, const std::string& password )
 {
 	if (serverHost)
@@ -113,7 +123,10 @@ static void BadClient(unsigned int clientID) //deal with a bad message
     badMessageCount[clientID]++;
     badMessage[clientID][badMessageCount[clientID]] = currentTime;
 }
+
 	
+
+
 Message* GetMessage ()
 {
 	ENetEvent event;
@@ -136,6 +149,7 @@ Message* GetMessage ()
 				msg->clientID = clientID;
 				clients[clientID] = event.peer;
 				badMessage[clientID][0] = 0; //clear bad-message entry so it can be used
+				makeBlowKey[clientID];
 				break;
 			case ENET_EVENT_TYPE_DISCONNECT:
 				{
@@ -162,6 +176,14 @@ Message* GetMessage ()
 				else 
                 {
 					msg->clientID = clientID;
+				/*	
+					if( Blowfish::do_crypt(msg, sessionKey[clientID], sessionIV[clientID]) == false) // msg is passed by reference. Return 0 on error.
+					{
+					} else {
+						//do something with the recieved message
+				 
+					}
+				 */ //disabled until finished implementation
 				}
 				
 				enet_packet_destroy(event.packet);
