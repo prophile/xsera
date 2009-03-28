@@ -22,11 +22,8 @@ local shipAdjust = .045 * camera.w
 
 
 --tempvars
---computerShip.physicsObject.position = { x = 2200, y = 2700 }
---computerShip.physicsObject.angle = math.pi
---computerShip.exploded = false
 firebeam = false -- unused, but may be helpful
-firepulse = false
+firepulse = false -- ditto?
 firespecial = false
 showVelocity = false
 showAngles = false
@@ -42,7 +39,7 @@ local arrowVar = (3 * math.sqrt(3))
 local arrowDist = hypot(6, (arrowLength - arrowVar))
 local arrowAlpha = math.atan2(6, arrowDist)
 local gridDistBlue = 300
-local gridDistLightBlue = 1200
+local gridDistLightBlue = 2400
 local gridDistGreen = 4800
 
 keyControls = { left = false, right = false, forward = false, brake = false }
@@ -409,22 +406,22 @@ function render ()
 	while i ~= 500 do
 		if (i * gridDistBlue) % gridDistLightBlue == 0 then
 			if (i * gridDistBlue) % gridDistGreen == 0 then
-				graphics.draw_line(-60000, -i * gridDistBlue, 60000, -i * gridDistBlue, 1) -- this green
-				graphics.draw_line(-60000, i * gridDistBlue, 60000, i * gridDistBlue, 1)
-				graphics.draw_line(-i * gridDistBlue, -60000, -i * gridDistBlue, 60000, 1)
-				graphics.draw_line(i * gridDistBlue, -60000, i * gridDistBlue, 60000, 1)
+				graphics.draw_line(-60000, -i * gridDistBlue, 60000, -i * gridDistBlue, 1, 0.1, 0.7, 0.1, 1) -- this green
+				graphics.draw_line(-60000, i * gridDistBlue, 60000, i * gridDistBlue, 1, 0.1, 0.7, 0.1, 1)
+				graphics.draw_line(-i * gridDistBlue, -60000, -i * gridDistBlue, 60000, 1, 0.1, 0.7, 0.1, 1)
+				graphics.draw_line(i * gridDistBlue, -60000, i * gridDistBlue, 60000, 1, 0.1, 0.7, 0.1, 1)
 			else
-				graphics.draw_line(-60000, -i * gridDistBlue, 60000, -i * gridDistBlue, 1) -- this light blue
-				graphics.draw_line(-60000, i * gridDistBlue, 60000, i * gridDistBlue, 1)
-				graphics.draw_line(-i * gridDistBlue, -60000, -i * gridDistBlue, 60000, 1)
-				graphics.draw_line(i * gridDistBlue, -60000, i * gridDistBlue, 60000, 1)
+				graphics.draw_line(-60000, -i * gridDistBlue, 60000, -i * gridDistBlue, 1, 0.1, 0.1, 0.8, 1) -- this light blue
+				graphics.draw_line(-60000, i * gridDistBlue, 60000, i * gridDistBlue, 1, 0.1, 0.1, 0.8, 1)
+				graphics.draw_line(-i * gridDistBlue, -60000, -i * gridDistBlue, 60000, 1, 0.1, 0.1, 0.8, 1)
+				graphics.draw_line(i * gridDistBlue, -60000, i * gridDistBlue, 60000, 1, 0.1, 0.1, 0.8, 1)
 			end
 		else
 			if cameraRatio ~= 1 / 16 then
-				graphics.draw_line(-60000, -i * gridDistBlue, 60000, -i * gridDistBlue, 1) -- this blue
-				graphics.draw_line(-60000, i * gridDistBlue, 60000, i * gridDistBlue, 1)
-				graphics.draw_line(-i * gridDistBlue, -60000, -i * gridDistBlue, 60000, 1)
-				graphics.draw_line(i * gridDistBlue, -60000, i * gridDistBlue, 60000, 1)
+				graphics.draw_line(-60000, -i * gridDistBlue, 60000, -i * gridDistBlue, 1, 0.0, 0.0, 0.65, 1) -- this blue
+				graphics.draw_line(-60000, i * gridDistBlue, 60000, i * gridDistBlue, 1, 0.0, 0.0, 0.65, 1)
+				graphics.draw_line(-i * gridDistBlue, -60000, -i * gridDistBlue, 60000, 1, 0.0, 0.0, 0.65, 1)
+				graphics.draw_line(i * gridDistBlue, -60000, i * gridDistBlue, 60000, 1, 0.0, 0.0, 0.65, 1)
 			end
 		end
 		i = i + 1
@@ -460,7 +457,7 @@ function render ()
 		local wNum = 1
 		while wNum <= playerShip.pkBeam.max_bullets do
 			if playerShip.pkBeamWeap[wNum] ~= nil then		
-				graphics.draw_line(playerShip.pkBeamWeap[wNum].physicsObject.position.x, playerShip.pkBeamWeap[wNum].physicsObject.position.y, playerShip.pkBeamWeap[wNum].physicsObject.position.x - math.cos(playerShip.pkBeamWeap[wNum].physicsObject.angle) * playerShip.pkBeam.length, playerShip.pkBeamWeap[wNum].physicsObject.position.y - math.sin(playerShip.pkBeamWeap[wNum].physicsObject.angle) * playerShip.pkBeam.length, playerShip.pkBeam.width)
+				graphics.draw_line(playerShip.pkBeamWeap[wNum].physicsObject.position.x, playerShip.pkBeamWeap[wNum].physicsObject.position.y, playerShip.pkBeamWeap[wNum].physicsObject.position.x - math.cos(playerShip.pkBeamWeap[wNum].physicsObject.angle) * playerShip.pkBeam.length, playerShip.pkBeamWeap[wNum].physicsObject.position.y - math.sin(playerShip.pkBeamWeap[wNum].physicsObject.angle) * playerShip.pkBeam.length, playerShip.pkBeam.width, 0.1, 0.7, 0.1, 1)
 			end
 			wNum = wNum + 1
 		end
@@ -485,9 +482,9 @@ function render ()
 ------------------]]--
 	
 	local angle = playerShip.physicsObject.angle
-	graphics.draw_line(math.cos(arrowAlpha + angle) * arrowDist + playerShip.physicsObject.position.x, math.sin(arrowAlpha + angle) * arrowDist + playerShip.physicsObject.position.y, math.cos(angle - arrowAlpha) * arrowDist + playerShip.physicsObject.position.x, math.sin(angle - arrowAlpha) * arrowDist + playerShip.physicsObject.position.y, 1.5)
-	graphics.draw_line(math.cos(angle - arrowAlpha) * arrowDist + playerShip.physicsObject.position.x, math.sin(angle - arrowAlpha) * arrowDist + playerShip.physicsObject.position.y, math.cos(angle) * (arrowLength + arrowVar) + playerShip.physicsObject.position.x, math.sin(angle) * (arrowLength + arrowVar) + playerShip.physicsObject.position.y, 1.5)
-	graphics.draw_line(math.cos(angle) * (arrowLength + arrowVar) + playerShip.physicsObject.position.x, math.sin(angle) * (arrowLength + arrowVar) + playerShip.physicsObject.position.y, math.cos(arrowAlpha + angle) * arrowDist + playerShip.physicsObject.position.x, math.sin(arrowAlpha + angle) * arrowDist + playerShip.physicsObject.position.y, 1.5)
+	graphics.draw_line(math.cos(arrowAlpha + angle) * arrowDist + playerShip.physicsObject.position.x, math.sin(arrowAlpha + angle) * arrowDist + playerShip.physicsObject.position.y, math.cos(angle - arrowAlpha) * arrowDist + playerShip.physicsObject.position.x, math.sin(angle - arrowAlpha) * arrowDist + playerShip.physicsObject.position.y, 1.5, 0.1, 0.7, 0.1, 1)
+	graphics.draw_line(math.cos(angle - arrowAlpha) * arrowDist + playerShip.physicsObject.position.x, math.sin(angle - arrowAlpha) * arrowDist + playerShip.physicsObject.position.y, math.cos(angle) * (arrowLength + arrowVar) + playerShip.physicsObject.position.x, math.sin(angle) * (arrowLength + arrowVar) + playerShip.physicsObject.position.y, 1.5, 0.1, 0.7, 0.1, 1)
+	graphics.draw_line(math.cos(angle) * (arrowLength + arrowVar) + playerShip.physicsObject.position.x, math.sin(angle) * (arrowLength + arrowVar) + playerShip.physicsObject.position.y, math.cos(arrowAlpha + angle) * arrowDist + playerShip.physicsObject.position.x, math.sin(arrowAlpha + angle) * arrowDist + playerShip.physicsObject.position.y, 1.5, 0.1, 0.7, 0.1, 1)
 	graphics.set_camera(-500, -500, 500, 500)
 	graphics.draw_image("Panels/SideLeft", -435, 0, 129, 1012)
     graphics.draw_image("Panels/SideRight", 487, -2, 27, 1020)
