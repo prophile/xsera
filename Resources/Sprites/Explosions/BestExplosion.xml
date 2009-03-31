@@ -3,4 +3,5 @@
   <dimensions x="6" y="2" />
 <!-- I didn't know it's rotational... is it? If not, is there something else that goes there? -->
   <rotational />
+  <scale factor="1.0" />
 </sprite>

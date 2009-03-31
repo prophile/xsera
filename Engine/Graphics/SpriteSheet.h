@@ -24,14 +24,14 @@ private:
 	int sheetTilesX, sheetTilesY;
 	int tileSizeX, tileSizeY;
 	bool rotational;
-	float scaleFactor;
 	void MakeResident ();
 public:
+	float scaleFactor;
 	SpriteSheet ( const std::string& name );
 	~SpriteSheet ();
 	
 	bool IsRotational () const { return rotational; }
-	float ScaleFactor () { return scaleFactor; }
+	float ScaleFactor () const { return scaleFactor; }
 	
 	int SheetTilesX () const { return sheetTilesX; }
 	int SheetTilesY () const { return sheetTilesY; }
