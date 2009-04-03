@@ -12,6 +12,11 @@ Xsera immediate TODO list:
 * Finish the OpenAL audio engine [assigned: Alastair]
 * Fix colour handling in Lua Binding [assigned: Alastair]
 * Tag release 0.0.1 once done [assigned: Alastair]
+* Debug blowfish encryption
+* Debug method for sending blowkeys/ivs from server to client
+* Add RSA encryption for blowkey swap
+* test encryption implementation
+
 
 * Add Credits [complete, will need expansion]
 * Add bindings to Lua for the Net subsystem [complete]
@@ -24,3 +29,4 @@ Xsera immediate TODO list:
 * Add kick code for bad messages in the Net subsystem [complete -LANS]
 * Make sure messageIDs only contain alphanumeric [complete -LANS]
 * Add error-checking to the Net subsystem [I believe its done - LANS]
+* Finish blowfish decyption [LANS]

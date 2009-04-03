@@ -3,6 +3,7 @@
 #include "Net.h"
 #include "MessageDecode.h"
 #include "Utilities/GameTime.h"
+#include <string>
 
 namespace Net
 {
@@ -17,6 +18,8 @@ const uint32_t CLIENT_BANDWIDTH_LIMIT = 1024 * 16; // 16 kB/s
 static unsigned int badMessages[5]; // client equivalent of server badMessage
 static unsigned int badMessageCount = 0; // client equivalent of badMessageCount
 static int lm_time = 0;
+BlowfishIV sessionIV;
+BlowfishKey sessionKey;
 	
 void Connect ( const std::string& host, unsigned short port, const std::string& password )
 {
@@ -92,7 +95,25 @@ Message* GetMessage ()
 				if (result == NULL)
 				{
 				    BadMessage();
+				} 
+				else if ( strcmp( result.message , "BLOWKEY" ) == 0) //if the message contains a blowkey
+				{
+					sessionKey = result.data; //store the blowkey
 				}
+				else if ( strcmp( result.message , "BLOWIV" ) == 0) //if it contains a blowAIV
+				{
+					sessionIV = result.data; //store the blowIV
+				}
+				/*	
+				 if( Blowfish::do_decrypt(result, sessionKey, sessionIV) == false) // result is passed by reference. Return false on error.
+				 {
+				 //do something with the bad message
+				 } else {
+				 //do something with the recieved message
+				 
+				 }
+				 */ //disabled until finished implementation
+				
 				enet_packet_destroy(event.packet);
 				break;
 		}

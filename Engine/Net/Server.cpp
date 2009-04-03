@@ -149,7 +149,13 @@ Message* GetMessage ()
 				msg->clientID = clientID;
 				clients[clientID] = event.peer;
 				badMessage[clientID][0] = 0; //clear bad-message entry so it can be used
+				
+				//make and share encryption keys
 				makeBlowKey[clientID];
+				keymsg = new Message ( "BLOWKEY", sessionKey[clientID], 16 ); //make a message with the blowkey
+				SendMessage( clientID, keymsg ); //send the blowkey
+				ivmsg = new Message ( "BLOWIV" , sessionIV[clientID], 8 ); //make a message with the blowIV
+				SendMessage( clientID, ivmsg ); //send the IV
 				break;
 			case ENET_EVENT_TYPE_DISCONNECT:
 				{
@@ -177,8 +183,9 @@ Message* GetMessage ()
                 {
 					msg->clientID = clientID;
 				/*	
-					if( Blowfish::do_crypt(msg, sessionKey[clientID], sessionIV[clientID]) == false) // msg is passed by reference. Return 0 on error.
+					if( Blowfish::do_decrypt(msg, sessionKey[clientID], sessionIV[clientID]) == false) // msg is passed by reference. Return 0 on error.
 					{
+				 //do something with the bad message
 					} else {
 						//do something with the recieved message
 				 
