@@ -12,7 +12,7 @@
 
 import('EntityLoad')
 import('Math')
-import('MouseHandle')
+-- import('MouseHandle')
 
 local cameraRatio = 1
 local aspectRatio = 4 / 3
@@ -22,9 +22,7 @@ local shipAdjust = .045 * camera.w
 
 
 --tempvars
-firebeam = false -- unused, but may be helpful
-firepulse = false -- ditto?
-firespecial = false
+firepulse = false
 showVelocity = false
 showAngles = false
 frame = 0

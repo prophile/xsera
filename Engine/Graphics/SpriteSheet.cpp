@@ -124,6 +124,11 @@ void SpriteSheet::Draw ( int x, int y, const vec2& size )
 		glBindTexture(GL_TEXTURE_RECTANGLE_ARB, texID);
 	else
 		MakeResident();
+	if (scaleFactor <= 0)
+	{
+		printf("Trouble with scaleFactor value.");
+		exit(101);
+	}
 	float vx = halfSize.X() * scaleFactor, vy = halfSize.Y() * scaleFactor;
 	GLfloat vertices[] = { -vx, -vy, vx, -vy, vx, vy, -vx, vy };
 	float texBLX, texBLY, texWidth = tileSizeX, texHeight = tileSizeY;

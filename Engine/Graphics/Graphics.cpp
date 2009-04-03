@@ -305,7 +305,6 @@ vec2 SpriteDimensions ( const std::string& sheetname )
 
 void DrawSprite ( const std::string& sheetname, int sheet_x, int sheet_y, vec2 location, vec2 size, float rotation )
 {
-	int resize_factor = 0.0;
 	SetShader("Sprite");
 	EnableTexturing();
 	EnableBlending();
