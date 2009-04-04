@@ -74,9 +74,9 @@ function init ()
     playerShip = NewShip("Ishiman/HeavyCruiser")
 		playerShip.warp = { warping = false, start = { bool = false, time = nil, engine = false, sound = false, isStarted = false }, endTime = 0.0, disengage = 2.0, finished = true, soundNum = 0 }
 		playerShip.switch = true
-		playerShip.battery = { percent = 0.9 } }
-		playerShip.charge = { percent = 0.9 } }
-		playerShip.shield = { percent = 0.9 } }
+		playerShip.battery = { percent = 0.9 }
+		playerShip.charge = { percent = 0.9 }
+		playerShip.shields = { percent = 0.9 }
 		playerShip.cMissile = NewBullet("cMissile", playerShip)
 			playerShip.cMissile.delta = 0.0
 			playerShip.cMissile.dest = { x = computerShip.physicsObject.position.x, y = computerShip.physicsObject.position.y }
@@ -491,13 +491,13 @@ function render ()
 	graphics.draw_image("Panels/SideLeft", -349, 0, 103, 607)
 	graphics.draw_image("Panels/SideRight", 387, -2, 26, 607)
 	-- Battery (red)
-	graphics.draw_box(107, 379, 29, 386, 0, 0.8, 0.2, 0.2, 1)
+	graphics.draw_box(107, 379, 29, 386, 0, 0.6, 0.15, 0.15, 1)
 	graphics.draw_box(playerShip.battery.percent * 78 + 29, 379, 29, 386, 0, 0.8, 0.4, 0.4, 1)
 	-- Charge (yellow)
-	graphics.draw_box(6, 379, -72.5, 386, 0, 0.8, 0.8, 0.2, 1)
+	graphics.draw_box(6, 379, -72.5, 386, 0, 0.6, 0.6, 0.15, 1)
 	graphics.draw_box(playerShip.charge.percent * 78.5 - 72.5, 379, -72.5, 386, 0, 0.8, 0.8, 0.4, 1)
 	-- Shields (blue)
-	graphics.draw_box(-96, 379, -173, 386, 0, 0.2, 0.2, 0.8, 1)
+	graphics.draw_box(-96, 379, -173, 386, 0, 0.15, 0.15, 0.6, 1)
 	graphics.draw_box(playerShip.shields.percent * 77 - 173, 379, -173, 386, 0, 0.4, 0.4, 0.8, 1)
 	-- Radar box (green)
 	graphics.draw_box(184, -394, 100, -308, 1, 0.0, 0.4, 0.0, 1)
