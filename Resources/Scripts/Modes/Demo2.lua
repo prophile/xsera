@@ -1,7 +1,7 @@
--- demo script: Player is Ishiman Heavy Cruiser, opponent is Gaitori Carrier.
+-- demo script (for demo 1.1): Player is Ishiman Heavy Cruiser, opponent is Gaitori Carrier.
 -- Carrier has no AI, so it just sits there. Player must warp to Carrier's position
 -- and can destroy it using both seeking and non-seeking weapons. Script ends when
--- Carrier is destroyed.
+-- Carrier is destroyed. 
 
 -- Future possible script variations:
 -- Using autopilot to find Carrier.
@@ -389,6 +389,7 @@ end
 
 function render ()
     graphics.begin_frame()
+	graphics.draw_box(200, 100, 100, 200, 2);
 --	print(playerShip.physicsObject.position.x)
 --	print(playerShip.physicsObject.position.y)
 	graphics.set_camera(-playerShip.physicsObject.position.x + shipAdjust - (camera.w / 2.0), -playerShip.physicsObject.position.y - (camera.h / 2.0), -playerShip.physicsObject.position.x + shipAdjust + (camera.w / 2.0), -playerShip.physicsObject.position.y + (camera.h / 2.0))

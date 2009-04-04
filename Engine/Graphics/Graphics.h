@@ -61,6 +61,16 @@ void DrawTextSDL ( const std::string& text, const std::string& font, vec2 locati
  */
 void DrawLine ( vec2 coordinate1, vec2 coordinate2, float width, colour col );
 /**
+ * Draws a box
+ * @param top The top side of the box
+ * @param left The left side of the box
+ * @param bottom The bottom side of the box
+ * @param right The right side of the box
+ * @param width The width of the surrounding line, in pixels (zero means no surrounding line)
+ * @param col The colour of the surrounding line
+ */
+void DrawBox ( float top, float left, float bottom, float right, float width, colour col );
+/**
  * Draws a non-filled circle
  * @param centre The position of the centre of the circle
  * @param radius The radius of the circle
