@@ -522,9 +522,10 @@ function render ()
 		count = count + 1
 	end
 	-- Communications panel (green)
-	graphics.draw_box(-63, -392, -158, -304, 0, 0.0, 0.4, 0.0, 0.5)
+	graphics.draw_box(-63, -392, -158, -304, 0, 0.0, 0.4, 0.0, 1)
 	-- Communications subpanel (green)
-	graphics.draw_box(-165.5, -389.5, -185, -311, 0, 0.0, 0.4, 0.0, 0.5)	
+	graphics.draw_box(-165.5, -389.5, -185, -311, 0, 0.0, 0.4, 0.0, 1)	
+    graphics.draw_text("005", "CrystalClear", -311, 60, 12)
 	graphics.end_frame()
 end
 
