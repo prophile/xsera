@@ -393,8 +393,15 @@ void DrawBox ( float top, float left, float bottom, float right, float width, co
 	Matrices::SetViewMatrix(matrix2x3::Identity());
 	Matrices::SetModelMatrix(matrix2x3::Identity());
 	SetColour(col);
+	float quad[8] = { left, top,
+					left, bottom,
+					right, bottom,
+					right, top };
+	glVertexPointer ( 2, GL_FLOAT, 0, quad );
+	glDrawArrays ( GL_QUADS, 0, 4 );
 	if (width != 0)
 	{
+		SetColour(col + colour(0.45, 0.45, 0.45, 0.0));
 		glLineWidth(width);
 		float vertices[16] = { left, top,
 							right, top,

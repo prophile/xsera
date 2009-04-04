@@ -20,7 +20,6 @@ camera = { w = 640 / cameraRatio, h }
 camera.h = camera.w / aspectRatio
 local shipAdjust = .045 * camera.w
 
-
 --tempvars
 firepulse = false
 showVelocity = false
@@ -28,6 +27,8 @@ showAngles = false
 frame = 0
 printFPS = false
 waitTime = 0.0
+resources = 50
+resource_bars = 3
 --/tempvars
 
 local soundLength = 0.25
@@ -389,7 +390,6 @@ end
 
 function render ()
     graphics.begin_frame()
-	graphics.draw_box(200, 100, 100, 200, 2);
 --	print(playerShip.physicsObject.position.x)
 --	print(playerShip.physicsObject.position.y)
 	graphics.set_camera(-playerShip.physicsObject.position.x + shipAdjust - (camera.w / 2.0), -playerShip.physicsObject.position.y - (camera.h / 2.0), -playerShip.physicsObject.position.x + shipAdjust + (camera.w / 2.0), -playerShip.physicsObject.position.y + (camera.h / 2.0))
@@ -484,9 +484,44 @@ function render ()
 	graphics.draw_line(math.cos(arrowAlpha + angle) * arrowDist + playerShip.physicsObject.position.x, math.sin(arrowAlpha + angle) * arrowDist + playerShip.physicsObject.position.y, math.cos(angle - arrowAlpha) * arrowDist + playerShip.physicsObject.position.x, math.sin(angle - arrowAlpha) * arrowDist + playerShip.physicsObject.position.y, 1.5, 0.1, 0.7, 0.1, 1)
 	graphics.draw_line(math.cos(angle - arrowAlpha) * arrowDist + playerShip.physicsObject.position.x, math.sin(angle - arrowAlpha) * arrowDist + playerShip.physicsObject.position.y, math.cos(angle) * (arrowLength + arrowVar) + playerShip.physicsObject.position.x, math.sin(angle) * (arrowLength + arrowVar) + playerShip.physicsObject.position.y, 1.5, 0.1, 0.7, 0.1, 1)
 	graphics.draw_line(math.cos(angle) * (arrowLength + arrowVar) + playerShip.physicsObject.position.x, math.sin(angle) * (arrowLength + arrowVar) + playerShip.physicsObject.position.y, math.cos(arrowAlpha + angle) * arrowDist + playerShip.physicsObject.position.x, math.sin(arrowAlpha + angle) * arrowDist + playerShip.physicsObject.position.y, 1.5, 0.1, 0.7, 0.1, 1)
-	graphics.set_camera(-500, -500, 500, 500)
-	graphics.draw_image("Panels/SideLeft", -435, 0, 129, 1012)
-    graphics.draw_image("Panels/SideRight", 487, -2, 27, 1020)
+	graphics.set_camera(-400, -300, 400, 300)
+	graphics.draw_image("Panels/SideLeft", -349, 0, 103, 607)
+	graphics.draw_image("Panels/SideRight", 387, -2, 26, 607)
+	-- Battery (red)
+	graphics.draw_box(107, 379, 29, 386, 0, 0.8, 0.2, 0.2, 1)
+	graphics.draw_box(107, 379, 29, 386, 0, 0.8, 0.4, 0.4, 1)
+	-- Charge (yellow)
+	graphics.draw_box(6, 379, -72.5, 386, 0, 0.8, 0.8, 0.2, 1)
+	graphics.draw_box(6, 379, -72.5, 386, 0, 0.8, 0.8, 0.4, 1)
+	-- Shields (blue)
+	graphics.draw_box(-96, 379, -173, 386, 0, 0.2, 0.2, 0.8, 1)
+	graphics.draw_box(-96, 379, -173, 386, 0, 0.4, 0.4, 0.8, 1)
+	-- Radar box (green)
+	graphics.draw_box(184, -394, 100, -308, 1, 0.0, 0.4, 0.0, 1)
+	-- Factory resources (green)
+	count = 0
+	while count <= 100 do
+		if count <= resources then
+			graphics.draw_box(151 - 3.15 * count, 394, 149 - 3.15 * count, 397, 0, 0.4, 0.7, 0.4, 1)
+		else
+			graphics.draw_box(151 - 3.15 * count, 394, 149 - 3.15 * count, 397, 0, 0.2, 0.5, 0.2, 1)
+		end
+		count = count + 1
+	end
+	-- Factory resource bars (yellow)
+	count = 1
+	while count <= 7 do
+		if count <= resource_bars then
+			graphics.draw_box(154.5 - 4.5 * count, 384, 151 - 4.5 * count, 392, 0, 0.7, 0.7, 0.4, 1)
+		else
+			graphics.draw_box(154.5 - 4.5 * count, 384, 151 - 4.5 * count, 392, 0, 0.5, 0.5, 0.2, 1)
+		end
+		count = count + 1
+	end
+	-- Communications panel (green)
+	graphics.draw_box(-63, -392, -158, -304, 0, 0.0, 0.4, 0.0, 0.5)
+	-- Communications subpanel (green)
+	graphics.draw_box(-165.5, -389.5, -185, -311, 0, 0.0, 0.4, 0.0, 0.5)	
 	graphics.end_frame()
 end
 
