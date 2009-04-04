@@ -3,5 +3,5 @@
 	<!-- full name -->
 	<name>Concussion Missile</name>
 	<!-- ammo -->
-	<ammo>100</ammo>
+	<ammo>5</ammo>
 </weapon>

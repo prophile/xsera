@@ -27,8 +27,10 @@ showAngles = false
 frame = 0
 printFPS = false
 waitTime = 0.0
-resources = 50
-resource_bars = 3
+resources = 10
+resource_bars = 1
+NEW_RES = 2
+resource_time = 0
 --/tempvars
 
 local soundLength = 0.25
@@ -74,9 +76,9 @@ function init ()
     playerShip = NewShip("Ishiman/HeavyCruiser")
 		playerShip.warp = { warping = false, start = { bool = false, time = nil, engine = false, sound = false, isStarted = false }, endTime = 0.0, disengage = 2.0, finished = true, soundNum = 0 }
 		playerShip.switch = true
-		playerShip.battery = { percent = 0.9 }
-		playerShip.charge = { percent = 0.9 }
-		playerShip.shields = { percent = 0.9 }
+		playerShip.battery = { total = 100, level = 100, percent = 1.0 }
+		playerShip.charge = { total = 100, level = 100, percent = 1.0 }
+		playerShip.shields = { total = 100, level = 100, percent = 1.0 }
 		playerShip.cMissile = NewBullet("cMissile", playerShip)
 			playerShip.cMissile.delta = 0.0
 			playerShip.cMissile.dest = { x = computerShip.physicsObject.position.x, y = computerShip.physicsObject.position.y }
@@ -256,6 +258,22 @@ function update ()
 	
 	weapon_manage(playerShip.pkBeam, playerShip.pkBeamWeap, playerShip)
 	
+-- Update panels
+	
+	resource_time = resource_time + dt
+	if resource_time > resource_time % NEW_RES then
+		resource_time = resource_time % NEW_RES
+		resources = resources + 1
+		if resources == 101 then
+			resources = 0
+			resource_bars = resource_bars + 1
+		end
+	end
+	
+	playerShip.battery.percent = playerShip.battery.level / playerShip.battery.total
+	playerShip.charge.percent = playerShip.charge.level / playerShip.charge.total
+	playerShip.shields.percent = playerShip.shields.level / playerShip.shields.total
+
 	physics.update(dt)
 end
 
@@ -270,7 +288,7 @@ function weapon_manage(weapon, weapData, weapOwner)
 	if weapon.firing == true then
 		local wNum = 0
 		if weapon.class == "beam" then
-			if playerShip.energy < weapon.cost then
+			if playerShip.battery.level < weapon.cost then
 				return
 			end
 		elseif weapon.class == "pulse" then
@@ -316,7 +334,7 @@ function weapon_manage(weapon, weapData, weapOwner)
 			
 			-- weapon fired, take away cost (and seek if necessary)
 			if weapon.class == "beam" then
-				playerShip.energy = playerShip.energy - weapon.cost
+				playerShip.battery.level = playerShip.battery.level - weapon.cost
 			elseif weapon.class == "pulse" then
 				return
 			elseif weapon.class == "special" then
@@ -408,19 +426,19 @@ function render ()
 	while i ~= 500 do
 		if (i * gridDistBlue) % gridDistLightBlue == 0 then
 			if (i * gridDistBlue) % gridDistGreen == 0 then
-				graphics.draw_line(-60000, -i * gridDistBlue, 60000, -i * gridDistBlue, 1, 0.1, 0.7, 0.1, 1) -- this green
+				graphics.draw_line(-60000, -i * gridDistBlue, 60000, -i * gridDistBlue, 1, 0.1, 0.7, 0.1, 1)
 				graphics.draw_line(-60000, i * gridDistBlue, 60000, i * gridDistBlue, 1, 0.1, 0.7, 0.1, 1)
 				graphics.draw_line(-i * gridDistBlue, -60000, -i * gridDistBlue, 60000, 1, 0.1, 0.7, 0.1, 1)
 				graphics.draw_line(i * gridDistBlue, -60000, i * gridDistBlue, 60000, 1, 0.1, 0.7, 0.1, 1)
 			else
-				graphics.draw_line(-60000, -i * gridDistBlue, 60000, -i * gridDistBlue, 1, 0.1, 0.1, 0.8, 1) -- this light blue
-				graphics.draw_line(-60000, i * gridDistBlue, 60000, i * gridDistBlue, 1, 0.1, 0.1, 0.8, 1)
-				graphics.draw_line(-i * gridDistBlue, -60000, -i * gridDistBlue, 60000, 1, 0.1, 0.1, 0.8, 1)
-				graphics.draw_line(i * gridDistBlue, -60000, i * gridDistBlue, 60000, 1, 0.1, 0.1, 0.8, 1)
+				graphics.draw_line(-60000, -i * gridDistBlue, 60000, -i * gridDistBlue, 1, 0.3, 0.3, 0.8, 1)
+				graphics.draw_line(-60000, i * gridDistBlue, 60000, i * gridDistBlue, 1, 0.3, 0.3, 0.8, 1)
+				graphics.draw_line(-i * gridDistBlue, -60000, -i * gridDistBlue, 60000, 1, 0.3, 0.3, 0.8, 1)
+				graphics.draw_line(i * gridDistBlue, -60000, i * gridDistBlue, 60000, 1, 0.3, 0.3, 0.8, 1)
 			end
 		else
 			if cameraRatio ~= 1 / 16 then
-				graphics.draw_line(-60000, -i * gridDistBlue, 60000, -i * gridDistBlue, 1, 0.0, 0.0, 0.65, 1) -- this blue
+				graphics.draw_line(-60000, -i * gridDistBlue, 60000, -i * gridDistBlue, 1, 0.0, 0.0, 0.65, 1)
 				graphics.draw_line(-60000, i * gridDistBlue, 60000, i * gridDistBlue, 1, 0.0, 0.0, 0.65, 1)
 				graphics.draw_line(-i * gridDistBlue, -60000, -i * gridDistBlue, 60000, 1, 0.0, 0.0, 0.65, 1)
 				graphics.draw_line(i * gridDistBlue, -60000, i * gridDistBlue, 60000, 1, 0.0, 0.0, 0.65, 1)
@@ -428,6 +446,13 @@ function render ()
 		end
 		i = i + 1
 	end
+	
+--[[------------------
+	Planet Drawing
+------------------]]--
+	
+	aex, aey = graphics.sprite_dimensions("Planets/AnotherEarth")
+	graphics.draw_sprite("Planets/AnotherEarth", -100, 100, aex, aey)
 	
 --[[------------------
 	Ship Drawing
@@ -471,7 +496,7 @@ function render ()
 	
 	if playerShip.cMissile.fired == true then
 		local wNum = 1
-		while wNum <= playerShip.pkBeam.max_bullets do
+		while wNum <= playerShip.cMissile.max_bullets do
 			if playerShip.cMissileWeap[wNum] ~= nil then		
 				graphics.draw_sprite("Weapons/cMissile", playerShip.cMissileWeap[wNum].physicsObject.position.x, playerShip.cMissileWeap[wNum].physicsObject.position.y, playerShip.cMissileWeap[wNum].size.x, playerShip.cMissileWeap[wNum].size.y, playerShip.cMissileWeap[wNum].physicsObject.angle)
 			end
@@ -504,10 +529,10 @@ function render ()
 	-- Factory resources (green)
 	count = 0
 	while count <= 100 do
-		if count <= resources then
-			graphics.draw_box(151 - 3.15 * count, 394, 149 - 3.15 * count, 397, 0, 0.4, 0.7, 0.4, 1)
-		else
+		if count > resources then
 			graphics.draw_box(151 - 3.15 * count, 394, 149 - 3.15 * count, 397, 0, 0.2, 0.5, 0.2, 1)
+		else
+			graphics.draw_box(151 - 3.15 * count, 394, 149 - 3.15 * count, 397, 0, 0.4, 0.7, 0.4, 1)
 		end
 		count = count + 1
 	end
@@ -524,8 +549,8 @@ function render ()
 	-- Communications panel (green)
 	graphics.draw_box(-63, -392, -158, -304, 0, 0.0, 0.4, 0.0, 1)
 	-- Communications subpanel (green)
-	graphics.draw_box(-165.5, -389.5, -185, -311, 0, 0.0, 0.4, 0.0, 1)	
-    graphics.draw_text("005", "CrystalClear", -311, 60, 12)
+	graphics.draw_box(-165.5, -389.5, -185, -311, 0, 0.0, 0.4, 0.0, 1)
+    graphics.draw_text(string.format('%03d', playerShip.special.ammo), "CrystalClear", -311, 60, 12)
 	graphics.end_frame()
 end
 
@@ -610,16 +635,6 @@ function key ( k )
 			arrowDist = arrowDist * 2
 			playerShip.pkBeam.width = cameraRatio
 		end
-	--[[ temporarily commented (currently unnecessary)
-	elseif k == "l" then
-		playerShip.physicsObject.angle = 0
-	elseif k == "i" then
-		playerShip.physicsObject.angle = math.pi / 2
-	elseif k == "j" then
-		playerShip.physicsObject.angle = math.pi
-	elseif k == "k" then
-		playerShip.physicsObject.angle = 3 * math.pi / 2
-	--]]
 	elseif k == "tab" then
 		playerShip.warp.start.bool = true
 	elseif k == " " then
