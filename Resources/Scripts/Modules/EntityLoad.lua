@@ -170,10 +170,9 @@ function NewScenario (scenario)
 			trueData[v.name] = v[1]
 		end
 	end
-	local scenarioObject = {}
+	local scenarioObject = { {} }
 	scenarioObject.name = trueData.name
-	scenarioObject.planet =  { name = trueData.planet.name, location = { x = tonumber(trueData.locationx), y = tonumber(trueData.planet.locationy) }, sprite = trueData.planet.sprite, res_gen = tonumber(trueData.planet.resources_generated) }
-	print(scenarioObject.planet.location.x) -- ALISTAIR: ADAM: COMES UP NIL... WHY?
+	scenarioObject.planet =  { name = trueData.pname, location = { x = tonumber(trueData.plocationx), y = tonumber(trueData.plocationy) }, sprite = trueData.psprite, res_gen = tonumber(trueData.presources_generated) }
 	return scenarioObject
 end
 
