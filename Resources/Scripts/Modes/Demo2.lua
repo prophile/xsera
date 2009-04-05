@@ -31,6 +31,7 @@ resources = 10
 resource_bars = 1
 NEW_RES = 2
 resource_time = 0
+recharge_timer = 0.0
 --/tempvars
 
 local soundLength = 0.25
@@ -76,9 +77,9 @@ function init ()
     playerShip = NewShip("Ishiman/HeavyCruiser")
 		playerShip.warp = { warping = false, start = { bool = false, time = nil, engine = false, sound = false, isStarted = false }, endTime = 0.0, disengage = 2.0, finished = true, soundNum = 0 }
 		playerShip.switch = true
-		playerShip.battery = { total = 100, level = 100, percent = 1.0 }
-		playerShip.charge = { total = 100, level = 100, percent = 1.0 }
-		playerShip.shields = { total = 100, level = 100, percent = 1.0 }
+		playerShip.battery = { total = 1000, level = 1000, percent = 1.0 }
+		playerShip.charge = { total = 1000, level = 1000, percent = 1.0 }
+		playerShip.shields = { total = 1000, level = 1000, percent = 1.0 }
 		playerShip.cMissile = NewBullet("cMissile", playerShip)
 			playerShip.cMissile.delta = 0.0
 			playerShip.cMissile.dest = { x = computerShip.physicsObject.position.x, y = computerShip.physicsObject.position.y }
@@ -257,23 +258,36 @@ function update ()
 -- PKBeam Firing
 	
 	weapon_manage(playerShip.pkBeam, playerShip.pkBeamWeap, playerShip)
-	
--- Update panels
+
+--[[------------------
+	Update Panels
+------------------]]--
 	
 	resource_time = resource_time + dt
 	if resource_time > resource_time % NEW_RES then
 		resource_time = resource_time % NEW_RES
 		resources = resources + 1
-		if resources == 101 then
-			resources = 0
-			resource_bars = resource_bars + 1
+		if resources == 100 then
+			if resource_bars ~= 7 then
+				resources = 0
+				resource_bars = resource_bars + 1
+			end
 		end
 	end
 	
 	playerShip.battery.percent = playerShip.battery.level / playerShip.battery.total
 	playerShip.charge.percent = playerShip.charge.level / playerShip.charge.total
 	playerShip.shields.percent = playerShip.shields.level / playerShip.shields.total
-
+	if playerShip.charge.percent ~= 1.0 then
+		recharge_timer = recharge_timer + dt
+		if recharge_timer >= 0.5 then
+			if playerShip.battery.percent ~= 0.0 then
+				playerShip.battery.level = playerShip.battery.level - 1
+				playerShip.charge.level = playerShip.charge.level + 1
+				recharge_timer = 0.0
+			end
+		end
+	end
 	physics.update(dt)
 end
 
@@ -334,7 +348,7 @@ function weapon_manage(weapon, weapData, weapOwner)
 			
 			-- weapon fired, take away cost (and seek if necessary)
 			if weapon.class == "beam" then
-				playerShip.battery.level = playerShip.battery.level - weapon.cost
+				playerShip.charge.level = playerShip.charge.level - weapon.cost
 			elseif weapon.class == "pulse" then
 				return
 			elseif weapon.class == "special" then
