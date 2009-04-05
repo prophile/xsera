@@ -303,12 +303,13 @@ vec2 SpriteDimensions ( const std::string& sheetname )
 	return vec2(sheet->TileSizeX(), sheet->TileSizeY());
 }
 
-void DrawSprite ( const std::string& sheetname, int sheet_x, int sheet_y, vec2 location, vec2 size, float rotation )
+void DrawSprite ( const std::string& sheetname, int sheet_x, int sheet_y, vec2 location, vec2 size, float rotation, colour col )
 {
 	SetShader("Sprite");
 	EnableTexturing();
 	EnableBlending();
 	ClearColour();
+	SetColour(col);
 	SpriteSheet* sheet;
 	SheetMap::iterator iter = spriteSheets.find(sheetname);
 	if (iter == spriteSheets.end())

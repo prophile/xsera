@@ -923,14 +923,26 @@ int GFX_DrawSprite ( lua_State* L )
 	const char* spritesheet;
 	int nargs = lua_gettop(L);
 	float loc_x, loc_y, size_x, size_y, rot = 0.0f;
+	colour col;
 	spritesheet = luaL_checkstring(L, 1);
 	loc_x = luaL_checknumber(L, 2);
 	loc_y = luaL_checknumber(L, 3);
 	size_x = luaL_checknumber(L, 4);
 	size_y = luaL_checknumber(L, 5);
-	if (nargs > 5)
+	if (nargs == 6)
+	{
 		rot = luaL_checknumber(L, 6);
-	Graphics::DrawSprite(spritesheet, 0, 0, vec2(loc_x, loc_y), vec2(size_x, size_y), rot);
+	}
+	if (nargs > 6)
+	{
+		float r = 0.0, g = 1.0, b = 0.0, a = 1.0;
+		r = luaL_checknumber(L, 6);
+		g = luaL_checknumber(L, 7);
+		b = luaL_checknumber(L, 8);
+		a = luaL_checknumber(L, 9);
+		Graphics::DrawSprite(spritesheet, 0, 0, vec2(loc_x, loc_y), vec2(size_x, size_y), rot, colour(r, g, b, a));
+	}
+	Graphics::DrawSprite(spritesheet, 0, 0, vec2(loc_x, loc_y), vec2(size_x, size_y), rot, colour(1.0f, 1.0f, 1.0f, 1.0f));
 	return 0;
 }
 
@@ -970,9 +982,20 @@ int GFX_DrawSpriteFromSheet ( lua_State* L )
 	loc_y = luaL_checknumber(L, 5);
 	size_x = luaL_checknumber(L, 6);
 	size_y = luaL_checknumber(L, 7);
-	if (nargs > 7)
+	if (nargs == 8)
+	{
 		rot = luaL_checknumber(L, 8);
-	Graphics::DrawSprite(spritesheet, sheet_x, sheet_y, vec2(loc_x, loc_y), vec2(size_x, size_y), rot);
+	}
+	if (nargs > 8)
+	{
+		float r = 0.0, g = 1.0, b = 0.0, a = 1.0;
+		r = luaL_checknumber(L, 6);
+		g = luaL_checknumber(L, 7);
+		b = luaL_checknumber(L, 8);
+		a = luaL_checknumber(L, 9);
+		Graphics::DrawSprite(spritesheet, sheet_x, sheet_y, vec2(loc_x, loc_y), vec2(size_x, size_y), rot, colour(r, g, b, a));
+	}
+	Graphics::DrawSprite(spritesheet, sheet_x, sheet_y, vec2(loc_x, loc_y), vec2(size_x, size_y), rot, colour(1.0f, 1.0f, 1.0f, 1.0f));
 	return 0;
 }
 

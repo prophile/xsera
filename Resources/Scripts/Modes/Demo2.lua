@@ -466,7 +466,7 @@ function render ()
 ------------------]]--
 	
 	aex, aey = graphics.sprite_dimensions("Planets/AnotherEarth")
-	graphics.draw_sprite("Planets/AnotherEarth", -100, 100, aex, aey)
+	graphics.draw_sprite("Planets/AnotherEarth", -100, 100, aex, aey, 1, 0.0, 1.0, 1.0, 1.0)
 	
 --[[------------------
 	Ship Drawing

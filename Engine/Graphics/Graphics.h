@@ -33,7 +33,7 @@ vec2 SpriteDimensions ( const std::string& sheetname );
  * @param size The size of the sprite in world coordinates
  * @param rotation The rotation of the sprite, in radians
  */
-void DrawSprite ( const std::string& sheetname, int sheet_x, int sheet_y, vec2 location, vec2 size, float rotation );
+void DrawSprite ( const std::string& sheetname, int sheet_x, int sheet_y, vec2 location, vec2 size, float rotation, colour col );
 /**
  * Draws an image
  * @param imageName The name of the image
@@ -41,7 +41,7 @@ void DrawSprite ( const std::string& sheetname, int sheet_x, int sheet_y, vec2 l
  * @param size The size of the image in world coordinates
  */
 inline void DrawImage ( const std::string& imageName, vec2 location, vec2 size )
-	{ DrawSprite("+" + imageName, 0, 0, location, size, 0.0f); }
+	{ DrawSprite("+" + imageName, 0, 0, location, size, 0.0f, colour(1.0f, 1.0f, 1.0f, 1.0f)); }
 /**
  * Draws a string of text
  * @param text The text to draw
