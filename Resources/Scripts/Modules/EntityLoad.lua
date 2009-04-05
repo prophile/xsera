@@ -161,8 +161,8 @@ end
 	New Scenario
 ------------------]]--
 
-function NewScenario (scenarioType)
-	local rawData = xml.load("Config/Scenarios/" .. scenarioType .. ".xml")
+function NewScenario (scenario)
+	local rawData = xml.load("Config/Scenarios/" .. scenario .. ".xml")
 	local scenarioData = rawData[1]
 	local trueData = {}
 	for k, v in ipairs(scenarioData) do
@@ -172,6 +172,8 @@ function NewScenario (scenarioType)
 	end
 	local scenarioObject = {}
 	scenarioObject.name = trueData.name
+	scenarioObject.planet =  { name = trueData.planet.name, location = { x = tonumber(trueData.locationx), y = tonumber(trueData.planet.locationy) }, sprite = trueData.planet.sprite, res_gen = tonumber(trueData.planet.resources_generated) }
+	print(scenarioObject.planet.location.x) -- ALISTAIR: ADAM: COMES UP NIL... WHY?
 	return scenarioObject
 end
 

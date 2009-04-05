@@ -20,6 +20,20 @@ camera = { w = 640 / cameraRatio, h }
 camera.h = camera.w / aspectRatio
 local shipAdjust = .045 * camera.w
 
+--color tables
+c_lightRed = { r = 0.8, g = 0.4, b = 0.4, a = 1 }
+c_red = { r = 0.6, g = 0.15, b = 0.15, a = 1 }
+c_lightBlue = { r = 0.15, g = 0.15, b = 0.6, a = 1 }
+c_blue = { r = 0.15, g = 0.15, b = 0.6, a = 1 }
+c_lightGreen = { r = 0.3, g = 0.7, b = 0.3, a = 1 }
+c_green = { r = 0.0, g = 0.4, b = 0.0, a = 1 }
+c_lightYellow = { r = 0.8, g = 0.8, b = 0.4, a = 1 }
+c_yellow = { r = 0.6, g = 0.6, b = 0.15, a = 1 }
+c_pink = { r = 0.8, g = 0.5, b = 0.5, a = 1 }
+c_lightPurple = { r = 0.8, g = 0.5, b = 0.7, a = 1 }
+c_purple = { r = 0.7, g = 0.4, b = 0.6, a = 1 }
+--/color tables
+
 --tempvars
 firepulse = false
 showVelocity = false
@@ -69,6 +83,7 @@ end
 		computerShip.physicsObject.position = { x = 2200, y = 2700 }
 		computerShip.physicsObject.angle = math.pi - 0.2
 		computerShip.exploded = false
+	scen = NewScenario("demo")
 
 function init ()
 	sound.stop_music()
@@ -428,9 +443,9 @@ function render ()
 --	print(playerShip.physicsObject.position.x)
 --	print(playerShip.physicsObject.position.y)
 	graphics.set_camera(-playerShip.physicsObject.position.x + shipAdjust - (camera.w / 2.0), -playerShip.physicsObject.position.y - (camera.h / 2.0), -playerShip.physicsObject.position.x + shipAdjust + (camera.w / 2.0), -playerShip.physicsObject.position.y + (camera.h / 2.0))
-	graphics.draw_starfield(0.4)
+--	graphics.draw_starfield(0.4)
 	--graphics.draw_starfield(0.0)
-	graphics.draw_starfield(-0.5)
+--	graphics.draw_starfield(-0.5)
 	
 --[[------------------
 	Grid Drawing
@@ -466,7 +481,7 @@ function render ()
 ------------------]]--
 	
 	aex, aey = graphics.sprite_dimensions("Planets/AnotherEarth")
-	graphics.draw_sprite("Planets/AnotherEarth", -100, 100, aex, aey, 1, 0.0, 1.0, 1.0, 1.0)
+	graphics.draw_sprite("Planets/AnotherEarth", scen.planet.location.x, scen.planet.location.y, aex, aey, 1, 0.0, 1.0, 1.0, 1.0)
 	
 --[[------------------
 	Ship Drawing
@@ -528,19 +543,19 @@ function render ()
 	graphics.draw_line(math.cos(angle) * (arrowLength + arrowVar) + playerShip.physicsObject.position.x, math.sin(angle) * (arrowLength + arrowVar) + playerShip.physicsObject.position.y, math.cos(arrowAlpha + angle) * arrowDist + playerShip.physicsObject.position.x, math.sin(arrowAlpha + angle) * arrowDist + playerShip.physicsObject.position.y, 1.5, 0.1, 0.7, 0.1, 1)
 	graphics.set_camera(-400, -300, 400, 300)
 	graphics.draw_image("Panels/SideLeft", -349, 0, 103, 607)
-	graphics.draw_image("Panels/SideRight", 387, -2, 26, 607)
-	-- Battery (red)
+	graphics.draw_image("Panels/SideRight", 387, -2, 26, 608)
+-- Battery (red)
 	graphics.draw_box(107, 379, 29, 386, 0, 0.6, 0.15, 0.15, 1)
 	graphics.draw_box(playerShip.battery.percent * 78 + 29, 379, 29, 386, 0, 0.8, 0.4, 0.4, 1)
-	-- Charge (yellow)
+-- Charge (yellow)
 	graphics.draw_box(6, 379, -72.5, 386, 0, 0.6, 0.6, 0.15, 1)
 	graphics.draw_box(playerShip.charge.percent * 78.5 - 72.5, 379, -72.5, 386, 0, 0.8, 0.8, 0.4, 1)
-	-- Shields (blue)
+-- Shields (blue)
 	graphics.draw_box(-96, 379, -173, 386, 0, 0.15, 0.15, 0.6, 1)
-	graphics.draw_box(playerShip.shields.percent * 77 - 173, 379, -173, 386, 0, 0.4, 0.4, 0.8, 1)
-	-- Radar box (green)
+	graphics.draw_box(playerShip.shields.percent * 77 - 173, 379, -173, 386, 0, 0.15, 0.15, 0.6, 1)
+-- Radar box (green)
 	graphics.draw_box(184, -394, 100, -308, 1, 0.0, 0.4, 0.0, 1)
-	-- Factory resources (green)
+-- Factory resources (green)
 	count = 0
 	while count <= 100 do
 		if count > resources then
@@ -550,7 +565,7 @@ function render ()
 		end
 		count = count + 1
 	end
-	-- Factory resource bars (yellow)
+-- Factory resource bars (yellow)
 	count = 1
 	while count <= 7 do
 		if count <= resource_bars then
@@ -560,11 +575,56 @@ function render ()
 		end
 		count = count + 1
 	end
-	-- Communications panel (green)
+-- Factory build bar
+	planet = true
+	planet_build = { factor = 10, current = 0, percent = 0.7 }
+	if planet == true then
+		graphics.draw_line(382, 181, 392, 181, 0.5, 0.7, 0.4, 0.6, 1)
+		graphics.draw_line(382, 181, 382, 177, 0.5, 0.7, 0.4, 0.6, 1)
+		graphics.draw_line(392, 177, 392, 181, 0.5, 0.7, 0.4, 0.6, 1)
+		graphics.draw_line(382, 159, 392, 159, 0.5, 0.7, 0.4, 0.6, 1)
+		graphics.draw_line(382, 163, 382, 159, 0.5, 0.7, 0.4, 0.6, 1)
+		graphics.draw_line(392, 159, 392, 163, 0.5, 0.7, 0.4, 0.6, 1)
+		graphics.draw_box(179, 384, 161, 390, 0, 0.7, 0.4, 0.6, 1)
+		graphics.draw_box(18 * planet_build.percent + 161, 384, 161, 390, 0, 0.8, 0.5, 0.7, 1)
+	end
+-- Communications panels (green)
 	graphics.draw_box(-63, -392, -158, -304, 0, 0.0, 0.4, 0.0, 1)
-	-- Communications subpanel (green)
 	graphics.draw_box(-165.5, -389.5, -185, -311, 0, 0.0, 0.4, 0.0, 1)
-    graphics.draw_text(string.format('%03d', playerShip.special.ammo), "CrystalClear", -311, 60, 12)
+	graphics.draw_line(-391, -74, -305, -74, 1, 0.3, 0.7, 0.3, 0.5)
+-- Weapon ammo count
+    graphics.draw_text(string.format('%03d', playerShip.special.ammo), "CrystalClear", -311, 60, 13) -- GREEN
+-- Right panel text
+    graphics.draw_text("MAIN MENU", "CrystalClear", -345, -69, 13) -- LEFT JUSTIFY, GREEN
+    graphics.draw_text("<Build>", "CrystalClear", -345, -80, 13) -- LEFT JUSTIFY, GREEN
+    graphics.draw_text("<Special Orders>", "CrystalClear", -345, -91, 13) -- LEFT JUSTIFY, GREEN
+    graphics.draw_text("<Message>", "CrystalClear", -345, -102, 13) -- LEFT JUSTIFY, GREEN
+    graphics.draw_text("<Mission Status>", "CrystalClear", -345, -113, 13) -- LEFT JUSTIFY, GREEN
+	target = true
+	control = true
+	if control == true then
+		graphics.draw_box(49, -392, 39, -305, 0, 0.8, 0.8, 0.4, 1)
+		graphics.draw_text("CONTROL", "CrystalClear", -370, 44, 13) -- LEFT JUSTIFY, BLACK
+		graphics.draw_line(-387, 26, -372, 26, 0.5)
+		graphics.draw_line(-387, 24, -387, 26, 0.5)
+		graphics.draw_line(-372, 24, -372, 26, 0.5)
+		graphics.draw_line(-387, 9, -372, 9, 0.5)
+		graphics.draw_line(-372, 11, -372, 9, 0.5)
+		graphics.draw_line(-387, 11, -387, 9, 0.5)
+	end
+	if target == true then
+		graphics.draw_box(-8, -392, -18, -305, 0, 0.2, 0.2, 0.6, 1)
+		graphics.draw_text("TARGET", "CrystalClear", -370, -13, 13) -- LEFT JUSTIFY, BLACK
+		graphics.draw_line(-387, -32, -372, -32, 0.5)
+		graphics.draw_line(-372, -34, -372, -32, 0.5)
+		graphics.draw_line(-387, -34, -387, -32, 0.5)
+		graphics.draw_line(-387, -49, -372, -49, 0.5)
+		graphics.draw_line(-372, -47, -372, -49, 0.5)
+		graphics.draw_line(-387, -47, -387, -49, 0.5)
+	end
+	graphics.draw_box(-165.5, -389.5, -175.5, -358, 0, 0.15, 0.15, 0.6, 1)
+	graphics.draw_text("RIGHT", "CrystalClear", -377, -171, 13) -- LEFT JUSTIFY, BLUE
+	graphics.draw_text("Select", "CrystalClear", -337, -171, 13) -- LEFT JUSTIFY, BLUE
 	graphics.end_frame()
 end
 

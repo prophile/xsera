@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<scenario>
+	<planet>
+		<name>Another Earth</name>
+		<locationx>100</locationx>
+		<locationy>100</locationy>
+		<sprite>AnotherEarth</sprite>
+		<resources_generated>0.5</resources_generated>
+	</planet>
+</scenario>
