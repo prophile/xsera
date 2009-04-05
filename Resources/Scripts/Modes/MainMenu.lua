@@ -83,13 +83,13 @@ function key ( k )
     elseif k == "k" then
         sizeFactor = sizeFactor - 0.1
     elseif k == "d" then
-        mode_manager.switch("Demo")
+        mode_manager.switch("Demo2")
     elseif k == "t" then
         mode_manager.switch("AngleTest")
     elseif k == "c" then
         mode_manager.switch("Credits")
     elseif k == "tab" then
-        mode_manager.switch("Demo2")
+        mode_manager.switch("Demo1")
     else
         print("Uninterpreted keystroke " .. k)
     end

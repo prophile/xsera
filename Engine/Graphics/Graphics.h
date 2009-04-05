@@ -33,7 +33,7 @@ vec2 SpriteDimensions ( const std::string& sheetname );
  * @param size The size of the sprite in world coordinates
  * @param rotation The rotation of the sprite, in radians
  */
-void DrawSprite ( const std::string& sheetname, int sheet_x, int sheet_y, vec2 location, vec2 size, float rotation );
+void DrawSprite ( const std::string& sheetname, int sheet_x, int sheet_y, vec2 location, vec2 size, float rotation, colour col );
 /**
  * Draws an image
  * @param imageName The name of the image
@@ -41,7 +41,7 @@ void DrawSprite ( const std::string& sheetname, int sheet_x, int sheet_y, vec2 l
  * @param size The size of the image in world coordinates
  */
 inline void DrawImage ( const std::string& imageName, vec2 location, vec2 size )
-	{ DrawSprite("+" + imageName, 0, 0, location, size, 0.0f); }
+	{ DrawSprite("+" + imageName, 0, 0, location, size, 0.0f, colour(1.0f, 1.0f, 1.0f, 1.0f)); }
 /**
  * Draws a string of text
  * @param text The text to draw
@@ -60,6 +60,16 @@ void DrawTextSDL ( const std::string& text, const std::string& font, vec2 locati
  * @param col The colour of the line
  */
 void DrawLine ( vec2 coordinate1, vec2 coordinate2, float width, colour col );
+/**
+ * Draws a box
+ * @param top The top side of the box
+ * @param left The left side of the box
+ * @param bottom The bottom side of the box
+ * @param right The right side of the box
+ * @param width The width of the surrounding line, in pixels (zero means no surrounding line)
+ * @param col The colour of the surrounding line
+ */
+void DrawBox ( float top, float left, float bottom, float right, float width, colour col );
 /**
  * Draws a non-filled circle
  * @param centre The position of the centre of the circle

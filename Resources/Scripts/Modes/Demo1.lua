@@ -3,16 +3,8 @@
 -- and can destroy it using both seeking and non-seeking weapons. Script ends when
 -- Carrier is destroyed.
 
--- Future possible script variations:
--- Using autopilot to find Carrier.
--- Carrier has a "fleeing" AI, and runs away when attacked, possibly warping away.
--- Carrier has other AIs.
--- Implement planets.
--- Use other Heavy Cruisers (possibly built on planets) to destroy Carrier, using attack command.
-
 import('EntityLoad')
 import('Math')
--- import('MouseHandle')
 
 local cameraRatio = 1
 local aspectRatio = 4 / 3
@@ -20,18 +12,13 @@ camera = { w = 640 / cameraRatio, h }
 camera.h = camera.w / aspectRatio
 local shipAdjust = .045 * camera.w
 
-
---tempvars
 firepulse = false
 showVelocity = false
 showAngles = false
 frame = 0
 printFPS = false
 waitTime = 0.0
---/tempvars
-
 local soundLength = 0.25
-
 local arrowLength = 135
 local arrowVar = (3 * math.sqrt(3))
 local arrowDist = hypot(6, (arrowLength - arrowVar))
@@ -100,7 +87,6 @@ end
 --------------------]]--
 
 function update ()
-	--DEMO2: put each section (marked by small lightsaber braces) into its own function in THIS file, if possible
 	local newTime = mode_manager.time()
 	dt = newTime - lastTime
 	lastTime = newTime

@@ -303,12 +303,13 @@ vec2 SpriteDimensions ( const std::string& sheetname )
 	return vec2(sheet->TileSizeX(), sheet->TileSizeY());
 }
 
-void DrawSprite ( const std::string& sheetname, int sheet_x, int sheet_y, vec2 location, vec2 size, float rotation )
+void DrawSprite ( const std::string& sheetname, int sheet_x, int sheet_y, vec2 location, vec2 size, float rotation, colour col )
 {
 	SetShader("Sprite");
 	EnableTexturing();
 	EnableBlending();
 	ClearColour();
+	SetColour(col);
 	SpriteSheet* sheet;
 	SheetMap::iterator iter = spriteSheets.find(sheetname);
 	if (iter == spriteSheets.end())
@@ -373,9 +374,47 @@ void DrawLine ( vec2 coordinate1, vec2 coordinate2, float width, colour col )
 	Matrices::SetModelMatrix(matrix2x3::Identity());
 	SetColour(col);
 	float vertices[4] = { coordinate1.X(), coordinate1.Y(),
-	                      coordinate2.X(), coordinate2.Y() };
+						coordinate2.X(), coordinate2.Y() };
 	glVertexPointer ( 2, GL_FLOAT, 0, vertices );
 	glDrawArrays ( GL_LINES, 0, 2 );
+}
+
+void DrawBox ( float top, float left, float bottom, float right, float width, colour col )
+{
+	SetShader("Primitive");
+	DisableTexturing();
+	if (col.alpha() < 1.0f)
+	{
+		EnableBlending();
+	}
+	else
+	{
+		DisableBlending();
+	}
+	Matrices::SetViewMatrix(matrix2x3::Identity());
+	Matrices::SetModelMatrix(matrix2x3::Identity());
+	SetColour(col);
+	float quad[8] = { left, top,
+					left, bottom,
+					right, bottom,
+					right, top };
+	glVertexPointer ( 2, GL_FLOAT, 0, quad );
+	glDrawArrays ( GL_QUADS, 0, 4 );
+	if (width != 0)
+	{
+		SetColour(col + colour(0.45, 0.45, 0.45, 0.0));
+		glLineWidth(width);
+		float vertices[16] = { left, top,
+							right, top,
+							left, top,
+							left, bottom,
+							right, top,
+							right, bottom,
+							left, bottom,
+							right, bottom };
+		glVertexPointer ( 2, GL_FLOAT, 0, vertices );
+		glDrawArrays ( GL_LINES, 0, 8 );
+	}
 }
 
 void DrawCircle ( vec2 centre, float radius, float width, colour col )

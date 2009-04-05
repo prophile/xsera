@@ -825,7 +825,7 @@ int GFX_DrawLine ( lua_State* L )
 	return 0;
 }
 
-/* I'm creating this to finish the demo. ALASTAIR: you can do it right on your own time [DEMO2] */
+/* I'm creating this to finish the demo. ALISTAIR: you can do it right on your own time [DEMO2] */
 int GFX_DrawLineTEMP ( lua_State* L )
 {
 	int nargs = lua_gettop(L);
@@ -850,7 +850,32 @@ int GFX_DrawLineTEMP ( lua_State* L )
 	}
 	return 0;
 }
-	
+
+int GFX_DrawBoxTEMP ( lua_State* L )
+{
+	int nargs = lua_gettop(L);
+	float top, left, bottom, right, width;
+	top = luaL_checknumber(L, 1);
+	left = luaL_checknumber(L, 2);
+	bottom = luaL_checknumber(L, 3);
+	right = luaL_checknumber(L, 4);
+	width = luaL_checknumber(L, 5);
+	if (nargs > 5)
+	{
+		float r = 0.0, g = 1.0, b = 0.0, a = 1.0;
+		r = luaL_checknumber(L, 6);
+		g = luaL_checknumber(L, 7);
+		b = luaL_checknumber(L, 8);
+		a = luaL_checknumber(L, 9);
+		Graphics::DrawBox(top, left, bottom, right, width, colour(r, g, b, a));
+	}
+	else
+	{
+		Graphics::DrawBox(top, left, bottom, right, width, colour(0.0f, 1.0f, 0.0f, 1.0f));
+	}
+	return 0;
+}
+
 int GFX_DrawCircle ( lua_State* L )
 {
 	int nargs = lua_gettop(L);
@@ -898,14 +923,26 @@ int GFX_DrawSprite ( lua_State* L )
 	const char* spritesheet;
 	int nargs = lua_gettop(L);
 	float loc_x, loc_y, size_x, size_y, rot = 0.0f;
+	colour col;
 	spritesheet = luaL_checkstring(L, 1);
 	loc_x = luaL_checknumber(L, 2);
 	loc_y = luaL_checknumber(L, 3);
 	size_x = luaL_checknumber(L, 4);
 	size_y = luaL_checknumber(L, 5);
-	if (nargs > 5)
+	if (nargs == 6)
+	{
 		rot = luaL_checknumber(L, 6);
-	Graphics::DrawSprite(spritesheet, 0, 0, vec2(loc_x, loc_y), vec2(size_x, size_y), rot);
+	}
+	if (nargs > 6)
+	{
+		float r = 0.0, g = 1.0, b = 0.0, a = 1.0;
+		r = luaL_checknumber(L, 6);
+		g = luaL_checknumber(L, 7);
+		b = luaL_checknumber(L, 8);
+		a = luaL_checknumber(L, 9);
+		Graphics::DrawSprite(spritesheet, 0, 0, vec2(loc_x, loc_y), vec2(size_x, size_y), rot, colour(r, g, b, a));
+	}
+	Graphics::DrawSprite(spritesheet, 0, 0, vec2(loc_x, loc_y), vec2(size_x, size_y), rot, colour(1.0f, 1.0f, 1.0f, 1.0f));
 	return 0;
 }
 
@@ -945,9 +982,20 @@ int GFX_DrawSpriteFromSheet ( lua_State* L )
 	loc_y = luaL_checknumber(L, 5);
 	size_x = luaL_checknumber(L, 6);
 	size_y = luaL_checknumber(L, 7);
-	if (nargs > 7)
+	if (nargs == 8)
+	{
 		rot = luaL_checknumber(L, 8);
-	Graphics::DrawSprite(spritesheet, sheet_x, sheet_y, vec2(loc_x, loc_y), vec2(size_x, size_y), rot);
+	}
+	if (nargs > 8)
+	{
+		float r = 0.0, g = 1.0, b = 0.0, a = 1.0;
+		r = luaL_checknumber(L, 6);
+		g = luaL_checknumber(L, 7);
+		b = luaL_checknumber(L, 8);
+		a = luaL_checknumber(L, 9);
+		Graphics::DrawSprite(spritesheet, sheet_x, sheet_y, vec2(loc_x, loc_y), vec2(size_x, size_y), rot, colour(r, g, b, a));
+	}
+	Graphics::DrawSprite(spritesheet, sheet_x, sheet_y, vec2(loc_x, loc_y), vec2(size_x, size_y), rot, colour(1.0f, 1.0f, 1.0f, 1.0f));
 	return 0;
 }
 
@@ -961,6 +1009,7 @@ luaL_Reg registryGraphics[] =
 	"draw_sheet_sprite", GFX_DrawSpriteFromSheet,
 	"draw_text", GFX_DrawText,
 	"draw_line", GFX_DrawLineTEMP,
+	"draw_box", GFX_DrawBoxTEMP,
 	"draw_circle", GFX_DrawCircle,
 	"sprite_dimensions", GFX_SpriteDimensions,
 	"draw_starfield", GFX_DrawStarfield,
