@@ -313,7 +313,7 @@ end
 -------------------------]]--
 
 function weapon_manage(weapon, weapData, weapOwner)
--- handling of new projectile	
+-- handling of new projectile
 	if weapon.firing == true then
 		local wNum = 0
 		if weapon.class == "beam" then
@@ -443,9 +443,9 @@ function render ()
 --	print(playerShip.physicsObject.position.x)
 --	print(playerShip.physicsObject.position.y)
 	graphics.set_camera(-playerShip.physicsObject.position.x + shipAdjust - (camera.w / 2.0), -playerShip.physicsObject.position.y - (camera.h / 2.0), -playerShip.physicsObject.position.x + shipAdjust + (camera.w / 2.0), -playerShip.physicsObject.position.y + (camera.h / 2.0))
---	graphics.draw_starfield(0.4)
+	graphics.draw_starfield(0.4)
 	--graphics.draw_starfield(0.0)
---	graphics.draw_starfield(-0.5)
+	graphics.draw_starfield(-0.5)
 	
 --[[------------------
 	Grid Drawing

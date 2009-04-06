@@ -68,7 +68,9 @@ end
 ^^the above was done late at night
 --]]
 
+-- function NewBullet (weaponType, weaponClass, ownerShip)
 function NewBullet (bulletType, ownerShip)
+--	local rawData = xml.load("Config/Weapons/" .. weaponClass .. "/" .. weaponType .. ".xml")
 	local rawData = xml.load("Config/Bullets/" .. bulletType .. ".xml")
 	local bulletData = rawData[1]
 	local trueData = {}
@@ -81,20 +83,18 @@ function NewBullet (bulletType, ownerShip)
 	if trueData.name == nil then
 		print("ERROR: Bullet " .. bulletType .. " does not have a name.")
 	end
-	bulletObject.name = trueData.name
-	bulletObject.shortName = trueData.shortName
-	bulletObject.sound = trueData.fireSound
 	if trueData.sprite ~= nil then
 		bulletObject.image = trueData.sprite
+	else
+		bulletObject.image = "Misc/QuestionMark"
+		print("ERROR: Bullet " .. bulletType .. " has no defined image. Default image used.")
 	end
 	if trueData.mass == nil then
-		trueData.mass = 1
+		trueData.mass = 0.01
 	end
 	bulletObject.physicsObject = physics.new_object(tonumber(trueData.mass))
-	if bulletObject.image ~= nil then
-		bulletObject.size.x, bulletObject.size.y = graphics.sprite_dimensions(bulletObject.image)
-		bulletObject.physicsObject.collision_radius = hypot(bulletObject.size.x, bulletObject.size.y)
-	end
+	bulletObject.size.x, bulletObject.size.y = graphics.sprite_dimensions(bulletObject.image)
+	bulletObject.physicsObject.collision_radius = hypot(bulletObject.size.x, bulletObject.size.y)
 	if trueData.velocity ~= nil then
 		bulletObject.velocity = { total = trueData.velocity, x, y }
 	end
@@ -109,11 +109,8 @@ function NewBullet (bulletType, ownerShip)
 		bulletObject.thrust = tonumber(trueData.thrust)
 	end
 	bulletObject.life = tonumber(trueData.life)
-	bulletObject.damage = tonumber(trueData.damage)
-	bulletObject.cooldown = tonumber(trueData.cooldown)
-	bulletObject.max_bullets = math.ceil(bulletObject.life / bulletObject.cooldown)
 	bulletObject.owner = ownerShip.name
-	bulletObject.cost = tonumber(trueData.energyCost)
+--	bulletObject.weapOwner = weaponType.name
 	bulletObject.class = trueData.class
 	-- class specifics
 	if bulletObject.class == "beam" then
@@ -127,12 +124,24 @@ function NewBullet (bulletType, ownerShip)
 	else
 		print("[EntityLoad] ERROR: Unknown weapon class '" .. bulletObject.class .. "'. See NewBullet")
 	end
+	
+	
+	
+	
+	bulletObject.shortName = trueData.shortName
+	bulletObject.sound = trueData.fireSound
+	bulletObject.damage = tonumber(trueData.damage)
+	bulletObject.cooldown = tonumber(trueData.cooldown)
+	bulletObject.max_bullets = math.ceil(bulletObject.life / bulletObject.cooldown)
+	bulletObject.name = trueData.name
 	return bulletObject
 end
 
 --[[------------------
 	New Weapon
 ------------------]]--
+
+
 
 function NewWeapon (weaponClass, weaponType)
 	local rawData = xml.load("Config/Weapons/" .. weaponClass .. "/" .. weaponType .. ".xml")
