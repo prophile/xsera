@@ -9,7 +9,7 @@
 	<!-- weapon class -->
 	<class>special</class>
 	<!-- name of sound made when fired -->
-	<fireSound>RocketLaunchr</fireSound> <!-- This file is not original -->
+	<fireSound>RocketLaunchr</fireSound> <!-- This file is not the original -->
 	<!-- mass, in kg -->
 	<mass>5000</mass>
 	<!-- turning rate, in radians/second -->

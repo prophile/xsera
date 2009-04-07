@@ -85,16 +85,15 @@ function NewBullet (bulletType, ownerShip)
 	end
 	if trueData.sprite ~= nil then
 		bulletObject.image = trueData.sprite
-	else
-		bulletObject.image = "Misc/QuestionMark"
-		print("ERROR: Bullet " .. bulletType .. " has no defined image. Default image used.")
 	end
 	if trueData.mass == nil then
 		trueData.mass = 0.01
 	end
 	bulletObject.physicsObject = physics.new_object(tonumber(trueData.mass))
-	bulletObject.size.x, bulletObject.size.y = graphics.sprite_dimensions(bulletObject.image)
-	bulletObject.physicsObject.collision_radius = hypot(bulletObject.size.x, bulletObject.size.y)
+	if bulletObject.image ~= nil then
+		bulletObject.size.x, bulletObject.size.y = graphics.sprite_dimensions(bulletObject.image)
+		bulletObject.physicsObject.collision_radius = hypot(bulletObject.size.x, bulletObject.size.y)
+	end
 	if trueData.velocity ~= nil then
 		bulletObject.velocity = { total = trueData.velocity, x, y }
 	end
