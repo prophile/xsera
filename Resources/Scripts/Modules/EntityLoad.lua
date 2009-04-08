@@ -180,7 +180,27 @@ function NewScenario (scenario)
 	end
 	local scenarioObject = { {} }
 	scenarioObject.name = trueData.name
-	scenarioObject.planet =  { name = trueData.pname, location = { x = tonumber(trueData.plocationx), y = tonumber(trueData.plocationy) }, sprite = trueData.psprite, res_gen = tonumber(trueData.presources_generated) }
+	scenarioObject.planet =  { name = trueData.pname,
+			location = { x = tonumber(trueData.plocationx), y = tonumber(trueData.plocationy) },
+			sprite = trueData.psprite,
+			res_gen = tonumber(trueData.presources_generated),
+			build = { } }
+	if trueData.build1 ~= nil then
+		scenarioObject.planet.build[1] = trueData.build1
+	end
+	if trueData.build2 ~= nil then
+		scenarioObject.planet.build[2] = trueData.build2
+	end
+	if trueData.build3 ~= nil then
+		scenarioObject.planet.build[3] = trueData.build3
+	end
+	if trueData.build4 ~= nil then
+		scenarioObject.planet.build[4] = trueData.build4
+	end
+	if trueData.build5 ~= nil then
+		scenarioObject.planet.build[5] = trueData.build5
+	end
+	scenarioObject.briefing = trueData.briefing
 	return scenarioObject
 end
 

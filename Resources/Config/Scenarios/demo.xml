@@ -7,7 +7,14 @@
 		<plocationy>100</plocationy>
 		<psprite>AnotherEarth</psprite>
 		<presources_generated>0.5</presources_generated>
-<!--	</planet>-->
+	<build1>Heavy Cruiser</build1>
+	<briefing>Destroy the Gaitori Carrier.</briefing>
+<!-- ALISTAIR: I'm gonna need a way to check the length, in screen units, of the briefings, in order to be
+	able to wrap them correctly. -->
+<!-- Here's what I need to do with buildable planets: I need to have their name and race (as it is on the hard
+	drive), so that I can access all of their data, and then convert that data in EntityLoad.lua, under
+	NewScenario -->
+<!--	</planet> -->
 <!-- ALISTAIR: I'd like to structure the data within planet tags, so we can define the bounds of each planet.
 	I don't know how to do this, so your help on this is greatly appreciated.-->
 </sprite>

@@ -12,6 +12,7 @@
 
 import('EntityLoad')
 import('Math')
+import('Scenario')
 import('PanelMenus')
 -- import('MouseHandle')
 
@@ -84,7 +85,6 @@ end
 		computerShip.physicsObject.position = { x = 2200, y = 2700 }
 		computerShip.physicsObject.angle = math.pi - 0.2
 		computerShip.exploded = false
-	scen = NewScenario("demo")
 
 function init ()
 	sound.stop_music()
@@ -619,7 +619,7 @@ function render ()
 		graphics.draw_line(-372, -47, -372, -49, 0.5, 1.0, 1.0, 1.0, 1)
 		graphics.draw_line(-387, -47, -387, -49, 0.5, 1.0, 1.0, 1.0, 1)
 	end
-	if menu_level ~= menu_options then
+	if menu_level == menu_options then
 		graphics.draw_box(-165.5, -389.5, -175.5, -358, 0, 0.15, 0.15, 0.6, 1)
 		graphics.draw_text("RIGHT", "CrystalClear", -377, -171, 13) -- LEFT JUSTIFY, BLUE
 		graphics.draw_text("Select", "CrystalClear", -337, -171, 13) -- LEFT JUSTIFY, BLUE
