@@ -161,8 +161,8 @@ end
 	New Scenario
 ------------------]]--
 
-function NewScenario (scenarioType)
-	local rawData = xml.load("Config/Scenarios/" .. scenarioType .. ".xml")
+function NewScenario (scenario)
+	local rawData = xml.load("Config/Scenarios/" .. scenario .. ".xml")
 	local scenarioData = rawData[1]
 	local trueData = {}
 	for k, v in ipairs(scenarioData) do
@@ -170,8 +170,9 @@ function NewScenario (scenarioType)
 			trueData[v.name] = v[1]
 		end
 	end
-	local scenarioObject = {}
+	local scenarioObject = { {} }
 	scenarioObject.name = trueData.name
+	scenarioObject.planet =  { name = trueData.pname, location = { x = tonumber(trueData.plocationx), y = tonumber(trueData.plocationy) }, sprite = trueData.psprite, res_gen = tonumber(trueData.presources_generated) }
 	return scenarioObject
 end
 
