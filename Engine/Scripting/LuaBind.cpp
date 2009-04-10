@@ -876,6 +876,30 @@ int GFX_DrawBoxTEMP ( lua_State* L )
 	return 0;
 }
 
+int GFX_DrawTriangleTEMP ( lua_State* L )
+{
+	int nargs = lua_gettop(L);
+	float width;
+	float points[6] = { luaL_checknumber(L, 1), luaL_checknumber(L, 2), luaL_checknumber(L, 3),
+						luaL_checknumber(L, 4), luaL_checknumber(L, 5), luaL_checknumber(L, 6) };
+	if (nargs > 6)
+	{
+		float r = 0.0, g = 1.0, b = 0.0, a = 1.0;
+		r = luaL_checknumber(L, 7);
+		g = luaL_checknumber(L, 8);
+		b = luaL_checknumber(L, 9);
+		a = luaL_checknumber(L, 10);
+		Graphics::DrawTriangle(vec2(points[1], points[2]), vec2(points[3], points[4]),
+							   vec2(points[5], points[6]), width, colour(r, g, b, a));
+	}
+	else
+	{
+		Graphics::DrawTriangle(vec2(points[1], points[2]), vec2(points[3], points[4]),
+							   vec2(points[5], points[6]), width, colour(0, 1, 0, 1));
+	}
+	return 0;
+}
+
 int GFX_DrawCircle ( lua_State* L )
 {
 	int nargs = lua_gettop(L);

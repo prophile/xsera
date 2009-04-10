@@ -79,6 +79,14 @@ void DrawBox ( float top, float left, float bottom, float right, float width, co
  */
 void DrawCircle ( vec2 centre, float radius, float width, colour col );
 /**
+ * Draws a filled triangle
+ * @param point1 the first point of the triangle
+ * @param point2 the second point of the triangle
+ * @param point3 the third point of the triangle
+ * @param col The colour of the circle
+ */	
+void DrawTriangle ( const vec2 point1, const vec2 point2, const vec2 point3, colour col )
+/**
  * Draws a set of particles
  * @param locations An array of locations
  * @param count The size of the locations array

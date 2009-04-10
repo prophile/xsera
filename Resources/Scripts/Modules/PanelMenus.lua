@@ -1,6 +1,18 @@
 import('Scenario') 
 -- need scenario data
 
+--polys
+--[[ the following is not related to this file, I just needed a place to stick it. (it might even need to go
+	to a C++ file, probably Graphics.cpp or Graphics.h)
+triangle_points = { 0.0, 0.5,
+					-0.5, -0.5,
+					0.5, -0.5 }
+one_sixth = 1/6
+plus_points = { 0.5, -one_sixth, -0.5, one_sixth,
+				one_sixth, -0.5, -one_sixth, 0.5 }
+--]]
+--/polys
+
 menu_shift = -345
 top_of_menu = -69
 menu_stride = -11
@@ -100,10 +112,10 @@ menu_messages = { "MESSAGES",
 }
 
 menu_options = { "MAIN MENU",
-	{ "<Build>", true, cmd = menu_f_build() },
-	{ "<Special Orders>", false, cmd = menu_f_special() },
-	{ "<Messages>", false, cmd = menu_f_messages() },
-	{ "<Mission Status>", false, cmd = menu_f_mission_status() }
+	{ "<Build>", true, menu_f_build },
+	{ "<Special Orders>", false, menu_f_special },
+	{ "<Messages>", false, menu_f_messages },
+	{ "<Mission Status>", false, menu_f_mission_status }
 }
 
 function change_menu(menu, direction)
@@ -135,7 +147,9 @@ function change_menu(menu, direction)
 				num = num + 1
 			end
 			num = num - 1
-			menu[num].cmd() -- this is wrong. Hrm. How do I reference a function that's being pointed to?
+		--	menu[num].cmd() -- this is wrong. Hrm. How do I reference a function that's being pointed to?
+			local temp = menu[num][3]
+			temp() -- this doesn't work either. Calling temp neither gives an error nor executes the code
 		end
 	end
 end
