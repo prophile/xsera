@@ -12,6 +12,8 @@
 
 import('EntityLoad')
 import('Math')
+import('Scenario')
+import('PanelMenus')
 -- import('MouseHandle')
 
 local cameraRatio = 1
@@ -83,7 +85,6 @@ end
 		computerShip.physicsObject.position = { x = 2200, y = 2700 }
 		computerShip.physicsObject.angle = math.pi - 0.2
 		computerShip.exploded = false
-	scen = NewScenario("demo")
 
 function init ()
 	sound.stop_music()
@@ -313,7 +314,7 @@ end
 -------------------------]]--
 
 function weapon_manage(weapon, weapData, weapOwner)
--- handling of new projectile	
+-- handling of new projectile
 	if weapon.firing == true then
 		local wNum = 0
 		if weapon.class == "beam" then
@@ -443,9 +444,9 @@ function render ()
 --	print(playerShip.physicsObject.position.x)
 --	print(playerShip.physicsObject.position.y)
 	graphics.set_camera(-playerShip.physicsObject.position.x + shipAdjust - (camera.w / 2.0), -playerShip.physicsObject.position.y - (camera.h / 2.0), -playerShip.physicsObject.position.x + shipAdjust + (camera.w / 2.0), -playerShip.physicsObject.position.y + (camera.h / 2.0))
---	graphics.draw_starfield(0.4)
+	graphics.draw_starfield(0.4)
 	--graphics.draw_starfield(0.0)
---	graphics.draw_starfield(-0.5)
+	graphics.draw_starfield(-0.5)
 	
 --[[------------------
 	Grid Drawing
@@ -589,42 +590,47 @@ function render ()
 		graphics.draw_box(18 * planet_build.percent + 161, 384, 161, 390, 0, 0.8, 0.5, 0.7, 1)
 	end
 -- Communications panels (green)
+	display_menu()
 	graphics.draw_box(-63, -392, -158, -304, 0, 0.0, 0.4, 0.0, 1)
+	graphics.draw_line(-391, -74, -305, -74, 1, 0.4, 0.8, 0.4, 0.5)
 	graphics.draw_box(-165.5, -389.5, -185, -311, 0, 0.0, 0.4, 0.0, 1)
-	graphics.draw_line(-391, -74, -305, -74, 1, 0.3, 0.7, 0.3, 0.5)
--- Weapon ammo count
+	display_menu()
+-- Weapon (special) ammo count
     graphics.draw_text(string.format('%03d', playerShip.special.ammo), "CrystalClear", -311, 60, 13) -- GREEN
--- Right panel text
-    graphics.draw_text("MAIN MENU", "CrystalClear", -345, -69, 13) -- LEFT JUSTIFY, GREEN
-    graphics.draw_text("<Build>", "CrystalClear", -345, -80, 13) -- LEFT JUSTIFY, GREEN
-    graphics.draw_text("<Special Orders>", "CrystalClear", -345, -91, 13) -- LEFT JUSTIFY, GREEN
-    graphics.draw_text("<Message>", "CrystalClear", -345, -102, 13) -- LEFT JUSTIFY, GREEN
-    graphics.draw_text("<Mission Status>", "CrystalClear", -345, -113, 13) -- LEFT JUSTIFY, GREEN
-	target = true
 	control = true
+	target = true
 	if control == true then
 		graphics.draw_box(49, -392, 39, -305, 0, 0.8, 0.8, 0.4, 1)
 		graphics.draw_text("CONTROL", "CrystalClear", -370, 44, 13) -- LEFT JUSTIFY, BLACK
-		graphics.draw_line(-387, 26, -372, 26, 0.5)
-		graphics.draw_line(-387, 24, -387, 26, 0.5)
-		graphics.draw_line(-372, 24, -372, 26, 0.5)
-		graphics.draw_line(-387, 9, -372, 9, 0.5)
-		graphics.draw_line(-372, 11, -372, 9, 0.5)
-		graphics.draw_line(-387, 11, -387, 9, 0.5)
+		graphics.draw_line(-387, 26, -372, 26, 0.5, 1.0, 1.0, 1.0, 1)
+		graphics.draw_line(-387, 24, -387, 26, 0.5, 1.0, 1.0, 1.0, 1)
+		graphics.draw_line(-372, 24, -372, 26, 0.5, 1.0, 1.0, 1.0, 1)
+		graphics.draw_line(-387, 9, -372, 9, 0.5, 1.0, 1.0, 1.0, 1)
+		graphics.draw_line(-372, 11, -372, 9, 0.5, 1.0, 1.0, 1.0, 1)
+		graphics.draw_line(-387, 11, -387, 9, 0.5, 1.0, 1.0, 1.0, 1)
 	end
 	if target == true then
 		graphics.draw_box(-8, -392, -18, -305, 0, 0.2, 0.2, 0.6, 1)
 		graphics.draw_text("TARGET", "CrystalClear", -370, -13, 13) -- LEFT JUSTIFY, BLACK
-		graphics.draw_line(-387, -32, -372, -32, 0.5)
-		graphics.draw_line(-372, -34, -372, -32, 0.5)
-		graphics.draw_line(-387, -34, -387, -32, 0.5)
-		graphics.draw_line(-387, -49, -372, -49, 0.5)
-		graphics.draw_line(-372, -47, -372, -49, 0.5)
-		graphics.draw_line(-387, -47, -387, -49, 0.5)
+		graphics.draw_line(-387, -32, -372, -32, 0.5, 1.0, 1.0, 1.0, 1)
+		graphics.draw_line(-372, -34, -372, -32, 0.5, 1.0, 1.0, 1.0, 1)
+		graphics.draw_line(-387, -34, -387, -32, 0.5, 1.0, 1.0, 1.0, 1)
+		graphics.draw_line(-387, -49, -372, -49, 0.5, 1.0, 1.0, 1.0, 1)
+		graphics.draw_line(-372, -47, -372, -49, 0.5, 1.0, 1.0, 1.0, 1)
+		graphics.draw_line(-387, -47, -387, -49, 0.5, 1.0, 1.0, 1.0, 1)
 	end
-	graphics.draw_box(-165.5, -389.5, -175.5, -358, 0, 0.15, 0.15, 0.6, 1)
-	graphics.draw_text("RIGHT", "CrystalClear", -377, -171, 13) -- LEFT JUSTIFY, BLUE
-	graphics.draw_text("Select", "CrystalClear", -337, -171, 13) -- LEFT JUSTIFY, BLUE
+	if menu_level == menu_options then
+		graphics.draw_box(-165.5, -389.5, -175.5, -358, 0, 0.15, 0.15, 0.6, 1)
+		graphics.draw_text("RIGHT", "CrystalClear", -377, -171, 13) -- LEFT JUSTIFY, BLUE
+		graphics.draw_text("Select", "CrystalClear", -337, -171, 13) -- LEFT JUSTIFY, BLUE
+	else
+		graphics.draw_box(-165.5, -389.5, -175.5, -358, 0, 0.15, 0.15, 0.6, 1)
+		graphics.draw_text("RIGHT", "CrystalClear", -377, -171, 13) -- LEFT JUSTIFY, BLUE
+		graphics.draw_text("Select", "CrystalClear", -337, -171, 13) -- LEFT JUSTIFY, BLUE
+		graphics.draw_box(-175.5, -389.5, -185.5, -358, 0, 0.15, 0.15, 0.6, 1)
+		graphics.draw_text("LEFT", "CrystalClear", -377, -181, 13) -- LEFT JUSTIFY, BLUE
+		graphics.draw_text("Go Back", "CrystalClear", -337, -181, 13) -- LEFT JUSTIFY, BLUE
+	end
 	graphics.end_frame()
 end
 
@@ -709,6 +715,14 @@ function key ( k )
 			arrowDist = arrowDist * 2
 			playerShip.pkBeam.width = cameraRatio
 		end
+	elseif k == "i" then
+		change_menu(menu_level, "i")
+	elseif k == "k" then
+		change_menu(menu_level, "k")
+	elseif k == "j" then
+		change_menu(menu_level, "j")
+	elseif k == "l" then
+		change_menu(menu_level, "l")
 	elseif k == "tab" then
 		playerShip.warp.start.bool = true
 	elseif k == " " then

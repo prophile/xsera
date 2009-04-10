@@ -437,6 +437,33 @@ void DrawCircle ( vec2 centre, float radius, float width, colour col )
 	glDrawArrays(GL_LINE_LOOP, 0, sizeof(circlePoints) / (2 * sizeof(float)));
 }
 
+const float triangle_verticies[6] = { 0.0, 0.5,
+									-0.5, -0.5,
+									0.5, -0.5 };
+	
+void DrawTriangle ( const vec2 point1, const vec2 point2, const vec2 point3, colour col )
+{
+	SetShader("Primitive");
+	DisableTexturing();
+	if (col.alpha() < 1.0f)
+	{
+		EnableBlending();
+	}
+	else
+	{
+		DisableBlending();
+	}
+	glLineWidth(width);
+	SetColour(col);
+	Matrices::SetViewMatrix(matrix2x3::Identity());
+	Matrices::SetModelMatrix(matrix2x3::Identity());
+	glVertexPointer(2, GL_FLOAT, 0, circlePoints);
+	float real_triangle[6] = { triangle_verticies[1] + point1.X(), triangle_verticies[2] + point1.Y(),
+							triangle_verticies[3] + point2.X(), triangle_verticies[4] + point2.Y(),
+							triangle_verticies[5] + point3.X(), triangle_verticies[6] + point3.Y() };
+	glDrawArrays(GL_POLYGON, 0, 6);
+} 
+
 void DrawParticles ( const vec2* locations, unsigned int count, colour col )
 {
 	SetShader("Primitive");

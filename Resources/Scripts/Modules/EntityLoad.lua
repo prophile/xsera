@@ -68,7 +68,9 @@ end
 ^^the above was done late at night
 --]]
 
+-- function NewBullet (weaponType, weaponClass, ownerShip)
 function NewBullet (bulletType, ownerShip)
+--	local rawData = xml.load("Config/Weapons/" .. weaponClass .. "/" .. weaponType .. ".xml")
 	local rawData = xml.load("Config/Bullets/" .. bulletType .. ".xml")
 	local bulletData = rawData[1]
 	local trueData = {}
@@ -81,14 +83,11 @@ function NewBullet (bulletType, ownerShip)
 	if trueData.name == nil then
 		print("ERROR: Bullet " .. bulletType .. " does not have a name.")
 	end
-	bulletObject.name = trueData.name
-	bulletObject.shortName = trueData.shortName
-	bulletObject.sound = trueData.fireSound
 	if trueData.sprite ~= nil then
 		bulletObject.image = trueData.sprite
 	end
 	if trueData.mass == nil then
-		trueData.mass = 1
+		trueData.mass = 0.01
 	end
 	bulletObject.physicsObject = physics.new_object(tonumber(trueData.mass))
 	if bulletObject.image ~= nil then
@@ -109,11 +108,8 @@ function NewBullet (bulletType, ownerShip)
 		bulletObject.thrust = tonumber(trueData.thrust)
 	end
 	bulletObject.life = tonumber(trueData.life)
-	bulletObject.damage = tonumber(trueData.damage)
-	bulletObject.cooldown = tonumber(trueData.cooldown)
-	bulletObject.max_bullets = math.ceil(bulletObject.life / bulletObject.cooldown)
 	bulletObject.owner = ownerShip.name
-	bulletObject.cost = tonumber(trueData.energyCost)
+--	bulletObject.weapOwner = weaponType.name
 	bulletObject.class = trueData.class
 	-- class specifics
 	if bulletObject.class == "beam" then
@@ -127,12 +123,24 @@ function NewBullet (bulletType, ownerShip)
 	else
 		print("[EntityLoad] ERROR: Unknown weapon class '" .. bulletObject.class .. "'. See NewBullet")
 	end
+	
+	
+	
+	
+	bulletObject.shortName = trueData.shortName
+	bulletObject.sound = trueData.fireSound
+	bulletObject.damage = tonumber(trueData.damage)
+	bulletObject.cooldown = tonumber(trueData.cooldown)
+	bulletObject.max_bullets = math.ceil(bulletObject.life / bulletObject.cooldown)
+	bulletObject.name = trueData.name
 	return bulletObject
 end
 
 --[[------------------
 	New Weapon
 ------------------]]--
+
+
 
 function NewWeapon (weaponClass, weaponType)
 	local rawData = xml.load("Config/Weapons/" .. weaponClass .. "/" .. weaponType .. ".xml")
@@ -172,7 +180,27 @@ function NewScenario (scenario)
 	end
 	local scenarioObject = { {} }
 	scenarioObject.name = trueData.name
-	scenarioObject.planet =  { name = trueData.pname, location = { x = tonumber(trueData.plocationx), y = tonumber(trueData.plocationy) }, sprite = trueData.psprite, res_gen = tonumber(trueData.presources_generated) }
+	scenarioObject.planet =  { name = trueData.pname,
+			location = { x = tonumber(trueData.plocationx), y = tonumber(trueData.plocationy) },
+			sprite = trueData.psprite,
+			res_gen = tonumber(trueData.presources_generated),
+			build = { } }
+	if trueData.build1 ~= nil then
+		scenarioObject.planet.build[1] = trueData.build1
+	end
+	if trueData.build2 ~= nil then
+		scenarioObject.planet.build[2] = trueData.build2
+	end
+	if trueData.build3 ~= nil then
+		scenarioObject.planet.build[3] = trueData.build3
+	end
+	if trueData.build4 ~= nil then
+		scenarioObject.planet.build[4] = trueData.build4
+	end
+	if trueData.build5 ~= nil then
+		scenarioObject.planet.build[5] = trueData.build5
+	end
+	scenarioObject.briefing = trueData.briefing
 	return scenarioObject
 end
 
