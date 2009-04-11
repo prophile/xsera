@@ -21,8 +21,8 @@ const int SERVER_MAX_CLIENTS = 8; // plucked this one out of my arse.
 unsigned int badMessage[SERVER_MAX_CLIENTS+1][5]; //[clientID][n] = time bad packet was sent
 unsigned int badMessageCount[SERVER_MAX_CLIENTS]; //number of bad packets sent
 
-map<int, BlowfishKey> sessionKey;
-map<int, BlowfishIV> sessionIV;
+std::map<int, BlowfishKey> sessionKey;
+std::map<int, BlowfishIV> sessionIV;
 void makeBlowKey(int clientID)
 {
 	sessionKey[clientID];
@@ -149,12 +149,15 @@ Message* GetMessage ()
 				msg->clientID = clientID;
 				clients[clientID] = event.peer;
 				badMessage[clientID][0] = 0; //clear bad-message entry so it can be used
+				Message* keymsg;
+				Message* ivmsg;
 				
 				//make and share encryption keys
 				makeBlowKey[clientID];
-				keymsg = new Message ( "BLOWKEY", sessionKey[clientID], 16 ); //make a message with the blowkey
+				keymsg = new Message( "BLOWKEY", sessionKey[clientID], 16 ); //make a message with the blowkey
 				SendMessage( clientID, keymsg ); //send the blowkey
-				ivmsg = new Message ( "BLOWIV" , sessionIV[clientID], 8 ); //make a message with the blowIV
+				
+				ivmsg = new Message( "BLOWIV" , sessionIV[clientID], 8 ); //make a message with the blowIV
 				SendMessage( clientID, ivmsg ); //send the IV
 				break;
 			case ENET_EVENT_TYPE_DISCONNECT:

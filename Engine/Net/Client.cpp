@@ -100,7 +100,7 @@ Message* GetMessage ()
 				{
 					sessionKey = result.data; //store the blowkey
 				}
-				else if ( strcmp( result.message , "BLOWIV" ) == 0) //if it contains a blowAIV
+				else if ( strcmp( result.message , "BLOWIV" ) == 0) //if it contains a blowIV
 				{
 					sessionIV = result.data; //store the blowIV
 				}

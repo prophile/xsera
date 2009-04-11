@@ -16,6 +16,7 @@ Xsera immediate TODO list:
 * Debug method for sending blowkeys/ivs from server to client
 * Add RSA encryption for blowkey swap
 * test encryption implementation
+* Add a console to the game (Lua-side) for testing Net interactions with the Lua code. [assigned: LANS]
 
 
 * Add Credits [complete, will need expansion]
