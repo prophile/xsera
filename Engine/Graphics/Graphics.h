@@ -85,7 +85,7 @@ void DrawCircle ( vec2 centre, float radius, float width, colour col );
  * @param point3 the third point of the triangle
  * @param col The colour of the circle
  */	
-void DrawTriangle ( const vec2 point1, const vec2 point2, const vec2 point3, colour col )
+void DrawTriangle ( const vec2 point1, const vec2 point2, const vec2 point3, colour col );
 /**
  * Draws a set of particles
  * @param locations An array of locations

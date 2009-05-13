@@ -453,7 +453,6 @@ void DrawTriangle ( const vec2 point1, const vec2 point2, const vec2 point3, col
 	{
 		DisableBlending();
 	}
-	glLineWidth(width);
 	SetColour(col);
 	Matrices::SetViewMatrix(matrix2x3::Identity());
 	Matrices::SetModelMatrix(matrix2x3::Identity());

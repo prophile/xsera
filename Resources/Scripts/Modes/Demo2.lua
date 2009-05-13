@@ -96,7 +96,7 @@ function init ()
 		playerShip.battery = { total = 1000, level = 1000, percent = 1.0 }
 		playerShip.charge = { total = 1000, level = 1000, percent = 1.0 }
 		playerShip.shields = { total = 1000, level = 1000, percent = 1.0 }
-		playerShip.cMissile = NewBullet("cMissile", playerShip)
+		playerShip.cMissile = NewProjectile("cMissile", "Special", playerShip)
 			playerShip.cMissile.delta = 0.0
 			playerShip.cMissile.dest = { x = computerShip.physicsObject.position.x, y = computerShip.physicsObject.position.y }
 			playerShip.cMissile.size = { x, y }
@@ -106,7 +106,7 @@ function init ()
 			playerShip.cMissile.force = { x, y }
 		playerShip.cMissileWeap = { { {} } }
 		table.remove(playerShip.cMissileWeap, 1)
-		playerShip.pkBeam = NewBullet("PKBeam", playerShip)
+		playerShip.pkBeam = NewProjectile("PKBeam", "Beam", playerShip)
 			playerShip.pkBeam.width = cameraRatio
 			playerShip.pkBeam.fired = false
 			playerShip.pkBeam.start = 0
@@ -229,7 +229,7 @@ function update ()
 	weapon_manage(playerShip.cMissile, playerShip.cMissileWeap, playerShip)
 	--seeking code
 	local wNum = 1
-	while wNum <= playerShip.cMissile.max_bullets do
+	while wNum <= playerShip.cMissile.max_projectiles do
 		if playerShip.cMissileWeap[wNum] ~= nil then
 			if playerShip.cMissileWeap[wNum].isSeeking == true then
 				playerShip.cMissileWeap[wNum].theta = find_angle(playerShip.cMissileWeap[wNum].physicsObject.position, playerShip.cMissile.dest)
@@ -265,7 +265,7 @@ function update ()
 				print(playerShip.cMissileWeap[wNum].delta)
 				print("----------------")
 			end
-			wNum = playerShip.cMissile.max_bullets
+			wNum = playerShip.cMissile.max_projectiles
 		end
 		wNum = wNum + 1
 	end
@@ -318,7 +318,7 @@ function weapon_manage(weapon, weapData, weapOwner)
 	if weapon.firing == true then
 		local wNum = 0
 		if weapon.class == "beam" then
-			if playerShip.battery.level < weapon.cost then
+			if weapOwner.battery.level < weapon.cost then
 				return
 			end
 		elseif weapon.class == "pulse" then
@@ -335,10 +335,10 @@ function weapon_manage(weapon, weapData, weapOwner)
 			weapon.start = mode_manager.time() * 1000
 			weapon.fired = true
 			wNum = 1
-			while wNum <= weapon.max_bullets do
+			while wNum <= weapon.max_projectiles do
 				if weapData[wNum] == nil then
 					-- I would rather load from memory, but we don't have a function that preloads yet. Oh well. [DEMO2, ADAM, ALISTAIR]
-					weapData[wNum] = NewBullet(weapon.shortName, weapOwner)
+					weapData[wNum] = NewProjectile(weapon.shortName, weapon.class, weapOwner)
 					if weapon.class ~= "special" then
 						weapData[wNum].physicsObject.angle = weapOwner.physicsObject.angle
 						if weapOwner.switch == true then
@@ -357,7 +357,7 @@ function weapon_manage(weapon, weapData, weapOwner)
 					end
 					weapData[wNum].start = mode_manager.time() * 1000
 					cNum = wNum
-					wNum = weapon.max_bullets -- exit while loop
+					wNum = weapon.max_projectiles -- exit while loop
 				end
 				wNum = wNum + 1
 			end
@@ -410,7 +410,7 @@ function weapon_manage(weapon, weapData, weapOwner)
 -- handling for collisions and age
 
 	wNum = 1
-	while wNum <= weapon.max_bullets do
+	while wNum <= weapon.max_projectiles do
 		if weapData[wNum] ~= nil then
 			if computerShip.exploded == false then
 				local x = computerShip.physicsObject.position.x - weapData[wNum].physicsObject.position.x
@@ -512,7 +512,7 @@ function render ()
 	
 	if playerShip.pkBeam.fired == true then
 		local wNum = 1
-		while wNum <= playerShip.pkBeam.max_bullets do
+		while wNum <= playerShip.pkBeam.max_projectiles do
 			if playerShip.pkBeamWeap[wNum] ~= nil then		
 				graphics.draw_line(playerShip.pkBeamWeap[wNum].physicsObject.position.x, playerShip.pkBeamWeap[wNum].physicsObject.position.y, playerShip.pkBeamWeap[wNum].physicsObject.position.x - math.cos(playerShip.pkBeamWeap[wNum].physicsObject.angle) * playerShip.pkBeam.length, playerShip.pkBeamWeap[wNum].physicsObject.position.y - math.sin(playerShip.pkBeamWeap[wNum].physicsObject.angle) * playerShip.pkBeam.length, playerShip.pkBeam.width, 0.1, 0.7, 0.1, 1)
 			end
@@ -526,7 +526,7 @@ function render ()
 	
 	if playerShip.cMissile.fired == true then
 		local wNum = 1
-		while wNum <= playerShip.cMissile.max_bullets do
+		while wNum <= playerShip.cMissile.max_projectiles do
 			if playerShip.cMissileWeap[wNum] ~= nil then		
 				graphics.draw_sprite("Weapons/cMissile", playerShip.cMissileWeap[wNum].physicsObject.position.x, playerShip.cMissileWeap[wNum].physicsObject.position.y, playerShip.cMissileWeap[wNum].size.x, playerShip.cMissileWeap[wNum].size.y, playerShip.cMissileWeap[wNum].physicsObject.angle)
 			end

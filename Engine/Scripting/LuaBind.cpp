@@ -890,12 +890,12 @@ int GFX_DrawTriangleTEMP ( lua_State* L )
 		b = luaL_checknumber(L, 9);
 		a = luaL_checknumber(L, 10);
 		Graphics::DrawTriangle(vec2(points[1], points[2]), vec2(points[3], points[4]),
-							   vec2(points[5], points[6]), width, colour(r, g, b, a));
+							   vec2(points[5], points[6]), colour(r, g, b, a));
 	}
 	else
 	{
 		Graphics::DrawTriangle(vec2(points[1], points[2]), vec2(points[3], points[4]),
-							   vec2(points[5], points[6]), width, colour(0, 1, 0, 1));
+							   vec2(points[5], points[6]), colour(0, 1, 0, 1));
 	}
 	return 0;
 }

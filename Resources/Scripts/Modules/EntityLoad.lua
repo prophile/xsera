@@ -58,9 +58,9 @@ end
 
 
 --[[ BULLETIN: [ADAM, ALISTAIR, DEMO2]
-- the functions of NewBullet and NewWeapon are mixed...
+- the functions of NewProjectile and NewWeapon are mixed...
 - weapon should contain name, short name, firing sound, sprite, etc.
-- bullet should contain physics (anything else?)
+- projectile should contain physics and changeable aspects of any projectile
 - haha, BULLETin, get it? BULLET? IN?
 
 - Also, I should make better use of ownerShip (heh, TURBOPUNS) by making angle, velocity, etc. equal
@@ -68,20 +68,19 @@ end
 ^^the above was done late at night
 --]]
 
--- function NewBullet (weaponType, weaponClass, ownerShip)
-function NewBullet (bulletType, ownerShip)
---	local rawData = xml.load("Config/Weapons/" .. weaponClass .. "/" .. weaponType .. ".xml")
-	local rawData = xml.load("Config/Bullets/" .. bulletType .. ".xml")
-	local bulletData = rawData[1]
+function NewProjectile (weaponType, weaponClass, ownerShip)
+-- function NewProjectile (projectileType, ownerShip)
+	local rawData = xml.load("Config/Weapons/" .. weaponClass .. "/" .. weaponType .. ".xml")
+	local projectileData = rawData[1]
 	local trueData = {}
-	for k, v in ipairs(bulletData) do
+	for k, v in ipairs(projectileData) do
 		if type(v) == "table" then
 			trueData[v.name] = v[1]
 		end
 	end
 	local bulletObject = { size = {} }
 	if trueData.name == nil then
-		print("ERROR: Bullet " .. bulletType .. " does not have a name.")
+		print("ERROR: Bullet " .. projectileType .. " does not have a name.")
 	end
 	if trueData.sprite ~= nil then
 		bulletObject.image = trueData.sprite
@@ -109,7 +108,7 @@ function NewBullet (bulletType, ownerShip)
 	end
 	bulletObject.life = tonumber(trueData.life)
 	bulletObject.owner = ownerShip.name
---	bulletObject.weapOwner = weaponType.name
+	bulletObject.weapOwner = weaponType
 	bulletObject.class = trueData.class
 	-- class specifics
 	if bulletObject.class == "beam" then
@@ -119,19 +118,20 @@ function NewBullet (bulletType, ownerShip)
 	elseif bulletObject.class == "special" then
 		
 	elseif bulletObject.class == nil then
-		print("[EntityLoad] ERROR: Bullet '" .. bulletObject.name .. "' has no class. See NewBullet")
+		print("[EntityLoad] ERROR: Bullet '" .. bulletObject.name .. "' has no class. See NewProjectile")
 	else
-		print("[EntityLoad] ERROR: Unknown weapon class '" .. bulletObject.class .. "'. See NewBullet")
+		print("[EntityLoad] ERROR: Unknown weapon class '" .. bulletObject.class .. "'. See NewProjectile")
 	end
 	
 	
 	
 	
 	bulletObject.shortName = trueData.shortName
+	bulletObject.cost = tonumber(trueData.energyCost)
 	bulletObject.sound = trueData.fireSound
 	bulletObject.damage = tonumber(trueData.damage)
 	bulletObject.cooldown = tonumber(trueData.cooldown)
-	bulletObject.max_bullets = math.ceil(bulletObject.life / bulletObject.cooldown)
+	bulletObject.max_projectiles = math.ceil(bulletObject.life / bulletObject.cooldown)
 	bulletObject.name = trueData.name
 	return bulletObject
 end

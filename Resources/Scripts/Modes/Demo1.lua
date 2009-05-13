@@ -60,7 +60,7 @@ function init ()
     playerShip = NewShip("Ishiman/HeavyCruiser")
 		playerShip.warp = { warping = false, start = { bool = false, time = nil, engine = false, sound = false, isStarted = false }, endTime = 0.0, disengage = 2.0, finished = true, soundNum = 0 }
 		playerShip.switch = true
-		playerShip.cMissile = NewBullet("cMissile", playerShip)
+		playerShip.cMissile = NewProjectile("cMissile", playerShip)
 			playerShip.cMissile.delta = 0.0
 			playerShip.cMissile.dest = { x = computerShip.physicsObject.position.x, y = computerShip.physicsObject.position.y }
 			playerShip.cMissile.size = { x, y }
@@ -70,7 +70,7 @@ function init ()
 			playerShip.cMissile.force = { x, y }
 		playerShip.cMissileWeap = { { {} } }
 		table.remove(playerShip.cMissileWeap, 1)
-		playerShip.pkBeam = NewBullet("PKBeam", playerShip)
+		playerShip.pkBeam = NewProjectile("PKBeam", playerShip)
 			playerShip.pkBeam.width = cameraRatio
 			playerShip.pkBeam.fired = false
 			playerShip.pkBeam.start = 0
@@ -272,7 +272,7 @@ function weapon_manage(weapon, weapData, weapOwner)
 			while wNum <= weapon.max_bullets do
 				if weapData[wNum] == nil then
 					-- I would rather load from memory, but we don't have a function that preloads yet. Oh well. [DEMO2, ADAM, ALISTAIR]
-					weapData[wNum] = NewBullet(weapon.shortName, weapOwner)
+					weapData[wNum] = NewProjectile(weapon.shortName, weapOwner)
 					if weapon.class ~= "special" then
 						weapData[wNum].physicsObject.angle = weapOwner.physicsObject.angle
 						if weapOwner.switch == true then

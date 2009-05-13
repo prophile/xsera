@@ -1,5 +1,4 @@
 import('Scenario') 
--- need scenario data
 
 --polys
 --[[ the following is not related to this file, I just needed a place to stick it. (it might even need to go
@@ -7,11 +6,23 @@ import('Scenario')
 triangle_points = { 0.0, 0.5,
 					-0.5, -0.5,
 					0.5, -0.5 }
-one_sixth = 1/6
+one_sixth = 1 / 6
 plus_points = { 0.5, -one_sixth, -0.5, one_sixth,
 				one_sixth, -0.5, -one_sixth, 0.5 }
 --]]
 --/polys
+
+--displaycontrol
+--[[ the following is not related to this file, I just needed to stick it elsewhere when done.
+	--(destination: Demo2.lua, circa line 602)
+controlparams = { -387, -372,	-- left, right (target)
+				-32, -49,		-- top, bottom (target)
+				-387, -372,		-- left, right (control)
+				26, 9 }			-- top, bottom (control)
+	-- those are the boundaries of the brackets. Ships draw from the middle, and I can't control the size,
+	-- so how is this going to work? I think I'm going to need something in the API to draw this correctly...
+--]]
+--/displaycontrol
 
 menu_shift = -345
 top_of_menu = -69
@@ -125,8 +136,10 @@ function change_menu(menu, direction)
 			while menu[num][2] ~= true do
 				num = num + 1
 			end
-			menu[num][2] = false
-			menu[num - 1][2] = true
+			if num - 1 ~= 1 then
+				menu[num][2] = false
+				menu[num - 1][2] = true
+			end
 		end
 	elseif direction == "k" then
 		num = num - 1
@@ -149,7 +162,7 @@ function change_menu(menu, direction)
 			num = num - 1
 		--	menu[num].cmd() -- this is wrong. Hrm. How do I reference a function that's being pointed to?
 			local temp = menu[num][3]
-			temp() -- this doesn't work either. Calling temp neither gives an error nor executes the code
+			temp() -- this doesn't work either. Calling temp does not execute the code, makes an error
 		end
 	end
 end
