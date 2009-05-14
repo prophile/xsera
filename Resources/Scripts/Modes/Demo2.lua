@@ -62,15 +62,15 @@ local gridDistGreen = 4800
 
 keyControls = { left = false, right = false, forward = false, brake = false }
 
---[[----------------------------
-	--{{--------------------
-		Bullet Collision
-	--------------------}}--
-----------------------------]]--
+--[[--------------------------------
+	--{{------------------------
+		Projectile Collision
+	------------------------}}--
+--------------------------------]]--
 
-function bullet_collision(bulletObject, bNum, bulletData, shipObject)
-	table.remove(bulletObject, bNum)
-	shipObject.life = shipObject.life - bulletData.damage
+function projectile_collision(projectileObject, pNum, projectileData, shipObject)
+	table.remove(projectileObject, pNum)
+	shipObject.life = shipObject.life - projectileData.damage
 end
 
 --[[--------------------------
@@ -376,11 +376,11 @@ function weapon_manage(weapon, weapData, weapOwner)
 				end
 				
 				if weapData[cNum].isSeeking == true then
-					local bulletTravel = { x, y, dist }
-					bulletTravel.dist = (weapData[cNum].thrust * weapon.life * weapon.life / 1000000) / (2 * weapData[cNum].physicsObject.mass)
-					bulletTravel.x = math.cos(weapData[cNum].physicsObject.angle) * (bulletTravel.dist + weapData[cNum].physicsObject.velocity.x)
-					bulletTravel.y = math.sin(weapData[cNum].physicsObject.angle) * (bulletTravel.dist + weapData[cNum].physicsObject.velocity.y)
-					if find_hypot(weapData[cNum].physicsObject.position, weapData[cNum].dest) <= hypot(bulletTravel.x, bulletTravel.y) then
+					local projectileTravel = { x, y, dist }
+					projectileTravel.dist = (weapData[cNum].thrust * weapon.life * weapon.life / 1000000) / (2 * weapData[cNum].physicsObject.mass)
+					projectileTravel.x = math.cos(weapData[cNum].physicsObject.angle) * (projectileTravel.dist + weapData[cNum].physicsObject.velocity.x)
+					projectileTravel.y = math.sin(weapData[cNum].physicsObject.angle) * (projectileTravel.dist + weapData[cNum].physicsObject.velocity.y)
+					if find_hypot(weapData[cNum].physicsObject.position, weapData[cNum].dest) <= hypot(projectileTravel.x, projectileTravel.y) then
 						if showAngles == true then
 							print(find_angle(weapData[cNum].dest, weapData[cNum].physicsObject.position))
 							print(weapData[cNum].physicsObject.angle)
@@ -416,7 +416,7 @@ function weapon_manage(weapon, weapData, weapOwner)
 				local x = computerShip.physicsObject.position.x - weapData[wNum].physicsObject.position.x
 				local y = computerShip.physicsObject.position.y - weapData[wNum].physicsObject.position.y
 				if hypot (x, y) <= computerShip.physicsObject.collision_radius * 2 / 7 then
-					bullet_collision(weapData, wNum, weapon, computerShip)
+					projectile_collision(weapData, wNum, weapon, computerShip)
 					return
 				end
 			end
@@ -491,6 +491,8 @@ function render ()
     if computerShip.life > 0 then
 		graphics.draw_sprite("Gaitori/Carrier", computerShip.physicsObject.position.x, computerShip.physicsObject.position.y, computerShip.size.x, computerShip.size.y, computerShip.physicsObject.angle)
     else
+		-- This explosion code is a hack. We need a way to deal with explosions in a better method. Let's figure
+		-- it out when we get Sfiera's data [ADAM, SFIERA]
 		if computerShip.exploded == false then
 			if frame == 0 then
 				sound.play("New/ExplosionCombo")

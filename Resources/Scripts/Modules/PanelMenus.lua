@@ -14,7 +14,6 @@ plus_points = { 0.5, -one_sixth, -0.5, one_sixth,
 
 --displaycontrol
 --[[ the following is not related to this file, I just needed to stick it elsewhere when done.
-	--(destination: Demo2.lua, circa line 602)
 controlparams = { -387, -372,	-- left, right (target)
 				-32, -49,		-- top, bottom (target)
 				-387, -372,		-- left, right (control)

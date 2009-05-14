@@ -53,23 +53,19 @@ function NewShip (shipType, shipOwner)
 end
 
 --[[------------------
-	New Bullet
+	New Projectile
 ------------------]]--
 
 
---[[ BULLETIN: [ADAM, ALISTAIR, DEMO2]
+--[[ [ADAM, ALISTAIR, DEMO2]
 - the functions of NewProjectile and NewWeapon are mixed...
 - weapon should contain name, short name, firing sound, sprite, etc.
 - projectile should contain physics and changeable aspects of any projectile
-- haha, BULLETin, get it? BULLET? IN?
 
-- Also, I should make better use of ownerShip (heh, TURBOPUNS) by making angle, velocity, etc. equal
-
-^^the above was done late at night
+- Also, I should make better use of ownerShip by making angle, velocity, etc. equal
 --]]
 
 function NewProjectile (weaponType, weaponClass, ownerShip)
--- function NewProjectile (projectileType, ownerShip)
 	local rawData = xml.load("Config/Weapons/" .. weaponClass .. "/" .. weaponType .. ".xml")
 	local projectileData = rawData[1]
 	local trueData = {}
@@ -78,62 +74,62 @@ function NewProjectile (weaponType, weaponClass, ownerShip)
 			trueData[v.name] = v[1]
 		end
 	end
-	local bulletObject = { size = {} }
+	local projectileObject = { size = {} }
 	if trueData.name == nil then
-		print("ERROR: Bullet " .. projectileType .. " does not have a name.")
+		print("ERROR: Projectile " .. projectileType .. " does not have a name.")
 	end
 	if trueData.sprite ~= nil then
-		bulletObject.image = trueData.sprite
+		projectileObject.image = trueData.sprite
 	end
 	if trueData.mass == nil then
 		trueData.mass = 0.01
 	end
-	bulletObject.physicsObject = physics.new_object(tonumber(trueData.mass))
-	if bulletObject.image ~= nil then
-		bulletObject.size.x, bulletObject.size.y = graphics.sprite_dimensions(bulletObject.image)
-		bulletObject.physicsObject.collision_radius = hypot(bulletObject.size.x, bulletObject.size.y)
+	projectileObject.physicsObject = physics.new_object(tonumber(trueData.mass))
+	if projectileObject.image ~= nil then
+		projectileObject.size.x, projectileObject.size.y = graphics.sprite_dimensions(projectileObject.image)
+		projectileObject.physicsObject.collision_radius = hypot(projectileObject.size.x, projectileObject.size.y)
 	end
 	if trueData.velocity ~= nil then
-		bulletObject.velocity = { total = trueData.velocity, x, y }
+		projectileObject.velocity = { total = trueData.velocity, x, y }
 	end
 	if trueData.turnrate ~= nil then
-		bulletObject.turningRate = tonumber(trueData.turnrate)
-		bulletObject.maxSeek = tonumber(trueData.maxSeek)
-		bulletObject.isSeeking = true
+		projectileObject.turningRate = tonumber(trueData.turnrate)
+		projectileObject.maxSeek = tonumber(trueData.maxSeek)
+		projectileObject.isSeeking = true
 	else
-		bulletObject.isSeeking = false
+		projectileObject.isSeeking = false
 	end
 	if trueData.thrust ~= nil then
-		bulletObject.thrust = tonumber(trueData.thrust)
+		projectileObject.thrust = tonumber(trueData.thrust)
 	end
-	bulletObject.life = tonumber(trueData.life)
-	bulletObject.owner = ownerShip.name
-	bulletObject.weapOwner = weaponType
-	bulletObject.class = trueData.class
+	projectileObject.life = tonumber(trueData.life)
+	projectileObject.owner = ownerShip.name
+	projectileObject.weapOwner = weaponType
+	projectileObject.class = trueData.class
 	-- class specifics
-	if bulletObject.class == "beam" then
-		bulletObject.length = tonumber(trueData.length)
-	elseif bulletObject.class == "pulse" then
+	if projectileObject.class == "beam" then
+		projectileObject.length = tonumber(trueData.length)
+	elseif projectileObject.class == "pulse" then
 		
-	elseif bulletObject.class == "special" then
+	elseif projectileObject.class == "special" then
 		
-	elseif bulletObject.class == nil then
-		print("[EntityLoad] ERROR: Bullet '" .. bulletObject.name .. "' has no class. See NewProjectile")
+	elseif projectileObject.class == nil then
+		print("[EntityLoad] ERROR: Projectile '" .. projectileObject.name .. "' has no class. See NewProjectile")
 	else
-		print("[EntityLoad] ERROR: Unknown weapon class '" .. bulletObject.class .. "'. See NewProjectile")
+		print("[EntityLoad] ERROR: Unknown weapon class '" .. projectileObject.class .. "'. See NewProjectile")
 	end
 	
 	
 	
 	
-	bulletObject.shortName = trueData.shortName
-	bulletObject.cost = tonumber(trueData.energyCost)
-	bulletObject.sound = trueData.fireSound
-	bulletObject.damage = tonumber(trueData.damage)
-	bulletObject.cooldown = tonumber(trueData.cooldown)
-	bulletObject.max_projectiles = math.ceil(bulletObject.life / bulletObject.cooldown)
-	bulletObject.name = trueData.name
-	return bulletObject
+	projectileObject.shortName = trueData.shortName
+	projectileObject.cost = tonumber(trueData.energyCost)
+	projectileObject.sound = trueData.fireSound
+	projectileObject.damage = tonumber(trueData.damage)
+	projectileObject.cooldown = tonumber(trueData.cooldown)
+	projectileObject.max_projectiles = math.ceil(projectileObject.life / projectileObject.cooldown)
+	projectileObject.name = trueData.name
+	return projectileObject
 end
 
 --[[------------------
@@ -160,7 +156,7 @@ function NewWeapon (weaponClass, weaponType)
 	elseif weaponClass == "Special" then
 		weaponObject.ammo = tonumber(trueData.ammo)
 	else
-		print("[EntityLoad] ERROR: Unknown weapon class '" .. bulletObject.type .. "'. See NewWeapon")
+		print("[EntityLoad] ERROR: Unknown weapon class '" .. projectileObject.type .. "'. See NewWeapon")
 	end
 	return weaponObject
 end
