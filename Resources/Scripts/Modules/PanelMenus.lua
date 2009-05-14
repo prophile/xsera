@@ -44,7 +44,7 @@ function shipyard()
 end
 
 function transfer_control()
-	--[[ pseudocode!!!
+	--[[ pseudocode!!! I don't have the concept of allies yet, need that before I can implement this
 	if controlShip.ally == true then
 		playerShip, controlShip = playerShip, controlShip
 	end --]]

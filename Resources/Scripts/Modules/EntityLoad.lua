@@ -90,7 +90,12 @@ function NewProjectile (weaponType, weaponClass, ownerShip)
 		projectileObject.physicsObject.collision_radius = hypot(projectileObject.size.x, projectileObject.size.y)
 	end
 	if trueData.velocity ~= nil then
-		projectileObject.velocity = { total = trueData.velocity, x, y }
+		projectileObject.physicsObject.velocity.x = trueData.velocity * math.cos(projectileObject.physicsObject.angle) + ownerShip.physicsObject.velocity.x
+		projectileObject.physicsObject.velocity.y = trueData.velocity * math.sin(projectileObject.physicsObject.angle) + ownerShip.physicsObject.velocity.y
+	else
+		local totalVelocity = math.sqrt(ownerShip.velocity.x * ownerShip.velocity.x + ownerShip.velocity.y * ownerShip.velocity.y)
+		projectileObject.physicsObject.velocity.x = totalVelocity * math.cos(projectileObject.physicsObject.angle) + ownerShip.physicsObject.velocity.x
+		projectileObject.physicsObject.velocity.y = totalVelocity * math.sin(projectileObject.physicsObject.angle) + ownerShip.physicsObject.velocity.y
 	end
 	if trueData.turnrate ~= nil then
 		projectileObject.turningRate = tonumber(trueData.turnrate)
@@ -103,40 +108,14 @@ function NewProjectile (weaponType, weaponClass, ownerShip)
 		projectileObject.thrust = tonumber(trueData.thrust)
 	end
 	projectileObject.life = tonumber(trueData.life)
-	projectileObject.owner = ownerShip.name
 	projectileObject.weapOwner = weaponType
-	projectileObject.class = trueData.class
-	-- class specifics
-	if projectileObject.class == "beam" then
-		projectileObject.length = tonumber(trueData.length)
-	elseif projectileObject.class == "pulse" then
-		
-	elseif projectileObject.class == "special" then
-		
-	elseif projectileObject.class == nil then
-		print("[EntityLoad] ERROR: Projectile '" .. projectileObject.name .. "' has no class. See NewProjectile")
-	else
-		print("[EntityLoad] ERROR: Unknown weapon class '" .. projectileObject.class .. "'. See NewProjectile")
-	end
-	
-	
-	
-	
-	projectileObject.shortName = trueData.shortName
-	projectileObject.cost = tonumber(trueData.energyCost)
-	projectileObject.sound = trueData.fireSound
-	projectileObject.damage = tonumber(trueData.damage)
-	projectileObject.cooldown = tonumber(trueData.cooldown)
-	projectileObject.max_projectiles = math.ceil(projectileObject.life / projectileObject.cooldown)
-	projectileObject.name = trueData.name
+	projectileObject.start = mode_manager.time() * 1000
 	return projectileObject
 end
 
 --[[------------------
 	New Weapon
 ------------------]]--
-
-
 
 function NewWeapon (weaponClass, weaponType)
 	local rawData = xml.load("Config/Weapons/" .. weaponClass .. "/" .. weaponType .. ".xml")
@@ -149,14 +128,26 @@ function NewWeapon (weaponClass, weaponType)
 	end
 	local weaponObject = { size = {} }
 	weaponObject.name = trueData.name
-	if weaponClass == "Beam" then
-		weaponObject.energy = tonumber(trueData.energy)
-	elseif weaponClass == "Pulse" then
-		weaponObject.energy = tonumber(trueData.energy)
-	elseif weaponClass == "Special" then
-		weaponObject.ammo = tonumber(trueData.ammo)
+	weaponObject.shortName = trueData.shortName
+	weaponObject.cost = tonumber(trueData.energyCost)
+	weaponObject.sound = trueData.fireSound
+	weaponObject.damage = tonumber(trueData.damage)
+	weaponObject.cooldown = tonumber(trueData.cooldown)
+	weaponObject.max_projectiles = math.ceil(tonumber(trueData.life) / weaponObject.cooldown)
+	weaponObject.life = tonumber(trueData.life)
+	weaponObject.ammo = tonumber(trueData.ammo)
+	weaponObject.class = trueData.class
+	-- class specifics
+	if weaponObject.class == "beam" then
+		weaponObject.length = tonumber(trueData.length)
+	elseif weaponObject.class == "pulse" then
+		
+	elseif weaponObject.class == "special" then
+		
+	elseif weaponObject.class == nil then
+		print("[EntityLoad] ERROR: Weapon '" .. weaponObject.name .. "' has no class. See NewWeapon")
 	else
-		print("[EntityLoad] ERROR: Unknown weapon class '" .. projectileObject.type .. "'. See NewWeapon")
+		print("[EntityLoad] ERROR: Unknown weapon class '" .. weaponObject.class .. "'. See NewWeapon")
 	end
 	return weaponObject
 end
