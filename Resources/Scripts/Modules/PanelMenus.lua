@@ -158,29 +158,26 @@ function change_menu(menu, direction)
 			while menu[num][2] ~= true do
 				num = num + 1
 			end
-			num = num - 1
-			menu[num][3]() -- this is wrong. Hrm. How do I reference a function that's being pointed to?
-		--	local temp = menu[num][3]
-		--	temp() -- this doesn't work either. Calling temp does not execute the code, makes an error
+		--	num = num - 1
+			menu[num][3]()
 		end
 	end
 end
 
+menu_level = menu_options
+
 function display_menu()
 	local shift = 1
 	local num = 1
-	menu_level = menu_options
-	if menu_level == menu_options then
-		graphics.draw_text(menu_level[1], "CrystalClear", menu_shift, top_of_menu, 13)
-		while menu_level[num] ~= nil do
-			if menu_level[num][1] ~= nil then
-				if menu_level[num][2] == true then
-					graphics.draw_box(top_of_menu + menu_stride * shift + 5, -392, top_of_menu + menu_stride * shift - 5, -304, 0, 0.1, 0.5, 0.1, 1)
-				end
-				graphics.draw_text(menu_level[num][1], "CrystalClear", menu_shift, top_of_menu + menu_stride * shift, 13)
-				shift = shift + 1
+	graphics.draw_text(menu_level[1], "CrystalClear", menu_shift, top_of_menu, 13)
+	while menu_level[num] ~= nil do
+		if menu_level[num][1] ~= nil then
+			if menu_level[num][2] == true then
+				graphics.draw_box(top_of_menu + menu_stride * shift + 5, -392, top_of_menu + menu_stride * shift - 5, -304, 0, 0.1, 0.5, 0.1, 1)
 			end
-			num = num + 1
-		end		
-	end
+			graphics.draw_text(menu_level[num][1], "CrystalClear", menu_shift, top_of_menu + menu_stride * shift, 13)
+			shift = shift + 1
+		end
+		num = num + 1
+	end		
 end

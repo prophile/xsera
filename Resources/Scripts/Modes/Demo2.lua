@@ -277,7 +277,7 @@ function update ()
 					playerShip.specialWeap[wNum].delta = 0.0
 				end
 				playerShip.specialWeap[wNum].physicsObject.angle = playerShip.specialWeap[wNum].physicsObject.angle + playerShip.specialWeap[wNum].delta
-				playerShip.specialWeap[wNum].force = { x = math.cos(playerShip.specialWeap[wNum].physicsObject.angle) * playerShip.special.thrust / playerShip.special.physicsObject.mass, y = math.sin(playerShip.specialWeap[wNum].physicsObject.angle) * playerShip.special.thrust / playerShip.special.physicsObject.mass }
+				playerShip.specialWeap[wNum].force = { x = math.cos(playerShip.specialWeap[wNum].physicsObject.angle) * playerShip.special.thrust / playerShip.special.mass, y = math.sin(playerShip.specialWeap[wNum].physicsObject.angle) * playerShip.special.thrust / playerShip.special.mass }
 				playerShip.specialWeap[wNum].physicsObject:apply_force(playerShip.specialWeap[wNum].force)
 				if showAngles == true then
 					print("For special #" .. wNum .. ":")
@@ -398,7 +398,7 @@ function weapon_manage(weapon, weapData, weapOwner)
 				
 				if weapData[cNum].isSeeking == true then
 					local projectileTravel = { x, y, dist }
-					projectileTravel.dist = (weapData[cNum].thrust * weapon.life * weapon.life / 1000000) / (2 * weapData[cNum].physicsObject.mass)
+					projectileTravel.dist = (weapon.thrust * weapon.life * weapon.life / 1000000) / (2 * weapon.mass)
 					projectileTravel.x = math.cos(weapData[cNum].physicsObject.angle) * (projectileTravel.dist + weapData[cNum].physicsObject.velocity.x)
 					projectileTravel.y = math.sin(weapData[cNum].physicsObject.angle) * (projectileTravel.dist + weapData[cNum].physicsObject.velocity.y)
 					if find_hypot(weapData[cNum].physicsObject.position, weapData[cNum].dest) <= hypot(projectileTravel.x, projectileTravel.y) then
@@ -432,7 +432,11 @@ function weapon_manage(weapon, weapData, weapOwner)
 
 	wNum = 1
 	while wNum <= playerShip.special.max_projectiles do
-		if weapData[wNum] ~= nil then	-- WHY IS THIS LETTING STUFF THROUGH?!?!?
+		if weapData[wNum] ~= nil then
+			if weapData[wNum].physicsObject == nil then
+				-- this object needs to be deleted
+				table.remove(weapData, wNum)
+			end
 			if computerShip.exploded == false then
 				local x = computerShip.physicsObject.position.x - weapData[wNum].physicsObject.position.x
 				local y = computerShip.physicsObject.position.y - weapData[wNum].physicsObject.position.y

@@ -78,9 +78,9 @@ function NewProjectile (weaponType, weaponClass, ownerShip)
 	if trueData.name == nil then
 		print("ERROR: Projectile " .. projectileType .. " does not have a name.")
 	end
-	if trueData.sprite ~= nil then
-		projectileObject.image = trueData.sprite
-	end
+--	if trueData.sprite ~= nil then
+--		projectileObject.image = trueData.sprite
+--	end
 	if trueData.mass == nil then
 		trueData.mass = 0.01
 	end
@@ -93,7 +93,7 @@ function NewProjectile (weaponType, weaponClass, ownerShip)
 		projectileObject.physicsObject.velocity.x = trueData.velocity * math.cos(projectileObject.physicsObject.angle) + ownerShip.physicsObject.velocity.x
 		projectileObject.physicsObject.velocity.y = trueData.velocity * math.sin(projectileObject.physicsObject.angle) + ownerShip.physicsObject.velocity.y
 	else
-		local totalVelocity = math.sqrt(ownerShip.velocity.x * ownerShip.velocity.x + ownerShip.velocity.y * ownerShip.velocity.y)
+		local totalVelocity = math.sqrt(ownerShip.physicsObject.velocity.x * ownerShip.physicsObject.velocity.x + ownerShip.physicsObject.velocity.y * ownerShip.physicsObject.velocity.y)
 		projectileObject.physicsObject.velocity.x = totalVelocity * math.cos(projectileObject.physicsObject.angle) + ownerShip.physicsObject.velocity.x
 		projectileObject.physicsObject.velocity.y = totalVelocity * math.sin(projectileObject.physicsObject.angle) + ownerShip.physicsObject.velocity.y
 	end
@@ -103,9 +103,6 @@ function NewProjectile (weaponType, weaponClass, ownerShip)
 		projectileObject.isSeeking = true
 	else
 		projectileObject.isSeeking = false
-	end
-	if trueData.thrust ~= nil then
-		projectileObject.thrust = tonumber(trueData.thrust)
 	end
 	projectileObject.life = tonumber(trueData.life)
 	projectileObject.weapOwner = weaponType
@@ -135,15 +132,23 @@ function NewWeapon (weaponClass, weaponType)
 	weaponObject.cooldown = tonumber(trueData.cooldown)
 	weaponObject.max_projectiles = math.ceil(tonumber(trueData.life) / weaponObject.cooldown)
 	weaponObject.life = tonumber(trueData.life)
+	weaponObject.mass = tonumber(trueData.mass)
 	weaponObject.ammo = tonumber(trueData.ammo)
+	if trueData.thrust ~= nil then
+		weaponObject.thrust = tonumber(trueData.thrust)
+	end
 	weaponObject.class = trueData.class
 	-- class specifics
 	if weaponObject.class == "beam" then
 		weaponObject.length = tonumber(trueData.length)
 	elseif weaponObject.class == "pulse" then
-		
+		if trueData.sprite ~= nil then
+			weaponObject.image = trueData.sprite
+		end
 	elseif weaponObject.class == "special" then
-		
+		if trueData.sprite ~= nil then
+			weaponObject.image = trueData.sprite
+		end
 	elseif weaponObject.class == nil then
 		print("[EntityLoad] ERROR: Weapon '" .. weaponObject.name .. "' has no class. See NewWeapon")
 	else
