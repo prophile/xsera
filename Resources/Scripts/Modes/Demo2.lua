@@ -80,7 +80,7 @@ end
 --------------------------]]--
 
 -- ALISTAIR: REQUEST: could init run BEFORE update, and not simultaneously with it?
--- When that's done, I'll re-add computerShip to init
+-- When that's done, I'll re-add to init
 	computerShip = NewShip("Gaitori/Carrier")
 		computerShip.physicsObject.position = { x = 2200, y = 2700 }
 		computerShip.physicsObject.angle = math.pi - 0.2
@@ -365,17 +365,17 @@ function weapon_manage(weapon, weapData, weapOwner)
 						-- [ADAM, FIX] this piece of code is a hack, it relies on what little weapons we have right now to make the assumption
 						weapData[wNum].physicsObject.angle = weapOwner.physicsObject.angle
 						if weapOwner.switch == true then
-							weapData[wNum].physicsObject.position = { x = playerShip.physicsObject.position.x + math.cos(weapData[wNum].physicsObject.angle + 0.17) * (weapon.length - 3), y = playerShip.physicsObject.position.y + math.sin(weapData[wNum].physicsObject.angle + 0.17) * (weapon.length - 3) }
+							weapData[wNum].physicsObject.position = { x = weapOwner.physicsObject.position.x + math.cos(weapData[wNum].physicsObject.angle + 0.17) * (weapon.length - 3), y = weapOwner.physicsObject.position.y + math.sin(weapData[wNum].physicsObject.angle + 0.17) * (weapon.length - 3) }
 							weapOwner.switch = false
 						else
-							weapData[wNum].physicsObject.position = { x = playerShip.physicsObject.position.x + math.cos(weapData[wNum].physicsObject.angle - 0.17) * (weapon.length - 3), y = playerShip.physicsObject.position.y + math.sin(weapData[wNum].physicsObject.angle - 0.17) * (weapon.length - 3) }
+							weapData[wNum].physicsObject.position = { x = weapOwner.physicsObject.position.x + math.cos(weapData[wNum].physicsObject.angle - 0.17) * (weapon.length - 3), y = weapOwner.physicsObject.position.y + math.sin(weapData[wNum].physicsObject.angle - 0.17) * (weapon.length - 3) }
 							weapOwner.switch = true
 						end
 					else
 						weapData[wNum].dest = { x = computerShip.physicsObject.position.x, y = computerShip.physicsObject.position.y }
-						weapData[wNum].physicsObject.angle = playerShip.physicsObject.angle
-						weapData[wNum].physicsObject.position = { x = playerShip.physicsObject.position.x, y = playerShip.physicsObject.position.y }
-						weapData[wNum].physicsObject.velocity = { x = playerShip.physicsObject.velocity.x, y = playerShip.physicsObject.velocity.y }
+						weapData[wNum].physicsObject.angle = weapOwner.physicsObject.angle
+						weapData[wNum].physicsObject.position = { x = weapOwner.physicsObject.position.x, y = weapOwner.physicsObject.position.y }
+						weapData[wNum].physicsObject.velocity = { x = weapOwner.physicsObject.velocity.x, y = weapOwner.physicsObject.velocity.y }
 					end
 					cNum = wNum
 					wNum = weapon.max_projectiles -- exit while loop
@@ -432,10 +432,11 @@ function weapon_manage(weapon, weapData, weapOwner)
 
 	wNum = 1
 	while wNum <= playerShip.special.max_projectiles do
-		if weapData[wNum] ~= nil then
+		if weapData[wNum] ~= nil then	-- WHY IS THIS LETTING STUFF THROUGH?!?!?
 			if computerShip.exploded == false then
 				local x = computerShip.physicsObject.position.x - weapData[wNum].physicsObject.position.x
 				local y = computerShip.physicsObject.position.y - weapData[wNum].physicsObject.position.y
+				-- put in real collision here [ALISTAIR, DEMO2]
 				if hypot (x, y) <= computerShip.physicsObject.collision_radius * 2 / 7 then
 					projectile_collision(weapData, wNum, weapon, computerShip)
 					return

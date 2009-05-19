@@ -159,9 +159,9 @@ function change_menu(menu, direction)
 				num = num + 1
 			end
 			num = num - 1
-		--	menu[num].cmd() -- this is wrong. Hrm. How do I reference a function that's being pointed to?
-			local temp = menu[num][3]
-			temp() -- this doesn't work either. Calling temp does not execute the code, makes an error
+			menu[num][3]() -- this is wrong. Hrm. How do I reference a function that's being pointed to?
+		--	local temp = menu[num][3]
+		--	temp() -- this doesn't work either. Calling temp does not execute the code, makes an error
 		end
 	end
 end
