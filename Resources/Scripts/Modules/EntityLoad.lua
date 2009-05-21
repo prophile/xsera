@@ -78,9 +78,6 @@ function NewProjectile (weaponType, weaponClass, ownerShip)
 	if trueData.name == nil then
 		print("ERROR: Projectile " .. projectileType .. " does not have a name.")
 	end
---	if trueData.sprite ~= nil then
---		projectileObject.image = trueData.sprite
---	end
 	if trueData.mass == nil then
 		trueData.mass = 0.01
 	end
@@ -89,13 +86,11 @@ function NewProjectile (weaponType, weaponClass, ownerShip)
 		projectileObject.size.x, projectileObject.size.y = graphics.sprite_dimensions(projectileObject.image)
 		projectileObject.physicsObject.collision_radius = hypot(projectileObject.size.x, projectileObject.size.y)
 	end
-	if trueData.velocity ~= nil then
-		projectileObject.physicsObject.velocity.x = trueData.velocity * math.cos(projectileObject.physicsObject.angle) + ownerShip.physicsObject.velocity.x
-		projectileObject.physicsObject.velocity.y = trueData.velocity * math.sin(projectileObject.physicsObject.angle) + ownerShip.physicsObject.velocity.y
+	projectileObject.physicsObject.angle = ownerShip.physicsObject.angle
+	if tonumber(trueData.velocity) ~= nil then
+		projectileObject.physicsObject.velocity = { x = tonumber(trueData.velocity) * math.cos(projectileObject.physicsObject.angle) + ownerShip.physicsObject.velocity.x, y = tonumber(trueData.velocity) * math.sin(projectileObject.physicsObject.angle) + ownerShip.physicsObject.velocity.y }
 	else
-		local totalVelocity = math.sqrt(ownerShip.physicsObject.velocity.x * ownerShip.physicsObject.velocity.x + ownerShip.physicsObject.velocity.y * ownerShip.physicsObject.velocity.y)
-		projectileObject.physicsObject.velocity.x = totalVelocity * math.cos(projectileObject.physicsObject.angle) + ownerShip.physicsObject.velocity.x
-		projectileObject.physicsObject.velocity.y = totalVelocity * math.sin(projectileObject.physicsObject.angle) + ownerShip.physicsObject.velocity.y
+		projectileObject.physicsObject.velocity = { x = ownerShip.physicsObject.velocity.x, y = ownerShip.physicsObject.velocity.y }
 	end
 	if trueData.turnrate ~= nil then
 		projectileObject.turningRate = tonumber(trueData.turnrate)
@@ -104,8 +99,30 @@ function NewProjectile (weaponType, weaponClass, ownerShip)
 	else
 		projectileObject.isSeeking = false
 	end
+	
+	if weaponClass == "beam" then
+		-- [ADAM, FIX] this piece of code is a hack, it relies on what little weapons we have right now to make the assumption
+		if ownerShip.switch == true then
+			projectileObject.physicsObject.position = { x = ownerShip.physicsObject.position.x + math.cos(projectileObject.physicsObject.angle + 0.17) * (tonumber(trueData.length) - 3), y = ownerShip.physicsObject.position.y + math.sin(projectileObject.physicsObject.angle + 0.17) * (tonumber(trueData.length) - 3) }
+			ownerShip.switch = false
+		else
+			projectileObject.physicsObject.position = { x = ownerShip.physicsObject.position.x + math.cos(projectileObject.physicsObject.angle - 0.17) * (tonumber(trueData.length) - 3), y = ownerShip.physicsObject.position.y + math.sin(projectileObject.physicsObject.angle - 0.17) * (tonumber(trueData.length) - 3) }
+			ownerShip.switch = true
+		end
+		-- cost
+		ownerShip.charge.level = ownerShip.charge.level - tonumber(trueData.energyCost)
+	elseif weaponClass == "pulse" then
+		return
+	elseif weaponClass == "special" then
+		projectileObject.dest = { x = computerShip.physicsObject.position.x, y = computerShip.physicsObject.position.y }
+	elseif weaponClass == nil then
+		print("[EntityLoad] ERROR: Weapon '" .. weaponType .. "' has no class. See NewProjectile")
+	else
+		print("[EntityLoad] ERROR: Unknown weapon class '" .. weaponClass .. "'. See NewProjectile")
+	end
+
 	projectileObject.life = tonumber(trueData.life)
-	projectileObject.weapOwner = weaponType
+--	projectileObject.weapOwner = weaponType
 	projectileObject.start = mode_manager.time() * 1000
 	return projectileObject
 end

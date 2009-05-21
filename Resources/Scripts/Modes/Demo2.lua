@@ -361,22 +361,6 @@ function weapon_manage(weapon, weapData, weapOwner)
 				if weapData[wNum] == nil then
 					-- I would rather load from memory, but we don't have a function that preloads yet. Oh well. [DEMO2, ADAM, ALISTAIR]
 					weapData[wNum] = NewProjectile(weapon.shortName, weapon.class, weapOwner)
-					if weapon.class ~= "special" then
-						-- [ADAM, FIX] this piece of code is a hack, it relies on what little weapons we have right now to make the assumption
-						weapData[wNum].physicsObject.angle = weapOwner.physicsObject.angle
-						if weapOwner.switch == true then
-							weapData[wNum].physicsObject.position = { x = weapOwner.physicsObject.position.x + math.cos(weapData[wNum].physicsObject.angle + 0.17) * (weapon.length - 3), y = weapOwner.physicsObject.position.y + math.sin(weapData[wNum].physicsObject.angle + 0.17) * (weapon.length - 3) }
-							weapOwner.switch = false
-						else
-							weapData[wNum].physicsObject.position = { x = weapOwner.physicsObject.position.x + math.cos(weapData[wNum].physicsObject.angle - 0.17) * (weapon.length - 3), y = weapOwner.physicsObject.position.y + math.sin(weapData[wNum].physicsObject.angle - 0.17) * (weapon.length - 3) }
-							weapOwner.switch = true
-						end
-					else
-						weapData[wNum].dest = { x = computerShip.physicsObject.position.x, y = computerShip.physicsObject.position.y }
-						weapData[wNum].physicsObject.angle = weapOwner.physicsObject.angle
-						weapData[wNum].physicsObject.position = { x = weapOwner.physicsObject.position.x, y = weapOwner.physicsObject.position.y }
-						weapData[wNum].physicsObject.velocity = { x = weapOwner.physicsObject.velocity.x, y = weapOwner.physicsObject.velocity.y }
-					end
 					cNum = wNum
 					wNum = weapon.max_projectiles -- exit while loop
 				end
@@ -384,11 +368,7 @@ function weapon_manage(weapon, weapData, weapOwner)
 			end
 			
 			-- weapon fired, take away cost (and seek if necessary)
-			if weapon.class == "beam" then
-				playerShip.charge.level = playerShip.charge.level - weapon.cost
-			elseif weapon.class == "pulse" then
-				return
-			elseif weapon.class == "special" then
+			if weapon.class == "special" then
 				weapOwner.special.ammo = weapOwner.special.ammo - 1
 				sound.play("RocketLaunchr")
 				-- temp sound file, should be "RocketLaunch" but for some reason, that file gets errors (file included for troubleshooting)
@@ -436,22 +416,23 @@ function weapon_manage(weapon, weapData, weapOwner)
 			if weapData[wNum].physicsObject == nil then
 				-- this object needs to be deleted
 				table.remove(weapData, wNum)
-			end
-			if computerShip.exploded == false then
-				local x = computerShip.physicsObject.position.x - weapData[wNum].physicsObject.position.x
-				local y = computerShip.physicsObject.position.y - weapData[wNum].physicsObject.position.y
-				-- put in real collision here [ALISTAIR, DEMO2]
-				if hypot (x, y) <= computerShip.physicsObject.collision_radius * 2 / 7 then
-					projectile_collision(weapData, wNum, weapon, computerShip)
-					return
+			else
+				if computerShip.exploded == false then
+					local x = computerShip.physicsObject.position.x - weapData[wNum].physicsObject.position.x
+					local y = computerShip.physicsObject.position.y - weapData[wNum].physicsObject.position.y
+					-- put in real collision code here [ALISTAIR, DEMO2]
+					if hypot (x, y) <= computerShip.physicsObject.collision_radius * 2 / 7 then
+						projectile_collision(weapData, wNum, weapon, computerShip)
+						return
+					end
 				end
-			end
-			if (mode_manager.time() * 1000) - weapData[wNum].start >= weapon.life then
-				table.remove(weapData, wNum)
-				if weapData[1] ~= nil then
-					weapon.fired = true
-				else
-					weapon.fired = false
+				if (mode_manager.time() * 1000) - weapData[wNum].start >= weapon.life then
+					table.remove(weapData, wNum)
+					if weapData[1] ~= nil then
+						weapon.fired = true
+					else
+						weapon.fired = false
+					end
 				end
 			end
 		end
@@ -509,7 +490,7 @@ function render ()
 	
 	aex, aey = graphics.sprite_dimensions("Planets/AnotherEarth")
 	graphics.draw_sprite("Planets/AnotherEarth", scen.planet.location.x, scen.planet.location.y, aex, aey, 1, 0.0, 1.0, 1.0, 1.0)
-	
+
 --[[------------------
 	Ship Drawing
 ------------------]]--
@@ -538,11 +519,11 @@ function render ()
 	PKBeam Firing
 ------------------]]--
 	
-	if playerShip.pkBeam.fired == true then
+	if playerShip.beam.fired == true then
 		local wNum = 1
-		while wNum <= playerShip.pkBeam.max_projectiles do
-			if playerShip.pkBeamWeap[wNum] ~= nil then		
-				graphics.draw_line(playerShip.pkBeamWeap[wNum].physicsObject.position.x, playerShip.pkBeamWeap[wNum].physicsObject.position.y, playerShip.pkBeamWeap[wNum].physicsObject.position.x - math.cos(playerShip.pkBeamWeap[wNum].physicsObject.angle) * playerShip.pkBeam.length, playerShip.pkBeamWeap[wNum].physicsObject.position.y - math.sin(playerShip.pkBeamWeap[wNum].physicsObject.angle) * playerShip.pkBeam.length, playerShip.pkBeam.width, 0.1, 0.7, 0.1, 1)
+		while wNum <= playerShip.beam.max_projectiles do
+			if playerShip.beamWeap[wNum] ~= nil then
+				graphics.draw_line(playerShip.beamWeap[wNum].physicsObject.position.x, playerShip.beamWeap[wNum].physicsObject.position.y, playerShip.beamWeap[wNum].physicsObject.position.x - math.cos(playerShip.beamWeap[wNum].physicsObject.angle) * playerShip.beam.length, playerShip.beamWeap[wNum].physicsObject.position.y - math.sin(playerShip.beamWeap[wNum].physicsObject.angle) * playerShip.beam.length, playerShip.beam.width, 0.1, 0.7, 0.1, 1)
 			end
 			wNum = wNum + 1
 		end
@@ -552,11 +533,11 @@ function render ()
 	C-Missile Firing
 ------------------]]--
 	
-	if playerShip.cMissile.fired == true then
+	if playerShip.special.fired == true then
 		local wNum = 1
-		while wNum <= playerShip.cMissile.max_projectiles do
-			if playerShip.cMissileWeap[wNum] ~= nil then		
-				graphics.draw_sprite("Weapons/cMissile", playerShip.cMissileWeap[wNum].physicsObject.position.x, playerShip.cMissileWeap[wNum].physicsObject.position.y, playerShip.cMissileWeap[wNum].size.x, playerShip.cMissileWeap[wNum].size.y, playerShip.cMissileWeap[wNum].physicsObject.angle)
+		while wNum <= playerShip.special.max_projectiles do
+			if playerShip.specialWeap[wNum] ~= nil then		
+				graphics.draw_sprite("Weapons/cMissile", playerShip.specialWeap[wNum].physicsObject.position.x, playerShip.specialWeap[wNum].physicsObject.position.y, playerShip.special.size.x, playerShip.special.size.y, playerShip.specialWeap[wNum].physicsObject.angle)
 			end
 			wNum = wNum + 1
 		end
