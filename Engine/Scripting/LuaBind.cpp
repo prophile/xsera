@@ -876,19 +876,20 @@ int GFX_DrawBoxTEMP ( lua_State* L )
 	return 0;
 }
 
-int GFX_DrawTriangleTEMP ( lua_State* L )
+int GFX_DrawRadarTriangleTEMP ( lua_State* L )
 {
 	int nargs = lua_gettop(L);
-	float width;
-	float points[6] = { luaL_checknumber(L, 1), luaL_checknumber(L, 2), luaL_checknumber(L, 3),
-						luaL_checknumber(L, 4), luaL_checknumber(L, 5), luaL_checknumber(L, 6) };
-	if (nargs > 6)
+	float coordinates[2] = { luaL_checknumber(L, 1), luaL_checknumber(L, 2) };
+	float points[6] = { coordinates[1], coordinates[2] + 0.5,
+						coordinates[1] - 0.5, coordinates[2] - 0.5,
+						coordinates[1] + 0.5, coordinates[2] - 0.5 };
+	if (nargs > 2)
 	{
 		float r = 0.0, g = 1.0, b = 0.0, a = 1.0;
-		r = luaL_checknumber(L, 7);
-		g = luaL_checknumber(L, 8);
-		b = luaL_checknumber(L, 9);
-		a = luaL_checknumber(L, 10);
+		r = luaL_checknumber(L, 3);
+		g = luaL_checknumber(L, 4);
+		b = luaL_checknumber(L, 5);
+		a = luaL_checknumber(L, 6);
 		Graphics::DrawTriangle(vec2(points[1], points[2]), vec2(points[3], points[4]),
 							   vec2(points[5], points[6]), colour(r, g, b, a));
 	}
@@ -896,6 +897,55 @@ int GFX_DrawTriangleTEMP ( lua_State* L )
 	{
 		Graphics::DrawTriangle(vec2(points[1], points[2]), vec2(points[3], points[4]),
 							   vec2(points[5], points[6]), colour(0, 1, 0, 1));
+	}
+	return 0;
+}
+
+int GFX_DrawRadarPlusTEMP ( lua_State* L )
+{
+	int nargs = lua_gettop(L);
+	const float one_sixth = 1 / 6;
+	float coordinates[2] = { luaL_checknumber(L, 1), luaL_checknumber(L, 2) };
+	float points[8] = { coordinates[1] + 0.5, coordinates[2] - one_sixth,
+						coordinates[1] - 0.5, coordinates[2] one_sixth,
+						coordinates[1] + one_sixth, coordinates[2] - 0.5,
+						coordinates[1] - one_sixth, coordinates[2] + 0.5 };
+	if (nargs > 2)
+	{
+		float r = 0.0, g = 1.0, b = 0.0, a = 1.0;
+		r = luaL_checknumber(L, 3);
+		g = luaL_checknumber(L, 4);
+		b = luaL_checknumber(L, 5);
+		a = luaL_checknumber(L, 6);
+		Graphics::DrawBox(points[1], points[2], points[3], points[4], 0, colour(r, g, b, a));
+		Graphics::DrawBox(points[5], points[6], points[7], points[8], 0, colour(r, g, b, a));
+	}
+	else
+	{
+		Graphics::DrawBox(points[1], points[2], points[3], points[4], 0, colour(0, 1, 0, 1));
+		Graphics::DrawBox(points[5], points[6], points[7], points[8], 0, colour(0, 1, 0, 1));
+	}
+	return 0;
+}
+
+int GFX_DrawRadarSquareTEMP ( lua_State* L )
+{
+	int nargs = lua_gettop(L);
+	float coordinates[2] = { luaL_checknumber(L, 1), luaL_checknumber(L, 2) };
+	float points[4] = { coordinates[2] + 0.5, coordinates[1] - 0.5,
+						coordinates[2] - 0.5, coordinates[1] + 0.5 };
+	if (nargs > 2)
+	{
+		float r = 0.0, g = 1.0, b = 0.0, a = 1.0;
+		r = luaL_checknumber(L, 3);
+		g = luaL_checknumber(L, 4);
+		b = luaL_checknumber(L, 5);
+		a = luaL_checknumber(L, 6);
+		Graphics::DrawBox(points[1], points[2], points[3], points[4], 0, colour(r, g, b, a));
+	}
+	else
+	{
+		Graphics::DrawBox(points[1], points[2], points[3], points[4], 0, colour(0, 1, 0, 1));
 	}
 	return 0;
 }
@@ -1034,6 +1084,9 @@ luaL_Reg registryGraphics[] =
 	"draw_text", GFX_DrawText,
 	"draw_line", GFX_DrawLineTEMP,
 	"draw_box", GFX_DrawBoxTEMP,
+	"draw_rbox", GFX_DrawRadarBoxTEMP,
+	"draw_rtri", GFX_DrawRadarTriangleTEMP,
+	"draw_rplus", GFX_DrawRadarPlusTEMP,
 	"draw_circle", GFX_DrawCircle,
 	"sprite_dimensions", GFX_SpriteDimensions,
 	"draw_starfield", GFX_DrawStarfield,

@@ -1,4 +1,4 @@
-<?xml version="1.0" ?>
+<?xml version="1.0"?>
 <weapon>
 	<!-- full name -->
 	<name>Photokinetic Beam</name>
@@ -15,7 +15,7 @@
 	<!-- damage dealt -->
 	<damage>50</damage>
 	<!-- cooldown time, in miliseconds -->
-	<cooldown>150</cooldown>
+	<cooldown>125</cooldown>
 	<!-- cost, in energy -->
 	<energyCost>5</energyCost>
 	<!-- velocity -->

@@ -414,7 +414,7 @@ function weapon_manage(weapon, weapData, weapOwner)
 	while wNum <= playerShip.special.max_projectiles do
 		if weapData[wNum] ~= nil then
 			if weapData[wNum].physicsObject == nil then
-				-- this object needs to be deleted
+				-- this object needs to be deleted, probably the initializing table
 				table.remove(weapData, wNum)
 			else
 				if computerShip.exploded == false then

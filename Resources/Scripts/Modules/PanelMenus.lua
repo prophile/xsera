@@ -1,17 +1,5 @@
 import('Scenario') 
 
---polys
---[[ the following is not related to this file, I just needed a place to stick it. (it might even need to go
-	to a C++ file, probably Graphics.cpp or Graphics.h)
-triangle_points = { 0.0, 0.5,
-					-0.5, -0.5,
-					0.5, -0.5 }
-one_sixth = 1 / 6
-plus_points = { 0.5, -one_sixth, -0.5, one_sixth,
-				one_sixth, -0.5, -one_sixth, 0.5 }
---]]
---/polys
-
 --displaycontrol
 --[[ the following is not related to this file, I just needed to stick it elsewhere when done.
 controlparams = { -387, -372,	-- left, right (target)
@@ -120,10 +108,6 @@ end
 
 menu_level = menu_options
 
-function build()
-	-- see shipyard() at the top of this file
-end
-
 function special()
 	menu_level = menu_special
 end
@@ -134,7 +118,7 @@ end
 
 function mission_status()
 	menu_level = { "BRIEFING",
-					{ scen.briefing, false } }
+		{ scen.briefing, false } }
 end
 
 menu_special = { "SPECIAL ORDERS",
