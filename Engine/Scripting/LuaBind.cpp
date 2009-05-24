@@ -907,7 +907,7 @@ int GFX_DrawRadarPlusTEMP ( lua_State* L )
 	const float one_sixth = 1 / 6;
 	float coordinates[2] = { luaL_checknumber(L, 1), luaL_checknumber(L, 2) };
 	float points[8] = { coordinates[1] + 0.5, coordinates[2] - one_sixth,
-						coordinates[1] - 0.5, coordinates[2] one_sixth,
+						coordinates[1] - 0.5, coordinates[2] + one_sixth,
 						coordinates[1] + one_sixth, coordinates[2] - 0.5,
 						coordinates[1] - one_sixth, coordinates[2] + 0.5 };
 	if (nargs > 2)
@@ -928,7 +928,7 @@ int GFX_DrawRadarPlusTEMP ( lua_State* L )
 	return 0;
 }
 
-int GFX_DrawRadarSquareTEMP ( lua_State* L )
+int GFX_DrawRadarBoxTEMP ( lua_State* L )
 {
 	int nargs = lua_gettop(L);
 	float coordinates[2] = { luaL_checknumber(L, 1), luaL_checknumber(L, 2) };
