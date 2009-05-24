@@ -27,21 +27,26 @@ menu_shift = -345
 top_of_menu = -69
 menu_stride = -11
 
+menu_shipyard = { "BUILD", {} }
+
 function shipyard()
-	menu_shipyard = { "BUILD" }
+	menu_level = menu_shipyard
 	local num = 1
-	graphics.draw_text(menu_shipyard[1], "CrystalClear", menu_shift, top_of_menu, 13)
 	while scen.planet.build[num] ~= nil do
+		menu_shipyard[num + 1] = {}
+		menu_shipyard[num + 1][1] = scen.planet.build[num]
 		if num ~= 1 then
-			menu_shipyard[num + 1][1] = scen.planet.build[num]
 			menu_shipyard[num + 1][2] = false
+			-- how do I have it create a ship when all I have is its name in a char?
 		else
-			menu_shipyard[num + 1][1] = scen.planet.build[num]
 			menu_shipyard[num + 1][2] = true
+			-- how do I have it create a ship when all I have is its name in a char?
 		end
 		num = num + 1
 	end
 end
+
+-- Special Orders
 
 function transfer_control()
 	--[[ pseudocode!!! I don't have the concept of allies yet, need that before I can implement this
@@ -70,16 +75,41 @@ function fire_special()
 	-- AI command, keep for later
 end
 
+-- Message menu
+
+text_being_drawn = false
+text_was_drawn = false
+textnum = 0
+
 function next_page_clear()
-	-- Text command, keep for later
+	if text_being_drawn == true then
+		if scen.text[textnum + 1] ~= nil then
+			textnum = textnum + 1
+		else
+			text_being_drawn = false
+			text_was_drawn = true
+		end
+	else
+		text_being_drawn = true
+		textnum = textnum + 1
+	end
 end
 
 function previous_page()
-	-- Text command, keep for later
+	if text_being_drawn == true then
+		if textnum ~= 1 then
+			textnum = textnum - 1
+		else
+			text_being_drawn = false
+			textnum = 0
+		end
+	end
 end
 
 function last_message()
-	-- Text command, keep for later
+	if text_was_drawn == true then
+		text_being_drawn = true
+	end
 end
 
 -----------------------------
@@ -90,20 +120,21 @@ end
 
 menu_level = menu_options
 
-function menu_f_build()
+function build()
 	-- see shipyard() at the top of this file
 end
 
-function menu_f_special()
+function special()
 	menu_level = menu_special
 end
 
-function menu_f_messages()
+function messages()
 	menu_level = menu_messages
 end
 
-function menu_f_mission_status()
-	graphics.draw_text(scen.briefing, "CrystalClear", menu_shift, top_of_menu + menu_stride, 13)
+function mission_status()
+	menu_level = { "BRIEFING",
+					{ scen.briefing, false } }
 end
 
 menu_special = { "SPECIAL ORDERS",
@@ -122,10 +153,10 @@ menu_messages = { "MESSAGES",
 }
 
 menu_options = { "MAIN MENU",
-	{ "<Build>", true, menu_f_build },
-	{ "<Special Orders>", false, menu_f_special },
-	{ "<Messages>", false, menu_f_messages },
-	{ "<Mission Status>", false, menu_f_mission_status }
+	{ "<Build>", true, shipyard },
+	{ "<Special Orders>", false, special },
+	{ "<Messages>", false, messages },
+	{ "<Mission Status>", false, mission_status }
 }
 
 function change_menu(menu, direction)
@@ -154,11 +185,10 @@ function change_menu(menu, direction)
 			menu_level = menu_options
 		end
 	elseif direction == "l" then
-		if menu == menu_options then
-			while menu[num][2] ~= true do
-				num = num + 1
-			end
-		--	num = num - 1
+		while menu[num][2] ~= true do
+			num = num + 1
+		end
+		if menu[num][3] ~= nil then
 			menu[num][3]()
 		end
 	end
@@ -173,11 +203,14 @@ function display_menu()
 	while menu_level[num] ~= nil do
 		if menu_level[num][1] ~= nil then
 			if menu_level[num][2] == true then
-				graphics.draw_box(top_of_menu + menu_stride * shift + 5, -392, top_of_menu + menu_stride * shift - 5, -304, 0, 0.1, 0.5, 0.1, 1)
+				graphics.draw_box(top_of_menu + menu_stride * shift + 4, -392, top_of_menu + menu_stride * shift - 5, -298, 0, 0.1, 0.5, 0.1, 1)
 			end
 			graphics.draw_text(menu_level[num][1], "CrystalClear", menu_shift, top_of_menu + menu_stride * shift, 13)
 			shift = shift + 1
 		end
 		num = num + 1
-	end		
+	end
+	if text_being_drawn == true then
+		graphics.draw_text(scen.text[textnum], "CrystalClear", 0, -250, 30)
+	end
 end

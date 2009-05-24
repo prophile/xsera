@@ -209,6 +209,16 @@ function NewScenario (scenario)
 	if trueData.build5 ~= nil then
 		scenarioObject.planet.build[5] = trueData.build5
 	end
+	if trueData.text1 ~= nil then
+		scenarioObject.text = {}
+		scenarioObject.text[1] = trueData.text1
+	end
+	if trueData.text2 ~= nil then
+		scenarioObject.text[2] = trueData.text2
+	end
+	if trueData.text3 ~= nil then
+		scenarioObject.text[3] = trueData.text3
+	end
 	scenarioObject.briefing = trueData.briefing
 	return scenarioObject
 end

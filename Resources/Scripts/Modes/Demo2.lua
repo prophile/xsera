@@ -448,8 +448,6 @@ end
 
 function render ()
     graphics.begin_frame()
---	print(playerShip.physicsObject.position.x)
---	print(playerShip.physicsObject.position.y)
 	graphics.set_camera(-playerShip.physicsObject.position.x + shipAdjust - (camera.w / 2.0), -playerShip.physicsObject.position.y - (camera.h / 2.0), -playerShip.physicsObject.position.x + shipAdjust + (camera.w / 2.0), -playerShip.physicsObject.position.y + (camera.h / 2.0))
 	graphics.draw_starfield(0.4)
 	--graphics.draw_starfield(0.0)
@@ -552,7 +550,7 @@ function render ()
 	graphics.draw_line(math.cos(angle - arrowAlpha) * arrowDist + playerShip.physicsObject.position.x, math.sin(angle - arrowAlpha) * arrowDist + playerShip.physicsObject.position.y, math.cos(angle) * (arrowLength + arrowVar) + playerShip.physicsObject.position.x, math.sin(angle) * (arrowLength + arrowVar) + playerShip.physicsObject.position.y, 1.5, 0.1, 0.7, 0.1, 1)
 	graphics.draw_line(math.cos(angle) * (arrowLength + arrowVar) + playerShip.physicsObject.position.x, math.sin(angle) * (arrowLength + arrowVar) + playerShip.physicsObject.position.y, math.cos(arrowAlpha + angle) * arrowDist + playerShip.physicsObject.position.x, math.sin(arrowAlpha + angle) * arrowDist + playerShip.physicsObject.position.y, 1.5, 0.1, 0.7, 0.1, 1)
 	graphics.set_camera(-400, -300, 400, 300)
-	graphics.draw_image("Panels/SideLeft", -349, 0, 103, 607)
+	graphics.draw_image("Panels/SideLeft", -346, 0, 109, 607)
 	graphics.draw_image("Panels/SideRight", 387, -2, 26, 608)
 -- Battery (red)
 	graphics.draw_box(107, 379, 29, 386, 0, 0.6, 0.15, 0.15, 1)
@@ -563,8 +561,6 @@ function render ()
 -- Shields (blue)
 	graphics.draw_box(-96, 379, -173, 386, 0, 0.15, 0.15, 0.6, 1)
 	graphics.draw_box(playerShip.shields.percent * 77 - 173, 379, -173, 386, 0, 0.15, 0.15, 0.6, 1)
--- Radar box (green)
-	graphics.draw_box(184, -394, 100, -308, 1, 0.0, 0.4, 0.0, 1)
 -- Factory resources (green)
 	count = 0
 	while count <= 100 do
@@ -598,18 +594,22 @@ function render ()
 		graphics.draw_box(179, 384, 161, 390, 0, 0.7, 0.4, 0.6, 1)
 		graphics.draw_box(18 * planet_build.percent + 161, 384, 161, 390, 0, 0.8, 0.5, 0.7, 1)
 	end
+	
+-- Left panel
+	
+-- Radar box (green)
+	graphics.draw_box(184, -394, 100, -303, 1, 0.0, 0.4, 0.0, 1)
 -- Communications panels (green)
-	display_menu()
-	graphics.draw_box(-63, -392, -158, -304, 0, 0.0, 0.4, 0.0, 1)
-	graphics.draw_line(-391, -74, -305, -74, 1, 0.4, 0.8, 0.4, 0.5)
-	graphics.draw_box(-165.5, -389.5, -185, -311, 0, 0.0, 0.4, 0.0, 1)
+	graphics.draw_box(-63, -392, -158, -298, 0, 0.0, 0.4, 0.0, 1)
+	graphics.draw_line(-391, -74, -298, -74, 1, 0.4, 0.8, 0.4, 0.5)
+	graphics.draw_box(-165.5, -389.5, -185, -298, 0, 0.0, 0.4, 0.0, 1)
 	display_menu()
 -- Weapon (special) ammo count
-	graphics.draw_text(string.format('%03d', playerShip.special.ammo), "CrystalClear", -311, 60, 13) -- GREEN
+	graphics.draw_text(string.format('%03d', playerShip.special.ammo), "CrystalClear", -308, 60, 13) -- GREEN
 	control = true
 	target = true
 	if control == true then
-		graphics.draw_box(49, -392, 39, -305, 0, 0.8, 0.8, 0.4, 1)
+		graphics.draw_box(49, -391, 39, -298, 0, 0.8, 0.8, 0.4, 1)
 		graphics.draw_text("CONTROL", "CrystalClear", -370, 44, 13) -- LEFT JUSTIFY, BLACK
 		graphics.draw_line(-387, 26, -372, 26, 0.5, 1.0, 1.0, 1.0, 1)
 		graphics.draw_line(-387, 24, -387, 26, 0.5, 1.0, 1.0, 1.0, 1)
@@ -619,7 +619,7 @@ function render ()
 		graphics.draw_line(-387, 11, -387, 9, 0.5, 1.0, 1.0, 1.0, 1)
 	end
 	if target == true then
-		graphics.draw_box(-8, -392, -18, -305, 0, 0.2, 0.2, 0.6, 1)
+		graphics.draw_box(-8, -391, -18, -298, 0, 0.2, 0.2, 0.6, 1)
 		graphics.draw_text("TARGET", "CrystalClear", -370, -13, 13) -- LEFT JUSTIFY, BLACK
 		graphics.draw_line(-387, -32, -372, -32, 0.5, 1.0, 1.0, 1.0, 1)
 		graphics.draw_line(-372, -34, -372, -32, 0.5, 1.0, 1.0, 1.0, 1)
@@ -628,15 +628,11 @@ function render ()
 		graphics.draw_line(-372, -47, -372, -49, 0.5, 1.0, 1.0, 1.0, 1)
 		graphics.draw_line(-387, -47, -387, -49, 0.5, 1.0, 1.0, 1.0, 1)
 	end
-	if menu_level == menu_options then
-		graphics.draw_box(-165.5, -389.5, -175.5, -358, 0, 0.15, 0.15, 0.6, 1)
-		graphics.draw_text("RIGHT", "CrystalClear", -377, -171, 13) -- LEFT JUSTIFY, BLUE
-		graphics.draw_text("Select", "CrystalClear", -337, -171, 13) -- LEFT JUSTIFY, BLUE
-	else
-		graphics.draw_box(-165.5, -389.5, -175.5, -358, 0, 0.15, 0.15, 0.6, 1)
-		graphics.draw_text("RIGHT", "CrystalClear", -377, -171, 13) -- LEFT JUSTIFY, BLUE
-		graphics.draw_text("Select", "CrystalClear", -337, -171, 13) -- LEFT JUSTIFY, BLUE
-		graphics.draw_box(-175.5, -389.5, -185.5, -358, 0, 0.15, 0.15, 0.6, 1)
+	graphics.draw_box(-165.5, -389.5, -175.5, -355, 0, 0.15, 0.15, 0.6, 1)
+	graphics.draw_text("RIGHT", "CrystalClear", -377, -171, 13) -- LEFT JUSTIFY, BLUE
+	graphics.draw_text("Select", "CrystalClear", -337, -171, 13) -- LEFT JUSTIFY, BLUE
+	if menu_level ~= menu_options then
+		graphics.draw_box(-175.5, -389.5, -185.5, -355, 0, 0.15, 0.15, 0.6, 1)
 		graphics.draw_text("LEFT", "CrystalClear", -377, -181, 13) -- LEFT JUSTIFY, BLUE
 		graphics.draw_text("Go Back", "CrystalClear", -337, -181, 13) -- LEFT JUSTIFY, BLUE
 	end
