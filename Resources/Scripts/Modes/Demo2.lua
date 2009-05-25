@@ -79,8 +79,8 @@ end
 	------------------}}--
 --------------------------]]--
 
--- ALISTAIR: REQUEST: could init run BEFORE update, and not simultaneously with it?
--- When that's done, I'll re-add to init
+-- ALISTAIR: REQUEST: could init run BEFORE update (as in, it works like a loading screen),
+-- and not simultaneously with it? When that's done, I'll re-add to init
 	computerShip = NewShip("Gaitori/Carrier")
 		computerShip.physicsObject.position = { x = 2200, y = 2700 }
 		computerShip.physicsObject.angle = math.pi - 0.2
@@ -89,10 +89,7 @@ end
     playerShip = NewShip("Ishiman/HeavyCruiser")
 		playerShip.warp = { warping = false, start = { bool = false, time = nil, engine = false, sound = false, isStarted = false }, endTime = 0.0, disengage = 2.0, finished = true, soundNum = 0 }
 		playerShip.switch = true
-		playerShip.battery = { total = 1000, level = 1000, percent = 1.0 }
-		playerShip.energy = { total = 1000, level = 1000, percent = 1.0 }
-		playerShip.shield = { total = 1000, level = 1000, percent = 1.0 }
-		playerShip.cMissile = NewWeapon("Special", "cMissile")
+--[[		playerShip.cMissile = NewWeapon("Special", "cMissile")
 			playerShip.cMissile.delta = 0.0
 			playerShip.cMissile.dest = { x = computerShip.physicsObject.position.x, y = computerShip.physicsObject.position.y }
 			playerShip.cMissile.size.x, playerShip.cMissile.size.y = graphics.sprite_dimensions("Weapons/cMissile")
@@ -107,7 +104,7 @@ end
 			playerShip.pkBeam.start = 0
 			playerShip.pkBeam.firing = false
 		playerShip.pkBeamWeap = { { {} } }
-		table.remove(playerShip.pkBeamWeap, 1)
+		table.remove(playerShip.pkBeamWeap, 1)--]]
 -------
     --------
         -------- new weapon loading (after bullet -> projectile)

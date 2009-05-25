@@ -5,13 +5,13 @@
 	<!-- sprite name -->
 	<sprite>Ishiman/HeavyCruiser</sprite>
 	<!-- amount of health -->
-	<life>50</life>
+	<life>1000</life>
 	<!-- mass, in kg -->
 	<mass>10000</mass>
 	<!-- turning rate, in radians/second -->
 	<turnrate>3.7</turnrate>
 	<!-- energy (in energy units?) -->
-	<energy>5000</energy> 
+	<energy>1000</energy> 
 	<!-- thrust, in newtons -->
 	<thrust>430</thrust> 
 	<!-- warping speed -->

@@ -21,9 +21,9 @@ function NewShip (shipType, shipOwner)
     shipObject.physicsObject.collision_radius = hypot(shipObject.size.x, shipObject.size.y)
     shipObject.name = trueData.name
     shipObject.turningRate = tonumber(trueData.turnrate)
-	if trueData.energy ~= nil then
-		shipObject.energy = tonumber(trueData.energy)
-	end
+	shipObject.battery = { total = 5 * tonumber(trueData.energy), level = 5 * tonumber(trueData.energy), percent = 1.0 }
+	shipObject.energy = { total = tonumber(trueData.energy), level = tonumber(trueData.energy), percent = 1.0 }
+	shipObject.shield = { total = tonumber(trueData.life), level = tonumber(trueData.life), percent = 1.0 }
 	if trueData.thrust ~= nil then
 		shipObject.thrust = tonumber(trueData.thrust)
 	else
