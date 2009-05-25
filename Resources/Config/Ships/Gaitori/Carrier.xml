@@ -8,6 +8,8 @@
 	<life>500</life>
 	<!-- mass, in kg -->
 	<mass>100000</mass>
+	<!-- ship energy -->
+	<energy>1000</energy>
 	<!-- turning rate, in radians/second -->
 	<turnrate>3.2</turnrate>
 	<!-- thrust, in newtons -->
