@@ -486,16 +486,24 @@ function render ()
 	Planet Drawing
 ------------------]]--
 	
-	aex, aey = graphics.sprite_dimensions("Planets/AnotherEarth")
-	graphics.draw_sprite("Planets/AnotherEarth", scen.planet.location.x, scen.planet.location.y, aex, aey, 1, 0.0, 1.0, 1.0, 1.0)
-
+	if cameraRatio ~= 1 / 16 then
+		aex, aey = graphics.sprite_dimensions("Planets/AnotherEarth")
+		graphics.draw_sprite("Planets/AnotherEarth", scen.planet.location.x, scen.planet.location.y, aex, aey, 1, 0.0, 1.0, 1.0, 1.0)
+	else
+		graphics.draw_rbox(aex, aey)
+	end
+	
 --[[------------------
 	Ship Drawing
 ------------------]]--
 
     if computerShip.life > 0 then
-		graphics.draw_sprite("Gaitori/Carrier", computerShip.physicsObject.position.x, computerShip.physicsObject.position.y, computerShip.size.x, computerShip.size.y, computerShip.physicsObject.angle)
-    else
+		if cameraRatio ~= 1 / 16 then
+			graphics.draw_sprite("Gaitori/Carrier", computerShip.physicsObject.position.x, computerShip.physicsObject.position.y, computerShip.size.x, computerShip.size.y, computerShip.physicsObject.angle)
+		else
+			graphics.draw_rtri(computerShip.physicsObject.position.x, computerShip.physicsObject.position.y, 1, 0, 0, 1)
+		end
+	else
 		-- This explosion code is a hack. We need a way to deal with explosions in a better method. Let's figure
 		-- it out when we get Sfiera's data [ADAM, SFIERA]
 		if computerShip.exploded == false then
@@ -510,8 +518,11 @@ function render ()
 			graphics.draw_sprite("Explosions/BestExplosion", computerShip.physicsObject.position.x, computerShip.physicsObject.position.y, bestExplosion.size.x, bestExplosion.size.y, frame / 6 * math.pi)
 		end
 	end
-	
-	graphics.draw_sprite(playerShip.image, playerShip.physicsObject.position.x, playerShip.physicsObject.position.y, playerShip.size.x, playerShip.size.y, playerShip.physicsObject.angle)
+	if cameraRatio ~= 1 / 16 then
+		graphics.draw_sprite(playerShip.image, playerShip.physicsObject.position.x, playerShip.physicsObject.position.y, playerShip.size.x, playerShip.size.y, playerShip.physicsObject.angle)
+	else
+		graphics.draw_rtri(playerShip.physicsObject.position.x, playerShip.physicsObject.position.y)
+	end
 	
 --[[------------------
 	PKBeam Firing
