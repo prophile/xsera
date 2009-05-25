@@ -110,7 +110,7 @@ function NewProjectile (weaponType, weaponClass, ownerShip)
 			ownerShip.switch = true
 		end
 		-- cost
-		ownerShip.charge.level = ownerShip.charge.level - tonumber(trueData.energyCost)
+		ownerShip.energy.level = ownerShip.energy.level - tonumber(trueData.energyCost)
 	elseif weaponClass == "pulse" then
 		return
 	elseif weaponClass == "special" then

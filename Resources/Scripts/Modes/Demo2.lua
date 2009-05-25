@@ -90,8 +90,8 @@ end
 		playerShip.warp = { warping = false, start = { bool = false, time = nil, engine = false, sound = false, isStarted = false }, endTime = 0.0, disengage = 2.0, finished = true, soundNum = 0 }
 		playerShip.switch = true
 		playerShip.battery = { total = 1000, level = 1000, percent = 1.0 }
-		playerShip.charge = { total = 1000, level = 1000, percent = 1.0 }
-		playerShip.shields = { total = 1000, level = 1000, percent = 1.0 }
+		playerShip.energy = { total = 1000, level = 1000, percent = 1.0 }
+		playerShip.shield = { total = 1000, level = 1000, percent = 1.0 }
 		playerShip.cMissile = NewWeapon("Special", "cMissile")
 			playerShip.cMissile.delta = 0.0
 			playerShip.cMissile.dest = { x = computerShip.physicsObject.position.x, y = computerShip.physicsObject.position.y }
@@ -314,14 +314,14 @@ function update ()
 	end
 	
 	playerShip.battery.percent = playerShip.battery.level / playerShip.battery.total
-	playerShip.charge.percent = playerShip.charge.level / playerShip.charge.total
-	playerShip.shields.percent = playerShip.shields.level / playerShip.shields.total
-	if playerShip.charge.percent ~= 1.0 then
+	playerShip.energy.percent = playerShip.energy.level / playerShip.energy.total
+	playerShip.shield.percent = playerShip.shield.level / playerShip.shield.total
+	if playerShip.energy.percent ~= 1.0 then
 		recharge_timer = recharge_timer + dt
 		if recharge_timer >= 0.5 then
 			if playerShip.battery.percent ~= 0.0 then
 				playerShip.battery.level = playerShip.battery.level - 1
-				playerShip.charge.level = playerShip.charge.level + 1
+				playerShip.energy.level = playerShip.energy.level + 1
 				recharge_timer = 0.0
 			end
 		end
@@ -566,12 +566,12 @@ function render ()
 -- Battery (red)
 	graphics.draw_box(107, 379, 29, 386, 0, 0.6, 0.15, 0.15, 1)
 	graphics.draw_box(playerShip.battery.percent * 78 + 29, 379, 29, 386, 0, 0.8, 0.4, 0.4, 1)
--- Charge (yellow)
+-- Energy (yellow)
 	graphics.draw_box(6, 379, -72.5, 386, 0, 0.6, 0.6, 0.15, 1)
-	graphics.draw_box(playerShip.charge.percent * 78.5 - 72.5, 379, -72.5, 386, 0, 0.8, 0.8, 0.4, 1)
--- Shields (blue)
+	graphics.draw_box(playerShip.energy.percent * 78.5 - 72.5, 379, -72.5, 386, 0, 0.8, 0.8, 0.4, 1)
+-- Shield (blue)
 	graphics.draw_box(-96, 379, -173, 386, 0, 0.15, 0.15, 0.6, 1)
-	graphics.draw_box(playerShip.shields.percent * 77 - 173, 379, -173, 386, 0, 0.15, 0.15, 0.6, 1)
+	graphics.draw_box(playerShip.shield.percent * 77 - 173, 379, -173, 386, 0, 0.15, 0.15, 0.6, 1)
 -- Factory resources (green)
 	count = 0
 	while count <= 100 do
