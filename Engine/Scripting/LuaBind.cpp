@@ -879,24 +879,25 @@ int GFX_DrawBoxTEMP ( lua_State* L )
 int GFX_DrawRadarTriangleTEMP ( lua_State* L )
 {
 	int nargs = lua_gettop(L);
-	float coordinates[2] = { luaL_checknumber(L, 1), luaL_checknumber(L, 2) };	
-	if (nargs > 2)
+	float coordinates[2] = { luaL_checknumber(L, 1), luaL_checknumber(L, 2) };
+	float varsize = luaL_checknumber(L, 3);
+	if (nargs > 3)
 	{
 		float r = 0.0, g = 1.0, b = 0.0, a = 1.0;
-		r = luaL_checknumber(L, 3);
-		g = luaL_checknumber(L, 4);
-		b = luaL_checknumber(L, 5);
-		a = luaL_checknumber(L, 6);
-		Graphics::DrawTriangle(vec2(coordinates[0], coordinates[1] + 60),
-							   vec2(coordinates[0] - 60, coordinates[1] - 60),
-							   vec2(coordinates[0] + 60, coordinates[1] - 60),
+		r = luaL_checknumber(L, 4);
+		g = luaL_checknumber(L, 5);
+		b = luaL_checknumber(L, 6);
+		a = luaL_checknumber(L, 7);
+		Graphics::DrawTriangle(vec2(coordinates[0], coordinates[1] + varsize),
+							   vec2(coordinates[0] - varsize, coordinates[1] - varsize),
+							   vec2(coordinates[0] + varsize, coordinates[1] - varsize),
 							   colour(r, g, b, a));
 	}
 	else
 	{
-		Graphics::DrawTriangle(vec2(coordinates[0], coordinates[1] + 60),
-							   vec2(coordinates[0] - 60, coordinates[1] - 60),
-							   vec2(coordinates[0] + 60, coordinates[1] - 60),
+		Graphics::DrawTriangle(vec2(coordinates[0], coordinates[1] + varsize),
+							   vec2(coordinates[0] - varsize, coordinates[1] - varsize),
+							   vec2(coordinates[0] + varsize, coordinates[1] - varsize),
 							   colour(0.0f, 1.0f, 0.0f, 1.0f));
 	}
 	return 0;
@@ -907,24 +908,21 @@ int GFX_DrawRadarPlusTEMP ( lua_State* L )
 	int nargs = lua_gettop(L);
 	const float one_sixth = 1 / 6;
 	float coordinates[2] = { luaL_checknumber(L, 1), luaL_checknumber(L, 2) };
-	float points[8] = { coordinates[0] + 0.5, coordinates[1] - one_sixth,
-						coordinates[0] - 0.5, coordinates[1] + one_sixth,
-						coordinates[0] + one_sixth, coordinates[1] - 0.5,
-						coordinates[0] - one_sixth, coordinates[1] + 0.5 };
-	if (nargs > 2)
+	float varsize = luaL_checknumber(L, 3);
+	if (nargs > 3)
 	{
 		float r = 0.0, g = 1.0, b = 0.0, a = 1.0;
-		r = luaL_checknumber(L, 3);
-		g = luaL_checknumber(L, 4);
-		b = luaL_checknumber(L, 5);
-		a = luaL_checknumber(L, 6);
-		Graphics::DrawBox(points[0], points[1], points[2], points[3], 0, colour(r, g, b, a));
-		Graphics::DrawBox(points[4], points[5], points[6], points[7], 0, colour(r, g, b, a));
+		r = luaL_checknumber(L, 4);
+		g = luaL_checknumber(L, 5);
+		b = luaL_checknumber(L, 6);
+		a = luaL_checknumber(L, 7);
+		Graphics::DrawBox(coordinates[0] + varsize, coordinates[1] - one_sixth, coordinates[0] - varsize, coordinates[1] + one_sixth, 0, colour(r, g, b, a));
+		Graphics::DrawBox(coordinates[0] + one_sixth, coordinates[1] - varsize, coordinates[0] - one_sixth, coordinates[1] + varsize, 0, colour(r, g, b, a));
 	}
 	else
 	{
-		Graphics::DrawBox(points[0], points[1], points[2], points[3], 0, colour(0, 1, 0, 1));
-		Graphics::DrawBox(points[4], points[5], points[6], points[7], 0, colour(0, 1, 0, 1));
+		Graphics::DrawBox(coordinates[0] + varsize, coordinates[1] - one_sixth, coordinates[0] - varsize, coordinates[1] + one_sixth, 0, colour(0, 1, 0, 1));
+		Graphics::DrawBox(coordinates[0] + one_sixth, coordinates[1] - varsize, coordinates[0] - one_sixth, coordinates[1] + varsize, 0, colour(0, 1, 0, 1));
 	}
 	return 0;
 }
@@ -933,20 +931,19 @@ int GFX_DrawRadarBoxTEMP ( lua_State* L )
 {
 	int nargs = lua_gettop(L);
 	float coordinates[2] = { luaL_checknumber(L, 1), luaL_checknumber(L, 2) };
-	float points[4] = { coordinates[1] + 60, coordinates[0] - 60,
-						coordinates[1] - 60, coordinates[0] + 60 };
-	if (nargs > 2)
+	float varsize = luaL_checknumber(L, 3);
+	if (nargs > 3)
 	{
 		float r = 0.0, g = 1.0, b = 0.0, a = 1.0;
-		r = luaL_checknumber(L, 3);
-		g = luaL_checknumber(L, 4);
-		b = luaL_checknumber(L, 5);
-		a = luaL_checknumber(L, 6);
-		Graphics::DrawBox(points[0], points[1], points[2], points[3], 0, colour(r, g, b, a));
+		r = luaL_checknumber(L, 4);
+		g = luaL_checknumber(L, 5);
+		b = luaL_checknumber(L, 6);
+		a = luaL_checknumber(L, 7);
+		Graphics::DrawBox(coordinates[1] + varsize, coordinates[0] - varsize, coordinates[1] - varsize, coordinates[0] + varsize, 0, colour(r, g, b, a));
 	}
 	else
 	{
-		Graphics::DrawBox(points[0], points[1], points[2], points[3], 0, colour(0, 1, 0, 1));
+		Graphics::DrawBox(coordinates[1] + varsize, coordinates[0] - varsize, coordinates[1] - varsize, coordinates[0] + varsize, 0, colour(0, 1, 0, 1));
 	}
 	return 0;
 }
@@ -955,20 +952,19 @@ int GFX_DrawRadarDiamondTEMP ( lua_State* L )
 {
 	int nargs = lua_gettop(L);
 	float coordinates[2] = { luaL_checknumber(L, 1), luaL_checknumber(L, 2) };
-	float points[4] = { coordinates[1] + 60, coordinates[0] - 60,
-						coordinates[1] - 60, coordinates[0] + 60 };
-	if (nargs > 2)
+	float varsize = luaL_checknumber(L, 3);
+	if (nargs > 3)
 	{
 		float r = 0.0, g = 1.0, b = 0.0, a = 1.0;
-		r = luaL_checknumber(L, 3);
-		g = luaL_checknumber(L, 4);
-		b = luaL_checknumber(L, 5);
-		a = luaL_checknumber(L, 6);
-		Graphics::DrawDiamond(points[0], points[1], points[2], points[3], colour(r, g, b, a));
+		r = luaL_checknumber(L, 4);
+		g = luaL_checknumber(L, 5);
+		b = luaL_checknumber(L, 6);
+		a = luaL_checknumber(L, 7);
+		Graphics::DrawDiamond(coordinates[1] + varsize, coordinates[0] - varsize, coordinates[1] - varsize, coordinates[0] + varsize, colour(r, g, b, a));
 	}
 	else
 	{
-		Graphics::DrawDiamond(points[0], points[1], points[2], points[3], colour(0, 1, 0, 1));
+		Graphics::DrawDiamond(coordinates[1] + varsize, coordinates[0] - varsize, coordinates[1] - varsize, coordinates[0] + varsize, colour(0, 1, 0, 1));
 	}
 	return 0;
 }
