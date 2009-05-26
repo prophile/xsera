@@ -51,13 +51,35 @@ inline void DrawImage ( const std::string& imageName, vec2 location, vec2 size )
  * @param col The colour of the text
  * @param rotation The rotation of the text
  */
-void DrawTextSDL ( const std::string& text, const std::string& font, vec2 location, float height, colour col, float rotation );
+void DrawTextCenterSDL ( const std::string& text, const std::string& font, vec2 location, float height, colour col, float rotation );
 /**
- * Draws a line between two points
- * @param coordinate1 The start of the line
- * @param coordinate2 The end of the line
- * @param width The width of the line, in pixels
+ * Draws text, center-justified
+ * @param text the text to be drawn
+ * @param font the font to be used
+ * @param location the place to justify the text
+ * @param height the font size of the text
  * @param col The colour of the line
+ * @param rotation how the text is rotated
+ */
+void DrawTextLeftSDL ( const std::string& text, const std::string& font, vec2 location, float height, colour col, float rotation );
+/**
+ * Draws text, left-justified
+ * @param text the text to be drawn
+ * @param font the font to be used
+ * @param location the place to justify the text
+ * @param height the font size of the text
+ * @param col The colour of the line
+ * @param rotation how the text is rotated
+ */
+void DrawTextRightSDL ( const std::string& text, const std::string& font, vec2 location, float height, colour col, float rotation );
+/**
+ * Draws text, right-justified
+ * @param text the text to be drawn
+ * @param font the font to be used
+ * @param location the place to justify the text
+ * @param height the font size of the text
+ * @param col The colour of the line
+ * @param rotation how the text is rotated
  */
 void DrawLine ( vec2 coordinate1, vec2 coordinate2, float width, colour col );
 /**

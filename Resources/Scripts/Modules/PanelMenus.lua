@@ -12,7 +12,7 @@ controlparams = { -387, -372,	-- left, right (target)
 --]]
 --/displaycontrol
 
-menu_shift = -345
+menu_shift = -391
 top_of_menu = -69
 menu_stride = -11
 
@@ -184,18 +184,18 @@ menu_level = menu_options
 function display_menu()
 	local shift = 1
 	local num = 1
-	graphics.draw_text(menu_level[1], "CrystalClear", menu_shift, top_of_menu, 13)
+	graphics.draw_text(menu_level[1], "CrystalClear", "left", menu_shift, top_of_menu, 13)
 	while menu_level[num] ~= nil do
 		if menu_level[num][1] ~= nil then
 			if menu_level[num][2] == true then
 				graphics.draw_box(top_of_menu + menu_stride * shift + 4, -392, top_of_menu + menu_stride * shift - 5, -298, 0, 0.1, 0.5, 0.1, 1)
 			end
-			graphics.draw_text(menu_level[num][1], "CrystalClear", menu_shift, top_of_menu + menu_stride * shift, 13)
+			graphics.draw_text(menu_level[num][1], "CrystalClear", "left", menu_shift, top_of_menu + menu_stride * shift, 13)
 			shift = shift + 1
 		end
 		num = num + 1
 	end
 	if text_being_drawn == true then
-		graphics.draw_text(scen.text[textnum], "CrystalClear", 0, -250, 30)
+		graphics.draw_text(scen.text[textnum], "CrystalClear", "left", 0, -250, 30)
 	end
 end

@@ -64,11 +64,11 @@ function render ()
         graphics.draw_sprite(ship[3], ship[1], ship[2], szx * sizeFactor * distancefactor(ship[4]), szy * sizeFactor * distancefactor(ship[4]), math.atan2(shipVelocity[2], shipVelocity[1]))
     end
     
-    graphics.draw_text("D - Demo", "CrystalClear", -332, 0, 60)
-    graphics.draw_text("T - Test", "CrystalClear", -349, -50, 60)
-    graphics.draw_text("C - Credits", "CrystalClear", -318, -100, 60)
+    graphics.draw_text("D - Demo", "CrystalClear", "left", -450, 0, 60)
+    graphics.draw_text("T - Test", "CrystalClear", "left", -450, -50, 60)
+    graphics.draw_text("C - Credits", "CrystalClear", "left", -450, -100, 60)
     
-    graphics.draw_text(versionInformation, "CrystalClear", -340, -200, 28)
+    graphics.draw_text(versionInformation, "CrystalClear", "left", -450, -220, 28)
 	
     graphics.end_frame()
 end

@@ -608,17 +608,17 @@ function render ()
 -- Radar box (green)
 	graphics.draw_box(184, -394, 100, -303, 1, 0.0, 0.4, 0.0, 1)
 -- Communications panels (green)
-	graphics.draw_box(-63, -392, -158, -298, 0, 0.0, 0.4, 0.0, 1)
+	graphics.draw_box(-63, -393, -158, -297, 0, 0.0, 0.4, 0.0, 1)
 	graphics.draw_line(-391, -74, -298, -74, 1, 0.4, 0.8, 0.4, 0.5)
-	graphics.draw_box(-165.5, -389.5, -185, -298, 0, 0.0, 0.4, 0.0, 1)
+	graphics.draw_box(-165, -389.5, -185.5, -304, 0, 0.0, 0.4, 0.0, 1)
 	display_menu()
 -- Weapon (special) ammo count
-	graphics.draw_text(string.format('%03d', playerShip.special.ammo), "CrystalClear", -308, 60, 13) -- GREEN
+	graphics.draw_text(string.format('%03d', playerShip.special.ammo), "CrystalClear", "left", -314, 60, 13) -- GREEN
 	control = true
 	target = true
-	if control == true then
-		graphics.draw_box(49, -391, 39, -298, 0, 0.8, 0.8, 0.4, 1)
-		graphics.draw_text("CONTROL", "CrystalClear", -370, 44, 13) -- LEFT JUSTIFY, BLACK
+	if control ~= nil then
+		graphics.draw_box(49, -392, 39, -297, 0, 0.8, 0.8, 0.4, 1)
+		graphics.draw_text("CONTROL", "CrystalClear", "left", -389, 44, 13) -- BLACK
 		graphics.draw_line(-387, 26, -372, 26, 0.5, 1.0, 1.0, 1.0, 1)
 		graphics.draw_line(-387, 24, -387, 26, 0.5, 1.0, 1.0, 1.0, 1)
 		graphics.draw_line(-372, 24, -372, 26, 0.5, 1.0, 1.0, 1.0, 1)
@@ -626,9 +626,9 @@ function render ()
 		graphics.draw_line(-372, 11, -372, 9, 0.5, 1.0, 1.0, 1.0, 1)
 		graphics.draw_line(-387, 11, -387, 9, 0.5, 1.0, 1.0, 1.0, 1)
 	end
-	if target == true then
-		graphics.draw_box(-8, -391, -18, -298, 0, 0.2, 0.2, 0.6, 1)
-		graphics.draw_text("TARGET", "CrystalClear", -370, -13, 13) -- LEFT JUSTIFY, BLACK
+	if target ~= nil then
+		graphics.draw_box(-8, -392, -18, -297, 0, 0.2, 0.2, 0.6, 1)
+		graphics.draw_text("TARGET", "CrystalClear", "left", -389, -13, 13) -- BLACK
 		graphics.draw_line(-387, -32, -372, -32, 0.5, 1.0, 1.0, 1.0, 1)
 		graphics.draw_line(-372, -34, -372, -32, 0.5, 1.0, 1.0, 1.0, 1)
 		graphics.draw_line(-387, -34, -387, -32, 0.5, 1.0, 1.0, 1.0, 1)
@@ -636,13 +636,13 @@ function render ()
 		graphics.draw_line(-372, -47, -372, -49, 0.5, 1.0, 1.0, 1.0, 1)
 		graphics.draw_line(-387, -47, -387, -49, 0.5, 1.0, 1.0, 1.0, 1)
 	end
-	graphics.draw_box(-165.5, -389.5, -175.5, -355, 0, 0.15, 0.15, 0.6, 1)
-	graphics.draw_text("RIGHT", "CrystalClear", -377, -171, 13) -- LEFT JUSTIFY, BLUE
-	graphics.draw_text("Select", "CrystalClear", -337, -171, 13) -- LEFT JUSTIFY, BLUE
+	graphics.draw_box(-165.5, -389.5, -175.5, -358, 0, 0.15, 0.15, 0.6, 1)
+	graphics.draw_text("RIGHT", "CrystalClear", "left", -388, -171, 13) -- BLUE
+	graphics.draw_text("Select", "CrystalClear", "left", -354, -171, 13) -- BLUE
 	if menu_level ~= menu_options then
-		graphics.draw_box(-175.5, -389.5, -185.5, -355, 0, 0.15, 0.15, 0.6, 1)
-		graphics.draw_text("LEFT", "CrystalClear", -377, -181, 13) -- LEFT JUSTIFY, BLUE
-		graphics.draw_text("Go Back", "CrystalClear", -337, -181, 13) -- LEFT JUSTIFY, BLUE
+		graphics.draw_box(-175.5, -389.5, -185.5, -358, 0, 0.15, 0.15, 0.6, 1)
+		graphics.draw_text("LEFT", "CrystalClear", "left", -388, -181, 13) -- BLUE
+		graphics.draw_text("Go Back", "CrystalClear", "left", -354, -181, 13) -- BLUE
 	end
 	graphics.end_frame()
 end

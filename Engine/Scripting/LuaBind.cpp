@@ -1,3 +1,4 @@
+#include <string.h>
 #include "Apollo.h"
 #include "Scripting.h"
 #include "Utilities/ResourceManager.h"
@@ -785,22 +786,48 @@ int GFX_DrawText ( lua_State* L )
 	int nargs = lua_gettop(L);
 	const char* text = luaL_checkstring(L, 1);
 	const char* font = luaL_checkstring(L, 2);
-	float locx = luaL_checknumber(L, 3);
-	float locy = luaL_checknumber(L, 4);
-	float height = luaL_checknumber(L, 5);
+	const char* justify = luaL_checkstring(L, 3);
+	float locx = luaL_checknumber(L, 4);
+	float locy = luaL_checknumber(L, 5);
+	float height = luaL_checknumber(L, 6);
 	float rotation = 0.0f;
+	if (nargs >= 8)
+	{
+		rotation = luaL_checknumber(L, 7);
+	}
 	if (nargs >= 7)
 	{
-		rotation = luaL_checknumber(L, 6);
-	}
-	if (nargs >= 6)
-	{
-		luaL_argcheck(L, lua_istable(L, 5), 5, "bad colour");
-		Graphics::DrawTextSDL(text, font, vec2(locx, locy), height, LoadColour(L, 5), rotation);
+		luaL_argcheck(L, lua_istable(L, 6), 6, "bad colour");
+		if (strcmp(justify, "left") == 0)
+		{
+			Graphics::DrawTextLeftSDL(text, font, vec2(locx, locy), height, LoadColour(L, 6), rotation);
+		} else
+		{
+			if (strcmp(justify, "right") == 0)
+			{
+				Graphics::DrawTextRightSDL(text, font, vec2(locx, locy), height, LoadColour(L, 6), rotation);
+			} else
+			{
+				Graphics::DrawTextCenterSDL(text, font, vec2(locx, locy), height, LoadColour(L, 6), rotation);
+			}
+		}
 	}
 	else
 	{
-		Graphics::DrawTextSDL(text, font, vec2(locx, locy), height, colour(1.0f, 1.0f, 1.0f, 1.0f), rotation);
+		if (strcmp(justify, "left") == 0)
+			
+		{
+			Graphics::DrawTextLeftSDL(text, font, vec2(locx, locy), height, colour(1.0f, 1.0f, 1.0f, 1.0f), rotation);
+		} else
+		{
+			if (strcmp(justify, "right") == 0)
+			{
+				Graphics::DrawTextRightSDL(text, font, vec2(locx, locy), height, colour(1.0f, 1.0f, 1.0f, 1.0f), rotation);
+			} else
+			{
+				Graphics::DrawTextCenterSDL(text, font, vec2(locx, locy), height, colour(1.0f, 1.0f, 1.0f, 1.0f), rotation);
+			}
+		}
 	}
 	return 0;
 }
