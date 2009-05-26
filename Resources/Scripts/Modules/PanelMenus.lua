@@ -196,6 +196,6 @@ function display_menu()
 		num = num + 1
 	end
 	if text_being_drawn == true then
-		graphics.draw_text(scen.text[textnum], "CrystalClear", "left", 0, -250, 30)
+		graphics.draw_text(scen.text[textnum], "CrystalClear", "center", 0, -250, 30)
 	end
 end

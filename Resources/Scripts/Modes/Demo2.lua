@@ -637,12 +637,12 @@ function render ()
 		graphics.draw_line(-387, -47, -387, -49, 0.5, 1.0, 1.0, 1.0, 1)
 	end
 	graphics.draw_box(-165.5, -389.5, -175.5, -358, 0, 0.15, 0.15, 0.6, 1)
-	graphics.draw_text("RIGHT", "CrystalClear", "left", -388, -171, 13) -- BLUE
-	graphics.draw_text("Select", "CrystalClear", "left", -354, -171, 13) -- BLUE
+	graphics.draw_text("RIGHT", "CrystalClear", "left", -388, -170, 13) -- BLUE
+	graphics.draw_text("Select", "CrystalClear", "left", -354, -170, 13) -- BLUE
 	if menu_level ~= menu_options then
 		graphics.draw_box(-175.5, -389.5, -185.5, -358, 0, 0.15, 0.15, 0.6, 1)
-		graphics.draw_text("LEFT", "CrystalClear", "left", -388, -181, 13) -- BLUE
-		graphics.draw_text("Go Back", "CrystalClear", "left", -354, -181, 13) -- BLUE
+		graphics.draw_text("LEFT", "CrystalClear", "left", -388, -180, 13) -- BLUE
+		graphics.draw_text("Go Back", "CrystalClear", "left", -354, -180, 13) -- BLUE
 	end
 	graphics.end_frame()
 end

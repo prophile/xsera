@@ -14,12 +14,6 @@
 	<text1>This is some sample text.</text1>
 	<text2>This test is to examine how text is drawn.</text2>
 	<text3>What does the computer do when text is too long to be displayed on one line?</text3>
-	<!-- this text stuff will be implemented following the implementation of left-justify, as a test-->
-<!-- ALISTAIR: I'm gonna need a way to check the length, in screen units, of the briefings, in order to be
-	able to wrap them correctly. -->
-<!-- Here's what I need to do with buildable planets: I need to have their name and race (as it is on the hard
-	drive), so that I can access all of their data, and then convert that data in EntityLoad.lua, under
-	NewScenario -->
 <!--	</planet> -->
 <!-- ALISTAIR: I'd like to structure the data within planet tags, so we can define the bounds of each planet.
 	I don't know how to do this, so your help on this is greatly appreciated.-->
