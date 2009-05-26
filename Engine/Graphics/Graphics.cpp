@@ -436,7 +436,7 @@ void DrawCircle ( vec2 centre, float radius, float width, colour col )
 	glVertexPointer(2, GL_FLOAT, 0, circlePoints);
 	glDrawArrays(GL_LINE_LOOP, 0, sizeof(circlePoints) / (2 * sizeof(float)));
 }
-	
+
 void DrawTriangle ( const vec2 point1, const vec2 point2, const vec2 point3, colour col )
 {
 	SetShader("Primitive");
@@ -457,6 +457,29 @@ void DrawTriangle ( const vec2 point1, const vec2 point2, const vec2 point3, col
 								point3.X(), point3.Y() };
 	glVertexPointer(2, GL_FLOAT, 0, real_triangle);
 	glDrawArrays(GL_POLYGON, 0, 3);
+} 
+
+void DrawDiamond ( float top, float left, float bottom, float right, colour col )
+{
+	SetShader("Primitive");
+	DisableTexturing();
+	if (col.alpha() < 1.0f)
+	{
+		EnableBlending();
+	}
+	else
+	{
+		DisableBlending();
+	}
+	SetColour(col);
+	Matrices::SetViewMatrix(matrix2x3::Identity());
+	Matrices::SetModelMatrix(matrix2x3::Identity());
+	float diamond[8] = { (right + left) / 2, top,
+						left, (top + bottom) / 2,
+						(right + left) / 2, bottom,
+						right, (top + bottom) / 2 };
+	glVertexPointer(2, GL_FLOAT, 0, diamond);
+	glDrawArrays(GL_QUADS, 0, 4);
 } 
 
 void DrawParticles ( const vec2* locations, unsigned int count, colour col )

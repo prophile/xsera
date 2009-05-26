@@ -71,10 +71,12 @@ void DrawLine ( vec2 coordinate1, vec2 coordinate2, float width, colour col );
  */
 void DrawBox ( float top, float left, float bottom, float right, float width, colour col );
 /**
- * Draws a non-filled circle
- * @param centre The position of the centre of the circle
- * @param radius The radius of the circle
- * @param width The width of the circle, in pixels
+ * Draws a filled box
+ * @param top the top bound of the box
+ * @param bottom the bottom bound of the box
+ * @param left the left bound of the box
+ * @param right the right bound of the box
+ * @param width The width of the border to the box, in pixels
  * @param col The colour of the circle
  */
 void DrawCircle ( vec2 centre, float radius, float width, colour col );
@@ -87,10 +89,18 @@ void DrawCircle ( vec2 centre, float radius, float width, colour col );
  */	
 void DrawTriangle ( const vec2 point1, const vec2 point2, const vec2 point3, colour col );
 /**
- * Draws a set of particles
- * @param locations An array of locations
- * @param count The size of the locations array
- * @param col The colour of the particles
+ * Draws a small triangle to represent a ship
+ * @param point* the three points of the triangle
+ * @param col The colour of the triangle
+ */
+void DrawDiamond ( float top, float left, float bottom, float right, colour col );
+/**
+ * Draws a small diamond to represent a capital ship
+ * @param top the top bound of the box
+ * @param bottom the bottom bound of the box
+ * @param left the left bound of the box
+ * @param right the right bound of the box
+ * @param col The colour of the triangle
  */
 void DrawParticles ( const vec2* locations, unsigned int count, colour col );
 /**

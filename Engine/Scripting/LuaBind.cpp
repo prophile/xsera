@@ -951,6 +951,28 @@ int GFX_DrawRadarBoxTEMP ( lua_State* L )
 	return 0;
 }
 
+int GFX_DrawRadarDiamondTEMP ( lua_State* L )
+{
+	int nargs = lua_gettop(L);
+	float coordinates[2] = { luaL_checknumber(L, 1), luaL_checknumber(L, 2) };
+	float points[4] = { coordinates[1] + 60, coordinates[0] - 60,
+						coordinates[1] - 60, coordinates[0] + 60 };
+	if (nargs > 2)
+	{
+		float r = 0.0, g = 1.0, b = 0.0, a = 1.0;
+		r = luaL_checknumber(L, 3);
+		g = luaL_checknumber(L, 4);
+		b = luaL_checknumber(L, 5);
+		a = luaL_checknumber(L, 6);
+		Graphics::DrawDiamond(points[0], points[1], points[2], points[3], colour(r, g, b, a));
+	}
+	else
+	{
+		Graphics::DrawDiamond(points[0], points[1], points[2], points[3], colour(0, 1, 0, 1));
+	}
+	return 0;
+}
+
 int GFX_DrawCircle ( lua_State* L )
 {
 	int nargs = lua_gettop(L);
@@ -1085,9 +1107,10 @@ luaL_Reg registryGraphics[] =
 	"draw_text", GFX_DrawText,
 	"draw_line", GFX_DrawLineTEMP,
 	"draw_box", GFX_DrawBoxTEMP,
-	"draw_rbox", GFX_DrawRadarBoxTEMP,
 	"draw_rtri", GFX_DrawRadarTriangleTEMP,
 	"draw_rplus", GFX_DrawRadarPlusTEMP,
+	"draw_rbox", GFX_DrawRadarBoxTEMP,
+	"draw_rdia", GFX_DrawRadarDiamondTEMP,
 	"draw_circle", GFX_DrawCircle,
 	"sprite_dimensions", GFX_SpriteDimensions,
 	"draw_starfield", GFX_DrawStarfield,

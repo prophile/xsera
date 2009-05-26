@@ -715,7 +715,7 @@ function key ( k )
 			arrowLength = arrowLength / 2
 			arrowVar = arrowVar / 2
 			arrowDist = arrowDist / 2
-			playerShip.pkBeam.width = cameraRatio
+			playerShip.beam.width = cameraRatio
 		end
 	elseif k == "h" then
 		if cameraRatio ~= 1 / 16 then
@@ -732,7 +732,7 @@ function key ( k )
 			arrowLength = arrowLength * 2
 			arrowVar = arrowVar * 2
 			arrowDist = arrowDist * 2
-			playerShip.pkBeam.width = cameraRatio
+			playerShip.beam.width = cameraRatio
 		end
 	elseif k == "i" then
 		change_menu(menu_level, "i")
