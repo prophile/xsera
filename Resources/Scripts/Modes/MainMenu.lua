@@ -84,6 +84,8 @@ function key ( k )
         sizeFactor = sizeFactor - 0.1
     elseif k == "d" then
         mode_manager.switch("Demo2")
+    elseif k == "x" then
+        mode_manager.switch("ConsoleDrawer")
     elseif k == "t" then
         mode_manager.switch("AngleTest")
     elseif k == "c" then

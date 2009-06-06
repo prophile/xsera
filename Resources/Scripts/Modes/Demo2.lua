@@ -45,6 +45,7 @@ printFPS = false
 waitTime = 0.0
 resources = 10
 resource_bars = 1
+RESOURCES_PER_TICK = 200
 NEW_RES = 2
 resource_time = 0
 recharge_timer = 0.0
@@ -89,27 +90,6 @@ end
     playerShip = NewShip("Ishiman/HeavyCruiser")
 		playerShip.warp = { warping = false, start = { bool = false, time = nil, engine = false, sound = false, isStarted = false }, endTime = 0.0, disengage = 2.0, finished = true, soundNum = 0 }
 		playerShip.switch = true
---[[		playerShip.cMissile = NewWeapon("Special", "cMissile")
-			playerShip.cMissile.delta = 0.0
-			playerShip.cMissile.dest = { x = computerShip.physicsObject.position.x, y = computerShip.physicsObject.position.y }
-			playerShip.cMissile.size.x, playerShip.cMissile.size.y = graphics.sprite_dimensions("Weapons/cMissile")
-			playerShip.cMissile.fired = false
-			playerShip.cMissile.start = 0
-			playerShip.cMissile.force = { x, y }
-		playerShip.cMissileWeap = { { {} } }
-		table.remove(playerShip.cMissileWeap, 1)
-		playerShip.pkBeam = NewWeapon("Beam", "PKBeam")
-			playerShip.pkBeam.width = cameraRatio
-			playerShip.pkBeam.fired = false
-			playerShip.pkBeam.start = 0
-			playerShip.pkBeam.firing = false
-		playerShip.pkBeamWeap = { { {} } }
-		table.remove(playerShip.pkBeamWeap, 1)--]]
--------
-    --------
-        -------- new weapon loading (after bullet -> projectile)
-    --------
--------
 		playerShip.special = NewWeapon("Special", "cMissile")
 			playerShip.special.delta = 0.0
 			playerShip.special.dest = { x = computerShip.physicsObject.position.x, y = computerShip.physicsObject.position.y }
@@ -408,7 +388,7 @@ function weapon_manage(weapon, weapData, weapOwner)
 -- handling for collisions and age
 
 	wNum = 1
-	while wNum <= playerShip.special.max_projectiles do
+	while wNum <= weapon.max_projectiles do
 		if weapData[wNum] ~= nil then
 			if weapData[wNum].physicsObject == nil then
 				-- this object needs to be deleted, probably the initializing table

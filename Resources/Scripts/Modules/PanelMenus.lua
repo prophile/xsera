@@ -8,7 +8,8 @@ controlparams = { -387, -372,	-- left, right (target)
 				26, 9 }			-- top, bottom (control)
 	-- those are the boundaries of the brackets. Ships draw from the middle, and I can't control the size,
 	-- so how is this going to work? I think I'm going to need something in the API to draw this correctly...
-	-- another reason why this would need to be in the API is for landing transports on planets.
+	-- another reason why this would need to be in the API is for landing transports on planets
+	-- (they shrink in size when they land - also that's (not) what she said)
 --]]
 --/displaycontrol
 

@@ -10,6 +10,13 @@
 	<build1>Fighter</build1>
 	<build2>Heavy Cruiser</build2>
 	<build3>Transport</build3>
+	<!-- how I'd like this to be set up:
+	<build>
+		<name>Fighter</name>
+		<name>Heavy Cruiser</name>
+		<name>Fighter</name>
+	</build>
+	would that be possible? -->
 	<briefing>Destroy the Gaitori Carrier.</briefing>
 	<text1>This is some sample text.</text1>
 	<text2>This test is to examine how text is drawn.</text2>
