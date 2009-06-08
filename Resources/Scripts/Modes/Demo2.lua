@@ -14,6 +14,7 @@ import('EntityLoad')
 import('Math')
 import('Scenario')
 import('PanelMenus')
+import('PopDownConsole')
 -- import('MouseHandle')
 
 local cameraRatio = 1
@@ -23,17 +24,17 @@ camera.h = camera.w / aspectRatio
 local shipAdjust = .045 * camera.w
 
 --color tables
-c_lightRed = { r = 0.8, g = 0.4, b = 0.4, a = 1 }
-c_red = { r = 0.6, g = 0.15, b = 0.15, a = 1 }
-c_lightBlue = { r = 0.15, g = 0.15, b = 0.6, a = 1 }
-c_blue = { r = 0.15, g = 0.15, b = 0.6, a = 1 }
-c_lightGreen = { r = 0.3, g = 0.7, b = 0.3, a = 1 }
-c_green = { r = 0.0, g = 0.4, b = 0.0, a = 1 }
-c_lightYellow = { r = 0.8, g = 0.8, b = 0.4, a = 1 }
-c_yellow = { r = 0.6, g = 0.6, b = 0.15, a = 1 }
-c_pink = { r = 0.8, g = 0.5, b = 0.5, a = 1 }
-c_lightPurple = { r = 0.8, g = 0.5, b = 0.7, a = 1 }
-c_purple = { r = 0.7, g = 0.4, b = 0.6, a = 1 }
+ClightRed = { r = 0.8, g = 0.4, b = 0.4, a = 1 }
+Cred = { r = 0.6, g = 0.15, b = 0.15, a = 1 }
+ClightBlue = { r = 0.15, g = 0.15, b = 0.6, a = 1 }
+Cblue = { r = 0.15, g = 0.15, b = 0.6, a = 1 }
+ClightGreen = { r = 0.3, g = 0.7, b = 0.3, a = 1 }
+Cgreen = { r = 0.0, g = 0.4, b = 0.0, a = 1 }
+ClightYellow = { r = 0.8, g = 0.8, b = 0.4, a = 1 }
+Cyellow = { r = 0.6, g = 0.6, b = 0.15, a = 1 }
+Cpink = { r = 0.8, g = 0.5, b = 0.5, a = 1 }
+ClightPurple = { r = 0.8, g = 0.5, b = 0.7, a = 1 }
+Cpurple = { r = 0.7, g = 0.4, b = 0.6, a = 1 }
 --/color tables
 
 --tempvars
@@ -624,6 +625,7 @@ function render ()
 		graphics.draw_text("LEFT", "CrystalClear", "left", -388, -180, 13) -- BLUE
 		graphics.draw_text("Go Back", "CrystalClear", "left", -354, -180, 13) -- BLUE
 	end
+	popDownConsole()
 	graphics.end_frame()
 end
 
@@ -724,6 +726,10 @@ function key ( k )
 		change_menu(menu_level, "l")
 	elseif k == "tab" then
 		playerShip.warp.start.bool = true
+	elseif k == "o" then
+		consoleDraw = true
+	elseif k == "u" then
+		consoleDraw = false
 	elseif k == " " then
 		if playerShip.beamName ~= nil then
 			playerShip.beam.firing = true
@@ -742,6 +748,8 @@ function key ( k )
 		mode_manager.switch("MainMenu")
 	end
 end
+
+normal_key = key
 
 function quit ()
     physics.close()
