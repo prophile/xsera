@@ -56,15 +56,6 @@ end
 	New Projectile
 ------------------]]--
 
-
---[[ [ADAM, ALISTAIR, DEMO2]
-- the functions of NewProjectile and NewWeapon are mixed...
-- weapon should contain name, short name, firing sound, sprite, etc.
-- projectile should contain physics and changeable aspects of any projectile
-
-- Also, I should make better use of ownerShip by making angle, velocity, etc. equal
---]]
-
 function NewProjectile (weaponType, weaponClass, ownerShip)
 	local rawData = xml.load("Config/Weapons/" .. weaponClass .. "/" .. weaponType .. ".xml")
 	local projectileData = rawData[1]
@@ -189,36 +180,23 @@ function NewScenario (scenario)
 	end
 	local scenarioObject = { {} }
 	scenarioObject.name = trueData.name
+	local n = 1
+	scenarioObject.planet = {}
+--[[
+	while trueData.planet[n] ~= nil do
+		scenarioObject.planet[n] =  { name = trueData.planet[n].name,
+			location = { x = tonumber(trueData.planet[n].locationx), y = tonumber(trueData.planet[n].locationy) },
+			sprite = trueData.planet[n].sprite,
+			res_gen = tonumber(trueData.planet[n].resources_generated),
+			build = trueData.planet[n].build }
+		n = n + 1
+	end --]]
 	scenarioObject.planet =  { name = trueData.pname,
-			location = { x = tonumber(trueData.plocationx), y = tonumber(trueData.plocationy) },
-			sprite = trueData.psprite,
-			res_gen = tonumber(trueData.presources_generated),
-			build = { } }
-	if trueData.build1 ~= nil then
-		scenarioObject.planet.build[1] = trueData.build1
-	end
-	if trueData.build2 ~= nil then
-		scenarioObject.planet.build[2] = trueData.build2
-	end
-	if trueData.build3 ~= nil then
-		scenarioObject.planet.build[3] = trueData.build3
-	end
-	if trueData.build4 ~= nil then
-		scenarioObject.planet.build[4] = trueData.build4
-	end
-	if trueData.build5 ~= nil then
-		scenarioObject.planet.build[5] = trueData.build5
-	end
-	if trueData.text1 ~= nil then
-		scenarioObject.text = {}
-		scenarioObject.text[1] = trueData.text1
-	end
-	if trueData.text2 ~= nil then
-		scenarioObject.text[2] = trueData.text2
-	end
-	if trueData.text3 ~= nil then
-		scenarioObject.text[3] = trueData.text3
-	end
+		location = { x = tonumber(trueData.plocationx), y = tonumber(trueData.plocationy) },
+		sprite = trueData.psprite,
+		res_gen = tonumber(trueData.presources_generated),
+		build = trueData.pbuild }
+	scenarioObject.ptext = trueData.ptext
 	scenarioObject.briefing = trueData.briefing
 	return scenarioObject
 end

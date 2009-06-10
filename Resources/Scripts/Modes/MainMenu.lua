@@ -92,6 +92,8 @@ function key ( k )
         mode_manager.switch("Credits")
     elseif k == "tab" then
         mode_manager.switch("Demo1")
+    elseif k == "escape" then
+		os.exit()
     else
         print("Uninterpreted keystroke " .. k)
     end

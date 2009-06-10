@@ -39,6 +39,7 @@ end
 -- Special Orders
 
 function transfer_control()
+	error("This command currently has no code.", 1)
 	--[[ pseudocode!!! I don't have the concept of allies yet, need that before I can implement this
 	if controlShip.ally == true then
 		playerShip, controlShip = playerShip, controlShip
@@ -46,23 +47,23 @@ function transfer_control()
 end
 
 function hold_position()
-	-- AI command, keep for later
+	error("This command currently has no code.", 1)
 end
 
 function go_to_my_position()
-	-- maybe I could build simple code for this. Maybe not. I'll do this later
+	error("This command currently has no code.", 1)
 end
 
 function fire_weapon_1()
-	-- AI command, keep for later
+	error("This command currently has no code.", 1)
 end
 
 function fire_weapon_2()
-	-- AI command, keep for later
+	error("This command currently has no code.", 1)
 end
 
 function fire_special()
-	-- AI command, keep for later
+	error("This command currently has no code.", 1)
 end
 
 -- Message menu

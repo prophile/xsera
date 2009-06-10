@@ -18,22 +18,6 @@ function console_draw(fontsize)
 	end
 end
 
-function c_return()
-	mode_manager.switch("MainMenu")
-end
-
-function c_load()
-	
-end
-
-function sc_load_demo()
-	mode_manager.switch("Demo2")
-end
-
-commands = {
-			{ "return", c_return },
-			{ "load demo", sc_load_demo } }
-
 function console_add(text)
 	table.insert(consoleHistory, text)
 	if text ~= ">" then
@@ -62,6 +46,8 @@ function console_key (k)
 		console_add(">")
 	elseif k == "escape" then
 		mode_manager.switch("MainMenu")
+	elseif k == "tab" then
+		consoleDraw = false
 	elseif asciikey >= 97 and asciikey <= 122 then
 		consoleHistory[line] = consoleHistory[line] .. k
 	elseif asciikey >= 65 and asciikey <= 90 then

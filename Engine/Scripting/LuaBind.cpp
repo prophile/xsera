@@ -580,7 +580,7 @@ void XML_ParseNode (lua_State* L, TiXmlNode* xmlNode)
 		TiXmlAttribute* xmlAttribute = xmlElement->FirstAttribute();
 		if (xmlAttribute)
 		{
-			lua_pushstring(L,"attr");
+			lua_pushstring(L, "attr");
 			lua_newtable(L);
 			for (; xmlAttribute; xmlAttribute = xmlAttribute->Next())
 			{
@@ -620,9 +620,9 @@ void XML_ParseNode (lua_State* L, TiXmlNode* xmlNode)
 				case TiXmlNode::UNKNOWN: break;
 			};
 		}
-		lua_pushstring(L,"n");
-		lua_pushnumber(L,childCount);
-		lua_settable(L,-3);
+		lua_pushstring(L, "n");
+		lua_pushnumber(L, childCount);
+		lua_settable(L, -3);
 	}
 }
 
