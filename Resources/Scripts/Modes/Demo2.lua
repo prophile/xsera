@@ -531,100 +531,17 @@ function render ()
 	end
 	
 --[[------------------
-	Arrow and Panels
+	Miscellaneous
 ------------------]]--
 	
+-- Arrow
 	local angle = playerShip.physicsObject.angle
 	graphics.draw_line(math.cos(arrowAlpha + angle) * arrowDist + playerShip.physicsObject.position.x, math.sin(arrowAlpha + angle) * arrowDist + playerShip.physicsObject.position.y, math.cos(angle - arrowAlpha) * arrowDist + playerShip.physicsObject.position.x, math.sin(angle - arrowAlpha) * arrowDist + playerShip.physicsObject.position.y, 1.5, 0.1, 0.7, 0.1, 1)
 	graphics.draw_line(math.cos(angle - arrowAlpha) * arrowDist + playerShip.physicsObject.position.x, math.sin(angle - arrowAlpha) * arrowDist + playerShip.physicsObject.position.y, math.cos(angle) * (arrowLength + arrowVar) + playerShip.physicsObject.position.x, math.sin(angle) * (arrowLength + arrowVar) + playerShip.physicsObject.position.y, 1.5, 0.1, 0.7, 0.1, 1)
 	graphics.draw_line(math.cos(angle) * (arrowLength + arrowVar) + playerShip.physicsObject.position.x, math.sin(angle) * (arrowLength + arrowVar) + playerShip.physicsObject.position.y, math.cos(arrowAlpha + angle) * arrowDist + playerShip.physicsObject.position.x, math.sin(arrowAlpha + angle) * arrowDist + playerShip.physicsObject.position.y, 1.5, 0.1, 0.7, 0.1, 1)
-	graphics.set_camera(-400, -300, 400, 300)
-	graphics.draw_image("Panels/SideLeft", -346, 0, 109, 607)
-	graphics.draw_image("Panels/SideRight", 387, -2, 26, 608)
--- Battery (red)
-	graphics.draw_box(107, 379, 29, 386, 0, 0.6, 0.15, 0.15, 1)
-	graphics.draw_box(playerShip.battery.percent * 78 + 29, 379, 29, 386, 0, 0.8, 0.4, 0.4, 1)
--- Energy (yellow)
-	graphics.draw_box(6, 379, -72.5, 386, 0, 0.6, 0.6, 0.15, 1)
-	graphics.draw_box(playerShip.energy.percent * 78.5 - 72.5, 379, -72.5, 386, 0, 0.7, 0.7, 0.4, 1)
--- Shield (blue)
-	graphics.draw_box(-96, 379, -173, 386, 0, 0.15, 0.15, 0.6, 1)
-	graphics.draw_box(playerShip.shield.percent * 77 - 173, 379, -173, 386, 0, 0.15, 0.15, 0.6, 1)
--- Factory resources (green)
-	count = 0
-	while count <= 100 do
-		if count > resources then
-			graphics.draw_box(151 - 3.15 * count, 394, 149 - 3.15 * count, 397, 0, 0.2, 0.5, 0.2, 1)
-		else
-			graphics.draw_box(151 - 3.15 * count, 394, 149 - 3.15 * count, 397, 0, 0.4, 0.7, 0.4, 1)
-		end
-		count = count + 1
-	end
--- Factory resource bars (yellow)
-	count = 1
-	while count <= 7 do
-		if count <= resource_bars then
-			graphics.draw_box(154.5 - 4.5 * count, 384, 151 - 4.5 * count, 392, 0, 0.7, 0.7, 0.3, 1)
-		else
-			graphics.draw_box(154.5 - 4.5 * count, 384, 151 - 4.5 * count, 392, 0, 0.5, 0.5, 0.2, 1)
-		end
-		count = count + 1
-	end
--- Factory build bar
-	planet = scen.planet
-	planet.build = { factor = 100, current = 0, percent = 0 }
-	if planet ~= nil then
-		graphics.draw_line(382, 181, 392, 181, 0.5, 0.7, 0.4, 0.6, 1)
-		graphics.draw_line(382, 181, 382, 177, 0.5, 0.7, 0.4, 0.6, 1)
-		graphics.draw_line(392, 177, 392, 181, 0.5, 0.7, 0.4, 0.6, 1)
-		graphics.draw_line(382, 159, 392, 159, 0.5, 0.7, 0.4, 0.6, 1)
-		graphics.draw_line(382, 163, 382, 159, 0.5, 0.7, 0.4, 0.6, 1)
-		graphics.draw_line(392, 159, 392, 163, 0.5, 0.7, 0.4, 0.6, 1)
-		graphics.draw_box(179, 384, 161, 390, 0, 0.7, 0.4, 0.6, 1)
-		graphics.draw_box(18 * planet.build.percent + 161, 384, 161, 390, 0, 0.8, 0.5, 0.7, 1)
-	end
-	
--- Left panel
-	
--- Radar box (green)
-	graphics.draw_box(184, -394, 100, -303, 1, 0.0, 0.4, 0.0, 1)
--- Communications panels (green)
-	graphics.draw_box(-63, -393, -158, -297, 0, 0.0, 0.4, 0.0, 1)
-	graphics.draw_line(-391, -74, -298, -74, 1, 0.4, 0.8, 0.4, 0.5)
-	graphics.draw_box(-165, -389.5, -185.5, -304, 0, 0.0, 0.4, 0.0, 1)
-	display_menu()
--- Weapon (special) ammo count
-	graphics.draw_text(string.format('%03d', playerShip.special.ammo), "CrystalClear", "left", -314, 60, 13) -- GREEN
-	control = scen.planet
-	if control ~= nil then
-		graphics.draw_box(49, -392, 39, -297, 0, 0.7, 0.7, 0.4, 1)
-		graphics.draw_text("CONTROL", "CrystalClear", "left", -389, 44, 13) -- BLACK
-		graphics.draw_sprite("Planets/" .. control.sprite, -379, 17, 16, 16, 1, 0.0, 1.0, 1.0, 1.0)
-		graphics.draw_line(-387, 26, -372, 26, 0.5, 1.0, 1.0, 1.0, 1)
-		graphics.draw_line(-387, 24, -387, 26, 0.5, 1.0, 1.0, 1.0, 1)
-		graphics.draw_line(-372, 24, -372, 26, 0.5, 1.0, 1.0, 1.0, 1)
-		graphics.draw_line(-387, 9, -372, 9, 0.5, 1.0, 1.0, 1.0, 1)
-		graphics.draw_line(-372, 11, -372, 9, 0.5, 1.0, 1.0, 1.0, 1)
-		graphics.draw_line(-387, 11, -387, 9, 0.5, 1.0, 1.0, 1.0, 1)
-	end
-	if target ~= nil then
-		graphics.draw_box(-8, -392, -18, -297, 0, 0.2, 0.2, 0.6, 1)
-		graphics.draw_text("TARGET", "CrystalClear", "left", -389, -13, 13) -- BLACK
-		graphics.draw_line(-387, -32, -372, -32, 0.5, 1.0, 1.0, 1.0, 1)
-		graphics.draw_line(-372, -34, -372, -32, 0.5, 1.0, 1.0, 1.0, 1)
-		graphics.draw_line(-387, -34, -387, -32, 0.5, 1.0, 1.0, 1.0, 1)
-		graphics.draw_line(-387, -49, -372, -49, 0.5, 1.0, 1.0, 1.0, 1)
-		graphics.draw_line(-372, -47, -372, -49, 0.5, 1.0, 1.0, 1.0, 1)
-		graphics.draw_line(-387, -47, -387, -49, 0.5, 1.0, 1.0, 1.0, 1)
-	end
-	graphics.draw_box(-165.5, -389.5, -175.5, -358, 0, 0.15, 0.15, 0.6, 1)
-	graphics.draw_text("RIGHT", "CrystalClear", "left", -388, -170, 13) -- BLUE
-	graphics.draw_text("Select", "CrystalClear", "left", -354, -170, 13) -- BLUE
-	if menu_level ~= menu_options then
-		graphics.draw_box(-175.5, -389.5, -185.5, -358, 0, 0.15, 0.15, 0.6, 1)
-		graphics.draw_text("LEFT", "CrystalClear", "left", -388, -180, 13) -- BLUE
-		graphics.draw_text("Go Back", "CrystalClear", "left", -354, -180, 13) -- BLUE
-	end
+-- Panels
+	draw_panels()
+-- Console
 	popDownConsole()
 	graphics.end_frame()
 end
