@@ -18,7 +18,12 @@ function console_draw(fontsize)
 	end
 end
 
-function console_add(text)
+function console_add(text, output)
+	if output ~= nil then
+		io.output(output)
+	else
+		io.output("XseraOutput.txt")
+	end
 	table.insert(consoleHistory, text)
 	if text ~= ">" then
 		print("[Console] " .. text)
@@ -55,4 +60,8 @@ function console_key (k)
 	elseif asciikey == 32 then
 		consoleHistory[line] = consoleHistory[line] .. k
 	end
+end
+
+function cout_table (t, name)
+	console_add(table_define(t, name), "XseraTables.txt")
 end

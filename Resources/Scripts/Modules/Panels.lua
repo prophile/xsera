@@ -1,17 +1,17 @@
 import('Scenario') 
 
 --displaycontrol
---[[ the following is not related to this file, I just needed to stick it elsewhere when done.
+--[[ the following is not related to this file, I just need to stick it elsewhere when done.
 controlparams = { -387, -372,	-- left, right (target)
 				-32, -49,		-- top, bottom (target)
 				-387, -372,		-- left, right (control)
 				26, 9 }			-- top, bottom (control)
-	-- those are the boundaries of the brackets. Ships draw from the middle, and I can't control the size,
-	-- so how is this going to work? I think I'm going to need something in the API to draw this correctly...
-	-- another reason why this would need to be in the API is for landing transports on planets
-	-- (they shrink in size when they land - also that's (not) what she said)
+	-- those are the boundaries of the brackets
 --]]
 --/displaycontrol
+
+control = scen.planet
+target = nil
 
 menu_shift = -391
 top_of_menu = -69
@@ -28,9 +28,10 @@ function shipyard()
 		if num ~= 1 then
 			menu_shipyard[num + 1][2] = false
 			-- how do I have it create a ship when all I have is its name in a char?
+			-- [ADAM] Answer: store its file name in the char and access its real name through that...
+			-- all other attributes will be accessible
 		else
 			menu_shipyard[num + 1][2] = true
-			-- how do I have it create a ship when all I have is its name in a char?
 		end
 		num = num + 1
 	end

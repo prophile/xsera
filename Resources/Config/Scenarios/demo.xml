@@ -45,8 +45,8 @@
 	<plocationy>100</plocationy>
 	<psprite>AnotherEarth</psprite>
 	<presources_generated>0.5</presources_generated>
-	<pbuild>Fighter</pbuild>
-	<pbuild>Heavy Cruiser</pbuild>
-	<pbuild>Cruiser</pbuild>
+	<pbuild1>Fighter</pbuild1>
+	<pbuild2>Heavy Cruiser</pbuild2>
+	<pbuild3>Cruiser</pbuild3>
 	<briefing>Destroy the Gaitori Carrier.</briefing>
 </sprite>

@@ -13,7 +13,7 @@
 import('EntityLoad')
 import('Math')
 import('Scenario')
-import('PanelMenus')
+import('Panels')
 import('PopDownConsole')
 -- import('MouseHandle')
 
@@ -546,7 +546,7 @@ function render ()
 	graphics.draw_box(playerShip.battery.percent * 78 + 29, 379, 29, 386, 0, 0.8, 0.4, 0.4, 1)
 -- Energy (yellow)
 	graphics.draw_box(6, 379, -72.5, 386, 0, 0.6, 0.6, 0.15, 1)
-	graphics.draw_box(playerShip.energy.percent * 78.5 - 72.5, 379, -72.5, 386, 0, 0.8, 0.8, 0.4, 1)
+	graphics.draw_box(playerShip.energy.percent * 78.5 - 72.5, 379, -72.5, 386, 0, 0.7, 0.7, 0.4, 1)
 -- Shield (blue)
 	graphics.draw_box(-96, 379, -173, 386, 0, 0.15, 0.15, 0.6, 1)
 	graphics.draw_box(playerShip.shield.percent * 77 - 173, 379, -173, 386, 0, 0.15, 0.15, 0.6, 1)
@@ -564,16 +564,16 @@ function render ()
 	count = 1
 	while count <= 7 do
 		if count <= resource_bars then
-			graphics.draw_box(154.5 - 4.5 * count, 384, 151 - 4.5 * count, 392, 0, 0.7, 0.7, 0.4, 1)
+			graphics.draw_box(154.5 - 4.5 * count, 384, 151 - 4.5 * count, 392, 0, 0.7, 0.7, 0.3, 1)
 		else
 			graphics.draw_box(154.5 - 4.5 * count, 384, 151 - 4.5 * count, 392, 0, 0.5, 0.5, 0.2, 1)
 		end
 		count = count + 1
 	end
 -- Factory build bar
-	planet = true
-	planet_build = { factor = 10, current = 0, percent = 0.7 }
-	if planet == true then
+	planet = scen.planet
+	planet.build = { factor = 100, current = 0, percent = 0 }
+	if planet ~= nil then
 		graphics.draw_line(382, 181, 392, 181, 0.5, 0.7, 0.4, 0.6, 1)
 		graphics.draw_line(382, 181, 382, 177, 0.5, 0.7, 0.4, 0.6, 1)
 		graphics.draw_line(392, 177, 392, 181, 0.5, 0.7, 0.4, 0.6, 1)
@@ -581,7 +581,7 @@ function render ()
 		graphics.draw_line(382, 163, 382, 159, 0.5, 0.7, 0.4, 0.6, 1)
 		graphics.draw_line(392, 159, 392, 163, 0.5, 0.7, 0.4, 0.6, 1)
 		graphics.draw_box(179, 384, 161, 390, 0, 0.7, 0.4, 0.6, 1)
-		graphics.draw_box(18 * planet_build.percent + 161, 384, 161, 390, 0, 0.8, 0.5, 0.7, 1)
+		graphics.draw_box(18 * planet.build.percent + 161, 384, 161, 390, 0, 0.8, 0.5, 0.7, 1)
 	end
 	
 -- Left panel
@@ -595,11 +595,11 @@ function render ()
 	display_menu()
 -- Weapon (special) ammo count
 	graphics.draw_text(string.format('%03d', playerShip.special.ammo), "CrystalClear", "left", -314, 60, 13) -- GREEN
-	control = true
-	target = true
+	control = scen.planet
 	if control ~= nil then
-		graphics.draw_box(49, -392, 39, -297, 0, 0.8, 0.8, 0.4, 1)
+		graphics.draw_box(49, -392, 39, -297, 0, 0.7, 0.7, 0.4, 1)
 		graphics.draw_text("CONTROL", "CrystalClear", "left", -389, 44, 13) -- BLACK
+		graphics.draw_sprite("Planets/" .. control.sprite, -379, 17, 16, 16, 1, 0.0, 1.0, 1.0, 1.0)
 		graphics.draw_line(-387, 26, -372, 26, 0.5, 1.0, 1.0, 1.0, 1)
 		graphics.draw_line(-387, 24, -387, 26, 0.5, 1.0, 1.0, 1.0, 1)
 		graphics.draw_line(-372, 24, -372, 26, 0.5, 1.0, 1.0, 1.0, 1)

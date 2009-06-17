@@ -195,9 +195,9 @@ function NewScenario (scenario)
 		location = { x = tonumber(trueData.plocationx), y = tonumber(trueData.plocationy) },
 		sprite = trueData.psprite,
 		res_gen = tonumber(trueData.presources_generated),
-		build = trueData.pbuild }
-	scenarioObject.ptext = trueData.ptext
+		build = trueData.pbuild, text = { trueData.pbuild1, trueData.pbuild2, trueData.pbuild3 } }
 	scenarioObject.briefing = trueData.briefing
+	cout_table(scenarioObject)
 	return scenarioObject
 end
 
