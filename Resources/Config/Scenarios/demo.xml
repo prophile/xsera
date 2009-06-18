@@ -44,7 +44,7 @@
 	<plocationx>100</plocationx>
 	<plocationy>100</plocationy>
 	<psprite>AnotherEarth</psprite>
-	<presources_generated>0.5</presources_generated>
+	<presources_generated>20</presources_generated>
 	<pbuild1>Fighter</pbuild1>
 	<pbuild2>Heavy Cruiser</pbuild2>
 	<pbuild3>Cruiser</pbuild3>

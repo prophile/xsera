@@ -32,6 +32,7 @@ end
 
 --[[ error level scheme:
 	1-5: non-fatal, continue
+		1: code not implemented
 	6-10: fatal, exit
 		6: Improper input - data is not of the correct type
 		7: No input given - file is missing necessary data

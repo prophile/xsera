@@ -252,7 +252,7 @@ function NewEntity (entName, entType, entDir, entSubdir)
             trueData[v.name] = v[1]
         end
     end
-    local entObject = { type = entType, size = {} }
+	local entObject = { type = entType, size = {} }
 	if trueData.name == nil then
 		error(entName .. " of " .. entType .. " does not have a name.", 7)
 	end
@@ -302,6 +302,7 @@ function NewEntity (entName, entType, entDir, entSubdir)
 			entObject.length = tonumber(trueData.length)
 		elseif entObject.class == "pulse" then
 		elseif entObject.class == "special" then
+			entObject.dest = { x = computerShip.physicsObject.position.x, y = computerShip.physicsObject.position.y }
 		elseif entObject.class == nil then
 			error("Weapon '" .. entObject.name .. "' has no class. See NewEntity", 7)
 		else
@@ -367,9 +368,6 @@ function NewEntity (entName, entType, entDir, entSubdir)
 		entObject.beamName = trueData.beamname
 		entObject.pulseName = trueData.pulsename
 		entObject.specialName = trueData.specialname
-	---
----  ?  --- this function becomes recursive... is this ok in Lua?
-	---
 		if trueData.beamname ~= nil then
 			entObject.beam = NewEntity(trueData.beamname, "Weapon", "Beam")
 		end

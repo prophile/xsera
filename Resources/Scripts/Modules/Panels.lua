@@ -203,12 +203,12 @@ function draw_panels()
 	graphics.draw_box(-96, 379, -173, 386, 0, 0.15, 0.15, 0.6, 1)
 	graphics.draw_box(playerShip.shield.percent * 77 - 173, 379, -173, 386, 0, 0.35, 0.35, 0.7, 1)
 -- Factory resources (green)
-	count = 0
+	count = 1
 	while count <= 100 do
 		if count > resources then
-			graphics.draw_box(151 - 3.15 * count, 394, 149 - 3.15 * count, 397, 0, 0.2, 0.5, 0.2, 1)
+			graphics.draw_box(152 - 3.15 * count, 394, 150 - 3.15 * count, 397, 0, 0.2, 0.5, 0.2, 1)
 		else
-			graphics.draw_box(151 - 3.15 * count, 394, 149 - 3.15 * count, 397, 0, 0.4, 0.7, 0.4, 1)
+			graphics.draw_box(152 - 3.15 * count, 394, 150 - 3.15 * count, 397, 0, 0.4, 0.7, 0.4, 1)
 		end
 		count = count + 1
 	end
@@ -265,7 +265,7 @@ function draw_panels()
 	end
 -- Weapon (special) ammo count
 	graphics.draw_text(string.format('%03d', playerShip.special.ammo), "CrystalClear", "left", -314, 60, 13) -- GREEN
-	control = scen.planet -- [HARDCODE]
+	control = playerShip -- [HARDCODE]
 	if control ~= nil then
 		graphics.draw_box(49, -392, 40, -297, 0, 0.7, 0.7, 0.4, 1)
 		graphics.draw_text("CONTROL", "CrystalClear", "left", -389, 44, 12) -- BLACK
@@ -275,31 +275,35 @@ function draw_panels()
 		end
 		if control.energy ~= nil then
 			graphics.draw_line(-357, 28, -347, 28, 0.5, 0.6, 0.6, 0.15, 1)
-			graphics.draw_line(-357, 26, -357, 28, 0.5, 0.6, 0.6, 0.15, 1)
-			graphics.draw_line(-347, 26, -347, 28, 0.5, 0.6, 0.6, 0.15, 1)
+			graphics.draw_line(-357, 27, -357, 28, 0.5, 0.6, 0.6, 0.15, 1)
+			graphics.draw_line(-347, 27, -347, 28, 0.5, 0.6, 0.6, 0.15, 1)
 			graphics.draw_line(-357, 9, -347, 9, 0.5, 0.6, 0.6, 0.15, 1)
-			graphics.draw_line(-357, 10.5, -357, 9, 0.5, 0.6, 0.6, 0.15, 1)
-			graphics.draw_line(-347, 10.5, -347, 9, 0.5, 0.6, 0.6, 0.15, 1)
-			graphics.draw_box(27, -355, 10, -349, 0, 0.6, 0.6, 0.15, 1)
+			graphics.draw_line(-357, 10, -357, 9, 0.5, 0.6, 0.6, 0.15, 1)
+			graphics.draw_line(-347, 10, -347, 9, 0.5, 0.6, 0.6, 0.15, 1)
+			graphics.draw_box(27, -356, 10, -348, 0, 0.6, 0.6, 0.15, 1)
 			graphics.draw_box(17 * control.energy.percent + 10, -355, 10, -349, 0, 0.7, 0.7, 0.4, 1)
 		end
 		if control.shield ~= nil then
 			graphics.draw_line(-369, 28, -359, 28, 0.5, 0.15, 0.15, 0.6, 1)
-			graphics.draw_line(-369, 26, -369, 28, 0.5, 0.15, 0.15, 0.6, 1)
-			graphics.draw_line(-359, 26, -359, 28, 0.5, 0.15, 0.15, 0.6, 1)
+			graphics.draw_line(-369, 27, -369, 28, 0.5, 0.15, 0.15, 0.6, 1)
+			graphics.draw_line(-359, 27, -359, 28, 0.5, 0.15, 0.15, 0.6, 1)
 			graphics.draw_line(-369, 9, -359, 9, 0.5, 0.15, 0.15, 0.6, 1)
-			graphics.draw_line(-369, 10.5, -369, 9, 0.5, 0.15, 0.15, 0.6, 1)
-			graphics.draw_line(-359, 10.5, -359, 9, 0.5, 0.15, 0.15, 0.6, 1)
-			graphics.draw_box(27, -367, 10, -361, 0, 0.15, 0.15, 0.6, 1)
+			graphics.draw_line(-369, 10, -369, 9, 0.5, 0.15, 0.15, 0.6, 1)
+			graphics.draw_line(-359, 10, -359, 9, 0.5, 0.15, 0.15, 0.6, 1)
+			graphics.draw_box(27, -368, 10, -360, 0, 0.15, 0.15, 0.6, 1)
 			graphics.draw_box(17 * control.shield.percent + 10, -367, 10, -361, 0, 0.35, 0.35, 0.7, 1)
 		end
-		graphics.draw_sprite(control.type .. "s/" .. control.image, -379, 19, 17, 17, 1, 0.0, 1.0, 1.0, 1.0)
+		if control.type == "Planet" then
+			graphics.draw_sprite(control.type .. "s/" .. control.image, -379, 19, 17, 17, 1, 0.0, 1.0, 1.0, 1.0)
+		else
+			graphics.draw_sprite(control.image, -379, 19, 17, 17, 1, 0.0, 1.0, 1.0, 1.0)
+		end
 		graphics.draw_line(-387, 28, -372, 28, 0.5, 1.0, 1.0, 1.0, 1)
-		graphics.draw_line(-387, 26, -387, 28, 0.5, 1.0, 1.0, 1.0, 1)
-		graphics.draw_line(-372, 26, -372, 28, 0.5, 1.0, 1.0, 1.0, 1)
+		graphics.draw_line(-387, 27, -387, 28, 0.5, 1.0, 1.0, 1.0, 1)
+		graphics.draw_line(-372, 27, -372, 28, 0.5, 1.0, 1.0, 1.0, 1)
 		graphics.draw_line(-387, 9, -372, 9, 0.5, 1.0, 1.0, 1.0, 1)
-		graphics.draw_line(-372, 10.5, -372, 9, 0.5, 1.0, 1.0, 1.0, 1)
-		graphics.draw_line(-387, 10.5, -387, 9, 0.5, 1.0, 1.0, 1.0, 1)
+		graphics.draw_line(-372, 10, -372, 9, 0.5, 1.0, 1.0, 1.0, 1)
+		graphics.draw_line(-387, 10, -387, 9, 0.5, 1.0, 1.0, 1.0, 1)
 	end
 	if target ~= nil then
 		graphics.draw_box(-8, -392, -17, -297, 0, 0.2, 0.2, 0.6, 1)

@@ -27,7 +27,7 @@ local shipAdjust = .045 * camera.w
 c_lightRed = { r = 0.8, g = 0.4, b = 0.4, a = 1 }
 c_red = { r = 0.6, g = 0.15, b = 0.15, a = 1 }
 c_lightBlue = { r = 0.15, g = 0.15, b = 0.6, a = 1 }
-c_blue = { r = 0.15, g = 0.15, b = 0.6, a = 1 }
+c_blue = { r = 0.35, g = 0.35, b = 0.7, a = 1 }
 c_lightGreen = { r = 0.3, g = 0.7, b = 0.3, a = 1 }
 c_green = { r = 0.0, g = 0.4, b = 0.0, a = 1 }
 c_lightYellow = { r = 0.8, g = 0.8, b = 0.4, a = 1 }
@@ -44,12 +44,12 @@ showAngles = false
 frame = 0
 printFPS = false
 waitTime = 0.0
-resources = 10
-resource_bars = 1
+resources = 0
+resource_bars = 0
 RESOURCES_PER_TICK = 200
-NEW_RES = 2
 resource_time = 0
 recharge_timer = 0.0
+cash = 0
 --/tempvars
 
 local soundLength = 0.25
@@ -87,26 +87,19 @@ end
 		computerShip.physicsObject.position = { x = 2200, y = 2700 }
 		computerShip.physicsObject.angle = math.pi - 0.2
 		computerShip.exploded = false
-	
-    playerShip = NewShip("Ishiman/HeavyCruiser")
+	playerShip = NewEntity("HeavyCruiser", "Ship", "Ishiman")
 		playerShip.warp = { warping = false, start = { bool = false, time = nil, engine = false, sound = false, isStarted = false }, endTime = 0.0, disengage = 2.0, finished = true, soundNum = 0 }
 		playerShip.switch = true
-		playerShip.special = NewWeapon("Special", "cMissile")
-			playerShip.special.delta = 0.0
-			playerShip.special.dest = { x = computerShip.physicsObject.position.x, y = computerShip.physicsObject.position.y }
-			playerShip.special.size.x, playerShip.special.size.y = graphics.sprite_dimensions("Weapons/cMissile")
-			playerShip.special.fired = false
-			playerShip.special.start = 0
-			playerShip.special.force = { x, y }
+		playerShip.special.delta = 0.0
+		playerShip.special.fired = false
+		playerShip.special.start = 0
+		playerShip.special.force = { x, y }
 		playerShip.specialWeap = { { {} } }
-		table.remove(playerShip.specialWeap, 1)
-		playerShip.beam = NewWeapon("Beam", "PKBeam")
-			playerShip.beam.width = cameraRatio
-			playerShip.beam.fired = false
-			playerShip.beam.start = 0
-			playerShip.beam.firing = false
+		playerShip.beam.width = cameraRatio
+		playerShip.beam.fired = false
+		playerShip.beam.start = 0
+		playerShip.beam.firing = false
 		playerShip.beamWeap = { { {} } }
-		
 		playerShip.type = "Ship"
 
 function init ()
@@ -282,15 +275,11 @@ function update ()
 ------------------]]--
 	
 	resource_time = resource_time + dt
-	if resource_time > resource_time % NEW_RES then
-		resource_time = resource_time % NEW_RES
-		resources = resources + 1
-		if resources == 100 then
-			if resource_bars ~= 7 then
-				resources = 0
-				resource_bars = resource_bars + 1
-			end
-		end
+	if resource_time > 1 then
+		resource_time = resource_time - 1
+		cash = cash + 20
+		resource_bars = math.floor(cash / 20000)
+		resources = math.floor((cash % 20000) / 200)
 	end
 	
 	playerShip.battery.percent = playerShip.battery.level / playerShip.battery.total
@@ -525,7 +514,7 @@ function render ()
 	if playerShip.special.fired == true then
 		local wNum = 1
 		while wNum <= playerShip.special.max_projectiles do
-			if playerShip.specialWeap[wNum] ~= nil then		
+			if playerShip.specialWeap[wNum] ~= nil then
 				graphics.draw_sprite("Weapons/cMissile", playerShip.specialWeap[wNum].physicsObject.position.x, playerShip.specialWeap[wNum].physicsObject.position.y, playerShip.special.size.x, playerShip.special.size.y, playerShip.specialWeap[wNum].physicsObject.angle)
 			end
 			wNum = wNum + 1
