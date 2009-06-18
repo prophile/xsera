@@ -257,8 +257,8 @@ function NewEntity (entName, entType, entDir, entSubdir)
 		error(entName .. " of " .. entType .. " does not have a name.", 7)
 	end
 	entObject.name = trueData.name
-	if trueData.shortName ~= nil then
-		entObject.shortName = trueData.shortName
+	if trueData.shortname ~= nil then
+		entObject.shortName = trueData.shortname
 	end
 	if trueData.mass == nil then
 		entObject.mass = 0.01

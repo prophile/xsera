@@ -1056,10 +1056,10 @@ int GFX_DrawSprite ( lua_State* L )
 	if (nargs > 6)
 	{
 		float r = 0.0, g = 1.0, b = 0.0, a = 1.0;
-		r = luaL_checknumber(L, 6);
-		g = luaL_checknumber(L, 7);
-		b = luaL_checknumber(L, 8);
-		a = luaL_checknumber(L, 9);
+		r = luaL_checknumber(L, 7);
+		g = luaL_checknumber(L, 8);
+		b = luaL_checknumber(L, 9);
+		a = luaL_checknumber(L, 10);
 		Graphics::DrawSprite(spritesheet, 0, 0, vec2(loc_x, loc_y), vec2(size_x, size_y), rot, colour(r, g, b, a));
 	}
 	Graphics::DrawSprite(spritesheet, 0, 0, vec2(loc_x, loc_y), vec2(size_x, size_y), rot, colour(1.0f, 1.0f, 1.0f, 1.0f));

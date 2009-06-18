@@ -269,7 +269,11 @@ function draw_panels()
 	if control ~= nil then
 		graphics.draw_box(49, -392, 40, -297, 0, 0.7, 0.7, 0.4, 1)
 		graphics.draw_text("CONTROL", "CrystalClear", "left", -389, 44, 12) -- BLACK
-		graphics.draw_text(control.name, "CrystalClear", "left", -389, 35, 12) -- WHITE
+		if control.type == "Planet" then
+			graphics.draw_text(control.name, "CrystalClear", "left", -389, 35, 12) -- WHITE
+		else
+			graphics.draw_text(control.shortName, "CrystalClear", "left", -389, 35, 12) -- WHITE
+		end
 		if control.ctrlObject ~= nil then
 			graphics.draw_text(control.ctrlObject.name, "CrystalClear", "left", -389, 3, 12) -- COLORED RED IF HOSTILE, GREEN IF FRIENDLY
 		end
@@ -294,9 +298,9 @@ function draw_panels()
 			graphics.draw_box(17 * control.shield.percent + 10, -367, 10, -361, 0, 0.35, 0.35, 0.7, 1)
 		end
 		if control.type == "Planet" then
-			graphics.draw_sprite(control.type .. "s/" .. control.image, -379, 19, 17, 17, 1, 0.0, 1.0, 1.0, 1.0)
+			graphics.draw_sprite(control.type .. "s/" .. control.image, -380, 19, 17, 17, 0)
 		else
-			graphics.draw_sprite(control.image, -379, 19, 17, 17, 1, 0.0, 1.0, 1.0, 1.0)
+			graphics.draw_sprite(control.image, -380, 19, 17, 17, 3.14 / 2.0)
 		end
 		graphics.draw_line(-387, 28, -372, 28, 0.5, 1.0, 1.0, 1.0, 1)
 		graphics.draw_line(-387, 27, -387, 28, 0.5, 1.0, 1.0, 1.0, 1)

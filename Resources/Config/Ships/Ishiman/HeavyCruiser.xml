@@ -3,7 +3,7 @@
 	<!-- full name -->
 	<name>Heavy Cruiser</name>
 	<!-- short name -->
-	<shortname>HCRUISER</shortname>
+	<shortname>HVCRUSR</shortname>
 	<!-- sprite name -->
 	<sprite>Ishiman/HeavyCruiser</sprite>
 	<!-- amount of health -->
