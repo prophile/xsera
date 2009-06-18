@@ -201,7 +201,7 @@ function draw_panels()
 	graphics.draw_box(playerShip.energy.percent * 78.5 - 72.5, 379, -72.5, 386, 0, 0.7, 0.7, 0.4, 1)
 -- Shield (blue)
 	graphics.draw_box(-96, 379, -173, 386, 0, 0.15, 0.15, 0.6, 1)
-	graphics.draw_box(playerShip.shield.percent * 77 - 173, 379, -173, 386, 0, 0.15, 0.15, 0.6, 1)
+	graphics.draw_box(playerShip.shield.percent * 77 - 173, 379, -173, 386, 0, 0.35, 0.35, 0.7, 1)
 -- Factory resources (green)
 	count = 0
 	while count <= 100 do
@@ -265,21 +265,45 @@ function draw_panels()
 	end
 -- Weapon (special) ammo count
 	graphics.draw_text(string.format('%03d', playerShip.special.ammo), "CrystalClear", "left", -314, 60, 13) -- GREEN
-	control = scen.planet
+	control = scen.planet -- [HARDCODE]
 	if control ~= nil then
-		graphics.draw_box(49, -392, 39, -297, 0, 0.7, 0.7, 0.4, 1)
-		graphics.draw_text("CONTROL", "CrystalClear", "left", -389, 44, 13) -- BLACK
-		graphics.draw_sprite("Planets/" .. control.sprite, -379, 17, 16, 16, 1, 0.0, 1.0, 1.0, 1.0)
-		graphics.draw_line(-387, 26, -372, 26, 0.5, 1.0, 1.0, 1.0, 1)
-		graphics.draw_line(-387, 24, -387, 26, 0.5, 1.0, 1.0, 1.0, 1)
-		graphics.draw_line(-372, 24, -372, 26, 0.5, 1.0, 1.0, 1.0, 1)
+		graphics.draw_box(49, -392, 40, -297, 0, 0.7, 0.7, 0.4, 1)
+		graphics.draw_text("CONTROL", "CrystalClear", "left", -389, 44, 12) -- BLACK
+		graphics.draw_text(control.name, "CrystalClear", "left", -389, 35, 12) -- WHITE
+		if control.ctrlObject ~= nil then
+			graphics.draw_text(control.ctrlObject.name, "CrystalClear", "left", -389, 3, 12) -- COLORED RED IF HOSTILE, GREEN IF FRIENDLY
+		end
+		if control.energy ~= nil then
+			graphics.draw_line(-357, 28, -347, 28, 0.5, 0.6, 0.6, 0.15, 1)
+			graphics.draw_line(-357, 26, -357, 28, 0.5, 0.6, 0.6, 0.15, 1)
+			graphics.draw_line(-347, 26, -347, 28, 0.5, 0.6, 0.6, 0.15, 1)
+			graphics.draw_line(-357, 9, -347, 9, 0.5, 0.6, 0.6, 0.15, 1)
+			graphics.draw_line(-357, 10.5, -357, 9, 0.5, 0.6, 0.6, 0.15, 1)
+			graphics.draw_line(-347, 10.5, -347, 9, 0.5, 0.6, 0.6, 0.15, 1)
+			graphics.draw_box(27, -355, 10, -349, 0, 0.6, 0.6, 0.15, 1)
+			graphics.draw_box(17 * control.energy.percent + 10, -355, 10, -349, 0, 0.7, 0.7, 0.4, 1)
+		end
+		if control.shield ~= nil then
+			graphics.draw_line(-369, 28, -359, 28, 0.5, 0.15, 0.15, 0.6, 1)
+			graphics.draw_line(-369, 26, -369, 28, 0.5, 0.15, 0.15, 0.6, 1)
+			graphics.draw_line(-359, 26, -359, 28, 0.5, 0.15, 0.15, 0.6, 1)
+			graphics.draw_line(-369, 9, -359, 9, 0.5, 0.15, 0.15, 0.6, 1)
+			graphics.draw_line(-369, 10.5, -369, 9, 0.5, 0.15, 0.15, 0.6, 1)
+			graphics.draw_line(-359, 10.5, -359, 9, 0.5, 0.15, 0.15, 0.6, 1)
+			graphics.draw_box(27, -367, 10, -361, 0, 0.15, 0.15, 0.6, 1)
+			graphics.draw_box(17 * control.shield.percent + 10, -367, 10, -361, 0, 0.35, 0.35, 0.7, 1)
+		end
+		graphics.draw_sprite(control.type .. "s/" .. control.image, -379, 19, 17, 17, 1, 0.0, 1.0, 1.0, 1.0)
+		graphics.draw_line(-387, 28, -372, 28, 0.5, 1.0, 1.0, 1.0, 1)
+		graphics.draw_line(-387, 26, -387, 28, 0.5, 1.0, 1.0, 1.0, 1)
+		graphics.draw_line(-372, 26, -372, 28, 0.5, 1.0, 1.0, 1.0, 1)
 		graphics.draw_line(-387, 9, -372, 9, 0.5, 1.0, 1.0, 1.0, 1)
-		graphics.draw_line(-372, 11, -372, 9, 0.5, 1.0, 1.0, 1.0, 1)
-		graphics.draw_line(-387, 11, -387, 9, 0.5, 1.0, 1.0, 1.0, 1)
+		graphics.draw_line(-372, 10.5, -372, 9, 0.5, 1.0, 1.0, 1.0, 1)
+		graphics.draw_line(-387, 10.5, -387, 9, 0.5, 1.0, 1.0, 1.0, 1)
 	end
 	if target ~= nil then
-		graphics.draw_box(-8, -392, -18, -297, 0, 0.2, 0.2, 0.6, 1)
-		graphics.draw_text("TARGET", "CrystalClear", "left", -389, -13, 13) -- BLACK
+		graphics.draw_box(-8, -392, -17, -297, 0, 0.2, 0.2, 0.6, 1)
+		graphics.draw_text("TARGET", "CrystalClear", "left", -389, -13, 12) -- BLACK
 		graphics.draw_line(-387, -32, -372, -32, 0.5, 1.0, 1.0, 1.0, 1)
 		graphics.draw_line(-372, -34, -372, -32, 0.5, 1.0, 1.0, 1.0, 1)
 		graphics.draw_line(-387, -34, -387, -32, 0.5, 1.0, 1.0, 1.0, 1)

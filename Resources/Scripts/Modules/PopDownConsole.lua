@@ -24,8 +24,15 @@ function popDownConsole()
 end
 
 function error(text, level)
-	console_add(text)
+	console_add(text .. "(level " .. level .. ")")
 	if level > 5 then
 		os.exit()
 	end
 end
+
+--[[ error level scheme:
+	1-5: non-fatal, continue
+	6-10: fatal, exit
+		6: Improper input - data is not of the correct type
+		7: No input given - file is missing necessary data
+--]]

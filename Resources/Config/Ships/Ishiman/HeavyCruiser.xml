@@ -1,7 +1,9 @@
 <?xml version="1.0" ?>
 <ship>
 	<!-- full name -->
-	<name>Ishiman Heavy Cruiser</name>
+	<name>Heavy Cruiser</name>
+	<!-- short name -->
+	<shortname>HCRUISER</shortname>
 	<!-- sprite name -->
 	<sprite>Ishiman/HeavyCruiser</sprite>
 	<!-- amount of health -->

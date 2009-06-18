@@ -1,1 +1,3 @@
-scen = NewScenario("demo")
+import('EntityLoad')
+
+scen = NewEntity("demo", "Scenario")

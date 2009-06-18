@@ -18,7 +18,7 @@ function console_draw(fontsize)
 	end
 end
 
-function console_add(text, output)
+function console_add(text, doPrint, output)
 	if output ~= nil then
 		io.output(output)
 	else
@@ -26,7 +26,9 @@ function console_add(text, output)
 	end
 	table.insert(consoleHistory, text)
 	if text ~= ">" then
-		print("[Console] " .. text)
+		if doPrint ~= false then
+			print("[Console] " .. text)
+		end
 		io.write(text, "\n")
 	end
 	line = line + 1
@@ -62,6 +64,6 @@ function console_key (k)
 	end
 end
 
-function cout_table (t, name)
-	console_add(table_define(t, name), "XseraTables.txt")
+function cout_table (t, name, doPrint)
+	console_add(table_define(t, name), doPrint, "XseraTables.txt")
 end

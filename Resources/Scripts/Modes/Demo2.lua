@@ -106,12 +106,14 @@ end
 			playerShip.beam.start = 0
 			playerShip.beam.firing = false
 		playerShip.beamWeap = { { {} } }
+		
+		playerShip.type = "Ship"
 
 function init ()
 	sound.stop_music()
     lastTime = mode_manager.time()
     physics.open(0.6)
-	bestExplosion = NewExplosion("BestExplosion")
+	bestExplosion = NewEntity("BestExplosion", "Explosion")
 end
 
 --[[--------------------
@@ -493,7 +495,7 @@ function render ()
 			else
 				frame = frame + dt * 50
 			end
-			graphics.draw_sprite("Explosions/BestExplosion", computerShip.physicsObject.position.x, computerShip.physicsObject.position.y, bestExplosion.size.x, bestExplosion.size.y, frame / 6 * math.pi)
+			graphics.draw_sprite(bestExplosion.image, computerShip.physicsObject.position.x, computerShip.physicsObject.position.y, bestExplosion.size.x, bestExplosion.size.y, frame / 6 * math.pi)
 		end
 	end
 	if cameraRatio ~= 1 / 16 then
