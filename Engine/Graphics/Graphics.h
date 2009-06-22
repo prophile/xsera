@@ -29,54 +29,54 @@ vec2 SpriteDimensions ( const std::string& sheetname );
  * @param sheetname The sprite sheet to use
  * @param sheet_x The x position on the sprite sheet
  * @param sheet_y The y position on the sprite sheet
- * @param location The location of the centre of the sprite in world coordinates
+ * @param position The position of the centre of the sprite in world coordinates
  * @param size The size of the sprite in world coordinates
  * @param rotation The rotation of the sprite, in radians
  */
-void DrawSprite ( const std::string& sheetname, int sheet_x, int sheet_y, vec2 location, vec2 size, float rotation, colour col );
+void DrawSprite ( const std::string& sheetname, int sheet_x, int sheet_y, vec2 position, vec2 size, float rotation, colour col );
 /**
  * Draws an image
  * @param imageName The name of the image
- * @param location The location of the centre of the image in world coordinates
+ * @param position The position of the centre of the image in world coordinates
  * @param size The size of the image in world coordinates
  */
-inline void DrawImage ( const std::string& imageName, vec2 location, vec2 size )
-	{ DrawSprite("+" + imageName, 0, 0, location, size, 0.0f, colour(1.0f, 1.0f, 1.0f, 1.0f)); }
+inline void DrawImage ( const std::string& imageName, vec2 position, vec2 size )
+	{ DrawSprite("+" + imageName, 0, 0, position, size, 0.0f, colour(1.0f, 1.0f, 1.0f, 1.0f)); }
 /**
  * Draws a string of text
  * @param text The text to draw
  * @param font The font to use
- * @param location The location of the centre of the text on-screen
+ * @param position The position of the centre of the text on-screen
  * @param height The height of the text
  * @param col The colour of the text
  * @param rotation The rotation of the text
  */
-void DrawTextCenterSDL ( const std::string& text, const std::string& font, vec2 location, float height, colour col, float rotation );
+void DrawTextCenterSDL ( const std::string& text, const std::string& font, vec2 position, float height, colour col, float rotation );
 /**
  * Draws text, center-justified
  * @param text the text to be drawn
  * @param font the font to be used
- * @param location the place to justify the text
+ * @param position the place to justify the text
  * @param height the font size of the text
  * @param col The colour of the line
  * @param rotation how the text is rotated
  */
-void DrawTextLeftSDL ( const std::string& text, const std::string& font, vec2 location, float height, colour col, float rotation );
+void DrawTextLeftSDL ( const std::string& text, const std::string& font, vec2 position, float height, colour col, float rotation );
 /**
  * Draws text, left-justified
  * @param text the text to be drawn
  * @param font the font to be used
- * @param location the place to justify the text
+ * @param position the place to justify the text
  * @param height the font size of the text
  * @param col The colour of the line
  * @param rotation how the text is rotated
  */
-void DrawTextRightSDL ( const std::string& text, const std::string& font, vec2 location, float height, colour col, float rotation );
+void DrawTextRightSDL ( const std::string& text, const std::string& font, vec2 position, float height, colour col, float rotation );
 /**
  * Draws text, right-justified
  * @param text the text to be drawn
  * @param font the font to be used
- * @param location the place to justify the text
+ * @param position the place to justify the text
  * @param height the font size of the text
  * @param col The colour of the line
  * @param rotation how the text is rotated
@@ -124,7 +124,7 @@ void DrawDiamond ( float top, float left, float bottom, float right, colour col 
  * @param right the right bound of the box
  * @param col The colour of the triangle
  */
-void DrawParticles ( const vec2* locations, unsigned int count, colour col );
+void DrawParticles ( const vec2* positions, unsigned int count, colour col );
 /**
  * Draws a star-field that covers the whole screen
  * @param depth The depth of the star-field, for parallax
@@ -144,11 +144,11 @@ float AspectRatio ();
 vec2 MapPoint ( vec2 windowCoords );
 /**
  * Checks if a circle lies entirely outside the current camera position
- * @param location The centre of the circle
+ * @param position The centre of the circle
  * @param radius The radius of the circle
  * @return Whether the circle is culled
  */
-bool IsCulled ( vec2 location, float radius );
+bool IsCulled ( vec2 position, float radius );
 /**
  * Sets the camera
  * @param corner1 One corner of the camera

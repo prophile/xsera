@@ -303,7 +303,7 @@ vec2 SpriteDimensions ( const std::string& sheetname )
 	return vec2(sheet->TileSizeX(), sheet->TileSizeY());
 }
 
-void DrawSprite ( const std::string& sheetname, int sheet_x, int sheet_y, vec2 location, vec2 size, float rotation, colour col )
+void DrawSprite ( const std::string& sheetname, int sheet_x, int sheet_y, vec2 position, vec2 size, float rotation, colour col )
 {
 	SetShader("Sprite");
 	EnableTexturing();
@@ -322,7 +322,7 @@ void DrawSprite ( const std::string& sheetname, int sheet_x, int sheet_y, vec2 l
 	{
 		sheet = iter->second;
 	}
-	Matrices::SetViewMatrix(matrix2x3::Translate(location));
+	Matrices::SetViewMatrix(matrix2x3::Translate(position));
 	Matrices::SetModelMatrix(matrix2x3::Identity());
 	if (sheet->IsRotational())
 	{
@@ -337,14 +337,14 @@ void DrawSprite ( const std::string& sheetname, int sheet_x, int sheet_y, vec2 l
 	}
 }
 
-void DrawTextCenterSDL ( const std::string& text, const std::string& font, vec2 location, float height, colour col, float rotation )
+void DrawTextCenterSDL ( const std::string& text, const std::string& font, vec2 position, float height, colour col, float rotation )
 {
 	SetShader("Sprite");
 	EnableTexturing();
 	EnableBlending();
 	SetColour(col);
 	GLuint texID = TextRenderer::TextObject(font, text);
-	Matrices::SetViewMatrix(matrix2x3::Translate(location));
+	Matrices::SetViewMatrix(matrix2x3::Translate(position));
 	Matrices::SetModelMatrix(matrix2x3::Rotation(rotation));
 	glBindTexture(GL_TEXTURE_RECTANGLE_ARB, texID);
 	vec2 dims = TextRenderer::TextDimensions(font, text);
@@ -357,14 +357,14 @@ void DrawTextCenterSDL ( const std::string& text, const std::string& font, vec2 
 	glDrawArrays(GL_QUADS, 0, 4);
 }
 
-void DrawTextLeftSDL ( const std::string& text, const std::string& font, vec2 location, float height, colour col, float rotation )
+void DrawTextLeftSDL ( const std::string& text, const std::string& font, vec2 position, float height, colour col, float rotation )
 {
 	SetShader("Sprite");
 	EnableTexturing();
 	EnableBlending();
 	SetColour(col);
 	GLuint texID = TextRenderer::TextObject(font, text);
-	Matrices::SetViewMatrix(matrix2x3::Translate(location));
+	Matrices::SetViewMatrix(matrix2x3::Translate(position));
 	Matrices::SetModelMatrix(matrix2x3::Rotation(rotation));
 	glBindTexture(GL_TEXTURE_RECTANGLE_ARB, texID);
 	vec2 dims = TextRenderer::TextDimensions(font, text);
@@ -377,14 +377,14 @@ void DrawTextLeftSDL ( const std::string& text, const std::string& font, vec2 lo
 	glDrawArrays(GL_QUADS, 0, 4);
 }
 
-void DrawTextRightSDL ( const std::string& text, const std::string& font, vec2 location, float height, colour col, float rotation )
+void DrawTextRightSDL ( const std::string& text, const std::string& font, vec2 position, float height, colour col, float rotation )
 {
 	SetShader("Sprite");
 	EnableTexturing();
 	EnableBlending();
 	SetColour(col);
 	GLuint texID = TextRenderer::TextObject(font, text);
-	Matrices::SetViewMatrix(matrix2x3::Translate(location));
+	Matrices::SetViewMatrix(matrix2x3::Translate(position));
 	Matrices::SetModelMatrix(matrix2x3::Rotation(rotation));
 	glBindTexture(GL_TEXTURE_RECTANGLE_ARB, texID);
 	vec2 dims = TextRenderer::TextDimensions(font, text);
@@ -522,7 +522,7 @@ void DrawDiamond ( float top, float left, float bottom, float right, colour col 
 	glDrawArrays(GL_QUADS, 0, 4);
 } 
 
-void DrawParticles ( const vec2* locations, unsigned int count, colour col )
+void DrawParticles ( const vec2* positions, unsigned int count, colour col )
 {
 	SetShader("Primitive");
 	DisableTexturing();
@@ -536,7 +536,7 @@ void DrawParticles ( const vec2* locations, unsigned int count, colour col )
 	}
 	Matrices::SetViewMatrix(matrix2x3::Identity());
 	Matrices::SetModelMatrix(matrix2x3::Identity());
-	glVertexPointer ( 2, GL_FLOAT, 0, locations );
+	glVertexPointer ( 2, GL_FLOAT, 0, positions );
 	SetColour(col);
 	glDrawArrays ( GL_POINTS, 0, count );
 }
@@ -578,15 +578,15 @@ vec2 MapPoint ( vec2 windowCoords )
 	return vec2(normalisedCoords.X() * scw, normalisedCoords.Y() * sch);
 }
 
-bool IsCulled ( vec2 location, float radius )
+bool IsCulled ( vec2 position, float radius )
 {
-	if ((location.X() + radius) < cameraCorner1.X())
+	if ((position.X() + radius) < cameraCorner1.X())
 		return true;
-	if ((location.X() - radius) > cameraCorner2.X())
+	if ((position.X() - radius) > cameraCorner2.X())
 		return true;
-	if ((location.Y() + radius) < cameraCorner1.Y())
+	if ((position.Y() + radius) < cameraCorner1.Y())
 		return true;
-	if ((location.Y() - radius) > cameraCorner2.Y())
+	if ((position.Y() - radius) > cameraCorner2.Y())
 		return true;
 	return false;
 }

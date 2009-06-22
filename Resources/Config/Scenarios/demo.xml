@@ -4,7 +4,7 @@
 	<name>Demo Scenario</name>
 	<planet>
 		<name string="Another Earth"/>
-		<location x="100" y="100"/>
+		<position x="100" y="100"/>
 		<sprite>AnotherEarth</sprite>
 		<resources_generated>0.5</resources_generated>
 		<build>Fighter</build>
@@ -14,7 +14,7 @@
 	</planet>
 	<planet>
 		<name string="Yet Another Earth"/>
-		<location x="100" y="-100"/>
+		<position x="100" y="-100"/>
 		<sprite>AnotherEarth</sprite>
 		<resources_generated>0.5</resources_generated>
 		<build>Fighter</build>
@@ -27,8 +27,8 @@
 	<name>Demo Scenario</name>
 	<planet>
 		<name>Another Earth</name>
-		<locationx>100</locationx>
-		<locationy>100</locationy>
+		<positionx>100</positionx>
+		<positiony>100</positiony>
 		<sprite>AnotherEarth</sprite>
 		<resources_generated>0.5</resources_generated>
 		<build>Fighter</build>
@@ -41,8 +41,8 @@
 <sprite>
 	<name>Demo Scenario</name>
 	<pname>Another Earth</pname>
-	<plocationx>100</plocationx>
-	<plocationy>100</plocationy>
+	<ppositionx>100</ppositionx>
+	<ppositiony>100</ppositiony>
 	<psprite>AnotherEarth</psprite>
 	<presources_generated>20</presources_generated>
 	<pbuild1>Fighter</pbuild1>

@@ -28,6 +28,7 @@ c_lightRed = { r = 0.8, g = 0.4, b = 0.4, a = 1 }
 c_red = { r = 0.6, g = 0.15, b = 0.15, a = 1 }
 c_lightBlue = { r = 0.15, g = 0.15, b = 0.6, a = 1 }
 c_blue = { r = 0.35, g = 0.35, b = 0.7, a = 1 }
+c_laserGreen = { r = 0.1, g = 0.7, b = 0.1, a = 1 }
 c_lightGreen = { r = 0.3, g = 0.7, b = 0.3, a = 1 }
 c_green = { r = 0.0, g = 0.4, b = 0.0, a = 1 }
 c_lightYellow = { r = 0.8, g = 0.8, b = 0.4, a = 1 }
@@ -47,9 +48,10 @@ waitTime = 0.0
 resources = 0
 resource_bars = 0
 RESOURCES_PER_TICK = 200
-resource_time = 0
+resource_time = 0.0
 recharge_timer = 0.0
 cash = 0
+alliedShips = {}
 --/tempvars
 
 local soundLength = 0.25
@@ -81,32 +83,15 @@ end
 	------------------}}--
 --------------------------]]--
 
--- ALISTAIR: REQUEST: could init run BEFORE update (as in, it works like a loading screen),
--- and not simultaneously with it? When that's done, I'll re-add to init
-	computerShip = NewShip("Gaitori/Carrier")
-		computerShip.physicsObject.position = { x = 2200, y = 2700 }
-		computerShip.physicsObject.angle = math.pi - 0.2
-		computerShip.exploded = false
-	playerShip = NewEntity("HeavyCruiser", "Ship", "Ishiman")
-		playerShip.warp = { warping = false, start = { bool = false, time = nil, engine = false, sound = false, isStarted = false }, endTime = 0.0, disengage = 2.0, finished = true, soundNum = 0 }
-		playerShip.switch = true
-		playerShip.special.delta = 0.0
-		playerShip.special.fired = false
-		playerShip.special.start = 0
-		playerShip.special.force = { x, y }
-		playerShip.specialWeap = { { {} } }
-		playerShip.beam.width = cameraRatio
-		playerShip.beam.fired = false
-		playerShip.beam.start = 0
-		playerShip.beam.firing = false
-		playerShip.beamWeap = { { {} } }
-		playerShip.type = "Ship"
-
 function init ()
 	sound.stop_music()
     lastTime = mode_manager.time()
     physics.open(0.6)
-	bestExplosion = NewEntity("BestExplosion", "Explosion")
+	computerShip = NewEntity(nil, "Carrier", "Ship", "Gaitori")
+		computerShip.physicsObject.position = { x = 2200, y = 2700 }
+		computerShip.physicsObject.angle = math.pi - 0.2
+	playerShip = NewEntity(nil, "HeavyCruiser", "Ship", "Ishiman")
+	bestExplosion = NewEntity(nil, "BestExplosion", "Explosion")
 end
 
 --[[--------------------
@@ -125,7 +110,7 @@ function update ()
 	end
 	
 	-- victory condition
-	if computerShip.exploded == true then
+	if computerShip == nil then
 		waitTime = waitTime + dt
 		if waitTime >= 2.5 then
 			mode_manager.switch("Credits")
@@ -291,7 +276,7 @@ function update ()
 			if playerShip.battery.percent ~= 0.0 then
 				playerShip.battery.level = playerShip.battery.level - 1
 				playerShip.energy.level = playerShip.energy.level + 1
-				recharge_timer = 0.0
+				recharge_timer = recharge_timer - 0.5
 			end
 		end
 	end
@@ -329,7 +314,11 @@ function weapon_manage(weapon, weapData, weapOwner)
 			while wNum <= weapon.max_projectiles do
 				if weapData[wNum] == nil then
 					-- I would rather load from memory, but we don't have a function that preloads yet. Oh well. [DEMO2, ADAM, ALISTAIR]
-					weapData[wNum] = NewProjectile(weapon.shortName, weapon.class, weapOwner)
+					if weapon.image ~= nil then
+						weapData[wNum] = NewEntity(weapOwner, weapon.image, "Weapon", weapon.class)
+					else
+						weapData[wNum] = NewEntity(weapOwner, weapon.fileName, "Weapon", weapon.class)
+					end
 					cNum = wNum
 					wNum = weapon.max_projectiles -- exit while loop
 				end
@@ -341,7 +330,7 @@ function weapon_manage(weapon, weapData, weapOwner)
 				weapOwner.special.ammo = weapOwner.special.ammo - 1
 				sound.play("RocketLaunchr")
 				-- temp sound file, should be "RocketLaunch" but for some reason, that file gets errors (file included for troubleshooting)
-				if computerShip.exploded == true then
+				if computerShip == nil then
 					weapData[cNum].isSeeking = false
 				end
 				
@@ -386,7 +375,7 @@ function weapon_manage(weapon, weapData, weapOwner)
 				-- this object needs to be deleted, probably the initializing table
 				table.remove(weapData, wNum)
 			else
-				if computerShip.exploded == false then
+				if computerShip ~= nil then
 					local x = computerShip.physicsObject.position.x - weapData[wNum].physicsObject.position.x
 					local y = computerShip.physicsObject.position.y - weapData[wNum].physicsObject.position.y
 					-- put in real collision code here [ALISTAIR, DEMO2]
@@ -457,7 +446,7 @@ function render ()
 	
 	if cameraRatio ~= 1 / 16 then
 		aex, aey = graphics.sprite_dimensions("Planets/AnotherEarth")
-		graphics.draw_sprite("Planets/AnotherEarth", scen.planet.location.x, scen.planet.location.y, aex, aey, 1, 0.0, 1.0, 1.0, 1.0)
+		graphics.draw_sprite("Planets/AnotherEarth", scen.planet.position.x, scen.planet.position.y, aex, aey, 1, 0.0, 1.0, 1.0, 1.0)
 	else
 		graphics.draw_rbox(aex, aey, 60)
 	end
@@ -465,32 +454,40 @@ function render ()
 --[[------------------
 	Ship Drawing
 ------------------]]--
-
-    if computerShip.life > 0 then
-		if cameraRatio ~= 1 / 16 then
-			graphics.draw_sprite("Gaitori/Carrier", computerShip.physicsObject.position.x, computerShip.physicsObject.position.y, computerShip.size.x, computerShip.size.y, computerShip.physicsObject.angle)
-		else
-			graphics.draw_rtri(computerShip.physicsObject.position.x, computerShip.physicsObject.position.y, 60, 1, 0, 0, 1)
-		end
-	else
-		-- This explosion code is a hack. We need a way to deal with explosions in a better method. Let's figure
-		-- it out when we get Sfiera's data [ADAM, SFIERA]
-		if computerShip.exploded == false then
-			if frame == 0 then
-				sound.play("New/ExplosionCombo")
-			end
-			if frame >= 12 then
-				computerShip.exploded = true
+	if computerShip ~= nil then
+		if computerShip.life > 0 then
+			if cameraRatio ~= 1 / 16 then
+				graphics.draw_sprite("Gaitori/Carrier", computerShip.physicsObject.position.x, computerShip.physicsObject.position.y, computerShip.size.x, computerShip.size.y, computerShip.physicsObject.angle)
 			else
-				frame = frame + dt * 50
+				graphics.draw_rtri(computerShip.physicsObject.position.x, computerShip.physicsObject.position.y, 60, 1, 0, 0, 1)
 			end
-			graphics.draw_sprite(bestExplosion.image, computerShip.physicsObject.position.x, computerShip.physicsObject.position.y, bestExplosion.size.x, bestExplosion.size.y, frame / 6 * math.pi)
+		else
+			-- This explosion code is a hack. We need a way to deal with explosions in a better method. Let's figure
+			-- it out when we get Sfiera's data [ADAM, SFIERA]
+			if computerShip ~= nil then
+				if frame == 0 then
+					sound.play("New/ExplosionCombo")
+				end
+				if frame >= 12 then
+					computerShip = nil
+				else
+					frame = frame + dt * 50
+				end
+				graphics.draw_sprite(bestExplosion.image, computerShip.physicsObject.position.x, computerShip.physicsObject.position.y, bestExplosion.size.x, bestExplosion.size.y, frame / 6 * math.pi)
+			end
 		end
 	end
 	if cameraRatio ~= 1 / 16 then
 		graphics.draw_sprite(playerShip.image, playerShip.physicsObject.position.x, playerShip.physicsObject.position.y, playerShip.size.x, playerShip.size.y, playerShip.physicsObject.angle)
 	else
 		graphics.draw_rtri(playerShip.physicsObject.position.x, playerShip.physicsObject.position.y, 60)
+	end
+	if otherShip ~= nil then
+		if cameraRatio ~= 1 / 16 then
+			graphics.draw_sprite(otherShip.image, otherShip.physicsObject.position.x, otherShip.physicsObject.position.y, otherShip.size.x, otherShip.size.y, otherShip.physicsObject.angle)
+		else
+			graphics.draw_rtri(otherShip.physicsObject.position.x, otherShip.physicsObject.position.y, 60)
+		end
 	end
 	
 --[[------------------
@@ -586,6 +583,9 @@ function key ( k )
         keyControls.left = true
     elseif k == "d" then
         keyControls.right = true
+	elseif k == "q" then
+		otherShip = NewEntity(scen.planet, "HeavyCruiser", "Ship", "Ishiman")
+		sound.play("comboBeepI")
 	elseif k == "r" then
 		showVelocity = true
 	elseif k == "t" then

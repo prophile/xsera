@@ -3,7 +3,9 @@
 	<!-- full name -->
 	<name>Photokinetic Beam</name>
 	<!-- short name -->
-	<shortName>PKBeam</shortName>
+	<shortName>PKBEAM 2</shortName>
+	<!-- file name -->
+	<fileName>pkBeam</fileName>
 	<!-- name of sound made when fired -->
 	<fireSound>ShotC</fireSound>
 	<!-- weapon class -->

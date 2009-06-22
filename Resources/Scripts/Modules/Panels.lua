@@ -285,7 +285,7 @@ function draw_panels()
 			graphics.draw_line(-357, 10, -357, 9, 0.5, 0.6, 0.6, 0.15, 1)
 			graphics.draw_line(-347, 10, -347, 9, 0.5, 0.6, 0.6, 0.15, 1)
 			graphics.draw_box(27, -356, 10, -348, 0, 0.6, 0.6, 0.15, 1)
-			graphics.draw_box(17 * control.energy.percent + 10, -355, 10, -349, 0, 0.7, 0.7, 0.4, 1)
+			graphics.draw_box(17 * control.energy.percent + 10, -356, 10, -348, 0, 0.7, 0.7, 0.4, 1)
 		end
 		if control.shield ~= nil then
 			graphics.draw_line(-369, 28, -359, 28, 0.5, 0.15, 0.15, 0.6, 1)
@@ -294,8 +294,8 @@ function draw_panels()
 			graphics.draw_line(-369, 9, -359, 9, 0.5, 0.15, 0.15, 0.6, 1)
 			graphics.draw_line(-369, 10, -369, 9, 0.5, 0.15, 0.15, 0.6, 1)
 			graphics.draw_line(-359, 10, -359, 9, 0.5, 0.15, 0.15, 0.6, 1)
-			graphics.draw_box(27, -368, 10, -360, 0, 0.15, 0.15, 0.6, 1)
-			graphics.draw_box(17 * control.shield.percent + 10, -367, 10, -361, 0, 0.35, 0.35, 0.7, 1)
+			graphics.draw_box(27, -367.5, 10, -360, 0, 0.15, 0.15, 0.6, 1)
+			graphics.draw_box(17 * control.shield.percent + 10, -367.5, 10, -360, 0, 0.35, 0.35, 0.7, 1)
 		end
 		if control.type == "Planet" then
 			graphics.draw_sprite(control.type .. "s/" .. control.image, -380, 19, 17, 17, 0)

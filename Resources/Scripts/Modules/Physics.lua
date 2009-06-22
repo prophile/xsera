@@ -2,7 +2,7 @@
 class "PhysicsObject"
 
 function PhysicsObject:initialize(baseMass)
-	self._location = { x = 0, y = 0 }
+	self._position = { x = 0, y = 0 }
 	self._velocity = { x = 0, y = 0 }
 	self._top_speed = 1.0
 	self._angle = 0.0
@@ -75,12 +75,12 @@ function PhysicsObject:set_angular_velocity ( angular_velocity )
     self._angular_velocity = angular_velocity
 end
 
-function PhysicsObject:location ()
-    return self._location
+function PhysicsObject:position ()
+    return self._position
 end
 
-function PhysicsObject:set_location ( location )
-    self._location = location
+function PhysicsObject:set_position ( position )
+    self._position = position
 end
 
 function PhysicsObject:velocity ()
@@ -114,9 +114,9 @@ function PhysicsObject:update ( dt, force, torque )
 		self._velocity.x = (self._velocity.x / speed) * self._top_speed
 		self._velocity.y = (self._velocity.y / speed) * self._top_speed
 	end
-	-- update _location
-	self._location.x = self._location.x + (self._velocity.x * dt)
-	self._location.y = self._location.y + (self._velocity.y * dt)
+	-- update _position
+	self._position.x = self._position.x + (self._velocity.x * dt)
+	self._position.y = self._position.y + (self._velocity.y * dt)
 	-- update angular _velocity
 	local angular_acceleration = (torque / self._mass)
 	angular_acceleration = angular_acceleration - (self._angular_velocity * self._rotational_drag)

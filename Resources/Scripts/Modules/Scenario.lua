@@ -1,3 +1,3 @@
 import('EntityLoad')
 
-scen = NewEntity("demo", "Scenario")
+scen = NewEntity(nil, "demo", "Scenario")
