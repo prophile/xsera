@@ -585,7 +585,7 @@ function key ( k )
         keyControls.right = true
 	elseif k == "q" then
 		otherShip = NewEntity(scen.planet, "HeavyCruiser", "Ship", "Ishiman")
-		sound.play("comboBeepI")
+		sound.play("IComboBeep")
 	elseif k == "r" then
 		showVelocity = true
 	elseif k == "t" then
