@@ -30,7 +30,14 @@ function shipyard()
 	local num = 1
 	while scen.planet.build[num] ~= nil do
 		menu_shipyard[num + 1] = {}
-		menu_shipyard[num + 1][1] = scen.planet.build[num]
+		local tempvar = 0
+		local foo, tempvar = scen.planet.build[num]:gsub("(%w+)/(%w+) (%w+)", "%1/%2 %3")
+		print(foo, tempvar)
+		if tempvar == 1 then
+			menu_shipyard[num + 1][1] = scen.planet.build[num]:gsub("(%w+)/(%w+) (%w+)", "%2 %3")
+		else
+			menu_shipyard[num + 1][1] = scen.planet.build[num]:gsub("(%w+)/(%w+)", "%2")
+		end
 		if num ~= 1 then
 			menu_shipyard[num + 1][2] = false
 			-- how do I have it create a ship when all I have is its name in a char?
@@ -42,8 +49,14 @@ function shipyard()
 		menu_shipyard[num + 1][3] = make_ship
 		menu_shipyard[num + 1][4] = {}
 		menu_shipyard[num + 1][4][1] = scen.planet
-		menu_shipyard[num + 1][4][2] = "HeavyCruiser"
-		menu_shipyard[num + 1][4][3] = "Ishiman"
+		if tempvar == 1 then
+			menu_shipyard[num + 1][4][2] = scen.planet.build[num]:gsub("(%w+)/(%w+) (%w+)", "%2%3")
+			menu_shipyard[num + 1][4][3] = scen.planet.build[num]:gsub("(%w+)/(%w+) (%w+)", "%1")
+		else
+			menu_shipyard[num + 1][4][2] = scen.planet.build[num]:gsub("(%w+)/(%w+)", "%2")
+			menu_shipyard[num + 1][4][3] = scen.planet.build[num]:gsub("(%w+)/(%w+)", "%1")
+		end
+		print(menu_shipyard[num + 1][4][3])
 		num = num + 1
 	end
 end

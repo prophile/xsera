@@ -45,9 +45,9 @@
 	<ppositiony>100</ppositiony>
 	<psprite>AnotherEarth</psprite>
 	<presources_generated>20</presources_generated>
-	<pbuild1>Fighter</pbuild1>
-	<pbuild2>Heavy Cruiser</pbuild2>
-	<pbuild3>Cruiser</pbuild3>
+	<pbuild1>Ishiman/Fighter</pbuild1>
+	<pbuild2>Ishiman/Heavy Cruiser</pbuild2>
+	<pbuild3>Ishiman/Cruiser</pbuild3>
 	<pinitialvelocityx>25</pinitialvelocityx>
 	<pinitialvelocityy>25</pinitialvelocityy>
 	<pinitialangle>0.3926</pinitialangle>
