@@ -78,23 +78,23 @@ function NewEntity (entOwner, entName, entType, entDir, entSubdir, other)
 		else
 			entObject.fileName = trueData.fileName
 		end
-		if entOwner ~= nil then
-			if entOwner.physicsObject ~= nil then
-				entObject.physicsObject.angle = entOwner.physicsObject.angle
-				entObject.physicsObject.position = { x = entOwner.physicsObject.position.x, y = entOwner.physicsObject.position.y }
-				if tonumber(trueData.velocity) ~= nil then
-					entObject.physicsObject.velocity = { x = entOwner.physicsObject.velocity.x + trueData.velocity * math.cos(entOwner.physicsObject.angle), y = entOwner.physicsObject.velocity.y + trueData.velocity * math.sin(entOwner.physicsObject.angle) }
-				else
-					entObject.physicsObject.velocity = { x = entOwner.physicsObject.velocity.x, y = entOwner.physicsObject.velocity.y }
-				end
+	end
+	if entOwner ~= nil then
+		if entOwner.physicsObject ~= nil then
+			entObject.physicsObject.angle = entOwner.physicsObject.angle
+			entObject.physicsObject.position = { x = entOwner.physicsObject.position.x, y = entOwner.physicsObject.position.y }
+			if trueData.velocity ~= nil then
+				entObject.physicsObject.velocity = { x = entOwner.physicsObject.velocity.x + trueData.velocity * math.cos(entOwner.physicsObject.angle), y = entOwner.physicsObject.velocity.y + trueData.velocity * math.sin(entOwner.physicsObject.angle) }
 			else
-				entObject.physicsObject.angle = 0
-				entObject.physicsObject.position = { x = entOwner.position.x, y = entOwner.position.y }
-				if tonumber(trueData.velocity) ~= nil then
-					entObject.physicsObject.velocity = { x = tonumber(trueData.velocity) * math.cos(entObject.physicsObject.angle), y = tonumber(trueData.velocity) * math.sin(entObject.physicsObject.angle) }
-				else
-					entObject.physicsObject.velocity = { x = entOwner.initialVelocity.x, y = entOwner.initialVelocity.y }
-				end
+				entObject.physicsObject.velocity = { x = entOwner.physicsObject.velocity.x, y = entOwner.physicsObject.velocity.y }
+			end
+		else
+			entObject.physicsObject.angle = 0
+			entObject.physicsObject.position = { x = entOwner.position.x, y = entOwner.position.y }
+			if trueData.velocity ~= nil then
+				entObject.physicsObject.velocity = { x = tonumber(trueData.velocity) * math.cos(entObject.physicsObject.angle), y = tonumber(trueData.velocity) * math.sin(entObject.physicsObject.angle) }
+			else
+				entObject.physicsObject.velocity = { x = entOwner.initialVelocity.x, y = entOwner.initialVelocity.y }
 			end
 		end
 	end
@@ -109,7 +109,7 @@ function NewEntity (entOwner, entName, entType, entDir, entSubdir, other)
 			position = { x = tonumber(trueData.ppositionx), y = tonumber(trueData.ppositiony) },
 			image = trueData.psprite,
 			res_gen = tonumber(trueData.presources_generated),
-			build = trueData.pbuild,
+			build = { trueData.pbuild1, trueData.pbuild2, trueData.pbuild3 },
 			type = "Planet",
 			initialVelocity = { x = trueData.pinitialvelocityx, y = trueData.pinitialvelocityy },
 			text = { trueData.pbuild1, trueData.pbuild2, trueData.pbuild3 } }
@@ -252,11 +252,6 @@ function NewEntity (entOwner, entName, entType, entDir, entSubdir, other)
 		end
 		entObject.warp = { warping = false, start = { bool = false, time = nil, engine = false, sound = false, isStarted = false }, endTime = 0.0, disengage = 2.0, finished = true, soundNum = 0 }
 		entObject.switch = true -- [HARDCODED]
-		entObject.physicsObject.velocity.x = tonumber(trueData.initial_velocity)
-		entObject.physicsObject.velocity.y = 0
-		if entOwner ~= nil then
-			entObject.physicsObject.position = { x = entOwner.position.x, y = entOwner.position.y }
-		end
 		entObject.type = "Ship"
 	else
 		error("Unknown entity of type " .. entType, 6)

@@ -477,9 +477,6 @@ function key ( k )
         keyControls.left = true
     elseif k == "d" then
         keyControls.right = true
-	elseif k == "q" then
-		otherShip = NewEntity(scen.planet, "HeavyCruiser", "Ship", "Ishiman")
-		sound.play("IComboBeep")
 	elseif k == "r" then
 		showVelocity = true
 	elseif k == "t" then

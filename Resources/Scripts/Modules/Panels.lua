@@ -11,12 +11,17 @@ controlparams = { -387, -372,	-- left, right (target)
 --]]
 --/displaycontrol
 
-control = scen.planet
+control = scen.planet -- [HARDCODED]
 target = nil
 
 menu_shift = -391
 top_of_menu = -69
 menu_stride = -11
+
+function make_ship(planet, name, race)
+	otherShip = NewEntity(planet, name, "Ship", race)
+	sound.play("IComboBeep")
+end
 
 menu_shipyard = { "BUILD", {} }
 
@@ -34,6 +39,11 @@ function shipyard()
 		else
 			menu_shipyard[num + 1][2] = true
 		end
+		menu_shipyard[num + 1][3] = make_ship
+		menu_shipyard[num + 1][4] = {}
+		menu_shipyard[num + 1][4][1] = scen.planet
+		menu_shipyard[num + 1][4][2] = "HeavyCruiser"
+		menu_shipyard[num + 1][4][3] = "Ishiman"
 		num = num + 1
 	end
 end
@@ -178,7 +188,11 @@ function change_menu(menu, direction)
 			num = num + 1
 		end
 		if menu[num][3] ~= nil then
-			menu[num][3]()
+			if menu[num][4] ~= nil then
+				menu[num][3](menu[num][4][1], menu[num][4][2], menu[num][4][3], menu[num][4][4], menu[num][4][5])
+			else
+				menu[num][3]()
+			end
 		end
 	end
 end
@@ -225,7 +239,7 @@ function draw_panels()
 	end
 -- Factory build bar
 	planet = scen.planet
-	planet.build = { factor = 100, current = 0, percent = 0 }
+	planet.buildqueue = { factor = 100, current = 0, percent = 0 }
 	if planet ~= nil then
 		graphics.draw_line(382, 181, 392, 181, 0.5, 0.7, 0.4, 0.6, 1)
 		graphics.draw_line(382, 181, 382, 177, 0.5, 0.7, 0.4, 0.6, 1)
@@ -234,7 +248,7 @@ function draw_panels()
 		graphics.draw_line(382, 163, 382, 159, 0.5, 0.7, 0.4, 0.6, 1)
 		graphics.draw_line(392, 159, 392, 163, 0.5, 0.7, 0.4, 0.6, 1)
 		graphics.draw_box(179, 384, 161, 390, 0, 0.7, 0.4, 0.6, 1)
-		graphics.draw_box(18 * planet.build.percent + 161, 384, 161, 390, 0, 0.8, 0.5, 0.7, 1)
+		graphics.draw_box(18 * planet.buildqueue.percent + 161, 384, 161, 390, 0, 0.8, 0.5, 0.7, 1)
 	end
 	
 --[[------------------

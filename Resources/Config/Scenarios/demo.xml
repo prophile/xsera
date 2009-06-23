@@ -48,7 +48,8 @@
 	<pbuild1>Fighter</pbuild1>
 	<pbuild2>Heavy Cruiser</pbuild2>
 	<pbuild3>Cruiser</pbuild3>
-	<pinitialvelocityx>10</pinitialvelocityx>
-	<pinitialvelocityy>5</pinitialvelocityy>
+	<pinitialvelocityx>25</pinitialvelocityx>
+	<pinitialvelocityy>25</pinitialvelocityy>
+	<pinitialangle>0.3926</pinitialangle>
 	<briefing>Destroy the Gaitori Carrier.</briefing>
 </sprite>
