@@ -82,6 +82,8 @@ function key ( k )
         sizeFactor = sizeFactor + 0.1
     elseif k == "k" then
         sizeFactor = sizeFactor - 0.1
+    elseif k == "p" then
+        mode_manager.switch("fractalmonster")
     elseif k == "d" then
         mode_manager.switch("Demo2")
     elseif k == "x" then

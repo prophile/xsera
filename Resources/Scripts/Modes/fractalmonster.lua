@@ -1,12 +1,12 @@
 function get_third(x, y)
 	local dist = y - x
-	local xthird = x + dist * 2 / 5
-	local ythird = y - dist * 2 / 5
+	local xthird = x + dist * 3 / 7
+	local ythird = y - dist * 3 / 7
 	return xthird, ythird
 end
 
 function drawline(a, b, f)
-	graphics.draw_line(a, 450 - 5 * f, b, 450 - 5 * f, 2)
+	graphics.draw_box(460 - 30 * f, b, 435 - 30 * f, a, 0)
 end
 
 function fractalize(a, b, f)
@@ -19,30 +19,30 @@ function fractalize(a, b, f)
 end
 
 function render()
-	local x = { one = 0, two = 0, three = 0, four = 0, five = 0, six = 0, seven = 0, eight = 0, nine = 0, ten = 0, eleven = 0, twelve = 0, thirteen = 0, fourteen = 0 }
+	local x = {}
 	local blah = 0
     graphics.begin_frame()
 	graphics.set_camera(-500, -500, 500, 500)
-	leftend = -400 -- x.one should be -166
-	rightend = 400
-	drawline(leftend, rightend, 0)
-	x.one, x.two = fractalize(leftend, rightend, 1)
+	x[1] = -400
+	x[2] = 400
+	drawline(x[1], x[2], 0)
+	x[2], x[3], x[4] = fractalize(x[1], x[2], 1), x[2]
 	
-	x.three, x.four = fractalize(x.one, leftend, 2)
-	x.five, x.six = fractalize(x.two, rightend, 2)
+	x[5], x[6] = fractalize(x[3], x[1], 2)
+	x[7], x[8] = fractalize(x[4], x[2], 2)
 	
-	x.seven, x.eight = fractalize(leftend, x.four, 3)
-	x.nine, x.ten = fractalize(x.three, x.one, 3)
-	x.eleven, x.twelve = fractalize(x.six, rightend, 3)
-	x.thirteen, x.fourteen = fractalize(x.five, x.two, 3)
+	x[9], x[10] = fractalize(x[1], x[6], 3)
+	x[13], x[14] = fractalize(x[2], x[8], 3)
+	x[11], x[12] = fractalize(x[3], x[5], 3)
+	x[15], x[16] = fractalize(x[4], x[7], 3)
 	
-	blah, blah = fractalize(leftend, x.seven, 4)
-	blah, blah = fractalize(x.eight, x.four, 4)
-	blah, blah = fractalize(x.nine, x.three, 4)
-	blah, blah = fractalize(x.ten, x.one, 4)
-	blah, blah = fractalize(x.two, x.fourteen, 4)
-	blah, blah = fractalize(x.thirteen, x.five, 4)
-	blah, blah = fractalize(x.eleven, x.six, 4)
-	blah, blah = fractalize(rightend, x.twelve, 4)
+	blah, blah = fractalize(x[1], x[9], 4)
+	blah, blah = fractalize(x[10], x[6], 4)
+	blah, blah = fractalize(x[11], x[5], 4)
+	blah, blah = fractalize(x[12], x[3], 4)
+	blah, blah = fractalize(x[4], x[16], 4)
+	blah, blah = fractalize(x[15], x[7], 4)
+	blah, blah = fractalize(x[13], x[8], 4)
+	blah, blah = fractalize(x[2], x[14], 4)
 	graphics.end_frame()
 end

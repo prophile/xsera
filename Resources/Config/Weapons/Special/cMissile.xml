@@ -3,9 +3,9 @@
 	<!-- full name -->
 	<name>Concussion Missile</name>
 	<!-- sprite name -->
-	<sprite>Weapons/cMissile</sprite>
+	<sprite>cMissile</sprite>
 	<!-- short name -->
-	<shortName>cMissile</shortName>
+	<shortName>CMISSILE</shortName>
 	<!-- weapon class -->
 	<class>special</class>
 	<!-- name of sound made when fired -->

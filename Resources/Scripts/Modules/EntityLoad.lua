@@ -12,6 +12,10 @@ function NewEntity (entOwner, entName, entType, entDir, entSubdir, other)
 			if entOwner.battery.level < weapon.cost then
 				return
 			end
+		elseif entDir == "special" then
+			if entOwner.special.ammo == 0 then
+				return
+			end
 		end
 		entType = "Weapon"
 	end
@@ -25,7 +29,6 @@ function NewEntity (entOwner, entName, entType, entDir, entSubdir, other)
 	else
 		error("Entity " .. entName .. " has no type.", 7)
 	end
-	entType = entTypeReal
     local entData = rawData[1]
     local trueData = {}
     for k, v in ipairs(entData) do
@@ -35,7 +38,7 @@ function NewEntity (entOwner, entName, entType, entDir, entSubdir, other)
     end
 	local entObject = { type = entType, size = {} }
 	if trueData.name == nil then
-		error(entName .. " of " .. entType .. " does not have a name.", 7)
+		error(entName .. " of " .. entTypeReal .. " does not have a name.", 7)
 	end
 	entObject.name = trueData.name
 	if trueData.shortname ~= nil then
@@ -75,7 +78,27 @@ function NewEntity (entOwner, entName, entType, entDir, entSubdir, other)
 		else
 			entObject.fileName = trueData.fileName
 		end
+		if entOwner ~= nil then
+			if entOwner.physicsObject ~= nil then
+				entObject.physicsObject.angle = entOwner.physicsObject.angle
+				entObject.physicsObject.position = { x = entOwner.physicsObject.position.x, y = entOwner.physicsObject.position.y }
+				if tonumber(trueData.velocity) ~= nil then
+					entObject.physicsObject.velocity = { x = entOwner.physicsObject.velocity.x + trueData.velocity * math.cos(entOwner.physicsObject.angle), y = entOwner.physicsObject.velocity.y + trueData.velocity * math.sin(entOwner.physicsObject.angle) }
+				else
+					entObject.physicsObject.velocity = { x = entOwner.physicsObject.velocity.x, y = entOwner.physicsObject.velocity.y }
+				end
+			else
+				entObject.physicsObject.angle = 0
+				entObject.physicsObject.position = { x = entOwner.position.x, y = entOwner.position.y }
+				if tonumber(trueData.velocity) ~= nil then
+					entObject.physicsObject.velocity = { x = tonumber(trueData.velocity) * math.cos(entObject.physicsObject.angle), y = tonumber(trueData.velocity) * math.sin(entObject.physicsObject.angle) }
+				else
+					entObject.physicsObject.velocity = { x = entOwner.initialVelocity.x, y = entOwner.initialVelocity.y }
+				end
+			end
+		end
 	end
+	entType = entTypeReal
 	
 	if entType == "Explosion" then
 -- explosion-specific
@@ -88,6 +111,7 @@ function NewEntity (entOwner, entName, entType, entDir, entSubdir, other)
 			res_gen = tonumber(trueData.presources_generated),
 			build = trueData.pbuild,
 			type = "Planet",
+			initialVelocity = { x = trueData.pinitialvelocityx, y = trueData.pinitialvelocityy },
 			text = { trueData.pbuild1, trueData.pbuild2, trueData.pbuild3 } }
 		entObject.briefing = trueData.briefing
 	elseif entType == "Weapon" then
@@ -105,7 +129,7 @@ function NewEntity (entOwner, entName, entType, entDir, entSubdir, other)
 		entObject.class = trueData.class
 		if entObject.class == "beam" then -- this is innacurate. Learn more about weapons [ADAM, FIX, SFIERA]
 			entObject.length = tonumber(trueData.length)
-			entObject.width = cameraRatio -- THERE IS NO CAMERARATIO!! [FIX, ADAM]
+			entObject.width = cameraRatio
 			entObject.fired = false
 			entObject.start = 0
 			entObject.firing = false
@@ -129,12 +153,6 @@ function NewEntity (entOwner, entName, entType, entDir, entSubdir, other)
 		sound.play(weapon.sound)
 		weapon.start = mode_manager.time() * 1000
 		weapon.fired = true
-		entObject.physicsObject.angle = entOwner.physicsObject.angle
-		if tonumber(trueData.velocity) ~= nil then
-			entObject.physicsObject.velocity = { x = tonumber(trueData.velocity) * math.cos(entObject.physicsObject.angle) + entOwner.physicsObject.velocity.x, y = tonumber(trueData.velocity) * math.sin(entObject.physicsObject.angle) + entOwner.physicsObject.velocity.y }
-		else
-			entObject.physicsObject.velocity = { x = entOwner.physicsObject.velocity.x, y = entOwner.physicsObject.velocity.y }
-		end
 		if trueData.turnrate ~= nil then
 			entObject.turningRate = tonumber(trueData.turnrate)
 			entObject.maxSeek = tonumber(trueData.maxSeek)
@@ -163,20 +181,20 @@ function NewEntity (entOwner, entName, entType, entDir, entSubdir, other)
 			-- temp sound file, should be "RocketLaunch" but for some reason, that file gets errors (file included for troubleshooting)
 			
 			if computerShip == nil then
-				weapData[wNum].isSeeking = false
+				entObject.isSeeking = false
 			end
-			if weapData[wNum].isSeeking == true then
+			if entObject.isSeeking == true then
 				local projectileTravel = { x, y, dist }
 				projectileTravel.dist = (weapon.thrust * weapon.life * weapon.life / 1000000) / (2 * weapon.mass)
-				projectileTravel.x = math.cos(weapData[wNum].physicsObject.angle) * (projectileTravel.dist + weapData[wNum].physicsObject.velocity.x)
-				projectileTravel.y = math.sin(weapData[wNum].physicsObject.angle) * (projectileTravel.dist + weapData[wNum].physicsObject.velocity.y)
-				if find_hypot(weapData[wNum].physicsObject.position, weapData[wNum].dest) <= hypot(projectileTravel.x, projectileTravel.y) then
+				projectileTravel.x = math.cos(entObject.physicsObject.angle) * (projectileTravel.dist + entObject.physicsObject.velocity.x)
+				projectileTravel.y = math.sin(entObject.physicsObject.angle) * (projectileTravel.dist + entObject.physicsObject.velocity.y)
+				if find_hypot(entObject.physicsObject.position, entObject.dest) <= hypot(projectileTravel.x, projectileTravel.y) then
 					if showAngles == true then
-						print(find_angle(weapData[wNum].dest, weapData[wNum].physicsObject.position))
-						print(weapData[wNum].physicsObject.angle)
-						print(find_angle(weapData[wNum].dest, weapData[wNum].physicsObject.position) - weapData[wNum].physicsObject.angle)
+						print(find_angle(entObject.dest, entObject.physicsObject.position))
+						print(entObject.physicsObject.angle)
+						print(find_angle(entObject.dest, entObject.physicsObject.position) - entObject.physicsObject.angle)
 					end
-					local angle = find_angle(weapData[wNum].dest, weapData[wNum].physicsObject.position) - weapData[wNum].physicsObject.angle
+					local angle = find_angle(entObject.dest, entObject.physicsObject.position) - entObject.physicsObject.angle
 					if math.abs(angle) > math.pi then -- need to go through 0
 						if angle > 0.0 then
 							angle = 2 * math.pi - angle
@@ -184,14 +202,14 @@ function NewEntity (entOwner, entName, entType, entDir, entSubdir, other)
 							angle = 2 * math.pi + angle
 						end
 					end
-					if math.abs(angle) > weapon.maxSeek then
-						weapData[wNum].isSeeking = false
+					if math.abs(angle) > entObject.maxSeek then
+						entObject.isSeeking = false
 					end
 				else
-					weapData[wNum].isSeeking = false
+					entObject.isSeeking = false
 				end
 			else
-				weapData[wNum].isSeeking = false
+				entObject.isSeeking = false
 			end
 		elseif weaponClass == nil then
 			error("Projectile '" .. entType .. "' has no class. See NewEntity", 7)

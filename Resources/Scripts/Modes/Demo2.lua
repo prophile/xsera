@@ -205,7 +205,6 @@ function update ()
 	
 -- PKBeam Firing
 	
-	newProjectile(playerShip.beam, playerShip.beamWeap, playerShip)
 	weapon_manage(playerShip.beam, playerShip.beamWeap, playerShip)
 
 --[[------------------
@@ -236,14 +235,31 @@ function update ()
 	physics.update(dt)
 end
 
---[[-------------------------
-	--{{-----------------
-		Weapon Firing
-	-----------------}}--
--------------------------]]--
+--[[-----------------------------
+	--{{---------------------
+		Weapon Management
+	---------------------}}--
+-----------------------------]]--
 
 function weapon_manage(weapon, weapData, weapOwner)
--- handling for collisions and age
+-- handling of new projectile
+	if weapOwner[weapon.class].firing == true then
+		local wNum = 1
+		while wNum <= weapon.max_projectiles do
+			if weapData[wNum] == nil then
+				-- I would rather load from memory, but we don't have a function that preloads yet. Oh well. [DEMO2, ADAM, ALISTAIR]
+				if weapon.image ~= nil then
+					weapData[wNum] = NewEntity(weapOwner, weapon.image, "Projectile", weapon.class, nil, wNum)
+				else
+					weapData[wNum] = NewEntity(weapOwner, weapon.fileName, "Projectile", weapon.class, nil, wNum)
+				end
+				wNum = weapon.max_projectiles -- exit while loop
+			end
+			wNum = wNum + 1
+		end
+	end
+
+-- handling for existing weapons and projectiles
 	wNum = 1
 	while wNum <= weapon.max_projectiles do
 		if weapData[wNum] ~= nil then
@@ -271,25 +287,6 @@ function weapon_manage(weapon, weapData, weapOwner)
 			end
 		end
 		wNum = wNum + 1
-	end
-end
-
-function newProjectile(weapon, weapData, weapOwner)
--- handling of new projectile
-	if weapOwner[weapon.class].firing == true then
-		local wNum = 1
-		while wNum <= weapon.max_projectiles do
-			if weapData[wNum] == nil then
-				-- I would rather load from memory, but we don't have a function that preloads yet. Oh well. [DEMO2, ADAM, ALISTAIR]
-				if weapon.image ~= nil then
-					weapData[wNum] = NewEntity(weapOwner, weapon.image, "Projectile", weapon.class, nil, wNum)
-				else
-					weapData[wNum] = NewEntity(weapOwner, weapon.fileName, "Projectile", weapon.class, nil, wNum)
-				end
-				wNum = weapon.max_projectiles -- exit while loop
-			end
-			wNum = wNum + 1
-		end
 	end
 end
 
@@ -357,9 +354,12 @@ function render ()
 				graphics.draw_rtri(computerShip.physicsObject.position.x, computerShip.physicsObject.position.y, 60, 1, 0, 0, 1)
 			end
 		else
-			-- This explosion code is a hack. We need a way to deal with explosions in a better method. Let's figure
-			-- it out when we get Sfiera's data [ADAM, SFIERA]
+			-- This explosion code is a hack. We need a way to deal with explosions in a better method.
+			-- Let's figure it out when we get Sfiera's data [ADAM, SFIERA]
 			if computerShip ~= nil then
+				if cameraRatio ~= 1 / 16 then
+					graphics.draw_sprite(bestExplosion.image, computerShip.physicsObject.position.x, computerShip.physicsObject.position.y, bestExplosion.size.x, bestExplosion.size.y, frame / 6 * math.pi)
+				end
 				if frame == 0 then
 					sound.play("New/ExplosionCombo")
 				end
@@ -368,7 +368,6 @@ function render ()
 				else
 					frame = frame + dt * 50
 				end
-				graphics.draw_sprite(bestExplosion.image, computerShip.physicsObject.position.x, computerShip.physicsObject.position.y, bestExplosion.size.x, bestExplosion.size.y, frame / 6 * math.pi)
 			end
 		end
 	end
