@@ -1,8 +1,18 @@
 import('PrintRecursive')
+import('GlobalVars')
 
-function NewEntity (entOwner, entName, entType, entDir, entSubdir)
+function NewEntity (entOwner, entName, entType, entDir, entSubdir, other)
 	local entTypeReal = entType
 	if entType == "Projectile" then
+		local weapon = entOwner[entDir]
+		if (weapon.start + weapon.cooldown) / 1000 > mode_manager.time() then
+			return
+		end
+		if entDir == "beam" then
+			if entOwner.battery.level < weapon.cost then
+				return
+			end
+		end
 		entType = "Weapon"
 	end
 	local rawData
@@ -95,7 +105,7 @@ function NewEntity (entOwner, entName, entType, entDir, entSubdir)
 		entObject.class = trueData.class
 		if entObject.class == "beam" then -- this is innacurate. Learn more about weapons [ADAM, FIX, SFIERA]
 			entObject.length = tonumber(trueData.length)
-			entObject.width = cameraRatio
+			entObject.width = cameraRatio -- THERE IS NO CAMERARATIO!! [FIX, ADAM]
 			entObject.fired = false
 			entObject.start = 0
 			entObject.firing = false
@@ -113,6 +123,12 @@ function NewEntity (entOwner, entName, entType, entDir, entSubdir)
 		end
 	elseif entType == "Projectile" then
 -- projectile-specific
+		local weaponClass = entDir
+		local weapon = entOwner[weaponClass]
+		local wNum = other
+		sound.play(weapon.sound)
+		weapon.start = mode_manager.time() * 1000
+		weapon.fired = true
 		entObject.physicsObject.angle = entOwner.physicsObject.angle
 		if tonumber(trueData.velocity) ~= nil then
 			entObject.physicsObject.velocity = { x = tonumber(trueData.velocity) * math.cos(entObject.physicsObject.angle) + entOwner.physicsObject.velocity.x, y = tonumber(trueData.velocity) * math.sin(entObject.physicsObject.angle) + entOwner.physicsObject.velocity.y }
@@ -126,13 +142,13 @@ function NewEntity (entOwner, entName, entType, entDir, entSubdir)
 		else
 			entObject.isSeeking = false
 		end
+		
 		if weaponClass == "beam" then
 			-- [ADAM, FIX] this piece of code is a hack, it relies on what little weapons we have right now to make the assumption
 			if entOwner.switch == true then
 				entObject.physicsObject.position = { x = entOwner.physicsObject.position.x + math.cos(entObject.physicsObject.angle + 0.17) * (tonumber(trueData.length) - 3), y = entOwner.physicsObject.position.y + math.sin(entObject.physicsObject.angle + 0.17) * (tonumber(trueData.length) - 3) }
 				entOwner.switch = false
 			else
-				-- [POSITIONVSLOCATION]
 				entObject.physicsObject.position = { x = entOwner.physicsObject.position.x + math.cos(entObject.physicsObject.angle - 0.17) * (tonumber(trueData.length) - 3), y = entOwner.physicsObject.position.y + math.sin(entObject.physicsObject.angle - 0.17) * (tonumber(trueData.length) - 3) }
 				entOwner.switch = true
 			end
@@ -142,10 +158,45 @@ function NewEntity (entOwner, entName, entType, entDir, entSubdir)
 			return
 		elseif weaponClass == "special" then
 			entObject.dest = { x = computerShip.physicsObject.position.x, y = computerShip.physicsObject.position.y }
+			entOwner.special.ammo = entOwner.special.ammo - 1
+		--	sound.play("RocketLaunchr")
+			-- temp sound file, should be "RocketLaunch" but for some reason, that file gets errors (file included for troubleshooting)
+			
+			if computerShip == nil then
+				weapData[wNum].isSeeking = false
+			end
+			if weapData[wNum].isSeeking == true then
+				local projectileTravel = { x, y, dist }
+				projectileTravel.dist = (weapon.thrust * weapon.life * weapon.life / 1000000) / (2 * weapon.mass)
+				projectileTravel.x = math.cos(weapData[wNum].physicsObject.angle) * (projectileTravel.dist + weapData[wNum].physicsObject.velocity.x)
+				projectileTravel.y = math.sin(weapData[wNum].physicsObject.angle) * (projectileTravel.dist + weapData[wNum].physicsObject.velocity.y)
+				if find_hypot(weapData[wNum].physicsObject.position, weapData[wNum].dest) <= hypot(projectileTravel.x, projectileTravel.y) then
+					if showAngles == true then
+						print(find_angle(weapData[wNum].dest, weapData[wNum].physicsObject.position))
+						print(weapData[wNum].physicsObject.angle)
+						print(find_angle(weapData[wNum].dest, weapData[wNum].physicsObject.position) - weapData[wNum].physicsObject.angle)
+					end
+					local angle = find_angle(weapData[wNum].dest, weapData[wNum].physicsObject.position) - weapData[wNum].physicsObject.angle
+					if math.abs(angle) > math.pi then -- need to go through 0
+						if angle > 0.0 then
+							angle = 2 * math.pi - angle
+						else
+							angle = 2 * math.pi + angle
+						end
+					end
+					if math.abs(angle) > weapon.maxSeek then
+						weapData[wNum].isSeeking = false
+					end
+				else
+					weapData[wNum].isSeeking = false
+				end
+			else
+				weapData[wNum].isSeeking = false
+			end
 		elseif weaponClass == nil then
-			error("Weapon '" .. entType .. "' has no class. See NewEntity", 7)
+			error("Projectile '" .. entType .. "' has no class. See NewEntity", 7)
 		else
-			error("Unknown weapon class '" .. entClass .. "'. See NewEntity", 6)
+			error("Unknown projectile class '" .. entClass .. "'. See NewEntity", 6)
 		end
 		entObject.life = tonumber(trueData.life)
 		entObject.start = mode_manager.time() * 1000
@@ -169,9 +220,6 @@ function NewEntity (entOwner, entName, entType, entDir, entSubdir)
 		end
 		entObject.maxSpeed = tonumber(trueData.maxspeed)
 		entObject.reverseThrust = tonumber(trueData.reverse)
-		entObject.beamName = trueData.beamname
-		entObject.pulseName = trueData.pulsename
-		entObject.specialName = trueData.specialname
 		if trueData.beamname ~= nil then
 			entObject.beam = NewEntity(nil, trueData.beamname, "Weapon", "Beam")
 			entObject.beamWeap = { { {} } }
@@ -189,7 +237,6 @@ function NewEntity (entOwner, entName, entType, entDir, entSubdir)
 		entObject.physicsObject.velocity.x = tonumber(trueData.initial_velocity)
 		entObject.physicsObject.velocity.y = 0
 		if entOwner ~= nil then
-			-- [POSITIONVSLOCATION]
 			entObject.physicsObject.position = { x = entOwner.position.x, y = entOwner.position.y }
 		end
 		entObject.type = "Ship"

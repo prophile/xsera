@@ -12,59 +12,11 @@
 
 import('EntityLoad')
 import('Math')
-import('Scenario')
 import('Panels')
 import('PopDownConsole')
+import('GlobalVars')
+import('Scenario')
 -- import('MouseHandle')
-
-local cameraRatio = 1
-local aspectRatio = 4 / 3
-camera = { w = 640 / cameraRatio, h }
-camera.h = camera.w / aspectRatio
-local shipAdjust = .045 * camera.w
-
---color tables
-c_lightRed = { r = 0.8, g = 0.4, b = 0.4, a = 1 }
-c_red = { r = 0.6, g = 0.15, b = 0.15, a = 1 }
-c_lightBlue = { r = 0.15, g = 0.15, b = 0.6, a = 1 }
-c_blue = { r = 0.35, g = 0.35, b = 0.7, a = 1 }
-c_laserGreen = { r = 0.1, g = 0.7, b = 0.1, a = 1 }
-c_lightGreen = { r = 0.3, g = 0.7, b = 0.3, a = 1 }
-c_green = { r = 0.0, g = 0.4, b = 0.0, a = 1 }
-c_lightYellow = { r = 0.8, g = 0.8, b = 0.4, a = 1 }
-c_yellow = { r = 0.6, g = 0.6, b = 0.15, a = 1 }
-c_pink = { r = 0.8, g = 0.5, b = 0.5, a = 1 }
-c_lightPurple = { r = 0.8, g = 0.5, b = 0.7, a = 1 }
-c_purple = { r = 0.7, g = 0.4, b = 0.6, a = 1 }
---/color tables
-
---tempvars
-firepulse = false
-showVelocity = false
-showAngles = false
-frame = 0
-printFPS = false
-waitTime = 0.0
-resources = 0
-resource_bars = 0
-RESOURCES_PER_TICK = 200
-resource_time = 0.0
-recharge_timer = 0.0
-cash = 0
-alliedShips = {}
---/tempvars
-
-local soundLength = 0.25
-
-local arrowLength = 135
-local arrowVar = (3 * math.sqrt(3))
-local arrowDist = hypot(6, (arrowLength - arrowVar))
-local arrowAlpha = math.atan2(6, arrowDist)
-local gridDistBlue = 300
-local gridDistLightBlue = 2400
-local gridDistGreen = 4800
-
-keyControls = { left = false, right = false, forward = false, brake = false }
 
 --[[--------------------------------
 	--{{------------------------
@@ -253,6 +205,7 @@ function update ()
 	
 -- PKBeam Firing
 	
+	newProjectile(playerShip.beam, playerShip.beamWeap, playerShip)
 	weapon_manage(playerShip.beam, playerShip.beamWeap, playerShip)
 
 --[[------------------
@@ -290,84 +243,7 @@ end
 -------------------------]]--
 
 function weapon_manage(weapon, weapData, weapOwner)
--- handling of new projectile
-	if weapon.firing == true then
-		local wNum = 0
-		if weapon.class == "beam" then
-			if weapOwner.battery.level < weapon.cost then
-				return
-			end
-		elseif weapon.class == "pulse" then
-			return
-		elseif weapon.class == "special" then
-			if weapOwner.special.ammo == 0 then
-				return
-			end
-		end
-		
-		if weapon.start / 1000 + weapon.cooldown / 1000 <= mode_manager.time() then
-			local cNum -- current number (for when wNum gets wiped)
-			sound.play(weapon.sound)
-			weapon.start = mode_manager.time() * 1000
-			weapon.fired = true
-			wNum = 1
-			while wNum <= weapon.max_projectiles do
-				if weapData[wNum] == nil then
-					-- I would rather load from memory, but we don't have a function that preloads yet. Oh well. [DEMO2, ADAM, ALISTAIR]
-					if weapon.image ~= nil then
-						weapData[wNum] = NewEntity(weapOwner, weapon.image, "Weapon", weapon.class)
-					else
-						weapData[wNum] = NewEntity(weapOwner, weapon.fileName, "Weapon", weapon.class)
-					end
-					cNum = wNum
-					wNum = weapon.max_projectiles -- exit while loop
-				end
-				wNum = wNum + 1
-			end
-			
-			-- weapon fired, take away cost (and seek if necessary)
-			if weapon.class == "special" then
-				weapOwner.special.ammo = weapOwner.special.ammo - 1
-				sound.play("RocketLaunchr")
-				-- temp sound file, should be "RocketLaunch" but for some reason, that file gets errors (file included for troubleshooting)
-				if computerShip == nil then
-					weapData[cNum].isSeeking = false
-				end
-				
-				if weapData[cNum].isSeeking == true then
-					local projectileTravel = { x, y, dist }
-					projectileTravel.dist = (weapon.thrust * weapon.life * weapon.life / 1000000) / (2 * weapon.mass)
-					projectileTravel.x = math.cos(weapData[cNum].physicsObject.angle) * (projectileTravel.dist + weapData[cNum].physicsObject.velocity.x)
-					projectileTravel.y = math.sin(weapData[cNum].physicsObject.angle) * (projectileTravel.dist + weapData[cNum].physicsObject.velocity.y)
-					if find_hypot(weapData[cNum].physicsObject.position, weapData[cNum].dest) <= hypot(projectileTravel.x, projectileTravel.y) then
-						if showAngles == true then
-							print(find_angle(weapData[cNum].dest, weapData[cNum].physicsObject.position))
-							print(weapData[cNum].physicsObject.angle)
-							print(find_angle(weapData[cNum].dest, weapData[cNum].physicsObject.position) - weapData[cNum].physicsObject.angle)
-						end
-						local angle = find_angle(weapData[cNum].dest, weapData[cNum].physicsObject.position) - weapData[cNum].physicsObject.angle
-						if math.abs(angle) > math.pi then -- need to go through 0
-							if angle > 0.0 then
-								angle = 2 * math.pi - angle
-							else
-								angle = 2 * math.pi + angle
-							end
-						end
-						if math.abs(angle) > weapon.maxSeek then
-							weapData[cNum].isSeeking = false
-						end
-					else
-						weapData[cNum].isSeeking = false
-					end
-				else
-					weapData[cNum].isSeeking = false
-				end
-			end
-		end
-	end
-	
 -- handling for collisions and age
-
 	wNum = 1
 	while wNum <= weapon.max_projectiles do
 		if weapData[wNum] ~= nil then
@@ -395,6 +271,25 @@ function weapon_manage(weapon, weapData, weapOwner)
 			end
 		end
 		wNum = wNum + 1
+	end
+end
+
+function newProjectile(weapon, weapData, weapOwner)
+-- handling of new projectile
+	if weapOwner[weapon.class].firing == true then
+		local wNum = 1
+		while wNum <= weapon.max_projectiles do
+			if weapData[wNum] == nil then
+				-- I would rather load from memory, but we don't have a function that preloads yet. Oh well. [DEMO2, ADAM, ALISTAIR]
+				if weapon.image ~= nil then
+					weapData[wNum] = NewEntity(weapOwner, weapon.image, "Projectile", weapon.class, nil, wNum)
+				else
+					weapData[wNum] = NewEntity(weapOwner, weapon.fileName, "Projectile", weapon.class, nil, wNum)
+				end
+				wNum = weapon.max_projectiles -- exit while loop
+			end
+			wNum = wNum + 1
+		end
 	end
 end
 
@@ -550,15 +445,15 @@ function keyup ( k )
     elseif k == "d" then
         keyControls.right = false
 	elseif k == " " then
-		if playerShip.beamName ~= nil then
+		if playerShip.beam ~= nil then
 			playerShip.beam.firing = false
 		end
 	elseif k == "x" then
-		if playerShip.pulseName ~= nil then
+		if playerShip.pulse ~= nil then
 			playerShip.pulse.firing = false
 		end
 	elseif k == "z" then
-		if playerShip.specialName ~= nil then
+		if playerShip.special ~= nil then
 			playerShip.special.firing = false
 		end
     elseif k == "tab" then
@@ -639,15 +534,15 @@ function key ( k )
 	elseif k == "u" then
 		consoleDraw = false
 	elseif k == " " then
-		if playerShip.beamName ~= nil then
+		if playerShip.beam ~= nil then
 			playerShip.beam.firing = true
 		end
 	elseif k == "x" then
-		if playerShip.pulseName ~= nil then
+		if playerShip.pulse ~= nil then
 			playerShip.pulse.firing = true
 		end
 	elseif k == "z" then
-		if playerShip.specialName ~= nil then
+		if playerShip.special ~= nil then
 			playerShip.special.firing = true
 		end
 	elseif k == "p" then

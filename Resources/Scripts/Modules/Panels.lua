@@ -1,4 +1,5 @@
-import('Scenario') 
+import('GlobalVars') 
+import('Scenario')
 
 --displaycontrol
 --[[ the following is not related to this file, I just need to stick it elsewhere when done.
