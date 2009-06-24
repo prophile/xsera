@@ -5,6 +5,9 @@ import('Panels')
 function init()
 	sound.stop_music()
 	loading_percent = 0.0
+	loading = true
+	NewEntity(nil, name, "Scenario")
+	print_table(entities)
 end
 
 function update()
@@ -19,10 +22,17 @@ function render()
 	graphics.end_frame()
 end
 
-function key(k)
+function key( k )
 	if k == "escape" then
 		if mode_manager.query() ~= "MainMenu" then
 			mode_manager.switch("MainMenu")
 		end
+	elseif k == " " then
+		mode_manager.switch("Demo2")
 	end
+end
+
+function clear_cache()
+	entities = { {} }
+	console_add("The entity cache has been cleared.")
 end

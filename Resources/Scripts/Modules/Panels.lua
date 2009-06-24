@@ -45,13 +45,13 @@ function shipyard()
 	local num = 1
 	while scen.planet.build[num] ~= nil do
 		menu_shipyard[num + 1] = {}
-		local stringSub = 0
-		local nada, stringSub = scen.planet.build[num]:gsub("(%w+)/(%w+) (%w+)", "%1/%2 %3")
-		if stringSub == 1 then
-			menu_shipyard[num + 1][1] = scen.planet.build[num]:gsub("(%w+)/(%w+) (%w+)", "%2 %3")
-		else
+	--	local stringSub = 0
+	--	local nada, stringSub = scen.planet.build[num]:gsub("(%w+)/(%w+) (%w+)", "%1/%2 %3")
+	--	if stringSub == 1 then
+	--		menu_shipyard[num + 1][1] = scen.planet.build[num]:gsub("(%w+)/(%w+) (%w+)", "%2 %3")
+	--	else
 			menu_shipyard[num + 1][1] = scen.planet.build[num]:gsub("(%w+)/(%w+)", "%2")
-		end
+	--	end
 		if num ~= 1 then
 			menu_shipyard[num + 1][2] = false
 		else
@@ -60,13 +60,13 @@ function shipyard()
 		menu_shipyard[num + 1][3] = make_ship
 		menu_shipyard[num + 1][4] = {}
 		menu_shipyard[num + 1][4][1] = scen.planet
-		if stringSub == 1 then
-			menu_shipyard[num + 1][4][2] = scen.planet.build[num]:gsub("(%w+)/(%w+) (%w+)", "%2%3")
-			menu_shipyard[num + 1][4][3] = scen.planet.build[num]:gsub("(%w+)/(%w+) (%w+)", "%1")
-		else
+	--	if stringSub == 1 then
+	--		menu_shipyard[num + 1][4][2] = scen.planet.build[num]:gsub("(%w+)/(%w+) (%w+)", "%2%3")
+	--		menu_shipyard[num + 1][4][3] = scen.planet.build[num]:gsub("(%w+)/(%w+) (%w+)", "%1")
+	--	else
 			menu_shipyard[num + 1][4][2] = scen.planet.build[num]:gsub("(%w+)/(%w+)", "%2")
 			menu_shipyard[num + 1][4][3] = scen.planet.build[num]:gsub("(%w+)/(%w+)", "%1")
-		end
+	--	end
 		num = num + 1
 	end
 	ship_selected = true
@@ -75,7 +75,7 @@ end
 -- Special Orders
 
 function transfer_control()
-	error("This command currently has no code.", 1)
+	stringSub("This command currently has no code.", 1)
 	--[[ pseudocode!!! I don't have the concept of allies yet, need that before I can implement this
 	if controlShip.ally == true then
 		playerShip, controlShip = playerShip, controlShip
@@ -83,23 +83,23 @@ function transfer_control()
 end
 
 function hold_position()
-	error("This command currently has no code.", 1)
+	stringSub("This command currently has no code.", 1)
 end
 
 function go_to_my_position()
-	error("This command currently has no code.", 1)
+	stringSub("This command currently has no code.", 1)
 end
 
 function fire_weapon_1()
-	error("This command currently has no code.", 1)
+	stringSub("This command currently has no code.", 1)
 end
 
 function fire_weapon_2()
-	error("This command currently has no code.", 1)
+	stringSub("This command currently has no code.", 1)
 end
 
 function fire_special()
-	error("This command currently has no code.", 1)
+	stringSub("This command currently has no code.", 1)
 end
 
 -- Message menu

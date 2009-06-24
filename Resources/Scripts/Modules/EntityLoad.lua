@@ -18,6 +18,27 @@ function NewEntity (entOwner, entName, entType, entDir, entSubdir, other)
 			end
 		end
 		entType = "Weapon"
+	else
+		num = 1
+		if entities ~= nil then
+			local concatString = 0
+			while entities[num] ~= nil do
+				if entSubdir ~= nil then
+					concatString = (entType .. "s/" .. entDir .. "/" .. entSubdir .. "/" .. entName)
+				elseif entDir ~= nil then
+					concatString = (entType .. "s/" .. entDir .. "/" .. entName)
+				elseif entType ~= nil then
+					concatString = (entType .. "s/" .. entName)
+				end
+				if entities[num].entName == concatString then
+					return entities[num]
+				end
+				num = num + 1
+			end
+			if loading ~= true then
+			--	stringSub("Entity being loaded after loading period.", 2)
+			end
+		end
 	end
 	local rawData
 	if entSubdir ~= nil then
@@ -27,7 +48,7 @@ function NewEntity (entOwner, entName, entType, entDir, entSubdir, other)
 	elseif entType ~= nil then
 		rawData = xml.load("Config/" .. entType .. "s/" .. entName .. ".xml")
 	else
-		error("Entity " .. entName .. " has no type.", 7)
+		stringSub("Entity " .. entName .. " has no type.", 7)
 	end
     local entData = rawData[1]
     local trueData = {}
@@ -36,9 +57,17 @@ function NewEntity (entOwner, entName, entType, entDir, entSubdir, other)
             trueData[v.name] = v[1]
         end
     end
+
 	local entObject = { type = entType, size = {} }
+	if entSubdir ~= nil then
+		entObject.entName = (entType .. "s/" .. entDir .. "/" .. entSubdir .. "/" .. entName)
+	elseif entDir ~= nil then
+		entObject.entName = (entType .. "s/" .. entDir .. "/" .. entName)
+	elseif entType ~= nil then
+		entObject.entName = (entType .. "s/" .. entName)
+	end
 	if trueData.name == nil then
-		error(entName .. " of " .. entTypeReal .. " does not have a name.", 7)
+		stringSub(entName .. " of " .. entTypeReal .. " does not have a name.", 7)
 	end
 	entObject.name = trueData.name
 	if trueData.shortname ~= nil then
@@ -113,6 +142,9 @@ function NewEntity (entOwner, entName, entType, entDir, entSubdir, other)
 			type = "Planet",
 			initialVelocity = { x = trueData.pinitialvelocityx, y = trueData.pinitialvelocityy },
 			text = { trueData.pbuild1, trueData.pbuild2, trueData.pbuild3 } }
+		NewEntity(entObject.planet, entObject.planet.text[1], "Ship")
+		NewEntity(entObject.planet, entObject.planet.text[2], "Ship")
+		NewEntity(entObject.planet, entObject.planet.text[3], "Ship")
 		entObject.briefing = trueData.briefing
 	elseif entType == "Weapon" then
 -- weapon-specific
@@ -135,15 +167,15 @@ function NewEntity (entOwner, entName, entType, entDir, entSubdir, other)
 			entObject.firing = false
 		elseif entObject.class == "pulse" then
 		elseif entObject.class == "special" then
-			entObject.dest = { x = computerShip.physicsObject.position.x, y = computerShip.physicsObject.position.y }
+			entObject.dest = { x = 2200, y = 2700 }
 			entObject.delta = 0.0
 			entObject.fired = false
 			entObject.start = 0
 			entObject.force = { x, y }
 		elseif entObject.class == nil then
-			error("Weapon '" .. entObject.name .. "' has no class. See NewEntity", 7)
+			stringSub("Weapon '" .. entObject.name .. "' has no class. See NewEntity", 7)
 		else
-			error("Unknown weapon class '" .. entObject.class .. "'. See NewEntity", 6)
+			stringSub("Unknown weapon class '" .. entObject.class .. "'. See NewEntity", 6)
 		end
 	elseif entType == "Projectile" then
 -- projectile-specific
@@ -212,9 +244,9 @@ function NewEntity (entOwner, entName, entType, entDir, entSubdir, other)
 				entObject.isSeeking = false
 			end
 		elseif weaponClass == nil then
-			error("Projectile '" .. entType .. "' has no class. See NewEntity", 7)
+			stringSub("Projectile '" .. entType .. "' has no class. See NewEntity", 7)
 		else
-			error("Unknown projectile class '" .. entClass .. "'. See NewEntity", 6)
+			stringSub("Unknown projectile class '" .. entClass .. "'. See NewEntity", 6)
 		end
 		entObject.life = tonumber(trueData.life)
 		entObject.start = mode_manager.time() * 1000
@@ -228,7 +260,7 @@ function NewEntity (entOwner, entName, entType, entDir, entSubdir, other)
 		if trueData.thrust ~= nil then
 			entObject.thrust = tonumber(trueData.thrust)
 		else
-			error("No thrust data for ship " .. trueData.name, 7)
+			stringSub("No thrust data for ship " .. trueData.name, 7)
 		end
 		if trueData.warp ~= nil then
 			entObject.warpSpeed = tonumber(trueData.warp)
@@ -254,8 +286,17 @@ function NewEntity (entOwner, entName, entType, entDir, entSubdir, other)
 		entObject.switch = true -- [HARDCODED]
 		entObject.type = "Ship"
 	else
-		error("Unknown entity of type " .. entType, 6)
+		stringSub("Unknown entity of type " .. entType, 6)
 	end
 	cout_table(entObject, "object", false)
+--	if entities ~= nil then
+		while entities[num] ~= nil do
+			num = num + 1
+		end
+		num = num - 1
+		entities[num] = entObject
+--	else
+--		entities = { entObject }
+--	end
     return entObject
 end

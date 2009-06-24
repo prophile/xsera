@@ -39,6 +39,8 @@ alliedShips = {}
 
 --loadingstuff
 loading_percent = 0.0
+loading = false
+entities = { {} }
 --/loadingstuff
 
 soundLength = 0.25
