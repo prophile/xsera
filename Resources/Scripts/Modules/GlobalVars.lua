@@ -37,6 +37,10 @@ cash = 0
 alliedShips = {}
 --/tempvars
 
+--loadingstuff
+loading_percent = 0.0
+--/loadingstuff
+
 soundLength = 0.25
 
 arrowLength = 135

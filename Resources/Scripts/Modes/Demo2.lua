@@ -377,10 +377,14 @@ function render ()
 		graphics.draw_rtri(playerShip.physicsObject.position.x, playerShip.physicsObject.position.y, 60)
 	end
 	if otherShip ~= nil then
-		if cameraRatio ~= 1 / 16 then
-			graphics.draw_sprite(otherShip.image, otherShip.physicsObject.position.x, otherShip.physicsObject.position.y, otherShip.size.x, otherShip.size.y, otherShip.physicsObject.angle)
-		else
-			graphics.draw_rtri(otherShip.physicsObject.position.x, otherShip.physicsObject.position.y, 60)
+		wNum = 1
+		while otherShip[wNum] ~= nil do
+			if cameraRatio ~= 1 / 16 then
+				graphics.draw_sprite(otherShip[wNum].image, otherShip[wNum].physicsObject.position.x, otherShip[wNum].physicsObject.position.y, otherShip[wNum].size.x, otherShip[wNum].size.y, otherShip[wNum].physicsObject.angle)
+			else
+				graphics.draw_rtri(otherShip[wNum].physicsObject.position.x, otherShip[wNum].physicsObject.position.y, 60)
+			end
+			wNum = wNum + 1
 		end
 	end
 	

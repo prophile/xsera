@@ -26,4 +26,8 @@
 	<specialname>cMissile</specialname>
 	<!-- beam weapon -->
 	<beamname>pkBeam</beamname>
+	<!-- cost -->
+	<cost>1500</cost>
+	<!-- time it takes to build (in ticks, 20 ticks / second) -->
+	<time>1500</time>
 </ship>

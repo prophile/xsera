@@ -18,8 +18,23 @@ menu_shift = -391
 top_of_menu = -69
 menu_stride = -11
 
+ship_selected = false
+
 function make_ship(planet, name, race)
-	otherShip = NewEntity(planet, name, "Ship", race)
+	
+	-- the below should be called on completion
+	if otherShip ~= nil then
+		while otherShip[wNum] ~= nil do
+			wNum = wNum + 1
+		end
+		if wNum == 3 and otherShip[2] == nil then -- I don't know why this works, but it does
+			wNum = wNum - 1
+		end
+		otherShip[wNum] = NewEntity(planet, name, "Ship", race)
+	else
+		otherShip = {}
+		otherShip[1] = NewEntity(planet, name, "Ship", race)
+	end
 	sound.play("IComboBeep")
 end
 
@@ -30,35 +45,31 @@ function shipyard()
 	local num = 1
 	while scen.planet.build[num] ~= nil do
 		menu_shipyard[num + 1] = {}
-		local tempvar = 0
-		local foo, tempvar = scen.planet.build[num]:gsub("(%w+)/(%w+) (%w+)", "%1/%2 %3")
-		print(foo, tempvar)
-		if tempvar == 1 then
+		local stringSub = 0
+		local nada, stringSub = scen.planet.build[num]:gsub("(%w+)/(%w+) (%w+)", "%1/%2 %3")
+		if stringSub == 1 then
 			menu_shipyard[num + 1][1] = scen.planet.build[num]:gsub("(%w+)/(%w+) (%w+)", "%2 %3")
 		else
 			menu_shipyard[num + 1][1] = scen.planet.build[num]:gsub("(%w+)/(%w+)", "%2")
 		end
 		if num ~= 1 then
 			menu_shipyard[num + 1][2] = false
-			-- how do I have it create a ship when all I have is its name in a char?
-			-- [ADAM] Answer: store its file name in the char and access its real name through that...
-			-- all other attributes will be accessible
 		else
 			menu_shipyard[num + 1][2] = true
 		end
 		menu_shipyard[num + 1][3] = make_ship
 		menu_shipyard[num + 1][4] = {}
 		menu_shipyard[num + 1][4][1] = scen.planet
-		if tempvar == 1 then
+		if stringSub == 1 then
 			menu_shipyard[num + 1][4][2] = scen.planet.build[num]:gsub("(%w+)/(%w+) (%w+)", "%2%3")
 			menu_shipyard[num + 1][4][3] = scen.planet.build[num]:gsub("(%w+)/(%w+) (%w+)", "%1")
 		else
 			menu_shipyard[num + 1][4][2] = scen.planet.build[num]:gsub("(%w+)/(%w+)", "%2")
 			menu_shipyard[num + 1][4][3] = scen.planet.build[num]:gsub("(%w+)/(%w+)", "%1")
 		end
-		print(menu_shipyard[num + 1][4][3])
 		num = num + 1
 	end
+	ship_selected = true
 end
 
 -- Special Orders
@@ -195,6 +206,7 @@ function change_menu(menu, direction)
 	elseif direction == "j" then
 		if menu ~= menu_options then
 			menu_level = menu_options
+			ship_selected = false
 		end
 	elseif direction == "l" then
 		while menu[num][2] ~= true do
@@ -232,6 +244,14 @@ function draw_panels()
 	graphics.draw_box(playerShip.shield.percent * 77 - 173, 379, -173, 386, 0, 0.35, 0.35, 0.7, 1)
 -- Factory resources (green)
 	count = 1
+--[[	if ship_selected == true then
+		local num = 1
+		while menu[num][2] ~= true do
+			num = num + 1
+		end
+		num = num - 1
+		if (resources - math.ceil(menu[num]
+	end--]]
 	while count <= 100 do
 		if count > resources then
 			graphics.draw_box(152 - 3.15 * count, 394, 150 - 3.15 * count, 397, 0, 0.2, 0.5, 0.2, 1)

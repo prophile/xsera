@@ -29,6 +29,10 @@ void SwitchMode ( const std::string& newmode );
  * @param newMode The mode to which to switch. This should not be deleted.
  */
 void SwitchMode ( AppMode* newMode );
+/**
+ * Queries the name of the current mode
+ */
+const char* QueryMode ();
 
 class AppMode
 {

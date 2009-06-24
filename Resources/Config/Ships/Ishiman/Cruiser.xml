@@ -11,7 +11,7 @@
 	<!-- mass, in kg -->
 	<mass>10000</mass>
 	<!-- turning rate, in radians/second -->
-	<turnrate>3.7</turnrate>
+	<turnrate>3.2</turnrate>
 	<!-- energy (in energy units?) -->
 	<energy>1000</energy> 
 	<!-- thrust, in newtons -->
@@ -24,4 +24,6 @@
 	<reverse>1000</reverse>
 	<!-- beam weapon -->
 	<beamname>pkBeam</beamname>
+	<!-- time it takes to build (in ticks, 20 ticks / second) -->
+	<time>1000</time>
 </ship>

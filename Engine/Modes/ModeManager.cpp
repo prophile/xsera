@@ -103,6 +103,11 @@ void UpdateModeManager ()
 	}
 }
 
+const char* QueryMode()
+{
+	return ActiveMode()->Name().c_str();
+}
+
 void SwitchMode ( const std::string& newmode )
 {
 	LuaMode* newMode = new LuaMode ( newmode );

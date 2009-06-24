@@ -663,10 +663,16 @@ int MM_Time ( lua_State* L )
 	return 1;
 }
 
+int MM_Query ( lua_State* L )
+{
+	lua_pushstring(L, QueryMode());
+	return 1;
+}
 luaL_Reg registryModeManager[] =
 {
 	"switch", MM_Switch,
 	"time", MM_Time,
+	"query", MM_Query,
 	NULL, NULL
 };
 

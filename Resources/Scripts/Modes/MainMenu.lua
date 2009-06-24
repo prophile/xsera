@@ -93,7 +93,7 @@ function key ( k )
     elseif k == "c" then
         mode_manager.switch("Credits")
     elseif k == "tab" then
-        mode_manager.switch("Demo1")
+        mode_manager.switch("LoadScreen")
     elseif k == "escape" then
 		os.exit()
     else
