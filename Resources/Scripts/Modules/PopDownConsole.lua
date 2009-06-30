@@ -23,10 +23,13 @@ function popDownConsole()
 	end
 end
 
-function stringSub(text, level)
+function errLog(text, level)
 	console_add(text .. "(level " .. level .. ")")
-	if level > 5 then
+	if level > 10 then
 		os.exit()
+	end
+	if level > 5 then
+		-- display on screen
 	end
 end
 
@@ -34,7 +37,8 @@ end
 	1-5: non-fatal, continue
 		1: code not implemented
 		2: load error
-	6-10: fatal, exit
-		6: Improper input - data is not of the correct type
-		7: No input given - file is missing necessary data
+	6-10: non-fatal, display on screen (not yet implemented)
+	11-15: fatal, exit
+		11: Improper input - data is not of the correct type
+		12: No input given - file is missing necessary data
 --]]

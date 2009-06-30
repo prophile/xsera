@@ -1,5 +1,6 @@
 import('PrintRecursive')
 import('GlobalVars')
+import('PopDownConsole')
 
 function NewEntity (entOwner, entName, entType, entDir, entSubdir, other)
 	local entTypeReal = entType
@@ -18,26 +19,25 @@ function NewEntity (entOwner, entName, entType, entDir, entSubdir, other)
 			end
 		end
 		entType = "Weapon"
-	else
-		num = 1
-		if entities ~= nil then
-			local concatString = 0
-			while entities[num] ~= nil do
-				if entSubdir ~= nil then
-					concatString = (entType .. "s/" .. entDir .. "/" .. entSubdir .. "/" .. entName)
-				elseif entDir ~= nil then
-					concatString = (entType .. "s/" .. entDir .. "/" .. entName)
-				elseif entType ~= nil then
-					concatString = (entType .. "s/" .. entName)
-				end
-				if entities[num].entName == concatString then
-					return entities[num]
-				end
-				num = num + 1
+	end
+	if entities ~= nil then
+		local concatString = 0
+		local num = 1
+		if entSubdir ~= nil then
+			concatString = (entType .. "s/" .. entDir .. "/" .. entSubdir .. "/" .. entName)
+		elseif entDir ~= nil then
+			concatString = (entType .. "s/" .. entDir .. "/" .. entName)
+		elseif entType ~= nil then
+			concatString = (entType .. "s/" .. entName)
+		end
+		while entities[num] ~= nil do
+			if entities[num].entName == concatString then
+				return deepcopy(entities[num])
 			end
-			if loading ~= true then
-			--	stringSub("Entity being loaded after loading period.", 2)
-			end
+			num = num + 1
+		end
+		if loading_entities ~= true then
+			errLog("Entity " .. concatString .. " being loaded after loading period.", 2)
 		end
 	end
 	local rawData
@@ -48,7 +48,7 @@ function NewEntity (entOwner, entName, entType, entDir, entSubdir, other)
 	elseif entType ~= nil then
 		rawData = xml.load("Config/" .. entType .. "s/" .. entName .. ".xml")
 	else
-		stringSub("Entity " .. entName .. " has no type.", 7)
+		errLog("Entity " .. entName .. " has no type.", 12)
 	end
     local entData = rawData[1]
     local trueData = {}
@@ -67,7 +67,7 @@ function NewEntity (entOwner, entName, entType, entDir, entSubdir, other)
 		entObject.entName = (entType .. "s/" .. entName)
 	end
 	if trueData.name == nil then
-		stringSub(entName .. " of " .. entTypeReal .. " does not have a name.", 7)
+		errLog(entName .. " of " .. entTypeReal .. " does not have a name.", 12)
 	end
 	entObject.name = trueData.name
 	if trueData.shortname ~= nil then
@@ -113,7 +113,8 @@ function NewEntity (entOwner, entName, entType, entDir, entSubdir, other)
 			entObject.physicsObject.angle = entOwner.physicsObject.angle
 			entObject.physicsObject.position = { x = entOwner.physicsObject.position.x, y = entOwner.physicsObject.position.y }
 			if trueData.velocity ~= nil then
-				entObject.physicsObject.velocity = { x = entOwner.physicsObject.velocity.x + trueData.velocity * math.cos(entOwner.physicsObject.angle), y = entOwner.physicsObject.velocity.y + trueData.velocity * math.sin(entOwner.physicsObject.angle) }
+				entObject.initVelocity = tonumber(trueData.velocity)
+				entObject.physicsObject.velocity = { x = entOwner.physicsObject.velocity.x + tonumber(trueData.velocity) * math.cos(entOwner.physicsObject.angle), y = entOwner.physicsObject.velocity.y + tonumber(trueData.velocity) * math.sin(entOwner.physicsObject.angle) }
 			else
 				entObject.physicsObject.velocity = { x = entOwner.physicsObject.velocity.x, y = entOwner.physicsObject.velocity.y }
 			end
@@ -121,6 +122,7 @@ function NewEntity (entOwner, entName, entType, entDir, entSubdir, other)
 			entObject.physicsObject.angle = 0
 			entObject.physicsObject.position = { x = entOwner.position.x, y = entOwner.position.y }
 			if trueData.velocity ~= nil then
+				entObject.initVelocity = tonumber(trueData.velocity)
 				entObject.physicsObject.velocity = { x = tonumber(trueData.velocity) * math.cos(entObject.physicsObject.angle), y = tonumber(trueData.velocity) * math.sin(entObject.physicsObject.angle) }
 			else
 				entObject.physicsObject.velocity = { x = entOwner.initialVelocity.x, y = entOwner.initialVelocity.y }
@@ -141,11 +143,13 @@ function NewEntity (entOwner, entName, entType, entDir, entSubdir, other)
 			build = { trueData.pbuild1, trueData.pbuild2, trueData.pbuild3 },
 			type = "Planet",
 			initialVelocity = { x = trueData.pinitialvelocityx, y = trueData.pinitialvelocityy },
+			buildqueue = { factor = 1, current = 0, percent = 100 },
 			text = { trueData.pbuild1, trueData.pbuild2, trueData.pbuild3 } }
 		NewEntity(entObject.planet, entObject.planet.text[1], "Ship")
 		NewEntity(entObject.planet, entObject.planet.text[2], "Ship")
 		NewEntity(entObject.planet, entObject.planet.text[3], "Ship")
 		entObject.briefing = trueData.briefing
+		-- put standard includes here (sounds, explosions, etc) [ADAM, DEMO3]
 	elseif entType == "Weapon" then
 -- weapon-specific
 		entObject.cost = tonumber(trueData.energyCost)
@@ -173,9 +177,9 @@ function NewEntity (entOwner, entName, entType, entDir, entSubdir, other)
 			entObject.start = 0
 			entObject.force = { x, y }
 		elseif entObject.class == nil then
-			stringSub("Weapon '" .. entObject.name .. "' has no class. See NewEntity", 7)
+			errLog("Weapon '" .. entObject.name .. "' has no class. See NewEntity", 12)
 		else
-			stringSub("Unknown weapon class '" .. entObject.class .. "'. See NewEntity", 6)
+			errLog("Unknown weapon class '" .. entObject.class .. "'. See NewEntity", 11)
 		end
 	elseif entType == "Projectile" then
 -- projectile-specific
@@ -244,14 +248,16 @@ function NewEntity (entOwner, entName, entType, entDir, entSubdir, other)
 				entObject.isSeeking = false
 			end
 		elseif weaponClass == nil then
-			stringSub("Projectile '" .. entType .. "' has no class. See NewEntity", 7)
+			errLog("Projectile '" .. entType .. "' has no class. See NewEntity", 12)
 		else
-			stringSub("Unknown projectile class '" .. entClass .. "'. See NewEntity", 6)
+			errLog("Unknown projectile class '" .. entClass .. "'. See NewEntity", 11)
 		end
 		entObject.life = tonumber(trueData.life)
 		entObject.start = mode_manager.time() * 1000
 	elseif entType == "Ship" then
 -- ship-specific
+		entObject.cost = tonumber(trueData.cost)
+		entObject.buildTime = tonumber(trueData.time) / 200
 		entObject.life = tonumber(trueData.life)
 		entObject.turningRate = tonumber(trueData.turnrate)
 		entObject.battery = { total = 5 * tonumber(trueData.energy), level = 5 * tonumber(trueData.energy), percent = 1.0 }
@@ -260,7 +266,7 @@ function NewEntity (entOwner, entName, entType, entDir, entSubdir, other)
 		if trueData.thrust ~= nil then
 			entObject.thrust = tonumber(trueData.thrust)
 		else
-			stringSub("No thrust data for ship " .. trueData.name, 7)
+			errLog("No thrust data for ship " .. trueData.name, 12)
 		end
 		if trueData.warp ~= nil then
 			entObject.warpSpeed = tonumber(trueData.warp)
@@ -286,17 +292,33 @@ function NewEntity (entOwner, entName, entType, entDir, entSubdir, other)
 		entObject.switch = true -- [HARDCODED]
 		entObject.type = "Ship"
 	else
-		stringSub("Unknown entity of type " .. entType, 6)
+		errLog("Unknown entity of type " .. entType, 11)
 	end
 	cout_table(entObject, "object", false)
---	if entities ~= nil then
-		while entities[num] ~= nil do
-			num = num + 1
+	local num = 1
+	while entities[num] ~= nil do
+		num = num + 1
+	end
+	entities[num] = deepcopy(entObject)
+	return deepcopy(entObject)
+end
+
+function resetPhysics(Object, Owner)
+	if Owner.physicsObject ~= nil then
+		Object.physicsObject.angle = Owner.physicsObject.angle
+		Object.physicsObject.position = { x = Owner.physicsObject.position.x, y = Owner.physicsObject.position.y }
+		if Object.initVelocity ~= nil then
+			Object.physicsObject.velocity = { x = Owner.physicsObject.velocity.x + Object.initVelocity * math.cos(Owner.physicsObject.angle), y = Owner.physicsObject.velocity.y + Object.initVelocity * math.sin(Owner.physicsObject.angle) }
+		else
+			Object.physicsObject.velocity = { x = Owner.physicsObject.velocity.x, y = Owner.physicsObject.velocity.y }
 		end
-		num = num - 1
-		entities[num] = entObject
---	else
---		entities = { entObject }
---	end
-    return entObject
+	else
+		Object.physicsObject.angle = 0
+		Object.physicsObject.position = { x = Owner.position.x, y = Owner.position.y }
+		if Object.initVelocity ~= nil then
+			Object.physicsObject.velocity = { x = Object.initVelocity * math.cos(Object.physicsObject.angle), y = Object.initVelocity * math.sin(Object.physicsObject.angle) }
+		else
+			Object.physicsObject.velocity = { x = Owner.initialVelocity.x, y = Owner.initialVelocity.y }
+		end
+	end
 end

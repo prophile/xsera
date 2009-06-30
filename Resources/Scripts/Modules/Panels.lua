@@ -1,15 +1,10 @@
-import('GlobalVars') 
-import('Scenario')
+import('GlobalVars')
 
---displaycontrol
---[[ the following is not related to this file, I just need to stick it elsewhere when done.
-controlparams = { -387, -372,	-- left, right (target)
-				-32, -49,		-- top, bottom (target)
-				-387, -372,		-- left, right (control)
-				26, 9 }			-- top, bottom (control)
-	-- those are the boundaries of the brackets
---]]
---/displaycontrol
+loading_entities = true
+if scen == nil then
+	scen = NewEntity(nil, "demo", "Scenario")
+end
+loading_entities = false
 
 control = scen.planet -- [HARDCODED]
 target = nil
@@ -20,22 +15,18 @@ menu_stride = -11
 
 ship_selected = false
 
-function make_ship(planet, name, race)
-	
-	-- the below should be called on completion
-	if otherShip ~= nil then
-		while otherShip[wNum] ~= nil do
-			wNum = wNum + 1
-		end
-		if wNum == 3 and otherShip[2] == nil then -- I don't know why this works, but it does
-			wNum = wNum - 1
-		end
-		otherShip[wNum] = NewEntity(planet, name, "Ship", race)
-	else
-		otherShip = {}
-		otherShip[1] = NewEntity(planet, name, "Ship", race)
+function make_ship()
+	shipBuilding = { p = shipQuerying.p, n = shipQuerying.n, r = shipQuerying.r }
+	local shipToBuild = NewEntity(shipBuilding.p, shipBuilding.n, "Ship", shipBuilding.r)
+	if shipToBuild.cost > cash or scen.planet.buildqueue.percent ~= 100 then
+		sound.play("NaughtyBeep")
+		return
 	end
-	sound.play("IComboBeep")
+	scen.planet.buildqueue.factor = shipToBuild.buildTime
+	scen.planet.buildqueue.time = mode_manager.time()
+	scen.planet.buildqueue.current = mode_manager.time() - scen.planet.buildqueue.time
+	cash = cash - shipToBuild.cost
+	build_timer_running = true
 end
 
 menu_shipyard = { "BUILD", {} }
@@ -45,28 +36,21 @@ function shipyard()
 	local num = 1
 	while scen.planet.build[num] ~= nil do
 		menu_shipyard[num + 1] = {}
-	--	local stringSub = 0
-	--	local nada, stringSub = scen.planet.build[num]:gsub("(%w+)/(%w+) (%w+)", "%1/%2 %3")
-	--	if stringSub == 1 then
-	--		menu_shipyard[num + 1][1] = scen.planet.build[num]:gsub("(%w+)/(%w+) (%w+)", "%2 %3")
-	--	else
-			menu_shipyard[num + 1][1] = scen.planet.build[num]:gsub("(%w+)/(%w+)", "%2")
-	--	end
+		menu_shipyard[num + 1][1] = scen.planet.build[num]:gsub("(%w+)/(%w+)", "%2")
 		if num ~= 1 then
 			menu_shipyard[num + 1][2] = false
 		else
 			menu_shipyard[num + 1][2] = true
+			ship_selected = true
+			shipQuerying.p = scen.planet
+			shipQuerying.n = scen.planet.build[num]:gsub("(%w+)/(%w+)", "%2")
+			shipQuerying.r = scen.planet.build[num]:gsub("(%w+)/(%w+)", "%1")
 		end
 		menu_shipyard[num + 1][3] = make_ship
 		menu_shipyard[num + 1][4] = {}
 		menu_shipyard[num + 1][4][1] = scen.planet
-	--	if stringSub == 1 then
-	--		menu_shipyard[num + 1][4][2] = scen.planet.build[num]:gsub("(%w+)/(%w+) (%w+)", "%2%3")
-	--		menu_shipyard[num + 1][4][3] = scen.planet.build[num]:gsub("(%w+)/(%w+) (%w+)", "%1")
-	--	else
-			menu_shipyard[num + 1][4][2] = scen.planet.build[num]:gsub("(%w+)/(%w+)", "%2")
-			menu_shipyard[num + 1][4][3] = scen.planet.build[num]:gsub("(%w+)/(%w+)", "%1")
-	--	end
+		menu_shipyard[num + 1][4][2] = scen.planet.build[num]:gsub("(%w+)/(%w+)", "%2")
+		menu_shipyard[num + 1][4][3] = scen.planet.build[num]:gsub("(%w+)/(%w+)", "%1")
 		num = num + 1
 	end
 	ship_selected = true
@@ -75,7 +59,7 @@ end
 -- Special Orders
 
 function transfer_control()
-	stringSub("This command currently has no code.", 1)
+	errLog("This command currently has no code.", 1)
 	--[[ pseudocode!!! I don't have the concept of allies yet, need that before I can implement this
 	if controlShip.ally == true then
 		playerShip, controlShip = playerShip, controlShip
@@ -83,23 +67,23 @@ function transfer_control()
 end
 
 function hold_position()
-	stringSub("This command currently has no code.", 1)
+	errLog("This command currently has no code.", 1)
 end
 
 function go_to_my_position()
-	stringSub("This command currently has no code.", 1)
+	errLog("This command currently has no code.", 1)
 end
 
 function fire_weapon_1()
-	stringSub("This command currently has no code.", 1)
+	errLog("This command currently has no code.", 1)
 end
 
 function fire_weapon_2()
-	stringSub("This command currently has no code.", 1)
+	errLog("This command currently has no code.", 1)
 end
 
 function fire_special()
-	stringSub("This command currently has no code.", 1)
+	errLog("This command currently has no code.", 1)
 end
 
 -- Message menu
@@ -192,6 +176,11 @@ function change_menu(menu, direction)
 			if num - 1 ~= 1 then
 				menu[num][2] = false
 				menu[num - 1][2] = true
+				if menu == menu_shipyard then
+					shipQuerying.p = menu_shipyard[num - 1][4][1]
+					shipQuerying.n = menu_shipyard[num - 1][4][2]
+					shipQuerying.r = menu_shipyard[num - 1][4][3]
+				end
 			end
 		end
 	elseif direction == "k" then
@@ -202,6 +191,11 @@ function change_menu(menu, direction)
 		if menu[num + 1] ~= nil then
 			menu[num][2] = false
 			menu[num + 1][2] = true
+			if menu == menu_shipyard then
+				shipQuerying.p = menu_shipyard[num + 1][4][1]
+				shipQuerying.n = menu_shipyard[num + 1][4][2]
+				shipQuerying.r = menu_shipyard[num + 1][4][3]
+			end
 		end
 	elseif direction == "j" then
 		if menu ~= menu_options then
@@ -213,11 +207,7 @@ function change_menu(menu, direction)
 			num = num + 1
 		end
 		if menu[num][3] ~= nil then
-			if menu[num][4] ~= nil then
-				menu[num][3](menu[num][4][1], menu[num][4][2], menu[num][4][3], menu[num][4][4], menu[num][4][5])
-			else
-				menu[num][3]()
-			end
+			menu[num][3]()
 		end
 	end
 end
@@ -242,16 +232,40 @@ function draw_panels()
 -- Shield (blue)
 	graphics.draw_box(-96, 379, -173, 386, 0, 0.15, 0.15, 0.6, 1)
 	graphics.draw_box(playerShip.shield.percent * 77 - 173, 379, -173, 386, 0, 0.35, 0.35, 0.7, 1)
--- Factory resources (green)
+-- Factory resources (green - mostly)
 	count = 1
---[[	if ship_selected == true then
-		local num = 1
-		while menu[num][2] ~= true do
-			num = num + 1
+	if ship_selected == true then
+		local shipToBuild = NewEntity(shipQuerying.p, shipQuerying.n, "Ship", shipQuerying.r)
+		if cash >= shipToBuild.cost then
+			local drawGreen = math.floor((cash - shipToBuild.cost) / 200)
+			local drawBlue = math.ceil((shipToBuild.cost) / 200) + drawGreen
+		--	print(count, "=>", drawGreen, "-[", ((cash - shipToBuild.cost) / 200), "]-")
+			while count <= drawGreen do
+				graphics.draw_box(152 - 3.15 * count, 394, 150 - 3.15 * count, 397, 0, 0.4, 0.7, 0.4, 1)
+				count = count + 1
+			end
+		--	print(count, drawGreen, drawBlue)
+			while count <= drawBlue do
+				graphics.draw_box(152 - 3.15 * count, 394, 150 - 3.15 * count, 397, 0, 0.4, 0.4, 0.8, 1)
+				count = count + 1
+			end
+		--	print(count, drawBlue)
+		else
+			local drawGreen = math.floor(cash / 200)
+			local drawRed = math.ceil(shipToBuild.cost / 200)
+		--	print(count, "=>", drawGreen, "-[", (cash / 200), "]-")
+			while count <= drawGreen do
+				graphics.draw_box(152 - 3.15 * count, 394, 150 - 3.15 * count, 397, 0, 0.4, 0.7, 0.4, 1)
+				count = count + 1
+			end
+		--	print(count, drawGreen, drawRed)
+			while count <= drawRed do
+				graphics.draw_box(152 - 3.15 * count, 394, 150 - 3.15 * count, 397, 0, 0.7, 0.4, 0.4, 1)
+				count = count + 1
+			end
+		--	print(count, drawRed)
 		end
-		num = num - 1
-		if (resources - math.ceil(menu[num]
-	end--]]
+	end
 	while count <= 100 do
 		if count > resources then
 			graphics.draw_box(152 - 3.15 * count, 394, 150 - 3.15 * count, 397, 0, 0.2, 0.5, 0.2, 1)
@@ -272,7 +286,6 @@ function draw_panels()
 	end
 -- Factory build bar
 	planet = scen.planet
-	planet.buildqueue = { factor = 100, current = 0, percent = 0 }
 	if planet ~= nil then
 		graphics.draw_line(382, 181, 392, 181, 0.5, 0.7, 0.4, 0.6, 1)
 		graphics.draw_line(382, 181, 382, 177, 0.5, 0.7, 0.4, 0.6, 1)
@@ -281,7 +294,7 @@ function draw_panels()
 		graphics.draw_line(382, 163, 382, 159, 0.5, 0.7, 0.4, 0.6, 1)
 		graphics.draw_line(392, 159, 392, 163, 0.5, 0.7, 0.4, 0.6, 1)
 		graphics.draw_box(179, 384, 161, 390, 0, 0.7, 0.4, 0.6, 1)
-		graphics.draw_box(18 * planet.buildqueue.percent + 161, 384, 161, 390, 0, 0.8, 0.5, 0.7, 1)
+		graphics.draw_box(18 * (100 - planet.buildqueue.percent) / 100 + 161, 384, 161, 390, 0, 0.8, 0.5, 0.7, 1)
 	end
 	
 --[[------------------

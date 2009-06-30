@@ -33,14 +33,19 @@ resource_bars = 0
 RESOURCES_PER_TICK = 200
 resource_time = 0.0
 recharge_timer = 0.0
-cash = 0
+cash = 1000
 alliedShips = {}
+build_timer_running = false
+shipToBuild = nil
+ship_selected = false
+scen = nil
+shipQuerying = { n, p, r }
+shipBuilding = { n, p, r }
 --/tempvars
 
 --loadingstuff
-loading_percent = 0.0
-loading = false
-entities = { {} }
+loading_entities = false
+entities = {}
 --/loadingstuff
 
 soundLength = 0.25

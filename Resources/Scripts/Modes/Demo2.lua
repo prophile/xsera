@@ -10,12 +10,11 @@
 -- Implement planets.
 -- Use other Heavy Cruisers (possibly built on planets) to destroy Carrier, using attack command.
 
+import('GlobalVars')
 import('EntityLoad')
 import('Math')
 import('Panels')
 import('PopDownConsole')
-import('GlobalVars')
-import('Scenario')
 -- import('MouseHandle')
 
 --[[--------------------------------
@@ -39,6 +38,11 @@ function init ()
 	sound.stop_music()
     lastTime = mode_manager.time()
     physics.open(0.6)
+	loading_entities = true
+	if scen == nil then
+		scen = NewEntity(nil, "demo", "Scenario")
+	end
+	loading_entities = false
 	computerShip = NewEntity(nil, "Carrier", "Ship", "Gaitori")
 		computerShip.physicsObject.position = { x = 2200, y = 2700 }
 		computerShip.physicsObject.angle = math.pi - 0.2
@@ -208,7 +212,7 @@ function update ()
 	weapon_manage(playerShip.beam, playerShip.beamWeap, playerShip)
 
 --[[------------------
-	Update Panels
+	Panels
 ------------------]]--
 	
 	resource_time = resource_time + dt
@@ -217,6 +221,29 @@ function update ()
 		cash = cash + 20
 		resource_bars = math.floor(cash / 20000)
 		resources = math.floor((cash % 20000) / 200)
+	end
+	
+	if build_timer_running == true then
+		scen.planet.buildqueue.current = scen.planet.buildqueue.current + dt
+		scen.planet.buildqueue.percent = scen.planet.buildqueue.current / scen.planet.buildqueue.factor * 100
+		if planet.buildqueue.percent >= 100.0 then
+			local num = 1
+			if otherShip == nil then
+				otherShip = {}
+			end
+			while otherShip[num] ~= nil do
+				num = num + 1
+			end
+			if num == 3 and otherShip[2] == nil then -- I don't know why this works, but it does
+				num = num - 1
+			end
+			otherShip[num] = deepcopy(NewEntity(shipBuilding.p, shipBuilding.n, "Ship", shipBuilding.r))
+			print(otherShip[num], playerShip)
+			resetPhysics(otherShip[num], shipBuilding.p)
+			planet.buildqueue.percent = 100
+			build_timer_running = false
+			sound.play("IComboBeep")
+		end
 	end
 	
 	playerShip.battery.percent = playerShip.battery.level / playerShip.battery.total

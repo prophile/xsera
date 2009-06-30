@@ -858,7 +858,7 @@ int GFX_DrawLine ( lua_State* L )
 	return 0;
 }
 
-/* I'm creating this to finish the demo. ALISTAIR: you can do it right on your own time [DEMO2] */
+/* I'm creating this to finish the demo. Alistair: you can do it right on your own time [ALISTAIR, DEMO?] */
 int GFX_DrawLineTEMP ( lua_State* L )
 {
 	int nargs = lua_gettop(L);

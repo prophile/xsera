@@ -24,6 +24,8 @@
 	<reverse>1000</reverse>
 	<!-- beam weapon -->
 	<beamname>pkBeam</beamname>
-	<!-- time it takes to build (in ticks, 20 ticks / second) -->
+	<!-- cost -->
+	<cost>1000</cost>
+	<!-- time it takes to build (in ticks, 200 ticks / second) -->
 	<time>1000</time>
 </ship>

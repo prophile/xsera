@@ -26,6 +26,6 @@
 	<beamname>pkBeam</beamname>
 	<!-- cost -->
 	<cost>600</cost>
-	<!-- time it takes to build (in ticks, 20 ticks / second) -->
+	<!-- time it takes to build (in ticks, 200 ticks / second) -->
 	<time>600</time>
 </ship>
