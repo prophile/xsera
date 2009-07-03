@@ -299,8 +299,8 @@ function NewEntity (entOwner, entName, entType, entDir, entSubdir, other)
 	while entities[num] ~= nil do
 		num = num + 1
 	end
-	entities[num] = deepcopy(entObject)
-	return deepcopy(entObject)
+	entities[num] = entObject
+	return entObject
 end
 
 function resetPhysics(Object, Owner)

@@ -226,7 +226,7 @@ function update ()
 	if build_timer_running == true then
 		scen.planet.buildqueue.current = scen.planet.buildqueue.current + dt
 		scen.planet.buildqueue.percent = scen.planet.buildqueue.current / scen.planet.buildqueue.factor * 100
-		if planet.buildqueue.percent >= 100.0 then
+		if planet.buildqueue.percent > 100.0 then
 			local num = 1
 			if otherShip == nil then
 				otherShip = {}
@@ -237,7 +237,7 @@ function update ()
 			if num == 3 and otherShip[2] == nil then -- I don't know why this works, but it does
 				num = num - 1
 			end
-			otherShip[num] = deepcopy(NewEntity(shipBuilding.p, shipBuilding.n, "Ship", shipBuilding.r))
+			otherShip[num] = NewEntity(shipBuilding.p, shipBuilding.n, "Ship", shipBuilding.r)
 			print(otherShip[num], playerShip)
 			resetPhysics(otherShip[num], shipBuilding.p)
 			planet.buildqueue.percent = 100
