@@ -1,4 +1,5 @@
 import('GlobalVars')
+import('PrintRecursive')
 
 loading_entities = true
 if scen == nil then
@@ -17,7 +18,7 @@ ship_selected = false
 
 function make_ship()
 	shipBuilding = { p = shipQuerying.p, n = shipQuerying.n, r = shipQuerying.r }
-	local shipToBuild = NewEntity(shipBuilding.p, shipBuilding.n, "Ship", shipBuilding.r)
+	local shipToBuild = deepcopy(NewEntity(shipBuilding.p, shipBuilding.n, "Ship", shipBuilding.r))
 	if shipToBuild.cost > cash or scen.planet.buildqueue.percent ~= 100 then
 		sound.play("NaughtyBeep")
 		return
@@ -93,6 +94,8 @@ text_was_drawn = false
 textnum = 0
 
 function next_page_clear()
+	errLog("This command currently has no code.", 1)
+	--[[
 	if text_being_drawn == true then
 		if scen.text[textnum + 1] ~= nil then
 			textnum = textnum + 1
@@ -104,9 +107,12 @@ function next_page_clear()
 		text_being_drawn = true
 		textnum = textnum + 1
 	end
+	--]]
 end
 
 function previous_page()
+	errLog("This command currently has no code.", 1)
+	--[[
 	if text_being_drawn == true then
 		if textnum ~= 1 then
 			textnum = textnum - 1
@@ -115,12 +121,16 @@ function previous_page()
 			textnum = 0
 		end
 	end
+	--]]
 end
 
 function last_message()
+	errLog("This command currently has no code.", 1)
+	--[[
 	if text_was_drawn == true then
 		text_being_drawn = true
 	end
+	--]]
 end
 
 -----------------------------

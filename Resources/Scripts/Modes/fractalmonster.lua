@@ -26,7 +26,7 @@ function render()
 	x[1] = -400
 	x[2] = 400
 	drawline(x[1], x[2], 0)
-	x[2], x[3], x[4] = fractalize(x[1], x[2], 1), x[2]
+	x[3], x[4] = fractalize(x[1], x[2], 1)
 	
 	x[5], x[6] = fractalize(x[3], x[1], 2)
 	x[7], x[8] = fractalize(x[4], x[2], 2)
@@ -36,6 +36,7 @@ function render()
 	x[11], x[12] = fractalize(x[3], x[5], 3)
 	x[15], x[16] = fractalize(x[4], x[7], 3)
 	
+	-- FIGURE OUT AN ALGORITHM FOR THIS
 	blah, blah = fractalize(x[1], x[9], 4)
 	blah, blah = fractalize(x[10], x[6], 4)
 	blah, blah = fractalize(x[11], x[5], 4)

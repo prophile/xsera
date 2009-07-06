@@ -50,7 +50,7 @@ function console_key (k)
 		else
 			console_add(error)
 		end
-		console_add(">")
+		console_add(" ") --EDITED
 	elseif k == "escape" then
 		mode_manager.switch("MainMenu")
 	elseif k == "tab" then

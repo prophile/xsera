@@ -3,7 +3,18 @@ import('GlobalVars')
 import('PopDownConsole')
 
 function NewEntity (entOwner, entName, entType, entDir, entSubdir, other)
+--	print(entOwner, entName, entType, entDir, entSubdir, other)
 	local entTypeReal = entType
+	local concatString = 0
+	if entSubdir ~= nil then
+		concatString = (entType .. "s/" .. entDir .. "/" .. entSubdir .. "/" .. entName)
+	elseif entDir ~= nil then
+		concatString = (entType .. "s/" .. entDir .. "/" .. entName)
+	elseif entType ~= nil then
+		concatString = (entType .. "s/" .. entName)
+	else
+		errLog("Entity of type " .. entType .. " has no name.", 1)
+	end
 	if entType == "Projectile" then
 		local weapon = entOwner[entDir]
 		if (weapon.start + weapon.cooldown) / 1000 > mode_manager.time() then
@@ -21,18 +32,12 @@ function NewEntity (entOwner, entName, entType, entDir, entSubdir, other)
 		entType = "Weapon"
 	end
 	if entities ~= nil then
-		local concatString = 0
 		local num = 1
-		if entSubdir ~= nil then
-			concatString = (entType .. "s/" .. entDir .. "/" .. entSubdir .. "/" .. entName)
-		elseif entDir ~= nil then
-			concatString = (entType .. "s/" .. entDir .. "/" .. entName)
-		elseif entType ~= nil then
-			concatString = (entType .. "s/" .. entName)
-		end
 		while entities[num] ~= nil do
 			if entities[num].entName == concatString then
-				return deepcopy(entities[num])
+				entObject = deepcopy(entities[num])
+				
+				return entObject
 			end
 			num = num + 1
 		end
@@ -41,15 +46,7 @@ function NewEntity (entOwner, entName, entType, entDir, entSubdir, other)
 		end
 	end
 	local rawData
-	if entSubdir ~= nil then
-		rawData = xml.load("Config/" .. entType .. "s/" .. entDir .. "/" .. entSubdir .. "/" .. entName .. ".xml")
-	elseif entDir ~= nil then
-		rawData = xml.load("Config/" .. entType .. "s/" .. entDir .. "/" .. entName .. ".xml")
-	elseif entType ~= nil then
-		rawData = xml.load("Config/" .. entType .. "s/" .. entName .. ".xml")
-	else
-		errLog("Entity " .. entName .. " has no type.", 12)
-	end
+	rawData = xml.load("Config/" .. concatString .. ".xml")
     local entData = rawData[1]
     local trueData = {}
     for k, v in ipairs(entData) do
@@ -59,13 +56,7 @@ function NewEntity (entOwner, entName, entType, entDir, entSubdir, other)
     end
 
 	local entObject = { type = entType, size = {} }
-	if entSubdir ~= nil then
-		entObject.entName = (entType .. "s/" .. entDir .. "/" .. entSubdir .. "/" .. entName)
-	elseif entDir ~= nil then
-		entObject.entName = (entType .. "s/" .. entDir .. "/" .. entName)
-	elseif entType ~= nil then
-		entObject.entName = (entType .. "s/" .. entName)
-	end
+	entObject.entName = concatString
 	if trueData.name == nil then
 		errLog(entName .. " of " .. entTypeReal .. " does not have a name.", 12)
 	end
@@ -97,9 +88,7 @@ function NewEntity (entOwner, entName, entType, entDir, entSubdir, other)
 		if trueData.sprite ~= nil then
 			entObject.image = trueData.sprite
 			if entSubdir ~= nil then
-				entObject.size.x, entObject.size.y = graphics.sprite_dimensions(entType .. "s/" .. "/" .. entSubdir .. "/" .. entName)
-			elseif entDir ~= nil then
-				entObject.size.x, entObject.size.y = graphics.sprite_dimensions(entType .. "s/" .. "/" .. entName)
+				entObject.size.x, entObject.size.y = graphics.sprite_dimensions(entType .. "s/" .. entSubdir .. "/" .. entName)
 			elseif entType ~= nil then
 				entObject.size.x, entObject.size.y = graphics.sprite_dimensions(entType .. "s/" .. entName)
 			end
@@ -145,9 +134,9 @@ function NewEntity (entOwner, entName, entType, entDir, entSubdir, other)
 			initialVelocity = { x = trueData.pinitialvelocityx, y = trueData.pinitialvelocityy },
 			buildqueue = { factor = 1, current = 0, percent = 100 },
 			text = { trueData.pbuild1, trueData.pbuild2, trueData.pbuild3 } }
-		NewEntity(entObject.planet, entObject.planet.text[1], "Ship")
-		NewEntity(entObject.planet, entObject.planet.text[2], "Ship")
-		NewEntity(entObject.planet, entObject.planet.text[3], "Ship")
+		NewEntity(nil, entObject.planet.text[1], "Ship")
+		NewEntity(nil, entObject.planet.text[2], "Ship")
+		NewEntity(nil, entObject.planet.text[3], "Ship")
 		entObject.briefing = trueData.briefing
 		-- put standard includes here (sounds, explosions, etc) [ADAM, DEMO3]
 	elseif entType == "Weapon" then
@@ -303,7 +292,13 @@ function NewEntity (entOwner, entName, entType, entDir, entSubdir, other)
 	return entObject
 end
 
-function resetPhysics(Object, Owner)
+function resetOwner(Object, Owner)
+	if Owner == nil then
+		Object.physicsObject.angle = 0
+		Object.physicsObject.position = { x = 0, y = 0 }
+		Object.physicsObject.velocity = { x = 0, y = 0 }
+		return
+	end
 	if Owner.physicsObject ~= nil then
 		Object.physicsObject.angle = Owner.physicsObject.angle
 		Object.physicsObject.position = { x = Owner.physicsObject.position.x, y = Owner.physicsObject.position.y }

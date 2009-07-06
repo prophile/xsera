@@ -47,6 +47,7 @@ function init ()
 		computerShip.physicsObject.position = { x = 2200, y = 2700 }
 		computerShip.physicsObject.angle = math.pi - 0.2
 	playerShip = NewEntity(nil, "HeavyCruiser", "Ship", "Ishiman")
+	resetOwner(playerShip)
 	bestExplosion = NewEntity(nil, "BestExplosion", "Explosion")
 end
 
@@ -57,6 +58,8 @@ end
 --------------------]]--
 
 function update ()
+--	print("---------------------------")
+--	print("V: ", playerShip.physicsObject.velocity.x, playerShip.physicsObject.velocity.y, "P: ", playerShip.physicsObject.position.x, playerShip.physicsObject.position.y)
 	--DEMO2: put each section (marked by small lightsaber braces) into its own function in THIS file, if possible
 	local newTime = mode_manager.time()
 	dt = newTime - lastTime
@@ -239,7 +242,7 @@ function update ()
 			end
 			otherShip[num] = NewEntity(shipBuilding.p, shipBuilding.n, "Ship", shipBuilding.r)
 			print(otherShip[num], playerShip)
-			resetPhysics(otherShip[num], shipBuilding.p)
+			resetOwner(otherShip[num], shipBuilding.p)
 			planet.buildqueue.percent = 100
 			build_timer_running = false
 			sound.play("IComboBeep")
