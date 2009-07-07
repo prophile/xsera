@@ -102,7 +102,7 @@ function NewEntity (entOwner, entName, entType, entDir, entSubdir, other)
 			entObject.physicsObject.angle = entOwner.physicsObject.angle
 			entObject.physicsObject.position = { x = entOwner.physicsObject.position.x, y = entOwner.physicsObject.position.y }
 			if trueData.velocity ~= nil then
-				entObject.initVelocity = tonumber(trueData.velocity)
+				entObject.initialVelocity = tonumber(trueData.velocity)
 				entObject.physicsObject.velocity = { x = entOwner.physicsObject.velocity.x + tonumber(trueData.velocity) * math.cos(entOwner.physicsObject.angle), y = entOwner.physicsObject.velocity.y + tonumber(trueData.velocity) * math.sin(entOwner.physicsObject.angle) }
 			else
 				entObject.physicsObject.velocity = { x = entOwner.physicsObject.velocity.x, y = entOwner.physicsObject.velocity.y }
@@ -111,7 +111,7 @@ function NewEntity (entOwner, entName, entType, entDir, entSubdir, other)
 			entObject.physicsObject.angle = 0
 			entObject.physicsObject.position = { x = entOwner.position.x, y = entOwner.position.y }
 			if trueData.velocity ~= nil then
-				entObject.initVelocity = tonumber(trueData.velocity)
+				entObject.initialVelocity = tonumber(trueData.velocity)
 				entObject.physicsObject.velocity = { x = tonumber(trueData.velocity) * math.cos(entObject.physicsObject.angle), y = tonumber(trueData.velocity) * math.sin(entObject.physicsObject.angle) }
 			else
 				entObject.physicsObject.velocity = { x = entOwner.initialVelocity.x, y = entOwner.initialVelocity.y }
@@ -302,16 +302,16 @@ function resetOwner(Object, Owner)
 	if Owner.physicsObject ~= nil then
 		Object.physicsObject.angle = Owner.physicsObject.angle
 		Object.physicsObject.position = { x = Owner.physicsObject.position.x, y = Owner.physicsObject.position.y }
-		if Object.initVelocity ~= nil then
-			Object.physicsObject.velocity = { x = Owner.physicsObject.velocity.x + Object.initVelocity * math.cos(Owner.physicsObject.angle), y = Owner.physicsObject.velocity.y + Object.initVelocity * math.sin(Owner.physicsObject.angle) }
+		if Object.initialVelocity ~= nil then
+			Object.physicsObject.velocity = { x = Owner.physicsObject.velocity.x + Object.initialVelocity * math.cos(Owner.physicsObject.angle), y = Owner.physicsObject.velocity.y + Object.initialVelocity * math.sin(Owner.physicsObject.angle) }
 		else
 			Object.physicsObject.velocity = { x = Owner.physicsObject.velocity.x, y = Owner.physicsObject.velocity.y }
 		end
 	else
 		Object.physicsObject.angle = 0
 		Object.physicsObject.position = { x = Owner.position.x, y = Owner.position.y }
-		if Object.initVelocity ~= nil then
-			Object.physicsObject.velocity = { x = Object.initVelocity * math.cos(Object.physicsObject.angle), y = Object.initVelocity * math.sin(Object.physicsObject.angle) }
+		if Object.initialVelocity ~= nil then
+			Object.physicsObject.velocity = { x = Object.initialVelocity * math.cos(Object.physicsObject.angle), y = Object.initialVelocity * math.sin(Object.physicsObject.angle) }
 		else
 			Object.physicsObject.velocity = { x = Owner.initialVelocity.x, y = Owner.initialVelocity.y }
 		end
