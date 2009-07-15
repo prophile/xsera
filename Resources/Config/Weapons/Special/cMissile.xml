@@ -18,8 +18,8 @@
 	<maxSeek>0.6</maxSeek>
 	<!-- thrust, in newtons -->
 	<thrust>4500000</thrust>
-	<!-- life, in miliseconds -->
-	<life>1500</life>
+	<!-- life, in seconds -->
+	<life>1.5</life>
 	<!-- damage dealt -->
 	<damage>100</damage>
 	<!-- cooldown time, in miliseconds -->

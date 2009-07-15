@@ -5,16 +5,7 @@ import('PopDownConsole')
 function NewEntity (entOwner, entName, entType, entDir, entSubdir, other)
 --	print(entOwner, entName, entType, entDir, entSubdir, other)
 	local entTypeReal = entType
-	local concatString = 0
-	if entSubdir ~= nil then
-		concatString = (entType .. "s/" .. entDir .. "/" .. entSubdir .. "/" .. entName)
-	elseif entDir ~= nil then
-		concatString = (entType .. "s/" .. entDir .. "/" .. entName)
-	elseif entType ~= nil then
-		concatString = (entType .. "s/" .. entName)
-	else
-		errLog("Entity of type " .. entType .. " has no name.", 1)
-	end
+	local concatString = nil
 	if entType == "Projectile" then
 		local weapon = entOwner[entDir]
 		if (weapon.start + weapon.cooldown) / 1000 > mode_manager.time() then
@@ -31,31 +22,192 @@ function NewEntity (entOwner, entName, entType, entDir, entSubdir, other)
 		end
 		entType = "Weapon"
 	end
-	if entities ~= nil then
-		local num = 1
-		while entities[num] ~= nil do
-			if entities[num].entName == concatString then
-				entObject = deepcopy(entities[num])
-				
-				return entObject
-			end
-			num = num + 1
-		end
-		if loading_entities ~= true then
-			errLog("Entity " .. concatString .. " being loaded after loading period.", 2)
-		end
+	if entSubdir ~= nil then
+		concatString = (entType .. "s/" .. entDir .. "/" .. entSubdir .. "/" .. entName)
+	elseif entDir ~= nil then
+		concatString = (entType .. "s/" .. entDir .. "/" .. entName)
+	elseif entType ~= nil then
+		concatString = (entType .. "s/" .. entName)
+	else
+		errLog("Entity of type " .. entType .. " has no name.", 1)
 	end
+    local trueData = {}
 	local rawData
 	rawData = xml.load("Config/" .. concatString .. ".xml")
     local entData = rawData[1]
-    local trueData = {}
     for k, v in ipairs(entData) do
         if type(v) == "table" then
             trueData[v.name] = v[1]
         end
     end
-
 	local entObject = { type = entType, size = {} }
+	if entities ~= nil then
+		local num = 1
+		while entities[num] ~= nil do
+			if entities[num].entName == concatString then
+				entObject = deepcopy(entities[num])
+				if trueData.mass == nil then
+					entObject.mass = 0.01
+				else
+					entObject.mass = tonumber(trueData.mass)
+				end
+				entObject.physicsObject = physics.new_object(entObject.mass)
+				if trueData.sprite ~= nil then
+					entObject.image = trueData.sprite
+					if loading_entities == false then
+						if entSubdir ~= nil then
+							entObject.size.x, entObject.size.y = graphics.sprite_dimensions(entDir .. "/" .. entSubdir .. "/" .. entName)
+						elseif entDir ~= nil then
+							entObject.size.x, entObject.size.y = graphics.sprite_dimensions(entDir .. "/" .. entName)
+						end
+						entObject.physicsObject.collision_radius = hypot(entObject.size.x, entObject.size.y)
+					end
+				else
+					entObject.fileName = trueData.fileName
+				end
+				if entOwner ~= nil then
+					if entOwner.physicsObject ~= nil then
+						entObject.physicsObject.angle = entOwner.physicsObject.angle
+						entObject.physicsObject.position = { x = entOwner.physicsObject.position.x, y = entOwner.physicsObject.position.y }
+						if trueData.velocity ~= nil then
+							entObject.initialVelocity = tonumber(trueData.velocity)
+							entObject.physicsObject.velocity = { x = entOwner.physicsObject.velocity.x + tonumber(trueData.velocity) * math.cos(entOwner.physicsObject.angle), y = entOwner.physicsObject.velocity.y + tonumber(trueData.velocity) * math.sin(entOwner.physicsObject.angle) }
+						else
+							entObject.physicsObject.velocity = { x = entOwner.physicsObject.velocity.x, y = entOwner.physicsObject.velocity.y }
+						end
+					else
+						entObject.physicsObject.angle = 0
+						entObject.physicsObject.position = { x = entOwner.position.x, y = entOwner.position.y }
+						if trueData.velocity ~= nil then
+							entObject.initialVelocity = tonumber(trueData.velocity)
+							entObject.physicsObject.velocity = { x = tonumber(trueData.velocity) * math.cos(entObject.physicsObject.angle), y = tonumber(trueData.velocity) * math.sin(entObject.physicsObject.angle) }
+						else
+							entObject.physicsObject.velocity = { x = entOwner.initialVelocity.x, y = entOwner.initialVelocity.y }
+						end
+					end
+				end
+				if entType == "Projectile" then
+					entOwner[weaponClass].start = mode_manager.time()
+					if weaponClass == "beam" then
+						-- [ADAM, FIX] this piece of code is a hack, it relies on what little weapons we have right now to make the assumption
+						if entOwner.switch == true then
+							entObject.physicsObject.position = { x = entOwner.physicsObject.position.x + math.cos(entObject.physicsObject.angle + 0.17) * (tonumber(trueData.length) - 3), y = entOwner.physicsObject.position.y + math.sin(entObject.physicsObject.angle + 0.17) * (tonumber(trueData.length) - 3) }
+							entOwner.switch = false
+						else
+							entObject.physicsObject.position = { x = entOwner.physicsObject.position.x + math.cos(entObject.physicsObject.angle - 0.17) * (tonumber(trueData.length) - 3), y = entOwner.physicsObject.position.y + math.sin(entObject.physicsObject.angle - 0.17) * (tonumber(trueData.length) - 3) }
+							entOwner.switch = true
+						end
+						-- cost
+						entOwner.energy.level = entOwner.energy.level - tonumber(trueData.energyCost)
+					elseif weaponClass == "pulse" then
+						return
+					elseif weaponClass == "special" then
+						entObject.dest = { x = computerShip.physicsObject.position.x, y = computerShip.physicsObject.position.y }
+						entOwner.special.ammo = entOwner.special.ammo - 1
+					--	sound.play("RocketLaunchr")
+						-- temp sound file, should be "RocketLaunch" but for some reason, that file gets errors (file included for troubleshooting)
+						
+						if computerShip == nil then
+							entObject.isSeeking = false
+						end
+						if entObject.isSeeking == true then
+							local projectileTravel = { x, y, dist }
+							projectileTravel.dist = (entOwner[weaponClass].thrust * entOwner[weaponClass].life * entOwner[weaponClass].life / 1000000) / (2 * entOwner[weaponClass].mass)
+							projectileTravel.x = math.cos(entObject.physicsObject.angle) * (projectileTravel.dist + entObject.physicsObject.velocity.x)
+							projectileTravel.y = math.sin(entObject.physicsObject.angle) * (projectileTravel.dist + entObject.physicsObject.velocity.y)
+							if find_hypot(entObject.physicsObject.position, entObject.dest) <= hypot(projectileTravel.x, projectileTravel.y) then
+								if showAngles == true then
+									print(find_angle(entObject.dest, entObject.physicsObject.position))
+									print(entObject.physicsObject.angle)
+									print(find_angle(entObject.dest, entObject.physicsObject.position) - entObject.physicsObject.angle)
+								end
+								local angle = find_angle(entObject.dest, entObject.physicsObject.position) - entObject.physicsObject.angle
+								if math.abs(angle) > math.pi then -- need to go through 0
+									if angle > 0.0 then
+										angle = 2 * math.pi - angle
+									else
+										angle = 2 * math.pi + angle
+									end
+								end
+								if math.abs(angle) > entObject.maxSeek then
+									entObject.isSeeking = false
+								end
+							else
+								entObject.isSeeking = false
+							end
+						else
+							entObject.isSeeking = false
+						end
+					elseif weaponClass == nil then
+						errLog("Projectile '" .. entType .. "' has no class. See NewEntity", 12)
+					else
+						errLog("Unknown projectile class '" .. entClass .. "'. See NewEntity", 11)
+					end
+					entObject.life = tonumber(trueData.life)
+					entObject.start = mode_manager.time()
+				elseif entType == "Ship" then
+					if entSubdir ~= nil then
+						entObject.size.x, entObject.size.y = graphics.sprite_dimensions(entDir .. "/" .. entSubdir .. "/" .. entName)
+					elseif entDir ~= nil then
+						entObject.size.x, entObject.size.y = graphics.sprite_dimensions(entDir .. "/" .. entName)
+					elseif entType ~= nil then
+						entObject.size.x, entObject.size.y = graphics.sprite_dimensions(entName)
+					end
+					if entObject.physicsObject == nil then
+						print(entObject.name)
+					end
+					entObject.physicsObject.collision_radius = hypot(entObject.size.x, entObject.size.y)
+				end
+				return entObject
+			end
+			num = num + 1
+		end
+		if loading_entities == false then
+			errLog("Entity " .. concatString .. " being loaded after loading period.", 2)
+			if trueData.mass == nil then
+				entObject.mass = 0.01
+			else
+				entObject.mass = tonumber(trueData.mass)
+			end
+			entObject.physicsObject = physics.new_object(entObject.mass)
+			if entOwner ~= nil then
+				if entOwner.physicsObject ~= nil then
+					entObject.physicsObject.angle = entOwner.physicsObject.angle
+					entObject.physicsObject.position = { x = entOwner.physicsObject.position.x, y = entOwner.physicsObject.position.y }
+					if trueData.velocity ~= nil then
+						entObject.initialVelocity = tonumber(trueData.velocity)
+						entObject.physicsObject.velocity = { x = entOwner.physicsObject.velocity.x + tonumber(trueData.velocity) * math.cos(entOwner.physicsObject.angle), y = entOwner.physicsObject.velocity.y + tonumber(trueData.velocity) * math.sin(entOwner.physicsObject.angle) }
+					else
+						entObject.physicsObject.velocity = { x = entOwner.physicsObject.velocity.x, y = entOwner.physicsObject.velocity.y }
+					end
+				else
+					entObject.physicsObject.angle = 0
+					entObject.physicsObject.position = { x = entOwner.position.x, y = entOwner.position.y }
+					if trueData.velocity ~= nil then
+						entObject.initialVelocity = tonumber(trueData.velocity)
+						entObject.physicsObject.velocity = { x = tonumber(trueData.velocity) * math.cos(entObject.physicsObject.angle), y = tonumber(trueData.velocity) * math.sin(entObject.physicsObject.angle) }
+					else
+						entObject.physicsObject.velocity = { x = entOwner.initialVelocity.x, y = entOwner.initialVelocity.y }
+					end
+				end
+			end
+			if trueData.sprite ~= nil then
+				entObject.image = trueData.sprite
+				if loading_entities == false then
+					if entSubdir ~= nil then
+						entObject.size.x, entObject.size.y = graphics.sprite_dimensions(entDir .. "/" .. entSubdir .. "/" .. entName)
+					elseif entDir ~= nil then
+						entObject.size.x, entObject.size.y = graphics.sprite_dimensions(entDir .. "/" .. entName)
+					else
+						entObject.size.x, entObject.size.y = graphics.sprite_dimensions(entType .. "s/" .. entName)
+					end
+					entObject.physicsObject.collision_radius = hypot(entObject.size.x, entObject.size.y)
+				end
+			else
+				entObject.fileName = trueData.fileName
+			end
+		end
+	end
 	entObject.entName = concatString
 	if trueData.name == nil then
 		errLog(entName .. " of " .. entTypeReal .. " does not have a name.", 12)
@@ -64,27 +216,37 @@ function NewEntity (entOwner, entName, entType, entDir, entSubdir, other)
 	if trueData.shortname ~= nil then
 		entObject.shortName = trueData.shortname
 	end
-	if trueData.mass == nil then
-		entObject.mass = 0.01
-	else
-		entObject.mass = tonumber(trueData.mass)
-	end
-	entObject.physicsObject = physics.new_object(entObject.mass)
-	if entType == "Ship" then
-		if trueData.sprite ~= nil then
-			entObject.image = trueData.sprite
+--[[	if loading_entities == false then
+		if trueData.mass == nil then
+			entObject.mass = 0.01
+		else
+			entObject.mass = tonumber(trueData.mass)
+		end
+		entObject.physicsObject = physics.new_object(entObject.mass)
+	end --]]
+--	if entType == "Ship" then
+
+	if trueData.sprite ~= nil then
+		entObject.image = trueData.sprite
+		if loading_entities == false then
 			if entSubdir ~= nil then
 				entObject.size.x, entObject.size.y = graphics.sprite_dimensions(entDir .. "/" .. entSubdir .. "/" .. entName)
 			elseif entDir ~= nil then
 				entObject.size.x, entObject.size.y = graphics.sprite_dimensions(entDir .. "/" .. entName)
-			elseif entType ~= nil then
-				entObject.size.x, entObject.size.y = graphics.sprite_dimensions(entName)
 			end
-			entObject.physicsObject.collision_radius = hypot(entObject.size.x, entObject.size.y)
-		else
-			entObject.fileName = trueData.filename
+			if entObject.physicsObject ~= nil then
+				entObject.physicsObject.collision_radius = hypot(entObject.size.x, entObject.size.y)
+			else
+			--	print(loading_entities)
+			--	print_table(entObject)
+			--	os.exit()
+			end
 		end
 	else
+		entObject.fileName = trueData.fileName
+	end
+		
+--[[	else
 		if trueData.sprite ~= nil then
 			entObject.image = trueData.sprite
 			if entSubdir ~= nil then
@@ -96,28 +258,31 @@ function NewEntity (entOwner, entName, entType, entDir, entSubdir, other)
 		else
 			entObject.fileName = trueData.fileName
 		end
-	end
-	if entOwner ~= nil then
-		if entOwner.physicsObject ~= nil then
-			entObject.physicsObject.angle = entOwner.physicsObject.angle
-			entObject.physicsObject.position = { x = entOwner.physicsObject.position.x, y = entOwner.physicsObject.position.y }
-			if trueData.velocity ~= nil then
-				entObject.initialVelocity = tonumber(trueData.velocity)
-				entObject.physicsObject.velocity = { x = entOwner.physicsObject.velocity.x + tonumber(trueData.velocity) * math.cos(entOwner.physicsObject.angle), y = entOwner.physicsObject.velocity.y + tonumber(trueData.velocity) * math.sin(entOwner.physicsObject.angle) }
+	end--]]
+	--[[
+	if loading_entities == false then
+		if entOwner ~= nil then
+			if entOwner.physicsObject ~= nil then
+				entObject.physicsObject.angle = entOwner.physicsObject.angle
+				entObject.physicsObject.position = { x = entOwner.physicsObject.position.x, y = entOwner.physicsObject.position.y }
+				if trueData.velocity ~= nil then
+					entObject.initialVelocity = tonumber(trueData.velocity)
+					entObject.physicsObject.velocity = { x = entOwner.physicsObject.velocity.x + tonumber(trueData.velocity) * math.cos(entOwner.physicsObject.angle), y = entOwner.physicsObject.velocity.y + tonumber(trueData.velocity) * math.sin(entOwner.physicsObject.angle) }
+				else
+					entObject.physicsObject.velocity = { x = entOwner.physicsObject.velocity.x, y = entOwner.physicsObject.velocity.y }
+				end
 			else
-				entObject.physicsObject.velocity = { x = entOwner.physicsObject.velocity.x, y = entOwner.physicsObject.velocity.y }
-			end
-		else
-			entObject.physicsObject.angle = 0
-			entObject.physicsObject.position = { x = entOwner.position.x, y = entOwner.position.y }
-			if trueData.velocity ~= nil then
-				entObject.initialVelocity = tonumber(trueData.velocity)
-				entObject.physicsObject.velocity = { x = tonumber(trueData.velocity) * math.cos(entObject.physicsObject.angle), y = tonumber(trueData.velocity) * math.sin(entObject.physicsObject.angle) }
-			else
-				entObject.physicsObject.velocity = { x = entOwner.initialVelocity.x, y = entOwner.initialVelocity.y }
+				entObject.physicsObject.angle = 0
+				entObject.physicsObject.position = { x = entOwner.position.x, y = entOwner.position.y }
+				if trueData.velocity ~= nil then
+					entObject.initialVelocity = tonumber(trueData.velocity)
+					entObject.physicsObject.velocity = { x = tonumber(trueData.velocity) * math.cos(entObject.physicsObject.angle), y = tonumber(trueData.velocity) * math.sin(entObject.physicsObject.angle) }
+				else
+					entObject.physicsObject.velocity = { x = entOwner.initialVelocity.x, y = entOwner.initialVelocity.y }
+				end
 			end
 		end
-	end
+	end --]]
 	entType = entTypeReal
 	
 	if entType == "Explosion" then
@@ -134,9 +299,11 @@ function NewEntity (entOwner, entName, entType, entDir, entSubdir, other)
 			initialVelocity = { x = trueData.pinitialvelocityx, y = trueData.pinitialvelocityy },
 			buildqueue = { factor = 1, current = 0, percent = 100 },
 			text = { trueData.pbuild1, trueData.pbuild2, trueData.pbuild3 } }
-		NewEntity(nil, entObject.planet.text[1], "Ship")
-		NewEntity(nil, entObject.planet.text[2], "Ship")
-		NewEntity(nil, entObject.planet.text[3], "Ship")
+		num = 1
+		while entObject.planet.text[num] ~= nil do
+			NewEntity(nil, entObject.planet.text[num], "Ship")
+			num = num + 1
+		end
 		entObject.briefing = trueData.briefing
 		-- put standard includes here (sounds, explosions, etc) [ADAM, DEMO3]
 	elseif entType == "Weapon" then
@@ -146,24 +313,22 @@ function NewEntity (entOwner, entName, entType, entDir, entSubdir, other)
 		entObject.damage = tonumber(trueData.damage)
 		entObject.cooldown = tonumber(trueData.cooldown)
 		entObject.life = tonumber(trueData.life)
-		entObject.max_projectiles = math.ceil(entObject.life / entObject.cooldown)
+		entObject.max_projectiles = math.ceil(entObject.life * 1000 / entObject.cooldown)
 		entObject.ammo = tonumber(trueData.ammo)
 		if trueData.thrust ~= nil then
 			entObject.thrust = tonumber(trueData.thrust)
 		end
+		entObject.fired = false
 		entObject.class = trueData.class
+		entObject.start = 0
 		if entObject.class == "beam" then -- this is innacurate. Learn more about weapons [ADAM, FIX, SFIERA]
 			entObject.length = tonumber(trueData.length)
 			entObject.width = cameraRatio
-			entObject.fired = false
-			entObject.start = 0
 			entObject.firing = false
 		elseif entObject.class == "pulse" then
 		elseif entObject.class == "special" then
 			entObject.dest = { x = 2200, y = 2700 }
 			entObject.delta = 0.0
-			entObject.fired = false
-			entObject.start = 0
 			entObject.force = { x, y }
 		elseif entObject.class == nil then
 			errLog("Weapon '" .. entObject.name .. "' has no class. See NewEntity", 12)
@@ -173,11 +338,11 @@ function NewEntity (entOwner, entName, entType, entDir, entSubdir, other)
 	elseif entType == "Projectile" then
 -- projectile-specific
 		local weaponClass = entDir
-		local weapon = entOwner[weaponClass]
 		local wNum = other
-		sound.play(weapon.sound)
-		weapon.start = mode_manager.time() * 1000
-		weapon.fired = true
+		sound.play(entOwner[weaponClass].sound)
+		if loading_entities == false then
+			entOwner[weaponClass].start = mode_manager.time()
+		end
 		if trueData.turnrate ~= nil then
 			entObject.turningRate = tonumber(trueData.turnrate)
 			entObject.maxSeek = tonumber(trueData.maxSeek)
@@ -186,63 +351,65 @@ function NewEntity (entOwner, entName, entType, entDir, entSubdir, other)
 			entObject.isSeeking = false
 		end
 		
-		if weaponClass == "beam" then
-			-- [ADAM, FIX] this piece of code is a hack, it relies on what little weapons we have right now to make the assumption
-			if entOwner.switch == true then
-				entObject.physicsObject.position = { x = entOwner.physicsObject.position.x + math.cos(entObject.physicsObject.angle + 0.17) * (tonumber(trueData.length) - 3), y = entOwner.physicsObject.position.y + math.sin(entObject.physicsObject.angle + 0.17) * (tonumber(trueData.length) - 3) }
-				entOwner.switch = false
-			else
-				entObject.physicsObject.position = { x = entOwner.physicsObject.position.x + math.cos(entObject.physicsObject.angle - 0.17) * (tonumber(trueData.length) - 3), y = entOwner.physicsObject.position.y + math.sin(entObject.physicsObject.angle - 0.17) * (tonumber(trueData.length) - 3) }
-				entOwner.switch = true
-			end
-			-- cost
-			entOwner.energy.level = entOwner.energy.level - tonumber(trueData.energyCost)
-		elseif weaponClass == "pulse" then
-			return
-		elseif weaponClass == "special" then
-			entObject.dest = { x = computerShip.physicsObject.position.x, y = computerShip.physicsObject.position.y }
-			entOwner.special.ammo = entOwner.special.ammo - 1
-		--	sound.play("RocketLaunchr")
-			-- temp sound file, should be "RocketLaunch" but for some reason, that file gets errors (file included for troubleshooting)
-			
-			if computerShip == nil then
-				entObject.isSeeking = false
-			end
-			if entObject.isSeeking == true then
-				local projectileTravel = { x, y, dist }
-				projectileTravel.dist = (weapon.thrust * weapon.life * weapon.life / 1000000) / (2 * weapon.mass)
-				projectileTravel.x = math.cos(entObject.physicsObject.angle) * (projectileTravel.dist + entObject.physicsObject.velocity.x)
-				projectileTravel.y = math.sin(entObject.physicsObject.angle) * (projectileTravel.dist + entObject.physicsObject.velocity.y)
-				if find_hypot(entObject.physicsObject.position, entObject.dest) <= hypot(projectileTravel.x, projectileTravel.y) then
-					if showAngles == true then
-						print(find_angle(entObject.dest, entObject.physicsObject.position))
-						print(entObject.physicsObject.angle)
-						print(find_angle(entObject.dest, entObject.physicsObject.position) - entObject.physicsObject.angle)
-					end
-					local angle = find_angle(entObject.dest, entObject.physicsObject.position) - entObject.physicsObject.angle
-					if math.abs(angle) > math.pi then -- need to go through 0
-						if angle > 0.0 then
-							angle = 2 * math.pi - angle
-						else
-							angle = 2 * math.pi + angle
+		if loading_entities == false then
+			if weaponClass == "beam" then
+				-- [ADAM, FIX] this piece of code is a hack, it relies on what little weapons we have right now to make the assumption
+				if entOwner.switch == true then
+					entObject.physicsObject.position = { x = entOwner.physicsObject.position.x + math.cos(entObject.physicsObject.angle + 0.17) * (tonumber(trueData.length) - 3), y = entOwner.physicsObject.position.y + math.sin(entObject.physicsObject.angle + 0.17) * (tonumber(trueData.length) - 3) }
+					entOwner.switch = false
+				else
+					entObject.physicsObject.position = { x = entOwner.physicsObject.position.x + math.cos(entObject.physicsObject.angle - 0.17) * (tonumber(trueData.length) - 3), y = entOwner.physicsObject.position.y + math.sin(entObject.physicsObject.angle - 0.17) * (tonumber(trueData.length) - 3) }
+					entOwner.switch = true
+				end
+				-- cost
+				entOwner.energy.level = entOwner.energy.level - tonumber(trueData.energyCost)
+			elseif weaponClass == "pulse" then
+				return
+			elseif weaponClass == "special" then
+				entObject.dest = { x = computerShip.physicsObject.position.x, y = computerShip.physicsObject.position.y }
+				entOwner.special.ammo = entOwner.special.ammo - 1
+			--	sound.play("RocketLaunchr")
+				-- temp sound file, should be "RocketLaunch" but for some reason, that file gets errors (file included for troubleshooting)
+				
+				if computerShip == nil then
+					entObject.isSeeking = false
+				end
+				if entObject.isSeeking == true then
+					local projectileTravel = { x, y, dist }
+					projectileTravel.dist = (entOwner[weaponClass].thrust * entOwner[weaponClass].life * entOwner[weaponClass].life / 1000000) / (2 * entOwner[weaponClass].mass)
+					projectileTravel.x = math.cos(entObject.physicsObject.angle) * (projectileTravel.dist + entObject.physicsObject.velocity.x)
+					projectileTravel.y = math.sin(entObject.physicsObject.angle) * (projectileTravel.dist + entObject.physicsObject.velocity.y)
+					if find_hypot(entObject.physicsObject.position, entObject.dest) <= hypot(projectileTravel.x, projectileTravel.y) then
+						if showAngles == true then
+							print(find_angle(entObject.dest, entObject.physicsObject.position))
+							print(entObject.physicsObject.angle)
+							print(find_angle(entObject.dest, entObject.physicsObject.position) - entObject.physicsObject.angle)
 						end
-					end
-					if math.abs(angle) > entObject.maxSeek then
+						local angle = find_angle(entObject.dest, entObject.physicsObject.position) - entObject.physicsObject.angle
+						if math.abs(angle) > math.pi then -- need to go through 0
+							if angle > 0.0 then
+								angle = 2 * math.pi - angle
+							else
+								angle = 2 * math.pi + angle
+							end
+						end
+						if math.abs(angle) > entObject.maxSeek then
+							entObject.isSeeking = false
+						end
+					else
 						entObject.isSeeking = false
 					end
 				else
 					entObject.isSeeking = false
 				end
+			elseif weaponClass == nil then
+				errLog("Projectile '" .. entType .. "' has no class. See NewEntity", 12)
 			else
-				entObject.isSeeking = false
+				errLog("Unknown projectile class '" .. entClass .. "'. See NewEntity", 11)
 			end
-		elseif weaponClass == nil then
-			errLog("Projectile '" .. entType .. "' has no class. See NewEntity", 12)
-		else
-			errLog("Unknown projectile class '" .. entClass .. "'. See NewEntity", 11)
+			entObject.life = tonumber(trueData.life)
+			entObject.start = mode_manager.time()
 		end
-		entObject.life = tonumber(trueData.life)
-		entObject.start = mode_manager.time() * 1000
 	elseif entType == "Ship" then
 -- ship-specific
 		entObject.cost = tonumber(trueData.cost)
@@ -288,11 +455,18 @@ function NewEntity (entOwner, entName, entType, entDir, entSubdir, other)
 	while entities[num] ~= nil do
 		num = num + 1
 	end
-	entities[num] = entObject
+	local tempEnt = deepcopy(entObject)
+	tempEnt.physicsObject = nil
+	entities[num] = tempEnt
 	return entObject
 end
 
+
+-- hoping to be rid of this shortly :3
 function resetOwner(Object, Owner)
+	if Object.type == "projectile" then
+		Object.start = mode_manager.time()
+	end
 	if Owner == nil then
 		Object.physicsObject.angle = 0
 		Object.physicsObject.position = { x = 0, y = 0 }
@@ -300,6 +474,15 @@ function resetOwner(Object, Owner)
 		return
 	end
 	if Owner.physicsObject ~= nil then
+		if Object.type == "projectile" then -- this code does not happen [ADAMDOTOMORROW]
+			if Owner[Object.class].switch == true then
+				Object.physicsObject.position = { x = Owner.physicsObject.position.x + math.cos(Object.physicsObject.angle + 0.17) * (Owner[Object.class].length - 3), y = Owner.physicsObject.position.y + math.sin(Object.physicsObject.angle + 0.17) * (Owner[Object.class].length - 3) }
+				Owner[Object.class].switch = false
+			else
+				Object.physicsObject.position = { x = Owner.physicsObject.position.x + math.cos(Object.physicsObject.angle - 0.17) * (Owner[Object.class].length - 3), y = Owner.physicsObject.position.y + math.sin(Object.physicsObject.angle - 0.17) * (Owner[Object.class].length - 3) }
+				Owner[Object.class].switch = true
+			end
+		end
 		Object.physicsObject.angle = Owner.physicsObject.angle
 		Object.physicsObject.position = { x = Owner.physicsObject.position.x, y = Owner.physicsObject.position.y }
 		if Object.initialVelocity ~= nil then

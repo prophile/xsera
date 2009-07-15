@@ -12,8 +12,8 @@
 	<class>beam</class>
 	<!-- beam length -->
 	<length>30</length>
-	<!-- life, in miliseconds -->
-	<life>175</life>
+	<!-- life, in seconds -->
+	<life>0.175</life>
 	<!-- damage dealt -->
 	<damage>50</damage>
 	<!-- cooldown time, in miliseconds -->

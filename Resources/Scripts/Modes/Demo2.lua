@@ -43,11 +43,12 @@ function init ()
 		scen = NewEntity(nil, "demo", "Scenario")
 	end
 	loading_entities = false
+--	print_table(entities)
 	computerShip = NewEntity(nil, "Carrier", "Ship", "Gaitori")
 		computerShip.physicsObject.position = { x = 2200, y = 2700 }
 		computerShip.physicsObject.angle = math.pi - 0.2
 	playerShip = NewEntity(nil, "HeavyCruiser", "Ship", "Ishiman")
-	resetOwner(playerShip)
+--	resetOwner(playerShip)
 	bestExplosion = NewEntity(nil, "BestExplosion", "Explosion")
 end
 
@@ -273,7 +274,7 @@ end
 
 function weapon_manage(weapon, weapData, weapOwner)
 -- handling of new projectile
-	if weapOwner[weapon.class].firing == true then
+	if weapon.firing == true then
 		local wNum = 1
 		while wNum <= weapon.max_projectiles do
 			if weapData[wNum] == nil then
@@ -281,20 +282,32 @@ function weapon_manage(weapon, weapData, weapOwner)
 				if weapon.image ~= nil then
 					weapData[wNum] = NewEntity(weapOwner, weapon.image, "Projectile", weapon.class, nil, wNum)
 				else
+					-- [FIX2] HERE IS THE OUTPUT I'M GETTING
 					weapData[wNum] = NewEntity(weapOwner, weapon.fileName, "Projectile", weapon.class, nil, wNum)
+					resetOwner(weapData[wNum], weapOwner)
+					print(weapData[wNum].start)
+					weapData[wNum].start = mode_manager.time()
+					print(weapData[wNum].start)
 				end
+			--	print_table(weapData[wNum])
+				print(wNum)
 				wNum = weapon.max_projectiles -- exit while loop
 			end
 			wNum = wNum + 1
 		end
+		weapon.fired = true
+	--	print("weapon.fired status: true (1)")
 	end
 
 -- handling for existing weapons and projectiles
-	wNum = 1
+	local wNum = 1
 	while wNum <= weapon.max_projectiles do
 		if weapData[wNum] ~= nil then
 			if weapData[wNum].physicsObject == nil then
 				-- this object needs to be deleted, probably the initializing table
+			--	print_table(weapData)
+			--	print(wNum)
+			--	print("-----------Initialization")
 				table.remove(weapData, wNum)
 			else
 				if computerShip ~= nil then
@@ -306,12 +319,15 @@ function weapon_manage(weapon, weapData, weapOwner)
 						return
 					end
 				end
-				if (mode_manager.time() * 1000) - weapData[wNum].start >= weapon.life then
+				if mode_manager.time() - weapData[wNum].start >= weapon.life then
+					print(mode_manager.time(), weapData[wNum].start, (mode_manager.time() - weapData[wNum].start), weapon.life)
 					table.remove(weapData, wNum)
 					if weapData[1] ~= nil then
 						weapon.fired = true
+					--	print("weapon.fired status: true(2)")
 					else
 						weapon.fired = false
+					--	print("weapon.fired status: false")
 					end
 				end
 			end
@@ -421,11 +437,13 @@ function render ()
 --[[------------------
 	PKBeam Firing
 ------------------]]--
-	
+--	print_table(playerShip.beamWeap)
 	if playerShip.beam.fired == true then
 		local wNum = 1
 		while wNum <= playerShip.beam.max_projectiles do
+		--	print(wNum, playerShip.beamWeap[wNum])
 			if playerShip.beamWeap[wNum] ~= nil then
+			--	print_table(playerShip.beamWeap[wNum])
 				graphics.draw_line(playerShip.beamWeap[wNum].physicsObject.position.x, playerShip.beamWeap[wNum].physicsObject.position.y, playerShip.beamWeap[wNum].physicsObject.position.x - math.cos(playerShip.beamWeap[wNum].physicsObject.angle) * playerShip.beam.length, playerShip.beamWeap[wNum].physicsObject.position.y - math.sin(playerShip.beamWeap[wNum].physicsObject.angle) * playerShip.beam.length, playerShip.beam.width, 0.1, 0.7, 0.1, 1)
 			end
 			wNum = wNum + 1
