@@ -52,19 +52,6 @@ function NewEntity (entOwner, entName, entType, entDir, entSubdir, other)
 					entObject.mass = tonumber(trueData.mass)
 				end
 				entObject.physicsObject = physics.new_object(entObject.mass)
-				if trueData.sprite ~= nil then
-					entObject.image = trueData.sprite
-					if loading_entities == false then
-						if entSubdir ~= nil then
-							entObject.size.x, entObject.size.y = graphics.sprite_dimensions(entDir .. "/" .. entSubdir .. "/" .. entName)
-						elseif entDir ~= nil then
-							entObject.size.x, entObject.size.y = graphics.sprite_dimensions(entDir .. "/" .. entName)
-						end
-						entObject.physicsObject.collision_radius = hypot(entObject.size.x, entObject.size.y)
-					end
-				else
-					entObject.fileName = trueData.fileName
-				end
 				if entOwner ~= nil then
 					if entOwner.physicsObject ~= nil then
 						entObject.physicsObject.angle = entOwner.physicsObject.angle
@@ -84,6 +71,33 @@ function NewEntity (entOwner, entName, entType, entDir, entSubdir, other)
 						else
 							entObject.physicsObject.velocity = { x = entOwner.initialVelocity.x, y = entOwner.initialVelocity.y }
 						end
+					end
+				end
+				if entType == "Ship" then
+					if trueData.sprite ~= nil then
+						entObject.image = trueData.sprite
+						if entSubdir ~= nil then
+							entObject.size.x, entObject.size.y = graphics.sprite_dimensions(entDir .. "/" .. entSubdir .. "/" .. entName)
+						elseif entDir ~= nil then
+							entObject.size.x, entObject.size.y = graphics.sprite_dimensions(entDir .. "/" .. entName)
+						elseif entType ~= nil then
+							entObject.size.x, entObject.size.y = graphics.sprite_dimensions(entName)
+						end
+						entObject.physicsObject.collision_radius = hypot(entObject.size.x, entObject.size.y)
+					else
+						entObject.fileName = trueData.filename
+					end
+				else
+					if trueData.sprite ~= nil then
+						entObject.image = trueData.sprite
+						if entSubdir ~= nil then
+							entObject.size.x, entObject.size.y = graphics.sprite_dimensions(entType .. "s/" .. entSubdir .. "/" .. entName)
+						elseif entType ~= nil then
+							entObject.size.x, entObject.size.y = graphics.sprite_dimensions(entType .. "s/" .. entName)
+						end
+						entObject.physicsObject.collision_radius = hypot(entObject.size.x, entObject.size.y)
+					else
+						entObject.fileName = trueData.fileName
 					end
 				end
 				if entType == "Projectile" then
@@ -145,18 +159,6 @@ function NewEntity (entOwner, entName, entType, entDir, entSubdir, other)
 					end
 					entObject.life = tonumber(trueData.life)
 					entObject.start = mode_manager.time()
-				elseif entType == "Ship" then
-					if entSubdir ~= nil then
-						entObject.size.x, entObject.size.y = graphics.sprite_dimensions(entDir .. "/" .. entSubdir .. "/" .. entName)
-					elseif entDir ~= nil then
-						entObject.size.x, entObject.size.y = graphics.sprite_dimensions(entDir .. "/" .. entName)
-					elseif entType ~= nil then
-						entObject.size.x, entObject.size.y = graphics.sprite_dimensions(entName)
-					end
-					if entObject.physicsObject == nil then
-						print(entObject.name)
-					end
-					entObject.physicsObject.collision_radius = hypot(entObject.size.x, entObject.size.y)
 				end
 				return entObject
 			end
@@ -191,100 +193,44 @@ function NewEntity (entOwner, entName, entType, entDir, entSubdir, other)
 					end
 				end
 			end
-			if trueData.sprite ~= nil then
-				entObject.image = trueData.sprite
-				if loading_entities == false then
+			if entType == "Ship" then
+				if trueData.sprite ~= nil then
+					entObject.image = trueData.sprite
 					if entSubdir ~= nil then
 						entObject.size.x, entObject.size.y = graphics.sprite_dimensions(entDir .. "/" .. entSubdir .. "/" .. entName)
 					elseif entDir ~= nil then
 						entObject.size.x, entObject.size.y = graphics.sprite_dimensions(entDir .. "/" .. entName)
-					else
+					elseif entType ~= nil then
+						entObject.size.x, entObject.size.y = graphics.sprite_dimensions(entName)
+					end
+					entObject.physicsObject.collision_radius = hypot(entObject.size.x, entObject.size.y)
+				else
+					entObject.fileName = trueData.filename
+				end
+			else
+				if trueData.sprite ~= nil then
+					entObject.image = trueData.sprite
+					if entSubdir ~= nil then
+						entObject.size.x, entObject.size.y = graphics.sprite_dimensions(entType .. "s/" .. entSubdir .. "/" .. entName)
+					elseif entType ~= nil then
 						entObject.size.x, entObject.size.y = graphics.sprite_dimensions(entType .. "s/" .. entName)
 					end
 					entObject.physicsObject.collision_radius = hypot(entObject.size.x, entObject.size.y)
+				else
+					entObject.fileName = trueData.fileName
 				end
-			else
-				entObject.fileName = trueData.fileName
 			end
 		end
 	end
 	entObject.entName = concatString
 	if trueData.name == nil then
-		errLog(entName .. " of " .. entTypeReal .. " does not have a name.", 12)
+		errLog(entName .. " of type " .. entTypeReal .. " does not have a name.", 12)
 	end
 	entObject.name = trueData.name
 	if trueData.shortname ~= nil then
 		entObject.shortName = trueData.shortname
 	end
---[[	if loading_entities == false then
-		if trueData.mass == nil then
-			entObject.mass = 0.01
-		else
-			entObject.mass = tonumber(trueData.mass)
-		end
-		entObject.physicsObject = physics.new_object(entObject.mass)
-	end --]]
---	if entType == "Ship" then
-
-	if trueData.sprite ~= nil then
-		entObject.image = trueData.sprite
-		if loading_entities == false then
-			if entSubdir ~= nil then
-				entObject.size.x, entObject.size.y = graphics.sprite_dimensions(entDir .. "/" .. entSubdir .. "/" .. entName)
-			elseif entDir ~= nil then
-				entObject.size.x, entObject.size.y = graphics.sprite_dimensions(entDir .. "/" .. entName)
-			end
-			if entObject.physicsObject ~= nil then
-				entObject.physicsObject.collision_radius = hypot(entObject.size.x, entObject.size.y)
-			else
-			--	print(loading_entities)
-			--	print_table(entObject)
-			--	os.exit()
-			end
-		end
-	else
-		entObject.fileName = trueData.fileName
-	end
-		
---[[	else
-		if trueData.sprite ~= nil then
-			entObject.image = trueData.sprite
-			if entSubdir ~= nil then
-				entObject.size.x, entObject.size.y = graphics.sprite_dimensions(entType .. "s/" .. entSubdir .. "/" .. entName)
-			elseif entType ~= nil then
-				entObject.size.x, entObject.size.y = graphics.sprite_dimensions(entType .. "s/" .. entName)
-			end
-			entObject.physicsObject.collision_radius = hypot(entObject.size.x, entObject.size.y)
-		else
-			entObject.fileName = trueData.fileName
-		end
-	end--]]
-	--[[
-	if loading_entities == false then
-		if entOwner ~= nil then
-			if entOwner.physicsObject ~= nil then
-				entObject.physicsObject.angle = entOwner.physicsObject.angle
-				entObject.physicsObject.position = { x = entOwner.physicsObject.position.x, y = entOwner.physicsObject.position.y }
-				if trueData.velocity ~= nil then
-					entObject.initialVelocity = tonumber(trueData.velocity)
-					entObject.physicsObject.velocity = { x = entOwner.physicsObject.velocity.x + tonumber(trueData.velocity) * math.cos(entOwner.physicsObject.angle), y = entOwner.physicsObject.velocity.y + tonumber(trueData.velocity) * math.sin(entOwner.physicsObject.angle) }
-				else
-					entObject.physicsObject.velocity = { x = entOwner.physicsObject.velocity.x, y = entOwner.physicsObject.velocity.y }
-				end
-			else
-				entObject.physicsObject.angle = 0
-				entObject.physicsObject.position = { x = entOwner.position.x, y = entOwner.position.y }
-				if trueData.velocity ~= nil then
-					entObject.initialVelocity = tonumber(trueData.velocity)
-					entObject.physicsObject.velocity = { x = tonumber(trueData.velocity) * math.cos(entObject.physicsObject.angle), y = tonumber(trueData.velocity) * math.sin(entObject.physicsObject.angle) }
-				else
-					entObject.physicsObject.velocity = { x = entOwner.initialVelocity.x, y = entOwner.initialVelocity.y }
-				end
-			end
-		end
-	end --]]
 	entType = entTypeReal
-	
 	if entType == "Explosion" then
 -- explosion-specific
 		entObject.frameDuration = tonumber(trueData.frameDuration)
