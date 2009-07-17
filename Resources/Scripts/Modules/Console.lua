@@ -39,7 +39,7 @@ function console_key (k)
 		return
 	end
 	
-	asciikey = string.byte(k, 1)
+	asciikey = string.byte(k)
 	if k == "return" then
 		local i = 1
 		io.write(consoleHistory[line], "\n")
@@ -50,7 +50,7 @@ function console_key (k)
 		else
 			console_add(error)
 		end
-		console_add(" ") --EDITED
+		console_add(">") --EDITED
 	elseif k == "escape" then
 		mode_manager.switch("MainMenu")
 	elseif k == "tab" then

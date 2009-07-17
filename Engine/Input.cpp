@@ -70,8 +70,7 @@ std::string MapKey ( SDLKey k )
 		KEYCASE(RETURN, "return");
 		KEYCASE(ESCAPE, "escape");
 		KEYCASE(SPACE, " ");
-		KEYCASE(QUOTE, "\"");
-		KEYCASE(BACKQUOTE, "backquote");
+		KEYCASE(QUOTE, "\'");
 		KEYCASE(LEFTPAREN, "(");
 		KEYCASE(RIGHTPAREN, ")");
 		KEYCASE(ASTERISK, "*");
