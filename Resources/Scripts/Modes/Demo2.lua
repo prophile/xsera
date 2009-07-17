@@ -242,8 +242,8 @@ function update ()
 				num = num - 1
 			end
 			otherShip[num] = NewEntity(shipBuilding.p, shipBuilding.n, "Ship", shipBuilding.r)
-			print(otherShip[num], playerShip)
-			resetOwner(otherShip[num], shipBuilding.p)
+		--	print(otherShip[num], playerShip)
+		--	resetOwner(otherShip[num], shipBuilding.p)
 			planet.buildqueue.percent = 100
 			build_timer_running = false
 			sound.play("IComboBeep")
@@ -272,25 +272,23 @@ end
 	---------------------}}--
 -----------------------------]]--
 
-function weapon_manage(weapon, weapData, weapOwner)
+function weapon_manage(weapon, weapData, weapOwner) -- examples: weapon = playerShip.beam, weapData = playerShip.beamWeap, weapOwner = playerShip
 -- handling of new projectile
 	if weapon.firing == true then
+	--	if  [FIX2] need to fix by adding cooldown restriction
 		local wNum = 1
 		while wNum <= weapon.max_projectiles do
 			if weapData[wNum] == nil then
 				-- I would rather load from memory, but we don't have a function that preloads yet. Oh well. [DEMO2, ADAM, ALISTAIR]
 				if weapon.image ~= nil then
+					print(weapon.image)
 					weapData[wNum] = NewEntity(weapOwner, weapon.image, "Projectile", weapon.class, nil, wNum)
 				else
-					-- [FIX2] HERE IS THE OUTPUT I'M GETTING
 					weapData[wNum] = NewEntity(weapOwner, weapon.fileName, "Projectile", weapon.class, nil, wNum)
-					resetOwner(weapData[wNum], weapOwner)
-					print(weapData[wNum].start)
 					weapData[wNum].start = mode_manager.time()
-					print(weapData[wNum].start)
 				end
 			--	print_table(weapData[wNum])
-				print(wNum)
+				print("Number of weapons: " .. wNum)
 				wNum = weapon.max_projectiles -- exit while loop
 			end
 			wNum = wNum + 1
@@ -320,6 +318,7 @@ function weapon_manage(weapon, weapData, weapOwner)
 					end
 				end
 				if mode_manager.time() - weapData[wNum].start >= weapon.life then
+					-- [FIX2] HERE IS THE OUTPUT I'M GETTING
 					print(mode_manager.time(), weapData[wNum].start, (mode_manager.time() - weapData[wNum].start), weapon.life)
 					table.remove(weapData, wNum)
 					if weapData[1] ~= nil then

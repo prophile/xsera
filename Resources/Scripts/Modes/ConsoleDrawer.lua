@@ -18,6 +18,10 @@ function key (k)
 	console_key(k)
 end
 
+function keyup (k)
+	console_keyup(k)
+end
+
 function update ()
 	while line > CONSOLE_MAX do
 		table.remove(consoleHistory, 1)

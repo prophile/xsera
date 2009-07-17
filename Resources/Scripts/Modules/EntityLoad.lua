@@ -420,7 +420,7 @@ function resetOwner(Object, Owner)
 		return
 	end
 	if Owner.physicsObject ~= nil then
-		if Object.type == "projectile" then -- this code does not happen [ADAMDOTOMORROW]
+		if Object.type == "projectile" then -- this code does not happen [ADAMDOTOMORROW] (perhaps deleting this code soon, look at later maybe)
 			if Owner[Object.class].switch == true then
 				Object.physicsObject.position = { x = Owner.physicsObject.position.x + math.cos(Object.physicsObject.angle + 0.17) * (Owner[Object.class].length - 3), y = Owner.physicsObject.position.y + math.sin(Object.physicsObject.angle + 0.17) * (Owner[Object.class].length - 3) }
 				Owner[Object.class].switch = false
