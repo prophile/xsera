@@ -101,10 +101,10 @@ std::string MapKey ( SDLKey k )
 		KEYCASE(BACKSLASH, "backslash");
 		KEYCASE(CARET, "^");
 		KEYCASE(UNDERSCORE, "_");
-		KEYCASE(LEFT, "arrow_left");
-		KEYCASE(RIGHT, "arrow_right");
-		KEYCASE(UP, "arrow_up");
-		KEYCASE(DOWN, "arrow_down");
+		KEYCASE(LEFT, "left");
+		KEYCASE(RIGHT, "right");
+		KEYCASE(UP, "up");
+		KEYCASE(DOWN, "down");
 		KEYCASE(KP_PERIOD, "KPperiod");
 		KEYCASE(KP_DIVIDE, "KPdivide");
 		KEYCASE(KP_MULTIPLY, "KPmultiply");

@@ -1,5 +1,6 @@
 consoleHistory = {}
 line = 0
+line_focus = 0
 CONSOLE_MAX = 5
 
 do
@@ -23,6 +24,7 @@ consoleBuffer = nil
 endsInCloseParen = nil
 processConsole = false
 nestLevel = 0
+newHistory = nil
 
 io.output("XseraOutput.txt")
 
@@ -54,6 +56,7 @@ function console_add(text, doPrint, output)
 		io.write(text, "\n")
 	end
 	line = line + 1
+	line_focus = line
 end
 
 function console_keyup (k)
@@ -82,6 +85,9 @@ function console_key (k)
 	
 	asciikey = k:byte(1)
 	if k == "return" then
+		if ((consoleHistory == ">>") or (consoleHistory == ">")) then
+			return
+		end
 		io.write(consoleHistory[line], "\n")
 		originalPrint("[Console] " .. consoleHistory[line])
 		local string = nil
@@ -249,6 +255,61 @@ function console_key (k)
 		else
 			consoleHistory[line] = consoleHistory[line] .. k
 		end
+	elseif k == "/" then
+		if ((shift_press == true) or (caps_hold == true)) then
+			consoleHistory[line] = consoleHistory[line] .. "?"
+		else
+			consoleHistory[line] = consoleHistory[line] .. k
+		end
+	elseif k == ";" then
+		if ((shift_press == true) or (caps_hold == true)) then
+			consoleHistory[line] = consoleHistory[line] .. ":"
+		else
+			consoleHistory[line] = consoleHistory[line] .. k
+		end
+	elseif k == "left" then
+		originalPrint("BOING")
+	elseif k == "right" then
+		originalPrint("BOING")
+	elseif k == "up" then
+		originalPrint("BOING")
+	elseif k == "down" then
+		originalPrint("BOING")
+	elseif k == "KP9" then
+		if line_focus > 1 then
+			if newHistory == nil then
+				newHistory = consoleHistory[line]
+				originalPrint(newHistory)
+			end
+			line_focus = line_focus - 1
+			if consoleHistory[line_focus]:sub(1, 1) == "$" then
+				line_focus = line_focus + 1
+			end
+			while consoleHistory[line_focus]:sub(1, 1) ~= ">" do
+				line_focus = line_focus - 1
+			end
+		end
+		consoleHistory[line] = consoleHistory[line_focus]
+	elseif k == "KP3" then
+		originalPrint(line_focus, line)
+		if line_focus < line then
+			line_focus = line_focus + 1
+			while consoleHistory[line_focus]:sub(1, 1) ~= ">" do
+				line_focus = line_focus + 1
+			end
+			consoleHistory[line] = consoleHistory[line_focus]
+		end
+		originalPrint(line_focus, line)
+		if ((line_focus == line) and (newHistory ~= nil)) then
+			consoleHistory[line] = newHistory
+			newHistory = nil
+		end
+		originalPrint(line_focus, line)
+		if line_focus > line then
+			line_focus = line_focus - 1
+		end
+		originalPrint(line_focus, line)
+		originalPrint("----------")
 	else
 		if k:gsub("(M)(%w+)", "%1", 1) == "M" then
 			local side = nil

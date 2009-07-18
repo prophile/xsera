@@ -27,5 +27,6 @@ function update ()
 	while line > CONSOLE_MAX do
 		table.remove(consoleHistory, 1)
 		line = line - 1
+		line_focus = line
 	end
 end
