@@ -2,8 +2,27 @@ consoleHistory = {}
 line = 0
 CONSOLE_MAX = 5
 
+do
+	originalPrint = print
+	newPrint = function(...)
+		local bigTable = {...}
+		i = 1
+		while bigTable[i] ~= nil do
+			console_add(tostring(bigTable[i]))
+			i = i + 1
+		end
+	end
+	setOriginalPrint = function() print = originalPrint end
+	setNewPrint = function() print = newPrint end
+end
+
 shift_press = false
 caps_hold = false
+
+consoleBuffer = nil
+endsInCloseParen = nil
+processConsole = false
+nestLevel = 0
 
 io.output("XseraOutput.txt")
 
@@ -28,9 +47,9 @@ function console_add(text, doPrint, output)
 		io.output("XseraOutput.txt")
 	end
 	table.insert(consoleHistory, text)
-	if text ~= ">" then
+	if ((text ~= ">") and (text ~= ">>")) then
 		if doPrint ~= false then
-			print("[Console] " .. text)
+			originalPrint("[Console] " .. text)
 		end
 		io.write(text, "\n")
 	end
@@ -63,21 +82,73 @@ function console_key (k)
 	
 	asciikey = k:byte(1)
 	if k == "return" then
-		local i = 1
 		io.write(consoleHistory[line], "\n")
-		print("[Console] " .. consoleHistory[line])
-		local string, error = loadstring(consoleHistory[line]:gsub("(>)(.)", "%2", 1))
-		if error == nil then
-			string()
-			console_add(consoleHistory[line]:gsub("(>)(.)", "%2", 1))
-		else
-			console_add(error)
+		originalPrint("[Console] " .. consoleHistory[line])
+		local string = nil
+		local error = nil
+		local list = { "if", "do", "while", "repeat", "for", "function", "local function" }
+		num = 1
+		while list[num] ~= nil do
+			if consoleHistory[line]:find(list[num]) ~= nil then
+				nestLevel = nestLevel + 1
+				num = 8 -- outside of the range
+			end
+			num = num + 1
 		end
-		console_add(">")
+		if (consoleHistory[line]:sub(-1, -1) == ")") then
+			endsInCloseParen = true
+		else
+			endsInCloseParen = false
+		end
+		local withoutGT = nil
+		if consoleHistory[line]:gsub("(>>)(.)", "%2", 1) ~= nil then
+			withoutGT = consoleHistory[line]:gsub("(>>)(.)", "%2", 1)
+		else
+			withoutGT = consoleHistory[line]:gsub("(>>)(.)", "%2", 1)
+		end
+		if withoutGT == "end" then
+			nestLevel = nestLevel - 1
+			if nestLevel == 0 then
+				processConsole = true
+			elseif nestLevel < 0 then
+				processConsole = true
+			end
+		end
+		if consoleBuffer ~= nil then
+			consoleBuffer = consoleBuffer .. "\n" .. withoutGT
+		else
+			consoleBuffer = consoleHistory[line]:gsub("(>)(.)", "%2", 1)
+		end
+		if endsInCloseParen == true then
+			if consoleBuffer == consoleHistory[line]:gsub("(>)(.)", "%2", 1) then
+				if consoleBuffer:find("function") == nil then
+					processConsole = true
+				end
+			end
+		end
+		if processConsole == false then
+			console_add(">>")
+		else
+			string, error = loadstring(consoleBuffer)
+			if error == nil then
+				string()
+			else
+				console_add(error)
+			end
+			consoleBuffer = nil
+			nestLevel = 0
+			console_add(">")
+		end
 	elseif k == "escape" then
+		setNewPrint()
 		mode_manager.switch("MainMenu")
+	elseif k == "backspace" then
+		if ((consoleHistory[line] ~= ">") and (consoleHistory[line] ~= ">>")) then
+			consoleHistory[line] = consoleHistory[line]:sub(1, -2)
+		end
 	elseif k == "tab" then
 		consoleDraw = false
+		release = true
 	elseif asciikey >= 97 and asciikey <= 122 then
 		if k:byte(2, 2) == nil then
 			if ((shift_press == true) or (caps_hold == true)) then
@@ -86,28 +157,74 @@ function console_key (k)
 				consoleHistory[line] = consoleHistory[line] .. k
 			end
 		end
---	elseif asciikey >= 65 and asciikey <= 90 then
---		consoleHistory[line] = consoleHistory[line] .. k
 	elseif asciikey == 32 then
 		consoleHistory[line] = consoleHistory[line] .. k
-	elseif k == "backspace" then
-		
+	elseif k == "," then
+		if ((shift_press == true) or (caps_hold == true)) then
+			consoleHistory[line] = consoleHistory[line] .. "<"
+		else
+			consoleHistory[line] = consoleHistory[line] .. k
+		end
+	elseif k == "." then
+		if ((shift_press == true) or (caps_hold == true)) then
+			consoleHistory[line] = consoleHistory[line] .. ">"
+		else
+			consoleHistory[line] = consoleHistory[line] .. k
+		end
+	elseif k == "-" then
+		if ((shift_press == true) or (caps_hold == true)) then
+			consoleHistory[line] = consoleHistory[line] .. "_"
+		else
+			consoleHistory[line] = consoleHistory[line] .. k
+		end
 	elseif k == "1" then
-		
+		if ((shift_press == true) or (caps_hold == true)) then
+			consoleHistory[line] = consoleHistory[line] .. "!"
+		else
+			consoleHistory[line] = consoleHistory[line] .. k
+		end
 	elseif k == "2" then
-		
+		if ((shift_press == true) or (caps_hold == true)) then
+			consoleHistory[line] = consoleHistory[line] .. "@"
+		else
+			consoleHistory[line] = consoleHistory[line] .. k
+		end
 	elseif k == "3" then
-		
+		if ((shift_press == true) or (caps_hold == true)) then
+			consoleHistory[line] = consoleHistory[line] .. "#"
+		else
+			consoleHistory[line] = consoleHistory[line] .. k
+		end
 	elseif k == "4" then
-		
+		if ((shift_press == true) or (caps_hold == true)) then
+			consoleHistory[line] = consoleHistory[line] .. "$"
+		else
+			consoleHistory[line] = consoleHistory[line] .. k
+		end
 	elseif k == "5" then
-		
+		if ((shift_press == true) or (caps_hold == true)) then
+			consoleHistory[line] = consoleHistory[line] .. "%"
+		else
+			consoleHistory[line] = consoleHistory[line] .. k
+		end
 	elseif k == "6" then
-		
+		if ((shift_press == true) or (caps_hold == true)) then
+			consoleHistory[line] = consoleHistory[line] .. "^"
+		else
+			consoleHistory[line] = consoleHistory[line] .. k
+		end
 	elseif k == "7" then
-		
+		if ((shift_press == true) or (caps_hold == true)) then
+			consoleHistory[line] = consoleHistory[line] .. "&"
+		else
+			consoleHistory[line] = consoleHistory[line] .. k
+		end
 	elseif k == "8" then
-		
+		if ((shift_press == true) or (caps_hold == true)) then
+			consoleHistory[line] = consoleHistory[line] .. "*"
+		else
+			consoleHistory[line] = consoleHistory[line] .. k
+		end
 	elseif k == "9" then
 		if ((shift_press == true) or (caps_hold == true)) then
 			consoleHistory[line] = consoleHistory[line] .. "("
@@ -154,10 +271,9 @@ function console_key (k)
 				else
 					caps_hold = true
 				end
-				print("Caps: ", caps_hold) -- [FIX3] caps_hold only changes every other time
+				originalPrint("Caps: ", caps_hold) -- [FIX3] caps_hold only changes every other time
 			end
 		end
-	--	consoleHistory[line] = consoleHistory[line] .. k
 	end
 end
 

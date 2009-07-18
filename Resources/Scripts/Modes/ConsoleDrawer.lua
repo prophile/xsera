@@ -3,6 +3,7 @@ import('Console')
 function init ()
 	console_add("$Loading console...")
 	sound.stop_music()
+	setNewPrint()
 	CONSOLE_MAX = 18
 	console_add("$Console loaded.")
 	console_add(">")
