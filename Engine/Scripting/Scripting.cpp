@@ -122,7 +122,27 @@ void LuaScript::InvokeSubroutine ( const std::string& name, float x, float y )
     {
 		lua_pushnumber(L, x);
 		lua_pushnumber(L, y);
-        int rc = lua_pcall(L, 0, 0, 0);
+        int rc = lua_pcall(L, 2, 0, 0);
+        if (rc > 0)
+        {
+            luaHandleError(L);
+        }
+    }
+    else
+    {
+        lua_pop(L, 1);
+    }
+}
+
+void LuaScript::InvokeSubroutine ( const std::string& name, const std::string& p, float x, float y )
+{
+	lua_getglobal(L, name.c_str());
+    if (!lua_isnoneornil(L, -1))
+    {
+		lua_pushlstring(L, p.data(), p.length());
+		lua_pushnumber(L, x);
+		lua_pushnumber(L, y);
+        int rc = lua_pcall(L, 3, 0, 0);
         if (rc > 0)
         {
             luaHandleError(L);

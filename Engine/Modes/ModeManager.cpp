@@ -1,5 +1,6 @@
 #include "ModeManager.h"
 #include <SDL/SDL.h>
+#include "input.h"
 
 #include "Logging.h"
 
@@ -58,6 +59,16 @@ public:
 			case Input::Event::KEYUP:
 				script->InvokeSubroutine("keyup", event.object);
 				break;
+			case Input::Event::CLICK:
+				script->InvokeSubroutine("mouse", event.object, event.mouse.X(), event.mouse.Y());
+				break;
+			case Input::Event::RELEASE:
+				script->InvokeSubroutine("mouse_up", event.object, event.mouse.X(), event.mouse.Y());
+				break;
+			case Input::Event::MOUSEMOVE:
+				script->InvokeSubroutine("mouse_move", event.mouse.X(), event.mouse.Y());
+				break;
+			default: break;
 			case Input::Event::QUIT:
 				exit(0);
 				break;

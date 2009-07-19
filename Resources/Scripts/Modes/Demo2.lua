@@ -34,6 +34,10 @@ end
 	------------------}}--
 --------------------------]]--
 
+mouse_movement = false
+mousePos = { x = 0, y = 0 }
+mouseStart = 0
+
 function init ()
 	sound.stop_music()
     lastTime = mode_manager.time()
@@ -472,6 +476,24 @@ function render ()
 	graphics.draw_line(math.cos(arrowAlpha + angle) * arrowDist + playerShip.physicsObject.position.x, math.sin(arrowAlpha + angle) * arrowDist + playerShip.physicsObject.position.y, math.cos(angle - arrowAlpha) * arrowDist + playerShip.physicsObject.position.x, math.sin(angle - arrowAlpha) * arrowDist + playerShip.physicsObject.position.y, 1.5, 0.1, 0.7, 0.1, 1)
 	graphics.draw_line(math.cos(angle - arrowAlpha) * arrowDist + playerShip.physicsObject.position.x, math.sin(angle - arrowAlpha) * arrowDist + playerShip.physicsObject.position.y, math.cos(angle) * (arrowLength + arrowVar) + playerShip.physicsObject.position.x, math.sin(angle) * (arrowLength + arrowVar) + playerShip.physicsObject.position.y, 1.5, 0.1, 0.7, 0.1, 1)
 	graphics.draw_line(math.cos(angle) * (arrowLength + arrowVar) + playerShip.physicsObject.position.x, math.sin(angle) * (arrowLength + arrowVar) + playerShip.physicsObject.position.y, math.cos(arrowAlpha + angle) * arrowDist + playerShip.physicsObject.position.x, math.sin(arrowAlpha + angle) * arrowDist + playerShip.physicsObject.position.y, 1.5, 0.1, 0.7, 0.1, 1)
+-- Mouse
+	if mouseMovement == true then
+		-- draw mouse replacement
+		-- check to see if it's over the panels
+		-- if it's not, draw the lines coming inward
+		graphics.draw_line(-410, mousePos.y, mousePos.x - 20, mousePos.y, 1.0, 0.3, 0.3, 0.8, 1)
+		graphics.draw_line(410, mousePos.y, mousePos.x + 20, mousePos.y, 1.0, 0.3, 0.3, 0.8, 1)
+		graphics.draw_line(mousePos.x, -310, mousePos.x, mousePos.y - 20, 1.0, 0.3, 0.3, 0.8, 1)
+		graphics.draw_line(mousePos.x, 310, mousePos.x, mousePos.y + 20, 1.0, 0.3, 0.3, 0.8, 1)
+		-- if it is, draw the cursor
+		cursorx, cursory = graphics.sprite_dimensions("Misc/Cursor")
+		graphics.draw_sprite("Misc/Cursor", mousePos.x, mousePos.y, cursorx, cursory, 0)
+		-- check mouse idleness timer
+		if mode_manager.time() - mouseStart >= 2.0 then
+			mouseMovement = false
+		end
+	end
+	
 -- Panels
 	draw_panels()
 -- Console
@@ -597,6 +619,20 @@ function key ( k )
 	elseif k == "escape" then
 		mode_manager.switch("MainMenu")
 	end
+end
+
+function mouse(button, mbX, mbY)
+	print(mbX, mbY)
+end
+
+function mouse_up(button, mbX, mbY)
+
+end
+
+function mouse_move(mbX, mbY)
+	mouseMovement = true
+	mousePos = { x = mbX, y = mbY }
+	mouseStart = mode_manager.time()
 end
 
 normal_key = key

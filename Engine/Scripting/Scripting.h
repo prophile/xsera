@@ -42,6 +42,14 @@ public:
      * @param y Another float parameter
      */
 	void InvokeSubroutine ( const std::string& name, float x, float y );
+    /**
+     * Invokes a lua subroutine
+     * @param name The name of the subroutine to invoke
+     * @param p A string parameter
+     * @param x A float parameter
+     * @param y Another float parameter
+     */
+	void InvokeSubroutine ( const std::string& name, const std::string& p, float x, float y );
 	
 	/**
 	 * Fetches the underlying lua_State* object
