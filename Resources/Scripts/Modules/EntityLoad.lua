@@ -7,12 +7,8 @@ function NewEntity (entOwner, entName, entType, entDir, entSubdir, other)
 	local entTypeReal = entType
 	local concatString = nil
 	if entType == "Projectile" then
-		local weapon = entOwner[entDir]
-		if (weapon.start + weapon.cooldown) / 1000 > mode_manager.time() then
-			return
-		end
 		if entDir == "beam" then
-			if entOwner.battery.level < weapon.cost then
+			if entOwner.battery.level < entOwner[entDir].cost then
 				return
 			end
 		elseif entDir == "special" then
@@ -101,7 +97,6 @@ function NewEntity (entOwner, entName, entType, entDir, entSubdir, other)
 					end
 				end
 				if entType == "Projectile" then
-					entOwner[weaponClass].start = mode_manager.time()
 					if weaponClass == "beam" then
 						-- [ADAM, FIX] this piece of code is a hack, it relies on what little weapons we have right now to make the assumption
 						if entOwner.switch == true then
@@ -118,8 +113,6 @@ function NewEntity (entOwner, entName, entType, entDir, entSubdir, other)
 					elseif weaponClass == "special" then
 						entObject.dest = { x = computerShip.physicsObject.position.x, y = computerShip.physicsObject.position.y }
 						entOwner.special.ammo = entOwner.special.ammo - 1
-					--	sound.play("RocketLaunchr")
-						-- temp sound file, should be "RocketLaunch" but for some reason, that file gets errors (file included for troubleshooting)
 						
 						if computerShip == nil then
 							entObject.isSeeking = false
@@ -158,7 +151,6 @@ function NewEntity (entOwner, entName, entType, entDir, entSubdir, other)
 						errLog("Unknown projectile class '" .. entClass .. "'. See NewEntity", 11)
 					end
 					entObject.life = tonumber(trueData.life)
-					entObject.start = mode_manager.time()
 				end
 				return entObject
 			end
@@ -285,10 +277,6 @@ function NewEntity (entOwner, entName, entType, entDir, entSubdir, other)
 -- projectile-specific
 		local weaponClass = entDir
 		local wNum = other
-		sound.play(entOwner[weaponClass].sound)
-		if loading_entities == false then
-			entOwner[weaponClass].start = mode_manager.time()
-		end
 		if trueData.turnrate ~= nil then
 			entObject.turningRate = tonumber(trueData.turnrate)
 			entObject.maxSeek = tonumber(trueData.maxSeek)
@@ -314,8 +302,6 @@ function NewEntity (entOwner, entName, entType, entDir, entSubdir, other)
 			elseif weaponClass == "special" then
 				entObject.dest = { x = computerShip.physicsObject.position.x, y = computerShip.physicsObject.position.y }
 				entOwner.special.ammo = entOwner.special.ammo - 1
-			--	sound.play("RocketLaunchr")
-				-- temp sound file, should be "RocketLaunch" but for some reason, that file gets errors (file included for troubleshooting)
 				
 				if computerShip == nil then
 					entObject.isSeeking = false
@@ -354,7 +340,6 @@ function NewEntity (entOwner, entName, entType, entDir, entSubdir, other)
 				errLog("Unknown projectile class '" .. entClass .. "'. See NewEntity", 11)
 			end
 			entObject.life = tonumber(trueData.life)
-			entObject.start = mode_manager.time()
 		end
 	elseif entType == "Ship" then
 -- ship-specific

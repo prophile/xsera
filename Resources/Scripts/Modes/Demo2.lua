@@ -37,6 +37,9 @@ end
 mouse_movement = false
 mousePos = { x = 0, y = 0 }
 mouseStart = 0
+timeInterval = 1
+cameraRatioOrig = nil
+cameraRatioT = cameraRatio
 
 function init ()
 	sound.stop_music()
@@ -81,6 +84,28 @@ function update ()
 		end
 	end
 	
+	if cameraChanging == true then
+		x = x - dt
+		if x < 0 then
+			x = 0
+			cameraChanging = false
+			playerShip.beam.width = cameraRatio
+		end
+		if x >= 0 then
+			if cameraIncreasing == true then
+				cameraRatio = cameraRatioOrig + cameraRatioOrig * multiplier * (((x - timeInterval) * (x - timeInterval)) / (timeInterval * timeInterval))
+			else
+				cameraRatio = cameraRatioOrig - cameraRatioOrig * multiplier * (((x - timeInterval) * (x - timeInterval)) / (timeInterval * timeInterval))
+			end
+		end
+		camera = { w = 640 / cameraRatio, h }
+		camera.h = camera.w / aspectRatio
+		shipAdjust = .045 * camera.w
+		arrowLength = CarrowLength / cameraRatio
+		arrowVar = CarrowVar / cameraRatio
+		arrowDist = CarrowDist / cameraRatio
+	end
+		
 --[[------------------
 	Warping Code
 ------------------]]-- it's a pair of lightsabers!
@@ -279,31 +304,36 @@ end
 function weapon_manage(weapon, weapData, weapOwner) -- examples: weapon = playerShip.beam, weapData = playerShip.beamWeap, weapOwner = playerShip
 -- handling of new projectile
 	if weapon.firing == true then
-	--	if  [FIX2] need to fix by adding cooldown restriction
-		local wNum = 1
-		while wNum <= weapon.max_projectiles do
-			if weapData[wNum] == nil then
-				-- I would rather load from memory, but we don't have a function that preloads yet. Oh well. [DEMO2, ADAM, ALISTAIR]
-				if weapon.image ~= nil then
-					print(weapon.image)
-					weapData[wNum] = NewEntity(weapOwner, weapon.image, "Projectile", weapon.class, nil, wNum)
-				else
-					weapData[wNum] = NewEntity(weapOwner, weapon.fileName, "Projectile", weapon.class, nil, wNum)
+		print(weapon.cooldown, mode_manager.time(), weapon.start, mode_manager.time() - weapon.start)
+		if weapon.cooldown <= mode_manager.time() - weapon.start then
+			sound.play(weapon.sound)
+			weapon.fired = true
+			weapon.start = mode_manager.time()
+			local wNum = 1
+			while wNum <= weapon.max_projectiles do
+				if weapData[wNum] == nil then
+					-- I would rather load from memory, but we don't have a function that preloads yet. Oh well. [DEMO2, ADAM, ALISTAIR]
+					if weapon.image ~= nil then
+						print(weapon.image)
+						weapData[wNum] = NewEntity(weapOwner, weapon.image, "Projectile", weapon.class, nil, wNum)
+					else
+						weapData[wNum] = NewEntity(weapOwner, weapon.fileName, "Projectile", weapon.class, nil, wNum)
+					end
 					weapData[wNum].start = mode_manager.time()
+					print_table(weapData[wNum])
+					print("Number of weapons: " .. wNum)
+					wNum = weapon.max_projectiles -- exit while loop
 				end
-			--	print_table(weapData[wNum])
-				print("Number of weapons: " .. wNum)
-				wNum = weapon.max_projectiles -- exit while loop
+				wNum = wNum + 1
 			end
-			wNum = wNum + 1
+			weapon.fired = true
+		--	print("weapon.fired status: true (1)")
 		end
-		weapon.fired = true
-	--	print("weapon.fired status: true (1)")
 	end
 
 -- handling for existing weapons and projectiles
 	local wNum = 1
-	while wNum <= weapon.max_projectiles do
+	while wNum <= 50 do
 		if weapData[wNum] ~= nil then
 			if weapData[wNum].physicsObject == nil then
 				-- this object needs to be deleted, probably the initializing table
@@ -322,8 +352,6 @@ function weapon_manage(weapon, weapData, weapOwner) -- examples: weapon = player
 					end
 				end
 				if mode_manager.time() - weapData[wNum].start >= weapon.life then
-					-- [FIX2] HERE IS THE OUTPUT I'M GETTING
-					print(mode_manager.time(), weapData[wNum].start, (mode_manager.time() - weapData[wNum].start), weapon.life)
 					table.remove(weapData, wNum)
 					if weapData[1] ~= nil then
 						weapon.fired = true
@@ -334,6 +362,7 @@ function weapon_manage(weapon, weapData, weapOwner) -- examples: weapon = player
 					end
 				end
 			end
+			print_table(weapData[wNum])
 		end
 		wNum = wNum + 1
 	end
@@ -477,6 +506,7 @@ function render ()
 	graphics.draw_line(math.cos(angle - arrowAlpha) * arrowDist + playerShip.physicsObject.position.x, math.sin(angle - arrowAlpha) * arrowDist + playerShip.physicsObject.position.y, math.cos(angle) * (arrowLength + arrowVar) + playerShip.physicsObject.position.x, math.sin(angle) * (arrowLength + arrowVar) + playerShip.physicsObject.position.y, 1.5, 0.1, 0.7, 0.1, 1)
 	graphics.draw_line(math.cos(angle) * (arrowLength + arrowVar) + playerShip.physicsObject.position.x, math.sin(angle) * (arrowLength + arrowVar) + playerShip.physicsObject.position.y, math.cos(arrowAlpha + angle) * arrowDist + playerShip.physicsObject.position.x, math.sin(arrowAlpha + angle) * arrowDist + playerShip.physicsObject.position.y, 1.5, 0.1, 0.7, 0.1, 1)
 -- Mouse
+	--[[ disabled for now
 	if mouseMovement == true then
 		-- draw mouse replacement
 		-- check to see if it's over the panels
@@ -492,7 +522,7 @@ function render ()
 		if mode_manager.time() - mouseStart >= 2.0 then
 			mouseMovement = false
 		end
-	end
+	end--]]
 	
 -- Panels
 	draw_panels()
@@ -556,37 +586,36 @@ function key ( k )
 		showVelocity = false
 	elseif k == "y" then
 		if cameraRatio ~= 2 then
-			cameraRatio = cameraRatio * 2
-			if cameraRatio == 1 / 8 then -- there is no 1:8, make it 1:4
-				cameraRatio = cameraRatio * 2
+			cameraChanging = true
+			cameraRatioOrig = cameraRatio
+			cameraIncreasing = true
+			x = timeInterval
+			if cameraRatio ~= 1 / 16 then
+				multiplier = 1
+			else
+				multiplier = 3
 				arrowLength = arrowLength / 2
 				arrowVar = arrowVar / 2
 				arrowDist = arrowDist / 2
 			end
-			camera = { w = 640 / cameraRatio, h }
-			camera.h = camera.w / aspectRatio
-			shipAdjust = .045 * camera.w
 			arrowLength = arrowLength / 2
 			arrowVar = arrowVar / 2
 			arrowDist = arrowDist / 2
-			playerShip.beam.width = cameraRatio
-		end
+		end--]]
 	elseif k == "h" then
 		if cameraRatio ~= 1 / 16 then
-			cameraRatio = cameraRatio / 2
-			if cameraRatio == 1 / 8 then -- there is no 1:8, make it 1:16
-				cameraRatio = cameraRatio / 2
+			cameraChanging = true
+			cameraRatioOrig = cameraRatio
+			cameraIncreasing = false
+			x = timeInterval
+			if cameraRatio ~= 1 / 4 then
+				multiplier = 1 / 2
+			else
+				multiplier = 1 / 4
 				arrowLength = arrowLength * 2
 				arrowVar = arrowVar * 2
 				arrowDist = arrowDist * 2
 			end
-			camera = { w = 640 / cameraRatio, h }
-			camera.h = camera.w / aspectRatio
-			shipAdjust = .045 * camera.w
-			arrowLength = arrowLength * 2
-			arrowVar = arrowVar * 2
-			arrowDist = arrowDist * 2
-			playerShip.beam.width = cameraRatio
 		end
 	elseif k == "i" then
 		change_menu(menu_level, "i")

@@ -17,7 +17,7 @@
 	<!-- damage dealt -->
 	<damage>50</damage>
 	<!-- cooldown time, in miliseconds -->
-	<cooldown>125</cooldown>
+	<cooldown>0.125</cooldown>
 	<!-- cost, in energy -->
 	<energyCost>5</energyCost>
 	<!-- velocity -->

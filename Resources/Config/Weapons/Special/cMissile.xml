@@ -23,7 +23,7 @@
 	<!-- damage dealt -->
 	<damage>100</damage>
 	<!-- cooldown time, in miliseconds -->
-	<cooldown>1200</cooldown>
+	<cooldown>1.2</cooldown>
 	<!-- cost, in energy -->
 	<energyCost>100</energyCost>
 	<!-- ammo -->

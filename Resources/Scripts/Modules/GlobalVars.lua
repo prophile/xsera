@@ -50,10 +50,16 @@ entities = {}
 
 soundLength = 0.25
 
-arrowLength = 135
-arrowVar = (3 * math.sqrt(3))
-arrowDist = hypot(6, (arrowLength - arrowVar))
-arrowAlpha = math.atan2(6, arrowDist)
+CarrowLength = 135
+CarrowVar = (3 * math.sqrt(3))
+CarrowDist = hypot(6, (CarrowLength - CarrowVar))
+CarrowAlpha = math.atan2(6, CarrowDist)
+
+arrowLength = CarrowLength
+arrowVar = CarrowVar
+arrowDist = CarrowDist
+arrowAlpha = CarrowAlpha
+
 gridDistBlue = 300
 gridDistLightBlue = 2400
 gridDistGreen = 4800
