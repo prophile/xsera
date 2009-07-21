@@ -400,7 +400,7 @@ function render ()
 				graphics.draw_line(i * gridDistBlue, -60000, i * gridDistBlue, 60000, 1, 0.3, 0.3, 0.8, 1)
 			end
 		else
-			if cameraRatio ~= 1 / 16 then
+			if cameraRatio > 1 / 8 then
 				graphics.draw_line(-60000, -i * gridDistBlue, 60000, -i * gridDistBlue, 1, 0.0, 0.0, 0.65, 1)
 				graphics.draw_line(-60000, i * gridDistBlue, 60000, i * gridDistBlue, 1, 0.0, 0.0, 0.65, 1)
 				graphics.draw_line(-i * gridDistBlue, -60000, -i * gridDistBlue, 60000, 1, 0.0, 0.0, 0.65, 1)
@@ -414,7 +414,7 @@ function render ()
 	Planet Drawing
 ------------------]]--
 	
-	if cameraRatio ~= 1 / 16 then
+	if cameraRatio > 1 / 8 then
 		aex, aey = graphics.sprite_dimensions("Planets/AnotherEarth")
 		graphics.draw_sprite("Planets/AnotherEarth", scen.planet.position.x, scen.planet.position.y, aex, aey, 1, 0.0, 1.0, 1.0, 1.0)
 	else
@@ -426,7 +426,7 @@ function render ()
 ------------------]]--
 	if computerShip ~= nil then
 		if computerShip.life > 0 then
-			if cameraRatio ~= 1 / 16 then
+			if cameraRatio > 1 / 8 then
 				graphics.draw_sprite("Gaitori/Carrier", computerShip.physicsObject.position.x, computerShip.physicsObject.position.y, computerShip.size.x, computerShip.size.y, computerShip.physicsObject.angle)
 			else
 				graphics.draw_rtri(computerShip.physicsObject.position.x, computerShip.physicsObject.position.y, 60, 1, 0, 0, 1)
@@ -435,7 +435,7 @@ function render ()
 			-- This explosion code is a hack. We need a way to deal with explosions in a better method.
 			-- Let's figure it out when we get Sfiera's data [ADAM, SFIERA]
 			if computerShip ~= nil then
-				if cameraRatio ~= 1 / 16 then
+				if cameraRatio > 1 / 8 then
 					graphics.draw_sprite(bestExplosion.image, computerShip.physicsObject.position.x, computerShip.physicsObject.position.y, bestExplosion.size.x, bestExplosion.size.y, frame / 6 * math.pi)
 				end
 				if frame == 0 then
@@ -449,7 +449,7 @@ function render ()
 			end
 		end
 	end
-	if cameraRatio ~= 1 / 16 then
+	if cameraRatio > 1 / 8 then
 		graphics.draw_sprite(playerShip.image, playerShip.physicsObject.position.x, playerShip.physicsObject.position.y, playerShip.size.x, playerShip.size.y, playerShip.physicsObject.angle)
 	else
 		graphics.draw_rtri(playerShip.physicsObject.position.x, playerShip.physicsObject.position.y, 60)
@@ -457,7 +457,7 @@ function render ()
 	if otherShip ~= nil then
 		wNum = 1
 		while otherShip[wNum] ~= nil do
-			if cameraRatio ~= 1 / 16 then
+			if cameraRatio > 1 / 8 then
 				graphics.draw_sprite(otherShip[wNum].image, otherShip[wNum].physicsObject.position.x, otherShip[wNum].physicsObject.position.y, otherShip[wNum].size.x, otherShip[wNum].size.y, otherShip[wNum].physicsObject.angle)
 			else
 				graphics.draw_rtri(otherShip[wNum].physicsObject.position.x, otherShip[wNum].physicsObject.position.y, 60)
@@ -586,24 +586,20 @@ function key ( k )
 		showVelocity = false
 	elseif k == "y" then
 		if cameraRatio ~= 2 then
+			print(cameraRatio)
 			cameraChanging = true
 			cameraRatioOrig = cameraRatio
 			cameraIncreasing = true
 			x = timeInterval
-			if cameraRatio ~= 1 / 16 then
+			if cameraRatio > 1 / 8 then
 				multiplier = 1
 			else
 				multiplier = 3
-				arrowLength = arrowLength / 2
-				arrowVar = arrowVar / 2
-				arrowDist = arrowDist / 2
 			end
-			arrowLength = arrowLength / 2
-			arrowVar = arrowVar / 2
-			arrowDist = arrowDist / 2
 		end--]]
 	elseif k == "h" then
 		if cameraRatio ~= 1 / 16 then
+			print(cameraRatio)
 			cameraChanging = true
 			cameraRatioOrig = cameraRatio
 			cameraIncreasing = false
@@ -612,9 +608,6 @@ function key ( k )
 				multiplier = 1 / 2
 			else
 				multiplier = 1 / 4
-				arrowLength = arrowLength * 2
-				arrowVar = arrowVar * 2
-				arrowDist = arrowDist * 2
 			end
 		end
 	elseif k == "i" then
