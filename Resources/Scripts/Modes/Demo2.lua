@@ -90,14 +90,12 @@ function update ()
 			x = 0
 			cameraChanging = false
 			playerShip.beam.width = cameraRatio
+			print(cameraRatio)
 		end
 		if x >= 0 then
-			if cameraIncreasing == true then
-				cameraRatio = cameraRatioOrig + cameraRatioOrig * multiplier * (((x - timeInterval) * (x - timeInterval)) / (timeInterval * timeInterval))
-			else
-				cameraRatio = cameraRatioOrig - cameraRatioOrig * multiplier * (((x - timeInterval) * (x - timeInterval)) / (timeInterval * timeInterval))
-			end
+			cameraRatio = cameraRatioOrig + cameraRatioOrig * multiplier * (((x - timeInterval) * (x - timeInterval)) / (timeInterval * timeInterval))
 		end
+		print(cameraRatio)
 		camera = { w = 640 / cameraRatio, h }
 		camera.h = camera.w / aspectRatio
 		shipAdjust = .045 * camera.w
@@ -105,7 +103,7 @@ function update ()
 		arrowVar = CarrowVar / cameraRatio
 		arrowDist = CarrowDist / cameraRatio
 	end
-		
+	
 --[[------------------
 	Warping Code
 ------------------]]-- it's a pair of lightsabers!
@@ -584,31 +582,25 @@ function key ( k )
 		showVelocity = true
 	elseif k == "t" then
 		showVelocity = false
-	elseif k == "y" then
-		if cameraRatio ~= 2 then
-			print(cameraRatio)
+	elseif k == "=" then
+		if cameraRatioNum ~= 1 then
+			sound.play("ZoomChange")
 			cameraChanging = true
 			cameraRatioOrig = cameraRatio
 			cameraIncreasing = true
 			x = timeInterval
-			if cameraRatio > 1 / 8 then
-				multiplier = 1
-			else
-				multiplier = 3
-			end
-		end--]]
-	elseif k == "h" then
-		if cameraRatio ~= 1 / 16 then
-			print(cameraRatio)
+			cameraRatioNum = cameraRatioNum - 1
+			multiplier = (cameraRatios[cameraRatioNum] - cameraRatio) / cameraRatio
+		end
+	elseif k == "-" then
+		if cameraRatios[cameraRatioNum + 1] ~= nil then
+			sound.play("ZoomChange")
 			cameraChanging = true
 			cameraRatioOrig = cameraRatio
 			cameraIncreasing = false
 			x = timeInterval
-			if cameraRatio ~= 1 / 4 then
-				multiplier = 1 / 2
-			else
-				multiplier = 1 / 4
-			end
+			cameraRatioNum = cameraRatioNum + 1
+			multiplier = (cameraRatios[cameraRatioNum] - cameraRatio) / cameraRatio
 		end
 	elseif k == "i" then
 		change_menu(menu_level, "i")

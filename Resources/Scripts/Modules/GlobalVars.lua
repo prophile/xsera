@@ -43,6 +43,9 @@ shipQuerying = { n, p, r }
 shipBuilding = { n, p, r }
 --/tempvars
 
+cameraRatios = { 2, 1, 1/2, 1/4, 1/16 }
+cameraRatioNum = 2
+
 --loadingstuff
 loading_entities = false
 entities = {}
