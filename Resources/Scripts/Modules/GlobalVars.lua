@@ -5,6 +5,8 @@ aspectRatio = 4 / 3
 camera = { w = 640 / cameraRatio, h }
 camera.h = camera.w / aspectRatio
 shipAdjust = .045 * camera.w
+cameraRatios = { 2, 1, 1/2, 1/4, 1/16 }
+cameraRatioNum = 2
 
 --color tables
 c_lightRed = { r = 0.8, g = 0.4, b = 0.4, a = 1 }
@@ -41,23 +43,18 @@ ship_selected = false
 scen = nil
 shipQuerying = { n, p, r }
 shipBuilding = { n, p, r }
+soundLength = 0.25
 --/tempvars
-
-cameraRatios = { 2, 1, 1/2, 1/4, 1/16 }
-cameraRatioNum = 2
 
 --loadingstuff
 loading_entities = false
 entities = {}
 --/loadingstuff
 
-soundLength = 0.25
-
 CarrowLength = 135
 CarrowVar = (3 * math.sqrt(3))
 CarrowDist = hypot(6, (CarrowLength - CarrowVar))
 CarrowAlpha = math.atan2(6, CarrowDist)
-
 arrowLength = CarrowLength
 arrowVar = CarrowVar
 arrowDist = CarrowDist

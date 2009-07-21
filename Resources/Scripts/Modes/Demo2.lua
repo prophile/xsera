@@ -50,12 +50,10 @@ function init ()
 		scen = NewEntity(nil, "demo", "Scenario")
 	end
 	loading_entities = false
---	print_table(entities)
 	computerShip = NewEntity(nil, "Carrier", "Ship", "Gaitori")
 		computerShip.physicsObject.position = { x = 2200, y = 2700 }
 		computerShip.physicsObject.angle = math.pi - 0.2
 	playerShip = NewEntity(nil, "HeavyCruiser", "Ship", "Ishiman")
---	resetOwner(playerShip)
 	bestExplosion = NewEntity(nil, "BestExplosion", "Explosion")
 end
 
@@ -90,12 +88,10 @@ function update ()
 			x = 0
 			cameraChanging = false
 			playerShip.beam.width = cameraRatio
-			print(cameraRatio)
 		end
 		if x >= 0 then
 			cameraRatio = cameraRatioOrig + cameraRatioOrig * multiplier * (((x - timeInterval) * (x - timeInterval)) / (timeInterval * timeInterval))
 		end
-		print(cameraRatio)
 		camera = { w = 640 / cameraRatio, h }
 		camera.h = camera.w / aspectRatio
 		shipAdjust = .045 * camera.w
@@ -270,7 +266,6 @@ function update ()
 			end
 			otherShip[num] = NewEntity(shipBuilding.p, shipBuilding.n, "Ship", shipBuilding.r)
 		--	print(otherShip[num], playerShip)
-		--	resetOwner(otherShip[num], shipBuilding.p)
 			planet.buildqueue.percent = 100
 			build_timer_running = false
 			sound.play("IComboBeep")
