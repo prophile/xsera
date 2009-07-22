@@ -2,6 +2,7 @@ consoleHistory = {}
 line = 0
 line_focus = 0
 CONSOLE_MAX = 5
+popDown = false
 
 do
 	originalPrint = print
@@ -25,16 +26,15 @@ endsInCloseParen = nil
 processConsole = false
 nestLevel = 0
 newHistory = nil
-
+firstTime = true
 io.output("XseraOutput.txt")
 
 function console_draw(fontsize)
-	camera = { w = 640, h = 480 }
-	graphics.set_camera(-camera.w / 2, -camera.h / 2, camera.w / 2, camera.h / 2)
+	graphics.set_camera(-320, -240, 320, 240)
 	local i = 1
 	while consoleHistory[i] ~= nil do
 		if i <= CONSOLE_MAX then
-			graphics.draw_text(consoleHistory[i], "CrystalClear", "left", -319, 234 - (i - 1) * fontsize + 1, fontsize)
+			graphics.draw_text(consoleHistory[i], "CrystalClear", "left", -319, 232 - (i - 1) * fontsize + 1, fontsize)
 			i = i + 1
 		else
 			return
@@ -147,7 +147,12 @@ function console_key (k)
 		end
 	elseif k == "escape" then
 		setNewPrint()
-		mode_manager.switch("MainMenu")
+		if popDown == true then
+			consoleDraw = false
+			popDown = false
+		else
+			mode_manager.switch("MainMenu")
+		end
 	elseif k == "backspace" then
 		if ((consoleHistory[line] ~= ">") and (consoleHistory[line] ~= ">>")) then
 			consoleHistory[line] = consoleHistory[line]:sub(1, -2)

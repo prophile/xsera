@@ -637,7 +637,7 @@ function key ( k )
 end
 
 function mouse(button, mbX, mbY)
-	print(mbX, mbY)
+--	print(mbX, mbY)
 end
 
 function mouse_up(button, mbX, mbY)

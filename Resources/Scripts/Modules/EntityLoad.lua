@@ -381,7 +381,7 @@ function NewEntity (entOwner, entName, entType, entDir, entSubdir, other)
 	else
 		errLog("Unknown entity of type " .. entType, 11)
 	end
-	cout_table(entObject, "object", false)
+--	cout_table(entObject, "object", false)
 	local num = 1
 	while entities[num] ~= nil do
 		num = num + 1

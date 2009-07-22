@@ -41,7 +41,11 @@ function table_define (t, name, indent)
 end
 
 function print_table (t, name)
-	print(table_define(t, name))
+	if originalPrint ~= nil then
+		originalPrint(table_define(t, name))
+	else
+		print(table_define(t, name))
+	end
 end
 
 function deepcopy(object)
