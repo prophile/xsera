@@ -22,7 +22,7 @@
 	<life>1.5</life>
 	<!-- damage dealt -->
 	<damage>100</damage>
-	<!-- cooldown time, in miliseconds -->
+	<!-- cooldown time, in seconds -->
 	<cooldown>1.2</cooldown>
 	<!-- cost, in energy -->
 	<energyCost>100</energyCost>

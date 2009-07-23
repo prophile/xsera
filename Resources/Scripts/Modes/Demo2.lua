@@ -297,7 +297,6 @@ end
 function weapon_manage(weapon, weapData, weapOwner) -- examples: weapon = playerShip.beam, weapData = playerShip.beamWeap, weapOwner = playerShip
 -- handling of new projectile
 	if weapon.firing == true then
-		print(weapon.cooldown, mode_manager.time(), weapon.start, mode_manager.time() - weapon.start)
 		if weapon.cooldown <= mode_manager.time() - weapon.start then
 			sound.play(weapon.sound)
 			weapon.fired = true
@@ -305,22 +304,69 @@ function weapon_manage(weapon, weapData, weapOwner) -- examples: weapon = player
 			local wNum = 1
 			while wNum <= weapon.max_projectiles do
 				if weapData[wNum] == nil then
-					print(weapon.class)
 					if weapon.image ~= nil then
-						print(weapon.image)
-						weapData[wNum] = NewEntity(weapOwner, weapon.image, "Projectile", weapon.class, nil, wNum)
+						weapData[wNum] = NewEntity(weapOwner, weapon.image, "Projectile", weapon.class)
 					else
-						weapData[wNum] = NewEntity(weapOwner, weapon.fileName, "Projectile", weapon.class, nil, wNum)
+						weapData[wNum] = NewEntity(weapOwner, weapon.fileName, "Projectile", weapon.class)
 					end
 					weapData[wNum].start = mode_manager.time()
-					print_table(weapData[wNum])
-					print("Number of weapons: " .. wNum)
+					if weapon.class == "beam" then
+						-- [ADAM, FIX] this piece of code is a hack, it relies on what little weapons we have right now to make the assumption
+						if weapOwner.switch == true then
+							weapData[wNum].physicsObject.position = { x = weapOwner.physicsObject.position.x + math.cos(weapData[wNum].physicsObject.angle + 0.17) * (weapon.length - 3), y = weapOwner.physicsObject.position.y + math.sin(weapData[wNum].physicsObject.angle + 0.17) * (weapon.length - 3) }
+							weapOwner.switch = false
+						else
+							weapData[wNum].physicsObject.position = { x = weapOwner.physicsObject.position.x + math.cos(weapData[wNum].physicsObject.angle - 0.17) * (weapon.length - 3), y = weapOwner.physicsObject.position.y + math.sin(weapData[wNum].physicsObject.angle - 0.17) * (weapon.length - 3) }
+							weapOwner.switch = true
+						end
+						weapOwner.energy.level = weapOwner.energy.level - weapon.cost
+					elseif weapon.class == "pulse" then
+						return
+					elseif weapon.class == "special" then
+						weapData[wNum].dest = { x = computerShip.physicsObject.position.x, y = computerShip.physicsObject.position.y }
+						weapOwner.special.ammo = weapOwner.special.ammo - 1
+						
+						if computerShip == nil then
+							weapData[wNum].isSeeking = false
+						end
+						if weapData[wNum].isSeeking == true then
+							local projectileTravel = { x, y, dist }
+							projectileTravel.dist = (weapOwner.special.thrust * weapOwner.special.life * weapOwner.special.life / 1000000) / (2 * weapOwner.special.mass)
+							projectileTravel.x = math.cos(weapData[wNum].physicsObject.angle) * (projectileTravel.dist + weapData[wNum].physicsObject.velocity.x)
+							projectileTravel.y = math.sin(weapData[wNum].physicsObject.angle) * (projectileTravel.dist + weapData[wNum].physicsObject.velocity.y)
+							if find_hypot(weapData[wNum].physicsObject.position, weapData[wNum].dest) <= hypot(projectileTravel.x, projectileTravel.y) then
+								if showAngles == true then
+									print(find_angle(weapData[wNum].dest, weapData[wNum].physicsObject.position))
+									print(weapData[wNum].physicsObject.angle)
+									print(find_angle(weapData[wNum].dest, weapData[wNum].physicsObject.position) - weapData[wNum].physicsObject.angle)
+								end
+								local angle = find_angle(weapData[wNum].dest, weapData[wNum].physicsObject.position) - weapData[wNum].physicsObject.angle
+								if math.abs(angle) > math.pi then -- need to go through 0
+									if angle > 0.0 then
+										angle = 2 * math.pi - angle
+									else
+										angle = 2 * math.pi + angle
+									end
+								end
+								if math.abs(angle) > weapData[wNum].maxSeek then
+									weapData[wNum].isSeeking = false
+								end
+							else
+								weapData[wNum].isSeeking = false
+							end
+						else
+							weapData[wNum].isSeeking = false
+						end
+					elseif weapon.class == nil then
+						errLog("Projectile '" .. entType .. "' has no class.", 12)
+					else
+						errLog("Unknown projectile class '" .. entClass .. "'", 11)
+					end
 					wNum = weapon.max_projectiles -- exit while loop
 				end
 				wNum = wNum + 1
 			end
 			weapon.fired = true
-		--	print("weapon.fired status: true (1)")
 		end
 	end
 
@@ -330,9 +376,6 @@ function weapon_manage(weapon, weapData, weapOwner) -- examples: weapon = player
 		if weapData[wNum] ~= nil then
 			if weapData[wNum].physicsObject == nil then
 				-- this object needs to be deleted, probably the initializing table
-			--	print_table(weapData)
-			--	print(wNum)
-			--	print("-----------Initialization")
 				table.remove(weapData, wNum)
 			else
 				if computerShip ~= nil then
@@ -348,14 +391,11 @@ function weapon_manage(weapon, weapData, weapOwner) -- examples: weapon = player
 					table.remove(weapData, wNum)
 					if weapData[1] ~= nil then
 						weapon.fired = true
-					--	print("weapon.fired status: true(2)")
 					else
 						weapon.fired = false
-					--	print("weapon.fired status: false")
 					end
 				end
 			end
-			print_table(weapData[wNum])
 		end
 		wNum = wNum + 1
 	end
@@ -483,7 +523,8 @@ function render ()
 		local wNum = 1
 		while wNum <= playerShip.special.max_projectiles do
 			if playerShip.specialWeap[wNum] ~= nil then
-				graphics.draw_sprite("Weapons/cMissile", playerShip.specialWeap[wNum].physicsObject.position.x, playerShip.specialWeap[wNum].physicsObject.position.y, playerShip.special.size.x, playerShip.special.size.y, playerShip.specialWeap[wNum].physicsObject.angle)
+				print_table(playerShip.special)
+				graphics.draw_sprite("Weapons/Special/cMissile", playerShip.specialWeap[wNum].physicsObject.position.x, playerShip.specialWeap[wNum].physicsObject.position.y, playerShip.special.size.x, playerShip.special.size.y, playerShip.specialWeap[wNum].physicsObject.angle)
 			end
 			wNum = wNum + 1
 		end
