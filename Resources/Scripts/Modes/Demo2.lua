@@ -467,21 +467,6 @@ function render ()
 	
 	drawPlanet(scen.planet)
 	drawPlanet(scen.planet2)
-	--[[
-	if cameraRatio > 1 / 8 then
-		aex, aey = graphics.sprite_dimensions("Planets/AnotherEarth")
-		graphics.draw_sprite("Planets/AnotherEarth", scen.planet.position.x, scen.planet.position.y, aex, aey, 1, 1.0, 1.0, 1.0, 1.0)
-	else
-		graphics.draw_rbox(scen.planet.position.x, scen.planet.position.y, 60)
-	end
-	
-	if cameraRatio > 1 / 8 then
-		satx, saty = graphics.sprite_dimensions("Planets/Saturny")
-		graphics.draw_sprite("Planets/Saturny", scen.planet2.position.x, scen.planet2.position.y, satx, saty, 1, 010, 1.0, 1.0, 1.0)
-	else
-		graphics.draw_rbox(scen.planet2.position.x, scen.planet2.position.y, 60, 1, 0, 0, 1)
-	end
-	--]]
 	
 --[[------------------
 	Ship Drawing

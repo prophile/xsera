@@ -29,7 +29,6 @@ function NewEntity (entOwner, entName, entType, entDir, entSubdir, other)
 	else
 		errLog("Entity " .. entName .. " has no type.", 1)
 	end
-	print(entObject.entName)
 ---- load data from file
     local trueData = {}
 	local rawData

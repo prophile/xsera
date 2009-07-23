@@ -48,7 +48,7 @@
 	<pbuild1>Ishiman/Fighter</pbuild1>
 	<pbuild2>Ishiman/HeavyCruiser</pbuild2>
 	<pbuild3>Ishiman/Cruiser</pbuild3>
-	<pbuild4>Ishiman/Cruiser</pbuild4>
+	<pbuild4>Ishiman/Transport</pbuild4>
 	<pinitialvelocityx>25</pinitialvelocityx>
 	<pinitialvelocityy>25</pinitialvelocityy>
 	<pinitialangle>0.3926</pinitialangle>
