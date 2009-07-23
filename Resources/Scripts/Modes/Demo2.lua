@@ -1,7 +1,8 @@
--- demo script (for demo 1.1): Player is Ishiman Heavy Cruiser, opponent is Gaitori Carrier.
+-- demo script (for demo 2): Player is Ishiman Heavy Cruiser, opponent is Gaitori Carrier.
 -- Carrier has no AI, so it just sits there. Player must warp to Carrier's position
--- and can destroy it using both seeking and non-seeking weapons. Script ends when
--- Carrier is destroyed. 
+-- and can destroy it using both seeking and non-seeking weapons. After that, the player must
+-- capture the planet that the Gaitori Carrier was protecting by building an Ishiman Transport.
+-- Script ends when the Carrier is destroyed and the planet is taken.
 
 -- Future possible script variations:
 -- Using autopilot to find Carrier.
@@ -46,6 +47,8 @@ function init ()
     lastTime = mode_manager.time()
     physics.open(0.6)
 	loading_entities = true
+	Admirals[1] = { ident = "Human/Ishiman", name = "Human / Ishiman Cooperative" }
+	Admirals[2] = { ident = "Gaitori", name = "Gaitori Union" }
 	if scen == nil then
 		scen = NewEntity(nil, "demo", "Scenario")
 	end
@@ -447,12 +450,38 @@ function render ()
 	Planet Drawing
 ------------------]]--
 	
+	
+	function drawPlanet(planet)
+		if cameraRatio > 1 / 8 then
+			local xcoord; local ycoord
+			xcoord, ycoord = graphics.sprite_dimensions("Planets/" .. planet.image)
+			graphics.draw_sprite("Planets/" .. planet.image, planet.position.x, planet.position.y, xcoord, ycoord, 1, 1, 1, 1, 1)
+		else
+			if planet.owner ~= Admirals[1].ident then
+				graphics.draw_rbox(planet.position.x, planet.position.y, 60, 1, 0, 0, 1)
+			else
+				graphics.draw_rbox(planet.position.x, planet.position.y, 60)
+			end
+		end
+	end
+	
+	drawPlanet(scen.planet)
+	drawPlanet(scen.planet2)
+	--[[
 	if cameraRatio > 1 / 8 then
 		aex, aey = graphics.sprite_dimensions("Planets/AnotherEarth")
-		graphics.draw_sprite("Planets/AnotherEarth", scen.planet.position.x, scen.planet.position.y, aex, aey, 1, 0.0, 1.0, 1.0, 1.0)
+		graphics.draw_sprite("Planets/AnotherEarth", scen.planet.position.x, scen.planet.position.y, aex, aey, 1, 1.0, 1.0, 1.0, 1.0)
 	else
-		graphics.draw_rbox(aex, aey, 60)
+		graphics.draw_rbox(scen.planet.position.x, scen.planet.position.y, 60)
 	end
+	
+	if cameraRatio > 1 / 8 then
+		satx, saty = graphics.sprite_dimensions("Planets/Saturny")
+		graphics.draw_sprite("Planets/Saturny", scen.planet2.position.x, scen.planet2.position.y, satx, saty, 1, 010, 1.0, 1.0, 1.0)
+	else
+		graphics.draw_rbox(scen.planet2.position.x, scen.planet2.position.y, 60, 1, 0, 0, 1)
+	end
+	--]]
 	
 --[[------------------
 	Ship Drawing

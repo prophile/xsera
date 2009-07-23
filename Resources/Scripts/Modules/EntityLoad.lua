@@ -75,11 +75,24 @@ function NewEntity (entOwner, entName, entType, entDir, entSubdir, other)
 			position = { x = tonumber(trueData.ppositionx), y = tonumber(trueData.ppositiony) },
 			image = trueData.psprite,
 			res_gen = tonumber(trueData.presources_generated),
-			build = { trueData.pbuild1, trueData.pbuild2, trueData.pbuild3 },
+			build = { trueData.pbuild1, trueData.pbuild2, trueData.pbuild3, trueData.pbuild4 },
 			type = "Planet",
 			initialVelocity = { x = trueData.pinitialvelocityx, y = trueData.pinitialvelocityy },
+			initialAngle = trueData.pinitialangle,
 			buildqueue = { factor = 1, current = 0, percent = 100 },
-			text = { trueData.pbuild1, trueData.pbuild2, trueData.pbuild3 } }
+			text = { trueData.pbuild1, trueData.pbuild2, trueData.pbuild3, trueData.pbuild4 },
+			owner = trueData.powner }
+		entObject.planet2 =  { name = trueData.p2name,
+			position = { x = tonumber(trueData.p2positionx), y = tonumber(trueData.p2positiony) },
+			image = trueData.p2sprite,
+			res_gen = tonumber(trueData.p2resources_generated),
+			build = { trueData.p2build1, trueData.p2build2, trueData.p2build3, trueData.p2build4 },
+			type = "Planet",
+			initialVelocity = { x = trueData.p2initialvelocityx, y = trueData.p2initialvelocityy },
+			initialAngle = trueData.p2initialangle,
+			buildqueue = { factor = 1, current = 0, percent = 100 },
+			text = { trueData.p2build1, trueData.p2build2, trueData.p2build3, trueData.p2build4 },
+			owner = trueData.p2owner }
 		num = 1
 		while entObject.planet.text[num] ~= nil do
 			NewEntity(nil, entObject.planet.text[num], "Ship")

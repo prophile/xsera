@@ -48,8 +48,23 @@
 	<pbuild1>Ishiman/Fighter</pbuild1>
 	<pbuild2>Ishiman/HeavyCruiser</pbuild2>
 	<pbuild3>Ishiman/Cruiser</pbuild3>
+	<pbuild4>Ishiman/Cruiser</pbuild4>
 	<pinitialvelocityx>25</pinitialvelocityx>
 	<pinitialvelocityy>25</pinitialvelocityy>
 	<pinitialangle>0.3926</pinitialangle>
+	<powner>Human/Ishiman</powner>
+		<p2name>Take Me Over</p2name>
+		<p2positionx>2500</p2positionx>
+		<p2positiony>2500</p2positiony>
+		<p2sprite>Saturny</p2sprite>
+		<p2resources_generated>20</p2resources_generated>
+		<p2build1>Ishiman/Fighter</p2build1>
+		<p2build2>Ishiman/HeavyCruiser</p2build2>
+		<p2build3>Ishiman/Cruiser</p2build3>
+		<p2build4>Ishiman/Transport</p2build4>
+		<p2initialvelocityx>25</p2initialvelocityx>
+		<p2initialvelocityy>25</p2initialvelocityy>
+		<p2initialangle>0.3926</p2initialangle>
+		<p2owner>Gaitori</p2owner>
 	<briefing>Destroy the Gaitori Carrier.</briefing>
 </sprite>

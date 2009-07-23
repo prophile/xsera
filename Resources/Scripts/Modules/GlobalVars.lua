@@ -46,6 +46,8 @@ shipBuilding = { n, p, r }
 soundLength = 0.25
 --/tempvars
 
+Admirals = {}
+
 --loadingstuff
 loading_entities = false
 entities = {}
