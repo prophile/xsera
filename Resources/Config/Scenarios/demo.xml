@@ -49,6 +49,14 @@
 	<pbuild2>Ishiman/HeavyCruiser</pbuild2>
 	<pbuild3>Ishiman/Cruiser</pbuild3>
 	<pbuild4>Ishiman/Transport</pbuild4>
+	<pbuildcost1>600</pbuildcost1>
+	<pbuildcost2>1500</pbuildcost2>
+	<pbuildcost3>1000</pbuildcost3>
+	<pbuildcost4>800</pbuildcost4>
+	<pbuildtime1>3</pbuildtime1>
+	<pbuildtime2>7.5</pbuildtime2>
+	<pbuildtime3>5</pbuildtime3>
+	<pbuildtime4>4</pbuildtime4>
 	<pinitialvelocityx>25</pinitialvelocityx>
 	<pinitialvelocityy>25</pinitialvelocityy>
 	<pinitialangle>0.3926</pinitialangle>
@@ -62,9 +70,17 @@
 		<p2build2>Ishiman/HeavyCruiser</p2build2>
 		<p2build3>Ishiman/Cruiser</p2build3>
 		<p2build4>Ishiman/Transport</p2build4>
+		<p2buildcost1>600</p2buildcost1>
+		<p2buildcost2>1500</p2buildcost2>
+		<p2buildcost3>1000</p2buildcost3>
+		<p2buildcost4>800</p2buildcost4>
+		<p2buildtime1>3</p2buildtime1>
+		<p2buildtime2>7.5</p2buildtime2>
+		<p2buildtime3>5</p2buildtime3>
+		<p2buildtime4>4</p2buildtime4>
 		<p2initialvelocityx>25</p2initialvelocityx>
 		<p2initialvelocityy>25</p2initialvelocityy>
 		<p2initialangle>0.3926</p2initialangle>
 		<p2owner>Gaitori</p2owner>
-	<briefing>Destroy the Gaitori Carrier.</briefing>
+	<briefing>Destroy the Gaitori Carrier and capture the planet to the Northeast.</briefing>
 </sprite>

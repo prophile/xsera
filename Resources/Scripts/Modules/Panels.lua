@@ -17,16 +17,15 @@ menu_stride = -11
 ship_selected = false
 
 function make_ship()
-	shipBuilding = { p = shipQuerying.p, n = shipQuerying.n, r = shipQuerying.r }
-	local shipToBuild = deepcopy(NewEntity(shipBuilding.p, shipBuilding.n, "Ship", shipBuilding.r))
-	if shipToBuild.cost > cash or scen.planet.buildqueue.percent ~= 100 then
+	shipBuilding = { p = shipQuerying.p, n = shipQuerying.n, r = shipQuerying.r, c = shipQuerying.c, t = shipQuerying.t }
+	if shipBuilding.c > cash or scen.planet.buildqueue.percent ~= 100 then
 		sound.play("NaughtyBeep")
 		return
 	end
-	scen.planet.buildqueue.factor = shipToBuild.buildTime
+	scen.planet.buildqueue.factor = shipBuilding.t
 	scen.planet.buildqueue.time = mode_manager.time()
 	scen.planet.buildqueue.current = mode_manager.time() - scen.planet.buildqueue.time
-	cash = cash - shipToBuild.cost
+	cash = cash - shipBuilding.c
 	build_timer_running = true
 end
 
@@ -46,6 +45,8 @@ function shipyard()
 			shipQuerying.p = scen.planet
 			shipQuerying.n = scen.planet.build[num]:gsub("(%w+)/(%w+)", "%2")
 			shipQuerying.r = scen.planet.build[num]:gsub("(%w+)/(%w+)", "%1")
+			shipQuerying.c = scen.planet.buildCost[num]
+			shipQuerying.t = scen.planet.buildTime[num]
 		end
 		menu_shipyard[num + 1][3] = make_ship
 		menu_shipyard[num + 1][4] = {}
@@ -60,7 +61,7 @@ end
 -- Special Orders
 
 function transfer_control()
-	errLog("This command currently has no code.", 1)
+	errLog("This command currently has no code.", 6)
 	--[[ pseudocode!!! I don't have the concept of allies yet, need that before I can implement this
 	if controlShip.ally == true then
 		playerShip, controlShip = playerShip, controlShip
@@ -68,23 +69,23 @@ function transfer_control()
 end
 
 function hold_position()
-	errLog("This command currently has no code.", 1)
+	errLog("This command currently has no code.", 6)
 end
 
 function go_to_my_position()
-	errLog("This command currently has no code.", 1)
+	errLog("This command currently has no code.", 6)
 end
 
 function fire_weapon_1()
-	errLog("This command currently has no code.", 1)
+	errLog("This command currently has no code.", 6)
 end
 
 function fire_weapon_2()
-	errLog("This command currently has no code.", 1)
+	errLog("This command currently has no code.", 6)
 end
 
 function fire_special()
-	errLog("This command currently has no code.", 1)
+	errLog("This command currently has no code.", 6)
 end
 
 -- Message menu
@@ -94,7 +95,7 @@ text_was_drawn = false
 textnum = 0
 
 function next_page_clear()
-	errLog("This command currently has no code.", 1)
+	errLog("This command currently has no code.", 6)
 	--[[
 	if text_being_drawn == true then
 		if scen.text[textnum + 1] ~= nil then
@@ -111,7 +112,7 @@ function next_page_clear()
 end
 
 function previous_page()
-	errLog("This command currently has no code.", 1)
+	errLog("This command currently has no code.", 6)
 	--[[
 	if text_being_drawn == true then
 		if textnum ~= 1 then
@@ -125,7 +126,7 @@ function previous_page()
 end
 
 function last_message()
-	errLog("This command currently has no code.", 1)
+	errLog("This command currently has no code.", 6)
 	--[[
 	if text_was_drawn == true then
 		text_being_drawn = true
@@ -190,6 +191,8 @@ function change_menu(menu, direction)
 					shipQuerying.p = menu_shipyard[num - 1][4][1]
 					shipQuerying.n = menu_shipyard[num - 1][4][2]
 					shipQuerying.r = menu_shipyard[num - 1][4][3]
+					shipQuerying.c = scen.planet.buildCost[num]
+					shipQuerying.t = scen.planet.buildTime[num]
 				end
 			end
 		end
@@ -205,6 +208,8 @@ function change_menu(menu, direction)
 				shipQuerying.p = menu_shipyard[num + 1][4][1]
 				shipQuerying.n = menu_shipyard[num + 1][4][2]
 				shipQuerying.r = menu_shipyard[num + 1][4][3]
+				shipQuerying.c = scen.planet.buildCost[num]
+				shipQuerying.t = scen.planet.buildTime[num]
 			end
 		end
 	elseif direction == "j" then
@@ -245,11 +250,10 @@ function draw_panels()
 -- Factory resources (green - mostly)
 	count = 1
 	if ship_selected == true then
-		local shipToBuild = NewEntity(shipQuerying.p, shipQuerying.n, "Ship", shipQuerying.r)
-		if cash >= shipToBuild.cost then
-			local drawGreen = math.floor((cash - shipToBuild.cost) / 200)
-			local drawBlue = math.ceil((shipToBuild.cost) / 200) + drawGreen
-		--	print(count, "=>", drawGreen, "-[", ((cash - shipToBuild.cost) / 200), "]-")
+		if cash >= shipQuerying.c then
+			local drawGreen = math.floor((cash - shipQuerying.c) / 200)
+			local drawBlue = math.ceil((shipQuerying.c) / 200) + drawGreen
+		--	print(count, "=>", drawGreen, "-[", ((cash - shipQuerying.c) / 200), "]-")
 			while count <= drawGreen do
 				graphics.draw_box(152 - 3.15 * count, 394, 150 - 3.15 * count, 397, 0, 0.4, 0.7, 0.4, 1)
 				count = count + 1
@@ -262,7 +266,7 @@ function draw_panels()
 		--	print(count, drawBlue)
 		else
 			local drawGreen = math.floor(cash / 200)
-			local drawRed = math.ceil(shipToBuild.cost / 200)
+			local drawRed = math.ceil(shipQuerying.c / 200)
 		--	print(count, "=>", drawGreen, "-[", (cash / 200), "]-")
 			while count <= drawGreen do
 				graphics.draw_box(152 - 3.15 * count, 394, 150 - 3.15 * count, 397, 0, 0.4, 0.7, 0.4, 1)
