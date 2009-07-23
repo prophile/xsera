@@ -266,6 +266,18 @@ function console_key (k)
 		else
 			consoleHistory[line] = consoleHistory[line] .. k
 		end
+	elseif k == "[" then
+		if ((shift_press == true) or (caps_hold == true)) then
+			consoleHistory[line] = consoleHistory[line] .. "{"
+		else
+			consoleHistory[line] = consoleHistory[line] .. k
+		end
+	elseif k == "]" then
+		if ((shift_press == true) or (caps_hold == true)) then
+			consoleHistory[line] = consoleHistory[line] .. "}"
+		else
+			consoleHistory[line] = consoleHistory[line] .. k
+		end
 	elseif k == ";" then
 		if ((shift_press == true) or (caps_hold == true)) then
 			consoleHistory[line] = consoleHistory[line] .. ":"
