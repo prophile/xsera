@@ -420,7 +420,7 @@ function render ()
 	if computerShip ~= nil then
 		if computerShip.life > 0 then
 			if cameraRatio > 1 / 8 then
-				graphics.draw_sprite("Gaitori/Carrier", computerShip.physicsObject.position.x, computerShip.physicsObject.position.y, computerShip.size.x, computerShip.size.y, computerShip.physicsObject.angle)
+				graphics.draw_sprite("Ships/Gaitori/Carrier", computerShip.physicsObject.position.x, computerShip.physicsObject.position.y, computerShip.size.x, computerShip.size.y, computerShip.physicsObject.angle)
 			else
 				graphics.draw_rtri(computerShip.physicsObject.position.x, computerShip.physicsObject.position.y, 60, 1, 0, 0, 1)
 			end

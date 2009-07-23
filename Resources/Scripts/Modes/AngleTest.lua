@@ -24,7 +24,7 @@ function key ( k )
 end
 
 function render ()
-    local szx, szy = graphics.sprite_dimensions("Cantharan/Schooner")
+    local szx, szy = graphics.sprite_dimensions("Ships/Cantharan/Schooner")
 	graphics.begin_frame()
 	graphics.set_camera(-320, -240, 320, 240)
 	graphics.draw_sprite("Cantharan/Schooner", 0, 0, szx * 2.2, szy * 2.2, angle)

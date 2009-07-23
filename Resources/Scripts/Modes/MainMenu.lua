@@ -26,7 +26,7 @@ function sort_ships ()
 end
 
 function ship_speed ( type )
-    local szx, szy = graphics.sprite_dimensions(type)
+    local szx, szy = graphics.sprite_dimensions("Ships/" .. type)
     local szt = math.sqrt(szx*szx + szy*szy)
     return 45.0 / szt
 end
@@ -60,8 +60,8 @@ function render ()
     graphics.set_camera(-500, -240, 500, 240)
     graphics.draw_image("Bootloader/Xsera", 0, 0, 1000, 480)
     for id, ship in ipairs(ships) do
-        local szx, szy = graphics.sprite_dimensions(ship[3], goodSpriteSheetX, goodSpriteSheetY)
-        graphics.draw_sprite(ship[3], ship[1], ship[2], szx * sizeFactor * distancefactor(ship[4]), szy * sizeFactor * distancefactor(ship[4]), math.atan2(shipVelocity[2], shipVelocity[1]))
+        local szx, szy = graphics.sprite_dimensions("Ships/" .. ship[3], goodSpriteSheetX, goodSpriteSheetY)
+        graphics.draw_sprite("Ships/" .. ship[3], ship[1], ship[2], szx * sizeFactor * distancefactor(ship[4]), szy * sizeFactor * distancefactor(ship[4]), math.atan2(shipVelocity[2], shipVelocity[1]))
     end
     
     graphics.draw_text("D - Demo", "CrystalClear", "left", -450, 0, 60)

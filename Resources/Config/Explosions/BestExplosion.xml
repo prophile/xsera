@@ -3,6 +3,6 @@
   <dimensions x="6" y="2" />
   <rotational />
   <name>Best Explosion</name>
-  <sprite>Explosions/BestExplosion</sprite>
+  <sprite>BestExplosion</sprite>
   <frameDuration>0.07</frameduration>
 </sprite>
