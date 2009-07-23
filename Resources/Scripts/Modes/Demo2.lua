@@ -305,7 +305,7 @@ function weapon_manage(weapon, weapData, weapOwner) -- examples: weapon = player
 			local wNum = 1
 			while wNum <= weapon.max_projectiles do
 				if weapData[wNum] == nil then
-					-- I would rather load from memory, but we don't have a function that preloads yet. Oh well. [DEMO2, ADAM, ALISTAIR]
+					print(weapon.class)
 					if weapon.image ~= nil then
 						print(weapon.image)
 						weapData[wNum] = NewEntity(weapOwner, weapon.image, "Projectile", weapon.class, nil, wNum)

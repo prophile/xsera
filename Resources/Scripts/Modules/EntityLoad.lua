@@ -96,8 +96,8 @@ function NewEntity (entOwner, entName, entType, entDir, entSubdir, other)
 						entObject.fileName = trueData.fileName
 					end
 				end
-				if entType == "Projectile" then
-					if weaponClass == "beam" then
+				if entTypeReal == "Projectile" then
+					if entDir == "beam" then
 						-- [ADAM, FIX] this piece of code is a hack, it relies on what little weapons we have right now to make the assumption
 						if entOwner.switch == true then
 							entObject.physicsObject.position = { x = entOwner.physicsObject.position.x + math.cos(entObject.physicsObject.angle + 0.17) * (tonumber(trueData.length) - 3), y = entOwner.physicsObject.position.y + math.sin(entObject.physicsObject.angle + 0.17) * (tonumber(trueData.length) - 3) }
@@ -108,9 +108,9 @@ function NewEntity (entOwner, entName, entType, entDir, entSubdir, other)
 						end
 						-- cost
 						entOwner.energy.level = entOwner.energy.level - tonumber(trueData.energyCost)
-					elseif weaponClass == "pulse" then
+					elseif entDir == "pulse" then
 						return
-					elseif weaponClass == "special" then
+					elseif entDir == "special" then
 						entObject.dest = { x = computerShip.physicsObject.position.x, y = computerShip.physicsObject.position.y }
 						entOwner.special.ammo = entOwner.special.ammo - 1
 						
@@ -119,7 +119,7 @@ function NewEntity (entOwner, entName, entType, entDir, entSubdir, other)
 						end
 						if entObject.isSeeking == true then
 							local projectileTravel = { x, y, dist }
-							projectileTravel.dist = (entOwner[weaponClass].thrust * entOwner[weaponClass].life * entOwner[weaponClass].life / 1000000) / (2 * entOwner[weaponClass].mass)
+							projectileTravel.dist = (entOwner[entDir].thrust * entOwner[entDir].life * entOwner[entDir].life / 1000000) / (2 * entOwner[entDir].mass)
 							projectileTravel.x = math.cos(entObject.physicsObject.angle) * (projectileTravel.dist + entObject.physicsObject.velocity.x)
 							projectileTravel.y = math.sin(entObject.physicsObject.angle) * (projectileTravel.dist + entObject.physicsObject.velocity.y)
 							if find_hypot(entObject.physicsObject.position, entObject.dest) <= hypot(projectileTravel.x, projectileTravel.y) then
@@ -145,7 +145,7 @@ function NewEntity (entOwner, entName, entType, entDir, entSubdir, other)
 						else
 							entObject.isSeeking = false
 						end
-					elseif weaponClass == nil then
+					elseif entDir == nil then
 						errLog("Projectile '" .. entType .. "' has no class. See NewEntity", 12)
 					else
 						errLog("Unknown projectile class '" .. entClass .. "'. See NewEntity", 11)
