@@ -521,7 +521,7 @@ function render ()
 				if otherShip[num].name ~= "Transport" then
 					graphics.draw_rtri(otherShip[num].physicsObject.position.x, otherShip[num].physicsObject.position.y, 60)
 				else
-					graphics.draw_rdia(otherShip[num].physicsObject.position.x, otherShip[num].physicsObject.position.y, 60)
+					graphics.draw_rplus(otherShip[num].physicsObject.position.x, otherShip[num].physicsObject.position.y, 60)
 				end
 			end
 			num = num + 1

@@ -939,7 +939,6 @@ int GFX_DrawRadarTriangleTEMP ( lua_State* L )
 int GFX_DrawRadarPlusTEMP ( lua_State* L )
 {
 	int nargs = lua_gettop(L);
-	const float one_sixth = 1 / 6;
 	float coordinates[2] = { luaL_checknumber(L, 1), luaL_checknumber(L, 2) };
 	float varsize = luaL_checknumber(L, 3);
 	if (nargs > 3)
@@ -949,13 +948,13 @@ int GFX_DrawRadarPlusTEMP ( lua_State* L )
 		g = luaL_checknumber(L, 5);
 		b = luaL_checknumber(L, 6);
 		a = luaL_checknumber(L, 7);
-		Graphics::DrawBox(coordinates[0] + varsize, coordinates[1] - one_sixth, coordinates[0] - varsize, coordinates[1] + one_sixth, 0, colour(r, g, b, a));
-		Graphics::DrawBox(coordinates[0] + one_sixth, coordinates[1] - varsize, coordinates[0] - one_sixth, coordinates[1] + varsize, 0, colour(r, g, b, a));
+		Graphics::DrawBox(coordinates[1] + varsize, coordinates[0] - 0.3 * varsize, coordinates[1] - varsize, coordinates[0] + 0.3 * varsize, 0, colour(r, g, b, a));
+		Graphics::DrawBox(coordinates[1] + 0.3 * varsize, coordinates[0] - varsize, coordinates[1] - 0.3 * varsize, coordinates[0] + varsize, 0, colour(r, g, b, a));
 	}
 	else
 	{
-		Graphics::DrawBox(coordinates[0] + varsize, coordinates[1] - one_sixth, coordinates[0] - varsize, coordinates[1] + one_sixth, 0, colour(0, 1, 0, 1));
-		Graphics::DrawBox(coordinates[0] + one_sixth, coordinates[1] - varsize, coordinates[0] - one_sixth, coordinates[1] + varsize, 0, colour(0, 1, 0, 1));
+		Graphics::DrawBox(coordinates[1] + varsize, coordinates[0] - 0.3 * varsize, coordinates[1] - varsize, coordinates[0] + 0.3 * varsize, 0, colour(0, 1, 0, 1));
+		Graphics::DrawBox(coordinates[1] + 0.3 * varsize, coordinates[0] - varsize, coordinates[1] - 0.3 * varsize, coordinates[0] + varsize, 0, colour(0, 1, 0, 1));
 	}
 	return 0;
 }
