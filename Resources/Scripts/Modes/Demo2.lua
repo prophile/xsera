@@ -16,6 +16,7 @@ import('EntityLoad')
 import('Math')
 import('Panels')
 import('PopDownConsole')
+import('CaptainAI')
 -- import('MouseHandle')
 
 --[[--------------------------------
@@ -67,9 +68,6 @@ end
 --------------------]]--
 
 function update ()
---	print("---------------------------")
---	print("V: ", playerShip.physicsObject.velocity.x, playerShip.physicsObject.velocity.y, "P: ", playerShip.physicsObject.position.x, playerShip.physicsObject.position.y)
-	--DEMO2: put each section (marked by small lightsaber braces) into its own function in THIS file, if possible
 	local newTime = mode_manager.time()
 	dt = newTime - lastTime
 	lastTime = newTime
@@ -78,9 +76,9 @@ function update ()
 	end
 	
 	-- victory condition
-	if computerShip == nil then
-		waitTime = waitTime + dt
-		if waitTime >= 2.5 then
+	if victory_timer ~= nil then
+		victory_timer = victory_timer + dt
+		if victory_timer >= 2.0 then
 			mode_manager.switch("Credits")
 		end
 	end
@@ -240,7 +238,21 @@ function update ()
 -- PKBeam Firing
 	
 	weapon_manage(playerShip.beam, playerShip.beamWeap, playerShip)
-
+	
+-- Pathfinding for Ishiman Transports
+	local num = 1
+	if otherShip ~= nil then
+		while otherShip[num] ~= nil do
+			if otherShip[num].name == "Transport" then
+				ai_pathfind(dt, otherShip[num], scen.planet2.position, computerShip)
+				if otherShip[num].landing_size == 0 then
+					table.remove(otherShip, num)
+				end
+			end
+			num = num + 1
+		end
+	end
+	
 --[[------------------
 	Panels
 ------------------]]--
@@ -502,14 +514,18 @@ function render ()
 		graphics.draw_rtri(playerShip.physicsObject.position.x, playerShip.physicsObject.position.y, 60)
 	end
 	if otherShip ~= nil then
-		wNum = 1
-		while otherShip[wNum] ~= nil do
+		num = 1
+		while otherShip[num] ~= nil do
 			if cameraRatio > 1 / 8 then
-				graphics.draw_sprite(otherShip[wNum].image, otherShip[wNum].physicsObject.position.x, otherShip[wNum].physicsObject.position.y, otherShip[wNum].size.x, otherShip[wNum].size.y, otherShip[wNum].physicsObject.angle)
+				if otherShip[num].name ~= "Transport" then
+					graphics.draw_sprite(otherShip[num].image, otherShip[num].physicsObject.position.x, otherShip[num].physicsObject.position.y, otherShip[num].size.x, otherShip[num].size.y, otherShip[num].physicsObject.angle)
+				else
+					graphics.draw_sprite(otherShip[num].image, otherShip[num].physicsObject.position.x, otherShip[num].physicsObject.position.y, otherShip[num].size.x * otherShip[num].landing_size, otherShip[num].size.y * otherShip[num].landing_size, otherShip[num].physicsObject.angle)
+				end
 			else
-				graphics.draw_rtri(otherShip[wNum].physicsObject.position.x, otherShip[wNum].physicsObject.position.y, 60)
+				graphics.draw_rtri(otherShip[num].physicsObject.position.x, otherShip[num].physicsObject.position.y, 60)
 			end
-			wNum = wNum + 1
+			num = num + 1
 		end
 	end
 	

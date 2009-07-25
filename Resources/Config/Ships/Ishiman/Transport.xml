@@ -9,17 +9,15 @@
 	<!-- amount of health -->
 	<life>250</life>
 	<!-- mass, in kg -->
-	<mass>30000</mass>
+	<mass>300000</mass>
 	<!-- turning rate, in radians/second -->
-	<turnrate>3.7</turnrate>
+	<turnrate>1.0</turnrate>
 	<!-- energy (in energy units?) -->
 	<energy>1000</energy> 
 	<!-- thrust, in newtons -->
-	<thrust>430</thrust>
-	<!-- warping speed -->
-	<warp>1300</warp> 
+	<thrust>230</thrust>
 	<!-- maximum speed -->
-	<maxspeed>350</maxspeed> 
+	<maxspeed>200</maxspeed> 
 	<!-- reverse thrust, in newtons -->
 	<reverse>1000</reverse>
 	<!-- cost -->

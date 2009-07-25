@@ -160,6 +160,11 @@ function NewEntity (entOwner, entName, entType, entDir, entSubdir, other)
 		end
 	elseif entType == "Ship" then
 -- ship-specific
+		if entObject.name == "Transport" then
+			entObject.landing_size = 1.0
+			entObject.landed = false
+			entObject.landing = false
+		end
 		entObject.cost = tonumber(trueData.cost)
 		entObject.buildTime = tonumber(trueData.time) / 200
 		entObject.life = tonumber(trueData.life)

@@ -8,6 +8,8 @@ shipAdjust = .045 * camera.w
 cameraRatios = { 2, 1, 1/2, 1/4, 1/16 }
 cameraRatioNum = 2
 
+victory_timer = nil
+
 --color tables
 c_lightRed = { r = 0.8, g = 0.4, b = 0.4, a = 1 }
 c_red = { r = 0.6, g = 0.15, b = 0.15, a = 1 }
@@ -29,7 +31,6 @@ showVelocity = false
 showAngles = false
 frame = 0
 printFPS = false
-waitTime = 0.0
 resources = 0
 resource_bars = 0
 RESOURCES_PER_TICK = 200
