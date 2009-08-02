@@ -112,12 +112,8 @@ int PHYS_DestroyObject ( lua_State* L )
 	if (obj->pob)
 	{
 		Physics::DestroyObject(obj->pob);
+	//	obj->pob = NULL;
 		return 0;
-	}
-	else
-	{
-		lua_pushliteral(L, "double-destruction of physics object");
-		return lua_error(L);
 	}
 }
 
@@ -355,6 +351,7 @@ luaL_Reg registryObjectPhysics[] =
 {
 	"__index", PHYS_Object_PropGet,
 	"__newindex", PHYS_Object_PropSet,
+//	"__gc", PHYS_DestroyObject,
 	NULL, NULL
 };
 

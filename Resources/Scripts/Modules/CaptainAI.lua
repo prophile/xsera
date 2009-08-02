@@ -1,10 +1,7 @@
 import('GlobalVars')
 
-first_play = true
-
 function ai_pathfind(dt, object, destination, computerShip)
 	if find_hypot(object.physicsObject.position, destination) >= 50 then
-		print(object.physicsObject.angle, math.atan2(destination.y - object.physicsObject.position.y, destination.x - object.physicsObject.position.x))
 		angle_diff = math.atan2(destination.y - object.physicsObject.position.y, destination.x - object.physicsObject.position.x) - object.physicsObject.angle
 		if math.abs(angle_diff) <= math.pi / 36 then
 			object.physicsObject.angular_velocity = 0
@@ -59,7 +56,7 @@ function ai_pathfind(dt, object, destination, computerShip)
 						victory_timer = 0
 						object.landed = true
 					else
-						errLog("You must destroy the Carrier first.", 6)
+						errLog("You must destroy the Carrier first.", 8)
 					end
 				end
 			end

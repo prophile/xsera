@@ -337,6 +337,41 @@ void DrawSprite ( const std::string& sheetname, int sheet_x, int sheet_y, vec2 p
 	}
 }
 
+/* [ADAMLATER]
+void DrawSpriteTile ( const std::string& sheetname, int sheet_x, int sheet_y, vec2 position, vec2 size, float rotation, colour col )
+{
+	SetShader("Sprite");
+	EnableTexturing();
+	EnableBlending();
+	ClearColour();
+	SetColour(col);
+	SpriteSheet* sheet;
+	SheetMap::iterator iter = spriteSheets.find(sheetname);
+	if (iter == spriteSheets.end())
+	{
+		// load it
+		sheet = new SpriteSheet(sheetname);
+		spriteSheets[sheetname] = sheet;
+	}
+	else
+	{
+		sheet = iter->second;
+	}
+	Matrices::SetViewMatrix(matrix2x3::Translate(position));
+	Matrices::SetModelMatrix(matrix2x3::Identity());
+	if (sheet->IsRotational())
+	{
+		assert(sheet_x == 0);
+		assert(sheet_y == 0);
+		sheet->DrawRotation(size, rotation);
+	}
+	else
+	{
+		glRotatef(RAD2DEG(rotation), 0.0f, 0.0f, 1.0f);
+		sheet->Draw(sheet_x, sheet_y, size);
+	}
+}*/
+
 void DrawTextCenterSDL ( const std::string& text, const std::string& font, vec2 position, float height, colour col, float rotation )
 {
 	SetShader("Sprite");

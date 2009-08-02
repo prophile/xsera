@@ -135,13 +135,39 @@ void SpriteSheet::Draw ( int x, int y, const vec2& size )
 	texBLX = (tileSizeX * x);
 	texBLY = (tileSizeY * y);
 	GLfloat texCoords[] = { texBLX, texBLY + texHeight,
-	                        texBLX + texWidth, texBLY + texHeight,
-							texBLX + texWidth, texBLY,
-							texBLX, texBLY };
+		texBLX + texWidth, texBLY + texHeight,
+		texBLX + texWidth, texBLY,
+	texBLX, texBLY };
 	glVertexPointer(2, GL_FLOAT, 0, vertices);
 	glTexCoordPointer(2, GL_FLOAT, 0, texCoords);
 	glDrawArrays(GL_QUADS, 0, 4);
 }
+
+/* [ADAMLATER]
+void SpriteSheet::DrawTile ( int x, int y, float vx, float vy, const vec2& size )
+{
+	vec2 halfSize = size / 2.0f;
+	if (texID)
+		glBindTexture(GL_TEXTURE_RECTANGLE_ARB, texID);
+	else
+		MakeResident();
+	if (scaleFactor <= 0)
+	{
+		printf("Trouble with scaleFactor value.");
+		exit(101);
+	}
+	GLfloat vertices[] = { -vx, -vy, vx, -vy, vx, vy, -vx, vy };
+	float texBLX, texBLY, texWidth = tileSizeX, texHeight = tileSizeY;
+	texBLX = (tileSizeX * x);
+	texBLY = (tileSizeY * y);
+	GLfloat texCoords[] = { texBLX, texBLY + texHeight,
+		texBLX + texWidth, texBLY + texHeight,
+		texBLX + texWidth, texBLY,
+	texBLX, texBLY };
+	glVertexPointer(2, GL_FLOAT, 0, vertices);
+	glTexCoordPointer(2, GL_FLOAT, 0, texCoords);
+	glDrawArrays(GL_QUADS, 0, 4);
+}*/
 
 void SpriteSheet::DrawRotation ( const vec2& size, float angle )
 {

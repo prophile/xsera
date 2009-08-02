@@ -746,6 +746,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COPY_PHASE_STRIP = NO;
+				GCC_VERSION = 4.0;
 				SDKROOT = macosx10.5;
 			};
 			name = Debug;
@@ -754,6 +755,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COPY_PHASE_STRIP = YES;
+				GCC_VERSION = 4.0;
 				SDKROOT = macosx10.5;
 			};
 			name = Release;

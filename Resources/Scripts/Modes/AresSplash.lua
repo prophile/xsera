@@ -1,15 +1,31 @@
 import('GlobalVars')
 import('PrintRecursive')
+import('PopDownConsole')
 
-splash_shift_left = -135
-splash_shift_right = 50
-top_of_splash = -14
-fontsize = 18
+splash_shift_left = -140
+splash_shift_right = 138
+top_of_splash = -8
+fontsize = 22
+splash_stride = 26
 splash_num = 0
 
 function init()
 	sound.stop_music()
-	clickable_box(top_of_splash, top_of_splash - fontsize - 1, splash_shift_left, splash_shift_right, "Play", "left", c_lightRed, c_purple, nil, splash_shift_left + 20, "P")
+	clickable_box(top_of_splash - splash_num * splash_stride, top_of_splash - splash_num * splash_stride - fontsize, splash_shift_left, splash_shift_right, "Start New Game", "left", c_lightRed, c_purple, nil, splash_shift_left + 20, "S")
+	splash_num = splash_num + 1
+	clickable_box(top_of_splash - splash_num * splash_stride, top_of_splash - splash_num * splash_stride - fontsize, splash_shift_left, splash_shift_right, "Start Network Game", "left", c_lightRed, c_purple, nil, splash_shift_left + 20, "N")
+	splash_num = splash_num + 1
+	clickable_box(top_of_splash - splash_num * splash_stride, top_of_splash - splash_num * splash_stride - fontsize, splash_shift_left, splash_shift_right, "Replay Intro", "left", c_lightRed, c_purple, nil, splash_shift_left + 20, "R")
+	splash_num = splash_num + 1
+	clickable_box(top_of_splash - splash_num * splash_stride, top_of_splash - splash_num * splash_stride - fontsize, splash_shift_left, splash_shift_right, "Demo", "left", c_lightRed, c_purple, nil, splash_shift_left + 20, "D")
+	splash_num = splash_num + 1
+	clickable_box(top_of_splash - splash_num * splash_stride, top_of_splash - splash_num * splash_stride - fontsize, splash_shift_left, splash_shift_right, "Options", "left", c_lightRed, c_purple, nil, splash_shift_left + 20, "O")
+	splash_num = splash_num + 1
+	clickable_box(top_of_splash - splash_num * splash_stride, top_of_splash - splash_num * splash_stride - fontsize, splash_shift_left, splash_shift_right, "About Ares and Xsera", "left", c_lightRed, c_purple, nil, splash_shift_left + 20, "A")
+	splash_num = splash_num + 1
+	clickable_box(top_of_splash - splash_num * splash_stride, top_of_splash - splash_num * splash_stride - fontsize, splash_shift_left, splash_shift_right, "Xsera Main Menu", "left", c_lightRed, c_purple, nil, splash_shift_left + 20, "M")
+	splash_num = splash_num + 1
+	clickable_box(top_of_splash - splash_num * splash_stride, top_of_splash - splash_num * splash_stride - fontsize, splash_shift_left, splash_shift_right, "Quit", "left", c_lightRed, c_purple, nil, splash_shift_left + 20, "Q")
 end
 
 function update()
@@ -41,29 +57,17 @@ function clickable_box(top, bottom, left, right, text, justify, boxColor, textCo
 		while execs[num] ~= nil do
 			num = num + 1
 		end
---		num = num - 1
 	end
-		execs[num] = { top = top, bottom = bottom, left = left, right = right, text = text, justify = justify, boxColor = { r = boxColor.r, g = boxColor.g, b = boxColor.b, a = boxColor.a }, textColor = { r = textColor.r, g = textColor.g, b = textColor.b, a = textColor.a }, execute = execute, mid = mid, letter = letter, start_point = start_point }
---	else
---		execs
---	end
+	execs[num] = { top = top, bottom = bottom, left = left, right = right, text = text, justify = justify, boxColor = { r = boxColor.r, g = boxColor.g, b = boxColor.b, a = boxColor.a }, textColor = { r = textColor.r, g = textColor.g, b = textColor.b, a = textColor.a }, execute = execute, mid = mid, letter = letter, start_point = start_point }
 end
 
 function render()
 	graphics.begin_frame()
-	splash_num = 0
 	graphics.set_camera(-320, -240, 320, 240)
     graphics.draw_image("Panels/MainTop", 0, 118, 640, 245)
     graphics.draw_image("Panels/MainBottom", 0, -227, 640, 24)
     graphics.draw_image("Panels/MainLeft", -231, -110, 178, 211)
     graphics.draw_image("Panels/MainRight", 230, -110, 180, 211)
---	graphics.draw_text("P - Play", "CrystalClear", "left", splash_shift, top_of_splash + splash_num * (-fontsize - 1), fontsize)
---	splash_num = splash_num + 1
---	graphics.draw_text("M - Xsera Main Menu", "CrystalClear", "left", splash_shift, top_of_splash + splash_num * (-fontsize - 1), fontsize)
---	splash_num = splash_num + 1
---	graphics.draw_text("C - Xsera Credits", "CrystalClear", "left", splash_shift, top_of_splash + splash_num * (-fontsize - 1), fontsize)
---	splash_num = splash_num + 1
---	graphics.draw_text("Q - Quit", "CrystalClear", "left", splash_shift, top_of_splash + splash_num * (-fontsize - 1), fontsize)
 	if execs ~= nil then
 		local num = 1
 		while execs[num] ~= nil do
@@ -76,15 +80,33 @@ function render()
 			num = num + 1
 		end
 	end
+	if errNotice ~= nil then
+		graphics.draw_text(errNotice.text, "CrystalClear", "left", -310, 230, 20)
+		if errNotice.start + errNotice.duration < mode_manager.time() then
+			errNotice = nil
+		end
+	end
 	graphics.end_frame()
 end
 
 function key(k)
-	if k == "p" then
+	if k == "s" then
 		mode_manager.switch("Demo2")
+	elseif k == "n" then
+		sound.play("NaughtyBeep")
+		errLog("This command currently has no code.", 10)
+	elseif k == "r" then
+		sound.play("NaughtyBeep")
+		errLog("This command currently has no code.", 10)
+	elseif k == "d" then
+		sound.play("NaughtyBeep")
+		errLog("This command currently has no code.", 10)
 	elseif k == "m" then
 		mode_manager.switch("MainMenu")
-	elseif k == "C" then
+	elseif k == "o" then
+		sound.play("NaughtyBeep")
+		errLog("This command currently has no code.", 10)
+	elseif k == "a" then
 		mode_manager.switch("Credits")
 	elseif k == "q" then
 		os.exit()

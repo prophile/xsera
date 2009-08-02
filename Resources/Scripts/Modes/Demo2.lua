@@ -11,6 +11,7 @@
 -- Implement planets.
 -- Use other Heavy Cruisers (possibly built on planets) to destroy Carrier, using attack command.
 
+import('PrintRecursive')
 import('GlobalVars')
 import('EntityLoad')
 import('Math')
@@ -530,7 +531,7 @@ function render ()
 	if cameraRatio > 1 / 8 then
 		graphics.draw_sprite(playerShip.image, playerShip.physicsObject.position.x, playerShip.physicsObject.position.y, playerShip.size.x, playerShip.size.y, playerShip.physicsObject.angle)
 	else
-		graphics.draw_rplus(playerShip.physicsObject.position.x, playerShip.physicsObject.position.y, 60)
+		graphics.draw_rtri(playerShip.physicsObject.position.x, playerShip.physicsObject.position.y, 60)
 	end
 	
 --[[------------------
@@ -573,6 +574,10 @@ function render ()
 	graphics.draw_line(math.cos(arrowAlpha + angle) * arrowDist + playerShip.physicsObject.position.x, math.sin(arrowAlpha + angle) * arrowDist + playerShip.physicsObject.position.y, math.cos(angle - arrowAlpha) * arrowDist + playerShip.physicsObject.position.x, math.sin(angle - arrowAlpha) * arrowDist + playerShip.physicsObject.position.y, 1.5, 0.1, 0.7, 0.1, 1)
 	graphics.draw_line(math.cos(angle - arrowAlpha) * arrowDist + playerShip.physicsObject.position.x, math.sin(angle - arrowAlpha) * arrowDist + playerShip.physicsObject.position.y, math.cos(angle) * (arrowLength + arrowVar) + playerShip.physicsObject.position.x, math.sin(angle) * (arrowLength + arrowVar) + playerShip.physicsObject.position.y, 1.5, 0.1, 0.7, 0.1, 1)
 	graphics.draw_line(math.cos(angle) * (arrowLength + arrowVar) + playerShip.physicsObject.position.x, math.sin(angle) * (arrowLength + arrowVar) + playerShip.physicsObject.position.y, math.cos(arrowAlpha + angle) * arrowDist + playerShip.physicsObject.position.x, math.sin(arrowAlpha + angle) * arrowDist + playerShip.physicsObject.position.y, 1.5, 0.1, 0.7, 0.1, 1)
+-- Panels
+	draw_panels()
+-- Console
+	popDownConsole()
 -- Mouse
 	--[[ disabled for now
 	if mouseMovement == true then
@@ -598,10 +603,6 @@ function render ()
 			errNotice = nil
 		end
 	end
--- Panels
-	draw_panels()
--- Console
-	popDownConsole()
 	graphics.end_frame()
 end
 
