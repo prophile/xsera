@@ -20,14 +20,13 @@ Nick "nfreader" Farley
 Steven "RedSteven" Edwards
 
 *Sound
+Modified sounds created by:
 Taylor "Rickton" Vaughn
-Alistair "prophile" Lynn
-Nick "nfreader" Farley
 All original sounds copyright Nathan Lamont
 See Read Me for more information
 
 *Graphics
-Shlimazel
-Dark.Revenant
+Graphics overhaul:
+"Shlimazel"
 All original graphics copyright Nathan Lamont
 See Read Me for more information
