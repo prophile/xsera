@@ -690,7 +690,9 @@ function key ( k )
 	elseif k == "tab" then
 		playerShip.warp.start.bool = true
 	elseif k == "o" then
-		consoleDraw = true
+		if release_build == false then
+			consoleDraw = true
+		end
 	elseif k == "u" then
 		consoleDraw = false
 	elseif k == " " then

@@ -1,5 +1,7 @@
 import('Math')
 
+release_build = false
+
 cameraRatio = 1
 aspectRatio = 4 / 3
 camera = { w = 640 / cameraRatio, h }

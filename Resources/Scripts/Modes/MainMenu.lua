@@ -87,7 +87,11 @@ function key ( k )
     elseif k == "d" then
         mode_manager.switch("Demo2")
     elseif k == "x" then
-        mode_manager.switch("ConsoleDrawer")
+		if release_build == false then
+			mode_manager.switch("ConsoleDrawer")
+		else
+			mode_manager.switch("AresSplash")
+		end
     elseif k == "t" then
         mode_manager.switch("AngleTest")
     elseif k == "c" then
