@@ -1,3 +1,5 @@
+import('GlobalVars')
+
 -- main menu script
 lastTime = 0
 ships = {}

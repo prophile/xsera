@@ -13,7 +13,7 @@ cameraRatioNum = 2
 victory_timer = nil
 
 --color tables
-c_lightRed = { r = 0.8, g = 0.4, b = 0.4, a = 1 }
+c_lightRed = { r = 0.8, g = 0.35, b = 0.35, a = 1 }
 c_red = { r = 0.6, g = 0.15, b = 0.15, a = 1 }
 c_lightBlue = { r = 0.15, g = 0.15, b = 0.6, a = 1 }
 c_blue = { r = 0.35, g = 0.35, b = 0.7, a = 1 }

@@ -1,7 +1,8 @@
 import('GlobalVars')
 
+-- this function will currently only work for the transport -- I need to make it work for all "targets"
 function ai_pathfind(dt, object, destination, computerShip)
-	if find_hypot(object.physicsObject.position, destination) >= 50 then
+	if find_hypot(object.physicsObject.position, destination) >= 15	then
 		angle_diff = math.atan2(destination.y - object.physicsObject.position.y, destination.x - object.physicsObject.position.x) - object.physicsObject.angle
 		if math.abs(angle_diff) <= math.pi / 36 then
 			object.physicsObject.angular_velocity = 0

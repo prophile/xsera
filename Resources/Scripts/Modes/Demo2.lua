@@ -693,8 +693,6 @@ function key ( k )
 		if release_build == false then
 			consoleDraw = true
 		end
-	elseif k == "u" then
-		consoleDraw = false
 	elseif k == " " then
 		if playerShip.beam ~= nil then
 			playerShip.beam.firing = true
@@ -708,7 +706,9 @@ function key ( k )
 			playerShip.special.firing = true
 		end
 	elseif k == "p" then
-		computerShip.life = 0
+		if release_build == false then
+			computerShip.life = 0
+		end
 	elseif k == "escape" then
 		mode_manager.switch("MainMenu")
 	end
