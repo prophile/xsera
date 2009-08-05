@@ -37,39 +37,6 @@ function update()
 	
 end
 
--- [TEMPORARY]
-function fix_colour(colour)
-	if colour.r > 1 then
-		colour.r = 1
-	elseif colour.r < 0 then
-		colour.r = 0
-	end
-	if colour.g > 1 then
-		colour.g = 1
-	elseif colour.g < 0 then
-		colour.g = 0
-	end
-	if colour.b > 1 then
-		colour.b = 1
-	elseif colour.b < 0 then
-		colour.b = 0
-	end
-	if colour.a > 1 then
-		colour.a = 1
-	elseif colour.a < 0 then
-		colour.a = 0
-	end
-	return colour
-end
-
-function colour_add(col1, col2, col3)
-	if col3 ~= nil then
-		return fix_colour({ r = col1.r + col2.r + col3.r, g = col1.g + col2.g + col3.g, b = col1.b + col2.b + col3.b, a = col1.a * col2.a * col3.a })
-	else
-		return fix_colour({ r = col1.r + col2.r, g = col1.g + col2.g, b = col1.b + col2.b, a = col1.a * col2.a })
-	end
-end
-
 function render()
 	graphics.begin_frame()
     graphics.draw_image("Panels/MainTop", 0, 118, 640, 245)
