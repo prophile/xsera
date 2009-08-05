@@ -11,36 +11,63 @@ splash_num = 0
 
 local execs = {}
 
-CYELLOW = { r = 0.7, g = 0.7, b = 0.4, a = 1.0 }
-CDGREEN = { r = 0.1, g = 0.75, b = 0.1, a = 1.0 }
-CGREY = { r = 0.6, b = 0.65, g = 0.55, a = 1.0 }
-CGREYBROWN = { r = 0.7, b = 0.7, g = 0.7, a = 1.0 }
-CLGREEN = { r = 0.3, g = 0.6, b = 0.3, a = 1.0 }
-
 function init()
 	sound.stop_music()
 	local num = 1
 	graphics.set_camera(-320, -240, 320, 240)
 --	graphics.set_camera(-480, -360, 480, 360)
-	execs[num] = { coordx = splash_shift_left, coordy = top_of_splash - (num - 1) * splash_stride, length = splash_shift_right - splash_shift_left, text = "Start New Game", justify = "left", boxColor = CYELLOW, textColor = c_purple, execute = nil, letter = "S" }
+	execs[num] = { coordx = splash_shift_left, coordy = top_of_splash - (num - 1) * splash_stride, length = splash_shift_right - splash_shift_left, text = "Start New Game", justify = "left", boxColour = c_lightYellow, textColor = c_purple, execute = nil, letter = "S" }
 	num = num + 1
-	execs[num] = { coordx = splash_shift_left, coordy = top_of_splash - (num - 1) * splash_stride, length = splash_shift_right - splash_shift_left, text = "Start Network Game", justify = "left", boxColor = CDGREEN, textColor = c_purple, execute = nil, letter = "N" }
+	execs[num] = { coordx = splash_shift_left, coordy = top_of_splash - (num - 1) * splash_stride, length = splash_shift_right - splash_shift_left, text = "Start Network Game", justify = "left", boxColour = CDGREEN, textColor = c_purple, execute = nil, letter = "N" }
 	num = num + 1
-	execs[num] = { coordx = splash_shift_left, coordy = top_of_splash - (num - 1) * splash_stride, length = splash_shift_right - splash_shift_left, text = "Replay Intro", justify = "left", boxColor = CGREY, textColor = c_purple, execute = nil, letter = "R" }
+	execs[num] = { coordx = splash_shift_left, coordy = top_of_splash - (num - 1) * splash_stride, length = splash_shift_right - splash_shift_left, text = "Replay Intro", justify = "left", boxColour = CGREY, textColor = c_purple, execute = nil, letter = "R" }
 	num = num + 1
-	execs[num] = { coordx = splash_shift_left, coordy = top_of_splash - (num - 1) * splash_stride, length = splash_shift_right - splash_shift_left, text = "Demo", justify = "left", boxColor = CGREYBROWN, textColor = c_purple, execute = nil, letter = "D" }
+	execs[num] = { coordx = splash_shift_left, coordy = top_of_splash - (num - 1) * splash_stride, length = splash_shift_right - splash_shift_left, text = "Demo", justify = "left", boxColour = CGREYBROWN, textColor = c_purple, execute = nil, letter = "D" }
 	num = num + 1
-	execs[num] = { coordx = splash_shift_left, coordy = top_of_splash - (num - 1) * splash_stride, length = splash_shift_right - splash_shift_left, text = "Options", justify = "left", boxColor = CLGREEN, textColor = c_purple, execute = nil, letter = "O" }
+	execs[num] = { coordx = splash_shift_left, coordy = top_of_splash - (num - 1) * splash_stride, length = splash_shift_right - splash_shift_left, text = "Options", justify = "left", boxColour = c_lightGreen, textColor = c_purple, execute = nil, letter = "O" }
 	num = num + 1
-	execs[num] = { coordx = splash_shift_left, coordy = top_of_splash - (num - 1) * splash_stride, length = splash_shift_right - splash_shift_left, text = "About Ares and Xsera", justify = "left", boxColor = CGREYBROWN, textColor = c_purple, execute = nil, letter = "A" }
+	execs[num] = { coordx = splash_shift_left, coordy = top_of_splash - (num - 1) * splash_stride, length = splash_shift_right - splash_shift_left, text = "About Ares and Xsera", justify = "left", boxColour = CGREYBROWN, textColor = c_purple, execute = nil, letter = "A" }
 	num = num + 1
-	execs[num] = { coordx = splash_shift_left, coordy = top_of_splash - (num - 1) * splash_stride, length = splash_shift_right - splash_shift_left, text = "Xsera Main Menu", justify = "left", boxColor = CYELLOW, textColor = c_purple, execute = nil, letter = "M" }
+	execs[num] = { coordx = splash_shift_left, coordy = top_of_splash - (num - 1) * splash_stride, length = splash_shift_right - splash_shift_left, text = "Xsera Main Menu", justify = "left", boxColour = c_lightYellow, textColor = c_purple, execute = nil, letter = "M" }
 	num = num + 1
-	execs[num] = { coordx = splash_shift_left, coordy = top_of_splash - (num - 1) * splash_stride, length = splash_shift_right - splash_shift_left, text = "Quit", justify = "left", boxColor = c_lightRed, textColor = c_purple, execute = nil, letter = "Q" }
+	execs[num] = { coordx = splash_shift_left, coordy = top_of_splash - (num - 1) * splash_stride, length = splash_shift_right - splash_shift_left, text = "Quit", justify = "left", boxColour = c_lightRed, textColor = c_purple, execute = nil, letter = "Q" }
 end
 
 function update()
 	
+end
+
+-- [TEMPORARY]
+function fix_colour(colour)
+	if colour.r > 1 then
+		colour.r = 1
+	elseif colour.r < 0 then
+		colour.r = 0
+	end
+	if colour.g > 1 then
+		colour.g = 1
+	elseif colour.g < 0 then
+		colour.g = 0
+	end
+	if colour.b > 1 then
+		colour.b = 1
+	elseif colour.b < 0 then
+		colour.b = 0
+	end
+	if colour.a > 1 then
+		colour.a = 1
+	elseif colour.a < 0 then
+		colour.a = 0
+	end
+	return colour
+end
+
+function colour_add(col1, col2, col3)
+	if col3 ~= nil then
+		return fix_colour({ r = col1.r + col2.r + col3.r, g = col1.g + col2.g + col3.g, b = col1.b + col2.b + col3.b, a = col1.a * col2.a * col3.a })
+	else
+		return fix_colour({ r = col1.r + col2.r, g = col1.g + col2.g, b = col1.b + col2.b, a = col1.a * col2.a })
+	end
 end
 
 function render()
@@ -52,19 +79,25 @@ function render()
 	local num = 1
 	while execs[num] ~= nil do
 		-- inner box and details
-		graphics.draw_box(execs[num].coordy + 13, execs[num].coordx + 11, execs[num].coordy + 5, execs[num].coordx + 10 + (execs[num].length - 20) / 3.5, 0, execs[num].boxColor.r + 0.1, execs[num].boxColor.g + 0.1, execs[num].boxColor.b + 0.1, execs[num].boxColor.a + 0.1)
-		graphics.draw_box(execs[num].coordy + 13, execs[num].coordx + 11 + (execs[num].length - 20) / 3.5, execs[num].coordy + 5, execs[num].coordx + execs[num].length - 11, 0, execs[num].boxColor.r - 0.1, execs[num].boxColor.g - 0.1, execs[num].boxColor.b - 0.1, execs[num].boxColor.a - 0.1)
+		graphics.draw_box(execs[num].coordy + 13, execs[num].coordx + 11, execs[num].coordy + 5, execs[num].coordx + 10 + (execs[num].length - 20) / 3.5, 0, colour_add(execs[num].boxColour, { r = 0.1, g = 0.1, b = 0.1, a = 1.0 }))
+		graphics.draw_box(execs[num].coordy + 13, execs[num].coordx + 11 + (execs[num].length - 20) / 3.5, execs[num].coordy + 5, execs[num].coordx + execs[num].length - 11, 0, colour_add(execs[num].boxColour, { r = -0.1, g = -0.1, b = -0.1, a = 1.0 }))
 		graphics.draw_text(execs[num].letter, "CrystalClear", "center", execs[num].coordx + 11 + (execs[num].length - 20) / 7, execs[num].coordy + 9, 13) 
-		graphics.draw_text(execs[num].text, "CrystalClear", "center", execs[num].coordx + 11 + (execs[num].length - 20) * 9 / 14, execs[num].coordy + 9, 13) 
+		graphics.draw_text(execs[num].text, "CrystalClear", "center", execs[num].coordx + 11 + (execs[num].length - 20) / 3.5 + (execs[num].length - 20) * 5 / 14, execs[num].coordy + 9, 13) 
 		-- frame boxes
-		graphics.draw_box(execs[num].coordy + 5, execs[num].coordx, execs[num].coordy + 3, execs[num].coordx + 10, 0, execs[num].boxColor.r, execs[num].boxColor.g, execs[num].boxColor.b, execs[num].boxColor.a)
-		graphics.draw_box(execs[num].coordy + 5, execs[num].coordx + execs[num].length - 10, execs[num].coordy + 3, execs[num].coordx + execs[num].length, 0, execs[num].boxColor.r, execs[num].boxColor.g, execs[num].boxColor.b, execs[num].boxColor.a)
-		graphics.draw_box(execs[num].coordy + 3, execs[num].coordx, execs[num].coordy, execs[num].coordx + execs[num].length, 0, execs[num].boxColor.r, execs[num].boxColor.g, execs[num].boxColor.b, execs[num].boxColor.a)
-		graphics.draw_box(execs[num].coordy + 15, execs[num].coordx, execs[num].coordy + 13, execs[num].coordx + 10, 0, execs[num].boxColor.r, execs[num].boxColor.g, execs[num].boxColor.b, execs[num].boxColor.a)
-		graphics.draw_box(execs[num].coordy + 15, execs[num].coordx + execs[num].length - 10, execs[num].coordy + 13, execs[num].coordx + execs[num].length, 0, execs[num].boxColor.r, execs[num].boxColor.g, execs[num].boxColor.b, execs[num].boxColor.a)
-		graphics.draw_box(execs[num].coordy + 18, execs[num].coordx, execs[num].coordy + 15, execs[num].coordx + execs[num].length, 0, execs[num].boxColor.r, execs[num].boxColor.g, execs[num].boxColor.b, execs[num].boxColor.a)
-		graphics.draw_box(execs[num].coordy + 12, execs[num].coordx, execs[num].coordy + 6, execs[num].coordx + 10, 0, execs[num].boxColor.r, execs[num].boxColor.g, execs[num].boxColor.b, execs[num].boxColor.a)
-		graphics.draw_box(execs[num].coordy + 12, execs[num].coordx + execs[num].length - 10, execs[num].coordy + 6, execs[num].coordx + execs[num].length, 0, execs[num].boxColor.r, execs[num].boxColor.g, execs[num].boxColor.b, execs[num].boxColor.a)
+		graphics.draw_box(execs[num].coordy + 5, execs[num].coordx, execs[num].coordy + 3, execs[num].coordx + 10, 0, execs[num].boxColour)
+		graphics.draw_box(execs[num].coordy + 5, execs[num].coordx + execs[num].length - 10, execs[num].coordy + 3, execs[num].coordx + execs[num].length, 0, execs[num].boxColour)
+		graphics.draw_box(execs[num].coordy + 3, execs[num].coordx, execs[num].coordy, execs[num].coordx + execs[num].length, 0, execs[num].boxColour)
+		graphics.draw_box(execs[num].coordy + 15, execs[num].coordx, execs[num].coordy + 13, execs[num].coordx + 10, 0, execs[num].boxColour)
+		graphics.draw_box(execs[num].coordy + 15, execs[num].coordx + execs[num].length - 10, execs[num].coordy + 13, execs[num].coordx + execs[num].length, 0, execs[num].boxColour)
+		graphics.draw_box(execs[num].coordy + 18, execs[num].coordx, execs[num].coordy + 15, execs[num].coordx + execs[num].length, 0, execs[num].boxColour)
+		graphics.draw_box(execs[num].coordy + 12, execs[num].coordx, execs[num].coordy + 6, execs[num].coordx + 10, 0, execs[num].boxColour)
+		graphics.draw_box(execs[num].coordy + 12, execs[num].coordx + execs[num].length - 10, execs[num].coordy + 6, execs[num].coordx + execs[num].length, 0, execs[num].boxColour)
+		-- under box, if it exists
+		if execs[num].underbox ~= nil then
+			graphics.draw_box(execs[num].coordy - 1, execs[num].coordx, execs[num].underbox, execs[num].coordx + 11, 0)
+			graphics.draw_box(execs[num].coordy - 1, execs[num].coordx + execs[num].length - 11, execs[num].underbox, execs[num].coordx + execs[num].coordx, 0)
+			graphics.draw_box(execs[num].underbox, execs[num].coordx, execs[num].underbox - 3, execs[num].coordx + execs[num].length, 0)
+		end
 		num = num + 1
 	end
 	if errNotice ~= nil then
@@ -74,6 +107,10 @@ function render()
 		end
 	end
 	graphics.end_frame()
+end
+
+function key_up(k)
+
 end
 
 function key(k)

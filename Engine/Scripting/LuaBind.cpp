@@ -775,37 +775,10 @@ int GFX_DrawText ( lua_State* L )
 	{
 		luaL_argcheck(L, lua_istable(L, 7), 7, "bad colour");
 		Graphics::DrawTextSDL(text, font, justify, vec2(locx, locy), height, LoadColour(L, 7), rotation);
-	/*	if (strcmp(justify, "left") == 0)
-		{
-			Graphics::DrawTextLeftSDL(text, font, vec2(locx, locy), height, LoadColour(L, 7), rotation);
-		} else
-		{
-			if (strcmp(justify, "right") == 0)
-			{
-				Graphics::DrawTextRightSDL(text, font, vec2(locx, locy), height, LoadColour(L, 7), rotation);
-			} else
-			{
-				Graphics::DrawTextCenterSDL(text, font, vec2(locx, locy), height, LoadColour(L, 7), rotation);
-			}
-		}*/
 	}
 	else
 	{
 		Graphics::DrawTextSDL(text, font, justify, vec2(locx, locy), height, colour(1.0f, 1.0f, 1.0f, 1.0f), rotation);
-	/*	if (strcmp(justify, "left") == 0)
-			
-		{
-			Graphics::DrawTextLeftSDL(text, font, vec2(locx, locy), height, colour(1.0f, 1.0f, 1.0f, 1.0f), rotation);
-		} else
-		{
-			if (strcmp(justify, "right") == 0)
-			{
-				Graphics::DrawTextRightSDL(text, font, vec2(locx, locy), height, colour(1.0f, 1.0f, 1.0f, 1.0f), rotation);
-			} else
-			{
-				Graphics::DrawTextCenterSDL(text, font, vec2(locx, locy), height, colour(1.0f, 1.0f, 1.0f, 1.0f), rotation);
-			}
-		}*/
 	}
 	return 0;
 }

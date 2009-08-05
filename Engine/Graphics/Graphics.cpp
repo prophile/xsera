@@ -337,7 +337,7 @@ void DrawSprite ( const std::string& sheetname, int sheet_x, int sheet_y, vec2 p
 	}
 }
 
-/* [ADAMLATER]
+/* [ADAMLATER] - this is a function that allows sprites to be tiled if necessary
 void DrawSpriteTile ( const std::string& sheetname, int sheet_x, int sheet_y, vec2 position, vec2 size, float rotation, colour col )
 {
 	SetShader("Sprite");
@@ -372,44 +372,6 @@ void DrawSpriteTile ( const std::string& sheetname, int sheet_x, int sheet_y, ve
 	}
 }*/
 
-void DrawTextCenterSDL ( const std::string& text, const std::string& font, vec2 position, float height, colour col, float rotation )
-{
-	SetShader("Sprite");
-	EnableTexturing();
-	EnableBlending();
-	SetColour(col);
-	GLuint texID = TextRenderer::TextObject(font, text);
-	Matrices::SetViewMatrix(matrix2x3::Translate(position));
-	Matrices::SetModelMatrix(matrix2x3::Rotation(rotation));
-	glBindTexture(GL_TEXTURE_RECTANGLE_ARB, texID);
-	vec2 dims = TextRenderer::TextDimensions(font, text);
-	vec2 halfSize = (dims * (height / dims.Y())) * 0.5f;
-	GLfloat textureArray[] = { 0.0f, 0.0f, dims.X(), 0.0f, dims.X(), dims.Y(), 0.0f, dims.Y() };
-	GLfloat vertexArray[] = { -halfSize.X(), halfSize.Y(), halfSize.X(), halfSize.Y(), halfSize.X(), -halfSize.Y(), -halfSize.X(), -halfSize.Y() };
-	glVertexPointer(2, GL_FLOAT, 0, vertexArray);
-	glTexCoordPointer(2, GL_FLOAT, 0, textureArray);
-	glDrawArrays(GL_QUADS, 0, 4);
-}
-
-void DrawTextLeftSDL ( const std::string& text, const std::string& font, vec2 position, float height, colour col, float rotation )
-{
-	SetShader("Sprite");
-	EnableTexturing();
-	EnableBlending();
-	SetColour(col);
-	GLuint texID = TextRenderer::TextObject(font, text);
-	Matrices::SetViewMatrix(matrix2x3::Translate(position));
-	Matrices::SetModelMatrix(matrix2x3::Rotation(rotation));
-	glBindTexture(GL_TEXTURE_RECTANGLE_ARB, texID);
-	vec2 dims = TextRenderer::TextDimensions(font, text);
-	vec2 halfSize = (dims * (height / dims.Y()));
-	GLfloat textureArray[] = { 0.0f, 0.0f, dims.X(), 0.0f, dims.X(), dims.Y(), 0.0f, dims.Y() };
-	GLfloat vertexArray[] = { 0, halfSize.Y() / 2, halfSize.X(), halfSize.Y() / 2, halfSize.X(), -halfSize.Y() / 2, 0, -halfSize.Y() / 2 };
-	glVertexPointer(2, GL_FLOAT, 0, vertexArray);
-	glTexCoordPointer(2, GL_FLOAT, 0, textureArray);
-	glDrawArrays(GL_QUADS, 0, 4);
-}
-
 void DrawTextSDL ( const std::string& text, const std::string& font, const char* justify, vec2 position, float height, colour col, float rotation )
 {
 	SetShader("Sprite");
@@ -441,25 +403,6 @@ void DrawTextSDL ( const std::string& text, const std::string& font, const char*
 			glVertexPointer(2, GL_FLOAT, 0, vertexArray);
 		}
 	}
-	glTexCoordPointer(2, GL_FLOAT, 0, textureArray);
-	glDrawArrays(GL_QUADS, 0, 4);
-}
-
-void DrawTextRightSDL ( const std::string& text, const std::string& font, vec2 position, float height, colour col, float rotation )
-{
-	SetShader("Sprite");
-	EnableTexturing();
-	EnableBlending();
-	SetColour(col);
-	GLuint texID = TextRenderer::TextObject(font, text);
-	Matrices::SetViewMatrix(matrix2x3::Translate(position));
-	Matrices::SetModelMatrix(matrix2x3::Rotation(rotation));
-	glBindTexture(GL_TEXTURE_RECTANGLE_ARB, texID);
-	vec2 dims = TextRenderer::TextDimensions(font, text);
-	vec2 halfSize = (dims * (height / dims.Y())) * 0.5f;
-	GLfloat textureArray[] = { 0.0f, 0.0f, dims.X(), 0.0f, dims.X(), dims.Y(), 0.0f, dims.Y() };
-	GLfloat vertexArray[] = { -halfSize.X(), halfSize.Y() / 2, 0, halfSize.Y() / 2, 0, -halfSize.Y() / 2, -halfSize.X(), -halfSize.Y() / 2 };
-	glVertexPointer(2, GL_FLOAT, 0, vertexArray);
 	glTexCoordPointer(2, GL_FLOAT, 0, textureArray);
 	glDrawArrays(GL_QUADS, 0, 4);
 }
