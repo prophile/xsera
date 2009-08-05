@@ -61,6 +61,17 @@ void DrawTextCenterSDL ( const std::string& text, const std::string& font, vec2 
  * @param col The colour of the line
  * @param rotation how the text is rotated
  */
+void DrawTextSDL ( const std::string& text, const std::string& font, const char* justify, vec2 position, float height, colour col, float rotation );
+/**
+ * Draws text to the screen
+ * @param text the text to be drawn
+ * @param font the font to be used
+ * @param justify the text justification
+ * @param position the place to justify the text
+ * @param height the font size of the text
+ * @param col The colour of the line
+ * @param rotation how the text is rotated
+ */
 void DrawTextLeftSDL ( const std::string& text, const std::string& font, vec2 position, float height, colour col, float rotation );
 /**
  * Draws text, left-justified

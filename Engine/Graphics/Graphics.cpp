@@ -385,8 +385,7 @@ void DrawTextCenterSDL ( const std::string& text, const std::string& font, vec2 
 	vec2 dims = TextRenderer::TextDimensions(font, text);
 	vec2 halfSize = (dims * (height / dims.Y())) * 0.5f;
 	GLfloat textureArray[] = { 0.0f, 0.0f, dims.X(), 0.0f, dims.X(), dims.Y(), 0.0f, dims.Y() };
-	GLfloat vertexArray[] = { -halfSize.X(), halfSize.Y(), halfSize.X(), halfSize.Y(),
-	halfSize.X(), -halfSize.Y(), -halfSize.X(), -halfSize.Y() };
+	GLfloat vertexArray[] = { -halfSize.X(), halfSize.Y(), halfSize.X(), halfSize.Y(), halfSize.X(), -halfSize.Y(), -halfSize.X(), -halfSize.Y() };
 	glVertexPointer(2, GL_FLOAT, 0, vertexArray);
 	glTexCoordPointer(2, GL_FLOAT, 0, textureArray);
 	glDrawArrays(GL_QUADS, 0, 4);
@@ -405,9 +404,43 @@ void DrawTextLeftSDL ( const std::string& text, const std::string& font, vec2 po
 	vec2 dims = TextRenderer::TextDimensions(font, text);
 	vec2 halfSize = (dims * (height / dims.Y()));
 	GLfloat textureArray[] = { 0.0f, 0.0f, dims.X(), 0.0f, dims.X(), dims.Y(), 0.0f, dims.Y() };
-	GLfloat vertexArray[] = { 0, halfSize.Y() / 2, halfSize.X(), halfSize.Y() / 2,
-		halfSize.X(), -halfSize.Y() / 2, 0, -halfSize.Y() / 2 };
+	GLfloat vertexArray[] = { 0, halfSize.Y() / 2, halfSize.X(), halfSize.Y() / 2, halfSize.X(), -halfSize.Y() / 2, 0, -halfSize.Y() / 2 };
 	glVertexPointer(2, GL_FLOAT, 0, vertexArray);
+	glTexCoordPointer(2, GL_FLOAT, 0, textureArray);
+	glDrawArrays(GL_QUADS, 0, 4);
+}
+
+void DrawTextSDL ( const std::string& text, const std::string& font, const char* justify, vec2 position, float height, colour col, float rotation )
+{
+	SetShader("Sprite");
+	EnableTexturing();
+	EnableBlending();
+	SetColour(col);
+	GLuint texID = TextRenderer::TextObject(font, text);
+	Matrices::SetViewMatrix(matrix2x3::Translate(position));
+	Matrices::SetModelMatrix(matrix2x3::Rotation(rotation));
+	glBindTexture(GL_TEXTURE_RECTANGLE_ARB, texID);
+	vec2 dims = TextRenderer::TextDimensions(font, text);
+	GLfloat textureArray[] = { 0.0f, 0.0f, dims.X(), 0.0f, dims.X(), dims.Y(), 0.0f, dims.Y() };
+	vec2 halfSize;
+	if (strcmp(justify, "left") == 0)
+	{
+		halfSize = (dims * (height / dims.Y()));
+		GLfloat vertexArray[8] = { 0, halfSize.Y() / 2, halfSize.X(), halfSize.Y() / 2, halfSize.X(), -halfSize.Y() / 2, 0, -halfSize.Y() / 2 };
+		glVertexPointer(2, GL_FLOAT, 0, vertexArray);
+	} else
+	{
+		halfSize = (dims * (height / dims.Y())) * 0.5f;
+		if (strcmp(justify, "right") == 0)
+		{
+			GLfloat vertexArray[8] = { -halfSize.X(), halfSize.Y() / 2, 0, halfSize.Y() / 2, 0, -halfSize.Y() / 2, -halfSize.X(), -halfSize.Y() / 2 };
+			glVertexPointer(2, GL_FLOAT, 0, vertexArray);
+		} else
+		{
+			GLfloat vertexArray[8] = { -halfSize.X(), halfSize.Y(), halfSize.X(), halfSize.Y(), halfSize.X(), -halfSize.Y(), -halfSize.X(), -halfSize.Y() };
+			glVertexPointer(2, GL_FLOAT, 0, vertexArray);
+		}
+	}
 	glTexCoordPointer(2, GL_FLOAT, 0, textureArray);
 	glDrawArrays(GL_QUADS, 0, 4);
 }
@@ -425,8 +458,7 @@ void DrawTextRightSDL ( const std::string& text, const std::string& font, vec2 p
 	vec2 dims = TextRenderer::TextDimensions(font, text);
 	vec2 halfSize = (dims * (height / dims.Y())) * 0.5f;
 	GLfloat textureArray[] = { 0.0f, 0.0f, dims.X(), 0.0f, dims.X(), dims.Y(), 0.0f, dims.Y() };
-	GLfloat vertexArray[] = { -halfSize.X(), halfSize.Y() / 2, 0, halfSize.Y() / 2,
-		0, -halfSize.Y() / 2, -halfSize.X(), -halfSize.Y() / 2 };
+	GLfloat vertexArray[] = { -halfSize.X(), halfSize.Y() / 2, 0, halfSize.Y() / 2, 0, -halfSize.Y() / 2, -halfSize.X(), -halfSize.Y() / 2 };
 	glVertexPointer(2, GL_FLOAT, 0, vertexArray);
 	glTexCoordPointer(2, GL_FLOAT, 0, textureArray);
 	glDrawArrays(GL_QUADS, 0, 4);
