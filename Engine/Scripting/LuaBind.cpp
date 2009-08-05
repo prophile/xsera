@@ -745,42 +745,15 @@ int GFX_SetCamera ( lua_State* L )
 
 static colour LoadColour ( lua_State* L, int index )
 {
-	lua_gettable(L, index);
 	float r = 1.0f, g = 1.0f, b = 1.0f, a = 1.0f;
-	
-	// get red
-	lua_getfield(L, -1, "r");
-	if (lua_isnumber(L, -1))
-	{
-		r = lua_tonumber(L, -1);
-	}
-	lua_pop(L, 1);
-	
-	// get green
-	lua_getfield(L, -1, "g");
-	if (lua_isnumber(L, -1))
-	{
-		g = lua_tonumber(L, -1);
-	}
-	lua_pop(L, 1);
-	
-	// get blue
-	lua_getfield(L, -1, "b");
-	if (lua_isnumber(L, -1))
-	{
-		b = lua_tonumber(L, -1);
-	}
-	lua_pop(L, 1);
-	
-	// get alpha
-	lua_getfield(L, -1, "a");
-	if (lua_isnumber(L, -1))
-	{
-		a = lua_tonumber(L, -1);
-	}
-	lua_pop(L, 1);
-	
-	lua_pop(L, 1);
+	lua_getfield(L, index, "r");
+	r = luaL_checknumber(L, -1);
+	lua_getfield(L, index, "g");
+	g = luaL_checknumber(L, -1);
+	lua_getfield(L, index, "b");
+	b = luaL_checknumber(L, -1);
+	lua_getfield(L, index, "a");
+	a = luaL_checknumber(L, -1);
 	return colour(r, g, b, a);
 }
 
@@ -855,33 +828,7 @@ int GFX_DrawLine ( lua_State* L )
 	return 0;
 }
 
-/* I'm creating this to finish the demo. Alistair: you can do it right on your own time [ALISTAIR, DEMO?] */
-int GFX_DrawLineTEMP ( lua_State* L )
-{
-	int nargs = lua_gettop(L);
-	float x1, y1, x2, y2, width;
-	x1 = luaL_checknumber(L, 1);
-	y1 = luaL_checknumber(L, 2);
-	x2 = luaL_checknumber(L, 3);
-	y2 = luaL_checknumber(L, 4);
-	width = luaL_checknumber(L, 5);
-	if (nargs > 5)
-	{
-		float r = 0.0, g = 1.0, b = 0.0, a = 1.0;
-		r = luaL_checknumber(L, 6);
-		g = luaL_checknumber(L, 7);
-		b = luaL_checknumber(L, 8);
-		a = luaL_checknumber(L, 9);
-		Graphics::DrawLine(vec2(x1, y1), vec2(x2, y2), width, colour(r, g, b, a));
-	}
-	else
-	{
-		Graphics::DrawLine(vec2(x1, y1), vec2(x2, y2), width, colour(0.0f, 1.0f, 0.0f, 1.0f));
-	}
-	return 0;
-}
-
-int GFX_DrawBoxTEMP ( lua_State* L )
+int GFX_DrawBox ( lua_State* L )
 {
 	int nargs = lua_gettop(L);
 	float top, left, bottom, right, width;
@@ -892,12 +839,7 @@ int GFX_DrawBoxTEMP ( lua_State* L )
 	width = luaL_checknumber(L, 5);
 	if (nargs > 5)
 	{
-		float r = 0.0, g = 1.0, b = 0.0, a = 1.0;
-		r = luaL_checknumber(L, 6);
-		g = luaL_checknumber(L, 7);
-		b = luaL_checknumber(L, 8);
-		a = luaL_checknumber(L, 9);
-		Graphics::DrawBox(top, left, bottom, right, width, colour(r, g, b, a));
+		Graphics::DrawBox(top, left, bottom, right, width, LoadColour(L, 6));
 	}
 	else
 	{
@@ -906,22 +848,17 @@ int GFX_DrawBoxTEMP ( lua_State* L )
 	return 0;
 }
 
-int GFX_DrawRadarTriangleTEMP ( lua_State* L )
+int GFX_DrawRadarTriangle ( lua_State* L )
 {
 	int nargs = lua_gettop(L);
 	float coordinates[2] = { luaL_checknumber(L, 1), luaL_checknumber(L, 2) };
 	float varsize = luaL_checknumber(L, 3);
 	if (nargs > 3)
 	{
-		float r = 0.0, g = 1.0, b = 0.0, a = 1.0;
-		r = luaL_checknumber(L, 4);
-		g = luaL_checknumber(L, 5);
-		b = luaL_checknumber(L, 6);
-		a = luaL_checknumber(L, 7);
 		Graphics::DrawTriangle(vec2(coordinates[0], coordinates[1] + varsize),
 							   vec2(coordinates[0] - varsize, coordinates[1] - varsize),
 							   vec2(coordinates[0] + varsize, coordinates[1] - varsize),
-							   colour(r, g, b, a));
+							   LoadColour(L, 4));
 	}
 	else
 	{
@@ -933,7 +870,7 @@ int GFX_DrawRadarTriangleTEMP ( lua_State* L )
 	return 0;
 }
 
-int GFX_DrawRadarPlusTEMP ( lua_State* L )
+int GFX_DrawRadarPlus ( lua_State* L )
 {
 	int nargs = lua_gettop(L);
 	float coordinates[2] = { luaL_checknumber(L, 1), luaL_checknumber(L, 2) };
@@ -941,12 +878,8 @@ int GFX_DrawRadarPlusTEMP ( lua_State* L )
 	if (nargs > 3)
 	{
 		float r = 0.0, g = 1.0, b = 0.0, a = 1.0;
-		r = luaL_checknumber(L, 4);
-		g = luaL_checknumber(L, 5);
-		b = luaL_checknumber(L, 6);
-		a = luaL_checknumber(L, 7);
-		Graphics::DrawBox(coordinates[1] + varsize, coordinates[0] - 0.3 * varsize, coordinates[1] - varsize, coordinates[0] + 0.3 * varsize, 0, colour(r, g, b, a));
-		Graphics::DrawBox(coordinates[1] + 0.3 * varsize, coordinates[0] - varsize, coordinates[1] - 0.3 * varsize, coordinates[0] + varsize, 0, colour(r, g, b, a));
+		Graphics::DrawBox(coordinates[1] + varsize, coordinates[0] - 0.3 * varsize, coordinates[1] - varsize, coordinates[0] + 0.3 * varsize, 0, LoadColour(L, 4));
+		Graphics::DrawBox(coordinates[1] + 0.3 * varsize, coordinates[0] - varsize, coordinates[1] - 0.3 * varsize, coordinates[0] + varsize, 0, LoadColour(L, 4));
 	}
 	else
 	{
@@ -956,19 +889,14 @@ int GFX_DrawRadarPlusTEMP ( lua_State* L )
 	return 0;
 }
 
-int GFX_DrawRadarBoxTEMP ( lua_State* L )
+int GFX_DrawRadarBox ( lua_State* L )
 {
 	int nargs = lua_gettop(L);
 	float coordinates[2] = { luaL_checknumber(L, 1), luaL_checknumber(L, 2) };
 	float varsize = luaL_checknumber(L, 3);
 	if (nargs > 3)
 	{
-		float r = 0.0, g = 1.0, b = 0.0, a = 1.0;
-		r = luaL_checknumber(L, 4);
-		g = luaL_checknumber(L, 5);
-		b = luaL_checknumber(L, 6);
-		a = luaL_checknumber(L, 7);
-		Graphics::DrawBox(coordinates[1] + varsize, coordinates[0] - varsize, coordinates[1] - varsize, coordinates[0] + varsize, 0, colour(r, g, b, a));
+		Graphics::DrawBox(coordinates[1] + varsize, coordinates[0] - varsize, coordinates[1] - varsize, coordinates[0] + varsize, 0, LoadColour(L, 4));
 	}
 	else
 	{
@@ -977,19 +905,14 @@ int GFX_DrawRadarBoxTEMP ( lua_State* L )
 	return 0;
 }
 
-int GFX_DrawRadarDiamondTEMP ( lua_State* L )
+int GFX_DrawRadarDiamond ( lua_State* L )
 {
 	int nargs = lua_gettop(L);
 	float coordinates[2] = { luaL_checknumber(L, 1), luaL_checknumber(L, 2) };
 	float varsize = luaL_checknumber(L, 3);
 	if (nargs > 3)
 	{
-		float r = 0.0, g = 1.0, b = 0.0, a = 1.0;
-		r = luaL_checknumber(L, 4);
-		g = luaL_checknumber(L, 5);
-		b = luaL_checknumber(L, 6);
-		a = luaL_checknumber(L, 7);
-		Graphics::DrawDiamond(coordinates[1] + varsize, coordinates[0] - varsize, coordinates[1] - varsize, coordinates[0] + varsize, colour(r, g, b, a));
+		Graphics::DrawDiamond(coordinates[1] + varsize, coordinates[0] - varsize, coordinates[1] - varsize, coordinates[0] + varsize, LoadColour(L, 4));
 	}
 	else
 	{
@@ -1051,18 +974,13 @@ int GFX_DrawSprite ( lua_State* L )
 	loc_y = luaL_checknumber(L, 3);
 	size_x = luaL_checknumber(L, 4);
 	size_y = luaL_checknumber(L, 5);
-	if (nargs == 6)
+	if (nargs >= 6)
 	{
 		rot = luaL_checknumber(L, 6);
 	}
 	if (nargs > 6)
 	{
-		float r = 0.0, g = 1.0, b = 0.0, a = 1.0;
-		r = luaL_checknumber(L, 7);
-		g = luaL_checknumber(L, 8);
-		b = luaL_checknumber(L, 9);
-		a = luaL_checknumber(L, 10);
-		Graphics::DrawSprite(spritesheet, 0, 0, vec2(loc_x, loc_y), vec2(size_x, size_y), rot, colour(r, g, b, a));
+		Graphics::DrawSprite(spritesheet, 0, 0, vec2(loc_x, loc_y), vec2(size_x, size_y), rot, LoadColour(L, 7));
 	}
 	Graphics::DrawSprite(spritesheet, 0, 0, vec2(loc_x, loc_y), vec2(size_x, size_y), rot, colour(1.0f, 1.0f, 1.0f, 1.0f));
 	return 0;
@@ -1130,12 +1048,12 @@ luaL_Reg registryGraphics[] =
 	"draw_sprite", GFX_DrawSprite,
 	"draw_sheet_sprite", GFX_DrawSpriteFromSheet,
 	"draw_text", GFX_DrawText,
-	"draw_line", GFX_DrawLineTEMP,
-	"draw_box", GFX_DrawBoxTEMP,
-	"draw_rtri", GFX_DrawRadarTriangleTEMP,
-	"draw_rplus", GFX_DrawRadarPlusTEMP,
-	"draw_rbox", GFX_DrawRadarBoxTEMP,
-	"draw_rdia", GFX_DrawRadarDiamondTEMP,
+	"draw_line", GFX_DrawLine,
+	"draw_box", GFX_DrawBox,
+	"draw_rtri", GFX_DrawRadarTriangle,
+	"draw_rplus", GFX_DrawRadarPlus,
+	"draw_rbox", GFX_DrawRadarBox,
+	"draw_rdia", GFX_DrawRadarDiamond,
 	"draw_circle", GFX_DrawCircle,
 	"sprite_dimensions", GFX_SpriteDimensions,
 	"draw_starfield", GFX_DrawStarfield,

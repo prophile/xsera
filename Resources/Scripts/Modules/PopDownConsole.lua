@@ -17,7 +17,7 @@ function popDownConsole()
 		console_add(">")
 	end
 	if consoleDraw == true then
-		graphics.draw_box(320, -400, 105, 400, 2, 0, 0, 0, 1)
+		graphics.draw_box(320, -400, 105, 400, 2, c_black)
 		console_draw(12)
 		while line > CONSOLE_MAX do
 			table.remove(consoleHistory, 1)
