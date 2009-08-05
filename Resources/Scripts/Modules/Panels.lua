@@ -340,18 +340,22 @@ function draw_panels()
 		graphics.draw_text(scen.text[textnum], "CrystalClear", "center", 0, -250, 30)
 	end
 -- Weapon (special) ammo count
-	graphics.draw_text(string.format('%03d', playerShip.special.ammo), "CrystalClear", "left", -314, 60, 13) -- [COLOURFIX] make it laserGreen
+	graphics.draw_text(string.format('%03d', playerShip.special.ammo), "CrystalClear", "left", -314, 60, 13, c_laserGreen)
 	control = playerShip -- [HARDCODE]
 	if control ~= nil then
 		graphics.draw_box(49, -392, 40, -297, 0, c_lightYellow)
-		graphics.draw_text("CONTROL", "CrystalClear", "left", -389, 44, 12) -- [COLOURFIX] make it black
+		graphics.draw_text("CONTROL", "CrystalClear", "left", -389, 44, 12, c_black)
 		if control.type == "Planet" then
 			graphics.draw_text(control.name, "CrystalClear", "left", -389, 35, 12)
 		else
 			graphics.draw_text(control.shortName, "CrystalClear", "left", -389, 35, 12)
 		end
 		if control.ctrlObject ~= nil then
-			graphics.draw_text(control.ctrlObject.name, "CrystalClear", "left", -389, 3, 12) -- COLORED RED IF HOSTILE, GREEN IF FRIENDLY [COLOURFIX]
+			if control.owner == "Human/Ishiman" then
+				graphics.draw_text(control.ctrlObject.name, "CrystalClear", "left", -389, 3, 12, c_green)
+			else
+				graphics.draw_text(control.ctrlObject.name, "CrystalClear", "left", -389, 3, 12, c_pureRed)
+			end
 		end
 		if control.energy ~= nil then
 			graphics.draw_line(-357, 28, -347, 28, 0.5, c_yellow)
@@ -387,7 +391,7 @@ function draw_panels()
 	end
 	if target ~= nil then
 		graphics.draw_box(-8, -392, -17, -297, 0, c_lightBlue)
-		graphics.draw_text("TARGET", "CrystalClear", "left", -389, -13, 12) -- [COLOURFIX] make it black
+		graphics.draw_text("TARGET", "CrystalClear", "left", -389, -13, 12, c_black)
 		graphics.draw_line(-387, -32, -372, -32, 0.5, c_white)
 		graphics.draw_line(-372, -34, -372, -32, 0.5, c_white)
 		graphics.draw_line(-387, -34, -387, -32, 0.5, c_white)
@@ -396,11 +400,11 @@ function draw_panels()
 		graphics.draw_line(-387, -47, -387, -49, 0.5, c_white)
 	end
 	graphics.draw_box(-165.5, -389.5, -175.5, -358, 0, c_lightBlue)
-	graphics.draw_text("RIGHT", "CrystalClear", "left", -388, -170, 13) -- [COLOURFIX] make it blue
-	graphics.draw_text("Select", "CrystalClear", "left", -354, -170, 13) -- [COLOURFIX] make it blue
+	graphics.draw_text("RIGHT", "CrystalClear", "left", -388, -170, 13, c_blue)
+	graphics.draw_text("Select", "CrystalClear", "left", -354, -170, 13, c_blue)
 	if menu_level ~= menu_options then
 		graphics.draw_box(-175.5, -389.5, -185.5, -358, 0, c_lightBlue)
-		graphics.draw_text("LEFT", "CrystalClear", "left", -388, -180, 13) -- [COLOURFIX] make it blue
-		graphics.draw_text("Go Back", "CrystalClear", "left", -354, -180, 13) -- [COLOURFIX] make it blue
+		graphics.draw_text("LEFT", "CrystalClear", "left", -388, -180, 13, c_blue)
+		graphics.draw_text("Go Back", "CrystalClear", "left", -354, -180, 13, c_blue)
 	end
 end

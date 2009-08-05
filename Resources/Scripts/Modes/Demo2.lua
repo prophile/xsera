@@ -58,7 +58,9 @@ function init ()
 	computerShip = NewEntity(nil, "Carrier", "Ship", "Gaitori")
 		computerShip.physicsObject.position = { x = 2200, y = 2700 }
 		computerShip.physicsObject.angle = math.pi - 0.2
+		computerShip.owner = "Gaitori"
 	playerShip = NewEntity(nil, "HeavyCruiser", "Ship", "Ishiman")
+		playerShip.owner = "Human/Ishiman"
 	bestExplosion = NewEntity(nil, "BestExplosion", "Explosion")
 end
 
