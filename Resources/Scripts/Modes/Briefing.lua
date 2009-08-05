@@ -79,10 +79,28 @@ function draw_interface_box(box, col_mod_all, col_mod_click)
 		-- bottom
 		graphics.draw_box(box.underbox + 3, box.coordx, box.underbox, box.coordx + box.length, 0, box.boxColour)
 	end
+	while execs[num] ~= nil do
+		if execs[num].special == "click" then
+			execs[num].special = nil
+		end
+		num = num + 1
+	end
+end
+
+function keyup(k)
+	if k == "escape" then
+		mode_manager.switch('AresSplash')
+	end
 end
 
 function key(k)
 	if k == "escape" then
-		mode_manager.switch('AresSplash')
+		local num = 1
+		while execs[num] ~= nil do
+			if execs[num].letter == "ESC" then
+				execs[num].special = "click"
+			end
+			num = num + 1
+		end
 	end
 end

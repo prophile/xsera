@@ -34,7 +34,7 @@ function init()
 end
 
 function update()
-	
+
 end
 
 function render()
@@ -45,65 +45,178 @@ function render()
     graphics.draw_image("Panels/MainRight", 230, -110, 180, 211)
 	local num = 1
 	while execs[num] ~= nil do
-		-- inner box and details
-		graphics.draw_box(execs[num].coordy + 13, execs[num].coordx + 11, execs[num].coordy + 5, execs[num].coordx + 10 + (execs[num].length - 20) / 3.5, 0, colour_add(execs[num].boxColour, { r = 0.1, g = 0.1, b = 0.1, a = 1.0 }))
-		graphics.draw_box(execs[num].coordy + 13, execs[num].coordx + 11 + (execs[num].length - 20) / 3.5, execs[num].coordy + 5, execs[num].coordx + execs[num].length - 11, 0, colour_add(execs[num].boxColour, { r = -0.1, g = -0.1, b = -0.1, a = 1.0 }))
-		graphics.draw_text(execs[num].letter, "CrystalClear", "center", execs[num].coordx + 11 + (execs[num].length - 20) / 7, execs[num].coordy + 9, 13) 
-		graphics.draw_text(execs[num].text, "CrystalClear", "center", execs[num].coordx + 11 + (execs[num].length - 20) / 3.5 + (execs[num].length - 20) * 5 / 14, execs[num].coordy + 9, 13) 
-		-- frame boxes
-		graphics.draw_box(execs[num].coordy + 5, execs[num].coordx, execs[num].coordy + 3, execs[num].coordx + 10, 0, execs[num].boxColour)
-		graphics.draw_box(execs[num].coordy + 5, execs[num].coordx + execs[num].length - 10, execs[num].coordy + 3, execs[num].coordx + execs[num].length, 0, execs[num].boxColour)
-		graphics.draw_box(execs[num].coordy + 3, execs[num].coordx, execs[num].coordy, execs[num].coordx + execs[num].length, 0, execs[num].boxColour)
-		graphics.draw_box(execs[num].coordy + 15, execs[num].coordx, execs[num].coordy + 13, execs[num].coordx + 10, 0, execs[num].boxColour)
-		graphics.draw_box(execs[num].coordy + 15, execs[num].coordx + execs[num].length - 10, execs[num].coordy + 13, execs[num].coordx + execs[num].length, 0, execs[num].boxColour)
-		graphics.draw_box(execs[num].coordy + 18, execs[num].coordx, execs[num].coordy + 15, execs[num].coordx + execs[num].length, 0, execs[num].boxColour)
-		graphics.draw_box(execs[num].coordy + 12, execs[num].coordx, execs[num].coordy + 6, execs[num].coordx + 10, 0, execs[num].boxColour)
-		graphics.draw_box(execs[num].coordy + 12, execs[num].coordx + execs[num].length - 10, execs[num].coordy + 6, execs[num].coordx + execs[num].length, 0, execs[num].boxColour)
-		-- under box, if it exists
-		if execs[num].underbox ~= nil then
-			graphics.draw_box(execs[num].coordy - 1, execs[num].coordx, execs[num].underbox, execs[num].coordx + 11, 0)
-			graphics.draw_box(execs[num].coordy - 1, execs[num].coordx + execs[num].length - 11, execs[num].underbox, execs[num].coordx + execs[num].coordx, 0)
-			graphics.draw_box(execs[num].underbox, execs[num].coordx, execs[num].underbox - 3, execs[num].coordx + execs[num].length, 0)
+		local col_mix = { r = 0.0, g = 0.0, b = 0.0, a = 1.0 }
+		if execs[num].special ~= nil then
+			if execs[num].special == "click" then
+				col_mix = { r = 0.1, g = 0.1, b = 0.1, a = 1.0 }
+				draw_interface_box(execs[num], c_black, col_mix)
+			elseif execs[num].special == "disabled" then
+				col_mix = { r = -0.3, g = -0.3, b = -0.3, a = 1.0 }
+				draw_interface_box(execs[num], col_mix, col_mix)
+			end
+		else
+			draw_interface_box(execs[num], c_black, c_black)
 		end
 		num = num + 1
-	end
-	if errNotice ~= nil then
-		graphics.draw_text(errNotice.text, "CrystalClear", "left", -310, 230, 20)
-		if errNotice.start + errNotice.duration < mode_manager.time() then
-			errNotice = nil
-		end
 	end
 	graphics.end_frame()
 end
 
-function key_up(k)
-
+function draw_interface_box(box, col_mod_all, col_mod_click)
+	-- inner box and details
+	if box.text ~= " " then
+		graphics.draw_box(box.coordy + 13, box.coordx + 11, box.coordy + 5, box.coordx + 10 + (box.length - 20) / 3.5, 0, colour_add(box.boxColour, c_lighten, col_mod_all))
+		graphics.draw_box(box.coordy + 13, box.coordx + 11 + (box.length - 20) / 3.5, box.coordy + 5, box.coordx + box.length - 11, 0, colour_add(box.boxColour, c_darken, col_mod_click))
+		graphics.draw_text(box.text, "CrystalClear", "center", box.coordx + 11 + (box.length - 20) / 3.5 + (box.length - 20) * 5 / 14, box.coordy + 9, 13, colour_add(box.boxColour, c_lighten, col_mod_all)) 
+	else
+		graphics.draw_box(box.coordy + 13, box.coordx + 11, box.coordy + 5, box.coordx + 10 + (box.length - 20) / 3.5, 0, colour_add(box.boxColour, c_darken))
+		graphics.draw_box(box.coordy + 13, box.coordx + 11 + (box.length - 20) / 3.5, box.coordy + 5, box.coordx + box.length - 11, 0, colour_add(box.boxColour, c_lighten))
+	end
+	if box.special ~= "disabled" then
+		graphics.draw_text(box.letter, "CrystalClear", "center", box.coordx + 11 + (box.length - 20) / 7, box.coordy + 9, 13) 
+	end
+	-- frame boxes
+	graphics.draw_box(box.coordy + 5, box.coordx, box.coordy + 3, box.coordx + 10, 0, colour_add(box.boxColour, col_mod_all))
+	graphics.draw_box(box.coordy + 5, box.coordx + box.length - 10, box.coordy + 3, box.coordx + box.length, 0, colour_add(box.boxColour, col_mod_all))
+	graphics.draw_box(box.coordy + 3, box.coordx, box.coordy, box.coordx + box.length, 0, colour_add(box.boxColour, col_mod_all))
+	graphics.draw_box(box.coordy + 15, box.coordx, box.coordy + 13, box.coordx + 10, 0, colour_add(box.boxColour, col_mod_all))
+	graphics.draw_box(box.coordy + 15, box.coordx + box.length - 10, box.coordy + 13, box.coordx + box.length, 0, colour_add(box.boxColour, col_mod_all))
+	graphics.draw_box(box.coordy + 18, box.coordx, box.coordy + 15, box.coordx + box.length, 0, colour_add(box.boxColour, col_mod_all))
+	graphics.draw_box(box.coordy + 12, box.coordx, box.coordy + 6, box.coordx + 10, 0, colour_add(box.boxColour, col_mod_all))
+	graphics.draw_box(box.coordy + 12, box.coordx + box.length - 10, box.coordy + 6, box.coordx + box.length, 0, colour_add(box.boxColour, col_mod_all))
+	-- under box, if it exists
+	if box.underbox ~= nil then
+		-- left side
+		graphics.draw_box(box.coordy - 1, box.coordx, (box.coordy + box.underbox + 4) / 2, box.coordx + 10, 0, box.boxColour)
+		graphics.draw_box((box.coordy + box.underbox + 2) / 2, box.coordx, box.underbox + 4, box.coordx + 10, 0, colour_add(box.boxColour, c_darken))
+		-- right side
+		graphics.draw_box(box.coordy - 1, box.coordx + box.length - 10, (box.coordy + box.underbox + 4) / 2, box.coordx + box.length, 0, box.boxColour)
+		graphics.draw_box((box.coordy + box.underbox + 2) / 2, box.coordx + box.length - 10, box.underbox + 4, box.coordx + box.length, 0, colour_add(box.boxColour, c_darken))
+		-- bottom
+		graphics.draw_box(box.underbox + 3, box.coordx, box.underbox, box.coordx + box.length, 0, box.boxColour)
+	end
 end
 
-function key(k)
+function keyup(k)
 	if k == "s" then
-		mode_manager.switch("Demo2")
+		mode_manager.switch('Demo2')
 	elseif k == "n" then
 		if release_build == true then
-			sound.play("NaughtyBeep")
+			sound.play('NaughtyBeep')
 			errLog("This command currently has no code.", 10)
+			local num = 1
+			while execs[num] ~= nil do
+				if execs[num].special == "click" then
+					execs[num].special = nil
+				end
+				num = num + 1
+			end
 		else
-			mode_manager.switch("Briefing")
+			mode_manager.switch('Briefing')
 		end
 	elseif k == "r" then
 		sound.play("NaughtyBeep")
 		errLog("This command currently has no code.", 10)
+		local num = 1
+		while execs[num] ~= nil do
+			if execs[num].special == "click" then
+				execs[num].special = nil
+			end
+			num = num + 1
+		end
 	elseif k == "d" then
 		sound.play("NaughtyBeep")
 		errLog("This command currently has no code.", 10)
+		local num = 1
+		while execs[num] ~= nil do
+			if execs[num].special == "click" then
+				execs[num].special = nil
+			end
+			num = num + 1
+		end
 	elseif k == "m" then
-		mode_manager.switch("MainMenu")
+		mode_manager.switch('MainMenu')
 	elseif k == "o" then
 		sound.play("NaughtyBeep")
 		errLog("This command currently has no code.", 10)
+		local num = 1
+		while execs[num] ~= nil do
+			if execs[num].special == "click" then
+				execs[num].special = nil
+			end
+			num = num + 1
+		end
 	elseif k == "a" then
-		mode_manager.switch("Credits")
+		mode_manager.switch('Credits')
 	elseif k == "q" then
 		os.exit()
+	end
+end
+
+function key(k)
+	if k == "s" then
+		local num = 1
+		while execs[num] ~= nil do
+			if execs[num].letter == "S" then
+				execs[num].special = "click"
+			end
+			num = num + 1
+		end
+	elseif k == "n" then
+		local num = 1
+		while execs[num] ~= nil do
+			if execs[num].letter == "N" then
+				execs[num].special = "click"
+			end
+			num = num + 1
+		end
+	elseif k == "r" then
+		local num = 1
+		while execs[num] ~= nil do
+			if execs[num].letter == "R" then
+				execs[num].special = "click"
+			end
+			num = num + 1
+		end
+	elseif k == "d" then
+		local num = 1
+		while execs[num] ~= nil do
+			if execs[num].letter == "D" then
+				execs[num].special = "click"
+			end
+			num = num + 1
+		end
+	elseif k == "m" then
+		local num = 1
+		while execs[num] ~= nil do
+			if execs[num].letter == "M" then
+				execs[num].special = "click"
+			end
+			num = num + 1
+		end
+	elseif k == "o" then
+		local num = 1
+		while execs[num] ~= nil do
+			if execs[num].letter == "O" then
+				execs[num].special = "click"
+			end
+			num = num + 1
+		end
+	elseif k == "a" then
+		local num = 1
+		while execs[num] ~= nil do
+			if execs[num].letter == "A" then
+				execs[num].special = "click"
+			end
+			num = num + 1
+		end
+	elseif k == "q" then
+		local num = 1
+		while execs[num] ~= nil do
+			if execs[num].letter == "Q" then
+				execs[num].special = "click"
+			end
+			num = num + 1
+		end
 	end
 end
