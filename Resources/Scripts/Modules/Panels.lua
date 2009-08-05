@@ -270,7 +270,7 @@ function draw_panels()
 			local drawRed = math.ceil(shipQuerying.c / 200)
 		--	print(count, "=>", drawGreen, "-[", (cash / 200), "]-")
 			while count <= drawGreen do
-				graphics.draw_box(152 - 3.15 * count, 394, 150 - 3.15 * count, 397, 0, c_lightGreen)
+				graphics.draw_box(152 - 3.15 * count, 394, 150 - 3.15 * count, 397, 0, c_green2)
 				count = count + 1
 			end
 		--	print(count, drawGreen, drawRed)
@@ -299,7 +299,7 @@ function draw_panels()
 		end
 		count = count + 1
 	end
--- Factory build bar
+-- Factory build bar (purple)
 	planet = scen.planet
 	if planet ~= nil then
 		graphics.draw_line(382, 181, 392, 181, 0.5, c_purple)
