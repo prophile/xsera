@@ -15,8 +15,11 @@ function init()
 	execs[num] = { coordx = 110, coordy = -105, length = 150, text = "Next", boxColour = CTEAL, textColor = c_purple, execute = nil, letter = "RGHT", special = "disabled" }
 	num = num + 1
 	execs[num] = { coordx = -280, coordy = 140, length = 560, text = " ", boxColour = CTEAL, textColor = c_purple, execute = nil, letter = "Select Level", underbox = -145 }
+	num = num + 1
+	execs[num] = { top = 120, left = -260, bottom = -55, right = 260, boxColour = CTEAL, title = "CHAPTER 6", subtitle = "...Into the Fire", desc = "Capture the planet Hades Beta while destroying as many Gaitori power stations as possible and saving as many of the Obish stations as you can." }
 end
 
+c_lighten2 = { r = 0.2, g = 0.2, b = 0.2, a = 1.0 }
 function update()
 
 end
@@ -29,17 +32,21 @@ function render()
 	graphics.draw_image("Panels/PanelRight", 303, -14, 35, 476)
 	local num = 1
 	while execs[num] ~= nil do
-		local col_mix = { r = 0.0, g = 0.0, b = 0.0, a = 1.0 }
-		if execs[num].special ~= nil then
-			if execs[num].special == "click" then
-				col_mix = { r = 0.1, g = 0.1, b = 0.1, a = 1.0 }
-				draw_interface_box(execs[num], c_black, col_mix)
-			elseif execs[num].special == "disabled" then
-				col_mix = { r = -0.3, g = -0.3, b = -0.3, a = 1.0 }
-				draw_interface_box(execs[num], col_mix, col_mix)
+		if execs[num].text ~= nil and execs[num].letter ~= nil then
+			local col_mix = { r = 0.0, g = 0.0, b = 0.0, a = 1.0 }
+			if execs[num].special ~= nil then
+				if execs[num].special == "click" then
+					col_mix = { r = 0.1, g = 0.1, b = 0.1, a = 1.0 }
+					draw_interface_box(execs[num], c_black, col_mix)
+				elseif execs[num].special == "disabled" then
+					col_mix = { r = -0.3, g = -0.3, b = -0.3, a = 1.0 }
+					draw_interface_box(execs[num], col_mix, col_mix)
+				end
+			else
+				draw_interface_box(execs[num], c_black, c_black)
 			end
 		else
-			draw_interface_box(execs[num], c_black, c_black)
+			draw_small_box(execs[num])
 		end
 		num = num + 1
 	end
@@ -85,6 +92,22 @@ function draw_interface_box(box, col_mod_all, col_mod_click)
 		end
 		num = num + 1
 	end
+end
+
+function draw_small_box(box)
+	graphics.draw_box(box.top, box.left, box.top - 3, box.right, 0, box.boxColour)
+	graphics.draw_box(box.top, box.left, box.top - 4, box.left + 3, 0, box.boxColour)
+	graphics.draw_box(box.top, box.right - 3, box.top - 4, box.right, 0, box.boxColour)
+	graphics.draw_box(box.top - 5, box.left, (box.top + box.bottom) / 2, box.left + 3, 0, colour_add(box.boxColour, c_lighten))
+	graphics.draw_box((box.top + box.bottom) / 2 - 1, box.left, box.bottom + 5, box.left + 3, 0, colour_add(box.boxColour, c_darken))
+	graphics.draw_box(box.bottom + 3, box.left, box.bottom, box.right, 0, box.boxColour)
+	graphics.draw_box(box.bottom + 4, box.left, box.bottom, box.left + 3, 0, box.boxColour)
+	graphics.draw_box(box.bottom + 4, box.right - 3, box.bottom, box.right, 0, box.boxColour)
+	graphics.draw_box(box.top - 5, box.right - 3, (box.top + box.bottom) / 2, box.right, 0, colour_add(box.boxColour, c_lighten))
+	graphics.draw_box((box.top + box.bottom) / 2 - 1, box.right - 3, box.bottom + 5, box.right, 0, colour_add(box.boxColour, c_darken))
+	graphics.draw_box(box.top - 5, box.left + 4, box.top - 25, box.right - 4, 0, colour_add(box.boxColour, c_lighten2, c_lighten))
+	graphics.draw_text(box.title, "CrystalClear", "left", box.left + 10, box.top - 15, 18, c_black)
+	graphics.draw_text(box.subtitle, "CrystalClear", "left", box.left + 10, box.top - 35, 18, c_black)
 end
 
 function keyup(k)
