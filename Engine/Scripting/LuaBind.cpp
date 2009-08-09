@@ -4,6 +4,7 @@
 #include "Utilities/ResourceManager.h"
 #include "Sound/Sound.h"
 #include "Graphics/Graphics.h"
+#include "Graphics/TextRenderer.h"
 #include "Input.h"
 #include "Modes/ModeManager.h"
 #include "TinyXML/tinyxml.h"
@@ -783,6 +784,15 @@ int GFX_DrawText ( lua_State* L )
 	return 0;
 }
 
+int GFX_TextLength (lua_State* L )
+{
+	const char* text = luaL_checkstring(L, 1);
+	const char* font = luaL_checkstring(L, 2);
+	vec2 dim = Graphics::TextRenderer::TextDimensions(font, text);
+	lua_pushnumber(L, dim.X());
+	return 1;
+}
+
 int GFX_DrawLine ( lua_State* L )
 {
 	int nargs = lua_gettop(L);
@@ -1023,6 +1033,7 @@ luaL_Reg registryGraphics[] =
 	"draw_sprite", GFX_DrawSprite,
 	"draw_sheet_sprite", GFX_DrawSpriteFromSheet,
 	"draw_text", GFX_DrawText,
+	"text_length", GFX_TextLength,
 	"draw_line", GFX_DrawLine,
 	"draw_box", GFX_DrawBox,
 	"draw_rtri", GFX_DrawRadarTriangle,
