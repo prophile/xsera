@@ -349,7 +349,7 @@ function console_key (k)
 				else
 					caps_hold = true
 				end
-				originalPrint("Caps: ", caps_hold) -- [FIX3] caps_hold only changes every other time
+				originalPrint("Caps: ", caps_hold)
 			end
 		end
 	end

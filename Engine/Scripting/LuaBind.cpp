@@ -5,6 +5,7 @@
 #include "Sound/Sound.h"
 #include "Graphics/Graphics.h"
 #include "Graphics/TextRenderer.h"
+#include "Preferences.h"
 #include "Input.h"
 #include "Modes/ModeManager.h"
 #include "TinyXML/tinyxml.h"
@@ -80,7 +81,7 @@ int PHYS_Update ( lua_State* L )
 {
 	float timestep = luaL_checknumber(L, 1);
 	Physics::Update(timestep);
-	//ALASTAIR: No second arg above (should be friction)? How does that work in C++ when you don't include all args?
+	//[ALISTAIR]: No second arg above (should be friction)? How does that work in C++ when you don't include all args?
 	return 0;
 }
 	
@@ -439,6 +440,27 @@ luaL_Reg registryNetClient[] =
 	"disconnect", NetClient_Disconnect,
 	"send", NetClient_SendMessage,
 	"get", NetClient_GetMessage,
+	NULL, NULL
+};
+
+int Pref_Get ( lua_State* L )
+{
+	const char* arg = luaL_checkstring(L, 1);
+	std::string push = Preferences::Get(arg, "nil");
+//	lua_pushstring(L, push);
+	if (push == "true") // [HARDCODED]
+	{
+		lua_pushboolean(L, true);
+	} else
+	{
+		lua_pushboolean(L, false);
+	}
+	return 1;
+}
+
+luaL_Reg registryPreferences[] = 
+{
+	"get", Pref_Get,
 	NULL, NULL
 };
 
@@ -1266,6 +1288,7 @@ void __LuaBind ( lua_State* L )
     luaL_register(L, "graphics", registryGraphics);
     luaL_register(L, "sound", registrySound);
 	luaL_register(L, "net_client", registryNetClient);
+	luaL_register(L, "preferences", registryPreferences);
 	luaL_register(L, "net_server", registryNetServer);
 	lua_cpcall(L, luaopen_physics, NULL);
 }

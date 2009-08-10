@@ -106,20 +106,16 @@ end
 
 function keyup(k)
 	if k == "s" then
-		mode_manager.switch('Demo2')
+		mode_manager.switch('Briefing')
 	elseif k == "n" then
-		if release_build == true then
-			sound.play('NaughtyBeep')
-			errLog("This command currently has no code.", 10)
-			local num = 1
-			while execs[num] ~= nil do
-				if execs[num].special == "click" then
-					execs[num].special = nil
-				end
-				num = num + 1
+		sound.play('NaughtyBeep')
+		errLog("This command currently has no code.", 10)
+		local num = 1
+		while execs[num] ~= nil do
+			if execs[num].special == "click" then
+				execs[num].special = nil
 			end
-		else
-			mode_manager.switch('Briefing')
+			num = num + 1
 		end
 	elseif k == "r" then
 		sound.play("NaughtyBeep")

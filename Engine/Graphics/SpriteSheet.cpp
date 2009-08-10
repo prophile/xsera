@@ -41,8 +41,21 @@ SpriteSheet::SpriteSheet ( const std::string& name )
 	}
 	else
 	{
-		configPath = "Sprites/" + name + ".xml";
-		imagePath = "Sprites/" + name + ".png";
+		if (Preferences::Get("Sprite/Original", "blah") == "blah")
+		{
+			configPath = "NewResources/Sprites/" + name + ".xml";
+			imagePath = "NewResources/Sprites/" + name + ".png";
+			SDL_RWops* imageRWOps = ResourceManager::OpenFile(imagePath);
+			if (!imageRWOps)
+			{
+				configPath = "Sprites/" + name + ".xml";
+				imagePath = "Sprites/" + name + ".png";
+			}
+		} else
+		{
+			configPath = "Sprites/" + name + ".xml";
+			imagePath = "Sprites/" + name + ".png";
+		}
 	}
 	SDL_RWops* configRWOps = ResourceManager::OpenFile(configPath);
 	SDL_RWops* imageRWOps = ResourceManager::OpenFile(imagePath);
@@ -50,7 +63,9 @@ SpriteSheet::SpriteSheet ( const std::string& name )
 	{
         // TODO: make this work gracefully
         LOG("Graphics::SpriteSheet", LOG_ERROR, "Failed to load image: %s", name.c_str());
-		exit(1);
+	//	exit(1);
+	//	imageRWOps = ResourceManager::OpenFile("Sprites/Misc/QuestionMark");
+		delete configRWOps;
 	}
 	surface = IMG_LoadTyped_RW(imageRWOps, 1, const_cast<char*>("PNG"));
 	if (configRWOps)

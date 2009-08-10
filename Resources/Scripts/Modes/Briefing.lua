@@ -7,6 +7,7 @@ scenInfo = { { title = "DEMO 2", subtitle = "The Second Technical Demo", desc = 
 			{ title = "TUTORIAL LESSON 1", subtitle = "Moons for Goons", desc = "Learning the Ares interface", unlocked = true },
 			{ title = "CHAPTER 1", subtitle = "Easy Street", desc = "Destroy all 5 Gaitori Transports.", unlocked = true },
 			{ title = "CHAPTER 6", subtitle = "...Into the Fire", desc = "Capture the planet Hades Beta while destroying as many Gaitori power stations as possible and saving as many of the Obish stations as you can.", unlocked = true } }
+-- the above is [TEMPORARY]
 scenNum = 1
 
 function change_special(k, set)
