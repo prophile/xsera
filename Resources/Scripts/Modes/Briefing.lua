@@ -2,9 +2,21 @@ import('GlobalVars')
 
 local execs = {}
 
-scenInfo = { { title = "DEMO 2", subtitle = "The Second Technical Demo", desc = "In this demo, you must destroy the Gaitori Carrier prior to taking over a nearby planet with an Ishiman Transport." },
-			{ title = "TUTORIAL LESSON 1", subtitle = "Moons for Goons", desc = "Learning the Ares interface" },
-			{ title = "CHAPTER 1", subtitle = "Easy Street", desc = "Destroy all 5 Gaitori Transports." } }
+scenInfo = { { title = "DEMO 2", subtitle = "The Second Technical Demo", desc = "In this demo, you must destroy the Gaitori Carrier prior to taking over a nearby planet with an Ishiman Transport.", unlocked = true },
+			{ title = "TUTORIAL LESSON 1", subtitle = "Moons for Goons", desc = "Learning the Ares interface", unlocked = true },
+			{ title = "CHAPTER 1", subtitle = "Easy Street", desc = "Destroy all 5 Gaitori Transports.", unlocked = true },
+			{ title = "CHAPTER 6", subtitle = "...Into the Fire", desc = "Capture the planet Hades Beta while destroying as many Gaitori power stations as possible and saving as many of the Obish stations as you can.", unlocked = true } }
+scenNum = 1
+
+function change_special(k, set)
+	local num = 1
+	while execs[num] ~= nil do
+		if execs[num].letter == k then
+			execs[num].special = set
+		end
+		num = num + 1
+	end
+end
 
 function init()
 	sound.stop_music()
@@ -20,13 +32,23 @@ function init()
 	num = num + 1
 	execs[num] = { coordx = -280, coordy = 140, length = 560, text = " ", boxColour = CTEAL, textColor = c_purple, execute = nil, letter = "Select Level", underbox = -145 }
 	num = num + 1
---	execs[num] = { top = 120, left = -260, bottom = -55, right = 260, boxColour = CTEAL, title = "CHAPTER 6", subtitle = "...Into the Fire", desc = "Capture the planet" }
-	execs[num] = { top = 120, left = -260, bottom = -55, right = 260, boxColour = CTEAL, title = "CHAPTER 6", subtitle = "...Into the Fire", desc = "Capture the planet Hades Beta while destroying as many Gaitori power stations as possible and saving as many of the Obish stations as you can." }
+	execs[num] = { top = 120, left = -260, bottom = -55, right = 260, boxColour = CTEAL, title = scenInfo[scenNum].title, subtitle = scenInfo[scenNum].subtitle, desc = scenInfo[scenNum].desc }
 end
 
 c_lighten2 = { r = 0.2, g = 0.2, b = 0.2, a = 1.0 }
-function update()
 
+function update()
+	if scenNum == 1 then
+		change_special("LEFT", "disabled")
+	else
+		change_special("LEFT", nil)
+	end
+	if scenInfo[scenNum + 1] ~= nil then
+		if scenInfo[scenNum + 1].unlocked == true then
+			change_special("RGHT", nil)
+		end
+	end
+	execs[6] = { top = 120, left = -260, bottom = -55, right = 260, boxColour = CTEAL, title = scenInfo[scenNum].title, subtitle = scenInfo[scenNum].subtitle, desc = scenInfo[scenNum].desc }
 end
 
 function render()
@@ -123,17 +145,25 @@ end
 function keyup(k)
 	if k == "escape" then
 		mode_manager.switch('AresSplash')
+	elseif k == "return" then
+		mode_manager.switch('Demo2')
 	end
 end
 
 function key(k)
 	if k == "escape" then
-		local num = 1
-		while execs[num] ~= nil do
-			if execs[num].letter == "ESC" then
-				execs[num].special = "click"
+		change_special("ESC", "click")
+	elseif k == "return" then
+		change_special("RTRN", "click")
+	elseif k == "l" then
+		if scenInfo[scenNum + 1] ~= nil then
+			if scenInfo[scenNum + 1].unlocked == true then
+				scenNum = scenNum + 1
 			end
-			num = num + 1
+		end
+	elseif k == "j" then
+		if scenNum ~= 1 then
+			scenNum = scenNum - 1
 		end
 	end
 end

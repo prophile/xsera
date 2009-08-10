@@ -27,7 +27,7 @@ function render ()
     local szx, szy = graphics.sprite_dimensions("Ships/Cantharan/Schooner")
 	graphics.begin_frame()
 	graphics.set_camera(-320, -240, 320, 240)
-	graphics.draw_sprite("Cantharan/Schooner", 0, 0, szx * 2.2, szy * 2.2, angle)
+	graphics.draw_sprite("Ships/Cantharan/Schooner", 0, 0, szx * 2.2, szy * 2.2, angle)
 	graphics.draw_text(string.format("Angle: %.3f", angle), "CrystalClear", "left", -200, -200, 30)
 	graphics.end_frame()
 end
