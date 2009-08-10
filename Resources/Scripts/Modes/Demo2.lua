@@ -690,7 +690,9 @@ function key ( k )
 	elseif k == "l" then
 		change_menu(menu_level, "l")
 	elseif k == "tab" then
-		playerShip.warp.start.bool = true
+		if playerShip.warp.finished == true then
+			playerShip.warp.start.bool = true
+		end
 	elseif k == "o" then
 		if release_build == false then
 			consoleDraw = true

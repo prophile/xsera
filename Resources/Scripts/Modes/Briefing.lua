@@ -1,8 +1,9 @@
 import('GlobalVars')
+import('Console')
 
 local execs = {}
 
-scenInfo = { { title = "DEMO 2", subtitle = "The Second Technical Demo", desc = "In this demo, you must destroy the Gaitori Carrier prior to taking over a nearby planet with an Ishiman Transport.", unlocked = true },
+scenInfo = { { title = "DEMO 2", subtitle = "The Second Technical Demo", desc = "In this demo, you must destroy the Gaitori Carrier prior to taking over a nearby planet with an Ishiman Transport.", unlocked = true, mode = "Demo2" },
 			{ title = "TUTORIAL LESSON 1", subtitle = "Moons for Goons", desc = "Learning the Ares interface", unlocked = true },
 			{ title = "CHAPTER 1", subtitle = "Easy Street", desc = "Destroy all 5 Gaitori Transports.", unlocked = true },
 			{ title = "CHAPTER 6", subtitle = "...Into the Fire", desc = "Capture the planet Hades Beta while destroying as many Gaitori power stations as possible and saving as many of the Obish stations as you can.", unlocked = true } }
@@ -77,6 +78,13 @@ function render()
 		end
 		num = num + 1
 	end
+	-- Error Printing
+	if errNotice ~= nil then
+		graphics.draw_text(errNotice.text, "CrystalClear", "center", 0, -270, 28)
+		if errNotice.start + errNotice.duration < mode_manager.time() then
+			errNotice = nil
+		end
+	end
 	graphics.end_frame()
 end
 
@@ -146,7 +154,12 @@ function keyup(k)
 	if k == "escape" then
 		mode_manager.switch('AresSplash')
 	elseif k == "return" then
-		mode_manager.switch('Demo2')
+		if scenInfo[scenNum].mode ~= nil then
+			mode_manager.switch(scenInfo[scenNum].mode)
+		else
+			errLog("This module is not yet available for playing.", 8)
+			sound.play("NaughtyBeep")
+		end
 	end
 end
 

@@ -1,6 +1,6 @@
 import('GlobalVars')
 import('PrintRecursive')
-import('PopDownConsole')
+import('Console')
 
 splash_shift_left = -140
 splash_shift_right = 138
@@ -58,6 +58,13 @@ function render()
 			draw_interface_box(execs[num], c_black, c_black)
 		end
 		num = num + 1
+	end
+	-- Error Printing
+	if errNotice ~= nil then
+		graphics.draw_text(errNotice.text, "CrystalClear", "left", -315, 225, 28)
+		if errNotice.start + errNotice.duration < mode_manager.time() then
+			errNotice = nil
+		end
 	end
 	graphics.end_frame()
 end

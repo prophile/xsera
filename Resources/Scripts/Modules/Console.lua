@@ -358,3 +358,24 @@ end
 function cout_table (t, name, doPrint)
 	console_add(table_define(t, name), doPrint, "XseraTables.txt")
 end
+
+
+function errLog(text, level)
+	console_add(text .. "(level " .. level .. ")")
+	if level > 10 then
+		os.exit()
+	end
+	if level > 5 then
+		errNotice = { start = mode_manager.time(), duration = level - 5, text = text }
+	end
+end
+
+--[[ error level scheme:
+	1-5: non-fatal, continue
+		1: code not implemented
+		2: load error
+	6-10: non-fatal, display on screen
+	11-15: fatal, exit
+		11: Improper input - data is not of the correct type
+		12: No input given - file is missing necessary data
+--]]

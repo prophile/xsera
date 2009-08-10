@@ -1,6 +1,6 @@
 import('PrintRecursive')
 import('GlobalVars')
-import('PopDownConsole')
+import('Console')
 
 function NewEntity (entOwner, entName, entType, entDir, entSubdir, other)
 --	print(entOwner, entName, entType, entDir, entSubdir, other)
