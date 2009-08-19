@@ -20,6 +20,8 @@ import('PopDownConsole')
 import('CaptainAI')
 -- import('MouseHandle')
 
+key_press_f6 = false
+
 --[[--------------------------------
 	--{{------------------------
 		Projectile Collision
@@ -152,9 +154,17 @@ function update ()
 ------------------]]--
 	
     if keyControls.left then
-        playerShip.physicsObject.angular_velocity = playerShip.turningRate
+		if key_press_f6 ~= true then
+			playerShip.physicsObject.angular_velocity = playerShip.turningRate
+		else
+			playerShip.physicsObject.angular_velocity = playerShip.turningRate / 10
+		end
     elseif keyControls.right then
-        playerShip.physicsObject.angular_velocity = -playerShip.turningRate
+		if key_press_f6 ~= true then
+			playerShip.physicsObject.angular_velocity = -playerShip.turningRate
+		else
+			playerShip.physicsObject.angular_velocity = -playerShip.turningRate / 10
+		end
     else
         playerShip.physicsObject.angular_velocity = 0
     end
@@ -303,7 +313,11 @@ function update ()
 			end
 		end
 	end
-	physics.update(dt)
+	if key_press_f6 ~= true then
+		physics.update(dt)
+	else
+		physics.update(dt * 30)
+	end
 end
 
 --[[-----------------------------
@@ -645,6 +659,8 @@ function keyup ( k )
 			playerShip.warp.warping = false
 			playerShip.warp.endTime = mode_manager.time()
 		end
+	elseif k == "F6" then
+		key_press_f6 = false
 	end
 end
 
@@ -715,6 +731,8 @@ function key ( k )
 		end
 	elseif k == "escape" then
 		mode_manager.switch("MainMenu")
+	elseif k == "F6" then
+		key_press_f6 = true
 	end
 end
 
