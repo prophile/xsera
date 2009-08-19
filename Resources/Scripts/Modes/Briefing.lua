@@ -1,6 +1,7 @@
 import('GlobalVars')
 import('Console')
 
+screenNum = 1
 local execs = {}
 
 scenInfo = { { title = "DEMO 2", subtitle = "The Second Technical Demo", desc = "In this demo, you must destroy the Gaitori Carrier prior to taking over a nearby planet with an Ishiman Transport.", unlocked = true, mode = "Demo2" },
@@ -49,6 +50,14 @@ function update()
 		if scenInfo[scenNum + 1].unlocked == true then
 			change_special("RGHT", nil)
 		end
+	else
+		change_special("RGHT", "disabled")
+	end
+	while execs[num] ~= nil do
+		if execs[num].special == "click" then
+			execs[num].special = nil
+		end
+		num = num + 1
 	end
 	execs[6] = { top = 120, left = -260, bottom = -55, right = 260, boxColour = CTEAL, title = scenInfo[scenNum].title, subtitle = scenInfo[scenNum].subtitle, desc = scenInfo[scenNum].desc }
 end
@@ -70,6 +79,8 @@ function render()
 				elseif execs[num].special == "disabled" then
 					col_mix = { r = -0.3, g = -0.3, b = -0.3, a = 1.0 }
 					draw_interface_box(execs[num], col_mix, col_mix)
+				elseif execs[num].special == "sidebox" then
+					draw_box_with_sidecar(execs[num])
 				end
 			else
 				draw_interface_box(execs[num], c_black, c_black)
@@ -126,12 +137,20 @@ function draw_interface_box(box, col_mod_all, col_mod_click)
 		-- bottom
 		graphics.draw_box(box.underbox + 3, box.coordx, box.underbox, box.coordx + box.length, 0, box.boxColour)
 	end
-	while execs[num] ~= nil do
-		if execs[num].special == "click" then
-			execs[num].special = nil
-		end
-		num = num + 1
-	end
+end
+
+c_clear = { r = 0.0, g = 0.0, b = 0.0, a = 0.0 }
+
+function draw_box_with_sidecar(box)
+	draw_interface_box(box, c_black, c_black)
+	-- sidecar: a box of a particular size that surrounds a particular object
+		-- box itself
+	graphics.draw_line(box.sidecar.y + box.sidecar.size.y, box.sidecar.x, box.sidecar.y + box.sidecar.size.y, box.sidecar.x + box.sidecar.size.x, 1, box.boxColour)
+	graphics.draw_line(box.sidecar.y, box.sidecar.x, box.sidecar.y, box.sidecar.x + box.sidecar.size.x, 1, box.boxColour)
+	graphics.draw_line(box.sidecar.y, box.sidecar.x, box.sidecar.y + box.sidecar.size.y, box.sidecar.x, 1, box.boxColour)
+	graphics.draw_line(box.sidecar.y, box.sidecar.x + box.sidecar.size.x, box.sidecar.y + box.sidecar.size.y, box.sidecar.x + box.sidecar.size.x, 1, box.boxColour)
+		-- connecting lines
+	
 end
 
 function draw_small_box(box)

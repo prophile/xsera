@@ -41,7 +41,7 @@ SpriteSheet::SpriteSheet ( const std::string& name )
 	}
 	else
 	{
-		if (Preferences::Get("Sprite/Original", "blah") == "blah")
+		if (Preferences::Get("Sprite/Original", "blah") == "blah")	//[ALISTAIR]: Why doesn't this work?
 		{
 			configPath = "NewResources/Sprites/" + name + ".xml";
 			imagePath = "NewResources/Sprites/" + name + ".png";
@@ -63,8 +63,7 @@ SpriteSheet::SpriteSheet ( const std::string& name )
 	{
         // TODO: make this work gracefully
         LOG("Graphics::SpriteSheet", LOG_ERROR, "Failed to load image: %s", name.c_str());
-	//	exit(1);
-	//	imageRWOps = ResourceManager::OpenFile("Sprites/Misc/QuestionMark");
+		exit(1);
 		delete configRWOps;
 	}
 	surface = IMG_LoadTyped_RW(imageRWOps, 1, const_cast<char*>("PNG"));
