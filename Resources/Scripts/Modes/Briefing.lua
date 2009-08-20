@@ -8,7 +8,7 @@ background = {	{ coordx = -260, coordy = -205, length = 150, text = "Cancel", bo
 	{ coordx = 110, coordy = -205, length = 150, text = "Begin", boxColour = c_lightGreen, textColor = c_purple, execute = nil, letter = "RTRN" },
 	{ coordx = -260, coordy = -105, length = 150, text = "Previous", boxColour = CTEAL, textColor = c_purple, execute = nil, letter = "LEFT" },
 	{ coordx = 110, coordy = -105, length = 150, text = "Next", boxColour = CTEAL, textColor = c_purple, execute = nil, letter = "RGHT", special = "disabled" },
-	{ coordx = -280, coordy = 140, length = 560, text = " ", boxColour = CTEAL, textColor = c_purple, execute = nil, letter = "Select Level", underbox = -145 } }
+	{ coordx = -280, coordy = 140, length = 560, text = " ", boxColour = CTEAL, textColor = c_purple, execute = nil, letter = "Select Level", underbox = -145, sidecar = { x = 310, y = 10, size = { x = 100, y = 100 } }, special = "sidecar" } }
 
 scenInfo = { { title = "DEMO 2", subtitle = "The Second Technical Demo", desc = "In this demo, you must destroy the Gaitori Carrier prior to taking over a nearby planet with an Ishiman Transport.", unlocked = true, mode = "Demo2" },
 			{ title = "TUTORIAL LESSON 1", subtitle = "Moons for Goons", desc = "Learning the Ares interface", unlocked = true },
@@ -69,7 +69,7 @@ function render()
 		num = num + 1
 	end
 	-- Screen Info
-	if levelSwitching == true then
+	if levelSwitching == true then -- [TODO] finish creating structure
 	-- When we load the scenario data, change all instances of "scenLevels" to "scen.levels"
 		switch_box( { top = 120, left = -260, bottom = -55, right = 260, boxColour = CTEAL, title = scenInfo[menuNum].title, subtitle = scenInfo[menuNum].subtitle, desc = scenInfo[menuNum].desc } )
 	else

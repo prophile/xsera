@@ -43,13 +43,18 @@ end
 function draw_box_with_sidecar(box)
 	draw_interface_box(box, c_black, c_black)
 	-- sidecar: a box of a particular size that surrounds a particular object
-		-- box itself
-	graphics.draw_line(box.sidecar.y + box.sidecar.size.y, box.sidecar.x, box.sidecar.y + box.sidecar.size.y, box.sidecar.x + box.sidecar.size.x, 1, box.boxColour)
-	graphics.draw_line(box.sidecar.y, box.sidecar.x, box.sidecar.y, box.sidecar.x + box.sidecar.size.x, 1, box.boxColour)
-	graphics.draw_line(box.sidecar.y, box.sidecar.x, box.sidecar.y + box.sidecar.size.y, box.sidecar.x, 1, box.boxColour)
-	graphics.draw_line(box.sidecar.y, box.sidecar.x + box.sidecar.size.x, box.sidecar.y + box.sidecar.size.y, box.sidecar.x + box.sidecar.size.x, 1, box.boxColour)
-		-- connecting lines
-	-- [TODO] create the connecting lines
+	-- box itself
+	graphics.draw_line(box.sidecar.x, box.sidecar.y + box.sidecar.size.y, box.sidecar.x + box.sidecar.size.x, box.sidecar.y + box.sidecar.size.y, 1, box.boxColour)
+	graphics.draw_line(box.sidecar.x, box.sidecar.y, box.sidecar.x + box.sidecar.size.x, box.sidecar.y, 1, box.boxColour)
+	graphics.draw_line(box.sidecar.x, box.sidecar.y, box.sidecar.x, box.sidecar.y + box.sidecar.size.y, 1, box.boxColour)
+	graphics.draw_line(box.sidecar.x + box.sidecar.size.x, box.sidecar.y, box.sidecar.x + box.sidecar.size.x, box.sidecar.y + box.sidecar.size.y, 1, box.boxColour)
+	-- connecting lines
+	graphics.draw_line(box.sidecar.x, box.sidecar.y + box.sidecar.size.y, (box.sidecar.x + box.coordx + box.length) / 2, box.sidecar.y + box.sidecar.size.y, 1, box.boxColour)
+	graphics.draw_line((box.sidecar.x + box.coordx + box.length) / 2, box.sidecar.y + box.sidecar.size.y, (box.sidecar.x + box.coordx + box.length) / 2, box.coordy + 17, 1, box.boxColour)
+	graphics.draw_line((box.sidecar.x + box.coordx + box.length) / 2, box.coordy + 17, box.coordx + box.length, box.coordy + 17, 1, box.boxColour)
+	graphics.draw_line(box.sidecar.x, box.sidecar.y, (box.sidecar.x + box.coordx + box.length) / 2, box.sidecar.y, 1, box.boxColour)
+	graphics.draw_line((box.sidecar.x + box.coordx + box.length) / 2, box.underbox + 1, (box.sidecar.x + box.coordx + box.length) / 2, box.sidecar.y, 1, box.boxColour)
+	graphics.draw_line(box.coordx + box.length, box.underbox + 1, (box.sidecar.x + box.coordx + box.length) / 2, box.underbox + 1, 1, box.boxColour)
 end
 
 function draw_small_box(box)
@@ -79,7 +84,7 @@ function switch_box(box)
 			elseif box.special == "disabled" then
 				col_mix = { r = -0.3, g = -0.3, b = -0.3, a = 1.0 }
 				draw_interface_box(box, col_mix, col_mix)
-			elseif box.special == "sidebox" then
+			elseif box.special == "sidecar" then
 				draw_box_with_sidecar(box)
 			end
 		else
