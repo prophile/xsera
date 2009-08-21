@@ -296,7 +296,7 @@ function update ()
 		--	print(otherShip[num], playerShip)
 			planet.buildqueue.percent = 100
 			build_timer_running = false
-			sound.play("IComboBeep")
+			sound.play("ComboBeep")
 		end
 	end
 	

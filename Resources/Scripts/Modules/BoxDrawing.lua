@@ -48,13 +48,22 @@ function draw_box_with_sidecar(box)
 	graphics.draw_line(box.sidecar.x, box.sidecar.y, box.sidecar.x + box.sidecar.size.x, box.sidecar.y, 1, box.boxColour)
 	graphics.draw_line(box.sidecar.x, box.sidecar.y, box.sidecar.x, box.sidecar.y + box.sidecar.size.y, 1, box.boxColour)
 	graphics.draw_line(box.sidecar.x + box.sidecar.size.x, box.sidecar.y, box.sidecar.x + box.sidecar.size.x, box.sidecar.y + box.sidecar.size.y, 1, box.boxColour)
-	-- connecting lines
-	graphics.draw_line(box.sidecar.x, box.sidecar.y + box.sidecar.size.y, (box.sidecar.x + box.coordx + box.length) / 2, box.sidecar.y + box.sidecar.size.y, 1, box.boxColour)
-	graphics.draw_line((box.sidecar.x + box.coordx + box.length) / 2, box.sidecar.y + box.sidecar.size.y, (box.sidecar.x + box.coordx + box.length) / 2, box.coordy + 17, 1, box.boxColour)
-	graphics.draw_line((box.sidecar.x + box.coordx + box.length) / 2, box.coordy + 17, box.coordx + box.length, box.coordy + 17, 1, box.boxColour)
-	graphics.draw_line(box.sidecar.x, box.sidecar.y, (box.sidecar.x + box.coordx + box.length) / 2, box.sidecar.y, 1, box.boxColour)
-	graphics.draw_line((box.sidecar.x + box.coordx + box.length) / 2, box.underbox + 1, (box.sidecar.x + box.coordx + box.length) / 2, box.sidecar.y, 1, box.boxColour)
-	graphics.draw_line(box.coordx + box.length, box.underbox + 1, (box.sidecar.x + box.coordx + box.length) / 2, box.underbox + 1, 1, box.boxColour)
+	-- connecting lines - differ if box is on the left or the right
+	if box.sidecar.x > box.coordx then
+		graphics.draw_line(box.sidecar.x, box.sidecar.y + box.sidecar.size.y, (box.sidecar.x + box.coordx + box.length) / 2, box.sidecar.y + box.sidecar.size.y, 1, box.boxColour)
+		graphics.draw_line((box.sidecar.x + box.coordx + box.length) / 2, box.sidecar.y + box.sidecar.size.y, (box.sidecar.x + box.coordx + box.length) / 2, box.coordy + 17, 1, box.boxColour)
+		graphics.draw_line((box.sidecar.x + box.coordx + box.length) / 2, box.coordy + 17, box.coordx + box.length, box.coordy + 17, 1, box.boxColour)
+		graphics.draw_line(box.sidecar.x, box.sidecar.y, (box.sidecar.x + box.coordx + box.length) / 2, box.sidecar.y, 1, box.boxColour)
+		graphics.draw_line((box.sidecar.x + box.coordx + box.length) / 2, box.underbox + 1, (box.sidecar.x + box.coordx + box.length) / 2, box.sidecar.y, 1, box.boxColour)
+		graphics.draw_line(box.coordx + box.length, box.underbox + 1, (box.sidecar.x + box.coordx + box.length) / 2, box.underbox + 1, 1, box.boxColour)
+	else
+	--	graphics.draw_line(box.sidecar.x, box.sidecar.y + box.sidecar.size.y, (box.sidecar.x + box.coordx + box.length) / 2, box.sidecar.y + box.sidecar.size.y, 1, box.boxColour)
+	--	graphics.draw_line((box.sidecar.x + box.coordx + box.length) / 2, box.sidecar.y + box.sidecar.size.y, (box.sidecar.x + box.coordx + box.length) / 2, box.coordy + 17, 1, box.boxColour)
+	--	graphics.draw_line((box.sidecar.x + box.coordx + box.length) / 2, box.coordy + 17, box.coordx + box.length, box.coordy + 17, 1, box.boxColour)
+	--	graphics.draw_line(box.sidecar.x, box.sidecar.y, (box.sidecar.x + box.coordx + box.length) / 2, box.sidecar.y, 1, box.boxColour)
+	--	graphics.draw_line((box.sidecar.x + box.coordx + box.length) / 2, box.underbox + 1, (box.sidecar.x + box.coordx + box.length) / 2, box.sidecar.y, 1, box.boxColour)
+	--	graphics.draw_line(box.coordx + box.length, box.underbox + 1, (box.sidecar.x + box.coordx + box.length) / 2, box.underbox + 1, 1, box.boxColour)
+	end
 end
 
 function draw_small_box(box)
