@@ -102,15 +102,29 @@ function render()
 		end
 		if menuNum == 1 then
 			graphics.draw_image("Scenario/Misc/Starmap", 0, -10, 533, 364)
-			-- add pointer to planet here
+			-- add pointer to planet here when implemented
 		else
+			local i = 0
+			while i * gridDistBlue < 4200 do
+				if (i * gridDistBlue) % gridDistLightBlue ~= 0 then
+					if i * gridDistBlue < 3000 then
+						graphics.draw_line(-270, -170 + i * gridDistBlue * 374 / 3000, 270, -170 + i * gridDistBlue * 374 / 3000, 1, c_darkBlue)
+					end
+					graphics.draw_line(-240 + i * gridDistBlue * 540 / 4332, -196, -240 + i * gridDistBlue * 540 / 4332, 174, 1, c_darkBlue)
+				else
+					if i * gridDistBlue < 3000 then
+						graphics.draw_line(-270, -170 + i * gridDistBlue * 374 / 3000, 270, -170 + i * gridDistBlue * 374 / 3000, 1, c_laserGreen)
+					end
+					graphics.draw_line(-240 + i * gridDistBlue * 540 / 4332, -196, -240 + i * gridDistBlue * 540 / 4332, 174, 1, c_laserGreen)
+				end
+				i = i + 1
+			end
 			local num = 1
 			while scenBriefing.screen[1][num] ~= nil do
 				tempx, tempy = graphics.sprite_dimensions(scenBriefing.screen[1][num].sprite)
 				graphics.draw_sprite(scenBriefing.screen[1][num].sprite, -240 + scenBriefing.screen[1][num].x * 540 / 4332, -170 + scenBriefing.screen[1][num].y * 374 / 3000, tempx * scenBriefing.screen[1][num].size, tempy * scenBriefing.screen[1][num].size, math.pi / 2)
 				num = num + 1
 			end
-			-- draw grid here
 			if menuNum ~= 2 then
 				if scenBriefing.screen[menuNum - 1] ~= nil then
 					switch_box(scenBriefing.screen[menuNum - 1])

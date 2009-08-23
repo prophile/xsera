@@ -51,6 +51,9 @@ function draw_interface_box(box, col_mod_all, col_mod_click)
 		graphics.draw_box(box.underbox + 5, box.coordx + box.length - 10, box.underbox, box.coordx + box.length, 0, box.boxColour)
 		-- bottom
 		graphics.draw_box(box.underbox + 3, box.coordx, box.underbox, box.coordx + box.length, 0, box.boxColour)
+		if box.uboxText ~= nil then
+			graphics.draw_text(box.uboxText, "CrystalClear", "left", box.coordx + 12, box.coordy - 6, 14)
+		end
 	end
 end
 

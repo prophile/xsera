@@ -30,8 +30,8 @@ build_timer_running = false
 shipToBuild = nil
 ship_selected = false
 scen = nil
-shipQuerying = { n, p, r }
-shipBuilding = { n, p, r }
+shipQuerying = { n, p, r, c, t }
+shipBuilding = { n, p, r, c, t }
 soundLength = 0.25
 --/tempvars
 
