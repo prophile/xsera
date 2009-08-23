@@ -180,36 +180,42 @@ menu_options = { "MAIN MENU",
 function change_menu(menu, direction)
 	local num = 2
 	if direction == "i" then
-		if menu[num - 1][2] ~= true then
-			while menu[num][2] ~= true do
-				num = num + 1
-			end
-			if num - 1 ~= 1 then
-				menu[num][2] = false
-				menu[num - 1][2] = true
-				if menu == menu_shipyard then
-					shipQuerying.p = menu_shipyard[num - 1][4][1]
-					shipQuerying.n = menu_shipyard[num - 1][4][2]
-					shipQuerying.r = menu_shipyard[num - 1][4][3]
-					shipQuerying.c = scen.planet.buildCost[num]
-					shipQuerying.t = scen.planet.buildTime[num]
-				end
-			end
-		end
-	elseif direction == "k" then
-		num = num - 1
 		while menu[num][2] ~= true do
 			num = num + 1
 		end
+		print(menu[num][2], num)
+		if num ~= 2 then
+			menu[num][2] = false
+			num = num - 1
+			menu[num][2] = true
+		--	print_table(menu[num - 1])
+			if menu == menu_shipyard then
+				shipQuerying.p = menu_shipyard[num][4][1]
+				shipQuerying.n = menu_shipyard[num][4][2]
+				shipQuerying.r = menu_shipyard[num][4][3]
+				shipQuerying.c = scen.planet.buildCost[num - 1]
+				shipQuerying.t = scen.planet.buildTime[num - 1]
+				print(shipQuerying.n, shipQuerying.c, shipQuerying.t)
+				print(num)
+			end
+		end
+	elseif direction == "k" then
+		while menu[num][2] ~= true do
+			num = num + 1
+		end
+		print(menu[num][2], num)
 		if menu[num + 1] ~= nil then
 			menu[num][2] = false
-			menu[num + 1][2] = true
+			num = num + 1
+			menu[num][2] = true
 			if menu == menu_shipyard then
-				shipQuerying.p = menu_shipyard[num + 1][4][1]
-				shipQuerying.n = menu_shipyard[num + 1][4][2]
-				shipQuerying.r = menu_shipyard[num + 1][4][3]
-				shipQuerying.c = scen.planet.buildCost[num]
-				shipQuerying.t = scen.planet.buildTime[num]
+				shipQuerying.p = menu_shipyard[num][4][1]
+				shipQuerying.n = menu_shipyard[num][4][2]
+				shipQuerying.r = menu_shipyard[num][4][3]
+				shipQuerying.c = scen.planet.buildCost[num - 1]
+				shipQuerying.t = scen.planet.buildTime[num - 1]
+				print(shipQuerying.n, shipQuerying.c, shipQuerying.t)
+				print(num)
 			end
 		end
 	elseif direction == "j" then
@@ -246,8 +252,8 @@ function draw_panels()
 	graphics.draw_box(6, 379, -72.5, 386, 0, c_yellow)
 	graphics.draw_box(playerShip.energy.percent * 78.5 - 72.5, 379, -72.5, 386, 0, c_lightYellow)
 -- Shield (blue)
-	graphics.draw_box(-96, 379, -173, 386, 0, c_blue)
-	graphics.draw_box(playerShip.shield.percent * 77 - 173, 379, -173, 386, 0, c_lightBlue)
+	graphics.draw_box(-96, 379, -173, 386, 0, c_lightBlue)
+	graphics.draw_box(playerShip.shield.percent * 77 - 173, 379, -173, 386, 0, c_blue)
 -- Factory resources (green - mostly)
 	count = 1
 	if ship_selected == true then
@@ -256,12 +262,12 @@ function draw_panels()
 			local drawBlue = math.ceil((shipQuerying.c) / 200) + drawGreen
 		--	print(count, "=>", drawGreen, "-[", ((cash - shipQuerying.c) / 200), "]-")
 			while count <= drawGreen do
-				graphics.draw_box(152 - 3.15 * count, 394, 150 - 3.15 * count, 397, 0, c_lightGreen)
+				graphics.draw_box(152 - 3.15 * count, 394, 150 - 3.15 * count, 397, 0, c_green4)
 				count = count + 1
 			end
 		--	print(count, drawGreen, drawBlue)
 			while count <= drawBlue do
-				graphics.draw_box(152 - 3.15 * count, 394, 150 - 3.15 * count, 397, 0, c_lightBlue)
+				graphics.draw_box(152 - 3.15 * count, 394, 150 - 3.15 * count, 397, 0, c_lightBlue2)
 				count = count + 1
 			end
 		--	print(count, drawBlue)
@@ -270,12 +276,12 @@ function draw_panels()
 			local drawRed = math.ceil(shipQuerying.c / 200)
 		--	print(count, "=>", drawGreen, "-[", (cash / 200), "]-")
 			while count <= drawGreen do
-				graphics.draw_box(152 - 3.15 * count, 394, 150 - 3.15 * count, 397, 0, c_green2)
+				graphics.draw_box(152 - 3.15 * count, 394, 150 - 3.15 * count, 397, 0, c_green4)
 				count = count + 1
 			end
 		--	print(count, drawGreen, drawRed)
 			while count <= drawRed do
-				graphics.draw_box(152 - 3.15 * count, 394, 150 - 3.15 * count, 397, 0, c_lightBlue)
+				graphics.draw_box(152 - 3.15 * count, 394, 150 - 3.15 * count, 397, 0, c_lightRed2)
 				count = count + 1
 			end
 		--	print(count, drawRed)
@@ -285,7 +291,7 @@ function draw_panels()
 		if count > resources then
 			graphics.draw_box(152 - 3.15 * count, 394, 150 - 3.15 * count, 397, 0, c_green2)
 		else
-			graphics.draw_box(152 - 3.15 * count, 394, 150 - 3.15 * count, 397, 0, c_lightGreen)
+			graphics.draw_box(152 - 3.15 * count, 394, 150 - 3.15 * count, 397, 0, c_green4)
 		end
 		count = count + 1
 	end
@@ -293,9 +299,9 @@ function draw_panels()
 	count = 1
 	while count <= 7 do
 		if count <= resource_bars then
-			graphics.draw_box(154.5 - 4.5 * count, 384, 151 - 4.5 * count, 392, 0, c_lightYellow)
+			graphics.draw_box(154.5 - 4.5 * count, 384, 151 - 4.5 * count, 392, 0, c_lightYellow2)
 		else
-			graphics.draw_box(154.5 - 4.5 * count, 384, 151 - 4.5 * count, 392, 0, c_yellow)
+			graphics.draw_box(154.5 - 4.5 * count, 384, 151 - 4.5 * count, 392, 0, c_yellow2)
 		end
 		count = count + 1
 	end
@@ -317,11 +323,11 @@ function draw_panels()
 ------------------]]--
 	
 -- Radar box (green)
-	graphics.draw_box(184, -394, 100, -303, 1, c_green)
+	graphics.draw_box(184, -394, 100, -303, 1, c_green5)
 -- Communications panels (green)
-	graphics.draw_box(-63, -393, -158, -297, 0, c_green)
-	graphics.draw_line(-391, -74, -298, -74, 1, c_lightGreen)
-	graphics.draw_box(-165, -389.5, -185.5, -304, 0, c_green)
+	graphics.draw_box(-63, -393, -158, -297, 0, c_green5)
+	graphics.draw_line(-391, -74, -298, -74, 1, c_lightGreen2)
+	graphics.draw_box(-165, -389.5, -185.5, -304, 0, c_green5)
 -- Menu drawing
 	local shift = 1
 	local num = 1
@@ -375,7 +381,7 @@ function draw_panels()
 			graphics.draw_line(-369, 10, -369, 9, 0.5, c_lightBlue)
 			graphics.draw_line(-359, 10, -359, 9, 0.5, c_lightBlue)
 			graphics.draw_box(27, -367.5, 10, -360, 0, c_lightBlue)
-			graphics.draw_box(17 * control.shield.percent + 10, -367.5, 10, -360, 0, c_blue)
+			graphics.draw_box(17 * control.shield.percent + 10, -367.5, 10, -360, 0, c_lightBlue3)
 		end
 		if control.type == "Planet" then
 			graphics.draw_sprite(control.type .. "s/" .. control.image, -380, 19, 17, 17, 0)
@@ -390,7 +396,7 @@ function draw_panels()
 		graphics.draw_line(-387, 10, -387, 9, 0.5, c_white)
 	end
 	if target ~= nil then
-		graphics.draw_box(-8, -392, -17, -297, 0, c_lightBlue)
+		graphics.draw_box(-8, -392, -17, -297, 0, c_lightBlue4)
 		graphics.draw_text("TARGET", "CrystalClear", "left", -389, -13, 12, c_black)
 		graphics.draw_line(-387, -32, -372, -32, 0.5, c_white)
 		graphics.draw_line(-372, -34, -372, -32, 0.5, c_white)

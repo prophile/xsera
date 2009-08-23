@@ -10,14 +10,14 @@ fontsize = 22
 splash_stride = 26
 splash_num = 0
 
-local execs = {	{ coordx = splash_shift_left, coordy = top_of_splash, length = splash_shift_right - splash_shift_left, text = "Start New Game", justify = "left", boxColour = c_lightYellow, textColor = c_purple, execute = nil, letter = "S" },
-	{ coordx = splash_shift_left, coordy = top_of_splash - 1 * splash_stride, length = splash_shift_right - splash_shift_left, text = "Start Network Game", justify = "left", boxColour = CDGREEN, textColor = c_purple, execute = nil, letter = "N" },
-	{ coordx = splash_shift_left, coordy = top_of_splash - 2 * splash_stride, length = splash_shift_right - splash_shift_left, text = "Replay Intro", justify = "left", boxColour = CGREY, textColor = c_purple, execute = nil, letter = "R" },
-	{ coordx = splash_shift_left, coordy = top_of_splash - 3 * splash_stride, length = splash_shift_right - splash_shift_left, text = "Demo", justify = "left", boxColour = CGREYBROWN, textColor = c_purple, execute = nil, letter = "D" },
-	{ coordx = splash_shift_left, coordy = top_of_splash - 4 * splash_stride, length = splash_shift_right - splash_shift_left, text = "Options", justify = "left", boxColour = c_lightGreen, textColor = c_purple, execute = nil, letter = "O" },
-	{ coordx = splash_shift_left, coordy = top_of_splash - 5 * splash_stride, length = splash_shift_right - splash_shift_left, text = "About Ares and Xsera", justify = "left", boxColour = CGREYBROWN, textColor = c_purple, execute = nil, letter = "A" },
-	{ coordx = splash_shift_left, coordy = top_of_splash - 6 * splash_stride, length = splash_shift_right - splash_shift_left, text = "Xsera Main Menu", justify = "left", boxColour = c_lightYellow, textColor = c_purple, execute = nil, letter = "M" },
-	{ coordx = splash_shift_left, coordy = top_of_splash - 7 * splash_stride, length = splash_shift_right - splash_shift_left, text = "Quit", justify = "left", boxColour = c_lightRed, textColor = c_purple, execute = nil, letter = "Q" } }
+local execs = {	{ coordx = splash_shift_left, coordy = top_of_splash, length = splash_shift_right - splash_shift_left, text = "Start New Game", justify = "left", boxColour = c_lightYellow, textColour = c_purple, execute = nil, letter = "S" },
+	{ coordx = splash_shift_left, coordy = top_of_splash - 1 * splash_stride, length = splash_shift_right - splash_shift_left, text = "Start Network Game", justify = "left", boxColour = c_darkGreen, textColour = c_purple, execute = nil, letter = "N" },
+	{ coordx = splash_shift_left, coordy = top_of_splash - 2 * splash_stride, length = splash_shift_right - splash_shift_left, text = "Replay Intro", justify = "left", boxColour = CGREY, textColour = c_purple, execute = nil, letter = "R" },
+	{ coordx = splash_shift_left, coordy = top_of_splash - 3 * splash_stride, length = splash_shift_right - splash_shift_left, text = "Demo", justify = "left", boxColour = CGREYBROWN, textColour = c_purple, execute = nil, letter = "D" },
+	{ coordx = splash_shift_left, coordy = top_of_splash - 4 * splash_stride, length = splash_shift_right - splash_shift_left, text = "Options", justify = "left", boxColour = c_lightGreen, textColour = c_purple, execute = nil, letter = "O" },
+	{ coordx = splash_shift_left, coordy = top_of_splash - 5 * splash_stride, length = splash_shift_right - splash_shift_left, text = "About Ares and Xsera", justify = "left", boxColour = CGREYBROWN, textColour = c_purple, execute = nil, letter = "A" },
+	{ coordx = splash_shift_left, coordy = top_of_splash - 6 * splash_stride, length = splash_shift_right - splash_shift_left, text = "Xsera Main Menu", justify = "left", boxColour = c_lightYellow, textColour = c_purple, execute = nil, letter = "M" },
+	{ coordx = splash_shift_left, coordy = top_of_splash - 7 * splash_stride, length = splash_shift_right - splash_shift_left, text = "Quit", justify = "left", boxColour = c_lightRed, textColour = c_purple, execute = nil, letter = "Q" } }
 
 function init()
 	sound.stop_music()

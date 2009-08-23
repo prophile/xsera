@@ -57,12 +57,12 @@ function draw_box_with_sidecar(box)
 		graphics.draw_line((box.sidecar.x + box.coordx + box.length) / 2, box.underbox + 1, (box.sidecar.x + box.coordx + box.length) / 2, box.sidecar.y, 1, box.boxColour)
 		graphics.draw_line(box.coordx + box.length, box.underbox + 1, (box.sidecar.x + box.coordx + box.length) / 2, box.underbox + 1, 1, box.boxColour)
 	else
-	--	graphics.draw_line(box.sidecar.x, box.sidecar.y + box.sidecar.size.y, (box.sidecar.x + box.coordx + box.length) / 2, box.sidecar.y + box.sidecar.size.y, 1, box.boxColour)
-	--	graphics.draw_line((box.sidecar.x + box.coordx + box.length) / 2, box.sidecar.y + box.sidecar.size.y, (box.sidecar.x + box.coordx + box.length) / 2, box.coordy + 17, 1, box.boxColour)
-	--	graphics.draw_line((box.sidecar.x + box.coordx + box.length) / 2, box.coordy + 17, box.coordx + box.length, box.coordy + 17, 1, box.boxColour)
-	--	graphics.draw_line(box.sidecar.x, box.sidecar.y, (box.sidecar.x + box.coordx + box.length) / 2, box.sidecar.y, 1, box.boxColour)
-	--	graphics.draw_line((box.sidecar.x + box.coordx + box.length) / 2, box.underbox + 1, (box.sidecar.x + box.coordx + box.length) / 2, box.sidecar.y, 1, box.boxColour)
-	--	graphics.draw_line(box.coordx + box.length, box.underbox + 1, (box.sidecar.x + box.coordx + box.length) / 2, box.underbox + 1, 1, box.boxColour)
+		graphics.draw_line(box.coordx, box.coordy + 17, (box.coordx + box.sidecar.x + box.sidecar.size.x) / 2, box.coordy + 17, 1, box.boxColour)
+		graphics.draw_line((box.coordx + box.sidecar.x + box.sidecar.size.x) / 2, box.coordy + 17, (box.coordx + box.sidecar.x + box.sidecar.size.x) / 2, box.sidecar.y + box.sidecar.size.y, 1, box.boxColour)
+		graphics.draw_line((box.coordx + box.sidecar.x + box.sidecar.size.x) / 2, box.sidecar.y + box.sidecar.size.y, box.sidecar.x + box.sidecar.size.x, box.sidecar.y + box.sidecar.size.y, 1, box.boxColour)
+		graphics.draw_line(box.sidecar.x + box.sidecar.size.x, box.sidecar.y, (box.coordx + box.sidecar.x + box.sidecar.size.x) / 2, box.sidecar.y, 1, box.boxColour)
+		graphics.draw_line((box.coordx + box.sidecar.x + box.sidecar.size.x) / 2, box.sidecar.y, (box.coordx + box.sidecar.x + box.sidecar.size.x) / 2, box.underbox + 1, 1, box.boxColour)
+		graphics.draw_line((box.coordx + box.sidecar.x + box.sidecar.size.x) / 2, box.underbox + 1, box.coordx, box.underbox + 1, 1, box.boxColour)
 	end
 end
 
@@ -80,7 +80,7 @@ function draw_small_box(box)
 	graphics.draw_box(box.top - 5, box.left + 4, box.top - 25, box.right - 4, 0, colour_add(box.boxColour, c_lighten2, c_lighten))
 	graphics.draw_text(box.title, "CrystalClear", "left", box.left + 10, box.top - 15, 18, c_black)
 	graphics.draw_text(box.subtitle, "CrystalClear", "left", box.left + 10, box.top - 35, 18, c_black)
-	graphics.draw_text(box.desc, "CrystalClear", "left", box.left + 10, box.top - 55, 18, c_black)
+--	graphics.draw_text(box.desc, "CrystalClear", "left", box.left + 10, box.top - 55, 18, c_black) [TEXTFIX] re-enable when text is fixed
 end
 
 function switch_box(box)
@@ -104,12 +104,12 @@ function switch_box(box)
 	end
 end
 
-function change_special(k, set, temp_table)
---	print_table(temp_table)
+function change_special(k, set, table)
+--	print_table(table)
 	local num = 1
-	while temp_table[num] ~= nil do
-		if temp_table[num].letter == k then
-			temp_table[num].special = set
+	while table[num] ~= nil do
+		if table[num].letter == k then
+			table[num].special = set
 		end
 		num = num + 1
 	end
