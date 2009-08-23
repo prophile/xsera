@@ -4,11 +4,11 @@ import('BoxDrawing')
 
 freezeMenuNum = 0
 levelSwitching = true
-background1 = {	{ coordx = -260, coordy = -205, length = 150, text = "Cancel", boxColour = CBYELLOW, textColour = c_purple, execute = nil, letter = "ESC" },
+background1 = {	{ coordx = -280, coordy = 140, length = 560, text = " ", boxColour = c_teal, textColour = c_purple, execute = nil, letter = "Select Level", underbox = -145 },
+				{ coordx = -260, coordy = -205, length = 150, text = "Cancel", boxColour = CBYELLOW, textColour = c_purple, execute = nil, letter = "ESC" },
 				{ coordx = 110, coordy = -205, length = 150, text = "Begin", boxColour = c_lightGreen, textColour = c_purple, execute = nil, letter = "RTRN" },
 				{ coordx = -260, coordy = -105, length = 150, text = "Previous", boxColour = c_teal, textColour = c_purple, execute = nil, letter = "LEFT" },
-				{ coordx = 110, coordy = -105, length = 150, text = "Next", boxColour = c_teal, textColour = c_purple, execute = nil, letter = "RGHT", special = "disabled" },
-				{ coordx = -280, coordy = 140, length = 560, text = " ", boxColour = c_teal, textColour = c_purple, execute = nil, letter = "Select Level", underbox = -145, } }
+				{ coordx = 110, coordy = -105, length = 150, text = "Next", boxColour = c_teal, textColour = c_purple, execute = nil, letter = "RGHT", special = "disabled" } }
 
 background2 = { { coordx = -280, coordy = 175, length = 560, text = " ", boxColour = c_grey, textColour = c_grey, execute = nil, letter = "Mission Analysis", underbox = -200 },
 				{ coordx = -280, coordy = -225, length = 170, text = "Previous", boxColour = c_grey, textColour = c_grey, execute = nil, letter = "LEFT" },
@@ -25,8 +25,8 @@ scenBriefing = { planet = { x = 0, y = 0 },
 	screen = { { { sprite = "Ships/Ishiman/HeavyCruiser", x = 0, y = 0, size = 0.2 },
 				{ sprite = "Planets/Saturny", x = 2500, y = 2500, size = 0.3 },
 				{ sprite = "Planets/AnotherEarth", x = 100, y = 100, size = 0.3 },
-				{ sprite = "Ships/Gaitori/Carrier", x = 2700, y = 2200, size = 0.2 } },
-				{ coordx = 180, coordy = -225, length = 170, text = "Done", boxColour = c_lightGreen, textColour = c_lightGreen, execute = nil, letter = "RTRN" }
+				{ sprite = "Ships/Gaitori/Carrier", x = 2200, y = 2700, size = 0.2 } },
+				{ coordx = -220, coordy = 100, length = 220, text = " ", boxColour = c_yellow, textColour = c_yellow, execute = nil, letter = "Xsera System", underbox = -100, uboxText = "Land a transport here.", sidecar = { x = 60, y = 130, size = { x = 23, y = 23 } }, special = "sidecar" }
 
 				} }
 -- the above is [TEMPORARY] - scenLevels will be replaced by scen.levels and scenBriefing will be replaced by scen.briefing
@@ -107,9 +107,10 @@ function render()
 			local num = 1
 			while scenBriefing.screen[1][num] ~= nil do
 				tempx, tempy = graphics.sprite_dimensions(scenBriefing.screen[1][num].sprite)
-				graphics.draw_sprite(scenBriefing.screen[1][num].sprite, scenBriefing.screen[1][num].x, scenBriefing.screen[1][num].y, tempx * scenBriefing.screen[1][num].size, tempy * scenBriefing.screen[1][num].size, 1)
+				graphics.draw_sprite(scenBriefing.screen[1][num].sprite, -240 + scenBriefing.screen[1][num].x * 540 / 4332, -170 + scenBriefing.screen[1][num].y * 374 / 3000, tempx * scenBriefing.screen[1][num].size, tempy * scenBriefing.screen[1][num].size, math.pi / 2)
 				num = num + 1
 			end
+			-- draw grid here
 			if menuNum ~= 2 then
 				if scenBriefing.screen[menuNum - 1] ~= nil then
 					switch_box(scenBriefing.screen[menuNum - 1])

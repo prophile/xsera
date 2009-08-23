@@ -2,17 +2,31 @@ import('ColourHandle')
 import('PrintRecursive')
 
 function draw_interface_box(box, col_mod_all, col_mod_click)
-	-- inner box and details
-	if box.text ~= " " then
-		graphics.draw_box(box.coordy + 13, box.coordx + 11, box.coordy + 5, box.coordx + 10 + (box.length - 20) / 3.5, 0, colour_add(box.boxColour, c_lighten, col_mod_all))
-		graphics.draw_box(box.coordy + 13, box.coordx + 11 + (box.length - 20) / 3.5, box.coordy + 5, box.coordx + box.length - 11, 0, colour_add(box.boxColour, c_darken, col_mod_click))
-		graphics.draw_text(box.text, "CrystalClear", "center", box.coordx + 11 + (box.length - 20) / 3.5 + (box.length - 20) * 5 / 14, box.coordy + 9, 14, colour_add(box.boxColour, c_lighten, col_mod_all)) 
+	if box.underbox ~= nil then
+		graphics.draw_box(box.coordy + 18, box.coordx, box.underbox, box.coordx + box.length, 0, c_black)
 	else
-		graphics.draw_box(box.coordy + 13, box.coordx + 11, box.coordy + 5, box.coordx + 10 + (box.length - 20) / 3.5, 0, colour_add(box.boxColour, c_darken))
-		graphics.draw_box(box.coordy + 13, box.coordx + 11 + (box.length - 20) / 3.5, box.coordy + 5, box.coordx + box.length - 11, 0, colour_add(box.boxColour, c_lighten))
+		graphics.draw_box(box.coordy + 18, box.coordx, box.coordy, box.coordx + box.length, 0, c_black)
 	end
 	if box.special ~= "disabled" then
-		graphics.draw_text(box.letter, "CrystalClear", "center", box.coordx + 11 + (box.length - 20) / 7, box.coordy + 9, 14) 
+		if ((box.length - 20) / 3.5) < graphics.text_length(box.letter, "CrystalClear", 14) then
+			txtlength = (graphics.text_length(box.letter, "CrystalClear", 14) + 20) / 2
+		else
+			txtlength = (box.length - 20) / 7
+		end
+	else
+		txtlength = (box.length - 20) / 7
+	end
+	-- inner box and details
+	if box.text ~= " " then
+		graphics.draw_box(box.coordy + 13, box.coordx + 11, box.coordy + 5, box.coordx + 10 + txtlength * 2, 0, colour_add(box.boxColour, c_lighten, col_mod_all))
+		graphics.draw_box(box.coordy + 13, box.coordx + 11 + txtlength * 2, box.coordy + 5, box.coordx + box.length - 11, 0, colour_add(box.boxColour, c_darken, col_mod_click))
+		graphics.draw_text(box.text, "CrystalClear", "center", box.coordx + 11 + txtlength * 9 / 2, box.coordy + 9, 14, colour_add(box.boxColour, c_lighten, col_mod_all)) 
+	else
+		graphics.draw_box(box.coordy + 13, box.coordx + 11, box.coordy + 5, box.coordx + 10 + txtlength * 2, 0, colour_add(box.boxColour, c_darken))
+		graphics.draw_box(box.coordy + 13, box.coordx + 11 + txtlength * 2, box.coordy + 5, box.coordx + box.length - 11, 0, colour_add(box.boxColour, c_lighten))
+	end
+	if box.special ~= "disabled" then
+		graphics.draw_text(box.letter, "CrystalClear", "center", box.coordx + 11 + txtlength, box.coordy + 9, 14) 
 	end
 	-- frame boxes
 	graphics.draw_box(box.coordy + 5, box.coordx, box.coordy + 3, box.coordx + 10, 0, colour_add(box.boxColour, col_mod_all))
