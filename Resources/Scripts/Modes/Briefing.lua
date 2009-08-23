@@ -2,6 +2,7 @@ import('GlobalVars')
 import('Console')
 import('BoxDrawing')
 
+freezeMenuNum = 0
 levelSwitching = true
 background1 = {	{ coordx = -260, coordy = -205, length = 150, text = "Cancel", boxColour = CBYELLOW, textColour = c_purple, execute = nil, letter = "ESC" },
 				{ coordx = 110, coordy = -205, length = 150, text = "Begin", boxColour = c_lightGreen, textColour = c_purple, execute = nil, letter = "RTRN" },
@@ -20,9 +21,17 @@ scenLevels = { { title = "DEMO 2", subtitle = "The Second Technical Demo", desc 
 			{ title = "CHAPTER 6", subtitle = "...Into the Fire", desc = "Capture the planet Hades Beta while destroying as many Gaitori power stations as possible and saving as many of the Obish stations as you can.", unlocked = true } }
 
 -- scenBriefing is hardcoded to work only with Demo2, in the future it will load whatever scenario data that I need
-scenBriefing = { planet = { x = 0, y = 0 } }
+scenBriefing = { planet = { x = 0, y = 0 },
+	screen = { { { sprite = "Ships/Ishiman/HeavyCruiser", x = 0, y = 0, size = 0.2 },
+				{ sprite = "Planets/Saturny", x = 2500, y = 2500, size = 0.3 },
+				{ sprite = "Planets/AnotherEarth", x = 100, y = 100, size = 0.3 },
+				{ sprite = "Ships/Gaitori/Carrier", x = 2700, y = 2200, size = 0.2 } },
+				{ coordx = 180, coordy = -225, length = 170, text = "Done", boxColour = c_lightGreen, textColour = c_lightGreen, execute = nil, letter = "RTRN" }
+
+				} }
 -- the above is [TEMPORARY] - scenLevels will be replaced by scen.levels and scenBriefing will be replaced by scen.briefing
 menuNum = 1
+screenNum = 1
 
 function init()
 	sound.stop_music()
@@ -44,6 +53,12 @@ function update()
 			end
 		else
 			change_special("RGHT", "disabled", background1)
+		end
+	else
+		if scenBriefing.screen[menuNum] ~= nil then
+			change_special("RGHT", nil, background2)
+		else
+			change_special("RGHT", "disabled", background2)
 		end
 	end
 	while background1[num] ~= nil do
@@ -72,7 +87,7 @@ function render()
 --	graphics.draw_rtri(270, 174, 3)
 	local num = 1
 	-- Screen Info
-	if levelSwitching == true then -- [TODO] finish creating structure
+	if levelSwitching == true then
 	-- When we load the scenario data, change all instances of "scenLevels" to "scen.levels"
 		while background1[num] ~= nil do
 			switch_box(background1[num])
@@ -80,19 +95,25 @@ function render()
 		end
 		switch_box( { top = 120, left = -260, bottom = -55, right = 260, boxColour = c_teal, title = scenLevels[menuNum].title, subtitle = scenLevels[menuNum].subtitle, desc = scenLevels[menuNum].desc } )
 	else
-	-- When we load the scenario data, change all instances of "scenBriefing" to "scen.Briefing"
+	-- When we load the scenario data, change all instances of "scenBriefing" to "scen.briefing"
 		while background2[num] ~= nil do
 			switch_box(background2[num])
 			num = num + 1
 		end
 		if menuNum == 1 then
 			graphics.draw_image("Scenario/Misc/Starmap", 0, -10, 533, 364)
+			-- add pointer to planet here
 		else
-			
 			local num = 1
-			while scenBriefing.screen[num] ~= nil do
-				
+			while scenBriefing.screen[1][num] ~= nil do
+				tempx, tempy = graphics.sprite_dimensions(scenBriefing.screen[1][num].sprite)
+				graphics.draw_sprite(scenBriefing.screen[1][num].sprite, scenBriefing.screen[1][num].x, scenBriefing.screen[1][num].y, tempx * scenBriefing.screen[1][num].size, tempy * scenBriefing.screen[1][num].size, 1)
 				num = num + 1
+			end
+			if menuNum ~= 2 then
+				if scenBriefing.screen[menuNum - 1] ~= nil then
+					switch_box(scenBriefing.screen[menuNum - 1])
+				end
 			end
 		end
 	end
@@ -110,16 +131,18 @@ function keyup(k)
 	if k == "escape" then
 		mode_manager.switch('AresSplash')
 	elseif k == "return" then
-		if scenLevels[menuNum].mode ~= nil then
-			if levelSwitching == true then
+		if levelSwitching == true then
+			if scenLevels[menuNum].mode ~= nil then
 				sound.play_music("FRED")
 				levelSwitching = false
+				freezeMenuNum = menuNum
+				menuNum = 1
 			else
-				mode_manager.switch(scenLevels[menuNum].mode)
+				errLog("This module is not yet available for playing.", 8)
+				sound.play("NaughtyBeep")
 			end
 		else
-			errLog("This module is not yet available for playing.", 8)
-			sound.play("NaughtyBeep")
+			mode_manager.switch(scenLevels[freezeMenuNum].mode)
 		end
 	end
 end
@@ -138,8 +161,14 @@ function key(k)
 			change_special("RTRN", "click", background2)
 		end
 	elseif k == "l" then
-		if scenLevels[menuNum + 1] ~= nil then
-			if scenLevels[menuNum + 1].unlocked == true then
+		if levelSwitching == true then
+			if scenLevels[menuNum + 1] ~= nil then
+				if scenLevels[menuNum + 1].unlocked == true then
+					menuNum = menuNum + 1
+				end
+			end
+		else
+			if scenBriefing.screen[menuNum] ~= nil then
 				menuNum = menuNum + 1
 			end
 		end
