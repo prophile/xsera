@@ -62,6 +62,10 @@ end
 function keyup(k)
 	if k == "escape" then
 		mode_manager.switch('AresSplash')
+	elseif k == "return" then
+		mode_manager.switch('AresSplash')
+	elseif k == "k" then
+		mode_manager.switch('KeyControls')
 	end
 end
 
@@ -70,5 +74,7 @@ function key(k)
 		change_special("ESC", "click", background)
 	elseif k == "return" then
 		change_special("RTRN", "click", background)
+	elseif k == "k" then
+		change_special("K", "click", background)
 	end
 end

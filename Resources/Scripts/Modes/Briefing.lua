@@ -73,7 +73,6 @@ function update()
 		end
 		num = num + 1
 	end
---	execs[6] = { top = 120, left = -260, bottom = -55, right = 260, boxColour = c_teal, title = scenLevels[menuNum].title, subtitle = scenLevels[menuNum].subtitle, desc = scenLevels[menuNum].desc }
 end
 
 function render()
