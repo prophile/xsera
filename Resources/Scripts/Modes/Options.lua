@@ -2,8 +2,15 @@ import('GlobalVars')
 import('Console')
 import('BoxDrawing')
 
-background = {	{ coordx = -280, coordy = 140, length = 560, text = " ", boxColour = c_purple, textColour = c_purple, execute = nil, letter = "Sound Options", underbox = -85 },
-				{ coordx = -260, coordy = 0, length = 520, text = " ", boxColour = c_purple, textColour = c_purple, execute = nil, letter = "VOLUME", underbox = -75 },
+soundLevel = 8
+soundMax = 8
+background = {	{ coordx = -280, coordy = 140, length = 560, text = " ", boxColour = c_purple2, textColour = c_purple, execute = nil, letter = "Sound Options", underbox = -85 },
+				{ coordx = -260, coordy = -30, length = 520, text = " ", boxColour = c_purple2, textColour = c_purple, execute = nil, letter = "VOLUME", underbox = -75 },
+				{ coordx = 110, coordy = 20, length = 150, text = "nodraw", boxColour = c_purple2, textColour = c_purple, execute = nil, letter = "Volume Down" },
+				{ coordx = 110, coordy = 100, length = 150, text = "nodraw", boxColour = c_purple2, textColour = c_purple, execute = nil, letter = "Volume Up" },
+				{ coordx = -245, coordy = 100, length = 250, text = "nodraw", boxColour = c_purpleBlue, textColour = c_purple, execute = nil, letter = "Music During Action", radio = "off" },
+				{ coordx = -245, coordy = 60, length = 250, text = "nodraw", boxColour = c_purpleBlue, textColour = c_purple, execute = nil, letter = "Music During Interlude", radio = "off" },
+				{ coordx = -245, coordy = 20, length = 250, text = "nodraw", boxColour = c_lightBlue4, textColour = c_purple, execute = nil, letter = "Speak Network Messages", radio = "off" },
 				{ coordx = -260, coordy = -205, length = 150, text = "Cancel", boxColour = c_brightYellow, textColour = c_purple, execute = nil, letter = "ESC" },
 				{ coordx = 110, coordy = -205, length = 150, text = "Done", boxColour = c_lightGreen, textColour = c_purple, execute = nil, letter = "RTRN" },
 				{ coordx = 110, coordy = -145, length = 150, text = "Key Controls", boxColour = c_teal, textColour = c_purple, execute = nil, letter = "K" } }
@@ -20,6 +27,9 @@ function update()
 		end
 		num = num + 1
 	end
+	if soundLevel > soundMax then
+		soundLevel = soundMax
+	end
 end
 
 function render()
@@ -32,6 +42,11 @@ function render()
 	local num = 1
 	while background[num] ~= nil do
 		switch_box(background[num])
+		num = num + 1
+	end
+	num = 0
+	while soundLevel > num do
+		graphics.draw_box(-37, -242 + 62 * num, -63, -190 + 62 * num, 0, colour_add(c_darkPurple, { r = num / 14.0, g = num / 14.0, b = num / 14.0, a = 1.0 } ))
 		num = num + 1
 	end
 	-- Error Printing

@@ -8,7 +8,9 @@ function draw_interface_box(box, col_mod_all, col_mod_click)
 		graphics.draw_box(box.coordy + 18, box.coordx, box.coordy, box.coordx + box.length, 0, c_black)
 	end
 	if box.special ~= "disabled" then
-		if ((box.length - 20) / 3.5) < graphics.text_length(box.letter, "CrystalClear", 14) then
+		if box.text == "nodraw" then
+			txtlength = (box.length - 22) / 2
+		elseif ((box.length - 20) / 3.5) < graphics.text_length(box.letter, "CrystalClear", 14) then
 			txtlength = (graphics.text_length(box.letter, "CrystalClear", 14) + 20) / 2
 		else
 			txtlength = (box.length - 20) / 7
@@ -17,21 +19,30 @@ function draw_interface_box(box, col_mod_all, col_mod_click)
 		txtlength = (box.length - 20) / 7
 	end
 	-- inner box and details
-	if box.text ~= " " then
+	if (box.text ~= " ") and (box.text ~= "nodraw") then
 		graphics.draw_box(box.coordy + 14, box.coordx + 11, box.coordy + 4, box.coordx + 10 + txtlength * 2, 0, colour_add(box.boxColour, c_lighten, col_mod_all))
 		graphics.draw_box(box.coordy + 14, box.coordx + 11 + txtlength * 2, box.coordy + 4, box.coordx + box.length - 11, 0, colour_add(box.boxColour, c_darken, col_mod_click))
 		graphics.draw_text(box.text, "CrystalClear", "center", box.coordx + 11 + txtlength * 9 / 2, box.coordy + 9, 14, colour_add(box.boxColour, c_lighten, col_mod_all)) 
 	else
-		graphics.draw_box(box.coordy + 14, box.coordx + 11, box.coordy + 4, box.coordx + 10 + txtlength * 2, 0, colour_add(box.boxColour, c_darken))
+		graphics.draw_box(box.coordy + 14, box.coordx + 11, box.coordy + 4, box.coordx + 10 + txtlength * 2, 0, colour_add(box.boxColour, c_darken, c_darken))
 		graphics.draw_box(box.coordy + 14, box.coordx + 11 + txtlength * 2, box.coordy + 4, box.coordx + box.length - 11, 0, colour_add(box.boxColour, c_lighten))
 	end
 	if box.special ~= "disabled" then
 		graphics.draw_text(box.letter, "CrystalClear", "center", box.coordx + 11 + txtlength, box.coordy + 9, 14) 
 	end
-	if box.special == "radioOff" then
-		graphics.draw_box(box.coordy + 13, box.coordx - 2, box.coordy + 4, box.coordx + 10, 0, colour_add(box.boxColour, col_mod_all))
-	elseif box.special == "radioOn" then
-		
+	if box.radio == "off" then
+		graphics.draw_box(box.coordy + 13, box.coordx - 2, box.coordy + 4, box.coordx + 5, 0, colour_add(box.boxColour, col_mod_all))
+		graphics.draw_box(box.coordy + 15, box.coordx - 5, box.coordy + 3, box.coordx - 3, 0, colour_add(box.boxColour, col_mod_all))
+		graphics.draw_box(box.coordy + 15, box.coordx - 15, box.coordy + 3, box.coordx - 13, 0, colour_add(box.boxColour, col_mod_all))
+		graphics.draw_box(box.coordy + 15, box.coordx - 15, box.coordy + 13, box.coordx - 3, 0, colour_add(box.boxColour, col_mod_all))
+		graphics.draw_box(box.coordy + 5, box.coordx - 15, box.coordy + 3, box.coordx - 3, 0, colour_add(box.boxColour, col_mod_all))
+	elseif box.radio == "on" then
+		graphics.draw_box(box.coordy + 13, box.coordx - 2, box.coordy + 4, box.coordx + 5, 0, colour_add(box.boxColour, col_mod_all))
+		graphics.draw_box(box.coordy + 15, box.coordx - 5, box.coordy + 3, box.coordx - 3, 0, colour_add(box.boxColour, col_mod_all))
+		graphics.draw_box(box.coordy + 15, box.coordx - 15, box.coordy + 3, box.coordx - 13, 0, colour_add(box.boxColour, col_mod_all))
+		graphics.draw_box(box.coordy + 15, box.coordx - 15, box.coordy + 13, box.coordx - 3, 0, colour_add(box.boxColour, col_mod_all))
+		graphics.draw_box(box.coordy + 5, box.coordx - 15, box.coordy + 3, box.coordx - 3, 0, colour_add(box.boxColour, col_mod_all))
+		graphics.draw_box(box.coordy + 11, box.coordx - 11, box.coordy + 7, box.coordx - 7, 0, colour_add(box.boxColour, col_mod_all))
 	end
 	-- frame boxes
 	graphics.draw_box(box.coordy + 3, box.coordx, box.coordy + 2, box.coordx + 10, 0, colour_add(box.boxColour, col_mod_all))

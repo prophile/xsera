@@ -374,7 +374,7 @@ function draw_panels()
 			graphics.draw_line(-369, 10, -369, 9, 0.5, c_lightBlue)
 			graphics.draw_line(-359, 10, -359, 9, 0.5, c_lightBlue)
 			graphics.draw_box(27, -367.5, 10, -360, 0, c_lightBlue)
-			graphics.draw_box(17 * control.shield.percent + 10, -367.5, 10, -360, 0, c_lightBlue3)
+			graphics.draw_box(17 * control.shield.percent + 10, -367.5, 10, -360, 0, c_blue)
 		end
 		if control.type == "Planet" then
 			graphics.draw_sprite(control.type .. "s/" .. control.image, -380, 19, 17, 17, 0)
