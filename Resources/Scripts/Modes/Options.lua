@@ -2,13 +2,24 @@ import('GlobalVars')
 import('Console')
 import('BoxDrawing')
 
+background = {	{ coordx = -280, coordy = 140, length = 560, text = " ", boxColour = c_purple, textColour = c_purple, execute = nil, letter = "Sound Options", underbox = -85 },
+				{ coordx = -260, coordy = 0, length = 520, text = " ", boxColour = c_purple, textColour = c_purple, execute = nil, letter = "VOLUME", underbox = -75 },
+				{ coordx = -260, coordy = -205, length = 150, text = "Cancel", boxColour = c_brightYellow, textColour = c_purple, execute = nil, letter = "ESC" },
+				{ coordx = 110, coordy = -205, length = 150, text = "Done", boxColour = c_lightGreen, textColour = c_purple, execute = nil, letter = "RTRN" },
+				{ coordx = 110, coordy = -145, length = 150, text = "Key Controls", boxColour = c_teal, textColour = c_purple, execute = nil, letter = "K" } }
+
 function init()
 	sound.stop_music()
 	graphics.set_camera(-480, -360, 480, 360)
 end
 
 function update()
-	
+	while background[num] ~= nil do
+		if background[num].special == "click" then
+			background[num].special = nil
+		end
+		num = num + 1
+	end
 end
 
 function render()
@@ -18,7 +29,11 @@ function render()
 	graphics.draw_image("Panels/PanelBottom", 0, -242, 572, 20)
 	graphics.draw_image("Panels/PanelLeft", -302, -14, 33, 476)
 	graphics.draw_image("Panels/PanelRight", 303, -14, 35, 476)
-	
+	local num = 1
+	while background[num] ~= nil do
+		switch_box(background[num])
+		num = num + 1
+	end
 	-- Error Printing
 	if errNotice ~= nil then
 		graphics.draw_text(errNotice.text, "CrystalClear", "center", 0, -270, 28)
@@ -37,10 +52,8 @@ end
 
 function key(k)
 	if k == "escape" then
-		if levelSwitching == true then
-			change_special("ESC", "click", background1)
-		else
-			change_special("ESC", "click", background2)
-		end
+		change_special("ESC", "click", background)
+	elseif k == "return" then
+		change_special("RTRN", "click", background)
 	end
 end

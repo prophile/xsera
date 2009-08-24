@@ -29,7 +29,7 @@ function draw_interface_box(box, col_mod_all, col_mod_click)
 		graphics.draw_text(box.letter, "CrystalClear", "center", box.coordx + 11 + txtlength, box.coordy + 9, 14) 
 	end
 	if box.special == "radioOff" then
-		
+		graphics.draw_box(box.coordy + 13, box.coordx - 2, box.coordy + 4, box.coordx + 10, 0, colour_add(box.boxColour, col_mod_all))
 	elseif box.special == "radioOn" then
 		
 	end
@@ -127,7 +127,6 @@ function switch_box(box)
 end
 
 function change_special(k, set, table)
---	print_table(table)
 	local num = 1
 	while table[num] ~= nil do
 		if table[num].letter == k then
