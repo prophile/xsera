@@ -83,8 +83,6 @@ function render()
 	graphics.draw_image("Panels/PanelBottom", 0, -242, 572, 20)
 	graphics.draw_image("Panels/PanelLeft", -302, -14, 33, 476)
 	graphics.draw_image("Panels/PanelRight", 303, -14, 35, 476)
---	graphics.draw_rtri(-270, -200, 3)
---	graphics.draw_rtri(270, 174, 3)
 	local num = 1
 	-- Screen Info
 	if levelSwitching == true then

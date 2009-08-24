@@ -87,15 +87,7 @@ function keyup(k)
 	elseif k == "m" then
 		mode_manager.switch('MainMenu')
 	elseif k == "o" then
-		sound.play("NaughtyBeep")
-		errLog("This command currently has no code.", 10)
-		local num = 1
-		while execs[num] ~= nil do
-			if execs[num].special == "click" then
-				execs[num].special = nil
-			end
-			num = num + 1
-		end
+		mode_manager.switch('Options')
 	elseif k == "a" then
 		mode_manager.switch('Credits')
 	elseif k == "q" then

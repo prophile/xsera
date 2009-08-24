@@ -18,25 +18,30 @@ function draw_interface_box(box, col_mod_all, col_mod_click)
 	end
 	-- inner box and details
 	if box.text ~= " " then
-		graphics.draw_box(box.coordy + 13, box.coordx + 11, box.coordy + 5, box.coordx + 10 + txtlength * 2, 0, colour_add(box.boxColour, c_lighten, col_mod_all))
-		graphics.draw_box(box.coordy + 13, box.coordx + 11 + txtlength * 2, box.coordy + 5, box.coordx + box.length - 11, 0, colour_add(box.boxColour, c_darken, col_mod_click))
+		graphics.draw_box(box.coordy + 14, box.coordx + 11, box.coordy + 4, box.coordx + 10 + txtlength * 2, 0, colour_add(box.boxColour, c_lighten, col_mod_all))
+		graphics.draw_box(box.coordy + 14, box.coordx + 11 + txtlength * 2, box.coordy + 4, box.coordx + box.length - 11, 0, colour_add(box.boxColour, c_darken, col_mod_click))
 		graphics.draw_text(box.text, "CrystalClear", "center", box.coordx + 11 + txtlength * 9 / 2, box.coordy + 9, 14, colour_add(box.boxColour, c_lighten, col_mod_all)) 
 	else
-		graphics.draw_box(box.coordy + 13, box.coordx + 11, box.coordy + 5, box.coordx + 10 + txtlength * 2, 0, colour_add(box.boxColour, c_darken))
-		graphics.draw_box(box.coordy + 13, box.coordx + 11 + txtlength * 2, box.coordy + 5, box.coordx + box.length - 11, 0, colour_add(box.boxColour, c_lighten))
+		graphics.draw_box(box.coordy + 14, box.coordx + 11, box.coordy + 4, box.coordx + 10 + txtlength * 2, 0, colour_add(box.boxColour, c_darken))
+		graphics.draw_box(box.coordy + 14, box.coordx + 11 + txtlength * 2, box.coordy + 4, box.coordx + box.length - 11, 0, colour_add(box.boxColour, c_lighten))
 	end
 	if box.special ~= "disabled" then
 		graphics.draw_text(box.letter, "CrystalClear", "center", box.coordx + 11 + txtlength, box.coordy + 9, 14) 
 	end
+	if box.special == "radioOff" then
+		
+	elseif box.special == "radioOn" then
+		
+	end
 	-- frame boxes
-	graphics.draw_box(box.coordy + 5, box.coordx, box.coordy + 3, box.coordx + 10, 0, colour_add(box.boxColour, col_mod_all))
-	graphics.draw_box(box.coordy + 5, box.coordx + box.length - 10, box.coordy + 3, box.coordx + box.length, 0, colour_add(box.boxColour, col_mod_all))
-	graphics.draw_box(box.coordy + 3, box.coordx, box.coordy, box.coordx + box.length, 0, colour_add(box.boxColour, col_mod_all))
-	graphics.draw_box(box.coordy + 15, box.coordx, box.coordy + 13, box.coordx + 10, 0, colour_add(box.boxColour, col_mod_all))
-	graphics.draw_box(box.coordy + 15, box.coordx + box.length - 10, box.coordy + 13, box.coordx + box.length, 0, colour_add(box.boxColour, col_mod_all))
-	graphics.draw_box(box.coordy + 18, box.coordx, box.coordy + 15, box.coordx + box.length, 0, colour_add(box.boxColour, col_mod_all))
-	graphics.draw_box(box.coordy + 12, box.coordx, box.coordy + 6, box.coordx + 10, 0, colour_add(box.boxColour, col_mod_all))
-	graphics.draw_box(box.coordy + 12, box.coordx + box.length - 10, box.coordy + 6, box.coordx + box.length, 0, colour_add(box.boxColour, col_mod_all))
+	graphics.draw_box(box.coordy + 3, box.coordx, box.coordy + 2, box.coordx + 10, 0, colour_add(box.boxColour, col_mod_all))
+	graphics.draw_box(box.coordy + 3, box.coordx + box.length - 10, box.coordy + 2, box.coordx + box.length, 0, colour_add(box.boxColour, col_mod_all))
+	graphics.draw_box(box.coordy + 2, box.coordx, box.coordy, box.coordx + box.length, 0, colour_add(box.boxColour, col_mod_all))
+	graphics.draw_box(box.coordy + 16, box.coordx, box.coordy + 14, box.coordx + 10, 0, colour_add(box.boxColour, col_mod_all))
+	graphics.draw_box(box.coordy + 16, box.coordx + box.length - 10, box.coordy + 14, box.coordx + box.length, 0, colour_add(box.boxColour, col_mod_all))
+	graphics.draw_box(box.coordy + 18, box.coordx, box.coordy + 16, box.coordx + box.length, 0, colour_add(box.boxColour, col_mod_all))
+	graphics.draw_box(box.coordy + 13, box.coordx, box.coordy + 4, box.coordx + 10, 0, colour_add(box.boxColour, col_mod_all))
+	graphics.draw_box(box.coordy + 13, box.coordx + box.length - 10, box.coordy + 4, box.coordx + box.length, 0, colour_add(box.boxColour, col_mod_all))
 	-- under box, if it exists
 	if box.underbox ~= nil then
 		-- left side

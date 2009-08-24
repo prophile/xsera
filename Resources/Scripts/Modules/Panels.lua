@@ -183,27 +183,22 @@ function change_menu(menu, direction)
 		while menu[num][2] ~= true do
 			num = num + 1
 		end
-		print(menu[num][2], num)
 		if num ~= 2 then
 			menu[num][2] = false
 			num = num - 1
 			menu[num][2] = true
-		--	print_table(menu[num - 1])
 			if menu == menu_shipyard then
 				shipQuerying.p = menu_shipyard[num][4][1]
 				shipQuerying.n = menu_shipyard[num][4][2]
 				shipQuerying.r = menu_shipyard[num][4][3]
 				shipQuerying.c = scen.planet.buildCost[num - 1]
 				shipQuerying.t = scen.planet.buildTime[num - 1]
-				print(shipQuerying.n, shipQuerying.c, shipQuerying.t)
-				print(num)
 			end
 		end
 	elseif direction == "k" then
 		while menu[num][2] ~= true do
 			num = num + 1
 		end
-		print(menu[num][2], num)
 		if menu[num + 1] ~= nil then
 			menu[num][2] = false
 			num = num + 1
@@ -214,8 +209,6 @@ function change_menu(menu, direction)
 				shipQuerying.r = menu_shipyard[num][4][3]
 				shipQuerying.c = scen.planet.buildCost[num - 1]
 				shipQuerying.t = scen.planet.buildTime[num - 1]
-				print(shipQuerying.n, shipQuerying.c, shipQuerying.t)
-				print(num)
 			end
 		end
 	elseif direction == "j" then
