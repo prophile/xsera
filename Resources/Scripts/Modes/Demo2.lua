@@ -634,8 +634,8 @@ function render ()
 end
 
 function drawEscapeMenu()
-	switch_box( { top = 100, left = -190, bottom = -100, right = 190, boxColour = c_teal } )
-	graphics.draw_text("Resume, start chapter over, or quit?", "CrystalClear", "left", -85, 65, 16)
+	switch_box( { top = 85, left = -140, bottom = -60, right = 140, boxColour = c_teal } )
+	graphics.draw_text("Resume, start chapter over, or quit?", "CrystalClear", "left", -125, 65, 16)
 	if esc_down == true then
 		switch_box( { coordx = -125, coordy = 30, length = 250, text = "Resume", boxColour = colour_add(c_lightGreen, c_lighten), textColour = c_lightGreen, execute = nil, letter = "ESC" } )
 	else

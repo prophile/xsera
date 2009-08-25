@@ -100,6 +100,7 @@ function draw_box_with_sidecar(box)
 end
 
 function draw_small_box(box)
+	graphics.draw_box(box.top, box.left, box.bottom, box.right, 0, c_black)
 	graphics.draw_box(box.top, box.left, box.top - 3, box.right, 0, box.boxColour)
 	graphics.draw_box(box.top, box.left, box.top - 4, box.left + 3, 0, box.boxColour)
 	graphics.draw_box(box.top, box.right - 3, box.top - 4, box.right, 0, box.boxColour)
