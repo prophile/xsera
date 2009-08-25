@@ -12,6 +12,7 @@ background = {	{ top = 170, left = -280, bottom = -60, right = 280, boxColour = 
 				{ coordx = 177, coordy = 170, length = 87, text = "nodraw", boxColour = c_teal, textColour = c_teal, execute = nil, letter = "HotKeys" },
 				{ coordx = 180, coordy = -205, length = 100, text = "nodraw", boxColour = c_lightGreen, textColour = c_purple, execute = nil, letter = "DONE" } }
 
+key_menu_num = 1
 key_menu = { { "Ship",
 				{ key = "KP8", name = "Accelerate" },
 				{ key = "KP5", name = "Decelerate" }, 
@@ -86,6 +87,31 @@ function render()
 	local num = 1
 	while background[num] ~= nil do
 		switch_box(background[num])
+		num = num + 1
+	end
+	numBoxes = 1
+	while key_menu[key_menu_num][numBoxes] ~= nil do
+		numBoxes = numBoxes + 1
+	end
+	rows = math.ceil(numBoxes / 2)
+	num = 1
+	local xcoord = 0
+	local yshift = 0
+	local adjust = 0
+	while key_menu[key_menu_num][num + 1] ~= nil do
+		if num % rows ~= num then
+			xcoord = 5
+			adjust = rows - 1
+		else
+			adjust = 0
+			xcoord = -250
+		end
+		if rows % 2 ~= 0 then
+			yshift = -9
+		else
+			yshift = -27
+		end
+		switch_box( { coordx = xcoord, coordy = (math.ceil(numBoxes / 4) - (num - 1 - adjust)) * 36 + yshift, length = 245, text = key_menu[key_menu_num][num + 1].name, boxColour = c_teal, textColour = c_teal, execute = nil, letter = key_menu[key_menu_num][num + 1].key } )
 		num = num + 1
 	end
 	-- Error Printing
