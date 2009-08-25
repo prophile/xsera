@@ -228,7 +228,7 @@ end
 
 menu_level = menu_options
 
-function draw_panels()
+function drawPanels()
 	local testnum = 1;
 	graphics.set_camera(-400, -300, 400, 300)
 	graphics.draw_image("Panels/SideLeft", -346, 0, 109, 607)

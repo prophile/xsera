@@ -18,9 +18,14 @@ import('Math')
 import('Panels')
 import('PopDownConsole')
 import('CaptainAI')
+import('BoxDrawing')
 -- import('MouseHandle')
 
 key_press_f6 = false
+esc_menu = false
+esc_down = false
+rtrn_down = false
+q_down = false
 
 --[[--------------------------------
 	--{{------------------------
@@ -313,10 +318,12 @@ function update ()
 			end
 		end
 	end
-	if key_press_f6 ~= true then
-		physics.update(dt)
-	else
-		physics.update(dt * 30)
+	if esc_menu == false then
+		if key_press_f6 ~= true then
+			physics.update(dt)
+		else
+			physics.update(dt * 30)
+		end
 	end
 end
 
@@ -591,7 +598,7 @@ function render ()
 	graphics.draw_line(math.cos(angle - arrowAlpha) * arrowDist + playerShip.physicsObject.position.x, math.sin(angle - arrowAlpha) * arrowDist + playerShip.physicsObject.position.y, math.cos(angle) * (arrowLength + arrowVar) + playerShip.physicsObject.position.x, math.sin(angle) * (arrowLength + arrowVar) + playerShip.physicsObject.position.y, 1.5, c_laserGreen)
 	graphics.draw_line(math.cos(angle) * (arrowLength + arrowVar) + playerShip.physicsObject.position.x, math.sin(angle) * (arrowLength + arrowVar) + playerShip.physicsObject.position.y, math.cos(arrowAlpha + angle) * arrowDist + playerShip.physicsObject.position.x, math.sin(arrowAlpha + angle) * arrowDist + playerShip.physicsObject.position.y, 1.5, c_laserGreen)
 -- Panels
-	draw_panels()
+	drawPanels()
 -- Console
 	popDownConsole()
 -- Mouse
@@ -612,6 +619,10 @@ function render ()
 			mouseMovement = false
 		end
 	end--]]
+-- Escape Menu
+	if esc_menu == true then
+		drawEscapeMenu()
+	end
 -- Error Printing
 	if errNotice ~= nil then
 		graphics.draw_text(errNotice.text, "CrystalClear", "center", 0, -150, 28)
@@ -622,11 +633,59 @@ function render ()
 	graphics.end_frame()
 end
 
+function drawEscapeMenu()
+	switch_box( { top = 100, left = -190, bottom = -100, right = 190, boxColour = c_teal } )
+	graphics.draw_text("Resume, start chapter over, or quit?", "CrystalClear", "left", -85, 65, 16)
+	if esc_down == true then
+		switch_box( { coordx = -125, coordy = 30, length = 250, text = "Resume", boxColour = colour_add(c_lightGreen, c_lighten), textColour = c_lightGreen, execute = nil, letter = "ESC" } )
+	else
+		switch_box( { coordx = -125, coordy = 30, length = 250, text = "Resume", boxColour = c_lightGreen, textColour = c_lightGreen, execute = nil, letter = "ESC" } )
+	end
+	if rtrn_down == true then
+		switch_box( { coordx = -125, coordy = 0, length = 250, text = "Start Chapter Over", boxColour = colour_add(c_lightYellow, c_lighten), textColour = c_lightYellow, execute = nil, letter = "RTRN" } )
+	else
+		switch_box( { coordx = -125, coordy = 0, length = 250, text = "Start Chapter Over", boxColour = c_lightYellow, textColour = c_lightYellow, execute = nil, letter = "RTRN" } )
+	end
+	if q_down == true then
+		switch_box( { coordx = -125, coordy = -30, length = 250, text = "Quit to Main Menu", boxColour = colour_add(c_lightRed, c_lighten), textColour = c_lightRed, execute = nil, letter = "Q" } )
+	else
+		switch_box( { coordx = -125, coordy = -30, length = 250, text = "Quit to Main Menu", boxColour = c_lightRed, textColour = c_lightRed, execute = nil, letter = "Q" } )
+	end
+end
+
 --[[------------------------
 	--{{----------------
 		Key Handling
 	----------------}}--
 ------------------------]]--
+
+function escape_keyup(k)
+    if k == "escape" then
+		if esc_down == true then
+			esc_menu = false
+			esc_down = false
+			keyup = normal_keyup
+			key = normal_key
+		end
+    elseif k == "return" then
+        rtrn_down = false
+		sound.play("NaughtyBeep")
+		errLog("This command currently has no code.", 10)
+    elseif k == "q" then
+        q_down = false
+		mode_manager.switch('MainMenu')
+	end
+end
+
+function escape_key(k)
+    if k == "escape" then
+		esc_down = true
+    elseif k == "return" then
+        rtrn_down = true
+    elseif k == "q" then
+        q_down = true
+	end
+end
 
 function keyup ( k )
     if k == "w" then
@@ -663,6 +722,8 @@ function keyup ( k )
 		key_press_f6 = false
 	end
 end
+
+normal_keyup = keyup
 
 function key ( k )
     if k == "w" then
@@ -730,11 +791,19 @@ function key ( k )
 			computerShip.life = 0
 		end
 	elseif k == "escape" then
-		mode_manager.switch("MainMenu")
+		if esc_menu == false then
+			esc_menu = true
+			keyup = escape_keyup
+			key = escape_key
+		else
+			esc_down = true
+		end
 	elseif k == "F6" then
 		key_press_f6 = true
 	end
 end
+
+normal_key = key
 
 function mouse(button, mbX, mbY)
 --	print(mbX, mbY)
@@ -750,7 +819,6 @@ function mouse_move(mbX, mbY)
 	mouseStart = mode_manager.time()
 end
 
-normal_key = key
 
 function quit ()
     physics.close()
