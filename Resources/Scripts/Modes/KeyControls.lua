@@ -5,7 +5,7 @@ import('BoxDrawing')
 background = {	{ top = 170, left = -280, bottom = -60, right = 280, boxColour = c_teal },
 				{ top = -70, left = -280, bottom = -110, right = 280, boxColour = c_rust },
 				{ coordx = -280, coordy = -205, length = 100, text = "nodraw", boxColour = c_brightYellow, textColour = c_purple, execute = nil, letter = "CANCEL" },
-				{ coordx = -265, coordy = 170, length = 63, text = "nodraw", boxColour = c_teal, textColour = c_teal, execute = nil, letter = "Ship" },
+				{ coordx = -265, coordy = 170, length = 63, text = "nodraw", boxColour = colour_add(c_teal, c_lighten2), textColour = c_teal, execute = nil, letter = "Ship" },
 				{ coordx = -177, coordy = 170, length = 93, text = "nodraw", boxColour = c_teal, textColour = c_teal, execute = nil, letter = "Command" },
 				{ coordx = -54, coordy = 170, length = 95, text = "nodraw", boxColour = c_teal, textColour = c_teal, execute = nil, letter = "Shortcuts" },
 				{ coordx = 71, coordy = 170, length = 71, text = "nodraw", boxColour = c_teal, textColour = c_teal, execute = nil, letter = "Utility" },
@@ -106,10 +106,10 @@ function render()
 			adjust = 0
 			xcoord = -250
 		end
-		if rows % 2 ~= 0 then
+		if rows % 2 ~= 0 then -- odd number of rows
 			yshift = -9
 		else
-			yshift = -27
+			yshift = 9
 		end
 		switch_box( { coordx = xcoord, coordy = (math.ceil(numBoxes / 4) - (num - 1 - adjust)) * 36 + yshift, length = 245, text = key_menu[key_menu_num][num + 1].name, boxColour = c_teal, textColour = c_teal, execute = nil, letter = key_menu[key_menu_num][num + 1].key } )
 		num = num + 1
@@ -130,6 +130,29 @@ function keyup(k)
 	end
 end
 
+function change_box_colour(box, match, shade)
+	local num = 1
+	while box[num] ~= nil do
+		if box[num].letter == match then
+			box[num].boxColour = colour_add(box[num].boxColour, shade)
+		end
+		num = num + 1
+	end
+end
+
 function key(k)
 -- no key presses until I can assign them to values
+	if k == "j" then
+		if key_menu_num ~= 1 then
+			change_box_colour(background, key_menu[key_menu_num][1], c_darken2)
+			key_menu_num = key_menu_num - 1
+			change_box_colour(background, key_menu[key_menu_num][1], c_lighten2)
+		end
+	elseif k == "l" then
+		if key_menu[key_menu_num] ~= nil then
+			change_box_colour(background, key_menu[key_menu_num][1], c_darken2)
+			key_menu_num = key_menu_num + 1
+			change_box_colour(background, key_menu[key_menu_num][1], c_lighten2)
+		end
+	end
 end

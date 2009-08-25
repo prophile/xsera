@@ -58,6 +58,7 @@ CGREYBROWN = { r = 0.7, b = 0.7, g = 0.7, a = 1.0 }
 
 --NON-COLOUR
 c_darken = { r = -0.1, g = -0.1, b = -0.1, a = 1.0 }
+c_darken2 = { r = -0.2, g = -0.2, b = -0.2, a = 1.0 }
 c_lighten = { r = 0.1, g = 0.1, b = 0.1, a = 1.0 }
 c_lighten2 = { r = 0.2, g = 0.2, b = 0.2, a = 1.0 }
 
