@@ -93,6 +93,17 @@ function update ()
 		end
 	end
 	
+	-- defeat condition
+	if playerShip.life == 0 then
+		defeat_timer = defeat_timer + dt
+		victory_timer = nil
+		if defeat_timer >= 2.0 then
+			menu_display = "defeat_menu"
+			keyup = escape_keyup
+			key = escape_key
+		end
+	end
+	
 	if cameraChanging == true then
 		x = x - dt
 		if x < 0 then
@@ -318,7 +329,7 @@ function update ()
 			end
 		end
 	end
-	if esc_menu == false then
+	if menu_display == nil then
 		if key_press_f6 ~= true then
 			physics.update(dt)
 		else
@@ -619,9 +630,13 @@ function render ()
 			mouseMovement = false
 		end
 	end--]]
--- Escape Menu
-	if esc_menu == true then
-		drawEscapeMenu()
+-- Menus
+	if menu_display ~= nil then
+		if menu_display == "esc_menu" then
+			drawEscapeMenu()
+		elseif menu_display == "defeat_menu" then
+			drawDefeatMenu()
+		end
 	end
 -- Error Printing
 	if errNotice ~= nil then
@@ -638,16 +653,50 @@ function drawEscapeMenu()
 	graphics.draw_text("Resume, start chapter over, or quit?", "CrystalClear", "left", -125, 65, 16)
 	if esc_down == true then
 		switch_box( { coordx = -125, coordy = 30, length = 250, text = "Resume", boxColour = colour_add(c_lightGreen, c_lighten), textColour = c_lightGreen, execute = nil, letter = "ESC" } )
+	elseif esc_down == "act" then
+		keyup = normal_keyup
+		key = normal_key
+		esc_down = false
+		menu_display = nil
 	else
 		switch_box( { coordx = -125, coordy = 30, length = 250, text = "Resume", boxColour = c_lightGreen, textColour = c_lightGreen, execute = nil, letter = "ESC" } )
 	end
 	if rtrn_down == true then
 		switch_box( { coordx = -125, coordy = 0, length = 250, text = "Start Chapter Over", boxColour = colour_add(c_lightYellow, c_lighten), textColour = c_lightYellow, execute = nil, letter = "RTRN" } )
+	elseif rtrn_down == "act" then
+		sound.play("NaughtyBeep")
+		errLog("This command currently has no code.", 10)
+		rtrn_down = false
 	else
 		switch_box( { coordx = -125, coordy = 0, length = 250, text = "Start Chapter Over", boxColour = c_lightYellow, textColour = c_lightYellow, execute = nil, letter = "RTRN" } )
 	end
 	if q_down == true then
 		switch_box( { coordx = -125, coordy = -30, length = 250, text = "Quit to Main Menu", boxColour = colour_add(c_lightRed, c_lighten), textColour = c_lightRed, execute = nil, letter = "Q" } )
+	elseif q_down == "act" then
+		menu_display = nil
+		mode_manager.switch('MainMenu')
+	else
+		switch_box( { coordx = -125, coordy = -30, length = 250, text = "Quit to Main Menu", boxColour = c_lightRed, textColour = c_lightRed, execute = nil, letter = "Q" } )
+	end
+end
+
+function drawDefeatMenu()
+	switch_box( { top = 85, left = -140, bottom = -60, right = 140, boxColour = c_rust } )
+	graphics.draw_text("You lost your Heavy Cruiser and failed.", "CrystalClear", "left", -125, 60, 16)
+	graphics.draw_text("Start chapter over, or quit?", "CrystalClear", "left", -125, 30, 16)
+	if rtrn_down == true then
+		switch_box( { coordx = -125, coordy = 0, length = 250, text = "Start Chapter Over", boxColour = colour_add(c_lightYellow, c_lighten), textColour = c_lightYellow, execute = nil, letter = "RTRN" } )
+	elseif rtrn_down == "act" then
+		menu_display = nil
+		mode_manager.switch('Demo2')
+	else
+		switch_box( { coordx = -125, coordy = 0, length = 250, text = "Start Chapter Over", boxColour = c_lightYellow, textColour = c_lightYellow, execute = nil, letter = "RTRN" } )
+	end
+	if q_down == true then
+		switch_box( { coordx = -125, coordy = -30, length = 250, text = "Quit to Main Menu", boxColour = colour_add(c_lightRed, c_lighten), textColour = c_lightRed, execute = nil, letter = "Q" } )
+	elseif q_down == "act" then
+		menu_display = nil
+		mode_manager.switch('MainMenu')
 	else
 		switch_box( { coordx = -125, coordy = -30, length = 250, text = "Quit to Main Menu", boxColour = c_lightRed, textColour = c_lightRed, execute = nil, letter = "Q" } )
 	end
@@ -662,18 +711,12 @@ end
 function escape_keyup(k)
     if k == "escape" then
 		if esc_down == true then
-			esc_menu = false
-			esc_down = false
-			keyup = normal_keyup
-			key = normal_key
+			esc_down = "act"
 		end
     elseif k == "return" then
-        rtrn_down = false
-		sound.play("NaughtyBeep")
-		errLog("This command currently has no code.", 10)
+        rtrn_down = "act"
     elseif k == "q" then
-        q_down = false
-		mode_manager.switch('MainMenu')
+        q_down = "act"
 	end
 end
 
@@ -790,9 +833,13 @@ function key ( k )
 		if release_build == false then
 			computerShip.life = 0
 		end
+	elseif k == "[" then
+		if release_build == false then
+			playerShip.life = 0
+		end
 	elseif k == "escape" then
 		if esc_menu == false then
-			esc_menu = true
+			menu_display = "esc_menu"
 			keyup = escape_keyup
 			key = escape_key
 		else

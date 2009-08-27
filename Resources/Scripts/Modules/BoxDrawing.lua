@@ -112,8 +112,8 @@ function draw_small_box(box)
 	graphics.draw_box(box.top - 5, box.right - 3, (box.top + box.bottom) / 2, box.right, 0, colour_add(box.boxColour, c_lighten))
 	graphics.draw_box((box.top + box.bottom) / 2 - 1, box.right - 3, box.bottom + 5, box.right, 0, colour_add(box.boxColour, c_darken))
 	if box.title ~= nil then
-		graphics.draw_text(box.title, "CrystalClear", "left", box.left + 10, box.top - 15, 18, c_black)
 		graphics.draw_box(box.top - 5, box.left + 4, box.top - 25, box.right - 4, 0, colour_add(box.boxColour, c_lighten2, c_lighten))
+		graphics.draw_text(box.title, "CrystalClear", "left", box.left + 10, box.top - 15, 18, c_black)
 	end
 	if box.subtitle ~= nil then
 		graphics.draw_text(box.subtitle, "CrystalClear", "left", box.left + 10, box.top - 35, 18, c_black)

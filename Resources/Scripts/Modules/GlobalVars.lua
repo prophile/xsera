@@ -12,6 +12,7 @@ cameraRatios = { 2, 1, 1/2, 1/4, 1/16 }
 cameraRatioNum = 2
 
 victory_timer = nil
+defeat_timer = 0
 
 --tempvars
 firepulse = false
