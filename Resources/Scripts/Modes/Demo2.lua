@@ -23,10 +23,13 @@ import('KeyboardControl')
 -- import('MouseHandle')
 
 key_press_f6 = false
+
 esc_menu = false
 esc_down = false
 rtrn_down = false
 q_down = false
+
+endGameData = nil
 
 --[[--------------------------------
 	--{{------------------------
@@ -90,7 +93,23 @@ function update ()
 	if victory_timer ~= nil then
 		victory_timer = victory_timer + dt
 		if victory_timer >= 2.0 then
-			mode_manager.switch("Credits")
+			key = nil
+			endGameData = {	{	{ true, c_clear, " " },
+								{ true, c_yellow, "YOU" },
+								{ true, c_yellow2, "PAR" } },
+							{	{ true, c_yellow, "TIME" },
+								{ true, c_clear, "YOU" },
+								{ true, c_clear, "1:00" } },
+							{	{ true, c_yellow2, "LOSSES" },
+								{ true, c_clear, "0" },
+								{ true, c_clear, "0" } },
+							{	{ true, c_yellow3, "KILLS" },
+								{ true, c_clear, "1" },
+								{ true, c_clear, "1" } },
+							{	{ true, c_yellow4, "SCORE" },
+								{ true, c_clear, "YOU" },
+								{ true, c_clear, "PAR" } } }
+			menu_display = "victory_menu"
 		end
 	end
 	
@@ -639,6 +658,8 @@ function render ()
 			drawDefeatMenu()
 		elseif menu_display == "info_menu" then
 			drawInfoMenu()
+		elseif menu_display == "victory_menu" then
+			drawVictoryMenu()
 		end
 	end
 -- Error Printing
@@ -702,6 +723,40 @@ function drawDefeatMenu()
 		mode_manager.switch('MainMenu')
 	else
 		switch_box( { coordx = -125, coordy = -50, length = 250, text = "Quit to Main Menu", boxColour = c_lightRed, textColour = c_lightRed, execute = nil, letter = "Q" } )
+	end
+end
+
+function drawVictoryMenu()
+	switch_box( { coordx = -125, coordy = 100, length = 290, text = " ", boxColour = c_yellow, textColour = c_yellow, execute = nil, letter = "Results", underbox = -100 } )
+	graphics.draw_text("You did it! Congratulations!", "CrystalClear", "left", -110, 90, 16)
+	switch_box( { top = 31, left = -75, bottom = -48, right = 115, boxColour = c_yellow, background = c_darkYellow } )
+	local startx = 113
+	local starty = 28
+	local xcheck = 1
+	local ycheck = 1
+	local xshift = 0
+	local xlength = 0
+	while endGameData[ycheck] ~= nil do
+		local xcheck = 1
+		while endGameData[ycheck][xcheck] ~= nil do
+			if endGameData[ycheck][xcheck][1] ~= false then
+				if xcheck == 1 then
+					xcoord = 117
+					xlength = 70
+				else
+					xcoord = 60 * (3 - xcheck) + 2
+					xlength = 60
+				end
+				if endGameData[ycheck][xcheck][2] ~= c_clear then
+					graphics.draw_box(starty - (ycheck - 1) * 15, startx - xcoord - xlength, starty - (ycheck) * 15, startx - xcoord, 0, endGameData[ycheck][xcheck][2])
+					graphics.draw_text(endGameData[ycheck][xcheck][3], "CrystalClear", "left", startx - xcoord - xlength + 2, starty - (ycheck - 1) * 15 - 6, 16)
+				else
+					graphics.draw_text(endGameData[ycheck][xcheck][3], "CrystalClear", "left", startx - xcoord - xlength + 2, starty - (ycheck - 1) * 15 - 6, 16)
+				end
+			end
+			xcheck = xcheck + 1
+		end
+		ycheck = ycheck + 1
 	end
 end
 

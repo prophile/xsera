@@ -294,7 +294,7 @@ function drawPanels()
 		if count <= resource_bars then
 			graphics.draw_box(154.5 - 4.5 * count, 384, 151 - 4.5 * count, 392, 0, c_lightYellow2)
 		else
-			graphics.draw_box(154.5 - 4.5 * count, 384, 151 - 4.5 * count, 392, 0, c_yellow2)
+			graphics.draw_box(154.5 - 4.5 * count, 384, 151 - 4.5 * count, 392, 0, c_yellow5)
 		end
 		count = count + 1
 	end
