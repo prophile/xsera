@@ -19,6 +19,7 @@ import('Panels')
 import('PopDownConsole')
 import('CaptainAI')
 import('BoxDrawing')
+import('KeyboardControl')
 -- import('MouseHandle')
 
 key_press_f6 = false
@@ -682,23 +683,92 @@ end
 
 function drawDefeatMenu()
 	switch_box( { top = 85, left = -140, bottom = -60, right = 140, boxColour = c_rust } )
-	graphics.draw_text("You lost your Heavy Cruiser and failed.", "CrystalClear", "left", -125, 60, 16)
-	graphics.draw_text("Start chapter over, or quit?", "CrystalClear", "left", -125, 30, 16)
+	graphics.draw_text("You lost your Heavy Cruiser and failed.", "CrystalClear", "left", -125, 26, 16)
+	graphics.draw_text("Start chapter over, or quit?", "CrystalClear", "left", -125, 10, 16)
 	if rtrn_down == true then
-		switch_box( { coordx = -125, coordy = 0, length = 250, text = "Start Chapter Over", boxColour = colour_add(c_lightYellow, c_lighten), textColour = c_lightYellow, execute = nil, letter = "RTRN" } )
+		switch_box( { coordx = -125, coordy = -20, length = 250, text = "Start Chapter Over", boxColour = colour_add(c_lightYellow, c_lighten), textColour = c_lightYellow, execute = nil, letter = "RTRN" } )
 	elseif rtrn_down == "act" then
 		menu_display = nil
 		mode_manager.switch('Demo2')
 	else
-		switch_box( { coordx = -125, coordy = 0, length = 250, text = "Start Chapter Over", boxColour = c_lightYellow, textColour = c_lightYellow, execute = nil, letter = "RTRN" } )
+		switch_box( { coordx = -125, coordy = -20, length = 250, text = "Start Chapter Over", boxColour = c_lightYellow, textColour = c_lightYellow, execute = nil, letter = "RTRN" } )
 	end
 	if q_down == true then
-		switch_box( { coordx = -125, coordy = -30, length = 250, text = "Quit to Main Menu", boxColour = colour_add(c_lightRed, c_lighten), textColour = c_lightRed, execute = nil, letter = "Q" } )
+		switch_box( { coordx = -125, coordy = -50, length = 250, text = "Quit to Main Menu", boxColour = colour_add(c_lightRed, c_lighten), textColour = c_lightRed, execute = nil, letter = "Q" } )
 	elseif q_down == "act" then
 		menu_display = nil
 		mode_manager.switch('MainMenu')
 	else
-		switch_box( { coordx = -125, coordy = -30, length = 250, text = "Quit to Main Menu", boxColour = c_lightRed, textColour = c_lightRed, execute = nil, letter = "Q" } )
+		switch_box( { coordx = -125, coordy = -50, length = 250, text = "Quit to Main Menu", boxColour = c_lightRed, textColour = c_lightRed, execute = nil, letter = "Q" } )
+	end
+	drawInfoMenu()
+end
+
+function drawInfoMenu()
+	switch_box( { top = 250, left = -260, bottom = -250, right = 280, boxColour = c_grey } )
+	if esc_down == true then
+		switch_box( { coordx = -255, coordy = -240, length = 530, text = "Done", boxColour = colour_add(c_grey, c_lighten), textColour = c_grey, execute = nil, letter = "ESC" } )
+	elseif esc_down == "act" then
+		keyup = normal_keyup
+		key = normal_key
+		esc_down = false
+		menu_display = nil
+	else
+		switch_box( { coordx = -255, coordy = -240, length = 530, text = "Done", boxColour = c_grey, textColour = c_grey, execute = nil, letter = "ESC" } )
+	end
+	local x = 245
+	local col_switch = true
+	while x - 15 >= -188 do
+		if col_switch == false then
+			col_switch = true
+			graphics.draw_box(x, -257, x - 15, 277, 0, c_red)
+		else
+			col_switch = false
+			graphics.draw_box(x, -257, x - 15, 277, 0, c_darkRed)
+		end
+		graphics.draw_box(x, -257, x - 15, -217, 0, c_pureRed)
+		graphics.draw_box(x, 5, x - 15, 45, 0, c_pureRed)
+--		local num = (x - 262) / -15
+		x = x - 15
+	end
+	local num = 1
+	local line_num = 1
+	while key_menu[num] ~= nil do
+		local subnum = 1
+		graphics.draw_box(line_num * -15 + 260, -257, line_num * -15 + 245, 277, 0, c_grey)
+		graphics.draw_text(key_menu[num][1], "CrystalClear", "left", -252, line_num * -15 + 253, 16)
+		line_num = line_num + 1
+		local xcoord = 0
+		local yshift = 0
+		local adjust = 0
+		local numBoxes = 1
+		while key_menu[num][numBoxes] ~= nil do
+			numBoxes = numBoxes + 1
+		end
+		local rows = math.ceil(numBoxes / 2)
+		while key_menu[num][subnum + 1] ~= nil do
+			if subnum % rows ~= subnum then
+				xcoord = 50
+				adjust = (rows - 1) * 15
+			else
+				adjust = 0
+				xcoord = -212
+			end
+			graphics.draw_text(key_menu[num][subnum + 1].name, "CrystalClear", "left", xcoord, line_num * -15 + 254 + adjust, 16)
+			if key_menu[num][subnum + 1].key_display == nil then
+				graphics.draw_text(key_menu[num][subnum + 1].key, "CrystalClear", "center", xcoord - 24, line_num * -15 + 254 + adjust, 16)
+			else
+				graphics.draw_text(key_menu[num][subnum + 1].key_display, "CrystalClear", "center", xcoord - 24, line_num * -15 + 254 + adjust, 16)
+			end
+			line_num = line_num + 1
+			subnum = subnum + 1
+		end
+		if numBoxes % 2 == 0 then
+			line_num = line_num - rows + 1
+		else
+			line_num = line_num - rows + 2
+		end
+		num = num + 1
 	end
 end
 

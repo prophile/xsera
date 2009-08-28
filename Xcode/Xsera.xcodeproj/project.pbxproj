@@ -270,6 +270,7 @@
 			buildSettings = {
 				ARCHS = "$(NATIVE_ARCH)";
 				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 0.0.2;
 				GCC_VERSION = "";
 				SDKROOT = macosx10.5;
 			};

@@ -7,6 +7,7 @@
 --RED
 c_lightRed = { r = 0.8, g = 0.4, b = 0.4, a = 1.0 }
 c_lightRed2 = { r = 0.7, g = 0.4, b = 0.4, a = 1.0 }
+c_darkRed = { r = 0.45, g = 0.0, b = 0.0, a = 1.0 }
 c_red = { r = 0.6, g = 0.15, b = 0.15, a = 1.0 }
 c_pureRed = { r = 1.0, b = 0.0, g = 0.0, a = 1.0 }
 c_pink = { r = 0.8, g = 0.5, b = 0.5, a = 1.0 }
