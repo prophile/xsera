@@ -688,8 +688,7 @@ function drawEscapeMenu()
 	if rtrn_down == true then
 		switch_box( { coordx = -125, coordy = 0, length = 250, text = "Start Chapter Over", boxColour = colour_add(c_lightYellow, c_lighten), textColour = c_lightYellow, execute = nil, letter = "RTRN" } )
 	elseif rtrn_down == "act" then
-		sound.play("NaughtyBeep")
-		errLog("This command currently has no code.", 10)
+		mode_manager.switch('Demo2')
 		rtrn_down = false
 	else
 		switch_box( { coordx = -125, coordy = 0, length = 250, text = "Start Chapter Over", boxColour = c_lightYellow, textColour = c_lightYellow, execute = nil, letter = "RTRN" } )
@@ -729,7 +728,7 @@ end
 function drawVictoryMenu()
 	switch_box( { coordx = -125, coordy = 100, length = 290, text = " ", boxColour = c_yellow, textColour = c_yellow, execute = nil, letter = "Results", underbox = -100 } )
 	graphics.draw_text("You did it! Congratulations!", "CrystalClear", "left", -110, 90, 16)
-	switch_box( { top = 31, left = -75, bottom = -48, right = 115, boxColour = c_yellow, background = c_darkYellow } )
+	switch_box( { top = 31, left = -75, bottom = -50, right = 115, boxColour = c_yellow, background = c_darkYellow } )
 	local startx = 113
 	local starty = 28
 	local xcheck = 1
@@ -741,14 +740,14 @@ function drawVictoryMenu()
 		while endGameData[ycheck][xcheck] ~= nil do
 			if endGameData[ycheck][xcheck][1] ~= false then
 				if xcheck == 1 then
-					xcoord = 117
-					xlength = 70
+					xcoord = 121
+					xlength = 64
 				else
-					xcoord = 60 * (3 - xcheck) + 2
+					xcoord = 60 * (3 - xcheck) + 1
 					xlength = 60
 				end
 				if endGameData[ycheck][xcheck][2] ~= c_clear then
-					graphics.draw_box(starty - (ycheck - 1) * 15, startx - xcoord - xlength, starty - (ycheck) * 15, startx - xcoord, 0, endGameData[ycheck][xcheck][2])
+					graphics.draw_box(starty - (ycheck - 1) * 15, startx - xcoord - xlength, starty - ycheck * 15, startx - xcoord, 0, endGameData[ycheck][xcheck][2])
 					graphics.draw_text(endGameData[ycheck][xcheck][3], "CrystalClear", "left", startx - xcoord - xlength + 2, starty - (ycheck - 1) * 15 - 6, 16)
 				else
 					graphics.draw_text(endGameData[ycheck][xcheck][3], "CrystalClear", "left", startx - xcoord - xlength + 2, starty - (ycheck - 1) * 15 - 6, 16)
