@@ -637,6 +637,8 @@ function render ()
 			drawEscapeMenu()
 		elseif menu_display == "defeat_menu" then
 			drawDefeatMenu()
+		elseif menu_display == "info_menu" then
+			drawInfoMenu()
 		end
 	end
 -- Error Printing
@@ -701,7 +703,6 @@ function drawDefeatMenu()
 	else
 		switch_box( { coordx = -125, coordy = -50, length = 250, text = "Quit to Main Menu", boxColour = c_lightRed, textColour = c_lightRed, execute = nil, letter = "Q" } )
 	end
-	drawInfoMenu()
 end
 
 function drawInfoMenu()
@@ -728,7 +729,6 @@ function drawInfoMenu()
 		end
 		graphics.draw_box(x, -257, x - 15, -217, 0, c_pureRed)
 		graphics.draw_box(x, 5, x - 15, 45, 0, c_pureRed)
---		local num = (x - 262) / -15
 		x = x - 15
 	end
 	local num = 1
@@ -908,13 +908,13 @@ function key ( k )
 			playerShip.life = 0
 		end
 	elseif k == "escape" then
-		if esc_menu == false then
-			menu_display = "esc_menu"
-			keyup = escape_keyup
-			key = escape_key
-		else
-			esc_down = true
-		end
+		menu_display = "esc_menu"
+		keyup = escape_keyup
+		key = escape_key
+	elseif k == "F1" then
+		menu_display = "info_menu"
+		keyup = escape_keyup
+		key = escape_key
 	elseif k == "F6" then
 		key_press_f6 = true
 	end
