@@ -728,6 +728,8 @@ function drawDefeatMenu()
 	end
 end
 
+stored_time = 0.0
+
 function drawVictoryMenu()
 	switch_box( { coordx = -125, coordy = 100, length = 290, text = " ", boxColour = c_yellow, textColour = c_yellow, execute = nil, letter = "Results", underbox = -100 } )
 	graphics.draw_text("You did it! Congratulations!", "CrystalClear", "left", -110, 90, 16)
@@ -755,25 +757,29 @@ function drawVictoryMenu()
 				else
 					graphics.draw_text(endGameData[ycheck][xcheck][3], "CrystalClear", "left", startx - xcoord - xlength + 2, starty - (ycheck - 1) * 15 - 6, 16)
 				end
-			elseif endGameData[ycheck][xcheck][1] == "inprogress" then
-				if position == nil then
-					position = 1
+			else
+				stored_time = stored_time + dt
+				if stored_time >= 0.07 then
+					stored_time = stored_time - 0.07
+					if endGameData[ycheck][xcheck][1] == "inprogress" then
+						if position == nil then
+							position = 1
+						end
+						if position == 1 then
+							graphics.draw_box(starty - (ycheck - 1) * 15, startx - xcoord - xlength / 2 - 5, starty - ycheck * 15, startx - xcoord - xlength / 2 + 5, 0, c_yellow)
+							position = 2
+						elseif position == 2 then
+							graphics.draw_box(starty - (ycheck - 1) * 15, startx - xcoord - 10, starty - ycheck * 15, startx - xcoord, 0, c_yellow)
+							endGameData[ycheck][xcheck][1] = true
+							position = nil
+						end
+						sound.play("ITeletype")
+					elseif endGameData[ycheck][xcheck][1] == false then
+						endGameData[ycheck][xcheck][1] = "inprogress"
+						sound.play("ITeletype")
+						graphics.draw_box(starty - (ycheck - 1) * 15, startx - xcoord - xlength, starty - ycheck * 15, startx - xcoord - xlength + 10, 0, c_yellow)
+					end
 				end
-				if position == 1 then
-					graphics.draw_box(starty - (ycheck - 1) * 15, startx - xcoord - xlength / 2 - 5, starty - ycheck * 15, startx - xcoord - xlength / 2 + 5, 0, c_yellow)
-					position = 2
-				elseif position == 2 then
-					graphics.draw_box(starty - (ycheck - 1) * 15, startx - xcoord - xlength - 10, starty - ycheck * 15, startx - xcoord - xlength, 0, c_yellow)
-					endGameData[ycheck][xcheck][1] = true
-					position = nil
-				end
-				ycheck = 5
-				xcheck = 4
-				sound.play("ITeletype")
-			elseif endGameData[ycheck][xcheck][1] == false then
-				endGameData[ycheck][xcheck][1] = "inprogress"
-				sound.play("ITeletype")
-				graphics.draw_box(starty - (ycheck - 1) * 15, startx - xcoord - xlength, starty - ycheck * 15, startx - xcoord - xlength + 10, 0, c_yellow)
 				ycheck = 5
 				xcheck = 4
 			end
