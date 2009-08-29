@@ -28,7 +28,7 @@ esc_menu = false
 esc_down = false
 rtrn_down = false
 q_down = false
-
+position = nil
 endGameData = nil
 
 --[[--------------------------------
@@ -56,6 +56,7 @@ cameraRatioOrig = nil
 cameraRatioT = cameraRatio
 
 function init ()
+	start_time = mode_manager.time()
 	sound.stop_music()
     lastTime = mode_manager.time()
     physics.open(0.6)
@@ -94,22 +95,24 @@ function update ()
 		victory_timer = victory_timer + dt
 		if victory_timer >= 2.0 then
 			key = nil
-			endGameData = {	{	{ true, c_clear, " " },
-								{ true, c_yellow, "YOU" },
-								{ true, c_yellow2, "PAR" } },
-							{	{ true, c_yellow, "TIME" },
-								{ true, c_clear, "YOU" },
-								{ true, c_clear, "1:00" } },
-							{	{ true, c_yellow2, "LOSSES" },
-								{ true, c_clear, "0" },
-								{ true, c_clear, "0" } },
-							{	{ true, c_yellow3, "KILLS" },
-								{ true, c_clear, "1" },
-								{ true, c_clear, "1" } },
-							{	{ true, c_yellow4, "SCORE" },
-								{ true, c_clear, "YOU" },
-								{ true, c_clear, "PAR" } } }
+			end_time = mode_manager.time()
+			endGameData = {	{	{ false, c_clear, " " },
+								{ false, c_yellow, "YOU" },
+								{ false, c_yellow2, "PAR" } },
+							{	{ false, c_yellow, "TIME" },
+								{ false, c_clear, (tostring(math.floor((end_time - start_time) / 60)) .. ":" .. tostring(math.floor((end_time - start_time) % 60)))},
+								{ false, c_clear, "1:00" } },
+							{	{ false, c_yellow2, "LOSSES" },
+								{ false, c_clear, "0" },
+								{ false, c_clear, "0" } },
+							{	{ false, c_yellow3, "KILLS" },
+								{ false, c_clear, "1" },
+								{ false, c_clear, "1" } },
+							{	{ false, c_yellow4, "SCORE" },
+								{ false, c_clear, "YOU" },
+								{ false, c_clear, "PAR" } } }
 			menu_display = "victory_menu"
+			victory_timer = nil
 		end
 	end
 	
@@ -738,20 +741,41 @@ function drawVictoryMenu()
 	while endGameData[ycheck] ~= nil do
 		local xcheck = 1
 		while endGameData[ycheck][xcheck] ~= nil do
-			if endGameData[ycheck][xcheck][1] ~= false then
-				if xcheck == 1 then
-					xcoord = 121
-					xlength = 64
-				else
-					xcoord = 60 * (3 - xcheck) + 1
-					xlength = 60
-				end
+			if xcheck == 1 then
+				xcoord = 121
+				xlength = 64
+			else
+				xcoord = 60 * (3 - xcheck) + 1
+				xlength = 60
+			end
+			if endGameData[ycheck][xcheck][1] == true then
 				if endGameData[ycheck][xcheck][2] ~= c_clear then
 					graphics.draw_box(starty - (ycheck - 1) * 15, startx - xcoord - xlength, starty - ycheck * 15, startx - xcoord, 0, endGameData[ycheck][xcheck][2])
 					graphics.draw_text(endGameData[ycheck][xcheck][3], "CrystalClear", "left", startx - xcoord - xlength + 2, starty - (ycheck - 1) * 15 - 6, 16)
 				else
 					graphics.draw_text(endGameData[ycheck][xcheck][3], "CrystalClear", "left", startx - xcoord - xlength + 2, starty - (ycheck - 1) * 15 - 6, 16)
 				end
+			elseif endGameData[ycheck][xcheck][1] == "inprogress" then
+				if position == nil then
+					position = 1
+				end
+				if position == 1 then
+					graphics.draw_box(starty - (ycheck - 1) * 15, startx - xcoord - xlength / 2 - 5, starty - ycheck * 15, startx - xcoord - xlength / 2 + 5, 0, c_yellow)
+					position = 2
+				elseif position == 2 then
+					graphics.draw_box(starty - (ycheck - 1) * 15, startx - xcoord - xlength - 10, starty - ycheck * 15, startx - xcoord - xlength, 0, c_yellow)
+					endGameData[ycheck][xcheck][1] = true
+					position = nil
+				end
+				ycheck = 5
+				xcheck = 4
+				sound.play("ITeletype")
+			elseif endGameData[ycheck][xcheck][1] == false then
+				endGameData[ycheck][xcheck][1] = "inprogress"
+				sound.play("ITeletype")
+				graphics.draw_box(starty - (ycheck - 1) * 15, startx - xcoord - xlength, starty - ycheck * 15, startx - xcoord - xlength + 10, 0, c_yellow)
+				ycheck = 5
+				xcheck = 4
 			end
 			xcheck = xcheck + 1
 		end
