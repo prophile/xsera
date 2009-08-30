@@ -560,7 +560,7 @@ unsigned starfieldNumber;
 
 void DrawStarfield ( float depth )
 {
-	if (starfields.size() >= starfieldNumber)
+	if (starfields.size() <= starfieldNumber)
 	{
 		starfields.push_back(new Starfield);
 	}
@@ -616,7 +616,7 @@ void BeginFrame ()
 	glClear(GL_COLOR_BUFFER_BIT);
 	Matrices::SetViewMatrix(matrix2x3::Identity());
 	Matrices::SetModelMatrix(matrix2x3::Identity());
-	starfieldNumber = 0;
+	starfieldNumber = 1;
 }
 
 void EndFrame ()
