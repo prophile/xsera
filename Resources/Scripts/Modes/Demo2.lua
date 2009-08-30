@@ -79,6 +79,12 @@ end
 	------------}}--
 --------------------]]--
 
+function tempkey(k)
+	if k ~= nil then
+		mode_manager.switch('Credits')
+	end
+end
+
 function update ()
 	local newTime = mode_manager.time()
 	dt = newTime - lastTime
@@ -91,13 +97,13 @@ function update ()
 	if victory_timer ~= nil then
 		victory_timer = victory_timer + dt
 		if victory_timer >= 2.0 then
-			key = nil
+			key = tempkey
 			end_time = mode_manager.time()
 			endGameData = {	{	{ false, c_clear, " " },
 								{ false, c_yellow, "YOU" },
 								{ false, c_yellow2, "PAR" } },
 							{	{ false, c_yellow, "TIME" },
-								{ false, c_clear, (tostring(math.floor((end_time - start_time) / 60)) .. ":" .. tostring(math.floor((end_time - start_time) % 60)))},
+								{ false, c_clear, (tostring(math.floor((end_time - start_time) / 60)) .. ":" .. tostring(string.format('%02d', math.floor((end_time - start_time) % 60))))},
 								{ false, c_clear, "1:00" } },
 							{	{ false, c_yellow2, "LOSSES" },
 								{ false, c_clear, "0" },
@@ -790,7 +796,9 @@ function key ( k )
 		end
 	elseif k == "z" then
 		if playerShip.special ~= nil then
-			playerShip.special.firing = true
+			if playerShip.special.ammo ~= 0 then
+				playerShip.special.firing = true
+			end
 		end
 	elseif k == "p" then
 		if release_build == false then
