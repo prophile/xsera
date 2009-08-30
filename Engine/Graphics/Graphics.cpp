@@ -560,7 +560,7 @@ unsigned starfieldNumber;
 
 void DrawStarfield ( float depth )
 {
-	if (starfields.size() <= starfieldNumber)
+	while (starfields.size() <= starfieldNumber)
 	{
 		starfields.push_back(new Starfield);
 	}
