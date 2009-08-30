@@ -43,7 +43,14 @@ function key ( k )
 end
 
 function render ()
+	local starfieldOffset = totalTime * 2.2
 	graphics.begin_frame()
+	graphics.set_camera(-320, -240 + starfieldOffset, 320, 240 + starfieldOffset)
+	graphics.draw_starfield(3.4)
+	graphics.draw_starfield(1.8)
+	graphics.draw_starfield(0.6)
+	graphics.draw_starfield(-0.3)
+	graphics.draw_starfield(-0.9)
 	graphics.set_camera(-320, -240, 320, 240)
 	for i, credit in pairs(credits) do
 		if credit ~= "" then

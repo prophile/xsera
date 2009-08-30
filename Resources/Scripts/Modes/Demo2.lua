@@ -481,6 +481,8 @@ function render ()
     graphics.begin_frame()
 	-- extract camera coordinates from here during update() and place finalized numbers here
 	graphics.set_camera(-playerShip.physicsObject.position.x + shipAdjust - (camera.w / 2.0), -playerShip.physicsObject.position.y - (camera.h / 2.0), -playerShip.physicsObject.position.x + shipAdjust + (camera.w / 2.0), -playerShip.physicsObject.position.y + (camera.h / 2.0))
+	graphics.draw_starfield(3.4)
+	graphics.draw_starfield(1.8)
 	graphics.draw_starfield(0.6)
 	graphics.draw_starfield(-0.3)
 	graphics.draw_starfield(-0.9)
