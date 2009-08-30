@@ -1,7 +1,7 @@
 import('Math')
 import('ColourHandle')
 
-release_build = false
+release_build = true
 
 cameraRatio = 1
 aspectRatio = 4 / 3
@@ -13,6 +13,9 @@ cameraRatioNum = 2
 
 victory_timer = nil
 defeat_timer = 0
+down = { esc = false, rtrn = false, q = false }
+
+endGameData = nil
 
 --tempvars
 firepulse = false
