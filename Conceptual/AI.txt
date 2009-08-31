@@ -1,0 +1,30 @@
+AI states for Xsera:
+
+  GOTO      -- go to a location, fend off enemies if necessary
+  PRIO_GOTO -- go to a location, ignore everything else
+  INTERCEPT -- head to intercept a specific craft
+  CHASE     -- chase after a specific craft
+  HIDE      -- get back towards a friendly fleet
+  COMBAT_NA -- fighting off another unit
+  COMBAT_A  -- fighting another unit very aggressively
+  HOLD      -- hold position in this area
+  ESCORT    -- stay near a ship, fending off enemies
+  IDLE      -- mulch around
+
+Each ship also has two values, from 0-1: importance and power. It will be escorted, best case, with MIN(0, 2(importance*(1-power))) power.
+
+Eg: transports are very important, but not particularly powerful. They might have im = 0.8 and pow = 0.02. This makes the escort power MIN(0, 2(0.8(1-0.02))) = 1.568. Fighters are a little more powerful, say pow = 0.15, but are very unimportant, im = 0.07. According to this, the transport would be escorted by about 10 fighters.
+
+Influence maps:
+
+  For each admiral, the dynamic five types of influence map are generated once every second:
+    * friendly importance
+    * friendly strength multiplied by health
+    * enemy importance
+    * enemy strength multiplied by health
+    * forecast enemy importance
+  summing up the different ship levels in any given area.
+  
+  These are combined with weights from a neural network once every second, with an input given from total ship strength, total enemy ship strength, total resources, and resource income rate. Every ten samples (6 a minute) is recorded, and fed back in every two minutes weighted by the ratio of ship strength multiplied by health to enemy ship strength multiplied by health.
+  
+  Once combined, a monte carlo method is applied, taking 30 random samples, and selecting the one with the highest weighting for where to send ships (exceptions: ones with "independent" AIs such as transports which will make their own way to places).
