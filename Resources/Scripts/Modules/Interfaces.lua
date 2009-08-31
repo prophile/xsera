@@ -202,11 +202,20 @@ end
 local time_elapsed = 0
 
 function drawPauseMenu(dt)
+	if down.o == true then
+		menu_display = nil
+		return
+	end
 	time_elapsed = time_elapsed + dt
-	if time_elapsed % 1.5 > 0.75 then
-		print("> CAPS LOCK - PAUSED <")
-		-- draw the wrapping box (a smallbox) and make background transparent
-		-- draw lines through smallbox
-		-- draw above printed text
+	if time_elapsed % 0.8 > 0.4 then
+		switch_box( { top = 20, left = -80, bottom = -20, right = 140, boxColour = c_green, background = c_clear } )
+		graphics.draw_line(-80, 15, 140, 15, 1, c_lightGreen)
+		graphics.draw_line(-80, 10, 140, 10, 1, c_lightGreen)
+		graphics.draw_line(-80, 5, 140, 5, 1, c_lightGreen)
+		graphics.draw_line(-80, 0, 140, 0, 1, c_lightGreen)
+		graphics.draw_line(-80, -5, 140, -5, 1, c_lightGreen)
+		graphics.draw_line(-80, -10, 140, -10, 1, c_lightGreen)
+		graphics.draw_line(-80, -15, 140, -15, 1, c_lightGreen)
+		graphics.draw_text("> CAPS LOCK - PAUSED <", "CrystalClear", "center", 30, 0, 23, c_green)
 	end
 end

@@ -660,7 +660,7 @@ function render ()
 		end
 	end--]]
 -- Menus
-	interface_display(menu_display, down)
+	interface_display(dt)
 -- Error Printing
 	if errNotice ~= nil then
 		graphics.draw_text(errNotice.text, "CrystalClear", "center", 0, -150, 28)
@@ -696,6 +696,8 @@ function escape_key(k)
         down.rtrn = true
     elseif k == "q" then
         down.q = true
+    elseif k == "o" then
+        down.o = true
 	end
 end
 
@@ -782,7 +784,7 @@ function key ( k )
 		if playerShip.warp.finished == true then
 			playerShip.warp.start.bool = true
 		end
-	elseif k == "o" then
+	elseif k == "`" then
 		if release_build == false then
 			consoleDraw = true
 		end
@@ -804,9 +806,15 @@ function key ( k )
 		if release_build == false then
 			computerShip.life = 0
 		end
+	elseif k == "o" then
+		if release_build == false then
+			menu_display = "pause_menu"
+		end
 	elseif k == "[" then
 		if release_build == false then
 			playerShip.life = 0
+			keyup = escape_keyup
+			key = escape_key
 		end
 	elseif k == "escape" then
 		menu_display = "esc_menu"
