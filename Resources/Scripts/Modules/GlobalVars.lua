@@ -1,7 +1,7 @@
 import('Math')
 import('ColourHandle')
 
-release_build = true
+release_build = false
 
 cameraRatio = 1
 aspectRatio = 4 / 3

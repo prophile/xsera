@@ -1,15 +1,8 @@
--- temp import - pushing to demo soon, I want to make sure interfaces gets all it needs
-import('PrintRecursive')
 import('GlobalVars')
 import('EntityLoad')
-import('Math')
-import('Panels')
-import('PopDownConsole')
-import('CaptainAI')
 import('BoxDrawing')
-import('KeyboardControl')
 
-function interface_display(menu_display, down)
+function interface_display(dt)
 	if menu_display ~= nil then
 		if menu_display == "esc_menu" then
 			drawEscapeMenu()
@@ -19,6 +12,8 @@ function interface_display(menu_display, down)
 			drawInfoMenu()
 		elseif menu_display == "victory_menu" then
 			drawVictoryMenu()
+		elseif menu_display == "pause_menu" then
+			drawPauseMenu(dt)
 		end
 	end
 end
@@ -39,7 +34,7 @@ function drawEscapeMenu()
 	if down.rtrn == true then
 		switch_box( { coordx = -125, coordy = 0, length = 250, text = "Start Chapter Over", boxColour = colour_add(c_lightYellow, c_lighten), textColour = c_lightYellow, execute = nil, letter = "RTRN" } )
 	elseif down.rtrn == "act" then
-		mode_manager.switch('Demo2')
+		mode_manager.switch('Demo3')
 		down.rtrn = false
 	else
 		switch_box( { coordx = -125, coordy = 0, length = 250, text = "Start Chapter Over", boxColour = c_lightYellow, textColour = c_lightYellow, execute = nil, letter = "RTRN" } )
@@ -62,7 +57,7 @@ function drawDefeatMenu()
 		switch_box( { coordx = -125, coordy = -20, length = 250, text = "Start Chapter Over", boxColour = colour_add(c_lightYellow, c_lighten), textColour = c_lightYellow, execute = nil, letter = "RTRN" } )
 	elseif down.rtrn == "act" then
 		menu_display = nil
-		mode_manager.switch('Demo2')
+		mode_manager.switch('Demo3')
 	else
 		switch_box( { coordx = -125, coordy = -20, length = 250, text = "Start Chapter Over", boxColour = c_lightYellow, textColour = c_lightYellow, execute = nil, letter = "RTRN" } )
 	end
@@ -201,5 +196,17 @@ function drawInfoMenu()
 			line_num = line_num - rows + 2
 		end
 		num = num + 1
+	end
+end
+
+local time_elapsed = 0
+
+function drawPauseMenu(dt)
+	time_elapsed = time_elapsed + dt
+	if time_elapsed % 1.5 > 0.75 then
+		print("> CAPS LOCK - PAUSED <")
+		-- draw the wrapping box (a smallbox) and make background transparent
+		-- draw lines through smallbox
+		-- draw above printed text
 	end
 end

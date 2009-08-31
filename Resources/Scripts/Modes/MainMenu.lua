@@ -87,7 +87,7 @@ function key ( k )
     elseif k == "p" then
         mode_manager.switch("fractalmonster")
     elseif k == "d" then
-        mode_manager.switch("Demo2")
+        mode_manager.switch("Demo3")
     elseif k == "x" then
 		if release_build == false then
 			mode_manager.switch("ConsoleDrawer")

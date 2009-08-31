@@ -15,12 +15,12 @@ background2 = { { coordx = -280, coordy = 175, length = 560, text = " ", boxColo
 				{ coordx = -100, coordy = -225, length = 170, text = "Next", boxColour = c_grey, textColour = c_grey, execute = nil, letter = "RGHT" },
 				{ coordx = 110, coordy = -225, length = 170, text = "Done", boxColour = c_lightGreen, textColour = c_lightGreen, execute = nil, letter = "RTRN" } }
 
-scenLevels = { { title = "DEMO 2", subtitle = "The Second Technical Demo", desc = "In this demo, you must destroy the Gaitori Carrier prior to taking over a nearby planet with an Ishiman Transport.", unlocked = true, mode = "Demo2" },
+scenLevels = { { title = "DEMO 2", subtitle = "The Second Technical Demo", desc = "In this demo, you must destroy the Gaitori Carrier prior to taking over a nearby planet with an Ishiman Transport.", unlocked = true, mode = "Demo3" },
 			{ title = "TUTORIAL LESSON 1", subtitle = "Moons for Goons", desc = "Learning the Ares interface", unlocked = true },
 			{ title = "CHAPTER 1", subtitle = "Easy Street", desc = "Destroy all 5 Gaitori Transports.", unlocked = true },
 			{ title = "CHAPTER 6", subtitle = "...Into the Fire", desc = "Capture the planet Hades Beta while destroying as many Gaitori power stations as possible and saving as many of the Obish stations as you can.", unlocked = true } }
 
--- scenBriefing is hardcoded to work only with Demo2, in the future it will load whatever scenario data that I need
+-- scenBriefing is hardcoded to work only with Demo3, in the future it will load whatever scenario data that I need
 scenBriefing = { planet = { x = 0, y = 0 },
 	screen = { { { sprite = "Ships/Ishiman/HeavyCruiser", x = 0, y = 0, size = 0.2 },
 				{ sprite = "Planets/Saturny", x = 2500, y = 2500, size = 0.3 },
