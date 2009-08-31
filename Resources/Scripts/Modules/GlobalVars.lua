@@ -13,6 +13,9 @@ cameraRatioNum = 2
 
 victory_timer = nil
 defeat_timer = 0
+down = { esc = false, rtrn = false, q = false, o = false }
+
+endGameData = nil
 
 --tempvars
 firepulse = false

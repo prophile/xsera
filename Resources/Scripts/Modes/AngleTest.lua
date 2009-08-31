@@ -3,11 +3,12 @@ angle = 0.0
 doRotation = true
 
 musics = {"FRED", "Yesterday", "Doomtroopers", "Technobee", "Targetron"}
+local szx, szy = graphics.sprite_dimensions("Ships/Cantharan/Schooner")
 
 function init ()
---	sound.play_music(musics[math.random(1, #musics)])
-	sound.play_music("FRED")
+	sound.play_music(musics[math.random(1, #musics)])
 	oldTime = mode_manager.time()
+	graphics.set_camera(-320, -240, 320, 240)
 end
 
 function key ( k )
@@ -24,9 +25,7 @@ function key ( k )
 end
 
 function render ()
-    local szx, szy = graphics.sprite_dimensions("Ships/Cantharan/Schooner")
 	graphics.begin_frame()
-	graphics.set_camera(-320, -240, 320, 240)
 	graphics.draw_sprite("Ships/Cantharan/Schooner", 0, 0, szx * 2.2, szy * 2.2, angle)
 	graphics.draw_text(string.format("Angle: %.3f", angle), "CrystalClear", "left", -200, -200, 30)
 	graphics.end_frame()
