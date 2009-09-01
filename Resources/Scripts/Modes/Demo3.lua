@@ -15,12 +15,11 @@ import('PrintRecursive')
 import('GlobalVars')
 import('EntityLoad')
 import('Math')
-import('Panels')
+import('Interfaces')
 import('PopDownConsole')
 import('CaptainAI')
 import('BoxDrawing')
 import('KeyboardControl')
-import('Interfaces')
 -- import('MouseHandle')
 
 key_press_f6 = false

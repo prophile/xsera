@@ -54,14 +54,14 @@ c_darkPurple = { r = 0.3, g = 0.0, b = 0.2, a = 1.0 }
 c_teal = { r = 0.15, g = 0.55, b = 0.55, a = 1.0 }
 
 --OTHER
-c_grey = { r = 0.7, g = 0.7, b = 0.7, a = 1.0 }
-c_clear = { r = 0.0, g = 0.0, b = 0.0, a = 0.0 }
 c_black = { r = 0.0, g = 0.0, b = 0.0, a = 1.0 }
 c_white = { r = 1.0, g = 1.0, b = 1.0, a = 1.0 }
-CGREY = { r = 0.6, b = 0.65, g = 0.55, a = 1.0 }
-CGREYBROWN = { r = 0.7, b = 0.7, g = 0.7, a = 1.0 }
+c_grey = { r = 0.6, b = 0.65, g = 0.55, a = 1.0 }
+c_grey_brown = { r = 0.7, b = 0.7, g = 0.7, a = 1.0 }
 
 --NON-COLOUR
+c_clear = { r = 0.0, g = 0.0, b = 0.0, a = 0.0 }
+c_half_clear = { r = 0.0, g = 0.0, b = 0.0, a = 0.5 }
 c_darken = { r = -0.1, g = -0.1, b = -0.1, a = 1.0 }
 c_darken2 = { r = -0.2, g = -0.2, b = -0.2, a = 1.0 }
 c_lighten = { r = 0.1, g = 0.1, b = 0.1, a = 1.0 }
