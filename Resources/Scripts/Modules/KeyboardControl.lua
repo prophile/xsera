@@ -113,11 +113,33 @@ function do_transfer_control()
 end
 
 function do_zoom_1_1()
-	errLog("The command does not have any code. /placeholder", 9)
+	if cameraRatioNum ~= 2 then
+		cameraChanging = true
+		cameraRatioOrig = cameraRatio
+		if cameraRatio > 1 then
+			cameraIncreasing = true
+		else
+			cameraIncreasing = false
+		end
+		x = timeInterval
+		cameraRatioNum = 2
+		multiplier = (cameraRatios[cameraRatioNum] - cameraRatio) / cameraRatio
+	end
 end
 
 function do_zoom_1_2()
-	errLog("The command does not have any code. /placeholder", 9)
+	if cameraRatioNum ~= 3 then
+		cameraChanging = true
+		cameraRatioOrig = cameraRatio
+		if cameraRatio > 0.5 then
+			cameraIncreasing = true
+		else
+			cameraIncreasing = false
+		end
+		x = timeInterval
+		cameraRatioNum = 3
+		multiplier = (cameraRatios[cameraRatioNum] - cameraRatio) / cameraRatio
+	end
 end
 
 function do_zoom_1_4()

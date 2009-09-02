@@ -15,9 +15,48 @@ target = nil
 menu_shift = -391
 top_of_menu = -69
 menu_stride = -11
-menu_level = menu_options
 ship_selected = false
 menu_shipyard = { "BUILD", {} }
+
+function make_ship()
+	shipBuilding = { p = shipQuerying.p, n = shipQuerying.n, r = shipQuerying.r, c = shipQuerying.c, t = shipQuerying.t }
+	if shipBuilding.c > cash or scen.planet.buildqueue.percent ~= 100 then
+		sound.play("NaughtyBeep")
+		return
+	end
+	scen.planet.buildqueue.factor = shipBuilding.t
+	scen.planet.buildqueue.time = mode_manager.time()
+	scen.planet.buildqueue.current = mode_manager.time() - scen.planet.buildqueue.time
+	cash = cash - shipBuilding.c
+	build_timer_running = true
+end
+
+function shipyard()
+	menu_level = menu_shipyard
+	local num = 1
+	while scen.planet.build[num] ~= nil do
+		menu_shipyard[num + 1] = {}
+		menu_shipyard[num + 1][1] = scen.planet.build[num]:gsub("(%w+)/(%w+)", "%2")
+		if num ~= 1 then
+			menu_shipyard[num + 1][2] = false
+		else
+			menu_shipyard[num + 1][2] = true
+			ship_selected = true
+			shipQuerying.p = scen.planet
+			shipQuerying.n = scen.planet.build[num]:gsub("(%w+)/(%w+)", "%2")
+			shipQuerying.r = scen.planet.build[num]:gsub("(%w+)/(%w+)", "%1")
+			shipQuerying.c = scen.planet.buildCost[num]
+			shipQuerying.t = scen.planet.buildTime[num]
+		end
+		menu_shipyard[num + 1][3] = make_ship
+		menu_shipyard[num + 1][4] = {}
+		menu_shipyard[num + 1][4][1] = scen.planet
+		menu_shipyard[num + 1][4][2] = scen.planet.build[num]:gsub("(%w+)/(%w+)", "%2")
+		menu_shipyard[num + 1][4][3] = scen.planet.build[num]:gsub("(%w+)/(%w+)", "%1")
+		num = num + 1
+	end
+	ship_selected = true
+end
 
 menu_special = { "SPECIAL ORDERS",
 	{ "Transfer Control", true, transfer_control },
@@ -28,11 +67,24 @@ menu_special = { "SPECIAL ORDERS",
 	{ "Fire Special", false, fire_special }
 }
 
+function special()
+	menu_level = menu_special
+end
+
 menu_messages = { "MESSAGES",
 	{ "Next Page/Clear", true, next_page_clear },
 	{ "Previous Page", false, previous_page },
 	{ "Last Message", false, last_message }
 }
+
+function messages()
+	menu_level = menu_messages
+end
+
+function mission_status()
+	menu_level = { "BRIEFING",
+		{ scen.briefing, false } }
+end
 
 menu_options = { "MAIN MENU",
 	{ "<Build>", true, shipyard },
@@ -40,6 +92,7 @@ menu_options = { "MAIN MENU",
 	{ "<Messages>", false, messages },
 	{ "<Mission Status>", false, mission_status }
 }
+menu_level = menu_options
 
 function interface_display(dt)
 	if menu_display ~= nil then
@@ -252,7 +305,7 @@ function drawPauseMenu(dt)
 	end
 end
 
-
+menu_level = menu_options
 
 function drawPanels()
 	graphics.set_camera(-400, -300, 400, 300)
@@ -280,12 +333,12 @@ function drawPanels()
 			local drawBlue = math.ceil((shipQuerying.c) / 200) + drawGreen
 		--	print(count, "=>", drawGreen, "-[", ((cash - shipQuerying.c) / 200), "]-")
 			while count <= drawGreen do
-				graphics.draw_box(152 - 3.15 * count, 394, 150 - 3.15 * count, 397, 0, c_green4)
+				graphics.draw_box(152 - 3.15 * count, 394, 150 - 3.15 * count, 397, 0, clut_colour(12, 3))
 				count = count + 1
 			end
 		--	print(count, drawGreen, drawBlue)
 			while count <= drawBlue do
-				graphics.draw_box(152 - 3.15 * count, 394, 150 - 3.15 * count, 397, 0, c_lightBlue2)
+				graphics.draw_box(152 - 3.15 * count, 394, 150 - 3.15 * count, 397, 0, clut_colour(14, 5))
 				count = count + 1
 			end
 		--	print(count, drawBlue)
@@ -294,12 +347,12 @@ function drawPanels()
 			local drawRed = math.ceil(shipQuerying.c / 200)
 		--	print(count, "=>", drawGreen, "-[", (cash / 200), "]-")
 			while count <= drawGreen do
-				graphics.draw_box(152 - 3.15 * count, 394, 150 - 3.15 * count, 397, 0, c_green4)
+				graphics.draw_box(152 - 3.15 * count, 394, 150 - 3.15 * count, 397, 0, clut_colour(12, 3))
 				count = count + 1
 			end
 		--	print(count, drawGreen, drawRed)
 			while count <= drawRed do
-				graphics.draw_box(152 - 3.15 * count, 394, 150 - 3.15 * count, 397, 0, c_lightRed2)
+				graphics.draw_box(152 - 3.15 * count, 394, 150 - 3.15 * count, 397, 0, clut_colour(2, 9))
 				count = count + 1
 			end
 		--	print(count, drawRed)
@@ -307,9 +360,9 @@ function drawPanels()
 	end
 	while count <= 100 do
 		if count > resources then
-			graphics.draw_box(152 - 3.15 * count, 394, 150 - 3.15 * count, 397, 0, c_green2)
+			graphics.draw_box(152 - 3.15 * count, 394, 150 - 3.15 * count, 397, 0, clut_colour(12, 14))
 		else
-			graphics.draw_box(152 - 3.15 * count, 394, 150 - 3.15 * count, 397, 0, c_green4)
+			graphics.draw_box(152 - 3.15 * count, 394, 150 - 3.15 * count, 397, 0, clut_colour(12, 3))
 		end
 		count = count + 1
 	end
@@ -317,9 +370,9 @@ function drawPanels()
 	count = 1
 	while count <= 7 do
 		if count <= resource_bars then
-			graphics.draw_box(154.5 - 4.5 * count, 384, 151 - 4.5 * count, 392, 0, c_lightYellow2)
+			graphics.draw_box(154.5 - 4.5 * count, 384, 151 - 4.5 * count, 392, 0, clut_colour(3, 3))
 		else
-			graphics.draw_box(154.5 - 4.5 * count, 384, 151 - 4.5 * count, 392, 0, c_yellow5)
+			graphics.draw_box(154.5 - 4.5 * count, 384, 151 - 4.5 * count, 392, 0, clut_colour(9, 13))
 		end
 		count = count + 1
 	end
@@ -432,45 +485,6 @@ function drawPanels()
 		graphics.draw_text("Go Back", "CrystalClear", "left", -354, -180, 13, c_blue)
 	end
 end
-function make_ship()
-	shipBuilding = { p = shipQuerying.p, n = shipQuerying.n, r = shipQuerying.r, c = shipQuerying.c, t = shipQuerying.t }
-	if shipBuilding.c > cash or scen.planet.buildqueue.percent ~= 100 then
-		sound.play("NaughtyBeep")
-		return
-	end
-	scen.planet.buildqueue.factor = shipBuilding.t
-	scen.planet.buildqueue.time = mode_manager.time()
-	scen.planet.buildqueue.current = mode_manager.time() - scen.planet.buildqueue.time
-	cash = cash - shipBuilding.c
-	build_timer_running = true
-end
-
-function shipyard()
-	menu_level = menu_shipyard
-	local num = 1
-	while scen.planet.build[num] ~= nil do
-		menu_shipyard[num + 1] = {}
-		menu_shipyard[num + 1][1] = scen.planet.build[num]:gsub("(%w+)/(%w+)", "%2")
-		if num ~= 1 then
-			menu_shipyard[num + 1][2] = false
-		else
-			menu_shipyard[num + 1][2] = true
-			ship_selected = true
-			shipQuerying.p = scen.planet
-			shipQuerying.n = scen.planet.build[num]:gsub("(%w+)/(%w+)", "%2")
-			shipQuerying.r = scen.planet.build[num]:gsub("(%w+)/(%w+)", "%1")
-			shipQuerying.c = scen.planet.buildCost[num]
-			shipQuerying.t = scen.planet.buildTime[num]
-		end
-		menu_shipyard[num + 1][3] = make_ship
-		menu_shipyard[num + 1][4] = {}
-		menu_shipyard[num + 1][4][1] = scen.planet
-		menu_shipyard[num + 1][4][2] = scen.planet.build[num]:gsub("(%w+)/(%w+)", "%2")
-		menu_shipyard[num + 1][4][3] = scen.planet.build[num]:gsub("(%w+)/(%w+)", "%1")
-		num = num + 1
-	end
-	ship_selected = true
-end
 
 -- Special Orders
 
@@ -546,27 +560,6 @@ function last_message()
 		text_being_drawn = true
 	end
 	--]]
-end
-
------------------------------
----------------------------------
--------------------------------------
----------------------------------
------------------------------
-
-menu_level = menu_options
-
-function special()
-	menu_level = menu_special
-end
-
-function messages()
-	menu_level = menu_messages
-end
-
-function mission_status()
-	menu_level = { "BRIEFING",
-		{ scen.briefing, false } }
 end
 
 function change_menu(menu, direction)

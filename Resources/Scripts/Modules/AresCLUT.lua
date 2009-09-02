@@ -24,10 +24,22 @@ clut = { { r = 1.0, g = 1.0, b = 1.0, a = 1.0 }, -- white
 		{ r = 1.0, g = 1.0, b = 0.8 }, -- peach
 		{ r = 1.0, g = 0.0, b = 0.0 } } -- red
 
-modifier = { 1.0, 0.941, 0.878, 0.816, 0.753, 0.690, 0.627, 0.565, 0.502, 0.439, 0.376, 0.251, 0.188, 0.125, 0.063 }
+modifier = { 1.0, 0.941, 0.878, 0.816, 0.753, 0.690, 0.627, 0.565, 0.502, 0.439, 0.376, 0.251, 0.188, 0.125, 0.063, 0.031, 0.0 }
 
 function clut_colour(clutnum, modnum)
-	return { r = clut[clutnum].r * modifier.modnum, g = clut[clutnum].g * modifier.modnum, b = clut[clutnum].b * modifier.modnum, a = 1.0 }
+	return { r = clut[clutnum].r * modifier[modnum], g = clut[clutnum].g * modifier[modnum], b = clut[clutnum].b * modifier[modnum], a = 1.0 }
+end
+
+function display_clut()
+	local i = 1
+	while clut[i] ~= nil do
+		local j = 1
+		while modifier[j] ~= nil do
+			graphics.draw_box(i * -10 + 150, j * 10 + 10, i * -10 + 160, j * 10, 0, clut_colour(i, j))
+			j = j + 1
+		end
+		i = i + 1
+	end
 end
 
 -- OTHER VALUES

@@ -664,6 +664,9 @@ function render ()
 			errNotice = nil
 		end
 	end
+	if tab_down == true then
+		display_clut()
+	end
 	graphics.end_frame()
 end
 
@@ -695,15 +698,16 @@ function keyup ( k )
 			playerShip.special.firing = false
 		end
     elseif k == "tab" then
-		playerShip.warp.start.bool = false
-		playerShip.warp.start.time = nil
-		playerShip.warp.start.engine = false
-		playerShip.warp.start.isStarted = false
-		playerShip.warp.soundNum = 0.0
-		if playerShip.warp.warping == true then
-			playerShip.warp.warping = false
-			playerShip.warp.endTime = mode_manager.time()
-		end
+		tab_down = false
+	--	playerShip.warp.start.bool = false
+	--	playerShip.warp.start.time = nil
+	--	playerShip.warp.start.engine = false
+	--	playerShip.warp.start.isStarted = false
+	--	playerShip.warp.soundNum = 0.0
+	--	if playerShip.warp.warping == true then
+	--		playerShip.warp.warping = false
+	--		playerShip.warp.endTime = mode_manager.time()
+	--	end
 	elseif k == "F6" then
 		keyboard[4][7].active = false
 	end
@@ -753,9 +757,10 @@ function key ( k )
 	elseif k == "l" then
 		change_menu(menu_level, "l")
 	elseif k == "tab" then
-		if playerShip.warp.finished == true then
-			playerShip.warp.start.bool = true
-		end
+		tab_down = true
+	--	if playerShip.warp.finished == true then
+	--		playerShip.warp.start.bool = true
+	--	end
 	elseif k == "`" then
 		if release_build == false then
 			consoleDraw = true
