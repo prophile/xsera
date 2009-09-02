@@ -22,8 +22,6 @@ import('BoxDrawing')
 import('KeyboardControl')
 -- import('MouseHandle')
 
-key_press_f6 = false
-
 position = nil
 endGameData = nil
 
@@ -47,7 +45,6 @@ end
 mouse_movement = false
 mousePos = { x = 0, y = 0 }
 mouseStart = 0
-timeInterval = 1
 cameraRatioOrig = nil
 cameraRatioT = cameraRatio
 
@@ -194,13 +191,13 @@ function update ()
 	Movement
 ------------------]]--
 	
-    if keyControls.left then
+    if keyboard[1][4].active == true then
 		if key_press_f6 ~= true then
 			playerShip.physicsObject.angular_velocity = playerShip.turningRate
 		else
 			playerShip.physicsObject.angular_velocity = playerShip.turningRate / 10
 		end
-    elseif keyControls.right then
+    elseif keyboard[1][5].active == true then
 		if key_press_f6 ~= true then
 			playerShip.physicsObject.angular_velocity = -playerShip.turningRate
 		else
@@ -210,13 +207,13 @@ function update ()
         playerShip.physicsObject.angular_velocity = 0
     end
 	
-	if keyControls.forward then
+	if keyboard[1][2].active == true then
         -- apply a forward force in the direction the ship is facing
         local angle = playerShip.physicsObject.angle
         local thrust = playerShip.thrust
         local force = { x = thrust * math.cos(angle), y = thrust * math.sin(angle) }
 		playerShip.physicsObject:apply_force(force)
-	elseif keyControls.brake then
+	elseif keyboard[1][3].active == true then
         -- apply a reverse force in the direction opposite the direction the ship is MOVING
         local force = playerShip.physicsObject.velocity
 		if force.x ~= 0 or force.y ~= 0 then
@@ -355,7 +352,7 @@ function update ()
 		end
 	end
 	if menu_display == nil then
-		if key_press_f6 ~= true then
+		if keyboard[4][7].active == false then
 			physics.update(dt)
 		else
 			physics.update(dt * 30)
@@ -678,13 +675,13 @@ end
 
 function keyup ( k )
     if k == "w" then
-        keyControls.forward = false
+        keyboard[1][2].active = false
     elseif k == "s" then
-        keyControls.brake = false
+        keyboard[1][3].active = false
     elseif k == "a" then
-        keyControls.left = false
+        keyboard[1][4].active = false
     elseif k == "d" then
-        keyControls.right = false
+        keyboard[1][5].active = false
 	elseif k == " " then
 		if playerShip.beam ~= nil then
 			playerShip.beam.firing = false
@@ -708,7 +705,7 @@ function keyup ( k )
 			playerShip.warp.endTime = mode_manager.time()
 		end
 	elseif k == "F6" then
-		key_press_f6 = false
+		keyboard[4][7].active = false
 	end
 end
 
@@ -716,13 +713,13 @@ normal_keyup = keyup
 
 function key ( k )
     if k == "w" then
-        keyControls.forward = true
+        keyboard[1][2].active = true
     elseif k == "s" then
-        keyControls.brake = true
+        keyboard[1][3].active = true
     elseif k == "a" then
-        keyControls.left = true
+        keyboard[1][4].active = true
     elseif k == "d" then
-        keyControls.right = true
+        keyboard[1][5].active = true
 	elseif k == "r" then
 		showVelocity = true
 	elseif k == "t" then
@@ -796,9 +793,9 @@ function key ( k )
 		keyup = escape_keyup
 		key = escape_key
 	elseif k == "F1" then
-		key_activated("F1")
+		key_activate("F1")
 	elseif k == "F6" then
-		key_press_f6 = true
+		key_activate("F6")
 	end
 end
 

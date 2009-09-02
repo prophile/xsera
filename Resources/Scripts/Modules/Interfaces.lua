@@ -199,20 +199,20 @@ function drawInfoMenu()
 	end
 	local num = 1
 	local line_num = 1
-	while key_menu[num] ~= nil do
+	while keyboard[num] ~= nil do
 		local subnum = 1
 		graphics.draw_box(line_num * -15 + 260, -257, line_num * -15 + 245, 277, 0, c_grey)
-		graphics.draw_text(key_menu[num][1], "CrystalClear", "left", -252, line_num * -15 + 253, 16)
+		graphics.draw_text(keyboard[num][1], "CrystalClear", "left", -252, line_num * -15 + 253, 16)
 		line_num = line_num + 1
 		local xcoord = 0
 		local yshift = 0
 		local adjust = 0
 		local numBoxes = 1
-		while key_menu[num][numBoxes] ~= nil do
+		while keyboard[num][numBoxes] ~= nil do
 			numBoxes = numBoxes + 1
 		end
 		local rows = math.ceil(numBoxes / 2)
-		while key_menu[num][subnum + 1] ~= nil do
+		while keyboard[num][subnum + 1] ~= nil do
 			if subnum % rows ~= subnum then
 				xcoord = 50
 				adjust = (rows - 1) * 15
@@ -220,11 +220,11 @@ function drawInfoMenu()
 				adjust = 0
 				xcoord = -212
 			end
-			graphics.draw_text(key_menu[num][subnum + 1].name, "CrystalClear", "left", xcoord, line_num * -15 + 254 + adjust, 16)
-			if key_menu[num][subnum + 1].key_display == nil then
-				graphics.draw_text(key_menu[num][subnum + 1].key, "CrystalClear", "center", xcoord - 24, line_num * -15 + 254 + adjust, 16)
+			graphics.draw_text(keyboard[num][subnum + 1].name, "CrystalClear", "left", xcoord, line_num * -15 + 254 + adjust, 16)
+			if keyboard[num][subnum + 1].key_display == nil then
+				graphics.draw_text(keyboard[num][subnum + 1].key, "CrystalClear", "center", xcoord - 24, line_num * -15 + 254 + adjust, 16)
 			else
-				graphics.draw_text(key_menu[num][subnum + 1].key_display, "CrystalClear", "center", xcoord - 24, line_num * -15 + 254 + adjust, 16)
+				graphics.draw_text(keyboard[num][subnum + 1].key_display, "CrystalClear", "center", xcoord - 24, line_num * -15 + 254 + adjust, 16)
 			end
 			line_num = line_num + 1
 			subnum = subnum + 1

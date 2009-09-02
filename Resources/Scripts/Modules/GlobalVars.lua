@@ -1,5 +1,5 @@
 import('Math')
-import('ColourHandle')
+import('AresCLUT')
 
 release_build = false
 
@@ -10,6 +10,7 @@ camera.h = camera.w / aspectRatio
 shipAdjust = .045 * camera.w
 cameraRatios = { 2, 1, 1/2, 1/4, 1/16 }
 cameraRatioNum = 2
+timeInterval = 1
 
 victory_timer = nil
 defeat_timer = 0

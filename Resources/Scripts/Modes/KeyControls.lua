@@ -13,7 +13,7 @@ background = {	{ top = 170, left = -280, bottom = -60, right = 280, boxColour = 
 				{ coordx = 177, coordy = 170, length = 87, text = "nodraw", boxColour = c_teal, textColour = c_teal, execute = nil, letter = "HotKeys" },
 				{ coordx = 180, coordy = -205, length = 100, text = "nodraw", boxColour = c_lightGreen, textColour = c_purple, execute = nil, letter = "DONE" } }
 
-key_menu_num = 1
+keyboard_num = 1
 
 function init()
 	sound.stop_music()
@@ -42,7 +42,7 @@ function render()
 		num = num + 1
 	end
 	numBoxes = 1
-	while key_menu[key_menu_num][numBoxes] ~= nil do
+	while keyboard[keyboard_num][numBoxes] ~= nil do
 		numBoxes = numBoxes + 1
 	end
 	rows = math.ceil(numBoxes / 2)
@@ -50,7 +50,7 @@ function render()
 	local xcoord = 0
 	local yshift = 0
 	local adjust = 0
-	while key_menu[key_menu_num][num + 1] ~= nil do
+	while keyboard[keyboard_num][num + 1] ~= nil do
 		if num % rows ~= num then
 			xcoord = 5
 			adjust = rows - 1
@@ -63,7 +63,7 @@ function render()
 		else
 			yshift = 9
 		end
-		switch_box( { coordx = xcoord, coordy = (math.ceil(numBoxes / 4) - (num - 1 - adjust)) * 36 + yshift, length = 245, text = key_menu[key_menu_num][num + 1].name, boxColour = c_teal, textColour = c_teal, execute = nil, letter = key_menu[key_menu_num][num + 1].key } )
+		switch_box( { coordx = xcoord, coordy = (math.ceil(numBoxes / 4) - (num - 1 - adjust)) * 36 + yshift, length = 245, text = keyboard[keyboard_num][num + 1].name, boxColour = c_teal, textColour = c_teal, execute = nil, letter = keyboard[keyboard_num][num + 1].key } )
 		num = num + 1
 	end
 	-- Error Printing
@@ -95,16 +95,16 @@ end
 function key(k)
 -- no key presses until I can assign them to values
 	if k == "j" then
-		if key_menu_num ~= 1 then
-			change_box_colour(background, key_menu[key_menu_num][1], c_darken2)
-			key_menu_num = key_menu_num - 1
-			change_box_colour(background, key_menu[key_menu_num][1], c_lighten2)
+		if keyboard_num ~= 1 then
+			change_box_colour(background, keyboard[keyboard_num][1], c_darken2)
+			keyboard_num = keyboard_num - 1
+			change_box_colour(background, keyboard[keyboard_num][1], c_lighten2)
 		end
 	elseif k == "l" then
-		if key_menu[key_menu_num] ~= nil then
-			change_box_colour(background, key_menu[key_menu_num][1], c_darken2)
-			key_menu_num = key_menu_num + 1
-			change_box_colour(background, key_menu[key_menu_num][1], c_lighten2)
+		if keyboard[keyboard_num] ~= nil then
+			change_box_colour(background, keyboard[keyboard_num][1], c_darken2)
+			keyboard_num = keyboard_num + 1
+			change_box_colour(background, keyboard[keyboard_num][1], c_lighten2)
 		end
 	end
 end
