@@ -676,30 +676,6 @@ end
 	----------------}}--
 ------------------------]]--
 
-function escape_keyup(k)
-    if k == "escape" then
-		if down.esc == true then
-			down.esc = "act"
-		end
-    elseif k == "return" then
-        down.rtrn = "act"
-    elseif k == "q" then
-        down.q = "act"
-	end
-end
-
-function escape_key(k)
-    if k == "escape" then
-		down.esc = true
-    elseif k == "return" then
-        down.rtrn = true
-    elseif k == "q" then
-        down.q = true
-    elseif k == "o" then
-        down.o = true
-	end
-end
-
 function keyup ( k )
     if k == "w" then
         keyControls.forward = false
@@ -820,9 +796,7 @@ function key ( k )
 		keyup = escape_keyup
 		key = escape_key
 	elseif k == "F1" then
-		menu_display = "info_menu"
-		keyup = escape_keyup
-		key = escape_key
+		key_activated("F1")
 	elseif k == "F6" then
 		key_press_f6 = true
 	end
