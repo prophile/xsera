@@ -1,4 +1,5 @@
 import('GlobalVars')
+import('Interfaces')
 
 --[[-----------------------
 	--{{---------------
@@ -41,19 +42,58 @@ end
 	--------]]--
 
 function do_fire_weap_1()
-	errLog("The command does not have any code. /placeholder", 9)
+	if playerShip.beam ~= nil then
+		playerShip.beam.firing = true
+	end
+end
+
+function stop_fire_weap_1()
+	if playerShip.beam ~= nil then
+		playerShip.beam.firing = false
+	end
 end
 
 function do_fire_weap_2()
-	errLog("The command does not have any code. /placeholder", 9)
+	if playerShip.pulse ~= nil then
+		playerShip.pulse.firing = true
+	end
+end
+
+function stop_fire_weap_2()
+	if playerShip.pulse ~= nil then
+		playerShip.pulse.firing = false
+	end
 end
 
 function do_fire_weap_special()
-	errLog("The command does not have any code. /placeholder", 9)
+	if playerShip.special ~= nil then
+		playerShip.special.firing = true
+	end
 end
 
+function stop_fire_weap_special()
+	if playerShip.special ~= nil then
+		playerShip.special.firing = false
+	end
+end
+
+-- these two functions don't work right now, for some reason. [FIX, ADAM]
 function do_warp()
-	errLog("The command does not have any code. /placeholder", 9)
+	playerShip.warp.start.bool = false
+	playerShip.warp.start.time = nil
+	playerShip.warp.start.engine = false
+	playerShip.warp.start.isStarted = false
+	playerShip.warp.soundNum = 0.0
+	if playerShip.warp.warping == true then
+		playerShip.warp.warping = false
+		playerShip.warp.endTime = mode_manager.time()
+	end
+end
+
+function stop_warp()
+	if playerShip.warp.finished == true then
+		playerShip.warp.start.bool = true
+	end
 end
 
 	--[[-----------
@@ -81,27 +121,49 @@ function do_move_order()
 end
 
 function do_scale_in()
-	errLog("The command does not have any code. /placeholder", 9)
+	if cameraRatioNum ~= 1 then
+		sound.play("ZoomChange")
+		cameraChanging = true
+		cameraRatioOrig = cameraRatio
+		cameraIncreasing = true
+		x = timeInterval
+		cameraRatioNum = cameraRatioNum - 1
+		multiplier = (cameraRatios[cameraRatioNum] - cameraRatio) / cameraRatio
+	end
+	action_deactivate("Scale In")
 end
 
 function do_scale_out()
-	errLog("The command does not have any code. /placeholder", 9)
+	if cameraRatios[cameraRatioNum + 1] ~= nil then
+		sound.play("ZoomChange")
+		cameraChanging = true
+		cameraRatioOrig = cameraRatio
+		cameraIncreasing = false
+		x = timeInterval
+		cameraRatioNum = cameraRatioNum + 1
+		multiplier = (cameraRatios[cameraRatioNum] - cameraRatio) / cameraRatio
+	end
+	action_deactivate("Scale Out")
 end
 
 function do_computer_previous()
-	errLog("The command does not have any code. /placeholder", 9)
+	change_menu(menu_level, "i")
+	keyboard[2][9].active = false
 end
 
 function do_computer_next()
-	errLog("The command does not have any code. /placeholder", 9)
+	change_menu(menu_level, "k")
+	keyboard[2][10].active = false
 end
 
 function do_computer_accept()
-	errLog("The command does not have any code. /placeholder", 9)
+	change_menu(menu_level, "l")
+	keyboard[2][11].active = false
 end
 
 function do_computer_back()
-	errLog("The command does not have any code. /placeholder", 9)
+	change_menu(menu_level, "j")
+	keyboard[2][12].active = false
 end
 
 	--[[-------------
@@ -242,28 +304,28 @@ end
 		Key Data
 	------------}}--
 ---------------------]]--
-
+-- keyboard with all the original keybindings here: <http://xsera.pastebin.com/f690af8a8>
 keyboard = { { "Ship",
-				{ key = "KP8", name = "Accelerate", active = false },
-				{ key = "KP5", name = "Decelerate", active = false }, 
-				{ key = "KP4", name = "Turn Counter-Clockwise", active = false }, 
-				{ key = "KP6", name = "Turn Clockwise", active = false }, 
-				{ key = "MaltL", key_display = "AltL", name = "Fire Weapon 1", action = do_fire_weap_1, active = false }, 
-				{ key = "MctrlL", key_display = "CtrlL", name = "Fire Weapon 2", action = do_fire_weap_2, active = false }, 
-				{ key = " ", key_display = "Space", name = "Fire/Activate Special", action = do_fire_weap_special, active = false }, 
+				{ key = "w", name = "Accelerate", active = false },
+				{ key = "s", name = "Decelerate", active = false }, 
+				{ key = "a", name = "Turn Counter-Clockwise", active = false }, 
+				{ key = "d", name = "Turn Clockwise", active = false }, 
+				{ key = "MmetaL", key_display = "CmdL", name = "Fire Weapon 1", action = do_fire_weap_1, deaction = stop_fire_weap_1, active = false }, 
+				{ key = "MaltL", key_display = "AltL", name = "Fire Weapon 2", action = do_fire_weap_2, deaction = stop_fire_weap_2, active = false }, 
+				{ key = " ", key_display = "Space", name = "Fire/Activate Special", action = do_fire_weap_special, deaction = stop_fire_weap_special, active = false }, 
 				{ key = "Tab", name = "Warp", action = do_warp, active = false } },
 			{ "Command", 
 				{ key = "pgdn", name = "Select Friendly", action = do_select_friendly, active = false }, 
 				{ key = "KPequals", key_display = "KP=", name = "Select Hostile", action = do_select_hostile, active = false }, 
 				{ key = "KPdivide", key_display = "KP/", name = "Select Base", action = do_select_base, active = false }, 
 				{ key = "MshiftL", key_display = "ShiftL", name = "Target", action = do_target, active = false }, 
-				{ key = "MmetaL", key_display = "CmndL", name = "Move Order", action = do_move_order, active = false }, 
-				{ key = "KPplus", key_display = "KP+", name = "Scale In", action = do_scale_in, active = false }, 
-				{ key = "KPminus", key_display = "KP-", name = "Scale Out", action = do_scale_out, active = false }, 
-				{ key = "up", key_display = "UP", name = "Computer Previous", action = do_computer_previous, active = false }, 
-				{ key = "down", key_display = "DOWN", name = "Computer Next", action = do_computer_next, active = false }, 
-				{ key = "right", key_display = "RGHT", name = "Computer Accept/Select/Do", action = do_computer_accept, active = false }, 
-				{ key = "left", key_display = "LEFT", name = "Computer Cancel/Back Up", action = do_computer_back, active = false } },
+				{ key = "MctrlL", key_display = "CtrlL", name = "Move Order", action = do_move_order, active = false }, 
+				{ key = "=", name = "Scale In", action = do_scale_in, active = false }, 
+				{ key = "-", name = "Scale Out", action = do_scale_out, active = false }, 
+				{ key = "i", key_display = "UP", name = "Computer Previous", action = do_computer_previous, active = false }, 
+				{ key = "k", key_display = "DOWN", name = "Computer Next", action = do_computer_next, active = false }, 
+				{ key = "l", key_display = "RGHT", name = "Computer Accept/Select/Do", action = do_computer_accept, active = false }, 
+				{ key = "j", key_display = "LEFT", name = "Computer Cancel/Back Up", action = do_computer_back, active = false } },
 			{ "Shortcuts",
 				{ key = "F8", name = "Transfer Control", action = do_transfer_control, active = false }, 
 				{ key = "F9", name = "Zoom to 1:1", action = do_zoom_1_1, active = false }, 
@@ -338,6 +400,57 @@ function key_activate(key)
 		while keyboard[i][j] ~= nil do
 			if keyboard[i][j].key == key then
 				keyboard[i][j].active = true
+				return
+			end
+			j = j + 1
+		end
+		i = i + 1
+	end
+end
+
+function action_activate(name)
+	local i = 1
+	while keyboard[i] ~= nil do
+		local j = 2
+		while keyboard[i][j] ~= nil do
+			if keyboard[i][j].name == name then
+				keyboard[i][j].active = true
+				return
+			end
+			j = j + 1
+		end
+		i = i + 1
+	end
+end
+
+function key_deactivate(key)
+	local i = 1
+	while keyboard[i] ~= nil do
+		local j = 2
+		while keyboard[i][j] ~= nil do
+			if keyboard[i][j].key == key then
+				keyboard[i][j].active = false
+				if keyboard[i][j].deaction ~= nil then
+					keyboard[i][j].deaction()
+				end
+				return
+			end
+			j = j + 1
+		end
+		i = i + 1
+	end
+end
+
+function action_deactivate(name)
+	local i = 1
+	while keyboard[i] ~= nil do
+		local j = 2
+		while keyboard[i][j] ~= nil do
+			if keyboard[i][j].name == name then
+				keyboard[i][j].active = false
+				if keyboard[i][j].deaction ~= nil then
+					keyboard[i][j].deaction()
+				end
 				return
 			end
 			j = j + 1

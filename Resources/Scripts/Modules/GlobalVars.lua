@@ -1,6 +1,8 @@
 import('Math')
 import('AresCLUT')
 
+playerShip = nil
+
 release_build = false
 
 cameraRatio = 1
@@ -38,6 +40,7 @@ scen = nil
 shipQuerying = { n, p, r, c, t }
 shipBuilding = { n, p, r, c, t }
 soundLength = 0.25
+menu_level = nil
 --/tempvars
 
 Admirals = {}

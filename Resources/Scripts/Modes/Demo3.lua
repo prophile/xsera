@@ -358,6 +358,7 @@ function update ()
 			physics.update(dt * 30)
 		end
 	end
+	key_do_activated()
 end
 
 --[[-----------------------------
@@ -677,107 +678,15 @@ end
 ------------------------]]--
 
 function keyup ( k )
-    if k == "w" then
-        keyboard[1][2].active = false
-    elseif k == "s" then
-        keyboard[1][3].active = false
-    elseif k == "a" then
-        keyboard[1][4].active = false
-    elseif k == "d" then
-        keyboard[1][5].active = false
-	elseif k == " " then
-		if playerShip.beam ~= nil then
-			playerShip.beam.firing = false
-		end
-	elseif k == "x" then
-		if playerShip.pulse ~= nil then
-			playerShip.pulse.firing = false
-		end
-	elseif k == "z" then
-		if playerShip.special ~= nil then
-			playerShip.special.firing = false
-		end
-    elseif k == "tab" then
-		tab_down = false
-	--	playerShip.warp.start.bool = false
-	--	playerShip.warp.start.time = nil
-	--	playerShip.warp.start.engine = false
-	--	playerShip.warp.start.isStarted = false
-	--	playerShip.warp.soundNum = 0.0
-	--	if playerShip.warp.warping == true then
-	--		playerShip.warp.warping = false
-	--		playerShip.warp.endTime = mode_manager.time()
-	--	end
-	elseif k == "F6" then
-		keyboard[4][7].active = false
-	end
+	key_deactivate(k)
 end
 
 normal_keyup = keyup
 
 function key ( k )
-    if k == "w" then
-        keyboard[1][2].active = true
-    elseif k == "s" then
-        keyboard[1][3].active = true
-    elseif k == "a" then
-        keyboard[1][4].active = true
-    elseif k == "d" then
-        keyboard[1][5].active = true
-	elseif k == "r" then
-		showVelocity = true
-	elseif k == "t" then
-		showVelocity = false
-	elseif k == "=" then
-		if cameraRatioNum ~= 1 then
-			sound.play("ZoomChange")
-			cameraChanging = true
-			cameraRatioOrig = cameraRatio
-			cameraIncreasing = true
-			x = timeInterval
-			cameraRatioNum = cameraRatioNum - 1
-			multiplier = (cameraRatios[cameraRatioNum] - cameraRatio) / cameraRatio
-		end
-	elseif k == "-" then
-		if cameraRatios[cameraRatioNum + 1] ~= nil then
-			sound.play("ZoomChange")
-			cameraChanging = true
-			cameraRatioOrig = cameraRatio
-			cameraIncreasing = false
-			x = timeInterval
-			cameraRatioNum = cameraRatioNum + 1
-			multiplier = (cameraRatios[cameraRatioNum] - cameraRatio) / cameraRatio
-		end
-	elseif k == "i" then
-		change_menu(menu_level, "i")
-	elseif k == "k" then
-		change_menu(menu_level, "k")
-	elseif k == "j" then
-		change_menu(menu_level, "j")
-	elseif k == "l" then
-		change_menu(menu_level, "l")
-	elseif k == "tab" then
-		tab_down = true
-	--	if playerShip.warp.finished == true then
-	--		playerShip.warp.start.bool = true
-	--	end
-	elseif k == "`" then
+	if k == "`" then
 		if release_build == false then
 			consoleDraw = true
-		end
-	elseif k == " " then
-		if playerShip.beam ~= nil then
-			playerShip.beam.firing = true
-		end
-	elseif k == "x" then
-		if playerShip.pulse ~= nil then
-			playerShip.pulse.firing = true
-		end
-	elseif k == "z" then
-		if playerShip.special ~= nil then
-			if playerShip.special.ammo ~= 0 then
-				playerShip.special.firing = true
-			end
 		end
 	elseif k == "p" then
 		if release_build == false then
@@ -797,10 +706,8 @@ function key ( k )
 		menu_display = "esc_menu"
 		keyup = escape_keyup
 		key = escape_key
-	elseif k == "F1" then
-		key_activate("F1")
-	elseif k == "F6" then
-		key_activate("F6")
+	else
+        key_activate(k)
 	end
 end
 
