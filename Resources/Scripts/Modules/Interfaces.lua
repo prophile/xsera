@@ -82,7 +82,7 @@ function messages()
 end
 
 function mission_status()
-	menu_level = { "BRIEFING",
+	menu_level = { "MISSION STATUS",
 		{ scen.briefing, false } }
 end
 
@@ -379,14 +379,14 @@ function drawPanels()
 -- Factory build bar (purple)
 	planet = scen.planet
 	if planet ~= nil then
-		graphics.draw_line(382, 181, 392, 181, 0.5, c_purple)
-		graphics.draw_line(382, 181, 382, 177, 0.5, c_purple)
-		graphics.draw_line(392, 177, 392, 181, 0.5, c_purple)
-		graphics.draw_line(382, 159, 392, 159, 0.5, c_purple)
-		graphics.draw_line(382, 163, 382, 159, 0.5, c_purple)
-		graphics.draw_line(392, 159, 392, 163, 0.5, c_purple)
-		graphics.draw_box(179, 384, 161, 390, 0, c_purple)
-		graphics.draw_box(18 * (100 - planet.buildqueue.percent) / 100 + 161, 384, 161, 390, 0, c_lightPurple)
+		graphics.draw_line(382, 181, 392, 181, 0.5, clut_colour(13, 9))
+		graphics.draw_line(382, 181, 382, 177, 0.5, clut_colour(13, 9))
+		graphics.draw_line(392, 177, 392, 181, 0.5, clut_colour(13, 9))
+		graphics.draw_line(382, 159, 392, 159, 0.5, clut_colour(13, 9))
+		graphics.draw_line(382, 163, 382, 159, 0.5, clut_colour(13, 9))
+		graphics.draw_line(392, 159, 392, 163, 0.5, clut_colour(13, 9))
+		graphics.draw_box(179, 384, 161, 390, 0, clut_colour(13, 9))
+		graphics.draw_box(18 * (100 - planet.buildqueue.percent) / 100 + 161, 384, 161, 390, 0, clut_colour(13, 5))
 	end
 	
 --[[------------------

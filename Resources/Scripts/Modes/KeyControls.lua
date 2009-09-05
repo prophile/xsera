@@ -5,13 +5,13 @@ import('KeyboardControl')
 
 background = {	{ top = 170, left = -280, bottom = -60, right = 280, boxColour = c_teal },
 				{ top = -70, left = -280, bottom = -110, right = 280, boxColour = c_rust },
-				{ coordx = -280, coordy = -205, length = 100, text = "nodraw", boxColour = c_brightYellow, textColour = c_purple, execute = nil, letter = "CANCEL" },
+				{ coordx = -280, coordy = -205, length = 100, text = "nodraw", boxColour = c_brightYellow, textColour = clut_colour(13, 9), execute = nil, letter = "CANCEL" },
 				{ coordx = -265, coordy = 170, length = 63, text = "nodraw", boxColour = colour_add(c_teal, c_lighten2), textColour = c_teal, execute = nil, letter = "Ship" },
 				{ coordx = -177, coordy = 170, length = 93, text = "nodraw", boxColour = c_teal, textColour = c_teal, execute = nil, letter = "Command" },
 				{ coordx = -54, coordy = 170, length = 95, text = "nodraw", boxColour = c_teal, textColour = c_teal, execute = nil, letter = "Shortcuts" },
 				{ coordx = 71, coordy = 170, length = 71, text = "nodraw", boxColour = c_teal, textColour = c_teal, execute = nil, letter = "Utility" },
 				{ coordx = 177, coordy = 170, length = 87, text = "nodraw", boxColour = c_teal, textColour = c_teal, execute = nil, letter = "HotKeys" },
-				{ coordx = 180, coordy = -205, length = 100, text = "nodraw", boxColour = c_lightGreen, textColour = c_purple, execute = nil, letter = "DONE" } }
+				{ coordx = 180, coordy = -205, length = 100, text = "nodraw", boxColour = c_lightGreen, textColour = clut_colour(13, 9), execute = nil, letter = "DONE" } }
 
 keyboard_num = 1
 

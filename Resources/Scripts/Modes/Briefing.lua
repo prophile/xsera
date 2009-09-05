@@ -4,11 +4,11 @@ import('BoxDrawing')
 
 freezeMenuNum = 0
 levelSwitching = true
-background1 = {	{ coordx = -280, coordy = 140, length = 560, text = " ", boxColour = c_teal, textColour = c_purple, execute = nil, letter = "Select Level", underbox = -145 },
-				{ coordx = -260, coordy = -205, length = 150, text = "Cancel", boxColour = c_brightYellow, textColour = c_purple, execute = nil, letter = "ESC" },
-				{ coordx = 110, coordy = -205, length = 150, text = "Begin", boxColour = c_lightGreen, textColour = c_purple, execute = nil, letter = "RTRN" },
-				{ coordx = -260, coordy = -105, length = 150, text = "Previous", boxColour = c_teal, textColour = c_purple, execute = nil, letter = "LEFT" },
-				{ coordx = 110, coordy = -105, length = 150, text = "Next", boxColour = c_teal, textColour = c_purple, execute = nil, letter = "RGHT", special = "disabled" } }
+background1 = {	{ coordx = -280, coordy = 140, length = 560, text = " ", boxColour = c_teal, textColour = clut_colour(13, 9), execute = nil, letter = "Select Level", underbox = -145 },
+				{ coordx = -260, coordy = -205, length = 150, text = "Cancel", boxColour = c_brightYellow, textColour = clut_colour(13, 9), execute = nil, letter = "ESC" },
+				{ coordx = 110, coordy = -205, length = 150, text = "Begin", boxColour = c_lightGreen, textColour = clut_colour(13, 9), execute = nil, letter = "RTRN" },
+				{ coordx = -260, coordy = -105, length = 150, text = "Previous", boxColour = c_teal, textColour = clut_colour(13, 9), execute = nil, letter = "LEFT" },
+				{ coordx = 110, coordy = -105, length = 150, text = "Next", boxColour = c_teal, textColour = clut_colour(13, 9), execute = nil, letter = "RGHT", special = "disabled" } }
 
 background2 = { { coordx = -280, coordy = 175, length = 560, text = " ", boxColour = c_grey, textColour = c_grey, execute = nil, letter = "Mission Analysis", underbox = -200 },
 				{ coordx = -280, coordy = -225, length = 170, text = "Previous", boxColour = c_grey, textColour = c_grey, execute = nil, letter = "LEFT" },
