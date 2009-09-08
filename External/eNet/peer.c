@@ -175,7 +175,7 @@ enet_peer_send (ENetPeer * peer, enet_uint8 channelID, ENetPacket * packet)
 /** Attempts to dequeue any incoming queued packet.
     @param peer peer to dequeue packets from
     @param channelID channel on which to receive
-    @returns a pointer to the packet, or NULL if there are no available incoming queued packets
+    @return a pointer to the packet, or NULL if there are no available incoming queued packets
 */
 ENetPacket *
 enet_peer_receive (ENetPeer * peer, enet_uint8 channelID)

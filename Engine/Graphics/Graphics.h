@@ -25,13 +25,14 @@ vec2 SpriteDimensions ( const std::string& sheetname );
 /**
  * Draws a sprite.
  * @note For rotational sprites, pass 0 for sheet_x and sheet_y
- * @note This may be used to draw images, using a + before the name of the sprite sheet
+ * @note This may be used to draw images, using a '+' before the name of the sprite sheet
  * @param sheetname The sprite sheet to use
  * @param sheet_x The x position on the sprite sheet
  * @param sheet_y The y position on the sprite sheet
  * @param position The position of the centre of the sprite in world coordinates
  * @param size The size of the sprite in world coordinates
  * @param rotation The rotation of the sprite, in radians
+ * @param col The colour of the image
  */
 void DrawSprite ( const std::string& sheetname, int sheet_x, int sheet_y, vec2 position, vec2 size, float rotation, colour col );
 /**
@@ -46,6 +47,7 @@ inline void DrawImage ( const std::string& imageName, vec2 position, vec2 size )
  * Draws a string of text
  * @param text The text to draw
  * @param font The font to use
+ * @param justify The justification of the text (should be "left", "right", or "center")
  * @param position The position of the centre of the text on-screen
  * @param height The height of the text
  * @param col The colour of the text
@@ -53,26 +55,13 @@ inline void DrawImage ( const std::string& imageName, vec2 position, vec2 size )
  */
 void DrawTextSDL ( const std::string& text, const std::string& font, const char* justify, vec2 position, float height, colour col, float rotation );
 /**
- * Draws text to the screen
- * @param text the text to be drawn
- * @param font the font to be used
- * @param justify the text justification
- * @param position the place to justify the text
- * @param height the font size of the text
+ * Draws a line
+ * @param coordinate1 Beginning coordinates of the line
+ * @param coordinate2 Ending coordinates of the line
+ * @param width The width, in pixels, of the line
  * @param col The colour of the line
- * @param rotation how the text is rotated
  */
 void DrawLine ( vec2 coordinate1, vec2 coordinate2, float width, colour col );
-/**
- * Draws a box
- * @param top The top side of the box
- * @param left The left side of the box
- * @param bottom The bottom side of the box
- * @param right The right side of the box
- * @param width The width of the surrounding line, in pixels (zero means no surrounding line)
- * @param col The colour of the surrounding line
- */
-void DrawBox ( float top, float left, float bottom, float right, float width, colour col );
 /**
  * Draws a filled box
  * @param top the top bound of the box
@@ -82,21 +71,23 @@ void DrawBox ( float top, float left, float bottom, float right, float width, co
  * @param width The width of the border to the box, in pixels
  * @param col The colour of the circle
  */
+void DrawBox ( float top, float left, float bottom, float right, float width, colour col );
+/**
+ * Draws an approximated circle
+ * @param centre The location of the centre of the circle
+ * @param radius The radius of the circle
+ * @param width The width of the lines that compose the approximated circle
+ * @param col The colour of the circle
+ */	
 void DrawCircle ( vec2 centre, float radius, float width, colour col );
 /**
- * Draws a filled triangle
+ * Draws a small triangle to represent a ship
  * @param point1 the first point of the triangle
  * @param point2 the second point of the triangle
  * @param point3 the third point of the triangle
- * @param col The colour of the circle
- */	
-void DrawTriangle ( const vec2 point1, const vec2 point2, const vec2 point3, colour col );
-/**
- * Draws a small triangle to represent a ship
- * @param point* the three points of the triangle
  * @param col The colour of the triangle
  */
-void DrawDiamond ( float top, float left, float bottom, float right, colour col );
+void DrawTriangle ( const vec2 point1, const vec2 point2, const vec2 point3, colour col );
 /**
  * Draws a small diamond to represent a capital ship
  * @param top the top bound of the box
@@ -104,6 +95,13 @@ void DrawDiamond ( float top, float left, float bottom, float right, colour col 
  * @param left the left bound of the box
  * @param right the right bound of the box
  * @param col The colour of the triangle
+ */
+void DrawDiamond ( float top, float left, float bottom, float right, colour col );
+/**
+ * Draws some particles
+ * @param positions The positions of the particles
+ * @param count How many particles there are
+ * @param col The colour of the particles
  */
 void DrawParticles ( const vec2* positions, unsigned int count, colour col );
 /**
@@ -119,7 +117,7 @@ void DrawStarfield ( float depth );
 float AspectRatio ();
 /**
  * Maps a point in window coordinates to a corresponding point in the current camera
- * @param point The window point
+ * @param windowCoords The point to be mapped
  * @return The point in the camera
  */
 vec2 MapPoint ( vec2 windowCoords );

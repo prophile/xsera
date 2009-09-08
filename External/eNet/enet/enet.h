@@ -367,7 +367,7 @@ typedef struct _ENetEvent
 /** 
   Initializes ENet globally.  Must be called prior to using any functions in
   ENet.
-  @returns 0 on success, < 0 on failure
+  @return 0 on success, < 0 on failure
 */
 ENET_API int enet_initialize (void);
 
@@ -376,7 +376,7 @@ ENET_API int enet_initialize (void);
 
   @param version the constant ENET_VERSION should be supplied so ENet knows which version of ENetCallbacks struct to use
   @param inits user-overriden callbacks where any NULL callbacks will use ENet's defaults
-  @returns 0 on success, < 0 on failure
+  @return 0 on success, < 0 on failure
 */
 ENET_API int enet_initialize_with_callbacks (ENetVersion version, const ENetCallbacks * inits);
 
@@ -423,7 +423,7 @@ ENET_API void       enet_socket_destroy (ENetSocket);
     @param hostName host name to lookup
     @retval 0 on success
     @retval < 0 on failure
-    @returns the address of the given hostName in address on success
+    @return the address of the given hostName in address on success
 */
 ENET_API int enet_address_set_host (ENetAddress * address, const char * hostName);
 
@@ -431,7 +431,7 @@ ENET_API int enet_address_set_host (ENetAddress * address, const char * hostName
     @param address    address printed
     @param hostName   destination for name, must not be NULL
     @param nameLength maximum length of hostName.
-    @returns the null-terminated name of the host in hostName on success
+    @return the null-terminated name of the host in hostName on success
     @retval 0 on success
     @retval < 0 on failure
 */
@@ -441,7 +441,7 @@ ENET_API int enet_address_get_host_ip (const ENetAddress * address, char * hostN
     @param address    address used for reverse lookup
     @param hostName   destination for name, must not be NULL
     @param nameLength maximum length of hostName.
-    @returns the null-terminated name of the host in hostName on success
+    @return the null-terminated name of the host in hostName on success
     @retval 0 on success
     @retval < 0 on failure
 */

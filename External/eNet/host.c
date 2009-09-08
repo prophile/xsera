@@ -17,7 +17,7 @@
     @param incomingBandwidth downstream bandwidth of the host in bytes/second; if 0, ENet will assume unlimited bandwidth.
     @param outgoingBandwidth upstream bandwidth of the host in bytes/second; if 0, ENet will assume unlimited bandwidth.
 
-    @returns the host on success and NULL on failure
+    @return the host on success and NULL on failure
 
     @remarks ENet will strategically drop packets on specific sides of a connection between hosts
     to ensure the host's bandwidth is not overwhelmed.  The bandwidth parameters also determine
@@ -111,7 +111,7 @@ enet_host_destroy (ENetHost * host)
     @param host host seeking the connection
     @param address destination for the connection
     @param channelCount number of channels to allocate
-    @returns a peer representing the foreign host on success, NULL on failure
+    @return a peer representing the foreign host on success, NULL on failure
     @remarks The peer returned will have not completed the connection until enet_host_service()
     notifies of an ENET_EVENT_TYPE_CONNECT event for the peer.
 */

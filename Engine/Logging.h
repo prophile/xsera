@@ -41,7 +41,7 @@ void __Log ( const char* subsystem, int level, const char* messageFormat, ... );
  * Logs a message
  * @param subsystem The name of the subsystem to use
  * @param level The level of message
- * @param message A format string, followed by printf-style arguments
+ * @param messageFormat A format string, followed by printf-style arguments
  */
 #define LOG(subsystem, level, messageFormat...) { if (level >= LOG_LEVEL) { __Log(subsystem, level, messageFormat , ## messageFormat); } }
 

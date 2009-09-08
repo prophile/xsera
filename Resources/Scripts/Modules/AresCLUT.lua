@@ -27,7 +27,27 @@ clut = { { r = 1.0, g = 1.0, b = 1.0, a = 1.0 }, -- white
 modifier = { 1.0, 0.941, 0.878, 0.816, 0.753, 0.690, 0.627, 0.565, 0.502, 0.439, 0.376, 0.251, 0.188, 0.125, 0.063, 0.031, 0.0 }
 
 function clut_colour(clutnum, modnum)
-	return { r = clut[clutnum].r * modifier[modnum], g = clut[clutnum].g * modifier[modnum], b = clut[clutnum].b * modifier[modnum], a = 1.0 }
+	return { r = clut[clutnum].r * modifier[modnum], g = clut[clutnum].g * modifier[modnum], b = clut[clutnum].b * modifier[modnum], a = 1.0, c = clutnum, m = modnum }
+end
+
+function clut_lighten(colour, lightness)
+	if lightness == nil then
+		lightness = 1
+	end
+	if modifier[colour.m + lightness] ~= nil then
+		colour.m = colour.m + lightness
+	end
+	return { r = clut[colour.c].r * modifier[colour.m], g = clut[colour.c].g * modifier[colour.m], b = clut[colour.c].b * modifier[colour.m], a = 1.0, c = colour.c, m = colour.m }
+end
+
+function clut_darken(colour, darkness)
+	if darkness == nil then
+		darkness = 1
+	end
+	if modifier[colour.m - darkness] ~= nil then
+		colour.m = colour.m - darkness
+	end
+	return { r = clut[colour.c].r * modifier[colour.m], g = clut[colour.c].g * modifier[colour.m], b = clut[colour.c].b * modifier[colour.m], a = 1.0, c = colour.c, m = colour.m }
 end
 
 function display_clut()

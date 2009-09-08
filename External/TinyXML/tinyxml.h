@@ -1414,6 +1414,9 @@ public:
 	/// Load a file using the given filename. Returns true if successful.
 	bool LoadFile( const char * filename, TiXmlEncoding encoding = TIXML_DEFAULT_ENCODING );
 	/// Save a file using the given filename. Returns true if successful.
+	/**
+	 * @param filename Name of requested xml file
+	 */
 	bool SaveFile( const char * filename ) const;
 	/** Load a file using the given FILE*. Returns true if successful. Note that this method
 		doesn't stream - the entire object pointed at by the FILE*
@@ -1425,7 +1428,12 @@ public:
 	bool SaveFile( FILE* ) const;
 
 	#ifdef TIXML_USE_STL
-	bool LoadFile( const std::string& filename, TiXmlEncoding encoding = TIXML_DEFAULT_ENCODING )			///< STL std::string version.
+	/**
+	 * Loads a file with a string
+	 * @param filename The name of the file, as a std::string
+	 * @param encoding The encoding of the file, automatically set to TIXML_DEFAULT_ENCODING
+	 */
+	bool LoadFile( const std::string& filename, TiXmlEncoding encoding = TIXML_DEFAULT_ENCODING )
 	{
 //		StringToBuffer f( filename );
 //		return ( f.buffer && LoadFile( f.buffer, encoding ));
@@ -1752,7 +1760,7 @@ public:
 	virtual bool Visit( const TiXmlUnknown& unknown );
 
 	/** Set the indent characters for printing. By default 4 spaces
-		but tab (\t) is also useful, or null/empty string for no indentation.
+		but tab is also useful, or null/empty string for no indentation.
 	*/
 	void SetIndent( const char* _indent )			{ indent = _indent ? _indent : "" ; }
 	/// Query the indention string.
