@@ -306,10 +306,10 @@ end
 ---------------------]]--
 -- keyboard with all the original keybindings here: <http://xsera.pastebin.com/f690af8a8>
 keyboard = { { "Ship",
-				{ key = "w", name = "Accelerate", active = false },
-				{ key = "s", name = "Decelerate", active = false }, 
-				{ key = "a", name = "Turn Counter-Clockwise", active = false }, 
-				{ key = "d", name = "Turn Clockwise", active = false }, 
+				{ key = "up", key_display = "Up", name = "Accelerate", active = false },
+				{ key = "down", key_display = "Down", name = "Decelerate", active = false }, 
+				{ key = "left", key_display = "Left", name = "Turn Counter-Clockwise", active = false }, 
+				{ key = "right", key_display = "Right", name = "Turn Clockwise", active = false }, 
 				{ key = "MmetaL", key_display = "CmdL", name = "Fire Weapon 1", action = do_fire_weap_1, deaction = stop_fire_weap_1, active = false }, 
 				{ key = "MaltL", key_display = "AltL", name = "Fire Weapon 2", action = do_fire_weap_2, deaction = stop_fire_weap_2, active = false }, 
 				{ key = " ", key_display = "Space", name = "Fire/Activate Special", action = do_fire_weap_special, deaction = stop_fire_weap_special, active = false }, 

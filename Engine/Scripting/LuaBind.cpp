@@ -1048,10 +1048,29 @@ int GFX_DrawSpriteFromSheet ( lua_State* L )
 	return 0;
 }
 
+/**
+ * @struct The structure for calling graphics functions from Lua.
+ * @brief Lua graphics registry.
+ *
+ * This registry contains all drawing mechanisms for Lua, along with some drawing manipulation
+ * functions. In Lua, they are all called like so: "graphics.function_name()" (for example:
+ * "begin_frame" becomes "graphics.begin_frame()").
+ */
 luaL_Reg registryGraphics[] =
 {
+	/// This function must be called before any graphics routines are called. It has no arguments.
 	"begin_frame", GFX_BeginFrame,
+	/// This function must be called after any graphics routines are called. It has no arguments.
 	"end_frame", GFX_EndFrame,
+	/**
+	 * @brief Sets the bounds of the camera.
+	 * 
+	 * This function requires the arguments for the left, bottom, right, and top of the camera, respectively.
+	 * @param left The left, or lower-x bound, of the screen.
+	 * @param bottom The bottom, or lower-y bound, of the screen.
+	 * @param right The right, or upper-x bound, of the screen.
+	 * @param top The top, or upper-y bound, of the screen.
+	 */
 	"set_camera", GFX_SetCamera,
 	"draw_image", GFX_DrawImage,
 	"draw_sprite", GFX_DrawSprite,

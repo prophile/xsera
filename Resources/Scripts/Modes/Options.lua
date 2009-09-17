@@ -4,10 +4,10 @@ import('BoxDrawing')
 
 soundLevel = 8
 soundMax = 8
-background = {	{ coordx = -280, coordy = 140, length = 560, text = " ", boxColour = c_purple2, textColour = clut_colour(13, 9), execute = nil, letter = "Sound Options", underbox = -85 },
-				{ coordx = -260, coordy = -30, length = 520, text = " ", boxColour = c_purple2, textColour = clut_colour(13, 9), execute = nil, letter = "VOLUME", underbox = -75 },
-				{ coordx = 110, coordy = 20, length = 150, text = "nodraw", boxColour = c_purple2, textColour = clut_colour(13, 9), execute = nil, letter = "Volume Down" },
-				{ coordx = 110, coordy = 100, length = 150, text = "nodraw", boxColour = c_purple2, textColour = clut_colour(13, 9), execute = nil, letter = "Volume Up" },
+background = {	{ coordx = -280, coordy = 140, length = 560, text = " ", boxColour = clut_colour(13, 9), textColour = clut_colour(13, 9), execute = nil, letter = "Sound Options", underbox = -85 },
+				{ coordx = -260, coordy = -30, length = 520, text = " ", boxColour = clut_colour(13, 9), textColour = clut_colour(13, 9), execute = nil, letter = "VOLUME", underbox = -75 },
+				{ coordx = 110, coordy = 20, length = 150, text = "nodraw", boxColour = clut_colour(13, 9), textColour = clut_colour(13, 9), execute = nil, letter = "Volume Down" },
+				{ coordx = 110, coordy = 100, length = 150, text = "nodraw", boxColour = clut_colour(13, 9), textColour = clut_colour(13, 9), execute = nil, letter = "Volume Up" },
 				{ coordx = -245, coordy = 100, length = 250, text = "nodraw", boxColour = c_purpleBlue, textColour = clut_colour(13, 9), execute = nil, letter = "Music During Action", radio = "off" },
 				{ coordx = -245, coordy = 60, length = 250, text = "nodraw", boxColour = c_purpleBlue, textColour = clut_colour(13, 9), execute = nil, letter = "Music During Interlude", radio = "off" },
 				{ coordx = -245, coordy = 20, length = 250, text = "nodraw", boxColour = c_lightBlue4, textColour = clut_colour(13, 9), execute = nil, letter = "Speak Network Messages", radio = "off" },

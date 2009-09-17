@@ -46,7 +46,6 @@ c_brightYellow = { r = 0.7, g = 0.7, b = 0.0, a = 1.0 }
 c_darkYellow = { r = 0.1, g = 0.1, b = 0.0, a = 1.0 }
 
 --PURPLE
-c_purple2 = { r = 0.7, g = 0.4, b = 0.6, a = 1.0 }
 c_purpleBlue = { r = 0.4, g = 0.2, b = 0.5, a = 1.0 }
 c_darkPurple = { r = 0.3, g = 0.0, b = 0.2, a = 1.0 }
 
