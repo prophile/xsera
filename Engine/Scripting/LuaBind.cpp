@@ -1056,16 +1056,16 @@ int GFX_DrawSpriteFromSheet ( lua_State* L )
  * functions. In Lua, they are all called like so: "graphics.function_name()" (for example:
  * "begin_frame" becomes "graphics.begin_frame()").
  * 
- * @section sec1 Frame and Camera
+ * @section frame_and_camera Frame and Camera
  * 
- * @subsection subsec1_1 begin_frame
- * This function must be called before any graphics routines are called. It has no arguments.
+ * @subsection begin_frame
+ * Must be called before any graphics routines are called. It has no parameters.
  * 
- * @subsection subsec1_2 end_frame
- * This function must be called after any graphics routines are called. It has no arguments.
+ * @subsection end_frame
+ * Must be called after any graphics routines are called. It has no parameters.
  * 
- * @subsection subsec1_3 set_camera
- * This function sets the bounds of the camera. It requires arguments for the left, bottom, right,
+ * @subsection set_camera
+ * Sets the bounds of the camera. It requires arguments for the left, bottom, right,
  * and top of the camera, respectively.\n
  * Parameters:\n
  * left - The left, or lower-x bound, of the screen.\n
@@ -1073,29 +1073,72 @@ int GFX_DrawSpriteFromSheet ( lua_State* L )
  * right - The right, or upper-x bound, of the screen.\n
  * top - The top, or upper-y bound, of the screen.\n
  * 
- * @section sec2 Sprites
+ * @section sprites Sprites
  * 
- * @subsection subsec2_1 draw_image
- * This function draws an "image", which is functionally different from a sprite. In general, a
+ * @subsection draw_image
+ * Draws an "image", which is functionally different from a sprite. In general, a
  * sprite has rotational capabilities and / or multiple frames, like a ship, where an image does
  * not, like panels on the sides of the screen.
  * 
- * @subsection subsec2_2 draw_sprite
- * This function draws a "sprite", which is functionally different from an image. In general, a
+ * @subsection draw_sprite
+ * Draws a "sprite", which is functionally different from an image. In general, a
  * sprite has rotational capabilities and / or multiple frames, like a ship, where an image does
  * not, like panels on the sides of the screen.
  * 
- * @subsection subsec2_3 draw_sheet_sprite
- * This function draws a given sprite from within a sprite sheet.
+ * @subsection draw_sheet_sprite
+ * Draws a given sprite from within a sprite sheet.
  * 
- * @subsection subsec2_4 sprite_dimensions
- * This function returns the dimensions for a given sprite.
+ * @subsection sprite_dimensions
+ * Returns the dimensions for a given sprite.
  * 
+ * @subsection draw_starfield
+ * Draws a starfield at the given depth. Draw multiple starfields at varying depths to give them a
+ * parallax feel.
  * 
+ * @section drawing_text Drawing Text
  * 
- * @todo Fix documentation @ref subsec2_1 and @ref subsec2_2 to better define sprites/images.
- * @todo Add args for @ref sec2 onward
- * @todo Finish this
+ * @subsection draw_text
+ * Given a position, size, font, and some text, (and optionally a rotation and some colour) this
+ * function will draw text to the screen with those specifications.
+ * 
+ * @subsection text_length
+ * Given a size, font, and some text, this function will output how long this text will be on
+ * the screen.
+ * 
+ * @section drawing_basic_objects Drawing Basic Objects
+ * 
+ * @subsection draw_line
+ * Draws a basic line.
+ * 
+ * @subsection draw_box
+ * Draws a basic box, with optional outlining.
+ * 
+ * @subsection draw_circle
+ * Draws a "circle", which is really just a series of lines approximating a circle.
+ * 
+ * @section drawing_radar_objects Drawing 'Radar' Objects
+ * 
+ * @subsection draw_rtri
+ * Draws a triangle - generally used as a placeholder for objects when zoomed out beyond 1:8 camera
+ * ratios.
+ * 
+ * @subsection draw_rplus
+ * Draws a plus sign - generally used as a placeholder for objects when zoomed out beyond 1:8 camera
+ * ratios.
+ * 
+ * @subsection draw_rbox
+ * Draws a square - generally used as a placeholder for objects when zoomed out beyond 1:8 camera
+ * ratios.
+ * 
+ * @subsection draw_rdia
+ * Draws a diamond - generally used as a placeholder for objects when zoomed out beyond 1:8 camera
+ * ratios.
+ * 
+ * @subsection is_culled
+ * Checks to see if a particular circle is entirely outside of the vision of the camera.
+ * 
+ * @todo Fix documentation @ref draw_image and @ref draw_sprite to better define sprites/images.
+ * @todo Add args for @ref sprites onward
  * @todo Repeat for all registries
  * 
  */
