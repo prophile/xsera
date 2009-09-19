@@ -433,6 +433,30 @@ int NetClient_GetMessage ( lua_State* L )
 	return 2;
 }
 
+/**
+ * @page lua_net_client The Lua Net Client Registry
+ * This page contains information about the Lua net server registry.
+ *
+ * This registry contains functions related to running a multiplayer server. In Lua, they are all
+ * called like so: "net_server.function_name()" (for example: "startup" becomes
+ * "net_server.startup(port, password)").
+ * 
+ * Note: Somebody else will need to complete this registry, I don't know anything about it right now.
+ * 
+ * @subsection net_client_connected connected
+ * 
+ * @subsection connect
+ * 
+ * @subsection disconnect
+ * 
+ * @subsection net_client_send send
+ * 
+ * @subsection net_client_get get
+ * 
+ * @todo Complete the @ref lua_net_client registry.
+ * 
+ */
+
 luaL_Reg registryNetClient[] =
 {
 	"connected", NetClient_Connected,
@@ -457,6 +481,23 @@ int Pref_Get ( lua_State* L )
 	}
 	return 1;
 }
+
+/**
+ * @page lua_xml The Lua Preferences Registry
+ * This page contains information about the Lua preferences registry.
+ *
+ * This registry currently only contains one function. In Lua, it is called called like so:
+ * "preferences.get(name)".
+ * 
+ * @subsection xml_get get
+ * Finds and returns a particular preference.\n
+ * Parameters:\n
+ * name - The name of the preference to be fetched.\n
+ * Returns:\n
+ * boolean - The status of the requested preference.
+ * 
+ * @todo Make @ref xml_get un-hardcoded.
+ */
 
 luaL_Reg registryPreferences[] = 
 {
@@ -568,7 +609,7 @@ int NetServer_GetMessage ( lua_State* L )
 }
 
 /**
- * @page lua_xml The Lua Net Server Registry
+ * @page lua_net_server The Lua Net Server Registry
  * This page contains information about the Lua net server registry.
  *
  * This registry contains functions related to running a multiplayer server. In Lua, they are all
@@ -587,15 +628,15 @@ int NetServer_GetMessage ( lua_State* L )
  * 
  * @subsection kill
  * 
- * @subsection connected
+ * @subsection net_server_connected connected
  * 
- * @subsection send
+ * @subsection net_server_send send
  * 
  * @subsection broadcast
  * 
- * @subsection get
+ * @subsection net_server_get get
  * 
- * @todo Complete the @ref lua_xml registry.
+ * @todo Complete the @ref lua_net_server registry.
  * 
  */
 
