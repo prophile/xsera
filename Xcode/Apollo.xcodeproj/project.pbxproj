@@ -747,7 +747,7 @@
 			buildSettings = {
 				COPY_PHASE_STRIP = NO;
 				GCC_VERSION = 4.0;
-				SDKROOT = macosx10.4;
+				SDKROOT = macosx10.6;
 			};
 			name = Debug;
 		};
@@ -756,7 +756,7 @@
 			buildSettings = {
 				COPY_PHASE_STRIP = YES;
 				GCC_VERSION = 4.0;
-				SDKROOT = macosx10.4;
+				SDKROOT = macosx10.6;
 			};
 			name = Release;
 		};

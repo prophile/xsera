@@ -1049,32 +1049,67 @@ int GFX_DrawSpriteFromSheet ( lua_State* L )
 }
 
 /**
- * @struct The structure for calling graphics functions from Lua.
- * @brief Lua graphics registry.
+ * @page lua_graphics The Lua Graphics Registry
+ * This page contains information about the Lua graphics registry.
  *
  * This registry contains all drawing mechanisms for Lua, along with some drawing manipulation
  * functions. In Lua, they are all called like so: "graphics.function_name()" (for example:
  * "begin_frame" becomes "graphics.begin_frame()").
+ * 
+ * @section sec1 Frame and Camera
+ * 
+ * @subsection subsec1_1 begin_frame
+ * This function must be called before any graphics routines are called. It has no arguments.
+ * 
+ * @subsection subsec1_2 end_frame
+ * This function must be called after any graphics routines are called. It has no arguments.
+ * 
+ * @subsection subsec1_3 set_camera
+ * This function sets the bounds of the camera. It requires arguments for the left, bottom, right,
+ * and top of the camera, respectively.\n
+ * Parameters:\n
+ * left - The left, or lower-x bound, of the screen.\n
+ * bottom - The bottom, or lower-y bound, of the screen.\n
+ * right - The right, or upper-x bound, of the screen.\n
+ * top - The top, or upper-y bound, of the screen.\n
+ * 
+ * @section sec2 Sprites
+ * 
+ * @subsection subsec2_1 draw_image
+ * This function draws an "image", which is functionally different from a sprite. In general, a
+ * sprite has rotational capabilities and / or multiple frames, like a ship, where an image does
+ * not, like panels on the sides of the screen.
+ * 
+ * @subsection subsec2_2 draw_sprite
+ * This function draws a "sprite", which is functionally different from an image. In general, a
+ * sprite has rotational capabilities and / or multiple frames, like a ship, where an image does
+ * not, like panels on the sides of the screen.
+ * 
+ * @subsection subsec2_3 draw_sheet_sprite
+ * This function draws a given sprite from within a sprite sheet.
+ * 
+ * @subsection subsec2_4 sprite_dimensions
+ * This function returns the dimensions for a given sprite.
+ * 
+ * 
+ * 
+ * @todo Fix documentation @ref subsec2_1 and @ref subsec2_2 to better define sprites/images.
+ * @todo Add args for @ref sec2 onward
+ * @todo Finish this
+ * @todo Repeat for all registries
+ * 
  */
+
 luaL_Reg registryGraphics[] =
 {
-	/// This function must be called before any graphics routines are called. It has no arguments.
 	"begin_frame", GFX_BeginFrame,
-	/// This function must be called after any graphics routines are called. It has no arguments.
 	"end_frame", GFX_EndFrame,
-	/**
-	 * @brief Sets the bounds of the camera.
-	 * 
-	 * This function requires the arguments for the left, bottom, right, and top of the camera, respectively.
-	 * @param left The left, or lower-x bound, of the screen.
-	 * @param bottom The bottom, or lower-y bound, of the screen.
-	 * @param right The right, or upper-x bound, of the screen.
-	 * @param top The top, or upper-y bound, of the screen.
-	 */
 	"set_camera", GFX_SetCamera,
 	"draw_image", GFX_DrawImage,
 	"draw_sprite", GFX_DrawSprite,
 	"draw_sheet_sprite", GFX_DrawSpriteFromSheet,
+	"sprite_dimensions", GFX_SpriteDimensions,
+	"draw_starfield", GFX_DrawStarfield,
 	"draw_text", GFX_DrawText,
 	"text_length", GFX_TextLength,
 	"draw_line", GFX_DrawLine,
@@ -1084,8 +1119,6 @@ luaL_Reg registryGraphics[] =
 	"draw_rbox", GFX_DrawRadarBox,
 	"draw_rdia", GFX_DrawRadarDiamond,
 	"draw_circle", GFX_DrawCircle,
-	"sprite_dimensions", GFX_SpriteDimensions,
-	"draw_starfield", GFX_DrawStarfield,
 	"is_culled", GFX_IsCulled,
     NULL, NULL
 };
