@@ -688,6 +688,31 @@ int MM_Query ( lua_State* L )
 	lua_pushstring(L, QueryMode());
 	return 1;
 }
+
+/**
+ * @page lua_mode_manager The Lua Mode Manager Registry
+ * This page contains information about the Lua mode manager registry.
+ *
+ * This small registry contains functions for dealing with modes. In Lua, they are all
+ * called like so: "mode_manager.function_name()" (for example: "switch" becomes
+ * "mode_manager.switch(mode)").
+ * 
+ * @subsection switch
+ * Switches the game mode. If the mode cannot be switched to the given name, an error occurs.\n
+ * Parameters:\n
+ * mode - the name of the mode you want to switch to (without the suffix ".lua").
+ * 
+ * @subsection time
+ * Gives the game's time, in seconds, since the game's start. This function has no parameters.\n
+ * Returns:\n
+ * number - The amount of seconds (accurate to miliseconds) since the game's start.
+ * 
+ * @subsection query
+ * Returns the game's current mode. This function has no parameters.\n
+ * Returns:\n
+ * string - The name of the mode that the game is currently in.
+ */
+
 luaL_Reg registryModeManager[] =
 {
 	"switch", MM_Switch,
