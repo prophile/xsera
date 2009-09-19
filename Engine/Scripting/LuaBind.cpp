@@ -567,6 +567,38 @@ int NetServer_GetMessage ( lua_State* L )
 	return 3;
 }
 
+/**
+ * @page lua_xml The Lua Net Server Registry
+ * This page contains information about the Lua net server registry.
+ *
+ * This registry contains functions related to running a multiplayer server. In Lua, they are all
+ * called like so: "net_server.function_name()" (for example: "startup" becomes
+ * "net_server.startup(port, password)").
+ * 
+ * Note: Somebody else will need to complete this registry, I don't know anything about it right now.
+ * 
+ * @subsection startup
+ * 
+ * @subsection shutdown
+ * 
+ * @subsection running
+ * 
+ * @subsection client_count
+ * 
+ * @subsection kill
+ * 
+ * @subsection connected
+ * 
+ * @subsection send
+ * 
+ * @subsection broadcast
+ * 
+ * @subsection get
+ * 
+ * @todo Complete the @ref lua_xml registry.
+ * 
+ */
+
 luaL_Reg registryNetServer[] =
 {
 	"startup", NetServer_Startup,
@@ -663,6 +695,21 @@ static int XML_ParseFile (lua_State *L)
 	free((void*)fullDataPointer);
 	return 1;
 }
+
+/**
+ * @page lua_xml The Lua XML Registry
+ * This page contains information about the Lua XML registry.
+ *
+ * This registry currently only contains one function. In Lua, it is called called like so:
+ * "xml.load(file)".
+ * 
+ * @subsection load
+ * Loads and parses an XML file\n
+ * Parameters:\n
+ * name - The name of the mode that the game is currently in.\n
+ * Returns:\n
+ * A table with the contents of the file in it.
+ */
 
 luaL_Reg registryXML[] =
 {
