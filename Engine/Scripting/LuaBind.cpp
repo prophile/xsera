@@ -732,6 +732,37 @@ int RM_Write ( lua_State* L )
     return 0;
 }
 
+/**
+ * @page lua_resource_manager The Lua Resource Manager Registry
+ * This page contains information about the Lua resource manager registry.
+ *
+ * This small registry contains a few simple tools for working with files. In Lua, they are all
+ * called like so: "resource_manager.function_name()" (for example: "file_exists" becomes
+ * "resource_manager.file_exists(file)").
+ * 
+ * @subsection file_exists
+ * Ensures that the given file exists, then returns a boolean of whether it does or not.\n
+ * Parameters:\n
+ * file - The name of the file\n
+ * Returns:\n
+ * Boolean - true if file exists, false if it does not\n
+ * 
+ * @subsection load
+ * Loads a given file. Will return error statement along with error if the file does not exist or
+ * cannot be opened.\n
+ * Parameters:\n
+ * file - The name of the file to be loaded\n
+ * Returns:\n
+ * data - If the load is successful, data will be returned from the file
+ * literal - If the load is unsuccessful, a string will be returned ("file not found")
+ * 
+ * @subsection write
+ * Writes to a given file. No error checking implemented.
+ * Parameters:\n
+ * file - The name of the file\n
+ * data - The data to be written to the file\n
+ */
+
 luaL_Reg registryResourceManager[] =
 {
     "file_exists", RM_FileExists,
