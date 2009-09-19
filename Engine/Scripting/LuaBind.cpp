@@ -300,19 +300,6 @@ int PHYS_Object_AngularImpulse ( lua_State* L )
 	return 0;
 }
 
-/*
-int PHYS_Object_Force ( lua_State* L )
-{
-	PHYS_Object* obj = (PHYS_Object*)luaL_checkudata(L, 1, "Apollo.PhysicsObject");
-	if (obj->pob == NULL)
-	{
-		lua_pushliteral(L, "cannot access properties on destroyed physics object");
-		return lua_error(L);
-	}
-	obj->pob->force += luaL_checkvec2(L, 2);
-	return 0;
-}*/
-
 int PHYS_Object_Force ( lua_State* L )
 {
 	PHYS_Object* obj = (PHYS_Object*)luaL_checkudata(L, 1, "Apollo.PhysicsObject");
@@ -336,6 +323,56 @@ int PHYS_Object_Torque ( lua_State* L )
 	obj->pob->torque += luaL_checknumber(L, 2);
 	return 0;
 }
+
+/**
+ * @page lua_physics The Lua Physics Registry
+ * This page contains information about the Lua physics registry.
+ *
+ * This registry contains functions related to utilizing Apollo's physics engine. In Lua, they are
+ * all called like so: "physics.function_name()" (for example: "open" becomes "physics.open(num)").
+ * 
+ * @subsection open
+ * Opens a physics system with a given amount of "resistance".\n
+ * Parameters:\n
+ * resistance - The resistance to movement; for space, should be 0.
+ * 
+ * @subsection close
+ * Closes the current physics system. This function has no parameters.
+ * 
+ * @subsection update
+ * Updates the current physics system based upon a small timestep (within Xsera, a variable named
+ * 'dt' is used to represent the change in time (delta time) from one frame to another).\n
+ * Parameters:\n
+ * dt - Change in time between updates.
+ * 
+ * @subsection new_object
+ * Creates a new physics object with properties like velocity, position, angular velocity, and more.
+ * To see what properties physics objects have, please visit the @ref lua_physics_object page. This
+ * function has no parameters.
+ * 
+ * @subsection destroy_object
+ * Destroys a physics object. This function has no parameters.
+ * 
+ * @subsection object_from_id
+ * Takes in an ID and returns the physics object with that ID, if one exists.\n
+ * Parameters:\n
+ * id - The ID of the requested physics object\n
+ * Returns:\n
+ * object - The physics object, if it exists under given ID.\n
+ * nil - If there is no physics object for the given ID, nil is returned.
+ * 
+ * @subsection collisions
+ * Given two objects and whether or not the second object is a bullet, this will tell you if there
+ * is a collision.\n
+ * Parameters:\n
+ * obj1 - The first object\n
+ * obj2 - The second object\n
+ * bullet - boolean of whether the second object is a bullet or not\n
+ * Returns:\n
+ * boolean - True if there is a collision, false if there is not.
+ * 
+ * @todo Create the @ref lua_physics_object page, referenced in @ref new_object (and possibly others)
+ */
 
 luaL_Reg registryPhysics[] =
 {
@@ -437,9 +474,9 @@ int NetClient_GetMessage ( lua_State* L )
  * @page lua_net_client The Lua Net Client Registry
  * This page contains information about the Lua net server registry.
  *
- * This registry contains functions related to running a multiplayer server. In Lua, they are all
- * called like so: "net_server.function_name()" (for example: "startup" becomes
- * "net_server.startup(port, password)").
+ * This registry contains functions related to playing on a multiplayer server. In Lua, they are all
+ * called like so: "net_server.function_name()" (for example: "connected" becomes
+ * "net_server.connected()").
  * 
  * Note: Somebody else will need to complete this registry, I don't know anything about it right now.
  * 
@@ -454,7 +491,6 @@ int NetClient_GetMessage ( lua_State* L )
  * @subsection net_client_get get
  * 
  * @todo Complete the @ref lua_net_client registry.
- * 
  */
 
 luaL_Reg registryNetClient[] =
@@ -483,11 +519,11 @@ int Pref_Get ( lua_State* L )
 }
 
 /**
- * @page lua_xml The Lua Preferences Registry
+ * @page lua_preferences The Lua Preferences Registry
  * This page contains information about the Lua preferences registry.
  *
- * This registry currently only contains one function. In Lua, it is called called like so:
- * "preferences.get(name)".
+ * This registry currently only contains one function, used for retrieving preferences. In Lua,
+ * it is called called like so: "preferences.get(name)".
  * 
  * @subsection xml_get get
  * Finds and returns a particular preference.\n
@@ -781,9 +817,10 @@ int MM_Query ( lua_State* L )
  * @page lua_mode_manager The Lua Mode Manager Registry
  * This page contains information about the Lua mode manager registry.
  *
- * This small registry contains functions for dealing with modes. In Lua, they are all
- * called like so: "mode_manager.function_name()" (for example: "switch" becomes
- * "mode_manager.switch(mode)").
+ * This small registry contains functions for dealing with modes. Modes are the states in which Lua
+ * runs, containing functions triggered by certain states of Apollo (like mouse movement, keyboard
+ * presses, etc). In Lua, they are all called like so: "mode_manager.function_name()" (for example:
+ * "switch" becomes "mode_manager.switch(mode)").
  * 
  * @subsection switch
  * Switches the game mode. If the mode cannot be switched to the given name, an error occurs.\n
@@ -849,7 +886,7 @@ int RM_Write ( lua_State* L )
  * @page lua_resource_manager The Lua Resource Manager Registry
  * This page contains information about the Lua resource manager registry.
  *
- * This small registry contains a few simple tools for working with files. In Lua, they are all
+ * This small registry contains a few simple tools for manipulating files. In Lua, they are all
  * called like so: "resource_manager.function_name()" (for example: "file_exists" becomes
  * "resource_manager.file_exists(file)").
  * 
@@ -1345,6 +1382,37 @@ int Sound_CurrentMusic ( lua_State* L )
 	return 1;
 }
 
+/**
+ * @page lua_sound The Lua Sound Registry
+ * This page contains information about the Lua sound registry.
+ *
+ * This registry contains all music control mechanisms for Lua, along with a function for playing
+ * sound effects. In Lua, they are all called like so: "sound.function_name()" (for example: "play" becomes
+ * "sound.play(file)").
+ * 
+ * @section sounds Sounds
+ * 
+ * @subsection play
+ * Plays a specified sound effect.\n
+ * Parameters:\n
+ * sound - The name of the sound file to be played.
+ * 
+ * @section music Music
+ * 
+ * @subsection play_music
+ * Plays the given song. Songs can be stopped on command, and their names can be queried.\n
+ * Parameters:\n
+ * song - the name of the song to be played.
+ * 
+ * @subsection stop_music
+ * Stops the current song. This function has no parameters.
+ * 
+ * @subsection current_music
+ * Queries the name of the song currently playing. This function has no parameters.\n
+ * Return:\n
+ * song - the name of the currently playing song.
+ */
+
 luaL_Reg registrySound[] =
 {
     "play", Sound_Play,
@@ -1517,6 +1585,41 @@ int import ( lua_State* L )
 }
 
 }
+
+/**
+ * @page all_lua_bindings All LuaBind Registries
+ * This page contains information about all Lua registries, along with links to the pages describing
+ * them.
+ * 
+ * @section reg_xml XML Registry
+ * This registry currently only contains one function (load). It is used to load XML data from
+ * files.
+ * 
+ * @section reg_mode_manager Mode Manager
+ * This small registry contains functions for dealing with modes. Modes are the states in which Lua
+ * runs, containing functions triggered by certain states of Apollo (like mouse movement, keyboard
+ * presses, etc).
+ * 
+ * @section reg_resource_manager Resource Manager
+ * This small registry contains a few simple tools for manipulating files.
+ * 
+ * @section reg_graphics Graphics
+ * This registry contains all drawing mechanisms for Lua, along with some drawing manipulation
+ * functions.
+ * 
+ * @section reg_sound Sound
+ * This registry contains all music control mechanisms for Lua, along with a function for playing
+ * sound effects.
+ * 
+ * @section reg_net_client Net Client
+ * This registry contains functions related to playing on a multiplayer server.
+ * 
+ * @section reg_net_server Net Server
+ * This registry contains functions related to hosting a multiplayer server.
+ * 
+ * @section reg_preferences Preferences
+ * This registry currently only contains one function, used for retrieving preferences.
+ */
 
 void __LuaBind ( lua_State* L )
 {
