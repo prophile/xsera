@@ -331,29 +331,29 @@ int PHYS_Object_Torque ( lua_State* L )
  * This registry contains functions related to utilizing Apollo's physics engine. In Lua, they are
  * all called like so: "physics.function_name()" (for example: "open" becomes "physics.open(num)").
  * 
- * @subsection open
+ * @section open
  * Opens a physics system with a given amount of "resistance".\n
  * Parameters:\n
  * resistance - The resistance to movement; for space, should be 0.
  * 
- * @subsection close
+ * @section close
  * Closes the current physics system. This function has no parameters.
  * 
- * @subsection update
+ * @section update
  * Updates the current physics system based upon a small timestep (within Xsera, a variable named
  * 'dt' is used to represent the change in time (delta time) from one frame to another).\n
  * Parameters:\n
  * dt - Change in time between updates.
  * 
- * @subsection new_object
+ * @section new_object
  * Creates a new physics object with properties like velocity, position, angular velocity, and more.
  * To see what properties physics objects have, please visit the @ref lua_physics_object page. This
  * function has no parameters.
  * 
- * @subsection destroy_object
+ * @section destroy_object
  * Destroys a physics object. This function has no parameters.
  * 
- * @subsection object_from_id
+ * @section object_from_id
  * Takes in an ID and returns the physics object with that ID, if one exists.\n
  * Parameters:\n
  * id - The ID of the requested physics object\n
@@ -361,7 +361,7 @@ int PHYS_Object_Torque ( lua_State* L )
  * object - The physics object, if it exists under given ID.\n
  * nil - If there is no physics object for the given ID, nil is returned.
  * 
- * @subsection collisions
+ * @section collisions
  * Given two objects and whether or not the second object is a bullet, this will tell you if there
  * is a collision.\n
  * Parameters:\n
@@ -480,15 +480,15 @@ int NetClient_GetMessage ( lua_State* L )
  * 
  * Note: Somebody else will need to complete this registry, I don't know anything about it right now.
  * 
- * @subsection net_client_connected connected
+ * @section net_client_connected connected
  * 
- * @subsection connect
+ * @section connect
  * 
- * @subsection disconnect
+ * @section disconnect
  * 
- * @subsection net_client_send send
+ * @section net_client_send send
  * 
- * @subsection net_client_get get
+ * @section net_client_get get
  * 
  * @todo Complete the @ref lua_net_client registry.
  */
@@ -525,7 +525,7 @@ int Pref_Get ( lua_State* L )
  * This registry currently only contains one function, used for retrieving preferences. In Lua,
  * it is called called like so: "preferences.get(name)".
  * 
- * @subsection xml_get get
+ * @section xml_get get
  * Finds and returns a particular preference.\n
  * Parameters:\n
  * name - The name of the preference to be fetched.\n
@@ -654,23 +654,23 @@ int NetServer_GetMessage ( lua_State* L )
  * 
  * Note: Somebody else will need to complete this registry, I don't know anything about it right now.
  * 
- * @subsection startup
+ * @section startup
  * 
- * @subsection shutdown
+ * @section shutdown
  * 
- * @subsection running
+ * @section running
  * 
- * @subsection client_count
+ * @section client_count
  * 
- * @subsection kill
+ * @section kill
  * 
- * @subsection net_server_connected connected
+ * @section net_server_connected connected
  * 
- * @subsection net_server_send send
+ * @section net_server_send send
  * 
- * @subsection broadcast
+ * @section broadcast
  * 
- * @subsection net_server_get get
+ * @section net_server_get get
  * 
  * @todo Complete the @ref lua_net_server registry.
  * 
@@ -780,7 +780,7 @@ static int XML_ParseFile (lua_State *L)
  * This registry currently only contains one function. In Lua, it is called called like so:
  * "xml.load(file)".
  * 
- * @subsection load
+ * @section load
  * Loads and parses an XML file\n
  * Parameters:\n
  * name - The name of the mode that the game is currently in.\n
@@ -822,17 +822,17 @@ int MM_Query ( lua_State* L )
  * presses, etc). In Lua, they are all called like so: "mode_manager.function_name()" (for example:
  * "switch" becomes "mode_manager.switch(mode)").
  * 
- * @subsection switch
+ * @section switch
  * Switches the game mode. If the mode cannot be switched to the given name, an error occurs.\n
  * Parameters:\n
  * mode - the name of the mode you want to switch to (without the suffix ".lua").
  * 
- * @subsection time
+ * @section time
  * Gives the game's time, in seconds, since the game's start. This function has no parameters.\n
  * Returns:\n
  * number - The amount of seconds (accurate to miliseconds) since the game's start.
  * 
- * @subsection query
+ * @section query
  * Returns the game's current mode. This function has no parameters.\n
  * Returns:\n
  * string - The name of the mode that the game is currently in.
@@ -890,14 +890,14 @@ int RM_Write ( lua_State* L )
  * called like so: "resource_manager.function_name()" (for example: "file_exists" becomes
  * "resource_manager.file_exists(file)").
  * 
- * @subsection file_exists
+ * @section file_exists
  * Ensures that the given file exists, then returns a boolean of whether it does or not.\n
  * Parameters:\n
  * file - The name of the file\n
  * Returns:\n
  * Boolean - true if file exists, false if it does not\n
  * 
- * @subsection load
+ * @section load
  * Loads a given file. Will return error statement along with error if the file does not exist or
  * cannot be opened.\n
  * Parameters:\n
@@ -906,7 +906,7 @@ int RM_Write ( lua_State* L )
  * data - If the load is successful, data will be returned from the file
  * literal - If the load is unsuccessful, a string will be returned ("file not found")
  * 
- * @subsection write
+ * @section write
  * Writes to a given file. No error checking implemented.
  * Parameters:\n
  * file - The name of the file\n
