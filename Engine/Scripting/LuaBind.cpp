@@ -1591,33 +1591,33 @@ int import ( lua_State* L )
  * This page contains information about all Lua registries, along with links to the pages describing
  * them.
  * 
- * @section reg_xml XML Registry
+ * @ref lua_xml \n
  * This registry currently only contains one function (load). It is used to load XML data from
  * files.
  * 
- * @section reg_mode_manager Mode Manager
+ * @ref lua_mode_manager \n
  * This small registry contains functions for dealing with modes. Modes are the states in which Lua
  * runs, containing functions triggered by certain states of Apollo (like mouse movement, keyboard
  * presses, etc).
  * 
- * @section reg_resource_manager Resource Manager
+ * @ref lua_resource_manager \n
  * This small registry contains a few simple tools for manipulating files.
  * 
- * @section reg_graphics Graphics
+ * @ref lua_graphics \n
  * This registry contains all drawing mechanisms for Lua, along with some drawing manipulation
  * functions.
  * 
- * @section reg_sound Sound
+ * @ref lua_sound \n
  * This registry contains all music control mechanisms for Lua, along with a function for playing
  * sound effects.
  * 
- * @section reg_net_client Net Client
+ * @ref lua_net_client \n
  * This registry contains functions related to playing on a multiplayer server.
  * 
- * @section reg_net_server Net Server
+ * @ref lua_net_server \n
  * This registry contains functions related to hosting a multiplayer server.
  * 
- * @section reg_preferences Preferences
+ * @ref lua_preferences \n
  * This registry currently only contains one function, used for retrieving preferences.
  */
 
