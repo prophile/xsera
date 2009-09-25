@@ -4,8 +4,6 @@
 	-----------------}}--
 -------------------------]]--
 
-import('ColourHandle') -- unfortunately, yes - but only for now
-
 -- CLUT VALUES
 clut = { { r = 1.0, g = 1.0, b = 1.0, a = 1.0 }, -- white
 		{ r = 1.0, g = 0.5, b = 0.0 }, -- orange
@@ -35,7 +33,7 @@ function clut_lighten(colour, lightness)
 		lightness = 1
 	end
 	if modifier[colour.m + lightness] ~= nil then
-		colour.m = colour.m + lightness
+		return { r = clut[colour.c].r * modifier[colour.m + lightness], g = clut[colour.c].g * modifier[colour.m + lightness], b = clut[colour.c].b * modifier[colour.m + lightness], a = 1.0, c = colour.c, m = colour.m + lightness }
 	end
 	return { r = clut[colour.c].r * modifier[colour.m], g = clut[colour.c].g * modifier[colour.m], b = clut[colour.c].b * modifier[colour.m], a = 1.0, c = colour.c, m = colour.m }
 end
@@ -61,9 +59,6 @@ function display_clut()
 		i = i + 1
 	end
 end
-
--- OTHER VALUES
-c_black = { r = 0.0, g = 0.0, b = 0.0, a = 1.0 }
 
 -- NON-COLOUR VALUES
 c_clear = { r = 0.0, g = 0.0, b = 0.0, a = 0.0 }
@@ -102,6 +97,10 @@ function fix_colour(colour)
 	end
 	return colour
 end
+
+--[[---------------------------------------------
+	This function is deprecated. Remove soon!
+---------------------------------------------]]--
 
 function colour_add(col1, col2, col3)
 	if col3 ~= nil then

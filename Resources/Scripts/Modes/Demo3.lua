@@ -96,18 +96,18 @@ function update ()
 			key = tempkey
 			end_time = mode_manager.time()
 			endGameData = {	{	{ false, c_clear, " " },
-								{ false, c_yellow, "YOU" },
-								{ false, c_yellow2, "PAR" } },
-							{	{ false, c_yellow, "TIME" },
+								{ false, clut_colour(3, 7), "YOU" },
+								{ false, clut_colour(3, 9), "PAR" } },
+							{	{ false, clut_colour(3, 7), "TIME" },
 								{ false, c_clear, (tostring(math.floor((end_time - start_time) / 60)) .. ":" .. tostring(string.format('%02d', math.floor((end_time - start_time) % 60))))},
 								{ false, c_clear, "1:00" } },
-							{	{ false, c_yellow2, "LOSSES" },
+							{	{ false, clut_colour(3, 9), "LOSSES" },
 								{ false, c_clear, "0" },
 								{ false, c_clear, "0" } },
-							{	{ false, c_yellow3, "KILLS" },
+							{	{ false, clut_colour(2, 11), "KILLS" },
 								{ false, c_clear, "1" },
 								{ false, c_clear, "1" } },
-							{	{ false, c_yellow4, "SCORE" },
+							{	{ false, clut_colour(2, 13), "SCORE" },
 								{ false, c_clear, ">9000!!!" },
 								{ false, c_clear, "100" } } }
 			menu_display = "victory_menu"
@@ -498,22 +498,22 @@ function render ()
 	while i ~= 500 do
 		if (i * gridDistBlue) % gridDistLightBlue == 0 then
 			if (i * gridDistBlue) % gridDistGreen == 0 then
-				graphics.draw_line(-60000, -i * gridDistBlue, 60000, -i * gridDistBlue, 1, c_laserGreen)
-				graphics.draw_line(-60000, i * gridDistBlue, 60000, i * gridDistBlue, 1, c_laserGreen)
-				graphics.draw_line(-i * gridDistBlue, -60000, -i * gridDistBlue, 60000, 1, c_laserGreen)
-				graphics.draw_line(i * gridDistBlue, -60000, i * gridDistBlue, 60000, 1, c_laserGreen)
+				graphics.draw_line(-60000, -i * gridDistBlue, 60000, -i * gridDistBlue, 1, clut_colour(5, 1))
+				graphics.draw_line(-60000, i * gridDistBlue, 60000, i * gridDistBlue, 1, clut_colour(5, 1))
+				graphics.draw_line(-i * gridDistBlue, -60000, -i * gridDistBlue, 60000, 1, clut_colour(5, 1))
+				graphics.draw_line(i * gridDistBlue, -60000, i * gridDistBlue, 60000, 1, clut_colour(5, 1))
 			else
-				graphics.draw_line(-60000, -i * gridDistBlue, 60000, -i * gridDistBlue, 1, c_lightBlue)
-				graphics.draw_line(-60000, i * gridDistBlue, 60000, i * gridDistBlue, 1, c_lightBlue)
-				graphics.draw_line(-i * gridDistBlue, -60000, -i * gridDistBlue, 60000, 1, c_lightBlue)
-				graphics.draw_line(i * gridDistBlue, -60000, i * gridDistBlue, 60000, 1, c_lightBlue)
+				graphics.draw_line(-60000, -i * gridDistBlue, 60000, -i * gridDistBlue, 1, clut_colour(4, 8))
+				graphics.draw_line(-60000, i * gridDistBlue, 60000, i * gridDistBlue, 1, clut_colour(4, 8))
+				graphics.draw_line(-i * gridDistBlue, -60000, -i * gridDistBlue, 60000, 1, clut_colour(4, 8))
+				graphics.draw_line(i * gridDistBlue, -60000, i * gridDistBlue, 60000, 1, clut_colour(4, 8))
 			end
 		else
 			if cameraRatio > 1 / 8 then
-				graphics.draw_line(-60000, -i * gridDistBlue, 60000, -i * gridDistBlue, 1, c_darkBlue)
-				graphics.draw_line(-60000, i * gridDistBlue, 60000, i * gridDistBlue, 1, c_darkBlue)
-				graphics.draw_line(-i * gridDistBlue, -60000, -i * gridDistBlue, 60000, 1, c_darkBlue)
-				graphics.draw_line(i * gridDistBlue, -60000, i * gridDistBlue, 60000, 1, c_darkBlue)
+				graphics.draw_line(-60000, -i * gridDistBlue, 60000, -i * gridDistBlue, 1, clut_colour(4, 11))
+				graphics.draw_line(-60000, i * gridDistBlue, 60000, i * gridDistBlue, 1, clut_colour(4, 11))
+				graphics.draw_line(-i * gridDistBlue, -60000, -i * gridDistBlue, 60000, 1, clut_colour(4, 11))
+				graphics.draw_line(i * gridDistBlue, -60000, i * gridDistBlue, 60000, 1, clut_colour(4, 11))
 			end
 		end
 		i = i + 1
@@ -531,7 +531,7 @@ function render ()
 			graphics.draw_sprite("Planets/" .. planet.image, planet.position.x, planet.position.y, xcoord, ycoord, 1)
 		else
 			if planet.owner ~= Admirals[1].ident then
-				graphics.draw_rbox(planet.position.x, planet.position.y, 60, c_pureRed)
+				graphics.draw_rbox(planet.position.x, planet.position.y, 60, clut_colour(16, 1))
 			else
 				graphics.draw_rbox(planet.position.x, planet.position.y, 60)
 			end
@@ -549,7 +549,7 @@ function render ()
 			if cameraRatio > 1 / 8 then
 				graphics.draw_sprite("Ships/Gaitori/Carrier", computerShip.physicsObject.position.x, computerShip.physicsObject.position.y, computerShip.size.x, computerShip.size.y, computerShip.physicsObject.angle)
 			else
-				graphics.draw_rdia(computerShip.physicsObject.position.x, computerShip.physicsObject.position.y, 60, c_pureRed )
+				graphics.draw_rdia(computerShip.physicsObject.position.x, computerShip.physicsObject.position.y, 60, clut_colour(16, 1) )
 			end
 		else
 			-- This explosion code is a hack. We need a way to deal with explosions in a better method.
@@ -604,7 +604,7 @@ function render ()
 		--	print(wNum, playerShip.beamWeap[wNum])
 			if playerShip.beamWeap[wNum] ~= nil then
 			--	print_table(playerShip.beamWeap[wNum])
-				graphics.draw_line(playerShip.beamWeap[wNum].physicsObject.position.x, playerShip.beamWeap[wNum].physicsObject.position.y, playerShip.beamWeap[wNum].physicsObject.position.x - math.cos(playerShip.beamWeap[wNum].physicsObject.angle) * playerShip.beam.length, playerShip.beamWeap[wNum].physicsObject.position.y - math.sin(playerShip.beamWeap[wNum].physicsObject.angle) * playerShip.beam.length, playerShip.beam.width, c_laserGreen)
+				graphics.draw_line(playerShip.beamWeap[wNum].physicsObject.position.x, playerShip.beamWeap[wNum].physicsObject.position.y, playerShip.beamWeap[wNum].physicsObject.position.x - math.cos(playerShip.beamWeap[wNum].physicsObject.angle) * playerShip.beam.length, playerShip.beamWeap[wNum].physicsObject.position.y - math.sin(playerShip.beamWeap[wNum].physicsObject.angle) * playerShip.beam.length, playerShip.beam.width, clut_colour(5, 1))
 			end
 			wNum = wNum + 1
 		end
@@ -631,9 +631,9 @@ function render ()
 	
 -- Arrow
 	local angle = playerShip.physicsObject.angle
-	graphics.draw_line(math.cos(arrowAlpha + angle) * arrowDist + playerShip.physicsObject.position.x, math.sin(arrowAlpha + angle) * arrowDist + playerShip.physicsObject.position.y, math.cos(angle - arrowAlpha) * arrowDist + playerShip.physicsObject.position.x, math.sin(angle - arrowAlpha) * arrowDist + playerShip.physicsObject.position.y, 1.5, c_laserGreen)
-	graphics.draw_line(math.cos(angle - arrowAlpha) * arrowDist + playerShip.physicsObject.position.x, math.sin(angle - arrowAlpha) * arrowDist + playerShip.physicsObject.position.y, math.cos(angle) * (arrowLength + arrowVar) + playerShip.physicsObject.position.x, math.sin(angle) * (arrowLength + arrowVar) + playerShip.physicsObject.position.y, 1.5, c_laserGreen)
-	graphics.draw_line(math.cos(angle) * (arrowLength + arrowVar) + playerShip.physicsObject.position.x, math.sin(angle) * (arrowLength + arrowVar) + playerShip.physicsObject.position.y, math.cos(arrowAlpha + angle) * arrowDist + playerShip.physicsObject.position.x, math.sin(arrowAlpha + angle) * arrowDist + playerShip.physicsObject.position.y, 1.5, c_laserGreen)
+	graphics.draw_line(math.cos(arrowAlpha + angle) * arrowDist + playerShip.physicsObject.position.x, math.sin(arrowAlpha + angle) * arrowDist + playerShip.physicsObject.position.y, math.cos(angle - arrowAlpha) * arrowDist + playerShip.physicsObject.position.x, math.sin(angle - arrowAlpha) * arrowDist + playerShip.physicsObject.position.y, 1.5, clut_colour(5, 1))
+	graphics.draw_line(math.cos(angle - arrowAlpha) * arrowDist + playerShip.physicsObject.position.x, math.sin(angle - arrowAlpha) * arrowDist + playerShip.physicsObject.position.y, math.cos(angle) * (arrowLength + arrowVar) + playerShip.physicsObject.position.x, math.sin(angle) * (arrowLength + arrowVar) + playerShip.physicsObject.position.y, 1.5, clut_colour(5, 1))
+	graphics.draw_line(math.cos(angle) * (arrowLength + arrowVar) + playerShip.physicsObject.position.x, math.sin(angle) * (arrowLength + arrowVar) + playerShip.physicsObject.position.y, math.cos(arrowAlpha + angle) * arrowDist + playerShip.physicsObject.position.x, math.sin(arrowAlpha + angle) * arrowDist + playerShip.physicsObject.position.y, 1.5, clut_colour(5, 1))
 -- Panels
 	drawPanels()
 -- Console
@@ -644,10 +644,10 @@ function render ()
 		-- draw mouse replacement
 		-- check to see if it's over the panels
 		-- if it's not, draw the lines coming inward
-		graphics.draw_line(-410, mousePos.y, mousePos.x - 20, mousePos.y, 1.0, c_lightBlue)
-		graphics.draw_line(410, mousePos.y, mousePos.x + 20, mousePos.y, 1.0, c_lightBlue)
-		graphics.draw_line(mousePos.x, -310, mousePos.x, mousePos.y - 20, 1.0, c_lightBlue)
-		graphics.draw_line(mousePos.x, 310, mousePos.x, mousePos.y + 20, 1.0, c_lightBlue)
+		graphics.draw_line(-410, mousePos.y, mousePos.x - 20, mousePos.y, 1.0, clut_colour(4, 8))
+		graphics.draw_line(410, mousePos.y, mousePos.x + 20, mousePos.y, 1.0, clut_colour(4, 8))
+		graphics.draw_line(mousePos.x, -310, mousePos.x, mousePos.y - 20, 1.0, clut_colour(4, 8))
+		graphics.draw_line(mousePos.x, 310, mousePos.x, mousePos.y + 20, 1.0, clut_colour(4, 8))
 		-- if it is, draw the cursor
 		cursorx, cursory = graphics.sprite_dimensions("Misc/Cursor")
 		graphics.draw_sprite("Misc/Cursor", mousePos.x, mousePos.y, cursorx, cursory, 0)

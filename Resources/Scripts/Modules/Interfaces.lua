@@ -111,64 +111,64 @@ function interface_display(dt)
 end
 
 function drawEscapeMenu()
-	switch_box( { top = 85, left = -140, bottom = -60, right = 140, boxColour = c_teal } )
+	switch_box( { top = 85, left = -140, bottom = -60, right = 140, boxColour = clut_colour(10, 8) } )
 	graphics.draw_text("Resume, start chapter over, or quit?", "CrystalClear", "left", -125, 65, 16)
 	if down.esc == true then
-		switch_box( { coordx = -125, coordy = 30, length = 250, text = "Resume", boxColour = colour_add(c_lightGreen, c_lighten), textColour = c_lightGreen, execute = nil, letter = "ESC" } )
+		switch_box( { coordx = -125, coordy = 30, length = 250, text = "Resume", boxColour = clut_lighten(clut_colour(12, 6), 1), textColour = clut_colour(12, 6), execute = nil, letter = "ESC" } )
 	elseif down.esc == "act" then
 		keyup = normal_keyup
 		key = normal_key
 		down.esc = false
 		menu_display = nil
 	else
-		switch_box( { coordx = -125, coordy = 30, length = 250, text = "Resume", boxColour = c_lightGreen, textColour = c_lightGreen, execute = nil, letter = "ESC" } )
+		switch_box( { coordx = -125, coordy = 30, length = 250, text = "Resume", boxColour = clut_colour(12, 6), textColour = clut_colour(12, 6), execute = nil, letter = "ESC" } )
 	end
 	if down.rtrn == true then
-		switch_box( { coordx = -125, coordy = 0, length = 250, text = "Start Chapter Over", boxColour = colour_add(c_lightYellow, c_lighten), textColour = c_lightYellow, execute = nil, letter = "RTRN" } )
+		switch_box( { coordx = -125, coordy = 0, length = 250, text = "Start Chapter Over", boxColour = clut_lighten(clut_colour(9, 6)), textColour = clut_colour(9, 6), execute = nil, letter = "RTRN" } )
 	elseif down.rtrn == "act" then
 		mode_manager.switch('Demo3')
 		down.rtrn = false
 	else
-		switch_box( { coordx = -125, coordy = 0, length = 250, text = "Start Chapter Over", boxColour = c_lightYellow, textColour = c_lightYellow, execute = nil, letter = "RTRN" } )
+		switch_box( { coordx = -125, coordy = 0, length = 250, text = "Start Chapter Over", boxColour = clut_colour(9, 6), textColour = clut_colour(9, 6), execute = nil, letter = "RTRN" } )
 	end
 	if down.q == true then
-		switch_box( { coordx = -125, coordy = -30, length = 250, text = "Quit to Main Menu", boxColour = colour_add(c_lightRed, c_lighten), textColour = c_lightRed, execute = nil, letter = "Q" } )
+		switch_box( { coordx = -125, coordy = -30, length = 250, text = "Quit to Main Menu", boxColour = clut_colour(8, 4), textColour = clut_colour(8, 17), execute = nil, letter = "Q" } )
 	elseif down.q == "act" then
 		menu_display = nil
 		mode_manager.switch('MainMenu')
 	else
-		switch_box( { coordx = -125, coordy = -30, length = 250, text = "Quit to Main Menu", boxColour = c_lightRed, textColour = c_lightRed, execute = nil, letter = "Q" } )
+		switch_box( { coordx = -125, coordy = -30, length = 250, text = "Quit to Main Menu", boxColour = clut_colour(8, 5), textColour = clut_colour(8, 5), execute = nil, letter = "Q" } )
 	end
 end
 
 function drawDefeatMenu()
-	switch_box( { top = 85, left = -140, bottom = -60, right = 140, boxColour = c_rust } )
+	switch_box( { top = 85, left = -140, bottom = -60, right = 140, boxColour = clut_colour(16, 6) } )
 	graphics.draw_text("You lost your Heavy Cruiser and failed.", "CrystalClear", "left", -125, 26, 16)
 	graphics.draw_text("Start chapter over, or quit?", "CrystalClear", "left", -125, 10, 16)
 	if down.rtrn == true then
-		switch_box( { coordx = -125, coordy = -20, length = 250, text = "Start Chapter Over", boxColour = colour_add(c_lightYellow, c_lighten), textColour = c_lightYellow, execute = nil, letter = "RTRN" } )
+		switch_box( { coordx = -125, coordy = -20, length = 250, text = "Start Chapter Over", boxColour = clut_lighten(clut_colour(9, 6), 1), textColour = clut_colour(9, 6), execute = nil, letter = "RTRN" } )
 	elseif down.rtrn == "act" then
 		menu_display = nil
 		mode_manager.switch('Demo3')
 	else
-		switch_box( { coordx = -125, coordy = -20, length = 250, text = "Start Chapter Over", boxColour = c_lightYellow, textColour = c_lightYellow, execute = nil, letter = "RTRN" } )
+		switch_box( { coordx = -125, coordy = -20, length = 250, text = "Start Chapter Over", boxColour = clut_colour(9, 6), textColour = clut_colour(9, 6), execute = nil, letter = "RTRN" } )
 	end
 	if down.q == true then
-		switch_box( { coordx = -125, coordy = -50, length = 250, text = "Quit to Main Menu", boxColour = colour_add(c_lightRed, c_lighten), textColour = c_lightRed, execute = nil, letter = "Q" } )
+		switch_box( { coordx = -125, coordy = -50, length = 250, text = "Quit to Main Menu", boxColour = clut_colour(8, 5), textColour = clut_colour(8, 17), execute = nil, letter = "Q" } )
 	elseif down.q == "act" then
 		menu_display = nil
 		mode_manager.switch('MainMenu')
 	else
-		switch_box( { coordx = -125, coordy = -50, length = 250, text = "Quit to Main Menu", boxColour = c_lightRed, textColour = c_lightRed, execute = nil, letter = "Q" } )
+		switch_box( { coordx = -125, coordy = -50, length = 250, text = "Quit to Main Menu", boxColour = clut_colour(8, 4), textColour = clut_colour(8, 1), execute = nil, letter = "Q" } )
 	end
 end
 
 stored_time = 0.0
 
 function drawVictoryMenu()
-	switch_box( { coordx = -125, coordy = 100, length = 290, text = " ", boxColour = c_yellow, textColour = c_yellow, execute = nil, letter = "Results", underbox = -100 } )
+	switch_box( { coordx = -125, coordy = 100, length = 290, text = " ", boxColour = clut_colour(3, 7), textColour = clut_colour(3, 7), execute = nil, letter = "Results", underbox = -100 } )
 	graphics.draw_text("You did it! Congratulations!", "CrystalClear", "left", -110, 90, 16)
-	switch_box( { top = 31, left = -75, bottom = -50, right = 115, boxColour = c_yellow, background = c_darkYellow } )
+	switch_box( { top = 31, left = -75, bottom = -50, right = 115, boxColour = clut_colour(3, 7), background = clut_colour(3, 14) } )
 	local startx = 113
 	local starty = 28
 	local xcheck = 1
@@ -201,10 +201,10 @@ function drawVictoryMenu()
 							position = 1
 						end
 						if position == 1 then
-							graphics.draw_box(starty - (ycheck - 1) * 15, startx - xcoord - xlength / 2 - 5, starty - ycheck * 15, startx - xcoord - xlength / 2 + 5, 0, c_yellow)
+							graphics.draw_box(starty - (ycheck - 1) * 15, startx - xcoord - xlength / 2 - 5, starty - ycheck * 15, startx - xcoord - xlength / 2 + 5, 0, clut_colour(3, 7))
 							position = 2
 						elseif position == 2 then
-							graphics.draw_box(starty - (ycheck - 1) * 15, startx - xcoord - 10, starty - ycheck * 15, startx - xcoord, 0, c_yellow)
+							graphics.draw_box(starty - (ycheck - 1) * 15, startx - xcoord - 10, starty - ycheck * 15, startx - xcoord, 0, clut_colour(3, 7))
 							endGameData[ycheck][xcheck][1] = true
 							position = nil
 						end
@@ -212,7 +212,7 @@ function drawVictoryMenu()
 					elseif endGameData[ycheck][xcheck][1] == false then
 						endGameData[ycheck][xcheck][1] = "inprogress"
 						sound.play("ITeletype")
-						graphics.draw_box(starty - (ycheck - 1) * 15, startx - xcoord - xlength, starty - ycheck * 15, startx - xcoord - xlength + 10, 0, c_yellow)
+						graphics.draw_box(starty - (ycheck - 1) * 15, startx - xcoord - xlength, starty - ycheck * 15, startx - xcoord - xlength + 10, 0, clut_colour(3, 7))
 					end
 				end
 				ycheck = 5
@@ -225,36 +225,36 @@ function drawVictoryMenu()
 end
 
 function drawInfoMenu()
-	switch_box( { top = 250, left = -260, bottom = -250, right = 280, boxColour = c_grey } )
+	switch_box( { top = 250, left = -260, bottom = -250, right = 280, boxColour = clut_colour(1, 8) } )
 	if down.esc == true then
-		switch_box( { coordx = -255, coordy = -240, length = 530, text = "Done", boxColour = colour_add(c_grey, c_lighten), textColour = c_grey, execute = nil, letter = "ESC" } )
+		switch_box( { coordx = -255, coordy = -240, length = 530, text = "Done", boxColour = clut_lighten(clut_colour(1, 8)), textColour = clut_colour(1, 8), execute = nil, letter = "ESC" } )
 	elseif down.esc == "act" then
 		keyup = normal_keyup
 		key = normal_key
 		down.esc = false
 		menu_display = nil
 	else
-		switch_box( { coordx = -255, coordy = -240, length = 530, text = "Done", boxColour = c_grey, textColour = c_grey, execute = nil, letter = "ESC" } )
+		switch_box( { coordx = -255, coordy = -240, length = 530, text = "Done", boxColour = clut_colour(1, 8), textColour = clut_colour(1, 8), execute = nil, letter = "ESC" } )
 	end
 	local x = 245
 	local col_switch = true
 	while x - 15 >= -188 do
 		if col_switch == false then
 			col_switch = true
-			graphics.draw_box(x, -257, x - 15, 277, 0, c_red)
+			graphics.draw_box(x, -257, x - 15, 277, 0, clut_colour(16, 11))
 		else
 			col_switch = false
-			graphics.draw_box(x, -257, x - 15, 277, 0, c_darkRed)
+			graphics.draw_box(x, -257, x - 15, 277, 0, clut_colour(16, 12))
 		end
-		graphics.draw_box(x, -257, x - 15, -217, 0, c_pureRed)
-		graphics.draw_box(x, 5, x - 15, 45, 0, c_pureRed)
+		graphics.draw_box(x, -257, x - 15, -217, 0, clut_colour(16, 1))
+		graphics.draw_box(x, 5, x - 15, 45, 0, clut_colour(16, 1))
 		x = x - 15
 	end
 	local num = 1
 	local line_num = 1
 	while keyboard[num] ~= nil do
 		local subnum = 1
-		graphics.draw_box(line_num * -15 + 260, -257, line_num * -15 + 245, 277, 0, c_grey)
+		graphics.draw_box(line_num * -15 + 260, -257, line_num * -15 + 245, 277, 0, clut_colour(1, 8))
 		graphics.draw_text(keyboard[num][1], "CrystalClear", "left", -252, line_num * -15 + 253, 16)
 		line_num = line_num + 1
 		local xcoord = 0
@@ -300,8 +300,8 @@ function drawPauseMenu(dt)
 	end
 	time_elapsed = time_elapsed + dt
 	if time_elapsed % 0.8 > 0.4 then
-		switch_box( { top = 20, left = -80, bottom = -20, right = 140, boxColour = c_green, background = c_half_clear } )
-		graphics.draw_text("> CAPS LOCK - PAUSED <", "CrystalClear", "center", 30, 0, 23, c_green)
+		switch_box( { top = 20, left = -80, bottom = -20, right = 140, boxColour = clut_colour(5, 11), background = c_half_clear } )
+		graphics.draw_text("> CAPS LOCK - PAUSED <", "CrystalClear", "center", 30, 0, 23, clut_colour(5, 11))
 	end
 end
 
@@ -317,14 +317,14 @@ function drawPanels()
 ------------------]]--
 
 -- Battery (red)
-	graphics.draw_box(107, 379, 29, 386, 0, c_red)
-	graphics.draw_box(playerShip.battery.percent * 78 + 29, 379, 29, 386, 0, c_lightRed)
+	graphics.draw_box(107, 379, 29, 386, 0, clut_colour(8, 8))
+	graphics.draw_box(playerShip.battery.percent * 78 + 29, 379, 29, 386, 0, clut_colour(8, 5))
 -- Energy (yellow)
-	graphics.draw_box(6, 379, -72.5, 386, 0, c_yellow)
-	graphics.draw_box(playerShip.energy.percent * 78.5 - 72.5, 379, -72.5, 386, 0, c_lightYellow)
+	graphics.draw_box(6, 379, -72.5, 386, 0, clut_colour(3, 7))
+	graphics.draw_box(playerShip.energy.percent * 78.5 - 72.5, 379, -72.5, 386, 0, clut_colour(9, 6))
 -- Shield (blue)
-	graphics.draw_box(-96, 379, -173, 386, 0, c_lightBlue)
-	graphics.draw_box(playerShip.shield.percent * 77 - 173, 379, -173, 386, 0, c_blue)
+	graphics.draw_box(-96, 379, -173, 386, 0, clut_colour(4, 8))
+	graphics.draw_box(playerShip.shield.percent * 77 - 173, 379, -173, 386, 0, clut_colour(4, 6))
 -- Factory resources (green - mostly)
 	count = 1
 	if ship_selected == true then
@@ -394,11 +394,11 @@ function drawPanels()
 ------------------]]--
 	
 -- Radar box (green)
-	graphics.draw_box(184, -394, 100, -303, 1, c_green5)
+	graphics.draw_box(184, -394, 100, -303, 1, clut_colour(5, 11))
 -- Communications panels (green)
-	graphics.draw_box(-63, -393, -158, -297, 0, c_green5)
-	graphics.draw_line(-391, -74, -298, -74, 1, c_lightGreen2)
-	graphics.draw_box(-165, -389.5, -185.5, -304, 0, c_green5)
+	graphics.draw_box(-63, -393, -158, -297, 0, clut_colour(5, 11))
+	graphics.draw_line(-391, -74, -298, -74, 1, clut_colour(12, 3))
+	graphics.draw_box(-165, -389.5, -185.5, -304, 0, clut_colour(5, 11))
 -- Menu drawing
 	local shift = 1
 	local num = 1
@@ -406,7 +406,7 @@ function drawPanels()
 	while menu_level[num] ~= nil do
 		if menu_level[num][1] ~= nil then
 			if menu_level[num][2] == true then
-				graphics.draw_box(top_of_menu + menu_stride * shift + 4, -392, top_of_menu + menu_stride * shift - 5, -298, 0, c_green3)
+				graphics.draw_box(top_of_menu + menu_stride * shift + 4, -392, top_of_menu + menu_stride * shift - 5, -298, 0, clut_colour(12, 10))
 			end
 			graphics.draw_text(menu_level[num][1], "CrystalClear", "left", menu_shift, top_of_menu + menu_stride * shift, 13)
 			shift = shift + 1
@@ -417,11 +417,11 @@ function drawPanels()
 		graphics.draw_text(scen.text[textnum], "CrystalClear", "center", 0, -250, 30)
 	end
 -- Weapon (special) ammo count
-	graphics.draw_text(string.format('%03d', playerShip.special.ammo), "CrystalClear", "left", -314, 60, 13, c_laserGreen)
+	graphics.draw_text(string.format('%03d', playerShip.special.ammo), "CrystalClear", "left", -314, 60, 13, clut_colour(5, 1))
 	control = playerShip -- [HARDCODE]
 	if control ~= nil then
-		graphics.draw_box(49, -392, 40, -297, 0, c_lightYellow)
-		graphics.draw_text("CONTROL", "CrystalClear", "left", -389, 44, 12, c_black)
+		graphics.draw_box(49, -392, 40, -297, 0, clut_colour(9, 6))
+		graphics.draw_text("CONTROL", "CrystalClear", "left", -389, 44, 12, clut_colour(1, 17))
 		if control.type == "Planet" then
 			graphics.draw_text(control.name, "CrystalClear", "left", -389, 35, 12)
 		else
@@ -429,60 +429,60 @@ function drawPanels()
 		end
 		if control.ctrlObject ~= nil then
 			if control.owner == "Human/Ishiman" then
-				graphics.draw_text(control.ctrlObject.name, "CrystalClear", "left", -389, 3, 12, c_green)
+				graphics.draw_text(control.ctrlObject.name, "CrystalClear", "left", -389, 3, 12, clut_colour(5, 11))
 			else
-				graphics.draw_text(control.ctrlObject.name, "CrystalClear", "left", -389, 3, 12, c_pureRed)
+				graphics.draw_text(control.ctrlObject.name, "CrystalClear", "left", -389, 3, 12, clut_colour(16, 1))
 			end
 		end
 		if control.energy ~= nil then
-			graphics.draw_line(-357, 28, -347, 28, 0.5, c_yellow)
-			graphics.draw_line(-357, 27, -357, 28, 0.5, c_yellow)
-			graphics.draw_line(-347, 27, -347, 28, 0.5, c_yellow)
-			graphics.draw_line(-357, 9, -347, 9, 0.5, c_yellow)
-			graphics.draw_line(-357, 10, -357, 9, 0.5, c_yellow)
-			graphics.draw_line(-347, 10, -347, 9, 0.5, c_yellow)
-			graphics.draw_box(27, -356, 10, -348, 0, c_yellow)
-			graphics.draw_box(17 * control.energy.percent + 10, -356, 10, -348, 0, c_lightYellow)
+			graphics.draw_line(-357, 28, -347, 28, 0.5, clut_colour(3, 7))
+			graphics.draw_line(-357, 27, -357, 28, 0.5, clut_colour(3, 7))
+			graphics.draw_line(-347, 27, -347, 28, 0.5, clut_colour(3, 7))
+			graphics.draw_line(-357, 9, -347, 9, 0.5, clut_colour(3, 7))
+			graphics.draw_line(-357, 10, -357, 9, 0.5, clut_colour(3, 7))
+			graphics.draw_line(-347, 10, -347, 9, 0.5, clut_colour(3, 7))
+			graphics.draw_box(27, -356, 10, -348, 0, clut_colour(3, 7))
+			graphics.draw_box(17 * control.energy.percent + 10, -356, 10, -348, 0, clut_colour(9, 6))
 		end
 		if control.shield ~= nil then
-			graphics.draw_line(-369, 28, -359, 28, 0.5, c_lightBlue)
-			graphics.draw_line(-369, 27, -369, 28, 0.5, c_lightBlue)
-			graphics.draw_line(-359, 27, -359, 28, 0.5, c_lightBlue)
-			graphics.draw_line(-369, 9, -359, 9, 0.5, c_lightBlue)
-			graphics.draw_line(-369, 10, -369, 9, 0.5, c_lightBlue)
-			graphics.draw_line(-359, 10, -359, 9, 0.5, c_lightBlue)
-			graphics.draw_box(27, -367.5, 10, -360, 0, c_lightBlue)
-			graphics.draw_box(17 * control.shield.percent + 10, -367.5, 10, -360, 0, c_blue)
+			graphics.draw_line(-369, 28, -359, 28, 0.5, clut_colour(4, 8))
+			graphics.draw_line(-369, 27, -369, 28, 0.5, clut_colour(4, 8))
+			graphics.draw_line(-359, 27, -359, 28, 0.5, clut_colour(4, 8))
+			graphics.draw_line(-369, 9, -359, 9, 0.5, clut_colour(4, 8))
+			graphics.draw_line(-369, 10, -369, 9, 0.5, clut_colour(4, 8))
+			graphics.draw_line(-359, 10, -359, 9, 0.5, clut_colour(4, 8))
+			graphics.draw_box(27, -367.5, 10, -360, 0, clut_colour(4, 8))
+			graphics.draw_box(17 * control.shield.percent + 10, -367.5, 10, -360, 0, clut_colour(4, 6))
 		end
 		if control.type == "Planet" then
 			graphics.draw_sprite(control.type .. "s/" .. control.image, -380, 19, 17, 17, 0)
 		else
 			graphics.draw_sprite(control.image, -380, 19, 17, 17, 3.14 / 2.0)
 		end
-		graphics.draw_line(-387, 28, -372, 28, 0.5, c_white)
-		graphics.draw_line(-387, 27, -387, 28, 0.5, c_white)
-		graphics.draw_line(-372, 27, -372, 28, 0.5, c_white)
-		graphics.draw_line(-387, 9, -372, 9, 0.5, c_white)
-		graphics.draw_line(-372, 10, -372, 9, 0.5, c_white)
-		graphics.draw_line(-387, 10, -387, 9, 0.5, c_white)
+		graphics.draw_line(-387, 28, -372, 28, 0.5, clut_colour(1, 1))
+		graphics.draw_line(-387, 27, -387, 28, 0.5, clut_colour(1, 1))
+		graphics.draw_line(-372, 27, -372, 28, 0.5, clut_colour(1, 1))
+		graphics.draw_line(-387, 9, -372, 9, 0.5, clut_colour(1, 1))
+		graphics.draw_line(-372, 10, -372, 9, 0.5, clut_colour(1, 1))
+		graphics.draw_line(-387, 10, -387, 9, 0.5, clut_colour(1, 1))
 	end
 	if target ~= nil then
-		graphics.draw_box(-8, -392, -17, -297, 0, c_lightBlue4)
-		graphics.draw_text("TARGET", "CrystalClear", "left", -389, -13, 12, c_black)
-		graphics.draw_line(-387, -32, -372, -32, 0.5, c_white)
-		graphics.draw_line(-372, -34, -372, -32, 0.5, c_white)
-		graphics.draw_line(-387, -34, -387, -32, 0.5, c_white)
-		graphics.draw_line(-387, -49, -372, -49, 0.5, c_white)
-		graphics.draw_line(-372, -47, -372, -49, 0.5, c_white)
-		graphics.draw_line(-387, -47, -387, -49, 0.5, c_white)
+		graphics.draw_box(-8, -392, -17, -297, 0, clut_colour(4, 7))
+		graphics.draw_text("TARGET", "CrystalClear", "left", -389, -13, 12, clut_colour(1, 17))
+		graphics.draw_line(-387, -32, -372, -32, 0.5, clut_colour(1, 1))
+		graphics.draw_line(-372, -34, -372, -32, 0.5, clut_colour(1, 1))
+		graphics.draw_line(-387, -34, -387, -32, 0.5, clut_colour(1, 1))
+		graphics.draw_line(-387, -49, -372, -49, 0.5, clut_colour(1, 1))
+		graphics.draw_line(-372, -47, -372, -49, 0.5, clut_colour(1, 1))
+		graphics.draw_line(-387, -47, -387, -49, 0.5, clut_colour(1, 1))
 	end
-	graphics.draw_box(-165.5, -389.5, -175.5, -358, 0, c_lightBlue)
-	graphics.draw_text("RIGHT", "CrystalClear", "left", -388, -170, 13, c_blue)
-	graphics.draw_text("Select", "CrystalClear", "left", -354, -170, 13, c_blue)
+	graphics.draw_box(-165.5, -389.5, -175.5, -358, 0, clut_colour(4, 8))
+	graphics.draw_text("RIGHT", "CrystalClear", "left", -388, -170, 13, clut_colour(4, 6))
+	graphics.draw_text("Select", "CrystalClear", "left", -354, -170, 13, clut_colour(4, 6))
 	if menu_level ~= menu_options then
-		graphics.draw_box(-175.5, -389.5, -185.5, -358, 0, c_lightBlue)
-		graphics.draw_text("LEFT", "CrystalClear", "left", -388, -180, 13, c_blue)
-		graphics.draw_text("Go Back", "CrystalClear", "left", -354, -180, 13, c_blue)
+		graphics.draw_box(-175.5, -389.5, -185.5, -358, 0, clut_colour(4, 8))
+		graphics.draw_text("LEFT", "CrystalClear", "left", -388, -180, 13, clut_colour(4, 6))
+		graphics.draw_text("Go Back", "CrystalClear", "left", -354, -180, 13, clut_colour(4, 6))
 	end
 end
 

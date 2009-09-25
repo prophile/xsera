@@ -3,15 +3,15 @@ import('Console')
 import('BoxDrawing')
 import('KeyboardControl')
 
-background = {	{ top = 170, left = -280, bottom = -60, right = 280, boxColour = c_teal },
-				{ top = -70, left = -280, bottom = -110, right = 280, boxColour = c_rust },
-				{ coordx = -280, coordy = -205, length = 100, text = "nodraw", boxColour = c_brightYellow, textColour = clut_colour(13, 9), execute = nil, letter = "CANCEL" },
-				{ coordx = -265, coordy = 170, length = 63, text = "nodraw", boxColour = colour_add(c_teal, c_lighten2), textColour = c_teal, execute = nil, letter = "Ship" },
-				{ coordx = -177, coordy = 170, length = 93, text = "nodraw", boxColour = c_teal, textColour = c_teal, execute = nil, letter = "Command" },
-				{ coordx = -54, coordy = 170, length = 95, text = "nodraw", boxColour = c_teal, textColour = c_teal, execute = nil, letter = "Shortcuts" },
-				{ coordx = 71, coordy = 170, length = 71, text = "nodraw", boxColour = c_teal, textColour = c_teal, execute = nil, letter = "Utility" },
-				{ coordx = 177, coordy = 170, length = 87, text = "nodraw", boxColour = c_teal, textColour = c_teal, execute = nil, letter = "HotKeys" },
-				{ coordx = 180, coordy = -205, length = 100, text = "nodraw", boxColour = c_lightGreen, textColour = clut_colour(13, 9), execute = nil, letter = "DONE" } }
+background = {	{ top = 170, left = -280, bottom = -60, right = 280, boxColour = clut_colour(10, 8) },
+				{ top = -70, left = -280, bottom = -110, right = 280, boxColour = clut_colour(16, 6) },
+				{ coordx = -280, coordy = -205, length = 100, text = "nodraw", boxColour = clut_colour(3, 6), textColour = clut_colour(13, 9), execute = nil, letter = "CANCEL" },
+				{ coordx = -265, coordy = 170, length = 63, text = "nodraw", boxColour = clut_lighten(clut_colour(10, 8)), textColour = clut_colour(10, 8), execute = nil, letter = "Ship" },
+				{ coordx = -177, coordy = 170, length = 93, text = "nodraw", boxColour = clut_colour(10, 8), textColour = clut_colour(10, 8), execute = nil, letter = "Command" },
+				{ coordx = -54, coordy = 170, length = 95, text = "nodraw", boxColour = clut_colour(10, 8), textColour = clut_colour(10, 8), execute = nil, letter = "Shortcuts" },
+				{ coordx = 71, coordy = 170, length = 71, text = "nodraw", boxColour = clut_colour(10, 8), textColour = clut_colour(10, 8), execute = nil, letter = "Utility" },
+				{ coordx = 177, coordy = 170, length = 87, text = "nodraw", boxColour = clut_colour(10, 8), textColour = clut_colour(10, 8), execute = nil, letter = "HotKeys" },
+				{ coordx = 180, coordy = -205, length = 100, text = "nodraw", boxColour = clut_colour(12, 6), textColour = clut_colour(13, 9), execute = nil, letter = "DONE" } }
 
 keyboard_num = 1
 
@@ -63,7 +63,7 @@ function render()
 		else
 			yshift = 9
 		end
-		switch_box( { coordx = xcoord, coordy = (math.ceil(numBoxes / 4) - (num - 1 - adjust)) * 36 + yshift, length = 245, text = keyboard[keyboard_num][num + 1].name, boxColour = c_teal, textColour = c_teal, execute = nil, letter = keyboard[keyboard_num][num + 1].key } )
+		switch_box( { coordx = xcoord, coordy = (math.ceil(numBoxes / 4) - (num - 1 - adjust)) * 36 + yshift, length = 245, text = keyboard[keyboard_num][num + 1].name, boxColour = clut_colour(10, 8), textColour = clut_colour(10, 8), execute = nil, letter = keyboard[keyboard_num][num + 1].key } )
 		num = num + 1
 	end
 	-- Error Printing
@@ -86,7 +86,7 @@ function change_box_colour(box, match, shade)
 	local num = 1
 	while box[num] ~= nil do
 		if box[num].letter == match then
-			box[num].boxColour = colour_add(box[num].boxColour, shade)
+			box[num].boxColour = clut_lighten(box[num].boxColour, shade)
 		end
 		num = num + 1
 	end
@@ -96,15 +96,15 @@ function key(k)
 -- no key presses until I can assign them to values
 	if k == "j" then
 		if keyboard_num ~= 1 then
-			change_box_colour(background, keyboard[keyboard_num][1], c_darken2)
+			change_box_colour(background, keyboard[keyboard_num][1], -2)
 			keyboard_num = keyboard_num - 1
-			change_box_colour(background, keyboard[keyboard_num][1], c_lighten2)
+			change_box_colour(background, keyboard[keyboard_num][1], 2)
 		end
 	elseif k == "l" then
 		if keyboard[keyboard_num] ~= nil then
-			change_box_colour(background, keyboard[keyboard_num][1], c_darken2)
+			change_box_colour(background, keyboard[keyboard_num][1], -2)
 			keyboard_num = keyboard_num + 1
-			change_box_colour(background, keyboard[keyboard_num][1], c_lighten2)
+			change_box_colour(background, keyboard[keyboard_num][1], 2)
 		end
 	end
 end
