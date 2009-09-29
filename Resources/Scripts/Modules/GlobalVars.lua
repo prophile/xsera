@@ -3,7 +3,7 @@ import('AresCLUT')
 
 playerShip = nil
 
-release_build = false
+releaseBuild = false
 
 cameraRatio = 1
 aspectRatio = 4 / 3
@@ -14,8 +14,8 @@ cameraRatios = { 2, 1, 1/2, 1/4, 1/16 }
 cameraRatioNum = 2
 timeInterval = 1
 
-victory_timer = nil
-defeat_timer = 0
+victoryTimer = nil
+defeatTimer = 0
 down = { esc = false, rtrn = false, q = false, o = false }
 
 endGameData = nil
@@ -33,20 +33,20 @@ resource_time = 0.0
 recharge_timer = 0.0
 cash = 1000
 alliedShips = {}
-build_timer_running = false
+buildTimerRunning = false
 shipToBuild = nil
-ship_selected = false
+shipSelected = false
 scen = nil
 shipQuerying = { n, p, r, c, t }
 shipBuilding = { n, p, r, c, t }
 soundLength = 0.25
-menu_level = nil
+menuLevel = nil
 --/tempvars
 
 Admirals = {}
 
 --loadingstuff
-loading_entities = false
+loadingEntities = false
 entities = {}
 --/loadingstuff
 

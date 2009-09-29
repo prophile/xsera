@@ -147,22 +147,22 @@ function do_scale_out()
 end
 
 function do_computer_previous()
-	change_menu(menu_level, "i")
+	change_menu(menuLevel, "i")
 	keyboard[2][9].active = false
 end
 
 function do_computer_next()
-	change_menu(menu_level, "k")
+	change_menu(menuLevel, "k")
 	keyboard[2][10].active = false
 end
 
 function do_computer_accept()
-	change_menu(menu_level, "l")
+	change_menu(menuLevel, "l")
 	keyboard[2][11].active = false
 end
 
 function do_computer_back()
-	change_menu(menu_level, "j")
+	change_menu(menuLevel, "j")
 	keyboard[2][12].active = false
 end
 

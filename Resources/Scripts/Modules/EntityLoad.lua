@@ -52,7 +52,7 @@ function NewEntity (entOwner, entName, entType, entDir, entSubdir, other)
 			end
 			num = num + 1
 		end
-		if loading_entities == false then
+		if loadingEntities == false then
 			errLog("Entity " .. entObject.entName .. " being loaded after loading period.", 2)
 			add_properties(entOwner, entName, entType, entDir, entSubdir, other, trueData, entObject, entObject.entName)
 		end
@@ -155,7 +155,7 @@ function NewEntity (entOwner, entName, entType, entDir, entSubdir, other)
 			entObject.isSeeking = false
 		end
 		
-		if loading_entities == false then
+		if loadingEntities == false then
 			entObject.life = tonumber(trueData.life)
 		end
 	elseif entType == "Ship" then

@@ -89,7 +89,7 @@ function key ( k )
     elseif k == "d" then
         mode_manager.switch("Demo3")
     elseif k == "x" then
-		if release_build == false then
+		if releaseBuild == false then
 			mode_manager.switch("ConsoleDrawer")
 		else
 			mode_manager.switch("AresSplash")

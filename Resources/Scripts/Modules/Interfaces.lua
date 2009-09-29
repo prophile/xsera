@@ -3,11 +3,11 @@ import('GlobalVars')
 import('EntityLoad')
 import('BoxDrawing')
 
-loading_entities = true
+loadingEntities = true
 if scen == nil then
 	scen = NewEntity(nil, "demo", "Scenario")
 end
-loading_entities = false
+loadingEntities = false
 
 control = scen.planet -- [HARDCODED]
 target = nil
@@ -15,7 +15,7 @@ target = nil
 menu_shift = -391
 top_of_menu = -69
 menu_stride = -11
-ship_selected = false
+shipSelected = false
 menu_shipyard = { "BUILD", {} }
 
 function make_ship()
@@ -28,11 +28,11 @@ function make_ship()
 	scen.planet.buildqueue.time = mode_manager.time()
 	scen.planet.buildqueue.current = mode_manager.time() - scen.planet.buildqueue.time
 	cash = cash - shipBuilding.c
-	build_timer_running = true
+	buildTimerRunning = true
 end
 
 function shipyard()
-	menu_level = menu_shipyard
+	menuLevel = menu_shipyard
 	local num = 1
 	while scen.planet.build[num] ~= nil do
 		menu_shipyard[num + 1] = {}
@@ -41,7 +41,7 @@ function shipyard()
 			menu_shipyard[num + 1][2] = false
 		else
 			menu_shipyard[num + 1][2] = true
-			ship_selected = true
+			shipSelected = true
 			shipQuerying.p = scen.planet
 			shipQuerying.n = scen.planet.build[num]:gsub("(%w+)/(%w+)", "%2")
 			shipQuerying.r = scen.planet.build[num]:gsub("(%w+)/(%w+)", "%1")
@@ -55,7 +55,7 @@ function shipyard()
 		menu_shipyard[num + 1][4][3] = scen.planet.build[num]:gsub("(%w+)/(%w+)", "%1")
 		num = num + 1
 	end
-	ship_selected = true
+	shipSelected = true
 end
 
 menu_special = { "SPECIAL ORDERS",
@@ -68,7 +68,7 @@ menu_special = { "SPECIAL ORDERS",
 }
 
 function special()
-	menu_level = menu_special
+	menuLevel = menu_special
 end
 
 menu_messages = { "MESSAGES",
@@ -78,11 +78,11 @@ menu_messages = { "MESSAGES",
 }
 
 function messages()
-	menu_level = menu_messages
+	menuLevel = menu_messages
 end
 
 function mission_status()
-	menu_level = { "MISSION STATUS",
+	menuLevel = { "MISSION STATUS",
 		{ scen.briefing, false } }
 end
 
@@ -92,7 +92,7 @@ menu_options = { "MAIN MENU",
 	{ "<Messages>", false, messages },
 	{ "<Mission Status>", false, mission_status }
 }
-menu_level = menu_options
+menuLevel = menu_options
 
 function interface_display(dt)
 	if menu_display ~= nil then
@@ -305,7 +305,7 @@ function drawPauseMenu(dt)
 	end
 end
 
-menu_level = menu_options
+menuLevel = menu_options
 
 function drawPanels()
 	graphics.set_camera(-400, -300, 400, 300)
@@ -327,7 +327,7 @@ function drawPanels()
 	graphics.draw_box(playerShip.shield.percent * 77 - 173, 379, -173, 386, 0, ClutColour(4, 6))
 -- Factory resources (green - mostly)
 	count = 1
-	if ship_selected == true then
+	if shipSelected == true then
 		if cash >= shipQuerying.c then
 			local drawGreen = math.floor((cash - shipQuerying.c) / 200)
 			local drawBlue = math.ceil((shipQuerying.c) / 200) + drawGreen
@@ -402,13 +402,13 @@ function drawPanels()
 -- Menu drawing
 	local shift = 1
 	local num = 1
-	graphics.draw_text(menu_level[1], "CrystalClear", "left", menu_shift, top_of_menu, 13)
-	while menu_level[num] ~= nil do
-		if menu_level[num][1] ~= nil then
-			if menu_level[num][2] == true then
+	graphics.draw_text(menuLevel[1], "CrystalClear", "left", menu_shift, top_of_menu, 13)
+	while menuLevel[num] ~= nil do
+		if menuLevel[num][1] ~= nil then
+			if menuLevel[num][2] == true then
 				graphics.draw_box(top_of_menu + menu_stride * shift + 4, -392, top_of_menu + menu_stride * shift - 5, -298, 0, ClutColour(12, 10))
 			end
-			graphics.draw_text(menu_level[num][1], "CrystalClear", "left", menu_shift, top_of_menu + menu_stride * shift, 13)
+			graphics.draw_text(menuLevel[num][1], "CrystalClear", "left", menu_shift, top_of_menu + menu_stride * shift, 13)
 			shift = shift + 1
 		end
 		num = num + 1
@@ -479,7 +479,7 @@ function drawPanels()
 	graphics.draw_box(-165.5, -389.5, -175.5, -358, 0, ClutColour(4, 8))
 	graphics.draw_text("RIGHT", "CrystalClear", "left", -388, -170, 13, ClutColour(4, 6))
 	graphics.draw_text("Select", "CrystalClear", "left", -354, -170, 13, ClutColour(4, 6))
-	if menu_level ~= menu_options then
+	if menuLevel ~= menu_options then
 		graphics.draw_box(-175.5, -389.5, -185.5, -358, 0, ClutColour(4, 8))
 		graphics.draw_text("LEFT", "CrystalClear", "left", -388, -180, 13, ClutColour(4, 6))
 		graphics.draw_text("Go Back", "CrystalClear", "left", -354, -180, 13, ClutColour(4, 6))
@@ -598,8 +598,8 @@ function change_menu(menu, direction)
 		end
 	elseif direction == "j" then
 		if menu ~= menu_options then
-			menu_level = menu_options
-			ship_selected = false
+			menuLevel = menu_options
+			shipSelected = false
 		end
 	elseif direction == "l" then
 		while menu[num][2] ~= true do

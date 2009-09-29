@@ -53,13 +53,13 @@ function init ()
 	sound.stop_music()
     lastTime = mode_manager.time()
     physics.open(0.6)
-	loading_entities = true
+	loadingEntities = true
 	Admirals[1] = { ident = "Human/Ishiman", name = "Human / Ishiman Cooperative" }
 	Admirals[2] = { ident = "Gaitori", name = "Gaitori Union" }
 	if scen == nil then
 		scen = NewEntity(nil, "demo", "Scenario")
 	end
-	loading_entities = false
+	loadingEntities = false
 	computerShip = NewEntity(nil, "Carrier", "Ship", "Gaitori")
 		computerShip.physicsObject.position = { x = 2200, y = 2700 }
 		computerShip.physicsObject.angle = math.pi - 0.2
@@ -90,9 +90,9 @@ function update ()
 	end
 	
 	-- victory condition
-	if victory_timer ~= nil then
-		victory_timer = victory_timer + dt
-		if victory_timer >= 2.0 then
+	if victoryTimer ~= nil then
+		victoryTimer = victoryTimer + dt
+		if victoryTimer >= 2.0 then
 			key = tempkey
 			end_time = mode_manager.time()
 			endGameData = {	{	{ false, c_clear, " " },
@@ -111,15 +111,15 @@ function update ()
 								{ false, c_clear, ">9000!!!" },
 								{ false, c_clear, "100" } } }
 			menu_display = "victory_menu"
-			victory_timer = nil
+			victoryTimer = nil
 		end
 	end
 	
 	-- defeat condition
 	if playerShip.life == 0 then
-		defeat_timer = defeat_timer + dt
-		victory_timer = nil
-		if defeat_timer >= 2.0 then
+		defeatTimer = defeatTimer + dt
+		victoryTimer = nil
+		if defeatTimer >= 2.0 then
 			menu_display = "defeat_menu"
 			keyup = escape_keyup
 			key = escape_key
@@ -316,7 +316,7 @@ function update ()
 		resources = math.floor((cash % 20000) / 200)
 	end
 	
-	if build_timer_running == true then
+	if buildTimerRunning == true then
 		scen.planet.buildqueue.current = scen.planet.buildqueue.current + dt
 		scen.planet.buildqueue.percent = scen.planet.buildqueue.current / scen.planet.buildqueue.factor * 100
 		if planet.buildqueue.percent > 100.0 then
@@ -333,7 +333,7 @@ function update ()
 			otherShip[num] = NewEntity(shipBuilding.p, shipBuilding.n, "Ship", shipBuilding.r)
 		--	print(otherShip[num], playerShip)
 			planet.buildqueue.percent = 100
-			build_timer_running = false
+			buildTimerRunning = false
 			sound.play("ComboBeep")
 		end
 	end
@@ -685,19 +685,19 @@ normal_keyup = keyup
 
 function key ( k )
 	if k == "`" then
-		if release_build == false then
+		if releaseBuild == false then
 			consoleDraw = true
 		end
 	elseif k == "p" then
-		if release_build == false then
+		if releaseBuild == false then
 			computerShip.life = 0
 		end
 	elseif k == "o" then
-		if release_build == false then
+		if releaseBuild == false then
 			menu_display = "pause_menu"
 		end
 	elseif k == "[" then
-		if release_build == false then
+		if releaseBuild == false then
 			playerShip.life = 0
 			keyup = escape_keyup
 			key = escape_key

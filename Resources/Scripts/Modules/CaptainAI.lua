@@ -54,7 +54,7 @@ function ai_pathfind(dt, object, destination, computerShip)
 				if object.landing_size < 0 then
 					object.landing_size = 0
 					if computerShip == nil then
-						victory_timer = 0
+						victoryTimer = 0
 						object.landed = true
 					else
 						errLog("You must destroy the Carrier first.", 8)
