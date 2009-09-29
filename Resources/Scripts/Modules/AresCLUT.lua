@@ -22,13 +22,15 @@ clut = { { r = 1.0, g = 1.0, b = 1.0, a = 1.0 }, -- white
 		{ r = 1.0, g = 1.0, b = 0.8 }, -- peach
 		{ r = 1.0, g = 0.0, b = 0.0 } } -- red
 
+-- 87 / 69
+
 modifier = { 1.0, 0.941, 0.878, 0.816, 0.753, 0.690, 0.627, 0.565, 0.502, 0.439, 0.376, 0.251, 0.188, 0.125, 0.063, 0.031, 0.0 }
 
-function clut_colour(clutnum, modnum)
-	return { r = clut[clutnum].r * modifier[modnum], g = clut[clutnum].g * modifier[modnum], b = clut[clutnum].b * modifier[modnum], a = 1.0, c = clutnum, m = modnum }
+function ClutColour(clutNum, modNum)
+	return { r = clut[clutNum].r * modifier[modNum], g = clut[clutNum].g * modifier[modNum], b = clut[clutNum].b * modifier[modNum], a = 1.0, c = clutNum, m = modNum }
 end
 
-function clut_lighten(colour, lightness)
+function ClutLighten(colour, lightness)
 	if lightness == nil then
 		lightness = 1
 	end
@@ -38,7 +40,7 @@ function clut_lighten(colour, lightness)
 	return { r = clut[colour.c].r * modifier[colour.m], g = clut[colour.c].g * modifier[colour.m], b = clut[colour.c].b * modifier[colour.m], a = 1.0, c = colour.c, m = colour.m }
 end
 
-function clut_darken(colour, darkness)
+function ClutDarken(colour, darkness)
 	if darkness == nil then
 		darkness = 1
 	end
@@ -48,12 +50,12 @@ function clut_darken(colour, darkness)
 	return { r = clut[colour.c].r * modifier[colour.m], g = clut[colour.c].g * modifier[colour.m], b = clut[colour.c].b * modifier[colour.m], a = 1.0, c = colour.c, m = colour.m }
 end
 
-function display_clut()
+function ClutDisplay()
 	local i = 1
 	while clut[i] ~= nil do
 		local j = 1
 		while modifier[j] ~= nil do
-			graphics.draw_box(i * -10 + 150, j * 10 + 10, i * -10 + 160, j * 10, 0, clut_colour(i, j))
+			graphics.draw_box(i * -10 + 150, j * 10 + 10, i * -10 + 160, j * 10, 0, ClutColour(i, j))
 			j = j + 1
 		end
 		i = i + 1
@@ -62,7 +64,7 @@ end
 
 -- NON-COLOUR VALUES
 c_clear = { r = 0.0, g = 0.0, b = 0.0, a = 0.0 }
-c_half_clear = { r = 0.0, g = 0.0, b = 0.0, a = 0.5 }
+c_halfClear = { r = 0.0, g = 0.0, b = 0.0, a = 0.5 }
 c_darken = { r = -0.1, g = -0.1, b = -0.1, a = 1.0 }
 c_darken2 = { r = -0.2, g = -0.2, b = -0.2, a = 1.0 }
 c_lighten = { r = 0.1, g = 0.1, b = 0.1, a = 1.0 }
@@ -74,7 +76,7 @@ c_lighten2 = { r = 0.2, g = 0.2, b = 0.2, a = 1.0 }
 	-----------------------}}--
 -------------------------------]]--
 
-function fix_colour(colour)
+function FixColour(colour)
 	if colour.r > 1 then
 		colour.r = 1
 	elseif colour.r < 0 then
@@ -99,13 +101,13 @@ function fix_colour(colour)
 end
 
 --[[---------------------------------------------
-	This function is deprecated. Remove soon!
+	This function is deprecated. Remove soon?
 ---------------------------------------------]]--
 
-function colour_add(col1, col2, col3)
+function AddColour(col1, col2, col3)
 	if col3 ~= nil then
-		return fix_colour({ r = col1.r + col2.r + col3.r, g = col1.g + col2.g + col3.g, b = col1.b + col2.b + col3.b, a = col1.a * col2.a * col3.a })
+		return FixColour({ r = col1.r + col2.r + col3.r, g = col1.g + col2.g + col3.g, b = col1.b + col2.b + col3.b, a = col1.a * col2.a * col3.a })
 	else
-		return fix_colour({ r = col1.r + col2.r, g = col1.g + col2.g, b = col1.b + col2.b, a = col1.a * col2.a })
+		return FixColour({ r = col1.r + col2.r, g = col1.g + col2.g, b = col1.b + col2.b, a = col1.a * col2.a })
 	end
 end

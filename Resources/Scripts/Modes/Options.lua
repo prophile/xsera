@@ -4,16 +4,16 @@ import('BoxDrawing')
 
 soundLevel = 8
 soundMax = 8
-background = {	{ coordx = -280, coordy = 140, length = 560, text = " ", boxColour = clut_colour(13, 9), textColour = clut_colour(13, 9), execute = nil, letter = "Sound Options", underbox = -85 },
-				{ coordx = -260, coordy = -30, length = 520, text = " ", boxColour = clut_colour(13, 9), textColour = clut_colour(13, 9), execute = nil, letter = "VOLUME", underbox = -75 },
-				{ coordx = 110, coordy = 20, length = 150, text = "nodraw", boxColour = clut_colour(13, 9), textColour = clut_colour(13, 9), execute = nil, letter = "Volume Down" },
-				{ coordx = 110, coordy = 100, length = 150, text = "nodraw", boxColour = clut_colour(13, 9), textColour = clut_colour(13, 9), execute = nil, letter = "Volume Up" },
-				{ coordx = -245, coordy = 100, length = 250, text = "nodraw", boxColour = clut_colour(14, 11), textColour = clut_colour(13, 9), execute = nil, letter = "Music During Action", radio = "off" },
-				{ coordx = -245, coordy = 60, length = 250, text = "nodraw", boxColour = clut_colour(14, 11), textColour = clut_colour(13, 9), execute = nil, letter = "Music During Interlude", radio = "off" },
-				{ coordx = -245, coordy = 20, length = 250, text = "nodraw", boxColour = clut_colour(4, 7), textColour = clut_colour(13, 9), execute = nil, letter = "Speak Network Messages", radio = "off" },
-				{ coordx = -260, coordy = -205, length = 150, text = "Cancel", boxColour = clut_colour(3, 6), textColour = clut_colour(13, 9), execute = nil, letter = "ESC" },
-				{ coordx = 110, coordy = -205, length = 150, text = "Done", boxColour = clut_colour(12, 6), textColour = clut_colour(13, 9), execute = nil, letter = "RTRN" },
-				{ coordx = 110, coordy = -145, length = 150, text = "Key Controls", boxColour = clut_colour(10, 8), textColour = clut_colour(13, 9), execute = nil, letter = "K" } }
+background = {	{ coordx = -280, coordy = 140, length = 560, text = " ", boxColour = ClutColour(13, 9), textColour = ClutColour(13, 9), execute = nil, letter = "Sound Options", underbox = -85 },
+				{ coordx = -260, coordy = -30, length = 520, text = " ", boxColour = ClutColour(13, 9), textColour = ClutColour(13, 9), execute = nil, letter = "VOLUME", underbox = -75 },
+				{ coordx = 110, coordy = 20, length = 150, text = "nodraw", boxColour = ClutColour(13, 9), textColour = ClutColour(13, 9), execute = nil, letter = "Volume Down" },
+				{ coordx = 110, coordy = 100, length = 150, text = "nodraw", boxColour = ClutColour(13, 9), textColour = ClutColour(13, 9), execute = nil, letter = "Volume Up" },
+				{ coordx = -245, coordy = 100, length = 250, text = "nodraw", boxColour = ClutColour(14, 11), textColour = ClutColour(13, 9), execute = nil, letter = "Music During Action", radio = "off" },
+				{ coordx = -245, coordy = 60, length = 250, text = "nodraw", boxColour = ClutColour(14, 11), textColour = ClutColour(13, 9), execute = nil, letter = "Music During Interlude", radio = "off" },
+				{ coordx = -245, coordy = 20, length = 250, text = "nodraw", boxColour = ClutColour(4, 7), textColour = ClutColour(13, 9), execute = nil, letter = "Speak Network Messages", radio = "off" },
+				{ coordx = -260, coordy = -205, length = 150, text = "Cancel", boxColour = ClutColour(3, 6), textColour = ClutColour(13, 9), execute = nil, letter = "ESC" },
+				{ coordx = 110, coordy = -205, length = 150, text = "Done", boxColour = ClutColour(12, 6), textColour = ClutColour(13, 9), execute = nil, letter = "RTRN" },
+				{ coordx = 110, coordy = -145, length = 150, text = "Key Controls", boxColour = ClutColour(10, 8), textColour = ClutColour(13, 9), execute = nil, letter = "K" } }
 
 function init()
 	sound.stop_music()
@@ -46,7 +46,7 @@ function render()
 	end
 	num = 0
 	while soundLevel > num do
-		graphics.draw_box(-37, -242 + 62 * num, -63, -190 + 62 * num, 0, clut_lighten(clut_colour(6, 12), num))
+		graphics.draw_box(-37, -242 + 62 * num, -63, -190 + 62 * num, 0, ClutLighten(ClutColour(6, 12), num))
 		num = num + 1
 	end
 	-- Error Printing

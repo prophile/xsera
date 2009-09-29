@@ -4,16 +4,16 @@ import('BoxDrawing')
 
 freezeMenuNum = 0
 levelSwitching = true
-background1 = {	{ coordx = -280, coordy = 140, length = 560, text = " ", boxColour = clut_colour(10, 8), textColour = clut_colour(13, 9), execute = nil, letter = "Select Level", underbox = -145 },
-				{ coordx = -260, coordy = -205, length = 150, text = "Cancel", boxColour = clut_colour(3, 6), textColour = clut_colour(13, 9), execute = nil, letter = "ESC" },
-				{ coordx = 110, coordy = -205, length = 150, text = "Begin", boxColour = clut_colour(12, 6), textColour = clut_colour(13, 9), execute = nil, letter = "RTRN" },
-				{ coordx = -260, coordy = -105, length = 150, text = "Previous", boxColour = clut_colour(10, 8), textColour = clut_colour(13, 9), execute = nil, letter = "LEFT" },
-				{ coordx = 110, coordy = -105, length = 150, text = "Next", boxColour = clut_colour(10, 8), textColour = clut_colour(13, 9), execute = nil, letter = "RGHT", special = "disabled" } }
+background1 = {	{ coordx = -280, coordy = 140, length = 560, text = " ", boxColour = ClutColour(10, 8), textColour = ClutColour(13, 9), execute = nil, letter = "Select Level", underbox = -145 },
+				{ coordx = -260, coordy = -205, length = 150, text = "Cancel", boxColour = ClutColour(3, 6), textColour = ClutColour(13, 9), execute = nil, letter = "ESC" },
+				{ coordx = 110, coordy = -205, length = 150, text = "Begin", boxColour = ClutColour(12, 6), textColour = ClutColour(13, 9), execute = nil, letter = "RTRN" },
+				{ coordx = -260, coordy = -105, length = 150, text = "Previous", boxColour = ClutColour(10, 8), textColour = ClutColour(13, 9), execute = nil, letter = "LEFT" },
+				{ coordx = 110, coordy = -105, length = 150, text = "Next", boxColour = ClutColour(10, 8), textColour = ClutColour(13, 9), execute = nil, letter = "RGHT", special = "disabled" } }
 
-background2 = { { coordx = -280, coordy = 175, length = 560, text = " ", boxColour = clut_colour(1, 8), textColour = clut_colour(1, 8), execute = nil, letter = "Mission Analysis", underbox = -200 },
-				{ coordx = -280, coordy = -225, length = 170, text = "Previous", boxColour = clut_colour(1, 8), textColour = clut_colour(1, 8), execute = nil, letter = "LEFT" },
-				{ coordx = -100, coordy = -225, length = 170, text = "Next", boxColour = clut_colour(1, 8), textColour = clut_colour(1, 8), execute = nil, letter = "RGHT" },
-				{ coordx = 110, coordy = -225, length = 170, text = "Done", boxColour = clut_colour(12, 6), textColour = clut_colour(12, 6), execute = nil, letter = "RTRN" } }
+background2 = { { coordx = -280, coordy = 175, length = 560, text = " ", boxColour = ClutColour(1, 8), textColour = ClutColour(1, 8), execute = nil, letter = "Mission Analysis", underbox = -200 },
+				{ coordx = -280, coordy = -225, length = 170, text = "Previous", boxColour = ClutColour(1, 8), textColour = ClutColour(1, 8), execute = nil, letter = "LEFT" },
+				{ coordx = -100, coordy = -225, length = 170, text = "Next", boxColour = ClutColour(1, 8), textColour = ClutColour(1, 8), execute = nil, letter = "RGHT" },
+				{ coordx = 110, coordy = -225, length = 170, text = "Done", boxColour = ClutColour(12, 6), textColour = ClutColour(12, 6), execute = nil, letter = "RTRN" } }
 
 scenLevels = { { title = "DEMO 2", subtitle = "The Second Technical Demo", desc = "In this demo, you must destroy the Gaitori Carrier prior to taking over a nearby planet with an Ishiman Transport.", unlocked = true, mode = "Demo3" },
 			{ title = "TUTORIAL LESSON 1", subtitle = "Moons for Goons", desc = "Learning the Ares interface", unlocked = true },
@@ -26,7 +26,7 @@ scenBriefing = { planet = { x = 0, y = 0 },
 				{ sprite = "Planets/Saturny", x = 2500, y = 2500, size = 0.3 },
 				{ sprite = "Planets/AnotherEarth", x = 100, y = 100, size = 0.3 },
 				{ sprite = "Ships/Gaitori/Carrier", x = 2200, y = 2700, size = 0.2 } },
-				{ coordx = -220, coordy = 100, length = 220, text = " ", boxColour = clut_colour(3, 7), textColour = clut_colour(3, 7), execute = nil, letter = "Xsera System", underbox = -100, uboxText = "Land a transport here.", sidecar = { x = 60, y = 130, size = { x = 23, y = 23 } }, special = "sidecar" }
+				{ coordx = -220, coordy = 100, length = 220, text = " ", boxColour = ClutColour(3, 7), textColour = ClutColour(3, 7), execute = nil, letter = "Xsera System", underbox = -100, uboxText = "Land a transport here.", sidecar = { x = 60, y = 130, size = { x = 23, y = 23 } }, special = "sidecar" }
 
 				} }
 -- the above is [TEMPORARY] - scenLevels will be replaced by scen.levels and scenBriefing will be replaced by scen.briefing
@@ -90,7 +90,7 @@ function render()
 			switch_box(background1[num])
 			num = num + 1
 		end
-		switch_box( { top = 120, left = -260, bottom = -55, right = 260, boxColour = clut_colour(10, 8), title = scenLevels[menuNum].title, subtitle = scenLevels[menuNum].subtitle, desc = scenLevels[menuNum].desc } )
+		switch_box( { top = 120, left = -260, bottom = -55, right = 260, boxColour = ClutColour(10, 8), title = scenLevels[menuNum].title, subtitle = scenLevels[menuNum].subtitle, desc = scenLevels[menuNum].desc } )
 	else
 	-- When we load the scenario data, change all instances of "scenBriefing" to "scen.briefing"
 		while background2[num] ~= nil do
@@ -105,14 +105,14 @@ function render()
 			while i * gridDistBlue < 4200 do
 				if (i * gridDistBlue) % gridDistLightBlue ~= 0 then
 					if i * gridDistBlue < 3000 then
-						graphics.draw_line(-270, -170 + i * gridDistBlue * 374 / 3000, 270, -170 + i * gridDistBlue * 374 / 3000, 1, clut_colour(4, 11))
+						graphics.draw_line(-270, -170 + i * gridDistBlue * 374 / 3000, 270, -170 + i * gridDistBlue * 374 / 3000, 1, ClutColour(4, 11))
 					end
-					graphics.draw_line(-240 + i * gridDistBlue * 540 / 4332, -196, -240 + i * gridDistBlue * 540 / 4332, 174, 1, clut_colour(4, 11))
+					graphics.draw_line(-240 + i * gridDistBlue * 540 / 4332, -196, -240 + i * gridDistBlue * 540 / 4332, 174, 1, ClutColour(4, 11))
 				else
 					if i * gridDistBlue < 3000 then
-						graphics.draw_line(-270, -170 + i * gridDistBlue * 374 / 3000, 270, -170 + i * gridDistBlue * 374 / 3000, 1, clut_colour(5, 1))
+						graphics.draw_line(-270, -170 + i * gridDistBlue * 374 / 3000, 270, -170 + i * gridDistBlue * 374 / 3000, 1, ClutColour(5, 1))
 					end
-					graphics.draw_line(-240 + i * gridDistBlue * 540 / 4332, -196, -240 + i * gridDistBlue * 540 / 4332, 174, 1, clut_colour(5, 1))
+					graphics.draw_line(-240 + i * gridDistBlue * 540 / 4332, -196, -240 + i * gridDistBlue * 540 / 4332, 174, 1, ClutColour(5, 1))
 				end
 				i = i + 1
 			end
