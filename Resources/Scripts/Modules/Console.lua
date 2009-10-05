@@ -1,8 +1,12 @@
+FONT_SIZE = 22
+CONSOLE_MAX = 5
+
 consoleHistory = {}
 line = 0
-line_focus = 0
-CONSOLE_MAX = 5
-popDown = false
+lineFocus = 0
+isPopDown = false
+isShiftPressed = false
+isCapsOn = false
 
 do
 	originalPrint = print
@@ -10,16 +14,13 @@ do
 		local bigTable = {...}
 		i = 1
 		while bigTable[i] ~= nil do
-			console_add(tostring(bigTable[i]))
+			ConsoleAdd(tostring(bigTable[i]))
 			i = i + 1
 		end
 	end
-	setOriginalPrint = function() print = originalPrint end
-	setNewPrint = function() print = newPrint end
+	SetOriginalPrint = function() print = originalPrint end
+	SetNewPrint = function() print = newPrint end
 end
-
-shift_press = false
-caps_hold = false
 
 consoleBuffer = nil
 endsInCloseParen = nil
@@ -29,12 +30,12 @@ newHistory = nil
 firstTime = true
 io.output("XseraOutput.txt")
 
-function console_draw(fontsize)
+function ConsoleDraw(FONT_SIZE)
 	graphics.set_camera(-320, -240, 320, 240)
 	local i = 1
 	while consoleHistory[i] ~= nil do
 		if i <= CONSOLE_MAX then
-			graphics.draw_text(consoleHistory[i], "CrystalClear", "left", -319, 232 - (i - 1) * fontsize + 1, fontsize)
+			graphics.draw_text(consoleHistory[i], "CrystalClear", "left", -319, 232 - (i - 1) * FONT_SIZE + 1, FONT_SIZE)
 			i = i + 1
 		else
 			return
@@ -42,7 +43,7 @@ function console_draw(fontsize)
 	end
 end
 
-function console_add(text, doPrint, output)
+function ConsoleAdd(text, doPrint, output)
 	if output ~= nil then
 		io.output(output)
 	else
@@ -56,10 +57,10 @@ function console_add(text, doPrint, output)
 		io.write(text, "\n")
 	end
 	line = line + 1
-	line_focus = line
+	lineFocus = line
 end
 
-function console_keyup (k)
+function ConsoleKeyup (k)
 	if k:gsub("(M)(%w+)", "%1", 1) == "M" then
 		local side = nil
 		local cmd = nil
@@ -73,17 +74,17 @@ function console_keyup (k)
 			cmd = k:gsub("(M)(%w+)", "%2", 1)
 		end
 		if cmd == "shift" then
-			shift_press = false
+			isShiftPressed = false
 		end
 	end
 end
 
-function console_key (k)
+function ConsoleKey (k)
 	if k == "unhandled" then
 		return
 	end
 	
-	asciikey = k:byte(1)
+	asciiKey = k:byte(1)
 	if k == "return" then
 		if ((consoleHistory == ">>") or (consoleHistory == ">")) then
 			return
@@ -133,23 +134,23 @@ function console_key (k)
 			end
 		end
 		if processConsole == false then
-			console_add(">>")
+			ConsoleAdd(">>")
 		else
 			string, error = loadstring(consoleBuffer)
 			if error == nil then
 				string()
 			else
-				console_add(error)
+				ConsoleAdd(error)
 			end
 			consoleBuffer = nil
 			nestLevel = 0
-			console_add(">")
+			ConsoleAdd(">")
 		end
 	elseif k == "escape" then
-		setNewPrint()
-		if popDown == true then
+		SetNewPrint()
+		if isPopDown == true then
 			consoleDraw = false
-			popDown = false
+			isPopDown = false
 		else
 			mode_manager.switch("MainMenu")
 		end
@@ -160,126 +161,126 @@ function console_key (k)
 	elseif k == "tab" then
 		consoleDraw = false
 		release = true
-	elseif asciikey >= 97 and asciikey <= 122 then
+	elseif asciiKey >= 97 and asciiKey <= 122 then
 		if k:byte(2, 2) == nil then
-			if ((shift_press == true) or (caps_hold == true)) then
+			if ((isShiftPressed == true) or (isCapsOn == true)) then
 				consoleHistory[line] = consoleHistory[line] .. k:upper()
 			else
 				consoleHistory[line] = consoleHistory[line] .. k
 			end
 		end
-	elseif asciikey == 32 then
+	elseif asciiKey == 32 then
 		consoleHistory[line] = consoleHistory[line] .. k
 	elseif k == "," then
-		if ((shift_press == true) or (caps_hold == true)) then
+		if ((isShiftPressed == true) or (isCapsOn == true)) then
 			consoleHistory[line] = consoleHistory[line] .. "<"
 		else
 			consoleHistory[line] = consoleHistory[line] .. k
 		end
 	elseif k == "." then
-		if ((shift_press == true) or (caps_hold == true)) then
+		if ((isShiftPressed == true) or (isCapsOn == true)) then
 			consoleHistory[line] = consoleHistory[line] .. ">"
 		else
 			consoleHistory[line] = consoleHistory[line] .. k
 		end
 	elseif k == "-" then
-		if ((shift_press == true) or (caps_hold == true)) then
+		if ((isShiftPressed == true) or (isCapsOn == true)) then
 			consoleHistory[line] = consoleHistory[line] .. "_"
 		else
 			consoleHistory[line] = consoleHistory[line] .. k
 		end
 	elseif k == "1" then
-		if ((shift_press == true) or (caps_hold == true)) then
+		if ((isShiftPressed == true) or (isCapsOn == true)) then
 			consoleHistory[line] = consoleHistory[line] .. "!"
 		else
 			consoleHistory[line] = consoleHistory[line] .. k
 		end
 	elseif k == "2" then
-		if ((shift_press == true) or (caps_hold == true)) then
+		if ((isShiftPressed == true) or (isCapsOn == true)) then
 			consoleHistory[line] = consoleHistory[line] .. "@"
 		else
 			consoleHistory[line] = consoleHistory[line] .. k
 		end
 	elseif k == "3" then
-		if ((shift_press == true) or (caps_hold == true)) then
+		if ((isShiftPressed == true) or (isCapsOn == true)) then
 			consoleHistory[line] = consoleHistory[line] .. "#"
 		else
 			consoleHistory[line] = consoleHistory[line] .. k
 		end
 	elseif k == "4" then
-		if ((shift_press == true) or (caps_hold == true)) then
+		if ((isShiftPressed == true) or (isCapsOn == true)) then
 			consoleHistory[line] = consoleHistory[line] .. "$"
 		else
 			consoleHistory[line] = consoleHistory[line] .. k
 		end
 	elseif k == "5" then
-		if ((shift_press == true) or (caps_hold == true)) then
+		if ((isShiftPressed == true) or (isCapsOn == true)) then
 			consoleHistory[line] = consoleHistory[line] .. "%"
 		else
 			consoleHistory[line] = consoleHistory[line] .. k
 		end
 	elseif k == "6" then
-		if ((shift_press == true) or (caps_hold == true)) then
+		if ((isShiftPressed == true) or (isCapsOn == true)) then
 			consoleHistory[line] = consoleHistory[line] .. "^"
 		else
 			consoleHistory[line] = consoleHistory[line] .. k
 		end
 	elseif k == "7" then
-		if ((shift_press == true) or (caps_hold == true)) then
+		if ((isShiftPressed == true) or (isCapsOn == true)) then
 			consoleHistory[line] = consoleHistory[line] .. "&"
 		else
 			consoleHistory[line] = consoleHistory[line] .. k
 		end
 	elseif k == "8" then
-		if ((shift_press == true) or (caps_hold == true)) then
+		if ((isShiftPressed == true) or (isCapsOn == true)) then
 			consoleHistory[line] = consoleHistory[line] .. "*"
 		else
 			consoleHistory[line] = consoleHistory[line] .. k
 		end
 	elseif k == "9" then
-		if ((shift_press == true) or (caps_hold == true)) then
+		if ((isShiftPressed == true) or (isCapsOn == true)) then
 			consoleHistory[line] = consoleHistory[line] .. "("
 		else
 			consoleHistory[line] = consoleHistory[line] .. k
 		end
 	elseif k == "0" then
-		if ((shift_press == true) or (caps_hold == true)) then
+		if ((isShiftPressed == true) or (isCapsOn == true)) then
 			consoleHistory[line] = consoleHistory[line] .. ")"
 		else
 			consoleHistory[line] = consoleHistory[line] .. k
 		end
 	elseif k == "\'" then
-		if ((shift_press == true) or (caps_hold == true)) then
+		if ((isShiftPressed == true) or (isCapsOn == true)) then
 			consoleHistory[line] = consoleHistory[line] .. "\""
 		else
 			consoleHistory[line] = consoleHistory[line] .. k
 		end
 	elseif k == "\=" then
-		if ((shift_press == true) or (caps_hold == true)) then
+		if ((isShiftPressed == true) or (isCapsOn == true)) then
 			consoleHistory[line] = consoleHistory[line] .. "\+"
 		else
 			consoleHistory[line] = consoleHistory[line] .. k
 		end
 	elseif k == "/" then
-		if ((shift_press == true) or (caps_hold == true)) then
+		if ((isShiftPressed == true) or (isCapsOn == true)) then
 			consoleHistory[line] = consoleHistory[line] .. "?"
 		else
 			consoleHistory[line] = consoleHistory[line] .. k
 		end
 	elseif k == "[" then
-		if ((shift_press == true) or (caps_hold == true)) then
+		if ((isShiftPressed == true) or (isCapsOn == true)) then
 			consoleHistory[line] = consoleHistory[line] .. "{"
 		else
 			consoleHistory[line] = consoleHistory[line] .. k
 		end
 	elseif k == "]" then
-		if ((shift_press == true) or (caps_hold == true)) then
+		if ((isShiftPressed == true) or (isCapsOn == true)) then
 			consoleHistory[line] = consoleHistory[line] .. "}"
 		else
 			consoleHistory[line] = consoleHistory[line] .. k
 		end
 	elseif k == ";" then
-		if ((shift_press == true) or (caps_hold == true)) then
+		if ((isShiftPressed == true) or (isCapsOn == true)) then
 			consoleHistory[line] = consoleHistory[line] .. ":"
 		else
 			consoleHistory[line] = consoleHistory[line] .. k
@@ -293,39 +294,39 @@ function console_key (k)
 	elseif k == "down" then
 		originalPrint("BOING")
 	elseif k == "KP9" then
-		if line_focus > 1 then
+		if lineFocus > 1 then
 			if newHistory == nil then
 				newHistory = consoleHistory[line]
 				originalPrint(newHistory)
 			end
-			line_focus = line_focus - 1
-			if consoleHistory[line_focus]:sub(1, 1) == "$" then
-				line_focus = line_focus + 1
+			lineFocus = lineFocus - 1
+			if consoleHistory[lineFocus]:sub(1, 1) == "$" then
+				lineFocus = lineFocus + 1
 			end
-			while consoleHistory[line_focus]:sub(1, 1) ~= ">" do
-				line_focus = line_focus - 1
+			while consoleHistory[lineFocus]:sub(1, 1) ~= ">" do
+				lineFocus = lineFocus - 1
 			end
 		end
-		consoleHistory[line] = consoleHistory[line_focus]
+		consoleHistory[line] = consoleHistory[lineFocus]
 	elseif k == "KP3" then
-		originalPrint(line_focus, line)
-		if line_focus < line then
-			line_focus = line_focus + 1
-			while consoleHistory[line_focus]:sub(1, 1) ~= ">" do
-				line_focus = line_focus + 1
+		originalPrint(lineFocus, line)
+		if lineFocus < line then
+			lineFocus = lineFocus + 1
+			while consoleHistory[lineFocus]:sub(1, 1) ~= ">" do
+				lineFocus = lineFocus + 1
 			end
-			consoleHistory[line] = consoleHistory[line_focus]
+			consoleHistory[line] = consoleHistory[lineFocus]
 		end
-		originalPrint(line_focus, line)
-		if ((line_focus == line) and (newHistory ~= nil)) then
+		originalPrint(lineFocus, line)
+		if ((lineFocus == line) and (newHistory ~= nil)) then
 			consoleHistory[line] = newHistory
 			newHistory = nil
 		end
-		originalPrint(line_focus, line)
-		if line_focus > line then
-			line_focus = line_focus - 1
+		originalPrint(lineFocus, line)
+		if lineFocus > line then
+			lineFocus = lineFocus - 1
 		end
-		originalPrint(line_focus, line)
+		originalPrint(lineFocus, line)
 		originalPrint("----------")
 	else
 		if k:gsub("(M)(%w+)", "%1", 1) == "M" then
@@ -341,27 +342,27 @@ function console_key (k)
 				cmd = k:gsub("(M)(%w+)", "%2", 1)
 			end
 			if cmd == "shift" then
-				shift_press = true
+				isShiftPressed = true
 			end
 			if cmd == "caps" then
-				if caps_hold == true then
-					caps_hold = false
+				if isCapsOn == true then
+					isCapsOn = false
 				else
-					caps_hold = true
+					isCapsOn = true
 				end
-				originalPrint("Caps: ", caps_hold)
+				originalPrint("Caps: ", isCapsOn)
 			end
 		end
 	end
 end
 
-function cout_table (t, name, doPrint)
-	console_add(table_define(t, name), doPrint, "XseraTables.txt")
+function CoutTable (t, name, doPrint)
+	ConsoleAdd(table_define(t, name), doPrint, "XseraTables.txt")
 end
 
 
-function errLog(text, level)
-	console_add(text .. "(level " .. level .. ")")
+function LogError(text, level)
+	ConsoleAdd(text .. "(level " .. level .. ")")
 	if level > 10 then
 		os.exit()
 	end

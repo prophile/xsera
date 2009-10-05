@@ -27,7 +27,7 @@ function NewEntity (entOwner, entName, entType, entDir, entSubdir, other)
 	elseif entType ~= nil then
 		entObject.entName = (entType .. "s/" .. entName)
 	else
-		errLog("Entity " .. entName .. " has no type.", 1)
+		LogError("Entity " .. entName .. " has no type.", 1)
 	end
 ---- load data from file
     local trueData = {}
@@ -53,12 +53,12 @@ function NewEntity (entOwner, entName, entType, entDir, entSubdir, other)
 			num = num + 1
 		end
 		if loadingEntities == false then
-			errLog("Entity " .. entObject.entName .. " being loaded after loading period.", 2)
+			LogError("Entity " .. entObject.entName .. " being loaded after loading period.", 2)
 			add_properties(entOwner, entName, entType, entDir, entSubdir, other, trueData, entObject, entObject.entName)
 		end
 	end
 	if trueData.name == nil then
-		errLog(entName .. " of type " .. entTypeReal .. " does not have a name.", 12)
+		LogError(entName .. " of type " .. entTypeReal .. " does not have a name.", 12)
 	end
 	entObject.name = trueData.name
 	if trueData.shortname ~= nil then
@@ -139,9 +139,9 @@ function NewEntity (entOwner, entName, entType, entDir, entSubdir, other)
 			entObject.delta = 0.0
 			entObject.force = { x, y }
 		elseif entObject.class == nil then
-			errLog("Weapon '" .. entObject.name .. "' has no class. See NewEntity", 12)
+			LogError("Weapon '" .. entObject.name .. "' has no class. See NewEntity", 12)
 		else
-			errLog("Unknown weapon class '" .. entObject.class .. "'. See NewEntity", 11)
+			LogError("Unknown weapon class '" .. entObject.class .. "'. See NewEntity", 11)
 		end
 	elseif entType == "Projectile" then
 -- projectile-specific
@@ -175,7 +175,7 @@ function NewEntity (entOwner, entName, entType, entDir, entSubdir, other)
 		if trueData.thrust ~= nil then
 			entObject.thrust = tonumber(trueData.thrust)
 		else
-			errLog("No thrust data for ship " .. trueData.name, 12)
+			LogError("No thrust data for ship " .. trueData.name, 12)
 		end
 		if trueData.warp ~= nil then
 			entObject.warpSpeed = tonumber(trueData.warp)
@@ -201,7 +201,7 @@ function NewEntity (entOwner, entName, entType, entDir, entSubdir, other)
 		entObject.switch = true -- [HARDCODED]
 		entObject.type = "Ship"
 	else
-		errLog("Unknown entity of type " .. entType, 11)
+		LogError("Unknown entity of type " .. entType, 11)
 	end
 	local num = 1
 	while entities[num] ~= nil do

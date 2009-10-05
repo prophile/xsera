@@ -150,7 +150,7 @@ function keyup(k)
 				freezeMenuNum = menuNum
 				menuNum = 1
 			else
-				errLog("This module is not yet available for playing.", 8)
+				LogError("This module is not yet available for playing.", 8)
 				sound.play("NaughtyBeep")
 			end
 		else

@@ -431,9 +431,9 @@ function weapon_manage(weapon, weapData, weapOwner) -- examples: weapon = player
 							weapData[wNum].isSeeking = false
 						end
 					elseif weapon.class == nil then
-						errLog("Projectile '" .. entType .. "' has no class.", 12)
+						LogError("Projectile '" .. entType .. "' has no class.", 12)
 					else
-						errLog("Unknown projectile class '" .. entClass .. "'", 11)
+						LogError("Unknown projectile class '" .. entClass .. "'", 11)
 					end
 					wNum = weapon.max_projectiles -- exit while loop
 				end

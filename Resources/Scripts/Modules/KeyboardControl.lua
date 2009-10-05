@@ -101,23 +101,23 @@ end
 	-----------]]--
 
 function do_select_friendly()
-	errLog("The command does not have any code. /placeholder", 9)
+	LogError("The command does not have any code. /placeholder", 9)
 end
 
 function do_select_hostile()
-	errLog("The command does not have any code. /placeholder", 9)
+	LogError("The command does not have any code. /placeholder", 9)
 end
 
 function do_select_base()
-	errLog("The command does not have any code. /placeholder", 9)
+	LogError("The command does not have any code. /placeholder", 9)
 end
 
 function do_target()
-	errLog("The command does not have any code. /placeholder", 9)
+	LogError("The command does not have any code. /placeholder", 9)
 end
 
 function do_move_order()
-	errLog("The command does not have any code. /placeholder", 9)
+	LogError("The command does not have any code. /placeholder", 9)
 end
 
 function do_scale_in()
@@ -171,7 +171,7 @@ end
 	-------------]]--
 
 function do_transfer_control()
-	errLog("The command does not have any code. /placeholder", 9)
+	LogError("The command does not have any code. /placeholder", 9)
 end
 
 function do_zoom_1_1()
@@ -205,27 +205,27 @@ function do_zoom_1_2()
 end
 
 function do_zoom_1_4()
-	errLog("The command does not have any code. /placeholder", 9)
+	LogError("The command does not have any code. /placeholder", 9)
 end
 
 function do_zoom_1_16()
-	errLog("The command does not have any code. /placeholder", 9)
+	LogError("The command does not have any code. /placeholder", 9)
 end
 
 function do_zoom_hostile()
-	errLog("The command does not have any code. /placeholder", 9)
+	LogError("The command does not have any code. /placeholder", 9)
 end
 
 function do_zoom_object()
-	errLog("The command does not have any code. /placeholder", 9)
+	LogError("The command does not have any code. /placeholder", 9)
 end
 
 function do_zoom_all()
-	errLog("The command does not have any code. /placeholder", 9)
+	LogError("The command does not have any code. /placeholder", 9)
 end
 
 function do_message_next()
-	errLog("The command does not have any code. /placeholder", 9)
+	LogError("The command does not have any code. /placeholder", 9)
 end
 
 	--[[-----------
@@ -239,19 +239,19 @@ function do_help()
 end
 
 function do_lower_volume()
-	errLog("The command does not have any code. /placeholder", 9)
+	LogError("The command does not have any code. /placeholder", 9)
 end
 
 function do_raise_volume()
-	errLog("The command does not have any code. /placeholder", 9)
+	LogError("The command does not have any code. /placeholder", 9)
 end
 
 function do_mute_music()
-	errLog("The command does not have any code. /placeholder", 9)
+	LogError("The command does not have any code. /placeholder", 9)
 end
 
 function do_expert_net()
-	errLog("The command does not have any code. /placeholder", 9)
+	LogError("The command does not have any code. /placeholder", 9)
 end
 
 	--[[-----------
@@ -259,43 +259,43 @@ end
 	-----------]]--
 
 function do_hotkey_1()
-	errLog("The command does not have any code. /placeholder", 9)
+	LogError("The command does not have any code. /placeholder", 9)
 end
 
 function do_hotkey_2()
-	errLog("The command does not have any code. /placeholder", 9)
+	LogError("The command does not have any code. /placeholder", 9)
 end
 
 function do_hotkey_3()
-	errLog("The command does not have any code. /placeholder", 9)
+	LogError("The command does not have any code. /placeholder", 9)
 end
 
 function do_hotkey_4()
-	errLog("The command does not have any code. /placeholder", 9)
+	LogError("The command does not have any code. /placeholder", 9)
 end
 
 function do_hotkey_5()
-	errLog("The command does not have any code. /placeholder", 9)
+	LogError("The command does not have any code. /placeholder", 9)
 end
 
 function do_hotkey_6()
-	errLog("The command does not have any code. /placeholder", 9)
+	LogError("The command does not have any code. /placeholder", 9)
 end
 
 function do_hotkey_7()
-	errLog("The command does not have any code. /placeholder", 9)
+	LogError("The command does not have any code. /placeholder", 9)
 end
 
 function do_hotkey_8()
-	errLog("The command does not have any code. /placeholder", 9)
+	LogError("The command does not have any code. /placeholder", 9)
 end
 
 function do_hotkey_9()
-	errLog("The command does not have any code. /placeholder", 9)
+	LogError("The command does not have any code. /placeholder", 9)
 end
 
 function do_hotkey_10()
-	errLog("The command does not have any code. /placeholder", 9)
+	LogError("The command does not have any code. /placeholder", 9)
 end
 
 
@@ -322,10 +322,10 @@ keyboard = { { "Ship",
 				{ key = "MctrlL", key_display = "CtrlL", name = "Move Order", action = do_move_order, active = false }, 
 				{ key = "=", name = "Scale In", action = do_scale_in, active = false }, 
 				{ key = "-", name = "Scale Out", action = do_scale_out, active = false }, 
-				{ key = "i", key_display = "UP", name = "Computer Previous", action = do_computer_previous, active = false }, 
-				{ key = "k", key_display = "DOWN", name = "Computer Next", action = do_computer_next, active = false }, 
-				{ key = "l", key_display = "RGHT", name = "Computer Accept/Select/Do", action = do_computer_accept, active = false }, 
-				{ key = "j", key_display = "LEFT", name = "Computer Cancel/Back Up", action = do_computer_back, active = false } },
+				{ key = "up", key_display = "UP", name = "Computer Previous", action = do_computer_previous, active = false }, 
+				{ key = "down", key_display = "DOWN", name = "Computer Next", action = do_computer_next, active = false }, 
+				{ key = "right", key_display = "RGHT", name = "Computer Accept/Select/Do", action = do_computer_accept, active = false }, 
+				{ key = "left", key_display = "LEFT", name = "Computer Cancel/Back Up", action = do_computer_back, active = false } },
 			{ "Shortcuts",
 				{ key = "F8", name = "Transfer Control", action = do_transfer_control, active = false }, 
 				{ key = "F9", name = "Zoom to 1:1", action = do_zoom_1_1, active = false }, 

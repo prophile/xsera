@@ -57,7 +57,7 @@ function ai_pathfind(dt, object, destination, computerShip)
 						victoryTimer = 0
 						object.landed = true
 					else
-						errLog("You must destroy the Carrier first.", 8)
+						LogError("You must destroy the Carrier first.", 8)
 					end
 				end
 			end

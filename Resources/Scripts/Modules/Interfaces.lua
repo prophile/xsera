@@ -489,7 +489,7 @@ end
 -- Special Orders
 
 function transfer_control()
-	errLog("This command currently has no code.", 6)
+	LogError("This command currently has no code.", 6)
 	--[[ pseudocode!!! I don't have the concept of allies yet, need that before I can implement this
 	if controlShip.ally == true then
 		playerShip, controlShip = playerShip, controlShip
@@ -497,23 +497,23 @@ function transfer_control()
 end
 
 function hold_position()
-	errLog("This command currently has no code.", 6)
+	LogError("This command currently has no code.", 6)
 end
 
 function go_to_my_position()
-	errLog("This command currently has no code.", 6)
+	LogError("This command currently has no code.", 6)
 end
 
 function fire_weapon_1()
-	errLog("This command currently has no code.", 6)
+	LogError("This command currently has no code.", 6)
 end
 
 function fire_weapon_2()
-	errLog("This command currently has no code.", 6)
+	LogError("This command currently has no code.", 6)
 end
 
 function fire_special()
-	errLog("This command currently has no code.", 6)
+	LogError("This command currently has no code.", 6)
 end
 
 -- Message menu
@@ -523,7 +523,7 @@ text_was_drawn = false
 textnum = 0
 
 function next_page_clear()
-	errLog("This command currently has no code.", 6)
+	LogError("This command currently has no code.", 6)
 	--[[
 	if text_being_drawn == true then
 		if scen.text[textnum + 1] ~= nil then
@@ -540,7 +540,7 @@ function next_page_clear()
 end
 
 function previous_page()
-	errLog("This command currently has no code.", 6)
+	LogError("This command currently has no code.", 6)
 	--[[
 	if text_being_drawn == true then
 		if textnum ~= 1 then
@@ -554,7 +554,7 @@ function previous_page()
 end
 
 function last_message()
-	errLog("This command currently has no code.", 6)
+	LogError("This command currently has no code.", 6)
 	--[[
 	if text_was_drawn == true then
 		text_being_drawn = true

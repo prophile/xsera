@@ -1,32 +1,32 @@
 import('Console')
 
 function init ()
-	console_add("$Loading console...")
+	ConsoleAdd("$Loading console...")
 	sound.stop_music()
-	setNewPrint()
+	SetNewPrint()
 	CONSOLE_MAX = 18
-	console_add("$Console loaded.")
-	console_add(">")
+	ConsoleAdd("$Console loaded.")
+	ConsoleAdd(">")
 end
 
 function render ()
     graphics.begin_frame()
-	console_draw(20)
+	ConsoleDraw(20)
     graphics.end_frame()
 end
 
 function key (k)
-	console_key(k)
+	ConsoleKey(k)
 end
 
 function keyup (k)
-	console_keyup(k)
+	ConsoleKeyup(k)
 end
 
 function update ()
 	while line > CONSOLE_MAX do
 		table.remove(consoleHistory, 1)
 		line = line - 1
-		line_focus = line
+		lineFocus = line
 	end
 end
