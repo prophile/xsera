@@ -369,7 +369,7 @@ function drawPanels()
 -- Factory resource bars (yellow)
 	count = 1
 	while count <= 7 do
-		if count <= resource_bars then
+		if count <= resourceBars then
 			graphics.draw_box(154.5 - 4.5 * count, 384, 151 - 4.5 * count, 392, 0, ClutColour(3, 3))
 		else
 			graphics.draw_box(154.5 - 4.5 * count, 384, 151 - 4.5 * count, 392, 0, ClutColour(9, 13))
