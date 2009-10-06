@@ -3,7 +3,7 @@ import('Console')
 import('BoxDrawing')
 
 freezeMenuNum = 0
-levelSwitching = true
+doLevelSwitch = true
 background1 = {	{ coordx = -280, coordy = 140, length = 560, text = " ", boxColour = ClutColour(10, 8), textColour = ClutColour(13, 9), execute = nil, letter = "Select Level", underbox = -145 },
 				{ coordx = -260, coordy = -205, length = 150, text = "Cancel", boxColour = ClutColour(3, 6), textColour = ClutColour(13, 9), execute = nil, letter = "ESC" },
 				{ coordx = 110, coordy = -205, length = 150, text = "Begin", boxColour = ClutColour(12, 6), textColour = ClutColour(13, 9), execute = nil, letter = "RTRN" },
@@ -46,7 +46,7 @@ function update()
 		change_special("LEFT", nil, background1)
 		change_special("LEFT", nil, background2)
 	end
-	if levelSwitching == true then
+	if doLevelSwitch == true then
 		if scenLevels[menuNum + 1] ~= nil then
 			if scenLevels[menuNum + 1].unlocked == true then
 				change_special("RGHT", nil, background1)
@@ -84,7 +84,7 @@ function render()
 	graphics.draw_image("Panels/PanelRight", 303, -14, 35, 476)
 	local num = 1
 	-- Screen Info
-	if levelSwitching == true then
+	if doLevelSwitch == true then
 	-- When we load the scenario data, change all instances of "scenLevels" to "scen.levels"
 		while background1[num] ~= nil do
 			switch_box(background1[num])
@@ -102,17 +102,17 @@ function render()
 			-- add pointer to planet here when implemented
 		else
 			local i = 0
-			while i * gridDistBlue < 4200 do
-				if (i * gridDistBlue) % gridDistLightBlue ~= 0 then
-					if i * gridDistBlue < 3000 then
-						graphics.draw_line(-270, -170 + i * gridDistBlue * 374 / 3000, 270, -170 + i * gridDistBlue * 374 / 3000, 1, ClutColour(4, 11))
+			while i * GRID_DIST_BLUE < 4200 do
+				if (i * GRID_DIST_BLUE) % GRID_DIST_LIGHT_BLUE ~= 0 then
+					if i * GRID_DIST_BLUE < 3000 then
+						graphics.draw_line(-270, -170 + i * GRID_DIST_BLUE * 374 / 3000, 270, -170 + i * GRID_DIST_BLUE * 374 / 3000, 1, ClutColour(4, 11))
 					end
-					graphics.draw_line(-240 + i * gridDistBlue * 540 / 4332, -196, -240 + i * gridDistBlue * 540 / 4332, 174, 1, ClutColour(4, 11))
+					graphics.draw_line(-240 + i * GRID_DIST_BLUE * 540 / 4332, -196, -240 + i * GRID_DIST_BLUE * 540 / 4332, 174, 1, ClutColour(4, 11))
 				else
-					if i * gridDistBlue < 3000 then
-						graphics.draw_line(-270, -170 + i * gridDistBlue * 374 / 3000, 270, -170 + i * gridDistBlue * 374 / 3000, 1, ClutColour(5, 1))
+					if i * GRID_DIST_BLUE < 3000 then
+						graphics.draw_line(-270, -170 + i * GRID_DIST_BLUE * 374 / 3000, 270, -170 + i * GRID_DIST_BLUE * 374 / 3000, 1, ClutColour(5, 1))
 					end
-					graphics.draw_line(-240 + i * gridDistBlue * 540 / 4332, -196, -240 + i * gridDistBlue * 540 / 4332, 174, 1, ClutColour(5, 1))
+					graphics.draw_line(-240 + i * GRID_DIST_BLUE * 540 / 4332, -196, -240 + i * GRID_DIST_BLUE * 540 / 4332, 174, 1, ClutColour(5, 1))
 				end
 				i = i + 1
 			end
@@ -143,10 +143,10 @@ function keyup(k)
 	if k == "escape" then
 		mode_manager.switch('AresSplash')
 	elseif k == "return" then
-		if levelSwitching == true then
+		if doLevelSwitch == true then
 			if scenLevels[menuNum].mode ~= nil then
 				sound.play_music("FRED")
-				levelSwitching = false
+				doLevelSwitch = false
 				freezeMenuNum = menuNum
 				menuNum = 1
 			else
@@ -161,19 +161,19 @@ end
 
 function key(k)
 	if k == "escape" then
-		if levelSwitching == true then
+		if doLevelSwitch == true then
 			change_special("ESC", "click", background1)
 		else
 			change_special("ESC", "click", background2)
 		end
 	elseif k == "return" then
-		if levelSwitching == true then
+		if doLevelSwitch == true then
 			change_special("RTRN", "click", background1)
 		else
 			change_special("RTRN", "click", background2)
 		end
 	elseif k == "l" then
-		if levelSwitching == true then
+		if doLevelSwitch == true then
 			if scenLevels[menuNum + 1] ~= nil then
 				if scenLevels[menuNum + 1].unlocked == true then
 					menuNum = menuNum + 1

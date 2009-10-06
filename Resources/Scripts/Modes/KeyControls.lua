@@ -13,8 +13,6 @@ background = {	{ top = 170, left = -280, bottom = -60, right = 280, boxColour = 
 				{ coordx = 177, coordy = 170, length = 87, text = "nodraw", boxColour = ClutColour(10, 8), textColour = ClutColour(10, 8), execute = nil, letter = "HotKeys" },
 				{ coordx = 180, coordy = -205, length = 100, text = "nodraw", boxColour = ClutColour(12, 6), textColour = ClutColour(13, 9), execute = nil, letter = "DONE" } }
 
-keyboard_num = 1
-
 function init()
 	sound.stop_music()
 	graphics.set_camera(-480, -360, 480, 360)
@@ -41,8 +39,9 @@ function render()
 		switch_box(background[num])
 		num = num + 1
 	end
+	
 	numBoxes = 1
-	while keyboard[keyboard_num][numBoxes] ~= nil do
+	while keyboard[keyboardNum][numBoxes] ~= nil do
 		numBoxes = numBoxes + 1
 	end
 	rows = math.ceil(numBoxes / 2)
@@ -50,7 +49,9 @@ function render()
 	local xcoord = 0
 	local yshift = 0
 	local adjust = 0
-	while keyboard[keyboard_num][num + 1] ~= nil do
+	
+	keyboardNum = 1
+	while keyboard[keyboardNum][num + 1] ~= nil do
 		if num % rows ~= num then
 			xcoord = 5
 			adjust = rows - 1
@@ -63,7 +64,7 @@ function render()
 		else
 			yshift = 9
 		end
-		switch_box( { coordx = xcoord, coordy = (math.ceil(numBoxes / 4) - (num - 1 - adjust)) * 36 + yshift, length = 245, text = keyboard[keyboard_num][num + 1].name, boxColour = ClutColour(10, 8), textColour = ClutColour(10, 8), execute = nil, letter = keyboard[keyboard_num][num + 1].key } )
+		switch_box( { coordx = xcoord, coordy = (math.ceil(numBoxes / 4) - (num - 1 - adjust)) * 36 + yshift, length = 245, text = keyboard[keyboardNum][num + 1].name, boxColour = ClutColour(10, 8), textColour = ClutColour(10, 8), execute = nil, letter = keyboard[keyboardNum][num + 1].key } )
 		num = num + 1
 	end
 	-- Error Printing
@@ -82,7 +83,7 @@ function keyup(k)
 	end
 end
 
-function change_box_colour(box, match, shade)
+function ChangeBoxColour(box, match, shade)
 	local num = 1
 	while box[num] ~= nil do
 		if box[num].letter == match then
@@ -95,16 +96,16 @@ end
 function key(k)
 -- no key presses until I can assign them to values
 	if k == "j" then
-		if keyboard_num ~= 1 then
-			change_box_colour(background, keyboard[keyboard_num][1], -2)
-			keyboard_num = keyboard_num - 1
-			change_box_colour(background, keyboard[keyboard_num][1], 2)
+		if keyboardNum ~= 1 then
+			ChangeBoxColour(background, keyboard[keyboardNum][1], -2)
+			keyboardNum = keyboardNum - 1
+			ChangeBoxColour(background, keyboard[keyboardNum][1], 2)
 		end
 	elseif k == "l" then
-		if keyboard[keyboard_num] ~= nil then
-			change_box_colour(background, keyboard[keyboard_num][1], -2)
-			keyboard_num = keyboard_num + 1
-			change_box_colour(background, keyboard[keyboard_num][1], 2)
+		if keyboard[keyboardNum] ~= nil then
+			ChangeBoxColour(background, keyboard[keyboardNum][1], -2)
+			keyboardNum = keyboardNum + 1
+			ChangeBoxColour(background, keyboard[keyboardNum][1], 2)
 		end
 	end
 end

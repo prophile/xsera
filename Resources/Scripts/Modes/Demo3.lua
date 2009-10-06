@@ -31,7 +31,7 @@ endGameData = nil
 	------------------------}}--
 --------------------------------]]--
 
-function projectile_collision(projectileObject, pNum, projectileData, shipObject)
+function ProjectileCollision(projectileObject, pNum, projectileData, shipObject)
 	table.remove(projectileObject, pNum)
 	shipObject.life = shipObject.life - projectileData.damage
 end
@@ -75,7 +75,7 @@ end
 	------------}}--
 --------------------]]--
 
-function tempkey(k)
+function TempKey(k)
 	if k ~= nil then
 		mode_manager.switch('Credits')
 	end
@@ -93,7 +93,7 @@ function update ()
 	if victoryTimer ~= nil then
 		victoryTimer = victoryTimer + dt
 		if victoryTimer >= 2.0 then
-			key = tempkey
+			key = TempKey
 			end_time = mode_manager.time()
 			endGameData = {	{	{ false, c_clear, " " },
 								{ false, ClutColour(3, 7), "YOU" },
@@ -139,9 +139,9 @@ function update ()
 		camera = { w = 640 / cameraRatio, h }
 		camera.h = camera.w / aspectRatio
 		shipAdjust = .045 * camera.w
-		arrowLength = CarrowLength / cameraRatio
-		arrowVar = CarrowVar / cameraRatio
-		arrowDist = CarrowDist / cameraRatio
+		arrowLength = ARROW_LENGTH / cameraRatio
+		arrowVar = ARROW_VAR / cameraRatio
+		arrowDist = ARROW_DIST / cameraRatio
 	end
 	
 --[[------------------
@@ -240,7 +240,7 @@ function update ()
 ------------------]]--
 	
 	if playerShip.special ~= nil then
-		weapon_manage(playerShip.special, playerShip.specialWeap, playerShip)
+		WeaponManage(playerShip.special, playerShip.specialWeap, playerShip)
 		--seeking code
 		local wNum = 1
 		while wNum <= playerShip.special.max_projectiles do
@@ -288,7 +288,7 @@ function update ()
 	
 -- PKBeam Firing
 	
-	weapon_manage(playerShip.beam, playerShip.beamWeap, playerShip)
+	WeaponManage(playerShip.beam, playerShip.beamWeap, playerShip)
 	
 -- Pathfinding for Ishiman Transports
 	local num = 1
@@ -308,11 +308,11 @@ function update ()
 	Panels
 ------------------]]--
 	
-	resource_time = resource_time + dt
-	if resource_time > 1 then
-		resource_time = resource_time - 1
+	resourceTime = resourceTime + dt
+	if resourceTime > 1 then
+		resourceTime = resourceTime - 1
 		cash = cash + 20
-		resource_bars = math.floor(cash / 20000)
+		resourceBars = math.floor(cash / 20000)
 		resources = math.floor((cash % 20000) / 200)
 	end
 	
@@ -342,12 +342,12 @@ function update ()
 	playerShip.energy.percent = playerShip.energy.level / playerShip.energy.total
 	playerShip.shield.percent = playerShip.shield.level / playerShip.shield.total
 	if playerShip.energy.percent ~= 1.0 then
-		recharge_timer = recharge_timer + dt
-		if recharge_timer >= 0.5 then
+		rechargeTimer = rechargeTimer + dt
+		if rechargeTimer >= 0.5 then
 			if playerShip.battery.percent ~= 0.0 then
 				playerShip.battery.level = playerShip.battery.level - 1
 				playerShip.energy.level = playerShip.energy.level + 1
-				recharge_timer = recharge_timer - 0.5
+				rechargeTimer = rechargeTimer - 0.5
 			end
 		end
 	end
@@ -367,7 +367,7 @@ end
 	---------------------}}--
 -----------------------------]]--
 
-function weapon_manage(weapon, weapData, weapOwner) -- examples: weapon = playerShip.beam, weapData = playerShip.beamWeap, weapOwner = playerShip
+function WeaponManage(weapon, weapData, weapOwner) -- examples: weapon = playerShip.beam, weapData = playerShip.beamWeap, weapOwner = playerShip
 -- handling of new projectile
 	if weapon.firing == true then
 		if weapon.cooldown <= mode_manager.time() - weapon.start then
@@ -456,7 +456,7 @@ function weapon_manage(weapon, weapData, weapOwner) -- examples: weapon = player
 					local y = computerShip.physicsObject.position.y - weapData[wNum].physicsObject.position.y
 					-- put in real collision code here [ALISTAIR, DEMO2]
 					if hypot (x, y) <= computerShip.physicsObject.collision_radius * 2 / 7 then
-						projectile_collision(weapData, wNum, weapon, computerShip)
+						ProjectileCollision(weapData, wNum, weapon, computerShip)
 						return
 					end
 				end
@@ -496,24 +496,24 @@ function render ()
 	
 	local i = 0
 	while i ~= 500 do
-		if (i * gridDistBlue) % gridDistLightBlue == 0 then
-			if (i * gridDistBlue) % gridDistGreen == 0 then
-				graphics.draw_line(-60000, -i * gridDistBlue, 60000, -i * gridDistBlue, 1, ClutColour(5, 1))
-				graphics.draw_line(-60000, i * gridDistBlue, 60000, i * gridDistBlue, 1, ClutColour(5, 1))
-				graphics.draw_line(-i * gridDistBlue, -60000, -i * gridDistBlue, 60000, 1, ClutColour(5, 1))
-				graphics.draw_line(i * gridDistBlue, -60000, i * gridDistBlue, 60000, 1, ClutColour(5, 1))
+		if (i * GRID_DIST_BLUE) % GRID_DIST_LIGHT_BLUE == 0 then
+			if (i * GRID_DIST_BLUE) % GRID_DIST_GREEN == 0 then
+				graphics.draw_line(-60000, -i * GRID_DIST_BLUE, 60000, -i * GRID_DIST_BLUE, 1, ClutColour(5, 1))
+				graphics.draw_line(-60000, i * GRID_DIST_BLUE, 60000, i * GRID_DIST_BLUE, 1, ClutColour(5, 1))
+				graphics.draw_line(-i * GRID_DIST_BLUE, -60000, -i * GRID_DIST_BLUE, 60000, 1, ClutColour(5, 1))
+				graphics.draw_line(i * GRID_DIST_BLUE, -60000, i * GRID_DIST_BLUE, 60000, 1, ClutColour(5, 1))
 			else
-				graphics.draw_line(-60000, -i * gridDistBlue, 60000, -i * gridDistBlue, 1, ClutColour(4, 8))
-				graphics.draw_line(-60000, i * gridDistBlue, 60000, i * gridDistBlue, 1, ClutColour(4, 8))
-				graphics.draw_line(-i * gridDistBlue, -60000, -i * gridDistBlue, 60000, 1, ClutColour(4, 8))
-				graphics.draw_line(i * gridDistBlue, -60000, i * gridDistBlue, 60000, 1, ClutColour(4, 8))
+				graphics.draw_line(-60000, -i * GRID_DIST_BLUE, 60000, -i * GRID_DIST_BLUE, 1, ClutColour(4, 8))
+				graphics.draw_line(-60000, i * GRID_DIST_BLUE, 60000, i * GRID_DIST_BLUE, 1, ClutColour(4, 8))
+				graphics.draw_line(-i * GRID_DIST_BLUE, -60000, -i * GRID_DIST_BLUE, 60000, 1, ClutColour(4, 8))
+				graphics.draw_line(i * GRID_DIST_BLUE, -60000, i * GRID_DIST_BLUE, 60000, 1, ClutColour(4, 8))
 			end
 		else
 			if cameraRatio > 1 / 8 then
-				graphics.draw_line(-60000, -i * gridDistBlue, 60000, -i * gridDistBlue, 1, ClutColour(4, 11))
-				graphics.draw_line(-60000, i * gridDistBlue, 60000, i * gridDistBlue, 1, ClutColour(4, 11))
-				graphics.draw_line(-i * gridDistBlue, -60000, -i * gridDistBlue, 60000, 1, ClutColour(4, 11))
-				graphics.draw_line(i * gridDistBlue, -60000, i * gridDistBlue, 60000, 1, ClutColour(4, 11))
+				graphics.draw_line(-60000, -i * GRID_DIST_BLUE, 60000, -i * GRID_DIST_BLUE, 1, ClutColour(4, 11))
+				graphics.draw_line(-60000, i * GRID_DIST_BLUE, 60000, i * GRID_DIST_BLUE, 1, ClutColour(4, 11))
+				graphics.draw_line(-i * GRID_DIST_BLUE, -60000, -i * GRID_DIST_BLUE, 60000, 1, ClutColour(4, 11))
+				graphics.draw_line(i * GRID_DIST_BLUE, -60000, i * GRID_DIST_BLUE, 60000, 1, ClutColour(4, 11))
 			end
 		end
 		i = i + 1

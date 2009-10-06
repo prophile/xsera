@@ -46,15 +46,14 @@ function NewEntity (entOwner, entName, entType, entDir, entSubdir, other)
 			if entities[num].entName == entObject.entName then
 ---- if it has, make a copy of it and add physicsObject properties
 				entObject = deepcopy(entities[num])
-				add_properties(entOwner, entName, entType, entDir, entSubdir, other, trueData, entObject, entObject.entName)
----- return - nothing more to do
+				AddProperties(entOwner, entName, entType, entDir, entSubdir, other, trueData, entObject, entObject.entName)
 				return entObject
 			end
 			num = num + 1
 		end
 		if loadingEntities == false then
 			LogError("Entity " .. entObject.entName .. " being loaded after loading period.", 2)
-			add_properties(entOwner, entName, entType, entDir, entSubdir, other, trueData, entObject, entObject.entName)
+			AddProperties(entOwner, entName, entType, entDir, entSubdir, other, trueData, entObject, entObject.entName)
 		end
 	end
 	if trueData.name == nil then
@@ -213,7 +212,7 @@ function NewEntity (entOwner, entName, entType, entDir, entSubdir, other)
 	return entObject
 end
 
-function add_properties(entOwner, entName, entType, entDir, entSubdir, other, trueData, entObject, concatString)
+function AddProperties(entOwner, entName, entType, entDir, entSubdir, other, trueData, entObject, concatString)
 	if trueData.mass == nil then
 		entObject.mass = 0.01
 	else

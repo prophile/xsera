@@ -7,6 +7,12 @@ lineFocus = 0
 isPopDown = false
 isShiftPressed = false
 isCapsOn = false
+consoleBuffer = nil
+endsInCloseParen = nil
+doProcessConsole = false
+nestLevel = 0
+newHistory = nil
+io.output("XseraOutput.txt")
 
 do
 	originalPrint = print
@@ -22,13 +28,6 @@ do
 	SetNewPrint = function() print = newPrint end
 end
 
-consoleBuffer = nil
-endsInCloseParen = nil
-processConsole = false
-nestLevel = 0
-newHistory = nil
-firstTime = true
-io.output("XseraOutput.txt")
 
 function ConsoleDraw(FONT_SIZE)
 	graphics.set_camera(-320, -240, 320, 240)
@@ -116,9 +115,9 @@ function ConsoleKey (k)
 		if withoutGT == "end" then
 			nestLevel = nestLevel - 1
 			if nestLevel == 0 then
-				processConsole = true
+				doProcessConsole = true
 			elseif nestLevel < 0 then
-				processConsole = true
+				doProcessConsole = true
 			end
 		end
 		if consoleBuffer ~= nil then
@@ -129,11 +128,11 @@ function ConsoleKey (k)
 		if endsInCloseParen == true then
 			if consoleBuffer == consoleHistory[line]:gsub("(>)(.)", "%2", 1) then
 				if consoleBuffer:find("function") == nil then
-					processConsole = true
+					doProcessConsole = true
 				end
 			end
 		end
-		if processConsole == false then
+		if doProcessConsole == false then
 			ConsoleAdd(">>")
 		else
 			string, error = loadstring(consoleBuffer)
