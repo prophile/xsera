@@ -1,0 +1,19 @@
+Xsera Lua-End Coding Standard
+
+All code used in Xsera must conform to the following standards. The standards are designed to create uniformity in code design with all developers that are working on Xsera.
+
+First, a few definitions:
+
+	"Camel case" refers to having the first letter in every word but the first capitalized, with all the words squished together. Most variables use the camel case typing. Camel casing looks like this: thisIsCamelCase
+
+	"Screaming case" refers to having all caps with underscores separating words. This should be used for "constants" (there are no such things as constants in Lua, but marking a variable in this way indicates that it should not be modified for any reason). Screaming case looks like this: THIS_IS_SCREAMING_CASE
+
+All regular variables and tables should use camel case (this excludes constants and booleans).
+
+Constants, or variables that should not be changed, should be designated with "screaming case", as stated earlier.
+
+All Lua functions must use camel case, first letter capitalized as well. Example: ThisIsAFunction()
+
+C++ API functions, on the other hand, use a format defined by LuaBind: namespace first, followed by function name, lowercase and underscores, like so: graphics.begin_frame()
+
+Boolean values should be designated by camel case with a leading "is" or "do", when not grammatically confusing. For example, if you want a variable to control when an object draws, you would not call it "isObjectDraws" but "doDrawObject" instead. If you're determining if an object got hit by a projectile, you would use "isObjectHit", not "hitObject". There are some occasions where you do not use either. The only example I can think of is "endsInCloseParen", which doesn't make sense with "is" or "do" preceding it.
