@@ -2,6 +2,7 @@ import('PrintRecursive')
 import('GlobalVars')
 import('EntityLoad')
 import('BoxDrawing')
+import('KeyboardControl')
 
 loadingEntities = true
 if scen == nil then
@@ -12,13 +13,13 @@ loadingEntities = false
 control = scen.planet -- [HARDCODED]
 target = nil
 
-menu_shift = -391
-top_of_menu = -69
-menu_stride = -11
+menuShift = -391
+topOfMenu = -69
+menuStride = -11
 shipSelected = false
-menu_shipyard = { "BUILD", {} }
+menuShipyard = { "BUILD", {} }
 
-function make_ship()
+function MakeShip()
 	shipBuilding = { p = shipQuerying.p, n = shipQuerying.n, r = shipQuerying.r, c = shipQuerying.c, t = shipQuerying.t }
 	if shipBuilding.c > cash or scen.planet.buildqueue.percent ~= 100 then
 		sound.play("NaughtyBeep")
@@ -31,16 +32,16 @@ function make_ship()
 	buildTimerRunning = true
 end
 
-function shipyard()
-	menuLevel = menu_shipyard
+function Shipyard()
+	menuLevel = menuShipyard
 	local num = 1
 	while scen.planet.build[num] ~= nil do
-		menu_shipyard[num + 1] = {}
-		menu_shipyard[num + 1][1] = scen.planet.build[num]:gsub("(%w+)/(%w+)", "%2")
+		menuShipyard[num + 1] = {}
+		menuShipyard[num + 1][1] = scen.planet.build[num]:gsub("(%w+)/(%w+)", "%2")
 		if num ~= 1 then
-			menu_shipyard[num + 1][2] = false
+			menuShipyard[num + 1][2] = false
 		else
-			menu_shipyard[num + 1][2] = true
+			menuShipyard[num + 1][2] = true
 			shipSelected = true
 			shipQuerying.p = scen.planet
 			shipQuerying.n = scen.planet.build[num]:gsub("(%w+)/(%w+)", "%2")
@@ -48,69 +49,69 @@ function shipyard()
 			shipQuerying.c = scen.planet.buildCost[num]
 			shipQuerying.t = scen.planet.buildTime[num]
 		end
-		menu_shipyard[num + 1][3] = make_ship
-		menu_shipyard[num + 1][4] = {}
-		menu_shipyard[num + 1][4][1] = scen.planet
-		menu_shipyard[num + 1][4][2] = scen.planet.build[num]:gsub("(%w+)/(%w+)", "%2")
-		menu_shipyard[num + 1][4][3] = scen.planet.build[num]:gsub("(%w+)/(%w+)", "%1")
+		menuShipyard[num + 1][3] = MakeShip
+		menuShipyard[num + 1][4] = {}
+		menuShipyard[num + 1][4][1] = scen.planet
+		menuShipyard[num + 1][4][2] = scen.planet.build[num]:gsub("(%w+)/(%w+)", "%2")
+		menuShipyard[num + 1][4][3] = scen.planet.build[num]:gsub("(%w+)/(%w+)", "%1")
 		num = num + 1
 	end
 	shipSelected = true
 end
 
-menu_special = { "SPECIAL ORDERS",
-	{ "Transfer Control", true, transfer_control },
-	{ "Hold Position", false, hold_position },
-	{ "Go To My Position", false, go_to_my_position },
-	{ "Fire Weapon 1", false, fire_weapon_1 },
-	{ "Fire Weapon 2", false, fire_weapon_2 },
-	{ "Fire Special", false, fire_special }
+menuSpecial = { "SPECIAL ORDERS",
+	{ "Transfer Control", true, nil },
+	{ "Hold Position", false, nil },
+	{ "Go To My Position", false, nil },
+	{ "Fire Weapon 1", false, nil },
+	{ "Fire Weapon 2", false, nil },
+	{ "Fire Special", false, nil }
 }
 
-function special()
-	menuLevel = menu_special
+function Special()
+	menuLevel = menuSpecial
 end
 
-menu_messages = { "MESSAGES",
-	{ "Next Page/Clear", true, next_page_clear },
-	{ "Previous Page", false, previous_page },
-	{ "Last Message", false, last_message }
+menuMessages = { "MESSAGES",
+	{ "Next Page/Clear", true, nil },
+	{ "Previous Page", false, nil },
+	{ "Last Message", false, nil }
 }
 
-function messages()
-	menuLevel = menu_messages
+function Messages()
+	menuLevel = menuMessages
 end
 
-function mission_status()
+function MissionStatus()
 	menuLevel = { "MISSION STATUS",
 		{ scen.briefing, false } }
 end
 
-menu_options = { "MAIN MENU",
-	{ "<Build>", true, shipyard },
-	{ "<Special Orders>", false, special },
-	{ "<Messages>", false, messages },
-	{ "<Mission Status>", false, mission_status }
+menuOptions = { "MAIN MENU",
+	{ "<Build>", true, Shipyard },
+	{ "<Special Orders>", false, Special },
+	{ "<Messages>", false, Messages },
+	{ "<Mission Status>", false, MissionStatus }
 }
-menuLevel = menu_options
+menuLevel = menuOptions
 
-function interface_display(dt)
+function InterfaceDisplay(dt)
 	if menu_display ~= nil then
 		if menu_display == "esc_menu" then
-			drawEscapeMenu()
+			DrawEscapeMenu()
 		elseif menu_display == "defeat_menu" then
-			drawDefeatMenu()
+			DrawDefeatMenu()
 		elseif menu_display == "info_menu" then
-			drawInfoMenu()
+			DrawInfoMenu()
 		elseif menu_display == "victory_menu" then
-			drawVictoryMenu()
+			DrawVictoryMenu()
 		elseif menu_display == "pause_menu" then
-			drawPauseMenu(dt)
+			DrawPauseMenu(dt)
 		end
 	end
 end
 
-function drawEscapeMenu()
+function DrawEscapeMenu()
 	switch_box( { top = 85, left = -140, bottom = -60, right = 140, boxColour = ClutColour(10, 8) } )
 	graphics.draw_text("Resume, start chapter over, or quit?", "CrystalClear", "left", -125, 65, 16)
 	if down.esc == true then
@@ -141,7 +142,7 @@ function drawEscapeMenu()
 	end
 end
 
-function drawDefeatMenu()
+function DrawDefeatMenu()
 	switch_box( { top = 85, left = -140, bottom = -60, right = 140, boxColour = ClutColour(16, 6) } )
 	graphics.draw_text("You lost your Heavy Cruiser and failed.", "CrystalClear", "left", -125, 26, 16)
 	graphics.draw_text("Start chapter over, or quit?", "CrystalClear", "left", -125, 10, 16)
@@ -163,9 +164,9 @@ function drawDefeatMenu()
 	end
 end
 
-stored_time = 0.0
+storedTime = 0.0
 
-function drawVictoryMenu()
+function DrawVictoryMenu()
 	switch_box( { coordx = -125, coordy = 100, length = 290, text = " ", boxColour = ClutColour(3, 7), textColour = ClutColour(3, 7), execute = nil, letter = "Results", underbox = -100 } )
 	graphics.draw_text("You did it! Congratulations!", "CrystalClear", "left", -110, 90, 16)
 	switch_box( { top = 31, left = -75, bottom = -50, right = 115, boxColour = ClutColour(3, 7), background = ClutColour(3, 14) } )
@@ -193,9 +194,9 @@ function drawVictoryMenu()
 					graphics.draw_text(endGameData[ycheck][xcheck][3], "CrystalClear", "left", startx - xcoord - xlength + 2, starty - (ycheck - 1) * 15 - 6, 16)
 				end
 			else
-				stored_time = stored_time + dt
-				if stored_time >= 0.07 then
-					stored_time = stored_time - 0.07
+				storedTime = storedTime + dt
+				if storedTime >= 0.07 then
+					storedTime = storedTime - 0.07
 					if endGameData[ycheck][xcheck][1] == "inprogress" then
 						if position == nil then
 							position = 1
@@ -224,7 +225,7 @@ function drawVictoryMenu()
 	end
 end
 
-function drawInfoMenu()
+function DrawInfoMenu()
 	switch_box( { top = 250, left = -260, bottom = -250, right = 280, boxColour = ClutColour(1, 8) } )
 	if down.esc == true then
 		switch_box( { coordx = -255, coordy = -240, length = 530, text = "Done", boxColour = ClutLighten(ClutColour(1, 8)), textColour = ClutColour(1, 8), execute = nil, letter = "ESC" } )
@@ -291,23 +292,23 @@ function drawInfoMenu()
 	end
 end
 
-local time_elapsed = 0
+local timeElapsed = 0
 
-function drawPauseMenu(dt)
+function DrawPauseMenu(dt)
 	if down.o == true then
 		menu_display = nil
 		return
 	end
-	time_elapsed = time_elapsed + dt
-	if time_elapsed % 0.8 > 0.4 then
+	timeElapsed = timeElapsed + dt
+	if timeElapsed % 0.8 > 0.4 then
 		switch_box( { top = 20, left = -80, bottom = -20, right = 140, boxColour = ClutColour(5, 11), background = c_half_clear } )
 		graphics.draw_text("> CAPS LOCK - PAUSED <", "CrystalClear", "center", 30, 0, 23, ClutColour(5, 11))
 	end
 end
 
-menuLevel = menu_options
+menuLevel = menuOptions
 
-function drawPanels()
+function DrawPanels()
 	graphics.set_camera(-400, -300, 400, 300)
 	graphics.draw_image("Panels/SideLeft", -346, 0, 109, 607)
 	graphics.draw_image("Panels/SideRight", 387, -2, 26, 608)
@@ -402,13 +403,13 @@ function drawPanels()
 -- Menu drawing
 	local shift = 1
 	local num = 1
-	graphics.draw_text(menuLevel[1], "CrystalClear", "left", menu_shift, top_of_menu, 13)
+	graphics.draw_text(menuLevel[1], "CrystalClear", "left", menuShift, topOfMenu, 13)
 	while menuLevel[num] ~= nil do
 		if menuLevel[num][1] ~= nil then
 			if menuLevel[num][2] == true then
-				graphics.draw_box(top_of_menu + menu_stride * shift + 4, -392, top_of_menu + menu_stride * shift - 5, -298, 0, ClutColour(12, 10))
+				graphics.draw_box(topOfMenu + menuStride * shift + 4, -392, topOfMenu + menuStride * shift - 5, -298, 0, ClutColour(12, 10))
 			end
-			graphics.draw_text(menuLevel[num][1], "CrystalClear", "left", menu_shift, top_of_menu + menu_stride * shift, 13)
+			graphics.draw_text(menuLevel[num][1], "CrystalClear", "left", menuShift, topOfMenu + menuStride * shift, 13)
 			shift = shift + 1
 		end
 		num = num + 1
@@ -479,87 +480,11 @@ function drawPanels()
 	graphics.draw_box(-165.5, -389.5, -175.5, -358, 0, ClutColour(4, 8))
 	graphics.draw_text("RIGHT", "CrystalClear", "left", -388, -170, 13, ClutColour(4, 6))
 	graphics.draw_text("Select", "CrystalClear", "left", -354, -170, 13, ClutColour(4, 6))
-	if menuLevel ~= menu_options then
+	if menuLevel ~= menuOptions then
 		graphics.draw_box(-175.5, -389.5, -185.5, -358, 0, ClutColour(4, 8))
 		graphics.draw_text("LEFT", "CrystalClear", "left", -388, -180, 13, ClutColour(4, 6))
 		graphics.draw_text("Go Back", "CrystalClear", "left", -354, -180, 13, ClutColour(4, 6))
 	end
-end
-
--- Special Orders
-
-function transfer_control()
-	LogError("This command currently has no code.", 6)
-	--[[ pseudocode!!! I don't have the concept of allies yet, need that before I can implement this
-	if controlShip.ally == true then
-		playerShip, controlShip = playerShip, controlShip
-	end --]]
-end
-
-function hold_position()
-	LogError("This command currently has no code.", 6)
-end
-
-function go_to_my_position()
-	LogError("This command currently has no code.", 6)
-end
-
-function fire_weapon_1()
-	LogError("This command currently has no code.", 6)
-end
-
-function fire_weapon_2()
-	LogError("This command currently has no code.", 6)
-end
-
-function fire_special()
-	LogError("This command currently has no code.", 6)
-end
-
--- Message menu
-
-text_being_drawn = false
-text_was_drawn = false
-textnum = 0
-
-function next_page_clear()
-	LogError("This command currently has no code.", 6)
-	--[[
-	if text_being_drawn == true then
-		if scen.text[textnum + 1] ~= nil then
-			textnum = textnum + 1
-		else
-			text_being_drawn = false
-			text_was_drawn = true
-		end
-	else
-		text_being_drawn = true
-		textnum = textnum + 1
-	end
-	--]]
-end
-
-function previous_page()
-	LogError("This command currently has no code.", 6)
-	--[[
-	if text_being_drawn == true then
-		if textnum ~= 1 then
-			textnum = textnum - 1
-		else
-			text_being_drawn = false
-			textnum = 0
-		end
-	end
-	--]]
-end
-
-function last_message()
-	LogError("This command currently has no code.", 6)
-	--[[
-	if text_was_drawn == true then
-		text_being_drawn = true
-	end
-	--]]
 end
 
 function change_menu(menu, direction)
@@ -572,10 +497,10 @@ function change_menu(menu, direction)
 			menu[num][2] = false
 			num = num - 1
 			menu[num][2] = true
-			if menu == menu_shipyard then
-				shipQuerying.p = menu_shipyard[num][4][1]
-				shipQuerying.n = menu_shipyard[num][4][2]
-				shipQuerying.r = menu_shipyard[num][4][3]
+			if menu == menuShipyard then
+				shipQuerying.p = menuShipyard[num][4][1]
+				shipQuerying.n = menuShipyard[num][4][2]
+				shipQuerying.r = menuShipyard[num][4][3]
 				shipQuerying.c = scen.planet.buildCost[num - 1]
 				shipQuerying.t = scen.planet.buildTime[num - 1]
 			end
@@ -588,17 +513,17 @@ function change_menu(menu, direction)
 			menu[num][2] = false
 			num = num + 1
 			menu[num][2] = true
-			if menu == menu_shipyard then
-				shipQuerying.p = menu_shipyard[num][4][1]
-				shipQuerying.n = menu_shipyard[num][4][2]
-				shipQuerying.r = menu_shipyard[num][4][3]
+			if menu == menuShipyard then
+				shipQuerying.p = menuShipyard[num][4][1]
+				shipQuerying.n = menuShipyard[num][4][2]
+				shipQuerying.r = menuShipyard[num][4][3]
 				shipQuerying.c = scen.planet.buildCost[num - 1]
 				shipQuerying.t = scen.planet.buildTime[num - 1]
 			end
 		end
 	elseif direction == "j" then
-		if menu ~= menu_options then
-			menuLevel = menu_options
+		if menu ~= menuOptions then
+			menuLevel = menuOptions
 			shipSelected = false
 		end
 	elseif direction == "l" then

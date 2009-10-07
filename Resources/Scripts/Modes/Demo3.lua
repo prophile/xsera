@@ -635,7 +635,7 @@ function render ()
 	graphics.draw_line(math.cos(angle - arrowAlpha) * arrowDist + playerShip.physicsObject.position.x, math.sin(angle - arrowAlpha) * arrowDist + playerShip.physicsObject.position.y, math.cos(angle) * (arrowLength + arrowVar) + playerShip.physicsObject.position.x, math.sin(angle) * (arrowLength + arrowVar) + playerShip.physicsObject.position.y, 1.5, ClutColour(5, 1))
 	graphics.draw_line(math.cos(angle) * (arrowLength + arrowVar) + playerShip.physicsObject.position.x, math.sin(angle) * (arrowLength + arrowVar) + playerShip.physicsObject.position.y, math.cos(arrowAlpha + angle) * arrowDist + playerShip.physicsObject.position.x, math.sin(arrowAlpha + angle) * arrowDist + playerShip.physicsObject.position.y, 1.5, ClutColour(5, 1))
 -- Panels
-	drawPanels()
+	DrawPanels()
 -- Console
 	popDownConsole()
 -- Mouse
@@ -657,7 +657,7 @@ function render ()
 		end
 	end --]]
 -- Menus
-	interface_display(dt)
+	InterfaceDisplay(dt)
 -- Error Printing
 	if errNotice ~= nil then
 		graphics.draw_text(errNotice.text, "CrystalClear", "center", 0, -150, 28)
