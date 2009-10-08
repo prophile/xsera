@@ -177,18 +177,18 @@ function DrawVictoryMenu()
 		local xcheck = 1
 		while endGameData[ycheck][xcheck] ~= nil do
 			if xcheck == 1 then
-				xcoord = 121
+				xCoord = 121
 				xlength = 64
 			else
-				xcoord = 60 * (3 - xcheck) + 1
+				xCoord = 60 * (3 - xcheck) + 1
 				xlength = 60
 			end
 			if endGameData[ycheck][xcheck][1] == true then
 				if endGameData[ycheck][xcheck][2] ~= c_clear then
-					graphics.draw_box(starty - (ycheck - 1) * 15, startx - xcoord - xlength, starty - ycheck * 15, startx - xcoord, 0, endGameData[ycheck][xcheck][2])
-					graphics.draw_text(endGameData[ycheck][xcheck][3], "CrystalClear", "left", startx - xcoord - xlength + 2, starty - (ycheck - 1) * 15 - 6, 16)
+					graphics.draw_box(starty - (ycheck - 1) * 15, startx - xCoord - xlength, starty - ycheck * 15, startx - xCoord, 0, endGameData[ycheck][xcheck][2])
+					graphics.draw_text(endGameData[ycheck][xcheck][3], "CrystalClear", "left", startx - xCoord - xlength + 2, starty - (ycheck - 1) * 15 - 6, 16)
 				else
-					graphics.draw_text(endGameData[ycheck][xcheck][3], "CrystalClear", "left", startx - xcoord - xlength + 2, starty - (ycheck - 1) * 15 - 6, 16)
+					graphics.draw_text(endGameData[ycheck][xcheck][3], "CrystalClear", "left", startx - xCoord - xlength + 2, starty - (ycheck - 1) * 15 - 6, 16)
 				end
 			else
 				storedTime = storedTime + dt
@@ -199,10 +199,10 @@ function DrawVictoryMenu()
 							position = 1
 						end
 						if position == 1 then
-							graphics.draw_box(starty - (ycheck - 1) * 15, startx - xcoord - xlength / 2 - 5, starty - ycheck * 15, startx - xcoord - xlength / 2 + 5, 0, ClutColour(3, 7))
+							graphics.draw_box(starty - (ycheck - 1) * 15, startx - xCoord - xlength / 2 - 5, starty - ycheck * 15, startx - xCoord - xlength / 2 + 5, 0, ClutColour(3, 7))
 							position = 2
 						elseif position == 2 then
-							graphics.draw_box(starty - (ycheck - 1) * 15, startx - xcoord - 10, starty - ycheck * 15, startx - xcoord, 0, ClutColour(3, 7))
+							graphics.draw_box(starty - (ycheck - 1) * 15, startx - xCoord - 10, starty - ycheck * 15, startx - xCoord, 0, ClutColour(3, 7))
 							endGameData[ycheck][xcheck][1] = true
 							position = nil
 						end
@@ -210,7 +210,7 @@ function DrawVictoryMenu()
 					elseif endGameData[ycheck][xcheck][1] == false then
 						endGameData[ycheck][xcheck][1] = "inprogress"
 						sound.play("ITeletype")
-						graphics.draw_box(starty - (ycheck - 1) * 15, startx - xcoord - xlength, starty - ycheck * 15, startx - xcoord - xlength + 10, 0, ClutColour(3, 7))
+						graphics.draw_box(starty - (ycheck - 1) * 15, startx - xCoord - xlength, starty - ycheck * 15, startx - xCoord - xlength + 10, 0, ClutColour(3, 7))
 					end
 				end
 				ycheck = 5
@@ -255,8 +255,8 @@ function DrawInfoMenu()
 		graphics.draw_box(line_num * -15 + 260, -257, line_num * -15 + 245, 277, 0, ClutColour(1, 8))
 		graphics.draw_text(keyboard[num][1], "CrystalClear", "left", -252, line_num * -15 + 253, 16)
 		line_num = line_num + 1
-		local xcoord = 0
-		local yshift = 0
+		local xCoord = 0
+		local yShift = 0
 		local adjust = 0
 		local numBoxes = 1
 		while keyboard[num][numBoxes] ~= nil do
@@ -265,17 +265,17 @@ function DrawInfoMenu()
 		local rows = math.ceil(numBoxes / 2)
 		while keyboard[num][subnum + 1] ~= nil do
 			if subnum % rows ~= subnum then
-				xcoord = 50
+				xCoord = 50
 				adjust = (rows - 1) * 15
 			else
 				adjust = 0
-				xcoord = -212
+				xCoord = -212
 			end
-			graphics.draw_text(keyboard[num][subnum + 1].name, "CrystalClear", "left", xcoord, line_num * -15 + 254 + adjust, 16)
+			graphics.draw_text(keyboard[num][subnum + 1].name, "CrystalClear", "left", xCoord, line_num * -15 + 254 + adjust, 16)
 			if keyboard[num][subnum + 1].key_display == nil then
-				graphics.draw_text(keyboard[num][subnum + 1].key, "CrystalClear", "center", xcoord - 24, line_num * -15 + 254 + adjust, 16)
+				graphics.draw_text(keyboard[num][subnum + 1].key, "CrystalClear", "center", xCoord - 24, line_num * -15 + 254 + adjust, 16)
 			else
-				graphics.draw_text(keyboard[num][subnum + 1].key_display, "CrystalClear", "center", xcoord - 24, line_num * -15 + 254 + adjust, 16)
+				graphics.draw_text(keyboard[num][subnum + 1].key_display, "CrystalClear", "center", xCoord - 24, line_num * -15 + 254 + adjust, 16)
 			end
 			line_num = line_num + 1
 			subnum = subnum + 1

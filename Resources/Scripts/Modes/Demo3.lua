@@ -526,9 +526,9 @@ function render ()
 	
 	function drawPlanet(planet)
 		if cameraRatio > 1 / 8 then
-			local xcoord; local ycoord
-			xcoord, ycoord = graphics.sprite_dimensions("Planets/" .. planet.image)
-			graphics.draw_sprite("Planets/" .. planet.image, planet.position.x, planet.position.y, xcoord, ycoord, 1)
+			local xCoord; local yCoord
+			xCoord, yCoord = graphics.sprite_dimensions("Planets/" .. planet.image)
+			graphics.draw_sprite("Planets/" .. planet.image, planet.position.x, planet.position.y, xCoord, yCoord, 1)
 		else
 			if planet.owner ~= Admirals[1].ident then
 				graphics.draw_rbox(planet.position.x, planet.position.y, 60, ClutColour(16, 1))

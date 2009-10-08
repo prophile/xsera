@@ -46,25 +46,25 @@ function render()
 	end
 	rows = math.ceil(numBoxes / 2)
 	num = 1
-	local xcoord = 0
-	local yshift = 0
+	local xCoord = 0
+	local yShift = 0
 	local adjust = 0
 	
 	keyboardNum = 1
 	while keyboard[keyboardNum][num + 1] ~= nil do
 		if num % rows ~= num then
-			xcoord = 5
+			xCoord = 5
 			adjust = rows - 1
 		else
 			adjust = 0
-			xcoord = -250
+			xCoord = -250
 		end
 		if rows % 2 ~= 0 then -- odd number of rows
-			yshift = -9
+			yShift = -9
 		else
-			yshift = 9
+			yShift = 9
 		end
-		switch_box( { coordx = xcoord, coordy = (math.ceil(numBoxes / 4) - (num - 1 - adjust)) * 36 + yshift, length = 245, text = keyboard[keyboardNum][num + 1].name, boxColour = ClutColour(10, 8), textColour = ClutColour(10, 8), execute = nil, letter = keyboard[keyboardNum][num + 1].key } )
+		switch_box( { coordx = xCoord, coordy = (math.ceil(numBoxes / 4) - (num - 1 - adjust)) * 36 + yShift, length = 245, text = keyboard[keyboardNum][num + 1].name, boxColour = ClutColour(10, 8), textColour = ClutColour(10, 8), execute = nil, letter = keyboard[keyboardNum][num + 1].key } )
 		num = num + 1
 	end
 	-- Error Printing
