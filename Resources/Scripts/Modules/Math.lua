@@ -69,3 +69,8 @@ function radian_range(angle)
 	end
 	return angle
 end
+
+function RandomReal ( min, max )
+    return (math.random() * (max - min)) + min
+end
+

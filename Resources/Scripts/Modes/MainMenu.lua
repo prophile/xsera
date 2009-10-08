@@ -22,36 +22,32 @@ versionInformation = ""
 timeFactor = 1.0
 sizeFactor = 1.0
 
-function sort_ships ()
+function SortShips ()
     table.sort(ships, function (a, b) return a[4] < b[4] end)
     -- print "Sorted ships!"
 end
 
-function ship_speed ( type )
+function ShipSpeed ( type )
     local szx, szy = graphics.sprite_dimensions("Ships/" .. type)
     local szt = math.sqrt(szx*szx + szy*szy)
     return 45.0 / szt
 end
 
-function random_real ( min, max )
-    return (math.random() * (max - min)) + min
-end
-
-function random_ship_type ()
+function RandomShipType ()
     return shipType[math.random(1, #shipType)]
 end
 
 for i=1,numShips do
-    local shipType = random_ship_type()
+    local shipType = RandomShipType()
     if allies then
-        ships[i] = { random_real(700, 1000), random_real(-580, 20), shipType, random_real(-1, 1), ship_speed(shipType) }
+        ships[i] = { RandomReal(700, 1000), RandomReal(-580, 20), shipType, RandomReal(-1, 1), ShipSpeed(shipType) }
     else
-        ships[i] = { random_real(-700, -1000), random_real(580, -20), shipType, random_real(-1, 1), ship_speed(shipType) }
+        ships[i] = { RandomReal(-700, -1000), RandomReal(580, -20), shipType, RandomReal(-1, 1), ShipSpeed(shipType) }
     end
 end
-sort_ships()
+SortShips()
 
-function distancefactor ( distance )
+function DistanceFactor ( distance )
     distance = distance + 1.3
     return distance / 1.4
 end
@@ -63,7 +59,7 @@ function render ()
     graphics.draw_image("Bootloader/Xsera", 0, 0, 1000, 480)
     for id, ship in ipairs(ships) do
         local szx, szy = graphics.sprite_dimensions("Ships/" .. ship[3], goodSpriteSheetX, goodSpriteSheetY)
-        graphics.draw_sprite("Ships/" .. ship[3], ship[1], ship[2], szx * sizeFactor * distancefactor(ship[4]), szy * sizeFactor * distancefactor(ship[4]), math.atan2(shipVelocity[2], shipVelocity[1]))
+        graphics.draw_sprite("Ships/" .. ship[3], ship[1], ship[2], szx * sizeFactor * DistanceFactor(ship[4]), szy * sizeFactor * DistanceFactor(ship[4]), math.atan2(shipVelocity[2], shipVelocity[1]))
     end
     
     graphics.draw_text("D - Demo", "CrystalClear", "left", -450, 0, 60)
@@ -117,23 +113,23 @@ function update ()
     -- print("Advancing simulation with timestep " .. dt .. " and velocity vector " .. gvx .. ", " .. gvy)
     local resortShips = false
     for ship in pairs(ships) do
-        ships[ship][1] = ships[ship][1] + (shipVelocity[1] * distancefactor(ships[ship][4]) * ships[ship][5]) * dt
-        ships[ship][2] = ships[ship][2] + (shipVelocity[2] * distancefactor(ships[ship][4]) * ships[ship][5]) * dt
+        ships[ship][1] = ships[ship][1] + (shipVelocity[1] * DistanceFactor(ships[ship][4]) * ships[ship][5]) * dt
+        ships[ship][2] = ships[ship][2] + (shipVelocity[2] * DistanceFactor(ships[ship][4]) * ships[ship][5]) * dt
         if (ships[ship][1] < -800 or ships[ship][1] > 800) then
             resortShips = true
             if allies then
-                ships[ship][1] = random_real(520, 800)
-                ships[ship][2] = random_real(-450, 190)
+                ships[ship][1] = RandomReal(520, 800)
+                ships[ship][2] = RandomReal(-450, 190)
             else
-                ships[ship][1] = random_real(-520, -800)
-                ships[ship][2] = random_real(450, -190)
+                ships[ship][1] = RandomReal(-520, -800)
+                ships[ship][2] = RandomReal(450, -190)
             end
-            ships[ship][3] = random_ship_type()
-            ships[ship][4] = random_real(-1, 1)
+            ships[ship][3] = RandomShipType()
+            ships[ship][4] = RandomReal(-1, 1)
         end
     end
     if resortShips then
-        sort_ships()
+        SortShips()
     end
 end
 
