@@ -358,7 +358,7 @@ function update ()
 			physics.update(dt * 30)
 		end
 	end
-	key_do_activated()
+	KeyDoActivated()
 end
 
 --[[-----------------------------
@@ -678,7 +678,7 @@ end
 ------------------------]]--
 
 function keyup ( k )
-	key_deactivate(k)
+	KeyDeactivate(k)
 end
 
 normal_keyup = keyup
@@ -707,7 +707,7 @@ function key ( k )
 		keyup = escape_keyup
 		key = escape_key
 	else
-        key_activate(k)
+        KeyActivate(k)
 	end
 end
 

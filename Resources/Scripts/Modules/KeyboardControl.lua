@@ -53,25 +53,25 @@ function StopFireWeap1()
 	end
 end
 
-function DoFireWeap_2()
+function DoFireWeap2()
 	if playerShip.pulse ~= nil then
 		playerShip.pulse.firing = true
 	end
 end
 
-function StopFireWeap_2()
+function StopFireWeap2()
 	if playerShip.pulse ~= nil then
 		playerShip.pulse.firing = false
 	end
 end
 
-function DoFireWeap_special()
+function DoFireWeapSpecial()
 	if playerShip.special ~= nil then
 		playerShip.special.firing = true
 	end
 end
 
-function StopFireWeap_special()
+function StopFireWeapSpecial()
 	if playerShip.special ~= nil then
 		playerShip.special.firing = false
 	end
@@ -130,7 +130,7 @@ function DoScaleIn()
 		cameraRatioNum = cameraRatioNum - 1
 		multiplier = (cameraRatios[cameraRatioNum] - cameraRatio) / cameraRatio
 	end
-	action_deactivate("Scale In")
+	ActionDeactivate("Scale In")
 end
 
 function DoScaleOut()
@@ -143,7 +143,7 @@ function DoScaleOut()
 		cameraRatioNum = cameraRatioNum + 1
 		multiplier = (cameraRatios[cameraRatioNum] - cameraRatio) / cameraRatio
 	end
-	action_deactivate("Scale Out")
+	ActionDeactivate("Scale Out")
 end
 
 function DocomputerPrevious()
@@ -311,7 +311,7 @@ keyboard = { { "Ship",
 				{ key = "a", name = "Turn Counter-Clockwise", active = false }, 
 				{ key = "d", name = "Turn Clockwise", active = false }, 
 				{ key = "MmetaL", key_display = "CmdL", name = "Fire Weapon 1", action = DoFireWeap1, deaction = StopFireWeap1, active = false }, 
-				{ key = "MaltL", key_display = "AltL", name = "Fire Weapon 2", action = DoFireWeap_2, deaction = StopFireWeap_2, active = false }, 
+				{ key = "MaltL", key_display = "AltL", name = "Fire Weapon 2", action = DoFireWeap2, deaction = StopFireWeap2, active = false }, 
 				{ key = " ", key_display = "Space", name = "Fire/Activate Special", action = DoFireWeapSpecial, deaction = StopFireWeapSpecial, active = false }, 
 				{ key = "Tab", name = "Warp", action = DoWarp, active = false } },
 			{ "Command", 
@@ -361,7 +361,7 @@ keyboard = { { "Ship",
 	-------------------------}}--
 ---------------------------------]]--
 
-function reassign_key(name, key)
+function ReassignKey(name, key)
 	local i = 1
 	while keyboard[i] ~= nil do
 		local j = 2
@@ -378,7 +378,7 @@ function reassign_key(name, key)
 	end
 end
 
-function key_is_unassigned()
+function KeyIsUnassigned()
 	local i = 1
 	while keyboard[i] ~= nil do
 		local j = 2
@@ -393,7 +393,7 @@ function key_is_unassigned()
 	return false
 end
 
-function key_activate(key)
+function KeyActivate(key)
 	local i = 1
 	while keyboard[i] ~= nil do
 		local j = 2
@@ -408,7 +408,7 @@ function key_activate(key)
 	end
 end
 
-function action_activate(name)
+function ActionActivate(name)
 	local i = 1
 	while keyboard[i] ~= nil do
 		local j = 2
@@ -423,7 +423,7 @@ function action_activate(name)
 	end
 end
 
-function key_deactivate(key)
+function KeyDeactivate(key)
 	local i = 1
 	while keyboard[i] ~= nil do
 		local j = 2
@@ -441,7 +441,7 @@ function key_deactivate(key)
 	end
 end
 
-function action_deactivate(name)
+function ActionDeactivate(name)
 	local i = 1
 	while keyboard[i] ~= nil do
 		local j = 2
@@ -459,7 +459,7 @@ function action_deactivate(name)
 	end
 end
 
-function key_do_activated()
+function KeyDoActivated()
 	local i = 1
 	while keyboard[i] ~= nil do
 		local j = 2
