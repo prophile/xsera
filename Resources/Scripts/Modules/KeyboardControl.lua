@@ -41,44 +41,44 @@ end
 		Ship
 	--------]]--
 
-function do_fire_weap_1()
+function DoFireWeap1()
 	if playerShip.beam ~= nil then
 		playerShip.beam.firing = true
 	end
 end
 
-function stop_fire_weap_1()
+function StopFireWeap1()
 	if playerShip.beam ~= nil then
 		playerShip.beam.firing = false
 	end
 end
 
-function do_fire_weap_2()
+function DoFireWeap_2()
 	if playerShip.pulse ~= nil then
 		playerShip.pulse.firing = true
 	end
 end
 
-function stop_fire_weap_2()
+function StopFireWeap_2()
 	if playerShip.pulse ~= nil then
 		playerShip.pulse.firing = false
 	end
 end
 
-function do_fire_weap_special()
+function DoFireWeap_special()
 	if playerShip.special ~= nil then
 		playerShip.special.firing = true
 	end
 end
 
-function stop_fire_weap_special()
+function StopFireWeap_special()
 	if playerShip.special ~= nil then
 		playerShip.special.firing = false
 	end
 end
 
 -- these two functions don't work right now, for some reason. [FIX, ADAM]
-function do_warp()
+function DoWarp()
 	playerShip.warp.start.bool = false
 	playerShip.warp.start.time = nil
 	playerShip.warp.start.engine = false
@@ -90,7 +90,7 @@ function do_warp()
 	end
 end
 
-function stop_warp()
+function StopWarp()
 	if playerShip.warp.finished == true then
 		playerShip.warp.start.bool = true
 	end
@@ -100,27 +100,27 @@ end
 		Command
 	-----------]]--
 
-function do_select_friendly()
+function DoSelectFriendly()
 	LogError("The command does not have any code. /placeholder", 9)
 end
 
-function do_select_hostile()
+function DoSelectHostile()
 	LogError("The command does not have any code. /placeholder", 9)
 end
 
-function do_select_base()
+function DoSelectBase()
 	LogError("The command does not have any code. /placeholder", 9)
 end
 
-function do_target()
+function DoTarget()
 	LogError("The command does not have any code. /placeholder", 9)
 end
 
-function do_move_order()
+function DoMoveOrder()
 	LogError("The command does not have any code. /placeholder", 9)
 end
 
-function do_scale_in()
+function DoScaleIn()
 	if cameraRatioNum ~= 1 then
 		sound.play("ZoomChange")
 		cameraChanging = true
@@ -133,7 +133,7 @@ function do_scale_in()
 	action_deactivate("Scale In")
 end
 
-function do_scale_out()
+function DoScaleOut()
 	if cameraRatios[cameraRatioNum + 1] ~= nil then
 		sound.play("ZoomChange")
 		cameraChanging = true
@@ -146,22 +146,22 @@ function do_scale_out()
 	action_deactivate("Scale Out")
 end
 
-function do_computer_previous()
+function DocomputerPrevious()
 	change_menu(menuLevel, "i")
 	keyboard[2][9].active = false
 end
 
-function do_computer_next()
+function DoComputerNext()
 	change_menu(menuLevel, "k")
 	keyboard[2][10].active = false
 end
 
-function do_computer_accept()
+function DoComputerAccept()
 	change_menu(menuLevel, "l")
 	keyboard[2][11].active = false
 end
 
-function do_computer_back()
+function DoComputerBack()
 	change_menu(menuLevel, "j")
 	keyboard[2][12].active = false
 end
@@ -170,11 +170,11 @@ end
 		Shortcuts
 	-------------]]--
 
-function do_transfer_control()
+function DoTransferControl()
 	LogError("The command does not have any code. /placeholder", 9)
 end
 
-function do_zoom_1_1()
+function DoZoom1_1()
 	if cameraRatioNum ~= 2 then
 		cameraChanging = true
 		cameraRatioOrig = cameraRatio
@@ -189,7 +189,7 @@ function do_zoom_1_1()
 	end
 end
 
-function do_zoom_1_2()
+function DoZoom1_2()
 	if cameraRatioNum ~= 3 then
 		cameraChanging = true
 		cameraRatioOrig = cameraRatio
@@ -204,27 +204,27 @@ function do_zoom_1_2()
 	end
 end
 
-function do_zoom_1_4()
+function DoZoom1_4()
 	LogError("The command does not have any code. /placeholder", 9)
 end
 
-function do_zoom_1_16()
+function DoZoom1_16()
 	LogError("The command does not have any code. /placeholder", 9)
 end
 
-function do_zoom_hostile()
+function DoZoomHostile()
 	LogError("The command does not have any code. /placeholder", 9)
 end
 
-function do_zoom_object()
+function DoZoomObject()
 	LogError("The command does not have any code. /placeholder", 9)
 end
 
-function do_zoom_all()
+function DoZoomAll()
 	LogError("The command does not have any code. /placeholder", 9)
 end
 
-function do_message_next()
+function DoMessageNext()
 	LogError("The command does not have any code. /placeholder", 9)
 end
 
@@ -232,25 +232,25 @@ end
 		Utility
 	-----------]]--
 
-function do_help()
+function DoHelp()
 	menu_display = "info_menu"
 	keyup = escape_keyup
 	key = escape_key
 end
 
-function do_lower_volume()
+function DoLowerVolume()
 	LogError("The command does not have any code. /placeholder", 9)
 end
 
-function do_raise_volume()
+function DoRaiseVolume()
 	LogError("The command does not have any code. /placeholder", 9)
 end
 
-function do_mute_music()
+function DoMuteMusic()
 	LogError("The command does not have any code. /placeholder", 9)
 end
 
-function do_expert_net()
+function DoExpertNet()
 	LogError("The command does not have any code. /placeholder", 9)
 end
 
@@ -258,43 +258,43 @@ end
 		HotKeys
 	-----------]]--
 
-function do_hotkey_1()
+function DoHotkey1()
 	LogError("The command does not have any code. /placeholder", 9)
 end
 
-function do_hotkey_2()
+function DoHotkey2()
 	LogError("The command does not have any code. /placeholder", 9)
 end
 
-function do_hotkey_3()
+function DoHotkey3()
 	LogError("The command does not have any code. /placeholder", 9)
 end
 
-function do_hotkey_4()
+function DoHotkey4()
 	LogError("The command does not have any code. /placeholder", 9)
 end
 
-function do_hotkey_5()
+function DoHotkey5()
 	LogError("The command does not have any code. /placeholder", 9)
 end
 
-function do_hotkey_6()
+function DoHotkey6()
 	LogError("The command does not have any code. /placeholder", 9)
 end
 
-function do_hotkey_7()
+function DoHotkey7()
 	LogError("The command does not have any code. /placeholder", 9)
 end
 
-function do_hotkey_8()
+function DoHotkey8()
 	LogError("The command does not have any code. /placeholder", 9)
 end
 
-function do_hotkey_9()
+function DoHotkey9()
 	LogError("The command does not have any code. /placeholder", 9)
 end
 
-function do_hotkey_10()
+function DoHotkey10()
 	LogError("The command does not have any code. /placeholder", 9)
 end
 
@@ -310,50 +310,50 @@ keyboard = { { "Ship",
 				{ key = "s", name = "Decelerate", active = false }, 
 				{ key = "a", name = "Turn Counter-Clockwise", active = false }, 
 				{ key = "d", name = "Turn Clockwise", active = false }, 
-				{ key = "MmetaL", key_display = "CmdL", name = "Fire Weapon 1", action = do_fire_weap_1, deaction = stop_fire_weap_1, active = false }, 
-				{ key = "MaltL", key_display = "AltL", name = "Fire Weapon 2", action = do_fire_weap_2, deaction = stop_fire_weap_2, active = false }, 
-				{ key = " ", key_display = "Space", name = "Fire/Activate Special", action = do_fire_weap_special, deaction = stop_fire_weap_special, active = false }, 
-				{ key = "Tab", name = "Warp", action = do_warp, active = false } },
+				{ key = "MmetaL", key_display = "CmdL", name = "Fire Weapon 1", action = DoFireWeap1, deaction = StopFireWeap1, active = false }, 
+				{ key = "MaltL", key_display = "AltL", name = "Fire Weapon 2", action = DoFireWeap_2, deaction = StopFireWeap_2, active = false }, 
+				{ key = " ", key_display = "Space", name = "Fire/Activate Special", action = DoFireWeapSpecial, deaction = StopFireWeapSpecial, active = false }, 
+				{ key = "Tab", name = "Warp", action = DoWarp, active = false } },
 			{ "Command", 
-				{ key = "pgdn", name = "Select Friendly", action = do_select_friendly, active = false }, 
-				{ key = "KPequals", key_display = "KP=", name = "Select Hostile", action = do_select_hostile, active = false }, 
-				{ key = "KPdivide", key_display = "KP/", name = "Select Base", action = do_select_base, active = false }, 
-				{ key = "MshiftL", key_display = "ShiftL", name = "Target", action = do_target, active = false }, 
-				{ key = "MctrlL", key_display = "CtrlL", name = "Move Order", action = do_move_order, active = false }, 
-				{ key = "=", name = "Scale In", action = do_scale_in, active = false }, 
-				{ key = "-", name = "Scale Out", action = do_scale_out, active = false }, 
-				{ key = "up", key_display = "UP", name = "Computer Previous", action = do_computer_previous, active = false }, 
-				{ key = "down", key_display = "DOWN", name = "Computer Next", action = do_computer_next, active = false }, 
-				{ key = "right", key_display = "RGHT", name = "Computer Accept/Select/Do", action = do_computer_accept, active = false }, 
-				{ key = "left", key_display = "LEFT", name = "Computer Cancel/Back Up", action = do_computer_back, active = false } },
+				{ key = "pgdn", name = "Select Friendly", action = DoSelectFriendly, active = false }, 
+				{ key = "KPequals", key_display = "KP=", name = "Select Hostile", action = DoSelectHostile, active = false }, 
+				{ key = "KPdivide", key_display = "KP/", name = "Select Base", action = DoSelectBase, active = false }, 
+				{ key = "MshiftL", key_display = "ShiftL", name = "Target", action = DoTarget, active = false }, 
+				{ key = "MctrlL", key_display = "CtrlL", name = "Move Order", action = DoMoveOrder, active = false }, 
+				{ key = "=", name = "Scale In", action = DoScaleIn, active = false }, 
+				{ key = "-", name = "Scale Out", action = DoScaleOut, active = false }, 
+				{ key = "up", key_display = "UP", name = "Computer Previous", action = DoComputerPrevious, active = false }, 
+				{ key = "down", key_display = "DOWN", name = "Computer Next", action = DoComputerNext, active = false }, 
+				{ key = "right", key_display = "RGHT", name = "Computer Accept/Select/Do", action = DoComputerAccept, active = false }, 
+				{ key = "left", key_display = "LEFT", name = "Computer Cancel/Back Up", action = DoComputerBack, active = false } },
 			{ "Shortcuts",
-				{ key = "F8", name = "Transfer Control", action = do_transfer_control, active = false }, 
-				{ key = "F9", name = "Zoom to 1:1", action = do_zoom_1_1, active = false }, 
-				{ key = "F10", name = "Zoom to 1:2", action = do_zoom_1_2, active = false }, 
-				{ key = "F11", name = "Zoom to 1:4", action = do_zoom_1_4, active = false }, 
-				{ key = "F12", name = "Zoom to 1:16", action = do_zoom_1_16, active = false }, 
-				{ key = "ins", name = "Zoom to Closest Hostile", action = do_zoom_hostile, active = false }, 
-				{ key = "home", name = "Zoom to Closest Object", action = do_zoom_object, active = false }, 
-				{ key = "pgup", name = "Zoom to All", action = do_zoom_all, active = false }, 
-				{ key = "del", name = "Message Next Page / Clear", action = do_message_next, active = false } },
+				{ key = "F8", name = "Transfer Control", action = DoTransferControl, active = false }, 
+				{ key = "F9", name = "Zoom to 1:1", action = DoZoom1_1, active = false }, 
+				{ key = "F10", name = "Zoom to 1:2", action = DoZoom1_2, active = false }, 
+				{ key = "F11", name = "Zoom to 1:4", action = DoZoom1_4, active = false }, 
+				{ key = "F12", name = "Zoom to 1:16", action = DoZoom1_16, active = false }, 
+				{ key = "ins", name = "Zoom to Closest Hostile", action = DoZoomHostile, active = false }, 
+				{ key = "home", name = "Zoom to Closest Object", action = DoZoomObject, active = false }, 
+				{ key = "pgup", name = "Zoom to All", action = DoZoomAll, active = false }, 
+				{ key = "del", name = "Message Next Page / Clear", action = DoMessageNext, active = false } },
 			{ "Utility",
-				{ key = "F1", name = "Help", action = do_help, active = false }, 
-				{ key = "F2", name = "Lower Volume", action = do_lower_volume, active = false }, 
-				{ key = "F3", name = "Raise Volume", action = do_raise_volume, active = false }, 
-				{ key = "F4", name = "Mute Music", action = do_mute_music, active = false }, 
-				{ key = "F5", name = "Expert Net Settings", action = do_expert_net, active = false }, 
+				{ key = "F1", name = "Help", action = Dohelp, active = false }, 
+				{ key = "F2", name = "Lower Volume", action = DoLowerVolume, active = false }, 
+				{ key = "F3", name = "Raise Volume", action = DoRaiseVolume, active = false }, 
+				{ key = "F4", name = "Mute Music", action = DoMuteMusic, active = false }, 
+				{ key = "F5", name = "Expert Net Settings", action = DoExpertNet, active = false }, 
 				{ key = "F6", name = "Fast Motion", active = false } }, 
 			{ "HotKeys",
-				{ key = "1", name = "HotKey 1", action = do_hotkey_1, active = false }, 
-				{ key = "2", name = "HotKey 2", action = do_hotkey_2, active = false }, 
-				{ key = "3", name = "HotKey 3", action = do_hotkey_3, active = false }, 
-				{ key = "4", name = "HotKey 4", action = do_hotkey_4, active = false }, 
-				{ key = "5", name = "HotKey 5", action = do_hotkey_5, active = false }, 
-				{ key = "6", name = "HotKey 6", action = do_hotkey_6, active = false }, 
-				{ key = "7", name = "HotKey 7", action = do_hotkey_7, active = false }, 
-				{ key = "8", name = "HotKey 8", action = do_hotkey_8, active = false }, 
-				{ key = "9", name = "HotKey 9", action = do_hotkey_9, active = false }, 
-				{ key = "0", name = "HotKey 10", action = do_hotkey_10, active = false } } }
+				{ key = "1", name = "HotKey 1", action = DoHotkey1, active = false }, 
+				{ key = "2", name = "HotKey 2", action = DoHotkey2, active = false }, 
+				{ key = "3", name = "HotKey 3", action = DoHotkey3, active = false }, 
+				{ key = "4", name = "HotKey 4", action = DoHotkey4, active = false }, 
+				{ key = "5", name = "HotKey 5", action = DoHotkey5, active = false }, 
+				{ key = "6", name = "HotKey 6", action = DoHotkey6, active = false }, 
+				{ key = "7", name = "HotKey 7", action = DoHotkey7, active = false }, 
+				{ key = "8", name = "HotKey 8", action = DoHotkey8, active = false }, 
+				{ key = "9", name = "HotKey 9", action = DoHotkey9, active = false }, 
+				{ key = "0", name = "HotKey 10", action = DoHotkey10, active = false } } }
 
 --[[---------------------------------
 	--{{-------------------------

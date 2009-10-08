@@ -1,8 +1,5 @@
-import('PrintRecursive')
-import('GlobalVars')
 import('EntityLoad')
 import('BoxDrawing')
-import('KeyboardControl')
 
 loadingEntities = true
 if scen == nil then

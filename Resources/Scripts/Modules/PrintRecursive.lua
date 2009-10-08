@@ -1,4 +1,4 @@
-import('Console')
+-- import('Console')
 
 table.print_recursive = function (t, indent) -- alt version, abuse to http://richard.warburton.it
 	local indent=indent or ''
