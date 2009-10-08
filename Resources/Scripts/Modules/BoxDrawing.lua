@@ -1,10 +1,10 @@
 import('PrintRecursive')
 
-function draw_interface_box(box, col_mod_all, col_mod_click)
+function DrawInterfaceBox(box, col_mod_all, col_mod_click)
 	if box.underbox ~= nil then
-		graphics.draw_box(box.coordy + 18, box.coordx, box.underbox, box.coordx + box.length, 0, ClutColour(1, 17))
+		graphics.draw_box(box.yCoord + 18, box.xCoord, box.underbox, box.xCoord + box.length, 0, ClutColour(1, 17))
 	else
-		graphics.draw_box(box.coordy + 18, box.coordx, box.coordy, box.coordx + box.length, 0, ClutColour(1, 17))
+		graphics.draw_box(box.yCoord + 18, box.xCoord, box.yCoord, box.xCoord + box.length, 0, ClutColour(1, 17))
 	end
 	if box.special ~= "disabled" then
 		if box.text == "nodraw" then
@@ -19,61 +19,61 @@ function draw_interface_box(box, col_mod_all, col_mod_click)
 	end
 	-- inner box and details
 	if (box.text ~= " ") and (box.text ~= "nodraw") then
-		graphics.draw_box(box.coordy + 14, box.coordx + 11, box.coordy + 4, box.coordx + 10 + txtlength * 2, 0, ClutLighten(box.boxColour, col_mod_all + 1))
-		graphics.draw_box(box.coordy + 14, box.coordx + 11 + txtlength * 2, box.coordy + 4, box.coordx + box.length - 11, 0, ClutLighten(box.boxColour, col_mod_click - 1))
-		graphics.draw_text(box.text, "CrystalClear", "center", box.coordx + 11 + txtlength * 9 / 2, box.coordy + 9, 14, ClutLighten(box.boxColour, col_mod_all + 1)) 
+		graphics.draw_box(box.yCoord + 14, box.xCoord + 11, box.yCoord + 4, box.xCoord + 10 + txtlength * 2, 0, ClutLighten(box.boxColour, col_mod_all + 1))
+		graphics.draw_box(box.yCoord + 14, box.xCoord + 11 + txtlength * 2, box.yCoord + 4, box.xCoord + box.length - 11, 0, ClutLighten(box.boxColour, col_mod_click - 1))
+		graphics.draw_text(box.text, "CrystalClear", "center", box.xCoord + 11 + txtlength * 9 / 2, box.yCoord + 9, 14, ClutLighten(box.boxColour, col_mod_all + 1)) 
 	else
-		graphics.draw_box(box.coordy + 14, box.coordx + 11, box.coordy + 4, box.coordx + 10 + txtlength * 2, 0, ClutLighten(box.boxColour, col_mod_all - 1))
-		graphics.draw_box(box.coordy + 14, box.coordx + 11 + txtlength * 2, box.coordy + 4, box.coordx + box.length - 11, 0, ClutLighten(box.boxColour, col_mod_all + 1))
+		graphics.draw_box(box.yCoord + 14, box.xCoord + 11, box.yCoord + 4, box.xCoord + 10 + txtlength * 2, 0, ClutLighten(box.boxColour, col_mod_all - 1))
+		graphics.draw_box(box.yCoord + 14, box.xCoord + 11 + txtlength * 2, box.yCoord + 4, box.xCoord + box.length - 11, 0, ClutLighten(box.boxColour, col_mod_all + 1))
 	end
 	if box.special ~= "disabled" then
-		graphics.draw_text(box.letter, "CrystalClear", "center", box.coordx + 11 + txtlength, box.coordy + 9, 14) 
+		graphics.draw_text(box.letter, "CrystalClear", "center", box.xCoord + 11 + txtlength, box.yCoord + 9, 14) 
 	end
 	if box.radio == "off" then
-		graphics.draw_box(box.coordy + 13, box.coordx - 2, box.coordy + 4, box.coordx + 5, 0, ClutLighten(box.boxColour, col_mod_all))
-		graphics.draw_box(box.coordy + 15, box.coordx - 5, box.coordy + 3, box.coordx - 3, 0, ClutLighten(box.boxColour, col_mod_all))
-		graphics.draw_box(box.coordy + 15, box.coordx - 15, box.coordy + 3, box.coordx - 13, 0, ClutLighten(box.boxColour, col_mod_all))
-		graphics.draw_box(box.coordy + 15, box.coordx - 15, box.coordy + 13, box.coordx - 3, 0, ClutLighten(box.boxColour, col_mod_all))
-		graphics.draw_box(box.coordy + 5, box.coordx - 15, box.coordy + 3, box.coordx - 3, 0, ClutLighten(box.boxColour, col_mod_all))
+		graphics.draw_box(box.yCoord + 13, box.xCoord - 2, box.yCoord + 4, box.xCoord + 5, 0, ClutLighten(box.boxColour, col_mod_all))
+		graphics.draw_box(box.yCoord + 15, box.xCoord - 5, box.yCoord + 3, box.xCoord - 3, 0, ClutLighten(box.boxColour, col_mod_all))
+		graphics.draw_box(box.yCoord + 15, box.xCoord - 15, box.yCoord + 3, box.xCoord - 13, 0, ClutLighten(box.boxColour, col_mod_all))
+		graphics.draw_box(box.yCoord + 15, box.xCoord - 15, box.yCoord + 13, box.xCoord - 3, 0, ClutLighten(box.boxColour, col_mod_all))
+		graphics.draw_box(box.yCoord + 5, box.xCoord - 15, box.yCoord + 3, box.xCoord - 3, 0, ClutLighten(box.boxColour, col_mod_all))
 	elseif box.radio == "on" then
-		graphics.draw_box(box.coordy + 13, box.coordx - 2, box.coordy + 4, box.coordx + 5, 0, ClutLighten(box.boxColour, col_mod_all))
-		graphics.draw_box(box.coordy + 15, box.coordx - 5, box.coordy + 3, box.coordx - 3, 0, ClutLighten(box.boxColour, col_mod_all))
-		graphics.draw_box(box.coordy + 15, box.coordx - 15, box.coordy + 3, box.coordx - 13, 0, ClutLighten(box.boxColour, col_mod_all))
-		graphics.draw_box(box.coordy + 15, box.coordx - 15, box.coordy + 13, box.coordx - 3, 0, ClutLighten(box.boxColour, col_mod_all))
-		graphics.draw_box(box.coordy + 5, box.coordx - 15, box.coordy + 3, box.coordx - 3, 0, ClutLighten(box.boxColour, col_mod_all))
-		graphics.draw_box(box.coordy + 11, box.coordx - 11, box.coordy + 7, box.coordx - 7, 0, ClutLighten(box.boxColour, col_mod_all))
+		graphics.draw_box(box.yCoord + 13, box.xCoord - 2, box.yCoord + 4, box.xCoord + 5, 0, ClutLighten(box.boxColour, col_mod_all))
+		graphics.draw_box(box.yCoord + 15, box.xCoord - 5, box.yCoord + 3, box.xCoord - 3, 0, ClutLighten(box.boxColour, col_mod_all))
+		graphics.draw_box(box.yCoord + 15, box.xCoord - 15, box.yCoord + 3, box.xCoord - 13, 0, ClutLighten(box.boxColour, col_mod_all))
+		graphics.draw_box(box.yCoord + 15, box.xCoord - 15, box.yCoord + 13, box.xCoord - 3, 0, ClutLighten(box.boxColour, col_mod_all))
+		graphics.draw_box(box.yCoord + 5, box.xCoord - 15, box.yCoord + 3, box.xCoord - 3, 0, ClutLighten(box.boxColour, col_mod_all))
+		graphics.draw_box(box.yCoord + 11, box.xCoord - 11, box.yCoord + 7, box.xCoord - 7, 0, ClutLighten(box.boxColour, col_mod_all))
 	end
 	-- frame boxes
-	graphics.draw_box(box.coordy + 3, box.coordx, box.coordy + 2, box.coordx + 10, 0, ClutLighten(box.boxColour, col_mod_all))
-	graphics.draw_box(box.coordy + 3, box.coordx + box.length - 10, box.coordy + 2, box.coordx + box.length, 0, ClutLighten(box.boxColour, col_mod_all))
-	graphics.draw_box(box.coordy + 2, box.coordx, box.coordy, box.coordx + box.length, 0, ClutLighten(box.boxColour, col_mod_all))
-	graphics.draw_box(box.coordy + 16, box.coordx, box.coordy + 14, box.coordx + 10, 0, ClutLighten(box.boxColour, col_mod_all))
-	graphics.draw_box(box.coordy + 16, box.coordx + box.length - 10, box.coordy + 14, box.coordx + box.length, 0, ClutLighten(box.boxColour, col_mod_all))
-	graphics.draw_box(box.coordy + 18, box.coordx, box.coordy + 16, box.coordx + box.length, 0, ClutLighten(box.boxColour, col_mod_all))
-	graphics.draw_box(box.coordy + 13, box.coordx, box.coordy + 4, box.coordx + 10, 0, ClutLighten(box.boxColour, col_mod_all))
-	graphics.draw_box(box.coordy + 13, box.coordx + box.length - 10, box.coordy + 4, box.coordx + box.length, 0, ClutLighten(box.boxColour, col_mod_all))
+	graphics.draw_box(box.yCoord + 3, box.xCoord, box.yCoord + 2, box.xCoord + 10, 0, ClutLighten(box.boxColour, col_mod_all))
+	graphics.draw_box(box.yCoord + 3, box.xCoord + box.length - 10, box.yCoord + 2, box.xCoord + box.length, 0, ClutLighten(box.boxColour, col_mod_all))
+	graphics.draw_box(box.yCoord + 2, box.xCoord, box.yCoord, box.xCoord + box.length, 0, ClutLighten(box.boxColour, col_mod_all))
+	graphics.draw_box(box.yCoord + 16, box.xCoord, box.yCoord + 14, box.xCoord + 10, 0, ClutLighten(box.boxColour, col_mod_all))
+	graphics.draw_box(box.yCoord + 16, box.xCoord + box.length - 10, box.yCoord + 14, box.xCoord + box.length, 0, ClutLighten(box.boxColour, col_mod_all))
+	graphics.draw_box(box.yCoord + 18, box.xCoord, box.yCoord + 16, box.xCoord + box.length, 0, ClutLighten(box.boxColour, col_mod_all))
+	graphics.draw_box(box.yCoord + 13, box.xCoord, box.yCoord + 4, box.xCoord + 10, 0, ClutLighten(box.boxColour, col_mod_all))
+	graphics.draw_box(box.yCoord + 13, box.xCoord + box.length - 10, box.yCoord + 4, box.xCoord + box.length, 0, ClutLighten(box.boxColour, col_mod_all))
 	-- under box, if it exists
 	if box.underbox ~= nil then
 		-- left side
-		graphics.draw_box(box.coordy + 1, box.coordx, box.coordy - 1, box.coordx + 10, 0, box.boxColour)
-		graphics.draw_box(box.coordy - 2, box.coordx, (box.coordy + box.underbox + 4) / 2, box.coordx + 10, 0, box.boxColour)
-		graphics.draw_box((box.coordy + box.underbox + 2) / 2, box.coordx, box.underbox + 6, box.coordx + 10, 0, ClutDarken(box.boxColour))
-		graphics.draw_box(box.underbox + 5, box.coordx, box.underbox, box.coordx + 10, 0, box.boxColour)
+		graphics.draw_box(box.yCoord + 1, box.xCoord, box.yCoord - 1, box.xCoord + 10, 0, box.boxColour)
+		graphics.draw_box(box.yCoord - 2, box.xCoord, (box.yCoord + box.underbox + 4) / 2, box.xCoord + 10, 0, box.boxColour)
+		graphics.draw_box((box.yCoord + box.underbox + 2) / 2, box.xCoord, box.underbox + 6, box.xCoord + 10, 0, ClutDarken(box.boxColour))
+		graphics.draw_box(box.underbox + 5, box.xCoord, box.underbox, box.xCoord + 10, 0, box.boxColour)
 		-- right side
-		graphics.draw_box(box.coordy + 1, box.coordx + box.length - 10, box.coordy - 1, box.coordx + box.length, 0, box.boxColour)
-		graphics.draw_box(box.coordy - 2, box.coordx + box.length - 10, (box.coordy + box.underbox + 4) / 2, box.coordx + box.length, 0, box.boxColour)
-		graphics.draw_box((box.coordy + box.underbox + 2) / 2, box.coordx + box.length - 10, box.underbox + 6, box.coordx + box.length, 0, ClutDarken(box.boxColour))
-		graphics.draw_box(box.underbox + 5, box.coordx + box.length - 10, box.underbox, box.coordx + box.length, 0, box.boxColour)
+		graphics.draw_box(box.yCoord + 1, box.xCoord + box.length - 10, box.yCoord - 1, box.xCoord + box.length, 0, box.boxColour)
+		graphics.draw_box(box.yCoord - 2, box.xCoord + box.length - 10, (box.yCoord + box.underbox + 4) / 2, box.xCoord + box.length, 0, box.boxColour)
+		graphics.draw_box((box.yCoord + box.underbox + 2) / 2, box.xCoord + box.length - 10, box.underbox + 6, box.xCoord + box.length, 0, ClutDarken(box.boxColour))
+		graphics.draw_box(box.underbox + 5, box.xCoord + box.length - 10, box.underbox, box.xCoord + box.length, 0, box.boxColour)
 		-- bottom
-		graphics.draw_box(box.underbox + 3, box.coordx, box.underbox, box.coordx + box.length, 0, box.boxColour)
+		graphics.draw_box(box.underbox + 3, box.xCoord, box.underbox, box.xCoord + box.length, 0, box.boxColour)
 		if box.uboxText ~= nil then
-			graphics.draw_text(box.uboxText, "CrystalClear", "left", box.coordx + 12, box.coordy - 6, 14)
+			graphics.draw_text(box.uboxText, "CrystalClear", "left", box.xCoord + 12, box.yCoord - 6, 14)
 		end
 	end
 end
 
-function draw_box_with_sidecar(box)
-	draw_interface_box(box, 0, 0)
+function DrawBoxWithSidecar(box)
+	DrawInterfaceBox(box, 0, 0)
 	-- sidecar: a box of a particular size that surrounds a particular object
 	-- box itself
 	graphics.draw_line(box.sidecar.x, box.sidecar.y + box.sidecar.size.y, box.sidecar.x + box.sidecar.size.x, box.sidecar.y + box.sidecar.size.y, 1, box.boxColour)
@@ -81,24 +81,24 @@ function draw_box_with_sidecar(box)
 	graphics.draw_line(box.sidecar.x, box.sidecar.y, box.sidecar.x, box.sidecar.y + box.sidecar.size.y, 1, box.boxColour)
 	graphics.draw_line(box.sidecar.x + box.sidecar.size.x, box.sidecar.y, box.sidecar.x + box.sidecar.size.x, box.sidecar.y + box.sidecar.size.y, 1, box.boxColour)
 	-- connecting lines - differ if box is on the left or the right
-	if box.sidecar.x > box.coordx then
-		graphics.draw_line(box.sidecar.x, box.sidecar.y + box.sidecar.size.y, (box.sidecar.x + box.coordx + box.length) / 2, box.sidecar.y + box.sidecar.size.y, 1, box.boxColour)
-		graphics.draw_line((box.sidecar.x + box.coordx + box.length) / 2, box.sidecar.y + box.sidecar.size.y, (box.sidecar.x + box.coordx + box.length) / 2, box.coordy + 17, 1, box.boxColour)
-		graphics.draw_line((box.sidecar.x + box.coordx + box.length) / 2, box.coordy + 17, box.coordx + box.length, box.coordy + 17, 1, box.boxColour)
-		graphics.draw_line(box.sidecar.x, box.sidecar.y, (box.sidecar.x + box.coordx + box.length) / 2, box.sidecar.y, 1, box.boxColour)
-		graphics.draw_line((box.sidecar.x + box.coordx + box.length) / 2, box.underbox + 1, (box.sidecar.x + box.coordx + box.length) / 2, box.sidecar.y, 1, box.boxColour)
-		graphics.draw_line(box.coordx + box.length, box.underbox + 1, (box.sidecar.x + box.coordx + box.length) / 2, box.underbox + 1, 1, box.boxColour)
+	if box.sidecar.x > box.xCoord then
+		graphics.draw_line(box.sidecar.x, box.sidecar.y + box.sidecar.size.y, (box.sidecar.x + box.xCoord + box.length) / 2, box.sidecar.y + box.sidecar.size.y, 1, box.boxColour)
+		graphics.draw_line((box.sidecar.x + box.xCoord + box.length) / 2, box.sidecar.y + box.sidecar.size.y, (box.sidecar.x + box.xCoord + box.length) / 2, box.yCoord + 17, 1, box.boxColour)
+		graphics.draw_line((box.sidecar.x + box.xCoord + box.length) / 2, box.yCoord + 17, box.xCoord + box.length, box.yCoord + 17, 1, box.boxColour)
+		graphics.draw_line(box.sidecar.x, box.sidecar.y, (box.sidecar.x + box.xCoord + box.length) / 2, box.sidecar.y, 1, box.boxColour)
+		graphics.draw_line((box.sidecar.x + box.xCoord + box.length) / 2, box.underbox + 1, (box.sidecar.x + box.xCoord + box.length) / 2, box.sidecar.y, 1, box.boxColour)
+		graphics.draw_line(box.xCoord + box.length, box.underbox + 1, (box.sidecar.x + box.xCoord + box.length) / 2, box.underbox + 1, 1, box.boxColour)
 	else
-		graphics.draw_line(box.coordx, box.coordy + 17, (box.coordx + box.sidecar.x + box.sidecar.size.x) / 2, box.coordy + 17, 1, box.boxColour)
-		graphics.draw_line((box.coordx + box.sidecar.x + box.sidecar.size.x) / 2, box.coordy + 17, (box.coordx + box.sidecar.x + box.sidecar.size.x) / 2, box.sidecar.y + box.sidecar.size.y, 1, box.boxColour)
-		graphics.draw_line((box.coordx + box.sidecar.x + box.sidecar.size.x) / 2, box.sidecar.y + box.sidecar.size.y, box.sidecar.x + box.sidecar.size.x, box.sidecar.y + box.sidecar.size.y, 1, box.boxColour)
-		graphics.draw_line(box.sidecar.x + box.sidecar.size.x, box.sidecar.y, (box.coordx + box.sidecar.x + box.sidecar.size.x) / 2, box.sidecar.y, 1, box.boxColour)
-		graphics.draw_line((box.coordx + box.sidecar.x + box.sidecar.size.x) / 2, box.sidecar.y, (box.coordx + box.sidecar.x + box.sidecar.size.x) / 2, box.underbox + 1, 1, box.boxColour)
-		graphics.draw_line((box.coordx + box.sidecar.x + box.sidecar.size.x) / 2, box.underbox + 1, box.coordx, box.underbox + 1, 1, box.boxColour)
+		graphics.draw_line(box.xCoord, box.yCoord + 17, (box.xCoord + box.sidecar.x + box.sidecar.size.x) / 2, box.yCoord + 17, 1, box.boxColour)
+		graphics.draw_line((box.xCoord + box.sidecar.x + box.sidecar.size.x) / 2, box.yCoord + 17, (box.xCoord + box.sidecar.x + box.sidecar.size.x) / 2, box.sidecar.y + box.sidecar.size.y, 1, box.boxColour)
+		graphics.draw_line((box.xCoord + box.sidecar.x + box.sidecar.size.x) / 2, box.sidecar.y + box.sidecar.size.y, box.sidecar.x + box.sidecar.size.x, box.sidecar.y + box.sidecar.size.y, 1, box.boxColour)
+		graphics.draw_line(box.sidecar.x + box.sidecar.size.x, box.sidecar.y, (box.xCoord + box.sidecar.x + box.sidecar.size.x) / 2, box.sidecar.y, 1, box.boxColour)
+		graphics.draw_line((box.xCoord + box.sidecar.x + box.sidecar.size.x) / 2, box.sidecar.y, (box.xCoord + box.sidecar.x + box.sidecar.size.x) / 2, box.underbox + 1, 1, box.boxColour)
+		graphics.draw_line((box.xCoord + box.sidecar.x + box.sidecar.size.x) / 2, box.underbox + 1, box.xCoord, box.underbox + 1, 1, box.boxColour)
 	end
 end
 
-function draw_small_box(box)
+function DrawSmallBox(box)
 	local backgroundCol = ClutColour(1, 17)
 	if box.background ~= nil then
 		backgroundCol = box.background
@@ -124,26 +124,26 @@ function draw_small_box(box)
 --	graphics.draw_text(box.desc, "CrystalClear", "left", box.left + 10, box.top - 55, 18, ClutColour(1, 17)) [TEXTFIX] re-enable when text is fixed
 end
 
-function switch_box(box) -- TOMORROW: FIX THESE FUNCTIONS TO WORK WITH CLUT COLOURS?
+function SwitchBox(box) -- TOMORROW: FIX THESE FUNCTIONS TO WORK WITH CLUT COLOURS?
 	if box.text ~= nil and box.letter ~= nil then
 		local col_mix = { r = 0.0, g = 0.0, b = 0.0, a = 1.0 }
 		if box.special ~= nil then
 			if box.special == "click" then
-				draw_interface_box(box, 0, 1)
+				DrawInterfaceBox(box, 0, 1)
 			elseif box.special == "disabled" then
-				draw_interface_box(box, -3, -3)
+				DrawInterfaceBox(box, -3, -3)
 			elseif box.special == "sidecar" then
-				draw_box_with_sidecar(box)
+				DrawBoxWithSidecar(box)
 			end
 		else
-			draw_interface_box(box, 0, 0)
+			DrawInterfaceBox(box, 0, 0)
 		end
 	else
-		draw_small_box(box)
+		DrawSmallBox(box)
 	end
 end
 
-function change_special(k, set, table)
+function ChangeSpecial(k, set, table)
 	local num = 1
 	while table[num] ~= nil do
 		if table[num].letter == k then

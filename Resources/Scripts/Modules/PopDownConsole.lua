@@ -2,7 +2,7 @@ import('Console')
 
 consoleDraw = false
 
-function popDownConsole()
+function PopDownConsole()
 	if (consoleDraw == false) and (key == ConsoleKey) then
 		key = normal_key
 	end

@@ -5,7 +5,7 @@
 -------------------------]]--
 
 -- CLUT VALUES
-clut = { { r = 1.0, g = 1.0, b = 1.0, a = 1.0 }, -- white
+CLUT = { { r = 1.0, g = 1.0, b = 1.0, a = 1.0 }, -- white
 		{ r = 1.0, g = 0.5, b = 0.0 }, -- orange
 		{ r = 1.0, g = 1.0, b = 0.0 }, -- yellow
 		{ r = 0.0, g = 0.0, b = 1.0 }, -- blue
@@ -25,7 +25,7 @@ clut = { { r = 1.0, g = 1.0, b = 1.0, a = 1.0 }, -- white
 modifier = { 1.0, 0.941, 0.878, 0.816, 0.753, 0.690, 0.627, 0.565, 0.502, 0.439, 0.376, 0.251, 0.188, 0.125, 0.063, 0.031, 0.0 }
 
 function ClutColour(clutNum, modNum)
-	return { r = clut[clutNum].r * modifier[modNum], g = clut[clutNum].g * modifier[modNum], b = clut[clutNum].b * modifier[modNum], a = 1.0, c = clutNum, m = modNum }
+	return { r = CLUT[clutNum].r * modifier[modNum], g = CLUT[clutNum].g * modifier[modNum], b = CLUT[clutNum].b * modifier[modNum], a = 1.0, c = clutNum, m = modNum }
 end
 
 function ClutLighten(colour, lightness)
@@ -33,9 +33,9 @@ function ClutLighten(colour, lightness)
 		lightness = 1
 	end
 	if modifier[colour.m + lightness] ~= nil then
-		return { r = clut[colour.c].r * modifier[colour.m + lightness], g = clut[colour.c].g * modifier[colour.m + lightness], b = clut[colour.c].b * modifier[colour.m + lightness], a = 1.0, c = colour.c, m = colour.m + lightness }
+		return { r = CLUT[colour.c].r * modifier[colour.m + lightness], g = CLUT[colour.c].g * modifier[colour.m + lightness], b = CLUT[colour.c].b * modifier[colour.m + lightness], a = 1.0, c = colour.c, m = colour.m + lightness }
 	end
-	return { r = clut[colour.c].r * modifier[colour.m], g = clut[colour.c].g * modifier[colour.m], b = clut[colour.c].b * modifier[colour.m], a = 1.0, c = colour.c, m = colour.m }
+	return { r = CLUT[colour.c].r * modifier[colour.m], g = CLUT[colour.c].g * modifier[colour.m], b = CLUT[colour.c].b * modifier[colour.m], a = 1.0, c = colour.c, m = colour.m }
 end
 
 function ClutDarken(colour, darkness)
@@ -45,12 +45,12 @@ function ClutDarken(colour, darkness)
 	if modifier[colour.m - darkness] ~= nil then
 		colour.m = colour.m - darkness
 	end
-	return { r = clut[colour.c].r * modifier[colour.m], g = clut[colour.c].g * modifier[colour.m], b = clut[colour.c].b * modifier[colour.m], a = 1.0, c = colour.c, m = colour.m }
+	return { r = CLUT[colour.c].r * modifier[colour.m], g = CLUT[colour.c].g * modifier[colour.m], b = CLUT[colour.c].b * modifier[colour.m], a = 1.0, c = colour.c, m = colour.m }
 end
 
 function ClutDisplay()
 	local i = 1
-	while clut[i] ~= nil do
+	while CLUT[i] ~= nil do
 		local j = 1
 		while modifier[j] ~= nil do
 			graphics.draw_box(i * -10 + 150, j * 10 + 10, i * -10 + 160, j * 10, 0, ClutColour(i, j))
@@ -61,12 +61,8 @@ function ClutDisplay()
 end
 
 -- NON-COLOUR VALUES
-c_clear = { r = 0.0, g = 0.0, b = 0.0, a = 0.0 }
-c_halfClear = { r = 0.0, g = 0.0, b = 0.0, a = 0.5 }
-c_darken = { r = -0.1, g = -0.1, b = -0.1, a = 1.0 }
-c_darken2 = { r = -0.2, g = -0.2, b = -0.2, a = 1.0 }
-c_lighten = { r = 0.1, g = 0.1, b = 0.1, a = 1.0 }
-c_lighten2 = { r = 0.2, g = 0.2, b = 0.2, a = 1.0 }
+cClear = { r = 0.0, g = 0.0, b = 0.0, a = 0.0 }
+cHalfClear = { r = 0.0, g = 0.0, b = 0.0, a = 0.5 }
 
 --[[-------------------------------
 	--{{-----------------------

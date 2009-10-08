@@ -5,13 +5,13 @@ import('KeyboardControl')
 
 background = {	{ top = 170, left = -280, bottom = -60, right = 280, boxColour = ClutColour(10, 8) },
 				{ top = -70, left = -280, bottom = -110, right = 280, boxColour = ClutColour(16, 6) },
-				{ coordx = -280, coordy = -205, length = 100, text = "nodraw", boxColour = ClutColour(3, 6), textColour = ClutColour(13, 9), execute = nil, letter = "CANCEL" },
-				{ coordx = -265, coordy = 170, length = 63, text = "nodraw", boxColour = ClutLighten(ClutColour(10, 8)), textColour = ClutColour(10, 8), execute = nil, letter = "Ship" },
-				{ coordx = -177, coordy = 170, length = 93, text = "nodraw", boxColour = ClutColour(10, 8), textColour = ClutColour(10, 8), execute = nil, letter = "Command" },
-				{ coordx = -54, coordy = 170, length = 95, text = "nodraw", boxColour = ClutColour(10, 8), textColour = ClutColour(10, 8), execute = nil, letter = "Shortcuts" },
-				{ coordx = 71, coordy = 170, length = 71, text = "nodraw", boxColour = ClutColour(10, 8), textColour = ClutColour(10, 8), execute = nil, letter = "Utility" },
-				{ coordx = 177, coordy = 170, length = 87, text = "nodraw", boxColour = ClutColour(10, 8), textColour = ClutColour(10, 8), execute = nil, letter = "HotKeys" },
-				{ coordx = 180, coordy = -205, length = 100, text = "nodraw", boxColour = ClutColour(12, 6), textColour = ClutColour(13, 9), execute = nil, letter = "DONE" } }
+				{ xCoord = -280, yCoord = -205, length = 100, text = "nodraw", boxColour = ClutColour(3, 6), textColour = ClutColour(13, 9), execute = nil, letter = "CANCEL" },
+				{ xCoord = -265, yCoord = 170, length = 63, text = "nodraw", boxColour = ClutLighten(ClutColour(10, 8)), textColour = ClutColour(10, 8), execute = nil, letter = "Ship" },
+				{ xCoord = -177, yCoord = 170, length = 93, text = "nodraw", boxColour = ClutColour(10, 8), textColour = ClutColour(10, 8), execute = nil, letter = "Command" },
+				{ xCoord = -54, yCoord = 170, length = 95, text = "nodraw", boxColour = ClutColour(10, 8), textColour = ClutColour(10, 8), execute = nil, letter = "Shortcuts" },
+				{ xCoord = 71, yCoord = 170, length = 71, text = "nodraw", boxColour = ClutColour(10, 8), textColour = ClutColour(10, 8), execute = nil, letter = "Utility" },
+				{ xCoord = 177, yCoord = 170, length = 87, text = "nodraw", boxColour = ClutColour(10, 8), textColour = ClutColour(10, 8), execute = nil, letter = "HotKeys" },
+				{ xCoord = 180, yCoord = -205, length = 100, text = "nodraw", boxColour = ClutColour(12, 6), textColour = ClutColour(13, 9), execute = nil, letter = "DONE" } }
 
 function init()
 	sound.stop_music()
@@ -36,7 +36,7 @@ function render()
 	graphics.draw_image("Panels/PanelRight", 303, -14, 35, 476)
 	local num = 1
 	while background[num] ~= nil do
-		switch_box(background[num])
+		SwitchBox(background[num])
 		num = num + 1
 	end
 	
@@ -64,7 +64,7 @@ function render()
 		else
 			yShift = 9
 		end
-		switch_box( { coordx = xCoord, coordy = (math.ceil(numBoxes / 4) - (num - 1 - adjust)) * 36 + yShift, length = 245, text = keyboard[keyboardNum][num + 1].name, boxColour = ClutColour(10, 8), textColour = ClutColour(10, 8), execute = nil, letter = keyboard[keyboardNum][num + 1].key } )
+		SwitchBox( { xCoord = xCoord, yCoord = (math.ceil(numBoxes / 4) - (num - 1 - adjust)) * 36 + yShift, length = 245, text = keyboard[keyboardNum][num + 1].name, boxColour = ClutColour(10, 8), textColour = ClutColour(10, 8), execute = nil, letter = keyboard[keyboardNum][num + 1].key } )
 		num = num + 1
 	end
 	-- Error Printing

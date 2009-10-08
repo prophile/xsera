@@ -4,16 +4,16 @@ import('BoxDrawing')
 
 soundLevel = 8
 soundMax = 8
-background = {	{ coordx = -280, coordy = 140, length = 560, text = " ", boxColour = ClutColour(13, 9), textColour = ClutColour(13, 9), execute = nil, letter = "Sound Options", underbox = -85 },
-				{ coordx = -260, coordy = -30, length = 520, text = " ", boxColour = ClutColour(13, 9), textColour = ClutColour(13, 9), execute = nil, letter = "VOLUME", underbox = -75 },
-				{ coordx = 110, coordy = 20, length = 150, text = "nodraw", boxColour = ClutColour(13, 9), textColour = ClutColour(13, 9), execute = nil, letter = "Volume Down" },
-				{ coordx = 110, coordy = 100, length = 150, text = "nodraw", boxColour = ClutColour(13, 9), textColour = ClutColour(13, 9), execute = nil, letter = "Volume Up" },
-				{ coordx = -245, coordy = 100, length = 250, text = "nodraw", boxColour = ClutColour(14, 11), textColour = ClutColour(13, 9), execute = nil, letter = "Music During Action", radio = "off" },
-				{ coordx = -245, coordy = 60, length = 250, text = "nodraw", boxColour = ClutColour(14, 11), textColour = ClutColour(13, 9), execute = nil, letter = "Music During Interlude", radio = "off" },
-				{ coordx = -245, coordy = 20, length = 250, text = "nodraw", boxColour = ClutColour(4, 7), textColour = ClutColour(13, 9), execute = nil, letter = "Speak Network Messages", radio = "off" },
-				{ coordx = -260, coordy = -205, length = 150, text = "Cancel", boxColour = ClutColour(3, 6), textColour = ClutColour(13, 9), execute = nil, letter = "ESC" },
-				{ coordx = 110, coordy = -205, length = 150, text = "Done", boxColour = ClutColour(12, 6), textColour = ClutColour(13, 9), execute = nil, letter = "RTRN" },
-				{ coordx = 110, coordy = -145, length = 150, text = "Key Controls", boxColour = ClutColour(10, 8), textColour = ClutColour(13, 9), execute = nil, letter = "K" } }
+background = {	{ xCoord = -280, yCoord = 140, length = 560, text = " ", boxColour = ClutColour(13, 9), textColour = ClutColour(13, 9), execute = nil, letter = "Sound Options", underbox = -85 },
+				{ xCoord = -260, yCoord = -30, length = 520, text = " ", boxColour = ClutColour(13, 9), textColour = ClutColour(13, 9), execute = nil, letter = "VOLUME", underbox = -75 },
+				{ xCoord = 110, yCoord = 20, length = 150, text = "nodraw", boxColour = ClutColour(13, 9), textColour = ClutColour(13, 9), execute = nil, letter = "Volume Down" },
+				{ xCoord = 110, yCoord = 100, length = 150, text = "nodraw", boxColour = ClutColour(13, 9), textColour = ClutColour(13, 9), execute = nil, letter = "Volume Up" },
+				{ xCoord = -245, yCoord = 100, length = 250, text = "nodraw", boxColour = ClutColour(14, 11), textColour = ClutColour(13, 9), execute = nil, letter = "Music During Action", radio = "off" },
+				{ xCoord = -245, yCoord = 60, length = 250, text = "nodraw", boxColour = ClutColour(14, 11), textColour = ClutColour(13, 9), execute = nil, letter = "Music During Interlude", radio = "off" },
+				{ xCoord = -245, yCoord = 20, length = 250, text = "nodraw", boxColour = ClutColour(4, 7), textColour = ClutColour(13, 9), execute = nil, letter = "Speak Network Messages", radio = "off" },
+				{ xCoord = -260, yCoord = -205, length = 150, text = "Cancel", boxColour = ClutColour(3, 6), textColour = ClutColour(13, 9), execute = nil, letter = "ESC" },
+				{ xCoord = 110, yCoord = -205, length = 150, text = "Done", boxColour = ClutColour(12, 6), textColour = ClutColour(13, 9), execute = nil, letter = "RTRN" },
+				{ xCoord = 110, yCoord = -145, length = 150, text = "Key Controls", boxColour = ClutColour(10, 8), textColour = ClutColour(13, 9), execute = nil, letter = "K" } }
 
 function init()
 	sound.stop_music()
@@ -41,7 +41,7 @@ function render()
 	graphics.draw_image("Panels/PanelRight", 303, -14, 35, 476)
 	local num = 1
 	while background[num] ~= nil do
-		switch_box(background[num])
+		SwitchBox(background[num])
 		num = num + 1
 	end
 	num = 0
@@ -71,10 +71,10 @@ end
 
 function key(k)
 	if k == "escape" then
-		change_special("ESC", "click", background)
+		ChangeSpecial("ESC", "click", background)
 	elseif k == "return" then
-		change_special("RTRN", "click", background)
+		ChangeSpecial("RTRN", "click", background)
 	elseif k == "k" then
-		change_special("K", "click", background)
+		ChangeSpecial("K", "click", background)
 	end
 end

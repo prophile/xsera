@@ -8,7 +8,6 @@
 -- Using autopilot to find Carrier.
 -- Carrier has a "fleeing" AI, and runs away when attacked, possibly warping away.
 -- Carrier has other AIs.
--- Implement planets.
 -- Use other Heavy Cruisers (possibly built on planets) to destroy Carrier, using attack command.
 
 import('PrintRecursive')
@@ -75,7 +74,7 @@ end
 	------------}}--
 --------------------]]--
 
-function TempKey(k)
+function temp_key(k)
 	if k ~= nil then
 		mode_manager.switch('Credits')
 	end
@@ -93,23 +92,23 @@ function update ()
 	if victoryTimer ~= nil then
 		victoryTimer = victoryTimer + dt
 		if victoryTimer >= 2.0 then
-			key = TempKey
+			key = temp_key
 			end_time = mode_manager.time()
-			endGameData = {	{	{ false, c_clear, " " },
+			endGameData = {	{	{ false, cClear, " " },
 								{ false, ClutColour(3, 7), "YOU" },
 								{ false, ClutColour(3, 9), "PAR" } },
 							{	{ false, ClutColour(3, 7), "TIME" },
-								{ false, c_clear, (tostring(math.floor((end_time - start_time) / 60)) .. ":" .. tostring(string.format('%02d', math.floor((end_time - start_time) % 60))))},
-								{ false, c_clear, "1:00" } },
+								{ false, cClear, (tostring(math.floor((end_time - start_time) / 60)) .. ":" .. tostring(string.format('%02d', math.floor((end_time - start_time) % 60))))},
+								{ false, cClear, "1:00" } },
 							{	{ false, ClutColour(3, 9), "LOSSES" },
-								{ false, c_clear, "0" },
-								{ false, c_clear, "0" } },
+								{ false, cClear, "0" },
+								{ false, cClear, "0" } },
 							{	{ false, ClutColour(2, 11), "KILLS" },
-								{ false, c_clear, "1" },
-								{ false, c_clear, "1" } },
+								{ false, cClear, "1" },
+								{ false, cClear, "1" } },
 							{	{ false, ClutColour(2, 13), "SCORE" },
-								{ false, c_clear, ">9000!!!" },
-								{ false, c_clear, "100" } } }
+								{ false, cClear, ">9000!!!" },
+								{ false, cClear, "100" } } }
 			menu_display = "victory_menu"
 			victoryTimer = nil
 		end
@@ -637,7 +636,7 @@ function render ()
 -- Panels
 	DrawPanels()
 -- Console
-	popDownConsole()
+	PopDownConsole()
 -- Mouse
 	--[[ disabled for now
 	if mouseMovement == true then

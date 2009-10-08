@@ -8,14 +8,14 @@ SPLASH_SHIFT_RIGHT = 138
 TOP_OF_SPLASH = -28
 SPLASH_STRIDE = 26
 
-local execs = {	{ coordx = SPLASH_SHIFT_LEFT, coordy = TOP_OF_SPLASH, length = SPLASH_SHIFT_RIGHT - SPLASH_SHIFT_LEFT, text = "Start New Game", justify = "left", boxColour = ClutColour(8, 6), textColour = ClutColour(13, 9), execute = nil, letter = "S" },
-	{ coordx = SPLASH_SHIFT_LEFT, coordy = TOP_OF_SPLASH - 1 * SPLASH_STRIDE, length = SPLASH_SHIFT_RIGHT - SPLASH_SHIFT_LEFT, text = "Start Network Game", justify = "left", boxColour = ClutColour(5, 5), textColour = ClutColour(13, 9), execute = nil, letter = "N" },
-	{ coordx = SPLASH_SHIFT_LEFT, coordy = TOP_OF_SPLASH - 2 * SPLASH_STRIDE, length = SPLASH_SHIFT_RIGHT - SPLASH_SHIFT_LEFT, text = "Replay Intro", justify = "left", boxColour = ClutColour(1, 8), textColour = ClutColour(13, 9), execute = nil, letter = "R" },
-	{ coordx = SPLASH_SHIFT_LEFT, coordy = TOP_OF_SPLASH - 3 * SPLASH_STRIDE, length = SPLASH_SHIFT_RIGHT - SPLASH_SHIFT_LEFT, text = "Demo", justify = "left", boxColour = ClutColour(1, 6), textColour = ClutColour(13, 9), execute = nil, letter = "D" },
-	{ coordx = SPLASH_SHIFT_LEFT, coordy = TOP_OF_SPLASH - 4 * SPLASH_STRIDE, length = SPLASH_SHIFT_RIGHT - SPLASH_SHIFT_LEFT, text = "Options", justify = "left", boxColour = ClutColour(12, 6), textColour = ClutColour(13, 9), execute = nil, letter = "O" },
-	{ coordx = SPLASH_SHIFT_LEFT, coordy = TOP_OF_SPLASH - 5 * SPLASH_STRIDE, length = SPLASH_SHIFT_RIGHT - SPLASH_SHIFT_LEFT, text = "About Ares and Xsera", justify = "left", boxColour = ClutColour(1, 6), textColour = ClutColour(13, 9), execute = nil, letter = "A" },
-	{ coordx = SPLASH_SHIFT_LEFT, coordy = TOP_OF_SPLASH - 6 * SPLASH_STRIDE, length = SPLASH_SHIFT_RIGHT - SPLASH_SHIFT_LEFT, text = "Xsera Main Menu", justify = "left", boxColour = ClutColour(9, 6), textColour = ClutColour(13, 9), execute = nil, letter = "M" },
-	{ coordx = SPLASH_SHIFT_LEFT, coordy = TOP_OF_SPLASH - 7 * SPLASH_STRIDE, length = SPLASH_SHIFT_RIGHT - SPLASH_SHIFT_LEFT, text = "Quit", justify = "left", boxColour = ClutColour(8, 4), textColour = ClutColour(13, 9), execute = nil, letter = "Q" } }
+local execs = {	{ xCoord = SPLASH_SHIFT_LEFT, yCoord = TOP_OF_SPLASH, length = SPLASH_SHIFT_RIGHT - SPLASH_SHIFT_LEFT, text = "Start New Game", justify = "left", boxColour = ClutColour(8, 6), textColour = ClutColour(13, 9), execute = nil, letter = "S" },
+	{ xCoord = SPLASH_SHIFT_LEFT, yCoord = TOP_OF_SPLASH - 1 * SPLASH_STRIDE, length = SPLASH_SHIFT_RIGHT - SPLASH_SHIFT_LEFT, text = "Start Network Game", justify = "left", boxColour = ClutColour(5, 5), textColour = ClutColour(13, 9), execute = nil, letter = "N" },
+	{ xCoord = SPLASH_SHIFT_LEFT, yCoord = TOP_OF_SPLASH - 2 * SPLASH_STRIDE, length = SPLASH_SHIFT_RIGHT - SPLASH_SHIFT_LEFT, text = "Replay Intro", justify = "left", boxColour = ClutColour(1, 8), textColour = ClutColour(13, 9), execute = nil, letter = "R" },
+	{ xCoord = SPLASH_SHIFT_LEFT, yCoord = TOP_OF_SPLASH - 3 * SPLASH_STRIDE, length = SPLASH_SHIFT_RIGHT - SPLASH_SHIFT_LEFT, text = "Demo", justify = "left", boxColour = ClutColour(1, 6), textColour = ClutColour(13, 9), execute = nil, letter = "D" },
+	{ xCoord = SPLASH_SHIFT_LEFT, yCoord = TOP_OF_SPLASH - 4 * SPLASH_STRIDE, length = SPLASH_SHIFT_RIGHT - SPLASH_SHIFT_LEFT, text = "Options", justify = "left", boxColour = ClutColour(12, 6), textColour = ClutColour(13, 9), execute = nil, letter = "O" },
+	{ xCoord = SPLASH_SHIFT_LEFT, yCoord = TOP_OF_SPLASH - 5 * SPLASH_STRIDE, length = SPLASH_SHIFT_RIGHT - SPLASH_SHIFT_LEFT, text = "About Ares and Xsera", justify = "left", boxColour = ClutColour(1, 6), textColour = ClutColour(13, 9), execute = nil, letter = "A" },
+	{ xCoord = SPLASH_SHIFT_LEFT, yCoord = TOP_OF_SPLASH - 6 * SPLASH_STRIDE, length = SPLASH_SHIFT_RIGHT - SPLASH_SHIFT_LEFT, text = "Xsera Main Menu", justify = "left", boxColour = ClutColour(9, 6), textColour = ClutColour(13, 9), execute = nil, letter = "M" },
+	{ xCoord = SPLASH_SHIFT_LEFT, yCoord = TOP_OF_SPLASH - 7 * SPLASH_STRIDE, length = SPLASH_SHIFT_RIGHT - SPLASH_SHIFT_LEFT, text = "Quit", justify = "left", boxColour = ClutColour(8, 4), textColour = ClutColour(13, 9), execute = nil, letter = "Q" } }
 
 function init()
 	sound.stop_music()
@@ -25,7 +25,6 @@ function init()
 end
 
 function update()
-
 end
 
 function render()
@@ -36,7 +35,7 @@ function render()
     graphics.draw_image("Panels/MainRight", 230, -110, 180, 211)
 	local num = 1
 	while execs[num] ~= nil do
-		switch_box(execs[num])
+		SwitchBox(execs[num])
 		num = num + 1
 	end
 	-- Error Printing
@@ -95,20 +94,20 @@ end
 
 function key(k)
 	if k == "s" then
-		change_special("S", "click", execs)
+		ChangeSpecial("S", "click", execs)
 	elseif k == "n" then
-		change_special("N", "click", execs)
+		ChangeSpecial("N", "click", execs)
 	elseif k == "r" then
-		change_special("R", "click", execs)
+		ChangeSpecial("R", "click", execs)
 	elseif k == "d" then
-		change_special("D", "click", execs)
+		ChangeSpecial("D", "click", execs)
 	elseif k == "m" then
-		change_special("M", "click", execs)
+		ChangeSpecial("M", "click", execs)
 	elseif k == "o" then
-		change_special("O", "click", execs)
+		ChangeSpecial("O", "click", execs)
 	elseif k == "a" then
-		change_special("A", "click", execs)
+		ChangeSpecial("A", "click", execs)
 	elseif k == "q" then
-		change_special("Q", "click", execs)
+		ChangeSpecial("Q", "click", execs)
 	end
 end

@@ -4,6 +4,6 @@
 -- The return values are otherwise unnecessary
 -- Tests should be named test_<name>
 
-function test_lua_works ()
+function TestLuaWorks ()
 	print("Yes, Lua works")
 end

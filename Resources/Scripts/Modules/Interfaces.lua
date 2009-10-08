@@ -109,64 +109,64 @@ function InterfaceDisplay(dt)
 end
 
 function DrawEscapeMenu()
-	switch_box( { top = 85, left = -140, bottom = -60, right = 140, boxColour = ClutColour(10, 8) } )
+	SwitchBox( { top = 85, left = -140, bottom = -60, right = 140, boxColour = ClutColour(10, 8) } )
 	graphics.draw_text("Resume, start chapter over, or quit?", "CrystalClear", "left", -125, 65, 16)
 	if down.esc == true then
-		switch_box( { coordx = -125, coordy = 30, length = 250, text = "Resume", boxColour = ClutLighten(ClutColour(12, 6), 1), textColour = ClutColour(12, 6), execute = nil, letter = "ESC" } )
+		SwitchBox( { xCoord = -125, yCoord = 30, length = 250, text = "Resume", boxColour = ClutLighten(ClutColour(12, 6), 1), textColour = ClutColour(12, 6), execute = nil, letter = "ESC" } )
 	elseif down.esc == "act" then
 		keyup = normal_keyup
 		key = normal_key
 		down.esc = false
 		menu_display = nil
 	else
-		switch_box( { coordx = -125, coordy = 30, length = 250, text = "Resume", boxColour = ClutColour(12, 6), textColour = ClutColour(12, 6), execute = nil, letter = "ESC" } )
+		SwitchBox( { xCoord = -125, yCoord = 30, length = 250, text = "Resume", boxColour = ClutColour(12, 6), textColour = ClutColour(12, 6), execute = nil, letter = "ESC" } )
 	end
 	if down.rtrn == true then
-		switch_box( { coordx = -125, coordy = 0, length = 250, text = "Start Chapter Over", boxColour = ClutLighten(ClutColour(9, 6)), textColour = ClutColour(9, 6), execute = nil, letter = "RTRN" } )
+		SwitchBox( { xCoord = -125, yCoord = 0, length = 250, text = "Start Chapter Over", boxColour = ClutLighten(ClutColour(9, 6)), textColour = ClutColour(9, 6), execute = nil, letter = "RTRN" } )
 	elseif down.rtrn == "act" then
 		mode_manager.switch('Demo3')
 		down.rtrn = false
 	else
-		switch_box( { coordx = -125, coordy = 0, length = 250, text = "Start Chapter Over", boxColour = ClutColour(9, 6), textColour = ClutColour(9, 6), execute = nil, letter = "RTRN" } )
+		SwitchBox( { xCoord = -125, yCoord = 0, length = 250, text = "Start Chapter Over", boxColour = ClutColour(9, 6), textColour = ClutColour(9, 6), execute = nil, letter = "RTRN" } )
 	end
 	if down.q == true then
-		switch_box( { coordx = -125, coordy = -30, length = 250, text = "Quit to Main Menu", boxColour = ClutColour(8, 4), textColour = ClutColour(8, 17), execute = nil, letter = "Q" } )
+		SwitchBox( { xCoord = -125, yCoord = -30, length = 250, text = "Quit to Main Menu", boxColour = ClutColour(8, 4), textColour = ClutColour(8, 17), execute = nil, letter = "Q" } )
 	elseif down.q == "act" then
 		menu_display = nil
 		mode_manager.switch('MainMenu')
 	else
-		switch_box( { coordx = -125, coordy = -30, length = 250, text = "Quit to Main Menu", boxColour = ClutColour(8, 5), textColour = ClutColour(8, 5), execute = nil, letter = "Q" } )
+		SwitchBox( { xCoord = -125, yCoord = -30, length = 250, text = "Quit to Main Menu", boxColour = ClutColour(8, 5), textColour = ClutColour(8, 5), execute = nil, letter = "Q" } )
 	end
 end
 
 function DrawDefeatMenu()
-	switch_box( { top = 85, left = -140, bottom = -60, right = 140, boxColour = ClutColour(16, 6) } )
+	SwitchBox( { top = 85, left = -140, bottom = -60, right = 140, boxColour = ClutColour(16, 6) } )
 	graphics.draw_text("You lost your Heavy Cruiser and failed.", "CrystalClear", "left", -125, 26, 16)
 	graphics.draw_text("Start chapter over, or quit?", "CrystalClear", "left", -125, 10, 16)
 	if down.rtrn == true then
-		switch_box( { coordx = -125, coordy = -20, length = 250, text = "Start Chapter Over", boxColour = ClutLighten(ClutColour(9, 6), 1), textColour = ClutColour(9, 6), execute = nil, letter = "RTRN" } )
+		SwitchBox( { xCoord = -125, yCoord = -20, length = 250, text = "Start Chapter Over", boxColour = ClutLighten(ClutColour(9, 6), 1), textColour = ClutColour(9, 6), execute = nil, letter = "RTRN" } )
 	elseif down.rtrn == "act" then
 		menu_display = nil
 		mode_manager.switch('Demo3')
 	else
-		switch_box( { coordx = -125, coordy = -20, length = 250, text = "Start Chapter Over", boxColour = ClutColour(9, 6), textColour = ClutColour(9, 6), execute = nil, letter = "RTRN" } )
+		SwitchBox( { xCoord = -125, yCoord = -20, length = 250, text = "Start Chapter Over", boxColour = ClutColour(9, 6), textColour = ClutColour(9, 6), execute = nil, letter = "RTRN" } )
 	end
 	if down.q == true then
-		switch_box( { coordx = -125, coordy = -50, length = 250, text = "Quit to Main Menu", boxColour = ClutColour(8, 5), textColour = ClutColour(8, 17), execute = nil, letter = "Q" } )
+		SwitchBox( { xCoord = -125, yCoord = -50, length = 250, text = "Quit to Main Menu", boxColour = ClutColour(8, 5), textColour = ClutColour(8, 17), execute = nil, letter = "Q" } )
 	elseif down.q == "act" then
 		menu_display = nil
 		mode_manager.switch('MainMenu')
 	else
-		switch_box( { coordx = -125, coordy = -50, length = 250, text = "Quit to Main Menu", boxColour = ClutColour(8, 4), textColour = ClutColour(8, 1), execute = nil, letter = "Q" } )
+		SwitchBox( { xCoord = -125, yCoord = -50, length = 250, text = "Quit to Main Menu", boxColour = ClutColour(8, 4), textColour = ClutColour(8, 1), execute = nil, letter = "Q" } )
 	end
 end
 
 storedTime = 0.0
 
 function DrawVictoryMenu()
-	switch_box( { coordx = -125, coordy = 100, length = 290, text = " ", boxColour = ClutColour(3, 7), textColour = ClutColour(3, 7), execute = nil, letter = "Results", underbox = -100 } )
+	SwitchBox( { xCoord = -125, yCoord = 100, length = 290, text = " ", boxColour = ClutColour(3, 7), textColour = ClutColour(3, 7), execute = nil, letter = "Results", underbox = -100 } )
 	graphics.draw_text("You did it! Congratulations!", "CrystalClear", "left", -110, 90, 16)
-	switch_box( { top = 31, left = -75, bottom = -50, right = 115, boxColour = ClutColour(3, 7), background = ClutColour(3, 14) } )
+	SwitchBox( { top = 31, left = -75, bottom = -50, right = 115, boxColour = ClutColour(3, 7), background = ClutColour(3, 14) } )
 	local startx = 113
 	local starty = 28
 	local xcheck = 1
@@ -184,7 +184,7 @@ function DrawVictoryMenu()
 				xlength = 60
 			end
 			if endGameData[ycheck][xcheck][1] == true then
-				if endGameData[ycheck][xcheck][2] ~= c_clear then
+				if endGameData[ycheck][xcheck][2] ~= cClear then
 					graphics.draw_box(starty - (ycheck - 1) * 15, startx - xCoord - xlength, starty - ycheck * 15, startx - xCoord, 0, endGameData[ycheck][xcheck][2])
 					graphics.draw_text(endGameData[ycheck][xcheck][3], "CrystalClear", "left", startx - xCoord - xlength + 2, starty - (ycheck - 1) * 15 - 6, 16)
 				else
@@ -223,16 +223,16 @@ function DrawVictoryMenu()
 end
 
 function DrawInfoMenu()
-	switch_box( { top = 250, left = -260, bottom = -250, right = 280, boxColour = ClutColour(1, 8) } )
+	SwitchBox( { top = 250, left = -260, bottom = -250, right = 280, boxColour = ClutColour(1, 8) } )
 	if down.esc == true then
-		switch_box( { coordx = -255, coordy = -240, length = 530, text = "Done", boxColour = ClutLighten(ClutColour(1, 8)), textColour = ClutColour(1, 8), execute = nil, letter = "ESC" } )
+		SwitchBox( { xCoord = -255, yCoord = -240, length = 530, text = "Done", boxColour = ClutLighten(ClutColour(1, 8)), textColour = ClutColour(1, 8), execute = nil, letter = "ESC" } )
 	elseif down.esc == "act" then
 		keyup = normal_keyup
 		key = normal_key
 		down.esc = false
 		menu_display = nil
 	else
-		switch_box( { coordx = -255, coordy = -240, length = 530, text = "Done", boxColour = ClutColour(1, 8), textColour = ClutColour(1, 8), execute = nil, letter = "ESC" } )
+		SwitchBox( { xCoord = -255, yCoord = -240, length = 530, text = "Done", boxColour = ClutColour(1, 8), textColour = ClutColour(1, 8), execute = nil, letter = "ESC" } )
 	end
 	local x = 245
 	local col_switch = true
@@ -298,7 +298,7 @@ function DrawPauseMenu(dt)
 	end
 	timeElapsed = timeElapsed + dt
 	if timeElapsed % 0.8 > 0.4 then
-		switch_box( { top = 20, left = -80, bottom = -20, right = 140, boxColour = ClutColour(5, 11), background = c_half_clear } )
+		SwitchBox( { top = 20, left = -80, bottom = -20, right = 140, boxColour = ClutColour(5, 11), background = c_half_clear } )
 		graphics.draw_text("> CAPS LOCK - PAUSED <", "CrystalClear", "center", 30, 0, 23, ClutColour(5, 11))
 	end
 end
