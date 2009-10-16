@@ -2,6 +2,10 @@ function hypot(x, y)
     return math.sqrt(x * x + y * y)
 end
 
+function hypot1(xAndY)
+	return math.sqrt(xAndY.x * xAndY.x + xAndY.y * xAndY.y)
+end
+
 function normalize(componentA, componentB)
 	return componentA / hypot(componentA, componentB)
 end

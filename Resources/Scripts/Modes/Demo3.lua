@@ -224,7 +224,11 @@ function update ()
 				force.y = -force.y / velocityMag
 				force.x = force.x * playerShip.reverseThrust
 				force.y = force.y * playerShip.reverseThrust
-				playerShip.physicsObject:apply_force(force)
+				if hypot1(force) > hypot1(playerShip.physicsObject.velocity) then
+					playerShip.physicsObject.velocity = { x = 0, y = 0 }
+				else
+					playerShip.physicsObject:apply_force(force)
+				end
 			end
 		end
     end

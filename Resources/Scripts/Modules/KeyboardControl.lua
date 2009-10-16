@@ -146,7 +146,7 @@ function DoScaleOut()
 	ActionDeactivate("Scale Out")
 end
 
-function DocomputerPrevious()
+function DoComputerPrevious()
 	change_menu(menuLevel, "i")
 	keyboard[2][9].active = false
 end
