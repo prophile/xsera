@@ -321,8 +321,8 @@ function DrawPanels()
 	graphics.draw_box(6, 379, -72.5, 386, 0, ClutColour(3, 7))
 	graphics.draw_box(playerShip.energy.percent * 78.5 - 72.5, 379, -72.5, 386, 0, ClutColour(9, 6))
 -- Shield (blue)
-	graphics.draw_box(-96, 379, -173, 386, 0, ClutColour(4, 8))
-	graphics.draw_box(playerShip.shield.percent * 77 - 173, 379, -173, 386, 0, ClutColour(4, 6))
+	graphics.draw_box(-96, 379, -173, 386, 0, ClutColour(14, 8))
+	graphics.draw_box(playerShip.shield.percent * 77 - 173, 379, -173, 386, 0, ClutColour(14, 6))
 -- Factory resources (green - mostly)
 	count = 1
 	if shipSelected == true then

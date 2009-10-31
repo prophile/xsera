@@ -26,6 +26,7 @@
 		49A0E6940ECC3887007F3458 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49A0E6930ECC3887007F3458 /* OpenGL.framework */; };
 		49A315530ED6BDD90054BB8B /* Fonts in Resources */ = {isa = PBXBuildFile; fileRef = 49A315500ED6BDD90054BB8B /* Fonts */; };
 		49D543CB0ED5E222002FC38E /* Sprites in Resources */ = {isa = PBXBuildFile; fileRef = 49D543B80ED5E222002FC38E /* Sprites */; };
+		7A58AD60108919F200C4F789 /* NewResources in Resources */ = {isa = PBXBuildFile; fileRef = 7A58AD4C108919F200C4F789 /* NewResources */; };
 		7A8C71560EDB0FB700CFE5D3 /* Sounds in Resources */ = {isa = PBXBuildFile; fileRef = 7A8C711F0EDB0FB700CFE5D3 /* Sounds */; };
 /* End PBXBuildFile section */
 
@@ -81,6 +82,7 @@
 		49A0E6930ECC3887007F3458 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = /System/Library/Frameworks/OpenGL.framework; sourceTree = "<absolute>"; };
 		49A315500ED6BDD90054BB8B /* Fonts */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Fonts; path = ../Resources/Fonts; sourceTree = SOURCE_ROOT; };
 		49D543B80ED5E222002FC38E /* Sprites */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Sprites; path = ../Resources/Sprites; sourceTree = SOURCE_ROOT; };
+		7A58AD4C108919F200C4F789 /* NewResources */ = {isa = PBXFileReference; lastKnownFileType = folder; name = NewResources; path = ../Resources/NewResources; sourceTree = SOURCE_ROOT; };
 		7A8C711F0EDB0FB700CFE5D3 /* Sounds */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Sounds; path = ../Resources/Sounds; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
@@ -124,13 +126,14 @@
 		496923E20EBE4C3500930DDD /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				496039250ED0B555003BA716 /* Scripts */,
+				49597A0B0ED4D47C00173D17 /* Config */,
 				493224690F23E1970048495A /* Shaders */,
 				49554A300EDDBD1F009CA121 /* Stars */,
 				7A8C711F0EDB0FB700CFE5D3 /* Sounds */,
 				49A315500ED6BDD90054BB8B /* Fonts */,
 				49D543B80ED5E222002FC38E /* Sprites */,
-				49597A0B0ED4D47C00173D17 /* Config */,
-				496039250ED0B555003BA716 /* Scripts */,
+				7A58AD4C108919F200C4F789 /* NewResources */,
 				4930D74A0ECE22990053CC8B /* Images */,
 				490CDB270ECCE572004B7D04 /* Music */,
 			);
@@ -240,6 +243,7 @@
 				7A8C71560EDB0FB700CFE5D3 /* Sounds in Resources */,
 				49554A330EDDBD1F009CA121 /* Stars in Resources */,
 				4932246F0F23E1970048495A /* Shaders in Resources */,
+				7A58AD60108919F200C4F789 /* NewResources in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -45,9 +45,13 @@ void InitStars ()
 		size_t len;
 		char* ptr = (char*)ResourceManager::ReadFull(&len, rwops, 1);
 		assert(ptr);
+		char* fileData = (char*)malloc(len + 1);
+		memcpy(fileData, ptr, len);
+		fileData[len] = '\0';
 		TiXmlDocument xmlDoc;
-		xmlDoc.Parse(ptr);
+		xmlDoc.Parse(fileData);
 		assert(!xmlDoc.Error());
+		free((void*)fileData);
 		TiXmlElement* root = xmlDoc.RootElement();
 		assert(root);
 		TiXmlElement* child = root->FirstChildElement("star");

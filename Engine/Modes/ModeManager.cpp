@@ -87,6 +87,7 @@ void InitModeManager ()
 
 void UpdateModeManager ()
 {
+//	usleep(125000); // debug line
 	if (nextMode != NULL)
 	{
 		if (mode)
