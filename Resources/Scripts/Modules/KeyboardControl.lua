@@ -79,20 +79,19 @@ end
 
 -- these two functions don't work right now, for some reason. [FIX, ADAM]
 function DoWarp()
-	playerShip.warp.start.bool = false
-	playerShip.warp.start.time = nil
-	playerShip.warp.start.engine = false
-	playerShip.warp.start.isStarted = false
-	playerShip.warp.soundNum = 0.0
-	if playerShip.warp.warping == true then
-		playerShip.warp.warping = false
-		playerShip.warp.endTime = mode_manager.time()
+	if playerShip.warp.stage == 7 then
+		print("TAB KEY PRESSED LULZ")
+		playerShip.warp.stage = 1
+		sound.play("Warp1")
 	end
 end
 
 function StopWarp()
-	if playerShip.warp.finished == true then
-		playerShip.warp.start.bool = true
+	print("TAB KEY UNPRESSED LULZ")
+	if playerShip.warp.stage == 5 then
+		playerShip.warp.stage = 6
+	else
+		playerShip.warp.stage = 7
 	end
 end
 
@@ -313,7 +312,7 @@ keyboard = { { "Ship",
 				{ key = "MmetaL", key_display = "CmdL", name = "Fire Weapon 1", action = DoFireWeap1, deaction = StopFireWeap1, active = false }, 
 				{ key = "MaltL", key_display = "AltL", name = "Fire Weapon 2", action = DoFireWeap2, deaction = StopFireWeap2, active = false }, 
 				{ key = " ", key_display = "Space", name = "Fire/Activate Special", action = DoFireWeapSpecial, deaction = StopFireWeapSpecial, active = false }, 
-				{ key = "Tab", name = "Warp", action = DoWarp, deaction = StopWarp, active = false } },
+				{ key = "tab", key_display = "Tab", name = "Warp", action = DoWarp, deaction = StopWarp, active = false } },
 			{ "Command", 
 				{ key = "pgdn", name = "Select Friendly", action = DoSelectFriendly, active = false }, 
 				{ key = "KPequals", key_display = "KP=", name = "Select Hostile", action = DoSelectHostile, active = false }, 
