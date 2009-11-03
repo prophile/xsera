@@ -77,22 +77,20 @@ function StopFireWeapSpecial()
 	end
 end
 
--- these two functions don't work right now, for some reason. [FIX, ADAM]
 function DoWarp()
 	if playerShip.warp.stage == 7 then
-		print("TAB KEY PRESSED LULZ")
 		playerShip.warp.stage = 1
 		sound.play("Warp1")
 	end
 end
 
 function StopWarp()
-	print("TAB KEY UNPRESSED LULZ")
 	if playerShip.warp.stage == 5 then
 		playerShip.warp.stage = 6
 	else
 		playerShip.warp.stage = 7
 	end
+	playerShip.warp.time = 0.0
 end
 
 	--[[-----------
@@ -121,7 +119,7 @@ end
 
 function DoScaleIn()
 	if cameraRatioNum ~= 1 then
-		sound.play("ZoomChange")
+--		sound.play("ZoomChange")
 		cameraChanging = true
 		cameraRatioOrig = cameraRatio
 		cameraIncreasing = true
@@ -134,7 +132,7 @@ end
 
 function DoScaleOut()
 	if cameraRatios[cameraRatioNum + 1] ~= nil then
-		sound.play("ZoomChange")
+--		sound.play("ZoomChange")
 		cameraChanging = true
 		cameraRatioOrig = cameraRatio
 		cameraIncreasing = false

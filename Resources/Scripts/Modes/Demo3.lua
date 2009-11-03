@@ -141,74 +141,38 @@ function update ()
 		arrowLength = ARROW_LENGTH / cameraRatio
 		arrowVar = ARROW_VAR / cameraRatio
 		arrowDist = ARROW_DIST / cameraRatio
+		if cameraRatio < 1 / 8 then
+			sound.play("ZoomChange")
+		end
 	end
 	
 --[[------------------
 	Warping Code
 ------------------]]-- it's a pair of lightsabers!
---[[
-	if playerShip.warp.endTime ~= 0.0 then
-		if newTime - playerShip.warp.endTime >= playerShip.warp.disengage then
-			sound.play("WarpOut")
-			playerShip.warp.endTime = 0.0
-			playerShip.warp.finished = true
-		end
-	end
-	
-	if playerShip.warp.start.bool == true then
-		if playerShip.warp.start.engine == false then -- once per warp init
-			playerShip.warp.start.engine = true
-			playerShip.warp.start.time = mode_manager.time()
-		end
-		if playerShip.warp.start.isStarted == true then
-			if mode_manager.time() - playerShip.warp.start.time - playerShip.warp.soundNum * soundLength >= soundLength then
-				playerShip.warp.start.isStarted = false
-			end
-		elseif playerShip.warp.start.isStarted == false then
-			playerShip.warp.start.isStarted = true
-			playerShip.warp.soundNum = playerShip.warp.soundNum + 1
-			if playerShip.warp.soundNum <= 4 then
-				sound.play("Warp" .. playerShip.warp.soundNum)
-			elseif playerShip.warp.soundNum == 5 then
-				sound.play("WarpIn")
-				playerShip.warp.warping = true
-				playerShip.warp.finished = false
-				playerShip.warp.start.bool = false
-			end
-		end
-	end
-	
-	if playerShip.warp.finished == false then
-		playerShip.physicsObject.velocity = { x = playerShip.warpSpeed * math.cos(playerShip.physicsObject.angle), y = playerShip.warpSpeed * math.sin(playerShip.physicsObject.angle) }
-	else	
-		if hypot (playerShip.physicsObject.velocity.x, playerShip.physicsObject.velocity.y) > playerShip.maxSpeed then
-			playerShip.physicsObject.velocity = { x = playerShip.maxSpeed * normalize(playerShip.physicsObject.velocity.x, playerShip.physicsObject.velocity.y), y = playerShip.maxSpeed * normalize(playerShip.physicsObject.velocity.y, playerShip.physicsObject.velocity.x) }
-		end
-	end
-	--]]
-	
 	
 	if playerShip.warp.stage ~= 7 then
 		playerShip.warp.time = playerShip.warp.time + dt
 		
 		if playerShip.warp.stage >= 1 and playerShip.warp.stage <= 4 then
-			print("WE HAVE YOU ON VISUAL " .. playerShip.warp.stage .. " " .. playerShip.warp.time)
 			if math.floor(playerShip.warp.time / soundLength) > playerShip.warp.stage then
 				playerShip.warp.stage = playerShip.warp.stage + 1
-				sound.play("Warp" .. playerShip.warp.stage)
+				if playerShip.warp.stage ~= 5 then
+					sound.play("Warp" .. playerShip.warp.stage)
+				end
 			end
 		elseif playerShip.warp.stage == 5 then
 			if playerShip.warp.enterWarp == false then
 				playerShip.warp.enterWarp = true
 				sound.play("WarpIn")
 			end
+			playerShip.warp.time = 0.0
 			playerShip.physicsObject.velocity = { x = playerShip.warpSpeed * math.cos(playerShip.physicsObject.angle), y = playerShip.warpSpeed * math.sin(playerShip.physicsObject.angle) }
 		elseif playerShip.warp.stage == 6 then
-			playerShip.warp.stage = playerShip.warp.stage + 1
 			-- need to work on this [ADAM]
 			sound.play("WarpOut")
-			-- this line instantly warps the ship out
+			-- these lines instantly warp the ship out
 			playerShip.physicsObject.velocity = { x = playerShip.maxSpeed * normalize(playerShip.physicsObject.velocity.x, playerShip.physicsObject.velocity.y), y = playerShip.maxSpeed * normalize(playerShip.physicsObject.velocity.y, playerShip.physicsObject.velocity.x) }
+			playerShip.warp.stage = playerShip.warp.stage + 1
 		end
 	end
 	
