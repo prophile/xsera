@@ -131,6 +131,7 @@ function update ()
 			x = 0
 			cameraChanging = false
 			playerShip.beam.width = cameraRatio
+			soundJustPlayed = false
 		end
 		if x >= 0 then
 			cameraRatio = cameraRatioOrig + cameraRatioOrig * multiplier * (((x - timeInterval) * (x - timeInterval)) / (timeInterval * timeInterval))
@@ -141,8 +142,11 @@ function update ()
 		arrowLength = ARROW_LENGTH / cameraRatio
 		arrowVar = ARROW_VAR / cameraRatio
 		arrowDist = ARROW_DIST / cameraRatio
-		if cameraRatio < 1 / 8 then
-			sound.play("ZoomChange")
+		if (cameraRatio < 1 / 8 and cameraRatioOrig > 1 / 8) or (cameraRatio > 1 / 8 and cameraRatioOrig < 1 / 8) then
+			if soundJustPlayed == false then
+				sound.play("ZoomChange")
+				soundJustPlayed = true
+			end
 		end
 	end
 	
@@ -174,7 +178,10 @@ function update ()
 			playerShip.physicsObject.velocity = { x = playerShip.maxSpeed * normalize(playerShip.physicsObject.velocity.x, playerShip.physicsObject.velocity.y), y = playerShip.maxSpeed * normalize(playerShip.physicsObject.velocity.y, playerShip.physicsObject.velocity.x) }
 			playerShip.warp.stage = playerShip.warp.stage + 1
 		end
+	elseif hypot (playerShip.physicsObject.velocity.x, playerShip.physicsObject.velocity.y) > playerShip.maxSpeed then
+		playerShip.physicsObject.velocity = { x = playerShip.maxSpeed * normalize(playerShip.physicsObject.velocity.x, playerShip.physicsObject.velocity.y), y = playerShip.maxSpeed * normalize(playerShip.physicsObject.velocity.y, playerShip.physicsObject.velocity.x) }
 	end
+
 	
 --[[------------------
 	Movement
@@ -546,7 +553,7 @@ function render ()
 			end
 		else
 			-- This explosion code is a hack. We need a way to deal with explosions in a better method.
-			-- Let's figure it out when we get Sfiera's data [ADAM, SFIERA]
+			-- Let's figure it out when we get Sfiera's data [ADAM]
 			if computerShip ~= nil then
 				if cameraRatio > 1 / 8 then
 					graphics.draw_sprite(bestExplosion.image, computerShip.physicsObject.position.x, computerShip.physicsObject.position.y, bestExplosion.size.x, bestExplosion.size.y, frame / 6 * math.pi)
@@ -594,9 +601,7 @@ function render ()
 	if playerShip.beam.fired == true then
 		local wNum = 1
 		while wNum <= playerShip.beam.max_projectiles do
-		--	print(wNum, playerShip.beamWeap[wNum])
 			if playerShip.beamWeap[wNum] ~= nil then
-			--	print_table(playerShip.beamWeap[wNum])
 				graphics.draw_line(playerShip.beamWeap[wNum].physicsObject.position.x, playerShip.beamWeap[wNum].physicsObject.position.y, playerShip.beamWeap[wNum].physicsObject.position.x - math.cos(playerShip.beamWeap[wNum].physicsObject.angle) * playerShip.beam.length, playerShip.beamWeap[wNum].physicsObject.position.y - math.sin(playerShip.beamWeap[wNum].physicsObject.angle) * playerShip.beam.length, playerShip.beam.width, ClutColour(5, 1))
 			end
 			wNum = wNum + 1
@@ -657,9 +662,6 @@ function render ()
 		if errNotice.start + errNotice.duration < mode_manager.time() then
 			errNotice = nil
 		end
-	end
-	if tab_down == true then
-		ClutDisplay()
 	end
 	graphics.end_frame()
 end
