@@ -597,7 +597,7 @@ function render ()
 --[[------------------
 	PKBeam Firing
 ------------------]]--
---	print_table(playerShip.beamWeap)
+--	printTable(playerShip.beamWeap)
 	if playerShip.beam.fired == true then
 		local wNum = 1
 		while wNum <= playerShip.beam.max_projectiles do
@@ -616,7 +616,7 @@ function render ()
 		local wNum = 1
 		while wNum <= playerShip.special.max_projectiles do
 			if playerShip.specialWeap[wNum] ~= nil then
-				print_table(playerShip.special)
+				printTable(playerShip.special)
 				graphics.draw_sprite("Weapons/Special/cMissile", playerShip.specialWeap[wNum].physicsObject.position.x, playerShip.specialWeap[wNum].physicsObject.position.y, playerShip.special.size.x, playerShip.special.size.y, playerShip.specialWeap[wNum].physicsObject.angle)
 			end
 			wNum = wNum + 1

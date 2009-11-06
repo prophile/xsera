@@ -43,7 +43,7 @@ function table_define (t, name, indent)
 	return table_r(t,name or 'Value',indent or '')
 end
 
-function print_table (t, name)
+function printTable (t, name)
 	if originalPrint ~= nil then
 		originalPrint(table_define(t, name))
 	else
