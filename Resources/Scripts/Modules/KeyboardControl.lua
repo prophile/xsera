@@ -77,22 +77,20 @@ function StopFireWeapSpecial()
 	end
 end
 
--- these two functions don't work right now, for some reason. [FIX, ADAM]
 function DoWarp()
 	if playerShip.warp.stage == 7 then
-		print("TAB KEY PRESSED LULZ")
 		playerShip.warp.stage = 1
 		sound.play("Warp1")
 	end
 end
 
 function StopWarp()
-	print("TAB KEY UNPRESSED LULZ")
 	if playerShip.warp.stage == 5 then
 		playerShip.warp.stage = 6
 	else
 		playerShip.warp.stage = 7
 	end
+	playerShip.warp.time = 0.0
 end
 
 	--[[-----------
@@ -121,7 +119,6 @@ end
 
 function DoScaleIn()
 	if cameraRatioNum ~= 1 then
-		sound.play("ZoomChange")
 		cameraChanging = true
 		cameraRatioOrig = cameraRatio
 		cameraIncreasing = true
@@ -134,7 +131,6 @@ end
 
 function DoScaleOut()
 	if cameraRatios[cameraRatioNum + 1] ~= nil then
-		sound.play("ZoomChange")
 		cameraChanging = true
 		cameraRatioOrig = cameraRatio
 		cameraIncreasing = false
@@ -212,7 +208,16 @@ function DoZoom1_16()
 end
 
 function DoZoomHostile()
-	LogError("The command does not have any code. /placeholder", 9)
+	-- the following is hardcoded, but can be easily modified to not be so
+	-- the following does not work correctly [ADAM]
+	
+	-- insta-zoom version
+	local diff = { x = computerShip.physicsObject.position.x - playerShip.physicsObject.position.x, y = computerShip.physicsObject.position.y - playerShip.physicsObject.position.y }
+	if aspectRatio > (diff.x / diff.y) then
+		camera = { w = diff.x, h =  (diff.x + 50) / aspectRatio }
+	else
+		camera = { w = aspectRatio *  (diff.y + 50), h = diff.y }
+	end
 end
 
 function DoZoomObject()
@@ -336,7 +341,7 @@ keyboard = { { "Ship",
 				{ key = "pgup", name = "Zoom to All", action = DoZoomAll, active = false }, 
 				{ key = "del", name = "Message Next Page / Clear", action = DoMessageNext, active = false } },
 			{ "Utility",
-				{ key = "F1", name = "Help", action = Dohelp, active = false }, 
+				{ key = "F1", name = "Help", action = DoHelp, active = false }, 
 				{ key = "F2", name = "Lower Volume", action = DoLowerVolume, active = false }, 
 				{ key = "F3", name = "Raise Volume", action = DoRaiseVolume, active = false }, 
 				{ key = "F4", name = "Mute Music", action = DoMuteMusic, active = false }, 
