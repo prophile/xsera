@@ -86,6 +86,7 @@ end
 
 function StopWarp()
 	if playerShip.warp.stage == 5 then
+		playerShip.warp.enterWarp = false;
 		playerShip.warp.stage = 6
 	else
 		playerShip.warp.stage = 7
@@ -103,7 +104,28 @@ end
 
 function DoSelectHostile()
 	LogError("The command does not have any code. /placeholder", 9)
+	--[[ pseudocode
+	if hostileSelected == false then
+		testWithin(angle)
+		select(closest)
+	else
+		if (testWithin(angle) ~= closest then
+			select(testWithin(angle))
+		end
+	end
+	--]]
 end
+
+--[[ pseudocode
+function DoSelect(type)
+	if currentSelect == type then
+		select(nextClosest)
+	else
+		elect(closest)
+	end
+end
+--]]
+
 
 function DoSelectBase()
 	LogError("The command does not have any code. /placeholder", 9)
@@ -199,17 +221,40 @@ function DoZoom1_2()
 	end
 end
 
-function DoZoom1_4()
-	LogError("The command does not have any code. /placeholder", 9)
+function DoZoom1_4() -- [ADAM] TEST THIS
+	if cameraRatioNum ~= 4 then
+		cameraChanging = true
+		cameraRatioOrig = cameraRatio
+		if cameraRatio > 0.25 then
+			cameraIncreasing = true
+		else
+			cameraIncreasing = false
+		end
+		x = timeInterval
+		cameraRatioNum = 4
+		multiplier = (cameraRatios[cameraRatioNum] - cameraRatio) / cameraRatio
+	end
 end
 
-function DoZoom1_16()
-	LogError("The command does not have any code. /placeholder", 9)
+function DoZoom1_16() -- [ADAM] TEST THIS
+	if cameraRatioNum ~= 5 then
+		cameraChanging = true
+		cameraRatioOrig = cameraRatio
+		if cameraRatio > 0.0625 then
+			cameraIncreasing = true
+		else
+			cameraIncreasing = false
+		end
+		x = timeInterval
+		cameraRatioNum = 5
+		multiplier = (cameraRatios[cameraRatioNum] - cameraRatio) / cameraRatio
+	end
 end
 
 function DoZoomHostile()
 	-- the following is hardcoded, but can be easily modified to not be so
 	-- the following does not work correctly [ADAM]
+	-- cannot work on this on laptop, no insert key
 	
 	-- insta-zoom version
 	local diff = { x = computerShip.physicsObject.position.x - playerShip.physicsObject.position.x, y = computerShip.physicsObject.position.y - playerShip.physicsObject.position.y }

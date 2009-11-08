@@ -103,10 +103,10 @@ function update ()
 							{	{ false, ClutColour(3, 9), "LOSSES" },
 								{ false, cClear, "0" },
 								{ false, cClear, "0" } },
-							{	{ false, ClutColour(2, 11), "KILLS" },
+							{	{ false, ClutColour(3, 11), "KILLS" },
 								{ false, cClear, "1" },
 								{ false, cClear, "1" } },
-							{	{ false, ClutColour(2, 13), "SCORE" },
+							{	{ false, ClutColour(3, 13), "SCORE" },
 								{ false, cClear, ">9000!!!" },
 								{ false, cClear, "100" } } }
 			menu_display = "victory_menu"
