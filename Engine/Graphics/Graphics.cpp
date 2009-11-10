@@ -101,6 +101,7 @@ using namespace Shaders;
 int scw, sch;
 
 bool haveFBO = false;
+bool noWarpFX = false;
 
 /*
  Other files can use:
@@ -231,7 +232,9 @@ void Init ( int w, int h, bool fullscreen )
 	glEnableClientState ( GL_VERTEX_ARRAY );
 	
 	const char* extensions = (const char*)glGetString(GL_EXTENSIONS);
+	const char* renderer = (const char*)glGetString(GL_RENDERER);
 	haveFBO = strstr(extensions, "GL_EXT_framebuffer_object");
+	noWarpFX = strstr(renderer, "Intel");
 }
 
 static bool texturingEnabled = false;
@@ -645,7 +648,7 @@ static const float WARP_MAG_THRESHOLD = 0.001f;
 void BeginWarp ( float magnitude, float angle )
 {
 #ifndef DISABLE_WARP_EFFECTS
-	if (!haveFBO)
+	if (!haveFBO || noWarpFX)
 		return;
 	warpMag = magnitude;
 	warpAngle = angle;
@@ -673,7 +676,7 @@ void BeginWarp ( float magnitude, float angle )
 void EndWarp ()
 {
 #ifndef DISABLE_WARP_EFFECTS
-	if (!haveFBO || warpMag < WARP_MAG_THRESHOLD)
+	if (!haveFBO || noWarpFX || warpMag < WARP_MAG_THRESHOLD)
 		return;
 	glBindFramebufferEXT(GL_FRAMEBUFFER_EXT, 0);
 	glBindTexture(GL_TEXTURE_RECTANGLE_ARB, warpTex);
