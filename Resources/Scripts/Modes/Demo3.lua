@@ -362,119 +362,6 @@ function update ()
 	KeyDoActivated()
 end
 
---[[-----------------------------
-	--{{---------------------
-		Weapon Management
-	---------------------}}--
------------------------------]]--
-
-function WeaponManage(weapon, weapData, weapOwner) -- examples: weapon = playerShip.beam, weapData = playerShip.beamWeap, weapOwner = playerShip
--- handling of new projectile
-	if weapon.firing == true then
-		if weapon.cooldown <= mode_manager.time() - weapon.start then
-			sound.play(weapon.sound)
-			weapon.fired = true
-			weapon.start = mode_manager.time()
-			local wNum = 1
-			while wNum <= weapon.max_projectiles do
-				if weapData[wNum] == nil then
-					if weapon.image ~= nil then
-						weapData[wNum] = NewEntity(weapOwner, weapon.image, "Projectile", weapon.class)
-					else
-						weapData[wNum] = NewEntity(weapOwner, weapon.fileName, "Projectile", weapon.class)
-					end
-					weapData[wNum].start = mode_manager.time()
-					if weapon.class == "beam" then
-						-- [ADAM, FIX] this piece of code is a hack, it relies on what little weapons we have right now to make the assumption
-						if weapOwner.switch == true then
-							weapData[wNum].physicsObject.position = { x = weapOwner.physicsObject.position.x + math.cos(weapData[wNum].physicsObject.angle + 0.17) * (weapon.length - 3), y = weapOwner.physicsObject.position.y + math.sin(weapData[wNum].physicsObject.angle + 0.17) * (weapon.length - 3) }
-							weapOwner.switch = false
-						else
-							weapData[wNum].physicsObject.position = { x = weapOwner.physicsObject.position.x + math.cos(weapData[wNum].physicsObject.angle - 0.17) * (weapon.length - 3), y = weapOwner.physicsObject.position.y + math.sin(weapData[wNum].physicsObject.angle - 0.17) * (weapon.length - 3) }
-							weapOwner.switch = true
-						end
-						weapOwner.energy.level = weapOwner.energy.level - weapon.cost
-					elseif weapon.class == "pulse" then
-						return
-					elseif weapon.class == "special" then
-						weapData[wNum].dest = { x = computerShip.physicsObject.position.x, y = computerShip.physicsObject.position.y }
-						weapOwner.special.ammo = weapOwner.special.ammo - 1
-						
-						if computerShip == nil then
-							weapData[wNum].isSeeking = false
-						end
-						if weapData[wNum].isSeeking == true then
-							local projectileTravel = { x, y, dist }
-							projectileTravel.dist = (weapOwner.special.thrust * weapOwner.special.life * weapOwner.special.life / 1000000) / (2 * weapOwner.special.mass)
-							projectileTravel.x = math.cos(weapData[wNum].physicsObject.angle) * (projectileTravel.dist + weapData[wNum].physicsObject.velocity.x)
-							projectileTravel.y = math.sin(weapData[wNum].physicsObject.angle) * (projectileTravel.dist + weapData[wNum].physicsObject.velocity.y)
-							if find_hypot(weapData[wNum].physicsObject.position, weapData[wNum].dest) <= hypot(projectileTravel.x, projectileTravel.y) then
-								if showAngles == true then
-									print(find_angle(weapData[wNum].dest, weapData[wNum].physicsObject.position))
-									print(weapData[wNum].physicsObject.angle)
-									print(find_angle(weapData[wNum].dest, weapData[wNum].physicsObject.position) - weapData[wNum].physicsObject.angle)
-								end
-								local angle = find_angle(weapData[wNum].dest, weapData[wNum].physicsObject.position) - weapData[wNum].physicsObject.angle
-								if math.abs(angle) > math.pi then -- need to go through 0
-									if angle > 0.0 then
-										angle = 2 * math.pi - angle
-									else
-										angle = 2 * math.pi + angle
-									end
-								end
-								if math.abs(angle) > weapData[wNum].maxSeek then
-									weapData[wNum].isSeeking = false
-								end
-							else
-								weapData[wNum].isSeeking = false
-							end
-						else
-							weapData[wNum].isSeeking = false
-						end
-					elseif weapon.class == nil then
-						LogError("Projectile '" .. entType .. "' has no class.", 12)
-					else
-						LogError("Unknown projectile class '" .. entClass .. "'", 11)
-					end
-					wNum = weapon.max_projectiles -- exit while loop
-				end
-				wNum = wNum + 1
-			end
-			weapon.fired = true
-		end
-	end
-
--- handling for existing weapons and projectiles
-	local wNum = 1
-	while wNum <= 50 do
-		if weapData[wNum] ~= nil then
-			if weapData[wNum].physicsObject == nil then
-				-- this object needs to be deleted, probably the initializing table
-				table.remove(weapData, wNum)
-			else
-				if computerShip ~= nil then
-					local x = computerShip.physicsObject.position.x - weapData[wNum].physicsObject.position.x
-					local y = computerShip.physicsObject.position.y - weapData[wNum].physicsObject.position.y
-					-- put in real collision code here [ALISTAIR, DEMO2]
-					if hypot (x, y) <= computerShip.physicsObject.collision_radius * 2 / 7 then
-						ProjectileCollision(weapData, wNum, weapon, computerShip)
-						return
-					end
-				end
-				if mode_manager.time() - weapData[wNum].start >= weapon.life then
-					table.remove(weapData, wNum)
-					if weapData[1] ~= nil then
-						weapon.fired = true
-					else
-						weapon.fired = false
-					end
-				end
-			end
-		end
-		wNum = wNum + 1
-	end
-end
-
 --[[---------------------
 	--{{-------------
 		Rendering
@@ -741,4 +628,110 @@ end
 
 function quit ()
     physics.close()
+end
+
+--[[-----------------------------
+	--{{---------------------
+--MARK:	Weapon Management
+	---------------------}}--
+-----------------------------]]--
+function WeaponManage(weapon, weapData, weapOwner)
+	if weapon.firing == true then
+		WeaponCreate(weapon, weapData, weapOwner)
+	end
+	
+	WeaponUpdate(weapon, weapData, weapOwner)
+end
+
+function WeaponCreate(weapon, weapData, weapOwner)
+
+	if	weapon.cooldown <= mode_manager.time() - weapon.start
+	and	weapOwner.energy.level - weapon.cost >= 0
+	and (weapon.ammo == nil or weapon.ammo > 0)
+	then
+		sound.play(weapon.sound)
+		weapon.fired = true
+		weapon.start = mode_manager.time()
+
+		weapOwner.energy.level = weapOwner.energy.level - weapon.cost
+
+		if weapon.ammo ~= nil then
+			weapon.ammo = weapon.ammo - 1
+		end
+		
+		local idx = #weapData+1
+		
+		if weapon.image ~= nil then
+			weapData[idx] = NewEntity(weapOwner, weapon.image, "Projectile", weapon.class)
+		else
+			weapData[idx] = NewEntity(weapOwner, weapon.fileName, "Projectile", weapon.class)
+		end
+		
+		weapData[idx].start = mode_manager.time()
+		
+		if weapon.class == "beam" then
+			-- [ADAM, FIX] this piece of code is a hack, it relies on what little weapons we have right now to make the assumption
+			if weapOwner.switch == true then
+				weapData[idx].physicsObject.position = {
+				x = weapOwner.physicsObject.position.x + math.cos(weapData[idx].physicsObject.angle + 0.17) * (weapon.length - 3),
+				y = weapOwner.physicsObject.position.y + math.sin(weapData[idx].physicsObject.angle + 0.17) * (weapon.length - 3) }
+				weapOwner.switch = false
+			else
+				weapData[idx].physicsObject.position = {
+				x = weapOwner.physicsObject.position.x + math.cos(weapData[idx].physicsObject.angle - 0.17) * (weapon.length - 3),
+				y = weapOwner.physicsObject.position.y + math.sin(weapData[idx].physicsObject.angle - 0.17) * (weapon.length - 3) }
+				weapOwner.switch = true
+			end
+		elseif weapon.class == "pulse" then
+			return
+		elseif weapon.class == "special" then
+			if computerShip ~= nil then
+				weapData[idx].dest = {
+					x = computerShip.physicsObject.position.x,
+					y = computerShip.physicsObject.position.y
+				}
+				weapData[idx].isSeeking = true
+			else
+				weapData[idx].isSeeking = false
+			end
+		elseif weapon.class == nil then
+			LogError("Projectile '" .. entType .. "' has no class.", 12)
+		else
+			LogError("Unknown projectile class '" .. entClass .. "'", 11)
+		end
+	end
+end
+
+function WeaponUpdate(weapon, weapData, weapOwner)
+-- handling for existing weapons and projectiles
+	local idx
+	for idx=1, #weapData do
+		if weapData[idx] ~= nil then
+			if weapData[idx].physicsObject == nil then
+				-- this object needs to be deleted, probably the initializing table
+				table.remove(weapData, idx)
+				idx = idx - 1 --If we don't do this then the next element in the table will be skipped
+			else
+				if computerShip ~= nil then
+					local x = computerShip.physicsObject.position.x - weapData[idx].physicsObject.position.x
+					local y = computerShip.physicsObject.position.y - weapData[idx].physicsObject.position.y
+					-- put in real collision code here [ALISTAIR, DEMO2]
+					if hypot (x, y) <= computerShip.physicsObject.collision_radius * 2 / 7 then
+						ProjectileCollision(weapData, idx, weapon, computerShip)
+						return
+					end
+				end
+				if mode_manager.time() - weapData[idx].start >= weapon.life then
+					table.remove(weapData, idx)
+					idx = idx - 1
+					
+					if #weapData ~= 0 then
+						weapon.fired = true
+					else
+						weapon.fired = false
+					end
+				end
+			end
+		end
+	end
 end

@@ -8,15 +8,6 @@ function NewEntity (entOwner, entName, entType, entDir, entSubdir, other)
 	local entObject = { type = entType, size = {} }
 ---- if it's a projectile, make sure that it's not cost-prohibitive
 	if entType == "Projectile" then
-		if entDir == "beam" then
-			if entOwner.battery.level < entOwner[entDir].cost then
-				return
-			end
-		elseif entDir == "special" then
-			if entOwner.special.ammo == 0 then
-				return
-			end
-		end
 		entType = "Weapon"
 	end
 ---- create entName for identification purposes
