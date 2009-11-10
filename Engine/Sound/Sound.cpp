@@ -5,6 +5,7 @@
 #include <SDL_mixer/SDL_mixer.h>
 #endif
 #include <SDL/SDL.h>
+#include <queue>
 
 #include <map>
 #include <math.h>
@@ -19,15 +20,17 @@ namespace Internal
 
 typedef std::map<std::string, Mix_Chunk*> EffectsMap;
 typedef std::map<std::string, Mix_Music*> MusicMap;
+std::queue<std::string> preloadQueue;
 EffectsMap effects;
 MusicMap musics;
 
-void ClearSoundAndMusic ()
-{
-}
+SDL_mutex* effectMapLock = NULL;
+SDL_mutex* preloadQueueLock = NULL;
+SDL_cond* preloadQueueCondition = NULL;
 
 Mix_Chunk* SoundNamed ( const std::string& name )
 {
+	SDL_LockMutex(effectMapLock);
 	EffectsMap::iterator iter = effects.find(name);
 	if (iter == effects.end())
 	{
@@ -39,14 +42,31 @@ Mix_Chunk* SoundNamed ( const std::string& name )
 		{
             LOG("Sound", LOG_WARNING, "Decoding sound '%s' failed! Error: %s", name.c_str(), Mix_GetError());
 			effects[name] = NULL;
+			SDL_UnlockMutex(effectMapLock);
 			return NULL;
 		}
 		effects[name] = newChunk;
+		SDL_UnlockMutex(effectMapLock);
 		return newChunk;
 	}
 	else
 	{
+		SDL_UnlockMutex(effectMapLock);
 		return iter->second;
+	}
+}
+
+void PreloadingThread ()
+{
+	SDL_LockMutex(preloadQueueLock);
+	while (SDL_CondWait(preloadQueueCondition, preloadQueueLock))
+	{
+		while (!preloadQueue.empty())
+		{
+			std::string nextSound = preloadQueue.front();
+			preloadQueue.pop();
+			SoundNamed(nextSound); 
+		}
 	}
 }
 
@@ -124,6 +144,17 @@ void Init ( int frequency, int resolution, int sources )
 	Mix_Volume(-1, volume_sound);
 	if (getenv("APOLLO_MUSIC_DISABLE"))
 		disable_music = true;
+	effectMapLock = SDL_CreateMutex();
+	preloadQueueLock = SDL_CreateMutex();
+	preloadQueueCondition = SDL_CreateCond();
+}
+
+void Preload ( const std::string& name )
+{
+	SDL_LockMutex(preloadQueueLock);
+	preloadQueue.push(name);
+	SDL_UnlockMutex(preloadQueueLock);
+	SDL_CondSignal(preloadQueueCondition);
 }
 
 void PlaySoundSDL ( const std::string& name, float gain, float pan )
@@ -140,7 +171,6 @@ void PlaySoundSDL ( const std::string& name, float gain, float pan )
 	if (fabs(gain - 1.0f) > 0.0003f)
 		Mix_SetDistance(channel, 1 / gain);
 	Mix_PlayChannel(channel, chunk, 0);
-	songName = "(no song)";
 }
 
 void PlayMusic ( const std::string& music )

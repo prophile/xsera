@@ -15,6 +15,12 @@ namespace Sound
 void Init ( int frequency, int resolution, int sources );
 
 /**
+ * Preloads a sound
+ *
+ * @param name The name of the sound to preload
+ */
+void Preload ( const std::string& name );
+/**
  * Plays a sound
  * @param name The name of the sound
  * @param gain The gain of the sound. 1 is normal gain, 2 is twice as loud, et cetera.

@@ -1,2 +1,15 @@
 -- Play some music
 sound.play_music("Doomtroopers")
+-- Preload many sounds
+sound.preload("ComboBeep")
+sound.preload("ExplosionCombo")
+sound.preload("ISpaceWoosh")
+sound.preload("ITeletype")
+sound.preload("NaughtyBeep")
+sound.preload("Warp1")
+sound.preload("Warp2")
+sound.preload("Warp3")
+sound.preload("Warp4")
+sound.preload("WarpIn")
+sound.preload("WarpOut")
+sound.preload("ZoomChange")

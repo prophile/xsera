@@ -1378,6 +1378,13 @@ int Sound_Play ( lua_State* L )
     return 0;
 }
 
+int Sound_Preload ( lua_State* L )
+{
+	const char* sound = luaL_checkstring(L, 1);
+	Sound::Preload(sound);
+	return 0;
+}
+
 int Sound_PlayMusic ( lua_State* L )
 {
     const char* mus = luaL_checkstring(L, 1);
@@ -1432,6 +1439,7 @@ int Sound_CurrentMusic ( lua_State* L )
 luaL_Reg registrySound[] =
 {
     "play", Sound_Play,
+    "preload", Sound_Preload,
     "play_music", Sound_PlayMusic,
     "stop_music", Sound_StopMusic,
     "current_music", Sound_CurrentMusic,
