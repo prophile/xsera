@@ -1,3 +1,5 @@
+#extension GL_ARB_texture_rectangle : require
+
 varying vec2 V;
 varying vec2 TX;
 uniform vec2 Target;
