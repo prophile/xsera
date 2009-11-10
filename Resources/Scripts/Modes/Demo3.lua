@@ -484,10 +484,10 @@ end
 function render ()
     graphics.begin_frame()
     local warpStatus = 0.0
-    if playerShip.warp.stage == 1 then
+    if playerShip.warp.stage == "warping" then
     	warpStatus = 1.0
-    elseif playerShip.warp.stage == 5 or playerShip.warp.stage == 6 then
-    	warpStatus = playerShip.warp.time / 2.0
+    elseif playerShip.warp.stage == "spooling" then
+    	warpStatus = playerShip.warp.time / 0.8
     	if warpStatus > 1.0 then
     		warpStatus = 1.0
     	end

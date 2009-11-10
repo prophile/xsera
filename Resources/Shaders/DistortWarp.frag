@@ -9,7 +9,7 @@ uniform sampler2DRect sampler;
 const float TEXELDIST = 20.0;
 const float MAGFACTOR = 5.0;
 const float CONSTANTDIST = -1.0;
-const float DISTEXPONENT = 0.7;
+const float DISTEXPONENT = 0.3;
 
 const float PI = 3.14159265;
 const float TWOPI  = PI * 2.0;
