@@ -78,18 +78,17 @@ function StopFireWeapSpecial()
 end
 
 function DoWarp()
-	if playerShip.warp.stage == 7 then
-		playerShip.warp.stage = 1
-		sound.play("Warp1")
+	if playerShip.warp.stage == "notWarping" then
+		playerShip.warp.stage = "spooling"
+	--	sound.play("Warp1")
 	end
 end
 
 function StopWarp()
-	if playerShip.warp.stage == 5 then
-		playerShip.warp.enterWarp = false;
-		playerShip.warp.stage = 6
+	if playerShip.warp.stage == "warping" then
+		playerShip.warp.stage = "cooldown"
 	else
-		playerShip.warp.stage = 7
+		playerShip.warp.stage = "notWarping"
 	end
 	playerShip.warp.time = 0.0
 end

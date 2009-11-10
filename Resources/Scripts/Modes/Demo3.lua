@@ -154,29 +154,30 @@ function update ()
 	Warping Code
 ------------------]]-- it's a pair of lightsabers!
 	
-	if playerShip.warp.stage ~= 7 then
+	if playerShip.warp.stage ~= "notWarping" then
 		playerShip.warp.time = playerShip.warp.time + dt
 		
-		if playerShip.warp.stage >= 1 and playerShip.warp.stage <= 4 then
-			if math.floor(playerShip.warp.time / soundLength) > playerShip.warp.stage then
-				playerShip.warp.stage = playerShip.warp.stage + 1
-				if playerShip.warp.stage ~= 5 then
-					sound.play("Warp" .. playerShip.warp.stage)
+		if playerShip.warp.stage == "spooling" then
+			if math.ceil(playerShip.warp.time / soundLength) > playerShip.warp.lastPlayed then
+				playerShip.warp.lastPlayed = playerShip.warp.lastPlayed + 1
+				if playerShip.warp.lastPlayed ~= 5 then
+					sound.play("Warp" .. playerShip.warp.lastPlayed)
+				else
+					playerShip.warp.stage = "warping"
+					sound.play("WarpIn")
+					playerShip.warp.lastPlayed = 0
 				end
 			end
-		elseif playerShip.warp.stage == 5 then
-			if playerShip.warp.enterWarp == false then
-				playerShip.warp.enterWarp = true
-				sound.play("WarpIn")
-			end
+		end
+		if playerShip.warp.stage == "warping" then
 			playerShip.warp.time = 0.0
 			playerShip.physicsObject.velocity = { x = playerShip.warpSpeed * math.cos(playerShip.physicsObject.angle), y = playerShip.warpSpeed * math.sin(playerShip.physicsObject.angle) }
-		elseif playerShip.warp.stage == 6 then
+		elseif playerShip.warp.stage == "cooldown" then
 			-- need to work on this [ADAM]
 			sound.play("WarpOut")
-			-- these lines instantly warp the ship out
+			-- these lines instantly warp the ship out (might as well just go to "notWarping")
 			playerShip.physicsObject.velocity = { x = playerShip.maxSpeed * normalize(playerShip.physicsObject.velocity.x, playerShip.physicsObject.velocity.y), y = playerShip.maxSpeed * normalize(playerShip.physicsObject.velocity.y, playerShip.physicsObject.velocity.x) }
-			playerShip.warp.stage = playerShip.warp.stage + 1
+			playerShip.warp.stage = "notWarping"
 		end
 	elseif hypot (playerShip.physicsObject.velocity.x, playerShip.physicsObject.velocity.y) > playerShip.maxSpeed then
 		playerShip.physicsObject.velocity = { x = playerShip.maxSpeed * normalize(playerShip.physicsObject.velocity.x, playerShip.physicsObject.velocity.y), y = playerShip.maxSpeed * normalize(playerShip.physicsObject.velocity.y, playerShip.physicsObject.velocity.x) }
