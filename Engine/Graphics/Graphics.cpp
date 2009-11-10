@@ -98,6 +98,8 @@ using namespace Shaders;
 
 int scw, sch;
 
+bool haveFBO = false;
+
 /*
  Other files can use:
  
@@ -225,6 +227,9 @@ void Init ( int w, int h, bool fullscreen )
 #endif
 	
 	glEnableClientState ( GL_VERTEX_ARRAY );
+	
+	const char* extensions = (const char*)glGetString(GL_EXTENSIONS);
+	haveFBO = strstr(extensions, "GL_EXT_framebuffer_object");
 }
 
 static bool texturingEnabled = false;
@@ -627,6 +632,57 @@ void EndFrame ()
 	SDL_GL_SwapBuffers();
 #endif
 	TextRenderer::Prune();
+}
+
+static GLuint warpFBO = 0;
+static GLuint warpTex = 0;
+static float warpMag = 0.0f;
+static float warpAngle = 0.0f;
+static const float WARP_MAG_THRESHOLD = 0.001f;
+
+void BeginWarp ( float magnitude, float angle )
+{
+	if (!haveFBO)
+		return;
+	warpMag = magnitude;
+	warpAngle = angle;
+	if (magnitude < WARP_MAG_THRESHOLD)
+		return;
+	if (warpFBO == 0)
+	{
+		glGenFramebuffersEXT(1, &warpFBO);
+		glGenTextures(1, &warpTex);
+		glBindFramebufferEXT(GL_FRAMEBUFFER_EXT, warpFBO);
+		glBindTexture(GL_TEXTURE_RECTANGLE_ARB, warpTex);
+		glTexImage2D(GL_TEXTURE_RECTANGLE_ARB, 0, GL_RGBA8, scw, sch, 0, GL_RGBA, GL_UNSIGNED_BYTE, NULL);
+		glFramebufferTexture2DEXT(GL_FRAMEBUFFER_EXT, GL_COLOR_ATTACHMENT0_EXT, GL_TEXTURE_RECTANGLE_ARB, warpTex, 0);
+		GLuint status = glCheckFramebufferStatusEXT(GL_FRAMEBUFFER_EXT);
+		assert(status == GL_FRAMEBUFFER_COMPLETE_EXT);
+	}
+	else
+	{
+		glBindFramebufferEXT(GL_FRAMEBUFFER_EXT, warpFBO);
+	}
+	glClear(GL_COLOR_BUFFER_BIT);
+}
+
+void EndWarp ()
+{
+	if (!haveFBO || warpMag < WARP_MAG_THRESHOLD)
+		return;
+	glBindFramebufferEXT(GL_FRAMEBUFFER_EXT, 0);
+	glBindTexture(GL_TEXTURE_RECTANGLE_ARB, warpTex);
+	Shaders::SetShader("DistortWarp");
+	glUniform1f(Shaders::UniformLocation("Angle"), warpAngle);
+	glUniform1f(Shaders::UniformLocation("Magnitude"), warpMag);
+	glUniform2f(Shaders::UniformLocation("Target"), 0.088f, 0.0f);
+	const GLfloat vertices[] = { -1.0f, -1.0f, 1.0f, -1.0f, 1.0f, 1.0f, -1.0f, 1.0f };
+	const GLfloat texCoords[] = { 0.0f, 0.0f, scw, 0.0f, scw, sch, 0.0f, sch };
+	glVertexPointer(2, GL_FLOAT, 0, vertices);
+	glTexCoordPointer(2, GL_FLOAT, 0, texCoords);
+	EnableTexturing();
+	DisableBlending();
+	glDrawArrays(GL_QUADS, 0, 4);
 }
 
 }

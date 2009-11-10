@@ -482,6 +482,18 @@ end
 
 function render ()
     graphics.begin_frame()
+    local warpStatus = 0.0
+    if playerShip.warp.stage == 1 then
+    	warpStatus = 1.0
+    elseif playerShip.warp.stage == 5 or playerShip.warp.stage == 6 then
+    	warpStatus = playerShip.warp.time / 2.0
+    	if warpStatus > 1.0 then
+    		warpStatus = 1.0
+    	end
+    else
+    	warpStatus = 0.0
+    end
+    graphics.begin_warp(warpStatus, (2.5*math.pi) - math.atan2(playerShip.physicsObject.velocity.x, playerShip.physicsObject.velocity.y))
 	-- extract camera coordinates from here during update() and place finalized numbers here
 	graphics.set_camera(-playerShip.physicsObject.position.x + shipAdjust - (camera.w / 2.0), -playerShip.physicsObject.position.y - (camera.h / 2.0), -playerShip.physicsObject.position.x + shipAdjust + (camera.w / 2.0), -playerShip.physicsObject.position.y + (camera.h / 2.0))
 	graphics.draw_starfield(3.4)
@@ -588,11 +600,6 @@ function render ()
 			num = num + 1
 		end
 	end
-	if cameraRatio > 1 / 8 then
-		graphics.draw_sprite(playerShip.image, playerShip.physicsObject.position.x, playerShip.physicsObject.position.y, playerShip.size.x, playerShip.size.y, playerShip.physicsObject.angle)
-	else
-		graphics.draw_rtri(playerShip.physicsObject.position.x, playerShip.physicsObject.position.y, 60)
-	end
 	
 --[[------------------
 	PKBeam Firing
@@ -621,6 +628,14 @@ function render ()
 			end
 			wNum = wNum + 1
 		end
+	end
+	
+    graphics.end_warp()
+    
+    if cameraRatio > 1 / 8 then
+		graphics.draw_sprite(playerShip.image, playerShip.physicsObject.position.x, playerShip.physicsObject.position.y, playerShip.size.x, playerShip.size.y, playerShip.physicsObject.angle)
+	else
+		graphics.draw_rtri(playerShip.physicsObject.position.x, playerShip.physicsObject.position.y, 60)
 	end
 	
 --[[------------------

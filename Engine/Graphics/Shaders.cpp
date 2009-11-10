@@ -130,6 +130,11 @@ void SetShader ( const std::string& name )
 	}
 }
 
+GLuint UniformLocation ( const std::string& name )
+{
+	return glGetUniformLocation(currentShader, name.c_str());
+}
+
 }
 
 }

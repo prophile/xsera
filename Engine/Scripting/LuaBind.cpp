@@ -1229,6 +1229,20 @@ int GFX_DrawSpriteFromSheet ( lua_State* L )
 	return 0;
 }
 
+int GFX_BeginWarp ( lua_State* L )
+{
+	float magnitude = luaL_checknumber(L, 1);
+	float angle = luaL_checknumber(L, 2);
+	Graphics::BeginWarp(magnitude, angle);
+	return 0;
+}
+
+int GFX_EndWarp ( lua_State* L )
+{
+	Graphics::EndWarp();
+	return 0;
+}
+
 /**
  * @page lua_graphics The Lua Graphics Registry
  * This page contains information about the Lua graphics registry.
@@ -1344,6 +1358,8 @@ luaL_Reg registryGraphics[] =
 	"draw_rdia", GFX_DrawRadarDiamond,
 	"draw_circle", GFX_DrawCircle,
 	"is_culled", GFX_IsCulled,
+	"begin_warp", GFX_BeginWarp,
+	"end_warp", GFX_EndWarp,
     NULL, NULL
 };
 

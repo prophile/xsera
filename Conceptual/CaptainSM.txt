@@ -1,0 +1,111 @@
+Captain pseudocode:
+
+Initial: state = IDLE
+         passiveState = IDLE
+
+switch (state)
+	case GOTO:
+		if (nearby_enemy())
+			passiveState = GOTO
+			state = combatShip ? COMBAT_NA : HIDE
+			targetCraft = nearby_enemy()
+		else
+			if (near_to(gotoDestination))
+				state = IDLE
+			else
+				head_to(gotoDestination)
+	
+	case PRIO_GOTO: 
+  		if (near_to(gotoDestination))
+			state = IDLE
+		else
+			head_to(gotoDestination)
+	
+	case INTERCEPT:
+		if (!combatShip)
+			state = passiveState
+		else if (!targetCraft.alive)
+			state = passiveState
+		else if (near_to(targetCraft.location))
+			state = COMBAT_A
+		else
+			temp ownSpeed = |self.velocity|
+			temp targetSpeed = |targetCraft.velocity|
+			temp targetAngle = targetCraft.velocity / targetSpeed
+			temp distance = |targetCraft.location - self.location|
+			temp coverageTime = distance / ownSpeed
+			temp offset = coverageTime * targetSpeed
+			head_to(targetCraft.location + (targetAngle * offset))
+	
+	case CHASE:
+		if (!combatShip)
+			state = passiveState
+		else if (!targetCraft.alive)
+			state = passiveState
+		else if (near_to(targetCraft.location))
+			state = COMBAT_A
+		else
+			head_to(targetCraft.location)
+	
+	case HOLD:
+		if (nearby_enemy() && combatShip)
+			passiveState = HOLD
+			targetCraft = nearby_enemy()
+			state = COMBAT_NA
+		else
+			// do nothing
+	
+	case ESCORT:
+		if (nearby_enemy() && combatShip)
+			passiveState = ESCORT
+			targetCraft = nearby_enemy()
+			state = COMBAT_NA
+		else
+			if (!escortTarget.alive)
+				head_to(escortTarget.location)
+			else
+				state = IDLE
+	
+	case IDLE:
+		if (nearby_enemy())
+			passiveState = IDLE
+			targetCraft = nearby_enem()
+			state = combatShip ? COMBAT_A : HIDE
+		else
+			// do nothing
+	
+	case HIDE:
+		fire_defensive_weapons();
+		if (!closeish_enemy())
+			clear(hideTarget)
+			state = passiveState
+		else
+			if (isset(hideTarget))
+				head_to(hideTarget)
+			else
+				do
+					hideTarget = pick_random_location()
+				while (nearby_enemies_to(hideTarget))
+	
+	case COMBAT_A:
+	case COMBAT_NA:
+		temp isAggressive = state == COMBAT_A
+		if (!targetCraft.alive)
+			state = passiveState
+		else if (health < isAggressive ? 0.1 : 0.2)
+			state = HIDE
+		else if (|targetCraft.location - self.location| > NEARBY_DISTANCE)
+			if (isAggressive)
+				state = CHASE
+			else
+				state = passiveState
+		else
+			if (offensive_weapons_reloading())
+				if (health < 0.9)
+					fire_defensive_weapons()
+				head_to(targetCraft.location - targetCraft.velocity)
+			else
+				head_to(targetCraft.location)
+					if (|targetCraft.location - self.location| < offensive_weapons_range())
+						fire_offensive_weapons()
+		
