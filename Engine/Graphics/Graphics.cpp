@@ -7,6 +7,8 @@
 #endif
 #include <SDL/SDL.h>
 
+//#define DISABLE_WARP_EFFECTS
+
 #include "Apollo.h"
 #include "Graphics.h"
 #include "SpriteSheet.h"
@@ -642,6 +644,7 @@ static const float WARP_MAG_THRESHOLD = 0.001f;
 
 void BeginWarp ( float magnitude, float angle )
 {
+#ifndef DISABLE_WARP_EFFECTS
 	if (!haveFBO)
 		return;
 	warpMag = magnitude;
@@ -664,10 +667,12 @@ void BeginWarp ( float magnitude, float angle )
 		glBindFramebufferEXT(GL_FRAMEBUFFER_EXT, warpFBO);
 	}
 	glClear(GL_COLOR_BUFFER_BIT);
+#endif
 }
 
 void EndWarp ()
 {
+#ifndef DISABLE_WARP_EFFECTS
 	if (!haveFBO || warpMag < WARP_MAG_THRESHOLD)
 		return;
 	glBindFramebufferEXT(GL_FRAMEBUFFER_EXT, 0);
@@ -683,6 +688,7 @@ void EndWarp ()
 	EnableTexturing();
 	DisableBlending();
 	glDrawArrays(GL_QUADS, 0, 4);
+#endif
 }
 
 }
