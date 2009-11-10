@@ -196,7 +196,7 @@ function NewEntity (entOwner, entName, entType, entDir, entSubdir, other)
 			entObject.special = NewEntity(nil, trueData.specialname, "Weapon", "Special")
 			entObject.specialWeap = { { {} } }
 		end
-		entObject.warp = { stage = 7, enterWarp = false, time = 0.0 }
+		entObject.warp = { stage = "notWarping", lastPlayed = 0, time = 0.0 }
 		entObject.switch = true -- [HARDCODED]
 		entObject.type = "Ship"
 	else
