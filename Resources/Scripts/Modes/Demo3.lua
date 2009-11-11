@@ -170,14 +170,16 @@ function update ()
 			end
 		end
 		if playerShip.warp.stage == "warping" then
-			playerShip.warp.time = 0.0
 			playerShip.physicsObject.velocity = { x = playerShip.warpSpeed * math.cos(playerShip.physicsObject.angle), y = playerShip.warpSpeed * math.sin(playerShip.physicsObject.angle) }
 		elseif playerShip.warp.stage == "cooldown" then
-			-- need to work on this [ADAM]
-			sound.play("WarpOut")
-			-- these lines instantly warp the ship out (might as well just go to "notWarping")
-			playerShip.physicsObject.velocity = { x = playerShip.maxSpeed * normalize(playerShip.physicsObject.velocity.x, playerShip.physicsObject.velocity.y), y = playerShip.maxSpeed * normalize(playerShip.physicsObject.velocity.y, playerShip.physicsObject.velocity.x) }
-			playerShip.warp.stage = "notWarping"
+			slowDownTime = 2 -- [HARDCODE]
+			if (playerShip.warp.time < slowDownTime) then
+				playerShip.physicsObject.velocity = { x = (playerShip.maxSpeed + (playerShip.warpSpeed - playerShip.maxSpeed) * (slowDownTime - playerShip.warp.time) / slowDownTime) * normalize(playerShip.physicsObject.velocity.x, playerShip.physicsObject.velocity.y), y = (playerShip.maxSpeed + (playerShip.warpSpeed - playerShip.maxSpeed) * (slowDownTime - playerShip.warp.time) / slowDownTime) * normalize(playerShip.physicsObject.velocity.y, playerShip.physicsObject.velocity.x) }
+			else
+				sound.play("WarpOut")
+				playerShip.physicsObject.velocity = { x = playerShip.maxSpeed * normalize(playerShip.physicsObject.velocity.x, playerShip.physicsObject.velocity.y), y = playerShip.maxSpeed * normalize(playerShip.physicsObject.velocity.y, playerShip.physicsObject.velocity.x) }
+				playerShip.warp.stage = "notWarping"
+			end
 		end
 	elseif hypot (playerShip.physicsObject.velocity.x, playerShip.physicsObject.velocity.y) > playerShip.maxSpeed then
 		playerShip.physicsObject.velocity = { x = playerShip.maxSpeed * normalize(playerShip.physicsObject.velocity.x, playerShip.physicsObject.velocity.y), y = playerShip.maxSpeed * normalize(playerShip.physicsObject.velocity.y, playerShip.physicsObject.velocity.x) }
@@ -204,13 +206,13 @@ function update ()
         playerShip.physicsObject.angular_velocity = 0
     end
 	
-	if keyboard[1][2].active == true then
+	if keyboard[1][2].active == true and playerShip.warp.stage == "notWarping" then
         -- apply a forward force in the direction the ship is facing
         local angle = playerShip.physicsObject.angle
         local thrust = playerShip.thrust
         local force = { x = thrust * math.cos(angle), y = thrust * math.sin(angle) }
 		playerShip.physicsObject:apply_force(force)
-	elseif keyboard[1][3].active == true then
+	elseif keyboard[1][3].active == true and playerShip.warp.stage == "notWarping" then
         -- apply a reverse force in the direction opposite the direction the ship is MOVING
         local force = playerShip.physicsObject.velocity
 		if force.x ~= 0 or force.y ~= 0 then
