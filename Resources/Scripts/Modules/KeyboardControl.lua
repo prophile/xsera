@@ -91,6 +91,7 @@ function StopWarp()
 		playerShip.warp.stage = "notWarping"
 	end
 	playerShip.warp.time = 0.0
+	playerShip.warp.lastPlayed = 0
 end
 
 	--[[-----------
