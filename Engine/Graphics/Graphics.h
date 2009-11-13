@@ -111,13 +111,14 @@ void DrawParticles ( const vec2* positions, unsigned int count, colour col );
 void DrawStarfield ( float depth );
 /**
  * Draws a 3D object for ambient lighting
+ * @param name The name of the object
  * @param centre The centre of the object
  * @param ambient The ambient colour
  * @param scale The scale of the object
  * @param angle The angle of the object
  * @param bank The bank of the object
  */
-void DrawObject3DAmbient ( vec2 centre, colour ambient, float scale, float angle, float bank = 0.0f );
+void DrawObject3DAmbient ( std::string name, vec2 centre, colour ambient, float scale, float angle, float bank = 0.0f );
 /**
  * Draws a 3D object for directional lighting
  * @param centre The centre of the object
@@ -127,7 +128,7 @@ void DrawObject3DAmbient ( vec2 centre, colour ambient, float scale, float angle
  * @param angle The angle of the object
  * @param bank The bank of the object
  */
-void DrawObject3DDirectional ( vec2 centre, colour light, float lightAngle, float scale, float angle, float bank = 0.0f );
+void DrawObject3DDirectional ( std::string name, vec2 centre, colour light, float lightAngle, float scale, float angle, float bank = 0.0f );
 /**
  * Draws a 3D object for directional lighting
  * @param centre The centre of the object
@@ -138,7 +139,7 @@ void DrawObject3DDirectional ( vec2 centre, colour light, float lightAngle, floa
  * @param angle The angle of the object
  * @param bank The bank of the object
  */
-void DrawObject3DSpot ( vec2 centre, colour light, vec2 lightCentre, float lightRadius, float scale, float angle, float bank = 0.0f );
+void DrawObject3DSpot ( std::string name, vec2 centre, colour light, vec2 lightCentre, float lightRadius, float scale, float angle, float bank = 0.0f );
 /**
  * Draws a 3D object for glow lighting
  * @param centre The centre of the object
@@ -147,7 +148,7 @@ void DrawObject3DSpot ( vec2 centre, colour light, vec2 lightCentre, float light
  * @param angle The angle of the object
  * @param bank The bank of the object
  */
-void DrawObject3DAmbient ( vec2 centre, float glow, float scale, float angle, float bank = 0.0f );
+void DrawObject3DGlow ( std::string name, vec2 centre, float glow, float scale, float angle, float bank = 0.0f );
 
 /**
  * Gives the aspect ratio of the screen

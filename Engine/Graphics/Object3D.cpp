@@ -79,7 +79,8 @@ void StripComments ( std::string& line )
 bool ReadLine ( SDL_RWops* ops, std::string& line )
 {
 	char inputCharacter;
-	while (SDL_RWread(ops, &inputCharacter, 1, 1) >= 0)
+	line.assign("");
+	while (SDL_RWread(ops, &inputCharacter, 1, 1) > 0)
 	{
 		if (inputCharacter == '\r')
 		{
@@ -91,13 +92,12 @@ bool ReadLine ( SDL_RWops* ops, std::string& line )
 			StripComments(line);
 			if (line == "") // if it's a dead line, recurse to get the next line
 				return ReadLine(ops, line);
-			else
-				return true;
+			return true;
 		}
 		line.push_back(inputCharacter);
 	}
 	StripComments(line);
-	return line.length() >= 0;
+	return line.length() > 0;
 }
 
 std::string PopWord ( std::string& string, char separator = ' ' )

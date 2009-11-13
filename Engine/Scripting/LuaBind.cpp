@@ -1111,6 +1111,21 @@ int GFX_DrawRadarDiamond ( lua_State* L )
 	return 0;
 }
 
+int GFX_DrawObject3DAmbient ( lua_State* L )
+{
+	std::string object = luaL_checkstring(L, 1);
+	float x = luaL_checknumber(L, 2);
+	float y = luaL_checknumber(L, 3);
+	float r = luaL_checknumber(L, 4);
+	float g = luaL_checknumber(L, 5);
+	float b = luaL_checknumber(L, 6);
+	float scale = luaL_checknumber(L, 7);
+	float angle = luaL_checknumber(L, 8);
+	float bank = luaL_optnumber(L, 9, 0.0);
+	Graphics::DrawObject3DAmbient(object, vec2(x, y), colour(r, g, b), scale, angle, bank);
+	return 0;
+}
+
 int GFX_DrawCircle ( lua_State* L )
 {
 	int nargs = lua_gettop(L);
@@ -1360,6 +1375,7 @@ luaL_Reg registryGraphics[] =
 	"is_culled", GFX_IsCulled,
 	"begin_warp", GFX_BeginWarp,
 	"end_warp", GFX_EndWarp,
+	"draw_3d_ambient", GFX_DrawObject3DAmbient,
     NULL, NULL
 };
 

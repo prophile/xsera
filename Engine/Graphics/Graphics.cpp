@@ -19,6 +19,7 @@
 #include "Logging.h"
 #include "Utilities/Matrix2x3.h"
 #include "Shaders.h"
+#include "Object3D.h"
 
 #define DEG2RAD(x) ((x / 180.0f) * M_PI)
 #define RAD2DEG(x) ((x / M_PI) * 180.0f)
@@ -581,6 +582,37 @@ void DrawStarfield ( float depth )
 	Matrices::SetViewMatrix(matrix2x3::Identity());
 	Matrices::SetModelMatrix(matrix2x3::Identity());
 	starfields[starfieldNumber++]->Draw(depth, (cameraCorner1 + cameraCorner2) / 2.0f);
+}
+
+std::map<std::string, Object3D*> objects3d;
+
+static Object3D* GetObject3D ( std::string name )
+{
+	std::map<std::string, Object3D*>::iterator iter;
+	iter = objects3d.find(name);
+	if (iter == objects3d.end())
+	{
+		// load the object
+		Object3D* object = new Object3D(name);
+		objects3d.insert(std::make_pair(name, object));
+		return object;
+	}
+	else
+	{
+		return iter->second;
+	}
+}
+
+void DrawObject3DAmbient ( std::string name, vec2 centre, colour ambient, float scale, float angle, float bank )
+{
+	Object3D* obj = GetObject3D(name);
+	EnableTexturing();
+	DisableBlending();
+	obj->BindTextures();
+	glUniform3f(UniformLocation("Ambient"), ambient.red(), ambient.green(), ambient.blue());
+	SetShader("3DAmbient" + obj->ShaderType());
+	Matrices::SetViewMatrix(matrix2x3::Translate(centre));
+	obj->Draw(scale, angle, bank);
 }
 
 float AspectRatio ()
