@@ -4,6 +4,8 @@
 #include <string>
 #include <string.h>
 
+#include "eNetAdapt.h"
+
 namespace Net
 {
 
@@ -17,17 +19,25 @@ struct Message
 	size_t dataLength;
 };
 
-namespace Client
+class Client
 {
-
-void Connect ( const std::string& host, unsigned short port, const std::string& password );
-void Disconnect ();
-bool IsConnected ();
-
-void SendMessage ( const Message& msg );
-Message* GetMessage ();
-
-}
+private:
+	ENetHost* clientHost;
+	ENetPeer* clientPeer;
+	float badMessages[5];
+	unsigned int badMessageCount;
+	void BadMessage ();
+public:
+	Client ();
+	~Client ();
+	
+	void Connect ( const std::string& host, unsigned short port, const std::string& password );
+	void Disconnect ();
+	bool IsConnected ();
+	
+	void SendMessage ( const Message& msg );
+	Message* GetMessage ();
+};
 
 namespace Server
 {

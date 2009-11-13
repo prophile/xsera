@@ -404,105 +404,6 @@ int luaopen_physics ( lua_State* L )
 	return 1;
 }
 
-int NetClient_Connected ( lua_State* L )
-{
-	lua_pushboolean(L, Net::Client::IsConnected() ? 1 : 0);
-	return 1;
-}
-
-int NetClient_Connect ( lua_State* L )
-{
-	int nargs = lua_gettop(L);
-	const char* host = luaL_checkstring(L, 1);
-	unsigned port = luaL_checkint(L, 2);
-	luaL_argcheck(L, port < 65536 && port > 0, 2, "Invalid port number");
-	const char* password = "";
-	if (nargs > 2)
-	{
-		password = luaL_checkstring(L, 3);
-	}
-	Net::Client::Connect(host, port, password);
-	return 0;
-}
-
-int NetClient_Disconnect ( lua_State* L )
-{
-	Net::Client::Disconnect();
-	return 0;
-}
-
-int NetClient_SendMessage ( lua_State* L )
-{
-	int nargs = lua_gettop(L);
-	const char* message = luaL_checkstring(L, 1);
-	size_t len = 0;
-	const void* data = NULL;
-	if (nargs > 1)
-	{
-		data = luaL_checklstring(L, 2, &len);
-	}
-	Net::Message messageObject ( message, data, len );
-	Net::Client::SendMessage ( messageObject );
-	return 0;
-}
-
-int NetClient_GetMessage ( lua_State* L )
-{
-	Net::Message* msg = Net::Client::GetMessage();
-	if (msg)
-	{
-		lua_pushlstring(L, msg->message.data(), msg->message.length());
-		if (msg->data)
-		{
-			lua_pushlstring(L, (const char*)msg->data, msg->dataLength);
-		}
-		else
-		{
-			lua_pushnil(L);
-		}
-		delete msg;
-	}
-	else
-	{
-		lua_pushnil(L);
-		lua_pushnil(L);
-	}
-	return 2;
-}
-
-/**
- * @page lua_net_client The Lua Net Client Registry
- * This page contains information about the Lua net server registry.
- *
- * This registry contains functions related to playing on a multiplayer server. In Lua, they are all
- * called like so: "net_server.function_name()" (for example: "connected" becomes
- * "net_server.connected()").
- * 
- * Note: Somebody else will need to complete this registry, I don't know anything about it right now.
- * 
- * @section net_client_connected connected
- * 
- * @section connect
- * 
- * @section disconnect
- * 
- * @section net_client_send send
- * 
- * @section net_client_get get
- * 
- * @todo Complete the @ref lua_net_client registry.
- */
-
-luaL_Reg registryNetClient[] =
-{
-	"connected", NetClient_Connected,
-	"connect", NetClient_Connect,
-	"disconnect", NetClient_Disconnect,
-	"send", NetClient_SendMessage,
-	"get", NetClient_GetMessage,
-	NULL, NULL
-};
-
 int Pref_Get ( lua_State* L )
 {
 	const char* arg = luaL_checkstring(L, 1);
@@ -1655,7 +1556,6 @@ void __LuaBind ( lua_State* L )
     luaL_register(L, "resource_manager", registryResourceManager);
     luaL_register(L, "graphics", registryGraphics);
     luaL_register(L, "sound", registrySound);
-	luaL_register(L, "net_client", registryNetClient);
 	luaL_register(L, "preferences", registryPreferences);
 	luaL_register(L, "net_server", registryNetServer);
 	lua_cpcall(L, luaopen_physics, NULL);

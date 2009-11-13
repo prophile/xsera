@@ -1,24 +1,26 @@
 #include "Apollo.h"
-#include "enetadapt.h"
+#include "eNetAdapt.h"
 #include "Net.h"
 #include "MessageDecode.h"
+#include <assert.h>
 #include "Utilities/GameTime.h"
 
 namespace Net
 {
 
-namespace Client
-{
-
-ENetHost* clientHost = NULL;
-ENetPeer* clientPeer = NULL;
-
 const uint32_t CLIENT_BANDWIDTH_LIMIT = 1024 * 16; // 16 kB/s
-static unsigned int badMessages[5]; // client equivalent of server badMessage
-static unsigned int badMessageCount = 0; // client equivalent of badMessageCount
-static int lm_time = 0;
-	
-void Connect ( const std::string& host, unsigned short port, const std::string& password )
+
+Client::Client ()
+: clientHost(NULL), clientPeer(NULL), badMessageCount(0)
+{
+}
+
+Client::~Client ()
+{
+	assert(!IsConnected());
+}
+
+void Client::Connect ( const std::string& host, unsigned short port, const std::string& password )
 {
 	if (clientHost)
 	{
@@ -32,7 +34,7 @@ void Connect ( const std::string& host, unsigned short port, const std::string& 
 	assert(clientPeer);
 }
 
-void Disconnect ()
+void Client::Disconnect ()
 {
 	if (clientHost)
 	{
@@ -44,12 +46,12 @@ void Disconnect ()
 	}
 }
 
-bool IsConnected ()
+bool Client::IsConnected ()
 {
 	return clientHost != NULL;
 }
 
-void SendMessage ( const Message& msg )
+void Client::SendMessage ( const Message& msg )
 {
 	if (!clientPeer)
 		return;
@@ -57,13 +59,13 @@ void SendMessage ( const Message& msg )
 	enet_peer_send(clientPeer, 0, packet);
 }
 
-void BadMessage()
+void Client::BadMessage()
 {
-		unsigned int currentTime = (unsigned int)GameTime();
+		float currentTime = GameTime();
 		
 		if(badMessageCount > 1) 
 		{
-			if( (currentTime - badMessages[badMessageCount]) < 10 || badMessageCount >= 4 ) 
+			if( (currentTime - badMessages[badMessageCount]) < 10.0f || badMessageCount >= 4 ) 
 			{
                 // kick on 5th bad message or 2nd in 10 seconds
 				Disconnect();
@@ -74,7 +76,7 @@ void BadMessage()
 		}
 }
 	
-Message* GetMessage ()
+Message* Client::GetMessage ()
 {
 	ENetEvent event;
 	if (enet_host_service(clientHost, &event, 0))
@@ -102,8 +104,6 @@ Message* GetMessage ()
 	{
 		return NULL;
 	}
-}
-
 }
 
 }
