@@ -107,13 +107,6 @@ void DrawTriangle ( const vec2 point1, const vec2 point2, const vec2 point3, col
  */
 void DrawDiamond ( float top, float left, float bottom, float right, colour col );
 /**
- * Draws some particles
- * @param positions The positions of the particles
- * @param count How many particles there are
- * @param col The colour of the particles
- */
-void DrawParticles ( const vec2* positions, unsigned int count, colour col );
-/**
  * Draws a star-field that covers the whole screen
  * @param depth The depth of the star-field, for parallax
  */

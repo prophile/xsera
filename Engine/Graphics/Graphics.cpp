@@ -608,25 +608,6 @@ void DrawDiamond ( float top, float left, float bottom, float right, colour col 
 	glDrawArrays(GL_QUADS, 0, 4);
 } 
 
-void DrawParticles ( const vec2* positions, unsigned int count, colour col )
-{
-	SetShader("Primitive");
-	DisableTexturing();
-	if (col.alpha() < 1.0f)
-	{
-		EnableBlending();
-	}
-	else
-	{
-		DisableBlending();
-	}
-	Matrices::SetViewMatrix(matrix2x3::Identity());
-	Matrices::SetModelMatrix(matrix2x3::Identity());
-	glVertexPointer ( 2, GL_FLOAT, 0, positions );
-	SetColour(col);
-	glDrawArrays ( GL_POINTS, 0, count );
-}
-
 static vec2 cameraCorner1;
 static vec2 cameraCorner2;
 static float cameraRotation;
