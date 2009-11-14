@@ -3,6 +3,7 @@
 #include "input.h"
 
 #include "Logging.h"
+#include "Graphics.h"
 
 static AppMode* mode = NULL;
 static AppMode* nextMode = NULL;
@@ -51,6 +52,7 @@ public:
 	
 	virtual void HandleEvent ( const Input::Event& event )
 	{
+		vec2 mouseMapped = Graphics::MapPoint(event.mouse);
 		switch (event.type)
 		{
 			case Input::Event::KEYDOWN:
@@ -60,18 +62,16 @@ public:
 				script->InvokeSubroutine("keyup", event.object);
 				break;
 			case Input::Event::CLICK:
-				script->InvokeSubroutine("mouse", event.object, event.mouse.X(), event.mouse.Y());
+				script->InvokeSubroutine("mouse", event.object, mouseMapped.X(), mouseMapped.Y());
 				break;
 			case Input::Event::RELEASE:
-				script->InvokeSubroutine("mouse_up", event.object, event.mouse.X(), event.mouse.Y());
+				script->InvokeSubroutine("mouse_up", event.object, mouseMapped.X(), mouseMapped.Y());
 				break;
-			case Input::Event::MOUSEMOVE:
-				script->InvokeSubroutine("mouse_move", event.mouse.X(), event.mouse.Y());
-				break;
-			default: break;
 			case Input::Event::QUIT:
+				// TODO: interpret this better: maybe just handle it like an ESC?
 				exit(0);
 				break;
+			default: break;
 		}
 	}
 };

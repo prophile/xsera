@@ -143,8 +143,8 @@ bool lmbPressed = false;
 void UpdateMouse ( Sint16 px, Sint16 py )
 {
     SDL_Surface* screen = SDL_GetVideoSurface();
-    mousePosition.X() = screen->w / float(px);
-    mousePosition.Y() = 1.0f - (screen->h / float(py));
+    mousePosition.X() = float(px) / float(screen->w);
+    mousePosition.Y() = 1.0f - (float(py) / float(screen->h));
 }
 
 std::string MouseButtonName ( Uint32 button )
@@ -185,9 +185,8 @@ void Pump ()
                 events.push(new Event(Event::QUIT, "", mousePosition));
                 break;
             case SDL_MOUSEMOTION:
-                UpdateMouse(evt.motion.x, evt.motion.y);
-                events.push(new Event(Event::MOUSEMOVE, "", mousePosition));
-                break;
+            	UpdateMouse(evt.button.x, evt.button.y);
+            	break;
 			case SDL_MOUSEBUTTONDOWN:
 				UpdateMouse(evt.button.x, evt.button.y);
 				events.push(new Event(Event::CLICK, MouseButtonName(evt.button.button), mousePosition));
@@ -215,6 +214,11 @@ Event* Next ()
         events.pop();
         return currentEvent;
     }
+}
+
+vec2 MousePosition ()
+{
+	return mousePosition;
 }
 
 }

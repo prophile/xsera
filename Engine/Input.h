@@ -60,6 +60,10 @@ void Pump ();
  * @return A pointer to an Event. Do not delete this. The value is only defined until the next call to Input::Next
  */
 Event* Next ();
+/**
+ * Fetches the position of the mouse
+ */
+vec2 MousePosition ();
 
 }
 

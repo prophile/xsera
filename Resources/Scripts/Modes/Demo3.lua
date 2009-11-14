@@ -543,11 +543,12 @@ function render ()
 -- Console
 	PopDownConsole()
 -- Mouse
-	--[[ disabled for now
-	if mouseMovement == true then
+	-- disabled for now
+	--if mouseMovement == true then
 		-- draw mouse replacement
 		-- check to see if it's over the panels
 		-- if it's not, draw the lines coming inward
+		mousePos.x, mousePos.y = mouse_position()
 		graphics.draw_line(-410, mousePos.y, mousePos.x - 20, mousePos.y, 1.0, ClutColour(4, 8))
 		graphics.draw_line(410, mousePos.y, mousePos.x + 20, mousePos.y, 1.0, ClutColour(4, 8))
 		graphics.draw_line(mousePos.x, -310, mousePos.x, mousePos.y - 20, 1.0, ClutColour(4, 8))
@@ -556,10 +557,10 @@ function render ()
 		cursorx, cursory = graphics.sprite_dimensions("Misc/Cursor")
 		graphics.draw_sprite("Misc/Cursor", mousePos.x, mousePos.y, cursorx, cursory, 0)
 		-- check mouse idleness timer
-		if mode_manager.time() - mouseStart >= 2.0 then
-			mouseMovement = false
-		end
-	end --]]
+		--if mode_manager.time() - mouseStart >= 2.0 then
+		--	mouseMovement = false
+		--end
+	--end
 -- Menus
 	InterfaceDisplay(dt)
 -- Error Printing
@@ -620,12 +621,6 @@ end
 
 function mouse_up(button, mbX, mbY)
 
-end
-
-function mouse_move(mbX, mbY)
-	mouseMovement = true
-	mousePos = { x = mbX, y = mbY }
-	mouseStart = mode_manager.time()
 end
 
 

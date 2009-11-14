@@ -1532,6 +1532,14 @@ luaL_Reg registryObjectXAR [] =
 	NULL, NULL
 };
 
+int mouse_position ( lua_State* L )
+{
+	vec2 mouse = Input::MousePosition();
+	lua_pushnumber(L, mouse.X());
+	lua_pushnumber(L, mouse.Y());
+	return 2;
+}
+
 int luaopen_xar ( lua_State* L )
 {
 	luaL_newmetatable(L, "Apollo.XarFile");
@@ -1590,6 +1598,8 @@ void __LuaBind ( lua_State* L )
 {
 	lua_pushcfunction(L, import);
 	lua_setglobal(L, "import");
+	lua_pushcfunction(L, mouse_position);
+	lua_setglobal(L, "mouse_position");
 	lua_cpcall(L, luaopen_component, NULL);
 	luaL_register(L, "xml", registryXML);
 	luaL_register(L, "mode_manager", registryModeManager);
