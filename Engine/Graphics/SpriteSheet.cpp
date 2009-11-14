@@ -8,26 +8,14 @@
 #include "Utilities/ResourceManager.h"
 #include "TinyXML/tinyxml.h"
 #include "Logging.h"
+#include "ImageLoader.h"
 
 namespace Graphics
 {
 
 void SpriteSheet::MakeResident ()
 {
-	glGenTextures(1, &texID);
-	glBindTexture(GL_TEXTURE_RECTANGLE_ARB, texID);
-	if (surface->format->BytesPerPixel == 3)
-	{
-		glTexImage2D(GL_TEXTURE_RECTANGLE_ARB, 0, GL_RGB,
-					 surface->w, surface->h, 0,
-					 GL_RGB, GL_UNSIGNED_BYTE, surface->pixels);
-	}
-	else
-	{
-		glTexImage2D(GL_TEXTURE_RECTANGLE_ARB, 0, GL_RGBA,
-					 surface->w, surface->h, 0,
-					 GL_RGBA, GL_UNSIGNED_BYTE, surface->pixels);
-	}
+	texID = ImageLoader::CreateTexture(surface, false);
 }
 
 SpriteSheet::SpriteSheet ( const std::string& name )
@@ -58,15 +46,14 @@ SpriteSheet::SpriteSheet ( const std::string& name )
 		}
 	}
 	SDL_RWops* configRWOps = ResourceManager::OpenFile(configPath);
-	SDL_RWops* imageRWOps = ResourceManager::OpenFile(imagePath);
-	if (!imageRWOps)
+	surface = ImageLoader::LoadImage(imagePath);
+	if (!surface)
 	{
         // TODO: make this work gracefully
         LOG("Graphics::SpriteSheet", LOG_ERROR, "Failed to load image: %s", name.c_str());
 		exit(1);
 		delete configRWOps;
 	}
-	surface = IMG_LoadTyped_RW(imageRWOps, 1, const_cast<char*>("PNG"));
 	if (configRWOps)
 	{
 		// load config

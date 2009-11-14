@@ -1,6 +1,7 @@
 #include "Object3D.h"
 #include "Matrix2x3.h"
 #include "Utilities/ResourceManager.h"
+#include "ImageLoader.h"
 
 namespace Graphics
 {
@@ -36,29 +37,10 @@ struct vector2
 
 GLuint GetTexture ( const std::string& path )
 {
-	GLuint texture;
-	SDL_RWops* rwops = ResourceManager::OpenFile(path);
-	if (!rwops)
-		return 0;
-	SDL_Surface* surface = IMG_LoadTyped_RW(rwops, 1, const_cast<char*>("PNG"));
+	SDL_Surface* surface = ImageLoader::LoadImage(path);
 	if (!surface)
-		return 0;
-	glGenTextures(1, &texture);
-	glBindTexture(GL_TEXTURE_2D, texture);
-	if (surface->format->BytesPerPixel == 3)
-	{
-		glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB,
-					 surface->w, surface->h, 0,
-					 GL_RGB, GL_UNSIGNED_BYTE, surface->pixels);
-	}
-	else
-	{
-		glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA,
-					 surface->w, surface->h, 0,
-					 GL_RGBA, GL_UNSIGNED_BYTE, surface->pixels);
-	}
-	SDL_FreeSurface(surface);
-	return texture;
+		return NULL;
+	return ImageLoader::CreateTexture(surface, true);
 }
 
 void StripComments ( std::string& line )

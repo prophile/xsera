@@ -112,6 +112,14 @@ void DrawDiamond ( float top, float left, float bottom, float right, colour col 
  */
 void DrawStarfield ( float depth );
 /**
+ * Draws all outstanding particles
+ */
+void DrawParticles ();
+/**
+ * Clears the particles
+ */
+void ClearParticles ();
+/**
  * Draws a 3D object for ambient lighting
  * @param name The name of the object
  * @param centre The centre of the object
