@@ -1018,6 +1018,29 @@ int GFX_DrawLine ( lua_State* L )
 	return 0;
 }
 
+int GFX_DrawLightning ( lua_State* L )
+{
+	int nargs = lua_gettop(L);
+	float x1, y1, x2, y2, width, chaos;
+	bool tailed;
+	x1 = luaL_checknumber(L, 1);
+	y1 = luaL_checknumber(L, 2);
+	x2 = luaL_checknumber(L, 3);
+	y2 = luaL_checknumber(L, 4);
+	width = luaL_checknumber(L, 5);
+	chaos = luaL_checknumber(L, 6);
+	tailed = lua_tonumber(L, 7);
+	if (nargs > 7)
+	{
+		Graphics::DrawLightning(vec2(x1, y1), vec2(x2, y2), width, chaos, LoadColour(L, 8), tailed);
+	}
+	else
+	{
+		Graphics::DrawLightning(vec2(x1, y1), vec2(x2, y2), width, chaos, colour(0.93f, 0.88f, 1.0f, 1.0f), tailed);
+	}
+	return 0;
+}
+
 int GFX_DrawBox ( lua_State* L )
 {
 	int nargs = lua_gettop(L);
@@ -1366,6 +1389,7 @@ luaL_Reg registryGraphics[] =
 	"draw_text", GFX_DrawText,
 	"text_length", GFX_TextLength,
 	"draw_line", GFX_DrawLine,
+	"draw_lightning", GFX_DrawLightning,
 	"draw_box", GFX_DrawBox,
 	"draw_rtri", GFX_DrawRadarTriangle,
 	"draw_rplus", GFX_DrawRadarPlus,

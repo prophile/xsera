@@ -63,6 +63,15 @@ void DrawTextSDL ( const std::string& text, const std::string& font, const char*
  */
 void DrawLine ( vec2 coordinate1, vec2 coordinate2, float width, colour col );
 /**
+ * Draws a lightning effect
+ * @param coordinate1 Beginning of the lightning
+ * @param coordinate2 End of the lightning
+ * @param width The width of the lightning, in pixels
+ * @param chaos The chaos of the lightning
+ * @param col The colour of the lightning
+ */
+void DrawLightning ( vec2 coordinate1, vec2 coordinate2, float width, float chaos, colour col, bool tailed );
+/**
  * Draws a filled box
  * @param top the top bound of the box
  * @param bottom the bottom bound of the box

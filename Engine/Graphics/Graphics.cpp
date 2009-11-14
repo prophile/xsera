@@ -6,6 +6,7 @@
 #include <OpenGL/gl.h>
 #endif
 #include <SDL/SDL.h>
+#include "RNG.h"
 
 //#define DISABLE_WARP_EFFECTS
 
@@ -438,6 +439,70 @@ void DrawLine ( vec2 coordinate1, vec2 coordinate2, float width, colour col )
 						coordinate2.X(), coordinate2.Y() };
 	glVertexPointer ( 2, GL_FLOAT, 0, vertices );
 	glDrawArrays ( GL_LINES, 0, 2 );
+}
+
+static float RandomFloat ( float min, float max )
+{
+	float range = max - min;
+	float uniform = rand() / (float)RAND_MAX;
+	float absolute = uniform * range;
+	return absolute + min;
+}
+
+static void RealDrawLightning ( vec2 coordinate1, vec2 coordinate2, float width, float chaos, colour col, bool tailed, RNG& rng )
+{
+	if (col.alpha() < 0.2f)
+		return;
+	SetShader("Primitive");
+	DisableTexturing();
+	if (col.alpha() < 1.0f)
+	{
+		EnableBlending();
+	}
+	else
+	{
+		DisableBlending();
+	}
+	glLineWidth(width);
+	Matrices::SetViewMatrix(matrix2x3::Identity());
+	Matrices::SetModelMatrix(matrix2x3::Identity());
+	SetColour(col);
+	unsigned long segments = 12;
+	float offsetting = chaos;
+	float* vertices = (float*)alloca(sizeof(float) * 2 * segments);
+	vec2 tangent = (coordinate2 - coordinate1).UnitVector();
+	vec2 normal = vec2(-tangent.Y(), tangent.X());
+	normal.X() = -normal.Y();
+	for (unsigned long i = 0; i < segments; i++)
+	{
+		float delta = ((float)i / (float)(segments - 1));
+		vec2 basePosition = ((coordinate1*(1.0f-delta)) + (coordinate2*delta)) / 2.0f;
+		if (tailed)
+		{
+			delta *= 2.0f;
+			if (delta > 1.0f) delta = 2.0f - delta;
+		}
+		float maxOffset = offsetting * delta;
+		float actualOffset = RandomFloat(-maxOffset, maxOffset);
+		basePosition += normal * actualOffset;
+		vertices[(i*2)+0] = basePosition.X();
+		vertices[(i*2)+1] = basePosition.Y();
+	}
+	glVertexPointer(2, GL_FLOAT, 0, vertices);
+	glDrawArrays(GL_LINE_STRIP, 0, segments);
+}
+
+static RNG lightningRNG;
+static uint32_t lastSeed = 4;
+
+void DrawLightning ( vec2 coordinate1, vec2 coordinate2, float width, float chaos, colour col, bool tailed )
+{
+	uint32_t newLastSeed = lightningRNG.GetState();
+	RealDrawLightning(coordinate1, coordinate2, width, chaos, col, tailed, lightningRNG);
+	RNG localRNG(lastSeed);
+	lastSeed = newLastSeed;
+	col.alpha() *= 0.5f;
+	RealDrawLightning(coordinate1, coordinate2, width * 3.0f, chaos, col, tailed, localRNG);
 }
 
 void DrawBox ( float top, float left, float bottom, float right, float width, colour col )
