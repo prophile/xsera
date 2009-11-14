@@ -919,6 +919,29 @@ int GFX_DrawLine ( lua_State* L )
 	return 0;
 }
 
+int GFX_DrawLightning ( lua_State* L )
+{
+	int nargs = lua_gettop(L);
+	float x1, y1, x2, y2, width, chaos;
+	bool tailed;
+	x1 = luaL_checknumber(L, 1);
+	y1 = luaL_checknumber(L, 2);
+	x2 = luaL_checknumber(L, 3);
+	y2 = luaL_checknumber(L, 4);
+	width = luaL_checknumber(L, 5);
+	chaos = luaL_checknumber(L, 6);
+	tailed = lua_tonumber(L, 7);
+	if (nargs > 7)
+	{
+		Graphics::DrawLightning(vec2(x1, y1), vec2(x2, y2), width, chaos, LoadColour(L, 8), tailed);
+	}
+	else
+	{
+		Graphics::DrawLightning(vec2(x1, y1), vec2(x2, y2), width, chaos, colour(0.93f, 0.88f, 1.0f, 1.0f), tailed);
+	}
+	return 0;
+}
+
 int GFX_DrawBox ( lua_State* L )
 {
 	int nargs = lua_gettop(L);
@@ -1009,6 +1032,21 @@ int GFX_DrawRadarDiamond ( lua_State* L )
 	{
 		Graphics::DrawDiamond(coordinates[1] + varsize, coordinates[0] - varsize, coordinates[1] - varsize, coordinates[0] + varsize, colour(0, 1, 0, 1));
 	}
+	return 0;
+}
+
+int GFX_DrawObject3DAmbient ( lua_State* L )
+{
+	std::string object = luaL_checkstring(L, 1);
+	float x = luaL_checknumber(L, 2);
+	float y = luaL_checknumber(L, 3);
+	float r = luaL_checknumber(L, 4);
+	float g = luaL_checknumber(L, 5);
+	float b = luaL_checknumber(L, 6);
+	float scale = luaL_checknumber(L, 7);
+	float angle = luaL_checknumber(L, 8);
+	float bank = luaL_optnumber(L, 9, 0.0);
+	Graphics::DrawObject3DAmbient(object, vec2(x, y), colour(r, g, b), scale, angle, bank);
 	return 0;
 }
 
@@ -1252,6 +1290,7 @@ luaL_Reg registryGraphics[] =
 	"draw_text", GFX_DrawText,
 	"text_length", GFX_TextLength,
 	"draw_line", GFX_DrawLine,
+	"draw_lightning", GFX_DrawLightning,
 	"draw_box", GFX_DrawBox,
 	"draw_rtri", GFX_DrawRadarTriangle,
 	"draw_rplus", GFX_DrawRadarPlus,
@@ -1261,6 +1300,7 @@ luaL_Reg registryGraphics[] =
 	"is_culled", GFX_IsCulled,
 	"begin_warp", GFX_BeginWarp,
 	"end_warp", GFX_EndWarp,
+	"draw_3d_ambient", GFX_DrawObject3DAmbient,
     NULL, NULL
 };
 

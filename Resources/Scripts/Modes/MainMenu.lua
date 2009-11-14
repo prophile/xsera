@@ -91,7 +91,7 @@ function key ( k )
 			mode_manager.switch("AresSplash")
 		end
     elseif k == "t" then
-        mode_manager.switch("AngleTest")
+        mode_manager.switch("WeaponTest")
     elseif k == "c" then
         mode_manager.switch("Credits")
     elseif k == "tab" then

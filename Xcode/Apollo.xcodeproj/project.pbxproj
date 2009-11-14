@@ -140,6 +140,9 @@
 		496A283D0F0EC9F800C53BA1 /* SDL_ttf.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 496A23F40F0EB31B00C53BA1 /* SDL_ttf.framework */; };
 		5725775B10ADB48E003A8259 /* Server.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5725775910ADB48E003A8259 /* Server.cpp */; };
 		5725775C10ADB48E003A8259 /* Server.h in Headers */ = {isa = PBXBuildFile; fileRef = 5725775A10ADB48E003A8259 /* Server.h */; };
+		57966A8010AE7E8A0088327C /* RNG.h in Headers */ = {isa = PBXBuildFile; fileRef = 57966A7F10AE7E8A0088327C /* RNG.h */; };
+		57FCA50B10ACDF9D002D6A9E /* Object3D.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 57FCA50910ACDF9D002D6A9E /* Object3D.cpp */; };
+		57FCA50C10ACDF9D002D6A9E /* Object3D.h in Headers */ = {isa = PBXBuildFile; fileRef = 57FCA50A10ACDF9D002D6A9E /* Object3D.h */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -277,6 +280,9 @@
 		496A277E0F0EC9A000C53BA1 /* libApollo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libApollo.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		5725775910ADB48E003A8259 /* Server.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Server.cpp; path = ../Engine/Server.cpp; sourceTree = SOURCE_ROOT; };
 		5725775A10ADB48E003A8259 /* Server.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Server.h; path = ../Engine/Server.h; sourceTree = SOURCE_ROOT; };
+		57966A7F10AE7E8A0088327C /* RNG.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RNG.h; sourceTree = "<group>"; };
+		57FCA50910ACDF9D002D6A9E /* Object3D.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Object3D.cpp; sourceTree = "<group>"; };
+		57FCA50A10ACDF9D002D6A9E /* Object3D.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Object3D.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -471,6 +477,8 @@
 		496A24A10F0EB37900C53BA1 /* Graphics */ = {
 			isa = PBXGroup;
 			children = (
+				57FCA50910ACDF9D002D6A9E /* Object3D.cpp */,
+				57FCA50A10ACDF9D002D6A9E /* Object3D.h */,
 				4932245F0F23DE030048495A /* Shaders.cpp */,
 				493224600F23DE030048495A /* Shaders.h */,
 				496A24A20F0EB37900C53BA1 /* Graphics.cpp */,
@@ -537,6 +545,7 @@
 		496A24C00F0EB37900C53BA1 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				57966A7F10AE7E8A0088327C /* RNG.h */,
 				496A24C10F0EB37900C53BA1 /* Colour.cpp */,
 				496A24C20F0EB37900C53BA1 /* Colour.h */,
 				496A24C30F0EB37900C53BA1 /* GameTime.h */,
@@ -630,6 +639,8 @@
 				493224620F23DE030048495A /* Shaders.h in Headers */,
 				49118E6C0F251D2B004710D9 /* Preferences.h in Headers */,
 				5725775C10ADB48E003A8259 /* Server.h in Headers */,
+				57FCA50C10ACDF9D002D6A9E /* Object3D.h in Headers */,
+				57966A8010AE7E8A0088327C /* RNG.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -744,6 +755,7 @@
 				493224610F23DE030048495A /* Shaders.cpp in Sources */,
 				49118E6B0F251D2B004710D9 /* Preferences.cpp in Sources */,
 				5725775B10ADB48E003A8259 /* Server.cpp in Sources */,
+				57FCA50B10ACDF9D002D6A9E /* Object3D.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

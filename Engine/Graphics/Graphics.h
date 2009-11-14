@@ -63,6 +63,15 @@ void DrawTextSDL ( const std::string& text, const std::string& font, const char*
  */
 void DrawLine ( vec2 coordinate1, vec2 coordinate2, float width, colour col );
 /**
+ * Draws a lightning effect
+ * @param coordinate1 Beginning of the lightning
+ * @param coordinate2 End of the lightning
+ * @param width The width of the lightning, in pixels
+ * @param chaos The chaos of the lightning
+ * @param col The colour of the lightning
+ */
+void DrawLightning ( vec2 coordinate1, vec2 coordinate2, float width, float chaos, colour col, bool tailed );
+/**
  * Draws a filled box
  * @param top the top bound of the box
  * @param bottom the bottom bound of the box
@@ -109,6 +118,46 @@ void DrawParticles ( const vec2* positions, unsigned int count, colour col );
  * @param depth The depth of the star-field, for parallax
  */
 void DrawStarfield ( float depth );
+/**
+ * Draws a 3D object for ambient lighting
+ * @param name The name of the object
+ * @param centre The centre of the object
+ * @param ambient The ambient colour
+ * @param scale The scale of the object
+ * @param angle The angle of the object
+ * @param bank The bank of the object
+ */
+void DrawObject3DAmbient ( std::string name, vec2 centre, colour ambient, float scale, float angle, float bank = 0.0f );
+/**
+ * Draws a 3D object for directional lighting
+ * @param centre The centre of the object
+ * @param light The light colour
+ * @param lightAngle The angle of the light
+ * @param scale The scale of the object
+ * @param angle The angle of the object
+ * @param bank The bank of the object
+ */
+void DrawObject3DDirectional ( std::string name, vec2 centre, colour light, float lightAngle, float scale, float angle, float bank = 0.0f );
+/**
+ * Draws a 3D object for directional lighting
+ * @param centre The centre of the object
+ * @param light The light colour
+ * @param lightCentre The origin of the light
+ * @param lightRadius The radius of this light
+ * @param scale The scale of the object
+ * @param angle The angle of the object
+ * @param bank The bank of the object
+ */
+void DrawObject3DSpot ( std::string name, vec2 centre, colour light, vec2 lightCentre, float lightRadius, float scale, float angle, float bank = 0.0f );
+/**
+ * Draws a 3D object for glow lighting
+ * @param centre The centre of the object
+ * @param glow The scale of the glow on the lighting
+ * @param scale The scale of the object
+ * @param angle The angle of the object
+ * @param bank The bank of the object
+ */
+void DrawObject3DGlow ( std::string name, vec2 centre, float glow, float scale, float angle, float bank = 0.0f );
 
 /**
  * Gives the aspect ratio of the screen

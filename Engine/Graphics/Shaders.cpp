@@ -115,8 +115,8 @@ void SetShader ( const std::string& name )
 	else
 	{
 		// add the shader
-		SDL_RWops* vertexOps = ResourceManager::OpenFile("Shaders/" + name + ".vtx");
-		SDL_RWops* fragmentOps = ResourceManager::OpenFile("Shaders/" + name + ".frag");
+		SDL_RWops* vertexOps = ResourceManager::OpenFile("Shaders/" + name + ".vs");
+		SDL_RWops* fragmentOps = ResourceManager::OpenFile("Shaders/" + name + ".fs");
 		assert(vertexOps);
 		assert(fragmentOps);
 		size_t len;
