@@ -81,7 +81,6 @@ int PHYS_Update ( lua_State* L )
 {
 	float timestep = luaL_checknumber(L, 1);
 	Physics::Update(timestep);
-	//[ALISTAIR]: No second arg above (should be friction)? How does that work in C++ when you don't include all args?
 	return 0;
 }
 	
@@ -154,9 +153,9 @@ int PHYS_Collisions ( lua_State* L )
 		lua_pushliteral(L, "cannot access properties on destroyed physics object");
 		return lua_error(L);
 	}
-	int bullet = luaL_checknumber(L, 3);
+	int projectile = luaL_checknumber(L, 3);
 	bool collide = false;
-	if (bullet == 1)
+	if (projectile == 1)
 	{
 		collide = obj1->pob->Collision(obj1->pob->position, obj2->pob->position, obj1->pob->collisionRadius);
 	} else
@@ -328,8 +327,9 @@ int PHYS_Object_Torque ( lua_State* L )
  * @page lua_physics The Lua Physics Registry
  * This page contains information about the Lua physics registry.
  *
- * This registry contains functions related to utilizing Apollo's physics engine. In Lua, they are
- * all called like so: "physics.function_name()" (for example: "open" becomes "physics.open(num)").
+ * This registry contains functions related to utilizing Apollo's physics
+ * engine. In Lua, they are all called like so: "physics.function_name()" (for
+ * example: "open" becomes "physics.open(num)").
  * 
  * @section open
  * Opens a physics system with a given amount of "resistance".\n
@@ -340,15 +340,17 @@ int PHYS_Object_Torque ( lua_State* L )
  * Closes the current physics system. This function has no parameters.
  * 
  * @section update
- * Updates the current physics system based upon a small timestep (within Xsera, a variable named
- * 'dt' is used to represent the change in time (delta time) from one frame to another).\n
+ * Updates the current physics system based upon a small timestep (within Xsera,
+ * a variable named
+ * 'dt' is used to represent the change in time (delta time) from one frame to
+ * another).\n
  * Parameters:\n
  * dt - Change in time between updates.
  * 
  * @section new_object
- * Creates a new physics object with properties like velocity, position, angular velocity, and more.
- * To see what properties physics objects have, please visit the @ref lua_physics_object page. This
- * function has no parameters.
+ * Creates a new physics object with properties like velocity, position, angular
+ * velocity, and more. To see what properties physics objects have, please visit
+ * the @ref lua_physics_object page. This function has no parameters.
  * 
  * @section destroy_object
  * Destroys a physics object. This function has no parameters.
@@ -362,12 +364,13 @@ int PHYS_Object_Torque ( lua_State* L )
  * nil - If there is no physics object for the given ID, nil is returned.
  * 
  * @section collisions
- * Given two objects and whether or not the second object is a bullet, this will tell you if there
- * is a collision.\n
+ * Given two objects and whether or not the second object is a bullet, this will
+ * tell you if there is a collision.\n
  * Parameters:\n
  * obj1 - The first object\n
  * obj2 - The second object\n
- * bullet - boolean of whether the second object is a bullet or not\n
+ * projectile - boolean of whether the second object is a projectile (or other
+ * object with insignificant radius) or not\n
  * Returns:\n
  * boolean - True if there is a collision, false if there is not.
  * 
@@ -423,8 +426,8 @@ int Pref_Get ( lua_State* L )
  * @page lua_preferences The Lua Preferences Registry
  * This page contains information about the Lua preferences registry.
  *
- * This registry currently only contains one function, used for retrieving preferences. In Lua,
- * it is called called like so: "preferences.get(name)".
+ * This registry currently only contains one function, used for retrieving
+ * preferences. In Lua, it is called called like so: "preferences.get(name)".
  * 
  * @section xml_get get
  * Finds and returns a particular preference.\n
@@ -549,11 +552,12 @@ int NetServer_GetMessage ( lua_State* L )
  * @page lua_net_server The Lua Net Server Registry
  * This page contains information about the Lua net server registry.
  *
- * This registry contains functions related to running a multiplayer server. In Lua, they are all
- * called like so: "net_server.function_name()" (for example: "startup" becomes
- * "net_server.startup(port, password)").
+ * This registry contains functions related to running a multiplayer server. In
+ * Lua, they are all called like so: "net_server.function_name()" (for example:
+ * "startup" becomes "net_server.startup(port, password)").
  * 
- * Note: Somebody else will need to complete this registry, I don't know anything about it right now.
+ * Note: Somebody else will need to complete this registry, I don't know
+ * anything about it right now.
  * 
  * @section startup
  * 
@@ -678,15 +682,17 @@ static int XML_ParseFile (lua_State *L)
  * @page lua_xml The Lua XML Registry
  * This page contains information about the Lua XML registry.
  *
- * This registry currently only contains one function. In Lua, it is called called like so:
- * "xml.load(file)".
+ * This registry currently only contains one function. In Lua, it is called 
+ * called like so: "xml.load(file)".
  * 
  * @section load
  * Loads and parses an XML file\n
  * Parameters:\n
  * name - The name of the mode that the game is currently in.\n
  * Returns:\n
- * A table with the contents of the file in it.
+ * A table with the contents of the file in it.\n
+ * Note: This function is deprecated. It will likely not be used in Xsera, and
+ * is not fully functional.
  */
 
 luaL_Reg registryXML[] =
@@ -718,20 +724,26 @@ int MM_Query ( lua_State* L )
  * @page lua_mode_manager The Lua Mode Manager Registry
  * This page contains information about the Lua mode manager registry.
  *
- * This small registry contains functions for dealing with modes. Modes are the states in which Lua
- * runs, containing functions triggered by certain states of Apollo (like mouse movement, keyboard
- * presses, etc). In Lua, they are all called like so: "mode_manager.function_name()" (for example:
- * "switch" becomes "mode_manager.switch(mode)").
+ * This small registry contains functions for dealing with modes. Modes are the
+ * states in which Lua runs, containing functions triggered by certain states of
+ * Apollo (like mouse movement, keyboard presses, etc). In Lua, they are all
+ * called like so: "mode_manager.function_name()" (for example: "switch" becomes
+ * "mode_manager.switch(mode)").
  * 
  * @section switch
- * Switches the game mode. If the mode cannot be switched to the given name, an error occurs.\n
+ * Switches the game mode. If the mode cannot be switched to the given name, an
+ * error occurs.\n
  * Parameters:\n
- * mode - the name of the mode you want to switch to (without the suffix ".lua").
+ * mode - the name of the mode you want to switch to (without the suffix
+ * ".lua"). For example, to switch to "MainMenu.lua", enter "MainMenu" for the
+ * parameter.
  * 
  * @section time
- * Gives the game's time, in seconds, since the game's start. This function has no parameters.\n
+ * Gives the game's time, in seconds, since the game's start. This function has
+ * no parameters.\n
  * Returns:\n
- * number - The amount of seconds (accurate to miliseconds) since the game's start.
+ * number - The amount of seconds (accurate to miliseconds) since the game's
+ * start.
  * 
  * @section query
  * Returns the game's current mode. This function has no parameters.\n
@@ -787,25 +799,27 @@ int RM_Write ( lua_State* L )
  * @page lua_resource_manager The Lua Resource Manager Registry
  * This page contains information about the Lua resource manager registry.
  *
- * This small registry contains a few simple tools for manipulating files. In Lua, they are all
- * called like so: "resource_manager.function_name()" (for example: "file_exists" becomes
- * "resource_manager.file_exists(file)").
+ * This small registry contains a few simple tools for manipulating files. In
+ * Lua, they are all called like so: "resource_manager.function_name()" (for
+ * example: "file_exists" becomes "resource_manager.file_exists(file)").
  * 
  * @section file_exists
- * Ensures that the given file exists, then returns a boolean of whether it does or not.\n
+ * Ensures that the given file exists, then returns a boolean of whether it does
+ * or not.\n
  * Parameters:\n
  * file - The name of the file\n
  * Returns:\n
  * Boolean - true if file exists, false if it does not\n
  * 
  * @section load
- * Loads a given file. Will return error statement along with error if the file does not exist or
- * cannot be opened.\n
+ * Loads a given file. Will return error statement along with error if the file
+ * does not exist or cannot be opened.\n
  * Parameters:\n
  * file - The name of the file to be loaded\n
  * Returns:\n
  * data - If the load is successful, data will be returned from the file
- * literal - If the load is unsuccessful, a string will be returned ("file not found")
+ * literal - If the load is unsuccessful, a string will be returned ("file not
+ * found")
  * 
  * @section write
  * Writes to a given file. No error checking implemented.
@@ -868,8 +882,8 @@ int GFX_DrawText ( lua_State* L )
 	const char* text = luaL_checkstring(L, 1);
 	const char* font = luaL_checkstring(L, 2);
 	const char* justify = luaL_checkstring(L, 3);
-	float locx = luaL_checknumber(L, 4);
-	float locy = luaL_checknumber(L, 5);
+	float loc_x = luaL_checknumber(L, 4);
+	float loc_y = luaL_checknumber(L, 5);
 	float height = luaL_checknumber(L, 6);
 	float rotation = 0.0f;
 	if (nargs >= 8)
@@ -879,11 +893,11 @@ int GFX_DrawText ( lua_State* L )
 	if (nargs >= 7)
 	{
 		luaL_argcheck(L, lua_istable(L, 7), 7, "bad colour");
-		Graphics::DrawTextSDL(text, font, justify, vec2(locx, locy), height, LoadColour(L, 7), rotation);
+		Graphics::DrawTextSDL(text, font, justify, vec2(loc_x, loc_y), height, LoadColour(L, 7), rotation);
 	}
 	else
 	{
-		Graphics::DrawTextSDL(text, font, justify, vec2(locx, locy), height, colour(1.0f, 1.0f, 1.0f, 1.0f), rotation);
+		Graphics::DrawTextSDL(text, font, justify, vec2(loc_x, loc_y), height, colour(1.0f, 1.0f, 1.0f, 1.0f), rotation);
 	}
 	return 0;
 }
@@ -991,7 +1005,6 @@ int GFX_DrawRadarPlus ( lua_State* L )
 	float varsize = luaL_checknumber(L, 3);
 	if (nargs > 3)
 	{
-		float r = 0.0, g = 1.0, b = 0.0, a = 1.0;
 		Graphics::DrawBox(coordinates[1] + varsize, coordinates[0] - 0.3 * varsize, coordinates[1] - varsize, coordinates[0] + 0.3 * varsize, 0, LoadColour(L, 4));
 		Graphics::DrawBox(coordinates[1] + 0.3 * varsize, coordinates[0] - varsize, coordinates[1] - 0.3 * varsize, coordinates[0] + varsize, 0, LoadColour(L, 4));
 	}
@@ -1186,12 +1199,7 @@ int GFX_DrawSpriteFromSheet ( lua_State* L )
 	}
 	if (nargs > 8)
 	{
-		float r = 0.0, g = 1.0, b = 0.0, a = 1.0;
-		r = luaL_checknumber(L, 6);
-		g = luaL_checknumber(L, 7);
-		b = luaL_checknumber(L, 8);
-		a = luaL_checknumber(L, 9);
-		Graphics::DrawSprite(spritesheet, sheet_x, sheet_y, vec2(loc_x, loc_y), vec2(size_x, size_y), rot, colour(r, g, b, a));
+		Graphics::DrawSprite(spritesheet, sheet_x, sheet_y, vec2(loc_x, loc_y), vec2(size_x, size_y), rot, LoadColour(L, 7));
 	}
 	Graphics::DrawSprite(spritesheet, sheet_x, sheet_y, vec2(loc_x, loc_y), vec2(size_x, size_y), rot, colour(1.0f, 1.0f, 1.0f, 1.0f));
 	return 0;
@@ -1215,9 +1223,10 @@ int GFX_EndWarp ( lua_State* L )
  * @page lua_graphics The Lua Graphics Registry
  * This page contains information about the Lua graphics registry.
  *
- * This registry contains all drawing mechanisms for Lua, along with some drawing manipulation
- * functions. In Lua, they are all called like so: "graphics.function_name()" (for example:
- * "begin_frame" becomes "graphics.begin_frame()").
+ * This registry contains all drawing mechanisms for Lua, along with some
+ * drawing manipulation functions. In Lua, they are all called like so:
+ * "graphics.function_name()" (for example: "begin_frame" becomes
+ * "graphics.begin_frame()").
  * 
  * @section frame_and_camera Frame and Camera
  * 
@@ -1228,8 +1237,8 @@ int GFX_EndWarp ( lua_State* L )
  * Must be called after any graphics routines are called. It has no parameters.
  * 
  * @subsection set_camera
- * Sets the bounds of the camera. It requires arguments for the left, bottom, right,
- * and top of the camera, respectively.\n
+ * Sets the bounds of the camera. It requires arguments for the left, bottom,
+ * right, and top of the camera, respectively.\n
  * Parameters:\n
  * left - The left, or lower-x bound, of the screen.\n
  * bottom - The bottom, or lower-y bound, of the screen.\n
@@ -1239,71 +1248,195 @@ int GFX_EndWarp ( lua_State* L )
  * @section sprites Sprites
  * 
  * @subsection draw_image
- * Draws an "image", which is functionally different from a sprite. In general, a
- * sprite has rotational capabilities and / or multiple frames, like a ship, where an image does
- * not, like panels on the sides of the screen.
+ * Draws an "image", which is functionally different from a sprite. In general,
+ * a sprite has rotational capabilities and / or multiple frames, like most
+ * ships, where an image does not, like panels on the sides of the screen.\n
+ * Parameters:\n
+ * imgname - The name of the image to be drawn\n
+ * loc_x - The x location of where the center of the image should be\n
+ * loc_y - The y location of where the center of the image should be\n
+ * sizex - The x size, in pixels, of the image\n
+ * sizey - The y size, in pixels, of the image - note that sizex and sizey
+ * should be in the same ratio of x:y as the original image, or stretching may
+ * occur.\n
+ * rot - The rotation of the image, in radians. Optional parameter.\n
+ * colour - The colour to be applied to the image, in the form of a table:\n
+ *    t = { r = red_val, b = blue_val, g = green_val, a = alpha_val }\n
+ * where the colour values are between 0.0 and 1.0. (optional)
  * 
  * @subsection draw_sprite
- * Draws a "sprite", which is functionally different from an image. In general, a
- * sprite has rotational capabilities and / or multiple frames, like a ship, where an image does
- * not, like panels on the sides of the screen.
+ * Draws a "sprite", which is functionally different from an image. In general,
+ * a sprite has rotational capabilities and / or multiple frames, like a ship,
+ * where an image does not, like panels on the sides of the screen.
+ * Parameters:\n
+ * spritesheet - The name of the file containing the sprites\n
+ * loc_x - The x location of where the center of the sprite should be\n
+ * loc_y - The y location of where the center of the sprite should be\n
+ * sizex - The x size, in pixels, of the sprite\n
+ * sizey - The y size, in pixels, of the sprite - note that sizex and sizey
+ * should be in the same ratio of x:y as the original image, or stretching may
+ * occur.\n
+ * rot - The rotation of the sprite, in radians. Determines which sprite is
+ * drawn\n
+ * colour - The colour to be applied to the sprite, in the form of a table:\n
+ *    t = { r = red_val, b = blue_val, g = green_val, a = alpha_val }\n
+ * where the colour values are between 0.0 and 1.0. (optional)
  * 
  * @subsection draw_sheet_sprite
- * Draws a given sprite from within a sprite sheet.
+ * Draws a given sprite from within a sprite sheet.\n
+ * Parameters:\n
+ * spritesheet - The name of the sprite sheet to be drawn\n
+ * sheetx - ?\n
+ * sheety - ?\n
+ * loc_x - The x location of where the center of the sprite should be\n
+ * loc_y - The y location of where the center of the sprite should be\n
+ * sizex - The x size, in pixels, of the sprite\n
+ * sizey - The y size, in pixels, of the sprite - note that sizex and sizey
+ * should be in the same ratio of x:y as the original image, or stretching may
+ * occur.\n
+ * rot - The rotation of the sprite, in radians. Determines which sprite is
+ * drawn\n
+ * colour - The colour to be applied to the sprite, in the form of a table:\n
+ *    t = { r = red_val, b = blue_val, g = green_val, a = alpha_val }\n
+ * where the colour values are between 0.0 and 1.0. (optional)
+ * @todo define sheetx and sheety for @ref draw_sprite_sheet
+ * @todo add in table reading for colours to @ref draw_sprite_sheet
  * 
  * @subsection sprite_dimensions
- * Returns the dimensions for a given sprite.
+ * Returns the dimensions for a given sprite.\n
+ * Parameters:\n
+ * spritesheet - The sprite sheet to check the dimensions of.\n
+ * Returns:\n
+ * x - The x size of one sprite on the sheet\n
+ * y - The y size of one sprite on the sheet
  * 
  * @subsection draw_starfield
- * Draws a starfield at the given depth. Draw multiple starfields at varying depths to give them a
- * parallax feel.
+ * Draws a starfield at the given depth. Draw multiple starfields at varying
+ * depths to give them a parallax feel.
+ * Parameters:\n
+ * depth - How deep the starfield should appear. Optional parameter (default is
+ * 0).
  * 
  * @section drawing_text Drawing Text
  * 
  * @subsection draw_text
- * Given a position, size, font, and some text, (and optionally a rotation and some colour) this
- * function will draw text to the screen with those specifications.
+ * Given a position, size, font, and some text, (and optionally a rotation and
+ * some colour) this function will draw text to the screen with those
+ * specifications. If not given rotation or colour, this function will default
+ * to zero degrees rotation and white text.\n
+ * Parameters:\n
+ * text - The text to be displayed on the screen\n
+ * font - The font for the text to be drawn in\n
+ * justify - One of "left", "right", or "center", the justification of the text.
+ * If misspelled or missing, defaults to "center".\n
+ * loc_x - The x coordinate of the text. Justification revolves around the
+ * position of this component.\n
+ * loc_y - The y coordinate of the text.\n
+ * height - The size of the font to be displayed.\n
+ * rotation - Rotation clockwise from the viewer's perspective, in radians.\n
+ * colour - The colour to be applied to the text, in the form of a table:\n
+ *    t = { r = red_val, b = blue_val, g = green_val, a = alpha_val }\n
+ * where the colour values are between 0.0 and 1.0. (optional)
  * 
  * @subsection text_length
- * Given a size, font, and some text, this function will output how long this text will be on
- * the screen.
+ * Given a size, font, and some text, this function will output how long this
+ * text will be on the screen.\n
+ * Parameters:\n
+ * text - The text to be sized up\n
+ * font - The font being used for the text\n
+ * height - the size of the font
  * 
  * @section drawing_basic_objects Drawing Basic Objects
  * 
  * @subsection draw_line
- * Draws a basic line.
+ * Draws a basic line.\n
+ * Parameters:\n
+ * x1 - The x coordinate of the starting point.\n
+ * y1 - The y coordinate of the starting point.\n
+ * x2 - The x coordinate of the ending point.\n
+ * y2 - The y coordinate of the ending point.\n
+ * width - The thickness of the line in pixels.\n
+ * colour - The colour to be applied to the line, in the form of a table:\n
+ *    t = { r = red_val, b = blue_val, g = green_val, a = alpha_val }\n
+ * where the colour values are between 0.0 and 1.0. (optional)
  * 
  * @subsection draw_box
- * Draws a basic box, with optional outlining.
+ * Draws a basic box.\n
+ * Parameters:\n
+ * top - The y coordinate of the top of the box.\n
+ * left - The x coordinate of the left of the box.\n
+ * bottom - The y coordinate of the bottom of the box.\n
+ * right - The x coordinate of the right of the box.\n
+ * width - The thickness of the line surrounding the boxin pixels. Use 0 for no
+ * line.\n
+ * colour - The colour to be applied to the box, in the form of a table:\n
+ *    t = { r = red_val, b = blue_val, g = green_val, a = alpha_val }\n
+ * where the colour values are between 0.0 and 1.0. (optional)
  * 
  * @subsection draw_circle
- * Draws a "circle", which is really just a series of lines approximating a circle.
+ * Draws a "circle", which is really just a series of lines approximating a
+ * circle.\n
+ * x - The x coordinate of the center of the circle.\n
+ * y - The y coordinate of the center of the circle.\n
+ * radius - The radius of the circle.\n
+ * width - The width of the lines comprising the circle.\n
+ * colour - The colour to be applied to the circle, in the form of a table:\n
+ *    t = { r = red_val, b = blue_val, g = green_val, a = alpha_val }\n
+ * where the colour values are between 0.0 and 1.0. (optional)
  * 
  * @section drawing_radar_objects Drawing 'Radar' Objects
  * 
  * @subsection draw_rtri
- * Draws a triangle - generally used as a placeholder for objects when zoomed out beyond 1:8 camera
- * ratios.
+ * Draws a triangle - generally used as a placeholder for objects when zoomed
+ * out beyond 1:8 camera ratios. (short for "radar triangle")\n
+ * x - The x coordinate of the center of the triangle.\n
+ * y - The y coordinate of the center of the triangle.\n
+ * varsize - The size of the triangle, according to the object's data.\n
+ * colour - The colour to be applied to the triangle, in the form of a table:\n
+ *    t = { r = red_val, b = blue_val, g = green_val, a = alpha_val }\n
+ * where the colour values are between 0.0 and 1.0. (optional)
  * 
  * @subsection draw_rplus
- * Draws a plus sign - generally used as a placeholder for objects when zoomed out beyond 1:8 camera
- * ratios.
+ * Draws a plus sign - generally used as a placeholder for objects when zoomed
+ * out beyond 1:8 camera ratios (short for "radar plus").\n
+ * x - The x coordinate of the center of the plus.\n
+ * y - The y coordinate of the center of the plus.\n
+ * varsize - The size of the plus, according to the object's data.\n
+ * colour - The colour to be applied to the plus, in the form of a table:\n
+ *    t = { r = red_val, b = blue_val, g = green_val, a = alpha_val }\n
+ * where the colour values are between 0.0 and 1.0. (optional)
  * 
  * @subsection draw_rbox
- * Draws a square - generally used as a placeholder for objects when zoomed out beyond 1:8 camera
- * ratios.
+ * Draws a square - generally used as a placeholder for objects when zoomed out
+ * beyond 1:8 camera ratios (short for "radar box").\n
+ * x - The x coordinate of the center of the box.\n
+ * y - The y coordinate of the center of the box.\n
+ * varsize - The size of the box, according to the object's data.\n
+ * colour - The colour to be applied to the box, in the form of a table:\n
+ *    t = { r = red_val, b = blue_val, g = green_val, a = alpha_val }\n
+ * where the colour values are between 0.0 and 1.0. (optional)
  * 
  * @subsection draw_rdia
- * Draws a diamond - generally used as a placeholder for objects when zoomed out beyond 1:8 camera
- * ratios.
+ * Draws a diamond - generally used as a placeholder for objects when zoomed out
+ * beyond 1:8 camera ratios (short for "radar diamond").\n
+ * x - The x coordinate of the center of the diamond.\n
+ * y - The y coordinate of the center of the diamond.\n
+ * varsize - The size of the diamond, according to the object's data.\n
+ * colour - The colour to be applied to the diamond, in the form of a table:\n
+ *    t = { r = red_val, b = blue_val, g = green_val, a = alpha_val }\n
+ * where the colour values are between 0.0 and 1.0. (optional)
  * 
  * @subsection is_culled
- * Checks to see if a particular circle is entirely outside of the vision of the camera.
+ * Checks to see if a particular circle is entirely outside of the vision of the
+ * camera.\n
+ * Parameters:\n
+ * x - The x coordinate of the center of the circle.\n
+ * y - The y coordinate of the center of the circle.\n
+ * radius - The radius of the circle.\n
+ * Returns:\n
+ * isCulled - If the circle is entirely off the screen, true. Otherwise false.
  * 
  * @todo Fix documentation @ref draw_image and @ref draw_sprite to better define sprites/images.
- * @todo Add args for @ref sprites onward
- * @todo Repeat for all registries
- * 
  */
 
 luaL_Reg registryGraphics[] =
@@ -1382,9 +1515,9 @@ int Sound_CurrentMusic ( lua_State* L )
  * @page lua_sound The Lua Sound Registry
  * This page contains information about the Lua sound registry.
  *
- * This registry contains all music control mechanisms for Lua, along with a function for playing
- * sound effects. In Lua, they are all called like so: "sound.function_name()" (for example: "play" becomes
- * "sound.play(file)").
+ * This registry contains all music control mechanisms for Lua, along with a
+ * function for playing sound effects. In Lua, they are all called like so:
+ * "sound.function_name()" (for example: "play" becomes "sound.play(file)").
  * 
  * @section sounds Sounds
  * 
@@ -1396,7 +1529,8 @@ int Sound_CurrentMusic ( lua_State* L )
  * @section music Music
  * 
  * @subsection play_music
- * Plays the given song. Songs can be stopped on command, and their names can be queried.\n
+ * Plays the given song. Songs can be stopped on command, and their names can be
+ * queried.\n
  * Parameters:\n
  * song - the name of the song to be played.
  * 
@@ -1404,7 +1538,8 @@ int Sound_CurrentMusic ( lua_State* L )
  * Stops the current song. This function has no parameters.
  * 
  * @subsection current_music
- * Queries the name of the song currently playing. This function has no parameters.\n
+ * Queries the name of the song currently playing. This function has no
+ * parameters.\n
  * Return:\n
  * song - the name of the currently playing song.
  */
@@ -1593,28 +1728,28 @@ int import ( lua_State* L )
 
 /**
  * @page all_lua_bindings All LuaBind Registries
- * This page contains information about all Lua registries, along with links to the pages describing
- * them.
+ * This page contains information about all Lua registries, along with links to
+ * the pages describing them.
  * 
  * @ref lua_xml \n
- * This registry currently only contains one function (load). It is used to load XML data from
- * files.
+ * This registry currently only contains one function (load). It is used to load
+ * XML data from files.
  * 
  * @ref lua_mode_manager \n
- * This small registry contains functions for dealing with modes. Modes are the states in which Lua
- * runs, containing functions triggered by certain states of Apollo (like mouse movement, keyboard
- * presses, etc).
+ * This small registry contains functions for dealing with modes. Modes are the
+ * states in which Lua runs, containing functions triggered by certain states of
+ * Apollo (like mouse movement, keyboard presses, etc).
  * 
  * @ref lua_resource_manager \n
  * This small registry contains a few simple tools for manipulating files.
  * 
  * @ref lua_graphics \n
- * This registry contains all drawing mechanisms for Lua, along with some drawing manipulation
- * functions.
+ * This registry contains all drawing mechanisms for Lua, along with some
+ * drawing manipulation functions.
  * 
  * @ref lua_sound \n
- * This registry contains all music control mechanisms for Lua, along with a function for playing
- * sound effects.
+ * This registry contains all music control mechanisms for Lua, along with a
+ * function for playing sound effects.
  * 
  * @ref lua_net_client \n
  * This registry contains functions related to playing on a multiplayer server.
@@ -1623,7 +1758,8 @@ int import ( lua_State* L )
  * This registry contains functions related to hosting a multiplayer server.
  * 
  * @ref lua_preferences \n
- * This registry currently only contains one function, used for retrieving preferences.
+ * This registry currently only contains one function, used for retrieving
+ * preferences.
  */
 
 void __LuaBind ( lua_State* L )

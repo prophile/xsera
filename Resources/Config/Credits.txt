@@ -1,6 +1,6 @@
 **Thank you for playing Xsera!
 **We hope you enjoyed
-**this demo!
+**playing this demo!
 
 ***Xsera
 A Brainpen Production
@@ -10,7 +10,10 @@ Copyright 1997-2001, 2008
 *Programmers
 Adam "adam_0" Hintz
 Alistair "prophile" Lynn
+Scott "GameFreak" McClaugherty
 Andrew "LANS" Moscoe
+
+*Ares Data Extractor
 Chris "Sfiera" Pickel
 
 *Coordinator
@@ -21,7 +24,7 @@ Steven "RedSteven" Edwards
 
 *Sound
 Modified sounds created by:
-Taylor "Rickton" Vaughn
+Taylor "Rickton" Vaughan
 All original sounds copyright Nathan Lamont
 See Read Me for more information
 
