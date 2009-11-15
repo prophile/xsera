@@ -13,7 +13,7 @@ namespace ImageLoader
 {
 
 SDL_Surface* LoadImage ( const std::string& path );
-GLuint CreateTexture ( SDL_Surface* surface, bool autofree );
+GLuint CreateTexture ( SDL_Surface* surface, bool autofree, bool rectangle = true );
 
 }
 

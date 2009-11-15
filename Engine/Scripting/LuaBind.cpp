@@ -1050,6 +1050,35 @@ int GFX_DrawObject3DAmbient ( lua_State* L )
 	return 0;
 }
 
+int GFX_DrawParticles ( lua_State* L )
+{
+	Graphics::DrawParticles();
+	return 0;
+}
+
+int GFX_ClearParticles ( lua_State* L )
+{
+	Graphics::ClearParticles();
+}
+
+int GFX_AddParticles ( lua_State* L )
+{
+	const char* name = luaL_checkstring(L, 1);
+	unsigned long pcount = luaL_checkinteger(L, 2);
+	float x = luaL_checknumber(L, 3);
+	float y = luaL_checknumber(L, 4);
+	float velX = luaL_checknumber(L, 5);
+	float velY = luaL_checknumber(L, 6);
+	float velVarX = luaL_checknumber(L, 7);
+	float velVarY = luaL_checknumber(L, 8);
+	float accX = luaL_checknumber(L, 9);
+	float accY = luaL_checknumber(L, 10);
+	float size = luaL_checknumber(L, 11);
+	float lifetime = luaL_checknumber(L, 12);
+	Graphics::AddParticles(name, pcount, vec2(x, y), vec2(velX, velY), vec2(velVarX, velVarY), vec2(accX, accY), size, lifetime);
+	return 0;
+}
+
 int GFX_DrawCircle ( lua_State* L )
 {
 	int nargs = lua_gettop(L);
@@ -1297,6 +1326,9 @@ luaL_Reg registryGraphics[] =
 	"draw_rbox", GFX_DrawRadarBox,
 	"draw_rdia", GFX_DrawRadarDiamond,
 	"draw_circle", GFX_DrawCircle,
+	"add_particles", GFX_AddParticles,
+	"draw_particles", GFX_DrawParticles,
+	"clear_particles", GFX_ClearParticles,
 	"is_culled", GFX_IsCulled,
 	"begin_warp", GFX_BeginWarp,
 	"end_warp", GFX_EndWarp,

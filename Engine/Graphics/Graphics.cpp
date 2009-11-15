@@ -7,6 +7,8 @@
 #endif
 #include <SDL/SDL.h>
 #include "RNG.h"
+#include "ParticleSystem.h"
+#include <list>
 
 //#define DISABLE_WARP_EFFECTS
 
@@ -607,6 +609,52 @@ void DrawDiamond ( float top, float left, float bottom, float right, colour col 
 	glVertexPointer(2, GL_FLOAT, 0, diamond);
 	glDrawArrays(GL_QUADS, 0, 4);
 } 
+
+#pragma mark Particle System Functions
+std::list<ParticleSystem*> particleSystems;
+
+void AddParticles ( const std::string& name, unsigned long particleCount, vec2 centre, vec2 velocity, vec2 velocityVariance, vec2 acceleration, float sizeFactor, float lifetime )
+{
+	ParticleSystem* ps = new ParticleSystem(name, particleCount, sizeFactor, centre, velocity, velocityVariance, acceleration, lifetime);
+	particleSystems.push_back(ps);
+}
+
+void DrawParticles ()
+{
+	Shaders::SetShader("Particles");
+	EnableTexturing();
+	EnableBlending();
+	Matrices::SetViewMatrix(matrix2x3::Identity());
+	Matrices::SetModelMatrix(matrix2x3::Identity());
+	for (std::list<ParticleSystem*>::iterator iter = particleSystems.begin();
+	                                          iter != particleSystems.end();
+	                                          ++iter)
+	{
+		ParticleSystem* ps = *iter;
+		bool isDead = ps->Update();
+		if (isDead)
+		{
+			std::list<ParticleSystem*>::iterator iterCopy = iter;
+			++iter;
+			particleSystems.erase(iterCopy);
+			delete ps;
+			if (iter == particleSystems.end())
+				break;
+		}
+		ps->Draw();
+	}
+}
+
+void ClearParticles ()
+{
+	for (std::list<ParticleSystem*>::iterator iter = particleSystems.begin();
+	                                          iter != particleSystems.end();
+	                                          ++iter)
+	{
+		delete *iter;
+	}
+	particleSystems.clear();
+}
 
 static vec2 cameraCorner1;
 static vec2 cameraCorner2;

@@ -26,6 +26,7 @@
 		49A0E6940ECC3887007F3458 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49A0E6930ECC3887007F3458 /* OpenGL.framework */; };
 		49A315530ED6BDD90054BB8B /* Fonts in Resources */ = {isa = PBXBuildFile; fileRef = 49A315500ED6BDD90054BB8B /* Fonts */; };
 		49D543CB0ED5E222002FC38E /* Sprites in Resources */ = {isa = PBXBuildFile; fileRef = 49D543B80ED5E222002FC38E /* Sprites */; };
+		5766341710AF74600025BA67 /* Particles in Resources */ = {isa = PBXBuildFile; fileRef = 5766341410AF74600025BA67 /* Particles */; };
 		57FCA77F10ACF9F6002D6A9E /* Objects in Resources */ = {isa = PBXBuildFile; fileRef = 57FCA77910ACF9F6002D6A9E /* Objects */; };
 		57FCA78010ACF9F6002D6A9E /* Textures in Resources */ = {isa = PBXBuildFile; fileRef = 57FCA77C10ACF9F6002D6A9E /* Textures */; };
 		7A58AD60108919F200C4F789 /* NewResources in Resources */ = {isa = PBXBuildFile; fileRef = 7A58AD4C108919F200C4F789 /* NewResources */; };
@@ -84,6 +85,7 @@
 		49A0E6930ECC3887007F3458 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = /System/Library/Frameworks/OpenGL.framework; sourceTree = "<absolute>"; };
 		49A315500ED6BDD90054BB8B /* Fonts */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Fonts; path = ../Resources/Fonts; sourceTree = SOURCE_ROOT; };
 		49D543B80ED5E222002FC38E /* Sprites */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Sprites; path = ../Resources/Sprites; sourceTree = SOURCE_ROOT; };
+		5766341410AF74600025BA67 /* Particles */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Particles; path = ../Resources/Particles; sourceTree = SOURCE_ROOT; };
 		57FCA77910ACF9F6002D6A9E /* Objects */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Objects; path = ../Resources/Objects; sourceTree = SOURCE_ROOT; };
 		57FCA77C10ACF9F6002D6A9E /* Textures */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Textures; path = ../Resources/Textures; sourceTree = SOURCE_ROOT; };
 		7A58AD4C108919F200C4F789 /* NewResources */ = {isa = PBXFileReference; lastKnownFileType = folder; name = NewResources; path = ../Resources/NewResources; sourceTree = SOURCE_ROOT; };
@@ -130,6 +132,7 @@
 		496923E20EBE4C3500930DDD /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				5766341410AF74600025BA67 /* Particles */,
 				57FCA77910ACF9F6002D6A9E /* Objects */,
 				57FCA77C10ACF9F6002D6A9E /* Textures */,
 				496039250ED0B555003BA716 /* Scripts */,
@@ -252,6 +255,7 @@
 				7A58AD60108919F200C4F789 /* NewResources in Resources */,
 				57FCA77F10ACF9F6002D6A9E /* Objects in Resources */,
 				57FCA78010ACF9F6002D6A9E /* Textures in Resources */,
+				5766341710AF74600025BA67 /* Particles in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

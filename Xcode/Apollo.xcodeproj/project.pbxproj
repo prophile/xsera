@@ -142,6 +142,8 @@
 		5725775C10ADB48E003A8259 /* Server.h in Headers */ = {isa = PBXBuildFile; fileRef = 5725775A10ADB48E003A8259 /* Server.h */; };
 		57662F2C10AF591B0025BA67 /* ImageLoader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 57662F2810AF591B0025BA67 /* ImageLoader.cpp */; };
 		57662F2D10AF591B0025BA67 /* ImageLoader.h in Headers */ = {isa = PBXBuildFile; fileRef = 57662F2910AF591B0025BA67 /* ImageLoader.h */; };
+		57662F2E10AF591B0025BA67 /* ParticleSystem.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 57662F2A10AF591B0025BA67 /* ParticleSystem.cpp */; };
+		57662F2F10AF591B0025BA67 /* ParticleSystem.h in Headers */ = {isa = PBXBuildFile; fileRef = 57662F2B10AF591B0025BA67 /* ParticleSystem.h */; };
 		57966A8010AE7E8A0088327C /* RNG.h in Headers */ = {isa = PBXBuildFile; fileRef = 57966A7F10AE7E8A0088327C /* RNG.h */; };
 		57FCA50B10ACDF9D002D6A9E /* Object3D.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 57FCA50910ACDF9D002D6A9E /* Object3D.cpp */; };
 		57FCA50C10ACDF9D002D6A9E /* Object3D.h in Headers */ = {isa = PBXBuildFile; fileRef = 57FCA50A10ACDF9D002D6A9E /* Object3D.h */; };
@@ -284,6 +286,8 @@
 		5725775A10ADB48E003A8259 /* Server.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Server.h; path = ../Engine/Server.h; sourceTree = SOURCE_ROOT; };
 		57662F2810AF591B0025BA67 /* ImageLoader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ImageLoader.cpp; sourceTree = "<group>"; };
 		57662F2910AF591B0025BA67 /* ImageLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageLoader.h; sourceTree = "<group>"; };
+		57662F2A10AF591B0025BA67 /* ParticleSystem.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ParticleSystem.cpp; sourceTree = "<group>"; };
+		57662F2B10AF591B0025BA67 /* ParticleSystem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ParticleSystem.h; sourceTree = "<group>"; };
 		57966A7F10AE7E8A0088327C /* RNG.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RNG.h; sourceTree = "<group>"; };
 		57FCA50910ACDF9D002D6A9E /* Object3D.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Object3D.cpp; sourceTree = "<group>"; };
 		57FCA50A10ACDF9D002D6A9E /* Object3D.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Object3D.h; sourceTree = "<group>"; };
@@ -483,6 +487,8 @@
 			children = (
 				57662F2810AF591B0025BA67 /* ImageLoader.cpp */,
 				57662F2910AF591B0025BA67 /* ImageLoader.h */,
+				57662F2A10AF591B0025BA67 /* ParticleSystem.cpp */,
+				57662F2B10AF591B0025BA67 /* ParticleSystem.h */,
 				57FCA50910ACDF9D002D6A9E /* Object3D.cpp */,
 				57FCA50A10ACDF9D002D6A9E /* Object3D.h */,
 				4932245F0F23DE030048495A /* Shaders.cpp */,
@@ -648,6 +654,7 @@
 				57FCA50C10ACDF9D002D6A9E /* Object3D.h in Headers */,
 				57966A8010AE7E8A0088327C /* RNG.h in Headers */,
 				57662F2D10AF591B0025BA67 /* ImageLoader.h in Headers */,
+				57662F2F10AF591B0025BA67 /* ParticleSystem.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -764,6 +771,7 @@
 				5725775B10ADB48E003A8259 /* Server.cpp in Sources */,
 				57FCA50B10ACDF9D002D6A9E /* Object3D.cpp in Sources */,
 				57662F2C10AF591B0025BA67 /* ImageLoader.cpp in Sources */,
+				57662F2E10AF591B0025BA67 /* ParticleSystem.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -120,6 +120,18 @@ void DrawParticles ();
  */
 void ClearParticles ();
 /**
+ * Add a new particle system
+ * @param name The name of the particle texture
+ * @param particleCount The number of particles to add
+ * @param centre The centre of the particle system
+ * @param velocity The average of the particle system
+ * @param velocityVariance The variation in the velocity of the particles
+ * @param acceleration The acceleration of the particles
+ * @param sizeFactor The factor of the original size that particles will grow to over their lifetime
+ * @param lifetime The lifetime of the particles
+ */
+void AddParticles ( const std::string& name, unsigned long particleCount, vec2 centre, vec2 velocity, vec2 velocityVariance, vec2 acceleration, float sizeFactor, float lifetime );
+/**
  * Draws a 3D object for ambient lighting
  * @param name The name of the object
  * @param centre The centre of the object

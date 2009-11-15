@@ -9,6 +9,7 @@
 #include "Apollo.h"
 #include "Utilities/ResourceManager.h"
 #include <map>
+#include <assert.h>
 
 namespace Graphics
 {
@@ -132,7 +133,9 @@ void SetShader ( const std::string& name )
 
 GLuint UniformLocation ( const std::string& name )
 {
-	return glGetUniformLocation(currentShader, name.c_str());
+	GLuint location = glGetUniformLocation(currentShader, name.c_str());
+	assert(location != -1UL);
+	return location;
 }
 
 }
