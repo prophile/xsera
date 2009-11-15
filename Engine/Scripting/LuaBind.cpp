@@ -1255,8 +1255,8 @@ int GFX_EndWarp ( lua_State* L )
  * imgname - The name of the image to be drawn\n
  * loc_x - The x location of where the center of the image should be\n
  * loc_y - The y location of where the center of the image should be\n
- * sizex - The x size, in pixels, of the image\n
- * sizey - The y size, in pixels, of the image - note that sizex and sizey
+ * size_x - The x size, in pixels, of the image\n
+ * size_y - The y size, in pixels, of the image - note that size_x and size_y
  * should be in the same ratio of x:y as the original image, or stretching may
  * occur.\n
  * rot - The rotation of the image, in radians. Optional parameter.\n
@@ -1272,8 +1272,8 @@ int GFX_EndWarp ( lua_State* L )
  * spritesheet - The name of the file containing the sprites\n
  * loc_x - The x location of where the center of the sprite should be\n
  * loc_y - The y location of where the center of the sprite should be\n
- * sizex - The x size, in pixels, of the sprite\n
- * sizey - The y size, in pixels, of the sprite - note that sizex and sizey
+ * size_x - The x size, in pixels, of the sprite\n
+ * size_y - The y size, in pixels, of the sprite - note that size_x and size_y
  * should be in the same ratio of x:y as the original image, or stretching may
  * occur.\n
  * rot - The rotation of the sprite, in radians. Determines which sprite is
@@ -1286,12 +1286,12 @@ int GFX_EndWarp ( lua_State* L )
  * Draws a given sprite from within a sprite sheet.\n
  * Parameters:\n
  * spritesheet - The name of the sprite sheet to be drawn\n
- * sheetx - ?\n
- * sheety - ?\n
+ * sheet_x - ?\n
+ * sheet_y - ?\n
  * loc_x - The x location of where the center of the sprite should be\n
  * loc_y - The y location of where the center of the sprite should be\n
- * sizex - The x size, in pixels, of the sprite\n
- * sizey - The y size, in pixels, of the sprite - note that sizex and sizey
+ * size_x - The x size, in pixels, of the sprite\n
+ * size_y - The y size, in pixels, of the sprite - note that size_x and size_y
  * should be in the same ratio of x:y as the original image, or stretching may
  * occur.\n
  * rot - The rotation of the sprite, in radians. Determines which sprite is
@@ -1299,8 +1299,8 @@ int GFX_EndWarp ( lua_State* L )
  * colour - The colour to be applied to the sprite, in the form of a table:\n
  *    t = { r = red_val, b = blue_val, g = green_val, a = alpha_val }\n
  * where the colour values are between 0.0 and 1.0. (optional)
- * @todo define sheetx and sheety for @ref draw_sprite_sheet
- * @todo add in table reading for colours to @ref draw_sprite_sheet
+ * @todo define sheet_x and sheet_y for @ref draw_sheet_sprite
+ * @todo add in table reading for colours to @ref draw_sheet_sprite
  * 
  * @subsection sprite_dimensions
  * Returns the dimensions for a given sprite.\n
@@ -1359,7 +1359,7 @@ int GFX_EndWarp ( lua_State* L )
  * colour - The colour to be applied to the line, in the form of a table:\n
  *    t = { r = red_val, b = blue_val, g = green_val, a = alpha_val }\n
  * where the colour values are between 0.0 and 1.0. (optional)
- * 
+ *
  * @subsection draw_box
  * Draws a basic box.\n
  * Parameters:\n
@@ -1436,6 +1436,35 @@ int GFX_EndWarp ( lua_State* L )
  * Returns:\n
  * isCulled - If the circle is entirely off the screen, true. Otherwise false.
  * 
+ * @section Special Effects
+ * This section contains information about special effects like particles and 
+ * lightning.
+ *
+ * @subsection draw_lightning
+ * Draws lightning effects needed for certain weapons.\n
+ * x1 - The x coordinate of the starting point.\n
+ * y1 - The y coordinate of the starting point.\n
+ * x2 - The x coordinate of the ending point.\n
+ * y2 - The y coordinate of the ending point.\n
+ * width - The thickness of the lightning in pixels.\n
+ * chaos - ?
+ * tailed - ?
+ * colour - The colour to be applied to the lightning, in the form of a table:\n
+ *    t = { r = red_val, b = blue_val, g = green_val, a = alpha_val }\n
+ * where the colour values are between 0.0 and 1.0. (optional)
+ * @todo figure out "chaos" and "tailed" properties of @ref draw_lightning
+ * 
+ * @subsection add_particles
+ * 
+ * @subsection draw_particles
+ * 
+ * @subsection clear_particles
+ * 
+ * @subsection begin_warp
+ * 
+ * @subsection end_warp
+ * 
+ * @todo Document @ref add_particles, @ref draw_particles, @ref clear_particles, @ref begin_warp, and @ref end_warp
  * @todo Fix documentation @ref draw_image and @ref draw_sprite to better define sprites/images.
  */
 
@@ -1452,17 +1481,17 @@ luaL_Reg registryGraphics[] =
 	"draw_text", GFX_DrawText,
 	"text_length", GFX_TextLength,
 	"draw_line", GFX_DrawLine,
-	"draw_lightning", GFX_DrawLightning,
 	"draw_box", GFX_DrawBox,
+	"draw_circle", GFX_DrawCircle,
 	"draw_rtri", GFX_DrawRadarTriangle,
 	"draw_rplus", GFX_DrawRadarPlus,
 	"draw_rbox", GFX_DrawRadarBox,
 	"draw_rdia", GFX_DrawRadarDiamond,
-	"draw_circle", GFX_DrawCircle,
+	"is_culled", GFX_IsCulled,
+	"draw_lightning", GFX_DrawLightning,
 	"add_particles", GFX_AddParticles,
 	"draw_particles", GFX_DrawParticles,
 	"clear_particles", GFX_ClearParticles,
-	"is_culled", GFX_IsCulled,
 	"begin_warp", GFX_BeginWarp,
 	"end_warp", GFX_EndWarp,
 	"draw_3d_ambient", GFX_DrawObject3DAmbient,
@@ -1522,9 +1551,14 @@ int Sound_CurrentMusic ( lua_State* L )
  * @section sounds Sounds
  * 
  * @subsection play
- * Plays a specified sound effect.\n
+ * Plays the specified sound effect.\n
  * Parameters:\n
  * sound - The name of the sound file to be played.
+ * 
+ * @subsection preload
+ * Preloads the specified sound effect for quicker access in-game.\n
+ * Parameters:\n
+ * sound - The name of the sound file to be preloaded.
  * 
  * @section music Music
  * 
