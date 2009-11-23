@@ -1447,8 +1447,11 @@ int GFX_EndWarp ( lua_State* L )
  * x2 - The x coordinate of the ending point.\n
  * y2 - The y coordinate of the ending point.\n
  * width - The thickness of the lightning in pixels.\n
- * chaos - ?
- * tailed - ?
+ * chaos - How jagged the lightning appears. 0 gives perfectly straight
+ * lightning.\n
+ * tailed - If tailed is true, the lightning tapers down to the endpoint. If
+ * tailed is false, the lightning does not taper down to the endpoint but
+ * instead ends somewhere around the endpoint.\n
  * colour - The colour to be applied to the lightning, in the form of a table:\n
  *    t = { r = red_val, b = blue_val, g = green_val, a = alpha_val }\n
  * where the colour values are between 0.0 and 1.0. (optional)
@@ -1463,6 +1466,8 @@ int GFX_EndWarp ( lua_State* L )
  * @subsection begin_warp
  * 
  * @subsection end_warp
+ * 
+ * @subsection draw_3d_ambient
  * 
  * @todo Document @ref add_particles, @ref draw_particles, @ref clear_particles, @ref begin_warp, and @ref end_warp
  * @todo Fix documentation @ref draw_image and @ref draw_sprite to better define sprites/images.

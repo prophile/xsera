@@ -79,8 +79,8 @@ end
 
 function DoWarp()
 	if playerShip.warp.stage == "notWarping" then
+		playerShip.warp.time = 0.0
 		playerShip.warp.stage = "spooling"
-	--	sound.play("Warp1")
 	end
 end
 

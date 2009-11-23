@@ -3,7 +3,7 @@ import('AresCLUT')
 
 playerShip = nil
 
-releaseBuild = false
+releaseBuild = true
 
 cameraRatio = 1
 aspectRatio = 4 / 3

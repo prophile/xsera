@@ -69,6 +69,9 @@ void DrawLine ( vec2 coordinate1, vec2 coordinate2, float width, colour col );
  * @param width The width of the lightning, in pixels
  * @param chaos The chaos of the lightning
  * @param col The colour of the lightning
+ * @param tailed If tailed is true, the lightning tapers down to the endpoint. If
+ * tailed is false, the lightning does not taper down to the endpoint but
+ * instead ends somewhere around the endpoint.
  */
 void DrawLightning ( vec2 coordinate1, vec2 coordinate2, float width, float chaos, colour col, bool tailed );
 /**

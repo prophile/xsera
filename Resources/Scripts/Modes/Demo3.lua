@@ -175,7 +175,7 @@ function update ()
 		elseif playerShip.warp.stage == "cooldown" then
 			slowDownTime = 2 -- [HARDCODE]
 			if (playerShip.warp.time < slowDownTime) then
-				playerShip.physicsObject.velocity = { x = (playerShip.maxSpeed + (playerShip.warpSpeed - playerShip.maxSpeed) * (slowDownTime - playerShip.warp.time) / slowDownTime) * normalize(playerShip.physicsObject.velocity.x, playerShip.physicsObject.velocity.y), y = (playerShip.maxSpeed + (playerShip.warpSpeed - playerShip.maxSpeed) * (slowDownTime - playerShip.warp.time) / slowDownTime) * normalize(playerShip.physicsObject.velocity.y, playerShip.physicsObject.velocity.x) }
+				playerShip.physicsObject.velocity = { x = (playerShip.maxSpeed + (playerShip.warpSpeed - playerShip.maxSpeed) * (slowDownTime - playerShip.warp.time) / slowDownTime) * math.cos(playerShip.physicsObject.angle), y = (playerShip.maxSpeed + (playerShip.warpSpeed - playerShip.maxSpeed) * (slowDownTime - playerShip.warp.time) / slowDownTime) * math.sin(playerShip.physicsObject.angle) }
 			else
 				sound.play("WarpOut")
 				playerShip.physicsObject.velocity = { x = playerShip.maxSpeed * normalize(playerShip.physicsObject.velocity.x, playerShip.physicsObject.velocity.y), y = playerShip.maxSpeed * normalize(playerShip.physicsObject.velocity.y, playerShip.physicsObject.velocity.x) }
