@@ -215,8 +215,9 @@ void EndFrame ();
  *
  * @param magnitude The magnitude of the warp, as a value between 0 and 1.
  * @param angle The angle of the warp, as an angle in radians.
+ * @param scale The scale.
  */
-void BeginWarp ( float magnitude, float angle );
+void BeginWarp ( float magnitude, float angle, float scale );
 
 /**
  * End rendering of a Warp effect

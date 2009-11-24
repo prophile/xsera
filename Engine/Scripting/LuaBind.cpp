@@ -1209,7 +1209,8 @@ int GFX_BeginWarp ( lua_State* L )
 {
 	float magnitude = luaL_checknumber(L, 1);
 	float angle = luaL_checknumber(L, 2);
-	Graphics::BeginWarp(magnitude, angle);
+	float scale = luaL_checknumber(L, 3);
+	Graphics::BeginWarp(magnitude, angle, scale);
 	return 0;
 }
 
