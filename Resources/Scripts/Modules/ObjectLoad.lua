@@ -1,4 +1,4 @@
 function NewObject(id)
-	local newObj = data["Objects"][id] 
+	local newObj = gameData["Objects"][id] 
 	return newObj
 end
