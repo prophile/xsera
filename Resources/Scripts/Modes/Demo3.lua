@@ -420,7 +420,7 @@ function render ()
     else
     	warpStatus = 0.0
     end
-    graphics.begin_warp(warpStatus, (2.5*math.pi) - math.atan2(playerShip.physicsObject.velocity.x, playerShip.physicsObject.velocity.y))
+    graphics.begin_warp(warpStatus, (2.5*math.pi) - math.atan2(playerShip.physicsObject.velocity.x, playerShip.physicsObject.velocity.y), cameraRatio)
 	-- extract camera coordinates from here during update() and place finalized numbers here
 	graphics.set_camera(-playerShip.physicsObject.position.x + shipAdjust - (camera.w / 2.0), -playerShip.physicsObject.position.y - (camera.h / 2.0), -playerShip.physicsObject.position.x + shipAdjust + (camera.w / 2.0), -playerShip.physicsObject.position.y + (camera.h / 2.0))
 	graphics.draw_starfield(3.4)

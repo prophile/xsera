@@ -769,15 +769,17 @@ static GLuint warpFBO = 0;
 static GLuint warpTex = 0;
 static float warpMag = 0.0f;
 static float warpAngle = 0.0f;
+static float warpScale = 0.0f;
 static const float WARP_MAG_THRESHOLD = 0.001f;
 
-void BeginWarp ( float magnitude, float angle )
+void BeginWarp ( float magnitude, float angle, float scale )
 {
 #ifndef DISABLE_WARP_EFFECTS
 	if (!haveFBO || noWarpFX)
 		return;
 	warpMag = magnitude;
 	warpAngle = angle;
+	warpScale = scale;
 	if (magnitude < WARP_MAG_THRESHOLD)
 		return;
 	if (warpFBO == 0)
@@ -809,6 +811,7 @@ void EndWarp ()
 	Shaders::SetShader("DistortWarp");
 	glUniform1f(Shaders::UniformLocation("Angle"), warpAngle);
 	glUniform1f(Shaders::UniformLocation("Magnitude"), warpMag);
+	glUniform1f(Shaders::UniformLocation("Scale"), 1.0f / warpScale);
 	glUniform2f(Shaders::UniformLocation("Target"), 0.088f, 0.0f);
 	const GLfloat vertices[] = { -1.0f, -1.0f, 1.0f, -1.0f, 1.0f, 1.0f, -1.0f, 1.0f };
 	const GLfloat texCoords[] = { 0.0f, 0.0f, scw, 0.0f, scw, sch, 0.0f, sch };

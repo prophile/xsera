@@ -5,6 +5,7 @@ varying vec2 TX;
 uniform vec2 Target;
 uniform float Angle;
 uniform float Magnitude;
+uniform float Scale;
 
 uniform sampler2DRect sampler;
 
@@ -43,6 +44,7 @@ float calculateShortAngleDifference ( float angle1, float angle2 )
 void main ()
 {
 	float dist = length(V - Target);
+	dist *= Scale;
 	float actualAngle = atan2((V.y - Target.y), (V.x - Target.x));
 	float angleDifference = calculateShortAngleDifference(actualAngle, Angle);
 	float editedDistance = pow(1.0 / dist, DISTEXPONENT) + CONSTANTDIST;
