@@ -57,7 +57,7 @@ function Shipyard()
 end
 
 menuSpecial = { "SPECIAL ORDERS",
-	{ "Transfer Control", true, nil },
+	{ "Transfer Control", true, DoTransferControl },
 	{ "Hold Position", false, nil },
 	{ "Go To My Position", false, nil },
 	{ "Fire Weapon 1", false, nil },
@@ -70,7 +70,7 @@ function Special()
 end
 
 menuMessages = { "MESSAGES",
-	{ "Next Page/Clear", true, nil },
+	{ "Next Page/Clear", true, DoMessageNext },
 	{ "Previous Page", false, nil },
 	{ "Last Message", false, nil }
 }

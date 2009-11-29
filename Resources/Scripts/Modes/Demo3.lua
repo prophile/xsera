@@ -130,7 +130,8 @@ function update ()
 	Camera Code
 ------------------]]--
 	if cameraRatioNum > 5 and cameraChanging == false then
-		-- this needs to be constantly modified to be set correctly
+		-- this is constantly modified, but not done smoothly, so it looks bad
+		
 		if cameraRatioNum == 6 then
 		--	print(playerShip.physicsObject.position.x, playerShip.physicsObject.position.y)
 			local diff = { x = math.abs(computerShip.physicsObject.position.x - playerShip.physicsObject.position.x) + computerShip.size.x / 2, y = math.abs(computerShip.physicsObject.position.y - playerShip.physicsObject.position.y) + computerShip.size.y / 2 }
@@ -139,14 +140,14 @@ function update ()
 			if diff.x == 0 or diff.y == 0 or aspectRatio == 0 then
 				cameraRatio = 2
 			else
-				if aspectRatio > (diff.x / diff.y) then
+				if aspectRatio > (diff.x / diff.y) then -- I think it's based on radius, not box size - check this [ADAM]
 					cameraRatio = (640 - 100) / (diff.y * 2 * aspectRatio)
 				else
 					cameraRatio = (640 - 100) / (diff.x * 2)
 				end
 			end
 		else
-			print("DONT DO EET")
+			print("DONT DO EET") -- temp error message
 		end
 		if cameraRatio > 2 then
 			cameraRatio = 2

@@ -231,26 +231,18 @@ end
 
 function DoZoomHostile()
 	-- the following is hardcoded, but can be easily modified to not be so
-	-- cannot work on this on laptop, no insert key (change to F6 or F5 or something)
 	
-	-- the following does not work correctly [ADAM]
-	--[[ insta-zoom version, doesn't work
-	local diff = { x = computerShip.physicsObject.position.x - playerShip.physicsObject.position.x, y = computerShip.physicsObject.position.y - playerShip.physicsObject.position.y }
-	if aspectRatio > (diff.x / diff.y) then
-		camera = { w = diff.x, h =  (diff.x + 50) / aspectRatio }
-	else
-		camera = { w = aspectRatio *  (diff.y + 50), h = diff.y }
-	end
-	--]]
-	
+	-- insta-zoom version
 	if cameraRatioNum ~= 6 then
 		local diff = { x = computerShip.physicsObject.position.x - playerShip.physicsObject.position.x, y = computerShip.physicsObject.position.y - playerShip.physicsObject.position.y }
 		local calculatedRatio = 0
+		
 		if aspectRatio > (diff.x / diff.y) then
-			calculatedRatio = 640 / diff.y * aspectRatio
+			calculatedRatio = 640 / (diff.y * 2 * aspectRatio)
 		else
-			calculatedRatio = 640 / diff.x
+			calculatedRatio = 640 / (diff.x * 2)
 		end
+		
 		cameraChanging = false
 		cameraRatioOrig = cameraRatio
 		x = timeInterval
