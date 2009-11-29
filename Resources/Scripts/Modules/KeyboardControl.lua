@@ -121,7 +121,7 @@ function DoSelect(type)
 	if currentSelect == type then
 		select(nextClosest)
 	else
-		elect(closest)
+		select(closest)
 	end
 end
 --]]
@@ -143,7 +143,6 @@ function DoScaleIn()
 	if cameraRatioNum ~= 1 then
 		cameraChanging = true
 		cameraRatioOrig = cameraRatio
-		cameraIncreasing = true
 		x = timeInterval
 		cameraRatioNum = cameraRatioNum - 1
 		multiplier = (cameraRatios[cameraRatioNum] - cameraRatio) / cameraRatio
@@ -155,7 +154,6 @@ function DoScaleOut()
 	if cameraRatios[cameraRatioNum + 1] ~= nil then
 		cameraChanging = true
 		cameraRatioOrig = cameraRatio
-		cameraIncreasing = false
 		x = timeInterval
 		cameraRatioNum = cameraRatioNum + 1
 		multiplier = (cameraRatios[cameraRatioNum] - cameraRatio) / cameraRatio
@@ -195,11 +193,6 @@ function DoZoom1_1()
 	if cameraRatioNum ~= 2 then
 		cameraChanging = true
 		cameraRatioOrig = cameraRatio
-		if cameraRatio > 1 then
-			cameraIncreasing = true
-		else
-			cameraIncreasing = false
-		end
 		x = timeInterval
 		cameraRatioNum = 2
 		multiplier = (cameraRatios[cameraRatioNum] - cameraRatio) / cameraRatio
@@ -210,41 +203,26 @@ function DoZoom1_2()
 	if cameraRatioNum ~= 3 then
 		cameraChanging = true
 		cameraRatioOrig = cameraRatio
-		if cameraRatio > 0.5 then
-			cameraIncreasing = true
-		else
-			cameraIncreasing = false
-		end
 		x = timeInterval
 		cameraRatioNum = 3
 		multiplier = (cameraRatios[cameraRatioNum] - cameraRatio) / cameraRatio
 	end
 end
 
-function DoZoom1_4() -- [ADAM] TEST THIS
+function DoZoom1_4()
 	if cameraRatioNum ~= 4 then
 		cameraChanging = true
 		cameraRatioOrig = cameraRatio
-		if cameraRatio > 0.25 then
-			cameraIncreasing = true
-		else
-			cameraIncreasing = false
-		end
 		x = timeInterval
 		cameraRatioNum = 4
 		multiplier = (cameraRatios[cameraRatioNum] - cameraRatio) / cameraRatio
 	end
 end
 
-function DoZoom1_16() -- [ADAM] TEST THIS
+function DoZoom1_16()
 	if cameraRatioNum ~= 5 then
 		cameraChanging = true
 		cameraRatioOrig = cameraRatio
-		if cameraRatio > 0.0625 then
-			cameraIncreasing = true
-		else
-			cameraIncreasing = false
-		end
 		x = timeInterval
 		cameraRatioNum = 5
 		multiplier = (cameraRatios[cameraRatioNum] - cameraRatio) / cameraRatio
@@ -253,15 +231,31 @@ end
 
 function DoZoomHostile()
 	-- the following is hardcoded, but can be easily modified to not be so
-	-- the following does not work correctly [ADAM]
-	-- cannot work on this on laptop, no insert key
+	-- cannot work on this on laptop, no insert key (change to F6 or F5 or something)
 	
-	-- insta-zoom version
+	-- the following does not work correctly [ADAM]
+	--[[ insta-zoom version, doesn't work
 	local diff = { x = computerShip.physicsObject.position.x - playerShip.physicsObject.position.x, y = computerShip.physicsObject.position.y - playerShip.physicsObject.position.y }
 	if aspectRatio > (diff.x / diff.y) then
 		camera = { w = diff.x, h =  (diff.x + 50) / aspectRatio }
 	else
 		camera = { w = aspectRatio *  (diff.y + 50), h = diff.y }
+	end
+	--]]
+	
+	if cameraRatioNum ~= 6 then
+		local diff = { x = computerShip.physicsObject.position.x - playerShip.physicsObject.position.x, y = computerShip.physicsObject.position.y - playerShip.physicsObject.position.y }
+		local calculatedRatio = 0
+		if aspectRatio > (diff.x / diff.y) then
+			calculatedRatio = 640 / diff.y * aspectRatio
+		else
+			calculatedRatio = 640 / diff.x
+		end
+		cameraChanging = false
+		cameraRatioOrig = cameraRatio
+		x = timeInterval
+		cameraRatioNum = 6
+		multiplier = (calculatedRatio - cameraRatio) / cameraRatio
 	end
 end
 
@@ -285,6 +279,7 @@ function DoHelp()
 	menu_display = "info_menu"
 	keyup = escape_keyup
 	key = escape_key
+	keyboard[4][2].active = false
 end
 
 function DoLowerVolume()
@@ -381,7 +376,7 @@ keyboard = { { "Ship",
 				{ key = "F10", name = "Zoom to 1:2", action = DoZoom1_2, active = false }, 
 				{ key = "F11", name = "Zoom to 1:4", action = DoZoom1_4, active = false }, 
 				{ key = "F12", name = "Zoom to 1:16", action = DoZoom1_16, active = false }, 
-				{ key = "ins", name = "Zoom to Closest Hostile", action = DoZoomHostile, active = false }, 
+				{ key = "F5", name = "Zoom to Closest Hostile", action = DoZoomHostile, active = false }, 
 				{ key = "home", name = "Zoom to Closest Object", action = DoZoomObject, active = false }, 
 				{ key = "pgup", name = "Zoom to All", action = DoZoomAll, active = false }, 
 				{ key = "del", name = "Message Next Page / Clear", action = DoMessageNext, active = false } },
@@ -390,8 +385,8 @@ keyboard = { { "Ship",
 				{ key = "F2", name = "Lower Volume", action = DoLowerVolume, active = false }, 
 				{ key = "F3", name = "Raise Volume", action = DoRaiseVolume, active = false }, 
 				{ key = "F4", name = "Mute Music", action = DoMuteMusic, active = false }, 
-				{ key = "F5", name = "Expert Net Settings", action = DoExpertNet, active = false }, 
-				{ key = "F6", name = "Fast Motion", active = false } }, 
+				{ key = "", name = "Expert Net Settings", action = DoExpertNet, active = false }, 
+				{ key = "", name = "Fast Motion", active = false } }, 
 			{ "HotKeys",
 				{ key = "1", name = "HotKey 1", action = DoHotkey1, active = false }, 
 				{ key = "2", name = "HotKey 2", action = DoHotkey2, active = false }, 

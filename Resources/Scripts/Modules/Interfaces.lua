@@ -231,6 +231,7 @@ function DrawInfoMenu()
 		key = normal_key
 		down.esc = false
 		menu_display = nil
+		return
 	else
 		SwitchBox( { xCoord = -255, yCoord = -240, length = 530, text = "Done", boxColour = ClutColour(1, 8), textColour = ClutColour(1, 8), execute = nil, letter = "ESC" } )
 	end
