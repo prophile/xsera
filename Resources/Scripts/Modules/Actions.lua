@@ -12,12 +12,24 @@ actionTable = {
 activate-special-action = function(action, owner, other) end,
 alter-absolute-cash-action = function(action, owner, other) end,
 alter-absolute-location-action = function(action, owner, other) end,
-alter-age-action = function(action, owner, other) end,
+alter-age-action = function(action, owner, other)
+	if action.reflexive == true then
+		owner.age = action.value
+	else
+		other.age = action.value
+	end
+end,
 alter-base-type-action = function(action, owner, other) end,
 alter-cloak-action = function(action, owner, other) end,
 alter-condition-true-yet-action = function(action, owner, other) end,
 alter-damage-action = function(action, owner, other) end,
-alter-energy-action = function(action, owner, other) end,
+alter-energy-action = function(action, owner, other)
+	if action.reflexive == true then
+		owner.energy = action.value
+	else
+		other.energy = action.value
+	end
+end,
 alter-hidden-action = function(action, owner, other) end,
 alter-location-action = function(action, owner, other) end,
 alter-max-velocity-action = function(action, owner, other) end,
