@@ -1,6 +1,6 @@
 return {
 ["Actions"] = {
-["000"] =  {
+[000] =  {
 ["type"] = "create-object-action";
 ["reflexive"] = "true";
 ["which-base-type"] = 29;
@@ -12,7 +12,7 @@ return {
 
 };
 
-["001"] =  {
+[001] =  {
 ["type"] = "create-object-action";
 ["reflexive"] = "true";
 ["which-base-type"] = 2;
@@ -24,7 +24,7 @@ return {
 
 };
 
-["002"] =  {
+[002] =  {
 ["type"] = "play-sound-action";
 ["reflexive"] = "true";
 ["priority"] = 3;
@@ -37,7 +37,7 @@ return {
 
 };
 
-["003"] =  {
+[003] =  {
 ["type"] = "alter-offline-action";
 ["reflexive"] = "true";
 ["owner"] = "other";
@@ -46,7 +46,7 @@ return {
 
 };
 
-["004"] =  {
+[004] =  {
 ["type"] = "alter-thrust-action";
 ["reflexive"] = "true";
 ["owner"] = "other";
@@ -56,7 +56,7 @@ return {
 
 };
 
-["005"] =  {
+[005] =  {
 ["type"] = "alter-spin-action";
 ["reflexive"] = "true";
 ["owner"] = "other";
@@ -65,7 +65,7 @@ return {
 
 };
 
-["006"] =  {
+[006] =  {
 ["type"] = "create-object-action";
 ["reflexive"] = "true";
 ["which-base-type"] = 53;
@@ -77,14 +77,14 @@ return {
 
 };
 
-["007"] =  {
+[007] =  {
 ["type"] = "die-action";
 ["reflexive"] = "true";
 ["type"] = 255;
 
 };
 
-["008"] =  {
+[008] =  {
 ["type"] = "play-sound-action";
 ["reflexive"] = "true";
 ["priority"] = 3;
@@ -97,7 +97,7 @@ return {
 
 };
 
-["009"] =  {
+[009] =  {
 ["type"] = "create-object-action";
 ["reflexive"] = "true";
 ["which-base-type"] = 53;
@@ -109,14 +109,14 @@ return {
 
 };
 
-["010"] =  {
+[010] =  {
 ["type"] = "die-action";
 ["reflexive"] = "true";
 ["type"] = 1;
 
 };
 
-["011"] =  {
+[011] =  {
 ["type"] = "create-object-action";
 ["reflexive"] = "true";
 ["which-base-type"] = 3;
@@ -128,7 +128,7 @@ return {
 
 };
 
-["012"] =  {
+[012] =  {
 ["type"] = "create-object-action";
 ["reflexive"] = "true";
 ["which-base-type"] = 8;
@@ -140,14 +140,14 @@ return {
 
 };
 
-["013"] =  {
+[013] =  {
 ["type"] = "die-action";
 ["reflexive"] = "true";
 ["type"] = 1;
 
 };
 
-["014"] =  {
+[014] =  {
 ["type"] = "create-object-action";
 ["reflexive"] = "true";
 ["which-base-type"] = 9;
@@ -159,7 +159,7 @@ return {
 
 };
 
-["015"] =  {
+[015] =  {
 ["type"] = "create-object-action";
 ["reflexive"] = "true";
 ["which-base-type"] = 29;
@@ -171,7 +171,7 @@ return {
 
 };
 
-["016"] =  {
+[016] =  {
 ["type"] = "play-sound-action";
 ["reflexive"] = "true";
 ["priority"] = 3;
@@ -184,7 +184,7 @@ return {
 
 };
 
-["017"] =  {
+[017] =  {
 ["type"] = "make-sparks-action";
 ["reflexive"] = "true";
 ["how-many"] = 10;
@@ -193,7 +193,7 @@ return {
 
 };
 
-["018"] =  {
+[018] =  {
 ["type"] = "create-object-action";
 ["reflexive"] = "true";
 ["which-base-type"] = 26;
@@ -205,7 +205,7 @@ return {
 
 };
 
-["019"] =  {
+[019] =  {
 ["type"] = "play-sound-action";
 ["reflexive"] = "true";
 ["priority"] = 3;
@@ -218,7 +218,7 @@ return {
 
 };
 
-["020"] =  {
+[020] =  {
 ["type"] = "create-object-action";
 ["reflexive"] = "true";
 ["which-base-type"] = 34;
@@ -230,7 +230,7 @@ return {
 
 };
 
-["021"] =  {
+[021] =  {
 ["type"] = "alter-velocity-action";
 ["reflexive"] = "false";
 ["relative"] = "true";
@@ -239,7 +239,7 @@ return {
 
 };
 
-["022"] =  {
+[022] =  {
 ["type"] = "alter-offline-action";
 ["reflexive"] = "false";
 ["minimum"] = -512;
@@ -247,14 +247,14 @@ return {
 
 };
 
-["023"] =  {
+[023] =  {
 ["type"] = "die-action";
 ["reflexive"] = "true";
 ["type"] = 1;
 
 };
 
-["024"] =  {
+[024] =  {
 ["type"] = "play-sound-action";
 ["reflexive"] = "true";
 ["priority"] = 5;
@@ -267,7 +267,7 @@ return {
 
 };
 
-["025"] =  {
+[025] =  {
 ["type"] = "create-object-action";
 ["reflexive"] = "true";
 ["which-base-type"] = 11;
@@ -279,7 +279,7 @@ return {
 
 };
 
-["026"] =  {
+[026] =  {
 ["type"] = "create-object-action";
 ["reflexive"] = "true";
 ["which-base-type"] = 12;
@@ -291,7 +291,7 @@ return {
 
 };
 
-["027"] =  {
+[027] =  {
 ["type"] = "create-object-action";
 ["reflexive"] = "true";
 ["which-base-type"] = 8;
@@ -303,14 +303,14 @@ return {
 
 };
 
-["028"] =  {
+[028] =  {
 ["type"] = "die-action";
 ["reflexive"] = "true";
 ["type"] = 1;
 
 };
 
-["029"] =  {
+[029] =  {
 ["type"] = "create-object-action";
 ["reflexive"] = "true";
 ["which-base-type"] = 79;
@@ -322,14 +322,14 @@ return {
 
 };
 
-["030"] =  {
+[030] =  {
 ["type"] = "die-action";
 ["reflexive"] = "true";
 ["type"] = 1;
 
 };
 
-["031"] =  {
+[031] =  {
 ["type"] = "create-object-action";
 ["reflexive"] = "true";
 ["which-base-type"] = 35;
@@ -341,7 +341,7 @@ return {
 
 };
 
-["032"] =  {
+[032] =  {
 ["type"] = "create-object-action";
 ["reflexive"] = "true";
 ["which-base-type"] = 35;
@@ -353,7 +353,7 @@ return {
 
 };
 
-["033"] =  {
+[033] =  {
 ["type"] = "create-object-action";
 ["reflexive"] = "true";
 ["which-base-type"] = 16;
@@ -365,7 +365,7 @@ return {
 
 };
 
-["034"] =  {
+[034] =  {
 ["type"] = "play-sound-action";
 ["reflexive"] = "true";
 ["priority"] = 3;
@@ -378,14 +378,14 @@ return {
 
 };
 
-["035"] =  {
+[035] =  {
 ["type"] = "die-action";
 ["reflexive"] = "true";
 ["type"] = 1;
 
 };
 
-["036"] =  {
+[036] =  {
 ["type"] = "create-object-action";
 ["reflexive"] = "true";
 ["which-base-type"] = 52;
@@ -397,7 +397,7 @@ return {
 
 };
 
-["037"] =  {
+[037] =  {
 ["type"] = "create-object-action";
 ["reflexive"] = "true";
 ["which-base-type"] = 5;
@@ -409,7 +409,7 @@ return {
 
 };
 
-["038"] =  {
+[038] =  {
 ["type"] = "create-object-action";
 ["reflexive"] = "true";
 ["which-base-type"] = 21;
@@ -421,7 +421,7 @@ return {
 
 };
 
-["039"] =  {
+[039] =  {
 ["type"] = "play-sound-action";
 ["reflexive"] = "true";
 ["priority"] = 3;
@@ -434,7 +434,7 @@ return {
 
 };
 
-["040"] =  {
+[040] =  {
 ["type"] = "create-object-action";
 ["reflexive"] = "true";
 ["which-base-type"] = 8;
@@ -446,14 +446,14 @@ return {
 
 };
 
-["041"] =  {
+[041] =  {
 ["type"] = "die-action";
 ["reflexive"] = "true";
 ["type"] = 1;
 
 };
 
-["042"] =  {
+[042] =  {
 ["type"] = "play-sound-action";
 ["reflexive"] = "true";
 ["priority"] = 3;
@@ -466,7 +466,7 @@ return {
 
 };
 
-["043"] =  {
+[043] =  {
 ["type"] = "play-sound-action";
 ["reflexive"] = "true";
 ["priority"] = 3;
@@ -479,7 +479,7 @@ return {
 
 };
 
-["044"] =  {
+[044] =  {
 ["type"] = "land-at-action";
 ["reflexive"] = "false";
 ["inclusive-filter"] = 4029677568;
@@ -489,7 +489,7 @@ return {
 
 };
 
-["045"] =  {
+[045] =  {
 ["type"] = "play-sound-action";
 ["reflexive"] = "false";
 ["inclusive-filter"] = 4029677568;
@@ -505,7 +505,7 @@ return {
 
 };
 
-["046"] =  {
+[046] =  {
 ["type"] = "create-object-action";
 ["reflexive"] = "true";
 ["which-base-type"] = 81;
@@ -517,7 +517,7 @@ return {
 
 };
 
-["047"] =  {
+[047] =  {
 ["type"] = "play-sound-action";
 ["reflexive"] = "true";
 ["priority"] = 3;
@@ -530,7 +530,7 @@ return {
 
 };
 
-["048"] =  {
+[048] =  {
 ["type"] = "display-message-action";
 ["reflexive"] = "false";
 ["message-id"] = 4220;
@@ -538,14 +538,14 @@ return {
 
 };
 
-["049"] =  {
+[049] =  {
 ["type"] = "die-action";
 ["reflexive"] = "true";
 ["type"] = 1;
 
 };
 
-["050"] =  {
+[050] =  {
 ["type"] = "alter-energy-action";
 ["reflexive"] = "false";
 ["inclusive-filter"] = 1024;
@@ -553,7 +553,7 @@ return {
 
 };
 
-["051"] =  {
+[051] =  {
 ["type"] = "die-action";
 ["reflexive"] = "false";
 ["inclusive-filter"] = 1024;
@@ -561,7 +561,7 @@ return {
 
 };
 
-["052"] =  {
+[052] =  {
 ["type"] = "play-sound-action";
 ["reflexive"] = "false";
 ["inclusive-filter"] = 1024;
@@ -575,7 +575,7 @@ return {
 
 };
 
-["053"] =  {
+[053] =  {
 ["type"] = "play-sound-action";
 ["reflexive"] = "true";
 ["priority"] = 4;
@@ -588,7 +588,7 @@ return {
 
 };
 
-["054"] =  {
+[054] =  {
 ["type"] = "create-object-action";
 ["reflexive"] = "true";
 ["which-base-type"] = 11;
@@ -600,7 +600,7 @@ return {
 
 };
 
-["055"] =  {
+[055] =  {
 ["type"] = "create-object-action";
 ["reflexive"] = "true";
 ["which-base-type"] = 22;
@@ -612,7 +612,7 @@ return {
 
 };
 
-["056"] =  {
+[056] =  {
 ["type"] = "alter-special-action";
 ["reflexive"] = "false";
 ["inclusive-filter"] = 1024;
@@ -620,14 +620,14 @@ return {
 
 };
 
-["057"] =  {
+[057] =  {
 ["type"] = "die-action";
 ["reflexive"] = "true";
 ["type"] = 1;
 
 };
 
-["058"] =  {
+[058] =  {
 ["type"] = "alter-hidden-action";
 ["reflexive"] = "true";
 ["minimum"] = 15;
@@ -635,7 +635,7 @@ return {
 
 };
 
-["059"] =  {
+[059] =  {
 ["type"] = "alter-hidden-action";
 ["reflexive"] = "true";
 ["minimum"] = 16;
@@ -643,7 +643,7 @@ return {
 
 };
 
-["060"] =  {
+[060] =  {
 ["type"] = "alter-hidden-action";
 ["reflexive"] = "true";
 ["minimum"] = 17;
@@ -651,7 +651,7 @@ return {
 
 };
 
-["061"] =  {
+[061] =  {
 ["type"] = "play-sound-action";
 ["reflexive"] = "true";
 ["priority"] = 3;
@@ -664,7 +664,7 @@ return {
 
 };
 
-["062"] =  {
+[062] =  {
 ["type"] = "make-sparks-action";
 ["reflexive"] = "true";
 ["how-many"] = 10;
@@ -673,7 +673,7 @@ return {
 
 };
 
-["063"] =  {
+[063] =  {
 ["type"] = "play-sound-action";
 ["reflexive"] = "true";
 ["priority"] = 3;
@@ -686,7 +686,7 @@ return {
 
 };
 
-["064"] =  {
+[064] =  {
 ["type"] = "create-object-action";
 ["reflexive"] = "true";
 ["which-base-type"] = 29;
@@ -698,7 +698,7 @@ return {
 
 };
 
-["065"] =  {
+[065] =  {
 ["type"] = "change-score-action";
 ["reflexive"] = "true";
 ["which-player"] = 0;
@@ -707,7 +707,7 @@ return {
 
 };
 
-["066"] =  {
+[066] =  {
 ["type"] = "create-object-action";
 ["reflexive"] = "true";
 ["which-base-type"] = 29;
@@ -719,7 +719,7 @@ return {
 
 };
 
-["067"] =  {
+[067] =  {
 ["type"] = "create-object-action";
 ["reflexive"] = "true";
 ["which-base-type"] = 35;
@@ -731,7 +731,7 @@ return {
 
 };
 
-["068"] =  {
+[068] =  {
 ["type"] = "create-object-action";
 ["reflexive"] = "true";
 ["which-base-type"] = 40;
@@ -743,7 +743,7 @@ return {
 
 };
 
-["069"] =  {
+[069] =  {
 ["type"] = "play-sound-action";
 ["reflexive"] = "true";
 ["priority"] = 0;
@@ -756,7 +756,7 @@ return {
 
 };
 
-["070"] =  {
+[070] =  {
 ["type"] = "create-object-action";
 ["reflexive"] = "true";
 ["which-base-type"] = 124;
@@ -768,7 +768,7 @@ return {
 
 };
 
-["071"] =  {
+[071] =  {
 ["type"] = "create-object-action";
 ["reflexive"] = "true";
 ["which-base-type"] = 8;
@@ -780,14 +780,14 @@ return {
 
 };
 
-["072"] =  {
+[072] =  {
 ["type"] = "die-action";
 ["reflexive"] = "true";
 ["type"] = 1;
 
 };
 
-["073"] =  {
+[073] =  {
 ["type"] = "create-object-action";
 ["reflexive"] = "true";
 ["which-base-type"] = 29;
@@ -799,7 +799,7 @@ return {
 
 };
 
-["074"] =  {
+[074] =  {
 ["type"] = "land-at-action";
 ["reflexive"] = "false";
 ["inclusive-filter"] = 1048576;
@@ -808,7 +808,7 @@ return {
 
 };
 
-["075"] =  {
+[075] =  {
 ["type"] = "play-sound-action";
 ["reflexive"] = "false";
 ["inclusive-filter"] = 1048576;
@@ -823,7 +823,7 @@ return {
 
 };
 
-["076"] =  {
+[076] =  {
 ["type"] = "create-object-action";
 ["reflexive"] = "true";
 ["which-base-type"] = 29;
@@ -835,7 +835,7 @@ return {
 
 };
 
-["077"] =  {
+[077] =  {
 ["type"] = "play-sound-action";
 ["reflexive"] = "true";
 ["priority"] = 3;
@@ -848,14 +848,14 @@ return {
 
 };
 
-["078"] =  {
+[078] =  {
 ["type"] = "die-action";
 ["reflexive"] = "true";
 ["type"] = 1;
 
 };
 
-["079"] =  {
+[079] =  {
 ["type"] = "create-object-action";
 ["reflexive"] = "true";
 ["which-base-type"] = 43;
@@ -867,7 +867,7 @@ return {
 
 };
 
-["080"] =  {
+[080] =  {
 ["type"] = "declare-winner-action";
 ["reflexive"] = "false";
 ["which-player"] = 0;
@@ -876,7 +876,7 @@ return {
 
 };
 
-["081"] =  {
+[081] =  {
 ["type"] = "declare-winner-action";
 ["reflexive"] = "false";
 ["which-player"] = 1;
@@ -885,7 +885,7 @@ return {
 
 };
 
-["082"] =  {
+[082] =  {
 ["type"] = "display-message-action";
 ["reflexive"] = "false";
 ["delay"] = 120;
@@ -894,7 +894,7 @@ return {
 
 };
 
-["083"] =  {
+[083] =  {
 ["type"] = "alter-hidden-action";
 ["reflexive"] = "false";
 ["minimum"] = 7;
@@ -902,21 +902,21 @@ return {
 
 };
 
-["084"] =  {
+[084] =  {
 ["type"] = "alter-condition-true-yet-action";
 ["reflexive"] = "true";
 ["value"] = 1;
 
 };
 
-["085"] =  {
+[085] =  {
 ["type"] = "alter-owner-action";
 ["reflexive"] = "false";
 ["relative"] = "false";
 
 };
 
-["086"] =  {
+[086] =  {
 ["type"] = "play-sound-action";
 ["reflexive"] = "true";
 ["priority"] = 3;
@@ -929,7 +929,7 @@ return {
 
 };
 
-["087"] =  {
+[087] =  {
 ["type"] = "create-object-action";
 ["reflexive"] = "true";
 ["which-base-type"] = 14;
@@ -941,7 +941,7 @@ return {
 
 };
 
-["088"] =  {
+[088] =  {
 ["type"] = "play-sound-action";
 ["reflexive"] = "true";
 ["priority"] = 2;
@@ -954,7 +954,7 @@ return {
 
 };
 
-["089"] =  {
+[089] =  {
 ["type"] = "create-object-action";
 ["reflexive"] = "true";
 ["which-base-type"] = 13;
@@ -966,7 +966,7 @@ return {
 
 };
 
-["090"] =  {
+[090] =  {
 ["type"] = "play-sound-action";
 ["reflexive"] = "true";
 ["priority"] = 0;
@@ -979,7 +979,7 @@ return {
 
 };
 
-["091"] =  {
+[091] =  {
 ["type"] = "create-object-action";
 ["reflexive"] = "true";
 ["which-base-type"] = 49;
@@ -991,7 +991,7 @@ return {
 
 };
 
-["092"] =  {
+[092] =  {
 ["type"] = "play-sound-action";
 ["reflexive"] = "true";
 ["priority"] = 4;
@@ -1004,7 +1004,7 @@ return {
 
 };
 
-["093"] =  {
+[093] =  {
 ["type"] = "create-object-action";
 ["reflexive"] = "true";
 ["which-base-type"] = 11;
@@ -1016,7 +1016,7 @@ return {
 
 };
 
-["094"] =  {
+[094] =  {
 ["type"] = "create-object-action";
 ["reflexive"] = "true";
 ["which-base-type"] = 12;
@@ -1028,7 +1028,7 @@ return {
 
 };
 
-["095"] =  {
+[095] =  {
 ["type"] = "create-object-action";
 ["reflexive"] = "true";
 ["which-base-type"] = 51;
@@ -1040,7 +1040,7 @@ return {
 
 };
 
-["096"] =  {
+[096] =  {
 ["type"] = "alter-hidden-action";
 ["reflexive"] = "true";
 ["minimum"] = 1;
@@ -1048,13 +1048,13 @@ return {
 
 };
 
-["097"] =  {
+[097] =  {
 ["type"] = "alter-cloak-action";
 ["reflexive"] = "true";
 
 };
 
-["098"] =  {
+[098] =  {
 ["type"] = "create-object-action";
 ["reflexive"] = "true";
 ["which-base-type"] = 43;
@@ -1066,7 +1066,7 @@ return {
 
 };
 
-["099"] =  {
+[099] =  {
 ["type"] = "alter-hidden-action";
 ["reflexive"] = "true";
 ["minimum"] = 12;
@@ -1074,7 +1074,7 @@ return {
 
 };
 
-["100"] =  {
+[100] =  {
 ["type"] = "alter-hidden-action";
 ["reflexive"] = "true";
 ["minimum"] = 13;
@@ -1082,7 +1082,7 @@ return {
 
 };
 
-["101"] =  {
+[101] =  {
 ["type"] = "display-message-action";
 ["reflexive"] = "true";
 ["delay"] = 120;
@@ -1091,7 +1091,7 @@ return {
 
 };
 
-["102"] =  {
+[102] =  {
 ["type"] = "create-object-action";
 ["reflexive"] = "true";
 ["which-base-type"] = 66;
@@ -1103,7 +1103,7 @@ return {
 
 };
 
-["103"] =  {
+[103] =  {
 ["type"] = "alter-offline-action";
 ["reflexive"] = "false";
 ["owner"] = "other";
@@ -1112,7 +1112,7 @@ return {
 
 };
 
-["104"] =  {
+[104] =  {
 ["type"] = "create-object-action";
 ["reflexive"] = "true";
 ["which-base-type"] = 8;
@@ -1124,14 +1124,14 @@ return {
 
 };
 
-["105"] =  {
+[105] =  {
 ["type"] = "die-action";
 ["reflexive"] = "true";
 ["type"] = 255;
 
 };
 
-["106"] =  {
+[106] =  {
 ["type"] = "play-sound-action";
 ["reflexive"] = "true";
 ["priority"] = 3;
@@ -1144,7 +1144,7 @@ return {
 
 };
 
-["107"] =  {
+[107] =  {
 ["type"] = "play-sound-action";
 ["reflexive"] = "true";
 ["priority"] = 3;
@@ -1157,7 +1157,7 @@ return {
 
 };
 
-["108"] =  {
+[108] =  {
 ["type"] = "create-object-action";
 ["reflexive"] = "true";
 ["which-base-type"] = 71;
@@ -1169,7 +1169,7 @@ return {
 
 };
 
-["109"] =  {
+[109] =  {
 ["type"] = "create-object-action";
 ["reflexive"] = "true";
 ["which-base-type"] = 69;
@@ -1181,7 +1181,7 @@ return {
 
 };
 
-["110"] =  {
+[110] =  {
 ["type"] = "create-object-action";
 ["reflexive"] = "true";
 ["which-base-type"] = 72;
@@ -1193,7 +1193,7 @@ return {
 
 };
 
-["111"] =  {
+[111] =  {
 ["type"] = "play-sound-action";
 ["reflexive"] = "true";
 ["priority"] = 3;
@@ -1206,7 +1206,7 @@ return {
 
 };
 
-["112"] =  {
+[112] =  {
 ["type"] = "alter-base-type-action";
 ["reflexive"] = "true";
 ["preserve-weapons"] = "false";
@@ -1214,21 +1214,21 @@ return {
 
 };
 
-["113"] =  {
+[113] =  {
 ["type"] = "alter-condition-true-yet-action";
 ["reflexive"] = "true";
 ["value"] = 2;
 
 };
 
-["114"] =  {
+[114] =  {
 ["type"] = "alter-owner-action";
 ["reflexive"] = "false";
 ["relative"] = "false";
 
 };
 
-["115"] =  {
+[115] =  {
 ["type"] = "play-sound-action";
 ["reflexive"] = "true";
 ["priority"] = 4;
@@ -1241,7 +1241,7 @@ return {
 
 };
 
-["116"] =  {
+[116] =  {
 ["type"] = "create-object-action";
 ["reflexive"] = "true";
 ["which-base-type"] = 257;
@@ -1253,7 +1253,7 @@ return {
 
 };
 
-["117"] =  {
+[117] =  {
 ["type"] = "create-object-action";
 ["reflexive"] = "true";
 ["which-base-type"] = 84;
@@ -1265,7 +1265,7 @@ return {
 
 };
 
-["118"] =  {
+[118] =  {
 ["type"] = "create-object-action";
 ["reflexive"] = "true";
 ["which-base-type"] = 35;
@@ -1277,7 +1277,7 @@ return {
 
 };
 
-["119"] =  {
+[119] =  {
 ["type"] = "create-object-action";
 ["reflexive"] = "true";
 ["which-base-type"] = 85;
@@ -1289,7 +1289,7 @@ return {
 
 };
 
-["120"] =  {
+[120] =  {
 ["type"] = "create-object-action";
 ["reflexive"] = "true";
 ["which-base-type"] = 35;
@@ -1301,7 +1301,7 @@ return {
 
 };
 
-["121"] =  {
+[121] =  {
 ["type"] = "change-score-action";
 ["reflexive"] = "false";
 ["which-player"] = 0;
@@ -1310,7 +1310,7 @@ return {
 
 };
 
-["122"] =  {
+[122] =  {
 ["type"] = "play-sound-action";
 ["reflexive"] = "true";
 ["priority"] = 3;
@@ -1323,14 +1323,14 @@ return {
 
 };
 
-["123"] =  {
+[123] =  {
 ["type"] = "die-action";
 ["reflexive"] = "true";
 ["type"] = 56;
 
 };
 
-["124"] =  {
+[124] =  {
 ["type"] = "display-message-action";
 ["reflexive"] = "true";
 ["message-id"] = 4200;
@@ -1338,7 +1338,7 @@ return {
 
 };
 
-["125"] =  {
+[125] =  {
 ["type"] = "alter-hidden-action";
 ["reflexive"] = "false";
 ["minimum"] = 1;
@@ -1346,7 +1346,7 @@ return {
 
 };
 
-["126"] =  {
+[126] =  {
 ["type"] = "display-message-action";
 ["reflexive"] = "true";
 ["delay"] = 120;
@@ -1355,7 +1355,7 @@ return {
 
 };
 
-["127"] =  {
+[127] =  {
 ["type"] = "set-destination-action";
 ["reflexive"] = "false";
 ["delay"] = 480;
@@ -1364,7 +1364,7 @@ return {
 
 };
 
-["128"] =  {
+[128] =  {
 ["type"] = "display-message-action";
 ["reflexive"] = "true";
 ["delay"] = 360;
@@ -1373,7 +1373,7 @@ return {
 
 };
 
-["129"] =  {
+[129] =  {
 ["type"] = "alter-hidden-action";
 ["reflexive"] = "true";
 ["delay"] = 120;
@@ -1382,7 +1382,7 @@ return {
 
 };
 
-["130"] =  {
+[130] =  {
 ["type"] = "set-destination-action";
 ["reflexive"] = "false";
 ["delay"] = 360;
@@ -1391,7 +1391,7 @@ return {
 
 };
 
-["131"] =  {
+[131] =  {
 ["type"] = "set-destination-action";
 ["reflexive"] = "false";
 ["initial-subject-override"] = 3;
@@ -1399,7 +1399,7 @@ return {
 
 };
 
-["132"] =  {
+[132] =  {
 ["type"] = "set-destination-action";
 ["reflexive"] = "false";
 ["initial-subject-override"] = 4;
@@ -1407,7 +1407,7 @@ return {
 
 };
 
-["133"] =  {
+[133] =  {
 ["type"] = "set-destination-action";
 ["reflexive"] = "false";
 ["initial-subject-override"] = 8;
@@ -1415,7 +1415,7 @@ return {
 
 };
 
-["134"] =  {
+[134] =  {
 ["type"] = "display-message-action";
 ["reflexive"] = "true";
 ["delay"] = 360;
@@ -1424,7 +1424,7 @@ return {
 
 };
 
-["135"] =  {
+[135] =  {
 ["type"] = "alter-hidden-action";
 ["reflexive"] = "true";
 ["minimum"] = 11;
@@ -1432,7 +1432,7 @@ return {
 
 };
 
-["136"] =  {
+[136] =  {
 ["type"] = "alter-owner-action";
 ["reflexive"] = "true";
 ["initial-subject-override"] = 7;
@@ -1441,14 +1441,14 @@ return {
 
 };
 
-["137"] =  {
+[137] =  {
 ["type"] = "alter-damage-action";
 ["reflexive"] = "true";
 ["value"] = 5000;
 
 };
 
-["138"] =  {
+[138] =  {
 ["type"] = "display-message-action";
 ["reflexive"] = "true";
 ["delay"] = 180;
@@ -1457,7 +1457,7 @@ return {
 
 };
 
-["139"] =  {
+[139] =  {
 ["type"] = "play-sound-action";
 ["reflexive"] = "true";
 ["priority"] = 5;
@@ -1470,7 +1470,7 @@ return {
 
 };
 
-["140"] =  {
+[140] =  {
 ["type"] = "create-object-action";
 ["reflexive"] = "true";
 ["delay"] = 180;
@@ -1483,14 +1483,14 @@ return {
 
 };
 
-["141"] =  {
+[141] =  {
 ["type"] = "alter-damage-action";
 ["reflexive"] = "true";
 ["value"] = -100000;
 
 };
 
-["142"] =  {
+[142] =  {
 ["type"] = "display-message-action";
 ["reflexive"] = "true";
 ["delay"] = 120;
@@ -1499,7 +1499,7 @@ return {
 
 };
 
-["143"] =  {
+[143] =  {
 ["type"] = "create-object-action";
 ["reflexive"] = "true";
 ["which-base-type"] = 90;
@@ -1511,7 +1511,7 @@ return {
 
 };
 
-["144"] =  {
+[144] =  {
 ["type"] = "create-object-action";
 ["reflexive"] = "true";
 ["which-base-type"] = 79;
@@ -1523,14 +1523,14 @@ return {
 
 };
 
-["145"] =  {
+[145] =  {
 ["type"] = "die-action";
 ["reflexive"] = "true";
 ["type"] = 1;
 
 };
 
-["146"] =  {
+[146] =  {
 ["type"] = "die-action";
 ["reflexive"] = "false";
 ["inclusive-filter"] = 2;
@@ -1539,7 +1539,7 @@ return {
 
 };
 
-["147"] =  {
+[147] =  {
 ["type"] = "play-sound-action";
 ["reflexive"] = "true";
 ["priority"] = 3;
@@ -1552,7 +1552,7 @@ return {
 
 };
 
-["148"] =  {
+[148] =  {
 ["type"] = "create-object-action";
 ["reflexive"] = "true";
 ["which-base-type"] = 38;
@@ -1564,7 +1564,7 @@ return {
 
 };
 
-["149"] =  {
+[149] =  {
 ["type"] = "alter-velocity-action";
 ["reflexive"] = "true";
 ["inclusive-filter"] = 1342177280;
@@ -1576,7 +1576,7 @@ return {
 
 };
 
-["150"] =  {
+[150] =  {
 ["type"] = "alter-max-velocity-action";
 ["reflexive"] = "true";
 ["inclusive-filter"] = 1342177280;
@@ -1586,7 +1586,7 @@ return {
 
 };
 
-["151"] =  {
+[151] =  {
 ["type"] = "play-sound-action";
 ["reflexive"] = "true";
 ["inclusive-filter"] = 1342177280;
@@ -1602,7 +1602,7 @@ return {
 
 };
 
-["152"] =  {
+[152] =  {
 ["type"] = "die-action";
 ["reflexive"] = "false";
 ["inclusive-filter"] = 1342177280;
@@ -1613,7 +1613,7 @@ return {
 
 };
 
-["153"] =  {
+[153] =  {
 ["type"] = "alter-owner-action";
 ["reflexive"] = "false";
 ["inclusive-filter"] = 1342177280;
@@ -1624,14 +1624,14 @@ return {
 
 };
 
-["154"] =  {
+[154] =  {
 ["type"] = "alter-max-velocity-action";
 ["reflexive"] = "true";
 ["value"] = -1;
 
 };
 
-["155"] =  {
+[155] =  {
 ["type"] = "create-object-action";
 ["reflexive"] = "true";
 ["which-base-type"] = 97;
@@ -1643,7 +1643,7 @@ return {
 
 };
 
-["156"] =  {
+[156] =  {
 ["type"] = "play-sound-action";
 ["reflexive"] = "true";
 ["priority"] = 4;
@@ -1656,7 +1656,7 @@ return {
 
 };
 
-["157"] =  {
+[157] =  {
 ["type"] = "create-object-set-dest-action";
 ["reflexive"] = "true";
 ["which-base-type"] = 99;
@@ -1668,7 +1668,7 @@ return {
 
 };
 
-["158"] =  {
+[158] =  {
 ["type"] = "die-action";
 ["reflexive"] = "false";
 ["inclusive-filter"] = 2684354560;
@@ -1678,7 +1678,7 @@ return {
 
 };
 
-["159"] =  {
+[159] =  {
 ["type"] = "play-sound-action";
 ["reflexive"] = "false";
 ["inclusive-filter"] = 2684354560;
@@ -1694,7 +1694,7 @@ return {
 
 };
 
-["160"] =  {
+[160] =  {
 ["type"] = "alter-occupation-action";
 ["reflexive"] = "false";
 ["inclusive-filter"] = 2684354560;
@@ -1704,7 +1704,7 @@ return {
 
 };
 
-["161"] =  {
+[161] =  {
 ["type"] = "activate-special-action";
 ["reflexive"] = "false";
 ["inclusive-filter"] = 2684354560;
@@ -1713,7 +1713,7 @@ return {
 
 };
 
-["162"] =  {
+[162] =  {
 ["type"] = "create-object-action";
 ["reflexive"] = "true";
 ["which-base-type"] = 29;
@@ -1725,7 +1725,7 @@ return {
 
 };
 
-["163"] =  {
+[163] =  {
 ["type"] = "play-sound-action";
 ["reflexive"] = "false";
 ["priority"] = 3;
@@ -1738,7 +1738,7 @@ return {
 
 };
 
-["164"] =  {
+[164] =  {
 ["type"] = "create-object-action";
 ["reflexive"] = "true";
 ["which-base-type"] = 35;
@@ -1750,7 +1750,7 @@ return {
 
 };
 
-["165"] =  {
+[165] =  {
 ["type"] = "play-sound-action";
 ["reflexive"] = "true";
 ["priority"] = 3;
@@ -1763,7 +1763,7 @@ return {
 
 };
 
-["166"] =  {
+[166] =  {
 ["type"] = "create-object-action";
 ["reflexive"] = "true";
 ["which-base-type"] = 107;
@@ -1775,7 +1775,7 @@ return {
 
 };
 
-["167"] =  {
+[167] =  {
 ["type"] = "create-object-action";
 ["reflexive"] = "true";
 ["which-base-type"] = 106;
@@ -1787,7 +1787,7 @@ return {
 
 };
 
-["168"] =  {
+[168] =  {
 ["type"] = "create-object-action";
 ["reflexive"] = "true";
 ["which-base-type"] = 105;
@@ -1799,7 +1799,7 @@ return {
 
 };
 
-["169"] =  {
+[169] =  {
 ["type"] = "display-message-action";
 ["reflexive"] = "true";
 ["message-id"] = 6200;
@@ -1807,7 +1807,7 @@ return {
 
 };
 
-["170"] =  {
+[170] =  {
 ["type"] = "set-destination-action";
 ["reflexive"] = "false";
 ["delay"] = 120;
@@ -1816,7 +1816,7 @@ return {
 
 };
 
-["171"] =  {
+[171] =  {
 ["type"] = "play-sound-action";
 ["reflexive"] = "false";
 ["owner"] = "other";
@@ -1830,7 +1830,7 @@ return {
 
 };
 
-["172"] =  {
+[172] =  {
 ["type"] = "display-message-action";
 ["reflexive"] = "true";
 ["delay"] = 360;
@@ -1839,7 +1839,7 @@ return {
 
 };
 
-["173"] =  {
+[173] =  {
 ["type"] = "set-destination-action";
 ["reflexive"] = "false";
 ["delay"] = 120;
@@ -1848,7 +1848,7 @@ return {
 
 };
 
-["174"] =  {
+[174] =  {
 ["type"] = "alter-hidden-action";
 ["reflexive"] = "true";
 ["minimum"] = 6;
@@ -1856,7 +1856,7 @@ return {
 
 };
 
-["175"] =  {
+[175] =  {
 ["type"] = "play-sound-action";
 ["reflexive"] = "true";
 ["priority"] = 5;
@@ -1869,7 +1869,7 @@ return {
 
 };
 
-["176"] =  {
+[176] =  {
 ["type"] = "display-message-action";
 ["reflexive"] = "true";
 ["delay"] = 360;
@@ -1878,7 +1878,7 @@ return {
 
 };
 
-["177"] =  {
+[177] =  {
 ["type"] = "set-destination-action";
 ["reflexive"] = "false";
 ["delay"] = 120;
@@ -1887,7 +1887,7 @@ return {
 
 };
 
-["178"] =  {
+[178] =  {
 ["type"] = "play-sound-action";
 ["reflexive"] = "true";
 ["priority"] = 5;
@@ -1900,7 +1900,7 @@ return {
 
 };
 
-["179"] =  {
+[179] =  {
 ["type"] = "display-message-action";
 ["reflexive"] = "true";
 ["delay"] = 360;
@@ -1909,7 +1909,7 @@ return {
 
 };
 
-["180"] =  {
+[180] =  {
 ["type"] = "display-message-action";
 ["reflexive"] = "true";
 ["delay"] = 360;
@@ -1918,7 +1918,7 @@ return {
 
 };
 
-["181"] =  {
+[181] =  {
 ["type"] = "alter-hidden-action";
 ["reflexive"] = "true";
 ["delay"] = 180;
@@ -1927,7 +1927,7 @@ return {
 
 };
 
-["182"] =  {
+[182] =  {
 ["type"] = "set-destination-action";
 ["reflexive"] = "false";
 ["initial-subject-override"] = 4;
@@ -1935,7 +1935,7 @@ return {
 
 };
 
-["183"] =  {
+[183] =  {
 ["type"] = "change-score-action";
 ["reflexive"] = "false";
 ["inclusive-filter"] = 1610612736;
@@ -1946,7 +1946,7 @@ return {
 
 };
 
-["184"] =  {
+[184] =  {
 ["type"] = "die-action";
 ["reflexive"] = "false";
 ["inclusive-filter"] = 1610612736;
@@ -1955,7 +1955,7 @@ return {
 
 };
 
-["185"] =  {
+[185] =  {
 ["type"] = "create-object-action";
 ["reflexive"] = "true";
 ["which-base-type"] = 61;
@@ -1967,7 +1967,7 @@ return {
 
 };
 
-["186"] =  {
+[186] =  {
 ["type"] = "create-object-action";
 ["reflexive"] = "true";
 ["which-base-type"] = 117;
@@ -1979,7 +1979,7 @@ return {
 
 };
 
-["187"] =  {
+[187] =  {
 ["type"] = "display-message-action";
 ["reflexive"] = "true";
 ["message-id"] = 5300;
@@ -1987,7 +1987,7 @@ return {
 
 };
 
-["188"] =  {
+[188] =  {
 ["type"] = "alter-hidden-action";
 ["reflexive"] = "true";
 ["delay"] = 1200;
@@ -1996,7 +1996,7 @@ return {
 
 };
 
-["189"] =  {
+[189] =  {
 ["type"] = "alter-hidden-action";
 ["reflexive"] = "true";
 ["delay"] = 1200;
@@ -2005,7 +2005,7 @@ return {
 
 };
 
-["190"] =  {
+[190] =  {
 ["type"] = "alter-hidden-action";
 ["reflexive"] = "true";
 ["delay"] = 1200;
@@ -2014,7 +2014,7 @@ return {
 
 };
 
-["191"] =  {
+[191] =  {
 ["type"] = "alter-hidden-action";
 ["reflexive"] = "true";
 ["delay"] = 1200;
@@ -2023,7 +2023,7 @@ return {
 
 };
 
-["192"] =  {
+[192] =  {
 ["type"] = "alter-hidden-action";
 ["reflexive"] = "true";
 ["delay"] = 1200;
@@ -2032,7 +2032,7 @@ return {
 
 };
 
-["193"] =  {
+[193] =  {
 ["type"] = "alter-hidden-action";
 ["reflexive"] = "true";
 ["minimum"] = 1;
@@ -2040,7 +2040,7 @@ return {
 
 };
 
-["194"] =  {
+[194] =  {
 ["type"] = "display-message-action";
 ["reflexive"] = "true";
 ["message-id"] = 5301;
@@ -2048,7 +2048,7 @@ return {
 
 };
 
-["195"] =  {
+[195] =  {
 ["type"] = "display-message-action";
 ["reflexive"] = "true";
 ["message-id"] = 5310;
@@ -2056,7 +2056,7 @@ return {
 
 };
 
-["196"] =  {
+[196] =  {
 ["type"] = "alter-hidden-action";
 ["reflexive"] = "true";
 ["delay"] = 400;
@@ -2065,7 +2065,7 @@ return {
 
 };
 
-["197"] =  {
+[197] =  {
 ["type"] = "play-sound-action";
 ["reflexive"] = "true";
 ["priority"] = 3;
@@ -2078,7 +2078,7 @@ return {
 
 };
 
-["198"] =  {
+[198] =  {
 ["type"] = "create-object-set-dest-action";
 ["reflexive"] = "true";
 ["which-base-type"] = 121;
@@ -2090,7 +2090,7 @@ return {
 
 };
 
-["199"] =  {
+[199] =  {
 ["type"] = "play-sound-action";
 ["reflexive"] = "true";
 ["priority"] = 3;
@@ -2103,7 +2103,7 @@ return {
 
 };
 
-["200"] =  {
+[200] =  {
 ["type"] = "alter-velocity-action";
 ["reflexive"] = "true";
 ["relative"] = "false";
@@ -2112,7 +2112,7 @@ return {
 
 };
 
-["201"] =  {
+[201] =  {
 ["type"] = "alter-velocity-action";
 ["reflexive"] = "true";
 ["delay"] = 7;
@@ -2122,7 +2122,7 @@ return {
 
 };
 
-["202"] =  {
+[202] =  {
 ["type"] = "display-message-action";
 ["reflexive"] = "true";
 ["message-id"] = 5370;
@@ -2130,7 +2130,7 @@ return {
 
 };
 
-["203"] =  {
+[203] =  {
 ["type"] = "declare-winner-action";
 ["reflexive"] = "false";
 ["delay"] = 360;
@@ -2140,7 +2140,7 @@ return {
 
 };
 
-["204"] =  {
+[204] =  {
 ["type"] = "alter-hidden-action";
 ["reflexive"] = "true";
 ["delay"] = 90;
@@ -2149,7 +2149,7 @@ return {
 
 };
 
-["205"] =  {
+[205] =  {
 ["type"] = "display-message-action";
 ["reflexive"] = "true";
 ["delay"] = 30;
@@ -2158,7 +2158,7 @@ return {
 
 };
 
-["206"] =  {
+[206] =  {
 ["type"] = "alter-hidden-action";
 ["reflexive"] = "true";
 ["delay"] = 900;
@@ -2167,7 +2167,7 @@ return {
 
 };
 
-["207"] =  {
+[207] =  {
 ["type"] = "play-sound-action";
 ["reflexive"] = "true";
 ["priority"] = 3;
@@ -2180,7 +2180,7 @@ return {
 
 };
 
-["208"] =  {
+[208] =  {
 ["type"] = "create-object-action";
 ["reflexive"] = "true";
 ["which-base-type"] = 131;
@@ -2192,7 +2192,7 @@ return {
 
 };
 
-["209"] =  {
+[209] =  {
 ["type"] = "alter-base-type-action";
 ["reflexive"] = "true";
 ["initial-subject-override"] = 0;
@@ -2201,7 +2201,7 @@ return {
 
 };
 
-["210"] =  {
+[210] =  {
 ["type"] = "play-sound-action";
 ["reflexive"] = "true";
 ["priority"] = 4;
@@ -2214,14 +2214,14 @@ return {
 
 };
 
-["211"] =  {
+[211] =  {
 ["type"] = "alter-condition-true-yet-action";
 ["reflexive"] = "true";
 ["value"] = 2;
 
 };
 
-["212"] =  {
+[212] =  {
 ["type"] = "set-destination-action";
 ["reflexive"] = "false";
 ["initial-subject-override"] = 0;
@@ -2229,7 +2229,7 @@ return {
 
 };
 
-["213"] =  {
+[213] =  {
 ["type"] = "display-message-action";
 ["reflexive"] = "true";
 ["message-id"] = 5401;
@@ -2237,7 +2237,7 @@ return {
 
 };
 
-["214"] =  {
+[214] =  {
 ["type"] = "set-destination-action";
 ["reflexive"] = "false";
 ["initial-subject-override"] = 10;
@@ -2245,7 +2245,7 @@ return {
 
 };
 
-["215"] =  {
+[215] =  {
 ["type"] = "play-sound-action";
 ["reflexive"] = "true";
 ["priority"] = 3;
@@ -2258,7 +2258,7 @@ return {
 
 };
 
-["216"] =  {
+[216] =  {
 ["type"] = "create-object-action";
 ["reflexive"] = "true";
 ["which-base-type"] = 112;
@@ -2270,7 +2270,7 @@ return {
 
 };
 
-["217"] =  {
+[217] =  {
 ["type"] = "play-sound-action";
 ["reflexive"] = "true";
 ["priority"] = 3;
@@ -2283,7 +2283,7 @@ return {
 
 };
 
-["218"] =  {
+[218] =  {
 ["type"] = "create-object-action";
 ["reflexive"] = "true";
 ["which-base-type"] = 133;
@@ -2295,7 +2295,7 @@ return {
 
 };
 
-["219"] =  {
+[219] =  {
 ["type"] = "play-sound-action";
 ["reflexive"] = "true";
 ["priority"] = 3;
@@ -2308,7 +2308,7 @@ return {
 
 };
 
-["220"] =  {
+[220] =  {
 ["type"] = "create-object-action";
 ["reflexive"] = "true";
 ["which-base-type"] = 136;
@@ -2320,7 +2320,7 @@ return {
 
 };
 
-["221"] =  {
+[221] =  {
 ["type"] = "display-message-action";
 ["reflexive"] = "true";
 ["delay"] = 120;
@@ -2329,7 +2329,7 @@ return {
 
 };
 
-["222"] =  {
+[222] =  {
 ["type"] = "alter-hidden-action";
 ["reflexive"] = "true";
 ["delay"] = 180;
@@ -2338,7 +2338,7 @@ return {
 
 };
 
-["223"] =  {
+[223] =  {
 ["type"] = "set-destination-action";
 ["reflexive"] = "false";
 ["initial-subject-override"] = 0;
@@ -2346,7 +2346,7 @@ return {
 
 };
 
-["224"] =  {
+[224] =  {
 ["type"] = "land-at-action";
 ["reflexive"] = "true";
 ["delay"] = 60;
@@ -2356,7 +2356,7 @@ return {
 
 };
 
-["225"] =  {
+[225] =  {
 ["type"] = "alter-hidden-action";
 ["reflexive"] = "true";
 ["delay"] = 10;
@@ -2365,7 +2365,7 @@ return {
 
 };
 
-["226"] =  {
+[226] =  {
 ["type"] = "declare-winner-action";
 ["reflexive"] = "true";
 ["which-player"] = 0;
@@ -2374,7 +2374,7 @@ return {
 
 };
 
-["227"] =  {
+[227] =  {
 ["type"] = "play-sound-action";
 ["reflexive"] = "true";
 ["priority"] = 4;
@@ -2387,7 +2387,7 @@ return {
 
 };
 
-["228"] =  {
+[228] =  {
 ["type"] = "play-sound-action";
 ["reflexive"] = "true";
 ["priority"] = 3;
@@ -2400,7 +2400,7 @@ return {
 
 };
 
-["229"] =  {
+[229] =  {
 ["type"] = "create-object-action";
 ["reflexive"] = "true";
 ["which-base-type"] = 144;
@@ -2412,7 +2412,7 @@ return {
 
 };
 
-["230"] =  {
+[230] =  {
 ["type"] = "play-sound-action";
 ["reflexive"] = "true";
 ["priority"] = 3;
@@ -2425,7 +2425,7 @@ return {
 
 };
 
-["231"] =  {
+[231] =  {
 ["type"] = "create-object-action";
 ["reflexive"] = "true";
 ["which-base-type"] = 146;
@@ -2437,7 +2437,7 @@ return {
 
 };
 
-["232"] =  {
+[232] =  {
 ["type"] = "play-sound-action";
 ["reflexive"] = "true";
 ["priority"] = 3;
@@ -2450,7 +2450,7 @@ return {
 
 };
 
-["233"] =  {
+[233] =  {
 ["type"] = "create-object-action";
 ["reflexive"] = "true";
 ["which-base-type"] = 147;
@@ -2462,7 +2462,7 @@ return {
 
 };
 
-["234"] =  {
+[234] =  {
 ["type"] = "play-sound-action";
 ["reflexive"] = "true";
 ["priority"] = 3;
@@ -2475,7 +2475,7 @@ return {
 
 };
 
-["235"] =  {
+[235] =  {
 ["type"] = "create-object-action";
 ["reflexive"] = "true";
 ["which-base-type"] = 153;
@@ -2487,7 +2487,7 @@ return {
 
 };
 
-["236"] =  {
+[236] =  {
 ["type"] = "play-sound-action";
 ["reflexive"] = "true";
 ["priority"] = 3;
@@ -2500,7 +2500,7 @@ return {
 
 };
 
-["237"] =  {
+[237] =  {
 ["type"] = "create-object-action";
 ["reflexive"] = "true";
 ["which-base-type"] = 155;
@@ -2512,7 +2512,7 @@ return {
 
 };
 
-["238"] =  {
+[238] =  {
 ["type"] = "play-sound-action";
 ["reflexive"] = "true";
 ["priority"] = 3;
@@ -2525,7 +2525,7 @@ return {
 
 };
 
-["239"] =  {
+[239] =  {
 ["type"] = "create-object-action";
 ["reflexive"] = "true";
 ["which-base-type"] = 156;
@@ -2537,7 +2537,7 @@ return {
 
 };
 
-["240"] =  {
+[240] =  {
 ["type"] = "create-object-action";
 ["reflexive"] = "true";
 ["which-base-type"] = 158;
@@ -2549,7 +2549,7 @@ return {
 
 };
 
-["241"] =  {
+[241] =  {
 ["type"] = "declare-winner-action";
 ["reflexive"] = "true";
 ["which-player"] = 1;
@@ -2558,21 +2558,21 @@ return {
 
 };
 
-["242"] =  {
+[242] =  {
 ["type"] = "alter-condition-true-yet-action";
 ["reflexive"] = "true";
 ["value"] = 1;
 
 };
 
-["243"] =  {
+[243] =  {
 ["type"] = "alter-condition-true-yet-action";
 ["reflexive"] = "true";
 ["value"] = 2;
 
 };
 
-["244"] =  {
+[244] =  {
 ["type"] = "display-message-action";
 ["reflexive"] = "true";
 ["message-id"] = 5240;
@@ -2580,7 +2580,7 @@ return {
 
 };
 
-["245"] =  {
+[245] =  {
 ["type"] = "display-message-action";
 ["reflexive"] = "true";
 ["message-id"] = 5241;
@@ -2588,14 +2588,14 @@ return {
 
 };
 
-["246"] =  {
+[246] =  {
 ["type"] = "alter-condition-true-yet-action";
 ["reflexive"] = "true";
 ["value"] = 0;
 
 };
 
-["247"] =  {
+[247] =  {
 ["type"] = "set-destination-action";
 ["reflexive"] = "false";
 ["delay"] = 1200;
@@ -2604,7 +2604,7 @@ return {
 
 };
 
-["248"] =  {
+[248] =  {
 ["type"] = "set-destination-action";
 ["reflexive"] = "false";
 ["initial-subject-override"] = 4;
@@ -2612,28 +2612,28 @@ return {
 
 };
 
-["249"] =  {
+[249] =  {
 ["type"] = "alter-condition-true-yet-action";
 ["reflexive"] = "true";
 ["value"] = 0;
 
 };
 
-["250"] =  {
+[250] =  {
 ["type"] = "alter-condition-true-yet-action";
 ["reflexive"] = "true";
 ["value"] = 1;
 
 };
 
-["251"] =  {
+[251] =  {
 ["type"] = "alter-condition-true-yet-action";
 ["reflexive"] = "true";
 ["value"] = 2;
 
 };
 
-["252"] =  {
+[252] =  {
 ["type"] = "display-message-action";
 ["reflexive"] = "true";
 ["delay"] = 360;
@@ -2642,7 +2642,7 @@ return {
 
 };
 
-["253"] =  {
+[253] =  {
 ["type"] = "alter-hidden-action";
 ["reflexive"] = "true";
 ["delay"] = 360;
@@ -2651,7 +2651,7 @@ return {
 
 };
 
-["254"] =  {
+[254] =  {
 ["type"] = "alter-hidden-action";
 ["reflexive"] = "true";
 ["delay"] = 360;
@@ -2660,7 +2660,7 @@ return {
 
 };
 
-["255"] =  {
+[255] =  {
 ["type"] = "alter-condition-true-yet-action";
 ["reflexive"] = "true";
 ["delay"] = 360;
@@ -2668,7 +2668,7 @@ return {
 
 };
 
-["256"] =  {
+[256] =  {
 ["type"] = "display-message-action";
 ["reflexive"] = "true";
 ["message-id"] = 6200;
@@ -2676,7 +2676,7 @@ return {
 
 };
 
-["257"] =  {
+[257] =  {
 ["type"] = "alter-hidden-action";
 ["reflexive"] = "true";
 ["delay"] = 600;
@@ -2685,7 +2685,7 @@ return {
 
 };
 
-["258"] =  {
+[258] =  {
 ["type"] = "alter-hidden-action";
 ["reflexive"] = "true";
 ["delay"] = 1200;
@@ -2694,7 +2694,7 @@ return {
 
 };
 
-["259"] =  {
+[259] =  {
 ["type"] = "alter-hidden-action";
 ["reflexive"] = "true";
 ["delay"] = 1200;
@@ -2703,7 +2703,7 @@ return {
 
 };
 
-["260"] =  {
+[260] =  {
 ["type"] = "alter-hidden-action";
 ["reflexive"] = "true";
 ["delay"] = 1200;
@@ -2712,7 +2712,7 @@ return {
 
 };
 
-["261"] =  {
+[261] =  {
 ["type"] = "alter-hidden-action";
 ["reflexive"] = "true";
 ["delay"] = 1200;
@@ -2721,7 +2721,7 @@ return {
 
 };
 
-["262"] =  {
+[262] =  {
 ["type"] = "alter-hidden-action";
 ["reflexive"] = "true";
 ["delay"] = 1200;
@@ -2730,7 +2730,7 @@ return {
 
 };
 
-["263"] =  {
+[263] =  {
 ["type"] = "create-object-action";
 ["reflexive"] = "false";
 ["inclusive-filter"] = 805306368;
@@ -2744,7 +2744,7 @@ return {
 
 };
 
-["264"] =  {
+[264] =  {
 ["type"] = "land-at-action";
 ["reflexive"] = "false";
 ["inclusive-filter"] = 805306368;
@@ -2754,7 +2754,7 @@ return {
 
 };
 
-["265"] =  {
+[265] =  {
 ["type"] = "play-sound-action";
 ["reflexive"] = "true";
 ["priority"] = 3;
@@ -2767,7 +2767,7 @@ return {
 
 };
 
-["266"] =  {
+[266] =  {
 ["type"] = "create-object-action";
 ["reflexive"] = "true";
 ["which-base-type"] = 163;
@@ -2779,7 +2779,7 @@ return {
 
 };
 
-["267"] =  {
+[267] =  {
 ["type"] = "alter-hidden-action";
 ["reflexive"] = "true";
 ["minimum"] = 18;
@@ -2787,7 +2787,7 @@ return {
 
 };
 
-["268"] =  {
+[268] =  {
 ["type"] = "alter-hidden-action";
 ["reflexive"] = "true";
 ["minimum"] = 28;
@@ -2795,7 +2795,7 @@ return {
 
 };
 
-["269"] =  {
+[269] =  {
 ["type"] = "play-sound-action";
 ["reflexive"] = "true";
 ["priority"] = 3;
@@ -2808,7 +2808,7 @@ return {
 
 };
 
-["270"] =  {
+[270] =  {
 ["type"] = "create-object-action";
 ["reflexive"] = "true";
 ["which-base-type"] = 165;
@@ -2820,7 +2820,7 @@ return {
 
 };
 
-["271"] =  {
+[271] =  {
 ["type"] = "create-object-action";
 ["reflexive"] = "true";
 ["which-base-type"] = 170;
@@ -2832,7 +2832,7 @@ return {
 
 };
 
-["272"] =  {
+[272] =  {
 ["type"] = "play-sound-action";
 ["reflexive"] = "true";
 ["priority"] = 3;
@@ -2845,7 +2845,7 @@ return {
 
 };
 
-["273"] =  {
+[273] =  {
 ["type"] = "play-sound-action";
 ["reflexive"] = "true";
 ["priority"] = 3;
@@ -2858,7 +2858,7 @@ return {
 
 };
 
-["274"] =  {
+[274] =  {
 ["type"] = "create-object-action";
 ["reflexive"] = "true";
 ["which-base-type"] = 172;
@@ -2870,7 +2870,7 @@ return {
 
 };
 
-["275"] =  {
+[275] =  {
 ["type"] = "alter-owner-action";
 ["reflexive"] = "false";
 ["inclusive-filter"] = 4029677568;
@@ -2881,7 +2881,7 @@ return {
 
 };
 
-["276"] =  {
+[276] =  {
 ["type"] = "change-score-action";
 ["reflexive"] = "true";
 ["which-player"] = 0;
@@ -2890,7 +2890,7 @@ return {
 
 };
 
-["277"] =  {
+[277] =  {
 ["type"] = "alter-owner-action";
 ["reflexive"] = "true";
 ["initial-subject-override"] = 0;
@@ -2898,14 +2898,14 @@ return {
 
 };
 
-["278"] =  {
+[278] =  {
 ["type"] = "alter-absolute-cash-action";
 ["reflexive"] = "false";
 ["value"] = 2560000;
 
 };
 
-["279"] =  {
+[279] =  {
 ["type"] = "play-sound-action";
 ["reflexive"] = "true";
 ["priority"] = 3;
@@ -2918,7 +2918,7 @@ return {
 
 };
 
-["280"] =  {
+[280] =  {
 ["type"] = "create-object-action";
 ["reflexive"] = "true";
 ["which-base-type"] = 176;
@@ -2930,7 +2930,7 @@ return {
 
 };
 
-["281"] =  {
+[281] =  {
 ["type"] = "alter-hidden-action";
 ["reflexive"] = "true";
 ["minimum"] = 31;
@@ -2938,7 +2938,7 @@ return {
 
 };
 
-["282"] =  {
+[282] =  {
 ["type"] = "create-object-action";
 ["reflexive"] = "true";
 ["which-base-type"] = 29;
@@ -2950,7 +2950,7 @@ return {
 
 };
 
-["283"] =  {
+[283] =  {
 ["type"] = "change-score-action";
 ["reflexive"] = "true";
 ["which-player"] = 0;
@@ -2959,7 +2959,7 @@ return {
 
 };
 
-["284"] =  {
+[284] =  {
 ["type"] = "set-destination-action";
 ["reflexive"] = "false";
 ["initial-subject-override"] = 17;
@@ -2967,7 +2967,7 @@ return {
 
 };
 
-["285"] =  {
+[285] =  {
 ["type"] = "declare-winner-action";
 ["reflexive"] = "false";
 ["which-player"] = 0;
@@ -2976,7 +2976,7 @@ return {
 
 };
 
-["286"] =  {
+[286] =  {
 ["type"] = "declare-winner-action";
 ["reflexive"] = "false";
 ["which-player"] = 1;
@@ -2985,7 +2985,7 @@ return {
 
 };
 
-["287"] =  {
+[287] =  {
 ["type"] = "declare-winner-action";
 ["reflexive"] = "false";
 ["which-player"] = 0;
@@ -2994,7 +2994,7 @@ return {
 
 };
 
-["288"] =  {
+[288] =  {
 ["type"] = "declare-winner-action";
 ["reflexive"] = "false";
 ["which-player"] = 1;
@@ -3003,7 +3003,7 @@ return {
 
 };
 
-["289"] =  {
+[289] =  {
 ["type"] = "declare-winner-action";
 ["reflexive"] = "false";
 ["which-player"] = 1;
@@ -3012,7 +3012,7 @@ return {
 
 };
 
-["290"] =  {
+[290] =  {
 ["type"] = "declare-winner-action";
 ["reflexive"] = "false";
 ["which-player"] = 0;
@@ -3021,7 +3021,7 @@ return {
 
 };
 
-["291"] =  {
+[291] =  {
 ["type"] = "declare-winner-action";
 ["reflexive"] = "false";
 ["which-player"] = 1;
@@ -3030,7 +3030,7 @@ return {
 
 };
 
-["292"] =  {
+[292] =  {
 ["type"] = "declare-winner-action";
 ["reflexive"] = "false";
 ["which-player"] = 0;
@@ -3039,7 +3039,7 @@ return {
 
 };
 
-["293"] =  {
+[293] =  {
 ["type"] = "declare-winner-action";
 ["reflexive"] = "false";
 ["which-player"] = 0;
@@ -3048,7 +3048,7 @@ return {
 
 };
 
-["294"] =  {
+[294] =  {
 ["type"] = "declare-winner-action";
 ["reflexive"] = "false";
 ["which-player"] = 1;
@@ -3057,7 +3057,7 @@ return {
 
 };
 
-["295"] =  {
+[295] =  {
 ["type"] = "declare-winner-action";
 ["reflexive"] = "false";
 ["which-player"] = 0;
@@ -3066,7 +3066,7 @@ return {
 
 };
 
-["296"] =  {
+[296] =  {
 ["type"] = "declare-winner-action";
 ["reflexive"] = "false";
 ["which-player"] = 1;
@@ -3075,7 +3075,7 @@ return {
 
 };
 
-["297"] =  {
+[297] =  {
 ["type"] = "declare-winner-action";
 ["reflexive"] = "false";
 ["which-player"] = 1;
@@ -3084,7 +3084,7 @@ return {
 
 };
 
-["298"] =  {
+[298] =  {
 ["type"] = "declare-winner-action";
 ["reflexive"] = "false";
 ["which-player"] = 1;
@@ -3093,7 +3093,7 @@ return {
 
 };
 
-["299"] =  {
+[299] =  {
 ["type"] = "declare-winner-action";
 ["reflexive"] = "false";
 ["which-player"] = 0;
@@ -3102,7 +3102,7 @@ return {
 
 };
 
-["300"] =  {
+[300] =  {
 ["type"] = "declare-winner-action";
 ["reflexive"] = "false";
 ["which-player"] = 1;
@@ -3111,7 +3111,7 @@ return {
 
 };
 
-["301"] =  {
+[301] =  {
 ["type"] = "declare-winner-action";
 ["reflexive"] = "false";
 ["which-player"] = 0;
@@ -3120,7 +3120,7 @@ return {
 
 };
 
-["302"] =  {
+[302] =  {
 ["type"] = "declare-winner-action";
 ["reflexive"] = "false";
 ["which-player"] = 1;
@@ -3129,7 +3129,7 @@ return {
 
 };
 
-["303"] =  {
+[303] =  {
 ["type"] = "declare-winner-action";
 ["reflexive"] = "false";
 ["which-player"] = 0;
@@ -3138,7 +3138,7 @@ return {
 
 };
 
-["304"] =  {
+[304] =  {
 ["type"] = "declare-winner-action";
 ["reflexive"] = "false";
 ["which-player"] = 0;
@@ -3147,7 +3147,7 @@ return {
 
 };
 
-["305"] =  {
+[305] =  {
 ["type"] = "declare-winner-action";
 ["reflexive"] = "false";
 ["which-player"] = 1;
@@ -3156,7 +3156,7 @@ return {
 
 };
 
-["306"] =  {
+[306] =  {
 ["type"] = "declare-winner-action";
 ["reflexive"] = "false";
 ["which-player"] = 0;
@@ -3165,7 +3165,7 @@ return {
 
 };
 
-["307"] =  {
+[307] =  {
 ["type"] = "create-object-action";
 ["reflexive"] = "true";
 ["which-base-type"] = 7;
@@ -3177,13 +3177,13 @@ return {
 
 };
 
-["308"] =  {
+[308] =  {
 ["type"] = "set-destination-action";
 ["reflexive"] = "true";
 
 };
 
-["309"] =  {
+[309] =  {
 ["type"] = "alter-velocity-action";
 ["reflexive"] = "true";
 ["relative"] = "false";
@@ -3192,7 +3192,7 @@ return {
 
 };
 
-["310"] =  {
+[310] =  {
 ["type"] = "create-object-action";
 ["reflexive"] = "true";
 ["which-base-type"] = 183;
@@ -3204,14 +3204,14 @@ return {
 
 };
 
-["311"] =  {
+[311] =  {
 ["type"] = "land-at-action";
 ["reflexive"] = "true";
 ["landing-speed"] = 128;
 
 };
 
-["312"] =  {
+[312] =  {
 ["type"] = "alter-base-type-action";
 ["reflexive"] = "true";
 ["preserve-weapons"] = "false";
@@ -3219,14 +3219,14 @@ return {
 
 };
 
-["313"] =  {
+[313] =  {
 ["type"] = "alter-damage-action";
 ["reflexive"] = "true";
 ["value"] = 80000;
 
 };
 
-["314"] =  {
+[314] =  {
 ["type"] = "display-message-action";
 ["reflexive"] = "true";
 ["delay"] = 60;
@@ -3235,7 +3235,7 @@ return {
 
 };
 
-["315"] =  {
+[315] =  {
 ["type"] = "create-object-action";
 ["reflexive"] = "true";
 ["which-base-type"] = 184;
@@ -3247,7 +3247,7 @@ return {
 
 };
 
-["316"] =  {
+[316] =  {
 ["type"] = "create-object-action";
 ["reflexive"] = "true";
 ["which-base-type"] = 195;
@@ -3259,7 +3259,7 @@ return {
 
 };
 
-["317"] =  {
+[317] =  {
 ["type"] = "alter-velocity-action";
 ["reflexive"] = "true";
 ["relative"] = "true";
@@ -3268,7 +3268,7 @@ return {
 
 };
 
-["318"] =  {
+[318] =  {
 ["type"] = "create-object-action";
 ["reflexive"] = "true";
 ["which-base-type"] = 189;
@@ -3280,13 +3280,13 @@ return {
 
 };
 
-["319"] =  {
+[319] =  {
 ["type"] = "activate-special-action";
 ["reflexive"] = "true";
 
 };
 
-["320"] =  {
+[320] =  {
 ["type"] = "create-object-action";
 ["reflexive"] = "true";
 ["which-base-type"] = 7;
@@ -3298,7 +3298,7 @@ return {
 
 };
 
-["321"] =  {
+[321] =  {
 ["type"] = "create-object-action";
 ["reflexive"] = "true";
 ["which-base-type"] = 14;
@@ -3310,7 +3310,7 @@ return {
 
 };
 
-["322"] =  {
+[322] =  {
 ["type"] = "create-object-action";
 ["reflexive"] = "true";
 ["which-base-type"] = 59;
@@ -3322,7 +3322,7 @@ return {
 
 };
 
-["323"] =  {
+[323] =  {
 ["type"] = "alter-hidden-action";
 ["reflexive"] = "true";
 ["minimum"] = 1;
@@ -3330,7 +3330,7 @@ return {
 
 };
 
-["324"] =  {
+[324] =  {
 ["type"] = "alter-hidden-action";
 ["reflexive"] = "true";
 ["minimum"] = 4;
@@ -3338,7 +3338,7 @@ return {
 
 };
 
-["325"] =  {
+[325] =  {
 ["type"] = "alter-hidden-action";
 ["reflexive"] = "true";
 ["minimum"] = 7;
@@ -3346,7 +3346,7 @@ return {
 
 };
 
-["326"] =  {
+[326] =  {
 ["type"] = "alter-velocity-action";
 ["reflexive"] = "true";
 ["initial-subject-override"] = 0;
@@ -3356,7 +3356,7 @@ return {
 
 };
 
-["327"] =  {
+[327] =  {
 ["type"] = "alter-offline-action";
 ["reflexive"] = "false";
 ["owner"] = "other";
@@ -3365,7 +3365,7 @@ return {
 
 };
 
-["328"] =  {
+[328] =  {
 ["type"] = "play-sound-action";
 ["reflexive"] = "true";
 ["priority"] = 3;
@@ -3378,14 +3378,14 @@ return {
 
 };
 
-["329"] =  {
+[329] =  {
 ["type"] = "alter-age-action";
 ["reflexive"] = "true";
 ["value"] = 180;
 
 };
 
-["330"] =  {
+[330] =  {
 ["type"] = "create-object-action";
 ["reflexive"] = "true";
 ["delay"] = 120;
@@ -3398,7 +3398,7 @@ return {
 
 };
 
-["331"] =  {
+[331] =  {
 ["type"] = "create-object-action";
 ["reflexive"] = "true";
 ["which-base-type"] = 257;
@@ -3410,7 +3410,7 @@ return {
 
 };
 
-["332"] =  {
+[332] =  {
 ["type"] = "create-object-action";
 ["reflexive"] = "true";
 ["which-base-type"] = 190;
@@ -3422,7 +3422,7 @@ return {
 
 };
 
-["333"] =  {
+[333] =  {
 ["type"] = "create-object-action";
 ["reflexive"] = "true";
 ["which-base-type"] = 191;
@@ -3434,7 +3434,7 @@ return {
 
 };
 
-["334"] =  {
+[334] =  {
 ["type"] = "create-object-action";
 ["reflexive"] = "true";
 ["which-base-type"] = 35;
@@ -3446,7 +3446,7 @@ return {
 
 };
 
-["335"] =  {
+[335] =  {
 ["type"] = "create-object-action";
 ["reflexive"] = "true";
 ["which-base-type"] = 193;
@@ -3458,7 +3458,7 @@ return {
 
 };
 
-["336"] =  {
+[336] =  {
 ["type"] = "play-sound-action";
 ["reflexive"] = "true";
 ["priority"] = 3;
@@ -3471,7 +3471,7 @@ return {
 
 };
 
-["337"] =  {
+[337] =  {
 ["type"] = "create-object-action";
 ["reflexive"] = "true";
 ["which-base-type"] = 194;
@@ -3483,7 +3483,7 @@ return {
 
 };
 
-["338"] =  {
+[338] =  {
 ["type"] = "alter-velocity-action";
 ["reflexive"] = "false";
 ["relative"] = "false";
@@ -3492,14 +3492,14 @@ return {
 
 };
 
-["339"] =  {
+[339] =  {
 ["type"] = "die-action";
 ["reflexive"] = "true";
 ["type"] = 0;
 
 };
 
-["340"] =  {
+[340] =  {
 ["type"] = "create-object-action";
 ["reflexive"] = "true";
 ["which-base-type"] = 52;
@@ -3511,14 +3511,14 @@ return {
 
 };
 
-["341"] =  {
+[341] =  {
 ["type"] = "die-action";
 ["reflexive"] = "true";
 ["type"] = 2;
 
 };
 
-["342"] =  {
+[342] =  {
 ["type"] = "create-object-action";
 ["reflexive"] = "true";
 ["which-base-type"] = 195;
@@ -3530,7 +3530,7 @@ return {
 
 };
 
-["343"] =  {
+[343] =  {
 ["type"] = "alter-velocity-action";
 ["reflexive"] = "false";
 ["relative"] = "true";
@@ -3539,7 +3539,7 @@ return {
 
 };
 
-["344"] =  {
+[344] =  {
 ["type"] = "create-object-action";
 ["reflexive"] = "true";
 ["which-base-type"] = 79;
@@ -3551,14 +3551,14 @@ return {
 
 };
 
-["345"] =  {
+[345] =  {
 ["type"] = "die-action";
 ["reflexive"] = "true";
 ["type"] = 1;
 
 };
 
-["346"] =  {
+[346] =  {
 ["type"] = "alter-offline-action";
 ["reflexive"] = "false";
 ["minimum"] = 10240;
@@ -3566,7 +3566,7 @@ return {
 
 };
 
-["347"] =  {
+[347] =  {
 ["type"] = "create-object-action";
 ["reflexive"] = "true";
 ["which-base-type"] = 199;
@@ -3578,7 +3578,7 @@ return {
 
 };
 
-["348"] =  {
+[348] =  {
 ["type"] = "play-sound-action";
 ["reflexive"] = "true";
 ["priority"] = 3;
@@ -3591,7 +3591,7 @@ return {
 
 };
 
-["349"] =  {
+[349] =  {
 ["type"] = "create-object-action";
 ["reflexive"] = "true";
 ["which-base-type"] = 35;
@@ -3603,7 +3603,7 @@ return {
 
 };
 
-["350"] =  {
+[350] =  {
 ["type"] = "play-sound-action";
 ["reflexive"] = "true";
 ["priority"] = 3;
@@ -3616,14 +3616,14 @@ return {
 
 };
 
-["351"] =  {
+[351] =  {
 ["type"] = "alter-damage-action";
 ["reflexive"] = "true";
 ["value"] = 250;
 
 };
 
-["352"] =  {
+[352] =  {
 ["type"] = "alter-base-type-action";
 ["reflexive"] = "true";
 ["preserve-weapons"] = "false";
@@ -3631,7 +3631,7 @@ return {
 
 };
 
-["353"] =  {
+[353] =  {
 ["type"] = "play-sound-action";
 ["reflexive"] = "true";
 ["priority"] = 4;
@@ -3644,7 +3644,7 @@ return {
 
 };
 
-["354"] =  {
+[354] =  {
 ["type"] = "play-sound-action";
 ["reflexive"] = "true";
 ["delay"] = 360;
@@ -3658,7 +3658,7 @@ return {
 
 };
 
-["355"] =  {
+[355] =  {
 ["type"] = "alter-base-type-action";
 ["reflexive"] = "true";
 ["delay"] = 60;
@@ -3667,28 +3667,28 @@ return {
 
 };
 
-["356"] =  {
+[356] =  {
 ["type"] = "alter-condition-true-yet-action";
 ["reflexive"] = "true";
 ["value"] = 13;
 
 };
 
-["357"] =  {
+[357] =  {
 ["type"] = "alter-condition-true-yet-action";
 ["reflexive"] = "true";
 ["value"] = 14;
 
 };
 
-["358"] =  {
+[358] =  {
 ["type"] = "alter-condition-true-yet-action";
 ["reflexive"] = "true";
 ["value"] = 15;
 
 };
 
-["359"] =  {
+[359] =  {
 ["type"] = "display-message-action";
 ["reflexive"] = "true";
 ["message-id"] = 5500;
@@ -3696,35 +3696,35 @@ return {
 
 };
 
-["360"] =  {
+[360] =  {
 ["type"] = "alter-condition-true-yet-action";
 ["reflexive"] = "true";
 ["value"] = 0;
 
 };
 
-["361"] =  {
+[361] =  {
 ["type"] = "alter-condition-true-yet-action";
 ["reflexive"] = "true";
 ["value"] = 1;
 
 };
 
-["362"] =  {
+[362] =  {
 ["type"] = "alter-condition-true-yet-action";
 ["reflexive"] = "true";
 ["value"] = 11;
 
 };
 
-["363"] =  {
+[363] =  {
 ["type"] = "alter-condition-true-yet-action";
 ["reflexive"] = "true";
 ["value"] = 12;
 
 };
 
-["364"] =  {
+[364] =  {
 ["type"] = "display-message-action";
 ["reflexive"] = "true";
 ["message-id"] = 5501;
@@ -3732,21 +3732,21 @@ return {
 
 };
 
-["365"] =  {
+[365] =  {
 ["type"] = "alter-condition-true-yet-action";
 ["reflexive"] = "true";
 ["value"] = 8;
 
 };
 
-["366"] =  {
+[366] =  {
 ["type"] = "alter-condition-true-yet-action";
 ["reflexive"] = "true";
 ["value"] = 4;
 
 };
 
-["367"] =  {
+[367] =  {
 ["type"] = "display-message-action";
 ["reflexive"] = "true";
 ["message-id"] = 5502;
@@ -3754,21 +3754,21 @@ return {
 
 };
 
-["368"] =  {
+[368] =  {
 ["type"] = "alter-condition-true-yet-action";
 ["reflexive"] = "true";
 ["value"] = 9;
 
 };
 
-["369"] =  {
+[369] =  {
 ["type"] = "alter-condition-true-yet-action";
 ["reflexive"] = "true";
 ["value"] = 5;
 
 };
 
-["370"] =  {
+[370] =  {
 ["type"] = "display-message-action";
 ["reflexive"] = "true";
 ["message-id"] = 5503;
@@ -3776,7 +3776,7 @@ return {
 
 };
 
-["371"] =  {
+[371] =  {
 ["type"] = "display-message-action";
 ["reflexive"] = "true";
 ["message-id"] = 5503;
@@ -3784,7 +3784,7 @@ return {
 
 };
 
-["372"] =  {
+[372] =  {
 ["type"] = "display-message-action";
 ["reflexive"] = "true";
 ["message-id"] = 5504;
@@ -3792,7 +3792,7 @@ return {
 
 };
 
-["373"] =  {
+[373] =  {
 ["type"] = "display-message-action";
 ["reflexive"] = "true";
 ["message-id"] = 5504;
@@ -3800,7 +3800,7 @@ return {
 
 };
 
-["374"] =  {
+[374] =  {
 ["type"] = "display-message-action";
 ["reflexive"] = "true";
 ["message-id"] = 5505;
@@ -3808,14 +3808,14 @@ return {
 
 };
 
-["375"] =  {
+[375] =  {
 ["type"] = "alter-condition-true-yet-action";
 ["reflexive"] = "true";
 ["value"] = 10;
 
 };
 
-["376"] =  {
+[376] =  {
 ["type"] = "display-message-action";
 ["reflexive"] = "true";
 ["message-id"] = 5505;
@@ -3823,7 +3823,7 @@ return {
 
 };
 
-["377"] =  {
+[377] =  {
 ["type"] = "display-message-action";
 ["reflexive"] = "true";
 ["message-id"] = 5503;
@@ -3831,63 +3831,63 @@ return {
 
 };
 
-["378"] =  {
+[378] =  {
 ["type"] = "alter-condition-true-yet-action";
 ["reflexive"] = "true";
 ["value"] = 3;
 
 };
 
-["379"] =  {
+[379] =  {
 ["type"] = "alter-condition-true-yet-action";
 ["reflexive"] = "true";
 ["value"] = 9;
 
 };
 
-["380"] =  {
+[380] =  {
 ["type"] = "alter-condition-true-yet-action";
 ["reflexive"] = "true";
 ["value"] = 12;
 
 };
 
-["381"] =  {
+[381] =  {
 ["type"] = "alter-condition-true-yet-action";
 ["reflexive"] = "true";
 ["value"] = 7;
 
 };
 
-["382"] =  {
+[382] =  {
 ["type"] = "alter-condition-true-yet-action";
 ["reflexive"] = "true";
 ["value"] = 2;
 
 };
 
-["383"] =  {
+[383] =  {
 ["type"] = "alter-condition-true-yet-action";
 ["reflexive"] = "true";
 ["value"] = 8;
 
 };
 
-["384"] =  {
+[384] =  {
 ["type"] = "alter-condition-true-yet-action";
 ["reflexive"] = "true";
 ["value"] = 6;
 
 };
 
-["385"] =  {
+[385] =  {
 ["type"] = "alter-condition-true-yet-action";
 ["reflexive"] = "true";
 ["value"] = 11;
 
 };
 
-["386"] =  {
+[386] =  {
 ["type"] = "display-message-action";
 ["reflexive"] = "true";
 ["delay"] = 360;
@@ -3896,14 +3896,14 @@ return {
 
 };
 
-["387"] =  {
+[387] =  {
 ["type"] = "set-destination-action";
 ["reflexive"] = "false";
 ["initial-direct-override"] = 5;
 
 };
 
-["388"] =  {
+[388] =  {
 ["type"] = "land-at-action";
 ["reflexive"] = "false";
 ["delay"] = 120;
@@ -3912,7 +3912,7 @@ return {
 
 };
 
-["389"] =  {
+[389] =  {
 ["type"] = "alter-condition-true-yet-action";
 ["reflexive"] = "true";
 ["delay"] = 2400;
@@ -3920,28 +3920,28 @@ return {
 
 };
 
-["390"] =  {
+[390] =  {
 ["type"] = "alter-condition-true-yet-action";
 ["reflexive"] = "true";
 ["value"] = 0;
 
 };
 
-["391"] =  {
+[391] =  {
 ["type"] = "alter-condition-true-yet-action";
 ["reflexive"] = "true";
 ["value"] = 2;
 
 };
 
-["392"] =  {
+[392] =  {
 ["type"] = "alter-condition-true-yet-action";
 ["reflexive"] = "true";
 ["value"] = 15;
 
 };
 
-["393"] =  {
+[393] =  {
 ["type"] = "display-message-action";
 ["reflexive"] = "true";
 ["message-id"] = 5506;
@@ -3949,14 +3949,14 @@ return {
 
 };
 
-["394"] =  {
+[394] =  {
 ["type"] = "alter-condition-true-yet-action";
 ["reflexive"] = "true";
 ["value"] = 14;
 
 };
 
-["395"] =  {
+[395] =  {
 ["type"] = "display-message-action";
 ["reflexive"] = "true";
 ["message-id"] = 5507;
@@ -3964,49 +3964,49 @@ return {
 
 };
 
-["396"] =  {
+[396] =  {
 ["type"] = "alter-condition-true-yet-action";
 ["reflexive"] = "true";
 ["value"] = 0;
 
 };
 
-["397"] =  {
+[397] =  {
 ["type"] = "alter-condition-true-yet-action";
 ["reflexive"] = "true";
 ["value"] = 2;
 
 };
 
-["398"] =  {
+[398] =  {
 ["type"] = "alter-condition-true-yet-action";
 ["reflexive"] = "true";
 ["value"] = 13;
 
 };
 
-["399"] =  {
+[399] =  {
 ["type"] = "alter-condition-true-yet-action";
 ["reflexive"] = "true";
 ["value"] = 14;
 
 };
 
-["400"] =  {
+[400] =  {
 ["type"] = "alter-condition-true-yet-action";
 ["reflexive"] = "true";
 ["value"] = 15;
 
 };
 
-["401"] =  {
+[401] =  {
 ["type"] = "alter-condition-true-yet-action";
 ["reflexive"] = "true";
 ["value"] = 17;
 
 };
 
-["402"] =  {
+[402] =  {
 ["type"] = "display-message-action";
 ["reflexive"] = "true";
 ["message-id"] = 5510;
@@ -4014,42 +4014,42 @@ return {
 
 };
 
-["403"] =  {
+[403] =  {
 ["type"] = "alter-condition-true-yet-action";
 ["reflexive"] = "true";
 ["value"] = 0;
 
 };
 
-["404"] =  {
+[404] =  {
 ["type"] = "alter-condition-true-yet-action";
 ["reflexive"] = "true";
 ["value"] = 2;
 
 };
 
-["405"] =  {
+[405] =  {
 ["type"] = "alter-condition-true-yet-action";
 ["reflexive"] = "true";
 ["value"] = 13;
 
 };
 
-["406"] =  {
+[406] =  {
 ["type"] = "alter-condition-true-yet-action";
 ["reflexive"] = "true";
 ["value"] = 14;
 
 };
 
-["407"] =  {
+[407] =  {
 ["type"] = "alter-condition-true-yet-action";
 ["reflexive"] = "true";
 ["value"] = 15;
 
 };
 
-["408"] =  {
+[408] =  {
 ["type"] = "display-message-action";
 ["reflexive"] = "true";
 ["message-id"] = 5511;
@@ -4057,42 +4057,42 @@ return {
 
 };
 
-["409"] =  {
+[409] =  {
 ["type"] = "alter-condition-true-yet-action";
 ["reflexive"] = "true";
 ["value"] = 0;
 
 };
 
-["410"] =  {
+[410] =  {
 ["type"] = "alter-condition-true-yet-action";
 ["reflexive"] = "true";
 ["value"] = 2;
 
 };
 
-["411"] =  {
+[411] =  {
 ["type"] = "alter-condition-true-yet-action";
 ["reflexive"] = "true";
 ["value"] = 13;
 
 };
 
-["412"] =  {
+[412] =  {
 ["type"] = "alter-condition-true-yet-action";
 ["reflexive"] = "true";
 ["value"] = 14;
 
 };
 
-["413"] =  {
+[413] =  {
 ["type"] = "alter-condition-true-yet-action";
 ["reflexive"] = "true";
 ["value"] = 16;
 
 };
 
-["414"] =  {
+[414] =  {
 ["type"] = "display-message-action";
 ["reflexive"] = "true";
 ["message-id"] = 5509;
@@ -4100,14 +4100,14 @@ return {
 
 };
 
-["415"] =  {
+[415] =  {
 ["type"] = "alter-damage-action";
 ["reflexive"] = "true";
 ["value"] = 1000;
 
 };
 
-["416"] =  {
+[416] =  {
 ["type"] = "play-sound-action";
 ["reflexive"] = "true";
 ["initial-subject-override"] = 0;
@@ -4122,7 +4122,7 @@ return {
 
 };
 
-["417"] =  {
+[417] =  {
 ["type"] = "alter-base-type-action";
 ["reflexive"] = "true";
 ["preserve-weapons"] = "false";
@@ -4130,7 +4130,7 @@ return {
 
 };
 
-["418"] =  {
+[418] =  {
 ["type"] = "alter-base-type-action";
 ["reflexive"] = "true";
 ["delay"] = 360;
@@ -4139,7 +4139,7 @@ return {
 
 };
 
-["419"] =  {
+[419] =  {
 ["type"] = "alter-hidden-action";
 ["reflexive"] = "true";
 ["minimum"] = 22;
@@ -4147,7 +4147,7 @@ return {
 
 };
 
-["420"] =  {
+[420] =  {
 ["type"] = "declare-winner-action";
 ["reflexive"] = "true";
 ["delay"] = 60;
@@ -4157,7 +4157,7 @@ return {
 
 };
 
-["421"] =  {
+[421] =  {
 ["type"] = "change-score-action";
 ["reflexive"] = "false";
 ["inclusive-filter"] = 3758096384;
@@ -4168,7 +4168,7 @@ return {
 
 };
 
-["422"] =  {
+[422] =  {
 ["type"] = "die-action";
 ["reflexive"] = "false";
 ["inclusive-filter"] = 3758096384;
@@ -4177,7 +4177,7 @@ return {
 
 };
 
-["423"] =  {
+[423] =  {
 ["type"] = "alter-base-type-action";
 ["reflexive"] = "true";
 ["initial-subject-override"] = 1;
@@ -4186,7 +4186,7 @@ return {
 
 };
 
-["424"] =  {
+[424] =  {
 ["type"] = "set-destination-action";
 ["reflexive"] = "false";
 ["delay"] = 3;
@@ -4194,14 +4194,14 @@ return {
 
 };
 
-["425"] =  {
+[425] =  {
 ["type"] = "alter-condition-true-yet-action";
 ["reflexive"] = "true";
 ["value"] = 2;
 
 };
 
-["426"] =  {
+[426] =  {
 ["type"] = "create-object-action";
 ["reflexive"] = "true";
 ["which-base-type"] = 207;
@@ -4213,7 +4213,7 @@ return {
 
 };
 
-["427"] =  {
+[427] =  {
 ["type"] = "change-score-action";
 ["reflexive"] = "true";
 ["which-player"] = 0;
@@ -4222,14 +4222,14 @@ return {
 
 };
 
-["428"] =  {
+[428] =  {
 ["type"] = "alter-condition-true-yet-action";
 ["reflexive"] = "true";
 ["value"] = 0;
 
 };
 
-["429"] =  {
+[429] =  {
 ["type"] = "alter-base-type-action";
 ["reflexive"] = "true";
 ["initial-subject-override"] = 1;
@@ -4238,21 +4238,21 @@ return {
 
 };
 
-["430"] =  {
+[430] =  {
 ["type"] = "alter-condition-true-yet-action";
 ["reflexive"] = "true";
 ["value"] = 2;
 
 };
 
-["431"] =  {
+[431] =  {
 ["type"] = "alter-condition-true-yet-action";
 ["reflexive"] = "true";
 ["value"] = 7;
 
 };
 
-["432"] =  {
+[432] =  {
 ["type"] = "alter-offline-action";
 ["reflexive"] = "true";
 ["minimum"] = -7680;
@@ -4260,7 +4260,7 @@ return {
 
 };
 
-["433"] =  {
+[433] =  {
 ["type"] = "alter-spin-action";
 ["reflexive"] = "true";
 ["minimum"] = -256;
@@ -4268,7 +4268,7 @@ return {
 
 };
 
-["434"] =  {
+[434] =  {
 ["type"] = "alter-velocity-action";
 ["reflexive"] = "true";
 ["delay"] = 20;
@@ -4278,7 +4278,7 @@ return {
 
 };
 
-["435"] =  {
+[435] =  {
 ["type"] = "alter-base-type-action";
 ["reflexive"] = "true";
 ["delay"] = 270;
@@ -4287,7 +4287,7 @@ return {
 
 };
 
-["436"] =  {
+[436] =  {
 ["type"] = "alter-base-type-action";
 ["reflexive"] = "true";
 ["delay"] = 270;
@@ -4296,7 +4296,7 @@ return {
 
 };
 
-["437"] =  {
+[437] =  {
 ["type"] = "create-object-action";
 ["reflexive"] = "true";
 ["which-base-type"] = 211;
@@ -4308,7 +4308,7 @@ return {
 
 };
 
-["438"] =  {
+[438] =  {
 ["type"] = "create-object-action";
 ["reflexive"] = "true";
 ["which-base-type"] = 205;
@@ -4320,7 +4320,7 @@ return {
 
 };
 
-["439"] =  {
+[439] =  {
 ["type"] = "alter-base-type-action";
 ["reflexive"] = "true";
 ["preserve-weapons"] = "false";
@@ -4328,7 +4328,7 @@ return {
 
 };
 
-["440"] =  {
+[440] =  {
 ["type"] = "play-sound-action";
 ["reflexive"] = "false";
 ["inclusive-filter"] = 1610612736;
@@ -4343,7 +4343,7 @@ return {
 
 };
 
-["441"] =  {
+[441] =  {
 ["type"] = "change-score-action";
 ["reflexive"] = "false";
 ["inclusive-filter"] = 1610612736;
@@ -4354,7 +4354,7 @@ return {
 
 };
 
-["442"] =  {
+[442] =  {
 ["type"] = "die-action";
 ["reflexive"] = "false";
 ["inclusive-filter"] = 1610612736;
@@ -4363,7 +4363,7 @@ return {
 
 };
 
-["443"] =  {
+[443] =  {
 ["type"] = "declare-winner-action";
 ["reflexive"] = "true";
 ["which-player"] = 0;
@@ -4372,14 +4372,14 @@ return {
 
 };
 
-["444"] =  {
+[444] =  {
 ["type"] = "alter-owner-action";
 ["reflexive"] = "true";
 ["relative"] = "false";
 
 };
 
-["445"] =  {
+[445] =  {
 ["type"] = "alter-base-type-action";
 ["reflexive"] = "true";
 ["initial-subject-override"] = 1;
@@ -4388,14 +4388,14 @@ return {
 
 };
 
-["446"] =  {
+[446] =  {
 ["type"] = "alter-condition-true-yet-action";
 ["reflexive"] = "true";
 ["value"] = 2;
 
 };
 
-["447"] =  {
+[447] =  {
 ["type"] = "create-object-action";
 ["reflexive"] = "true";
 ["which-base-type"] = 214;
@@ -4407,7 +4407,7 @@ return {
 
 };
 
-["448"] =  {
+[448] =  {
 ["type"] = "change-score-action";
 ["reflexive"] = "true";
 ["which-player"] = 0;
@@ -4416,21 +4416,21 @@ return {
 
 };
 
-["449"] =  {
+[449] =  {
 ["type"] = "alter-condition-true-yet-action";
 ["reflexive"] = "true";
 ["value"] = 0;
 
 };
 
-["450"] =  {
+[450] =  {
 ["type"] = "activate-special-action";
 ["reflexive"] = "true";
 ["initial-subject-override"] = 6;
 
 };
 
-["451"] =  {
+[451] =  {
 ["type"] = "alter-base-type-action";
 ["reflexive"] = "true";
 ["initial-subject-override"] = 1;
@@ -4439,14 +4439,14 @@ return {
 
 };
 
-["452"] =  {
+[452] =  {
 ["type"] = "alter-condition-true-yet-action";
 ["reflexive"] = "true";
 ["value"] = 2;
 
 };
 
-["453"] =  {
+[453] =  {
 ["type"] = "declare-winner-action";
 ["reflexive"] = "true";
 ["which-player"] = 0;
@@ -4455,7 +4455,7 @@ return {
 
 };
 
-["454"] =  {
+[454] =  {
 ["type"] = "alter-offline-action";
 ["reflexive"] = "true";
 ["minimum"] = -7680;
@@ -4463,7 +4463,7 @@ return {
 
 };
 
-["455"] =  {
+[455] =  {
 ["type"] = "alter-spin-action";
 ["reflexive"] = "true";
 ["minimum"] = -256;
@@ -4471,7 +4471,7 @@ return {
 
 };
 
-["456"] =  {
+[456] =  {
 ["type"] = "alter-velocity-action";
 ["reflexive"] = "true";
 ["delay"] = 20;
@@ -4481,7 +4481,7 @@ return {
 
 };
 
-["457"] =  {
+[457] =  {
 ["type"] = "alter-base-type-action";
 ["reflexive"] = "true";
 ["delay"] = 270;
@@ -4490,7 +4490,7 @@ return {
 
 };
 
-["458"] =  {
+[458] =  {
 ["type"] = "alter-base-type-action";
 ["reflexive"] = "true";
 ["delay"] = 270;
@@ -4499,7 +4499,7 @@ return {
 
 };
 
-["459"] =  {
+[459] =  {
 ["type"] = "create-object-action";
 ["reflexive"] = "true";
 ["which-base-type"] = 211;
@@ -4511,7 +4511,7 @@ return {
 
 };
 
-["460"] =  {
+[460] =  {
 ["type"] = "create-object-action";
 ["reflexive"] = "true";
 ["which-base-type"] = 212;
@@ -4523,14 +4523,14 @@ return {
 
 };
 
-["461"] =  {
+[461] =  {
 ["type"] = "activate-special-action";
 ["reflexive"] = "true";
 ["initial-subject-override"] = 7;
 
 };
 
-["462"] =  {
+[462] =  {
 ["type"] = "alter-base-type-action";
 ["reflexive"] = "true";
 ["preserve-weapons"] = "false";
@@ -4538,7 +4538,7 @@ return {
 
 };
 
-["463"] =  {
+[463] =  {
 ["type"] = "create-object-action";
 ["reflexive"] = "true";
 ["which-base-type"] = 37;
@@ -4550,7 +4550,7 @@ return {
 
 };
 
-["464"] =  {
+[464] =  {
 ["type"] = "create-object-action";
 ["reflexive"] = "true";
 ["which-base-type"] = 38;
@@ -4562,7 +4562,7 @@ return {
 
 };
 
-["465"] =  {
+[465] =  {
 ["type"] = "declare-winner-action";
 ["reflexive"] = "false";
 ["which-player"] = 0;
@@ -4571,7 +4571,7 @@ return {
 
 };
 
-["466"] =  {
+[466] =  {
 ["type"] = "alter-base-type-action";
 ["reflexive"] = "true";
 ["preserve-weapons"] = "false";
@@ -4579,7 +4579,7 @@ return {
 
 };
 
-["467"] =  {
+[467] =  {
 ["type"] = "create-object-action";
 ["reflexive"] = "true";
 ["which-base-type"] = 29;
@@ -4591,7 +4591,7 @@ return {
 
 };
 
-["468"] =  {
+[468] =  {
 ["type"] = "create-object-action";
 ["reflexive"] = "true";
 ["delay"] = 20;
@@ -4604,7 +4604,7 @@ return {
 
 };
 
-["469"] =  {
+[469] =  {
 ["type"] = "create-object-action";
 ["reflexive"] = "true";
 ["delay"] = 20;
@@ -4617,7 +4617,7 @@ return {
 
 };
 
-["470"] =  {
+[470] =  {
 ["type"] = "create-object-action";
 ["reflexive"] = "true";
 ["delay"] = 20;
@@ -4630,7 +4630,7 @@ return {
 
 };
 
-["471"] =  {
+[471] =  {
 ["type"] = "alter-hidden-action";
 ["reflexive"] = "true";
 ["minimum"] = 4;
@@ -4638,7 +4638,7 @@ return {
 
 };
 
-["472"] =  {
+[472] =  {
 ["type"] = "play-sound-action";
 ["reflexive"] = "true";
 ["priority"] = 4;
@@ -4651,7 +4651,7 @@ return {
 
 };
 
-["473"] =  {
+[473] =  {
 ["type"] = "create-object-action";
 ["reflexive"] = "true";
 ["which-base-type"] = 221;
@@ -4663,14 +4663,14 @@ return {
 
 };
 
-["474"] =  {
+[474] =  {
 ["type"] = "alter-condition-true-yet-action";
 ["reflexive"] = "true";
 ["value"] = 1;
 
 };
 
-["475"] =  {
+[475] =  {
 ["type"] = "color-flash-action";
 ["reflexive"] = "true";
 ["length"] = 128;
@@ -4679,42 +4679,42 @@ return {
 
 };
 
-["476"] =  {
+[476] =  {
 ["type"] = "alter-condition-true-yet-action";
 ["reflexive"] = "true";
 ["value"] = 1;
 
 };
 
-["477"] =  {
+[477] =  {
 ["type"] = "alter-condition-true-yet-action";
 ["reflexive"] = "true";
 ["value"] = 2;
 
 };
 
-["478"] =  {
+[478] =  {
 ["type"] = "alter-condition-true-yet-action";
 ["reflexive"] = "true";
 ["value"] = 4;
 
 };
 
-["479"] =  {
+[479] =  {
 ["type"] = "alter-condition-true-yet-action";
 ["reflexive"] = "true";
 ["value"] = 3;
 
 };
 
-["480"] =  {
+[480] =  {
 ["type"] = "alter-condition-true-yet-action";
 ["reflexive"] = "true";
 ["value"] = 5;
 
 };
 
-["481"] =  {
+[481] =  {
 ["type"] = "declare-winner-action";
 ["reflexive"] = "true";
 ["which-player"] = 0;
@@ -4723,21 +4723,21 @@ return {
 
 };
 
-["482"] =  {
+[482] =  {
 ["type"] = "alter-condition-true-yet-action";
 ["reflexive"] = "true";
 ["value"] = 2;
 
 };
 
-["483"] =  {
+[483] =  {
 ["type"] = "alter-condition-true-yet-action";
 ["reflexive"] = "true";
 ["value"] = 1;
 
 };
 
-["484"] =  {
+[484] =  {
 ["type"] = "declare-winner-action";
 ["reflexive"] = "true";
 ["which-player"] = 1;
@@ -4746,7 +4746,7 @@ return {
 
 };
 
-["485"] =  {
+[485] =  {
 ["type"] = "change-score-action";
 ["reflexive"] = "true";
 ["which-player"] = 0;
@@ -4755,7 +4755,7 @@ return {
 
 };
 
-["486"] =  {
+[486] =  {
 ["type"] = "declare-winner-action";
 ["reflexive"] = "true";
 ["which-player"] = 1;
@@ -4764,7 +4764,7 @@ return {
 
 };
 
-["487"] =  {
+[487] =  {
 ["type"] = "declare-winner-action";
 ["reflexive"] = "true";
 ["which-player"] = 1;
@@ -4773,7 +4773,7 @@ return {
 
 };
 
-["488"] =  {
+[488] =  {
 ["type"] = "create-object-action";
 ["reflexive"] = "true";
 ["initial-subject-override"] = 0;
@@ -4787,7 +4787,7 @@ return {
 
 };
 
-["489"] =  {
+[489] =  {
 ["type"] = "declare-winner-action";
 ["reflexive"] = "true";
 ["which-player"] = 1;
@@ -4796,7 +4796,7 @@ return {
 
 };
 
-["490"] =  {
+[490] =  {
 ["type"] = "create-object-action";
 ["reflexive"] = "true";
 ["which-base-type"] = 29;
@@ -4808,7 +4808,7 @@ return {
 
 };
 
-["491"] =  {
+[491] =  {
 ["type"] = "declare-winner-action";
 ["reflexive"] = "true";
 ["which-player"] = 1;
@@ -4817,7 +4817,7 @@ return {
 
 };
 
-["492"] =  {
+[492] =  {
 ["type"] = "create-object-action";
 ["reflexive"] = "true";
 ["which-base-type"] = 29;
@@ -4829,7 +4829,7 @@ return {
 
 };
 
-["493"] =  {
+[493] =  {
 ["type"] = "declare-winner-action";
 ["reflexive"] = "true";
 ["which-player"] = 1;
@@ -4838,7 +4838,7 @@ return {
 
 };
 
-["494"] =  {
+[494] =  {
 ["type"] = "play-sound-action";
 ["reflexive"] = "true";
 ["priority"] = 3;
@@ -4851,7 +4851,7 @@ return {
 
 };
 
-["495"] =  {
+[495] =  {
 ["type"] = "create-object-action";
 ["reflexive"] = "true";
 ["which-base-type"] = 227;
@@ -4863,7 +4863,7 @@ return {
 
 };
 
-["496"] =  {
+[496] =  {
 ["type"] = "declare-winner-action";
 ["reflexive"] = "true";
 ["which-player"] = 0;
@@ -4872,7 +4872,7 @@ return {
 
 };
 
-["497"] =  {
+[497] =  {
 ["type"] = "alter-hidden-action";
 ["reflexive"] = "true";
 ["minimum"] = 6;
@@ -4880,7 +4880,7 @@ return {
 
 };
 
-["498"] =  {
+[498] =  {
 ["type"] = "alter-velocity-action";
 ["reflexive"] = "false";
 ["relative"] = "true";
@@ -4889,7 +4889,7 @@ return {
 
 };
 
-["499"] =  {
+[499] =  {
 ["type"] = "create-object-action";
 ["reflexive"] = "true";
 ["which-base-type"] = 53;
@@ -4901,14 +4901,14 @@ return {
 
 };
 
-["500"] =  {
+[500] =  {
 ["type"] = "die-action";
 ["reflexive"] = "true";
 ["type"] = 0;
 
 };
 
-["501"] =  {
+[501] =  {
 ["type"] = "create-object-action";
 ["reflexive"] = "true";
 ["which-base-type"] = 184;
@@ -4920,7 +4920,7 @@ return {
 
 };
 
-["502"] =  {
+[502] =  {
 ["type"] = "create-object-action";
 ["reflexive"] = "true";
 ["which-base-type"] = 195;
@@ -4932,7 +4932,7 @@ return {
 
 };
 
-["503"] =  {
+[503] =  {
 ["type"] = "play-sound-action";
 ["reflexive"] = "true";
 ["priority"] = 3;
@@ -4945,7 +4945,7 @@ return {
 
 };
 
-["504"] =  {
+[504] =  {
 ["type"] = "make-sparks-action";
 ["reflexive"] = "true";
 ["how-many"] = 2;
@@ -4954,14 +4954,14 @@ return {
 
 };
 
-["505"] =  {
+[505] =  {
 ["type"] = "die-action";
 ["reflexive"] = "true";
 ["type"] = 0;
 
 };
 
-["506"] =  {
+[506] =  {
 ["type"] = "alter-damage-action";
 ["reflexive"] = "true";
 ["initial-subject-override"] = 2;
@@ -4969,7 +4969,7 @@ return {
 
 };
 
-["507"] =  {
+[507] =  {
 ["type"] = "alter-damage-action";
 ["reflexive"] = "true";
 ["initial-subject-override"] = 3;
@@ -4977,7 +4977,7 @@ return {
 
 };
 
-["508"] =  {
+[508] =  {
 ["type"] = "alter-damage-action";
 ["reflexive"] = "true";
 ["initial-subject-override"] = 4;
@@ -4985,7 +4985,7 @@ return {
 
 };
 
-["509"] =  {
+[509] =  {
 ["type"] = "alter-damage-action";
 ["reflexive"] = "true";
 ["initial-subject-override"] = 5;
@@ -4993,7 +4993,7 @@ return {
 
 };
 
-["510"] =  {
+[510] =  {
 ["type"] = "display-message-action";
 ["reflexive"] = "true";
 ["message-id"] = 6123;
@@ -5001,7 +5001,7 @@ return {
 
 };
 
-["511"] =  {
+[511] =  {
 ["type"] = "play-sound-action";
 ["reflexive"] = "true";
 ["priority"] = 3;
@@ -5014,7 +5014,7 @@ return {
 
 };
 
-["512"] =  {
+[512] =  {
 ["type"] = "create-object-action";
 ["reflexive"] = "true";
 ["which-base-type"] = 232;
@@ -5026,7 +5026,7 @@ return {
 
 };
 
-["513"] =  {
+[513] =  {
 ["type"] = "make-sparks-action";
 ["reflexive"] = "false";
 ["how-many"] = 20;
@@ -5035,7 +5035,7 @@ return {
 
 };
 
-["514"] =  {
+[514] =  {
 ["type"] = "play-sound-action";
 ["reflexive"] = "true";
 ["priority"] = 1;
@@ -5048,7 +5048,7 @@ return {
 
 };
 
-["515"] =  {
+[515] =  {
 ["type"] = "create-object-action";
 ["reflexive"] = "true";
 ["which-base-type"] = 233;
@@ -5060,14 +5060,14 @@ return {
 
 };
 
-["516"] =  {
+[516] =  {
 ["type"] = "die-action";
 ["reflexive"] = "true";
 ["type"] = 1;
 
 };
 
-["517"] =  {
+[517] =  {
 ["type"] = "play-sound-action";
 ["reflexive"] = "true";
 ["priority"] = 3;
@@ -5080,7 +5080,7 @@ return {
 
 };
 
-["518"] =  {
+[518] =  {
 ["type"] = "create-object-action";
 ["reflexive"] = "true";
 ["which-base-type"] = 236;
@@ -5092,7 +5092,7 @@ return {
 
 };
 
-["519"] =  {
+[519] =  {
 ["type"] = "play-sound-action";
 ["reflexive"] = "true";
 ["priority"] = 101;
@@ -5105,7 +5105,7 @@ return {
 
 };
 
-["520"] =  {
+[520] =  {
 ["type"] = "create-object-action";
 ["reflexive"] = "true";
 ["which-base-type"] = 239;
@@ -5117,7 +5117,7 @@ return {
 
 };
 
-["521"] =  {
+[521] =  {
 ["type"] = "play-sound-action";
 ["reflexive"] = "true";
 ["priority"] = 3;
@@ -5130,7 +5130,7 @@ return {
 
 };
 
-["522"] =  {
+[522] =  {
 ["type"] = "create-object-action";
 ["reflexive"] = "true";
 ["which-base-type"] = 242;
@@ -5142,7 +5142,7 @@ return {
 
 };
 
-["523"] =  {
+[523] =  {
 ["type"] = "play-sound-action";
 ["reflexive"] = "true";
 ["priority"] = 3;
@@ -5155,7 +5155,7 @@ return {
 
 };
 
-["524"] =  {
+[524] =  {
 ["type"] = "create-object-action";
 ["reflexive"] = "true";
 ["which-base-type"] = 245;
@@ -5167,7 +5167,7 @@ return {
 
 };
 
-["525"] =  {
+[525] =  {
 ["type"] = "play-sound-action";
 ["reflexive"] = "true";
 ["priority"] = 3;
@@ -5180,7 +5180,7 @@ return {
 
 };
 
-["526"] =  {
+[526] =  {
 ["type"] = "create-object-set-dest-action";
 ["reflexive"] = "true";
 ["which-base-type"] = 248;
@@ -5192,7 +5192,7 @@ return {
 
 };
 
-["527"] =  {
+[527] =  {
 ["type"] = "play-sound-action";
 ["reflexive"] = "true";
 ["priority"] = 3;
@@ -5205,7 +5205,7 @@ return {
 
 };
 
-["528"] =  {
+[528] =  {
 ["type"] = "create-object-set-dest-action";
 ["reflexive"] = "true";
 ["which-base-type"] = 252;
@@ -5217,7 +5217,7 @@ return {
 
 };
 
-["529"] =  {
+[529] =  {
 ["type"] = "play-sound-action";
 ["reflexive"] = "true";
 ["priority"] = 3;
@@ -5230,7 +5230,7 @@ return {
 
 };
 
-["530"] =  {
+[530] =  {
 ["type"] = "create-object-set-dest-action";
 ["reflexive"] = "true";
 ["which-base-type"] = 253;
@@ -5242,7 +5242,7 @@ return {
 
 };
 
-["531"] =  {
+[531] =  {
 ["type"] = "create-object-action";
 ["reflexive"] = "true";
 ["which-base-type"] = 255;
@@ -5254,7 +5254,7 @@ return {
 
 };
 
-["532"] =  {
+[532] =  {
 ["type"] = "play-sound-action";
 ["reflexive"] = "true";
 ["priority"] = 3;
@@ -5267,7 +5267,7 @@ return {
 
 };
 
-["533"] =  {
+[533] =  {
 ["type"] = "alter-base-type-action";
 ["reflexive"] = "true";
 ["preserve-weapons"] = "true";
@@ -5275,7 +5275,7 @@ return {
 
 };
 
-["534"] =  {
+[534] =  {
 ["type"] = "play-sound-action";
 ["reflexive"] = "false";
 ["priority"] = 3;
@@ -5288,7 +5288,7 @@ return {
 
 };
 
-["535"] =  {
+[535] =  {
 ["type"] = "create-object-action";
 ["reflexive"] = "true";
 ["which-base-type"] = 258;
@@ -5300,7 +5300,7 @@ return {
 
 };
 
-["536"] =  {
+[536] =  {
 ["type"] = "play-sound-action";
 ["reflexive"] = "true";
 ["priority"] = 3;
@@ -5313,7 +5313,7 @@ return {
 
 };
 
-["537"] =  {
+[537] =  {
 ["type"] = "create-object-action";
 ["reflexive"] = "true";
 ["which-base-type"] = 260;
@@ -5325,7 +5325,7 @@ return {
 
 };
 
-["538"] =  {
+[538] =  {
 ["type"] = "create-object-action";
 ["reflexive"] = "true";
 ["which-base-type"] = 262;
@@ -5337,7 +5337,7 @@ return {
 
 };
 
-["539"] =  {
+[539] =  {
 ["type"] = "create-object-action";
 ["reflexive"] = "true";
 ["which-base-type"] = 263;
@@ -5349,7 +5349,7 @@ return {
 
 };
 
-["540"] =  {
+[540] =  {
 ["type"] = "play-sound-action";
 ["reflexive"] = "true";
 ["priority"] = 3;
@@ -5362,7 +5362,7 @@ return {
 
 };
 
-["541"] =  {
+[541] =  {
 ["type"] = "create-object-action";
 ["reflexive"] = "true";
 ["which-base-type"] = 265;
@@ -5374,7 +5374,7 @@ return {
 
 };
 
-["542"] =  {
+[542] =  {
 ["type"] = "create-object-action";
 ["reflexive"] = "true";
 ["which-base-type"] = 195;
@@ -5386,7 +5386,7 @@ return {
 
 };
 
-["543"] =  {
+[543] =  {
 ["type"] = "alter-hidden-action";
 ["reflexive"] = "true";
 ["minimum"] = 5;
@@ -5394,7 +5394,7 @@ return {
 
 };
 
-["544"] =  {
+[544] =  {
 ["type"] = "alter-owner-action";
 ["reflexive"] = "true";
 ["initial-subject-override"] = 2;
@@ -5402,7 +5402,7 @@ return {
 
 };
 
-["545"] =  {
+[545] =  {
 ["type"] = "alter-owner-action";
 ["reflexive"] = "true";
 ["initial-subject-override"] = 3;
@@ -5410,7 +5410,7 @@ return {
 
 };
 
-["546"] =  {
+[546] =  {
 ["type"] = "alter-absolute-cash-action";
 ["reflexive"] = "false";
 ["initial-subject-override"] = 3;
@@ -5418,7 +5418,7 @@ return {
 
 };
 
-["547"] =  {
+[547] =  {
 ["type"] = "alter-hidden-action";
 ["reflexive"] = "true";
 ["minimum"] = 9;
@@ -5426,7 +5426,7 @@ return {
 
 };
 
-["548"] =  {
+[548] =  {
 ["type"] = "declare-winner-action";
 ["reflexive"] = "false";
 ["which-player"] = 1;
@@ -5435,7 +5435,7 @@ return {
 
 };
 
-["549"] =  {
+[549] =  {
 ["type"] = "declare-winner-action";
 ["reflexive"] = "true";
 ["which-player"] = 0;
@@ -5444,7 +5444,7 @@ return {
 
 };
 
-["550"] =  {
+[550] =  {
 ["type"] = "display-message-action";
 ["reflexive"] = "true";
 ["message-id"] = 5170;
@@ -5452,7 +5452,7 @@ return {
 
 };
 
-["551"] =  {
+[551] =  {
 ["type"] = "display-message-action";
 ["reflexive"] = "true";
 ["delay"] = 360;
@@ -5461,7 +5461,7 @@ return {
 
 };
 
-["552"] =  {
+[552] =  {
 ["type"] = "alter-hidden-action";
 ["reflexive"] = "true";
 ["delay"] = 360;
@@ -5470,7 +5470,7 @@ return {
 
 };
 
-["553"] =  {
+[553] =  {
 ["type"] = "declare-winner-action";
 ["reflexive"] = "true";
 ["which-player"] = 0;
@@ -5479,7 +5479,7 @@ return {
 
 };
 
-["554"] =  {
+[554] =  {
 ["type"] = "declare-winner-action";
 ["reflexive"] = "false";
 ["which-player"] = 0;
@@ -5488,7 +5488,7 @@ return {
 
 };
 
-["555"] =  {
+[555] =  {
 ["type"] = "land-at-action";
 ["reflexive"] = "false";
 ["inclusive-filter"] = 4029677568;
@@ -5497,7 +5497,7 @@ return {
 
 };
 
-["556"] =  {
+[556] =  {
 ["type"] = "play-sound-action";
 ["reflexive"] = "false";
 ["inclusive-filter"] = 4029677568;
@@ -5512,7 +5512,7 @@ return {
 
 };
 
-["557"] =  {
+[557] =  {
 ["type"] = "play-sound-action";
 ["reflexive"] = "true";
 ["priority"] = 3;
@@ -5525,7 +5525,7 @@ return {
 
 };
 
-["558"] =  {
+[558] =  {
 ["type"] = "alter-location-action";
 ["reflexive"] = "true";
 ["initial-direct-override"] = 3;
@@ -5533,14 +5533,14 @@ return {
 
 };
 
-["559"] =  {
+[559] =  {
 ["type"] = "alter-damage-action";
 ["reflexive"] = "true";
 ["value"] = 1000;
 
 };
 
-["560"] =  {
+[560] =  {
 ["type"] = "alter-velocity-action";
 ["reflexive"] = "true";
 ["relative"] = "false";
@@ -5549,7 +5549,7 @@ return {
 
 };
 
-["561"] =  {
+[561] =  {
 ["type"] = "alter-base-type-action";
 ["reflexive"] = "true";
 ["preserve-weapons"] = "false";
@@ -5557,14 +5557,14 @@ return {
 
 };
 
-["562"] =  {
+[562] =  {
 ["type"] = "alter-damage-action";
 ["reflexive"] = "true";
 ["value"] = 1000;
 
 };
 
-["563"] =  {
+[563] =  {
 ["type"] = "alter-base-type-action";
 ["reflexive"] = "true";
 ["preserve-weapons"] = "false";
@@ -5572,7 +5572,7 @@ return {
 
 };
 
-["564"] =  {
+[564] =  {
 ["type"] = "alter-base-type-action";
 ["reflexive"] = "false";
 ["preserve-weapons"] = "false";
@@ -5580,7 +5580,7 @@ return {
 
 };
 
-["565"] =  {
+[565] =  {
 ["type"] = "play-sound-action";
 ["reflexive"] = "false";
 ["priority"] = 5;
@@ -5593,20 +5593,20 @@ return {
 
 };
 
-["566"] =  {
+[566] =  {
 ["type"] = "nil-target-action";
 ["reflexive"] = "true";
 
 };
 
-["567"] =  {
+[567] =  {
 ["type"] = "alter-age-action";
 ["reflexive"] = "true";
 ["value"] = -1;
 
 };
 
-["568"] =  {
+[568] =  {
 ["type"] = "alter-base-type-action";
 ["reflexive"] = "true";
 ["preserve-weapons"] = "false";
@@ -5614,7 +5614,7 @@ return {
 
 };
 
-["569"] =  {
+[569] =  {
 ["type"] = "alter-base-type-action";
 ["reflexive"] = "false";
 ["preserve-weapons"] = "false";
@@ -5622,7 +5622,7 @@ return {
 
 };
 
-["570"] =  {
+[570] =  {
 ["type"] = "play-sound-action";
 ["reflexive"] = "false";
 ["priority"] = 5;
@@ -5635,13 +5635,13 @@ return {
 
 };
 
-["571"] =  {
+[571] =  {
 ["type"] = "nil-target-action";
 ["reflexive"] = "true";
 
 };
 
-["572"] =  {
+[572] =  {
 ["type"] = "play-sound-action";
 ["reflexive"] = "true";
 ["priority"] = 3;
@@ -5654,7 +5654,7 @@ return {
 
 };
 
-["573"] =  {
+[573] =  {
 ["type"] = "alter-location-action";
 ["reflexive"] = "true";
 ["initial-direct-override"] = 2;
@@ -5662,14 +5662,14 @@ return {
 
 };
 
-["574"] =  {
+[574] =  {
 ["type"] = "alter-damage-action";
 ["reflexive"] = "true";
 ["value"] = 1000;
 
 };
 
-["575"] =  {
+[575] =  {
 ["type"] = "alter-velocity-action";
 ["reflexive"] = "true";
 ["relative"] = "false";
@@ -5678,7 +5678,7 @@ return {
 
 };
 
-["576"] =  {
+[576] =  {
 ["type"] = "alter-base-type-action";
 ["reflexive"] = "true";
 ["preserve-weapons"] = "false";
@@ -5686,14 +5686,14 @@ return {
 
 };
 
-["577"] =  {
+[577] =  {
 ["type"] = "alter-damage-action";
 ["reflexive"] = "true";
 ["value"] = 1000;
 
 };
 
-["578"] =  {
+[578] =  {
 ["type"] = "alter-base-type-action";
 ["reflexive"] = "true";
 ["preserve-weapons"] = "false";
@@ -5701,14 +5701,14 @@ return {
 
 };
 
-["579"] =  {
+[579] =  {
 ["type"] = "alter-age-action";
 ["reflexive"] = "true";
 ["value"] = -1;
 
 };
 
-["580"] =  {
+[580] =  {
 ["type"] = "alter-base-type-action";
 ["reflexive"] = "true";
 ["preserve-weapons"] = "false";
@@ -5716,7 +5716,7 @@ return {
 
 };
 
-["581"] =  {
+[581] =  {
 ["type"] = "declare-winner-action";
 ["reflexive"] = "true";
 ["which-player"] = 1;
@@ -5725,14 +5725,14 @@ return {
 
 };
 
-["582"] =  {
+[582] =  {
 ["type"] = "alter-owner-action";
 ["reflexive"] = "true";
 ["relative"] = "true";
 
 };
 
-["583"] =  {
+[583] =  {
 ["type"] = "declare-winner-action";
 ["reflexive"] = "true";
 ["which-player"] = 1;
@@ -5741,7 +5741,7 @@ return {
 
 };
 
-["584"] =  {
+[584] =  {
 ["type"] = "declare-winner-action";
 ["reflexive"] = "true";
 ["which-player"] = 0;
@@ -5750,7 +5750,7 @@ return {
 
 };
 
-["585"] =  {
+[585] =  {
 ["type"] = "change-score-action";
 ["reflexive"] = "true";
 ["which-player"] = 0;
@@ -5759,7 +5759,7 @@ return {
 
 };
 
-["586"] =  {
+[586] =  {
 ["type"] = "alter-hidden-action";
 ["reflexive"] = "true";
 ["delay"] = 360;
@@ -5768,14 +5768,14 @@ return {
 
 };
 
-["587"] =  {
+[587] =  {
 ["type"] = "alter-condition-true-yet-action";
 ["reflexive"] = "false";
 ["value"] = 0;
 
 };
 
-["588"] =  {
+[588] =  {
 ["type"] = "change-score-action";
 ["reflexive"] = "true";
 ["which-player"] = 1;
@@ -5784,7 +5784,7 @@ return {
 
 };
 
-["589"] =  {
+[589] =  {
 ["type"] = "alter-hidden-action";
 ["reflexive"] = "true";
 ["delay"] = 360;
@@ -5793,14 +5793,14 @@ return {
 
 };
 
-["590"] =  {
+[590] =  {
 ["type"] = "alter-condition-true-yet-action";
 ["reflexive"] = "true";
 ["value"] = 1;
 
 };
 
-["591"] =  {
+[591] =  {
 ["type"] = "declare-winner-action";
 ["reflexive"] = "true";
 ["which-player"] = 1;
@@ -5809,7 +5809,7 @@ return {
 
 };
 
-["592"] =  {
+[592] =  {
 ["type"] = "declare-winner-action";
 ["reflexive"] = "true";
 ["which-player"] = 0;
@@ -5818,7 +5818,7 @@ return {
 
 };
 
-["593"] =  {
+[593] =  {
 ["type"] = "play-sound-action";
 ["reflexive"] = "true";
 ["priority"] = 3;
@@ -5831,7 +5831,7 @@ return {
 
 };
 
-["594"] =  {
+[594] =  {
 ["type"] = "create-object-action";
 ["reflexive"] = "true";
 ["which-base-type"] = 242;
@@ -5843,7 +5843,7 @@ return {
 
 };
 
-["595"] =  {
+[595] =  {
 ["type"] = "declare-winner-action";
 ["reflexive"] = "true";
 ["which-player"] = 0;
@@ -5852,7 +5852,7 @@ return {
 
 };
 
-["596"] =  {
+[596] =  {
 ["type"] = "declare-winner-action";
 ["reflexive"] = "true";
 ["which-player"] = 1;
@@ -5861,7 +5861,7 @@ return {
 
 };
 
-["597"] =  {
+[597] =  {
 ["type"] = "declare-winner-action";
 ["reflexive"] = "true";
 ["which-player"] = 1;
@@ -5870,7 +5870,7 @@ return {
 
 };
 
-["598"] =  {
+[598] =  {
 ["type"] = "declare-winner-action";
 ["reflexive"] = "true";
 ["which-player"] = 0;
@@ -5879,7 +5879,7 @@ return {
 
 };
 
-["599"] =  {
+[599] =  {
 ["type"] = "declare-winner-action";
 ["reflexive"] = "true";
 ["which-player"] = 1;
@@ -5888,7 +5888,7 @@ return {
 
 };
 
-["600"] =  {
+[600] =  {
 ["type"] = "declare-winner-action";
 ["reflexive"] = "true";
 ["which-player"] = 0;
@@ -5897,21 +5897,21 @@ return {
 
 };
 
-["601"] =  {
+[601] =  {
 ["type"] = "disable-keys-action";
 ["reflexive"] = "false";
 ["key-mask"] = 4177559551;
 
 };
 
-["602"] =  {
+[602] =  {
 ["type"] = "set-zoom-action";
 ["reflexive"] = "false";
 ["zoom-level"] = 1;
 
 };
 
-["603"] =  {
+[603] =  {
 ["type"] = "alter-velocity-action";
 ["reflexive"] = "true";
 ["initial-subject-override"] = 0;
@@ -5921,7 +5921,7 @@ return {
 
 };
 
-["604"] =  {
+[604] =  {
 ["type"] = "display-message-action";
 ["reflexive"] = "false";
 ["message-id"] = 5700;
@@ -5929,7 +5929,7 @@ return {
 
 };
 
-["605"] =  {
+[605] =  {
 ["type"] = "display-message-action";
 ["reflexive"] = "false";
 ["message-id"] = 5701;
@@ -5937,14 +5937,14 @@ return {
 
 };
 
-["606"] =  {
+[606] =  {
 ["type"] = "alter-condition-true-yet-action";
 ["reflexive"] = "false";
 ["value"] = 3;
 
 };
 
-["607"] =  {
+[607] =  {
 ["type"] = "display-message-action";
 ["reflexive"] = "false";
 ["message-id"] = 5750;
@@ -5952,42 +5952,42 @@ return {
 
 };
 
-["608"] =  {
+[608] =  {
 ["type"] = "enable-keys-action";
 ["reflexive"] = "false";
 ["key-mask"] = 2485616640;
 
 };
 
-["609"] =  {
+[609] =  {
 ["type"] = "alter-condition-true-yet-action";
 ["reflexive"] = "false";
 ["value"] = 22;
 
 };
 
-["610"] =  {
+[610] =  {
 ["type"] = "set-zoom-action";
 ["reflexive"] = "false";
 ["zoom-level"] = 3;
 
 };
 
-["611"] =  {
+[611] =  {
 ["type"] = "alter-condition-true-yet-action";
 ["reflexive"] = "false";
 ["value"] = 5;
 
 };
 
-["612"] =  {
+[612] =  {
 ["type"] = "enable-keys-action";
 ["reflexive"] = "false";
 ["key-mask"] = 373841920;
 
 };
 
-["613"] =  {
+[613] =  {
 ["type"] = "display-message-action";
 ["reflexive"] = "false";
 ["message-id"] = 5711;
@@ -5995,7 +5995,7 @@ return {
 
 };
 
-["614"] =  {
+[614] =  {
 ["type"] = "set-destination-action";
 ["reflexive"] = "false";
 ["initial-subject-override"] = 5;
@@ -6003,21 +6003,21 @@ return {
 
 };
 
-["615"] =  {
+[615] =  {
 ["type"] = "alter-condition-true-yet-action";
 ["reflexive"] = "false";
 ["value"] = 7;
 
 };
 
-["616"] =  {
+[616] =  {
 ["type"] = "set-zoom-action";
 ["reflexive"] = "false";
 ["zoom-level"] = 5;
 
 };
 
-["617"] =  {
+[617] =  {
 ["type"] = "set-destination-action";
 ["reflexive"] = "false";
 ["initial-subject-override"] = 5;
@@ -6025,7 +6025,7 @@ return {
 
 };
 
-["618"] =  {
+[618] =  {
 ["type"] = "alter-condition-true-yet-action";
 ["reflexive"] = "false";
 ["delay"] = 120;
@@ -6033,7 +6033,7 @@ return {
 
 };
 
-["619"] =  {
+[619] =  {
 ["type"] = "set-destination-action";
 ["reflexive"] = "false";
 ["initial-subject-override"] = 5;
@@ -6041,7 +6041,7 @@ return {
 
 };
 
-["620"] =  {
+[620] =  {
 ["type"] = "alter-condition-true-yet-action";
 ["reflexive"] = "false";
 ["delay"] = 120;
@@ -6049,7 +6049,7 @@ return {
 
 };
 
-["621"] =  {
+[621] =  {
 ["type"] = "die-action";
 ["reflexive"] = "true";
 ["initial-subject-override"] = 5;
@@ -6057,14 +6057,14 @@ return {
 
 };
 
-["622"] =  {
+[622] =  {
 ["type"] = "alter-condition-true-yet-action";
 ["reflexive"] = "false";
 ["value"] = 10;
 
 };
 
-["623"] =  {
+[623] =  {
 ["type"] = "display-message-action";
 ["reflexive"] = "true";
 ["message-id"] = 5715;
@@ -6072,21 +6072,21 @@ return {
 
 };
 
-["624"] =  {
+[624] =  {
 ["type"] = "disable-keys-action";
 ["reflexive"] = "false";
 ["key-mask"] = 2828558336;
 
 };
 
-["625"] =  {
+[625] =  {
 ["type"] = "set-zoom-action";
 ["reflexive"] = "false";
 ["zoom-level"] = 7;
 
 };
 
-["626"] =  {
+[626] =  {
 ["type"] = "alter-damage-action";
 ["reflexive"] = "true";
 ["initial-subject-override"] = 2;
@@ -6094,21 +6094,21 @@ return {
 
 };
 
-["627"] =  {
+[627] =  {
 ["type"] = "alter-condition-true-yet-action";
 ["reflexive"] = "false";
 ["value"] = 14;
 
 };
 
-["628"] =  {
+[628] =  {
 ["type"] = "enable-keys-action";
 ["reflexive"] = "false";
 ["key-mask"] = 374890496;
 
 };
 
-["629"] =  {
+[629] =  {
 ["type"] = "display-message-action";
 ["reflexive"] = "false";
 ["message-id"] = 5721;
@@ -6116,42 +6116,42 @@ return {
 
 };
 
-["630"] =  {
+[630] =  {
 ["type"] = "enable-keys-action";
 ["reflexive"] = "false";
 ["key-mask"] = 12582924;
 
 };
 
-["631"] =  {
+[631] =  {
 ["type"] = "enable-keys-action";
 ["reflexive"] = "false";
 ["key-mask"] = 131;
 
 };
 
-["632"] =  {
+[632] =  {
 ["type"] = "set-zoom-action";
 ["reflexive"] = "false";
 ["zoom-level"] = 1;
 
 };
 
-["633"] =  {
+[633] =  {
 ["type"] = "set-zoom-action";
 ["reflexive"] = "false";
 ["zoom-level"] = 4;
 
 };
 
-["634"] =  {
+[634] =  {
 ["type"] = "enable-keys-action";
 ["reflexive"] = "true";
 ["key-mask"] = 112;
 
 };
 
-["635"] =  {
+[635] =  {
 ["type"] = "alter-hidden-action";
 ["reflexive"] = "false";
 ["minimum"] = 7;
@@ -6159,14 +6159,14 @@ return {
 
 };
 
-["636"] =  {
+[636] =  {
 ["type"] = "alter-cloak-action";
 ["reflexive"] = "true";
 ["initial-subject-override"] = 8;
 
 };
 
-["637"] =  {
+[637] =  {
 ["type"] = "alter-max-velocity-action";
 ["reflexive"] = "true";
 ["initial-subject-override"] = 8;
@@ -6174,7 +6174,7 @@ return {
 
 };
 
-["638"] =  {
+[638] =  {
 ["type"] = "alter-max-velocity-action";
 ["reflexive"] = "true";
 ["initial-subject-override"] = 7;
@@ -6182,7 +6182,7 @@ return {
 
 };
 
-["639"] =  {
+[639] =  {
 ["type"] = "alter-owner-action";
 ["reflexive"] = "true";
 ["initial-subject-override"] = 4;
@@ -6190,21 +6190,21 @@ return {
 
 };
 
-["640"] =  {
+[640] =  {
 ["type"] = "alter-condition-true-yet-action";
 ["reflexive"] = "false";
 ["value"] = 20;
 
 };
 
-["641"] =  {
+[641] =  {
 ["type"] = "alter-condition-true-yet-action";
 ["reflexive"] = "false";
 ["value"] = 21;
 
 };
 
-["642"] =  {
+[642] =  {
 ["type"] = "declare-winner-action";
 ["reflexive"] = "true";
 ["which-player"] = 0;
@@ -6213,7 +6213,7 @@ return {
 
 };
 
-["643"] =  {
+[643] =  {
 ["type"] = "display-message-action";
 ["reflexive"] = "false";
 ["message-id"] = 5800;
@@ -6221,7 +6221,7 @@ return {
 
 };
 
-["644"] =  {
+[644] =  {
 ["type"] = "alter-velocity-action";
 ["reflexive"] = "true";
 ["initial-subject-override"] = 0;
@@ -6231,7 +6231,7 @@ return {
 
 };
 
-["645"] =  {
+[645] =  {
 ["type"] = "alter-velocity-action";
 ["reflexive"] = "true";
 ["initial-subject-override"] = 1;
@@ -6241,28 +6241,28 @@ return {
 
 };
 
-["646"] =  {
+[646] =  {
 ["type"] = "disable-keys-action";
 ["reflexive"] = "false";
 ["key-mask"] = 2015395827;
 
 };
 
-["647"] =  {
+[647] =  {
 ["type"] = "set-zoom-action";
 ["reflexive"] = "false";
 ["zoom-level"] = 2;
 
 };
 
-["648"] =  {
+[648] =  {
 ["type"] = "alter-condition-true-yet-action";
 ["reflexive"] = "true";
 ["value"] = 2;
 
 };
 
-["649"] =  {
+[649] =  {
 ["type"] = "display-message-action";
 ["reflexive"] = "false";
 ["message-id"] = 5803;
@@ -6270,7 +6270,7 @@ return {
 
 };
 
-["650"] =  {
+[650] =  {
 ["type"] = "display-message-action";
 ["reflexive"] = "false";
 ["message-id"] = 5811;
@@ -6278,7 +6278,7 @@ return {
 
 };
 
-["651"] =  {
+[651] =  {
 ["type"] = "alter-hidden-action";
 ["reflexive"] = "false";
 ["minimum"] = 2;
@@ -6286,21 +6286,21 @@ return {
 
 };
 
-["652"] =  {
+[652] =  {
 ["type"] = "set-zoom-action";
 ["reflexive"] = "true";
 ["zoom-level"] = 7;
 
 };
 
-["653"] =  {
+[653] =  {
 ["type"] = "alter-condition-true-yet-action";
 ["reflexive"] = "true";
 ["value"] = 6;
 
 };
 
-["654"] =  {
+[654] =  {
 ["type"] = "display-message-action";
 ["reflexive"] = "true";
 ["message-id"] = 5813;
@@ -6308,7 +6308,7 @@ return {
 
 };
 
-["655"] =  {
+[655] =  {
 ["type"] = "die-action";
 ["reflexive"] = "true";
 ["initial-subject-override"] = 2;
@@ -6316,7 +6316,7 @@ return {
 
 };
 
-["656"] =  {
+[656] =  {
 ["type"] = "die-action";
 ["reflexive"] = "true";
 ["initial-subject-override"] = 3;
@@ -6324,7 +6324,7 @@ return {
 
 };
 
-["657"] =  {
+[657] =  {
 ["type"] = "die-action";
 ["reflexive"] = "true";
 ["initial-subject-override"] = 4;
@@ -6332,7 +6332,7 @@ return {
 
 };
 
-["658"] =  {
+[658] =  {
 ["type"] = "die-action";
 ["reflexive"] = "true";
 ["initial-subject-override"] = 5;
@@ -6340,7 +6340,7 @@ return {
 
 };
 
-["659"] =  {
+[659] =  {
 ["type"] = "alter-condition-true-yet-action";
 ["reflexive"] = "false";
 ["initial-subject-override"] = 5;
@@ -6348,35 +6348,35 @@ return {
 
 };
 
-["660"] =  {
+[660] =  {
 ["type"] = "set-zoom-action";
 ["reflexive"] = "true";
 ["zoom-level"] = 2;
 
 };
 
-["661"] =  {
+[661] =  {
 ["type"] = "enable-keys-action";
 ["reflexive"] = "true";
 ["key-mask"] = 1792;
 
 };
 
-["662"] =  {
+[662] =  {
 ["type"] = "disable-keys-action";
 ["reflexive"] = "true";
 ["key-mask"] = 2147483648;
 
 };
 
-["663"] =  {
+[663] =  {
 ["type"] = "alter-condition-true-yet-action";
 ["reflexive"] = "false";
 ["value"] = 4;
 
 };
 
-["664"] =  {
+[664] =  {
 ["type"] = "display-message-action";
 ["reflexive"] = "false";
 ["message-id"] = 5751;
@@ -6384,14 +6384,14 @@ return {
 
 };
 
-["665"] =  {
+[665] =  {
 ["type"] = "alter-condition-true-yet-action";
 ["reflexive"] = "false";
 ["value"] = 23;
 
 };
 
-["666"] =  {
+[666] =  {
 ["type"] = "display-message-action";
 ["reflexive"] = "false";
 ["message-id"] = 5704;
@@ -6399,7 +6399,7 @@ return {
 
 };
 
-["667"] =  {
+[667] =  {
 ["type"] = "display-message-action";
 ["reflexive"] = "false";
 ["message-id"] = 5815;
@@ -6407,7 +6407,7 @@ return {
 
 };
 
-["668"] =  {
+[668] =  {
 ["type"] = "alter-hidden-action";
 ["reflexive"] = "false";
 ["minimum"] = 2;
@@ -6415,7 +6415,7 @@ return {
 
 };
 
-["669"] =  {
+[669] =  {
 ["type"] = "alter-absolute-location-action";
 ["reflexive"] = "true";
 ["initial-subject-override"] = 2;
@@ -6423,7 +6423,7 @@ return {
 
 };
 
-["670"] =  {
+[670] =  {
 ["type"] = "alter-absolute-location-action";
 ["reflexive"] = "true";
 ["initial-subject-override"] = 3;
@@ -6431,7 +6431,7 @@ return {
 
 };
 
-["671"] =  {
+[671] =  {
 ["type"] = "alter-absolute-location-action";
 ["reflexive"] = "true";
 ["initial-subject-override"] = 4;
@@ -6439,7 +6439,7 @@ return {
 
 };
 
-["672"] =  {
+[672] =  {
 ["type"] = "alter-absolute-location-action";
 ["reflexive"] = "true";
 ["initial-subject-override"] = 5;
@@ -6447,21 +6447,21 @@ return {
 
 };
 
-["673"] =  {
+[673] =  {
 ["type"] = "alter-condition-true-yet-action";
 ["reflexive"] = "false";
 ["value"] = 10;
 
 };
 
-["674"] =  {
+[674] =  {
 ["type"] = "set-zoom-action";
 ["reflexive"] = "true";
 ["zoom-level"] = 3;
 
 };
 
-["675"] =  {
+[675] =  {
 ["type"] = "display-message-action";
 ["reflexive"] = "false";
 ["message-id"] = 5817;
@@ -6469,14 +6469,14 @@ return {
 
 };
 
-["676"] =  {
+[676] =  {
 ["type"] = "alter-condition-true-yet-action";
 ["reflexive"] = "false";
 ["value"] = 12;
 
 };
 
-["677"] =  {
+[677] =  {
 ["type"] = "alter-absolute-location-action";
 ["reflexive"] = "true";
 ["initial-subject-override"] = 2;
@@ -6484,7 +6484,7 @@ return {
 
 };
 
-["678"] =  {
+[678] =  {
 ["type"] = "alter-absolute-location-action";
 ["reflexive"] = "true";
 ["initial-subject-override"] = 3;
@@ -6492,7 +6492,7 @@ return {
 
 };
 
-["679"] =  {
+[679] =  {
 ["type"] = "alter-absolute-location-action";
 ["reflexive"] = "true";
 ["initial-subject-override"] = 4;
@@ -6500,7 +6500,7 @@ return {
 
 };
 
-["680"] =  {
+[680] =  {
 ["type"] = "alter-absolute-location-action";
 ["reflexive"] = "true";
 ["initial-subject-override"] = 5;
@@ -6508,14 +6508,14 @@ return {
 
 };
 
-["681"] =  {
+[681] =  {
 ["type"] = "set-zoom-action";
 ["reflexive"] = "true";
 ["zoom-level"] = 7;
 
 };
 
-["682"] =  {
+[682] =  {
 ["type"] = "display-message-action";
 ["reflexive"] = "false";
 ["message-id"] = 5819;
@@ -6523,7 +6523,7 @@ return {
 
 };
 
-["683"] =  {
+[683] =  {
 ["type"] = "alter-absolute-location-action";
 ["reflexive"] = "true";
 ["initial-subject-override"] = 2;
@@ -6531,7 +6531,7 @@ return {
 
 };
 
-["684"] =  {
+[684] =  {
 ["type"] = "alter-absolute-location-action";
 ["reflexive"] = "true";
 ["initial-subject-override"] = 3;
@@ -6539,7 +6539,7 @@ return {
 
 };
 
-["685"] =  {
+[685] =  {
 ["type"] = "alter-absolute-location-action";
 ["reflexive"] = "true";
 ["initial-subject-override"] = 4;
@@ -6547,7 +6547,7 @@ return {
 
 };
 
-["686"] =  {
+[686] =  {
 ["type"] = "alter-absolute-location-action";
 ["reflexive"] = "true";
 ["initial-subject-override"] = 5;
@@ -6555,21 +6555,21 @@ return {
 
 };
 
-["687"] =  {
+[687] =  {
 ["type"] = "set-zoom-action";
 ["reflexive"] = "true";
 ["zoom-level"] = 1;
 
 };
 
-["688"] =  {
+[688] =  {
 ["type"] = "alter-condition-true-yet-action";
 ["reflexive"] = "true";
 ["value"] = 15;
 
 };
 
-["689"] =  {
+[689] =  {
 ["type"] = "display-message-action";
 ["reflexive"] = "true";
 ["message-id"] = 5823;
@@ -6577,14 +6577,14 @@ return {
 
 };
 
-["690"] =  {
+[690] =  {
 ["type"] = "alter-condition-true-yet-action";
 ["reflexive"] = "true";
 ["value"] = 17;
 
 };
 
-["691"] =  {
+[691] =  {
 ["type"] = "display-message-action";
 ["reflexive"] = "true";
 ["message-id"] = 5825;
@@ -6592,35 +6592,35 @@ return {
 
 };
 
-["692"] =  {
+[692] =  {
 ["type"] = "alter-condition-true-yet-action";
 ["reflexive"] = "true";
 ["value"] = 19;
 
 };
 
-["693"] =  {
+[693] =  {
 ["type"] = "disable-keys-action";
 ["reflexive"] = "true";
 ["key-mask"] = 1792;
 
 };
 
-["694"] =  {
+[694] =  {
 ["type"] = "enable-keys-action";
 ["reflexive"] = "true";
 ["key-mask"] = 2147485696;
 
 };
 
-["695"] =  {
+[695] =  {
 ["type"] = "set-zoom-action";
 ["reflexive"] = "true";
 ["zoom-level"] = 2;
 
 };
 
-["696"] =  {
+[696] =  {
 ["type"] = "display-message-action";
 ["reflexive"] = "true";
 ["message-id"] = 5827;
@@ -6628,14 +6628,14 @@ return {
 
 };
 
-["697"] =  {
+[697] =  {
 ["type"] = "alter-condition-true-yet-action";
 ["reflexive"] = "false";
 ["value"] = 21;
 
 };
 
-["698"] =  {
+[698] =  {
 ["type"] = "display-message-action";
 ["reflexive"] = "true";
 ["message-id"] = 5831;
@@ -6643,7 +6643,7 @@ return {
 
 };
 
-["699"] =  {
+[699] =  {
 ["type"] = "alter-hidden-action";
 ["reflexive"] = "true";
 ["minimum"] = 7;
@@ -6651,14 +6651,14 @@ return {
 
 };
 
-["700"] =  {
+[700] =  {
 ["type"] = "alter-condition-true-yet-action";
 ["reflexive"] = "false";
 ["value"] = 23;
 
 };
 
-["701"] =  {
+[701] =  {
 ["type"] = "display-message-action";
 ["reflexive"] = "true";
 ["message-id"] = 5833;
@@ -6666,28 +6666,28 @@ return {
 
 };
 
-["702"] =  {
+[702] =  {
 ["type"] = "alter-condition-true-yet-action";
 ["reflexive"] = "true";
 ["value"] = 25;
 
 };
 
-["703"] =  {
+[703] =  {
 ["type"] = "disable-keys-action";
 ["reflexive"] = "true";
 ["key-mask"] = 2147483648;
 
 };
 
-["704"] =  {
+[704] =  {
 ["type"] = "enable-keys-action";
 ["reflexive"] = "true";
 ["key-mask"] = 1792;
 
 };
 
-["705"] =  {
+[705] =  {
 ["type"] = "display-message-action";
 ["reflexive"] = "false";
 ["message-id"] = 5835;
@@ -6695,14 +6695,14 @@ return {
 
 };
 
-["706"] =  {
+[706] =  {
 ["type"] = "alter-condition-true-yet-action";
 ["reflexive"] = "false";
 ["value"] = 27;
 
 };
 
-["707"] =  {
+[707] =  {
 ["type"] = "display-message-action";
 ["reflexive"] = "false";
 ["message-id"] = 5836;
@@ -6710,14 +6710,14 @@ return {
 
 };
 
-["708"] =  {
+[708] =  {
 ["type"] = "alter-condition-true-yet-action";
 ["reflexive"] = "false";
 ["value"] = 29;
 
 };
 
-["709"] =  {
+[709] =  {
 ["type"] = "display-message-action";
 ["reflexive"] = "false";
 ["message-id"] = 5837;
@@ -6725,21 +6725,21 @@ return {
 
 };
 
-["710"] =  {
+[710] =  {
 ["type"] = "enable-keys-action";
 ["reflexive"] = "false";
 ["key-mask"] = 2147483776;
 
 };
 
-["711"] =  {
+[711] =  {
 ["type"] = "alter-condition-true-yet-action";
 ["reflexive"] = "false";
 ["value"] = 31;
 
 };
 
-["712"] =  {
+[712] =  {
 ["type"] = "display-message-action";
 ["reflexive"] = "false";
 ["message-id"] = 5840;
@@ -6747,14 +6747,14 @@ return {
 
 };
 
-["713"] =  {
+[713] =  {
 ["type"] = "alter-condition-true-yet-action";
 ["reflexive"] = "false";
 ["value"] = 33;
 
 };
 
-["714"] =  {
+[714] =  {
 ["type"] = "display-message-action";
 ["reflexive"] = "false";
 ["message-id"] = 5841;
@@ -6762,7 +6762,7 @@ return {
 
 };
 
-["715"] =  {
+[715] =  {
 ["type"] = "set-zoom-action";
 ["reflexive"] = "true";
 ["initial-subject-override"] = 1;
@@ -6771,21 +6771,21 @@ return {
 
 };
 
-["716"] =  {
+[716] =  {
 ["type"] = "alter-condition-true-yet-action";
 ["reflexive"] = "false";
 ["value"] = 34;
 
 };
 
-["717"] =  {
+[717] =  {
 ["type"] = "disable-keys-action";
 ["reflexive"] = "false";
 ["key-mask"] = 3758129151;
 
 };
 
-["718"] =  {
+[718] =  {
 ["type"] = "set-destination-action";
 ["reflexive"] = "false";
 ["delay"] = 120;
@@ -6794,14 +6794,14 @@ return {
 
 };
 
-["719"] =  {
+[719] =  {
 ["type"] = "alter-condition-true-yet-action";
 ["reflexive"] = "false";
 ["value"] = 34;
 
 };
 
-["720"] =  {
+[720] =  {
 ["type"] = "display-message-action";
 ["reflexive"] = "false";
 ["message-id"] = 5842;
@@ -6809,7 +6809,7 @@ return {
 
 };
 
-["721"] =  {
+[721] =  {
 ["type"] = "enable-keys-action";
 ["reflexive"] = "false";
 ["initial-subject-override"] = 0;
@@ -6817,7 +6817,7 @@ return {
 
 };
 
-["722"] =  {
+[722] =  {
 ["type"] = "alter-condition-true-yet-action";
 ["reflexive"] = "false";
 ["initial-subject-override"] = 0;
@@ -6825,14 +6825,14 @@ return {
 
 };
 
-["723"] =  {
+[723] =  {
 ["type"] = "alter-condition-true-yet-action";
 ["reflexive"] = "false";
 ["value"] = 35;
 
 };
 
-["724"] =  {
+[724] =  {
 ["type"] = "declare-winner-action";
 ["reflexive"] = "false";
 ["initial-subject-override"] = 0;
@@ -6843,14 +6843,14 @@ return {
 
 };
 
-["725"] =  {
+[725] =  {
 ["type"] = "disable-keys-action";
 ["reflexive"] = "false";
 ["key-mask"] = 1073741827;
 
 };
 
-["726"] =  {
+[726] =  {
 ["type"] = "alter-velocity-action";
 ["reflexive"] = "true";
 ["initial-subject-override"] = 0;
@@ -6860,7 +6860,7 @@ return {
 
 };
 
-["727"] =  {
+[727] =  {
 ["type"] = "display-message-action";
 ["reflexive"] = "false";
 ["message-id"] = 5843;
@@ -6868,7 +6868,7 @@ return {
 
 };
 
-["728"] =  {
+[728] =  {
 ["type"] = "display-message-action";
 ["reflexive"] = "false";
 ["message-id"] = 5843;
@@ -6876,7 +6876,7 @@ return {
 
 };
 
-["729"] =  {
+[729] =  {
 ["type"] = "alter-velocity-action";
 ["reflexive"] = "false";
 ["initial-subject-override"] = 0;
@@ -6886,28 +6886,28 @@ return {
 
 };
 
-["730"] =  {
+[730] =  {
 ["type"] = "disable-keys-action";
 ["reflexive"] = "false";
 ["key-mask"] = 1476399347;
 
 };
 
-["731"] =  {
+[731] =  {
 ["type"] = "set-zoom-action";
 ["reflexive"] = "false";
 ["zoom-level"] = 2;
 
 };
 
-["732"] =  {
+[732] =  {
 ["type"] = "alter-absolute-cash-action";
 ["reflexive"] = "false";
 ["value"] = 640000;
 
 };
 
-["733"] =  {
+[733] =  {
 ["type"] = "display-message-action";
 ["reflexive"] = "false";
 ["message-id"] = 5900;
@@ -6915,7 +6915,7 @@ return {
 
 };
 
-["734"] =  {
+[734] =  {
 ["type"] = "alter-owner-action";
 ["reflexive"] = "true";
 ["delay"] = 160;
@@ -6924,14 +6924,14 @@ return {
 
 };
 
-["735"] =  {
+[735] =  {
 ["type"] = "alter-condition-true-yet-action";
 ["reflexive"] = "false";
 ["value"] = 2;
 
 };
 
-["736"] =  {
+[736] =  {
 ["type"] = "display-message-action";
 ["reflexive"] = "false";
 ["message-id"] = 5905;
@@ -6939,14 +6939,14 @@ return {
 
 };
 
-["737"] =  {
+[737] =  {
 ["type"] = "alter-condition-true-yet-action";
 ["reflexive"] = "false";
 ["value"] = 4;
 
 };
 
-["738"] =  {
+[738] =  {
 ["type"] = "display-message-action";
 ["reflexive"] = "false";
 ["message-id"] = 5910;
@@ -6954,14 +6954,14 @@ return {
 
 };
 
-["739"] =  {
+[739] =  {
 ["type"] = "alter-absolute-cash-action";
 ["reflexive"] = "false";
 ["value"] = 6000000;
 
 };
 
-["740"] =  {
+[740] =  {
 ["type"] = "alter-absolute-cash-action";
 ["reflexive"] = "false";
 ["initial-subject-override"] = 0;
@@ -6970,7 +6970,7 @@ return {
 
 };
 
-["741"] =  {
+[741] =  {
 ["type"] = "computer-select-action";
 ["reflexive"] = "false";
 ["screen"] = 2;
@@ -6978,7 +6978,7 @@ return {
 
 };
 
-["742"] =  {
+[742] =  {
 ["type"] = "computer-select-action";
 ["reflexive"] = "false";
 ["screen"] = 2;
@@ -6986,21 +6986,21 @@ return {
 
 };
 
-["743"] =  {
+[743] =  {
 ["type"] = "enable-keys-action";
 ["reflexive"] = "false";
 ["key-mask"] = 268435456;
 
 };
 
-["744"] =  {
+[744] =  {
 ["type"] = "alter-condition-true-yet-action";
 ["reflexive"] = "false";
 ["value"] = 9;
 
 };
 
-["745"] =  {
+[745] =  {
 ["type"] = "display-message-action";
 ["reflexive"] = "false";
 ["message-id"] = 5925;
@@ -7008,14 +7008,14 @@ return {
 
 };
 
-["746"] =  {
+[746] =  {
 ["type"] = "disable-keys-action";
 ["reflexive"] = "false";
 ["key-mask"] = 268435456;
 
 };
 
-["747"] =  {
+[747] =  {
 ["type"] = "display-message-action";
 ["reflexive"] = "false";
 ["message-id"] = 5930;
@@ -7023,21 +7023,21 @@ return {
 
 };
 
-["748"] =  {
+[748] =  {
 ["type"] = "alter-condition-true-yet-action";
 ["reflexive"] = "false";
 ["value"] = 11;
 
 };
 
-["749"] =  {
+[749] =  {
 ["type"] = "assume-initial-object-action";
 ["reflexive"] = "true";
 ["which-initial-object"] = 5;
 
 };
 
-["750"] =  {
+[750] =  {
 ["type"] = "change-score-action";
 ["reflexive"] = "true";
 ["which-player"] = 0;
@@ -7046,7 +7046,7 @@ return {
 
 };
 
-["751"] =  {
+[751] =  {
 ["type"] = "display-message-action";
 ["reflexive"] = "false";
 ["message-id"] = 5935;
@@ -7054,21 +7054,21 @@ return {
 
 };
 
-["752"] =  {
+[752] =  {
 ["type"] = "set-zoom-action";
 ["reflexive"] = "false";
 ["zoom-level"] = 7;
 
 };
 
-["753"] =  {
+[753] =  {
 ["type"] = "alter-condition-true-yet-action";
 ["reflexive"] = "false";
 ["value"] = 13;
 
 };
 
-["754"] =  {
+[754] =  {
 ["type"] = "display-message-action";
 ["reflexive"] = "false";
 ["message-id"] = 5940;
@@ -7076,14 +7076,14 @@ return {
 
 };
 
-["755"] =  {
+[755] =  {
 ["type"] = "set-zoom-action";
 ["reflexive"] = "false";
 ["zoom-level"] = 2;
 
 };
 
-["756"] =  {
+[756] =  {
 ["type"] = "computer-select-action";
 ["reflexive"] = "false";
 ["screen"] = 2;
@@ -7091,28 +7091,28 @@ return {
 
 };
 
-["757"] =  {
+[757] =  {
 ["type"] = "alter-condition-true-yet-action";
 ["reflexive"] = "false";
 ["value"] = 14;
 
 };
 
-["758"] =  {
+[758] =  {
 ["type"] = "disable-keys-action";
 ["reflexive"] = "false";
 ["key-mask"] = 2147485440;
 
 };
 
-["759"] =  {
+[759] =  {
 ["type"] = "enable-keys-action";
 ["reflexive"] = "false";
 ["key-mask"] = 268435456;
 
 };
 
-["760"] =  {
+[760] =  {
 ["type"] = "display-message-action";
 ["reflexive"] = "false";
 ["message-id"] = 5945;
@@ -7120,28 +7120,28 @@ return {
 
 };
 
-["761"] =  {
+[761] =  {
 ["type"] = "set-zoom-action";
 ["reflexive"] = "false";
 ["zoom-level"] = 7;
 
 };
 
-["762"] =  {
+[762] =  {
 ["type"] = "alter-condition-true-yet-action";
 ["reflexive"] = "false";
 ["value"] = 17;
 
 };
 
-["763"] =  {
+[763] =  {
 ["type"] = "enable-keys-action";
 ["reflexive"] = "false";
 ["key-mask"] = 2147485440;
 
 };
 
-["764"] =  {
+[764] =  {
 ["type"] = "display-message-action";
 ["reflexive"] = "false";
 ["message-id"] = 5950;
@@ -7149,21 +7149,21 @@ return {
 
 };
 
-["765"] =  {
+[765] =  {
 ["type"] = "set-zoom-action";
 ["reflexive"] = "false";
 ["zoom-level"] = 2;
 
 };
 
-["766"] =  {
+[766] =  {
 ["type"] = "alter-condition-true-yet-action";
 ["reflexive"] = "false";
 ["value"] = 18;
 
 };
 
-["767"] =  {
+[767] =  {
 ["type"] = "display-message-action";
 ["reflexive"] = "false";
 ["message-id"] = 5955;
@@ -7171,28 +7171,28 @@ return {
 
 };
 
-["768"] =  {
+[768] =  {
 ["type"] = "set-zoom-action";
 ["reflexive"] = "false";
 ["zoom-level"] = 7;
 
 };
 
-["769"] =  {
+[769] =  {
 ["type"] = "alter-condition-true-yet-action";
 ["reflexive"] = "false";
 ["value"] = 19;
 
 };
 
-["770"] =  {
+[770] =  {
 ["type"] = "enable-keys-action";
 ["reflexive"] = "false";
 ["key-mask"] = 4096;
 
 };
 
-["771"] =  {
+[771] =  {
 ["type"] = "display-message-action";
 ["reflexive"] = "false";
 ["message-id"] = 5960;
@@ -7200,14 +7200,14 @@ return {
 
 };
 
-["772"] =  {
+[772] =  {
 ["type"] = "alter-condition-true-yet-action";
 ["reflexive"] = "false";
 ["value"] = 20;
 
 };
 
-["773"] =  {
+[773] =  {
 ["type"] = "display-message-action";
 ["reflexive"] = "false";
 ["message-id"] = 5965;
@@ -7215,14 +7215,14 @@ return {
 
 };
 
-["774"] =  {
+[774] =  {
 ["type"] = "alter-condition-true-yet-action";
 ["reflexive"] = "false";
 ["value"] = 21;
 
 };
 
-["775"] =  {
+[775] =  {
 ["type"] = "display-message-action";
 ["reflexive"] = "false";
 ["message-id"] = 5970;
@@ -7230,7 +7230,7 @@ return {
 
 };
 
-["776"] =  {
+[776] =  {
 ["type"] = "alter-owner-action";
 ["reflexive"] = "true";
 ["initial-subject-override"] = 1;
@@ -7238,7 +7238,7 @@ return {
 
 };
 
-["777"] =  {
+[777] =  {
 ["type"] = "set-zoom-action";
 ["reflexive"] = "true";
 ["initial-subject-override"] = 1;
@@ -7246,14 +7246,14 @@ return {
 
 };
 
-["778"] =  {
+[778] =  {
 ["type"] = "alter-absolute-cash-action";
 ["reflexive"] = "false";
 ["value"] = -3276800;
 
 };
 
-["779"] =  {
+[779] =  {
 ["type"] = "alter-hidden-action";
 ["reflexive"] = "false";
 ["minimum"] = 3;
@@ -7261,14 +7261,14 @@ return {
 
 };
 
-["780"] =  {
+[780] =  {
 ["type"] = "alter-condition-true-yet-action";
 ["reflexive"] = "false";
 ["value"] = 23;
 
 };
 
-["781"] =  {
+[781] =  {
 ["type"] = "display-message-action";
 ["reflexive"] = "false";
 ["delay"] = 280;
@@ -7277,7 +7277,7 @@ return {
 
 };
 
-["782"] =  {
+[782] =  {
 ["type"] = "alter-hidden-action";
 ["reflexive"] = "false";
 ["minimum"] = 4;
@@ -7285,14 +7285,14 @@ return {
 
 };
 
-["783"] =  {
+[783] =  {
 ["type"] = "alter-condition-true-yet-action";
 ["reflexive"] = "false";
 ["value"] = 25;
 
 };
 
-["784"] =  {
+[784] =  {
 ["type"] = "display-message-action";
 ["reflexive"] = "false";
 ["message-id"] = 5980;
@@ -7300,14 +7300,14 @@ return {
 
 };
 
-["785"] =  {
+[785] =  {
 ["type"] = "alter-condition-true-yet-action";
 ["reflexive"] = "false";
 ["value"] = 26;
 
 };
 
-["786"] =  {
+[786] =  {
 ["type"] = "display-message-action";
 ["reflexive"] = "false";
 ["message-id"] = 5985;
@@ -7315,14 +7315,14 @@ return {
 
 };
 
-["787"] =  {
+[787] =  {
 ["type"] = "alter-condition-true-yet-action";
 ["reflexive"] = "false";
 ["value"] = 27;
 
 };
 
-["788"] =  {
+[788] =  {
 ["type"] = "display-message-action";
 ["reflexive"] = "false";
 ["message-id"] = 5990;
@@ -7330,14 +7330,14 @@ return {
 
 };
 
-["789"] =  {
+[789] =  {
 ["type"] = "alter-condition-true-yet-action";
 ["reflexive"] = "false";
 ["value"] = 28;
 
 };
 
-["790"] =  {
+[790] =  {
 ["type"] = "display-message-action";
 ["reflexive"] = "false";
 ["message-id"] = 5995;
@@ -7345,14 +7345,14 @@ return {
 
 };
 
-["791"] =  {
+[791] =  {
 ["type"] = "alter-condition-true-yet-action";
 ["reflexive"] = "false";
 ["value"] = 29;
 
 };
 
-["792"] =  {
+[792] =  {
 ["type"] = "display-message-action";
 ["reflexive"] = "false";
 ["message-id"] = 7000;
@@ -7360,28 +7360,28 @@ return {
 
 };
 
-["793"] =  {
+[793] =  {
 ["type"] = "disable-keys-action";
 ["reflexive"] = "false";
 ["key-mask"] = 2147483648;
 
 };
 
-["794"] =  {
+[794] =  {
 ["type"] = "set-zoom-action";
 ["reflexive"] = "false";
 ["zoom-level"] = 1;
 
 };
 
-["795"] =  {
+[795] =  {
 ["type"] = "alter-condition-true-yet-action";
 ["reflexive"] = "false";
 ["value"] = 31;
 
 };
 
-["796"] =  {
+[796] =  {
 ["type"] = "display-message-action";
 ["reflexive"] = "false";
 ["message-id"] = 7005;
@@ -7389,42 +7389,42 @@ return {
 
 };
 
-["797"] =  {
+[797] =  {
 ["type"] = "alter-condition-true-yet-action";
 ["reflexive"] = "false";
 ["value"] = 32;
 
 };
 
-["798"] =  {
+[798] =  {
 ["type"] = "enable-keys-action";
 ["reflexive"] = "false";
 ["key-mask"] = 2147483648;
 
 };
 
-["799"] =  {
+[799] =  {
 ["type"] = "set-zoom-action";
 ["reflexive"] = "false";
 ["zoom-level"] = 7;
 
 };
 
-["800"] =  {
+[800] =  {
 ["type"] = "alter-condition-true-yet-action";
 ["reflexive"] = "false";
 ["value"] = 33;
 
 };
 
-["801"] =  {
+[801] =  {
 ["type"] = "alter-condition-true-yet-action";
 ["reflexive"] = "false";
 ["value"] = 34;
 
 };
 
-["802"] =  {
+[802] =  {
 ["type"] = "display-message-action";
 ["reflexive"] = "false";
 ["message-id"] = 7010;
@@ -7432,7 +7432,7 @@ return {
 
 };
 
-["803"] =  {
+[803] =  {
 ["type"] = "computer-select-action";
 ["reflexive"] = "false";
 ["screen"] = 1;
@@ -7440,14 +7440,14 @@ return {
 
 };
 
-["804"] =  {
+[804] =  {
 ["type"] = "alter-condition-true-yet-action";
 ["reflexive"] = "false";
 ["value"] = 36;
 
 };
 
-["805"] =  {
+[805] =  {
 ["type"] = "computer-select-action";
 ["reflexive"] = "false";
 ["screen"] = 1;
@@ -7455,7 +7455,7 @@ return {
 
 };
 
-["806"] =  {
+[806] =  {
 ["type"] = "display-message-action";
 ["reflexive"] = "false";
 ["message-id"] = 7015;
@@ -7463,14 +7463,14 @@ return {
 
 };
 
-["807"] =  {
+[807] =  {
 ["type"] = "alter-condition-true-yet-action";
 ["reflexive"] = "false";
 ["value"] = 38;
 
 };
 
-["808"] =  {
+[808] =  {
 ["type"] = "display-message-action";
 ["reflexive"] = "false";
 ["message-id"] = 7020;
@@ -7478,14 +7478,14 @@ return {
 
 };
 
-["809"] =  {
+[809] =  {
 ["type"] = "enable-keys-action";
 ["reflexive"] = "false";
 ["key-mask"] = 134217728;
 
 };
 
-["810"] =  {
+[810] =  {
 ["type"] = "computer-select-action";
 ["reflexive"] = "false";
 ["screen"] = 3;
@@ -7493,14 +7493,14 @@ return {
 
 };
 
-["811"] =  {
+[811] =  {
 ["type"] = "alter-condition-true-yet-action";
 ["reflexive"] = "false";
 ["value"] = 39;
 
 };
 
-["812"] =  {
+[812] =  {
 ["type"] = "display-message-action";
 ["reflexive"] = "false";
 ["message-id"] = 7025;
@@ -7508,7 +7508,7 @@ return {
 
 };
 
-["813"] =  {
+[813] =  {
 ["type"] = "alter-hidden-action";
 ["reflexive"] = "false";
 ["minimum"] = 7;
@@ -7516,7 +7516,7 @@ return {
 
 };
 
-["814"] =  {
+[814] =  {
 ["type"] = "alter-condition-true-yet-action";
 ["reflexive"] = "false";
 ["delay"] = 360;
@@ -7524,21 +7524,21 @@ return {
 
 };
 
-["815"] =  {
+[815] =  {
 ["type"] = "enable-keys-action";
 ["reflexive"] = "false";
 ["key-mask"] = 4228382719;
 
 };
 
-["816"] =  {
+[816] =  {
 ["type"] = "set-zoom-action";
 ["reflexive"] = "false";
 ["zoom-level"] = 5;
 
 };
 
-["817"] =  {
+[817] =  {
 ["type"] = "declare-winner-action";
 ["reflexive"] = "false";
 ["which-player"] = 0;
@@ -7547,14 +7547,14 @@ return {
 
 };
 
-["818"] =  {
+[818] =  {
 ["type"] = "alter-condition-true-yet-action";
 ["reflexive"] = "false";
 ["value"] = 7;
 
 };
 
-["819"] =  {
+[819] =  {
 ["type"] = "no-action";
 ["reflexive"] = "false";
 ["initial-subject-override"] = 0;
@@ -7562,7 +7562,7 @@ return {
 
 };
 
-["820"] =  {
+[820] =  {
 ["type"] = "no-action";
 ["reflexive"] = "false";
 ["initial-subject-override"] = 0;
@@ -7572,7 +7572,7 @@ return {
 
 };
 ["InitialObject"] = {
-["000"] =  {
+[000] =  {
 ["type"] = 36;
 ["owner"] = 1;
 ["location"] = {
@@ -7589,7 +7589,7 @@ return {
 
 };
 
-["001"] =  {
+[001] =  {
 ["type"] = 61;
 ["owner"] = 0;
 ["location"] = {
@@ -7606,7 +7606,7 @@ return {
 
 };
 
-["002"] =  {
+[002] =  {
 ["type"] = 37;
 ["owner"] = 1;
 ["location"] = {
@@ -7623,7 +7623,7 @@ return {
 
 };
 
-["003"] =  {
+[003] =  {
 ["type"] = 37;
 ["owner"] = 1;
 ["location"] = {
@@ -7640,7 +7640,7 @@ return {
 
 };
 
-["004"] =  {
+[004] =  {
 ["type"] = 37;
 ["owner"] = 1;
 ["location"] = {
@@ -7657,7 +7657,7 @@ return {
 
 };
 
-["005"] =  {
+[005] =  {
 ["type"] = 64;
 ["owner"] = 1;
 ["location"] = {
@@ -7674,7 +7674,7 @@ return {
 
 };
 
-["006"] =  {
+[006] =  {
 ["type"] = 37;
 ["owner"] = 1;
 ["location"] = {
@@ -7691,7 +7691,7 @@ return {
 
 };
 
-["007"] =  {
+[007] =  {
 ["type"] = 37;
 ["owner"] = 1;
 ["location"] = {
@@ -7708,7 +7708,7 @@ return {
 
 };
 
-["008"] =  {
+[008] =  {
 ["type"] = 64;
 ["owner"] = 1;
 ["location"] = {
@@ -7725,7 +7725,7 @@ return {
 
 };
 
-["009"] =  {
+[009] =  {
 ["type"] = 37;
 ["owner"] = 1;
 ["location"] = {
@@ -7742,7 +7742,7 @@ return {
 
 };
 
-["010"] =  {
+[010] =  {
 ["type"] = 37;
 ["owner"] = 1;
 ["location"] = {
@@ -7759,7 +7759,7 @@ return {
 
 };
 
-["011"] =  {
+[011] =  {
 ["type"] = 37;
 ["owner"] = 1;
 ["location"] = {
@@ -7776,7 +7776,7 @@ return {
 
 };
 
-["012"] =  {
+[012] =  {
 ["type"] = 42;
 ["owner"] = 0;
 ["location"] = {
@@ -7793,7 +7793,7 @@ return {
 
 };
 
-["013"] =  {
+[013] =  {
 ["type"] = 42;
 ["owner"] = 0;
 ["location"] = {
@@ -7810,7 +7810,7 @@ return {
 
 };
 
-["014"] =  {
+[014] =  {
 ["type"] = 104;
 ["owner"] = 1;
 ["location"] = {
@@ -7828,7 +7828,7 @@ return {
 
 };
 
-["015"] =  {
+[015] =  {
 ["type"] = 27;
 ["owner"] = -1;
 ["location"] = {
@@ -7845,7 +7845,7 @@ return {
 
 };
 
-["016"] =  {
+[016] =  {
 ["type"] = 36;
 ["owner"] = 1;
 ["location"] = {
@@ -7862,7 +7862,7 @@ return {
 
 };
 
-["017"] =  {
+[017] =  {
 ["type"] = 36;
 ["owner"] = 1;
 ["location"] = {
@@ -7879,7 +7879,7 @@ return {
 
 };
 
-["018"] =  {
+[018] =  {
 ["type"] = 36;
 ["owner"] = 1;
 ["location"] = {
@@ -7896,7 +7896,7 @@ return {
 
 };
 
-["019"] =  {
+[019] =  {
 ["type"] = 62;
 ["owner"] = 1;
 ["location"] = {
@@ -7913,7 +7913,7 @@ return {
 
 };
 
-["020"] =  {
+[020] =  {
 ["type"] = 80;
 ["owner"] = 0;
 ["location"] = {
@@ -7930,7 +7930,7 @@ return {
 
 };
 
-["021"] =  {
+[021] =  {
 ["type"] = 83;
 ["owner"] = 1;
 ["location"] = {
@@ -7947,7 +7947,7 @@ return {
 
 };
 
-["022"] =  {
+[022] =  {
 ["type"] = 23;
 ["owner"] = 0;
 ["location"] = {
@@ -7965,7 +7965,7 @@ return {
 
 };
 
-["023"] =  {
+[023] =  {
 ["type"] = 27;
 ["owner"] = -1;
 ["location"] = {
@@ -7982,7 +7982,7 @@ return {
 
 };
 
-["024"] =  {
+[024] =  {
 ["type"] = 61;
 ["owner"] = 0;
 ["location"] = {
@@ -7999,7 +7999,7 @@ return {
 
 };
 
-["025"] =  {
+[025] =  {
 ["type"] = 59;
 ["owner"] = 1;
 ["location"] = {
@@ -8016,7 +8016,7 @@ return {
 
 };
 
-["026"] =  {
+[026] =  {
 ["type"] = 17;
 ["owner"] = 1;
 ["location"] = {
@@ -8033,7 +8033,7 @@ return {
 
 };
 
-["027"] =  {
+[027] =  {
 ["type"] = 59;
 ["owner"] = 1;
 ["location"] = {
@@ -8050,7 +8050,7 @@ return {
 
 };
 
-["028"] =  {
+[028] =  {
 ["type"] = 59;
 ["owner"] = 1;
 ["location"] = {
@@ -8067,7 +8067,7 @@ return {
 
 };
 
-["029"] =  {
+[029] =  {
 ["type"] = 23;
 ["owner"] = 0;
 ["location"] = {
@@ -8085,7 +8085,7 @@ return {
 
 };
 
-["030"] =  {
+[030] =  {
 ["type"] = 45;
 ["owner"] = 1;
 ["location"] = {
@@ -8102,7 +8102,7 @@ return {
 
 };
 
-["031"] =  {
+[031] =  {
 ["type"] = 0;
 ["owner"] = 0;
 ["location"] = {
@@ -8119,7 +8119,7 @@ return {
 
 };
 
-["032"] =  {
+[032] =  {
 ["type"] = 7;
 ["owner"] = 1;
 ["location"] = {
@@ -8136,7 +8136,7 @@ return {
 
 };
 
-["033"] =  {
+[033] =  {
 ["type"] = 23;
 ["owner"] = -1;
 ["location"] = {
@@ -8154,7 +8154,7 @@ return {
 
 };
 
-["034"] =  {
+[034] =  {
 ["type"] = 23;
 ["owner"] = 1;
 ["location"] = {
@@ -8172,7 +8172,7 @@ return {
 
 };
 
-["035"] =  {
+[035] =  {
 ["type"] = 27;
 ["owner"] = -1;
 ["location"] = {
@@ -8189,7 +8189,7 @@ return {
 
 };
 
-["036"] =  {
+[036] =  {
 ["type"] = 61;
 ["owner"] = 0;
 ["location"] = {
@@ -8206,7 +8206,7 @@ return {
 
 };
 
-["037"] =  {
+[037] =  {
 ["type"] = 27;
 ["owner"] = -1;
 ["location"] = {
@@ -8223,7 +8223,7 @@ return {
 
 };
 
-["038"] =  {
+[038] =  {
 ["type"] = 0;
 ["owner"] = 0;
 ["location"] = {
@@ -8240,7 +8240,7 @@ return {
 
 };
 
-["039"] =  {
+[039] =  {
 ["type"] = 13;
 ["owner"] = 0;
 ["location"] = {
@@ -8257,7 +8257,7 @@ return {
 
 };
 
-["040"] =  {
+[040] =  {
 ["type"] = 13;
 ["owner"] = 0;
 ["location"] = {
@@ -8274,7 +8274,7 @@ return {
 
 };
 
-["041"] =  {
+[041] =  {
 ["type"] = 42;
 ["owner"] = 0;
 ["location"] = {
@@ -8291,7 +8291,7 @@ return {
 
 };
 
-["042"] =  {
+[042] =  {
 ["type"] = 47;
 ["owner"] = 0;
 ["location"] = {
@@ -8308,7 +8308,7 @@ return {
 
 };
 
-["043"] =  {
+[043] =  {
 ["type"] = 61;
 ["owner"] = 0;
 ["location"] = {
@@ -8325,7 +8325,7 @@ return {
 
 };
 
-["044"] =  {
+[044] =  {
 ["type"] = 42;
 ["owner"] = 0;
 ["location"] = {
@@ -8342,7 +8342,7 @@ return {
 
 };
 
-["045"] =  {
+[045] =  {
 ["type"] = 13;
 ["owner"] = 0;
 ["location"] = {
@@ -8359,7 +8359,7 @@ return {
 
 };
 
-["046"] =  {
+[046] =  {
 ["type"] = 62;
 ["owner"] = 1;
 ["location"] = {
@@ -8376,7 +8376,7 @@ return {
 
 };
 
-["047"] =  {
+[047] =  {
 ["type"] = 62;
 ["owner"] = 1;
 ["location"] = {
@@ -8393,7 +8393,7 @@ return {
 
 };
 
-["048"] =  {
+[048] =  {
 ["type"] = 7;
 ["owner"] = 1;
 ["location"] = {
@@ -8410,7 +8410,7 @@ return {
 
 };
 
-["049"] =  {
+[049] =  {
 ["type"] = 37;
 ["owner"] = 1;
 ["location"] = {
@@ -8427,7 +8427,7 @@ return {
 
 };
 
-["050"] =  {
+[050] =  {
 ["type"] = 37;
 ["owner"] = 1;
 ["location"] = {
@@ -8444,7 +8444,7 @@ return {
 
 };
 
-["051"] =  {
+[051] =  {
 ["type"] = 23;
 ["owner"] = -1;
 ["location"] = {
@@ -8462,7 +8462,7 @@ return {
 
 };
 
-["052"] =  {
+[052] =  {
 ["type"] = 45;
 ["owner"] = 1;
 ["location"] = {
@@ -8479,7 +8479,7 @@ return {
 
 };
 
-["053"] =  {
+[053] =  {
 ["type"] = 45;
 ["owner"] = 1;
 ["location"] = {
@@ -8496,7 +8496,7 @@ return {
 
 };
 
-["054"] =  {
+[054] =  {
 ["type"] = 14;
 ["owner"] = 1;
 ["location"] = {
@@ -8513,7 +8513,7 @@ return {
 
 };
 
-["055"] =  {
+[055] =  {
 ["type"] = 14;
 ["owner"] = 1;
 ["location"] = {
@@ -8530,7 +8530,7 @@ return {
 
 };
 
-["056"] =  {
+[056] =  {
 ["type"] = 7;
 ["owner"] = 1;
 ["location"] = {
@@ -8547,7 +8547,7 @@ return {
 
 };
 
-["057"] =  {
+[057] =  {
 ["type"] = 7;
 ["owner"] = 1;
 ["location"] = {
@@ -8564,7 +8564,7 @@ return {
 
 };
 
-["058"] =  {
+[058] =  {
 ["type"] = 7;
 ["owner"] = 1;
 ["location"] = {
@@ -8581,7 +8581,7 @@ return {
 
 };
 
-["059"] =  {
+[059] =  {
 ["type"] = 7;
 ["owner"] = 1;
 ["location"] = {
@@ -8598,7 +8598,7 @@ return {
 
 };
 
-["060"] =  {
+[060] =  {
 ["type"] = 7;
 ["owner"] = 1;
 ["location"] = {
@@ -8615,7 +8615,7 @@ return {
 
 };
 
-["061"] =  {
+[061] =  {
 ["type"] = 61;
 ["owner"] = 0;
 ["location"] = {
@@ -8632,7 +8632,7 @@ return {
 
 };
 
-["062"] =  {
+[062] =  {
 ["type"] = 77;
 ["owner"] = 0;
 ["location"] = {
@@ -8649,7 +8649,7 @@ return {
 
 };
 
-["063"] =  {
+[063] =  {
 ["type"] = 75;
 ["owner"] = 1;
 ["location"] = {
@@ -8666,7 +8666,7 @@ return {
 
 };
 
-["064"] =  {
+[064] =  {
 ["type"] = 75;
 ["owner"] = 1;
 ["location"] = {
@@ -8683,7 +8683,7 @@ return {
 
 };
 
-["065"] =  {
+[065] =  {
 ["type"] = 75;
 ["owner"] = 1;
 ["location"] = {
@@ -8700,7 +8700,7 @@ return {
 
 };
 
-["066"] =  {
+[066] =  {
 ["type"] = 62;
 ["owner"] = 1;
 ["location"] = {
@@ -8717,7 +8717,7 @@ return {
 
 };
 
-["067"] =  {
+[067] =  {
 ["type"] = 23;
 ["owner"] = 1;
 ["location"] = {
@@ -8735,7 +8735,7 @@ return {
 
 };
 
-["068"] =  {
+[068] =  {
 ["type"] = 78;
 ["owner"] = 1;
 ["location"] = {
@@ -8752,7 +8752,7 @@ return {
 
 };
 
-["069"] =  {
+[069] =  {
 ["type"] = 23;
 ["owner"] = 1;
 ["location"] = {
@@ -8770,7 +8770,7 @@ return {
 
 };
 
-["070"] =  {
+[070] =  {
 ["type"] = 23;
 ["owner"] = 0;
 ["location"] = {
@@ -8788,7 +8788,7 @@ return {
 
 };
 
-["071"] =  {
+[071] =  {
 ["type"] = 47;
 ["owner"] = 0;
 ["location"] = {
@@ -8805,7 +8805,7 @@ return {
 
 };
 
-["072"] =  {
+[072] =  {
 ["type"] = 47;
 ["owner"] = 0;
 ["location"] = {
@@ -8822,7 +8822,7 @@ return {
 
 };
 
-["073"] =  {
+[073] =  {
 ["type"] = 45;
 ["owner"] = 1;
 ["location"] = {
@@ -8839,7 +8839,7 @@ return {
 
 };
 
-["074"] =  {
+[074] =  {
 ["type"] = 45;
 ["owner"] = 1;
 ["location"] = {
@@ -8856,7 +8856,7 @@ return {
 
 };
 
-["075"] =  {
+[075] =  {
 ["type"] = 45;
 ["owner"] = 1;
 ["location"] = {
@@ -8873,7 +8873,7 @@ return {
 
 };
 
-["076"] =  {
+[076] =  {
 ["type"] = 45;
 ["owner"] = 1;
 ["location"] = {
@@ -8890,7 +8890,7 @@ return {
 
 };
 
-["077"] =  {
+[077] =  {
 ["type"] = 45;
 ["owner"] = 1;
 ["location"] = {
@@ -8907,7 +8907,7 @@ return {
 
 };
 
-["078"] =  {
+[078] =  {
 ["type"] = 17;
 ["owner"] = 1;
 ["location"] = {
@@ -8924,7 +8924,7 @@ return {
 
 };
 
-["079"] =  {
+[079] =  {
 ["type"] = 23;
 ["owner"] = 0;
 ["location"] = {
@@ -8942,7 +8942,7 @@ return {
 
 };
 
-["080"] =  {
+[080] =  {
 ["type"] = 0;
 ["owner"] = 0;
 ["location"] = {
@@ -8959,7 +8959,7 @@ return {
 
 };
 
-["081"] =  {
+[081] =  {
 ["type"] = 27;
 ["owner"] = -1;
 ["location"] = {
@@ -8976,7 +8976,7 @@ return {
 
 };
 
-["082"] =  {
+[082] =  {
 ["type"] = 37;
 ["owner"] = 1;
 ["location"] = {
@@ -8993,7 +8993,7 @@ return {
 
 };
 
-["083"] =  {
+[083] =  {
 ["type"] = 87;
 ["owner"] = 1;
 ["location"] = {
@@ -9010,7 +9010,7 @@ return {
 
 };
 
-["084"] =  {
+[084] =  {
 ["type"] = 23;
 ["owner"] = 1;
 ["location"] = {
@@ -9028,7 +9028,7 @@ return {
 
 };
 
-["085"] =  {
+[085] =  {
 ["type"] = 284;
 ["owner"] = 0;
 ["location"] = {
@@ -9045,7 +9045,7 @@ return {
 
 };
 
-["086"] =  {
+[086] =  {
 ["type"] = 284;
 ["owner"] = 1;
 ["location"] = {
@@ -9062,7 +9062,7 @@ return {
 
 };
 
-["087"] =  {
+[087] =  {
 ["type"] = 93;
 ["owner"] = -1;
 ["location"] = {
@@ -9079,7 +9079,7 @@ return {
 
 };
 
-["088"] =  {
+[088] =  {
 ["type"] = 93;
 ["owner"] = -1;
 ["location"] = {
@@ -9096,7 +9096,7 @@ return {
 
 };
 
-["089"] =  {
+[089] =  {
 ["type"] = 93;
 ["owner"] = -1;
 ["location"] = {
@@ -9113,7 +9113,7 @@ return {
 
 };
 
-["090"] =  {
+[090] =  {
 ["type"] = -1;
 ["owner"] = 0;
 ["location"] = {
@@ -9130,7 +9130,7 @@ return {
 
 };
 
-["091"] =  {
+[091] =  {
 ["type"] = -1;
 ["owner"] = 0;
 ["location"] = {
@@ -9147,7 +9147,7 @@ return {
 
 };
 
-["092"] =  {
+[092] =  {
 ["type"] = -1;
 ["owner"] = 0;
 ["location"] = {
@@ -9164,7 +9164,7 @@ return {
 
 };
 
-["093"] =  {
+[093] =  {
 ["type"] = -1;
 ["owner"] = 0;
 ["location"] = {
@@ -9181,7 +9181,7 @@ return {
 
 };
 
-["094"] =  {
+[094] =  {
 ["type"] = -1;
 ["owner"] = 0;
 ["location"] = {
@@ -9199,7 +9199,7 @@ return {
 
 };
 
-["095"] =  {
+[095] =  {
 ["type"] = -1;
 ["owner"] = 0;
 ["location"] = {
@@ -9216,7 +9216,7 @@ return {
 
 };
 
-["096"] =  {
+[096] =  {
 ["type"] = -1;
 ["owner"] = 1;
 ["location"] = {
@@ -9233,7 +9233,7 @@ return {
 
 };
 
-["097"] =  {
+[097] =  {
 ["type"] = -1;
 ["owner"] = 1;
 ["location"] = {
@@ -9250,7 +9250,7 @@ return {
 
 };
 
-["098"] =  {
+[098] =  {
 ["type"] = -1;
 ["owner"] = 1;
 ["location"] = {
@@ -9267,7 +9267,7 @@ return {
 
 };
 
-["099"] =  {
+[099] =  {
 ["type"] = -1;
 ["owner"] = 1;
 ["location"] = {
@@ -9284,7 +9284,7 @@ return {
 
 };
 
-["100"] =  {
+[100] =  {
 ["type"] = -1;
 ["owner"] = 1;
 ["location"] = {
@@ -9301,7 +9301,7 @@ return {
 
 };
 
-["101"] =  {
+[101] =  {
 ["type"] = 0;
 ["owner"] = 0;
 ["location"] = {
@@ -9318,7 +9318,7 @@ return {
 
 };
 
-["102"] =  {
+[102] =  {
 ["type"] = 23;
 ["owner"] = 0;
 ["location"] = {
@@ -9336,7 +9336,7 @@ return {
 
 };
 
-["103"] =  {
+[103] =  {
 ["type"] = 95;
 ["owner"] = 0;
 ["location"] = {
@@ -9353,7 +9353,7 @@ return {
 
 };
 
-["104"] =  {
+[104] =  {
 ["type"] = 94;
 ["owner"] = 1;
 ["location"] = {
@@ -9370,7 +9370,7 @@ return {
 
 };
 
-["105"] =  {
+[105] =  {
 ["type"] = 95;
 ["owner"] = 0;
 ["location"] = {
@@ -9387,7 +9387,7 @@ return {
 
 };
 
-["106"] =  {
+[106] =  {
 ["type"] = 243;
 ["owner"] = 1;
 ["location"] = {
@@ -9404,7 +9404,7 @@ return {
 
 };
 
-["107"] =  {
+[107] =  {
 ["type"] = 93;
 ["owner"] = 1;
 ["location"] = {
@@ -9421,7 +9421,7 @@ return {
 
 };
 
-["108"] =  {
+[108] =  {
 ["type"] = 93;
 ["owner"] = 1;
 ["location"] = {
@@ -9438,7 +9438,7 @@ return {
 
 };
 
-["109"] =  {
+[109] =  {
 ["type"] = 23;
 ["owner"] = 1;
 ["location"] = {
@@ -9456,7 +9456,7 @@ return {
 
 };
 
-["110"] =  {
+[110] =  {
 ["type"] = 114;
 ["owner"] = 0;
 ["location"] = {
@@ -9473,7 +9473,7 @@ return {
 
 };
 
-["111"] =  {
+[111] =  {
 ["type"] = 114;
 ["owner"] = 0;
 ["location"] = {
@@ -9490,7 +9490,7 @@ return {
 
 };
 
-["112"] =  {
+[112] =  {
 ["type"] = 114;
 ["owner"] = 0;
 ["location"] = {
@@ -9507,7 +9507,7 @@ return {
 
 };
 
-["113"] =  {
+[113] =  {
 ["type"] = 114;
 ["owner"] = 1;
 ["location"] = {
@@ -9524,7 +9524,7 @@ return {
 
 };
 
-["114"] =  {
+[114] =  {
 ["type"] = 114;
 ["owner"] = 1;
 ["location"] = {
@@ -9541,7 +9541,7 @@ return {
 
 };
 
-["115"] =  {
+[115] =  {
 ["type"] = 114;
 ["owner"] = 1;
 ["location"] = {
@@ -9558,7 +9558,7 @@ return {
 
 };
 
-["116"] =  {
+[116] =  {
 ["type"] = 93;
 ["owner"] = 0;
 ["location"] = {
@@ -9575,7 +9575,7 @@ return {
 
 };
 
-["117"] =  {
+[117] =  {
 ["type"] = 93;
 ["owner"] = 0;
 ["location"] = {
@@ -9592,7 +9592,7 @@ return {
 
 };
 
-["118"] =  {
+[118] =  {
 ["type"] = 93;
 ["owner"] = 0;
 ["location"] = {
@@ -9609,7 +9609,7 @@ return {
 
 };
 
-["119"] =  {
+[119] =  {
 ["type"] = 93;
 ["owner"] = 1;
 ["location"] = {
@@ -9626,7 +9626,7 @@ return {
 
 };
 
-["120"] =  {
+[120] =  {
 ["type"] = 93;
 ["owner"] = 1;
 ["location"] = {
@@ -9643,7 +9643,7 @@ return {
 
 };
 
-["121"] =  {
+[121] =  {
 ["type"] = 93;
 ["owner"] = 1;
 ["location"] = {
@@ -9660,7 +9660,7 @@ return {
 
 };
 
-["122"] =  {
+[122] =  {
 ["type"] = 23;
 ["owner"] = 0;
 ["location"] = {
@@ -9678,7 +9678,7 @@ return {
 
 };
 
-["123"] =  {
+[123] =  {
 ["type"] = 111;
 ["owner"] = 1;
 ["location"] = {
@@ -9696,7 +9696,7 @@ return {
 
 };
 
-["124"] =  {
+[124] =  {
 ["type"] = 0;
 ["owner"] = 0;
 ["location"] = {
@@ -9713,7 +9713,7 @@ return {
 
 };
 
-["125"] =  {
+[125] =  {
 ["type"] = 64;
 ["owner"] = 1;
 ["location"] = {
@@ -9730,7 +9730,7 @@ return {
 
 };
 
-["126"] =  {
+[126] =  {
 ["type"] = -1;
 ["owner"] = -1;
 ["location"] = {
@@ -9748,7 +9748,7 @@ return {
 
 };
 
-["127"] =  {
+[127] =  {
 ["type"] = -1;
 ["owner"] = -1;
 ["location"] = {
@@ -9766,7 +9766,7 @@ return {
 
 };
 
-["128"] =  {
+[128] =  {
 ["type"] = -1;
 ["owner"] = -1;
 ["location"] = {
@@ -9784,7 +9784,7 @@ return {
 
 };
 
-["129"] =  {
+[129] =  {
 ["type"] = -1;
 ["owner"] = -1;
 ["location"] = {
@@ -9802,7 +9802,7 @@ return {
 
 };
 
-["130"] =  {
+[130] =  {
 ["type"] = -1;
 ["owner"] = 0;
 ["location"] = {
@@ -9819,7 +9819,7 @@ return {
 
 };
 
-["131"] =  {
+[131] =  {
 ["type"] = -1;
 ["owner"] = 0;
 ["location"] = {
@@ -9836,7 +9836,7 @@ return {
 
 };
 
-["132"] =  {
+[132] =  {
 ["type"] = -1;
 ["owner"] = 1;
 ["location"] = {
@@ -9853,7 +9853,7 @@ return {
 
 };
 
-["133"] =  {
+[133] =  {
 ["type"] = -1;
 ["owner"] = 1;
 ["location"] = {
@@ -9870,7 +9870,7 @@ return {
 
 };
 
-["134"] =  {
+[134] =  {
 ["type"] = -1;
 ["owner"] = 1;
 ["location"] = {
@@ -9887,7 +9887,7 @@ return {
 
 };
 
-["135"] =  {
+[135] =  {
 ["type"] = -1;
 ["owner"] = 1;
 ["location"] = {
@@ -9904,7 +9904,7 @@ return {
 
 };
 
-["136"] =  {
+[136] =  {
 ["type"] = -1;
 ["owner"] = 1;
 ["location"] = {
@@ -9921,7 +9921,7 @@ return {
 
 };
 
-["137"] =  {
+[137] =  {
 ["type"] = -1;
 ["owner"] = 1;
 ["location"] = {
@@ -9938,7 +9938,7 @@ return {
 
 };
 
-["138"] =  {
+[138] =  {
 ["type"] = 115;
 ["owner"] = 0;
 ["location"] = {
@@ -9955,7 +9955,7 @@ return {
 
 };
 
-["139"] =  {
+[139] =  {
 ["type"] = 116;
 ["owner"] = 0;
 ["location"] = {
@@ -9972,7 +9972,7 @@ return {
 
 };
 
-["140"] =  {
+[140] =  {
 ["type"] = 0;
 ["owner"] = 0;
 ["location"] = {
@@ -9989,7 +9989,7 @@ return {
 
 };
 
-["141"] =  {
+[141] =  {
 ["type"] = 118;
 ["owner"] = 0;
 ["location"] = {
@@ -10006,7 +10006,7 @@ return {
 
 };
 
-["142"] =  {
+[142] =  {
 ["type"] = 104;
 ["owner"] = -1;
 ["location"] = {
@@ -10023,7 +10023,7 @@ return {
 
 };
 
-["143"] =  {
+[143] =  {
 ["type"] = 118;
 ["owner"] = 0;
 ["location"] = {
@@ -10040,7 +10040,7 @@ return {
 
 };
 
-["144"] =  {
+[144] =  {
 ["type"] = 118;
 ["owner"] = 0;
 ["location"] = {
@@ -10057,7 +10057,7 @@ return {
 
 };
 
-["145"] =  {
+[145] =  {
 ["type"] = 118;
 ["owner"] = 0;
 ["location"] = {
@@ -10074,7 +10074,7 @@ return {
 
 };
 
-["146"] =  {
+[146] =  {
 ["type"] = 118;
 ["owner"] = 0;
 ["location"] = {
@@ -10091,7 +10091,7 @@ return {
 
 };
 
-["147"] =  {
+[147] =  {
 ["type"] = 23;
 ["owner"] = 0;
 ["location"] = {
@@ -10109,7 +10109,7 @@ return {
 
 };
 
-["148"] =  {
+[148] =  {
 ["type"] = 23;
 ["owner"] = 1;
 ["location"] = {
@@ -10127,7 +10127,7 @@ return {
 
 };
 
-["149"] =  {
+[149] =  {
 ["type"] = 104;
 ["owner"] = -1;
 ["location"] = {
@@ -10144,7 +10144,7 @@ return {
 
 };
 
-["150"] =  {
+[150] =  {
 ["type"] = 45;
 ["owner"] = 1;
 ["location"] = {
@@ -10161,7 +10161,7 @@ return {
 
 };
 
-["151"] =  {
+[151] =  {
 ["type"] = 93;
 ["owner"] = -2;
 ["location"] = {
@@ -10178,7 +10178,7 @@ return {
 
 };
 
-["152"] =  {
+[152] =  {
 ["type"] = 93;
 ["owner"] = 1;
 ["location"] = {
@@ -10195,7 +10195,7 @@ return {
 
 };
 
-["153"] =  {
+[153] =  {
 ["type"] = 119;
 ["owner"] = 1;
 ["location"] = {
@@ -10212,7 +10212,7 @@ return {
 
 };
 
-["154"] =  {
+[154] =  {
 ["type"] = 119;
 ["owner"] = 1;
 ["location"] = {
@@ -10229,7 +10229,7 @@ return {
 
 };
 
-["155"] =  {
+[155] =  {
 ["type"] = 125;
 ["owner"] = 0;
 ["location"] = {
@@ -10246,7 +10246,7 @@ return {
 
 };
 
-["156"] =  {
+[156] =  {
 ["type"] = 128;
 ["owner"] = -1;
 ["location"] = {
@@ -10263,7 +10263,7 @@ return {
 
 };
 
-["157"] =  {
+[157] =  {
 ["type"] = 128;
 ["owner"] = -1;
 ["location"] = {
@@ -10280,7 +10280,7 @@ return {
 
 };
 
-["158"] =  {
+[158] =  {
 ["type"] = 128;
 ["owner"] = -1;
 ["location"] = {
@@ -10297,7 +10297,7 @@ return {
 
 };
 
-["159"] =  {
+[159] =  {
 ["type"] = 128;
 ["owner"] = -1;
 ["location"] = {
@@ -10314,7 +10314,7 @@ return {
 
 };
 
-["160"] =  {
+[160] =  {
 ["type"] = 128;
 ["owner"] = -1;
 ["location"] = {
@@ -10331,7 +10331,7 @@ return {
 
 };
 
-["161"] =  {
+[161] =  {
 ["type"] = 128;
 ["owner"] = -1;
 ["location"] = {
@@ -10348,7 +10348,7 @@ return {
 
 };
 
-["162"] =  {
+[162] =  {
 ["type"] = 137;
 ["owner"] = 0;
 ["location"] = {
@@ -10365,7 +10365,7 @@ return {
 
 };
 
-["163"] =  {
+[163] =  {
 ["type"] = 141;
 ["owner"] = 0;
 ["location"] = {
@@ -10382,7 +10382,7 @@ return {
 
 };
 
-["164"] =  {
+[164] =  {
 ["type"] = 141;
 ["owner"] = 0;
 ["location"] = {
@@ -10399,7 +10399,7 @@ return {
 
 };
 
-["165"] =  {
+[165] =  {
 ["type"] = 127;
 ["owner"] = 0;
 ["location"] = {
@@ -10416,7 +10416,7 @@ return {
 
 };
 
-["166"] =  {
+[166] =  {
 ["type"] = 129;
 ["owner"] = 0;
 ["location"] = {
@@ -10433,7 +10433,7 @@ return {
 
 };
 
-["167"] =  {
+[167] =  {
 ["type"] = 87;
 ["owner"] = 1;
 ["location"] = {
@@ -10450,7 +10450,7 @@ return {
 
 };
 
-["168"] =  {
+[168] =  {
 ["type"] = 37;
 ["owner"] = 1;
 ["location"] = {
@@ -10467,7 +10467,7 @@ return {
 
 };
 
-["169"] =  {
+[169] =  {
 ["type"] = 37;
 ["owner"] = 1;
 ["location"] = {
@@ -10484,7 +10484,7 @@ return {
 
 };
 
-["170"] =  {
+[170] =  {
 ["type"] = 64;
 ["owner"] = 1;
 ["location"] = {
@@ -10501,7 +10501,7 @@ return {
 
 };
 
-["171"] =  {
+[171] =  {
 ["type"] = 113;
 ["owner"] = 1;
 ["location"] = {
@@ -10518,7 +10518,7 @@ return {
 
 };
 
-["172"] =  {
+[172] =  {
 ["type"] = 110;
 ["owner"] = 1;
 ["location"] = {
@@ -10535,7 +10535,7 @@ return {
 
 };
 
-["173"] =  {
+[173] =  {
 ["type"] = 110;
 ["owner"] = 1;
 ["location"] = {
@@ -10552,7 +10552,7 @@ return {
 
 };
 
-["174"] =  {
+[174] =  {
 ["type"] = 117;
 ["owner"] = 0;
 ["location"] = {
@@ -10569,7 +10569,7 @@ return {
 
 };
 
-["175"] =  {
+[175] =  {
 ["type"] = 141;
 ["owner"] = 0;
 ["location"] = {
@@ -10586,7 +10586,7 @@ return {
 
 };
 
-["176"] =  {
+[176] =  {
 ["type"] = 23;
 ["owner"] = 0;
 ["location"] = {
@@ -10604,7 +10604,7 @@ return {
 
 };
 
-["177"] =  {
+[177] =  {
 ["type"] = 23;
 ["owner"] = 1;
 ["location"] = {
@@ -10622,7 +10622,7 @@ return {
 
 };
 
-["178"] =  {
+[178] =  {
 ["type"] = 104;
 ["owner"] = 1;
 ["location"] = {
@@ -10640,7 +10640,7 @@ return {
 
 };
 
-["179"] =  {
+[179] =  {
 ["type"] = 129;
 ["owner"] = 0;
 ["location"] = {
@@ -10657,7 +10657,7 @@ return {
 
 };
 
-["180"] =  {
+[180] =  {
 ["type"] = 138;
 ["owner"] = 1;
 ["location"] = {
@@ -10674,7 +10674,7 @@ return {
 
 };
 
-["181"] =  {
+[181] =  {
 ["type"] = 47;
 ["owner"] = 0;
 ["location"] = {
@@ -10691,7 +10691,7 @@ return {
 
 };
 
-["182"] =  {
+[182] =  {
 ["type"] = 67;
 ["owner"] = 0;
 ["location"] = {
@@ -10708,7 +10708,7 @@ return {
 
 };
 
-["183"] =  {
+[183] =  {
 ["type"] = 113;
 ["owner"] = 1;
 ["location"] = {
@@ -10725,7 +10725,7 @@ return {
 
 };
 
-["184"] =  {
+[184] =  {
 ["type"] = 113;
 ["owner"] = 1;
 ["location"] = {
@@ -10742,7 +10742,7 @@ return {
 
 };
 
-["185"] =  {
+[185] =  {
 ["type"] = 148;
 ["owner"] = 1;
 ["location"] = {
@@ -10759,7 +10759,7 @@ return {
 
 };
 
-["186"] =  {
+[186] =  {
 ["type"] = 160;
 ["owner"] = 1;
 ["location"] = {
@@ -10776,7 +10776,7 @@ return {
 
 };
 
-["187"] =  {
+[187] =  {
 ["type"] = 109;
 ["owner"] = 0;
 ["location"] = {
@@ -10793,7 +10793,7 @@ return {
 
 };
 
-["188"] =  {
+[188] =  {
 ["type"] = 151;
 ["owner"] = 0;
 ["location"] = {
@@ -10810,7 +10810,7 @@ return {
 
 };
 
-["189"] =  {
+[189] =  {
 ["type"] = 129;
 ["owner"] = 0;
 ["location"] = {
@@ -10827,7 +10827,7 @@ return {
 
 };
 
-["190"] =  {
+[190] =  {
 ["type"] = 129;
 ["owner"] = 0;
 ["location"] = {
@@ -10844,7 +10844,7 @@ return {
 
 };
 
-["191"] =  {
+[191] =  {
 ["type"] = 147;
 ["owner"] = 1;
 ["location"] = {
@@ -10861,7 +10861,7 @@ return {
 
 };
 
-["192"] =  {
+[192] =  {
 ["type"] = 147;
 ["owner"] = 1;
 ["location"] = {
@@ -10878,7 +10878,7 @@ return {
 
 };
 
-["193"] =  {
+[193] =  {
 ["type"] = 147;
 ["owner"] = 1;
 ["location"] = {
@@ -10895,7 +10895,7 @@ return {
 
 };
 
-["194"] =  {
+[194] =  {
 ["type"] = 147;
 ["owner"] = 1;
 ["location"] = {
@@ -10912,7 +10912,7 @@ return {
 
 };
 
-["195"] =  {
+[195] =  {
 ["type"] = 147;
 ["owner"] = 1;
 ["location"] = {
@@ -10929,7 +10929,7 @@ return {
 
 };
 
-["196"] =  {
+[196] =  {
 ["type"] = 148;
 ["owner"] = 1;
 ["location"] = {
@@ -10946,7 +10946,7 @@ return {
 
 };
 
-["197"] =  {
+[197] =  {
 ["type"] = 149;
 ["owner"] = 1;
 ["location"] = {
@@ -10963,7 +10963,7 @@ return {
 
 };
 
-["198"] =  {
+[198] =  {
 ["type"] = 142;
 ["owner"] = 1;
 ["location"] = {
@@ -10980,7 +10980,7 @@ return {
 
 };
 
-["199"] =  {
+[199] =  {
 ["type"] = 117;
 ["owner"] = 0;
 ["location"] = {
@@ -10997,7 +10997,7 @@ return {
 
 };
 
-["200"] =  {
+[200] =  {
 ["type"] = 47;
 ["owner"] = 0;
 ["location"] = {
@@ -11014,7 +11014,7 @@ return {
 
 };
 
-["201"] =  {
+[201] =  {
 ["type"] = 47;
 ["owner"] = 0;
 ["location"] = {
@@ -11031,7 +11031,7 @@ return {
 
 };
 
-["202"] =  {
+[202] =  {
 ["type"] = 47;
 ["owner"] = 0;
 ["location"] = {
@@ -11048,7 +11048,7 @@ return {
 
 };
 
-["203"] =  {
+[203] =  {
 ["type"] = 129;
 ["owner"] = 0;
 ["location"] = {
@@ -11065,7 +11065,7 @@ return {
 
 };
 
-["204"] =  {
+[204] =  {
 ["type"] = 129;
 ["owner"] = 0;
 ["location"] = {
@@ -11082,7 +11082,7 @@ return {
 
 };
 
-["205"] =  {
+[205] =  {
 ["type"] = 129;
 ["owner"] = 0;
 ["location"] = {
@@ -11099,7 +11099,7 @@ return {
 
 };
 
-["206"] =  {
+[206] =  {
 ["type"] = 148;
 ["owner"] = 1;
 ["location"] = {
@@ -11116,7 +11116,7 @@ return {
 
 };
 
-["207"] =  {
+[207] =  {
 ["type"] = 148;
 ["owner"] = 1;
 ["location"] = {
@@ -11133,7 +11133,7 @@ return {
 
 };
 
-["208"] =  {
+[208] =  {
 ["type"] = 142;
 ["owner"] = 1;
 ["location"] = {
@@ -11150,7 +11150,7 @@ return {
 
 };
 
-["209"] =  {
+[209] =  {
 ["type"] = 142;
 ["owner"] = 1;
 ["location"] = {
@@ -11167,7 +11167,7 @@ return {
 
 };
 
-["210"] =  {
+[210] =  {
 ["type"] = 149;
 ["owner"] = 1;
 ["location"] = {
@@ -11184,7 +11184,7 @@ return {
 
 };
 
-["211"] =  {
+[211] =  {
 ["type"] = -1;
 ["owner"] = 0;
 ["location"] = {
@@ -11201,7 +11201,7 @@ return {
 
 };
 
-["212"] =  {
+[212] =  {
 ["type"] = 23;
 ["owner"] = 0;
 ["location"] = {
@@ -11218,7 +11218,7 @@ return {
 
 };
 
-["213"] =  {
+[213] =  {
 ["type"] = 23;
 ["owner"] = 1;
 ["location"] = {
@@ -11235,7 +11235,7 @@ return {
 
 };
 
-["214"] =  {
+[214] =  {
 ["type"] = 276;
 ["owner"] = 0;
 ["location"] = {
@@ -11252,7 +11252,7 @@ return {
 
 };
 
-["215"] =  {
+[215] =  {
 ["type"] = 278;
 ["owner"] = 1;
 ["location"] = {
@@ -11269,7 +11269,7 @@ return {
 
 };
 
-["216"] =  {
+[216] =  {
 ["type"] = 274;
 ["owner"] = 0;
 ["location"] = {
@@ -11286,7 +11286,7 @@ return {
 
 };
 
-["217"] =  {
+[217] =  {
 ["type"] = 275;
 ["owner"] = 1;
 ["location"] = {
@@ -11303,7 +11303,7 @@ return {
 
 };
 
-["218"] =  {
+[218] =  {
 ["type"] = 272;
 ["owner"] = 0;
 ["location"] = {
@@ -11320,7 +11320,7 @@ return {
 
 };
 
-["219"] =  {
+[219] =  {
 ["type"] = 272;
 ["owner"] = 0;
 ["location"] = {
@@ -11337,7 +11337,7 @@ return {
 
 };
 
-["220"] =  {
+[220] =  {
 ["type"] = 272;
 ["owner"] = 0;
 ["location"] = {
@@ -11354,7 +11354,7 @@ return {
 
 };
 
-["221"] =  {
+[221] =  {
 ["type"] = 272;
 ["owner"] = 0;
 ["location"] = {
@@ -11371,7 +11371,7 @@ return {
 
 };
 
-["222"] =  {
+[222] =  {
 ["type"] = 272;
 ["owner"] = 0;
 ["location"] = {
@@ -11388,7 +11388,7 @@ return {
 
 };
 
-["223"] =  {
+[223] =  {
 ["type"] = 272;
 ["owner"] = 0;
 ["location"] = {
@@ -11405,7 +11405,7 @@ return {
 
 };
 
-["224"] =  {
+[224] =  {
 ["type"] = 272;
 ["owner"] = 0;
 ["location"] = {
@@ -11422,7 +11422,7 @@ return {
 
 };
 
-["225"] =  {
+[225] =  {
 ["type"] = 272;
 ["owner"] = 0;
 ["location"] = {
@@ -11439,7 +11439,7 @@ return {
 
 };
 
-["226"] =  {
+[226] =  {
 ["type"] = 273;
 ["owner"] = 1;
 ["location"] = {
@@ -11456,7 +11456,7 @@ return {
 
 };
 
-["227"] =  {
+[227] =  {
 ["type"] = 273;
 ["owner"] = 1;
 ["location"] = {
@@ -11473,7 +11473,7 @@ return {
 
 };
 
-["228"] =  {
+[228] =  {
 ["type"] = 273;
 ["owner"] = 1;
 ["location"] = {
@@ -11490,7 +11490,7 @@ return {
 
 };
 
-["229"] =  {
+[229] =  {
 ["type"] = 273;
 ["owner"] = 1;
 ["location"] = {
@@ -11507,7 +11507,7 @@ return {
 
 };
 
-["230"] =  {
+[230] =  {
 ["type"] = 273;
 ["owner"] = 1;
 ["location"] = {
@@ -11524,7 +11524,7 @@ return {
 
 };
 
-["231"] =  {
+[231] =  {
 ["type"] = 273;
 ["owner"] = 1;
 ["location"] = {
@@ -11541,7 +11541,7 @@ return {
 
 };
 
-["232"] =  {
+[232] =  {
 ["type"] = 273;
 ["owner"] = 1;
 ["location"] = {
@@ -11558,7 +11558,7 @@ return {
 
 };
 
-["233"] =  {
+[233] =  {
 ["type"] = 273;
 ["owner"] = 1;
 ["location"] = {
@@ -11575,7 +11575,7 @@ return {
 
 };
 
-["234"] =  {
+[234] =  {
 ["type"] = 23;
 ["owner"] = 0;
 ["location"] = {
@@ -11592,7 +11592,7 @@ return {
 
 };
 
-["235"] =  {
+[235] =  {
 ["type"] = 23;
 ["owner"] = 1;
 ["location"] = {
@@ -11609,7 +11609,7 @@ return {
 
 };
 
-["236"] =  {
+[236] =  {
 ["type"] = 45;
 ["owner"] = 0;
 ["location"] = {
@@ -11626,7 +11626,7 @@ return {
 
 };
 
-["237"] =  {
+[237] =  {
 ["type"] = 45;
 ["owner"] = 0;
 ["location"] = {
@@ -11643,7 +11643,7 @@ return {
 
 };
 
-["238"] =  {
+[238] =  {
 ["type"] = 45;
 ["owner"] = 0;
 ["location"] = {
@@ -11660,7 +11660,7 @@ return {
 
 };
 
-["239"] =  {
+[239] =  {
 ["type"] = 45;
 ["owner"] = 1;
 ["location"] = {
@@ -11677,7 +11677,7 @@ return {
 
 };
 
-["240"] =  {
+[240] =  {
 ["type"] = 45;
 ["owner"] = 1;
 ["location"] = {
@@ -11694,7 +11694,7 @@ return {
 
 };
 
-["241"] =  {
+[241] =  {
 ["type"] = 45;
 ["owner"] = 1;
 ["location"] = {
@@ -11711,7 +11711,7 @@ return {
 
 };
 
-["242"] =  {
+[242] =  {
 ["type"] = 270;
 ["owner"] = -1;
 ["location"] = {
@@ -11728,7 +11728,7 @@ return {
 
 };
 
-["243"] =  {
+[243] =  {
 ["type"] = 270;
 ["owner"] = -1;
 ["location"] = {
@@ -11745,7 +11745,7 @@ return {
 
 };
 
-["244"] =  {
+[244] =  {
 ["type"] = 270;
 ["owner"] = -1;
 ["location"] = {
@@ -11762,7 +11762,7 @@ return {
 
 };
 
-["245"] =  {
+[245] =  {
 ["type"] = 270;
 ["owner"] = -1;
 ["location"] = {
@@ -11779,7 +11779,7 @@ return {
 
 };
 
-["246"] =  {
+[246] =  {
 ["type"] = 270;
 ["owner"] = -1;
 ["location"] = {
@@ -11796,7 +11796,7 @@ return {
 
 };
 
-["247"] =  {
+[247] =  {
 ["type"] = 93;
 ["owner"] = -1;
 ["location"] = {
@@ -11813,7 +11813,7 @@ return {
 
 };
 
-["248"] =  {
+[248] =  {
 ["type"] = 93;
 ["owner"] = -1;
 ["location"] = {
@@ -11830,7 +11830,7 @@ return {
 
 };
 
-["249"] =  {
+[249] =  {
 ["type"] = 93;
 ["owner"] = -1;
 ["location"] = {
@@ -11847,7 +11847,7 @@ return {
 
 };
 
-["250"] =  {
+[250] =  {
 ["type"] = 93;
 ["owner"] = -1;
 ["location"] = {
@@ -11864,7 +11864,7 @@ return {
 
 };
 
-["251"] =  {
+[251] =  {
 ["type"] = 270;
 ["owner"] = -1;
 ["location"] = {
@@ -11881,7 +11881,7 @@ return {
 
 };
 
-["252"] =  {
+[252] =  {
 ["type"] = 270;
 ["owner"] = -1;
 ["location"] = {
@@ -11898,7 +11898,7 @@ return {
 
 };
 
-["253"] =  {
+[253] =  {
 ["type"] = -1;
 ["owner"] = 1;
 ["location"] = {
@@ -11915,7 +11915,7 @@ return {
 
 };
 
-["254"] =  {
+[254] =  {
 ["type"] = -1;
 ["owner"] = 1;
 ["location"] = {
@@ -11932,7 +11932,7 @@ return {
 
 };
 
-["255"] =  {
+[255] =  {
 ["type"] = -1;
 ["owner"] = 1;
 ["location"] = {
@@ -11949,7 +11949,7 @@ return {
 
 };
 
-["256"] =  {
+[256] =  {
 ["type"] = -1;
 ["owner"] = 1;
 ["location"] = {
@@ -11966,7 +11966,7 @@ return {
 
 };
 
-["257"] =  {
+[257] =  {
 ["type"] = -1;
 ["owner"] = 1;
 ["location"] = {
@@ -11983,7 +11983,7 @@ return {
 
 };
 
-["258"] =  {
+[258] =  {
 ["type"] = -1;
 ["owner"] = 1;
 ["location"] = {
@@ -12000,7 +12000,7 @@ return {
 
 };
 
-["259"] =  {
+[259] =  {
 ["type"] = 23;
 ["owner"] = -1;
 ["location"] = {
@@ -12017,7 +12017,7 @@ return {
 
 };
 
-["260"] =  {
+[260] =  {
 ["type"] = 23;
 ["owner"] = -1;
 ["location"] = {
@@ -12035,7 +12035,7 @@ return {
 
 };
 
-["261"] =  {
+[261] =  {
 ["type"] = 166;
 ["owner"] = 0;
 ["location"] = {
@@ -12052,7 +12052,7 @@ return {
 
 };
 
-["262"] =  {
+[262] =  {
 ["type"] = 174;
 ["owner"] = 0;
 ["location"] = {
@@ -12069,7 +12069,7 @@ return {
 
 };
 
-["263"] =  {
+[263] =  {
 ["type"] = 174;
 ["owner"] = 0;
 ["location"] = {
@@ -12086,7 +12086,7 @@ return {
 
 };
 
-["264"] =  {
+[264] =  {
 ["type"] = 174;
 ["owner"] = 0;
 ["location"] = {
@@ -12103,7 +12103,7 @@ return {
 
 };
 
-["265"] =  {
+[265] =  {
 ["type"] = 174;
 ["owner"] = 0;
 ["location"] = {
@@ -12120,7 +12120,7 @@ return {
 
 };
 
-["266"] =  {
+[266] =  {
 ["type"] = 174;
 ["owner"] = 0;
 ["location"] = {
@@ -12137,7 +12137,7 @@ return {
 
 };
 
-["267"] =  {
+[267] =  {
 ["type"] = 177;
 ["owner"] = 1;
 ["location"] = {
@@ -12154,7 +12154,7 @@ return {
 
 };
 
-["268"] =  {
+[268] =  {
 ["type"] = 167;
 ["owner"] = 0;
 ["location"] = {
@@ -12171,7 +12171,7 @@ return {
 
 };
 
-["269"] =  {
+[269] =  {
 ["type"] = 167;
 ["owner"] = 0;
 ["location"] = {
@@ -12188,7 +12188,7 @@ return {
 
 };
 
-["270"] =  {
+[270] =  {
 ["type"] = 45;
 ["owner"] = 1;
 ["location"] = {
@@ -12205,7 +12205,7 @@ return {
 
 };
 
-["271"] =  {
+[271] =  {
 ["type"] = 45;
 ["owner"] = 1;
 ["location"] = {
@@ -12222,7 +12222,7 @@ return {
 
 };
 
-["272"] =  {
+[272] =  {
 ["type"] = 17;
 ["owner"] = 1;
 ["location"] = {
@@ -12239,7 +12239,7 @@ return {
 
 };
 
-["273"] =  {
+[273] =  {
 ["type"] = 7;
 ["owner"] = 1;
 ["location"] = {
@@ -12256,7 +12256,7 @@ return {
 
 };
 
-["274"] =  {
+[274] =  {
 ["type"] = 164;
 ["owner"] = 0;
 ["location"] = {
@@ -12273,7 +12273,7 @@ return {
 
 };
 
-["275"] =  {
+[275] =  {
 ["type"] = 164;
 ["owner"] = 0;
 ["location"] = {
@@ -12290,7 +12290,7 @@ return {
 
 };
 
-["276"] =  {
+[276] =  {
 ["type"] = 149;
 ["owner"] = 1;
 ["location"] = {
@@ -12307,7 +12307,7 @@ return {
 
 };
 
-["277"] =  {
+[277] =  {
 ["type"] = 149;
 ["owner"] = 1;
 ["location"] = {
@@ -12324,7 +12324,7 @@ return {
 
 };
 
-["278"] =  {
+[278] =  {
 ["type"] = 165;
 ["owner"] = 0;
 ["location"] = {
@@ -12341,7 +12341,7 @@ return {
 
 };
 
-["279"] =  {
+[279] =  {
 ["type"] = 165;
 ["owner"] = 0;
 ["location"] = {
@@ -12358,7 +12358,7 @@ return {
 
 };
 
-["280"] =  {
+[280] =  {
 ["type"] = 165;
 ["owner"] = 0;
 ["location"] = {
@@ -12375,7 +12375,7 @@ return {
 
 };
 
-["281"] =  {
+[281] =  {
 ["type"] = 165;
 ["owner"] = 0;
 ["location"] = {
@@ -12392,7 +12392,7 @@ return {
 
 };
 
-["282"] =  {
+[282] =  {
 ["type"] = 165;
 ["owner"] = 0;
 ["location"] = {
@@ -12409,7 +12409,7 @@ return {
 
 };
 
-["283"] =  {
+[283] =  {
 ["type"] = 165;
 ["owner"] = 0;
 ["location"] = {
@@ -12426,7 +12426,7 @@ return {
 
 };
 
-["284"] =  {
+[284] =  {
 ["type"] = 142;
 ["owner"] = 1;
 ["location"] = {
@@ -12443,7 +12443,7 @@ return {
 
 };
 
-["285"] =  {
+[285] =  {
 ["type"] = 142;
 ["owner"] = 1;
 ["location"] = {
@@ -12460,7 +12460,7 @@ return {
 
 };
 
-["286"] =  {
+[286] =  {
 ["type"] = 167;
 ["owner"] = 0;
 ["location"] = {
@@ -12477,7 +12477,7 @@ return {
 
 };
 
-["287"] =  {
+[287] =  {
 ["type"] = 167;
 ["owner"] = 0;
 ["location"] = {
@@ -12494,7 +12494,7 @@ return {
 
 };
 
-["288"] =  {
+[288] =  {
 ["type"] = 166;
 ["owner"] = 0;
 ["location"] = {
@@ -12511,7 +12511,7 @@ return {
 
 };
 
-["289"] =  {
+[289] =  {
 ["type"] = 166;
 ["owner"] = 0;
 ["location"] = {
@@ -12528,7 +12528,7 @@ return {
 
 };
 
-["290"] =  {
+[290] =  {
 ["type"] = 148;
 ["owner"] = 1;
 ["location"] = {
@@ -12545,7 +12545,7 @@ return {
 
 };
 
-["291"] =  {
+[291] =  {
 ["type"] = 148;
 ["owner"] = 1;
 ["location"] = {
@@ -12562,7 +12562,7 @@ return {
 
 };
 
-["292"] =  {
+[292] =  {
 ["type"] = 148;
 ["owner"] = 1;
 ["location"] = {
@@ -12579,7 +12579,7 @@ return {
 
 };
 
-["293"] =  {
+[293] =  {
 ["type"] = 148;
 ["owner"] = 1;
 ["location"] = {
@@ -12596,7 +12596,7 @@ return {
 
 };
 
-["294"] =  {
+[294] =  {
 ["type"] = 23;
 ["owner"] = 1;
 ["location"] = {
@@ -12614,7 +12614,7 @@ return {
 
 };
 
-["295"] =  {
+[295] =  {
 ["type"] = 179;
 ["owner"] = 1;
 ["location"] = {
@@ -12631,7 +12631,7 @@ return {
 
 };
 
-["296"] =  {
+[296] =  {
 ["type"] = 179;
 ["owner"] = 1;
 ["location"] = {
@@ -12648,7 +12648,7 @@ return {
 
 };
 
-["297"] =  {
+[297] =  {
 ["type"] = 179;
 ["owner"] = 1;
 ["location"] = {
@@ -12665,7 +12665,7 @@ return {
 
 };
 
-["298"] =  {
+[298] =  {
 ["type"] = 179;
 ["owner"] = 1;
 ["location"] = {
@@ -12682,7 +12682,7 @@ return {
 
 };
 
-["299"] =  {
+[299] =  {
 ["type"] = 179;
 ["owner"] = 1;
 ["location"] = {
@@ -12699,7 +12699,7 @@ return {
 
 };
 
-["300"] =  {
+[300] =  {
 ["type"] = 0;
 ["owner"] = 0;
 ["location"] = {
@@ -12716,7 +12716,7 @@ return {
 
 };
 
-["301"] =  {
+[301] =  {
 ["type"] = 38;
 ["owner"] = 1;
 ["location"] = {
@@ -12733,7 +12733,7 @@ return {
 
 };
 
-["302"] =  {
+[302] =  {
 ["type"] = 38;
 ["owner"] = 1;
 ["location"] = {
@@ -12750,7 +12750,7 @@ return {
 
 };
 
-["303"] =  {
+[303] =  {
 ["type"] = 38;
 ["owner"] = 1;
 ["location"] = {
@@ -12767,7 +12767,7 @@ return {
 
 };
 
-["304"] =  {
+[304] =  {
 ["type"] = 38;
 ["owner"] = 1;
 ["location"] = {
@@ -12784,7 +12784,7 @@ return {
 
 };
 
-["305"] =  {
+[305] =  {
 ["type"] = 38;
 ["owner"] = 1;
 ["location"] = {
@@ -12801,7 +12801,7 @@ return {
 
 };
 
-["306"] =  {
+[306] =  {
 ["type"] = 38;
 ["owner"] = 1;
 ["location"] = {
@@ -12818,7 +12818,7 @@ return {
 
 };
 
-["307"] =  {
+[307] =  {
 ["type"] = 38;
 ["owner"] = 1;
 ["location"] = {
@@ -12835,7 +12835,7 @@ return {
 
 };
 
-["308"] =  {
+[308] =  {
 ["type"] = 37;
 ["owner"] = 1;
 ["location"] = {
@@ -12852,7 +12852,7 @@ return {
 
 };
 
-["309"] =  {
+[309] =  {
 ["type"] = 37;
 ["owner"] = 1;
 ["location"] = {
@@ -12869,7 +12869,7 @@ return {
 
 };
 
-["310"] =  {
+[310] =  {
 ["type"] = 37;
 ["owner"] = 1;
 ["location"] = {
@@ -12886,7 +12886,7 @@ return {
 
 };
 
-["311"] =  {
+[311] =  {
 ["type"] = 37;
 ["owner"] = 1;
 ["location"] = {
@@ -12903,7 +12903,7 @@ return {
 
 };
 
-["312"] =  {
+[312] =  {
 ["type"] = 23;
 ["owner"] = 0;
 ["location"] = {
@@ -12921,7 +12921,7 @@ return {
 
 };
 
-["313"] =  {
+[313] =  {
 ["type"] = 111;
 ["owner"] = 0;
 ["location"] = {
@@ -12939,7 +12939,7 @@ return {
 
 };
 
-["314"] =  {
+[314] =  {
 ["type"] = 114;
 ["owner"] = 0;
 ["location"] = {
@@ -12956,7 +12956,7 @@ return {
 
 };
 
-["315"] =  {
+[315] =  {
 ["type"] = 111;
 ["owner"] = 1;
 ["location"] = {
@@ -12974,7 +12974,7 @@ return {
 
 };
 
-["316"] =  {
+[316] =  {
 ["type"] = 111;
 ["owner"] = 1;
 ["location"] = {
@@ -12992,7 +12992,7 @@ return {
 
 };
 
-["317"] =  {
+[317] =  {
 ["type"] = 23;
 ["owner"] = 1;
 ["location"] = {
@@ -13010,7 +13010,7 @@ return {
 
 };
 
-["318"] =  {
+[318] =  {
 ["type"] = 166;
 ["owner"] = 0;
 ["location"] = {
@@ -13027,7 +13027,7 @@ return {
 
 };
 
-["319"] =  {
+[319] =  {
 ["type"] = 223;
 ["owner"] = 1;
 ["location"] = {
@@ -13044,7 +13044,7 @@ return {
 
 };
 
-["320"] =  {
+[320] =  {
 ["type"] = 45;
 ["owner"] = 1;
 ["location"] = {
@@ -13061,7 +13061,7 @@ return {
 
 };
 
-["321"] =  {
+[321] =  {
 ["type"] = 45;
 ["owner"] = 1;
 ["location"] = {
@@ -13078,7 +13078,7 @@ return {
 
 };
 
-["322"] =  {
+[322] =  {
 ["type"] = 167;
 ["owner"] = 0;
 ["location"] = {
@@ -13095,7 +13095,7 @@ return {
 
 };
 
-["323"] =  {
+[323] =  {
 ["type"] = 167;
 ["owner"] = 0;
 ["location"] = {
@@ -13112,7 +13112,7 @@ return {
 
 };
 
-["324"] =  {
+[324] =  {
 ["type"] = 181;
 ["owner"] = 0;
 ["location"] = {
@@ -13129,7 +13129,7 @@ return {
 
 };
 
-["325"] =  {
+[325] =  {
 ["type"] = 23;
 ["owner"] = 1;
 ["location"] = {
@@ -13147,7 +13147,7 @@ return {
 
 };
 
-["326"] =  {
+[326] =  {
 ["type"] = 180;
 ["owner"] = 1;
 ["location"] = {
@@ -13164,7 +13164,7 @@ return {
 
 };
 
-["327"] =  {
+[327] =  {
 ["type"] = 196;
 ["owner"] = -1;
 ["location"] = {
@@ -13181,7 +13181,7 @@ return {
 
 };
 
-["328"] =  {
+[328] =  {
 ["type"] = 45;
 ["owner"] = 1;
 ["location"] = {
@@ -13198,7 +13198,7 @@ return {
 
 };
 
-["329"] =  {
+[329] =  {
 ["type"] = 45;
 ["owner"] = 1;
 ["location"] = {
@@ -13215,7 +13215,7 @@ return {
 
 };
 
-["330"] =  {
+[330] =  {
 ["type"] = 45;
 ["owner"] = 1;
 ["location"] = {
@@ -13232,7 +13232,7 @@ return {
 
 };
 
-["331"] =  {
+[331] =  {
 ["type"] = 45;
 ["owner"] = 1;
 ["location"] = {
@@ -13249,7 +13249,7 @@ return {
 
 };
 
-["332"] =  {
+[332] =  {
 ["type"] = 45;
 ["owner"] = 1;
 ["location"] = {
@@ -13266,7 +13266,7 @@ return {
 
 };
 
-["333"] =  {
+[333] =  {
 ["type"] = 45;
 ["owner"] = 1;
 ["location"] = {
@@ -13283,7 +13283,7 @@ return {
 
 };
 
-["334"] =  {
+[334] =  {
 ["type"] = 62;
 ["owner"] = 1;
 ["location"] = {
@@ -13300,7 +13300,7 @@ return {
 
 };
 
-["335"] =  {
+[335] =  {
 ["type"] = 62;
 ["owner"] = 1;
 ["location"] = {
@@ -13317,7 +13317,7 @@ return {
 
 };
 
-["336"] =  {
+[336] =  {
 ["type"] = 178;
 ["owner"] = 0;
 ["location"] = {
@@ -13334,7 +13334,7 @@ return {
 
 };
 
-["337"] =  {
+[337] =  {
 ["type"] = 178;
 ["owner"] = 0;
 ["location"] = {
@@ -13351,7 +13351,7 @@ return {
 
 };
 
-["338"] =  {
+[338] =  {
 ["type"] = 178;
 ["owner"] = 0;
 ["location"] = {
@@ -13368,7 +13368,7 @@ return {
 
 };
 
-["339"] =  {
+[339] =  {
 ["type"] = 178;
 ["owner"] = 0;
 ["location"] = {
@@ -13385,7 +13385,7 @@ return {
 
 };
 
-["340"] =  {
+[340] =  {
 ["type"] = 178;
 ["owner"] = 0;
 ["location"] = {
@@ -13402,7 +13402,7 @@ return {
 
 };
 
-["341"] =  {
+[341] =  {
 ["type"] = 178;
 ["owner"] = 0;
 ["location"] = {
@@ -13419,7 +13419,7 @@ return {
 
 };
 
-["342"] =  {
+[342] =  {
 ["type"] = 178;
 ["owner"] = 0;
 ["location"] = {
@@ -13436,7 +13436,7 @@ return {
 
 };
 
-["343"] =  {
+[343] =  {
 ["type"] = 178;
 ["owner"] = 0;
 ["location"] = {
@@ -13453,7 +13453,7 @@ return {
 
 };
 
-["344"] =  {
+[344] =  {
 ["type"] = 178;
 ["owner"] = 0;
 ["location"] = {
@@ -13470,7 +13470,7 @@ return {
 
 };
 
-["345"] =  {
+[345] =  {
 ["type"] = 178;
 ["owner"] = 0;
 ["location"] = {
@@ -13487,7 +13487,7 @@ return {
 
 };
 
-["346"] =  {
+[346] =  {
 ["type"] = 167;
 ["owner"] = 0;
 ["location"] = {
@@ -13504,7 +13504,7 @@ return {
 
 };
 
-["347"] =  {
+[347] =  {
 ["type"] = 167;
 ["owner"] = 0;
 ["location"] = {
@@ -13521,7 +13521,7 @@ return {
 
 };
 
-["348"] =  {
+[348] =  {
 ["type"] = 167;
 ["owner"] = 0;
 ["location"] = {
@@ -13538,7 +13538,7 @@ return {
 
 };
 
-["349"] =  {
+[349] =  {
 ["type"] = 167;
 ["owner"] = 0;
 ["location"] = {
@@ -13555,7 +13555,7 @@ return {
 
 };
 
-["350"] =  {
+[350] =  {
 ["type"] = 164;
 ["owner"] = 0;
 ["location"] = {
@@ -13572,7 +13572,7 @@ return {
 
 };
 
-["351"] =  {
+[351] =  {
 ["type"] = 166;
 ["owner"] = 0;
 ["location"] = {
@@ -13589,7 +13589,7 @@ return {
 
 };
 
-["352"] =  {
+[352] =  {
 ["type"] = 166;
 ["owner"] = 0;
 ["location"] = {
@@ -13606,7 +13606,7 @@ return {
 
 };
 
-["353"] =  {
+[353] =  {
 ["type"] = 166;
 ["owner"] = 0;
 ["location"] = {
@@ -13623,7 +13623,7 @@ return {
 
 };
 
-["354"] =  {
+[354] =  {
 ["type"] = 165;
 ["owner"] = 0;
 ["location"] = {
@@ -13640,7 +13640,7 @@ return {
 
 };
 
-["355"] =  {
+[355] =  {
 ["type"] = 164;
 ["owner"] = 0;
 ["location"] = {
@@ -13657,7 +13657,7 @@ return {
 
 };
 
-["356"] =  {
+[356] =  {
 ["type"] = 166;
 ["owner"] = 0;
 ["location"] = {
@@ -13674,7 +13674,7 @@ return {
 
 };
 
-["357"] =  {
+[357] =  {
 ["type"] = 61;
 ["owner"] = 0;
 ["location"] = {
@@ -13691,7 +13691,7 @@ return {
 
 };
 
-["358"] =  {
+[358] =  {
 ["type"] = 14;
 ["owner"] = 1;
 ["location"] = {
@@ -13708,7 +13708,7 @@ return {
 
 };
 
-["359"] =  {
+[359] =  {
 ["type"] = 182;
 ["owner"] = -1;
 ["location"] = {
@@ -13725,7 +13725,7 @@ return {
 
 };
 
-["360"] =  {
+[360] =  {
 ["type"] = 185;
 ["owner"] = -1;
 ["location"] = {
@@ -13742,7 +13742,7 @@ return {
 
 };
 
-["361"] =  {
+[361] =  {
 ["type"] = 80;
 ["owner"] = 0;
 ["location"] = {
@@ -13759,7 +13759,7 @@ return {
 
 };
 
-["362"] =  {
+[362] =  {
 ["type"] = 80;
 ["owner"] = 0;
 ["location"] = {
@@ -13776,7 +13776,7 @@ return {
 
 };
 
-["363"] =  {
+[363] =  {
 ["type"] = 80;
 ["owner"] = 0;
 ["location"] = {
@@ -13793,7 +13793,7 @@ return {
 
 };
 
-["364"] =  {
+[364] =  {
 ["type"] = 186;
 ["owner"] = 1;
 ["location"] = {
@@ -13810,7 +13810,7 @@ return {
 
 };
 
-["365"] =  {
+[365] =  {
 ["type"] = 23;
 ["owner"] = 0;
 ["location"] = {
@@ -13827,7 +13827,7 @@ return {
 
 };
 
-["366"] =  {
+[366] =  {
 ["type"] = 111;
 ["owner"] = 0;
 ["location"] = {
@@ -13845,7 +13845,7 @@ return {
 
 };
 
-["367"] =  {
+[367] =  {
 ["type"] = 111;
 ["owner"] = 0;
 ["location"] = {
@@ -13863,7 +13863,7 @@ return {
 
 };
 
-["368"] =  {
+[368] =  {
 ["type"] = 188;
 ["owner"] = 0;
 ["location"] = {
@@ -13880,7 +13880,7 @@ return {
 
 };
 
-["369"] =  {
+[369] =  {
 ["type"] = 203;
 ["owner"] = 0;
 ["location"] = {
@@ -13897,7 +13897,7 @@ return {
 
 };
 
-["370"] =  {
+[370] =  {
 ["type"] = 111;
 ["owner"] = 0;
 ["location"] = {
@@ -13915,7 +13915,7 @@ return {
 
 };
 
-["371"] =  {
+[371] =  {
 ["type"] = 111;
 ["owner"] = 1;
 ["location"] = {
@@ -13933,7 +13933,7 @@ return {
 
 };
 
-["372"] =  {
+[372] =  {
 ["type"] = 188;
 ["owner"] = 1;
 ["location"] = {
@@ -13950,7 +13950,7 @@ return {
 
 };
 
-["373"] =  {
+[373] =  {
 ["type"] = 111;
 ["owner"] = 1;
 ["location"] = {
@@ -13968,7 +13968,7 @@ return {
 
 };
 
-["374"] =  {
+[374] =  {
 ["type"] = 188;
 ["owner"] = 1;
 ["location"] = {
@@ -13985,7 +13985,7 @@ return {
 
 };
 
-["375"] =  {
+[375] =  {
 ["type"] = 188;
 ["owner"] = 1;
 ["location"] = {
@@ -14002,7 +14002,7 @@ return {
 
 };
 
-["376"] =  {
+[376] =  {
 ["type"] = 111;
 ["owner"] = 1;
 ["location"] = {
@@ -14020,7 +14020,7 @@ return {
 
 };
 
-["377"] =  {
+[377] =  {
 ["type"] = 188;
 ["owner"] = 1;
 ["location"] = {
@@ -14037,7 +14037,7 @@ return {
 
 };
 
-["378"] =  {
+[378] =  {
 ["type"] = 188;
 ["owner"] = 1;
 ["location"] = {
@@ -14054,7 +14054,7 @@ return {
 
 };
 
-["379"] =  {
+[379] =  {
 ["type"] = 188;
 ["owner"] = 1;
 ["location"] = {
@@ -14071,7 +14071,7 @@ return {
 
 };
 
-["380"] =  {
+[380] =  {
 ["type"] = 111;
 ["owner"] = 0;
 ["location"] = {
@@ -14089,7 +14089,7 @@ return {
 
 };
 
-["381"] =  {
+[381] =  {
 ["type"] = 203;
 ["owner"] = 0;
 ["location"] = {
@@ -14106,7 +14106,7 @@ return {
 
 };
 
-["382"] =  {
+[382] =  {
 ["type"] = 203;
 ["owner"] = 0;
 ["location"] = {
@@ -14123,7 +14123,7 @@ return {
 
 };
 
-["383"] =  {
+[383] =  {
 ["type"] = 137;
 ["owner"] = 0;
 ["location"] = {
@@ -14140,7 +14140,7 @@ return {
 
 };
 
-["384"] =  {
+[384] =  {
 ["type"] = 141;
 ["owner"] = 0;
 ["location"] = {
@@ -14157,7 +14157,7 @@ return {
 
 };
 
-["385"] =  {
+[385] =  {
 ["type"] = 141;
 ["owner"] = 0;
 ["location"] = {
@@ -14174,7 +14174,7 @@ return {
 
 };
 
-["386"] =  {
+[386] =  {
 ["type"] = 141;
 ["owner"] = 0;
 ["location"] = {
@@ -14191,7 +14191,7 @@ return {
 
 };
 
-["387"] =  {
+[387] =  {
 ["type"] = 117;
 ["owner"] = 0;
 ["location"] = {
@@ -14208,7 +14208,7 @@ return {
 
 };
 
-["388"] =  {
+[388] =  {
 ["type"] = 286;
 ["owner"] = 0;
 ["location"] = {
@@ -14226,7 +14226,7 @@ return {
 
 };
 
-["389"] =  {
+[389] =  {
 ["type"] = 206;
 ["owner"] = 0;
 ["location"] = {
@@ -14243,7 +14243,7 @@ return {
 
 };
 
-["390"] =  {
+[390] =  {
 ["type"] = 210;
 ["owner"] = 1;
 ["location"] = {
@@ -14260,7 +14260,7 @@ return {
 
 };
 
-["391"] =  {
+[391] =  {
 ["type"] = 210;
 ["owner"] = 1;
 ["location"] = {
@@ -14277,7 +14277,7 @@ return {
 
 };
 
-["392"] =  {
+[392] =  {
 ["type"] = 210;
 ["owner"] = 1;
 ["location"] = {
@@ -14294,7 +14294,7 @@ return {
 
 };
 
-["393"] =  {
+[393] =  {
 ["type"] = 112;
 ["owner"] = 1;
 ["location"] = {
@@ -14311,7 +14311,7 @@ return {
 
 };
 
-["394"] =  {
+[394] =  {
 ["type"] = 14;
 ["owner"] = 1;
 ["location"] = {
@@ -14328,7 +14328,7 @@ return {
 
 };
 
-["395"] =  {
+[395] =  {
 ["type"] = 14;
 ["owner"] = 1;
 ["location"] = {
@@ -14345,7 +14345,7 @@ return {
 
 };
 
-["396"] =  {
+[396] =  {
 ["type"] = 13;
 ["owner"] = 0;
 ["location"] = {
@@ -14362,7 +14362,7 @@ return {
 
 };
 
-["397"] =  {
+[397] =  {
 ["type"] = 13;
 ["owner"] = 0;
 ["location"] = {
@@ -14379,7 +14379,7 @@ return {
 
 };
 
-["398"] =  {
+[398] =  {
 ["type"] = 7;
 ["owner"] = 1;
 ["location"] = {
@@ -14396,7 +14396,7 @@ return {
 
 };
 
-["399"] =  {
+[399] =  {
 ["type"] = 62;
 ["owner"] = 1;
 ["location"] = {
@@ -14413,7 +14413,7 @@ return {
 
 };
 
-["400"] =  {
+[400] =  {
 ["type"] = 110;
 ["owner"] = 1;
 ["location"] = {
@@ -14430,7 +14430,7 @@ return {
 
 };
 
-["401"] =  {
+[401] =  {
 ["type"] = 110;
 ["owner"] = 1;
 ["location"] = {
@@ -14447,7 +14447,7 @@ return {
 
 };
 
-["402"] =  {
+[402] =  {
 ["type"] = 110;
 ["owner"] = 1;
 ["location"] = {
@@ -14464,7 +14464,7 @@ return {
 
 };
 
-["403"] =  {
+[403] =  {
 ["type"] = 225;
 ["owner"] = 0;
 ["location"] = {
@@ -14481,7 +14481,7 @@ return {
 
 };
 
-["404"] =  {
+[404] =  {
 ["type"] = 217;
 ["owner"] = 0;
 ["location"] = {
@@ -14498,7 +14498,7 @@ return {
 
 };
 
-["405"] =  {
+[405] =  {
 ["type"] = 216;
 ["owner"] = 1;
 ["location"] = {
@@ -14515,7 +14515,7 @@ return {
 
 };
 
-["406"] =  {
+[406] =  {
 ["type"] = 216;
 ["owner"] = 1;
 ["location"] = {
@@ -14532,7 +14532,7 @@ return {
 
 };
 
-["407"] =  {
+[407] =  {
 ["type"] = 216;
 ["owner"] = 1;
 ["location"] = {
@@ -14549,7 +14549,7 @@ return {
 
 };
 
-["408"] =  {
+[408] =  {
 ["type"] = 61;
 ["owner"] = 0;
 ["location"] = {
@@ -14566,7 +14566,7 @@ return {
 
 };
 
-["409"] =  {
+[409] =  {
 ["type"] = 42;
 ["owner"] = 0;
 ["location"] = {
@@ -14583,7 +14583,7 @@ return {
 
 };
 
-["410"] =  {
+[410] =  {
 ["type"] = 218;
 ["owner"] = 1;
 ["location"] = {
@@ -14600,7 +14600,7 @@ return {
 
 };
 
-["411"] =  {
+[411] =  {
 ["type"] = 37;
 ["owner"] = 1;
 ["location"] = {
@@ -14617,7 +14617,7 @@ return {
 
 };
 
-["412"] =  {
+[412] =  {
 ["type"] = 37;
 ["owner"] = 1;
 ["location"] = {
@@ -14634,7 +14634,7 @@ return {
 
 };
 
-["413"] =  {
+[413] =  {
 ["type"] = 37;
 ["owner"] = 1;
 ["location"] = {
@@ -14651,7 +14651,7 @@ return {
 
 };
 
-["414"] =  {
+[414] =  {
 ["type"] = 37;
 ["owner"] = 1;
 ["location"] = {
@@ -14668,7 +14668,7 @@ return {
 
 };
 
-["415"] =  {
+[415] =  {
 ["type"] = 37;
 ["owner"] = 1;
 ["location"] = {
@@ -14685,7 +14685,7 @@ return {
 
 };
 
-["416"] =  {
+[416] =  {
 ["type"] = 64;
 ["owner"] = 1;
 ["location"] = {
@@ -14702,7 +14702,7 @@ return {
 
 };
 
-["417"] =  {
+[417] =  {
 ["type"] = 37;
 ["owner"] = 1;
 ["location"] = {
@@ -14719,7 +14719,7 @@ return {
 
 };
 
-["418"] =  {
+[418] =  {
 ["type"] = 38;
 ["owner"] = 1;
 ["location"] = {
@@ -14736,7 +14736,7 @@ return {
 
 };
 
-["419"] =  {
+[419] =  {
 ["type"] = 38;
 ["owner"] = 1;
 ["location"] = {
@@ -14753,7 +14753,7 @@ return {
 
 };
 
-["420"] =  {
+[420] =  {
 ["type"] = 228;
 ["owner"] = -1;
 ["location"] = {
@@ -14770,7 +14770,7 @@ return {
 
 };
 
-["421"] =  {
+[421] =  {
 ["type"] = 229;
 ["owner"] = -1;
 ["location"] = {
@@ -14787,7 +14787,7 @@ return {
 
 };
 
-["422"] =  {
+[422] =  {
 ["type"] = 23;
 ["owner"] = 0;
 ["location"] = {
@@ -14805,7 +14805,7 @@ return {
 
 };
 
-["423"] =  {
+[423] =  {
 ["type"] = 23;
 ["owner"] = 1;
 ["location"] = {
@@ -14823,7 +14823,7 @@ return {
 
 };
 
-["424"] =  {
+[424] =  {
 ["type"] = 104;
 ["owner"] = -1;
 ["location"] = {
@@ -14840,7 +14840,7 @@ return {
 
 };
 
-["425"] =  {
+[425] =  {
 ["type"] = 104;
 ["owner"] = -1;
 ["location"] = {
@@ -14857,7 +14857,7 @@ return {
 
 };
 
-["426"] =  {
+[426] =  {
 ["type"] = 129;
 ["owner"] = 0;
 ["location"] = {
@@ -14874,7 +14874,7 @@ return {
 
 };
 
-["427"] =  {
+[427] =  {
 ["type"] = 129;
 ["owner"] = 1;
 ["location"] = {
@@ -14891,7 +14891,7 @@ return {
 
 };
 
-["428"] =  {
+[428] =  {
 ["type"] = 23;
 ["owner"] = 0;
 ["location"] = {
@@ -14909,7 +14909,7 @@ return {
 
 };
 
-["429"] =  {
+[429] =  {
 ["type"] = 23;
 ["owner"] = 1;
 ["location"] = {
@@ -14927,7 +14927,7 @@ return {
 
 };
 
-["430"] =  {
+[430] =  {
 ["type"] = 23;
 ["owner"] = 2;
 ["location"] = {
@@ -14945,7 +14945,7 @@ return {
 
 };
 
-["431"] =  {
+[431] =  {
 ["type"] = 129;
 ["owner"] = 0;
 ["location"] = {
@@ -14962,7 +14962,7 @@ return {
 
 };
 
-["432"] =  {
+[432] =  {
 ["type"] = 129;
 ["owner"] = 1;
 ["location"] = {
@@ -14979,7 +14979,7 @@ return {
 
 };
 
-["433"] =  {
+[433] =  {
 ["type"] = 129;
 ["owner"] = 2;
 ["location"] = {
@@ -14996,7 +14996,7 @@ return {
 
 };
 
-["434"] =  {
+[434] =  {
 ["type"] = 129;
 ["owner"] = 0;
 ["location"] = {
@@ -15013,7 +15013,7 @@ return {
 
 };
 
-["435"] =  {
+[435] =  {
 ["type"] = 0;
 ["owner"] = 0;
 ["location"] = {
@@ -15030,7 +15030,7 @@ return {
 
 };
 
-["436"] =  {
+[436] =  {
 ["type"] = 0;
 ["owner"] = 0;
 ["location"] = {
@@ -15047,7 +15047,7 @@ return {
 
 };
 
-["437"] =  {
+[437] =  {
 ["type"] = 0;
 ["owner"] = 0;
 ["location"] = {
@@ -15064,7 +15064,7 @@ return {
 
 };
 
-["438"] =  {
+[438] =  {
 ["type"] = 0;
 ["owner"] = 0;
 ["location"] = {
@@ -15081,7 +15081,7 @@ return {
 
 };
 
-["439"] =  {
+[439] =  {
 ["type"] = 47;
 ["owner"] = 0;
 ["location"] = {
@@ -15098,7 +15098,7 @@ return {
 
 };
 
-["440"] =  {
+[440] =  {
 ["type"] = 47;
 ["owner"] = 0;
 ["location"] = {
@@ -15115,7 +15115,7 @@ return {
 
 };
 
-["441"] =  {
+[441] =  {
 ["type"] = 19;
 ["owner"] = 0;
 ["location"] = {
@@ -15132,7 +15132,7 @@ return {
 
 };
 
-["442"] =  {
+[442] =  {
 ["type"] = 19;
 ["owner"] = 0;
 ["location"] = {
@@ -15149,7 +15149,7 @@ return {
 
 };
 
-["443"] =  {
+[443] =  {
 ["type"] = 19;
 ["owner"] = 0;
 ["location"] = {
@@ -15166,7 +15166,7 @@ return {
 
 };
 
-["444"] =  {
+[444] =  {
 ["type"] = 61;
 ["owner"] = 0;
 ["location"] = {
@@ -15183,7 +15183,7 @@ return {
 
 };
 
-["445"] =  {
+[445] =  {
 ["type"] = 61;
 ["owner"] = 0;
 ["location"] = {
@@ -15200,7 +15200,7 @@ return {
 
 };
 
-["446"] =  {
+[446] =  {
 ["type"] = 61;
 ["owner"] = 0;
 ["location"] = {
@@ -15217,7 +15217,7 @@ return {
 
 };
 
-["447"] =  {
+[447] =  {
 ["type"] = 61;
 ["owner"] = 0;
 ["location"] = {
@@ -15234,7 +15234,7 @@ return {
 
 };
 
-["448"] =  {
+[448] =  {
 ["type"] = 61;
 ["owner"] = 0;
 ["location"] = {
@@ -15251,7 +15251,7 @@ return {
 
 };
 
-["449"] =  {
+[449] =  {
 ["type"] = 13;
 ["owner"] = 0;
 ["location"] = {
@@ -15268,7 +15268,7 @@ return {
 
 };
 
-["450"] =  {
+[450] =  {
 ["type"] = 13;
 ["owner"] = 0;
 ["location"] = {
@@ -15285,7 +15285,7 @@ return {
 
 };
 
-["451"] =  {
+[451] =  {
 ["type"] = 13;
 ["owner"] = 0;
 ["location"] = {
@@ -15302,7 +15302,7 @@ return {
 
 };
 
-["452"] =  {
+[452] =  {
 ["type"] = 87;
 ["owner"] = 1;
 ["location"] = {
@@ -15319,7 +15319,7 @@ return {
 
 };
 
-["453"] =  {
+[453] =  {
 ["type"] = 87;
 ["owner"] = 1;
 ["location"] = {
@@ -15336,7 +15336,7 @@ return {
 
 };
 
-["454"] =  {
+[454] =  {
 ["type"] = 87;
 ["owner"] = 1;
 ["location"] = {
@@ -15353,7 +15353,7 @@ return {
 
 };
 
-["455"] =  {
+[455] =  {
 ["type"] = 87;
 ["owner"] = 1;
 ["location"] = {
@@ -15370,7 +15370,7 @@ return {
 
 };
 
-["456"] =  {
+[456] =  {
 ["type"] = 87;
 ["owner"] = 1;
 ["location"] = {
@@ -15387,7 +15387,7 @@ return {
 
 };
 
-["457"] =  {
+[457] =  {
 ["type"] = 37;
 ["owner"] = 1;
 ["location"] = {
@@ -15404,7 +15404,7 @@ return {
 
 };
 
-["458"] =  {
+[458] =  {
 ["type"] = 37;
 ["owner"] = 1;
 ["location"] = {
@@ -15421,7 +15421,7 @@ return {
 
 };
 
-["459"] =  {
+[459] =  {
 ["type"] = 37;
 ["owner"] = 1;
 ["location"] = {
@@ -15438,7 +15438,7 @@ return {
 
 };
 
-["460"] =  {
+[460] =  {
 ["type"] = 37;
 ["owner"] = 1;
 ["location"] = {
@@ -15455,7 +15455,7 @@ return {
 
 };
 
-["461"] =  {
+[461] =  {
 ["type"] = 37;
 ["owner"] = 1;
 ["location"] = {
@@ -15472,7 +15472,7 @@ return {
 
 };
 
-["462"] =  {
+[462] =  {
 ["type"] = 37;
 ["owner"] = 1;
 ["location"] = {
@@ -15489,7 +15489,7 @@ return {
 
 };
 
-["463"] =  {
+[463] =  {
 ["type"] = 64;
 ["owner"] = 1;
 ["location"] = {
@@ -15506,7 +15506,7 @@ return {
 
 };
 
-["464"] =  {
+[464] =  {
 ["type"] = 64;
 ["owner"] = 1;
 ["location"] = {
@@ -15523,7 +15523,7 @@ return {
 
 };
 
-["465"] =  {
+[465] =  {
 ["type"] = 64;
 ["owner"] = 1;
 ["location"] = {
@@ -15540,7 +15540,7 @@ return {
 
 };
 
-["466"] =  {
+[466] =  {
 ["type"] = 64;
 ["owner"] = 1;
 ["location"] = {
@@ -15557,7 +15557,7 @@ return {
 
 };
 
-["467"] =  {
+[467] =  {
 ["type"] = 64;
 ["owner"] = 1;
 ["location"] = {
@@ -15574,7 +15574,7 @@ return {
 
 };
 
-["468"] =  {
+[468] =  {
 ["type"] = 64;
 ["owner"] = 1;
 ["location"] = {
@@ -15591,7 +15591,7 @@ return {
 
 };
 
-["469"] =  {
+[469] =  {
 ["type"] = 64;
 ["owner"] = 1;
 ["location"] = {
@@ -15608,7 +15608,7 @@ return {
 
 };
 
-["470"] =  {
+[470] =  {
 ["type"] = 64;
 ["owner"] = 1;
 ["location"] = {
@@ -15625,7 +15625,7 @@ return {
 
 };
 
-["471"] =  {
+[471] =  {
 ["type"] = 37;
 ["owner"] = 1;
 ["location"] = {
@@ -15642,7 +15642,7 @@ return {
 
 };
 
-["472"] =  {
+[472] =  {
 ["type"] = 64;
 ["owner"] = 1;
 ["location"] = {
@@ -15659,7 +15659,7 @@ return {
 
 };
 
-["473"] =  {
+[473] =  {
 ["type"] = 64;
 ["owner"] = 1;
 ["location"] = {
@@ -15676,7 +15676,7 @@ return {
 
 };
 
-["474"] =  {
+[474] =  {
 ["type"] = 266;
 ["owner"] = -1;
 ["location"] = {
@@ -15693,7 +15693,7 @@ return {
 
 };
 
-["475"] =  {
+[475] =  {
 ["type"] = 267;
 ["owner"] = -1;
 ["location"] = {
@@ -15710,7 +15710,7 @@ return {
 
 };
 
-["476"] =  {
+[476] =  {
 ["type"] = 23;
 ["owner"] = -1;
 ["location"] = {
@@ -15728,7 +15728,7 @@ return {
 
 };
 
-["477"] =  {
+[477] =  {
 ["type"] = 23;
 ["owner"] = -1;
 ["location"] = {
@@ -15746,7 +15746,7 @@ return {
 
 };
 
-["478"] =  {
+[478] =  {
 ["type"] = 104;
 ["owner"] = -1;
 ["location"] = {
@@ -15763,7 +15763,7 @@ return {
 
 };
 
-["479"] =  {
+[479] =  {
 ["type"] = 129;
 ["owner"] = 0;
 ["location"] = {
@@ -15780,7 +15780,7 @@ return {
 
 };
 
-["480"] =  {
+[480] =  {
 ["type"] = 151;
 ["owner"] = 0;
 ["location"] = {
@@ -15797,7 +15797,7 @@ return {
 
 };
 
-["481"] =  {
+[481] =  {
 ["type"] = 151;
 ["owner"] = 0;
 ["location"] = {
@@ -15814,7 +15814,7 @@ return {
 
 };
 
-["482"] =  {
+[482] =  {
 ["type"] = 151;
 ["owner"] = 0;
 ["location"] = {
@@ -15831,7 +15831,7 @@ return {
 
 };
 
-["483"] =  {
+[483] =  {
 ["type"] = 164;
 ["owner"] = 0;
 ["location"] = {
@@ -15848,7 +15848,7 @@ return {
 
 };
 
-["484"] =  {
+[484] =  {
 ["type"] = 164;
 ["owner"] = 0;
 ["location"] = {
@@ -15865,7 +15865,7 @@ return {
 
 };
 
-["485"] =  {
+[485] =  {
 ["type"] = 148;
 ["owner"] = 1;
 ["location"] = {
@@ -15882,7 +15882,7 @@ return {
 
 };
 
-["486"] =  {
+[486] =  {
 ["type"] = 270;
 ["owner"] = -1;
 ["location"] = {
@@ -15899,7 +15899,7 @@ return {
 
 };
 
-["487"] =  {
+[487] =  {
 ["type"] = 270;
 ["owner"] = -1;
 ["location"] = {
@@ -15916,7 +15916,7 @@ return {
 
 };
 
-["488"] =  {
+[488] =  {
 ["type"] = 266;
 ["owner"] = -1;
 ["location"] = {
@@ -15933,7 +15933,7 @@ return {
 
 };
 
-["489"] =  {
+[489] =  {
 ["type"] = 267;
 ["owner"] = -1;
 ["location"] = {
@@ -15950,7 +15950,7 @@ return {
 
 };
 
-["490"] =  {
+[490] =  {
 ["type"] = 23;
 ["owner"] = 0;
 ["location"] = {
@@ -15968,7 +15968,7 @@ return {
 
 };
 
-["491"] =  {
+[491] =  {
 ["type"] = 23;
 ["owner"] = 1;
 ["location"] = {
@@ -15986,7 +15986,7 @@ return {
 
 };
 
-["492"] =  {
+[492] =  {
 ["type"] = 270;
 ["owner"] = -1;
 ["location"] = {
@@ -16003,7 +16003,7 @@ return {
 
 };
 
-["493"] =  {
+[493] =  {
 ["type"] = 270;
 ["owner"] = -1;
 ["location"] = {
@@ -16020,7 +16020,7 @@ return {
 
 };
 
-["494"] =  {
+[494] =  {
 ["type"] = 270;
 ["owner"] = -1;
 ["location"] = {
@@ -16037,7 +16037,7 @@ return {
 
 };
 
-["495"] =  {
+[495] =  {
 ["type"] = 270;
 ["owner"] = -1;
 ["location"] = {
@@ -16054,7 +16054,7 @@ return {
 
 };
 
-["496"] =  {
+[496] =  {
 ["type"] = 104;
 ["owner"] = -1;
 ["location"] = {
@@ -16071,7 +16071,7 @@ return {
 
 };
 
-["497"] =  {
+[497] =  {
 ["type"] = 129;
 ["owner"] = 0;
 ["location"] = {
@@ -16088,7 +16088,7 @@ return {
 
 };
 
-["498"] =  {
+[498] =  {
 ["type"] = 129;
 ["owner"] = 1;
 ["location"] = {
@@ -16105,7 +16105,7 @@ return {
 
 };
 
-["499"] =  {
+[499] =  {
 ["type"] = -1;
 ["owner"] = -1;
 ["location"] = {
@@ -16122,7 +16122,7 @@ return {
 
 };
 
-["500"] =  {
+[500] =  {
 ["type"] = 0;
 ["owner"] = 0;
 ["location"] = {
@@ -16139,7 +16139,7 @@ return {
 
 };
 
-["501"] =  {
+[501] =  {
 ["type"] = 0;
 ["owner"] = 0;
 ["location"] = {
@@ -16156,7 +16156,7 @@ return {
 
 };
 
-["502"] =  {
+[502] =  {
 ["type"] = 24;
 ["owner"] = 0;
 ["location"] = {
@@ -16173,7 +16173,7 @@ return {
 
 };
 
-["503"] =  {
+[503] =  {
 ["type"] = 47;
 ["owner"] = 0;
 ["location"] = {
@@ -16190,7 +16190,7 @@ return {
 
 };
 
-["504"] =  {
+[504] =  {
 ["type"] = 23;
 ["owner"] = -1;
 ["location"] = {
@@ -16207,7 +16207,7 @@ return {
 
 };
 
-["505"] =  {
+[505] =  {
 ["type"] = 287;
 ["owner"] = 1;
 ["location"] = {
@@ -16224,7 +16224,7 @@ return {
 
 };
 
-["506"] =  {
+[506] =  {
 ["type"] = 0;
 ["owner"] = 0;
 ["location"] = {
@@ -16241,7 +16241,7 @@ return {
 
 };
 
-["507"] =  {
+[507] =  {
 ["type"] = 25;
 ["owner"] = 1;
 ["location"] = {
@@ -16258,7 +16258,7 @@ return {
 
 };
 
-["508"] =  {
+[508] =  {
 ["type"] = 25;
 ["owner"] = 1;
 ["location"] = {
@@ -16275,7 +16275,7 @@ return {
 
 };
 
-["509"] =  {
+[509] =  {
 ["type"] = 0;
 ["owner"] = 0;
 ["location"] = {
@@ -16292,7 +16292,7 @@ return {
 
 };
 
-["510"] =  {
+[510] =  {
 ["type"] = 61;
 ["owner"] = 0;
 ["location"] = {
@@ -16309,7 +16309,7 @@ return {
 
 };
 
-["511"] =  {
+[511] =  {
 ["type"] = 19;
 ["owner"] = 0;
 ["location"] = {
@@ -16326,7 +16326,7 @@ return {
 
 };
 
-["512"] =  {
+[512] =  {
 ["type"] = 13;
 ["owner"] = 0;
 ["location"] = {
@@ -16343,7 +16343,7 @@ return {
 
 };
 
-["513"] =  {
+[513] =  {
 ["type"] = 0;
 ["owner"] = 0;
 ["location"] = {
@@ -16360,7 +16360,7 @@ return {
 
 };
 
-["514"] =  {
+[514] =  {
 ["type"] = 24;
 ["owner"] = 0;
 ["location"] = {
@@ -16377,7 +16377,7 @@ return {
 
 };
 
-["515"] =  {
+[515] =  {
 ["type"] = 23;
 ["owner"] = 0;
 ["location"] = {
@@ -16394,7 +16394,7 @@ return {
 
 };
 
-["516"] =  {
+[516] =  {
 ["type"] = 287;
 ["owner"] = 1;
 ["location"] = {
@@ -16411,7 +16411,7 @@ return {
 
 };
 
-["517"] =  {
+[517] =  {
 ["type"] = 0;
 ["owner"] = 0;
 ["location"] = {
@@ -16428,7 +16428,7 @@ return {
 
 };
 
-["518"] =  {
+[518] =  {
 ["type"] = 23;
 ["owner"] = 0;
 ["location"] = {
@@ -16445,7 +16445,7 @@ return {
 
 };
 
-["519"] =  {
+[519] =  {
 ["type"] = 61;
 ["owner"] = 0;
 ["location"] = {
@@ -16462,7 +16462,7 @@ return {
 
 };
 
-["520"] =  {
+[520] =  {
 ["type"] = 24;
 ["owner"] = 0;
 ["location"] = {
@@ -16479,7 +16479,7 @@ return {
 
 };
 
-["521"] =  {
+[521] =  {
 ["type"] = 24;
 ["owner"] = 0;
 ["location"] = {
@@ -16496,7 +16496,7 @@ return {
 
 };
 
-["522"] =  {
+[522] =  {
 ["type"] = 13;
 ["owner"] = 0;
 ["location"] = {
@@ -16513,7 +16513,7 @@ return {
 
 };
 
-["523"] =  {
+[523] =  {
 ["type"] = 13;
 ["owner"] = 0;
 ["location"] = {
@@ -16530,7 +16530,7 @@ return {
 
 };
 
-["524"] =  {
+[524] =  {
 ["type"] = 25;
 ["owner"] = 1;
 ["location"] = {
@@ -16547,7 +16547,7 @@ return {
 
 };
 
-["525"] =  {
+[525] =  {
 ["type"] = 25;
 ["owner"] = 1;
 ["location"] = {
@@ -16564,7 +16564,7 @@ return {
 
 };
 
-["526"] =  {
+[526] =  {
 ["type"] = 25;
 ["owner"] = 1;
 ["location"] = {
@@ -16581,7 +16581,7 @@ return {
 
 };
 
-["527"] =  {
+[527] =  {
 ["type"] = 25;
 ["owner"] = 1;
 ["location"] = {
@@ -16598,7 +16598,7 @@ return {
 
 };
 
-["528"] =  {
+[528] =  {
 ["type"] = 25;
 ["owner"] = 1;
 ["location"] = {
@@ -16615,7 +16615,7 @@ return {
 
 };
 
-["529"] =  {
+[529] =  {
 ["type"] = 25;
 ["owner"] = 1;
 ["location"] = {
@@ -16632,7 +16632,7 @@ return {
 
 };
 
-["530"] =  {
+[530] =  {
 ["type"] = 25;
 ["owner"] = 1;
 ["location"] = {
@@ -16649,7 +16649,7 @@ return {
 
 };
 
-["531"] =  {
+[531] =  {
 ["type"] = 25;
 ["owner"] = 1;
 ["location"] = {
@@ -16666,7 +16666,7 @@ return {
 
 };
 
-["532"] =  {
+[532] =  {
 ["type"] = 25;
 ["owner"] = 1;
 ["location"] = {
@@ -16683,7 +16683,7 @@ return {
 
 };
 
-["533"] =  {
+[533] =  {
 ["type"] = 25;
 ["owner"] = 1;
 ["location"] = {
@@ -16700,7 +16700,7 @@ return {
 
 };
 
-["534"] =  {
+[534] =  {
 ["type"] = 0;
 ["owner"] = 0;
 ["location"] = {
@@ -16718,7 +16718,7 @@ return {
 
 };
 
-["535"] =  {
+[535] =  {
 ["type"] = 0;
 ["owner"] = 0;
 ["location"] = {
@@ -16736,7 +16736,7 @@ return {
 
 };
 
-["536"] =  {
+[536] =  {
 ["type"] = 0;
 ["owner"] = 0;
 ["location"] = {
@@ -16754,7 +16754,7 @@ return {
 
 };
 
-["537"] =  {
+[537] =  {
 ["type"] = 0;
 ["owner"] = 0;
 ["location"] = {
@@ -16772,7 +16772,7 @@ return {
 
 };
 
-["538"] =  {
+[538] =  {
 ["type"] = 0;
 ["owner"] = 0;
 ["location"] = {
@@ -16790,7 +16790,7 @@ return {
 
 };
 
-["539"] =  {
+[539] =  {
 ["type"] = 0;
 ["owner"] = 0;
 ["location"] = {
@@ -16808,7 +16808,7 @@ return {
 
 };
 
-["540"] =  {
+[540] =  {
 ["type"] = 0;
 ["owner"] = 0;
 ["location"] = {
@@ -16826,7 +16826,7 @@ return {
 
 };
 
-["541"] =  {
+[541] =  {
 ["type"] = 0;
 ["owner"] = 0;
 ["location"] = {
@@ -16844,7 +16844,7 @@ return {
 
 };
 
-["542"] =  {
+[542] =  {
 ["type"] = 0;
 ["owner"] = 0;
 ["location"] = {
@@ -16862,7 +16862,7 @@ return {
 
 };
 
-["543"] =  {
+[543] =  {
 ["type"] = 0;
 ["owner"] = 0;
 ["location"] = {
@@ -16880,7 +16880,7 @@ return {
 
 };
 
-["544"] =  {
+[544] =  {
 ["type"] = 0;
 ["owner"] = 0;
 ["location"] = {
@@ -16898,7 +16898,7 @@ return {
 
 };
 
-["545"] =  {
+[545] =  {
 ["type"] = 0;
 ["owner"] = 0;
 ["location"] = {
@@ -16916,7 +16916,7 @@ return {
 
 };
 
-["546"] =  {
+[546] =  {
 ["type"] = 0;
 ["owner"] = 0;
 ["location"] = {
@@ -16934,7 +16934,7 @@ return {
 
 };
 
-["547"] =  {
+[547] =  {
 ["type"] = 0;
 ["owner"] = 0;
 ["location"] = {
@@ -16952,7 +16952,7 @@ return {
 
 };
 
-["548"] =  {
+[548] =  {
 ["type"] = 0;
 ["owner"] = 0;
 ["location"] = {
@@ -16970,7 +16970,7 @@ return {
 
 };
 
-["549"] =  {
+[549] =  {
 ["type"] = 0;
 ["owner"] = 0;
 ["location"] = {
@@ -16988,7 +16988,7 @@ return {
 
 };
 
-["550"] =  {
+[550] =  {
 ["type"] = 0;
 ["owner"] = 0;
 ["location"] = {
@@ -17006,7 +17006,7 @@ return {
 
 };
 
-["551"] =  {
+[551] =  {
 ["type"] = 0;
 ["owner"] = 0;
 ["location"] = {
@@ -17024,7 +17024,7 @@ return {
 
 };
 
-["552"] =  {
+[552] =  {
 ["type"] = 0;
 ["owner"] = 0;
 ["location"] = {
@@ -17042,7 +17042,7 @@ return {
 
 };
 
-["553"] =  {
+[553] =  {
 ["type"] = 0;
 ["owner"] = 0;
 ["location"] = {
@@ -17060,7 +17060,7 @@ return {
 
 };
 
-["554"] =  {
+[554] =  {
 ["type"] = 0;
 ["owner"] = 0;
 ["location"] = {
@@ -17078,7 +17078,7 @@ return {
 
 };
 
-["555"] =  {
+[555] =  {
 ["type"] = 0;
 ["owner"] = 0;
 ["location"] = {
@@ -17096,7 +17096,7 @@ return {
 
 };
 
-["556"] =  {
+[556] =  {
 ["type"] = 0;
 ["owner"] = 0;
 ["location"] = {
@@ -17114,7 +17114,7 @@ return {
 
 };
 
-["557"] =  {
+[557] =  {
 ["type"] = 0;
 ["owner"] = 0;
 ["location"] = {
@@ -17132,7 +17132,7 @@ return {
 
 };
 
-["558"] =  {
+[558] =  {
 ["type"] = 0;
 ["owner"] = 0;
 ["location"] = {
@@ -17150,7 +17150,7 @@ return {
 
 };
 
-["559"] =  {
+[559] =  {
 ["type"] = 0;
 ["owner"] = 0;
 ["location"] = {
@@ -17168,7 +17168,7 @@ return {
 
 };
 
-["560"] =  {
+[560] =  {
 ["type"] = 0;
 ["owner"] = 0;
 ["location"] = {
@@ -17186,7 +17186,7 @@ return {
 
 };
 
-["561"] =  {
+[561] =  {
 ["type"] = 0;
 ["owner"] = 0;
 ["location"] = {
@@ -17204,7 +17204,7 @@ return {
 
 };
 
-["562"] =  {
+[562] =  {
 ["type"] = 0;
 ["owner"] = 0;
 ["location"] = {
@@ -17222,7 +17222,7 @@ return {
 
 };
 
-["563"] =  {
+[563] =  {
 ["type"] = 0;
 ["owner"] = 0;
 ["location"] = {
@@ -17240,7 +17240,7 @@ return {
 
 };
 
-["564"] =  {
+[564] =  {
 ["type"] = 0;
 ["owner"] = 0;
 ["location"] = {
@@ -17258,7 +17258,7 @@ return {
 
 };
 
-["565"] =  {
+[565] =  {
 ["type"] = 0;
 ["owner"] = 0;
 ["location"] = {
@@ -17276,7 +17276,7 @@ return {
 
 };
 
-["566"] =  {
+[566] =  {
 ["type"] = 0;
 ["owner"] = 0;
 ["location"] = {
@@ -17294,7 +17294,7 @@ return {
 
 };
 
-["567"] =  {
+[567] =  {
 ["type"] = 0;
 ["owner"] = 0;
 ["location"] = {
@@ -17312,7 +17312,7 @@ return {
 
 };
 
-["568"] =  {
+[568] =  {
 ["type"] = 0;
 ["owner"] = 0;
 ["location"] = {
@@ -17330,7 +17330,7 @@ return {
 
 };
 
-["569"] =  {
+[569] =  {
 ["type"] = 0;
 ["owner"] = 0;
 ["location"] = {
@@ -17348,7 +17348,7 @@ return {
 
 };
 
-["570"] =  {
+[570] =  {
 ["type"] = 0;
 ["owner"] = 0;
 ["location"] = {
@@ -17366,7 +17366,7 @@ return {
 
 };
 
-["571"] =  {
+[571] =  {
 ["type"] = 0;
 ["owner"] = 0;
 ["location"] = {
@@ -17384,7 +17384,7 @@ return {
 
 };
 
-["572"] =  {
+[572] =  {
 ["type"] = 0;
 ["owner"] = 0;
 ["location"] = {
@@ -17402,7 +17402,7 @@ return {
 
 };
 
-["573"] =  {
+[573] =  {
 ["type"] = 0;
 ["owner"] = 0;
 ["location"] = {
@@ -17420,7 +17420,7 @@ return {
 
 };
 
-["574"] =  {
+[574] =  {
 ["type"] = 0;
 ["owner"] = 0;
 ["location"] = {
@@ -17438,7 +17438,7 @@ return {
 
 };
 
-["575"] =  {
+[575] =  {
 ["type"] = 0;
 ["owner"] = 0;
 ["location"] = {
@@ -17456,7 +17456,7 @@ return {
 
 };
 
-["576"] =  {
+[576] =  {
 ["type"] = 0;
 ["owner"] = 0;
 ["location"] = {
@@ -17474,7 +17474,7 @@ return {
 
 };
 
-["577"] =  {
+[577] =  {
 ["type"] = 0;
 ["owner"] = 0;
 ["location"] = {
@@ -17492,7 +17492,7 @@ return {
 
 };
 
-["578"] =  {
+[578] =  {
 ["type"] = 0;
 ["owner"] = 0;
 ["location"] = {
@@ -17510,7 +17510,7 @@ return {
 
 };
 
-["579"] =  {
+[579] =  {
 ["type"] = 0;
 ["owner"] = 0;
 ["location"] = {
@@ -17528,7 +17528,7 @@ return {
 
 };
 
-["580"] =  {
+[580] =  {
 ["type"] = 1;
 ["owner"] = 2;
 ["location"] = {
@@ -17546,7 +17546,7 @@ return {
 
 };
 
-["581"] =  {
+[581] =  {
 ["type"] = 0;
 ["owner"] = 0;
 ["location"] = {
@@ -17564,7 +17564,7 @@ return {
 
 };
 
-["582"] =  {
+[582] =  {
 ["type"] = 0;
 ["owner"] = 0;
 ["location"] = {
@@ -17582,7 +17582,7 @@ return {
 
 };
 
-["583"] =  {
+[583] =  {
 ["type"] = 0;
 ["owner"] = 0;
 ["location"] = {
@@ -17600,7 +17600,7 @@ return {
 
 };
 
-["584"] =  {
+[584] =  {
 ["type"] = 0;
 ["owner"] = 0;
 ["location"] = {
@@ -17618,7 +17618,7 @@ return {
 
 };
 
-["585"] =  {
+[585] =  {
 ["type"] = 0;
 ["owner"] = 0;
 ["location"] = {
@@ -17636,7 +17636,7 @@ return {
 
 };
 
-["586"] =  {
+[586] =  {
 ["type"] = 0;
 ["owner"] = 0;
 ["location"] = {
@@ -17654,7 +17654,7 @@ return {
 
 };
 
-["587"] =  {
+[587] =  {
 ["type"] = 0;
 ["owner"] = 0;
 ["location"] = {
@@ -17672,7 +17672,7 @@ return {
 
 };
 
-["588"] =  {
+[588] =  {
 ["type"] = 0;
 ["owner"] = 0;
 ["location"] = {
@@ -17690,7 +17690,7 @@ return {
 
 };
 
-["589"] =  {
+[589] =  {
 ["type"] = 0;
 ["owner"] = 0;
 ["location"] = {
@@ -17708,7 +17708,7 @@ return {
 
 };
 
-["590"] =  {
+[590] =  {
 ["type"] = 0;
 ["owner"] = 0;
 ["location"] = {
@@ -17726,7 +17726,7 @@ return {
 
 };
 
-["591"] =  {
+[591] =  {
 ["type"] = 0;
 ["owner"] = 0;
 ["location"] = {
@@ -17744,7 +17744,7 @@ return {
 
 };
 
-["592"] =  {
+[592] =  {
 ["type"] = 0;
 ["owner"] = 0;
 ["location"] = {
@@ -17762,7 +17762,7 @@ return {
 
 };
 
-["593"] =  {
+[593] =  {
 ["type"] = 0;
 ["owner"] = 0;
 ["location"] = {
@@ -17780,7 +17780,7 @@ return {
 
 };
 
-["594"] =  {
+[594] =  {
 ["type"] = 0;
 ["owner"] = 0;
 ["location"] = {
@@ -17798,7 +17798,7 @@ return {
 
 };
 
-["595"] =  {
+[595] =  {
 ["type"] = 0;
 ["owner"] = 0;
 ["location"] = {
@@ -17816,7 +17816,7 @@ return {
 
 };
 
-["596"] =  {
+[596] =  {
 ["type"] = 0;
 ["owner"] = 0;
 ["location"] = {
@@ -17834,7 +17834,7 @@ return {
 
 };
 
-["597"] =  {
+[597] =  {
 ["type"] = 0;
 ["owner"] = 0;
 ["location"] = {
@@ -17852,7 +17852,7 @@ return {
 
 };
 
-["598"] =  {
+[598] =  {
 ["type"] = 0;
 ["owner"] = 0;
 ["location"] = {
@@ -17870,7 +17870,7 @@ return {
 
 };
 
-["599"] =  {
+[599] =  {
 ["type"] = 0;
 ["owner"] = 0;
 ["location"] = {
@@ -17890,7 +17890,7 @@ return {
 
 };
 ["Objects"] = {
-["000"] =  {
+[000] =  {
 ["name"] = "Cruiser";
 ["short-name"] = "CRUISER";
 ["note"] = "Development Notes";
@@ -17998,7 +17998,7 @@ return {
 
 };
 
-["001"] =  {
+[001] =  {
 ["name"] = "P-K Beam Cannon";
 ["short-name"] = "PKBEAM 1";
 ["note"] = "P-K Beam Cannon";
@@ -18036,7 +18036,7 @@ return {
 
 };
 
-["002"] =  {
+[002] =  {
 ["name"] = "P-K Beam";
 ["short-name"] = "PK BEAM";
 ["note"] = "P-K Beam";
@@ -18086,7 +18086,7 @@ return {
 
 };
 
-["003"] =  {
+[003] =  {
 ["name"] = "Fusion Pulse";
 ["short-name"] = "FPULSE 1";
 ["note"] = "Fusion Pulse";
@@ -18143,7 +18143,7 @@ return {
 
 };
 
-["004"] =  {
+[004] =  {
 ["name"] = "Rap F Pulse React";
 ["short-name"] = "RF PULSE";
 ["note"] = "Rap F Pulse React";
@@ -18181,7 +18181,7 @@ return {
 
 };
 
-["005"] =  {
+[005] =  {
 ["name"] = "Antimatter Pulse";
 ["short-name"] = "A PULSE";
 ["note"] = "Antimatter Pulse";
@@ -18240,7 +18240,7 @@ return {
 
 };
 
-["006"] =  {
+[006] =  {
 ["name"] = "Antimatter Pulse Reactor Type II";
 ["short-name"] = "APULSE 2";
 ["note"] = "Antimatter Pulse Reactor Type II";
@@ -18278,7 +18278,7 @@ return {
 
 };
 
-["007"] =  {
+[007] =  {
 ["name"] = "Cruiser";
 ["short-name"] = "CRUISER";
 ["note"] = "Cruiser";
@@ -18398,7 +18398,7 @@ return {
 
 };
 
-["008"] =  {
+[008] =  {
 ["name"] = "Energy Explosion";
 ["short-name"] = "EXPLSN";
 ["note"] = "Energy Explosion";
@@ -18444,7 +18444,7 @@ return {
 
 };
 
-["009"] =  {
+[009] =  {
 ["name"] = "Antimatter Pulse Type II";
 ["short-name"] = "APULSE 2";
 ["note"] = "Antimatter Pulse Type II";
@@ -18510,7 +18510,7 @@ return {
 
 };
 
-["010"] =  {
+[010] =  {
 ["name"] = "Combustion Explosion";
 ["short-name"] = "EXPLSN";
 ["note"] = "Combustion Explosion";
@@ -18558,7 +18558,7 @@ return {
 
 };
 
-["011"] =  {
+[011] =  {
 ["name"] = "Debris";
 ["short-name"] = "DEBRIS";
 ["note"] = "Debris";
@@ -18614,7 +18614,7 @@ return {
 
 };
 
-["012"] =  {
+[012] =  {
 ["name"] = "Debris";
 ["short-name"] = "DERBIS";
 ["note"] = "Debris";
@@ -18670,7 +18670,7 @@ return {
 
 };
 
-["013"] =  {
+[013] =  {
 ["name"] = "Fighter";
 ["short-name"] = "FIGHTER";
 ["note"] = "Fighter";
@@ -18765,7 +18765,7 @@ return {
 
 };
 
-["014"] =  {
+[014] =  {
 ["name"] = "Fighter";
 ["short-name"] = "FIGHTER";
 ["note"] = "Fighter";
@@ -18856,7 +18856,7 @@ return {
 
 };
 
-["015"] =  {
+[015] =  {
 ["name"] = "P-K Beam Cannon";
 ["short-name"] = "PKBEAM 1";
 ["note"] = "P-K Beam Cannon";
@@ -18894,7 +18894,7 @@ return {
 
 };
 
-["016"] =  {
+[016] =  {
 ["name"] = "P-K Beam";
 ["short-name"] = "PK BEAM";
 ["note"] = "P-K Beam";
@@ -18944,7 +18944,7 @@ return {
 
 };
 
-["017"] =  {
+[017] =  {
 ["name"] = "Gunship";
 ["short-name"] = "GUNSHIP";
 ["note"] = "Gunship";
@@ -19049,7 +19049,7 @@ return {
 
 };
 
-["018"] =  {
+[018] =  {
 ["name"] = "Antimatter Pulse Reactor";
 ["short-name"] = "APULSE 1";
 ["note"] = "Antimatter Pulse Reactor";
@@ -19087,7 +19087,7 @@ return {
 
 };
 
-["019"] =  {
+[019] =  {
 ["name"] = "Gunship";
 ["short-name"] = "GUNSHIP";
 ["note"] = "Gunship";
@@ -19200,7 +19200,7 @@ return {
 
 };
 
-["020"] =  {
+[020] =  {
 ["name"] = "Lepton Beam Cannon";
 ["short-name"] = "LBEAM 1";
 ["note"] = "Lepton Beam Cannon";
@@ -19238,7 +19238,7 @@ return {
 
 };
 
-["021"] =  {
+[021] =  {
 ["name"] = "Lepton Beam";
 ["short-name"] = "L BEAM";
 ["note"] = "Lepton Beam";
@@ -19289,7 +19289,7 @@ return {
 
 };
 
-["022"] =  {
+[022] =  {
 ["name"] = "Castaway Crew Member";
 ["short-name"] = "CREW";
 ["note"] = "Castaway Crew Member";
@@ -19344,7 +19344,7 @@ return {
 
 };
 
-["023"] =  {
+[023] =  {
 ["name"] = "Planet";
 ["short-name"] = "PLANET";
 ["note"] = "Planet";
@@ -19391,7 +19391,7 @@ return {
 
 };
 
-["024"] =  {
+[024] =  {
 ["name"] = "Transport";
 ["short-name"] = "TRANSPRT";
 ["note"] = "Transport";
@@ -19488,7 +19488,7 @@ return {
 
 };
 
-["025"] =  {
+[025] =  {
 ["name"] = "Transport";
 ["short-name"] = "TRANSPRT";
 ["note"] = "Transport";
@@ -19585,7 +19585,7 @@ return {
 
 };
 
-["026"] =  {
+[026] =  {
 ["name"] = "Antimatter Pulse";
 ["short-name"] = "A PULSE";
 ["note"] = "Antimatter Pulse";
@@ -19639,7 +19639,7 @@ return {
 
 };
 
-["027"] =  {
+[027] =  {
 ["name"] = "Sun";
 ["short-name"] = "SUN";
 ["note"] = "Sun";
@@ -19677,7 +19677,7 @@ return {
 
 };
 
-["028"] =  {
+[028] =  {
 ["name"] = "Energy";
 ["short-name"] = "ENERGY";
 ["note"] = "Energy";
@@ -19736,7 +19736,7 @@ return {
 
 };
 
-["029"] =  {
+[029] =  {
 ["name"] = "Large Explosion";
 ["short-name"] = "EXPLSN";
 ["note"] = "Large Explosion";
@@ -19786,7 +19786,7 @@ return {
 
 };
 
-["030"] =  {
+[030] =  {
 ["name"] = "Superlight Boosters";
 ["short-name"] = "LGHTDRVE";
 ["note"] = "Superlight Boosters";
@@ -19846,7 +19846,7 @@ return {
 
 };
 
-["031"] =  {
+[031] =  {
 ["name"] = "ProtoPulse Cannon";
 ["short-name"] = "PULSCANN";
 ["note"] = "ProtoPulse Cannon";
@@ -19885,7 +19885,7 @@ return {
 
 };
 
-["032"] =  {
+[032] =  {
 ["name"] = "Warp In Flare";
 ["short-name"] = "WARP IN";
 ["note"] = "Warp In Flare";
@@ -19931,7 +19931,7 @@ return {
 
 };
 
-["033"] =  {
+[033] =  {
 ["name"] = "Warp Out Flare";
 ["short-name"] = "WARP OUT";
 ["note"] = "Warp Out Flare";
@@ -19977,7 +19977,7 @@ return {
 
 };
 
-["034"] =  {
+[034] =  {
 ["name"] = "Large Hit Explosion";
 ["short-name"] = "EXPLSN";
 ["note"] = "Large Hit Explosion";
@@ -20023,7 +20023,7 @@ return {
 
 };
 
-["035"] =  {
+[035] =  {
 ["name"] = "Small Destruction Explosion";
 ["short-name"] = "EXPLSN";
 ["note"] = "Small Destruction Explosion";
@@ -20072,7 +20072,7 @@ return {
 
 };
 
-["036"] =  {
+[036] =  {
 ["name"] = "Sensor Relay Station";
 ["short-name"] = "RLAYSTTN";
 ["note"] = "Sensor Relay Station";
@@ -20126,7 +20126,7 @@ return {
 
 };
 
-["037"] =  {
+[037] =  {
 ["name"] = "Cruiser";
 ["short-name"] = "CRUISER";
 ["note"] = "Cruiser";
@@ -20221,7 +20221,7 @@ return {
 
 };
 
-["038"] =  {
+[038] =  {
 ["name"] = "Fighter";
 ["short-name"] = "FIGHTER";
 ["note"] = "Fighter";
@@ -20314,7 +20314,7 @@ return {
 
 };
 
-["039"] =  {
+[039] =  {
 ["name"] = "Concsv Pellet Gun";
 ["short-name"] = "CCPLTGUN";
 ["note"] = "Machine gun";
@@ -20352,7 +20352,7 @@ return {
 
 };
 
-["040"] =  {
+[040] =  {
 ["name"] = "Concussive Pellet";
 ["short-name"] = "CCPELLET";
 ["note"] = "Invisible Bullet";
@@ -20396,7 +20396,7 @@ return {
 
 };
 
-["041"] =  {
+[041] =  {
 ["name"] = "SL Transport";
 ["short-name"] = "TRANSPRT";
 ["note"] = "SL Transport";
@@ -20477,7 +20477,7 @@ return {
 
 };
 
-["042"] =  {
+[042] =  {
 ["name"] = "Escort";
 ["short-name"] = "ESCORT";
 ["note"] = "Escort";
@@ -20597,7 +20597,7 @@ return {
 
 };
 
-["043"] =  {
+[043] =  {
 ["name"] = "Protopulse";
 ["short-name"] = "PROPULS";
 ["note"] = "Protopulse";
@@ -20658,7 +20658,7 @@ return {
 
 };
 
-["044"] =  {
+[044] =  {
 ["name"] = "Twin Pulse Cannon";
 ["short-name"] = "TWNPPULS";
 ["note"] = "Twin Pulse Cannon";
@@ -20697,7 +20697,7 @@ return {
 
 };
 
-["045"] =  {
+[045] =  {
 ["name"] = "Carrier";
 ["short-name"] = "CARRIER";
 ["note"] = "Carrier";
@@ -20815,7 +20815,7 @@ return {
 
 };
 
-["046"] =  {
+[046] =  {
 ["name"] = "Launching Bay";
 ["short-name"] = "LANCHBAY";
 ["note"] = "Launching Bay";
@@ -20854,7 +20854,7 @@ return {
 
 };
 
-["047"] =  {
+[047] =  {
 ["name"] = "Carrier";
 ["short-name"] = "CARRIER";
 ["note"] = "Carrier";
@@ -20972,7 +20972,7 @@ return {
 
 };
 
-["048"] =  {
+[048] =  {
 ["name"] = "Launching Bay";
 ["short-name"] = "LANCHBAY";
 ["note"] = "Launching Bay";
@@ -21011,7 +21011,7 @@ return {
 
 };
 
-["049"] =  {
+[049] =  {
 ["name"] = "Cluster Cell";
 ["short-name"] = "CLSTRCEL";
 ["note"] = "Cluster Cell";
@@ -21067,7 +21067,7 @@ return {
 
 };
 
-["050"] =  {
+[050] =  {
 ["name"] = "ClusterCell Array";
 ["short-name"] = "CLSTRCEL";
 ["note"] = "ClusterCell Array";
@@ -21106,7 +21106,7 @@ return {
 
 };
 
-["051"] =  {
+[051] =  {
 ["name"] = "Debris";
 ["short-name"] = "DEBRIS";
 ["note"] = "Debris";
@@ -21164,7 +21164,7 @@ return {
 
 };
 
-["052"] =  {
+[052] =  {
 ["name"] = "Giant Explosion";
 ["short-name"] = "EXPLSN";
 ["note"] = "Giant Explosion";
@@ -21211,7 +21211,7 @@ return {
 
 };
 
-["053"] =  {
+[053] =  {
 ["name"] = "Missile Hit";
 ["short-name"] = "HIT";
 ["note"] = "Missile Hit";
@@ -21256,7 +21256,7 @@ return {
 
 };
 
-["054"] =  {
+[054] =  {
 ["name"] = "Defense Drone";
 ["short-name"] = "DEFDRONE";
 ["note"] = "Defense Drone";
@@ -21363,7 +21363,7 @@ return {
 
 };
 
-["055"] =  {
+[055] =  {
 ["name"] = "Rapid P-K Cannon";
 ["short-name"] = "PKBEAM 2";
 ["note"] = "Rapid P-K Cannon";
@@ -21401,7 +21401,7 @@ return {
 
 };
 
-["056"] =  {
+[056] =  {
 ["name"] = "Defense Drone";
 ["short-name"] = "DEFDRONE";
 ["note"] = "Defense Drone";
@@ -21509,7 +21509,7 @@ return {
 
 };
 
-["057"] =  {
+[057] =  {
 ["name"] = "Stealth Field";
 ["short-name"] = "STEALTH";
 ["note"] = "Stealth Field";
@@ -21547,7 +21547,7 @@ return {
 
 };
 
-["058"] =  {
+[058] =  {
 ["name"] = "Schooner";
 ["short-name"] = "SCHOONER";
 ["note"] = "Schooner";
@@ -21642,7 +21642,7 @@ return {
 
 };
 
-["059"] =  {
+[059] =  {
 ["name"] = "Schooner";
 ["short-name"] = "SCHOONER";
 ["note"] = "Schooner";
@@ -21738,7 +21738,7 @@ return {
 
 };
 
-["060"] =  {
+[060] =  {
 ["name"] = "F Pulse Reactor";
 ["short-name"] = "F PULSE";
 ["note"] = "F Pulse Reactor";
@@ -21776,7 +21776,7 @@ return {
 
 };
 
-["061"] =  {
+[061] =  {
 ["name"] = "Heavy Cruiser";
 ["short-name"] = "HVCRUISR";
 ["note"] = "Heavy Cruiser";
@@ -21896,7 +21896,7 @@ return {
 
 };
 
-["062"] =  {
+[062] =  {
 ["name"] = "Heavy Cruiser";
 ["short-name"] = "HVCRUISR";
 ["note"] = "Heavy Cruiser";
@@ -22016,7 +22016,7 @@ return {
 
 };
 
-["063"] =  {
+[063] =  {
 ["name"] = "Rap A Pulse React";
 ["short-name"] = "RPAPULSE";
 ["note"] = "Rap A Pulse React";
@@ -22054,7 +22054,7 @@ return {
 
 };
 
-["064"] =  {
+[064] =  {
 ["name"] = "Gunship";
 ["short-name"] = "GUNSHIP";
 ["note"] = "Gunship";
@@ -22161,7 +22161,7 @@ return {
 
 };
 
-["065"] =  {
+[065] =  {
 ["name"] = "Atomic Pulse Gun";
 ["short-name"] = "ATOMPLSE";
 ["note"] = "Atomic Pulse Gun";
@@ -22202,7 +22202,7 @@ return {
 
 };
 
-["066"] =  {
+[066] =  {
 ["name"] = "Atomic Pulse";
 ["short-name"] = "ATOMPLSE";
 ["note"] = "Atomic Pulse";
@@ -22276,7 +22276,7 @@ return {
 
 };
 
-["067"] =  {
+[067] =  {
 ["name"] = "Battleship";
 ["short-name"] = "BTTLSHIP";
 ["note"] = "Battleship";
@@ -22382,7 +22382,7 @@ return {
 
 };
 
-["068"] =  {
+[068] =  {
 ["name"] = "R-Plasma Launcher";
 ["short-name"] = "RPLASMA";
 ["note"] = "R-Plasma Launcher";
@@ -22422,7 +22422,7 @@ return {
 
 };
 
-["069"] =  {
+[069] =  {
 ["name"] = "R-Plasma";
 ["short-name"] = "RPLASMA";
 ["note"] = "R-Plasma";
@@ -22488,7 +22488,7 @@ return {
 
 };
 
-["070"] =  {
+[070] =  {
 ["name"] = "Z Beam Cannon";
 ["short-name"] = "Z BEAM";
 ["note"] = "Z Beam Cannon";
@@ -22527,7 +22527,7 @@ return {
 
 };
 
-["071"] =  {
+[071] =  {
 ["name"] = "Z Beam";
 ["short-name"] = "Z BEAM";
 ["note"] = "Z Beam";
@@ -22578,7 +22578,7 @@ return {
 
 };
 
-["072"] =  {
+[072] =  {
 ["name"] = "C Missile";
 ["short-name"] = "CMISSILE";
 ["note"] = "C Missile";
@@ -22651,7 +22651,7 @@ return {
 
 };
 
-["073"] =  {
+[073] =  {
 ["name"] = "C Missile Launch";
 ["short-name"] = "CMISSILE";
 ["note"] = "C Missile Launch";
@@ -22691,7 +22691,7 @@ return {
 
 };
 
-["074"] =  {
+[074] =  {
 ["name"] = "C Missiles(5)";
 ["short-name"] = "CMISSILE";
 ["note"] = "C Missiles(5)";
@@ -22731,7 +22731,7 @@ return {
 
 };
 
-["075"] =  {
+[075] =  {
 ["name"] = "Tractor Moor";
 ["short-name"] = "MOOR";
 ["note"] = "Tractor Moor";
@@ -22786,7 +22786,7 @@ return {
 
 };
 
-["076"] =  {
+[076] =  {
 ["name"] = "Alter Battleship";
 ["short-name"] = "ALTERTST";
 ["note"] = "Alter Battleship";
@@ -22824,7 +22824,7 @@ return {
 
 };
 
-["077"] =  {
+[077] =  {
 ["name"] = "Battleship-Moored";
 ["short-name"] = "BTTLSHIP";
 ["note"] = "Battleship-Moored";
@@ -22878,7 +22878,7 @@ return {
 
 };
 
-["078"] =  {
+[078] =  {
 ["name"] = "Border Drone";
 ["short-name"] = "BRDRDRNE";
 ["note"] = "Border Drone";
@@ -22979,7 +22979,7 @@ return {
 
 };
 
-["079"] =  {
+[079] =  {
 ["name"] = "Gas Explosion";
 ["short-name"] = "EXPLSN";
 ["note"] = "Gas Explosion";
@@ -23027,7 +23027,7 @@ return {
 
 };
 
-["080"] =  {
+[080] =  {
 ["name"] = "Astrominer";
 ["short-name"] = "ASTROMNR";
 ["note"] = "Astrominer";
@@ -23126,7 +23126,7 @@ return {
 
 };
 
-["081"] =  {
+[081] =  {
 ["name"] = "Lightwave Pulse";
 ["short-name"] = "L PULSE";
 ["note"] = "Lightwave Pulse";
@@ -23181,7 +23181,7 @@ return {
 
 };
 
-["082"] =  {
+[082] =  {
 ["name"] = "Lightwave Cannon";
 ["short-name"] = "L PULSE";
 ["note"] = "Lightwave Cannon";
@@ -23222,7 +23222,7 @@ return {
 
 };
 
-["083"] =  {
+[083] =  {
 ["name"] = "Asteroid";
 ["short-name"] = "ASTEROID";
 ["note"] = "Asteroid";
@@ -23284,7 +23284,7 @@ return {
 
 };
 
-["084"] =  {
+[084] =  {
 ["name"] = "Astroid Fragment";
 ["short-name"] = "ASTRFRGM";
 ["note"] = "Astroid Fragment";
@@ -23344,7 +23344,7 @@ return {
 
 };
 
-["085"] =  {
+[085] =  {
 ["name"] = "Asteroid Debris";
 ["short-name"] = "ASTRDBRS";
 ["note"] = "Asteroid Debris";
@@ -23408,7 +23408,7 @@ return {
 
 };
 
-["086"] =  {
+[086] =  {
 ["name"] = "Transport";
 ["short-name"] = "TRANSPRT";
 ["note"] = "Transport";
@@ -23504,7 +23504,7 @@ return {
 
 };
 
-["087"] =  {
+[087] =  {
 ["name"] = "Carrier";
 ["short-name"] = "CARRIER";
 ["note"] = "Carrier";
@@ -23621,7 +23621,7 @@ return {
 
 };
 
-["088"] =  {
+[088] =  {
 ["name"] = "Transport";
 ["short-name"] = "TRANSPRT";
 ["note"] = "Transport";
@@ -23734,7 +23734,7 @@ return {
 
 };
 
-["089"] =  {
+[089] =  {
 ["name"] = "Battlecruiser";
 ["short-name"] = "BTTLCRSR";
 ["note"] = "Battlecruiser";
@@ -23840,7 +23840,7 @@ return {
 
 };
 
-["090"] =  {
+[090] =  {
 ["name"] = "Clustercell 2";
 ["short-name"] = "CLSTR2";
 ["note"] = "Clustercell 2";
@@ -23897,7 +23897,7 @@ return {
 
 };
 
-["091"] =  {
+[091] =  {
 ["name"] = "Kamikaze";
 ["short-name"] = "KAMIKAZI";
 ["note"] = "Kamikaze";
@@ -23975,7 +23975,7 @@ return {
 
 };
 
-["092"] =  {
+[092] =  {
 ["name"] = "Launching Bay";
 ["short-name"] = "LAUNCHBY";
 ["note"] = "Launching Bay";
@@ -24014,7 +24014,7 @@ return {
 
 };
 
-["093"] =  {
+[093] =  {
 ["name"] = "Flak Drone";
 ["short-name"] = "FLCKDRON";
 ["note"] = "Flak Drone";
@@ -24118,7 +24118,7 @@ return {
 
 };
 
-["094"] =  {
+[094] =  {
 ["name"] = "Engineer Pod";
 ["short-name"] = "ENGINEER";
 ["note"] = "Engineer Pod";
@@ -24234,7 +24234,7 @@ return {
 
 };
 
-["095"] =  {
+[095] =  {
 ["name"] = "Engineer Pod";
 ["short-name"] = "ENGINEER";
 ["note"] = "Engineer Pod";
@@ -24349,7 +24349,7 @@ return {
 
 };
 
-["096"] =  {
+[096] =  {
 ["name"] = "Repulser";
 ["short-name"] = "REPULSER";
 ["note"] = "Rupulser";
@@ -24390,7 +24390,7 @@ return {
 
 };
 
-["097"] =  {
+[097] =  {
 ["name"] = "Repulser Beam";
 ["short-name"] = "REPULSE";
 ["note"] = "Repulser Beam";
@@ -24441,7 +24441,7 @@ return {
 
 };
 
-["098"] =  {
+[098] =  {
 ["name"] = "Assault Team";
 ["short-name"] = "ASLTTEAM";
 ["note"] = "Assault Team";
@@ -24481,7 +24481,7 @@ return {
 
 };
 
-["099"] =  {
+[099] =  {
 ["name"] = "EVA Trooper";
 ["short-name"] = "EVATROOP";
 ["note"] = "EVA Trooper";
@@ -24589,7 +24589,7 @@ return {
 
 };
 
-["100"] =  {
+[100] =  {
 ["name"] = "Station";
 ["short-name"] = "STATION";
 ["note"] = "Station";
@@ -24633,7 +24633,7 @@ return {
 
 };
 
-["101"] =  {
+[101] =  {
 ["name"] = "Assault Transport";
 ["short-name"] = "ASLTTRAN";
 ["note"] = "Assault Transport";
@@ -24768,7 +24768,7 @@ return {
 
 };
 
-["102"] =  {
+[102] =  {
 ["name"] = "Hand PK Beam";
 ["short-name"] = "HANDBEAM";
 ["note"] = "Hand PK Beam";
@@ -24808,7 +24808,7 @@ return {
 
 };
 
-["103"] =  {
+[103] =  {
 ["name"] = "PK Beam";
 ["short-name"] = "PK BEAM";
 ["note"] = "PK Beam";
@@ -24858,7 +24858,7 @@ return {
 
 };
 
-["104"] =  {
+[104] =  {
 ["name"] = "Bunker Station";
 ["short-name"] = "STATION";
 ["note"] = "Bunker Station";
@@ -24912,7 +24912,7 @@ return {
 
 };
 
-["105"] =  {
+[105] =  {
 ["name"] = "Flak Shell";
 ["short-name"] = "FLAKSHL";
 ["note"] = "Flak Shell";
@@ -24976,7 +24976,7 @@ return {
 
 };
 
-["106"] =  {
+[106] =  {
 ["name"] = "Flak Explosion";
 ["short-name"] = "FLAKEXP";
 ["note"] = "Flak Explosion";
@@ -25021,7 +25021,7 @@ return {
 
 };
 
-["107"] =  {
+[107] =  {
 ["name"] = "Flak";
 ["short-name"] = "FLAK";
 ["note"] = "Flak";
@@ -25078,7 +25078,7 @@ return {
 
 };
 
-["108"] =  {
+[108] =  {
 ["name"] = "Flak Artillery";
 ["short-name"] = "FLAKART";
 ["note"] = "Flak Artillery";
@@ -25119,7 +25119,7 @@ return {
 
 };
 
-["109"] =  {
+[109] =  {
 ["name"] = "Research Vessel";
 ["short-name"] = "RESEARCH";
 ["note"] = "Research Vessel";
@@ -25199,7 +25199,7 @@ return {
 
 };
 
-["110"] =  {
+[110] =  {
 ["name"] = "Cruiser";
 ["short-name"] = "CRUISER";
 ["note"] = "Cruiser";
@@ -25319,7 +25319,7 @@ return {
 
 };
 
-["111"] =  {
+[111] =  {
 ["name"] = "Moon";
 ["short-name"] = "MOON";
 ["note"] = "Moon";
@@ -25364,7 +25364,7 @@ return {
 
 };
 
-["112"] =  {
+[112] =  {
 ["name"] = "Fighter";
 ["short-name"] = "FIGHTER";
 ["note"] = "Fighter";
@@ -25455,7 +25455,7 @@ return {
 
 };
 
-["113"] =  {
+[113] =  {
 ["name"] = "Carrier";
 ["short-name"] = "CARRIER";
 ["note"] = "Carrier";
@@ -25573,7 +25573,7 @@ return {
 
 };
 
-["114"] =  {
+[114] =  {
 ["name"] = "Power Station";
 ["short-name"] = "POWERSTN";
 ["note"] = "Power Station";
@@ -25628,7 +25628,7 @@ return {
 
 };
 
-["115"] =  {
+[115] =  {
 ["name"] = "Orbital Shipyard";
 ["short-name"] = "ORBTYARD";
 ["note"] = "Orbital Shipyard";
@@ -25668,7 +25668,7 @@ return {
 
 };
 
-["116"] =  {
+[116] =  {
 ["name"] = "Battleship";
 ["short-name"] = "BTTLSHIP";
 ["note"] = "Battleship";
@@ -25771,7 +25771,7 @@ return {
 
 };
 
-["117"] =  {
+[117] =  {
 ["name"] = "Jump Gate Effect";
 ["short-name"] = "JUMPGATE";
 ["note"] = "Jump Gate Effect";
@@ -25817,7 +25817,7 @@ return {
 
 };
 
-["118"] =  {
+[118] =  {
 ["name"] = "Cargo Ship";
 ["short-name"] = "CARGO";
 ["note"] = "Cargo Ship";
@@ -25906,7 +25906,7 @@ return {
 
 };
 
-["119"] =  {
+[119] =  {
 ["name"] = "Assault Transport";
 ["short-name"] = "ASLTTRAN";
 ["note"] = "Assault Transport";
@@ -26042,7 +26042,7 @@ return {
 
 };
 
-["120"] =  {
+[120] =  {
 ["name"] = "Engineer Pod";
 ["short-name"] = "ENGINEER";
 ["note"] = "Engineer Pod";
@@ -26159,7 +26159,7 @@ return {
 
 };
 
-["121"] =  {
+[121] =  {
 ["name"] = "EVA Trooper";
 ["short-name"] = "EVATROOP";
 ["note"] = "EVA Trooper";
@@ -26266,7 +26266,7 @@ return {
 
 };
 
-["122"] =  {
+[122] =  {
 ["name"] = "Assault Team";
 ["short-name"] = "ASSAULT";
 ["note"] = "Assault Team";
@@ -26306,7 +26306,7 @@ return {
 
 };
 
-["123"] =  {
+[123] =  {
 ["name"] = "Retroburst";
 ["short-name"] = "RTROBRST";
 ["note"] = "Retroburst";
@@ -26344,7 +26344,7 @@ return {
 
 };
 
-["124"] =  {
+[124] =  {
 ["name"] = "Gunsmoke";
 ["short-name"] = "GUNSMOKE";
 ["note"] = "Gunsmoke";
@@ -26375,7 +26375,7 @@ return {
 
 };
 
-["125"] =  {
+[125] =  {
 ["name"] = "Luxury Liner";
 ["short-name"] = "LUXLINER";
 ["note"] = "Liner Disabled";
@@ -26437,7 +26437,7 @@ return {
 
 };
 
-["126"] =  {
+[126] =  {
 ["name"] = "Luxury Liner";
 ["short-name"] = "LUXLINER";
 ["note"] = "Luxury Liner";
@@ -26521,7 +26521,7 @@ return {
 
 };
 
-["127"] =  {
+[127] =  {
 ["name"] = "Tractor Tug";
 ["short-name"] = "TUG";
 ["note"] = "Tractor Tug";
@@ -26598,7 +26598,7 @@ return {
 
 };
 
-["128"] =  {
+[128] =  {
 ["name"] = "Escape Pod";
 ["short-name"] = "ESCPEPOD";
 ["note"] = "Escape Pod";
@@ -26672,7 +26672,7 @@ return {
 
 };
 
-["129"] =  {
+[129] =  {
 ["name"] = "Heavy Destroyer";
 ["short-name"] = "HVDSTRYR";
 ["note"] = "Heavy Destroyer";
@@ -26797,7 +26797,7 @@ return {
 
 };
 
-["130"] =  {
+[130] =  {
 ["name"] = "Fullerene Gun";
 ["short-name"] = "FULLPLSE";
 ["note"] = "Fullerene Gun";
@@ -26837,7 +26837,7 @@ return {
 
 };
 
-["131"] =  {
+[131] =  {
 ["name"] = "Fullerene Pulse";
 ["short-name"] = "FULLPLSE";
 ["note"] = "Fullerene Pulse";
@@ -26891,7 +26891,7 @@ return {
 
 };
 
-["132"] =  {
+[132] =  {
 ["name"] = "Launching Bay";
 ["short-name"] = "LNCHBAY";
 ["note"] = "Launching Bay";
@@ -26930,7 +26930,7 @@ return {
 
 };
 
-["133"] =  {
+[133] =  {
 ["name"] = "LR PK Beam";
 ["short-name"] = "LRPKMEAM";
 ["note"] = "LR PK Beam";
@@ -26974,7 +26974,7 @@ return {
 
 };
 
-["134"] =  {
+[134] =  {
 ["name"] = "LRPK Beam Cannon";
 ["short-name"] = "LRPKBEAM";
 ["note"] = "LRPK Beam Cannon";
@@ -27014,7 +27014,7 @@ return {
 
 };
 
-["135"] =  {
+[135] =  {
 ["name"] = "Magno Launcher";
 ["short-name"] = "MGNOPULS";
 ["note"] = "Magno Launcher";
@@ -27055,7 +27055,7 @@ return {
 
 };
 
-["136"] =  {
+[136] =  {
 ["name"] = "Magno Pulse";
 ["short-name"] = "MGNOPULS";
 ["note"] = "Magno Pulse";
@@ -27123,7 +27123,7 @@ return {
 
 };
 
-["137"] =  {
+[137] =  {
 ["name"] = "Jump Gate";
 ["short-name"] = "JUMPGATE";
 ["note"] = "Jump Gate";
@@ -27172,7 +27172,7 @@ return {
 
 };
 
-["138"] =  {
+[138] =  {
 ["name"] = "Gunship";
 ["short-name"] = "GUNSHIP";
 ["note"] = "Gunship";
@@ -27291,7 +27291,7 @@ return {
 
 };
 
-["139"] =  {
+[139] =  {
 ["name"] = "Assault Transport";
 ["short-name"] = "ASLTTRAN";
 ["note"] = "Assault Transport";
@@ -27427,7 +27427,7 @@ return {
 
 };
 
-["140"] =  {
+[140] =  {
 ["name"] = "Transport";
 ["short-name"] = "TRANSPRT";
 ["note"] = "Transport";
@@ -27540,7 +27540,7 @@ return {
 
 };
 
-["141"] =  {
+[141] =  {
 ["name"] = "Jump Gate Non";
 ["short-name"] = "JUMPNON";
 ["note"] = "Jump Gate Non";
@@ -27588,7 +27588,7 @@ return {
 
 };
 
-["142"] =  {
+[142] =  {
 ["name"] = "Cruiser";
 ["short-name"] = "CRUISER";
 ["note"] = "Cruiser";
@@ -27708,7 +27708,7 @@ return {
 
 };
 
-["143"] =  {
+[143] =  {
 ["name"] = "Rapid Inasa Pulse";
 ["short-name"] = "RAPDINSA";
 ["note"] = "Rapid Inasa Pulse Gun";
@@ -27748,7 +27748,7 @@ return {
 
 };
 
-["144"] =  {
+[144] =  {
 ["name"] = "Inasa Pulse";
 ["short-name"] = "INASPULS";
 ["note"] = "Inasa Pulse";
@@ -27803,7 +27803,7 @@ return {
 
 };
 
-["145"] =  {
+[145] =  {
 ["name"] = "ASB Beam Cannon";
 ["short-name"] = "ASB BEAM";
 ["note"] = "ASB Beam Cannon";
@@ -27843,7 +27843,7 @@ return {
 
 };
 
-["146"] =  {
+[146] =  {
 ["name"] = "ASB Beam";
 ["short-name"] = "ASB BEAM";
 ["note"] = "ASB Beam";
@@ -27888,7 +27888,7 @@ return {
 
 };
 
-["147"] =  {
+[147] =  {
 ["name"] = "Fighter";
 ["short-name"] = "FIGHTER";
 ["note"] = "Fighter";
@@ -27979,7 +27979,7 @@ return {
 
 };
 
-["148"] =  {
+[148] =  {
 ["name"] = "Carrier";
 ["short-name"] = "Carrier";
 ["note"] = "Carrier";
@@ -28097,7 +28097,7 @@ return {
 
 };
 
-["149"] =  {
+[149] =  {
 ["name"] = "Gunship";
 ["short-name"] = "GUNSHIP";
 ["note"] = "Gunship";
@@ -28204,7 +28204,7 @@ return {
 
 };
 
-["150"] =  {
+[150] =  {
 ["name"] = "Launching Bay";
 ["short-name"] = "LNCHBAY";
 ["note"] = "Launching Bay";
@@ -28243,7 +28243,7 @@ return {
 
 };
 
-["151"] =  {
+[151] =  {
 ["name"] = "Cruiser";
 ["short-name"] = "CRUISER";
 ["note"] = "Cruiser";
@@ -28351,7 +28351,7 @@ return {
 
 };
 
-["152"] =  {
+[152] =  {
 ["name"] = "Onas Pulse Gun";
 ["short-name"] = "ONASPULS";
 ["note"] = "Onas Pulse Gun";
@@ -28391,7 +28391,7 @@ return {
 
 };
 
-["153"] =  {
+[153] =  {
 ["name"] = "Onas Pulse";
 ["short-name"] = "ONASPULS";
 ["note"] = "Onas Pulse";
@@ -28446,7 +28446,7 @@ return {
 
 };
 
-["154"] =  {
+[154] =  {
 ["name"] = "Newo Beam Cannon";
 ["short-name"] = "NEWOBEAM";
 ["note"] = "Newo Beam Cannon";
@@ -28486,7 +28486,7 @@ return {
 
 };
 
-["155"] =  {
+[155] =  {
 ["name"] = "Newo Beam";
 ["short-name"] = "NEWOBEAM";
 ["note"] = "Newo Beam";
@@ -28531,7 +28531,7 @@ return {
 
 };
 
-["156"] =  {
+[156] =  {
 ["name"] = "Missile";
 ["short-name"] = "MISSILE";
 ["note"] = "Missile";
@@ -28598,7 +28598,7 @@ return {
 
 };
 
-["157"] =  {
+[157] =  {
 ["name"] = "A Missile Launch";
 ["short-name"] = "AMISSILE";
 ["note"] = "A Missile Launch";
@@ -28638,7 +28638,7 @@ return {
 
 };
 
-["158"] =  {
+[158] =  {
 ["name"] = "Holographic Decoy";
 ["short-name"] = "HOLODCOY";
 ["note"] = "Holographic Decoy";
@@ -28690,7 +28690,7 @@ return {
 
 };
 
-["159"] =  {
+[159] =  {
 ["name"] = "Holo Generator";
 ["short-name"] = "HLOGNRTR";
 ["note"] = "Holo Generator";
@@ -28730,7 +28730,7 @@ return {
 
 };
 
-["160"] =  {
+[160] =  {
 ["name"] = "Massive Device";
 ["short-name"] = "MASSDVCE";
 ["note"] = "Massive Device";
@@ -28785,7 +28785,7 @@ return {
 
 };
 
-["161"] =  {
+[161] =  {
 ["name"] = "Transport";
 ["short-name"] = "TRNSPORT";
 ["note"] = "Fleeing to Jump Gate";
@@ -28881,7 +28881,7 @@ return {
 
 };
 
-["162"] =  {
+[162] =  {
 ["name"] = "Protopulse 2 Gun";
 ["short-name"] = "PRTOPLSE";
 ["note"] = "Protopulse 2 Gun";
@@ -28921,7 +28921,7 @@ return {
 
 };
 
-["163"] =  {
+[163] =  {
 ["name"] = "Protopulse 2";
 ["short-name"] = "PRTOPLS2";
 ["note"] = "Protopulse 2";
@@ -28975,7 +28975,7 @@ return {
 
 };
 
-["164"] =  {
+[164] =  {
 ["name"] = "Cruiser";
 ["short-name"] = "CRUISER";
 ["note"] = "Cruiser";
@@ -29083,7 +29083,7 @@ return {
 
 };
 
-["165"] =  {
+[165] =  {
 ["name"] = "Fighter";
 ["short-name"] = "FIGHTER";
 ["note"] = "Fighter";
@@ -29178,7 +29178,7 @@ return {
 
 };
 
-["166"] =  {
+[166] =  {
 ["name"] = "Gunship";
 ["short-name"] = "GUNSHIP";
 ["note"] = "Gunship";
@@ -29291,7 +29291,7 @@ return {
 
 };
 
-["167"] =  {
+[167] =  {
 ["name"] = "Carrier";
 ["short-name"] = "CARRIER";
 ["note"] = "Carrier";
@@ -29417,7 +29417,7 @@ return {
 
 };
 
-["168"] =  {
+[168] =  {
 ["name"] = "Launching Bay";
 ["short-name"] = "LNCHBAY";
 ["note"] = "Launching Bay";
@@ -29456,7 +29456,7 @@ return {
 
 };
 
-["169"] =  {
+[169] =  {
 ["name"] = "Laser Cannon";
 ["short-name"] = "LASER";
 ["note"] = "Laser Cannon";
@@ -29494,7 +29494,7 @@ return {
 
 };
 
-["170"] =  {
+[170] =  {
 ["name"] = "Laser";
 ["short-name"] = "LASER";
 ["note"] = "Laser";
@@ -29538,7 +29538,7 @@ return {
 
 };
 
-["171"] =  {
+[171] =  {
 ["name"] = "Rapid Magneto";
 ["short-name"] = "MGNTOPLS";
 ["note"] = "Rapid Magneto";
@@ -29578,7 +29578,7 @@ return {
 
 };
 
-["172"] =  {
+[172] =  {
 ["name"] = "Magneto Pulse";
 ["short-name"] = "MGNOPULS";
 ["note"] = "Magneto Pulse";
@@ -29632,7 +29632,7 @@ return {
 
 };
 
-["173"] =  {
+[173] =  {
 ["name"] = "Magneto Pulse Gun";
 ["short-name"] = "MGNTOPLS";
 ["note"] = "Magneto Pulse Gun";
@@ -29672,7 +29672,7 @@ return {
 
 };
 
-["174"] =  {
+[174] =  {
 ["name"] = "Transport";
 ["short-name"] = "TRANSPRT";
 ["note"] = "Transport -- special, for chapter 19";
@@ -29769,7 +29769,7 @@ return {
 
 };
 
-["175"] =  {
+[175] =  {
 ["name"] = "Laser Turret";
 ["short-name"] = "LSRTURRT";
 ["note"] = "Laser Turret";
@@ -29810,7 +29810,7 @@ return {
 
 };
 
-["176"] =  {
+[176] =  {
 ["name"] = "Laser";
 ["short-name"] = "LASER";
 ["note"] = "Laser";
@@ -29855,7 +29855,7 @@ return {
 
 };
 
-["177"] =  {
+[177] =  {
 ["name"] = "Transport";
 ["short-name"] = "TRANSPRT";
 ["note"] = "Transport";
@@ -29951,7 +29951,7 @@ return {
 
 };
 
-["178"] =  {
+[178] =  {
 ["name"] = "Transport";
 ["short-name"] = "TRANSPRT";
 ["note"] = "Transport";
@@ -30048,7 +30048,7 @@ return {
 
 };
 
-["179"] =  {
+[179] =  {
 ["name"] = "Transport";
 ["short-name"] = "TRANSPRT";
 ["note"] = "Transport";
@@ -30138,7 +30138,7 @@ return {
 
 };
 
-["180"] =  {
+[180] =  {
 ["name"] = "Gate Ship";
 ["short-name"] = "GATESHIP";
 ["note"] = "Normal [usually has 198 for Special Weapon, health of 80000]";
@@ -30233,7 +30233,7 @@ return {
 
 };
 
-["181"] =  {
+[181] =  {
 ["name"] = "Modified Cruiser";
 ["short-name"] = "MODCRSR";
 ["note"] = "Modified Cruiser";
@@ -30352,7 +30352,7 @@ return {
 
 };
 
-["182"] =  {
+[182] =  {
 ["name"] = "Asteroid Shoot Up";
 ["short-name"] = "ASTRSHOT";
 ["note"] = "Asteroid Shoot Up";
@@ -30387,7 +30387,7 @@ return {
 
 };
 
-["183"] =  {
+[183] =  {
 ["name"] = "Jump Effect Large";
 ["short-name"] = "JUMPGATE";
 ["note"] = "Jump Effect Large";
@@ -30433,7 +30433,7 @@ return {
 
 };
 
-["184"] =  {
+[184] =  {
 ["name"] = "Asteroid";
 ["short-name"] = "ASTEROID";
 ["note"] = "Asteroid, regular";
@@ -30505,7 +30505,7 @@ return {
 
 };
 
-["185"] =  {
+[185] =  {
 ["name"] = "Ast Shoot Down";
 ["short-name"] = "ASSHTDWN";
 ["note"] = "Ast Shoot Down";
@@ -30540,7 +30540,7 @@ return {
 
 };
 
-["186"] =  {
+[186] =  {
 ["name"] = "Enemy Shooter Obj";
 ["short-name"] = "ENSHTOBJ";
 ["note"] = "Enemy Shooter Obj";
@@ -30576,7 +30576,7 @@ return {
 
 };
 
-["187"] =  {
+[187] =  {
 ["name"] = "Enemy Shooter Wpn";
 ["short-name"] = "ENSHTWPN";
 ["note"] = "Enemy Shooter Wpn";
@@ -30615,7 +30615,7 @@ return {
 
 };
 
-["188"] =  {
+[188] =  {
 ["name"] = "Target Drone";
 ["short-name"] = "TRGTDRNE";
 ["note"] = "Target Drone";
@@ -30704,7 +30704,7 @@ return {
 
 };
 
-["189"] =  {
+[189] =  {
 ["name"] = "Zerbilite";
 ["short-name"] = "ZRBILITE";
 ["note"] = "Zerbilite";
@@ -30786,7 +30786,7 @@ return {
 
 };
 
-["190"] =  {
+[190] =  {
 ["name"] = "Asteroid Fragment";
 ["short-name"] = "FRAGMENT";
 ["note"] = "Asteroid Fragment";
@@ -30845,7 +30845,7 @@ return {
 
 };
 
-["191"] =  {
+[191] =  {
 ["name"] = "Asteroid Debris";
 ["short-name"] = "DEBRIS";
 ["note"] = "Asteroid Debris";
@@ -30908,7 +30908,7 @@ return {
 
 };
 
-["192"] =  {
+[192] =  {
 ["name"] = "Shrikeolator";
 ["short-name"] = "SHRKOLTR";
 ["note"] = "Pushes you far far away";
@@ -30949,7 +30949,7 @@ return {
 
 };
 
-["193"] =  {
+[193] =  {
 ["name"] = "Temp Pulse";
 ["short-name"] = "TEMPPLSE";
 ["note"] = "Temp Pulse";
@@ -31019,7 +31019,7 @@ return {
 
 };
 
-["194"] =  {
+[194] =  {
 ["name"] = "Large Energy Exp";
 ["short-name"] = "ENRGYEXP";
 ["note"] = "Large Energy Exp";
@@ -31065,7 +31065,7 @@ return {
 
 };
 
-["195"] =  {
+[195] =  {
 ["name"] = "Nastiroid";
 ["short-name"] = "NASTROID";
 ["note"] = "Nastiroid";
@@ -31134,7 +31134,7 @@ return {
 
 };
 
-["196"] =  {
+[196] =  {
 ["name"] = "Nastiroid Shooter";
 ["short-name"] = "NSTSHOOT";
 ["note"] = "Nastiroid Shooter";
@@ -31169,7 +31169,7 @@ return {
 
 };
 
-["197"] =  {
+[197] =  {
 ["name"] = "Electronic Jam";
 ["short-name"] = "ELCTJAM";
 ["note"] = "Electronic Jamming Device";
@@ -31210,7 +31210,7 @@ return {
 
 };
 
-["198"] =  {
+[198] =  {
 ["name"] = "Inert Beam Cannon";
 ["short-name"] = "INRTBEAM";
 ["note"] = "Inert Beam Cannon";
@@ -31251,7 +31251,7 @@ return {
 
 };
 
-["199"] =  {
+[199] =  {
 ["name"] = "Inert PK Beam";
 ["short-name"] = "INRTBEAM";
 ["note"] = "Inert PK Beam";
@@ -31296,7 +31296,7 @@ return {
 
 };
 
-["200"] =  {
+[200] =  {
 ["name"] = "Zerbilite Spawn";
 ["short-name"] = "ZERBLITE";
 ["note"] = "Zerbilite Spawn";
@@ -31380,7 +31380,7 @@ return {
 
 };
 
-["201"] =  {
+[201] =  {
 ["name"] = "Target Drone Dead";
 ["short-name"] = "TRGTDRNE";
 ["note"] = "Target Drone Dead";
@@ -31430,7 +31430,7 @@ return {
 
 };
 
-["202"] =  {
+[202] =  {
 ["name"] = "Practice Drone";
 ["short-name"] = "PRCTCDRN";
 ["note"] = "Practice Drone";
@@ -31510,7 +31510,7 @@ return {
 
 };
 
-["203"] =  {
+[203] =  {
 ["name"] = "Cruiser";
 ["short-name"] = "CRUISER";
 ["note"] = "Practice Active";
@@ -31606,7 +31606,7 @@ return {
 
 };
 
-["204"] =  {
+[204] =  {
 ["name"] = "Cruiser Dead";
 ["short-name"] = "CRUISER";
 ["note"] = "Practice Inactive";
@@ -31659,7 +31659,7 @@ return {
 
 };
 
-["205"] =  {
+[205] =  {
 ["name"] = "Human";
 ["short-name"] = "HUMAN";
 ["note"] = "Needs rescuing, Not Waving";
@@ -31739,7 +31739,7 @@ return {
 
 };
 
-["206"] =  {
+[206] =  {
 ["name"] = "Destroyer";
 ["short-name"] = "DESTROYR";
 ["note"] = "Can Rescue";
@@ -31866,7 +31866,7 @@ return {
 
 };
 
-["207"] =  {
+[207] =  {
 ["name"] = "Human";
 ["short-name"] = "HUMAN";
 ["note"] = "exiting to base";
@@ -31932,7 +31932,7 @@ return {
 
 };
 
-["208"] =  {
+[208] =  {
 ["name"] = "Human";
 ["short-name"] = "HUMAN";
 ["note"] = "Human needs rescuing (waving)";
@@ -32002,7 +32002,7 @@ return {
 
 };
 
-["209"] =  {
+[209] =  {
 ["name"] = "Lab";
 ["short-name"] = "Lab";
 ["note"] = "Burning";
@@ -32042,7 +32042,7 @@ return {
 
 };
 
-["210"] =  {
+[210] =  {
 ["name"] = "Lab";
 ["short-name"] = "LAB";
 ["note"] = "Fresh";
@@ -32087,7 +32087,7 @@ return {
 
 };
 
-["211"] =  {
+[211] =  {
 ["name"] = "Giant Explosion";
 ["short-name"] = "EXPLOSN";
 ["note"] = "Debris-less";
@@ -32134,7 +32134,7 @@ return {
 
 };
 
-["212"] =  {
+[212] =  {
 ["name"] = "Obiard";
 ["short-name"] = "OBIARD";
 ["note"] = "Needs rescuing, turning";
@@ -32218,7 +32218,7 @@ return {
 
 };
 
-["213"] =  {
+[213] =  {
 ["name"] = "Obiard";
 ["short-name"] = "OBIARD";
 ["note"] = "Needs rescuing, waving";
@@ -32292,7 +32292,7 @@ return {
 
 };
 
-["214"] =  {
+[214] =  {
 ["name"] = "Obiard";
 ["short-name"] = "OBIARD";
 ["note"] = "Returning to Base";
@@ -32358,7 +32358,7 @@ return {
 
 };
 
-["215"] =  {
+[215] =  {
 ["name"] = "Lab";
 ["short-name"] = "LAB";
 ["note"] = "Gaitori, Burning";
@@ -32398,7 +32398,7 @@ return {
 
 };
 
-["216"] =  {
+[216] =  {
 ["name"] = "Lab";
 ["short-name"] = "LAB";
 ["note"] = "Gaitori, Fresh (Not Burning)";
@@ -32443,7 +32443,7 @@ return {
 
 };
 
-["217"] =  {
+[217] =  {
 ["name"] = "Transport";
 ["short-name"] = "TRANSPRT";
 ["note"] = "Can Pick Up Guys";
@@ -32543,7 +32543,7 @@ return {
 
 };
 
-["218"] =  {
+[218] =  {
 ["name"] = "Enmy Object Shoot";
 ["short-name"] = "ENOBJSHT";
 ["note"] = "Gaitori";
@@ -32579,7 +32579,7 @@ return {
 
 };
 
-["219"] =  {
+[219] =  {
 ["name"] = "Enemy Object Wpn";
 ["short-name"] = "ENOBJWPN";
 ["note"] = "Gaitor";
@@ -32618,7 +32618,7 @@ return {
 
 };
 
-["220"] =  {
+[220] =  {
 ["name"] = "Gate Ship";
 ["short-name"] = "GATESHIP";
 ["note"] = "Blowing up &amp; Dying Left &amp; Right";
@@ -32689,7 +32689,7 @@ return {
 
 };
 
-["221"] =  {
+[221] =  {
 ["name"] = "Super Nova";
 ["short-name"] = "SUPRNOVA";
 ["note"] = "Gate Ship Explodes";
@@ -32742,7 +32742,7 @@ return {
 
 };
 
-["222"] =  {
+[222] =  {
 ["name"] = "Carrier";
 ["short-name"] = "Carrier";
 ["note"] = "Modified";
@@ -32867,7 +32867,7 @@ return {
 
 };
 
-["223"] =  {
+[223] =  {
 ["name"] = "Gate Ship";
 ["short-name"] = "GATESHIP";
 ["note"] = "Instead of dying, opens up jump gate &amp; escapes (health 40000)";
@@ -32982,7 +32982,7 @@ return {
 
 };
 
-["224"] =  {
+[224] =  {
 ["name"] = "Gate Ship";
 ["short-name"] = "GATESHIP";
 ["note"] = "Going through Jump Gate";
@@ -33059,7 +33059,7 @@ return {
 
 };
 
-["225"] =  {
+[225] =  {
 ["name"] = "Passenger Liner";
 ["short-name"] = "LINER";
 ["note"] = "Receives Hostages";
@@ -33103,7 +33103,7 @@ return {
 
 };
 
-["226"] =  {
+[226] =  {
 ["name"] = "KL Beam Cannon";
 ["short-name"] = "KLBEAM";
 ["note"] = "Identical to #2, really";
@@ -33143,7 +33143,7 @@ return {
 
 };
 
-["227"] =  {
+[227] =  {
 ["name"] = "Kinetic Laser";
 ["short-name"] = "KLBEAM";
 ["note"] = "Same as #3, except sound";
@@ -33193,7 +33193,7 @@ return {
 
 };
 
-["228"] =  {
+[228] =  {
 ["name"] = "Ast Shoot Up Lite";
 ["short-name"] = "ASTSHOOT";
 ["note"] = "For Net Level 1 (Rock &amp; Rock)";
@@ -33228,7 +33228,7 @@ return {
 
 };
 
-["229"] =  {
+[229] =  {
 ["name"] = "Ast Shoot Down Lt";
 ["short-name"] = "ASTSHTDN";
 ["note"] = "For Net Level 1 (Rock &amp; Rock)";
@@ -33263,7 +33263,7 @@ return {
 
 };
 
-["230"] =  {
+[230] =  {
 ["name"] = "Heavy Destroyer";
 ["short-name"] = "HVDSTRYR";
 ["note"] = "Heavy Destroyer";
@@ -33387,7 +33387,7 @@ return {
 
 };
 
-["231"] =  {
+[231] =  {
 ["name"] = "Quasimatter Gun";
 ["short-name"] = "QUASMTTR";
 ["note"] = "Quasimatter Gun";
@@ -33427,7 +33427,7 @@ return {
 
 };
 
-["232"] =  {
+[232] =  {
 ["name"] = "Quasimatter Pulse";
 ["short-name"] = "QSIPULSE";
 ["note"] = "Quasimatter Pulse";
@@ -33481,7 +33481,7 @@ return {
 
 };
 
-["233"] =  {
+[233] =  {
 ["name"] = "Quasimatter Exp";
 ["short-name"] = "QUASEXPL";
 ["note"] = "Quasimatter Explosion";
@@ -33515,7 +33515,7 @@ return {
 
 };
 
-["234"] =  {
+[234] =  {
 ["name"] = "Heavy Destroyer";
 ["short-name"] = "HVDSTRYR";
 ["note"] = "Heavy Destroyer";
@@ -33639,7 +33639,7 @@ return {
 
 };
 
-["235"] =  {
+[235] =  {
 ["name"] = "C-Form Cannon";
 ["short-name"] = "CFORMCNN";
 ["note"] = "Charged Form Cannon";
@@ -33679,7 +33679,7 @@ return {
 
 };
 
-["236"] =  {
+[236] =  {
 ["name"] = "Charged Form";
 ["short-name"] = "CHRGFORM";
 ["note"] = "Charged Form";
@@ -33733,7 +33733,7 @@ return {
 
 };
 
-["237"] =  {
+[237] =  {
 ["name"] = "Heavy Destroyer";
 ["short-name"] = "HVDSTRYR";
 ["note"] = "Salrilian Heavy Destroyer";
@@ -33857,7 +33857,7 @@ return {
 
 };
 
-["238"] =  {
+[238] =  {
 ["name"] = "Chronon Prtcl Gun";
 ["short-name"] = "CHRNNPRT";
 ["note"] = "Chronon Particle Gun";
@@ -33897,7 +33897,7 @@ return {
 
 };
 
-["239"] =  {
+[239] =  {
 ["name"] = "Chronon Particle";
 ["short-name"] = "CHRNNPRT";
 ["note"] = "Untitled";
@@ -33951,7 +33951,7 @@ return {
 
 };
 
-["240"] =  {
+[240] =  {
 ["name"] = "Heavy Destroyer";
 ["short-name"] = "HVDSTRYR";
 ["note"] = "Human Heavy Destroyer";
@@ -34075,7 +34075,7 @@ return {
 
 };
 
-["241"] =  {
+[241] =  {
 ["name"] = "Phtorctr Pls Cann";
 ["short-name"] = "PHTOPULS";
 ["note"] = "Photoreactor Pulse Cannon";
@@ -34115,7 +34115,7 @@ return {
 
 };
 
-["242"] =  {
+[242] =  {
 ["name"] = "Photoreactor Puls";
 ["short-name"] = "PHTOPULS";
 ["note"] = "Photoreactor Pulse";
@@ -34169,7 +34169,7 @@ return {
 
 };
 
-["243"] =  {
+[243] =  {
 ["name"] = "Heavy Destroyer";
 ["short-name"] = "HVDSTRYR";
 ["note"] = "Gaitori Heavy Destroyer";
@@ -34290,7 +34290,7 @@ return {
 
 };
 
-["244"] =  {
+[244] =  {
 ["name"] = "Neutron Pulse Gun";
 ["short-name"] = "NEUTRON";
 ["note"] = "Neutron Pulse Gun";
@@ -34330,7 +34330,7 @@ return {
 
 };
 
-["245"] =  {
+[245] =  {
 ["name"] = "Neutron Pulse";
 ["short-name"] = "NEUTRON";
 ["note"] = "Neutron Pulse";
@@ -34384,7 +34384,7 @@ return {
 
 };
 
-["246"] =  {
+[246] =  {
 ["name"] = "Assault Transport";
 ["short-name"] = "ASLTTRAN";
 ["note"] = "Gaitori Assault Transport";
@@ -34518,7 +34518,7 @@ return {
 
 };
 
-["247"] =  {
+[247] =  {
 ["name"] = "Assault Team";
 ["short-name"] = "ASLTTEAM";
 ["note"] = "Gaitori Assault Team";
@@ -34558,7 +34558,7 @@ return {
 
 };
 
-["248"] =  {
+[248] =  {
 ["name"] = "EVA Trooper";
 ["short-name"] = "EVAT";
 ["note"] = "Gaitori Extra-vehicular Assault Trooper";
@@ -34665,7 +34665,7 @@ return {
 
 };
 
-["249"] =  {
+[249] =  {
 ["name"] = "Assault Transport";
 ["short-name"] = "ASLTTRAN";
 ["note"] = "Human Assault Transport";
@@ -34798,7 +34798,7 @@ return {
 
 };
 
-["250"] =  {
+[250] =  {
 ["name"] = "Assault Transport";
 ["short-name"] = "ASLTTRAN";
 ["note"] = "Audemedon Assault Transport";
@@ -34932,7 +34932,7 @@ return {
 
 };
 
-["251"] =  {
+[251] =  {
 ["name"] = "Assault Team";
 ["short-name"] = "ASLTTEAM";
 ["note"] = "Audemedon Assault Team";
@@ -34972,7 +34972,7 @@ return {
 
 };
 
-["252"] =  {
+[252] =  {
 ["name"] = "EVA Trooper";
 ["short-name"] = "EVAT";
 ["note"] = "Audemedon Extra-vehicular Assault Trooper";
@@ -35079,7 +35079,7 @@ return {
 
 };
 
-["253"] =  {
+[253] =  {
 ["name"] = "EVA Trooper";
 ["short-name"] = "EVAT";
 ["note"] = "Salrilian Extra-vehicular Assault Trooper";
@@ -35186,7 +35186,7 @@ return {
 
 };
 
-["254"] =  {
+[254] =  {
 ["name"] = "Assault Team";
 ["short-name"] = "ASLTTEAM";
 ["note"] = "Salrilian Assault Team";
@@ -35226,7 +35226,7 @@ return {
 
 };
 
-["255"] =  {
+[255] =  {
 ["name"] = "Sparkle";
 ["short-name"] = "SPARKLE";
 ["note"] = "Sparkle";
@@ -35261,7 +35261,7 @@ return {
 
 };
 
-["256"] =  {
+[256] =  {
 ["name"] = "C Missile";
 ["short-name"] = "CMISSILE";
 ["note"] = "Can't target or turn?";
@@ -35339,7 +35339,7 @@ return {
 
 };
 
-["257"] =  {
+[257] =  {
 ["name"] = "Large Explosion";
 ["short-name"] = "EXPLOSN";
 ["note"] = "No bodies, no debris";
@@ -35388,7 +35388,7 @@ return {
 
 };
 
-["258"] =  {
+[258] =  {
 ["name"] = "Trans-Space Bolt";
 ["short-name"] = "TRNSBOLT";
 ["note"] = "Trans-Space Bolt";
@@ -35430,7 +35430,7 @@ return {
 
 };
 
-["259"] =  {
+[259] =  {
 ["name"] = "T-Space Bolt Rod";
 ["short-name"] = "TRNSBOLT";
 ["note"] = "Trans-Spacial Bolt Firing Rod";
@@ -35472,7 +35472,7 @@ return {
 
 };
 
-["260"] =  {
+[260] =  {
 ["name"] = "Trazer Beam";
 ["short-name"] = "TRZRBEAM";
 ["note"] = "Trazer Beam";
@@ -35514,7 +35514,7 @@ return {
 
 };
 
-["261"] =  {
+[261] =  {
 ["name"] = "Trazer Cannon";
 ["short-name"] = "TRAZER";
 ["note"] = "Trazer Cannon";
@@ -35553,7 +35553,7 @@ return {
 
 };
 
-["262"] =  {
+[262] =  {
 ["name"] = "Fireball Trail";
 ["short-name"] = "FIRETRL";
 ["note"] = "Fireball Trail";
@@ -35599,7 +35599,7 @@ return {
 
 };
 
-["263"] =  {
+[263] =  {
 ["name"] = "Fireball";
 ["short-name"] = "FIREBALL";
 ["note"] = "Fireball";
@@ -35660,7 +35660,7 @@ return {
 
 };
 
-["264"] =  {
+[264] =  {
 ["name"] = "Plasma Ball";
 ["short-name"] = "PLASMA";
 ["note"] = "Plasma Ball, Fireball";
@@ -35700,7 +35700,7 @@ return {
 
 };
 
-["265"] =  {
+[265] =  {
 ["name"] = "Asteroid";
 ["short-name"] = "Asteroid";
 ["note"] = "Asteroid (random direction)";
@@ -35772,7 +35772,7 @@ return {
 
 };
 
-["266"] =  {
+[266] =  {
 ["name"] = "Asteroid Shoot Up";
 ["short-name"] = "ASTSHTUP";
 ["note"] = "Asteroid Shoot Up, Random Direction";
@@ -35807,7 +35807,7 @@ return {
 
 };
 
-["267"] =  {
+[267] =  {
 ["name"] = "AsteroidShootDown";
 ["short-name"] = "ASTSHTDN";
 ["note"] = "Asteroid Shoot Down, Random Direction";
@@ -35842,7 +35842,7 @@ return {
 
 };
 
-["268"] =  {
+[268] =  {
 ["name"] = "Untitled";
 ["short-name"] = "Untitled";
 ["note"] = "Untitled";
@@ -35871,7 +35871,7 @@ return {
 
 };
 
-["269"] =  {
+[269] =  {
 ["name"] = "Monkey Friend";
 ["short-name"] = "MONKEY";
 ["note"] = "Monkey Friend";
@@ -35900,7 +35900,7 @@ return {
 
 };
 
-["270"] =  {
+[270] =  {
 ["name"] = "Outpost Station";
 ["short-name"] = "OUTPOST";
 ["note"] = "Outpost";
@@ -35954,7 +35954,7 @@ return {
 
 };
 
-["271"] =  {
+[271] =  {
 ["name"] = "Inasa Pulse Gun";
 ["short-name"] = "INSAPLSE";
 ["note"] = "Inasa Pulse Gun";
@@ -35994,7 +35994,7 @@ return {
 
 };
 
-["272"] =  {
+[272] =  {
 ["name"] = "Cruiser";
 ["short-name"] = "CRUISER";
 ["note"] = "Cruiser, Grolk for CTF, P1";
@@ -36093,7 +36093,7 @@ return {
 
 };
 
-["273"] =  {
+[273] =  {
 ["name"] = "Cruiser";
 ["short-name"] = "CRUISER";
 ["note"] = "Cruiser, Grolk, for CTF, P2";
@@ -36192,7 +36192,7 @@ return {
 
 };
 
-["274"] =  {
+[274] =  {
 ["name"] = "Player 1's Flag";
 ["short-name"] = "FLAG P1";
 ["note"] = "Flag, for CTF, P1";
@@ -36269,7 +36269,7 @@ return {
 
 };
 
-["275"] =  {
+[275] =  {
 ["name"] = "Player 2's Flag";
 ["short-name"] = "FLAG P2";
 ["note"] = "Flag, for CTF, P2";
@@ -36346,7 +36346,7 @@ return {
 
 };
 
-["276"] =  {
+[276] =  {
 ["name"] = "Tractor Moor";
 ["short-name"] = "MOOR 1 Y";
 ["note"] = "Moor, for CTF, P1, Active";
@@ -36390,7 +36390,7 @@ return {
 
 };
 
-["277"] =  {
+[277] =  {
 ["name"] = "Tractor Moor";
 ["short-name"] = "MOOR 1 N";
 ["note"] = "Moor, for CTF, P1 Inactive";
@@ -36453,7 +36453,7 @@ return {
 
 };
 
-["278"] =  {
+[278] =  {
 ["name"] = "Tractor Moor";
 ["short-name"] = "MOOR 2 Y";
 ["note"] = "Moor, for CTF, P2 Active";
@@ -36497,7 +36497,7 @@ return {
 
 };
 
-["279"] =  {
+[279] =  {
 ["name"] = "Tractor Moor";
 ["short-name"] = "MOOR 2 N";
 ["note"] = "Moor, for CTF, P2 Inactive";
@@ -36560,7 +36560,7 @@ return {
 
 };
 
-["280"] =  {
+[280] =  {
 ["name"] = "Cruiser";
 ["short-name"] = "CRUISER";
 ["note"] = "Cruiser, for CTF, Player 1, Inactive";
@@ -36622,7 +36622,7 @@ return {
 
 };
 
-["281"] =  {
+[281] =  {
 ["name"] = "Cruiser";
 ["short-name"] = "CRUISER";
 ["note"] = "Cruiser, for CTF, Player 2, Inactive";
@@ -36684,7 +36684,7 @@ return {
 
 };
 
-["282"] =  {
+[282] =  {
 ["name"] = "Reactivator";
 ["short-name"] = "RCTVTR";
 ["note"] = "for CTF moor -- P2's moor -- turns deactivated ship active";
@@ -36725,7 +36725,7 @@ return {
 
 };
 
-["283"] =  {
+[283] =  {
 ["name"] = "Reactivator";
 ["short-name"] = "RCTVTR";
 ["note"] = "Reactivator, for CTF, P2";
@@ -36766,7 +36766,7 @@ return {
 
 };
 
-["284"] =  {
+[284] =  {
 ["name"] = "Light Cruiser";
 ["short-name"] = "LGHTCRSR";
 ["note"] = "Light Cruiser, Grolk";
@@ -36855,7 +36855,7 @@ return {
 
 };
 
-["285"] =  {
+[285] =  {
 ["name"] = "Light Phtoreactor";
 ["short-name"] = "LTPHTORT";
 ["note"] = "Light Photoreactor Pulse Cannon";
@@ -36895,7 +36895,7 @@ return {
 
 };
 
-["286"] =  {
+[286] =  {
 ["name"] = "U.N.S. Ares";
 ["short-name"] = "UNSARES";
 ["note"] = "Ares for Shoplifter 2";
@@ -36939,7 +36939,7 @@ return {
 
 };
 
-["287"] =  {
+[287] =  {
 ["name"] = "Transport";
 ["short-name"] = "TRANSPRT";
 ["note"] = "Special transport for newtorial 1; can't evade, be attacked, or collide";
@@ -37015,7 +37015,7 @@ return {
 
 };
 
-["288"] =  {
+[288] =  {
 ["name"] = "Cruiser";
 ["short-name"] = "CRUISER";
 ["note"] = "Cruiser -- for newtorial 3; adopts init ob # of score 0";
@@ -37128,7 +37128,7 @@ return {
 
 };
 
-["289"] =  {
+[289] =  {
 ["name"] = "Untitled";
 ["short-name"] = "Untitled";
 ["note"] = "Untitled";
@@ -37157,7 +37157,7 @@ return {
 
 };
 
-["290"] =  {
+[290] =  {
 ["name"] = "Untitled";
 ["short-name"] = "Untitled";
 ["note"] = "Untitled";
@@ -37186,7 +37186,7 @@ return {
 
 };
 
-["291"] =  {
+[291] =  {
 ["name"] = "Untitled";
 ["short-name"] = "Untitled";
 ["note"] = "Untitled";
@@ -37215,7 +37215,7 @@ return {
 
 };
 
-["292"] =  {
+[292] =  {
 ["name"] = "Untitled";
 ["short-name"] = "Untitled";
 ["note"] = "Untitled";
@@ -37244,7 +37244,7 @@ return {
 
 };
 
-["293"] =  {
+[293] =  {
 ["name"] = "Untitled";
 ["short-name"] = "Untitled";
 ["note"] = "Untitled";
@@ -37273,7 +37273,7 @@ return {
 
 };
 
-["294"] =  {
+[294] =  {
 ["name"] = "Untitled";
 ["short-name"] = "Untitled";
 ["note"] = "Untitled";
@@ -37302,7 +37302,7 @@ return {
 
 };
 
-["295"] =  {
+[295] =  {
 ["name"] = "Untitled";
 ["short-name"] = "Untitled";
 ["note"] = "Untitled";
@@ -37331,7 +37331,7 @@ return {
 
 };
 
-["296"] =  {
+[296] =  {
 ["name"] = "Untitled";
 ["short-name"] = "Untitled";
 ["note"] = "Untitled";
@@ -37360,7 +37360,7 @@ return {
 
 };
 
-["297"] =  {
+[297] =  {
 ["name"] = "Untitled";
 ["short-name"] = "Untitled";
 ["note"] = "Untitled";
@@ -37389,7 +37389,7 @@ return {
 
 };
 
-["298"] =  {
+[298] =  {
 ["name"] = "Untitled";
 ["short-name"] = "Untitled";
 ["note"] = "Untitled";
@@ -37418,7 +37418,7 @@ return {
 
 };
 
-["299"] =  {
+[299] =  {
 ["name"] = "Untitled";
 ["short-name"] = "Untitled";
 ["note"] = "Untitled";
@@ -37449,7 +37449,7 @@ return {
 
 };
 ["Races"] = {
-["000"] = 
+[000] = 
  {
 ["name"] = "Human";
 ["plural"] = "Humans";
@@ -37462,7 +37462,7 @@ return {
 
 };
 
-["001"] = 
+[001] = 
  {
 ["name"] = "Ishiman";
 ["plural"] = "Ishimans";
@@ -37475,7 +37475,7 @@ return {
 
 };
 
-["002"] = 
+[002] = 
  {
 ["name"] = "Elejeetian";
 ["plural"] = "Elejeetians";
@@ -37488,7 +37488,7 @@ return {
 
 };
 
-["003"] = 
+[003] = 
  {
 ["name"] = "Obish";
 ["plural"] = "Obiards";
@@ -37501,7 +37501,7 @@ return {
 
 };
 
-["004"] = 
+[004] = 
  {
 ["name"] = "Bazidanese";
 ["plural"] = "Bazidanese";
@@ -37514,7 +37514,7 @@ return {
 
 };
 
-["005"] = 
+[005] = 
  {
 ["name"] = "Cantharan";
 ["plural"] = "Cantharans";
@@ -37527,7 +37527,7 @@ return {
 
 };
 
-["006"] = 
+[006] = 
  {
 ["name"] = "Gaitori";
 ["plural"] = "Gaitori";
@@ -37540,7 +37540,7 @@ return {
 
 };
 
-["007"] = 
+[007] = 
  {
 ["name"] = "Salrilian";
 ["plural"] = "Salrilians";
@@ -37553,7 +37553,7 @@ return {
 
 };
 
-["008"] = 
+[008] = 
  {
 ["name"] = "Audemedon";
 ["plural"] = "Audemedons";
@@ -37566,7 +37566,7 @@ return {
 
 };
 
-["009"] = 
+[009] = 
  {
 ["name"] = "Grolk";
 ["plural"] = "Grolk";
@@ -37579,7 +37579,7 @@ return {
 
 };
 
-["010"] = 
+[010] = 
  {
 ["name"] = "Unused Race 1";
 ["plural"] = "Plural";
@@ -37592,7 +37592,7 @@ return {
 
 };
 
-["011"] = 
+[011] = 
  {
 ["name"] = "Unused Race 2";
 ["plural"] = "Plural";
@@ -37605,7 +37605,7 @@ return {
 
 };
 
-["012"] = 
+[012] = 
  {
 ["name"] = "Unused Race 3";
 ["plural"] = "Plural";
@@ -37618,7 +37618,7 @@ return {
 
 };
 
-["013"] = 
+[013] = 
  {
 ["name"] = "Unused Race 4";
 ["plural"] = "Plural";
@@ -37631,7 +37631,7 @@ return {
 
 };
 
-["014"] = 
+[014] = 
  {
 ["name"] = "Unused Race 5";
 ["plural"] = "Plural";
@@ -37644,7 +37644,7 @@ return {
 
 };
 
-["015"] = 
+[015] = 
  {
 ["name"] = "Unused Race 6";
 ["plural"] = "Plural";
@@ -37659,7 +37659,7 @@ return {
 
 };
 ["Scenarios"] = {
-["000"] = 
+[000] = 
 {
 ["id"] = 0;
 ["name"] = "Tutorial Lesson 1 - Moons for Goons";
@@ -37695,15 +37695,15 @@ return {
 
 ["score-string"] = {
 
-["1"] = [==[
+[1] = [==[
 -Destroy all 5";
 ]==];
 
-["2"] = [==[
+[2] = [==[
 _-transports.";
 ]==];
 
-["3"] = [==[
+[3] = [==[
 4\0\0\5\f\t\Remaining: \/5";
 ]==];
 
@@ -37711,7 +37711,7 @@ _-transports.";
 
 ["player"] = {
 
-["1"] = {
+[1] = {
 ["player-type"] = "local-player";
 ["player-race"] = 100;
 ["name"] = "The Human/Ishiman Cooperative";
@@ -37719,7 +37719,7 @@ _-transports.";
 
 };
 
-["2"] = {
+[2] = {
 ["player-type"] = "computer";
 ["player-race"] = 200;
 ["name"] = "The Cantharan Order";
@@ -37730,7 +37730,7 @@ _-transports.";
 };
 };
 
-["001"] = 
+[001] = 
 {
 ["id"] = 1;
 ["name"] = "Chapter 1 - Easy Street";
@@ -37767,15 +37767,15 @@ _-transports.";
 
 ["score-string"] = {
 
-["1"] = [==[
+[1] = [==[
 -Destroy all 5";
 ]==];
 
-["2"] = [==[
+[2] = [==[
 _-transports.";
 ]==];
 
-["3"] = [==[
+[3] = [==[
 4\0\0\5\f\t\Remaining: \/5";
 ]==];
 
@@ -37783,34 +37783,34 @@ _-transports.";
 
 ["player"] = {
 
-["1"] = {
+[1] = {
 ["player-type"] = "local-player";
 ["player-race"] = 100;
 ["name"] = "The Human/Ishiman Cooperative";
 ["earning-power"] = 1.0;
 
-["1"] = 8;
+[1] = 8;
 
 };
 
-["2"] = {
+[2] = {
 ["player-type"] = "computer";
 ["player-race"] = 300;
 ["name"] = "The Gaitori Union";
 ["earning-power"] = 1.0;
 
-["1"] = 2;
+[1] = 2;
 
-["2"] = 7;
+[2] = 7;
 
-["3"] = 14;
-
-};
+[3] = 14;
 
 };
+
+};
 };
 
-["002"] = 
+[002] = 
 {
 ["id"] = 2;
 ["name"] = "Tutorial Lesson 2 - Section on Selection";
@@ -37845,15 +37845,15 @@ _-transports.";
 
 ["score-string"] = {
 
-["1"] = [==[
+[1] = [==[
 -Destroy all 5";
 ]==];
 
-["2"] = [==[
+[2] = [==[
 _-transports.";
 ]==];
 
-["3"] = [==[
+[3] = [==[
 4\0\0\5\f\t\Remaining: \/5";
 ]==];
 
@@ -37861,7 +37861,7 @@ _-transports.";
 
 ["player"] = {
 
-["1"] = {
+[1] = {
 ["player-type"] = "local-player";
 ["player-race"] = 100;
 ["name"] = "The Human/Ishiman Cooperative";
@@ -37869,7 +37869,7 @@ _-transports.";
 
 };
 
-["2"] = {
+[2] = {
 ["player-type"] = "computer";
 ["player-race"] = 200;
 ["name"] = "The Cantharan Order";
@@ -37880,7 +37880,7 @@ _-transports.";
 };
 };
 
-["003"] = 
+[003] = 
 {
 ["id"] = 3;
 ["name"] = "Chapter 2 - The Stars Have Ears";
@@ -37915,15 +37915,15 @@ _-transports.";
 
 ["score-string"] = {
 
-["1"] = [==[
+[1] = [==[
 -Destroy all 4";
 ]==];
 
-["2"] = [==[
+[2] = [==[
 _-relay dishes.";
 ]==];
 
-["3"] = [==[
+[3] = [==[
 4\0\0\4\f\t\Remaining: \/4";
 ]==];
 
@@ -37931,7 +37931,7 @@ _-relay dishes.";
 
 ["player"] = {
 
-["1"] = {
+[1] = {
 ["player-type"] = "local-player";
 ["player-race"] = 100;
 ["name"] = "The Human/Ishiman Cooperative";
@@ -37940,7 +37940,7 @@ _-relay dishes.";
 
 };
 
-["2"] = {
+[2] = {
 ["player-type"] = "computer";
 ["player-race"] = 300;
 ["name"] = "The Gaitori Union";
@@ -37952,7 +37952,7 @@ _-relay dishes.";
 };
 };
 
-["004"] = 
+[004] = 
 {
 ["id"] = 4;
 ["name"] = "Tutorial Lesson 3 - The Complete Idiotâs Guide to Commanding a Space Armada";
@@ -37987,15 +37987,15 @@ _-relay dishes.";
 
 ["score-string"] = {
 
-["1"] = [==[
+[1] = [==[
 -Destroy all 5";
 ]==];
 
-["2"] = [==[
+[2] = [==[
 _-transports.";
 ]==];
 
-["3"] = [==[
+[3] = [==[
 4\0\0\5\f\t\Remaining: \/5";
 ]==];
 
@@ -38003,7 +38003,7 @@ _-transports.";
 
 ["player"] = {
 
-["1"] = {
+[1] = {
 ["player-type"] = "local-player";
 ["player-race"] = 100;
 ["name"] = "The Human/Ishiman Cooperative";
@@ -38011,7 +38011,7 @@ _-transports.";
 
 };
 
-["2"] = {
+[2] = {
 ["player-type"] = "computer";
 ["player-race"] = 200;
 ["name"] = "The Cantharan Order";
@@ -38022,7 +38022,7 @@ _-transports.";
 };
 };
 
-["005"] = 
+[005] = 
 {
 ["id"] = 5;
 ["name"] = "Chapter 3 - While The Iron Is Hot";
@@ -38057,11 +38057,11 @@ _-transports.";
 
 ["score-string"] = {
 
-["1"] = [==[
+[1] = [==[
 -Capture Demeter";
 ]==];
 
-["2"] = [==[
+[2] = [==[
 _-Beta";
 ]==];
 
@@ -38069,24 +38069,24 @@ _-Beta";
 
 ["player"] = {
 
-["1"] = {
+[1] = {
 ["player-type"] = "local-player";
 ["player-race"] = 100;
 ["name"] = "The Human/Ishiman Cooperative";
 ["admiral-number"] = 4200;
 ["earning-power"] = 1.0;
 
-["1"] = 2;
+[1] = 2;
 
-["2"] = 3;
+[2] = 3;
 
-["3"] = 5;
+[3] = 5;
 
-["4"] = 7;
+[4] = 7;
 
 };
 
-["2"] = {
+[2] = {
 ["player-type"] = "computer";
 ["player-race"] = 300;
 ["name"] = "The Gaitori Union";
@@ -38098,7 +38098,7 @@ _-Beta";
 };
 };
 
-["006"] = 
+[006] = 
 {
 ["id"] = 6;
 ["name"] = "Chapter 4 - Shoplifter 1";
@@ -38133,19 +38133,19 @@ _-Beta";
 
 ["score-string"] = {
 
-["1"] = [==[
+[1] = [==[
 -Rescue 11";
 ]==];
 
-["2"] = [==[
+[2] = [==[
 _-Obiards";
 ]==];
 
-["3"] = [==[
+[3] = [==[
 2\0\0\0\f\t\In transport: \/5";
 ]==];
 
-["4"] = [==[
+[4] = [==[
 2\1\0\0\f\t\Rescued: \/11";
 ]==];
 
@@ -38153,7 +38153,7 @@ _-Obiards";
 
 ["player"] = {
 
-["1"] = {
+[1] = {
 ["player-type"] = "local-player";
 ["player-race"] = 100;
 ["name"] = "The Human/Ishiman Cooperative";
@@ -38162,27 +38162,27 @@ _-Obiards";
 
 };
 
-["2"] = {
+[2] = {
 ["player-type"] = "computer";
 ["player-race"] = 300;
 ["name"] = "The Gaitori Union";
 ["admiral-number"] = 4200;
 ["earning-power"] = 1.5;
 
-["1"] = 1;
+[1] = 1;
 
-["2"] = 3;
+[2] = 3;
 
-["3"] = 6;
+[3] = 6;
 
-["4"] = 7;
-
-};
+[4] = 7;
 
 };
+
+};
 };
 
-["007"] = 
+[007] = 
 {
 ["id"] = 7;
 ["name"] = "Chapter 5 - Out of the Frying Pan...";
@@ -38217,11 +38217,11 @@ _-Obiards";
 
 ["score-string"] = {
 
-["1"] = [==[
+[1] = [==[
 -Capture Aeneas";
 ]==];
 
-["2"] = [==[
+[2] = [==[
 _-Beta";
 ]==];
 
@@ -38229,44 +38229,44 @@ _-Beta";
 
 ["player"] = {
 
-["1"] = {
+[1] = {
 ["player-type"] = "local-player";
 ["player-race"] = 100;
 ["name"] = "The Human/Ishiman Cooperative";
 ["admiral-number"] = 4200;
 ["earning-power"] = 1.0;
 
-["1"] = 2;
+[1] = 2;
 
-["2"] = 3;
+[2] = 3;
 
-["3"] = 5;
+[3] = 5;
 
-["4"] = 7;
+[4] = 7;
 
 };
 
-["2"] = {
+[2] = {
 ["player-type"] = "computer";
 ["player-race"] = 300;
 ["name"] = "The Gaitori Union";
 ["admiral-number"] = 4200;
 ["earning-power"] = 1.5;
 
-["1"] = 1;
+[1] = 1;
 
-["2"] = 3;
+[2] = 3;
 
-["3"] = 6;
+[3] = 6;
 
-["4"] = 7;
-
-};
+[4] = 7;
 
 };
+
+};
 };
 
-["008"] = 
+[008] = 
 {
 ["id"] = 8;
 ["name"] = "Chapter 6 - ...Into the Fire";
@@ -38301,11 +38301,11 @@ _-Beta";
 
 ["score-string"] = {
 
-["1"] = [==[
+[1] = [==[
 -Capture Hades";
 ]==];
 
-["2"] = [==[
+[2] = [==[
 _-Beta";
 ]==];
 
@@ -38313,42 +38313,42 @@ _-Beta";
 
 ["player"] = {
 
-["1"] = {
+[1] = {
 ["player-type"] = "local-player";
 ["player-race"] = 100;
 ["name"] = "The Human/Ishiman Cooperative";
 ["admiral-number"] = 4200;
 ["earning-power"] = 1.0;
 
-["1"] = 2;
+[1] = 2;
 
-["2"] = 3;
+[2] = 3;
 
-["3"] = 5;
+[3] = 5;
 
-["4"] = 7;
+[4] = 7;
 
 };
 
-["2"] = {
+[2] = {
 ["player-type"] = "computer";
 ["player-race"] = 300;
 ["name"] = "The Gaitori Union";
 ["admiral-number"] = 4200;
 ["earning-power"] = 1.25;
 
-["1"] = 4;
+[1] = 4;
 
-["2"] = 5;
+[2] = 5;
 
-["3"] = 7;
-
-};
+[3] = 7;
 
 };
+
+};
 };
 
-["009"] = 
+[009] = 
 {
 ["id"] = 9;
 ["name"] = "Chapter 7 - On the Rocks";
@@ -38386,15 +38386,15 @@ _-Beta";
 
 ["score-string"] = {
 
-["1"] = [==[
+[1] = [==[
 -Collect 4";
 ]==];
 
-["2"] = [==[
+[2] = [==[
 _-asteroid samples";
 ]==];
 
-["3"] = [==[
+[3] = [==[
 2\1\0\0\f\t\Collected: \/4";
 ]==];
 
@@ -38402,7 +38402,7 @@ _-asteroid samples";
 
 ["player"] = {
 
-["1"] = {
+[1] = {
 ["player-type"] = "local-player";
 ["player-race"] = 100;
 ["name"] = "The Human/Ishiman Cooperative";
@@ -38411,7 +38411,7 @@ _-asteroid samples";
 
 };
 
-["2"] = {
+[2] = {
 ["player-type"] = "computer";
 ["player-race"] = 200;
 ["name"] = "The Cantharan Order";
@@ -38423,7 +38423,7 @@ _-asteroid samples";
 };
 };
 
-["010"] = 
+[010] = 
 {
 ["id"] = 10;
 ["name"] = "Chapter 8 - Astrotrash Plus!";
@@ -38458,15 +38458,15 @@ _-asteroid samples";
 
 ["score-string"] = {
 
-["1"] = [==[
+[1] = [==[
 -Collect 10";
 ]==];
 
-["2"] = [==[
+[2] = [==[
 _-asteroid samples";
 ]==];
 
-["3"] = [==[
+[3] = [==[
 2\1\0\0\f\t\Collected: \/10";
 ]==];
 
@@ -38474,7 +38474,7 @@ _-asteroid samples";
 
 ["player"] = {
 
-["1"] = {
+[1] = {
 ["player-type"] = "local-player";
 ["player-race"] = 100;
 ["name"] = "The Human/Ishiman Cooperative";
@@ -38482,26 +38482,26 @@ _-asteroid samples";
 
 };
 
-["2"] = {
+[2] = {
 ["player-type"] = "computer";
 ["player-race"] = 200;
 ["name"] = "The Cantharan Order";
 ["earning-power"] = 1.0;
 
-["1"] = 2;
+[1] = 2;
 
-["2"] = 3;
+[2] = 3;
 
-["3"] = 5;
+[3] = 5;
 
-["4"] = 7;
-
-};
+[4] = 7;
 
 };
+
+};
 };
 
-["011"] = 
+[011] = 
 {
 ["id"] = 11;
 ["name"] = "Chapter 9 - Hand Over Fist";
@@ -38536,11 +38536,11 @@ _-asteroid samples";
 
 ["score-string"] = {
 
-["1"] = [==[
+[1] = [==[
 -Capture Proteus";
 ]==];
 
-["2"] = [==[
+[2] = [==[
 _-Gamma";
 ]==];
 
@@ -38548,7 +38548,7 @@ _-Gamma";
 
 ["player"] = {
 
-["1"] = {
+[1] = {
 ["player-type"] = "local-player";
 ["player-race"] = 100;
 ["name"] = "The Human/Ishiman Cooperative";
@@ -38557,21 +38557,21 @@ _-Gamma";
 
 };
 
-["2"] = {
+[2] = {
 ["player-type"] = "computer";
 ["player-race"] = 200;
 ["name"] = "The Cantharan Order";
 ["admiral-number"] = 4200;
 ["earning-power"] = 1.25;
 
-["1"] = 0;
+[1] = 0;
 
 };
 
 };
 };
 
-["012"] = 
+[012] = 
 {
 ["id"] = 12;
 ["name"] = "Chapter 10 - Assassin";
@@ -38606,11 +38606,11 @@ _-Gamma";
 
 ["score-string"] = {
 
-["1"] = [==[
+[1] = [==[
 -Destroy all";
 ]==];
 
-["2"] = [==[
+[2] = [==[
 _-hostile ships";
 ]==];
 
@@ -38618,7 +38618,7 @@ _-hostile ships";
 
 ["player"] = {
 
-["1"] = {
+[1] = {
 ["player-type"] = "local-player";
 ["player-race"] = 100;
 ["name"] = "The Human/Ishiman Cooperative";
@@ -38627,7 +38627,7 @@ _-hostile ships";
 
 };
 
-["2"] = {
+[2] = {
 ["player-type"] = "computer";
 ["player-race"] = 200;
 ["name"] = "The Cantharan Order";
@@ -38639,7 +38639,7 @@ _-hostile ships";
 };
 };
 
-["013"] = 
+[013] = 
 {
 ["id"] = 13;
 ["name"] = "Chapter 11 - Shoplifter 2";
@@ -38675,19 +38675,19 @@ _-hostile ships";
 
 ["score-string"] = {
 
-["1"] = [==[
+[1] = [==[
 -Rescue 21";
 ]==];
 
-["2"] = [==[
+[2] = [==[
 _-humans";
 ]==];
 
-["3"] = [==[
+[3] = [==[
 2\0\0\0\f\t\On board: \/5";
 ]==];
 
-["4"] = [==[
+[4] = [==[
 2\1\0\0\f\t\Rescued: \/21";
 ]==];
 
@@ -38695,26 +38695,26 @@ _-humans";
 
 ["player"] = {
 
-["1"] = {
+[1] = {
 ["player-type"] = "local-player";
 ["player-race"] = 100;
 ["name"] = "The Human/Ishiman Cooperative";
 ["admiral-number"] = 4200;
 ["earning-power"] = 0.00390625;
 
-["1"] = 0;
+[1] = 0;
 
-["2"] = 2;
+[2] = 2;
 
-["3"] = 5;
+[3] = 5;
 
-["4"] = 6;
+[4] = 6;
 
-["5"] = 7;
+[5] = 7;
 
 };
 
-["2"] = {
+[2] = {
 ["player-type"] = "computer";
 ["player-race"] = 200;
 ["name"] = "The Prophets of Salril";
@@ -38726,7 +38726,7 @@ _-humans";
 };
 };
 
-["014"] = 
+[014] = 
 {
 ["id"] = 14;
 ["name"] = "Chapter 12 - Make Way";
@@ -38761,27 +38761,27 @@ _-humans";
 
 ["score-string"] = {
 
-["1"] = [==[
+[1] = [==[
 -Capture Fansi";
 ]==];
 
-["2"] = [==[
+[2] = [==[
 _-Beta";
 ]==];
 
-["3"] = [==[
+[3] = [==[
 -Ensure safety";
 ]==];
 
-["4"] = [==[
+[4] = [==[
 _-of 5 cargo ships";
 ]==];
 
-["5"] = [==[
+[5] = [==[
 -";
 ]==];
 
-["6"] = [==[
+[6] = [==[
 2\0\0\0\f\t\Docked: \/5";
 ]==];
 
@@ -38789,7 +38789,7 @@ _-of 5 cargo ships";
 
 ["player"] = {
 
-["1"] = {
+[1] = {
 ["player-type"] = "local-player";
 ["player-race"] = 100;
 ["name"] = "The Human/Ishiman Cooperative";
@@ -38798,27 +38798,27 @@ _-of 5 cargo ships";
 
 };
 
-["2"] = {
+[2] = {
 ["player-type"] = "computer";
 ["player-race"] = 200;
 ["name"] = "The Cantharan Order";
 ["admiral-number"] = 4200;
 ["earning-power"] = 3.0;
 
-["1"] = 2;
+[1] = 2;
 
-["2"] = 3;
+[2] = 3;
 
-["3"] = 5;
+[3] = 5;
 
-["4"] = 7;
-
-};
+[4] = 7;
 
 };
+
+};
 };
 
-["015"] = 
+[015] = 
 {
 ["id"] = 15;
 ["name"] = "Chapter 13 - Yo Ho Ho";
@@ -38855,19 +38855,19 @@ _-of 5 cargo ships";
 
 ["score-string"] = {
 
-["1"] = [==[
+[1] = [==[
 1\0\0\0\Retrieve escape\Escort tractor";
 ]==];
 
-["2"] = [==[
+[2] = [==[
 _1\0\0\0\pods\tug";
 ]==];
 
-["3"] = [==[
+[3] = [==[
 2\1\0\0\f\t\Rescued: \/6";
 ]==];
 
-["4"] = [==[
+[4] = [==[
 1\1\0\0\N\Y\Liner secure: \";
 ]==];
 
@@ -38875,7 +38875,7 @@ _1\0\0\0\pods\tug";
 
 ["player"] = {
 
-["1"] = {
+[1] = {
 ["player-type"] = "local-player";
 ["player-race"] = 100;
 ["name"] = "The Human/Ishiman Cooperative";
@@ -38883,7 +38883,7 @@ _1\0\0\0\pods\tug";
 
 };
 
-["2"] = {
+[2] = {
 ["player-type"] = "computer";
 ["player-race"] = 600;
 ["name"] = "The Prophets of Salril";
@@ -38894,7 +38894,7 @@ _1\0\0\0\pods\tug";
 };
 };
 
-["016"] = 
+[016] = 
 {
 ["id"] = 16;
 ["name"] = "Chapter 14 - Captivating";
@@ -38930,19 +38930,19 @@ _1\0\0\0\pods\tug";
 
 ["score-string"] = {
 
-["1"] = [==[
+[1] = [==[
 -Capture Bokleo";
 ]==];
 
-["2"] = [==[
+[2] = [==[
 _-Gamma";
 ]==];
 
-["3"] = [==[
+[3] = [==[
 -Free Bazidanese";
 ]==];
 
-["4"] = [==[
+[4] = [==[
 _-Ship";
 ]==];
 
@@ -38950,36 +38950,36 @@ _-Ship";
 
 ["player"] = {
 
-["1"] = {
+[1] = {
 ["player-type"] = "local-player";
 ["player-race"] = 100;
 ["name"] = "The Human/Ishiman Cooperative";
 ["admiral-number"] = 4200;
 ["earning-power"] = 1.0;
 
-["1"] = 1;
+[1] = 1;
 
-["2"] = 5;
+[2] = 5;
 
 };
 
-["2"] = {
+[2] = {
 ["player-type"] = "computer";
 ["player-race"] = 200;
 ["name"] = "The Cantharan Order";
 ["admiral-number"] = 4200;
 ["earning-power"] = 1.25;
 
-["1"] = 1;
+[1] = 1;
 
-["2"] = 5;
-
-};
+[2] = 5;
 
 };
+
+};
 };
 
-["017"] = 
+[017] = 
 {
 ["id"] = 17;
 ["name"] = "Chapter 15 - The Left Hand";
@@ -39014,11 +39014,11 @@ _-Ship";
 
 ["score-string"] = {
 
-["1"] = [==[
+[1] = [==[
 -Capture Thasero";
 ]==];
 
-["2"] = [==[
+[2] = [==[
 _-Beta";
 ]==];
 
@@ -39026,23 +39026,23 @@ _-Beta";
 
 ["player"] = {
 
-["1"] = {
+[1] = {
 ["player-type"] = "local-player";
 ["player-race"] = 100;
 ["name"] = "The Human/Ishiman Cooperative";
 ["earning-power"] = 1.0;
 
-["1"] = 2;
+[1] = 2;
 
-["2"] = 3;
+[2] = 3;
 
-["3"] = 5;
+[3] = 5;
 
-["4"] = 7;
+[4] = 7;
 
 };
 
-["2"] = {
+[2] = {
 ["player-type"] = "computer";
 ["player-race"] = 600;
 ["name"] = "The Prophets of Salril";
@@ -39053,7 +39053,7 @@ _-Beta";
 };
 };
 
-["018"] = 
+[018] = 
 {
 ["id"] = 18;
 ["name"] = "Chapter 16 - Hornet's Nest";
@@ -39089,23 +39089,23 @@ _-Beta";
 
 ["score-string"] = {
 
-["1"] = [==[
+[1] = [==[
 1\2\0\0\Protect science\Destroy jumpgate\\";
 ]==];
 
-["2"] = [==[
+[2] = [==[
 1\2\0\0\vessel\inhibitor\\";
 ]==];
 
-["3"] = [==[
+[3] = [==[
 1\3\0\0\\DESTROYED\\";
 ]==];
 
-["4"] = [==[
+[4] = [==[
 1\3\0\0\\Destroy all\\";
 ]==];
 
-["5"] = [==[
+[5] = [==[
 1\3\0\0\\hostile ships\\";
 ]==];
 
@@ -39113,44 +39113,44 @@ _-Beta";
 
 ["player"] = {
 
-["1"] = {
+[1] = {
 ["player-type"] = "local-player";
 ["player-race"] = 100;
 ["name"] = "The Human/Ishiman Cooperative";
 ["earning-power"] = 1.0;
 
-["1"] = 0;
+[1] = 0;
 
-["2"] = 1;
+[2] = 1;
 
-["3"] = 3;
+[3] = 3;
 
-["4"] = 5;
+[4] = 5;
 
-["5"] = 7;
+[5] = 7;
 
 };
 
-["2"] = {
+[2] = {
 ["player-type"] = "computer";
 ["player-race"] = 700;
 ["name"] = "The Audemedon Axis";
 ["earning-power"] = 1.0;
 
-["1"] = 1;
+[1] = 1;
 
-["2"] = 3;
+[2] = 3;
 
-["3"] = 6;
+[3] = 6;
 
-["4"] = 7;
-
-};
+[4] = 7;
 
 };
+
+};
 };
 
-["019"] = 
+[019] = 
 {
 ["id"] = 19;
 ["name"] = "Chapter 17 - ...And It Feels So Good";
@@ -39185,11 +39185,11 @@ _-Beta";
 
 ["score-string"] = {
 
-["1"] = [==[
+[1] = [==[
 -Capture Lalande";
 ]==];
 
-["2"] = [==[
+[2] = [==[
 _-Beta";
 ]==];
 
@@ -39197,7 +39197,7 @@ _-Beta";
 
 ["player"] = {
 
-["1"] = {
+[1] = {
 ["player-type"] = "local-player";
 ["player-race"] = 100;
 ["name"] = "The Human/Ishiman Cooperative";
@@ -39205,7 +39205,7 @@ _-Beta";
 
 };
 
-["2"] = {
+[2] = {
 ["player-type"] = "computer";
 ["player-race"] = 700;
 ["name"] = "The Audemedon Axis";
@@ -39216,7 +39216,7 @@ _-Beta";
 };
 };
 
-["020"] = 
+[020] = 
 {
 ["id"] = 20;
 ["name"] = "Chapter 18 - Blood, Toil, Tears, and Sweat";
@@ -39251,11 +39251,11 @@ _-Beta";
 
 ["score-string"] = {
 
-["1"] = [==[
+[1] = [==[
 -Capture Proxima";
 ]==];
 
-["2"] = [==[
+[2] = [==[
 _-Alpha &amp; Beta";
 ]==];
 
@@ -39263,42 +39263,42 @@ _-Alpha &amp; Beta";
 
 ["player"] = {
 
-["1"] = {
+[1] = {
 ["player-type"] = "local-player";
 ["player-race"] = 900;
 ["name"] = "The UNS Resistance";
 ["earning-power"] = 1.0;
 
-["1"] = 2;
+[1] = 2;
 
-["2"] = 3;
+[2] = 3;
 
-["3"] = 5;
+[3] = 5;
 
-["4"] = 7;
+[4] = 7;
 
 };
 
-["2"] = {
+[2] = {
 ["player-type"] = "computer";
 ["player-race"] = 700;
 ["name"] = "The Audemedon Axis";
 ["earning-power"] = 1.0;
 
-["1"] = 1;
+[1] = 1;
 
-["2"] = 3;
+[2] = 3;
 
-["3"] = 6;
+[3] = 6;
 
-["4"] = 7;
-
-};
+[4] = 7;
 
 };
+
+};
 };
 
-["021"] = 
+[021] = 
 {
 ["id"] = 21;
 ["name"] = "Chapter 19 - You Should Have Seen the One that Got Away";
@@ -39333,19 +39333,19 @@ _-Alpha &amp; Beta";
 
 ["score-string"] = {
 
-["1"] = [==[
+[1] = [==[
 _-Capture Pictoris";
 ]==];
 
-["2"] = [==[
+[2] = [==[
 Beta, 1 &amp; 2";
 ]==];
 
-["3"] = [==[
+[3] = [==[
 -Destroy hostile";
 ]==];
 
-["4"] = [==[
+[4] = [==[
 _-gateship";
 ]==];
 
@@ -39353,25 +39353,25 @@ _-gateship";
 
 ["player"] = {
 
-["1"] = {
+[1] = {
 ["player-type"] = "local-player";
 ["player-race"] = 900;
 ["name"] = "The UNS Resistance";
 ["earning-power"] = 1.0;
 
-["1"] = 6;
+[1] = 6;
 
-["2"] = 7;
+[2] = 7;
 
-["3"] = 11;
+[3] = 11;
 
-["4"] = 13;
+[4] = 13;
 
-["5"] = 14;
+[5] = 14;
 
 };
 
-["2"] = {
+[2] = {
 ["player-type"] = "computer";
 ["player-race"] = 200;
 ["name"] = "The Cantharan Order";
@@ -39382,7 +39382,7 @@ _-gateship";
 };
 };
 
-["022"] = 
+[022] = 
 {
 ["id"] = 22;
 ["name"] = "Chapter 20 - The Mothership Connection";
@@ -39418,11 +39418,11 @@ _-gateship";
 
 ["score-string"] = {
 
-["1"] = [==[
+[1] = [==[
 -Destroy hostile";
 ]==];
 
-["2"] = [==[
+[2] = [==[
 _-gateship";
 ]==];
 
@@ -39430,42 +39430,42 @@ _-gateship";
 
 ["player"] = {
 
-["1"] = {
+[1] = {
 ["player-type"] = "local-player";
 ["player-race"] = 100;
 ["name"] = "The Human/Ishiman Cooperative";
 ["admiral-number"] = 11521624;
 ["earning-power"] = 1.0;
 
-["1"] = 0;
+[1] = 0;
 
-["2"] = 1;
+[2] = 1;
 
 };
 
-["2"] = {
+[2] = {
 ["player-type"] = "computer";
 ["player-race"] = 200;
 ["name"] = "The Cantharan Order";
 ["admiral-number"] = 0;
 ["earning-power"] = 1.0;
 
-["1"] = 0;
+[1] = 0;
 
-["2"] = 2;
+[2] = 2;
 
-["3"] = 4;
+[3] = 4;
 
-["4"] = 5;
+[4] = 5;
 
-["5"] = 7;
-
-};
+[5] = 7;
 
 };
+
+};
 };
 
-["023"] = 
+[023] = 
 {
 ["id"] = 23;
 ["name"] = "Between a Rock and a Rock";
@@ -39501,50 +39501,50 @@ _-gateship";
 
 ["player"] = {
 
-["1"] = {
+[1] = {
 ["player-type"] = "network-player";
 ["player-race"] = 100;
 ["name"] = "The Human/Ishiman Cooperative";
 ["earning-power"] = 1.0;
 
-["1"] = 0;
+[1] = 0;
 
-["2"] = 1;
+[2] = 1;
 
-["3"] = 5;
+[3] = 5;
 
-["4"] = 6;
+[4] = 6;
 
-["5"] = 7;
+[5] = 7;
 
-["6"] = 8;
+[6] = 8;
 
 };
 
-["2"] = {
+[2] = {
 ["player-type"] = "network-player";
 ["player-race"] = 100;
 ["name"] = "The Human/Ishiman Cooperative";
 ["earning-power"] = 1.0;
 
-["1"] = 0;
+[1] = 0;
 
-["2"] = 1;
+[2] = 1;
 
-["3"] = 5;
+[3] = 5;
 
-["4"] = 6;
+[4] = 6;
 
-["5"] = 7;
+[5] = 7;
 
-["6"] = 8;
-
-};
+[6] = 8;
 
 };
+
+};
 };
 
-["024"] = 
+[024] = 
 {
 ["id"] = 24;
 ["name"] = "**DEV-23**";
@@ -39580,7 +39580,7 @@ _-gateship";
 
 ["player"] = {
 
-["1"] = {
+[1] = {
 ["player-type"] = "none";
 ["player-race"] = 100;
 ["name"] = "The Human/Ishiman Cooperative";
@@ -39588,7 +39588,7 @@ _-gateship";
 
 };
 
-["2"] = {
+[2] = {
 ["player-type"] = "none";
 ["player-race"] = 100;
 ["name"] = "The Human/Ishiman Cooperative";
@@ -39596,7 +39596,7 @@ _-gateship";
 
 };
 
-["3"] = {
+[3] = {
 ["player-type"] = "computer";
 ["player-race"] = 700;
 ["name"] = "The Audemedon Axis";
@@ -39607,7 +39607,7 @@ _-gateship";
 };
 };
 
-["025"] = 
+[025] = 
 {
 ["id"] = 25;
 ["name"] = "Space Race, the Musical!";
@@ -39642,7 +39642,7 @@ _-gateship";
 
 ["player"] = {
 
-["1"] = {
+[1] = {
 ["player-type"] = "local-player";
 ["player-race"] = 100;
 ["name"] = "The Human/Ishiman Cooperative";
@@ -39650,7 +39650,7 @@ _-gateship";
 
 };
 
-["2"] = {
+[2] = {
 ["player-type"] = "computer";
 ["player-race"] = 300;
 ["name"] = "The Gaitori Union";
@@ -39661,7 +39661,7 @@ _-gateship";
 };
 };
 
-["026"] = 
+[026] = 
 {
 ["id"] = 26;
 ["name"] = "Scratching Post";
@@ -39697,50 +39697,50 @@ _-gateship";
 
 ["player"] = {
 
-["1"] = {
+[1] = {
 ["player-type"] = "network-player";
 ["player-race"] = 100;
 ["name"] = "The UNS Resistance";
 ["earning-power"] = 1.0;
 
-["1"] = 0;
+[1] = 0;
 
-["2"] = 1;
+[2] = 1;
 
-["3"] = 5;
+[3] = 5;
 
-["4"] = 6;
+[4] = 6;
 
-["5"] = 7;
+[5] = 7;
 
-["6"] = 8;
+[6] = 8;
 
 };
 
-["2"] = {
+[2] = {
 ["player-type"] = "network-player";
 ["player-race"] = 100;
 ["name"] = "The Cantharan Order";
 ["earning-power"] = 1.0;
 
-["1"] = 0;
+[1] = 0;
 
-["2"] = 1;
+[2] = 1;
 
-["3"] = 5;
+[3] = 5;
 
-["4"] = 6;
+[4] = 6;
 
-["5"] = 7;
+[5] = 7;
 
-["6"] = 8;
-
-};
+[6] = 8;
 
 };
+
+};
 };
 
-["027"] = 
+[027] = 
 {
 ["id"] = 27;
 ["name"] = "Capture the Flagpod";
@@ -39776,30 +39776,30 @@ _-gateship";
 
 ["player"] = {
 
-["1"] = {
+[1] = {
 ["player-type"] = "network-player";
 ["player-race"] = 1100;
 ["name"] = "The Human/Ishiman Cooperative";
 ["earning-power"] = 0.0;
 
-["1"] = 9;
+[1] = 9;
 
 };
 
-["2"] = {
+[2] = {
 ["player-type"] = "network-player";
 ["player-race"] = 1100;
 ["name"] = "The Human/Ishiman Cooperative";
 ["earning-power"] = 0.0;
 
-["1"] = 9;
+[1] = 9;
 
 };
 
 };
 };
 
-["028"] = 
+[028] = 
 {
 ["id"] = 28;
 ["name"] = "Spaze Warz";
@@ -39835,30 +39835,30 @@ _-gateship";
 
 ["player"] = {
 
-["1"] = {
+[1] = {
 ["player-type"] = "network-player";
 ["player-race"] = 1100;
 ["name"] = "The Human/Ishiman Cooperative";
 ["earning-power"] = 0.0;
 
-["1"] = 9;
+[1] = 9;
 
 };
 
-["2"] = {
+[2] = {
 ["player-type"] = "network-player";
 ["player-race"] = 1100;
 ["name"] = "The Cantharan Order";
 ["earning-power"] = 0.0;
 
-["1"] = 9;
+[1] = 9;
 
 };
 
 };
 };
 
-["029"] = 
+[029] = 
 {
 ["id"] = 29;
 ["name"] = "Location, Location, Location";
@@ -39894,37 +39894,37 @@ _-gateship";
 
 ["player"] = {
 
-["1"] = {
+[1] = {
 ["player-type"] = "network-player";
 ["player-race"] = 100;
 ["name"] = "The Human/Ishiman Cooperative";
 ["earning-power"] = 1.0;
 
-["1"] = 1;
+[1] = 1;
 
-["2"] = 5;
+[2] = 5;
 
-["3"] = 6;
+[3] = 6;
 
 };
 
-["2"] = {
+[2] = {
 ["player-type"] = "network-player";
 ["player-race"] = 100;
 ["earning-power"] = 1.0;
 
-["1"] = 1;
+[1] = 1;
 
-["2"] = 5;
+[2] = 5;
 
-["3"] = 6;
-
-};
+[3] = 6;
 
 };
+
+};
 };
 
-["030"] = 
+[030] = 
 {
 ["id"] = 30;
 ["name"] = "Training - Moons for Goons";
@@ -39959,7 +39959,7 @@ _-gateship";
 
 ["player"] = {
 
-["1"] = {
+[1] = {
 ["player-type"] = "local-player";
 ["player-race"] = 100;
 ["name"] = "The Human/Ishiman Cooperative";
@@ -39967,15 +39967,15 @@ _-gateship";
 
 };
 
-["2"] = {
+[2] = {
 ["player-type"] = "computer";
 ["player-race"] = 100;
 ["name"] = "The Human/Ishiman Cooperative";
 ["earning-power"] = 0.0;
 
-["1"] = 9;
+[1] = 9;
 
-["2"] = 10;
+[2] = 10;
 
 };
 
