@@ -3,16 +3,23 @@ import('ObjectLoad')
 import('GlobalVars')
 import('Math')
 import('Scenarios')
+import('PrintRecursive')
 
 
 cid = 0
 
 function init()
 	physics.open(0.6)
+	start_time = mode_manager.time()
+	last_time = mode_manager.time()
 	loadingEntities = true
 	gameData = dofile("./Xsera.app/Contents/Resources/Config/data.lua") --[FIX] this is A) not cross platform in ANY way shape or form B) an ugly way of fixing it.
-	loadingEntities = false
 	scen = LoadScenario(1)
+
+	loadingEntities = false
+
+	graphics.set_camera(-75000,-0,75000,150000)
+
 end
 
 function key( k )
@@ -29,12 +36,29 @@ function key( k )
 end
 
 function update()
-
+	local newTime = mode_manager.time()
+	dt = newTime - last_time
+	last_time = newTime
+	physics.update(dt)
 end
+
 
 function render()
 	graphics.begin_frame()
-	graphics.draw_text("Current id: " .. cid,"CrystalClear","left",-400,200,60)
-	graphics.draw_text(gameData["Objects"][cid].name,"CrystalClear","left",-400,120,30)
+	if scen ~= nil and scen.objects ~= nil then
+	for obId = 0, #scen.objects-1 do
+		local o = scen.objects[obId]
+		graphics.draw_sprite(o.sprite,
+		o.physics.position.x,
+		o.physics.position.y,
+		4000,4000,
+		o.physics.angle)
+		end
+	end
 	graphics.end_frame()
+end
+
+
+function quit()
+	physics.close()
 end
