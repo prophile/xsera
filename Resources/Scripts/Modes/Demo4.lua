@@ -13,7 +13,7 @@ function init()
 	start_time = mode_manager.time()
 	last_time = mode_manager.time()
 	loadingEntities = true
-	gameData = dofile("./Xsera.app/Contents/Resources/Config/data.lua") --[FIX] this is A) not cross platform in ANY way shape or form B) an ugly way of fixing it.
+	
 	scen = LoadScenario(1)
 
 	loadingEntities = false

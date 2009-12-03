@@ -49,6 +49,7 @@ Admirals = {}
 --loadingstuff
 loadingEntities = false
 entities = {}
+gameData = dofile("./Xsera.app/Contents/Resources/Config/data.lua") --[FIX] this is A) not cross platform in ANY way shape or form B) an ugly way of fixing it.
 --/loadingstuff
 
 ARROW_LENGTH = 135
