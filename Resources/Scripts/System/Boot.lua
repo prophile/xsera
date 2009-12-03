@@ -1,5 +1,3 @@
--- Play some music
-sound.play_music("Doomtroopers")
 -- Preload many sounds
 sound.preload("ComboBeep")
 sound.preload("ExplosionCombo")
