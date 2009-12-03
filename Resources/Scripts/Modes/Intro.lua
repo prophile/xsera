@@ -21,7 +21,7 @@ function render()
 	graphics.set_camera(-512, -384, 512, 384)
 	if myTime < 5 then
 		graphics.draw_image("Panels/BrainpenLogo", 0, 50, 512, 469)
-		graphics.draw_text("Presents...", "CrystalClear", "center", 0, -200, 50)
+		graphics.draw_text("Presents...", "CrystalClear", "center", 0, -210, 50)
 	elseif myTime < 10 then
 		graphics.draw_text("Based upon", "CrystalClear", "center", 0, 300, 50)
 		graphics.draw_image("Panels/NLCredits", 0, 230, 160, 36)
@@ -37,10 +37,10 @@ end
 
 function key(k)
 	if myTime < 5 then
-		myTime = 3
+		myTime = 4
 	elseif myTime < 10 then
-		myTime = 8
+		myTime = 9
 	else
-		myTime = 15
+		myTime = 16
 	end
 end
