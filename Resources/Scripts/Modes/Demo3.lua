@@ -130,6 +130,13 @@ function update ()
 	Camera Code
 ------------------]]--
 	
+	--[[ plan for hostile zoom [ADAM]
+	
+	set cameraChanging = "constant" if the ratio of the change that needs to be made is small enough (start it off at around 0.5 and test)
+	
+	--]]
+	
+	--[[ this structure needs to be removed
 	if cameraRatioNum > 5 and cameraChanging == false then
 		-- this is constantly modified, but not done smoothly, so it looks bad
 		
@@ -137,10 +144,17 @@ function update ()
 			local diff = { x = math.abs(computerShip.physicsObject.position.x - playerShip.physicsObject.position.x) + computerShip.size.x / 2, y = math.abs(computerShip.physicsObject.position.y - playerShip.physicsObject.position.y) + computerShip.size.y / 2 }
 			
 			cameraRatioOrig = cameraRatio
-			if diff.x == 0 or diff.y == 0 or aspectRatio == 0 then
-				cameraRatio = 2
+			if (math.abs(hypot1(diff) / hypot1(camera)) > 0.5) then
+				cameraChanging = true
+				x = 0.6
+				timeInterval = 0.6
+				cameraRatioOrig = cameraRatio
 			else
-				cameraRatio = (440) / (hypot1(diff) * 2)
+				if diff.x == 0 or diff.y == 0 or aspectRatio == 0 then
+					cameraRatio = 2
+				else
+					cameraRatio = (440) / (hypot1(diff) * 2)
+				end
 			end
 		else
 			print("DONT DO EET") -- temp error message because cameraRatioNum is greater than 5 but not equal to 6, somehow
@@ -157,7 +171,7 @@ function update ()
 		arrowLength = ARROW_LENGTH / cameraRatio
 		arrowVar = ARROW_VAR / cameraRatio
 		arrowDist = ARROW_DIST / cameraRatio
-	end
+	end--]]
 	
 	if cameraChanging == true then
 		x = x - dt
@@ -168,7 +182,8 @@ function update ()
 			soundJustPlayed = false
 		end
 		if x >= 0 then
-			cameraRatio = cameraRatioOrig + cameraRatioOrig * multiplier * (((x - timeInterval) * (x - timeInterval)) / (timeInterval * timeInterval))
+			cameraRatio = cameraRatioOrig + cameraRatioOrig * multiplier * math.pow(math.abs((x - timeInterval) / timeInterval), 2)  --[[* (((x - timeInterval) * (x - timeInterval) * math.sqrt(math.abs(x - timeInterval))) / (timeInterval * timeInterval * math.sqrt(math.abs(timeInterval))))--]]
+			print(cameraRatio, timeInterval)
 		end
 		camera = { w = 640 / cameraRatio, h }
 		camera.h = camera.w / aspectRatio

@@ -720,6 +720,17 @@ int MM_Query ( lua_State* L )
 	return 1;
 }
 
+int MM_Release ( lua_State* L )
+{
+	#ifdef NDEBUG
+		lua_pushboolean(L, true);
+		return 1;
+	#else
+		lua_pushboolean(L, false);
+		return 1;
+	#endif
+}
+
 /**
  * @page lua_mode_manager The Lua Mode Manager Registry
  * This page contains information about the Lua mode manager registry.
@@ -749,6 +760,11 @@ int MM_Query ( lua_State* L )
  * Returns the game's current mode. This function has no parameters.\n
  * Returns:\n
  * string - The name of the mode that the game is currently in.
+ * 
+ * @section is_release
+ * Returns the game's current build mode. This function has no parameters.\n
+ * Returns:\n
+ * bool - True if the game's current build is a release build, false if not.
  */
 
 luaL_Reg registryModeManager[] =
@@ -756,6 +772,7 @@ luaL_Reg registryModeManager[] =
 	"switch", MM_Switch,
 	"time", MM_Time,
 	"query", MM_Query,
+	"is_release", MM_Release,
 	NULL, NULL
 };
 
