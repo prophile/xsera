@@ -48,7 +48,7 @@ function render()
 	if scen ~= nil and scen.objects ~= nil then
 	for obId = 0, #scen.objects-1 do
 		local o = scen.objects[obId]
-		graphics.draw_sprite(o.sprite,
+		graphics.draw_sprite("Id/"..o.sprite,
 		o.physics.position.x,
 		o.physics.position.y,
 		4000,4000,

@@ -7,7 +7,7 @@ function LoadScenario(id)
 	for datId = scen.initial.id, max do
 		local state = gameData.InitialObject[datId]
 		local new = NewObject(state.type)
-
+		print(new.name)
 		new.physics.position = state.location
 		scen.objects[ctr] = new
 		ctr = ctr + 1
