@@ -9,7 +9,6 @@ end
 
 function update()
 	local newTime = mode_manager.time()
-	
 	dt = newTime - lastTime
 	lastTime = newTime
 end
@@ -36,11 +35,11 @@ function render()
 end
 
 function key(k)
-	if myTime < 5 then
+	if myTime < 4 then
 		myTime = 4
-	elseif myTime < 10 then
+	elseif myTime < 9 then
 		myTime = 9
-	else
+	elseif myTime < 16 then
 		myTime = 16
 	end
 end
