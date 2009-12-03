@@ -30,7 +30,6 @@
 		57FCA77F10ACF9F6002D6A9E /* Objects in Resources */ = {isa = PBXBuildFile; fileRef = 57FCA77910ACF9F6002D6A9E /* Objects */; };
 		57FCA78010ACF9F6002D6A9E /* Textures in Resources */ = {isa = PBXBuildFile; fileRef = 57FCA77C10ACF9F6002D6A9E /* Textures */; };
 		7A58AD60108919F200C4F789 /* NewResources in Resources */ = {isa = PBXBuildFile; fileRef = 7A58AD4C108919F200C4F789 /* NewResources */; };
-		7A5EA5D110C674DF00CDF5F0 /* NewIntro.lua in Sources */ = {isa = PBXBuildFile; fileRef = 7A5EA5D010C674DF00CDF5F0 /* NewIntro.lua */; };
 		7A8C71560EDB0FB700CFE5D3 /* Sounds in Resources */ = {isa = PBXBuildFile; fileRef = 7A8C711F0EDB0FB700CFE5D3 /* Sounds */; };
 /* End PBXBuildFile section */
 
@@ -90,7 +89,6 @@
 		57FCA77910ACF9F6002D6A9E /* Objects */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Objects; path = ../Resources/Objects; sourceTree = SOURCE_ROOT; };
 		57FCA77C10ACF9F6002D6A9E /* Textures */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Textures; path = ../Resources/Textures; sourceTree = SOURCE_ROOT; };
 		7A58AD4C108919F200C4F789 /* NewResources */ = {isa = PBXFileReference; lastKnownFileType = folder; name = NewResources; path = ../Resources/NewResources; sourceTree = SOURCE_ROOT; };
-		7A5EA5D010C674DF00CDF5F0 /* NewIntro.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.lua; name = NewIntro.lua; path = ../Resources/Scripts/Modes/NewIntro.lua; sourceTree = SOURCE_ROOT; };
 		7A8C711F0EDB0FB700CFE5D3 /* Sounds */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Sounds; path = ../Resources/Sounds; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
@@ -114,7 +112,6 @@
 		496923C90EBE4B7600930DDD = {
 			isa = PBXGroup;
 			children = (
-				7A5EA5D010C674DF00CDF5F0 /* NewIntro.lua */,
 				496A27300F0EC29C00C53BA1 /* Apollo.xcodeproj */,
 				496923E40EBE4C4000930DDD /* Source */,
 				496923E30EBE4C3900930DDD /* External */,
@@ -270,7 +267,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				496924830EBE516100930DDD /* Xsera.cpp in Sources */,
-				7A5EA5D110C674DF00CDF5F0 /* NewIntro.lua in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
