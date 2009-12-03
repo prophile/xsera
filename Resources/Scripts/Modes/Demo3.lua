@@ -126,6 +126,39 @@ function update ()
 		end
 	end
 	
+--[[------------------
+	Camera Code
+------------------]]--
+	
+	if cameraRatioNum > 5 and cameraChanging == false then
+		-- this is constantly modified, but not done smoothly, so it looks bad
+		
+		if cameraRatioNum == 6 then
+			local diff = { x = math.abs(computerShip.physicsObject.position.x - playerShip.physicsObject.position.x) + computerShip.size.x / 2, y = math.abs(computerShip.physicsObject.position.y - playerShip.physicsObject.position.y) + computerShip.size.y / 2 }
+			
+			cameraRatioOrig = cameraRatio
+			if diff.x == 0 or diff.y == 0 or aspectRatio == 0 then
+				cameraRatio = 2
+			else
+				cameraRatio = (440) / (hypot1(diff) * 2)
+			end
+		else
+			print("DONT DO EET") -- temp error message because cameraRatioNum is greater than 5 but not equal to 6, somehow
+		end
+		if cameraRatio > 2 then
+			cameraRatio = 2
+		end
+		if (cameraRatio < 1 / 8 and cameraRatioOrig > 1 / 8) or (cameraRatio > 1 / 8 and cameraRatioOrig < 1 / 8) then
+			sound.play("ZoomChange")
+		end
+		camera = { w = 640 / cameraRatio, h }
+		camera.h = camera.w / aspectRatio
+		shipAdjust = .045 * camera.w
+		arrowLength = ARROW_LENGTH / cameraRatio
+		arrowVar = ARROW_VAR / cameraRatio
+		arrowDist = ARROW_DIST / cameraRatio
+	end
+	
 	if cameraChanging == true then
 		x = x - dt
 		if x < 0 then
@@ -543,7 +576,7 @@ function render ()
 -- Console
 	PopDownConsole()
 -- Mouse
-	-- disabled for now
+	--[[ disabled for now
 	--if mouseMovement == true then
 		-- draw mouse replacement
 		-- check to see if it's over the panels
@@ -561,6 +594,7 @@ function render ()
 		--	mouseMovement = false
 		--end
 	--end
+	--]]
 -- Menus
 	InterfaceDisplay(dt)
 -- Error Printing
