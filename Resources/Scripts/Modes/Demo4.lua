@@ -4,7 +4,7 @@ import('GlobalVars')
 import('Math')
 import('Scenarios')
 import('PrintRecursive')
-
+import('KeyboardControl')
 
 
 function init()
@@ -25,7 +25,16 @@ function key( k )
 	print(k)
 	if k == "q" or k == "escape" then
 		mode_manager.switch("MainMenu")
+	else
+		KeyActivate(k)
 	end
+end
+
+normal_key = key
+normal_keyup = keyup
+
+function keyup(k)
+	KeyDeactivate(k)
 end
 
 function update()
