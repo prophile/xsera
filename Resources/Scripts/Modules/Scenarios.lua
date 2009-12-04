@@ -8,7 +8,14 @@ function LoadScenario(id)
 	for datId = scen.initial.id, max do
 		local state = gameData.InitialObject[datId]
 		local new = NewObject(state.type)
-
+		print(state.attributes)
+		if state.attributes == 512 then
+			if scen.playerShip == nil then
+				scen.playerShip = ctr
+			else
+				error "There is already a an intial player ship set."
+			end
+		end
 		new.physics.position = state.location
 		scen.objects[ctr] = new
 		ctr = ctr + 1
