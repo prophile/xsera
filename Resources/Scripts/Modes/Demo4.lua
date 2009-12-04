@@ -6,7 +6,6 @@ import('Scenarios')
 import('PrintRecursive')
 
 
-cid = 0
 
 function init()
 	physics.open(0.6)
@@ -24,14 +23,8 @@ end
 
 function key( k )
 	print(k)
-	if k == "q" then
+	if k == "q" or k == "escape" then
 		mode_manager.switch("MainMenu")
-	elseif k =="w" then
-		cid = cid + 1
-	elseif k == "s" then
-		cid = cid - 1
-	elseif k == "return" then
-		
 	end
 end
 
