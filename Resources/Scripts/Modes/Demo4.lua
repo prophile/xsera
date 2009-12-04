@@ -37,17 +37,29 @@ end
 
 
 function render()
+local shipAdjust = 0.0
+local camera = {w = 1000.0, h = 1000.0}
 	graphics.begin_frame()
+	graphics.set_camera(-scen.playerShip.physics.position.x + shipAdjust - (camera.w / 2.0), -scen.playerShip.physics.position.y - (camera.h / 2.0), -scen.playerShip.physics.position.x + shipAdjust + (camera.w / 2.0), -scen.playerShip.physics.position.y + (camera.h / 2.0))
+	
+	
 	if scen ~= nil and scen.objects ~= nil then
 	for obId = 0, #scen.objects-1 do
 		local o = scen.objects[obId]
 		graphics.draw_sprite("Id/"..o.sprite,
 		o.physics.position.x,
 		o.physics.position.y,
-		4000,4000,
+		40,40,
 		o.physics.angle)
 		end
 	end
+	
+	graphics.draw_starfield(3.4)
+	graphics.draw_starfield(1.8)
+	graphics.draw_starfield(0.6)
+	graphics.draw_starfield(-0.3)
+	graphics.draw_starfield(-0.9)
+	
 	graphics.end_frame()
 end
 

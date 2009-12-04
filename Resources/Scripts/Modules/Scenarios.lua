@@ -11,7 +11,8 @@ function LoadScenario(id)
 		print(state.attributes)
 		if state.attributes == 512 then
 			if scen.playerShip == nil then
-				scen.playerShip = ctr
+				new.physics.velocity = {x = 0.0, y = -400.0}
+				scen.playerShip = new
 			else
 				error "There is already a an intial player ship set."
 			end
