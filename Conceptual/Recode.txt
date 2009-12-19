@@ -1,0 +1,8 @@
+Created functions in xy-recode:
+- graphics.draw_text()
+- graphics.draw_line()
+- graphics.draw_lightning()
+- graphics.draw_radar_*()
+- GFX_DrawObject3DAmbient() <-- C name
+
+Applied functions in xy-recode:

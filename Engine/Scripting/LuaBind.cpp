@@ -893,6 +893,31 @@ static colour LoadColour ( lua_State* L, int index )
 	return colour(r, g, b, a);
 }
 
+int GFX_DrawText_V ( lua_State* L )
+{
+	int nargs = lua_gettop(L);
+	const char* text = luaL_checkstring(L, 1);
+	const char* font = luaL_checkstring(L, 2);
+	const char* justify = luaL_checkstring(L, 3);
+	vec2 location = luaL_checkvec2(L, 4);
+	float height = luaL_checknumber(L, 5);
+	float rotation = 0.0f;
+	if (nargs >= 7)
+	{
+		rotation = luaL_checknumber(L, 7);
+	}
+	if (nargs >= 6)
+	{
+		luaL_argcheck(L, lua_istable(L, 6), 6, "bad colour");
+		Graphics::DrawTextSDL(text, font, justify, location, height, LoadColour(L, 6), rotation);
+	}
+	else
+	{
+		Graphics::DrawTextSDL(text, font, justify, location, height, colour(1.0f, 1.0f, 1.0f, 1.0f), rotation);
+	}
+	return 0;
+}
+
 int GFX_DrawText ( lua_State* L )
 {
 	int nargs = lua_gettop(L);
@@ -930,6 +955,24 @@ int GFX_TextLength (lua_State* L )
 	return 1;
 }
 
+int GFX_DrawLine_V ( lua_State* L )
+{
+	int nargs = lua_gettop(L);
+	float width;
+	vec2 point1 = luaL_checkvec2(L, 1);
+	vec2 point2 = luaL_checkvec2(L, 2);
+	width = luaL_checknumber(L, 3);
+	if (nargs > 3)
+	{
+		Graphics::DrawLine(point1, point2, width, LoadColour(L, 4));
+	}
+	else
+	{
+		Graphics::DrawLine(point1, point2, width, colour(0.0f, 1.0f, 0.0f, 1.0f));
+	}
+	return 0;
+}
+
 int GFX_DrawLine ( lua_State* L )
 {
 	int nargs = lua_gettop(L);
@@ -946,6 +989,27 @@ int GFX_DrawLine ( lua_State* L )
 	else
 	{
 		Graphics::DrawLine(vec2(x1, y1), vec2(x2, y2), width, colour(0.0f, 1.0f, 0.0f, 1.0f));
+	}
+	return 0;
+}
+
+int GFX_DrawLightning_V ( lua_State* L )
+{
+	int nargs = lua_gettop(L);
+	float width, chaos;
+	bool tailed;
+	vec2 point1 = luaL_checkvec2(L, 1);
+	vec2 point2 = luaL_checkvec2(L, 2);
+	width = luaL_checknumber(L, 3);
+	chaos = luaL_checknumber(L, 4);
+	tailed = lua_tonumber(L, 5);
+	if (nargs > 5)
+	{
+		Graphics::DrawLightning(point1, point2, width, chaos, LoadColour(L, 6), tailed);
+	}
+	else
+	{
+		Graphics::DrawLightning(point1, point2, width, chaos, colour(0.93f, 0.88f, 1.0f, 1.0f), tailed);
 	}
 	return 0;
 }
@@ -990,6 +1054,90 @@ int GFX_DrawBox ( lua_State* L )
 	{
 		Graphics::DrawBox(top, left, bottom, right, width, colour(0.0f, 1.0f, 0.0f, 1.0f));
 	}
+	return 0;
+}
+
+int GFX_DrawRadarTriangle_V ( lua_State* L )
+{
+	int nargs = lua_gettop(L);
+	vec2 coordinates = luaL_checkvec2(L, 1);
+	float varsize = luaL_checknumber(L, 2);
+	if (nargs > 2)
+	{
+		Graphics::DrawTriangle(vec2(coordinates.X(), coordinates.Y() + varsize),
+							   vec2(coordinates.X() - varsize, coordinates.Y() - varsize),
+							   vec2(coordinates.X() + varsize, coordinates.Y() - varsize),
+							   LoadColour(L, 3));
+	}
+	else
+	{
+		Graphics::DrawTriangle(vec2(coordinates.X(), coordinates.Y() + varsize),
+							   vec2(coordinates.X() - varsize, coordinates.Y() - varsize),
+							   vec2(coordinates.X() + varsize, coordinates.Y() - varsize),
+							   colour(0.0f, 1.0f, 0.0f, 1.0f));
+	}
+	return 0;
+}
+
+int GFX_DrawRadarPlus_V ( lua_State* L )
+{
+	int nargs = lua_gettop(L);
+	vec2 coordinates = luaL_checkvec2(L, 1);
+	float varsize = luaL_checknumber(L, 2);
+	if (nargs > 2)
+	{
+		Graphics::DrawBox(coordinates.Y() + varsize, coordinates.X() - 0.3 * varsize, coordinates.Y() - varsize, coordinates.X() + 0.3 * varsize, 0, LoadColour(L, 3));
+		Graphics::DrawBox(coordinates.Y() + 0.3 * varsize, coordinates.X() - varsize, coordinates.Y() - 0.3 * varsize, coordinates.X() + varsize, 0, LoadColour(L, 3));
+	}
+	else
+	{
+		Graphics::DrawBox(coordinates.Y() + varsize, coordinates.X() - 0.3 * varsize, coordinates.Y() - varsize, coordinates.X() + 0.3 * varsize, 0, colour(0, 1, 0, 1));
+		Graphics::DrawBox(coordinates.Y() + 0.3 * varsize, coordinates.X() - varsize, coordinates.Y() - 0.3 * varsize, coordinates.X() + varsize, 0, colour(0, 1, 0, 1));
+	}
+	return 0;
+}
+
+int GFX_DrawRadarBox_V ( lua_State* L )
+{
+	int nargs = lua_gettop(L);
+	vec2 coordinates = luaL_checkvec2(L, 1);
+	float varsize = luaL_checknumber(L, 2);
+	if (nargs > 2)
+	{
+		Graphics::DrawBox(coordinates.Y() + varsize, coordinates.X() - varsize, coordinates.Y() - varsize, coordinates.X() + varsize, 0, LoadColour(L, 3));
+	}
+	else
+	{
+		Graphics::DrawBox(coordinates.Y() + varsize, coordinates.X() - varsize, coordinates.Y() - varsize, coordinates.X() + varsize, 0, colour(0, 1, 0, 1));
+	}
+	return 0;
+}
+
+int GFX_DrawRadarDiamond_V ( lua_State* L )
+{
+	int nargs = lua_gettop(L);
+	vec2 coordinates = luaL_checkvec2(L, 1);
+	float varsize = luaL_checknumber(L, 2);
+	if (nargs > 2)
+	{
+		Graphics::DrawDiamond(coordinates.Y() + varsize, coordinates.X() - varsize, coordinates.Y() - varsize, coordinates.X() + varsize, LoadColour(L, 3));
+	}
+	else
+	{
+		Graphics::DrawDiamond(coordinates.Y() + varsize, coordinates.X() - varsize, coordinates.Y() - varsize, coordinates.X() + varsize, colour(0, 1, 0, 1));
+	}
+	return 0;
+}
+
+int GFX_DrawObject3DAmbient_V ( lua_State* L )
+{
+	std::string object = luaL_checkstring(L, 1);
+	vec2 location = luaL_checkvec2(L, 2);
+	colour col = LoadColour(L, 3);
+	float scale = luaL_checknumber(L, 4);
+	float angle = luaL_checknumber(L, 5);
+	float bank = luaL_optnumber(L, 6, 0.0);
+	Graphics::DrawObject3DAmbient(object, location, col, scale, angle, bank);
 	return 0;
 }
 
