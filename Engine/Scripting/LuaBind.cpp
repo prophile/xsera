@@ -1239,6 +1239,48 @@ int GFX_ClearParticles ( lua_State* L )
 	Graphics::ClearParticles();
 }
 
+int GFX_AddParticles_V ( lua_State* L )
+{
+	const char* name = luaL_checkstring(L, 1);
+	unsigned long pcount = luaL_checkinteger(L, 2);
+	vec2 location = luaL_checkvec2(L, 3);
+	vec2 velocity = luaL_checkvec2(L, 4);
+	vec2 velocityVar = luaL_checkvec2(L, 5);
+	vec2 acc = luaL_checkvec2(L, 6);
+	float size = luaL_checknumber(L, 7);
+	float lifetime = luaL_checknumber(L, 8);
+	Graphics::AddParticles(name, pcount, location, velocity, velocityVar, acc, size, lifetime);
+	return 0;
+}
+
+int GFX_DrawCircle_V ( lua_State* L )
+{
+	int nargs = lua_gettop(L);
+	float radius, width;
+	vec2 location = luaL_checkvec2(L, 1);
+	radius = luaL_checknumber(L, 2);
+	width = luaL_checknumber(L, 3);
+	if (nargs > 3)
+	{
+		Graphics::DrawCircle(location, radius, width, LoadColour(L, 4));
+	}
+	else
+	{
+		Graphics::DrawCircle(location, radius, width, colour(0.0f, 1.0f, 0.0f, 1.0f));
+	}
+	return 0;
+}
+
+int GFX_DrawImage_V ( lua_State* L )
+{
+	const char* imgName;
+	imgName = luaL_checkstring(L, 1);
+	vec2 location = luaL_checkvec2(L, 2);
+	vec2 size = luaL_checkvec2(L, 3);
+	Graphics::DrawImage(imgName, location, size);
+	return 0;
+}
+
 int GFX_AddParticles ( lua_State* L )
 {
 	const char* name = luaL_checkstring(L, 1);
@@ -1299,6 +1341,30 @@ int GFX_SpriteDimensions ( lua_State* L )
 	return 2;
 }
 
+int GFX_DrawSprite_V ( lua_State* L )
+{
+	const char* spritesheet;
+	int nargs = lua_gettop(L);
+	float rot = 0.0f;
+	colour col;
+	spritesheet = luaL_checkstring(L, 1);
+	vec2 location = luaL_checkvec2(L, 2);
+	vec2 size = luaL_checkvec2(L, 3);
+	if (nargs > 3)
+	{
+		rot = luaL_checknumber(L, 4);
+	}
+	if (nargs > 4)
+	{
+		Graphics::DrawSprite(spritesheet, 0, 0, location, size, rot, LoadColour(L, 5));
+	}
+	else
+	{
+		Graphics::DrawSprite(spritesheet, 0, 0, location, size, rot, colour(1.0f, 1.0f, 1.0f, 1.0f));
+	}
+	return 0;
+}
+
 int GFX_DrawSprite ( lua_State* L )
 {
 	const char* spritesheet;
@@ -1318,7 +1384,10 @@ int GFX_DrawSprite ( lua_State* L )
 	{
 		Graphics::DrawSprite(spritesheet, 0, 0, vec2(loc_x, loc_y), vec2(size_x, size_y), rot, LoadColour(L, 7));
 	}
-	Graphics::DrawSprite(spritesheet, 0, 0, vec2(loc_x, loc_y), vec2(size_x, size_y), rot, colour(1.0f, 1.0f, 1.0f, 1.0f));
+	else
+	{
+		Graphics::DrawSprite(spritesheet, 0, 0, vec2(loc_x, loc_y), vec2(size_x, size_y), rot, colour(1.0f, 1.0f, 1.0f, 1.0f));
+	}
 	return 0;
 }
 
@@ -1336,6 +1405,15 @@ int GFX_DrawStarfield ( lua_State* L )
 	return 0;
 }
 
+int GFX_IsCulled_V ( lua_State* L )
+{
+	vec2 location = luaL_checkvec2(L, 1);
+	float radius = luaL_optnumber(L, 2, 0.0);
+	bool isCulled = Graphics::IsCulled(location, radius);
+	lua_pushboolean(L, isCulled ? 1 : 0);
+	return 1;
+}
+
 int GFX_IsCulled ( lua_State* L )
 {
 	float x = luaL_checknumber(L, 1);
@@ -1344,6 +1422,30 @@ int GFX_IsCulled ( lua_State* L )
 	bool isCulled = Graphics::IsCulled(vec2(x, y), radius);
 	lua_pushboolean(L, isCulled ? 1 : 0);
 	return 1;
+}
+
+int GFX_DrawSpriteFromSheet_V ( lua_State* L )
+{
+	const char* spritesheet;
+	int nargs = lua_gettop(L);
+	float rot = 0.0f;
+	spritesheet = luaL_checkstring(L, 1);
+	vec2 sheet = luaL_checkvec2(L, 2);
+	vec2 location = luaL_checkvec2(L, 3);
+	vec2 size = luaL_checkvec2(L, 4);
+	if (nargs > 4)
+	{
+		rot = luaL_checknumber(L, 5);
+	}
+	if (nargs > 5)
+	{
+		Graphics::DrawSprite(spritesheet, sheet.X(), sheet.Y(), location, size, rot, LoadColour(L, 6));
+	}
+	else
+	{
+		Graphics::DrawSprite(spritesheet, sheet.X(), sheet.Y(), location, size, rot, colour(1.0f, 1.0f, 1.0f, 1.0f));
+	}
+	return 0;
 }
 
 int GFX_DrawSpriteFromSheet ( lua_State* L )
@@ -1366,7 +1468,10 @@ int GFX_DrawSpriteFromSheet ( lua_State* L )
 	{
 		Graphics::DrawSprite(spritesheet, sheet_x, sheet_y, vec2(loc_x, loc_y), vec2(size_x, size_y), rot, LoadColour(L, 7));
 	}
-	Graphics::DrawSprite(spritesheet, sheet_x, sheet_y, vec2(loc_x, loc_y), vec2(size_x, size_y), rot, colour(1.0f, 1.0f, 1.0f, 1.0f));
+	else
+	{
+		Graphics::DrawSprite(spritesheet, sheet_x, sheet_y, vec2(loc_x, loc_y), vec2(size_x, size_y), rot, colour(1.0f, 1.0f, 1.0f, 1.0f));
+	}
 	return 0;
 }
 
