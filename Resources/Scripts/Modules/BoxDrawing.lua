@@ -21,13 +21,13 @@ function DrawInterfaceBox(box, col_mod_all, col_mod_click)
 	if (box.text ~= " ") and (box.text ~= "nodraw") then
 		graphics.draw_box(box.yCoord + 14, box.xCoord + 11, box.yCoord + 4, box.xCoord + 10 + txtlength * 2, 0, ClutLighten(box.boxColour, col_mod_all + 1))
 		graphics.draw_box(box.yCoord + 14, box.xCoord + 11 + txtlength * 2, box.yCoord + 4, box.xCoord + box.length - 11, 0, ClutLighten(box.boxColour, col_mod_click - 1))
-		graphics.draw_text(box.text, "CrystalClear", "center", box.xCoord + 11 + txtlength * 9 / 2, box.yCoord + 9, 14, ClutLighten(box.boxColour, col_mod_all + 1)) 
+		graphics.draw_text(box.text, "CrystalClear", "center", { x = box.xCoord + 11 + txtlength * 9 / 2, y = box.yCoord + 9 }, 14 , ClutLighten(box.boxColour, col_mod_all + 1)) 
 	else
 		graphics.draw_box(box.yCoord + 14, box.xCoord + 11, box.yCoord + 4, box.xCoord + 10 + txtlength * 2, 0, ClutLighten(box.boxColour, col_mod_all - 1))
 		graphics.draw_box(box.yCoord + 14, box.xCoord + 11 + txtlength * 2, box.yCoord + 4, box.xCoord + box.length - 11, 0, ClutLighten(box.boxColour, col_mod_all + 1))
 	end
 	if box.special ~= "disabled" then
-		graphics.draw_text(box.letter, "CrystalClear", "center", box.xCoord + 11 + txtlength, box.yCoord + 9, 14) 
+		graphics.draw_text(box.letter, "CrystalClear", "center", { x = box.xCoord + 11 + txtlength, y = box.yCoord + 9 }, 14) 
 	end
 	if box.radio == "off" then
 		graphics.draw_box(box.yCoord + 13, box.xCoord - 2, box.yCoord + 4, box.xCoord + 5, 0, ClutLighten(box.boxColour, col_mod_all))
@@ -67,7 +67,7 @@ function DrawInterfaceBox(box, col_mod_all, col_mod_click)
 		-- bottom
 		graphics.draw_box(box.underbox + 3, box.xCoord, box.underbox, box.xCoord + box.length, 0, box.boxColour)
 		if box.uboxText ~= nil then
-			graphics.draw_text(box.uboxText, "CrystalClear", "left", box.xCoord + 12, box.yCoord - 6, 14)
+			graphics.draw_text(box.uboxText, "CrystalClear", "left", { x = box.xCoord + 12, y = box.yCoord - 6 }, 14)
 		end
 	end
 end
@@ -76,25 +76,25 @@ function DrawBoxWithSidecar(box)
 	DrawInterfaceBox(box, 0, 0)
 	-- sidecar: a box of a particular size that surrounds a particular object
 	-- box itself
-	graphics.draw_line(box.sidecar.x, box.sidecar.y + box.sidecar.size.y, box.sidecar.x + box.sidecar.size.x, box.sidecar.y + box.sidecar.size.y, 1, box.boxColour)
-	graphics.draw_line(box.sidecar.x, box.sidecar.y, box.sidecar.x + box.sidecar.size.x, box.sidecar.y, 1, box.boxColour)
-	graphics.draw_line(box.sidecar.x, box.sidecar.y, box.sidecar.x, box.sidecar.y + box.sidecar.size.y, 1, box.boxColour)
-	graphics.draw_line(box.sidecar.x + box.sidecar.size.x, box.sidecar.y, box.sidecar.x + box.sidecar.size.x, box.sidecar.y + box.sidecar.size.y, 1, box.boxColour)
+	graphics.draw_line({ x = box.sidecar.x, y = box.sidecar.y + box.sidecar.size.y }, { x = box.sidecar.x + box.sidecar.size.x, y = box.sidecar.y + box.sidecar.size.y }, 1, box.boxColour)
+	graphics.draw_line(box.sidecar, { x = box.sidecar.x + box.sidecar.size.x, y = box.sidecar.y }, 1, box.boxColour)
+	graphics.draw_line(box.sidecar, { x = box.sidecar.x, y = box.sidecar.y + box.sidecar.size.y }, 1, box.boxColour)
+	graphics.draw_line({ x = box.sidecar.x + box.sidecar.size.x, y = box.sidecar.y }, { x = box.sidecar.x + box.sidecar.size.x, y = box.sidecar.y + box.sidecar.size.y }, 1, box.boxColour)
 	-- connecting lines - differ if box is on the left or the right
 	if box.sidecar.x > box.xCoord then
-		graphics.draw_line(box.sidecar.x, box.sidecar.y + box.sidecar.size.y, (box.sidecar.x + box.xCoord + box.length) / 2, box.sidecar.y + box.sidecar.size.y, 1, box.boxColour)
-		graphics.draw_line((box.sidecar.x + box.xCoord + box.length) / 2, box.sidecar.y + box.sidecar.size.y, (box.sidecar.x + box.xCoord + box.length) / 2, box.yCoord + 17, 1, box.boxColour)
-		graphics.draw_line((box.sidecar.x + box.xCoord + box.length) / 2, box.yCoord + 17, box.xCoord + box.length, box.yCoord + 17, 1, box.boxColour)
-		graphics.draw_line(box.sidecar.x, box.sidecar.y, (box.sidecar.x + box.xCoord + box.length) / 2, box.sidecar.y, 1, box.boxColour)
-		graphics.draw_line((box.sidecar.x + box.xCoord + box.length) / 2, box.underbox + 1, (box.sidecar.x + box.xCoord + box.length) / 2, box.sidecar.y, 1, box.boxColour)
-		graphics.draw_line(box.xCoord + box.length, box.underbox + 1, (box.sidecar.x + box.xCoord + box.length) / 2, box.underbox + 1, 1, box.boxColour)
+		graphics.draw_line({ x = box.sidecar.x, y = box.sidecar.y + box.sidecar.size.y }, { x = (box.sidecar.x + box.xCoord + box.length) / 2, y = box.sidecar.y + box.sidecar.size.y }, 1, box.boxColour)
+		graphics.draw_line({ x = (box.sidecar.x + box.xCoord + box.length) / 2, y = box.sidecar.y + box.sidecar.size.y }, { x = (box.sidecar.x + box.xCoord + box.length) / 2, y = box.yCoord + 17 }, 1, box.boxColour)
+		graphics.draw_line({ x = (box.sidecar.x + box.xCoord + box.length) / 2, y = box.yCoord + 17 }, { x = box.xCoord + box.length, y = box.yCoord + 17 }, 1, box.boxColour)
+		graphics.draw_line(box.sidecar, { x = (box.sidecar.x + box.xCoord + box.length) / 2, y = box.sidecar.y }, 1, box.boxColour)
+		graphics.draw_line({ x = (box.sidecar.x + box.xCoord + box.length) / 2, y = box.underbox + 1 }, { x = (box.sidecar.x + box.xCoord + box.length) / 2, y = box.sidecar.y }, 1, box.boxColour)
+		graphics.draw_line({ x = box.xCoord + box.length, y = box.underbox + 1 }, { x = (box.sidecar.x + box.xCoord + box.length) / 2, y = box.underbox + 1 }, 1, box.boxColour)
 	else
-		graphics.draw_line(box.xCoord, box.yCoord + 17, (box.xCoord + box.sidecar.x + box.sidecar.size.x) / 2, box.yCoord + 17, 1, box.boxColour)
-		graphics.draw_line((box.xCoord + box.sidecar.x + box.sidecar.size.x) / 2, box.yCoord + 17, (box.xCoord + box.sidecar.x + box.sidecar.size.x) / 2, box.sidecar.y + box.sidecar.size.y, 1, box.boxColour)
-		graphics.draw_line((box.xCoord + box.sidecar.x + box.sidecar.size.x) / 2, box.sidecar.y + box.sidecar.size.y, box.sidecar.x + box.sidecar.size.x, box.sidecar.y + box.sidecar.size.y, 1, box.boxColour)
-		graphics.draw_line(box.sidecar.x + box.sidecar.size.x, box.sidecar.y, (box.xCoord + box.sidecar.x + box.sidecar.size.x) / 2, box.sidecar.y, 1, box.boxColour)
-		graphics.draw_line((box.xCoord + box.sidecar.x + box.sidecar.size.x) / 2, box.sidecar.y, (box.xCoord + box.sidecar.x + box.sidecar.size.x) / 2, box.underbox + 1, 1, box.boxColour)
-		graphics.draw_line((box.xCoord + box.sidecar.x + box.sidecar.size.x) / 2, box.underbox + 1, box.xCoord, box.underbox + 1, 1, box.boxColour)
+		graphics.draw_line({ x = box.xCoord, y = box.yCoord + 17 }, { x = (box.xCoord + box.sidecar.x + box.sidecar.size.x) / 2, y = box.yCoord + 17 }, 1, box.boxColour)
+		graphics.draw_line({ x = (box.xCoord + box.sidecar.x + box.sidecar.size.x) / 2, y = box.yCoord + 17 }, { x = (box.xCoord + box.sidecar.x + box.sidecar.size.x) / 2, y = box.sidecar.y + box.sidecar.size.y }, 1, box.boxColour)
+		graphics.draw_line({ x = (box.xCoord + box.sidecar.x + box.sidecar.size.x) / 2, y = box.sidecar.y + box.sidecar.size.y }, { x = box.sidecar.x + box.sidecar.size.x, y = box.sidecar.y + box.sidecar.size.y }, 1, box.boxColour)
+		graphics.draw_line({ x = box.sidecar.x + box.sidecar.size.x, y = box.sidecar.y }, { x = (box.xCoord + box.sidecar.x + box.sidecar.size.x) / 2, y = box.sidecar.y }, 1, box.boxColour)
+		graphics.draw_line({ x = (box.xCoord + box.sidecar.x + box.sidecar.size.x) / 2, y = box.sidecar.y }, { x = (box.xCoord + box.sidecar.x + box.sidecar.size.x) / 2, y = box.underbox + 1 }, 1, box.boxColour)
+		graphics.draw_line({ x = (box.xCoord + box.sidecar.x + box.sidecar.size.x) / 2, y = box.underbox + 1 }, { x = box.xCoord, y = box.underbox + 1 }, 1, box.boxColour)
 	end
 end
 
@@ -116,15 +116,15 @@ function DrawSmallBox(box)
 	graphics.draw_box((box.top + box.bottom) / 2 - 1, box.right - 3, box.bottom + 5, box.right, 0, ClutDarken(box.boxColour))
 	if box.title ~= nil then
 		graphics.draw_box(box.top - 5, box.left + 4, box.top - 25, box.right - 4, 0, ClutLighten(box.boxColour, 3))
-		graphics.draw_text(box.title, "CrystalClear", "left", box.left + 10, box.top - 15, 18, ClutColour(1, 17))
+		graphics.draw_text(box.title, "CrystalClear", "left", { x = box.left + 10, y = box.top - 15 }, 18, ClutColour(1, 17))
 	end
 	if box.subtitle ~= nil then
-		graphics.draw_text(box.subtitle, "CrystalClear", "left", box.left + 10, box.top - 35, 18, ClutColour(1, 17))
+		graphics.draw_text(box.subtitle, "CrystalClear", "left", { x = box.left + 10, y = box.top - 35 }, 18, ClutColour(1, 17))
 	end
---	graphics.draw_text(box.desc, "CrystalClear", "left", box.left + 10, box.top - 55, 18, ClutColour(1, 17)) [TEXTFIX] re-enable when text is fixed
+--	graphics.draw_text(box.desc, "CrystalClear", "left", { x = box.left + 10, y = box.top - 55 }, 18, ClutColour(1, 17)) [TEXTFIX] re-enable when text colours are added
 end
 
-function SwitchBox(box) -- TOMORROW: FIX THESE FUNCTIONS TO WORK WITH CLUT COLOURS?
+function SwitchBox(box)
 	if box.text ~= nil and box.letter ~= nil then
 		local col_mix = { r = 0.0, g = 0.0, b = 0.0, a = 1.0 }
 		if box.special ~= nil then
