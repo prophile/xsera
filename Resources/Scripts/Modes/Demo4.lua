@@ -32,14 +32,14 @@ local camera = {w = 3000.0, h = 3000.0}
 local shipAdjust = 0
 
 function key( k )
-	if --[[k == "q" or]] k == "escape" then
+	if k == "q" or k == "escape" then
 		mode_manager.switch("MainMenu")
 	elseif k == "=" then
-		camera.w = camera.w * 2
-		camera.h = camera.h * 2
-	elseif k == "-" then
 		camera.w = camera.w / 2
 		camera.h = camera.h / 2
+	elseif k == "-" then
+		camera.w = camera.w * 2
+		camera.h = camera.h * 2
 	else
 		KeyActivate(k)
 	end
@@ -114,11 +114,16 @@ function render()
 	graphics.begin_frame()
 	graphics.set_camera(-scen.playerShip.physics.position.x + shipAdjust - (camera.w / 2.0), -scen.playerShip.physics.position.y - (camera.h / 2.0), -scen.playerShip.physics.position.x + shipAdjust + (camera.w / 2.0), -scen.playerShip.physics.position.y + (camera.h / 2.0))
 	
+	graphics.draw_starfield(3.4)
+	graphics.draw_starfield(1.8)
+	graphics.draw_starfield(0.6)
+	graphics.draw_starfield(-0.3)
+	graphics.draw_starfield(-0.9)
 	
 	if scen ~= nil and scen.objects ~= nil then
 		for obId = 0, #scen.objects-1 do
 			local o = scen.objects[obId]
-			if shipAdjust < 1.0 then
+			if camera.w < 3000 then
 				graphics.draw_sprite("Id/"..o.sprite,
 				o.physics.position.x,
 				o.physics.position.y,
@@ -129,12 +134,6 @@ function render()
 			end
 		end
 	end
-	
-	graphics.draw_starfield(3.4)
-	graphics.draw_starfield(1.8)
-	graphics.draw_starfield(0.6)
-	graphics.draw_starfield(-0.3)
-	graphics.draw_starfield(-0.9)
 	
 	graphics.end_frame()
 end
