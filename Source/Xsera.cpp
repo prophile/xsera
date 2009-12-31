@@ -31,7 +31,11 @@ void Startup ()
 	// compile class script
 	CompileScript("System/Class");
 	LuaScript bootScript ("System/Boot");
-	SwitchMode("MainMenu");
+	#ifdef NDEBUG
+		SwitchMode("Intro");
+	#else
+		SwitchMode("MainMenu");
+	#endif
 }
 
 void MainLoop ()

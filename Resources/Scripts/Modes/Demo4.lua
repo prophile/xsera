@@ -56,9 +56,8 @@ local camera = {w = 1000.0, h = 1000.0}
 	for obId = 0, #scen.objects-1 do
 		local o = scen.objects[obId]
 		graphics.draw_sprite("Id/"..o.sprite,
-		o.physics.position.x,
-		o.physics.position.y,
-		40,40,
+		o.physics.position,
+		{x=40,y=40},
 		o.physics.angle)
 		end
 	end

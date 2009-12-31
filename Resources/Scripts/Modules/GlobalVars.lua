@@ -3,14 +3,15 @@ import('AresCLUT')
 
 playerShip = nil
 
-releaseBuild = true
+releaseBuild = mode_manager.is_release()
+print(releaseBuild)
 
 cameraRatio = 1
 aspectRatio = 4 / 3
 camera = { w = 640 / cameraRatio, h }
 camera.h = camera.w / aspectRatio
 shipAdjust = .045 * camera.w
-cameraRatios = { 2, 1, 1/2, 1/4, 1/16 }
+cameraRatios = { 2, 1, 1/2, 1/4, 1/16, "hostile" }
 cameraRatioNum = 2
 timeInterval = 1
 

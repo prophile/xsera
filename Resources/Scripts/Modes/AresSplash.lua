@@ -29,10 +29,10 @@ end
 
 function render()
 	graphics.begin_frame()
-    graphics.draw_image("Panels/MainTop", 0, 118, 640, 245)
-    graphics.draw_image("Panels/MainBottom", 0, -227, 640, 24)
-    graphics.draw_image("Panels/MainLeft", -231, -110, 178, 211)
-    graphics.draw_image("Panels/MainRight", 230, -110, 180, 211)
+    graphics.draw_image("Panels/MainTop", { x = 0, y = 118 }, { x = 640, y = 245 })
+    graphics.draw_image("Panels/MainBottom", { x = 0, y = -227 }, { x = 640, y = 24 })
+    graphics.draw_image("Panels/MainLeft", { x = -231, y = -110 }, { x = 178, y = 211 })
+    graphics.draw_image("Panels/MainRight", { x = 230, y = -110 }, { x = 180, y = 211 })
 	local num = 1
 	while execs[num] ~= nil do
 		SwitchBox(execs[num])
@@ -40,7 +40,7 @@ function render()
 	end
 	-- Error Printing
 	if errNotice ~= nil then
-		graphics.draw_text(errNotice.text, "CrystalClear", "left", -315, 225, 28)
+		graphics.draw_text(errNotice.text, "CrystalClear", "left", { x = -315, y = 225 }, 28)
 		if errNotice.start + errNotice.duration < mode_manager.time() then
 			errNotice = nil
 		end
