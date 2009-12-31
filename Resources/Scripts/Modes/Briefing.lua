@@ -78,10 +78,10 @@ end
 function render()
 	graphics.begin_frame()
 	-- Background
-	graphics.draw_image("Panels/PanelTop", 0, 210, 572, 28)
-	graphics.draw_image("Panels/PanelBottom", 0, -242, 572, 20)
-	graphics.draw_image("Panels/PanelLeft", -302, -14, 33, 476)
-	graphics.draw_image("Panels/PanelRight", 303, -14, 35, 476)
+	graphics.draw_image("Panels/PanelTop", { x = 0, y = 210 }, { x = 572, y = 28 })
+	graphics.draw_image("Panels/PanelBottom", { x = 0, y = -242 }, { x = 572, y = 20 })
+	graphics.draw_image("Panels/PanelLeft", { x = -302, y = -14 }, { x = 33, y = 476 })
+	graphics.draw_image("Panels/PanelRight", { x = 303, y = -14 }, { x = 35, y = 476 })
 	local num = 1
 	-- Screen Info
 	if doLevelSwitch == true then
@@ -98,28 +98,28 @@ function render()
 			num = num + 1
 		end
 		if menuNum == 1 then
-			graphics.draw_image("Scenario/Misc/Starmap", 0, -10, 533, 364)
+			graphics.draw_image("Scenario/Misc/Starmap", { x = 0, y = -10 }, { x = 533, y = 364 })
 			-- add pointer to planet here when implemented
 		else
 			local i = 0
 			while i * GRID_DIST_BLUE < 4200 do
 				if (i * GRID_DIST_BLUE) % GRID_DIST_LIGHT_BLUE ~= 0 then
 					if i * GRID_DIST_BLUE < 3000 then
-						graphics.draw_line(-270, -170 + i * GRID_DIST_BLUE * 374 / 3000, 270, -170 + i * GRID_DIST_BLUE * 374 / 3000, 1, ClutColour(4, 11))
+						graphics.draw_line({ x = -270, y = -170 + i * GRID_DIST_BLUE * 374 / 3000 }, { x = 270, y = -170 + i * GRID_DIST_BLUE * 374 / 3000 }, 1, ClutColour(4, 11))
 					end
-					graphics.draw_line(-240 + i * GRID_DIST_BLUE * 540 / 4332, -196, -240 + i * GRID_DIST_BLUE * 540 / 4332, 174, 1, ClutColour(4, 11))
+					graphics.draw_line({ x = -240 + i * GRID_DIST_BLUE * 540 / 4332, y = -196 }, { x = -240 + i * GRID_DIST_BLUE * 540 / 4332, y = 174 }, 1, ClutColour(4, 11))
 				else
 					if i * GRID_DIST_BLUE < 3000 then
-						graphics.draw_line(-270, -170 + i * GRID_DIST_BLUE * 374 / 3000, 270, -170 + i * GRID_DIST_BLUE * 374 / 3000, 1, ClutColour(5, 1))
+						graphics.draw_line({ x = -270, y = -170 + i * GRID_DIST_BLUE * 374 / 3000 }, { x = 270, y = -170 + i * GRID_DIST_BLUE * 374 / 3000 }, 1, ClutColour(5, 1))
 					end
-					graphics.draw_line(-240 + i * GRID_DIST_BLUE * 540 / 4332, -196, -240 + i * GRID_DIST_BLUE * 540 / 4332, 174, 1, ClutColour(5, 1))
+					graphics.draw_line({ x = -240 + i * GRID_DIST_BLUE * 540 / 4332, y = -196 }, { x = -240 + i * GRID_DIST_BLUE * 540 / 4332, y = 174 }, 1, ClutColour(5, 1))
 				end
 				i = i + 1
 			end
 			local num = 1
 			while scenBriefing.screen[1][num] ~= nil do
 				tempx, tempy = graphics.sprite_dimensions(scenBriefing.screen[1][num].sprite)
-				graphics.draw_sprite(scenBriefing.screen[1][num].sprite, -240 + scenBriefing.screen[1][num].x * 540 / 4332, -170 + scenBriefing.screen[1][num].y * 374 / 3000, tempx * scenBriefing.screen[1][num].size, tempy * scenBriefing.screen[1][num].size, math.pi / 2)
+				graphics.draw_sprite(scenBriefing.screen[1][num].sprite, { x = -240 + scenBriefing.screen[1][num].x * 540 / 4332, y = -170 + scenBriefing.screen[1][num].y * 374 / 3000 }, { x = tempx * scenBriefing.screen[1][num].size, y = tempy * scenBriefing.screen[1][num].size }, math.pi / 2)
 				num = num + 1
 			end
 			if menuNum ~= 2 then
@@ -131,7 +131,7 @@ function render()
 	end
 	-- Error Printing
 	if errNotice ~= nil then
-		graphics.draw_text(errNotice.text, "CrystalClear", "center", 0, -270, 28)
+		graphics.draw_text(errNotice.text, "CrystalClear", "center", { x = 0, y = -270 }, 28)
 		if errNotice.start + errNotice.duration < mode_manager.time() then
 			errNotice = nil
 		end
