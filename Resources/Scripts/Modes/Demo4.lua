@@ -125,12 +125,11 @@ function render()
 			local o = scen.objects[obId]
 			if camera.w < 3000 then
 				graphics.draw_sprite("Id/"..o.sprite,
-				o.physics.position.x,
-				o.physics.position.y,
-				40,40,
+				o.physics.position,
+				{x=40,y=40},
 				o.physics.angle)
 			else
-				graphics.draw_rbox(o.physics.position.x, o.physics.position.y, 70)
+				graphics.draw_rbox(o.physics.position, 70)
 			end
 		end
 	end

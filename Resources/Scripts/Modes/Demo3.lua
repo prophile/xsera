@@ -130,6 +130,14 @@ function update ()
 	Camera Code
 ------------------]]--
 	
+	--[[ plan for hostile zoom [ADAM]
+	
+	set cameraChanging = "constant" if the ratio of the change that needs to be made is small enough (start it off at around 0.5 - or half as big - and test)
+	make an elseif under "if cameraChanging == true then": "elseif cameraChanging == "constant" then"
+	if cameraChanging == "constant", we want it to
+	--]]
+	
+	--[[ this structure needs to be removed
 	if cameraRatioNum > 5 and cameraChanging == false then
 		-- this is constantly modified, but not done smoothly, so it looks bad
 		
@@ -137,10 +145,17 @@ function update ()
 			local diff = { x = math.abs(computerShip.physicsObject.position.x - playerShip.physicsObject.position.x) + computerShip.size.x / 2, y = math.abs(computerShip.physicsObject.position.y - playerShip.physicsObject.position.y) + computerShip.size.y / 2 }
 			
 			cameraRatioOrig = cameraRatio
-			if diff.x == 0 or diff.y == 0 or aspectRatio == 0 then
-				cameraRatio = 2
+			if (math.abs(hypot1(diff) / hypot1(camera)) > 0.5) then
+				cameraChanging = true
+				x = 0.6
+				timeInterval = 0.6
+				cameraRatioOrig = cameraRatio
 			else
-				cameraRatio = (440) / (hypot1(diff) * 2)
+				if diff.x == 0 or diff.y == 0 or aspectRatio == 0 then
+					cameraRatio = 2
+				else
+					cameraRatio = (440) / (hypot1(diff) * 2)
+				end
 			end
 		else
 			print("DONT DO EET") -- temp error message because cameraRatioNum is greater than 5 but not equal to 6, somehow
@@ -157,7 +172,7 @@ function update ()
 		arrowLength = ARROW_LENGTH / cameraRatio
 		arrowVar = ARROW_VAR / cameraRatio
 		arrowDist = ARROW_DIST / cameraRatio
-	end
+	end--]]
 	
 	if cameraChanging == true then
 		x = x - dt
@@ -168,7 +183,8 @@ function update ()
 			soundJustPlayed = false
 		end
 		if x >= 0 then
-			cameraRatio = cameraRatioOrig + cameraRatioOrig * multiplier * (((x - timeInterval) * (x - timeInterval)) / (timeInterval * timeInterval))
+			cameraRatio = cameraRatioOrig + cameraRatioOrig * multiplier * math.pow(math.abs((x - timeInterval) / timeInterval), 2)  --[[* (((x - timeInterval) * (x - timeInterval) * math.sqrt(math.abs(x - timeInterval))) / (timeInterval * timeInterval * math.sqrt(math.abs(timeInterval))))--]]
+			print(cameraRatio, timeInterval)
 		end
 		camera = { w = 640 / cameraRatio, h }
 		camera.h = camera.w / aspectRatio
@@ -434,22 +450,22 @@ function render ()
 	while i ~= 500 do
 		if (i * GRID_DIST_BLUE) % GRID_DIST_LIGHT_BLUE == 0 then
 			if (i * GRID_DIST_BLUE) % GRID_DIST_GREEN == 0 then
-				graphics.draw_line(-60000, -i * GRID_DIST_BLUE, 60000, -i * GRID_DIST_BLUE, 1, ClutColour(5, 1))
-				graphics.draw_line(-60000, i * GRID_DIST_BLUE, 60000, i * GRID_DIST_BLUE, 1, ClutColour(5, 1))
-				graphics.draw_line(-i * GRID_DIST_BLUE, -60000, -i * GRID_DIST_BLUE, 60000, 1, ClutColour(5, 1))
-				graphics.draw_line(i * GRID_DIST_BLUE, -60000, i * GRID_DIST_BLUE, 60000, 1, ClutColour(5, 1))
+				graphics.draw_line({ x = -60000, y = -i * GRID_DIST_BLUE }, { x = 60000, y = -i * GRID_DIST_BLUE }, 1, ClutColour(5, 1))
+				graphics.draw_line({ x = -60000, y = i * GRID_DIST_BLUE }, { x = 60000, y = i * GRID_DIST_BLUE }, 1, ClutColour(5, 1))
+				graphics.draw_line({ x = -i * GRID_DIST_BLUE, y = -60000 }, { x = -i * GRID_DIST_BLUE, y = 60000 }, 1, ClutColour(5, 1))
+				graphics.draw_line({ x = i * GRID_DIST_BLUE, y = -60000 }, { x = i * GRID_DIST_BLUE, y = 60000 }, 1, ClutColour(5, 1))
 			else
-				graphics.draw_line(-60000, -i * GRID_DIST_BLUE, 60000, -i * GRID_DIST_BLUE, 1, ClutColour(4, 8))
-				graphics.draw_line(-60000, i * GRID_DIST_BLUE, 60000, i * GRID_DIST_BLUE, 1, ClutColour(4, 8))
-				graphics.draw_line(-i * GRID_DIST_BLUE, -60000, -i * GRID_DIST_BLUE, 60000, 1, ClutColour(4, 8))
-				graphics.draw_line(i * GRID_DIST_BLUE, -60000, i * GRID_DIST_BLUE, 60000, 1, ClutColour(4, 8))
+				graphics.draw_line({ x = -60000, y = -i * GRID_DIST_BLUE }, { x = 60000, y = -i * GRID_DIST_BLUE }, 1, ClutColour(4, 8))
+				graphics.draw_line({ x = -60000, y = i * GRID_DIST_BLUE }, { x = 60000, y = i * GRID_DIST_BLUE }, 1, ClutColour(4, 8))
+				graphics.draw_line({ x = -i * GRID_DIST_BLUE, y = -60000 }, { x = -i * GRID_DIST_BLUE, y = 60000 }, 1, ClutColour(4, 8))
+				graphics.draw_line({ x = i * GRID_DIST_BLUE, y = -60000 }, { x = i * GRID_DIST_BLUE, y = 60000 }, 1, ClutColour(4, 8))
 			end
 		else
 			if cameraRatio > 1 / 8 then
-				graphics.draw_line(-60000, -i * GRID_DIST_BLUE, 60000, -i * GRID_DIST_BLUE, 1, ClutColour(4, 11))
-				graphics.draw_line(-60000, i * GRID_DIST_BLUE, 60000, i * GRID_DIST_BLUE, 1, ClutColour(4, 11))
-				graphics.draw_line(-i * GRID_DIST_BLUE, -60000, -i * GRID_DIST_BLUE, 60000, 1, ClutColour(4, 11))
-				graphics.draw_line(i * GRID_DIST_BLUE, -60000, i * GRID_DIST_BLUE, 60000, 1, ClutColour(4, 11))
+				graphics.draw_line({ x = -60000, y = -i * GRID_DIST_BLUE }, { x = 60000, y = -i * GRID_DIST_BLUE }, 1, ClutColour(4, 11))
+				graphics.draw_line({ x = -60000, y = i * GRID_DIST_BLUE }, { x = 60000, y = i * GRID_DIST_BLUE }, 1, ClutColour(4, 11))
+				graphics.draw_line({ x = -i * GRID_DIST_BLUE, y = -60000 }, { x = -i * GRID_DIST_BLUE, y = 60000 }, 1, ClutColour(4, 11))
+				graphics.draw_line({ x = i * GRID_DIST_BLUE, y = -60000 }, { x = i * GRID_DIST_BLUE, y = 60000 }, 1, ClutColour(4, 11))
 			end
 		end
 		i = i + 1
@@ -462,14 +478,14 @@ function render ()
 	
 	function drawPlanet(planet)
 		if cameraRatio > 1 / 8 then
-			local xCoord; local yCoord
-			xCoord, yCoord = graphics.sprite_dimensions("Planets/" .. planet.image)
-			graphics.draw_sprite("Planets/" .. planet.image, planet.position.x, planet.position.y, xCoord, yCoord, 1)
+			local planetCoord = { x, y }
+			planetCoord.x, planetCoord.y = graphics.sprite_dimensions("Planets/" .. planet.image)
+			graphics.draw_sprite("Planets/" .. planet.image, planet.position, planetCoord, 1)
 		else
 			if planet.owner ~= Admirals[1].ident then
-				graphics.draw_rbox(planet.position.x, planet.position.y, 60, ClutColour(16, 1))
+				graphics.draw_rbox(planet.position, 60, ClutColour(16, 1))
 			else
-				graphics.draw_rbox(planet.position.x, planet.position.y, 60)
+				graphics.draw_rbox(planet.position, 60)
 			end
 		end
 	end
@@ -483,16 +499,16 @@ function render ()
 	if computerShip ~= nil then
 		if computerShip.life > 0 then
 			if cameraRatio > 1 / 8 then
-				graphics.draw_sprite("Ships/Gaitori/Carrier", computerShip.physicsObject.position.x, computerShip.physicsObject.position.y, computerShip.size.x, computerShip.size.y, computerShip.physicsObject.angle)
+				graphics.draw_sprite("Ships/Gaitori/Carrier", computerShip.physicsObject.position, computerShip.size, computerShip.physicsObject.angle)
 			else
-				graphics.draw_rdia(computerShip.physicsObject.position.x, computerShip.physicsObject.position.y, 60, ClutColour(16, 1) )
+				graphics.draw_rdia(computerShip.physicsObject.position, 60, ClutColour(16, 1) )
 			end
 		else
 			-- This explosion code is a hack. We need a way to deal with explosions in a better method.
 			-- Let's figure it out when we get Sfiera's data [ADAM]
 			if computerShip ~= nil then
 				if cameraRatio > 1 / 8 then
-					graphics.draw_sprite(bestExplosion.image, computerShip.physicsObject.position.x, computerShip.physicsObject.position.y, bestExplosion.size.x, bestExplosion.size.y, frame / 6 * math.pi)
+					graphics.draw_sprite(bestExplosion.image, computerShip.physicsObject.position, bestExplosion.size, frame / 6 * math.pi)
 				end
 				if frame == 0 then
 					sound.play("New/ExplosionCombo")
@@ -510,15 +526,15 @@ function render ()
 		while otherShip[num] ~= nil do
 			if cameraRatio > 1 / 8 then
 				if otherShip[num].name ~= "Transport" then
-					graphics.draw_sprite(otherShip[num].image, otherShip[num].physicsObject.position.x, otherShip[num].physicsObject.position.y, otherShip[num].size.x, otherShip[num].size.y, otherShip[num].physicsObject.angle)
+					graphics.draw_sprite(otherShip[num].image, otherShip[num].physicsObject.position, otherShip[num].size, otherShip[num].physicsObject.angle)
 				else
-					graphics.draw_sprite(otherShip[num].image, otherShip[num].physicsObject.position.x, otherShip[num].physicsObject.position.y, otherShip[num].size.x * otherShip[num].landing_size, otherShip[num].size.y * otherShip[num].landing_size, otherShip[num].physicsObject.angle)
+					graphics.draw_sprite(otherShip[num].image, otherShip[num].physicsObject.position, { x = otherShip[num].size.x * otherShip[num].landing_size, y = otherShip[num].size.y * otherShip[num].landing_size }, otherShip[num].physicsObject.angle)
 				end
 			else
 				if otherShip[num].name ~= "Transport" then
-					graphics.draw_rtri(otherShip[num].physicsObject.position.x, otherShip[num].physicsObject.position.y, 60)
+					graphics.draw_rtri(otherShip[num].physicsObject.position, 60)
 				else
-					graphics.draw_rplus(otherShip[num].physicsObject.position.x, otherShip[num].physicsObject.position.y, 60)
+					graphics.draw_rplus(otherShip[num].physicsObject.position, 60)
 				end
 			end
 			num = num + 1
@@ -533,7 +549,7 @@ function render ()
 		local wNum = 1
 		while wNum <= playerShip.beam.max_projectiles do
 			if playerShip.beamWeap[wNum] ~= nil then
-				graphics.draw_line(playerShip.beamWeap[wNum].physicsObject.position.x, playerShip.beamWeap[wNum].physicsObject.position.y, playerShip.beamWeap[wNum].physicsObject.position.x - math.cos(playerShip.beamWeap[wNum].physicsObject.angle) * playerShip.beam.length, playerShip.beamWeap[wNum].physicsObject.position.y - math.sin(playerShip.beamWeap[wNum].physicsObject.angle) * playerShip.beam.length, playerShip.beam.width, ClutColour(5, 1))
+				graphics.draw_line(playerShip.beamWeap[wNum].physicsObject.position, { x = playerShip.beamWeap[wNum].physicsObject.position.x - math.cos(playerShip.beamWeap[wNum].physicsObject.angle) * playerShip.beam.length, y = playerShip.beamWeap[wNum].physicsObject.position.y - math.sin(playerShip.beamWeap[wNum].physicsObject.angle) * playerShip.beam.length }, playerShip.beam.width, ClutColour(5, 1))
 			end
 			wNum = wNum + 1
 		end
@@ -548,7 +564,7 @@ function render ()
 		while wNum <= playerShip.special.max_projectiles do
 			if playerShip.specialWeap[wNum] ~= nil then
 				printTable(playerShip.special)
-				graphics.draw_sprite("Weapons/Special/cMissile", playerShip.specialWeap[wNum].physicsObject.position.x, playerShip.specialWeap[wNum].physicsObject.position.y, playerShip.special.size.x, playerShip.special.size.y, playerShip.specialWeap[wNum].physicsObject.angle)
+				graphics.draw_sprite("Weapons/Special/cMissile", playerShip.specialWeap[wNum].physicsObject.position, playerShip.special.size, playerShip.specialWeap[wNum].physicsObject.angle)
 			end
 			wNum = wNum + 1
 		end
@@ -557,9 +573,9 @@ function render ()
     graphics.end_warp()
     
     if cameraRatio > 1 / 8 then
-		graphics.draw_sprite(playerShip.image, playerShip.physicsObject.position.x, playerShip.physicsObject.position.y, playerShip.size.x, playerShip.size.y, playerShip.physicsObject.angle)
+		graphics.draw_sprite(playerShip.image, playerShip.physicsObject.position, playerShip.size, playerShip.physicsObject.angle)
 	else
-		graphics.draw_rtri(playerShip.physicsObject.position.x, playerShip.physicsObject.position.y, 60)
+		graphics.draw_rtri(playerShip.physicsObject.position, 60)
 	end
 	
 --[[------------------
@@ -568,9 +584,9 @@ function render ()
 	
 -- Arrow
 	local angle = playerShip.physicsObject.angle
-	graphics.draw_line(math.cos(arrowAlpha + angle) * arrowDist + playerShip.physicsObject.position.x, math.sin(arrowAlpha + angle) * arrowDist + playerShip.physicsObject.position.y, math.cos(angle - arrowAlpha) * arrowDist + playerShip.physicsObject.position.x, math.sin(angle - arrowAlpha) * arrowDist + playerShip.physicsObject.position.y, 1.5, ClutColour(5, 1))
-	graphics.draw_line(math.cos(angle - arrowAlpha) * arrowDist + playerShip.physicsObject.position.x, math.sin(angle - arrowAlpha) * arrowDist + playerShip.physicsObject.position.y, math.cos(angle) * (arrowLength + arrowVar) + playerShip.physicsObject.position.x, math.sin(angle) * (arrowLength + arrowVar) + playerShip.physicsObject.position.y, 1.5, ClutColour(5, 1))
-	graphics.draw_line(math.cos(angle) * (arrowLength + arrowVar) + playerShip.physicsObject.position.x, math.sin(angle) * (arrowLength + arrowVar) + playerShip.physicsObject.position.y, math.cos(arrowAlpha + angle) * arrowDist + playerShip.physicsObject.position.x, math.sin(arrowAlpha + angle) * arrowDist + playerShip.physicsObject.position.y, 1.5, ClutColour(5, 1))
+	graphics.draw_line({ x = math.cos(arrowAlpha + angle) * arrowDist + playerShip.physicsObject.position.x, y = math.sin(arrowAlpha + angle) * arrowDist + playerShip.physicsObject.position.y }, { x = math.cos(angle - arrowAlpha) * arrowDist + playerShip.physicsObject.position.x, y = math.sin(angle - arrowAlpha) * arrowDist + playerShip.physicsObject.position.y }, 1.5, ClutColour(5, 1))
+	graphics.draw_line({ x = math.cos(angle - arrowAlpha) * arrowDist + playerShip.physicsObject.position.x, y = math.sin(angle - arrowAlpha) * arrowDist + playerShip.physicsObject.position.y }, { x =math.cos(angle) * (arrowLength + arrowVar) + playerShip.physicsObject.position.x, y = math.sin(angle) * (arrowLength + arrowVar) + playerShip.physicsObject.position.y }, 1.5, ClutColour(5, 1))
+	graphics.draw_line({ x = math.cos(angle) * (arrowLength + arrowVar) + playerShip.physicsObject.position.x, y = math.sin(angle) * (arrowLength + arrowVar) + playerShip.physicsObject.position.y }, { x = math.cos(arrowAlpha + angle) * arrowDist + playerShip.physicsObject.position.x, y = math.sin(arrowAlpha + angle) * arrowDist + playerShip.physicsObject.position.y }, 1.5, ClutColour(5, 1))
 -- Panels
 	DrawPanels()
 -- Console
@@ -582,13 +598,13 @@ function render ()
 		-- check to see if it's over the panels
 		-- if it's not, draw the lines coming inward
 		mousePos.x, mousePos.y = mouse_position()
-		graphics.draw_line(-410, mousePos.y, mousePos.x - 20, mousePos.y, 1.0, ClutColour(4, 8))
-		graphics.draw_line(410, mousePos.y, mousePos.x + 20, mousePos.y, 1.0, ClutColour(4, 8))
-		graphics.draw_line(mousePos.x, -310, mousePos.x, mousePos.y - 20, 1.0, ClutColour(4, 8))
-		graphics.draw_line(mousePos.x, 310, mousePos.x, mousePos.y + 20, 1.0, ClutColour(4, 8))
+		graphics.draw_line({ x = -410, y = mousePos.y }, { x = mousePos.x - 20, y = mousePos.y }, 1.0, ClutColour(4, 8))
+		graphics.draw_line({ x = 410, y = mousePos.y }, { x = mousePos.x + 20, y = mousePos.y }, 1.0, ClutColour(4, 8))
+		graphics.draw_line({ x = mousePos.x, y = -310 }, { x = mousePos.x, y = mousePos.y - 20 }, 1.0, ClutColour(4, 8))
+		graphics.draw_line({ x = mousePos.x, y = 310 }, { x = mousePos.x, y = mousePos.y + 20 }, 1.0, ClutColour(4, 8))
 		-- if it is, draw the cursor
-		cursorx, cursory = graphics.sprite_dimensions("Misc/Cursor")
-		graphics.draw_sprite("Misc/Cursor", mousePos.x, mousePos.y, cursorx, cursory, 0)
+		local cursor = graphics.sprite_dimensions("Misc/Cursor")
+		graphics.draw_sprite("Misc/Cursor", mousePos, cursor, 0)
 		-- check mouse idleness timer
 		--if mode_manager.time() - mouseStart >= 2.0 then
 		--	mouseMovement = false
@@ -599,7 +615,7 @@ function render ()
 	InterfaceDisplay(dt)
 -- Error Printing
 	if errNotice ~= nil then
-		graphics.draw_text(errNotice.text, "CrystalClear", "center", 0, -150, 28)
+		graphics.draw_text(errNotice.text, "CrystalClear", "center", { x = 0, y = -150 }, 28)
 		if errNotice.start + errNotice.duration < mode_manager.time() then
 			errNotice = nil
 		end
