@@ -42,56 +42,56 @@ end
 	--------]]--
 
 function DoFireWeap1()
-	if playerShip.beam ~= nil then
-		playerShip.beam.firing = true
+	if scen.playerShip.beam ~= nil then
+		scen.playerShip.beam.firing = true
 	end
 end
 
 function StopFireWeap1()
-	if playerShip.beam ~= nil then
-		playerShip.beam.firing = false
+	if scen.playerShip.beam ~= nil then
+		scen.playerShip.beam.firing = false
 	end
 end
 
 function DoFireWeap2()
-	if playerShip.pulse ~= nil then
-		playerShip.pulse.firing = true
+	if scen.playerShip.pulse ~= nil then
+		scen.playerShip.pulse.firing = true
 	end
 end
 
 function StopFireWeap2()
-	if playerShip.pulse ~= nil then
-		playerShip.pulse.firing = false
+	if scen.playerShip.pulse ~= nil then
+		scen.playerShip.pulse.firing = false
 	end
 end
 
 function DoFireWeapSpecial()
-	if playerShip.special ~= nil then
-		playerShip.special.firing = true
+	if scen.playerShip.special ~= nil then
+		scen.playerShip.special.firing = true
 	end
 end
 
 function StopFireWeapSpecial()
-	if playerShip.special ~= nil then
-		playerShip.special.firing = false
+	if scen.playerShip.special ~= nil then
+		scen.playerShip.special.firing = false
 	end
 end
 
 function DoWarp()
-	if playerShip.warp.stage == "notWarping" then
-		playerShip.warp.time = 0.0
-		playerShip.warp.stage = "spooling"
+	if scen.playerShip.warp.stage == "notWarping" then
+		scen.playerShip.warp.time = 0.0
+		scen.playerShip.warp.stage = "spooling"
 	end
 end
 
 function StopWarp()
-	if playerShip.warp.stage == "warping" then
-		playerShip.warp.stage = "cooldown"
+	if scen.playerShip.warp.stage == "warping" then
+		scen.playerShip.warp.stage = "cooldown"
 	else
-		playerShip.warp.stage = "notWarping"
+		scen.playerShip.warp.stage = "notWarping"
 	end
-	playerShip.warp.time = 0.0
-	playerShip.warp.lastPlayed = 0
+	scen.playerShip.warp.time = 0.0
+	scen.playerShip.warp.lastPlayed = 0
 end
 
 	--[[-----------
@@ -234,7 +234,7 @@ function DoZoomHostile()
 	
 	-- insta-zoom version
 	if cameraRatioNum ~= 6 then
-		local diff = { x = computerShip.physicsObject.position.x - playerShip.physicsObject.position.x, y = computerShip.physicsObject.position.y - playerShip.physicsObject.position.y }
+		local diff = { x = computerShip.physicsObject.position.x - scen.playerShip.physicsObject.position.x, y = computerShip.physicsObject.position.y - scen.playerShip.physicsObject.position.y }
 		local calculatedRatio = 0
 		
 		if aspectRatio > (diff.x / diff.y) then

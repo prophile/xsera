@@ -6,8 +6,6 @@ import('Scenarios')
 import('PrintRecursive')
 import('KeyboardControl')
 
-local playerShip = nil
-
 function init()
 	physics.open(0.6)
 	start_time = mode_manager.time()
@@ -17,15 +15,6 @@ function init()
 	scen = LoadScenario(2)
 
 	loadingEntities = false
-	
-	for obId = 0, #scen.objects - 1 do
-		printTable(scen.objects[obId])
-		if scen.objects[obId].name == "Cruiser" and scen.objects[obId].race == 100 then
-			scen.objects[obId].velocity = { x = 0, y = 0 }
-			scen.objects[obId].angular_velocity = 0
-			playerShip = scen.objects[obId]
-		end
-	end
 end
 
 local camera = {w = 3000.0, h = 3000.0}
@@ -63,43 +52,43 @@ function update()
 	
     if keyboard[1][4].active == true then
 		if key_press_f6 ~= true then
-			playerShip.physics.angular_velocity = 1.0 -- [HARDCODE]
+			scen.playerShip.physics.angular_velocity = scen.playerShip.rotation["max-turn-rate"]
 		else
-			playerShip.physics.angular_velocity = 0.1 -- [HARDCODE]
+			scen.playerShip.physics.angular_velocity = 0.1 -- [HARDCODE]
 		end
     elseif keyboard[1][5].active == true then
 		if key_press_f6 ~= true then
-			playerShip.physics.angular_velocity = -1.0 -- [HARDCODE]
+			scen.playerShip.physics.angular_velocity = -scen.playerShip.rotation["max-turn-rate"]
 		else
-			playerShip.physics.angular_velocity = -0.1 -- [HARDCODE]
+			scen.playerShip.physics.angular_velocity = -0.1 -- [HARDCODE]
 		end
     else
-        playerShip.physics.angular_velocity = 0
+        scen.playerShip.physics.angular_velocity = 0
     end
 	
 	if keyboard[1][2].active == true then
         -- apply a forward force in the direction the ship is facing
-        local angle = playerShip.physics.angle
-        local thrust = playerShip["max-thrust"] * 10000
+        local angle = scen.playerShip.physics.angle
+        local thrust = scen.playerShip["max-thrust"] * 10000
 		local force = { x = thrust * math.cos(angle), y = thrust * math.sin(angle) }
-		playerShip.physics:apply_force(force)
+		scen.playerShip.physics:apply_force(force)
 	elseif keyboard[1][3].active == true then
         -- apply a reverse force in the direction opposite the direction the ship is MOVING
-        local thrust = playerShip["max-thrust"] * 10000
-        local force = playerShip.physics.velocity
+        local thrust = scen.playerShip["max-thrust"] * 10000
+        local force = scen.playerShip.physics.velocity
 		if force.x ~= 0 or force.y ~= 0 then
-			if hypot(playerShip.physics.velocity.x, playerShip.physics.velocity.y) <= 10 then
-				playerShip.physics.velocity = { x = 0, y = 0 }
+			if hypot(scen.playerShip.physics.velocity.x, scen.playerShip.physics.velocity.y) <= 10 then
+				scen.playerShip.physics.velocity = { x = 0, y = 0 }
 			else
 				local velocityMag = hypot1(force)
 				force.x = -force.x / velocityMag
 				force.y = -force.y / velocityMag
 				force.x = force.x * thrust
 				force.y = force.y * thrust
-				if hypot1(force) > hypot1(playerShip.physics.velocity) then
-					playerShip.physics.velocity = { x = 0, y = 0 }
+				if hypot1(force) > hypot1(scen.playerShip.physics.velocity) then
+					scen.playerShip.physics.velocity = { x = 0, y = 0 }
 				else
-					playerShip.physics:apply_force(force)
+					scen.playerShip.physics:apply_force(force)
 				end
 			end
 		end
