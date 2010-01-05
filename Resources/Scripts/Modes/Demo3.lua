@@ -134,7 +134,7 @@ function update ()
 	
 	set cameraChanging = "constant" if the ratio of the change that needs to be made is small enough (start it off at around 0.5 - or half as big - and test)
 	make an elseif under "if cameraChanging == true then": "elseif cameraChanging == "constant" then"
-	if cameraChanging == "constant", we want it to
+	if cameraChanging == "constant", we want it to update differently than if cameraChanging == true -  it needs to be a smooth transition (what makes it smooth?)
 	--]]
 	
 	--[[ this structure needs to be removed

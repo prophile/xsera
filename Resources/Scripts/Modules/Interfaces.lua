@@ -223,6 +223,9 @@ function DrawVictoryMenu()
 end
 
 function DrawInfoMenu()
+
+	print("test1")
+	
 	SwitchBox( { top = 250, left = -260, bottom = -250, right = 280, boxColour = ClutColour(1, 8) } )
 	if down.esc == true then
 		SwitchBox( { xCoord = -255, yCoord = -240, length = 530, text = "Done", boxColour = ClutLighten(ClutColour(1, 8)), textColour = ClutColour(1, 8), execute = nil, letter = "ESC" } )
@@ -237,6 +240,9 @@ function DrawInfoMenu()
 	end
 	local x = 245
 	local col_switch = true
+	
+	print("test2")
+	
 	while x - 15 >= -188 do
 		if col_switch == false then
 			col_switch = true
@@ -251,7 +257,14 @@ function DrawInfoMenu()
 	end
 	local num = 1
 	local line_num = 1
+	
+	print("test3")
+	
 	while keyboard[num] ~= nil do
+	
+		print("BORK BORK BORK = ", keyboard[num])
+		printTable(keyboard[num])
+		
 		local subnum = 1
 		graphics.draw_box(line_num * -15 + 260, -257, line_num * -15 + 245, 277, 0, ClutColour(1, 8))
 		graphics.draw_text(keyboard[num][1], "CrystalClear", "left", { x = -252, y = line_num * -15 + 253 }, 16)
