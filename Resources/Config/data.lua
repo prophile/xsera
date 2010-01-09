@@ -17959,7 +17959,7 @@ return {
 [1] = {
 ["id"] = 0;
 ["count"] = 1;
-["trigger"] = destroy;
+["trigger"] = "destroy";
 };
 
 };
@@ -18029,7 +18029,7 @@ return {
 [1] = {
 ["id"] = 1;
 ["count"] = 1;
-["trigger"] = activate;
+["trigger"] = "activate";
 };
 
 };
@@ -18073,13 +18073,13 @@ return {
 [1] = {
 ["id"] = 2;
 ["count"] = 1;
-["trigger"] = create;
+["trigger"] = "create";
 };
 
 [2] = {
 ["id"] = 12;
 ["count"] = 2;
-["trigger"] = collide;
+["trigger"] = "collide";
 };
 
 };
@@ -18130,13 +18130,13 @@ return {
 [1] = {
 ["id"] = 8;
 ["count"] = 1;
-["trigger"] = create;
+["trigger"] = "create";
 };
 
 [2] = {
 ["id"] = 3;
 ["count"] = 5;
-["trigger"] = collide;
+["trigger"] = "collide";
 };
 
 };
@@ -18174,7 +18174,7 @@ return {
 [1] = {
 ["id"] = 11;
 ["count"] = 1;
-["trigger"] = activate;
+["trigger"] = "activate";
 };
 
 };
@@ -18227,13 +18227,13 @@ return {
 [1] = {
 ["id"] = 19;
 ["count"] = 1;
-["trigger"] = create;
+["trigger"] = "create";
 };
 
 [2] = {
 ["id"] = 3;
 ["count"] = 5;
-["trigger"] = collide;
+["trigger"] = "collide";
 };
 
 };
@@ -18271,7 +18271,7 @@ return {
 [1] = {
 ["id"] = 14;
 ["count"] = 1;
-["trigger"] = activate;
+["trigger"] = "activate";
 };
 
 };
@@ -18347,7 +18347,7 @@ return {
 [1] = {
 ["id"] = 15;
 ["count"] = 1;
-["trigger"] = destroy;
+["trigger"] = "destroy";
 };
 
 };
@@ -18437,7 +18437,7 @@ return {
 [1] = {
 ["id"] = 16;
 ["count"] = 2;
-["trigger"] = create;
+["trigger"] = "create";
 };
 
 };
@@ -18491,19 +18491,19 @@ return {
 [1] = {
 ["id"] = 19;
 ["count"] = 1;
-["trigger"] = create;
+["trigger"] = "create";
 };
 
 [2] = {
 ["id"] = 18;
 ["count"] = 1;
-["trigger"] = expire;
+["trigger"] = "expire";
 };
 
 [3] = {
 ["id"] = 20;
 ["count"] = 4;
-["trigger"] = collide;
+["trigger"] = "collide";
 };
 
 };
@@ -18551,7 +18551,7 @@ return {
 [1] = {
 ["id"] = 24;
 ["count"] = 3;
-["trigger"] = create;
+["trigger"] = "create";
 };
 
 };
@@ -18607,7 +18607,7 @@ return {
 [1] = {
 ["id"] = 27;
 ["count"] = 2;
-["trigger"] = collide;
+["trigger"] = "collide";
 };
 
 };
@@ -18663,7 +18663,7 @@ return {
 [1] = {
 ["id"] = 27;
 ["count"] = 2;
-["trigger"] = collide;
+["trigger"] = "collide";
 };
 
 };
@@ -18738,7 +18738,7 @@ return {
 [1] = {
 ["id"] = 31;
 ["count"] = 1;
-["trigger"] = destroy;
+["trigger"] = "destroy";
 };
 
 };
@@ -18833,7 +18833,7 @@ return {
 [1] = {
 ["id"] = 32;
 ["count"] = 1;
-["trigger"] = destroy;
+["trigger"] = "destroy";
 };
 
 };
@@ -18887,7 +18887,7 @@ return {
 [1] = {
 ["id"] = 33;
 ["count"] = 1;
-["trigger"] = activate;
+["trigger"] = "activate";
 };
 
 };
@@ -18931,13 +18931,13 @@ return {
 [1] = {
 ["id"] = 34;
 ["count"] = 1;
-["trigger"] = create;
+["trigger"] = "create";
 };
 
 [2] = {
 ["id"] = 12;
 ["count"] = 2;
-["trigger"] = collide;
+["trigger"] = "collide";
 };
 
 };
@@ -19014,7 +19014,7 @@ return {
 [1] = {
 ["id"] = 36;
 ["count"] = 1;
-["trigger"] = destroy;
+["trigger"] = "destroy";
 };
 
 };
@@ -19080,7 +19080,7 @@ return {
 [1] = {
 ["id"] = 37;
 ["count"] = 1;
-["trigger"] = activate;
+["trigger"] = "activate";
 };
 
 };
@@ -19157,7 +19157,7 @@ return {
 [1] = {
 ["id"] = 36;
 ["count"] = 1;
-["trigger"] = destroy;
+["trigger"] = "destroy";
 };
 
 };
@@ -19231,7 +19231,7 @@ return {
 [1] = {
 ["id"] = 38;
 ["count"] = 1;
-["trigger"] = activate;
+["trigger"] = "activate";
 };
 
 };
@@ -19276,13 +19276,13 @@ return {
 [1] = {
 ["id"] = 39;
 ["count"] = 1;
-["trigger"] = create;
+["trigger"] = "create";
 };
 
 [2] = {
 ["id"] = 40;
 ["count"] = 2;
-["trigger"] = collide;
+["trigger"] = "collide";
 };
 
 };
@@ -19337,7 +19337,7 @@ return {
 [1] = {
 ["id"] = 9;
 ["count"] = 2;
-["trigger"] = expire;
+["trigger"] = "expire";
 };
 
 };
@@ -19469,19 +19469,19 @@ return {
 [1] = {
 ["id"] = 0;
 ["count"] = 1;
-["trigger"] = destroy;
+["trigger"] = "destroy";
 };
 
 [2] = {
 ["id"] = 44;
 ["count"] = 2;
-["trigger"] = arrive;
+["trigger"] = "arrive";
 };
 
 [3] = {
 ["id"] = 275;
 ["count"] = 1;
-["trigger"] = expire;
+["trigger"] = "expire";
 };
 
 };
@@ -19566,19 +19566,19 @@ return {
 [1] = {
 ["id"] = 0;
 ["count"] = 1;
-["trigger"] = destroy;
+["trigger"] = "destroy";
 };
 
 [2] = {
 ["id"] = 44;
 ["count"] = 2;
-["trigger"] = arrive;
+["trigger"] = "arrive";
 };
 
 [3] = {
 ["id"] = 275;
 ["count"] = 1;
-["trigger"] = expire;
+["trigger"] = "expire";
 };
 
 };
@@ -19632,7 +19632,7 @@ return {
 [1] = {
 ["id"] = 3;
 ["count"] = 5;
-["trigger"] = collide;
+["trigger"] = "collide";
 };
 
 };
@@ -19729,7 +19729,7 @@ return {
 [1] = {
 ["id"] = 50;
 ["count"] = 3;
-["trigger"] = collide;
+["trigger"] = "collide";
 };
 
 };
@@ -19779,7 +19779,7 @@ return {
 [1] = {
 ["id"] = 53;
 ["count"] = 3;
-["trigger"] = create;
+["trigger"] = "create";
 };
 
 };
@@ -19839,7 +19839,7 @@ return {
 [1] = {
 ["id"] = 56;
 ["count"] = 2;
-["trigger"] = arrive;
+["trigger"] = "arrive";
 };
 
 };
@@ -19878,7 +19878,7 @@ return {
 [1] = {
 ["id"] = 98;
 ["count"] = 1;
-["trigger"] = activate;
+["trigger"] = "activate";
 };
 
 };
@@ -19924,7 +19924,7 @@ return {
 [1] = {
 ["id"] = 42;
 ["count"] = 1;
-["trigger"] = create;
+["trigger"] = "create";
 };
 
 };
@@ -19970,7 +19970,7 @@ return {
 [1] = {
 ["id"] = 43;
 ["count"] = 1;
-["trigger"] = create;
+["trigger"] = "create";
 };
 
 };
@@ -20016,7 +20016,7 @@ return {
 [1] = {
 ["id"] = 61;
 ["count"] = 2;
-["trigger"] = create;
+["trigger"] = "create";
 };
 
 };
@@ -20065,7 +20065,7 @@ return {
 [1] = {
 ["id"] = 63;
 ["count"] = 1;
-["trigger"] = create;
+["trigger"] = "create";
 };
 
 };
@@ -20119,7 +20119,7 @@ return {
 [1] = {
 ["id"] = 64;
 ["count"] = 2;
-["trigger"] = destroy;
+["trigger"] = "destroy";
 };
 
 };
@@ -20194,7 +20194,7 @@ return {
 [1] = {
 ["id"] = 66;
 ["count"] = 1;
-["trigger"] = destroy;
+["trigger"] = "destroy";
 };
 
 };
@@ -20287,7 +20287,7 @@ return {
 [1] = {
 ["id"] = 67;
 ["count"] = 1;
-["trigger"] = destroy;
+["trigger"] = "destroy";
 };
 
 };
@@ -20345,7 +20345,7 @@ return {
 [1] = {
 ["id"] = 68;
 ["count"] = 3;
-["trigger"] = activate;
+["trigger"] = "activate";
 };
 
 };
@@ -20389,7 +20389,7 @@ return {
 [1] = {
 ["id"] = 503;
 ["count"] = 3;
-["trigger"] = collide;
+["trigger"] = "collide";
 };
 
 };
@@ -20464,13 +20464,13 @@ return {
 [1] = {
 ["id"] = 73;
 ["count"] = 1;
-["trigger"] = destroy;
+["trigger"] = "destroy";
 };
 
 [2] = {
 ["id"] = 74;
 ["count"] = 2;
-["trigger"] = arrive;
+["trigger"] = "arrive";
 };
 
 };
@@ -20546,7 +20546,7 @@ return {
 [1] = {
 ["id"] = 76;
 ["count"] = 1;
-["trigger"] = destroy;
+["trigger"] = "destroy";
 };
 
 };
@@ -20645,13 +20645,13 @@ return {
 [1] = {
 ["id"] = 77;
 ["count"] = 1;
-["trigger"] = create;
+["trigger"] = "create";
 };
 
 [2] = {
 ["id"] = 9;
 ["count"] = 2;
-["trigger"] = collide;
+["trigger"] = "collide";
 };
 
 };
@@ -20690,7 +20690,7 @@ return {
 [1] = {
 ["id"] = 79;
 ["count"] = 1;
-["trigger"] = activate;
+["trigger"] = "activate";
 };
 
 };
@@ -20768,7 +20768,7 @@ return {
 [1] = {
 ["id"] = 36;
 ["count"] = 1;
-["trigger"] = destroy;
+["trigger"] = "destroy";
 };
 
 };
@@ -20847,7 +20847,7 @@ return {
 [1] = {
 ["id"] = 86;
 ["count"] = 2;
-["trigger"] = activate;
+["trigger"] = "activate";
 };
 
 };
@@ -20925,7 +20925,7 @@ return {
 [1] = {
 ["id"] = 36;
 ["count"] = 1;
-["trigger"] = destroy;
+["trigger"] = "destroy";
 };
 
 };
@@ -21004,7 +21004,7 @@ return {
 [1] = {
 ["id"] = 88;
 ["count"] = 2;
-["trigger"] = activate;
+["trigger"] = "activate";
 };
 
 };
@@ -21060,7 +21060,7 @@ return {
 [1] = {
 ["id"] = 9;
 ["count"] = 2;
-["trigger"] = collide;
+["trigger"] = "collide";
 };
 
 };
@@ -21099,7 +21099,7 @@ return {
 [1] = {
 ["id"] = 90;
 ["count"] = 2;
-["trigger"] = activate;
+["trigger"] = "activate";
 };
 
 };
@@ -21157,7 +21157,7 @@ return {
 [1] = {
 ["id"] = 27;
 ["count"] = 2;
-["trigger"] = collide;
+["trigger"] = "collide";
 };
 
 };
@@ -21204,7 +21204,7 @@ return {
 [1] = {
 ["id"] = 92;
 ["count"] = 4;
-["trigger"] = create;
+["trigger"] = "create";
 };
 
 };
@@ -21249,7 +21249,7 @@ return {
 [1] = {
 ["id"] = 16;
 ["count"] = 1;
-["trigger"] = create;
+["trigger"] = "create";
 };
 
 };
@@ -21328,7 +21328,7 @@ return {
 [1] = {
 ["id"] = 0;
 ["count"] = 1;
-["trigger"] = destroy;
+["trigger"] = "destroy";
 };
 
 };
@@ -21394,7 +21394,7 @@ return {
 [1] = {
 ["id"] = 1;
 ["count"] = 1;
-["trigger"] = activate;
+["trigger"] = "activate";
 };
 
 };
@@ -21474,7 +21474,7 @@ return {
 [1] = {
 ["id"] = 0;
 ["count"] = 1;
-["trigger"] = destroy;
+["trigger"] = "destroy";
 };
 
 };
@@ -21540,7 +21540,7 @@ return {
 [1] = {
 ["id"] = 97;
 ["count"] = 1;
-["trigger"] = activate;
+["trigger"] = "activate";
 };
 
 };
@@ -21615,7 +21615,7 @@ return {
 [1] = {
 ["id"] = 0;
 ["count"] = 1;
-["trigger"] = destroy;
+["trigger"] = "destroy";
 };
 
 };
@@ -21711,7 +21711,7 @@ return {
 [1] = {
 ["id"] = 0;
 ["count"] = 1;
-["trigger"] = destroy;
+["trigger"] = "destroy";
 };
 
 };
@@ -21769,7 +21769,7 @@ return {
 [1] = {
 ["id"] = 11;
 ["count"] = 1;
-["trigger"] = activate;
+["trigger"] = "activate";
 };
 
 };
@@ -21845,7 +21845,7 @@ return {
 [1] = {
 ["id"] = 0;
 ["count"] = 1;
-["trigger"] = destroy;
+["trigger"] = "destroy";
 };
 
 };
@@ -21965,7 +21965,7 @@ return {
 [1] = {
 ["id"] = 15;
 ["count"] = 1;
-["trigger"] = destroy;
+["trigger"] = "destroy";
 };
 
 };
@@ -22047,7 +22047,7 @@ return {
 [1] = {
 ["id"] = 37;
 ["count"] = 1;
-["trigger"] = activate;
+["trigger"] = "activate";
 };
 
 };
@@ -22122,7 +22122,7 @@ return {
 [1] = {
 ["id"] = 66;
 ["count"] = 1;
-["trigger"] = destroy;
+["trigger"] = "destroy";
 };
 
 };
@@ -22195,7 +22195,7 @@ return {
 [1] = {
 ["id"] = 102;
 ["count"] = 1;
-["trigger"] = activate;
+["trigger"] = "activate";
 };
 
 };
@@ -22257,19 +22257,19 @@ return {
 [1] = {
 ["id"] = 532;
 ["count"] = 1;
-["trigger"] = create;
+["trigger"] = "create";
 };
 
 [2] = {
 ["id"] = 531;
 ["count"] = 50331649;
-["trigger"] = activate;
+["trigger"] = "activate";
 };
 
 [3] = {
 ["id"] = 20;
 ["count"] = 4;
-["trigger"] = collide;
+["trigger"] = "collide";
 };
 
 };
@@ -22347,7 +22347,7 @@ return {
 [1] = {
 ["id"] = 36;
 ["count"] = 1;
-["trigger"] = destroy;
+["trigger"] = "destroy";
 };
 
 };
@@ -22415,7 +22415,7 @@ return {
 [1] = {
 ["id"] = 109;
 ["count"] = 1;
-["trigger"] = activate;
+["trigger"] = "activate";
 };
 
 };
@@ -22475,13 +22475,13 @@ return {
 [1] = {
 ["id"] = 106;
 ["count"] = 1;
-["trigger"] = create;
+["trigger"] = "create";
 };
 
 [2] = {
 ["id"] = 3;
 ["count"] = 5;
-["trigger"] = collide;
+["trigger"] = "collide";
 };
 
 };
@@ -22520,7 +22520,7 @@ return {
 [1] = {
 ["id"] = 108;
 ["count"] = 1;
-["trigger"] = activate;
+["trigger"] = "activate";
 };
 
 };
@@ -22565,13 +22565,13 @@ return {
 [1] = {
 ["id"] = 107;
 ["count"] = 1;
-["trigger"] = create;
+["trigger"] = "create";
 };
 
 [2] = {
 ["id"] = 12;
 ["count"] = 2;
-["trigger"] = collide;
+["trigger"] = "collide";
 };
 
 };
@@ -22632,19 +22632,19 @@ return {
 [1] = {
 ["id"] = 27;
 ["count"] = 2;
-["trigger"] = destroy;
+["trigger"] = "destroy";
 };
 
 [2] = {
 ["id"] = 111;
 ["count"] = 1;
-["trigger"] = create;
+["trigger"] = "create";
 };
 
 [3] = {
 ["id"] = 29;
 ["count"] = 2;
-["trigger"] = collide;
+["trigger"] = "collide";
 };
 
 };
@@ -22684,7 +22684,7 @@ return {
 [1] = {
 ["id"] = 110;
 ["count"] = 1;
-["trigger"] = activate;
+["trigger"] = "activate";
 };
 
 };
@@ -22724,7 +22724,7 @@ return {
 [1] = {
 ["id"] = 110;
 ["count"] = 1;
-["trigger"] = activate;
+["trigger"] = "activate";
 };
 
 };
@@ -22779,7 +22779,7 @@ return {
 [1] = {
 ["id"] = 64;
 ["count"] = 2;
-["trigger"] = destroy;
+["trigger"] = "destroy";
 };
 
 };
@@ -22817,7 +22817,7 @@ return {
 [1] = {
 ["id"] = 112;
 ["count"] = 1;
-["trigger"] = activate;
+["trigger"] = "activate";
 };
 
 };
@@ -22871,7 +22871,7 @@ return {
 [1] = {
 ["id"] = 36;
 ["count"] = 1;
-["trigger"] = destroy;
+["trigger"] = "destroy";
 };
 
 };
@@ -22932,7 +22932,7 @@ return {
 [1] = {
 ["id"] = 0;
 ["count"] = 1;
-["trigger"] = destroy;
+["trigger"] = "destroy";
 };
 
 };
@@ -23020,7 +23020,7 @@ return {
 [1] = {
 ["id"] = 115;
 ["count"] = 1;
-["trigger"] = create;
+["trigger"] = "create";
 };
 
 };
@@ -23099,7 +23099,7 @@ return {
 [1] = {
 ["id"] = 36;
 ["count"] = 1;
-["trigger"] = destroy;
+["trigger"] = "destroy";
 };
 
 };
@@ -23174,7 +23174,7 @@ return {
 [1] = {
 ["id"] = 498;
 ["count"] = 3;
-["trigger"] = collide;
+["trigger"] = "collide";
 };
 
 };
@@ -23215,7 +23215,7 @@ return {
 [1] = {
 ["id"] = 46;
 ["count"] = 2;
-["trigger"] = activate;
+["trigger"] = "activate";
 };
 
 };
@@ -23277,7 +23277,7 @@ return {
 [1] = {
 ["id"] = 116;
 ["count"] = 2;
-["trigger"] = destroy;
+["trigger"] = "destroy";
 };
 
 };
@@ -23337,7 +23337,7 @@ return {
 [1] = {
 ["id"] = 118;
 ["count"] = 2;
-["trigger"] = destroy;
+["trigger"] = "destroy";
 };
 
 };
@@ -23395,13 +23395,13 @@ return {
 [1] = {
 ["id"] = 120;
 ["count"] = 1;
-["trigger"] = destroy;
+["trigger"] = "destroy";
 };
 
 [2] = {
 ["id"] = 121;
 ["count"] = 3;
-["trigger"] = collide;
+["trigger"] = "collide";
 };
 
 };
@@ -23485,19 +23485,19 @@ return {
 [1] = {
 ["id"] = 0;
 ["count"] = 1;
-["trigger"] = destroy;
+["trigger"] = "destroy";
 };
 
 [2] = {
 ["id"] = 44;
 ["count"] = 2;
-["trigger"] = arrive;
+["trigger"] = "arrive";
 };
 
 [3] = {
 ["id"] = 275;
 ["count"] = 1;
-["trigger"] = expire;
+["trigger"] = "expire";
 };
 
 };
@@ -23574,7 +23574,7 @@ return {
 [1] = {
 ["id"] = 36;
 ["count"] = 1;
-["trigger"] = destroy;
+["trigger"] = "destroy";
 };
 
 };
@@ -23699,19 +23699,19 @@ return {
 [1] = {
 ["id"] = 0;
 ["count"] = 1;
-["trigger"] = destroy;
+["trigger"] = "destroy";
 };
 
 [2] = {
 ["id"] = 44;
 ["count"] = 2;
-["trigger"] = arrive;
+["trigger"] = "arrive";
 };
 
 [3] = {
 ["id"] = 275;
 ["count"] = 1;
-["trigger"] = expire;
+["trigger"] = "expire";
 };
 
 };
@@ -23805,7 +23805,7 @@ return {
 [1] = {
 ["id"] = 36;
 ["count"] = 1;
-["trigger"] = destroy;
+["trigger"] = "destroy";
 };
 
 };
@@ -23890,7 +23890,7 @@ return {
 [1] = {
 ["id"] = 9;
 ["count"] = 2;
-["trigger"] = collide;
+["trigger"] = "collide";
 };
 
 };
@@ -23962,13 +23962,13 @@ return {
 [1] = {
 ["id"] = 143;
 ["count"] = 3;
-["trigger"] = destroy;
+["trigger"] = "destroy";
 };
 
 [2] = {
 ["id"] = 146;
 ["count"] = 1;
-["trigger"] = arrive;
+["trigger"] = "arrive";
 };
 
 };
@@ -24007,7 +24007,7 @@ return {
 [1] = {
 ["id"] = 147;
 ["count"] = 2;
-["trigger"] = activate;
+["trigger"] = "activate";
 };
 
 };
@@ -24071,7 +24071,7 @@ return {
 [1] = {
 ["id"] = 0;
 ["count"] = 1;
-["trigger"] = destroy;
+["trigger"] = "destroy";
 };
 
 };
@@ -24199,19 +24199,19 @@ return {
 [1] = {
 ["id"] = 0;
 ["count"] = 1;
-["trigger"] = destroy;
+["trigger"] = "destroy";
 };
 
 [2] = {
 ["id"] = 149;
 ["count"] = 6;
-["trigger"] = arrive;
+["trigger"] = "arrive";
 };
 
 [3] = {
 ["id"] = 24;
 ["count"] = 5;
-["trigger"] = expire;
+["trigger"] = "expire";
 };
 
 };
@@ -24314,19 +24314,19 @@ return {
 [1] = {
 ["id"] = 0;
 ["count"] = 1;
-["trigger"] = destroy;
+["trigger"] = "destroy";
 };
 
 [2] = {
 ["id"] = 149;
 ["count"] = 6;
-["trigger"] = arrive;
+["trigger"] = "arrive";
 };
 
 [3] = {
 ["id"] = 24;
 ["count"] = 5;
-["trigger"] = expire;
+["trigger"] = "expire";
 };
 
 };
@@ -24383,7 +24383,7 @@ return {
 [1] = {
 ["id"] = 155;
 ["count"] = 1;
-["trigger"] = activate;
+["trigger"] = "activate";
 };
 
 };
@@ -24428,13 +24428,13 @@ return {
 [1] = {
 ["id"] = 107;
 ["count"] = 1;
-["trigger"] = create;
+["trigger"] = "create";
 };
 
 [2] = {
 ["id"] = 3;
 ["count"] = 5;
-["trigger"] = collide;
+["trigger"] = "collide";
 };
 
 };
@@ -24474,7 +24474,7 @@ return {
 [1] = {
 ["id"] = 156;
 ["count"] = 2;
-["trigger"] = activate;
+["trigger"] = "activate";
 };
 
 };
@@ -24556,13 +24556,13 @@ return {
 [1] = {
 ["id"] = 163;
 ["count"] = 2;
-["trigger"] = destroy;
+["trigger"] = "destroy";
 };
 
 [2] = {
 ["id"] = 158;
 ["count"] = 3;
-["trigger"] = arrive;
+["trigger"] = "arrive";
 };
 
 };
@@ -24711,13 +24711,13 @@ return {
 [1] = {
 ["id"] = 161;
 ["count"] = 2;
-["trigger"] = destroy;
+["trigger"] = "destroy";
 };
 
 [2] = {
 ["id"] = 161;
 ["count"] = 1;
-["trigger"] = arrive;
+["trigger"] = "arrive";
 };
 
 };
@@ -24801,7 +24801,7 @@ return {
 [1] = {
 ["id"] = 1;
 ["count"] = 1;
-["trigger"] = activate;
+["trigger"] = "activate";
 };
 
 };
@@ -24845,13 +24845,13 @@ return {
 [1] = {
 ["id"] = 2;
 ["count"] = 1;
-["trigger"] = create;
+["trigger"] = "create";
 };
 
 [2] = {
 ["id"] = 12;
 ["count"] = 2;
-["trigger"] = collide;
+["trigger"] = "collide";
 };
 
 };
@@ -24963,13 +24963,13 @@ return {
 [1] = {
 ["id"] = 166;
 ["count"] = 2;
-["trigger"] = expire;
+["trigger"] = "expire";
 };
 
 [2] = {
 ["id"] = 166;
 ["count"] = 2;
-["trigger"] = collide;
+["trigger"] = "collide";
 };
 
 };
@@ -25014,7 +25014,7 @@ return {
 [1] = {
 ["id"] = 165;
 ["count"] = 1;
-["trigger"] = create;
+["trigger"] = "create";
 };
 
 };
@@ -25071,7 +25071,7 @@ return {
 [1] = {
 ["id"] = 27;
 ["count"] = 2;
-["trigger"] = collide;
+["trigger"] = "collide";
 };
 
 };
@@ -25112,7 +25112,7 @@ return {
 [1] = {
 ["id"] = 168;
 ["count"] = 1;
-["trigger"] = activate;
+["trigger"] = "activate";
 };
 
 };
@@ -25192,7 +25192,7 @@ return {
 [1] = {
 ["id"] = 0;
 ["count"] = 1;
-["trigger"] = destroy;
+["trigger"] = "destroy";
 };
 
 };
@@ -25268,7 +25268,7 @@ return {
 [1] = {
 ["id"] = 15;
 ["count"] = 1;
-["trigger"] = destroy;
+["trigger"] = "destroy";
 };
 
 };
@@ -25432,7 +25432,7 @@ return {
 [1] = {
 ["id"] = 32;
 ["count"] = 1;
-["trigger"] = destroy;
+["trigger"] = "destroy";
 };
 
 };
@@ -25526,7 +25526,7 @@ return {
 [1] = {
 ["id"] = 36;
 ["count"] = 1;
-["trigger"] = destroy;
+["trigger"] = "destroy";
 };
 
 };
@@ -25621,7 +25621,7 @@ return {
 [1] = {
 ["id"] = 0;
 ["count"] = 1;
-["trigger"] = destroy;
+["trigger"] = "destroy";
 };
 
 };
@@ -25736,7 +25736,7 @@ return {
 [1] = {
 ["id"] = 36;
 ["count"] = 1;
-["trigger"] = destroy;
+["trigger"] = "destroy";
 };
 
 };
@@ -25810,7 +25810,7 @@ return {
 [1] = {
 ["id"] = 227;
 ["count"] = 1;
-["trigger"] = create;
+["trigger"] = "create";
 };
 
 };
@@ -25887,19 +25887,19 @@ return {
 [1] = {
 ["id"] = 0;
 ["count"] = 1;
-["trigger"] = destroy;
+["trigger"] = "destroy";
 };
 
 [2] = {
 ["id"] = 186;
 ["count"] = 1;
-["trigger"] = create;
+["trigger"] = "create";
 };
 
 [3] = {
 ["id"] = 183;
 ["count"] = 2;
-["trigger"] = arrive;
+["trigger"] = "arrive";
 };
 
 };
@@ -25985,13 +25985,13 @@ return {
 [1] = {
 ["id"] = 161;
 ["count"] = 2;
-["trigger"] = destroy;
+["trigger"] = "destroy";
 };
 
 [2] = {
 ["id"] = 161;
 ["count"] = 1;
-["trigger"] = arrive;
+["trigger"] = "arrive";
 };
 
 };
@@ -26124,19 +26124,19 @@ return {
 [1] = {
 ["id"] = 0;
 ["count"] = 1;
-["trigger"] = destroy;
+["trigger"] = "destroy";
 };
 
 [2] = {
 ["id"] = 149;
 ["count"] = 6;
-["trigger"] = arrive;
+["trigger"] = "arrive";
 };
 
 [3] = {
 ["id"] = 24;
 ["count"] = 5;
-["trigger"] = expire;
+["trigger"] = "expire";
 };
 
 };
@@ -26233,13 +26233,13 @@ return {
 [1] = {
 ["id"] = 163;
 ["count"] = 2;
-["trigger"] = destroy;
+["trigger"] = "destroy";
 };
 
 [2] = {
 ["id"] = 158;
 ["count"] = 3;
-["trigger"] = arrive;
+["trigger"] = "arrive";
 };
 
 };
@@ -26299,7 +26299,7 @@ return {
 [1] = {
 ["id"] = 197;
 ["count"] = 2;
-["trigger"] = activate;
+["trigger"] = "activate";
 };
 
 };
@@ -26337,7 +26337,7 @@ return {
 [1] = {
 ["id"] = 199;
 ["count"] = 3;
-["trigger"] = activate;
+["trigger"] = "activate";
 };
 
 };
@@ -26430,7 +26430,7 @@ return {
 [1] = {
 ["id"] = 490;
 ["count"] = 2;
-["trigger"] = destroy;
+["trigger"] = "destroy";
 };
 
 };
@@ -26508,13 +26508,13 @@ return {
 [1] = {
 ["id"] = 490;
 ["count"] = 2;
-["trigger"] = destroy;
+["trigger"] = "destroy";
 };
 
 [2] = {
 ["id"] = 226;
 ["count"] = 1;
-["trigger"] = expire;
+["trigger"] = "expire";
 };
 
 };
@@ -26585,13 +26585,13 @@ return {
 [1] = {
 ["id"] = 36;
 ["count"] = 1;
-["trigger"] = destroy;
+["trigger"] = "destroy";
 };
 
 [2] = {
 ["id"] = 185;
 ["count"] = 2;
-["trigger"] = create;
+["trigger"] = "create";
 };
 
 };
@@ -26659,13 +26659,13 @@ return {
 [1] = {
 ["id"] = 492;
 ["count"] = 2;
-["trigger"] = destroy;
+["trigger"] = "destroy";
 };
 
 [2] = {
 ["id"] = 121;
 ["count"] = 3;
-["trigger"] = collide;
+["trigger"] = "collide";
 };
 
 };
@@ -26742,7 +26742,7 @@ return {
 [1] = {
 ["id"] = 36;
 ["count"] = 1;
-["trigger"] = destroy;
+["trigger"] = "destroy";
 };
 
 };
@@ -26830,7 +26830,7 @@ return {
 [1] = {
 ["id"] = 207;
 ["count"] = 2;
-["trigger"] = activate;
+["trigger"] = "activate";
 };
 
 };
@@ -26884,7 +26884,7 @@ return {
 [1] = {
 ["id"] = 9;
 ["count"] = 2;
-["trigger"] = collide;
+["trigger"] = "collide";
 };
 
 };
@@ -26923,7 +26923,7 @@ return {
 [1] = {
 ["id"] = 215;
 ["count"] = 2;
-["trigger"] = activate;
+["trigger"] = "activate";
 };
 
 };
@@ -26967,7 +26967,7 @@ return {
 [1] = {
 ["id"] = 12;
 ["count"] = 2;
-["trigger"] = collide;
+["trigger"] = "collide";
 };
 
 };
@@ -27007,7 +27007,7 @@ return {
 [1] = {
 ["id"] = 217;
 ["count"] = 2;
-["trigger"] = activate;
+["trigger"] = "activate";
 };
 
 };
@@ -27048,7 +27048,7 @@ return {
 [1] = {
 ["id"] = 219;
 ["count"] = 2;
-["trigger"] = activate;
+["trigger"] = "activate";
 };
 
 };
@@ -27110,13 +27110,13 @@ return {
 [1] = {
 ["id"] = 27;
 ["count"] = 2;
-["trigger"] = destroy;
+["trigger"] = "destroy";
 };
 
 [2] = {
 ["id"] = 29;
 ["count"] = 2;
-["trigger"] = collide;
+["trigger"] = "collide";
 };
 
 };
@@ -27165,7 +27165,7 @@ return {
 [1] = {
 ["id"] = 64;
 ["count"] = 2;
-["trigger"] = destroy;
+["trigger"] = "destroy";
 };
 
 };
@@ -27240,7 +27240,7 @@ return {
 [1] = {
 ["id"] = 66;
 ["count"] = 1;
-["trigger"] = destroy;
+["trigger"] = "destroy";
 };
 
 };
@@ -27370,13 +27370,13 @@ return {
 [1] = {
 ["id"] = 161;
 ["count"] = 2;
-["trigger"] = destroy;
+["trigger"] = "destroy";
 };
 
 [2] = {
 ["id"] = 161;
 ["count"] = 1;
-["trigger"] = arrive;
+["trigger"] = "arrive";
 };
 
 };
@@ -27505,19 +27505,19 @@ return {
 [1] = {
 ["id"] = 0;
 ["count"] = 1;
-["trigger"] = destroy;
+["trigger"] = "destroy";
 };
 
 [2] = {
 ["id"] = 44;
 ["count"] = 2;
-["trigger"] = arrive;
+["trigger"] = "arrive";
 };
 
 [3] = {
 ["id"] = 275;
 ["count"] = 1;
-["trigger"] = expire;
+["trigger"] = "expire";
 };
 
 };
@@ -27581,7 +27581,7 @@ return {
 [1] = {
 ["id"] = 64;
 ["count"] = 2;
-["trigger"] = destroy;
+["trigger"] = "destroy";
 };
 
 };
@@ -27657,7 +27657,7 @@ return {
 [1] = {
 ["id"] = 15;
 ["count"] = 1;
-["trigger"] = destroy;
+["trigger"] = "destroy";
 };
 
 };
@@ -27741,7 +27741,7 @@ return {
 [1] = {
 ["id"] = 228;
 ["count"] = 2;
-["trigger"] = activate;
+["trigger"] = "activate";
 };
 
 };
@@ -27796,7 +27796,7 @@ return {
 [1] = {
 ["id"] = 9;
 ["count"] = 2;
-["trigger"] = collide;
+["trigger"] = "collide";
 };
 
 };
@@ -27836,7 +27836,7 @@ return {
 [1] = {
 ["id"] = 230;
 ["count"] = 2;
-["trigger"] = activate;
+["trigger"] = "activate";
 };
 
 };
@@ -27881,7 +27881,7 @@ return {
 [1] = {
 ["id"] = 3;
 ["count"] = 5;
-["trigger"] = collide;
+["trigger"] = "collide";
 };
 
 };
@@ -27956,7 +27956,7 @@ return {
 [1] = {
 ["id"] = 32;
 ["count"] = 1;
-["trigger"] = destroy;
+["trigger"] = "destroy";
 };
 
 };
@@ -28050,7 +28050,7 @@ return {
 [1] = {
 ["id"] = 36;
 ["count"] = 1;
-["trigger"] = destroy;
+["trigger"] = "destroy";
 };
 
 };
@@ -28165,7 +28165,7 @@ return {
 [1] = {
 ["id"] = 66;
 ["count"] = 1;
-["trigger"] = destroy;
+["trigger"] = "destroy";
 };
 
 };
@@ -28236,7 +28236,7 @@ return {
 [1] = {
 ["id"] = 232;
 ["count"] = 2;
-["trigger"] = activate;
+["trigger"] = "activate";
 };
 
 };
@@ -28312,7 +28312,7 @@ return {
 [1] = {
 ["id"] = 15;
 ["count"] = 1;
-["trigger"] = destroy;
+["trigger"] = "destroy";
 };
 
 };
@@ -28384,7 +28384,7 @@ return {
 [1] = {
 ["id"] = 234;
 ["count"] = 2;
-["trigger"] = activate;
+["trigger"] = "activate";
 };
 
 };
@@ -28439,7 +28439,7 @@ return {
 [1] = {
 ["id"] = 343;
 ["count"] = 3;
-["trigger"] = collide;
+["trigger"] = "collide";
 };
 
 };
@@ -28479,7 +28479,7 @@ return {
 [1] = {
 ["id"] = 236;
 ["count"] = 2;
-["trigger"] = activate;
+["trigger"] = "activate";
 };
 
 };
@@ -28524,7 +28524,7 @@ return {
 [1] = {
 ["id"] = 3;
 ["count"] = 5;
-["trigger"] = collide;
+["trigger"] = "collide";
 };
 
 };
@@ -28585,13 +28585,13 @@ return {
 [1] = {
 ["id"] = 27;
 ["count"] = 2;
-["trigger"] = destroy;
+["trigger"] = "destroy";
 };
 
 [2] = {
 ["id"] = 29;
 ["count"] = 2;
-["trigger"] = collide;
+["trigger"] = "collide";
 };
 
 };
@@ -28631,7 +28631,7 @@ return {
 [1] = {
 ["id"] = 238;
 ["count"] = 2;
-["trigger"] = activate;
+["trigger"] = "activate";
 };
 
 };
@@ -28723,7 +28723,7 @@ return {
 [1] = {
 ["id"] = 240;
 ["count"] = 1;
-["trigger"] = activate;
+["trigger"] = "activate";
 };
 
 };
@@ -28778,7 +28778,7 @@ return {
 [1] = {
 ["id"] = 0;
 ["count"] = 1;
-["trigger"] = destroy;
+["trigger"] = "destroy";
 };
 
 };
@@ -28862,19 +28862,19 @@ return {
 [1] = {
 ["id"] = 488;
 ["count"] = 2;
-["trigger"] = destroy;
+["trigger"] = "destroy";
 };
 
 [2] = {
 ["id"] = 263;
 ["count"] = 2;
-["trigger"] = arrive;
+["trigger"] = "arrive";
 };
 
 [3] = {
 ["id"] = 276;
 ["count"] = 1;
-["trigger"] = expire;
+["trigger"] = "expire";
 };
 
 };
@@ -28914,7 +28914,7 @@ return {
 [1] = {
 ["id"] = 265;
 ["count"] = 2;
-["trigger"] = activate;
+["trigger"] = "activate";
 };
 
 };
@@ -28968,7 +28968,7 @@ return {
 [1] = {
 ["id"] = 9;
 ["count"] = 2;
-["trigger"] = collide;
+["trigger"] = "collide";
 };
 
 };
@@ -29044,7 +29044,7 @@ return {
 [1] = {
 ["id"] = 0;
 ["count"] = 1;
-["trigger"] = destroy;
+["trigger"] = "destroy";
 };
 
 };
@@ -29151,7 +29151,7 @@ return {
 [1] = {
 ["id"] = 31;
 ["count"] = 1;
-["trigger"] = destroy;
+["trigger"] = "destroy";
 };
 
 };
@@ -29248,7 +29248,7 @@ return {
 [1] = {
 ["id"] = 36;
 ["count"] = 1;
-["trigger"] = destroy;
+["trigger"] = "destroy";
 };
 
 };
@@ -29362,7 +29362,7 @@ return {
 [1] = {
 ["id"] = 36;
 ["count"] = 1;
-["trigger"] = destroy;
+["trigger"] = "destroy";
 };
 
 };
@@ -29449,7 +29449,7 @@ return {
 [1] = {
 ["id"] = 269;
 ["count"] = 2;
-["trigger"] = activate;
+["trigger"] = "activate";
 };
 
 };
@@ -29487,7 +29487,7 @@ return {
 [1] = {
 ["id"] = 271;
 ["count"] = 2;
-["trigger"] = activate;
+["trigger"] = "activate";
 };
 
 };
@@ -29531,7 +29531,7 @@ return {
 [1] = {
 ["id"] = 12;
 ["count"] = 2;
-["trigger"] = collide;
+["trigger"] = "collide";
 };
 
 };
@@ -29571,7 +29571,7 @@ return {
 [1] = {
 ["id"] = 273;
 ["count"] = 2;
-["trigger"] = activate;
+["trigger"] = "activate";
 };
 
 };
@@ -29625,7 +29625,7 @@ return {
 [1] = {
 ["id"] = 9;
 ["count"] = 2;
-["trigger"] = collide;
+["trigger"] = "collide";
 };
 
 };
@@ -29665,7 +29665,7 @@ return {
 [1] = {
 ["id"] = 273;
 ["count"] = 2;
-["trigger"] = activate;
+["trigger"] = "activate";
 };
 
 };
@@ -29750,19 +29750,19 @@ return {
 [1] = {
 ["id"] = 0;
 ["count"] = 1;
-["trigger"] = destroy;
+["trigger"] = "destroy";
 };
 
 [2] = {
 ["id"] = 555;
 ["count"] = 2;
-["trigger"] = arrive;
+["trigger"] = "arrive";
 };
 
 [3] = {
 ["id"] = 276;
 ["count"] = 1;
-["trigger"] = expire;
+["trigger"] = "expire";
 };
 
 };
@@ -29803,7 +29803,7 @@ return {
 [1] = {
 ["id"] = 279;
 ["count"] = 2;
-["trigger"] = activate;
+["trigger"] = "activate";
 };
 
 };
@@ -29848,7 +29848,7 @@ return {
 [1] = {
 ["id"] = 12;
 ["count"] = 2;
-["trigger"] = collide;
+["trigger"] = "collide";
 };
 
 };
@@ -29932,19 +29932,19 @@ return {
 [1] = {
 ["id"] = 0;
 ["count"] = 1;
-["trigger"] = destroy;
+["trigger"] = "destroy";
 };
 
 [2] = {
 ["id"] = 44;
 ["count"] = 2;
-["trigger"] = arrive;
+["trigger"] = "arrive";
 };
 
 [3] = {
 ["id"] = 275;
 ["count"] = 1;
-["trigger"] = expire;
+["trigger"] = "expire";
 };
 
 };
@@ -30029,19 +30029,19 @@ return {
 [1] = {
 ["id"] = 0;
 ["count"] = 1;
-["trigger"] = destroy;
+["trigger"] = "destroy";
 };
 
 [2] = {
 ["id"] = 44;
 ["count"] = 2;
-["trigger"] = arrive;
+["trigger"] = "arrive";
 };
 
 [3] = {
 ["id"] = 275;
 ["count"] = 1;
-["trigger"] = expire;
+["trigger"] = "expire";
 };
 
 };
@@ -30125,13 +30125,13 @@ return {
 [1] = {
 ["id"] = 282;
 ["count"] = 2;
-["trigger"] = destroy;
+["trigger"] = "destroy";
 };
 
 [2] = {
 ["id"] = 81;
 ["count"] = 1;
-["trigger"] = arrive;
+["trigger"] = "arrive";
 };
 
 };
@@ -30301,7 +30301,7 @@ return {
 [1] = {
 ["id"] = 0;
 ["count"] = 1;
-["trigger"] = destroy;
+["trigger"] = "destroy";
 };
 
 };
@@ -30426,7 +30426,7 @@ return {
 [1] = {
 ["id"] = 227;
 ["count"] = 1;
-["trigger"] = create;
+["trigger"] = "create";
 };
 
 };
@@ -30492,13 +30492,13 @@ return {
 [1] = {
 ["id"] = 331;
 ["count"] = 2;
-["trigger"] = destroy;
+["trigger"] = "destroy";
 };
 
 [2] = {
 ["id"] = 317;
 ["count"] = 2;
-["trigger"] = create;
+["trigger"] = "create";
 };
 
 };
@@ -30608,7 +30608,7 @@ return {
 [1] = {
 ["id"] = 320;
 ["count"] = 3;
-["trigger"] = activate;
+["trigger"] = "activate";
 };
 
 };
@@ -30773,13 +30773,13 @@ return {
 [1] = {
 ["id"] = 349;
 ["count"] = 2;
-["trigger"] = destroy;
+["trigger"] = "destroy";
 };
 
 [2] = {
 ["id"] = 327;
 ["count"] = 4;
-["trigger"] = collide;
+["trigger"] = "collide";
 };
 
 };
@@ -30838,7 +30838,7 @@ return {
 [1] = {
 ["id"] = 333;
 ["count"] = 2;
-["trigger"] = destroy;
+["trigger"] = "destroy";
 };
 
 };
@@ -30895,13 +30895,13 @@ return {
 [1] = {
 ["id"] = 120;
 ["count"] = 1;
-["trigger"] = destroy;
+["trigger"] = "destroy";
 };
 
 [2] = {
 ["id"] = 121;
 ["count"] = 3;
-["trigger"] = collide;
+["trigger"] = "collide";
 };
 
 };
@@ -30942,7 +30942,7 @@ return {
 [1] = {
 ["id"] = 335;
 ["count"] = 2;
-["trigger"] = activate;
+["trigger"] = "activate";
 };
 
 };
@@ -31006,13 +31006,13 @@ return {
 [1] = {
 ["id"] = 27;
 ["count"] = 2;
-["trigger"] = destroy;
+["trigger"] = "destroy";
 };
 
 [2] = {
 ["id"] = 337;
 ["count"] = 3;
-["trigger"] = collide;
+["trigger"] = "collide";
 };
 
 };
@@ -31058,7 +31058,7 @@ return {
 [1] = {
 ["id"] = 61;
 ["count"] = 2;
-["trigger"] = create;
+["trigger"] = "create";
 };
 
 };
@@ -31121,13 +31121,13 @@ return {
 [1] = {
 ["id"] = 340;
 ["count"] = 1;
-["trigger"] = destroy;
+["trigger"] = "destroy";
 };
 
 [2] = {
 ["id"] = 341;
 ["count"] = 1;
-["trigger"] = collide;
+["trigger"] = "collide";
 };
 
 };
@@ -31203,7 +31203,7 @@ return {
 [1] = {
 ["id"] = 346;
 ["count"] = 1;
-["trigger"] = activate;
+["trigger"] = "activate";
 };
 
 };
@@ -31244,7 +31244,7 @@ return {
 [1] = {
 ["id"] = 347;
 ["count"] = 2;
-["trigger"] = activate;
+["trigger"] = "activate";
 };
 
 };
@@ -31289,7 +31289,7 @@ return {
 [1] = {
 ["id"] = 12;
 ["count"] = 2;
-["trigger"] = collide;
+["trigger"] = "collide";
 };
 
 };
@@ -31367,13 +31367,13 @@ return {
 [1] = {
 ["id"] = 349;
 ["count"] = 2;
-["trigger"] = destroy;
+["trigger"] = "destroy";
 };
 
 [2] = {
 ["id"] = 327;
 ["count"] = 2;
-["trigger"] = collide;
+["trigger"] = "collide";
 };
 
 };
@@ -31503,7 +31503,7 @@ return {
 [1] = {
 ["id"] = 386;
 ["count"] = 4;
-["trigger"] = create;
+["trigger"] = "create";
 };
 
 };
@@ -31714,25 +31714,25 @@ return {
 [1] = {
 ["id"] = 485;
 ["count"] = 1;
-["trigger"] = destroy;
+["trigger"] = "destroy";
 };
 
 [2] = {
 ["id"] = 444;
 ["count"] = 1;
-["trigger"] = create;
+["trigger"] = "create";
 };
 
 [3] = {
 ["id"] = 432;
 ["count"] = 538968069;
-["trigger"] = activate;
+["trigger"] = "activate";
 };
 
 [4] = {
 ["id"] = 421;
 ["count"] = 2;
-["trigger"] = collide;
+["trigger"] = "collide";
 };
 
 };
@@ -31811,7 +31811,7 @@ return {
 [1] = {
 ["id"] = 36;
 ["count"] = 1;
-["trigger"] = destroy;
+["trigger"] = "destroy";
 };
 
 };
@@ -31919,13 +31919,13 @@ return {
 [1] = {
 ["id"] = 424;
 ["count"] = 1;
-["trigger"] = create;
+["trigger"] = "create";
 };
 
 [2] = {
 ["id"] = 440;
 ["count"] = 3;
-["trigger"] = arrive;
+["trigger"] = "arrive";
 };
 
 };
@@ -31989,13 +31989,13 @@ return {
 [1] = {
 ["id"] = 485;
 ["count"] = 1;
-["trigger"] = destroy;
+["trigger"] = "destroy";
 };
 
 [2] = {
 ["id"] = 421;
 ["count"] = 2;
-["trigger"] = collide;
+["trigger"] = "collide";
 };
 
 };
@@ -32127,7 +32127,7 @@ return {
 [1] = {
 ["id"] = 92;
 ["count"] = 1;
-["trigger"] = create;
+["trigger"] = "create";
 };
 
 };
@@ -32193,25 +32193,25 @@ return {
 [1] = {
 ["id"] = 485;
 ["count"] = 1;
-["trigger"] = destroy;
+["trigger"] = "destroy";
 };
 
 [2] = {
 ["id"] = 444;
 ["count"] = 1;
-["trigger"] = create;
+["trigger"] = "create";
 };
 
 [3] = {
 ["id"] = 454;
 ["count"] = 538968069;
-["trigger"] = activate;
+["trigger"] = "activate";
 };
 
 [4] = {
 ["id"] = 421;
 ["count"] = 2;
-["trigger"] = collide;
+["trigger"] = "collide";
 };
 
 };
@@ -32279,13 +32279,13 @@ return {
 [1] = {
 ["id"] = 485;
 ["count"] = 1;
-["trigger"] = destroy;
+["trigger"] = "destroy";
 };
 
 [2] = {
 ["id"] = 421;
 ["count"] = 2;
-["trigger"] = collide;
+["trigger"] = "collide";
 };
 
 };
@@ -32345,13 +32345,13 @@ return {
 [1] = {
 ["id"] = 424;
 ["count"] = 1;
-["trigger"] = create;
+["trigger"] = "create";
 };
 
 [2] = {
 ["id"] = 440;
 ["count"] = 3;
-["trigger"] = arrive;
+["trigger"] = "arrive";
 };
 
 };
@@ -32512,7 +32512,7 @@ return {
 [1] = {
 ["id"] = 0;
 ["count"] = 1;
-["trigger"] = destroy;
+["trigger"] = "destroy";
 };
 
 };
@@ -32611,7 +32611,7 @@ return {
 [1] = {
 ["id"] = 463;
 ["count"] = 2;
-["trigger"] = activate;
+["trigger"] = "activate";
 };
 
 };
@@ -32676,13 +32676,13 @@ return {
 [1] = {
 ["id"] = 472;
 ["count"] = 3;
-["trigger"] = expire;
+["trigger"] = "expire";
 };
 
 [2] = {
 ["id"] = 467;
 ["count"] = 269484037;
-["trigger"] = activate;
+["trigger"] = "activate";
 };
 
 };
@@ -32729,13 +32729,13 @@ return {
 [1] = {
 ["id"] = 475;
 ["count"] = 1;
-["trigger"] = create;
+["trigger"] = "create";
 };
 
 [2] = {
 ["id"] = 475;
 ["count"] = 67371009;
-["trigger"] = activate;
+["trigger"] = "activate";
 };
 
 };
@@ -32812,7 +32812,7 @@ return {
 [1] = {
 ["id"] = 36;
 ["count"] = 1;
-["trigger"] = destroy;
+["trigger"] = "destroy";
 };
 
 };
@@ -33136,7 +33136,7 @@ return {
 [1] = {
 ["id"] = 495;
 ["count"] = 1;
-["trigger"] = activate;
+["trigger"] = "activate";
 };
 
 };
@@ -33180,13 +33180,13 @@ return {
 [1] = {
 ["id"] = 494;
 ["count"] = 1;
-["trigger"] = create;
+["trigger"] = "create";
 };
 
 [2] = {
 ["id"] = 12;
 ["count"] = 2;
-["trigger"] = collide;
+["trigger"] = "collide";
 };
 
 };
@@ -33332,7 +33332,7 @@ return {
 [1] = {
 ["id"] = 36;
 ["count"] = 1;
-["trigger"] = destroy;
+["trigger"] = "destroy";
 };
 
 };
@@ -33420,7 +33420,7 @@ return {
 [1] = {
 ["id"] = 511;
 ["count"] = 2;
-["trigger"] = activate;
+["trigger"] = "activate";
 };
 
 };
@@ -33474,7 +33474,7 @@ return {
 [1] = {
 ["id"] = 513;
 ["count"] = 4;
-["trigger"] = collide;
+["trigger"] = "collide";
 };
 
 };
@@ -33584,7 +33584,7 @@ return {
 [1] = {
 ["id"] = 36;
 ["count"] = 1;
-["trigger"] = destroy;
+["trigger"] = "destroy";
 };
 
 };
@@ -33672,7 +33672,7 @@ return {
 [1] = {
 ["id"] = 517;
 ["count"] = 2;
-["trigger"] = activate;
+["trigger"] = "activate";
 };
 
 };
@@ -33726,7 +33726,7 @@ return {
 [1] = {
 ["id"] = 9;
 ["count"] = 2;
-["trigger"] = collide;
+["trigger"] = "collide";
 };
 
 };
@@ -33802,7 +33802,7 @@ return {
 [1] = {
 ["id"] = 36;
 ["count"] = 1;
-["trigger"] = destroy;
+["trigger"] = "destroy";
 };
 
 };
@@ -33890,7 +33890,7 @@ return {
 [1] = {
 ["id"] = 519;
 ["count"] = 2;
-["trigger"] = activate;
+["trigger"] = "activate";
 };
 
 };
@@ -33944,7 +33944,7 @@ return {
 [1] = {
 ["id"] = 9;
 ["count"] = 2;
-["trigger"] = collide;
+["trigger"] = "collide";
 };
 
 };
@@ -34020,7 +34020,7 @@ return {
 [1] = {
 ["id"] = 36;
 ["count"] = 1;
-["trigger"] = destroy;
+["trigger"] = "destroy";
 };
 
 };
@@ -34108,7 +34108,7 @@ return {
 [1] = {
 ["id"] = 521;
 ["count"] = 2;
-["trigger"] = activate;
+["trigger"] = "activate";
 };
 
 };
@@ -34162,7 +34162,7 @@ return {
 [1] = {
 ["id"] = 9;
 ["count"] = 2;
-["trigger"] = collide;
+["trigger"] = "collide";
 };
 
 };
@@ -34239,7 +34239,7 @@ return {
 [1] = {
 ["id"] = 36;
 ["count"] = 1;
-["trigger"] = destroy;
+["trigger"] = "destroy";
 };
 
 };
@@ -34323,7 +34323,7 @@ return {
 [1] = {
 ["id"] = 523;
 ["count"] = 2;
-["trigger"] = activate;
+["trigger"] = "activate";
 };
 
 };
@@ -34377,7 +34377,7 @@ return {
 [1] = {
 ["id"] = 9;
 ["count"] = 2;
-["trigger"] = collide;
+["trigger"] = "collide";
 };
 
 };
@@ -34461,13 +34461,13 @@ return {
 [1] = {
 ["id"] = 162;
 ["count"] = 1;
-["trigger"] = destroy;
+["trigger"] = "destroy";
 };
 
 [2] = {
 ["id"] = 161;
 ["count"] = 1;
-["trigger"] = arrive;
+["trigger"] = "arrive";
 };
 
 };
@@ -34551,7 +34551,7 @@ return {
 [1] = {
 ["id"] = 525;
 ["count"] = 2;
-["trigger"] = activate;
+["trigger"] = "activate";
 };
 
 };
@@ -34632,13 +34632,13 @@ return {
 [1] = {
 ["id"] = 163;
 ["count"] = 2;
-["trigger"] = destroy;
+["trigger"] = "destroy";
 };
 
 [2] = {
 ["id"] = 158;
 ["count"] = 3;
-["trigger"] = arrive;
+["trigger"] = "arrive";
 };
 
 };
@@ -34741,13 +34741,13 @@ return {
 [1] = {
 ["id"] = 161;
 ["count"] = 2;
-["trigger"] = destroy;
+["trigger"] = "destroy";
 };
 
 [2] = {
 ["id"] = 161;
 ["count"] = 1;
-["trigger"] = arrive;
+["trigger"] = "arrive";
 };
 
 };
@@ -34875,13 +34875,13 @@ return {
 [1] = {
 ["id"] = 162;
 ["count"] = 1;
-["trigger"] = destroy;
+["trigger"] = "destroy";
 };
 
 [2] = {
 ["id"] = 161;
 ["count"] = 1;
-["trigger"] = arrive;
+["trigger"] = "arrive";
 };
 
 };
@@ -34965,7 +34965,7 @@ return {
 [1] = {
 ["id"] = 527;
 ["count"] = 2;
-["trigger"] = activate;
+["trigger"] = "activate";
 };
 
 };
@@ -35046,13 +35046,13 @@ return {
 [1] = {
 ["id"] = 163;
 ["count"] = 2;
-["trigger"] = destroy;
+["trigger"] = "destroy";
 };
 
 [2] = {
 ["id"] = 158;
 ["count"] = 3;
-["trigger"] = arrive;
+["trigger"] = "arrive";
 };
 
 };
@@ -35153,13 +35153,13 @@ return {
 [1] = {
 ["id"] = 163;
 ["count"] = 2;
-["trigger"] = destroy;
+["trigger"] = "destroy";
 };
 
 [2] = {
 ["id"] = 158;
 ["count"] = 3;
-["trigger"] = arrive;
+["trigger"] = "arrive";
 };
 
 };
@@ -35219,7 +35219,7 @@ return {
 [1] = {
 ["id"] = 529;
 ["count"] = 2;
-["trigger"] = activate;
+["trigger"] = "activate";
 };
 
 };
@@ -35314,25 +35314,25 @@ return {
 [1] = {
 ["id"] = 27;
 ["count"] = 2;
-["trigger"] = destroy;
+["trigger"] = "destroy";
 };
 
 [2] = {
 ["id"] = 111;
 ["count"] = 1;
-["trigger"] = create;
+["trigger"] = "create";
 };
 
 [3] = {
 ["id"] = 533;
 ["count"] = 1;
-["trigger"] = expire;
+["trigger"] = "expire";
 };
 
 [4] = {
 ["id"] = 29;
 ["count"] = 2;
-["trigger"] = collide;
+["trigger"] = "collide";
 };
 
 };
@@ -35381,7 +35381,7 @@ return {
 [1] = {
 ["id"] = 53;
 ["count"] = 1;
-["trigger"] = create;
+["trigger"] = "create";
 };
 
 };
@@ -35423,7 +35423,7 @@ return {
 [1] = {
 ["id"] = 12;
 ["count"] = 1;
-["trigger"] = collide;
+["trigger"] = "collide";
 };
 
 };
@@ -35465,7 +35465,7 @@ return {
 [1] = {
 ["id"] = 534;
 ["count"] = 2;
-["trigger"] = activate;
+["trigger"] = "activate";
 };
 
 };
@@ -35507,7 +35507,7 @@ return {
 [1] = {
 ["id"] = 12;
 ["count"] = 1;
-["trigger"] = collide;
+["trigger"] = "collide";
 };
 
 };
@@ -35546,7 +35546,7 @@ return {
 [1] = {
 ["id"] = 536;
 ["count"] = 2;
-["trigger"] = activate;
+["trigger"] = "activate";
 };
 
 };
@@ -35592,7 +35592,7 @@ return {
 [1] = {
 ["id"] = 12;
 ["count"] = 2;
-["trigger"] = collide;
+["trigger"] = "collide";
 };
 
 };
@@ -35647,13 +35647,13 @@ return {
 [1] = {
 ["id"] = 538;
 ["count"] = 16777217;
-["trigger"] = activate;
+["trigger"] = "activate";
 };
 
 [2] = {
 ["id"] = 12;
 ["count"] = 2;
-["trigger"] = collide;
+["trigger"] = "collide";
 };
 
 };
@@ -35693,7 +35693,7 @@ return {
 [1] = {
 ["id"] = 539;
 ["count"] = 2;
-["trigger"] = activate;
+["trigger"] = "activate";
 };
 
 };
@@ -35759,13 +35759,13 @@ return {
 [1] = {
 ["id"] = 331;
 ["count"] = 2;
-["trigger"] = destroy;
+["trigger"] = "destroy";
 };
 
 [2] = {
 ["id"] = 317;
 ["count"] = 2;
-["trigger"] = create;
+["trigger"] = "create";
 };
 
 };
@@ -35987,7 +35987,7 @@ return {
 [1] = {
 ["id"] = 228;
 ["count"] = 2;
-["trigger"] = activate;
+["trigger"] = "activate";
 };
 
 };
@@ -36256,13 +36256,13 @@ return {
 [1] = {
 ["id"] = 0;
 ["count"] = 1;
-["trigger"] = destroy;
+["trigger"] = "destroy";
 };
 
 [2] = {
 ["id"] = 582;
 ["count"] = 1;
-["trigger"] = collide;
+["trigger"] = "collide";
 };
 
 };
@@ -36333,13 +36333,13 @@ return {
 [1] = {
 ["id"] = 0;
 ["count"] = 1;
-["trigger"] = destroy;
+["trigger"] = "destroy";
 };
 
 [2] = {
 ["id"] = 582;
 ["count"] = 1;
-["trigger"] = collide;
+["trigger"] = "collide";
 };
 
 };
@@ -36718,7 +36718,7 @@ return {
 [1] = {
 ["id"] = 564;
 ["count"] = 3;
-["trigger"] = activate;
+["trigger"] = "activate";
 };
 
 };
@@ -36759,7 +36759,7 @@ return {
 [1] = {
 ["id"] = 569;
 ["count"] = 3;
-["trigger"] = activate;
+["trigger"] = "activate";
 };
 
 };
@@ -36832,7 +36832,7 @@ return {
 [1] = {
 ["id"] = 0;
 ["count"] = 1;
-["trigger"] = destroy;
+["trigger"] = "destroy";
 };
 
 };
@@ -36888,7 +36888,7 @@ return {
 [1] = {
 ["id"] = 521;
 ["count"] = 2;
-["trigger"] = activate;
+["trigger"] = "activate";
 };
 
 };
@@ -37008,7 +37008,7 @@ return {
 [1] = {
 ["id"] = 0;
 ["count"] = 1;
-["trigger"] = destroy;
+["trigger"] = "destroy";
 };
 
 };
@@ -37083,13 +37083,13 @@ return {
 [1] = {
 ["id"] = 0;
 ["count"] = 1;
-["trigger"] = destroy;
+["trigger"] = "destroy";
 };
 
 [2] = {
 ["id"] = 749;
 ["count"] = 2;
-["trigger"] = create;
+["trigger"] = "create";
 };
 
 };
@@ -39983,198 +39983,4 @@ _-gateship";
 };
 
 };
-["Sprites"] = {
-[1000] = "Tactical Symbols";
-[1001] = "Planet Marslike";
-[1002] = "Planet Jungle";
-[1003] = "Planet Yellow";
-[1004] = "Planet Graysplotch";
-[1005] = "Planet Blueyellow Marble";
-[1006] = "Planet Bahamas";
-[1007] = "Planet Purplegas";
-[1008] = "Planet Lava";
-[1009] = "Planet Saturny";
-[1010] = "Planet Yellow Cookie";
-[1011] = "Planet Purpleblue";
-[1012] = "Planet Bluegas";
-[1013] = "Planet Sandyred";
-[1014] = "Planet Marble Streakedpurple";
-[1015] = "Planet Tiedye Lava";
-[1016] = "Planet Goldtone";
-[1017] = "Planet Purpleyellow Trouble";
-[1018] = "Planet Brightgas";
-[1019] = "Planet Redwhite Excitement";
-[1020] = "Planet Cloudtones";
-[1021] = "Planet Fall";
-[1022] = "Planet Purtygas";
-[1023] = "Planet Aqua Minerale";
-[1024] = "Planet Bruised";
-[1025] = "Planet Nastyswirl";
-[1026] = "Planet Moldymud";
-[1027] = "Planet Uglypaint";
-[1028] = "Planet Calmpurple";
-[1029] = "Planet Yerrear";
-[1030] = "Planet Splatterpaint Pink";
-[1031] = "Planet Marshmellow";
-[1032] = "Planet Clay";
-[1033] = "Planet Sta-Puft";
-[1034] = "Planet Purple Stripes Ugly";
-[1035] = "Planet Dirtcloud";
-[1036] = "Another Earth";
-[1200] = "Habitat";
-[499] = "question mark";
-[500] = "Sprite Cursor";
-[501] = "Shovelnose, Brighter";
-[502] = "Green Wing New Colors";
-[503] = "New Shots";
-[504] = "Mike Explosion";
-[505] = "Earth";
-[506] = "Gunship Cantharan 2";
-[507] = "Debris";
-[508] = "Aqua Pulse";
-[509] = "Gunship Ishiman";
-[510] = "Fighter, Ishiman";
-[512] = "Fighter, Cantharan";
-[513] = "Space Suit";
-[514] = "Cantharan Transport 2";
-[515] = "Transport, Ishiman";
-[516] = "Sun 3";
-[517] = "Energy Pod";
-[518] = "Supply Pack";
-[519] = "Warp Flash";
-[520] = "Escort, Ishiman";
-[521] = "Cruiser, Heavy, Ishiman";
-[522] = "Red Pulse [Mike]";
-[523] = "Cruiser Heavy Cantharan";
-[524] = "Carrier Cantharan?";
-[525] = "Carrier, Ishiman (Improved?)";
-[526] = "Blue Bullet";
-[527] = "Defense Drone, Ishiman";
-[528] = "Missile, White & Yellow";
-[529] = "Drone Cantharan";
-[530] = "Dark Gunship 2";
-[532] = "Cruiser, Obish";
-[533] = "Schooner Cantharan";
-[534] = "Schooner Ishiman";
-[535] = "Battleship, Bazidanese (Hires)";
-[536] = "Moor, Cantharan";
-[537] = "Torpedo, Green";
-[538] = "Torpedo, Green";
-[539] = "Ugly Shrinking Yellow Sphere";
-[540] = "Moor, Cantharan";
-[541] = "Missle Poofy Explosion";
-[542] = "Border Drone";
-[543] = "Asteroid";
-[544] = "Asteroid Fragment Large";
-[545] = "Astroid Fragment Small";
-[546] = "Astrominer, Ishiman";
-[547] = "Nate Photon 2 Green";
-[548] = "Nate Photon 2 Yellow";
-[549] = "Marine, Human";
-[550] = "Gaitori Cruiser";
-[551] = "Gaitori Fighter";
-[552] = "New Sensor Relay Dish R&N";
-[553] = "Gunship, Gaitori";
-[554] = "Original New Best Explosions";
-[555] = "Fat Gold Ship New Colors";
-[556] = "Meteor";
-[557] = "Flack Explosion (6)";
-[558] = "Jump Gate Sprite";
-[559] = "Assault Transport, Ishiman";
-[560] = "Carrier, Gaitori";
-[561] = "Engineer, Gaitori";
-[562] = "Engineer, Ishiman";
-[563] = "Transport, Gaitori";
-[564] = "Power Station";
-[565] = "Battleship, Obish";
-[566] = "Fighter, Salrilian";
-[567] = "Transport, Obish";
-[568] = "Escape Pod";
-[569] = "Gunship, Salrilian";
-[570] = "Jump Gate Module";
-[571] = "Transport, Salrilian";
-[572] = "Battlesation, Salrilian";
-[573] = "Invisible";
-[576] = "Battlecruiser, Audemedon";
-[577] = "Fighter, Audemedon";
-[578] = "Cruiser, Audemedon";
-[579] = "Gunship, Audemedon";
-[580] = "Pulse Blue";
-[581] = "Pulse Orange";
-[582] = "Cruiser, Elejeetian";
-[583] = "Missile, Audemedon";
-[584] = "Pulse, Indigo Pulsing";
-[585] = "Research Vessel, Ishiman";
-[586] = "Jump Gate Inhibitor";
-[587] = "Gate Ship?";
-[588] = "Target Drone, Ishiman";
-[589] = "Space Blob";
-[590] = "Nastiroid";
-[591] = "Buoy";
-[592] = "Prison Salrilian";
-[593] = "Human Turns";
-[594] = "Human Waves";
-[595] = "Prison Gaitori";
-[596] = "Obiard Turns";
-[597] = "Obiard Waves";
-[598] = "Super Nova";
-[599] = "Ares_Apollo";
-[600] = "Assault Transport, Salril";
-[601] = "Transport, Audemedon";
-[602] = "Trooper, Salrilian";
-[603] = "Destroyer, Heavy Cantharan";
-[604] = "Gateship, Cantharan 2";
-[605] = "Pulse, Aqua Ring Pulsing";
-[606] = "Strange Explosion?";
-[607] = "Destroyer, Audemedon";
-[608] = "Destroyer, Gaitori";
-[609] = "Destroyer, Human";
-[610] = "Destroyer, Salrilian";
-[611] = "Small Blue Bucky Ball";
-[612] = "Fighter, Cantharan";
-[613] = "Big Yellow Bucky Ball";
-[614] = "Yellow Sparkle Shot";
-[615] = "Assault Transport, Audemedon";
-[616] = "Assault Transport, Gaitori";
-[617] = "Assault Transport, Human";
-[618] = "Trooper, Audemedon";
-[619] = "Trooper, Gaitori";
-[620] = "Twin Orbit Shot";
-[635] = "Battleship, Bazidanese";
-[636] = "Hybrid Ishiman_Obish";
-[637] = "Assault Transport, Cantharan";
-[638] = "Assault Troop Cantharan";
-[639] = "Body, Cantharan";
-[640] = "Freighter, Ishiman";
-[641] = "Orbital Shipyard";
-[642] = "Engineer, Cantharan";
-[643] = "Bunker Station";
-[644] = "Carrier, Audemedon";
-[645] = "Gunfire";
-[646] = "Destroyer, Ishiman";
-[647] = "Liner, Elejeetian";
-[648] = "Carrier, Salrilian";
-[649] = "carrier, human";
-[650] = "cruiser, human";
-[651] = "fighter, human";
-[652] = "gunship, human";
-[653] = "pulse, red [nl]";
-[654] = "Gate Ship";
-[655] = "Sonic Sparkle";
-[656] = "Fireball Small";
-[657] = "Battlecruiser, Grolk";
-[658] = "Moor, Grolk [jail]";
-[659] = "Flag Pod White";
-[660] = "Light Cruiser, Grolk";
-[800] = "Mothership";
-[801] = "Station Minor";
-[990] = "Carrier Friend Placeholder";
-[991] = "Cruiser Foe Placeholder";
-[992] = "Fighter Friend Placeholder";
-[993] = "Carrier Foe Placeholder";
-[994] = "Cruiser Friend Placeholder";
-[995] = "Fighter Foe Placeholder";
-[996] = "Transport Foe Placeholder";
-[997] = "Transport Friend Placeholder";
-};
-};
+}
