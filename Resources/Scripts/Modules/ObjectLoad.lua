@@ -1,4 +1,18 @@
 function NewObject(id)
+	
+	function CopyActions(obj)
+		obj.trigger = {}
+		if obj.action ~= nil then
+			local id
+			print(obj.name)
+			for id = 1, #obj.action do
+				if obj.action[id] ~= nil then
+					obj.trigger[obj.action[id].trigger] = obj.action[id]
+				end
+			end
+		end
+	end
+	
 	local newObj = deepcopy(gameData["Objects"][id])
 	newObj.sprite = newObj["sprite-id"]
 	if newObj.mass == nil then
@@ -18,10 +32,18 @@ function NewObject(id)
 			weap.position = deepcopy(newObj.weapon[wid].position)
 			weap.lastPos = 1
 			weap.ammo = weap.device.ammo
+			
+			CopyActions(weap)
+			
 --			print("TEST:" .. newObj.weapon[wid].type)
 			newObj.weapon[newObj.weapon[wid].type] = weap
-			
+		
+		
+		
 		end
 	end
+	
+	CopyActions(newObj)
+	
 	return newObj
 end
