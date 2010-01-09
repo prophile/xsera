@@ -7,5 +7,23 @@ function NewObject(id)
 	print("Creating new " .. newObj.name)
 	newObj.physics = physics.new_object(newObj.mass)
 	newObj.physics.angular_velocity = 1.00
+	
+	if newObj.weapon ~= nil then
+		local wid
+		for wid=1, #newObj.weapon do
+			if newObj.weapon[newObj.weapon[wid].type] ~= nil then
+				error("More than one weapon of type '" .. newObj.weapon[wid].type .. "' defined.")
+			end
+			local weap = deepcopy(gameData["Objects"][newObj.weapon[wid].id])
+			weap.position = deepcopy(newObj.weapon[wid].position)
+			weap.lastPos = 1
+			weap.ammo = weap.device.ammo
+			print("TEST:" .. newObj.weapon[wid].type)
+--			newObj.weapon[] = 1
+			
+			 -- = weap
+			
+		end
+	end
 	return newObj
 end
