@@ -18,10 +18,8 @@ function NewObject(id)
 			weap.position = deepcopy(newObj.weapon[wid].position)
 			weap.lastPos = 1
 			weap.ammo = weap.device.ammo
-			print("TEST:" .. newObj.weapon[wid].type)
---			newObj.weapon[] = 1
-			
-			 -- = weap
+--			print("TEST:" .. newObj.weapon[wid].type)
+			newObj.weapon[newObj.weapon[wid].type] = weap
 			
 		end
 	end
