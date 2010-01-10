@@ -1,6 +1,7 @@
 import('Math')
 import('AresCLUT')
 
+--gameData = dofile("Config/data.lua")
 playerShip = nil
 
 releaseBuild = mode_manager.is_release()
