@@ -29,6 +29,8 @@ function key( k )
 	elseif k == "-" then
 		camera.w = camera.w * 2
 		camera.h = camera.h * 2
+	elseif k == " " then
+		DeviceActivate(scen.playerShip.weapon.pulse,scen.playerShip)
 	else
 		KeyActivate(k)
 	end
@@ -52,15 +54,15 @@ function update()
 	
     if keyboard[1][4].active == true then
 		if key_press_f6 ~= true then
-			scen.playerShip.physics.angular_velocity = scen.playerShip.rotation["max-turn-rate"]
+			scen.playerShip.physics.angular_velocity = scen.playerShip.rotation["max-turn-rate"]*2.0
 		else
-			scen.playerShip.physics.angular_velocity = 0.1 -- [HARDCODE]
+			scen.playerShip.physics.angular_velocity = scen.playerShip.rotation["max-turn-rate"] * 4.0
 		end
     elseif keyboard[1][5].active == true then
 		if key_press_f6 ~= true then
-			scen.playerShip.physics.angular_velocity = -scen.playerShip.rotation["max-turn-rate"]
+			scen.playerShip.physics.angular_velocity = -scen.playerShip.rotation["max-turn-rate"] * 2.0
 		else
-			scen.playerShip.physics.angular_velocity = -0.1 -- [HARDCODE]
+			scen.playerShip.physics.angular_velocity = -scen.playerShip.rotation["max-turn-rate"] * 4.0
 		end
     else
         scen.playerShip.physics.angular_velocity = 0
@@ -133,8 +135,7 @@ end
 
 
 function DeviceActivate(device, owner)
-
-	if xor(owner == nil, owner.energy >= device["energy-cost"])
+	if xor(owner == nil, owner.energy >= device.device["energy-cost"])
 	and xor(device.ammo == -1, device.ammo > 0) then
 --TODO: add cooldown support
 			if device.ammo ~= -1 then
@@ -142,7 +143,7 @@ function DeviceActivate(device, owner)
 			end
 			
 			if owner ~= nil then
-				owner.energy = owner.energy - device["energy-cost"]
+				owner.energy = owner.energy - device.device["energy-cost"]
 			end
 			
 			
@@ -156,8 +157,7 @@ function DeviceActivate(device, owner)
 			If the weapon is auto aim then select a target
 			
 			--]]
-			
-			callAction(device.action["activate"],owner,nil)
+			callAction(device.trigger["activate"],owner,nil)
 				
 	end
 end
