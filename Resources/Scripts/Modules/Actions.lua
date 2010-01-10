@@ -62,13 +62,13 @@ end
 
 if action["velocity-relative"] == "true" then
 new.physics.velocity = {
-x = p.velocity.x + new["initial-velocity"] * math.cos(new.physics.angle);
-y = p.velocity.y + new["initial-velocity"] * math.sin(new.physics.angle);
+x = p.velocity.x + SPEED_FACTOR * new["initial-velocity"] * math.cos(new.physics.angle);
+y = p.velocity.y + SPEED_FACTOR * new["initial-velocity"] * math.sin(new.physics.angle);
 }
 else
 new.physics.velocity = {
-x =  new["initial-velocity"] * math.cos(new.physics.angle);
-y =  new["initial-velocity"] * math.sin(new.physics.angle);
+x =  SPEED_FACTOR * new["initial-velocity"] * math.cos(new.physics.angle);
+y =  SPEED_FACTOR * new["initial-velocity"] * math.sin(new.physics.angle);
 }
 end
 
