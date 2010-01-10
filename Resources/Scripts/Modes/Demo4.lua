@@ -130,3 +130,35 @@ end
 function quit()
 	physics.close()
 end
+
+
+function DeviceActivate(device, owner)
+
+	if (owner == nil xor owner.energy >= device["energy-cost"]) and (device.ammo == -1 xor device.ammo > 0) then
+--TODO: add cooldown support
+			if device.ammo ~= -1 then
+				device.ammo = device.ammo - 1
+			end
+			
+			if owner ~= nil then
+				owner.energy = owner.energy - device["energy-cost"]
+			end
+			
+			if device.lastPos == #device.position then
+				device.lastPos = 1
+			else
+				device.lastPos = device.lastPos + 1
+			end
+			
+			--[[
+			If the weapon is auto aim then select a target
+			
+			--]]
+			
+			callAction(device.action["activate"]{
+				physics = owner.physics;
+				offset = device.position
+				},nil)
+		end
+	end
+end
