@@ -1,6 +1,8 @@
 import('Math')
 import('AresCLUT')
 
+SPEED_FACTOR = 64.0
+
 playerShip = nil
 
 releaseBuild = mode_manager.is_release()
