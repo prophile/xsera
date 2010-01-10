@@ -134,7 +134,8 @@ end
 
 function DeviceActivate(device, owner)
 
-	if (owner == nil xor owner.energy >= device["energy-cost"]) and (device.ammo == -1 xor device.ammo > 0) then
+	if xor(owner == nil, owner.energy >= device["energy-cost"])
+	and xor(device.ammo == -1, device.ammo > 0) then
 --TODO: add cooldown support
 			if device.ammo ~= -1 then
 				device.ammo = device.ammo - 1
@@ -159,6 +160,6 @@ function DeviceActivate(device, owner)
 				physics = owner.physics;
 				offset = device.position
 				},nil)
-		end
+				
 	end
 end

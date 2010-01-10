@@ -78,3 +78,6 @@ function RandomReal ( min, max )
     return (math.random() * (max - min)) + min
 end
 
+function xor(p,q)
+	return (p and not q) or (not p and q)
+end
