@@ -145,10 +145,11 @@ function DeviceActivate(device, owner)
 				owner.energy = owner.energy - device["energy-cost"]
 			end
 			
-			if device.lastPos == #device.position then
-				device.lastPos = 1
+			
+			if device.position.last == #device.position then
+				device.position.last = 1
 			else
-				device.lastPos = device.lastPos + 1
+				device.position.last = device.position.last + 1
 			end
 			
 			--[[
@@ -156,10 +157,7 @@ function DeviceActivate(device, owner)
 			
 			--]]
 			
-			callAction(device.action["activate"]{
-				physics = owner.physics;
-				offset = device.position
-				},nil)
+			callAction(device.action["activate"],owner,nil)
 				
 	end
 end

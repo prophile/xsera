@@ -30,7 +30,7 @@ function NewObject(id)
 			end
 			local weap = deepcopy(gameData["Objects"][newObj.weapon[wid].id])
 			weap.position = deepcopy(newObj.weapon[wid].position)
-			weap.lastPos = 1
+			weap.position.last = 1
 			weap.ammo = deepcopy(weap.device.ammo)
 			
 			CopyActions(weap)
