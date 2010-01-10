@@ -32,7 +32,7 @@ function NewObject(id)
 			weap.position = deepcopy(newObj.weapon[wid].position)
 			weap.position.last = 1
 			weap.ammo = deepcopy(weap.device.ammo)
-			
+			weap.parent = newObj
 			CopyActions(weap)
 			
 --			print("TEST:" .. newObj.weapon[wid].type)
