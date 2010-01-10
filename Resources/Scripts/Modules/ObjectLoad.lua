@@ -20,7 +20,7 @@ function NewObject(id)
 	end
 	print("Creating new " .. newObj.name)
 	newObj.physics = physics.new_object(newObj.mass)
-	newObj.physics.angular_velocity = 1.00
+	newObj.physics.angular_velocity = 0.00
 	
 	if newObj.weapon ~= nil then
 		local wid
@@ -30,9 +30,9 @@ function NewObject(id)
 			end
 			local weap = deepcopy(gameData["Objects"][newObj.weapon[wid].id])
 			weap.position = deepcopy(newObj.weapon[wid].position)
-			weap.lastPos = 1
+			weap.position.last = 1
 			weap.ammo = deepcopy(weap.device.ammo)
-			
+			weap.parent = newObj
 			CopyActions(weap)
 			
 --			print("TEST:" .. newObj.weapon[wid].type)

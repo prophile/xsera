@@ -29,6 +29,8 @@ function key( k )
 	elseif k == "-" then
 		camera.w = camera.w * 2
 		camera.h = camera.h * 2
+	elseif k == " " then
+		DeviceActivate(scen.playerShip.weapon.pulse,scen.playerShip)
 	else
 		KeyActivate(k)
 	end
@@ -52,15 +54,15 @@ function update()
 	
     if keyboard[1][4].active == true then
 		if key_press_f6 ~= true then
-			scen.playerShip.physics.angular_velocity = scen.playerShip.rotation["max-turn-rate"]
+			scen.playerShip.physics.angular_velocity = scen.playerShip.rotation["max-turn-rate"]*2.0
 		else
-			scen.playerShip.physics.angular_velocity = 0.1 -- [HARDCODE]
+			scen.playerShip.physics.angular_velocity = scen.playerShip.rotation["max-turn-rate"] * 4.0
 		end
     elseif keyboard[1][5].active == true then
 		if key_press_f6 ~= true then
-			scen.playerShip.physics.angular_velocity = -scen.playerShip.rotation["max-turn-rate"]
+			scen.playerShip.physics.angular_velocity = -scen.playerShip.rotation["max-turn-rate"] * 2.0
 		else
-			scen.playerShip.physics.angular_velocity = -0.1 -- [HARDCODE]
+			scen.playerShip.physics.angular_velocity = -scen.playerShip.rotation["max-turn-rate"] * 4.0
 		end
     else
         scen.playerShip.physics.angular_velocity = 0
@@ -110,7 +112,7 @@ function render()
 	graphics.draw_starfield(-0.9)
 	
 	if scen ~= nil and scen.objects ~= nil then
-		for obId = 0, #scen.objects-1 do
+		for obId = 0, #scen.objects do
 			local o = scen.objects[obId]
 			if camera.w < 3000 then
 				graphics.draw_sprite("Id/"..o.sprite,
@@ -133,32 +135,25 @@ end
 
 
 function DeviceActivate(device, owner)
-
-	if (owner == nil xor owner.energy >= device["energy-cost"]) and (device.ammo == -1 xor device.ammo > 0) then
+	if xor(owner == nil, owner.energy >= device.device["energy-cost"])
+	and xor(device.ammo == -1, device.ammo > 0) then
 --TODO: add cooldown support
 			if device.ammo ~= -1 then
 				device.ammo = device.ammo - 1
 			end
 			
 			if owner ~= nil then
-				owner.energy = owner.energy - device["energy-cost"]
+				owner.energy = owner.energy - device.device["energy-cost"]
 			end
 			
-			if device.lastPos == #device.position then
-				device.lastPos = 1
+			
+			if device.position.last == #device.position then
+				device.position.last = 1
 			else
-				device.lastPos = device.lastPos + 1
+				device.position.last = device.position.last + 1
 			end
 			
-			--[[
-			If the weapon is auto aim then select a target
-			
-			--]]
-			
-			callAction(device.action["activate"]{
-				physics = owner.physics;
-				offset = device.position
-				},nil)
-		end
+			callAction(device.trigger["activate"],device,nil)
+				
 	end
 end
