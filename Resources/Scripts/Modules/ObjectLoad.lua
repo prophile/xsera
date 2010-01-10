@@ -20,7 +20,7 @@ function NewObject(id)
 	end
 	print("Creating new " .. newObj.name)
 	newObj.physics = physics.new_object(newObj.mass)
-	newObj.physics.angular_velocity = 1.00
+	newObj.physics.angular_velocity = 0.00
 	
 	if newObj.weapon ~= nil then
 		local wid

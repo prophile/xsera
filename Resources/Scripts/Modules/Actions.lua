@@ -1,7 +1,7 @@
 
 function callAction(trigger, source, direct)
 	local id
-	local max = id + trigger.count - 1
+	local max = trigger.id + trigger.count - 1
 	for id = trigger.id, max do
 		local action = gameData["Actions"][id]
 		actionTable[action.type](action, source, direct)
@@ -45,7 +45,36 @@ end,
 ["change-score-action"] = function(action, source, direct) end,
 ["color-flash-action"] = function(action, source, direct) end,
 ["computer-select-action"] = function(action, source, direct) end,
-["create-object-action"] = function(action, source, direct) end,
+["create-object-action"] = function(action, source, direct)
+--Aquire parent data
+local p = deepcopy(source.parent.physics) --[HARDCODE]
+
+--create object(s)
+local new = NewObject(action["which-base-type"])
+
+new.physics.position = p.position
+
+if action["direction-relative"] == "true" then
+new.physics.angle = p.angle
+else
+new.physics.angle = RandomReal(0, 2.0 * math.pi)
+end
+
+if action["velocity-relative"] == "true" then
+new.physics.velocity = {
+x = p.velocity.x + new["initial-velocity"] * math.cos(new.physics.angle);
+y = p.velocity.y + new["initial-velocity"] * math.sin(new.physics.angle);
+}
+else
+new.physics.velocity = {
+x =  new["initial-velocity"] * math.cos(new.physics.angle);
+y =  new["initial-velocity"] * math.sin(new.physics.angle);
+}
+end
+
+table.insert(scen.objects,new)
+
+end,
 ["create-object-set-dest-action"] = function(action, source, direct) end,
 ["declare-winner-action"] = function(action, source, direct) end,
 ["die-action"] = function(action, source, direct) end,

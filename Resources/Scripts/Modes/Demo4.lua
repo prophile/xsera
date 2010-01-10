@@ -112,7 +112,7 @@ function render()
 	graphics.draw_starfield(-0.9)
 	
 	if scen ~= nil and scen.objects ~= nil then
-		for obId = 0, #scen.objects-1 do
+		for obId = 0, #scen.objects do
 			local o = scen.objects[obId]
 			if camera.w < 3000 then
 				graphics.draw_sprite("Id/"..o.sprite,
@@ -153,11 +153,7 @@ function DeviceActivate(device, owner)
 				device.position.last = device.position.last + 1
 			end
 			
-			--[[
-			If the weapon is auto aim then select a target
-			
-			--]]
-			callAction(device.trigger["activate"],owner,nil)
+			callAction(device.trigger["activate"],device,nil)
 				
 	end
 end
