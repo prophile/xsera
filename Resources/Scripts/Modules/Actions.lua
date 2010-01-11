@@ -52,7 +52,7 @@ local offset = {x = 0.0, y = 0.0}
 if action.reflexive == "true" then --There may be more conditions to consider
 	if source.device ~= nil then
 		p = source.parent.physics
-		offset = RotatePoint(source.position[source.position.last],p.angle)
+		offset = RotatePoint(source.position[source.position.last],p.angle-math.pi/2.0)
 	else
 		p = source.physics
 	end
