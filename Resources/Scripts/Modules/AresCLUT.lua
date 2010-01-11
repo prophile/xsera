@@ -25,6 +25,9 @@ CLUT = { { r = 1.0, g = 1.0, b = 1.0, a = 1.0 }, -- white
 modifier = { 1.0, 0.941, 0.878, 0.816, 0.753, 0.690, 0.627, 0.565, 0.502, 0.439, 0.376, 0.251, 0.188, 0.125, 0.063, 0.031, 0.0 }
 
 function ClutColour(clutNum, modNum)
+	if modNum == nil then
+	clutNum, modNum = math.floor(clutNum/16)+1,clutNum%16+1
+	end
 	return { r = CLUT[clutNum].r * modifier[modNum], g = CLUT[clutNum].g * modifier[modNum], b = CLUT[clutNum].b * modifier[modNum], a = 1.0, c = clutNum, m = modNum }
 end
 

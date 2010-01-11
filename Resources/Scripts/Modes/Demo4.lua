@@ -12,12 +12,12 @@ function init()
 	last_time = mode_manager.time()
 	loadingEntities = true
 	
-	scen = LoadScenario(2)
+	scen = LoadScenario(25)
 
 	loadingEntities = false
 end
 
-local camera = {w = 3000.0, h = 3000.0}
+local camera = {w = 1024, h = 768}
 local shipAdjust = 0
 
 function key( k )
@@ -130,11 +130,14 @@ function render()
 					graphics.draw_rbox(o.physics.position, 70)
 				end
 			elseif o.beam ~= nil then
-				if o.beam.kind == 512 then --Kinetic Bolt
+				if o.beam.kind == 512
+				or o.beam.kind == 9472
+				or o.beam.kind == "kinetic"
+				then --Kinetic Bolt
 
 				local p1 = o.physics.position
 				local p2 = RotatePoint({x=BEAM_LENGTH,y=0},o.physics.angle)
-				graphics.draw_line(p1,{x=p1.x+p2.x,y=p1.y+p2.y},1,ClutColour(5,1))
+				graphics.draw_line(p1,{x=p1.x+p2.x,y=p1.y+p2.y},1,ClutColour(o.beam.color))
 				end
 			end
 		end
@@ -159,7 +162,7 @@ function render()
 	end
 	
 	if scen.playerShip.weapon.special ~= nil and scen.playerShip.weapon.special.ammo ~= -1 then
-		graphics.draw_text("Special Ammo: " .. scen.playerShip.weapon.special.ammo, "CrystalClear", "left", {x = ox, y = oy + 4 * vstep}, camera.w/fs)
+		graphics.draw_text("Special Ammo: " .. scen.playerShip.weapon.special.ammo, "CrystalClear", "left", {x = ox, y = oy + 5 * vstep}, camera.w/fs)
 	end
 	
 	graphics.end_frame()
