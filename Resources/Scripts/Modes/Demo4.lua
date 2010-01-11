@@ -103,8 +103,13 @@ end
 
 function render()
 	graphics.begin_frame()
-	graphics.set_camera(-scen.playerShip.physics.position.x + shipAdjust - (camera.w / 2.0), -scen.playerShip.physics.position.y - (camera.h / 2.0), -scen.playerShip.physics.position.x + shipAdjust + (camera.w / 2.0), -scen.playerShip.physics.position.y + (camera.h / 2.0))
-	
+
+	graphics.set_camera(
+	-scen.playerShip.physics.position.x + shipAdjust - (camera.w / 2.0),
+	-scen.playerShip.physics.position.y - (camera.h / 2.0),
+	-scen.playerShip.physics.position.x + shipAdjust + (camera.w / 2.0),
+	-scen.playerShip.physics.position.y + (camera.h / 2.0))
+
 	graphics.draw_starfield(3.4)
 	graphics.draw_starfield(1.8)
 	graphics.draw_starfield(0.6)
@@ -118,12 +123,33 @@ function render()
 				graphics.draw_sprite("Id/"..o.sprite,
 				o.physics.position,
 				o.spriteDim,
---				{x=40,y=40},
 				o.physics.angle)
 			else
 				graphics.draw_rbox(o.physics.position, 70)
 			end
 		end
+	end
+	
+	
+	--Draw temporary status display
+	local fs = 30
+	local ox = camera.w/fs + scen.playerShip.physics.position.x - camera.w / 2
+	local oy = -camera.w/fs + scen.playerShip.physics.position.y + camera.h / 2
+	local vstep = -camera.w/fs * 1.5
+	
+	graphics.draw_text("Health: " .. scen.playerShip.health, "CrystalClear", "left", {x = ox, y = oy}, camera.w/fs)
+	graphics.draw_text("Energy: " .. scen.playerShip.energy, "CrystalClear", "left", {x = ox, y = oy + vstep}, camera.w/fs)
+	
+	if scen.playerShip.weapon.beam ~= nil and scen.playerShip.weapon.beam.ammo ~= -1 then
+		graphics.draw_text("Beam Ammo: " .. scen.playerShip.weapon.beam.ammo, "CrystalClear", "left", {x = ox, y = oy + 3 * vstep}, camera.w/fs)
+	end
+	
+	if scen.playerShip.weapon.pulse ~= nil and scen.playerShip.weapon.pulse.ammo ~= -1 then
+		graphics.draw_text("Pulse Ammo: " .. scen.playerShip.weapon.pulse.ammo, "CrystalClear", "left", {x = ox, y = oy + 4 * vstep}, camera.w/fs)
+	end
+	
+	if scen.playerShip.weapon.special ~= nil and scen.playerShip.weapon.special.ammo ~= -1 then
+		graphics.draw_text("Special Ammo: " .. scen.playerShip.weapon.special.ammo, "CrystalClear", "left", {x = ox, y = oy + 4 * vstep}, camera.w/fs)
 	end
 	
 	graphics.end_frame()
