@@ -30,7 +30,7 @@ function key( k )
 		camera.w = camera.w * 2
 		camera.h = camera.h * 2
 	elseif k == " " then
-		DeviceActivate(scen.playerShip.weapon.pulse,scen.playerShip)
+		DeviceActivate(scen.playerShip.weapon.beam,scen.playerShip)
 	else
 		KeyActivate(k)
 	end
@@ -119,13 +119,23 @@ function render()
 	if scen ~= nil and scen.objects ~= nil then
 		for obId = 0, #scen.objects do
 			local o = scen.objects[obId]
-			if camera.w < 3000 then
-				graphics.draw_sprite("Id/"..o.sprite,
-				o.physics.position,
-				o.spriteDim,
-				o.physics.angle)
-			else
-				graphics.draw_rbox(o.physics.position, 70)
+			
+			if o.sprite ~= nil then
+				if camera.w < 3000 then
+					graphics.draw_sprite("Id/"..o.sprite,
+					o.physics.position,
+					o.spriteDim,
+					o.physics.angle)
+				else
+					graphics.draw_rbox(o.physics.position, 70)
+				end
+			elseif o.beam ~= nil then
+				if o.beam.kind == 512 then --Kinetic Bolt
+
+				local p1 = o.physics.position
+				local p2 = RotatePoint({x=BEAM_LENGTH,y=0},o.physics.angle)
+				graphics.draw_line(p1,{x=p1.x+p2.x,y=p1.y+p2.y},1,ClutColour(5,1))
+				end
 			end
 		end
 	end

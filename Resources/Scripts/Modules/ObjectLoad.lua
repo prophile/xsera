@@ -14,17 +14,21 @@ function NewObject(id)
 	end
 	
 	local newObj = deepcopy(gameData["Objects"][id])
-	newObj.sprite = newObj["sprite-id"]
+	
+	if newObj["sprite-id"] ~= nil then
+		newObj.sprite = newObj["sprite-id"]
+		
+		x, y = graphics.sprite_dimensions("Id/" .. newObj.sprite)
+		newObj.spriteDim = {x=x,y=y}
+	end
+	
 	if newObj.mass == nil then
 		newObj.mass = 1000.0 --We should add a way for objects to me immobile
 	end
 	print("Creating new " .. newObj.name)
 	newObj.physics = physics.new_object(newObj.mass)
-	newObj.physics.angular_velocity = 0.00
-	
-	x, y = graphics.sprite_dimensions("Id/" .. newObj.sprite)
-	newObj.spriteDim = {x=x,y=y}
-	
+	newObj.physics.angular_velocity = 0.00	
+
 	if newObj.weapon ~= nil then
 		local wid
 		for wid=1, #newObj.weapon do
