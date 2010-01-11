@@ -78,3 +78,13 @@ function RandomReal ( min, max )
     return (math.random() * (max - min)) + min
 end
 
+function RotatePoint(point, angle)
+return {
+x = point.x*math.cos(angle)-point.y*math.sin(angle);
+y = point.x*math.sin(angle)+point.y*math.cos(angle);
+}
+end
+
+function xor(p,q)
+	return (p and not q) or (not p and q)
+end
