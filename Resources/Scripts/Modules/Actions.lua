@@ -51,13 +51,13 @@ local p
 local offset = {x = 0.0, y = 0.0}
 if action.reflexive == "true" then --There may be more conditions to consider
 	if source.device ~= nil then
-		p = deepcopy(source.parent.physics)
-		offset = RotatePoint(source.position[source.position.last],p.angle)
+		p = source.parent.physics
+		offset = RotatePoint(source.position[source.position.last],p.angle-math.pi/2.0)
 	else
-		p = deepcopy(source.physics)
+		p = source.physics
 	end
 else
-	p = deepcopy(direct.physics)
+	p = direct.physics
 end
 
 --create object(s)
