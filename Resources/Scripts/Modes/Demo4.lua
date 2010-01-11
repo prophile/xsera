@@ -117,7 +117,8 @@ function render()
 			if camera.w < 3000 then
 				graphics.draw_sprite("Id/"..o.sprite,
 				o.physics.position,
-				{x=40,y=40},
+				o.spriteDim,
+--				{x=40,y=40},
 				o.physics.angle)
 			else
 				graphics.draw_rbox(o.physics.position, 70)
