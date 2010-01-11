@@ -14,7 +14,7 @@ actionTable = {
 ["alter-absolute-cash-action"] = function(action, source, direct) end,
 ["alter-absolute-location-action"] = function(action, source, direct) end,
 ["alter-age-action"] = function(action, source, direct)
-	if action.reflexive == true then
+	if action.reflexive == "true" then
 		source.age = action.value
 	else
 		direct.age = action.value
@@ -25,7 +25,7 @@ end,
 ["alter-condition-true-yet-action"] = function(action, source, direct) end,
 ["alter-damage-action"] = function(action, source, direct) end,
 ["alter-energy-action"] = function(action, source, direct)
-	if action.reflexive == true then
+	if action.reflexive == "true" then
 		source.energy = action.value
 	else
 		direct.energy = action.value
@@ -47,12 +47,28 @@ end,
 ["computer-select-action"] = function(action, source, direct) end,
 ["create-object-action"] = function(action, source, direct)
 --Aquire parent data
-local p = deepcopy(source.parent.physics) --[HARDCODE]
+local p
+local offset = {x = 0.0, y = 0.0}
+if action.reflexive == "true" then --There may be more conditions to consider
+	if source.device ~= nil then
+		p = deepcopy(source.parent.physics)
+		offset = RotatePoint(source.position[source.position.last],p.angle)
+	else
+		p = deepcopy(source.physics)
+	end
+else
+	p = deepcopy(direct.physics)
+end
 
 --create object(s)
+local count = action["how-many-min"] + math.random(0, action["how-many-range"])
+for ctr = 1, count do
 local new = NewObject(action["which-base-type"])
 
-new.physics.position = p.position
+new.physics.position = {
+		x = p.position.x + offset.x;
+		y = p.position.y + offset.y;
+		}
 
 if action["direction-relative"] == "true" then
 new.physics.angle = p.angle
@@ -62,18 +78,19 @@ end
 
 if action["velocity-relative"] == "true" then
 new.physics.velocity = {
-x = p.velocity.x + new["initial-velocity"] * math.cos(new.physics.angle);
-y = p.velocity.y + new["initial-velocity"] * math.sin(new.physics.angle);
+x = p.velocity.x + SPEED_FACTOR * new["initial-velocity"] * math.cos(new.physics.angle);
+y = p.velocity.y + SPEED_FACTOR * new["initial-velocity"] * math.sin(new.physics.angle);
 }
 else
 new.physics.velocity = {
-x =  new["initial-velocity"] * math.cos(new.physics.angle);
-y =  new["initial-velocity"] * math.sin(new.physics.angle);
+x =  SPEED_FACTOR * new["initial-velocity"] * math.cos(new.physics.angle);
+y =  SPEED_FACTOR * new["initial-velocity"] * math.sin(new.physics.angle);
 }
+
 end
 
 table.insert(scen.objects,new)
-
+end
 end,
 ["create-object-set-dest-action"] = function(action, source, direct) end,
 ["declare-winner-action"] = function(action, source, direct) end,

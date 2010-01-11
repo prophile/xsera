@@ -22,6 +22,9 @@ function NewObject(id)
 	newObj.physics = physics.new_object(newObj.mass)
 	newObj.physics.angular_velocity = 0.00
 	
+	x, y = graphics.sprite_dimensions("Id/" .. newObj.sprite)
+	newObj.spriteDim = {x=x,y=y}
+	
 	if newObj.weapon ~= nil then
 		local wid
 		for wid=1, #newObj.weapon do
