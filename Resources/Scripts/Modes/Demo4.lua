@@ -51,6 +51,16 @@ function update()
 --[[------------------
 	Movement
 ------------------]]--
+	local v = scen.playerShip.physics.velocity
+	if hypot1(v) > scen.playerShip["max-velocity"] * SPEED_FACTOR then
+		scen.playerShip.physics.velocity = {
+		x = scen.playerShip["max-velocity"] * normalize(v.x,v.y) * SPEED_FACTOR;
+		y = scen.playerShip["max-velocity"] * normalize(v.y,v.x) * SPEED_FACTOR;
+		}
+		
+	end
+	
+	
 	
     if keyboard[1][4].active == true then
 		if key_press_f6 ~= true then
@@ -71,12 +81,13 @@ function update()
 	if keyboard[1][2].active == true then
         -- apply a forward force in the direction the ship is facing
         local angle = scen.playerShip.physics.angle
-        local thrust = scen.playerShip["max-thrust"] * 10000
+		--Multiply by 60 because the thrust value in the data is given per FRAME not per second.
+        local thrust = scen.playerShip["max-thrust"] * 60 * SPEED_FACTOR
 		local force = { x = thrust * math.cos(angle), y = thrust * math.sin(angle) }
 		scen.playerShip.physics:apply_force(force)
 	elseif keyboard[1][3].active == true then
         -- apply a reverse force in the direction opposite the direction the ship is MOVING
-        local thrust = scen.playerShip["max-thrust"] * 10000
+        local thrust = scen.playerShip["max-thrust"] * 60 * SPEED_FACTOR
         local force = scen.playerShip.physics.velocity
 		if force.x ~= 0 or force.y ~= 0 then
 			if hypot(scen.playerShip.physics.velocity.x, scen.playerShip.physics.velocity.y) <= 10 then
