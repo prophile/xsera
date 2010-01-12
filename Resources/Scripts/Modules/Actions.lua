@@ -118,7 +118,12 @@ else
 new.physics.angle = RandomReal(0, 2.0 * math.pi)
 end
 
+if new["initial-velocity"] == nil then
+new["initial-velocity"] = 0
+end
+
 if action["velocity-relative"] == "true" then
+
 new.physics.velocity = {
 x = p.velocity.x + SPEED_FACTOR * new["initial-velocity"] * math.cos(new.physics.angle);
 y = p.velocity.y + SPEED_FACTOR * new["initial-velocity"] * math.sin(new.physics.angle);

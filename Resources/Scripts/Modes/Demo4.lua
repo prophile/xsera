@@ -95,16 +95,16 @@ for i = 0, #scen.objects do
 --[[------------------
 	Movement
 ------------------]]--
-
-	local v = o.physics.velocity
-	if hypot1(v) > o["max-velocity"] * SPEED_FACTOR then
-		o.physics.velocity = {
-		x = o["max-velocity"] * normalize(v.x,v.y) * SPEED_FACTOR;
-		y = o["max-velocity"] * normalize(v.y,v.x) * SPEED_FACTOR;
-		}
-		
+	if o["max-thrust"] ~= nil then
+		local v = o.physics.velocity
+		if hypot1(v) > o["max-velocity"] * SPEED_FACTOR then
+			o.physics.velocity = {
+			x = o["max-velocity"] * normalize(v.x,v.y) * SPEED_FACTOR;
+			y = o["max-velocity"] * normalize(v.y,v.x) * SPEED_FACTOR;
+			}
+			
+		end
 	end
-		
 	
 	if o.attributes["can-turn"] == true then
 		if o.control.left == true then
