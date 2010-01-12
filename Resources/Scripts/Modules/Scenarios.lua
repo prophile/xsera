@@ -13,6 +13,7 @@ function LoadScenario(id)
 			if scen.playerShip == nil then
 				new.physics.velocity = {x = 0.0, y = 0.0}
 				scen.playerShip = new
+				scen.playerShipId = ctr
 			else
 				error "There is already a an intial player ship set."
 			end
