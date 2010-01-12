@@ -317,13 +317,13 @@ function DrawPanels()
 
 -- Battery (red)
 	graphics.draw_box(107, 379, 29, 386, 0, ClutColour(8, 8))
-	graphics.draw_box(playerShip.battery.percent * 78 + 29, 379, 29, 386, 0, ClutColour(8, 5))
+--	graphics.draw_box(playerShip.battery.percent * 78 + 29, 379, 29, 386, 0, ClutColour(8, 5))
 -- Energy (yellow)
 	graphics.draw_box(6, 379, -72.5, 386, 0, ClutColour(3, 7))
-	graphics.draw_box(playerShip.energy.percent * 78.5 - 72.5, 379, -72.5, 386, 0, ClutColour(9, 6))
+--	graphics.draw_box(playerShip.energy.percent * 78.5 - 72.5, 379, -72.5, 386, 0, ClutColour(9, 6))
 -- Shield (blue)
 	graphics.draw_box(-96, 379, -173, 386, 0, ClutColour(14, 8))
-	graphics.draw_box(playerShip.shield.percent * 77 - 173, 379, -173, 386, 0, ClutColour(14, 6))
+--	graphics.draw_box(playerShip.shield.percent * 77 - 173, 379, -173, 386, 0, ClutColour(14, 6))
 -- Factory resources (green - mostly)
 	count = 1
 	if shipSelected == true then
@@ -416,7 +416,7 @@ function DrawPanels()
 		graphics.draw_text(scen.text[textnum], "CrystalClear", "center", { x = 0, y = -250 }, 30)
 	end
 -- Weapon (special) ammo count
-	graphics.draw_text(string.format('%03d', playerShip.special.ammo), "CrystalClear", "left", { x = -314, y = 60 }, 13, ClutColour(5, 1))
+	graphics.draw_text(string.format('%03d', scen.playerShip.weapon.special.ammo), "CrystalClear", "left", { x = -314, y = 60 }, 13, ClutColour(5, 1))
 	control = playerShip -- [HARDCODE]
 	if control ~= nil then
 		graphics.draw_box(49, -392, 40, -297, 0, ClutColour(9, 6))

@@ -5,6 +5,7 @@ import('Math')
 import('Scenarios')
 import('PrintRecursive')
 import('KeyboardControl')
+import('Interfaces')
 
 function init()
 	physics.open(0.6)
@@ -234,7 +235,7 @@ function render()
 	if scen.playerShip.weapon.special ~= nil and scen.playerShip.weapon.special.ammo ~= -1 then
 		graphics.draw_text("Special Ammo: " .. scen.playerShip.weapon.special.ammo, "CrystalClear", "left", {x = ox, y = oy + 5 * vstep}, camera.w/fs)
 	end
-	
+	DrawPanels()
 	graphics.end_frame()
 end
 
