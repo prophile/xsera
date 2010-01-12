@@ -224,17 +224,6 @@ function render()
 		graphics.draw_text("Energy: " .. scen.playerShip.energy, "CrystalClear", "left", {x = ox, y = oy + vstep}, camera.w/fs)
 	end
 	
-	if scen.playerShip.weapon.beam ~= nil and scen.playerShip.weapon.beam.ammo ~= -1 then
-		graphics.draw_text("Beam Ammo: " .. scen.playerShip.weapon.beam.ammo, "CrystalClear", "left", {x = ox, y = oy + 3 * vstep}, camera.w/fs)
-	end
-	
-	if scen.playerShip.weapon.pulse ~= nil and scen.playerShip.weapon.pulse.ammo ~= -1 then
-		graphics.draw_text("Pulse Ammo: " .. scen.playerShip.weapon.pulse.ammo, "CrystalClear", "left", {x = ox, y = oy + 4 * vstep}, camera.w/fs)
-	end
-	
-	if scen.playerShip.weapon.special ~= nil and scen.playerShip.weapon.special.ammo ~= -1 then
-		graphics.draw_text("Special Ammo: " .. scen.playerShip.weapon.special.ammo, "CrystalClear", "left", {x = ox, y = oy + 5 * vstep}, camera.w/fs)
-	end
 	DrawPanels()
 	graphics.end_frame()
 end
