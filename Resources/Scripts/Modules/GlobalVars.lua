@@ -1,7 +1,7 @@
 import('Math')
 import('AresCLUT')
 
-SPEED_FACTOR = 128.0
+SPEED_FACTOR = 64.0
 BEAM_LENGTH = 32
 
 playerShip = nil

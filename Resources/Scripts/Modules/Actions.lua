@@ -1,3 +1,42 @@
+function ActivateTrigger(device, owner)
+	if xor(owner == nil, owner.energy >= device.device["energy-cost"])
+	and xor(device.ammo == -1, device.ammo > 0) then
+--TODO: add cooldown support
+			if device.ammo ~= -1 then
+				device.ammo = device.ammo - 1
+			end
+			
+			if owner ~= nil then
+				owner.energy = owner.energy - device.device["energy-cost"]
+			end
+			
+			
+			if device.position.last == #device.position then
+				device.position.last = 1
+			else
+				device.position.last = device.position.last + 1
+			end
+			
+			callAction(device.trigger["activate"],device,nil)
+				
+	end
+end
+
+
+function ExpireTrigger(owner)
+end
+
+function DestroyTrigger(owner)
+end
+
+function CreateTrigger(owner)
+end
+
+function CollideTrigger(owner,other)
+end
+
+function ArriveTrigger(owner,other)
+end
 
 function callAction(trigger, source, direct)
 	local id

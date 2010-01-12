@@ -66,21 +66,32 @@ function update()
 
 	KeyDoActivated()
 
-if scen.playerShip.control.pulse == true then
-	DeviceActivate(scen.playerShip.weapon.pulse, scen.playerShip)
-end
-
-if scen.playerShip.control.beam == true then
-	DeviceActivate(scen.playerShip.weapon.beam, scen.playerShip)
-end
-
-if scen.playerShip.control.special == true then
-	DeviceActivate(scen.playerShip.weapon.special, scen.playerShip)
-end
-
 local i
 for i = 0, #scen.objects do
 	local o = scen.objects[i]
+	
+	--Lifetimer
+	if o.age ~= nil then
+		if o.age + o.created <= newTime then
+			ExpireTrigger(o)
+			table.insert(scen.destroyQueue, i)
+		end
+	end
+	
+	--Fire weapons
+	if o.control.pulse == true then
+		ActivateTrigger(o.weapon.pulse, o)
+	end
+
+	if o.control.beam == true then
+		ActivateTrigger(o.weapon.beam, o)
+	end
+
+	if o.control.special == true then
+		ActivateTrigger(o.weapon.special, o)
+	end
+	
+	
 --[[------------------
 	Movement
 ------------------]]--
@@ -93,36 +104,36 @@ for i = 0, #scen.objects do
 		}
 		
 	end
-	
+		
 	
 	if o.attributes["can-turn"] == true then
-    if o.control.left == true then
-		if key_press_f6 ~= true then
-			o.physics.angular_velocity = o.rotation["max-turn-rate"]*2.0
+		if o.control.left == true then
+			if key_press_f6 ~= true then
+				o.physics.angular_velocity = o.rotation["max-turn-rate"]*2.0
+			else
+				o.physics.angular_velocity = o.rotation["max-turn-rate"] * 4.0
+			end
+		elseif o.control.right == true then
+			if key_press_f6 ~= true then
+				o.physics.angular_velocity = -o.rotation["max-turn-rate"] * 2.0
+			else
+				o.physics.angular_velocity = -o.rotation["max-turn-rate"] * 4.0
+			end
 		else
-			o.physics.angular_velocity = o.rotation["max-turn-rate"] * 4.0
+			o.physics.angular_velocity = 0
 		end
-    elseif o.control.right == true then
-		if key_press_f6 ~= true then
-			o.physics.angular_velocity = -o.rotation["max-turn-rate"] * 2.0
-		else
-			o.physics.angular_velocity = -o.rotation["max-turn-rate"] * 4.0
-		end
-    else
-        o.physics.angular_velocity = 0
-    end
 	end 
 	if o.control.accel == true then
-        -- apply a forward force in the direction the ship is facing
-        local angle = o.physics.angle
+		-- apply a forward force in the direction the ship is facing
+		local angle = o.physics.angle
 		--Multiply by 60 because the thrust value in the data is given per FRAME not per second.
-        local thrust = o["max-thrust"] * 60 * SPEED_FACTOR
+		local thrust = o["max-thrust"] * 60 * SPEED_FACTOR
 		local force = { x = thrust * math.cos(angle), y = thrust * math.sin(angle) }
 		o.physics:apply_force(force)
 	elseif o.control.decel == true then
-        -- apply a reverse force in the direction opposite the direction the ship is MOVING
-        local thrust = o["max-thrust"] * 60 * SPEED_FACTOR
-        local force = o.physics.velocity
+		-- apply a reverse force in the direction opposite the direction the ship is MOVING
+		local thrust = o["max-thrust"] * 60 * SPEED_FACTOR
+		local force = o.physics.velocity
 		if force.x ~= 0 or force.y ~= 0 then
 			if hypot(o.physics.velocity.x, o.physics.velocity.y) <= 10 then
 				o.physics.velocity = { x = 0, y = 0 }
@@ -139,10 +150,19 @@ for i = 0, #scen.objects do
 				end
 			end
 		end
-    end
-	
-
+	end
 end
+	--Remove destroyed or expired objects
+	--Count backwards because the array is shifted with each deletion
+	if #scen.destroyQueue > 0 then
+		for i = #scen.destroyQueue, 1, -1 do
+			scen.objects[scen.destroyQueue[i]].dead = true
+			physics.destroy_object(scen.objects[scen.destroyQueue[i]].physics)
+--			scen.objects[scen.destroyQueue[i]].physics:destroy()
+			table.remove(scen.objects,scen.destroyQueue[i])
+		end
+	end
+	scen.destroyQueue = {}
 	physics.update(dt)
 end
 
@@ -221,29 +241,4 @@ end
 
 function quit()
 	physics.close()
-end
-
-
-function DeviceActivate(device, owner)
-	if xor(owner == nil, owner.energy >= device.device["energy-cost"])
-	and xor(device.ammo == -1, device.ammo > 0) then
---TODO: add cooldown support
-			if device.ammo ~= -1 then
-				device.ammo = device.ammo - 1
-			end
-			
-			if owner ~= nil then
-				owner.energy = owner.energy - device.device["energy-cost"]
-			end
-			
-			
-			if device.position.last == #device.position then
-				device.position.last = 1
-			else
-				device.position.last = device.position.last + 1
-			end
-			
-			callAction(device.trigger["activate"],device,nil)
-				
-	end
 end

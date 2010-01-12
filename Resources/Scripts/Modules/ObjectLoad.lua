@@ -38,9 +38,16 @@ function NewObject(id)
 	special = false;
 	warp = false;
 	}
-
+	
 	newObj.physics = physics.new_object(newObj.mass)
 	newObj.physics.angular_velocity = 0.00	
+
+	if newObj["initial-age"] ~= nil then
+		newObj.created = mode_manager.time()
+		newObj.age = newObj["initial-age"] / 20.0 --initial-age is in 20ths of a second
+	end
+
+	newObj.dead = false
 
 	--Prepare devices
 	if newObj.weapon ~= nil then
