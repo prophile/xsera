@@ -33,6 +33,7 @@ function DestroyTrigger(owner)
 end
 
 function CreateTrigger(owner)
+	callAction(owner.trigger["create"],owner,nil)
 end
 
 function CollideTrigger(owner,other)
@@ -42,11 +43,13 @@ function ArriveTrigger(owner,other)
 end
 
 function callAction(trigger, source, direct)
-	local id
-	local max = trigger.id + trigger.count - 1
-	for id = trigger.id, max do
-		local action = gameData["Actions"][id]
-		actionTable[action.type](action, source, direct)
+	if trigger ~= nil then
+		local id
+		local max = trigger.id + trigger.count - 1
+		for id = trigger.id, max do
+			local action = gameData["Actions"][id]
+			actionTable[action.type](action, source, direct)
+		end
 	end
 end
 
@@ -136,6 +139,9 @@ y =  SPEED_FACTOR * new["initial-velocity"] * math.sin(new.physics.angle);
 
 end
 
+if new.attributes["is-guided"] == true then
+	new.control.accel = true
+end
 table.insert(scen.objects,new)
 end
 end,

@@ -1,4 +1,5 @@
 import('GlobalVars')
+import('Actions')
 
 function NewObject(id)
 	
@@ -75,6 +76,6 @@ function NewObject(id)
 	end
 	
 	CopyActions(newObj)
-	
+	CreateTrigger(newObj)
 	return newObj
 end
