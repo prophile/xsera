@@ -38409,4 +38409,10 @@ _-gateship";
 [996] = "Transport Foe Placeholder";
 [997] = "Transport Friend Placeholder";
 };
+["Sounds"] = {
+	[500] = "ShotC";
+	[501] = "ExplosionCombo";
+	[511] = "NaughtyBeep";
+	[533] = "RocketLaunchr";
+	};
 };

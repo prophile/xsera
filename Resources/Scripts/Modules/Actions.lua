@@ -155,7 +155,15 @@ end,
 ["make-sparks-action"] = function(action, source, direct) end,
 ["nil-target-action"] = function(action, source, direct) end,
 ["no-action"] = function(action, source, direct) end,
-["play-sound-action"] = function(action, source, direct) end,
+["play-sound-action"] = function(action, source, direct)
+
+	local rsound = gameData["Sounds"][action["id-minimum"]]
+	if rsound ~= nil then
+		sound.play(rsound)
+	else
+		print("Sound '" .. action["id-minimum"] .. "' not found.")
+	end
+end,
 ["set-destination-action"] = function(action, source, direct) end,
 ["set-zoom-action"] = function(action, source, direct) end,
 }
