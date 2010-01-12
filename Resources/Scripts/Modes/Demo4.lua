@@ -189,13 +189,24 @@ function render()
 			local o = scen.objects[obId]
 			
 			if o.sprite ~= nil then
-				if camera.w < 3000 then
+				if camera.w < 16384 then
 					graphics.draw_sprite("Id/"..o.sprite,
 					o.physics.position,
 					o.spriteDim,
 					o.physics.angle)
 				else
-					graphics.draw_rbox(o.physics.position, 70)
+					local iconScale = camera.w/1024
+					if o["tiny-shape"] == "solid-square" then
+						graphics.draw_rbox(o.physics.position, o["tiny-size"] * iconScale)
+					elseif o["tiny-shape"] == "plus" then
+						graphics.draw_rplus(o.physics.position, o["tiny-size"] * iconScale)
+					elseif o["tiny-shape"] == "triangle" then
+						graphics.draw_rtri(o.physics.position, o["tiny-size"] * iconScale)
+					elseif o["tiny-shape"] == "diamond" then
+						graphics.draw_rdia(o.physics.position, o["tiny-size"] * iconScale)
+					elseif o["tiny-shape"] == "framed-square" then
+						graphics.draw_rbox(o.physics.position, o["tiny-size"] * iconScale)
+					end
 				end
 			elseif o.beam ~= nil then
 				if o.beam.kind == 512
