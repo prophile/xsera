@@ -225,6 +225,7 @@ function render()
 	end
 	
 	DrawPanels()
+	DrawArrow()
 	graphics.end_frame()
 end
 
