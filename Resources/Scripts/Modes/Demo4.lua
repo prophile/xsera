@@ -64,6 +64,8 @@ function update()
 	dt = newTime - last_time
 	last_time = newTime
 
+	KeyDoActivated()
+
 if scen.playerShip.control.pulse == true then
 	DeviceActivate(scen.playerShip.weapon.pulse, scen.playerShip)
 end
@@ -196,7 +198,10 @@ function render()
 	local vstep = -camera.w/fs * 1.5
 	
 	graphics.draw_text("Health: " .. scen.playerShip.health, "CrystalClear", "left", {x = ox, y = oy}, camera.w/fs)
-	graphics.draw_text("Energy: " .. scen.playerShip.energy, "CrystalClear", "left", {x = ox, y = oy + vstep}, camera.w/fs)
+	
+	if scen.playerShip.energy ~= nil then
+		graphics.draw_text("Energy: " .. scen.playerShip.energy, "CrystalClear", "left", {x = ox, y = oy + vstep}, camera.w/fs)
+	end
 	
 	if scen.playerShip.weapon.beam ~= nil and scen.playerShip.weapon.beam.ammo ~= -1 then
 		graphics.draw_text("Beam Ammo: " .. scen.playerShip.weapon.beam.ammo, "CrystalClear", "left", {x = ox, y = oy + 3 * vstep}, camera.w/fs)

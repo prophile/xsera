@@ -72,12 +72,13 @@ function DoFireWeapSpecial()
 end
 
 function StopFireWeapSpecial()
-	if scen.playerShip.weapom.special ~= nil then
+	if scen.playerShip.weapon.special ~= nil then
 		scen.playerShip.control.special = false
 	end
 end
 
 function DoAccelerate()
+	keyboard[1][2].active = false
 	scen.playerShip.control.accel = true
 end
 
@@ -86,6 +87,7 @@ function StopAccelerate()
 end
 
 function DoDecelerate()
+	keyboard[1][3].active = false
 	scen.playerShip.control.decel = true
 end
 
@@ -94,6 +96,7 @@ function StopDecelerate()
 end
 
 function DoLeftTurn()
+	keyboard[1][4].active = false
 	scen.playerShip.control.left = true
 end
 
@@ -102,6 +105,7 @@ function StopLeftTurn()
 end
 
 function DoRightTurn()
+	keyboard[1][5].active = false
 	scen.playerShip.control.right = true
 end
 
@@ -468,9 +472,6 @@ function KeyActivate(key)
 		while keyboard[i][j] ~= nil do
 			if keyboard[i][j].key == key then
 				keyboard[i][j].active = true
-				if keyboard[i][j].action ~= nil then
-					keyboard[i][j].action()
-				end
 				return
 			end
 			j = j + 1
@@ -486,9 +487,6 @@ function ActionActivate(name)
 		while keyboard[i][j] ~= nil do
 			if keyboard[i][j].name == name then
 				keyboard[i][j].active = true
-				if keyboard[i][j].action ~= nil then
-					keyboard[i][j].action()
-				end
 				return
 			end
 			j = j + 1
