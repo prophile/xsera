@@ -5,6 +5,7 @@ import('Math')
 import('Scenarios')
 import('PrintRecursive')
 import('KeyboardControl')
+import('Interfaces')
 
 function init()
 	physics.open(0.6)
@@ -64,63 +65,76 @@ function update()
 	dt = newTime - last_time
 	last_time = newTime
 
-if scen.playerShip.control.pulse == true then
-	DeviceActivate(scen.playerShip.weapon.pulse, scen.playerShip)
-end
-
-if scen.playerShip.control.beam == true then
-	DeviceActivate(scen.playerShip.weapon.beam, scen.playerShip)
-end
-
-if scen.playerShip.control.special == true then
-	DeviceActivate(scen.playerShip.weapon.special, scen.playerShip)
-end
+	KeyDoActivated()
 
 local i
 for i = 0, #scen.objects do
 	local o = scen.objects[i]
---[[------------------
-	Movement
-------------------]]--
+	
+	--Lifetimer
+	if o.age ~= nil then
+		if o.age + o.created <= newTime then
+			ExpireTrigger(o)
+			table.insert(scen.destroyQueue, i)
+		end
+	end
+	
+	--Fire weapons
+	if o.control.pulse == true then
+		ActivateTrigger(o.weapon.pulse, o)
+	end
 
-	local v = o.physics.velocity
-	if hypot1(v) > o["max-velocity"] * SPEED_FACTOR then
-		o.physics.velocity = {
-		x = o["max-velocity"] * normalize(v.x,v.y) * SPEED_FACTOR;
-		y = o["max-velocity"] * normalize(v.y,v.x) * SPEED_FACTOR;
-		}
-		
+	if o.control.beam == true then
+		ActivateTrigger(o.weapon.beam, o)
+	end
+
+	if o.control.special == true then
+		ActivateTrigger(o.weapon.special, o)
 	end
 	
 	
+--[[------------------
+	Movement
+------------------]]--
+	if o["max-thrust"] ~= nil then
+		local v = o.physics.velocity
+		if hypot1(v) > o["max-velocity"] * SPEED_FACTOR then
+			o.physics.velocity = {
+			x = o["max-velocity"] * normalize(v.x,v.y) * SPEED_FACTOR;
+			y = o["max-velocity"] * normalize(v.y,v.x) * SPEED_FACTOR;
+			}
+			
+		end
+	end
+	
 	if o.attributes["can-turn"] == true then
-    if o.control.left == true then
-		if key_press_f6 ~= true then
-			o.physics.angular_velocity = o.rotation["max-turn-rate"]*2.0
+		if o.control.left == true then
+			if key_press_f6 ~= true then
+				o.physics.angular_velocity = o.rotation["max-turn-rate"]*2.0
+			else
+				o.physics.angular_velocity = o.rotation["max-turn-rate"] * 4.0
+			end
+		elseif o.control.right == true then
+			if key_press_f6 ~= true then
+				o.physics.angular_velocity = -o.rotation["max-turn-rate"] * 2.0
+			else
+				o.physics.angular_velocity = -o.rotation["max-turn-rate"] * 4.0
+			end
 		else
-			o.physics.angular_velocity = o.rotation["max-turn-rate"] * 4.0
+			o.physics.angular_velocity = 0
 		end
-    elseif o.control.right == true then
-		if key_press_f6 ~= true then
-			o.physics.angular_velocity = -o.rotation["max-turn-rate"] * 2.0
-		else
-			o.physics.angular_velocity = -o.rotation["max-turn-rate"] * 4.0
-		end
-    else
-        o.physics.angular_velocity = 0
-    end
 	end 
 	if o.control.accel == true then
-        -- apply a forward force in the direction the ship is facing
-        local angle = o.physics.angle
+		-- apply a forward force in the direction the ship is facing
+		local angle = o.physics.angle
 		--Multiply by 60 because the thrust value in the data is given per FRAME not per second.
-        local thrust = o["max-thrust"] * 60 * SPEED_FACTOR
+		local thrust = o["max-thrust"] * TIME_FACTOR * SPEED_FACTOR
 		local force = { x = thrust * math.cos(angle), y = thrust * math.sin(angle) }
 		o.physics:apply_force(force)
 	elseif o.control.decel == true then
-        -- apply a reverse force in the direction opposite the direction the ship is MOVING
-        local thrust = o["max-thrust"] * 60 * SPEED_FACTOR
-        local force = o.physics.velocity
+		-- apply a reverse force in the direction opposite the direction the ship is MOVING
+		local thrust = o["max-thrust"] * TIME_FACTOR * SPEED_FACTOR
+		local force = o.physics.velocity
 		if force.x ~= 0 or force.y ~= 0 then
 			if hypot(o.physics.velocity.x, o.physics.velocity.y) <= 10 then
 				o.physics.velocity = { x = 0, y = 0 }
@@ -137,10 +151,19 @@ for i = 0, #scen.objects do
 				end
 			end
 		end
-    end
-	
-
+	end
 end
+	--Remove destroyed or expired objects
+	--Count backwards because the array is shifted with each deletion
+	if #scen.destroyQueue > 0 then
+		for i = #scen.destroyQueue, 1, -1 do
+			scen.objects[scen.destroyQueue[i]].dead = true
+			physics.destroy_object(scen.objects[scen.destroyQueue[i]].physics)
+--			scen.objects[scen.destroyQueue[i]].physics:destroy()
+			table.remove(scen.objects,scen.destroyQueue[i])
+		end
+	end
+	scen.destroyQueue = {}
 	physics.update(dt)
 end
 
@@ -166,13 +189,24 @@ function render()
 			local o = scen.objects[obId]
 			
 			if o.sprite ~= nil then
-				if camera.w < 3000 then
+				if camera.w < 16384 then
 					graphics.draw_sprite("Id/"..o.sprite,
 					o.physics.position,
 					o.spriteDim,
 					o.physics.angle)
 				else
-					graphics.draw_rbox(o.physics.position, 70)
+					local iconScale = camera.w/1024
+					if o["tiny-shape"] == "solid-square" then
+						graphics.draw_rbox(o.physics.position, o["tiny-size"] * iconScale)
+					elseif o["tiny-shape"] == "plus" then
+						graphics.draw_rplus(o.physics.position, o["tiny-size"] * iconScale)
+					elseif o["tiny-shape"] == "triangle" then
+						graphics.draw_rtri(o.physics.position, o["tiny-size"] * iconScale)
+					elseif o["tiny-shape"] == "diamond" then
+						graphics.draw_rdia(o.physics.position, o["tiny-size"] * iconScale)
+					elseif o["tiny-shape"] == "framed-square" then
+						graphics.draw_rbox(o.physics.position, o["tiny-size"] * iconScale)
+					end
 				end
 			elseif o.beam ~= nil then
 				if o.beam.kind == 512
@@ -196,49 +230,17 @@ function render()
 	local vstep = -camera.w/fs * 1.5
 	
 	graphics.draw_text("Health: " .. scen.playerShip.health, "CrystalClear", "left", {x = ox, y = oy}, camera.w/fs)
-	graphics.draw_text("Energy: " .. scen.playerShip.energy, "CrystalClear", "left", {x = ox, y = oy + vstep}, camera.w/fs)
 	
-	if scen.playerShip.weapon.beam ~= nil and scen.playerShip.weapon.beam.ammo ~= -1 then
-		graphics.draw_text("Beam Ammo: " .. scen.playerShip.weapon.beam.ammo, "CrystalClear", "left", {x = ox, y = oy + 3 * vstep}, camera.w/fs)
+	if scen.playerShip.energy ~= nil then
+		graphics.draw_text("Energy: " .. scen.playerShip.energy, "CrystalClear", "left", {x = ox, y = oy + vstep}, camera.w/fs)
 	end
 	
-	if scen.playerShip.weapon.pulse ~= nil and scen.playerShip.weapon.pulse.ammo ~= -1 then
-		graphics.draw_text("Pulse Ammo: " .. scen.playerShip.weapon.pulse.ammo, "CrystalClear", "left", {x = ox, y = oy + 4 * vstep}, camera.w/fs)
-	end
-	
-	if scen.playerShip.weapon.special ~= nil and scen.playerShip.weapon.special.ammo ~= -1 then
-		graphics.draw_text("Special Ammo: " .. scen.playerShip.weapon.special.ammo, "CrystalClear", "left", {x = ox, y = oy + 5 * vstep}, camera.w/fs)
-	end
-	
+	DrawPanels()
+	DrawArrow()
 	graphics.end_frame()
 end
 
 
 function quit()
 	physics.close()
-end
-
-
-function DeviceActivate(device, owner)
-	if xor(owner == nil, owner.energy >= device.device["energy-cost"])
-	and xor(device.ammo == -1, device.ammo > 0) then
---TODO: add cooldown support
-			if device.ammo ~= -1 then
-				device.ammo = device.ammo - 1
-			end
-			
-			if owner ~= nil then
-				owner.energy = owner.energy - device.device["energy-cost"]
-			end
-			
-			
-			if device.position.last == #device.position then
-				device.position.last = 1
-			else
-				device.position.last = device.position.last + 1
-			end
-			
-			callAction(device.trigger["activate"],device,nil)
-				
-	end
 end

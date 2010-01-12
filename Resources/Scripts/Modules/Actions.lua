@@ -1,10 +1,55 @@
+function ActivateTrigger(device, owner)
+	if xor(owner == nil, owner.energy >= device.device["energy-cost"])
+	and xor(device.ammo == -1, device.ammo > 0)
+	and device.device.lastActivated < mode_manager.time() - device.device["fire-time"] / TIME_FACTOR then
+
+			device.device.lastActivated = mode_manager.time()
+
+			if device.ammo ~= -1 then
+				device.ammo = device.ammo - 1
+			end
+			
+			if owner ~= nil then
+				owner.energy = owner.energy - device.device["energy-cost"]
+			end
+			
+			
+			if device.position.last == #device.position then
+				device.position.last = 1
+			else
+				device.position.last = device.position.last + 1
+			end
+			
+			callAction(device.trigger["activate"],device,nil)
+				
+	end
+end
+
+
+function ExpireTrigger(owner)
+end
+
+function DestroyTrigger(owner)
+end
+
+function CreateTrigger(owner)
+	callAction(owner.trigger["create"],owner,nil)
+end
+
+function CollideTrigger(owner,other)
+end
+
+function ArriveTrigger(owner,other)
+end
 
 function callAction(trigger, source, direct)
-	local id
-	local max = trigger.id + trigger.count - 1
-	for id = trigger.id, max do
-		local action = gameData["Actions"][id]
-		actionTable[action.type](action, source, direct)
+	if trigger ~= nil then
+		local id
+		local max = trigger.id + trigger.count - 1
+		for id = trigger.id, max do
+			local action = gameData["Actions"][id]
+			actionTable[action.type](action, source, direct)
+		end
 	end
 end
 
@@ -76,7 +121,12 @@ else
 new.physics.angle = RandomReal(0, 2.0 * math.pi)
 end
 
+if new["initial-velocity"] == nil then
+new["initial-velocity"] = 0
+end
+
 if action["velocity-relative"] == "true" then
+
 new.physics.velocity = {
 x = p.velocity.x + SPEED_FACTOR * new["initial-velocity"] * math.cos(new.physics.angle);
 y = p.velocity.y + SPEED_FACTOR * new["initial-velocity"] * math.sin(new.physics.angle);
@@ -89,6 +139,9 @@ y =  SPEED_FACTOR * new["initial-velocity"] * math.sin(new.physics.angle);
 
 end
 
+if new.attributes["is-guided"] == true then
+	new.control.accel = true
+end
 table.insert(scen.objects,new)
 end
 end,

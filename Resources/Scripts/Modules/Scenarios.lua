@@ -1,6 +1,7 @@
 function LoadScenario(id)
 	local scen = deepcopy(gameData.Scenarios[id])
 	scen.objects = {}
+	scen.destroyQueue = {}
 	local datId
 	local max = scen.initial.id + scen.initial.count - 1
 	local ctr = 0

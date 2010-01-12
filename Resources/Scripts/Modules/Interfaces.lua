@@ -329,13 +329,13 @@ function DrawPanels()
 
 -- Battery (red)
 	graphics.draw_box(107, 379, 29, 386, 0, ClutColour(8, 8))
-	graphics.draw_box(playerShip.battery.percent * 78 + 29, 379, 29, 386, 0, ClutColour(8, 5))
+--	graphics.draw_box(playerShip.battery.percent * 78 + 29, 379, 29, 386, 0, ClutColour(8, 5))
 -- Energy (yellow)
 	graphics.draw_box(6, 379, -72.5, 386, 0, ClutColour(3, 7))
-	graphics.draw_box(playerShip.energy.percent * 78.5 - 72.5, 379, -72.5, 386, 0, ClutColour(9, 6))
+--	graphics.draw_box(playerShip.energy.percent * 78.5 - 72.5, 379, -72.5, 386, 0, ClutColour(9, 6))
 -- Shield (blue)
 	graphics.draw_box(-96, 379, -173, 386, 0, ClutColour(14, 8))
-	graphics.draw_box(playerShip.shield.percent * 77 - 173, 379, -173, 386, 0, ClutColour(14, 6))
+--	graphics.draw_box(playerShip.shield.percent * 77 - 173, 379, -173, 386, 0, ClutColour(14, 6))
 -- Factory resources (green - mostly)
 	count = 1
 	if shipSelected == true then
@@ -427,8 +427,22 @@ function DrawPanels()
 	if text_being_drawn == true then
 		graphics.draw_text(scen.text[textnum], "CrystalClear", "center", { x = 0, y = -250 }, 30)
 	end
--- Weapon (special) ammo count
-	graphics.draw_text(string.format('%03d', playerShip.special.ammo), "CrystalClear", "left", { x = -314, y = 60 }, 13, ClutColour(5, 1))
+	
+-- Weapon ammo count
+--OFFSET = 32 PIXELS
+	if scen.playerShip.weapon ~= nil then
+		if scen.playerShip.weapon.pulse ~= nil and scen.playerShip.weapon.pulse.ammo ~= -1 then
+			graphics.draw_text(string.format('%03d', scen.playerShip.weapon.pulse.ammo), "CrystalClear", "left", { x = -376, y = 60 }, 13, ClutColour(5, 1))
+		end
+		
+		if scen.playerShip.weapon.beam ~= nil and scen.playerShip.weapon.beam.ammo ~= -1 then
+			graphics.draw_text(string.format('%03d', scen.playerShip.weapon.beam.ammo), "CrystalClear", "left", { x = -345, y = 60 }, 13, ClutColour(5, 1))
+		end
+		
+		if scen.playerShip.weapon.special ~= nil and scen.playerShip.weapon.special.ammo ~= -1 then
+			graphics.draw_text(string.format('%03d', scen.playerShip.weapon.special.ammo), "CrystalClear", "left", { x = -314, y = 60 }, 13, ClutColour(5, 1))
+		end
+	end
 	control = playerShip -- [HARDCODE]
 	if control ~= nil then
 		graphics.draw_box(49, -392, 40, -297, 0, ClutColour(9, 6))
@@ -544,4 +558,25 @@ function change_menu(menu, direction)
 			menu[num][3]()
 		end
 	end
+end
+
+
+function DrawArrow()
+	local angle = scen.playerShip.physics.angle
+	local pos = {x = 0, y = 0}
+	local c1 = {
+		x = math.cos(arrowAlpha + angle) * arrowDist + pos.x,
+		y = math.sin(arrowAlpha + angle) * arrowDist + pos.y
+	}
+	local c2 = {
+		x = math.cos(angle - arrowAlpha) * arrowDist + pos.x,
+		y = math.sin(angle - arrowAlpha) * arrowDist + pos.y
+	}
+	local c3 = {
+		x =math.cos(angle) * (arrowLength + arrowVar) + pos.x,
+		y = math.sin(angle) * (arrowLength + arrowVar) + pos.y
+	}
+	graphics.draw_line(c1, c2, 1.5, ClutColour(5, 1))
+	graphics.draw_line(c2, c3, 1.5, ClutColour(5, 1))
+	graphics.draw_line(c3, c1, 1.5, ClutColour(5, 1))
 end
