@@ -1,7 +1,10 @@
 function ActivateTrigger(device, owner)
 	if xor(owner == nil, owner.energy >= device.device["energy-cost"])
-	and xor(device.ammo == -1, device.ammo > 0) then
---TODO: add cooldown support
+	and xor(device.ammo == -1, device.ammo > 0)
+	and device.device.lastActivated < mode_manager.time() - device.device["fire-time"] / TIME_FACTOR then
+
+			device.device.lastActivated = mode_manager.time()
+
 			if device.ammo ~= -1 then
 				device.ammo = device.ammo - 1
 			end

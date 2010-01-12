@@ -1,10 +1,11 @@
+import('GlobalVars')
+
 function NewObject(id)
 	
 	function CopyActions(obj)
 		obj.trigger = {}
 		if obj.action ~= nil then
 			local id
-			print(obj.name)
 			for id = 1, #obj.action do
 				if obj.action[id] ~= nil then
 					obj.trigger[obj.action[id].trigger] = obj.action[id]
@@ -44,7 +45,8 @@ function NewObject(id)
 
 	if newObj["initial-age"] ~= nil then
 		newObj.created = mode_manager.time()
-		newObj.age = newObj["initial-age"] / 20.0 --initial-age is in 20ths of a second
+		newObj.age = newObj["initial-age"] / TIME_FACTOR
+		--the documentation for Hera says that initial-age is in 20ths of a second but it appears to be 60ths
 	end
 
 	newObj.dead = false
@@ -61,6 +63,8 @@ function NewObject(id)
 			weap.position.last = 1
 			weap.ammo = deepcopy(weap.device.ammo)
 			weap.parent = newObj
+			
+			weap.device.lastActivated = -weap.device["fire-time"] / TIME_FACTOR
 			
 			CopyActions(weap)
 

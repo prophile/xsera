@@ -127,12 +127,12 @@ for i = 0, #scen.objects do
 		-- apply a forward force in the direction the ship is facing
 		local angle = o.physics.angle
 		--Multiply by 60 because the thrust value in the data is given per FRAME not per second.
-		local thrust = o["max-thrust"] * 60 * SPEED_FACTOR
+		local thrust = o["max-thrust"] * TIME_FACTOR * SPEED_FACTOR
 		local force = { x = thrust * math.cos(angle), y = thrust * math.sin(angle) }
 		o.physics:apply_force(force)
 	elseif o.control.decel == true then
 		-- apply a reverse force in the direction opposite the direction the ship is MOVING
-		local thrust = o["max-thrust"] * 60 * SPEED_FACTOR
+		local thrust = o["max-thrust"] * TIME_FACTOR * SPEED_FACTOR
 		local force = o.physics.velocity
 		if force.x ~= 0 or force.y ~= 0 then
 			if hypot(o.physics.velocity.x, o.physics.velocity.y) <= 10 then
