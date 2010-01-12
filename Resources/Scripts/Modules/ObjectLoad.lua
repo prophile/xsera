@@ -25,10 +25,24 @@ function NewObject(id)
 	if newObj.mass == nil then
 		newObj.mass = 1000.0 --We should add a way for objects to me immobile
 	end
-	print("Creating new " .. newObj.name)
+	
+	
+	--Generalize controls for the AI
+	newObj.control = {
+	accel = false;
+	decel = false;
+	left = false;
+	right = false;
+	beam = false;
+	pulse = false;
+	special = false;
+	warp = false;
+	}
+
 	newObj.physics = physics.new_object(newObj.mass)
 	newObj.physics.angular_velocity = 0.00	
 
+	--Prepare devices
 	if newObj.weapon ~= nil then
 		local wid
 		for wid=1, #newObj.weapon do
@@ -40,11 +54,10 @@ function NewObject(id)
 			weap.position.last = 1
 			weap.ammo = deepcopy(weap.device.ammo)
 			weap.parent = newObj
-			CopyActions(weap)
 			
---			print("TEST:" .. newObj.weapon[wid].type)
+			CopyActions(weap)
+
 			newObj.weapon[newObj.weapon[wid].type] = weap
-		
 		
 		
 		end

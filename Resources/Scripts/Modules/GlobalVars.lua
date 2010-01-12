@@ -42,6 +42,7 @@ buildTimerRunning = false
 shipToBuild = nil
 shipSelected = false
 scen = nil
+--scen = {playerShip = {control = {}}}
 shipQuerying = { n, p, r, c, t }
 shipBuilding = { n, p, r, c, t }
 soundLength = 0.25

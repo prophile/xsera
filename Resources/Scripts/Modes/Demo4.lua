@@ -29,8 +29,24 @@ function key( k )
 	elseif k == "-" then
 		camera.w = camera.w * 2
 		camera.h = camera.h * 2
-	elseif k == " " then
-		DeviceActivate(scen.playerShip.weapon.beam,scen.playerShip)
+	elseif k == "[" then
+		if scen.playerShipId == 0 then
+			scen.playerShipId = #scen.objects
+		else
+			scen.playerShipId = scen.playerShipId - 1
+		end
+		
+		scen.playerShip = scen.objects[scen.playerShipId]
+	elseif k == "]" then
+		if scen.playerShipId == #scen.objects then
+			scen.playerShipId = 0
+		else
+			scen.playerShipId = scen.playerShipId + 1
+		end
+		
+		scen.playerShip = scen.objects[scen.playerShipId]
+--	elseif k == " " then
+--		DeviceActivate(scen.playerShip.weapon.beam,scen.playerShip)
 	else
 		KeyActivate(k)
 	end
@@ -47,66 +63,84 @@ function update()
 	local newTime = mode_manager.time()
 	dt = newTime - last_time
 	last_time = newTime
-	
+
+if scen.playerShip.control.pulse == true then
+	DeviceActivate(scen.playerShip.weapon.pulse, scen.playerShip)
+end
+
+if scen.playerShip.control.beam == true then
+	DeviceActivate(scen.playerShip.weapon.beam, scen.playerShip)
+end
+
+if scen.playerShip.control.special == true then
+	DeviceActivate(scen.playerShip.weapon.special, scen.playerShip)
+end
+
+local i
+for i = 0, #scen.objects do
+	local o = scen.objects[i]
 --[[------------------
 	Movement
 ------------------]]--
-	local v = scen.playerShip.physics.velocity
-	if hypot1(v) > scen.playerShip["max-velocity"] * SPEED_FACTOR then
-		scen.playerShip.physics.velocity = {
-		x = scen.playerShip["max-velocity"] * normalize(v.x,v.y) * SPEED_FACTOR;
-		y = scen.playerShip["max-velocity"] * normalize(v.y,v.x) * SPEED_FACTOR;
+
+	local v = o.physics.velocity
+	if hypot1(v) > o["max-velocity"] * SPEED_FACTOR then
+		o.physics.velocity = {
+		x = o["max-velocity"] * normalize(v.x,v.y) * SPEED_FACTOR;
+		y = o["max-velocity"] * normalize(v.y,v.x) * SPEED_FACTOR;
 		}
 		
 	end
 	
 	
-	
-    if keyboard[1][4].active == true then
+	if o.attributes["can-turn"] == true then
+    if o.control.left == true then
 		if key_press_f6 ~= true then
-			scen.playerShip.physics.angular_velocity = scen.playerShip.rotation["max-turn-rate"]*2.0
+			o.physics.angular_velocity = o.rotation["max-turn-rate"]*2.0
 		else
-			scen.playerShip.physics.angular_velocity = scen.playerShip.rotation["max-turn-rate"] * 4.0
+			o.physics.angular_velocity = o.rotation["max-turn-rate"] * 4.0
 		end
-    elseif keyboard[1][5].active == true then
+    elseif o.control.right == true then
 		if key_press_f6 ~= true then
-			scen.playerShip.physics.angular_velocity = -scen.playerShip.rotation["max-turn-rate"] * 2.0
+			o.physics.angular_velocity = -o.rotation["max-turn-rate"] * 2.0
 		else
-			scen.playerShip.physics.angular_velocity = -scen.playerShip.rotation["max-turn-rate"] * 4.0
+			o.physics.angular_velocity = -o.rotation["max-turn-rate"] * 4.0
 		end
     else
-        scen.playerShip.physics.angular_velocity = 0
+        o.physics.angular_velocity = 0
     end
-	
-	if keyboard[1][2].active == true then
+	end 
+	if o.control.accel == true then
         -- apply a forward force in the direction the ship is facing
-        local angle = scen.playerShip.physics.angle
+        local angle = o.physics.angle
 		--Multiply by 60 because the thrust value in the data is given per FRAME not per second.
-        local thrust = scen.playerShip["max-thrust"] * 60 * SPEED_FACTOR
+        local thrust = o["max-thrust"] * 60 * SPEED_FACTOR
 		local force = { x = thrust * math.cos(angle), y = thrust * math.sin(angle) }
-		scen.playerShip.physics:apply_force(force)
-	elseif keyboard[1][3].active == true then
+		o.physics:apply_force(force)
+	elseif o.control.decel == true then
         -- apply a reverse force in the direction opposite the direction the ship is MOVING
-        local thrust = scen.playerShip["max-thrust"] * 60 * SPEED_FACTOR
-        local force = scen.playerShip.physics.velocity
+        local thrust = o["max-thrust"] * 60 * SPEED_FACTOR
+        local force = o.physics.velocity
 		if force.x ~= 0 or force.y ~= 0 then
-			if hypot(scen.playerShip.physics.velocity.x, scen.playerShip.physics.velocity.y) <= 10 then
-				scen.playerShip.physics.velocity = { x = 0, y = 0 }
+			if hypot(o.physics.velocity.x, o.physics.velocity.y) <= 10 then
+				o.physics.velocity = { x = 0, y = 0 }
 			else
 				local velocityMag = hypot1(force)
 				force.x = -force.x / velocityMag
 				force.y = -force.y / velocityMag
 				force.x = force.x * thrust
 				force.y = force.y * thrust
-				if hypot1(force) > hypot1(scen.playerShip.physics.velocity) then
-					scen.playerShip.physics.velocity = { x = 0, y = 0 }
+				if hypot1(force) > hypot1(o.physics.velocity) then
+					o.physics.velocity = { x = 0, y = 0 }
 				else
-					scen.playerShip.physics:apply_force(force)
+					o.physics:apply_force(force)
 				end
 			end
 		end
     end
 	
+
+end
 	physics.update(dt)
 end
 
