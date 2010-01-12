@@ -42,56 +42,88 @@ end
 	--------]]--
 
 function DoFireWeap1()
-	if playerShip.beam ~= nil then
-		playerShip.beam.firing = true
+	if scen.playerShip.weapon.beam ~= nil then
+		scen.playerShip.control.beam = true
 	end
 end
 
 function StopFireWeap1()
-	if playerShip.beam ~= nil then
-		playerShip.beam.firing = false
+	if scen.playerShip.weapon.beam ~= nil then
+		scen.playerShip.control.beam = false
 	end
 end
 
 function DoFireWeap2()
-	if playerShip.pulse ~= nil then
-		playerShip.pulse.firing = true
+	if scen.playerShip.weapon.pulse ~= nil then
+		scen.playerShip.control.pulse = true
 	end
 end
 
 function StopFireWeap2()
-	if playerShip.pulse ~= nil then
-		playerShip.pulse.firing = false
+	if scen.playerShip.weapon.pulse ~= nil then
+		scen.playerShip.control.pulse = false
 	end
 end
 
 function DoFireWeapSpecial()
-	if playerShip.special ~= nil then
-		playerShip.special.firing = true
+	if scen.playerShip.weapon.special ~= nil then
+		scen.playerShip.control.special = true
 	end
 end
 
 function StopFireWeapSpecial()
-	if playerShip.special ~= nil then
-		playerShip.special.firing = false
+	if scen.playerShip.weapom.special ~= nil then
+		scen.playerShip.control.special = false
 	end
 end
 
+function DoAccelerate()
+	scen.playerShip.control.accel = true
+end
+
+function StopAccelerate()
+	scen.playerShip.control.accel = false
+end
+
+function DoDecelerate()
+	scen.playerShip.control.decel = true
+end
+
+function StopDecelerate()
+	scen.playerShip.control.decel = false
+end
+
+function DoLeftTurn()
+	scen.playerShip.control.left = true
+end
+
+function StopLeftTurn()
+	scen.playerShip.control.left = false
+end
+
+function DoRightTurn()
+	scen.playerShip.control.right = true
+end
+
+function StopRightTurn()
+	scen.playerShip.control.right = false
+end
+
 function DoWarp()
-	if playerShip.warp.stage == "notWarping" then
-		playerShip.warp.time = 0.0
-		playerShip.warp.stage = "spooling"
+	if scen.playerShip.warp.stage == "notWarping" then
+		scen.playerShip.warp.time = 0.0
+		scen.playerShip.warp.stage = "spooling"
 	end
 end
 
 function StopWarp()
-	if playerShip.warp.stage == "warping" then
-		playerShip.warp.stage = "cooldown"
+	if scen.playerShip.warp.stage == "warping" then
+		scen.playerShip.warp.stage = "cooldown"
 	else
-		playerShip.warp.stage = "notWarping"
+		scen.playerShip.warp.stage = "notWarping"
 	end
-	playerShip.warp.time = 0.0
-	playerShip.warp.lastPlayed = 0
+	scen.playerShip.warp.time = 0.0
+	scen.playerShip.warp.lastPlayed = 0
 end
 
 	--[[-----------
@@ -234,7 +266,7 @@ function DoZoomHostile()
 	
 	-- insta-zoom version
 	if cameraRatioNum ~= 6 then
-		local diff = { x = computerShip.physicsObject.position.x - playerShip.physicsObject.position.x, y = computerShip.physicsObject.position.y - playerShip.physicsObject.position.y }
+		local diff = { x = computerShip.physicsObject.position.x - scen.playerShip.physicsObject.position.x, y = computerShip.physicsObject.position.y - scen.playerShip.physicsObject.position.y }
 		local calculatedRatio = 0
 		
 		if aspectRatio > (diff.x / diff.y) then
@@ -342,10 +374,10 @@ end
 ---------------------]]--
 -- keyboard with all the original keybindings here: <http://xsera.pastebin.com/f690af8a8>
 keyboard = { { "Ship",
-				{ key = "w", name = "Accelerate", active = false },
-				{ key = "s", name = "Decelerate", active = false }, 
-				{ key = "a", name = "Turn Counter-Clockwise", active = false }, 
-				{ key = "d", name = "Turn Clockwise", active = false }, 
+				{ key = "w", name = "Accelerate", active = false, action = DoAccelerate, deaction = StopAccelerate },
+				{ key = "s", name = "Decelerate", active = false, action = DoDecelerate, deaction = StopDecelerate }, 
+				{ key = "a", name = "Turn Counter-Clockwise", active = false , action = DoLeftTurn, deaction = StopLeftTurn }, 
+				{ key = "d", name = "Turn Clockwise", active = false, action = DoRightTurn, deaction = StopRightTurn }, 
 				{ key = "MmetaL", key_display = "CmdL", name = "Fire Weapon 1", action = DoFireWeap1, deaction = StopFireWeap1, active = false }, 
 				{ key = "MaltL", key_display = "AltL", name = "Fire Weapon 2", action = DoFireWeap2, deaction = StopFireWeap2, active = false }, 
 				{ key = " ", key_display = "Space", name = "Fire/Activate Special", action = DoFireWeapSpecial, deaction = StopFireWeapSpecial, active = false }, 
@@ -436,6 +468,9 @@ function KeyActivate(key)
 		while keyboard[i][j] ~= nil do
 			if keyboard[i][j].key == key then
 				keyboard[i][j].active = true
+				if keyboard[i][j].action ~= nil then
+					keyboard[i][j].action()
+				end
 				return
 			end
 			j = j + 1
@@ -451,6 +486,9 @@ function ActionActivate(name)
 		while keyboard[i][j] ~= nil do
 			if keyboard[i][j].name == name then
 				keyboard[i][j].active = true
+				if keyboard[i][j].action ~= nil then
+					keyboard[i][j].action()
+				end
 				return
 			end
 			j = j + 1

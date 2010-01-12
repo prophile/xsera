@@ -1,7 +1,9 @@
 import('Math')
 import('AresCLUT')
 
---gameData = dofile("Config/data.lua")
+SPEED_FACTOR = 128.0
+BEAM_LENGTH = 32
+
 playerShip = nil
 
 releaseBuild = mode_manager.is_release()
@@ -11,7 +13,7 @@ cameraRatio = 1
 cameraRatios = { 2, 1, 1/2, 1/4, 1/16, "hostile" }
 cameraRatioNum = 2
 aspectRatio = 4 / 3
-camera = { w = 640 / cameraRatio, h }
+camera = { w = 1024 / cameraRatio, h }
 camera.h = camera.w / aspectRatio
 shipAdjust = .045 * camera.w
 timeInterval = 1
@@ -40,6 +42,7 @@ buildTimerRunning = false
 shipToBuild = nil
 shipSelected = false
 scen = nil
+--scen = {playerShip = {control = {}}}
 shipQuerying = { n, p, r, c, t }
 shipBuilding = { n, p, r, c, t }
 soundLength = 0.25
@@ -51,6 +54,7 @@ Admirals = {}
 --loadingstuff
 loadingEntities = false
 entities = {}
+gameData = dofile("./Xsera.app/Contents/Resources/Config/data.lua") --[FIX] this is A) not cross platform in ANY way shape or form B) an ugly way of fixing it.
 --/loadingstuff
 
 ARROW_LENGTH = 135
