@@ -75,6 +75,10 @@ function NewObject(id)
 		end
 	end
 	
+	-- energy & health
+	newObj.energy = { total = newObj.energy, percent = 1, level = newObj.energy }
+	newObj.health = { total = newObj.health, percent = 1, level = newObj.health }
+	
 	CopyActions(newObj)
 	CreateTrigger(newObj)
 	return newObj

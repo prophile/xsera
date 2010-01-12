@@ -84,7 +84,7 @@ function WeaponUpdate(weapon, weapData, weapOwner)
 				if computerShip ~= nil then
 					local x = computerShip.physicsObject.position.x - weapData[idx].physicsObject.position.x
 					local y = computerShip.physicsObject.position.y - weapData[idx].physicsObject.position.y
-					-- put in real collision code here [ALISTAIR, DEMO2]
+					-- put in real collision code here [ALISTAIR, DEMO3]
 					if hypot (x, y) <= computerShip.physicsObject.collision_radius * 2 / 7 then
 						ProjectileCollision(weapData, idx, weapon, computerShip)
 						return

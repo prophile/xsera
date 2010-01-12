@@ -8,7 +8,6 @@ BEAM_LENGTH = 32
 playerShip = nil
 
 releaseBuild = mode_manager.is_release()
-print(releaseBuild)
 
 cameraRatio = 1
 cameraRatios = { 2, 1, 1/2, 1/4, 1/16, "hostile" }

@@ -14,22 +14,29 @@ function init()
 	loadingEntities = true
 	
 	scen = LoadScenario(25)
-
+--	for o in scen.objects do -- #TEST look up this for variant
+--		print(11111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111)
+--	end
+	for i = 0, #scen.objects do
+		local o = scen.objects[i]
+		o.battery = { percent = 1, level = 100, total = 100 }
+	--	o.energy = { percent = 1, level = 100, total = 100 }
+	end
+--	scen.playerShip.battery = { percent = 1, level = 100, total = 100 }
 	loadingEntities = false
 end
 
-local camera = {w = 1024, h = 768}
-local shipAdjust = 0
+--local shipAdjust = 0 #TEST if the shipAdjust variable is contained in GlobalVars.lua
 
 function key( k )
 	if k == "q" or k == "escape" then
 		mode_manager.switch("MainMenu")
-	elseif k == "=" then
+--[[	elseif k == "=" then
 		camera.w = camera.w / 2
 		camera.h = camera.h / 2
 	elseif k == "-" then
 		camera.w = camera.w * 2
-		camera.h = camera.h * 2
+		camera.h = camera.h * 2--]] -- #TEST if camera changing works
 	elseif k == "[" then
 		if scen.playerShipId == 0 then
 			scen.playerShipId = #scen.objects
@@ -46,6 +53,7 @@ function key( k )
 		end
 		
 		scen.playerShip = scen.objects[scen.playerShipId]
+		scen.playerShip.battery = { percent = 1, level = 100, total = 100 }
 --	elseif k == " " then
 --		DeviceActivate(scen.playerShip.weapon.beam,scen.playerShip)
 	else
@@ -65,6 +73,65 @@ function update()
 	dt = newTime - last_time
 	last_time = newTime
 
+--[[------------------
+	Panels
+------------------]]--
+	
+	resourceTime = resourceTime + dt
+	if resourceTime > 1 then
+		resourceTime = resourceTime - 1
+		cash = cash + 20
+		resourceBars = math.floor(cash / 20000)
+		resources = math.floor((cash % 20000) / 200)
+	end
+	
+	--[[ can't use this yet
+	if buildTimerRunning == true then
+		scen.planet.buildqueue.current = scen.planet.buildqueue.current + dt
+		scen.planet.buildqueue.percent = scen.planet.buildqueue.current / scen.planet.buildqueue.factor * 100
+		if planet.buildqueue.percent > 100.0 then
+			local num = 1
+			if otherShip == nil then
+				otherShip = {}
+			end
+			while otherShip[num] ~= nil do
+				num = num + 1
+			end
+			if num == 3 and otherShip[2] == nil then -- I don't know why this works, but it does
+				num = num - 1
+			end
+			otherShip[num] = NewEntity(shipBuilding.p, shipBuilding.n, "Ship", shipBuilding.r)
+		--	print(otherShip[num], playerShip)
+			planet.buildqueue.percent = 100
+			buildTimerRunning = false
+			sound.play("ComboBeep")
+		end
+	end
+	--]]
+	
+	scen.playerShip.battery.percent = scen.playerShip.battery.level / scen.playerShip.battery.total
+	scen.playerShip.energy.percent = scen.playerShip.energy.level / scen.playerShip.energy.total
+	scen.playerShip.health.percent = scen.playerShip.health.level / scen.playerShip.health.total
+	if scen.playerShip.energy.percent ~= 1.0 then
+		rechargeTimer = rechargeTimer + dt
+		if rechargeTimer >= 0.5 then
+			if scen.playerShip.battery.percent ~= 0.0 then
+				scen.playerShip.battery.level = scen.playerShip.battery.level - 1
+				scen.playerShip.energy.level = scen.playerShip.energy.level + 1
+				rechargeTimer = rechargeTimer - 0.5
+			end
+		end
+	end
+	
+-- Fast speed vs regular
+	if menu_display == nil then
+		if keyboard[4][7].active == false then
+			physics.update(dt)
+		else
+			physics.update(dt * 30)
+		end
+	end
+	
 	KeyDoActivated()
 
 local i
@@ -110,7 +177,7 @@ for i = 0, #scen.objects do
 	if o.attributes["can-turn"] == true then
 		if o.control.left == true then
 			if key_press_f6 ~= true then
-				o.physics.angular_velocity = o.rotation["max-turn-rate"]*2.0
+				o.physics.angular_velocity = o.rotation["max-turn-rate"] * 2.0
 			else
 				o.physics.angular_velocity = o.rotation["max-turn-rate"] * 4.0
 			end
@@ -153,6 +220,34 @@ for i = 0, #scen.objects do
 		end
 	end
 end
+
+-- camera stuffs
+if cameraChanging == true then
+	x = x - dt
+	if x < 0 then
+		x = 0
+		cameraChanging = false
+		scen.playerShip.beam.width = cameraRatio
+		soundJustPlayed = false
+	end
+	if x >= 0 then
+		cameraRatio = cameraRatioOrig + cameraRatioOrig * multiplier * math.pow(math.abs((x - timeInterval) / timeInterval), 2)  --[[* (((x - timeInterval) * (x - timeInterval) * math.sqrt(math.abs(x - timeInterval))) / (timeInterval * timeInterval * math.sqrt(math.abs(timeInterval))))--]]
+	--	print(cameraRatio, timeInterval)
+	end
+	camera = { w = 640 / cameraRatio, h }
+	camera.h = camera.w / aspectRatio
+	shipAdjust = .045 * camera.w
+	arrowLength = ARROW_LENGTH / cameraRatio
+	arrowVar = ARROW_VAR / cameraRatio
+	arrowDist = ARROW_DIST / cameraRatio
+	if (cameraRatio < 1 / 8 and cameraRatioOrig > 1 / 8) or (cameraRatio > 1 / 8 and cameraRatioOrig < 1 / 8) then
+		if soundJustPlayed == false then
+			sound.play("ZoomChange")
+			soundJustPlayed = true
+		end
+	end
+end
+
 	--Remove destroyed or expired objects
 	--Count backwards because the array is shifted with each deletion
 	if #scen.destroyQueue > 0 then
@@ -223,7 +318,7 @@ function render()
 	end
 	
 	
-	--Draw temporary status display
+	--[[Draw temporary status display [ADAM] commented out because of panels
 	local fs = 30
 	local ox = camera.w/fs + scen.playerShip.physics.position.x - camera.w / 2
 	local oy = -camera.w/fs + scen.playerShip.physics.position.y + camera.h / 2
@@ -233,10 +328,10 @@ function render()
 	
 	if scen.playerShip.energy ~= nil then
 		graphics.draw_text("Energy: " .. scen.playerShip.energy, "CrystalClear", "left", {x = ox, y = oy + vstep}, camera.w/fs)
-	end
+	end--]]
 	
-	DrawPanels()
 	DrawArrow()
+	DrawPanels()
 	graphics.end_frame()
 end
 

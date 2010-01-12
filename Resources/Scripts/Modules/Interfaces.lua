@@ -311,9 +311,19 @@ function DrawRadar()
 	if cameraRatioNum >= 5 then
 		graphics.draw_box(radar.top, radar.left, radar.bottom, radar.right, 1, ClutColour(5, 11)) -- foreground (light green with edge)
 	else
-		boxSize = ((cameraRatios[cameraRatioNum] * 8 - 1) / (cameraRatios[cameraRatioNum] * 16))
+		boxSize = (cameraRatio * 8 - 1) / cameraRatio / 16
 		graphics.draw_box(radar.top - radar.length * boxSize, radar.left + radar.width * boxSize, radar.bottom + radar.length * boxSize, radar.right - radar.width * boxSize, 0, ClutColour(5, 11))
 	end
+	
+	--[[ pseudo-code: (will need to plug in to GameFreak's Demo4.lua)
+	
+	for all the ships
+		if the ship is in range of radar
+			put a dot where it is on the radar (proportionally) -- how do I draw a dot? (need new C++ function?)
+		end
+	end
+	
+	--]]
 end
 
 menuLevel = menuOptions
@@ -329,7 +339,7 @@ function DrawPanels()
 
 -- Battery (red)
 	graphics.draw_box(107, 379, 29, 386, 0, ClutColour(8, 8))
---	graphics.draw_box(playerShip.battery.percent * 78 + 29, 379, 29, 386, 0, ClutColour(8, 5))
+--	graphics.draw_box(playerShip.battery.percent * 78 + 29, 379, 29, 386, 0, ClutColour(8, 5)) -- #TEST these commented lines should be fixed and uncommented
 -- Energy (yellow)
 	graphics.draw_box(6, 379, -72.5, 386, 0, ClutColour(3, 7))
 --	graphics.draw_box(playerShip.energy.percent * 78.5 - 72.5, 379, -72.5, 386, 0, ClutColour(9, 6))
@@ -443,14 +453,14 @@ function DrawPanels()
 			graphics.draw_text(string.format('%03d', scen.playerShip.weapon.special.ammo), "CrystalClear", "left", { x = -314, y = 60 }, 13, ClutColour(5, 1))
 		end
 	end
-	control = playerShip -- [HARDCODE]
+	control = scen.playerShip -- [HARDCODE]
 	if control ~= nil then
 		graphics.draw_box(49, -392, 40, -297, 0, ClutColour(9, 6))
 		graphics.draw_text("CONTROL", "CrystalClear", "left", { x = -389, y = 44 }, 12, ClutColour(1, 17))
 		if control.type == "Planet" then
 			graphics.draw_text(control.name, "CrystalClear", "left", { x = -389, y = 35 }, 12)
 		else
-			graphics.draw_text(control.shortName, "CrystalClear", "left", { x = -389, y = 35 }, 12)
+			graphics.draw_text(control["short-name"], "CrystalClear", "left", { x = -389, y = 35 }, 12)
 		end
 		if control.ctrlObject ~= nil then
 			if control.owner == "Human/Ishiman" then
@@ -482,7 +492,7 @@ function DrawPanels()
 		if control.type == "Planet" then
 			graphics.draw_sprite(control.type .. "s/" .. control.image, { x = -380, y = 19 }, { x = 17, y = 17 }, 0)
 		else
-			graphics.draw_sprite(control.image, { x = -380, y = 19 }, { x = 17, y = 17 }, 3.14 / 2.0)
+			graphics.draw_sprite("Id/" .. control.sprite, { x = -380, y = 19 }, { x = 17, y = 17 }, 3.14 / 2.0)
 		end
 		graphics.draw_line({ x = -387, y = 28 }, { x = -372, y = 28 }, 0.5, ClutColour(1, 1))
 		graphics.draw_line({ x = -387, y = 27 }, { x = -387, y = 28 }, 0.5, ClutColour(1, 1))
@@ -563,7 +573,7 @@ end
 
 function DrawArrow()
 	local angle = scen.playerShip.physics.angle
-	local pos = {x = 0, y = 0}
+	local pos = scen.playerShip.physics.position
 	local c1 = {
 		x = math.cos(arrowAlpha + angle) * arrowDist + pos.x,
 		y = math.sin(arrowAlpha + angle) * arrowDist + pos.y
@@ -573,7 +583,7 @@ function DrawArrow()
 		y = math.sin(angle - arrowAlpha) * arrowDist + pos.y
 	}
 	local c3 = {
-		x =math.cos(angle) * (arrowLength + arrowVar) + pos.x,
+		x = math.cos(angle) * (arrowLength + arrowVar) + pos.x,
 		y = math.sin(angle) * (arrowLength + arrowVar) + pos.y
 	}
 	graphics.draw_line(c1, c2, 1.5, ClutColour(5, 1))
