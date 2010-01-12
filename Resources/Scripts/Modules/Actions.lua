@@ -27,9 +27,11 @@ end
 
 
 function ExpireTrigger(owner)
+	callAction(owner.trigger["expire"],owner,nil)
 end
 
 function DestroyTrigger(owner)
+	callAction(owner.trigger["destroy"],owner,nil)
 end
 
 function CreateTrigger(owner)
@@ -37,9 +39,11 @@ function CreateTrigger(owner)
 end
 
 function CollideTrigger(owner,other)
+	callAction(owner.trigger["collide"],owner,other)
 end
 
 function ArriveTrigger(owner,other)
+	callAction(owner.trigger["arrive"],owner,other)
 end
 
 function callAction(trigger, source, direct)
