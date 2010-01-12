@@ -304,6 +304,18 @@ function DrawPauseMenu(dt)
 	end
 end
 
+radar = { top = 184, left = -394, bottom = 100, right = -303, width = 91, length = 84 }
+
+function DrawRadar()
+	graphics.draw_box(radar.top, radar.left, radar.bottom, radar.right, 0, ClutColour(5, 13)) -- background (dark green)
+	if cameraRatioNum >= 5 then
+		graphics.draw_box(radar.top, radar.left, radar.bottom, radar.right, 1, ClutColour(5, 11)) -- foreground (light green with edge)
+	else
+		boxSize = ((cameraRatios[cameraRatioNum] * 8 - 1) / (cameraRatios[cameraRatioNum] * 16))
+		graphics.draw_box(radar.top - radar.length * boxSize, radar.left + radar.width * boxSize, radar.bottom + radar.length * boxSize, radar.right - radar.width * boxSize, 0, ClutColour(5, 11))
+	end
+end
+
 menuLevel = menuOptions
 
 function DrawPanels()
@@ -393,7 +405,7 @@ function DrawPanels()
 ------------------]]--
 	
 -- Radar box (green)
-	graphics.draw_box(184, -394, 100, -303, 1, ClutColour(5, 11))
+	DrawRadar()
 -- Communications panels (green)
 	graphics.draw_box(-63, -393, -158, -297, 0, ClutColour(5, 11))
 	graphics.draw_line({ x = -391, y = -74 }, { x = -298, y = -74 }, 1, ClutColour(12, 3))

@@ -184,7 +184,7 @@ function update ()
 		end
 		if x >= 0 then
 			cameraRatio = cameraRatioOrig + cameraRatioOrig * multiplier * math.pow(math.abs((x - timeInterval) / timeInterval), 2)  --[[* (((x - timeInterval) * (x - timeInterval) * math.sqrt(math.abs(x - timeInterval))) / (timeInterval * timeInterval * math.sqrt(math.abs(timeInterval))))--]]
-			print(cameraRatio, timeInterval)
+		--	print(cameraRatio, timeInterval)
 		end
 		camera = { w = 640 / cameraRatio, h }
 		camera.h = camera.w / aspectRatio

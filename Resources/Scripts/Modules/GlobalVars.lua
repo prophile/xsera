@@ -8,12 +8,12 @@ releaseBuild = mode_manager.is_release()
 print(releaseBuild)
 
 cameraRatio = 1
+cameraRatios = { 2, 1, 1/2, 1/4, 1/16, "hostile" }
+cameraRatioNum = 2
 aspectRatio = 4 / 3
 camera = { w = 640 / cameraRatio, h }
 camera.h = camera.w / aspectRatio
 shipAdjust = .045 * camera.w
-cameraRatios = { 2, 1, 1/2, 1/4, 1/16, "hostile" }
-cameraRatioNum = 2
 timeInterval = 1
 
 victoryTimer = nil
@@ -62,8 +62,8 @@ arrowVar = ARROW_VAR
 arrowDist = ARROW_DIST
 arrowAlpha = CarrowAlpha
 
-GRID_DIST_BLUE = 300
-GRID_DIST_LIGHT_BLUE = 2400
-GRID_DIST_GREEN = 4800
+GRID_DIST_BLUE = 256
+GRID_DIST_LIGHT_BLUE = 2048
+GRID_DIST_GREEN = 4096
 
 keyControls = { left = false, right = false, forward = false, brake = false }
