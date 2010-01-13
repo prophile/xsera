@@ -25,8 +25,6 @@ down = { esc = false, rtrn = false, q = false, o = false }
 endGameData = nil
 
 --tempvars
-RESOURCES_PER_TICK = 200
---^^is that a tempvar?^^
 firepulse = false
 showVelocity = false
 showAngles = false
@@ -42,7 +40,6 @@ buildTimerRunning = false
 shipToBuild = nil
 shipSelected = false
 scen = nil
---scen = {playerShip = {control = {}}}
 shipQuerying = { n, p, r, c, t }
 shipBuilding = { n, p, r, c, t }
 soundLength = 0.25
@@ -55,19 +52,27 @@ Admirals = {}
 loadingEntities = false
 entities = {}
 gameData = dofile("./Xsera.app/Contents/Resources/Config/data.lua") --[FIX] this is A) not cross platform in ANY way shape or form B) an ugly way of fixing it.
+-- ^^ perhaps set data.lua to be gameData = {} instead of return {} ? then just import("data.lua")
 --/loadingstuff
 
+--client-server
+isMultiplayer = false
+--/client-server
+
+--constants
 ARROW_LENGTH = 135
 ARROW_VAR = (3 * math.sqrt(3))
 ARROW_DIST = hypot(6, (ARROW_LENGTH - ARROW_VAR))
+
+RESOURCES_PER_TICK = 200
+
+GRID_DIST_BLUE = 256
+GRID_DIST_LIGHT_BLUE = 2048
+GRID_DIST_GREEN = 4096
+--/constants
+
 CarrowAlpha = math.atan2(6, ARROW_DIST)
 arrowLength = ARROW_LENGTH
 arrowVar = ARROW_VAR
 arrowDist = ARROW_DIST
 arrowAlpha = CarrowAlpha
-
-GRID_DIST_BLUE = 256
-GRID_DIST_LIGHT_BLUE = 2048
-GRID_DIST_GREEN = 4096
-
-keyControls = { left = false, right = false, forward = false, brake = false }
