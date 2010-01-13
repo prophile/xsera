@@ -8,7 +8,9 @@
 
 namespace Net
 {
-
+	typedef unsigned char BlowfishKey[16];
+	typedef unsigned char BlowfishIV[8];
+	
 struct Message
 {
 	Message ( std::string _message, const void* _data, size_t _len ) : message(_message), dataLength(_len), clientID(0), data(NULL) { if (_data) { data = malloc(_len); memcpy(data, _data, _len); } }
@@ -56,6 +58,14 @@ Message* GetMessage ();
 
 }
 
+
+
+namespace Blowfish {
+
+	bool do_crypt( Message& msg, int ID);
+	
+	
+}
 }
 
 #endif

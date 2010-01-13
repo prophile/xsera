@@ -16,6 +16,7 @@
 		493224620F23DE030048495A /* Shaders.h in Headers */ = {isa = PBXBuildFile; fileRef = 493224600F23DE030048495A /* Shaders.h */; };
 		493A3C280F0EDB3900F44530 /* Logging.h in Headers */ = {isa = PBXBuildFile; fileRef = 493A3C270F0EDB3900F44530 /* Logging.h */; };
 		493A3C2A0F0EDB4F00F44530 /* Logging.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 493A3C290F0EDB4F00F44530 /* Logging.cpp */; };
+		494689A00F7EAF2B00BE4CED /* Encryption.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4946899F0F7EAF2B00BE4CED /* Encryption.cpp */; };
 		496A27850F0EC9D800C53BA1 /* callbacks.h in Headers */ = {isa = PBXBuildFile; fileRef = 496A24070F0EB35E00C53BA1 /* callbacks.h */; };
 		496A27860F0EC9D800C53BA1 /* enet.h in Headers */ = {isa = PBXBuildFile; fileRef = 496A24080F0EB35E00C53BA1 /* enet.h */; };
 		496A27870F0EC9D800C53BA1 /* list.h in Headers */ = {isa = PBXBuildFile; fileRef = 496A24090F0EB35E00C53BA1 /* list.h */; };
@@ -159,6 +160,7 @@
 		493224600F23DE030048495A /* Shaders.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Shaders.h; sourceTree = "<group>"; };
 		493A3C270F0EDB3900F44530 /* Logging.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Logging.h; path = ../Engine/Logging.h; sourceTree = SOURCE_ROOT; };
 		493A3C290F0EDB4F00F44530 /* Logging.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Logging.cpp; path = ../Engine/Logging.cpp; sourceTree = SOURCE_ROOT; };
+		4946899F0F7EAF2B00BE4CED /* Encryption.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Encryption.cpp; sourceTree = "<group>"; };
 		496A23EA0F0EB31B00C53BA1 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
 		496A23EC0F0EB31B00C53BA1 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = /System/Library/Frameworks/OpenGL.framework; sourceTree = "<absolute>"; };
 		496A23EE0F0EB31B00C53BA1 /* SDL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDL.framework; path = /Library/Frameworks/SDL.framework; sourceTree = "<absolute>"; };
@@ -509,6 +511,7 @@
 		496A24AC0F0EB37900C53BA1 /* Net */ = {
 			isa = PBXGroup;
 			children = (
+				4946899F0F7EAF2B00BE4CED /* Encryption.cpp */,
 				496A24AD0F0EB37900C53BA1 /* Client.cpp */,
 				496A24AE0F0EB37900C53BA1 /* MessageDecode.cpp */,
 				496A24AF0F0EB37900C53BA1 /* MessageDecode.h */,
@@ -768,10 +771,10 @@
 				493223CF0F23BB360048495A /* SDLMain.m in Sources */,
 				493224610F23DE030048495A /* Shaders.cpp in Sources */,
 				49118E6B0F251D2B004710D9 /* Preferences.cpp in Sources */,
-				5725775B10ADB48E003A8259 /* Server.cpp in Sources */,
 				57FCA50B10ACDF9D002D6A9E /* Object3D.cpp in Sources */,
 				57662F2C10AF591B0025BA67 /* ImageLoader.cpp in Sources */,
 				57662F2E10AF591B0025BA67 /* ParticleSystem.cpp in Sources */,
+				494689A00F7EAF2B00BE4CED /* Encryption.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
