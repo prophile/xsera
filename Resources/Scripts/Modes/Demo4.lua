@@ -14,29 +14,13 @@ function init()
 	loadingEntities = true
 	
 	scen = LoadScenario(25)
---	for o in scen.objects do -- #TEST look up this for variant
---		print(11111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111)
---	end
-	for i = 0, #scen.objects do
-		local o = scen.objects[i]
-		o.battery = { current = 100, max = 100 }
-	--	o.energy = { current = 100, max = 100 }
-	end
---	scen.playerShip.battery = { current = 100, max = 100 }
+	
 	loadingEntities = false
 end
-
---local shipAdjust = 0 #TEST if the shipAdjust variable is contained in GlobalVars.lua
 
 function key( k )
 	if k == "q" or k == "escape" then
 		mode_manager.switch("MainMenu")
---[[	elseif k == "=" then
-		camera.w = camera.w / 2
-		camera.h = camera.h / 2
-	elseif k == "-" then
-		camera.w = camera.w * 2
-		camera.h = camera.h * 2--]] -- #TEST if camera changing works
 	elseif k == "[" then
 		if scen.playerShipId == 0 then
 			scen.playerShipId = #scen.objects
@@ -53,7 +37,6 @@ function key( k )
 		end
 		
 		scen.playerShip = scen.objects[scen.playerShipId]
-		scen.playerShip.battery = { percent = 1, current = 100, max = 100 }
 --	elseif k == " " then
 --		DeviceActivate(scen.playerShip.weapon.beam,scen.playerShip)
 	else
@@ -85,7 +68,7 @@ function update()
 		resources = math.floor((cash % 20000) / 200)
 	end
 	
-	--[[ can't use this yet
+	--[[ can't use this yet - don't need it yet
 	if buildTimerRunning == true then
 		scen.planet.buildqueue.current = scen.planet.buildqueue.current + dt
 		scen.planet.buildqueue.percent = scen.planet.buildqueue.current / scen.planet.buildqueue.factor * 100
@@ -120,94 +103,94 @@ function update()
 		end
 	end
 	
-local i
-for i = 0, #scen.objects do
-	local o = scen.objects[i]
-	
-	--Lifetimer
-	if o.age ~= nil then
-		if o.age + o.created <= newTime then
-			ExpireTrigger(o)
-			table.insert(scen.destroyQueue, i)
-		end
-	end
-	
-	--Fire weapons
-	if o.control.pulse == true then
-		ActivateTrigger(o.weapon.pulse, o)
-	end
-
-	if o.control.beam == true then
-		ActivateTrigger(o.weapon.beam, o)
-	end
-
-	if o.control.special == true then
-		ActivateTrigger(o.weapon.special, o)
-	end
-	
-	
---[[------------------
-	Movement
-------------------]]--
-	if o["max-thrust"] ~= nil then
-		local v = o.physics.velocity
-		if hypot1(v) > o["max-velocity"] * SPEED_FACTOR then
-			o.physics.velocity = {
-			x = o["max-velocity"] * normalize(v.x,v.y) * SPEED_FACTOR;
-			y = o["max-velocity"] * normalize(v.y,v.x) * SPEED_FACTOR;
-			}
-			
-		end
-	end
-	
-	if o.attributes["can-turn"] == true then
-		if o.control.left == true then
-			if key_press_f6 ~= true then
-				o.physics.angular_velocity = o.rotation["max-turn-rate"] * 2.0
-			else
-				o.physics.angular_velocity = o.rotation["max-turn-rate"] * 4.0
+	local i
+	for i = 0, #scen.objects do
+		local o = scen.objects[i]
+		
+		--Lifetimer
+		if o.age ~= nil then
+			if o.age + o.created <= newTime then
+				ExpireTrigger(o)
+				table.insert(scen.destroyQueue, i)
 			end
-		elseif o.control.right == true then
-			if key_press_f6 ~= true then
-				o.physics.angular_velocity = -o.rotation["max-turn-rate"] * 2.0
-			else
-				o.physics.angular_velocity = -o.rotation["max-turn-rate"] * 4.0
-			end
-		else
-			o.physics.angular_velocity = 0
 		end
-	end 
-	if o.control.accel == true then
-		-- apply a forward force in the direction the ship is facing
-		local angle = o.physics.angle
-		--Multiply by 60 because the thrust value in the data is given per FRAME not per second.
-		local thrust = o["max-thrust"] * TIME_FACTOR * SPEED_FACTOR
-		local force = { x = thrust * math.cos(angle), y = thrust * math.sin(angle) }
-		o.physics:apply_force(force)
-	elseif o.control.decel == true then
-		-- apply a reverse force in the direction opposite the direction the ship is MOVING
-		local thrust = o["max-thrust"] * TIME_FACTOR * SPEED_FACTOR
-		local force = o.physics.velocity
-		if force.x ~= 0 or force.y ~= 0 then
-			if hypot(o.physics.velocity.x, o.physics.velocity.y) <= 10 then
-				o.physics.velocity = { x = 0, y = 0 }
+		
+		--Fire weapons
+		if o.control.pulse == true then
+			ActivateTrigger(o.weapon.pulse, o)
+		end
+
+		if o.control.beam == true then
+			ActivateTrigger(o.weapon.beam, o)
+		end
+
+		if o.control.special == true then
+			ActivateTrigger(o.weapon.special, o)
+		end
+		
+		
+	--[[------------------
+		Movement
+	------------------]]--
+		if o["max-thrust"] ~= nil then
+			local v = o.physics.velocity
+			if hypot1(v) > o["max-velocity"] * SPEED_FACTOR then
+				o.physics.velocity = {
+				x = o["max-velocity"] * normalize(v.x,v.y) * SPEED_FACTOR;
+				y = o["max-velocity"] * normalize(v.y,v.x) * SPEED_FACTOR;
+				}
+				
+			end
+		end
+		
+		if o.attributes["can-turn"] == true then
+			if o.control.left == true then
+				if key_press_f6 ~= true then
+					o.physics.angular_velocity = o.rotation["max-turn-rate"] * 2.0
+				else
+					o.physics.angular_velocity = o.rotation["max-turn-rate"] * 4.0
+				end
+			elseif o.control.right == true then
+				if key_press_f6 ~= true then
+					o.physics.angular_velocity = -o.rotation["max-turn-rate"] * 2.0
+				else
+					o.physics.angular_velocity = -o.rotation["max-turn-rate"] * 4.0
+				end
 			else
-				local velocityMag = hypot1(force)
-				force.x = -force.x / velocityMag
-				force.y = -force.y / velocityMag
-				force.x = force.x * thrust
-				force.y = force.y * thrust
-				if hypot1(force) > hypot1(o.physics.velocity) then
+				o.physics.angular_velocity = 0
+			end
+		end 
+		if o.control.accel == true then
+			-- apply a forward force in the direction the ship is facing
+			local angle = o.physics.angle
+			--Multiply by 60 because the thrust value in the data is given per FRAME not per second.
+			local thrust = o["max-thrust"] * TIME_FACTOR * SPEED_FACTOR
+			local force = { x = thrust * math.cos(angle), y = thrust * math.sin(angle) }
+			o.physics:apply_force(force)
+		elseif o.control.decel == true then
+			-- apply a reverse force in the direction opposite the direction the ship is MOVING
+			local thrust = o["max-thrust"] * TIME_FACTOR * SPEED_FACTOR
+			local force = o.physics.velocity
+			if force.x ~= 0 or force.y ~= 0 then
+				if hypot(o.physics.velocity.x, o.physics.velocity.y) <= 10 then
 					o.physics.velocity = { x = 0, y = 0 }
 				else
-					o.physics:apply_force(force)
+					local velocityMag = hypot1(force)
+					force.x = -force.x / velocityMag
+					force.y = -force.y / velocityMag
+					force.x = force.x * thrust
+					force.y = force.y * thrust
+					if hypot1(force) > hypot1(o.physics.velocity) then
+						o.physics.velocity = { x = 0, y = 0 }
+					else
+						o.physics:apply_force(force)
+					end
 				end
 			end
 		end
 	end
-end
 
-	-- camera stuffs
+-- camera stuffs
 	if cameraChanging == true then
 		x = x - dt
 		if x < 0 then
@@ -218,9 +201,8 @@ end
 		end
 		if x >= 0 then
 			cameraRatio = cameraRatioOrig + cameraRatioOrig * multiplier * math.pow(math.abs((x - timeInterval) / timeInterval), 2)  --[[* (((x - timeInterval) * (x - timeInterval) * math.sqrt(math.abs(x - timeInterval))) / (timeInterval * timeInterval * math.sqrt(math.abs(timeInterval))))--]]
-		--	print(cameraRatio, timeInterval)
 		end
-		camera = { w = 640 / cameraRatio, h }
+		camera = { w = 1024 / cameraRatio, h }
 		camera.h = camera.w / aspectRatio
 		shipAdjust = .045 * camera.w
 		arrowLength = ARROW_LENGTH / cameraRatio

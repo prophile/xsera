@@ -78,6 +78,7 @@ function NewObject(id)
 	-- energy & health
 	newObj.energy = { max = newObj.energy, current = newObj.energy }
 	newObj.health = { max = newObj.health, current = newObj.health }
+	newObj.battery = { max = newObj.energy.max * 5, current = newObj.energy.max }
 	
 	CopyActions(newObj)
 	CreateTrigger(newObj)

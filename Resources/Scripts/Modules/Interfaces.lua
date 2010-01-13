@@ -308,7 +308,7 @@ radar = { top = 184, left = -394, bottom = 100, right = -303, width = 91, length
 
 function DrawRadar()
 	graphics.draw_box(radar.top, radar.left, radar.bottom, radar.right, 0, ClutColour(5, 13)) -- background (dark green)
-	if cameraRatioNum >= 5 then
+	if cameraRatio <= 1 / 8 then
 		graphics.draw_box(radar.top, radar.left, radar.bottom, radar.right, 1, ClutColour(5, 11)) -- foreground (light green with edge)
 	else
 		boxSize = (cameraRatio * 8 - 1) / cameraRatio / 16
