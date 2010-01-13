@@ -25,8 +25,8 @@ std::map<int, BlowfishKey> sessionKey;
 std::map<int, BlowfishIV> sessionIV;
 void makeBlowKey(int clientID)
 {
-	sessionKey[clientID];
-	sessionIV[clientID];
+//ADAM	sessionKey[clientID];
+//ADAM	sessionIV[clientID];
 	// add a random number generator for this
 }
 	
@@ -153,12 +153,12 @@ Message* GetMessage ()
 				Message* ivmsg;
 				
 				//make and share encryption keys
-				makeBlowKey[clientID];
-				keymsg = new Message( "BLOWKEY", sessionKey[clientID], 16 ); //make a message with the blowkey
-				SendMessage( clientID, keymsg ); //send the blowkey
+			//ADAM	makeBlowKey[clientID];
+			//ADAM	keymsg = new Message( "BLOWKEY", sessionKey[clientID], 16 ); //make a message with the blowkey
+			//ADAM	SendMessage( clientID, keymsg ); //send the blowkey
 				
-				ivmsg = new Message( "BLOWIV" , sessionIV[clientID], 8 ); //make a message with the blowIV
-				SendMessage( clientID, ivmsg ); //send the IV
+			//ADAM	ivmsg = new Message( "BLOWIV" , sessionIV[clientID], 8 ); //make a message with the blowIV
+			//ADAM	SendMessage( clientID, ivmsg ); //send the IV
 				break;
 			case ENET_EVENT_TYPE_DISCONNECT:
 				{

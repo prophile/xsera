@@ -9,8 +9,6 @@
 namespace Net
 {
 
-const uint32_t CLIENT_BANDWIDTH_LIMIT = 1024 * 16; // 16 kB/s
-
 Client::Client ()
 : clientHost(NULL), clientPeer(NULL), badMessageCount(0)
 {
@@ -30,7 +28,7 @@ BlowfishKey sessionKey;
 	
 void Connect ( const std::string& host, unsigned short port, const std::string& password )
 {
-	if (clientHost)
+/*ADAM	if (clientHost)
 	{
 		Disconnect();
 	}
@@ -39,7 +37,7 @@ void Connect ( const std::string& host, unsigned short port, const std::string& 
 	addr.port = htons(port);
 	enet_address_set_host(&addr, host.c_str());
 	clientPeer = enet_host_connect(clientHost, &addr, 1);
-	assert(clientPeer);
+	assert(clientPeer);*/
 }
 
 void Client::Disconnect ()
@@ -102,7 +100,7 @@ Message* Client::GetMessage ()
 				if (result == NULL)
 				{
 				    BadMessage();
-				} 
+				} /*ADAM
 				else if ( strcmp( result.message , "BLOWKEY" ) == 0) //if the message contains a blowkey
 				{
 					sessionKey = result.data; //store the blowkey
@@ -110,7 +108,7 @@ Message* Client::GetMessage ()
 				else if ( strcmp( result.message , "BLOWIV" ) == 0) //if it contains a blowIV
 				{
 					sessionIV = result.data; //store the blowIV
-				}
+				}*/
 				/*	
 				 if( Blowfish::do_decrypt(result, sessionKey, sessionIV) == false) // result is passed by reference. Return false on error.
 				 {
