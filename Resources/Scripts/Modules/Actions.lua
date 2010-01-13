@@ -129,7 +129,7 @@ if new["initial-direction"] ~= nil then
 	if new["initial-direction-range"] ~= nil then
 		new.physics.angle = new.physics.angle + math.pi *( new["initial-direction"] + math.random(0.0, new["initial-direction-range"]))/180
 	else
-		new.physics.angle = math.pi * new.physics.angle + new["initial-direction"] / 180
+		new.physics.angle = new.physics.angle + math.pi * new["initial-direction"] / 180
 	end
 end
 
