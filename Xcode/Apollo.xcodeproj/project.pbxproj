@@ -139,7 +139,6 @@
 		496A283B0F0EC9F800C53BA1 /* SDL_image.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 496A23F00F0EB31B00C53BA1 /* SDL_image.framework */; };
 		496A283C0F0EC9F800C53BA1 /* SDL_mixer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 496A23F20F0EB31B00C53BA1 /* SDL_mixer.framework */; };
 		496A283D0F0EC9F800C53BA1 /* SDL_ttf.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 496A23F40F0EB31B00C53BA1 /* SDL_ttf.framework */; };
-		5725775B10ADB48E003A8259 /* Server.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5725775910ADB48E003A8259 /* Server.cpp */; };
 		5725775C10ADB48E003A8259 /* Server.h in Headers */ = {isa = PBXBuildFile; fileRef = 5725775A10ADB48E003A8259 /* Server.h */; };
 		57662F2C10AF591B0025BA67 /* ImageLoader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 57662F2810AF591B0025BA67 /* ImageLoader.cpp */; };
 		57662F2D10AF591B0025BA67 /* ImageLoader.h in Headers */ = {isa = PBXBuildFile; fileRef = 57662F2910AF591B0025BA67 /* ImageLoader.h */; };
