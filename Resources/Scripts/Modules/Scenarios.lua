@@ -9,7 +9,7 @@ function LoadScenario(id)
 	for datId = scen.initial.id, max do
 		local state = gameData.InitialObject[datId]
 		local new = NewObject(state.type)
-		print(state.attributes)
+
 		if state.attributes == 512 then
 			if scen.playerShip == nil then
 				new.physics.velocity = {x = 0.0, y = 0.0}

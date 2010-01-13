@@ -27,9 +27,11 @@ end
 
 
 function ExpireTrigger(owner)
+	callAction(owner.trigger["expire"],owner,nil)
 end
 
 function DestroyTrigger(owner)
+	callAction(owner.trigger["destroy"],owner,nil)
 end
 
 function CreateTrigger(owner)
@@ -37,9 +39,11 @@ function CreateTrigger(owner)
 end
 
 function CollideTrigger(owner,other)
+	callAction(owner.trigger["collide"],owner,other)
 end
 
 function ArriveTrigger(owner,other)
+	callAction(owner.trigger["arrive"],owner,other)
 end
 
 function callAction(trigger, source, direct)
@@ -121,6 +125,14 @@ else
 new.physics.angle = RandomReal(0, 2.0 * math.pi)
 end
 
+if new["initial-direction"] ~= nil then
+	if new["initial-direction-range"] ~= nil then
+		new.physics.angle = new.physics.angle + math.pi *( new["initial-direction"] + math.random(0.0, new["initial-direction-range"]))/180
+	else
+		new.physics.angle = new.physics.angle + math.pi * new["initial-direction"] / 180
+	end
+end
+
 if new["initial-velocity"] == nil then
 new["initial-velocity"] = 0
 end
@@ -155,7 +167,15 @@ end,
 ["make-sparks-action"] = function(action, source, direct) end,
 ["nil-target-action"] = function(action, source, direct) end,
 ["no-action"] = function(action, source, direct) end,
-["play-sound-action"] = function(action, source, direct) end,
+["play-sound-action"] = function(action, source, direct)
+
+	local rsound = gameData["Sounds"][action["id-minimum"]]
+	if rsound ~= nil then
+		sound.play(rsound)
+	else
+		print("Sound '" .. action["id-minimum"] .. "' not found.")
+	end
+end,
 ["set-destination-action"] = function(action, source, direct) end,
 ["set-zoom-action"] = function(action, source, direct) end,
 }
