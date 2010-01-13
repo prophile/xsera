@@ -1,5 +1,5 @@
 function ActivateTrigger(device, owner)
-	if xor(owner == nil, owner.energy.level >= device.device["energy-cost"])
+	if xor(owner == nil, owner.energy.current >= device.device["energy-cost"])
 	and xor(device.ammo == -1, device.ammo > 0)
 	and device.device.lastActivated < mode_manager.time() - device.device["fire-time"] / TIME_FACTOR then
 
@@ -10,7 +10,7 @@ function ActivateTrigger(device, owner)
 			end
 			
 			if owner ~= nil then
-				owner.energy.level = owner.energy.level - device.device["energy-cost"]
+				owner.energy.current = owner.energy.current - device.device["energy-cost"]
 			end
 			
 			

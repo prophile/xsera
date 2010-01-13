@@ -339,13 +339,13 @@ function DrawPanels()
 
 -- Battery (red)
 	graphics.draw_box(107, 379, 29, 386, 0, ClutColour(8, 8))
---	graphics.draw_box(playerShip.battery.percent * 78 + 29, 379, 29, 386, 0, ClutColour(8, 5)) -- #TEST these commented lines should be fixed and uncommented
+--	graphics.draw_box(scen.playerShip.battery.current / scen.playerShip.battery.max * 78 + 29, 379, 29, 386, 0, ClutColour(8, 5)) -- #TEST these commented lines should be fixed and uncommented
 -- Energy (yellow)
 	graphics.draw_box(6, 379, -72.5, 386, 0, ClutColour(3, 7))
---	graphics.draw_box(playerShip.energy.percent * 78.5 - 72.5, 379, -72.5, 386, 0, ClutColour(9, 6))
+--	graphics.draw_box(scen.playerShip.energy.current / scen.playerShip.battery.max * 78.5 - 72.5, 379, -72.5, 386, 0, ClutColour(9, 6))
 -- Shield (blue)
 	graphics.draw_box(-96, 379, -173, 386, 0, ClutColour(14, 8))
---	graphics.draw_box(playerShip.shield.percent * 77 - 173, 379, -173, 386, 0, ClutColour(14, 6))
+--	graphics.draw_box(scen.playerShip.shield.current / scen.playerShip.battery.max * 77 - 173, 379, -173, 386, 0, ClutColour(14, 6))
 -- Factory resources (green - mostly)
 	count = 1
 	if shipSelected == true then
@@ -477,7 +477,7 @@ function DrawPanels()
 			graphics.draw_line({ x = -357, y = 10 }, { x = -357, y = 9 }, 0.5, ClutColour(3, 7))
 			graphics.draw_line({ x = -347, y = 10 }, { x = -347, y = 9 }, 0.5, ClutColour(3, 7))
 			graphics.draw_box(27, -356, 10, -348, 0, ClutColour(3, 7))
-			graphics.draw_box(17 * control.energy.percent + 10, -356, 10, -348, 0, ClutColour(9, 6))
+			graphics.draw_box(17 * control.energy.current / control.energy.max + 10, -356, 10, -348, 0, ClutColour(9, 6))
 		end
 		if control.shield ~= nil then
 			graphics.draw_line({ x = -369, y = 28 }, { x = -359, y = 28 }, 0.5, ClutColour(4, 8))
@@ -487,7 +487,7 @@ function DrawPanels()
 			graphics.draw_line({ x = -369, y = 10 }, { x = -369, y = 9 }, 0.5, ClutColour(4, 8))
 			graphics.draw_line({ x = -359, y = 10 }, { x = -359, y = 9 }, 0.5, ClutColour(4, 8))
 			graphics.draw_box(27, -367.5, 10, -360, 0, ClutColour(4, 8))
-			graphics.draw_box(17 * control.shield.percent + 10, -367.5, 10, -360, 0, ClutColour(4, 6))
+			graphics.draw_box(17 * control.health.current / control.health.max + 10, -367.5, 10, -360, 0, ClutColour(4, 6))
 		end
 		if control.type == "Planet" then
 			graphics.draw_sprite(control.type .. "s/" .. control.image, { x = -380, y = 19 }, { x = 17, y = 17 }, 0)

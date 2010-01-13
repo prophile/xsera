@@ -19,10 +19,10 @@ function init()
 --	end
 	for i = 0, #scen.objects do
 		local o = scen.objects[i]
-		o.battery = { percent = 1, level = 100, total = 100 }
-	--	o.energy = { percent = 1, level = 100, total = 100 }
+		o.battery = { current = 100, max = 100 }
+	--	o.energy = { current = 100, max = 100 }
 	end
---	scen.playerShip.battery = { percent = 1, level = 100, total = 100 }
+--	scen.playerShip.battery = { current = 100, max = 100 }
 	loadingEntities = false
 end
 
@@ -53,7 +53,7 @@ function key( k )
 		end
 		
 		scen.playerShip = scen.objects[scen.playerShipId]
-		scen.playerShip.battery = { percent = 1, level = 100, total = 100 }
+		scen.playerShip.battery = { percent = 1, current = 100, max = 100 }
 --	elseif k == " " then
 --		DeviceActivate(scen.playerShip.weapon.beam,scen.playerShip)
 	else
@@ -109,31 +109,17 @@ function update()
 	end
 	--]]
 	
-	scen.playerShip.battery.percent = scen.playerShip.battery.level / scen.playerShip.battery.total
-	scen.playerShip.energy.percent = scen.playerShip.energy.level / scen.playerShip.energy.total
-	scen.playerShip.health.percent = scen.playerShip.health.level / scen.playerShip.health.total
-	if scen.playerShip.energy.percent ~= 1.0 then
+	if scen.playerShip.energy.current / scen.playerShip.energy.max ~= 1.0 then
 		rechargeTimer = rechargeTimer + dt
 		if rechargeTimer >= 0.5 then
-			if scen.playerShip.battery.percent ~= 0.0 then
-				scen.playerShip.battery.level = scen.playerShip.battery.level - 1
-				scen.playerShip.energy.level = scen.playerShip.energy.level + 1
+			if scen.playerShip.battery.current / scen.playerShip.battery.max ~= 0.0 then
+				scen.playerShip.battery.current = scen.playerShip.battery.current - 1
+				scen.playerShip.energy.current = scen.playerShip.energy.current + 1
 				rechargeTimer = rechargeTimer - 0.5
 			end
 		end
 	end
 	
--- Fast speed vs regular
-	if menu_display == nil then
-		if keyboard[4][7].active == false then
-			physics.update(dt)
-		else
-			physics.update(dt * 30)
-		end
-	end
-	
-	KeyDoActivated()
-
 local i
 for i = 0, #scen.objects do
 	local o = scen.objects[i]
@@ -221,32 +207,32 @@ for i = 0, #scen.objects do
 	end
 end
 
--- camera stuffs
-if cameraChanging == true then
-	x = x - dt
-	if x < 0 then
-		x = 0
-		cameraChanging = false
-		scen.playerShip.beam.width = cameraRatio
-		soundJustPlayed = false
-	end
-	if x >= 0 then
-		cameraRatio = cameraRatioOrig + cameraRatioOrig * multiplier * math.pow(math.abs((x - timeInterval) / timeInterval), 2)  --[[* (((x - timeInterval) * (x - timeInterval) * math.sqrt(math.abs(x - timeInterval))) / (timeInterval * timeInterval * math.sqrt(math.abs(timeInterval))))--]]
-	--	print(cameraRatio, timeInterval)
-	end
-	camera = { w = 640 / cameraRatio, h }
-	camera.h = camera.w / aspectRatio
-	shipAdjust = .045 * camera.w
-	arrowLength = ARROW_LENGTH / cameraRatio
-	arrowVar = ARROW_VAR / cameraRatio
-	arrowDist = ARROW_DIST / cameraRatio
-	if (cameraRatio < 1 / 8 and cameraRatioOrig > 1 / 8) or (cameraRatio > 1 / 8 and cameraRatioOrig < 1 / 8) then
-		if soundJustPlayed == false then
-			sound.play("ZoomChange")
-			soundJustPlayed = true
+	-- camera stuffs
+	if cameraChanging == true then
+		x = x - dt
+		if x < 0 then
+			x = 0
+			cameraChanging = false
+			scen.playerShip.beam.width = cameraRatio
+			soundJustPlayed = false
+		end
+		if x >= 0 then
+			cameraRatio = cameraRatioOrig + cameraRatioOrig * multiplier * math.pow(math.abs((x - timeInterval) / timeInterval), 2)  --[[* (((x - timeInterval) * (x - timeInterval) * math.sqrt(math.abs(x - timeInterval))) / (timeInterval * timeInterval * math.sqrt(math.abs(timeInterval))))--]]
+		--	print(cameraRatio, timeInterval)
+		end
+		camera = { w = 640 / cameraRatio, h }
+		camera.h = camera.w / aspectRatio
+		shipAdjust = .045 * camera.w
+		arrowLength = ARROW_LENGTH / cameraRatio
+		arrowVar = ARROW_VAR / cameraRatio
+		arrowDist = ARROW_DIST / cameraRatio
+		if (cameraRatio < 1 / 8 and cameraRatioOrig > 1 / 8) or (cameraRatio > 1 / 8 and cameraRatioOrig < 1 / 8) then
+			if soundJustPlayed == false then
+				sound.play("ZoomChange")
+				soundJustPlayed = true
+			end
 		end
 	end
-end
 
 	--Remove destroyed or expired objects
 	--Count backwards because the array is shifted with each deletion
@@ -259,7 +245,17 @@ end
 		end
 	end
 	scen.destroyQueue = {}
-	physics.update(dt)
+	
+-- Fast speed vs regular
+	if menu_display == nil then
+		if keyboard[4][7].active == false then
+			physics.update(dt)
+		else
+			physics.update(dt * 30)
+		end
+	end
+	
+	KeyDoActivated()
 end
 
 

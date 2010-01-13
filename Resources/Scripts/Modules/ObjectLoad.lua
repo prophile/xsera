@@ -55,7 +55,7 @@ function NewObject(id)
 	--Prepare devices
 	if newObj.weapon ~= nil then
 		local wid
-		for wid=1, #newObj.weapon do
+		for wid = 1, #newObj.weapon do
 			if newObj.weapon[newObj.weapon[wid].type] ~= nil then
 				error("More than one weapon of type '" .. newObj.weapon[wid].type .. "' defined.")
 			end
@@ -76,8 +76,8 @@ function NewObject(id)
 	end
 	
 	-- energy & health
-	newObj.energy = { total = newObj.energy, percent = 1, level = newObj.energy }
-	newObj.health = { total = newObj.health, percent = 1, level = newObj.health }
+	newObj.energy = { max = newObj.energy, current = newObj.energy }
+	newObj.health = { max = newObj.health, current = newObj.health }
 	
 	CopyActions(newObj)
 	CreateTrigger(newObj)
