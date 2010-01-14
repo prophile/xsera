@@ -26,7 +26,7 @@ function test1()
 		print("SERVER HAS NOT RECEIVED MESSAGES")
 	end
 	
-	--/CLIENT
+	--/CLIENT/
 	if client.receivedMsg() then
 		print("CLIENT HAS RECEIVED MESSAGES")
 		clientMessages = client.readMsg()
@@ -47,21 +47,21 @@ function key(k)
 	elseif k == "2" then
 		test2()
 	elseif k == "3" then
-		
+		test3()
 	elseif k == "4" then
-		
+		test4()
 	elseif k == "5" then
-		
+		test5()
 	elseif k == "6" then
-		
+		test6()
 	elseif k == "7" then
-		
+		test7()
 	elseif k == "8" then
-		
+		test8()
 	elseif k == "9" then
-		
+		test9()
 	elseif k == "0" then
-		
+		test0()
 	elseif k == "escape" then
 		mode_manager.switch('MainMenu')
 	end
@@ -78,7 +78,7 @@ end
 
 function render()
 	graphics.begin_frame()
-	graphics.draw_text("ESC to go to main screen", "CrystalClear", "center", { x = 0, y = 0 }, 30)
+	graphics.draw_text("ESC to go to main screen", "CrystalClear", "center", { x = 50, y = 0 }, 60)
 	if message ~= nil then
 		graphics.draw_text(message, "CrystalClear", "center", { x = 0, y = -50 }, 30)
 	end
