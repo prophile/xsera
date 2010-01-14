@@ -49,6 +49,11 @@ function key( k )
 		end
 		
 		scen.playerShip = scen.objects[scen.playerShipId]
+	elseif k == "backspace" then
+		scen.playerShip.health = scen.playerShip.health - 1000
+		if scen.playerShip.health < 0 then
+			scen.playerShip.health = 0
+		end
 --	elseif k == " " then
 --		DeviceActivate(scen.playerShip.weapon.beam,scen.playerShip)
 	else
@@ -74,6 +79,10 @@ local i
 for i = 0, #scen.objects do
 	local o = scen.objects[i]
 	
+	if o.health == 0 then
+		DestroyTrigger(o)
+		table.insert(scen.destroyQueue,i)
+	end
 	--Lifetimer
 	if o.age ~= nil then
 		if o.age + o.created <= newTime then
