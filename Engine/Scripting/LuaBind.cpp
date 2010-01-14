@@ -163,7 +163,7 @@ int PHYS_Collisions ( lua_State* L )
 		collide = obj1->pob->Collision(obj1->pob->position, obj2->pob->position, obj1->pob->collisionRadius, obj2->pob->collisionRadius);
 	}
 	lua_pushboolean(L, collide);
-	return 0;
+	return 1;
 }
 
 int PHYS_Object_Impulse ( lua_State* L );

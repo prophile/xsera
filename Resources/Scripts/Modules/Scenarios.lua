@@ -1,7 +1,7 @@
 function LoadScenario(id)
 	local scen = deepcopy(gameData.Scenarios[id])
 	scen.objects = {}
-	scen.destroyQueue = {}
+--	scen.destroyQueue = {}
 	local datId
 	local max = scen.initial.id + scen.initial.count - 1
 	local ctr = 0
@@ -27,6 +27,8 @@ function LoadScenario(id)
 		end
 		
 		new.physics.position = state.location
+		new.owner = state.owner
+		
 		scen.objects[ctr] = new
 		ctr = ctr + 1
 	end

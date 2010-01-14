@@ -55,8 +55,14 @@ function NewObject(id)
 	}
 	
 	newObj.physics = physics.new_object(newObj.mass)
-	newObj.physics.angular_velocity = 0.00	
-
+	newObj.physics.angular_velocity = 0.00
+	
+	if newObj.spriteDim ~= nil then
+		newObj.physics.collision_radius = hypot1(newObj.spriteDim)/32
+	else
+		newObj.physics.collision_radius = 1
+	end
+	
 	if newObj["initial-age"] ~= nil then
 		newObj.created = mode_manager.time()
 		newObj.age = newObj["initial-age"] / TIME_FACTOR

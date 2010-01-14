@@ -103,16 +103,21 @@ end,
 --Aquire parent data
 local p
 local offset = {x = 0.0, y = 0.0}
+local owner
 if action.reflexive == "true" then --There may be more conditions to consider
 	if source.device ~= nil then
 		p = source.parent.physics
+		owner = source.parent.owner
 		offset = RotatePoint(source.position[source.position.last],p.angle-math.pi/2.0)
 	else
 		p = source.physics
+		owner = source.owner
 	end
 else
 	p = direct.physics
+	owner = direct.owner
 end
+
 
 --create object(s)
 local count = action["how-many-min"] + math.random(0, action["how-many-range"])
@@ -159,12 +164,22 @@ end
 if new.attributes["is-guided"] == true then
 	new.control.accel = true
 end
+
+new.owner = owner
 table.insert(scen.objects,new)
 end
 end,
 ["create-object-set-dest-action"] = function(action, source, direct) end,
 ["declare-winner-action"] = function(action, source, direct) end,
-["die-action"] = function(action, source, direct) end,
+["die-action"] = function(action, source, direct)
+	if action.reflexive == "true" then
+		source.dead = true
+		print(source.name)
+	else
+		direct.dead = true
+		print(direct.name)
+	end
+end,
 ["disable-keys-action"] = function(action, source, direct) end,
 ["display-message-action"] = function(action, source, direct) end,
 ["enable-keys-action"] = function(action, source, direct) end,

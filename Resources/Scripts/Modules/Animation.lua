@@ -1,7 +1,7 @@
 import('GlobalVars')
 import('Actions')
 
-function Animate(obj,idx)
+function Animate(obj)
 	if obj.animation["frame-speed"] == 0 then
 		return 0
 	else
@@ -11,11 +11,12 @@ function Animate(obj,idx)
 		local frameCount = a["last-shape"] - a["first-shape"]
 		
 		if obj.attributes["animation-cycle"] ~= true
-		and framesPassed > frameCount
-		and idx ~= nil then
+		and framesPassed > frameCount then
+--		and idx ~= nil then
 
 			ExpireTrigger(obj)
-			table.insert(scen.destroyQueue,idx)
+			obj.dead = true
+--			table.insert(scen.destroyQueue,idx)
 		end
 		
 		local frameNumber= (framesPassed+a["frame-shape"]-a["first-shape"])%(frameCount)+a["first-shape"]

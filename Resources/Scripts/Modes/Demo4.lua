@@ -78,16 +78,41 @@ function update()
 local i
 for i = 0, #scen.objects do
 	local o = scen.objects[i]
+	local i2
+	for i2 = i + 1, #scen.objects do
+		local o2 = scen.objects[i2]
+--		print(i..", "..i2)
+		if o.owner ~= o2.owner and physics.collisions(o.physics, o2.physics, 0) == true then
+--			if o.owner ~= o2.owner then
+				local p = o.physics
+
+				p.velocity = {x = -p.velocity.x, y = -p.velocity.y}
+				local p2 = o2.physics
+				p2.velocity = {x = -p2.velocity.x, y = -p2.velocity.y}
+				
+				CollideTrigger(o,o2)
+				CollideTrigger(o2,o)
+				if o2.damage ~= nil then
+				o.health = o.health - o2.damage
+				end
+				if o.damage ~= nil then
+				o2.health = o2.health - o.damage
+				end
+	--			local dx = math.cos(p.position,p2.position)
+	--			print("A")
+--			end
+		end
+	end
 	
-	if o.health == 0 then
+	if o.health <= 0 then
 		DestroyTrigger(o)
-		table.insert(scen.destroyQueue,i)
+		o.dead = true
 	end
 	--Lifetimer
 	if o.age ~= nil then
 		if o.age + o.created <= newTime then
 			ExpireTrigger(o)
-			table.insert(scen.destroyQueue, i)
+			o.dead = true
 		end
 	end
 	
@@ -172,8 +197,8 @@ for i = 0, #scen.objects do
 		end
 	end
 end
-	EmptyDestroyQueue()
 	physics.update(dt)
+	RemoveDead()
 end
 
 
@@ -257,12 +282,14 @@ function render()
 		graphics.draw_text("Energy: " .. scen.playerShip.energy, "CrystalClear", "left", {x = ox, y = oy + vstep}, camera.w/fs)
 	end
 	
-	EmptyDestroyQueue()
+
 	
 	graphics.draw_particles()
 	DrawPanels()
 	DrawArrow()
 	graphics.end_frame()
+	
+--	RemoveDead()
 end
 
 
@@ -271,16 +298,24 @@ function quit()
 end
 
 
-function EmptyDestroyQueue()
+function RemoveDead()
 	--Remove destroyed or expired objects
 	--Count backwards because the array is shifted with each deletion
-	if #scen.destroyQueue > 0 then
-		for i = #scen.destroyQueue, 1, -1 do
-			scen.objects[scen.destroyQueue[i]].dead = true
-			physics.destroy_object(scen.objects[scen.destroyQueue[i]].physics)
+	local i
+	for i = #scen.objects, 0, -1 do
+		local o = scen.objects[i]
+		if o.dead == true then
+			physics.destroy_object(scen.objects[i].physics)
+			table.remove(scen.objects,i)
+			i = i - 1
+--	if scen.destroyQueue > 0 then
+--		for i = #scen.destroyQueue, 1, -1 do
+--			scen.objects[scen.destroyQueue[i]].dead = true
+
 --			scen.objects[scen.destroyQueue[i]].physics:destroy()
-			table.remove(scen.objects,scen.destroyQueue[i])
+--			table.remove(scen.objects,scen.destroyQueue[i])
 		end
+		
 	end
-	scen.destroyQueue = {}
+--	scen.destroyQueue = {}
 end
