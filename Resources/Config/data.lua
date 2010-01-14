@@ -73,7 +73,7 @@ return {
 [007] =  {
 ["type"] = "die-action";
 ["reflexive"] = "true";
-["type"] = 255;
+["death-type"] = 255;
 
 };
 [008] =  {
@@ -102,7 +102,7 @@ return {
 [010] =  {
 ["type"] = "die-action";
 ["reflexive"] = "true";
-["type"] = 1;
+["death-type"] = 1;
 
 };
 [011] =  {
@@ -130,7 +130,7 @@ return {
 [013] =  {
 ["type"] = "die-action";
 ["reflexive"] = "true";
-["type"] = 1;
+["death-type"] = 1;
 
 };
 [014] =  {
@@ -227,7 +227,7 @@ return {
 [023] =  {
 ["type"] = "die-action";
 ["reflexive"] = "true";
-["type"] = 1;
+["death-type"] = 1;
 
 };
 [024] =  {
@@ -278,7 +278,7 @@ return {
 [028] =  {
 ["type"] = "die-action";
 ["reflexive"] = "true";
-["type"] = 1;
+["death-type"] = 1;
 
 };
 [029] =  {
@@ -295,7 +295,7 @@ return {
 [030] =  {
 ["type"] = "die-action";
 ["reflexive"] = "true";
-["type"] = 1;
+["death-type"] = 1;
 
 };
 [031] =  {
@@ -346,7 +346,7 @@ return {
 [035] =  {
 ["type"] = "die-action";
 ["reflexive"] = "true";
-["type"] = 1;
+["death-type"] = 1;
 
 };
 [036] =  {
@@ -408,7 +408,7 @@ return {
 [041] =  {
 ["type"] = "die-action";
 ["reflexive"] = "true";
-["type"] = 1;
+["death-type"] = 1;
 
 };
 [042] =  {
@@ -492,7 +492,7 @@ return {
 [049] =  {
 ["type"] = "die-action";
 ["reflexive"] = "true";
-["type"] = 1;
+["death-type"] = 1;
 
 };
 [050] =  {
@@ -506,7 +506,7 @@ return {
 ["type"] = "die-action";
 ["reflexive"] = "false";
 ["inclusive-filter"] = 1024;
-["type"] = 1;
+["death-type"] = 1;
 
 };
 [052] =  {
@@ -566,7 +566,7 @@ return {
 [057] =  {
 ["type"] = "die-action";
 ["reflexive"] = "true";
-["type"] = 1;
+["death-type"] = 1;
 
 };
 [058] =  {
@@ -711,7 +711,7 @@ return {
 [072] =  {
 ["type"] = "die-action";
 ["reflexive"] = "true";
-["type"] = 1;
+["death-type"] = 1;
 
 };
 [073] =  {
@@ -773,7 +773,7 @@ return {
 [078] =  {
 ["type"] = "die-action";
 ["reflexive"] = "true";
-["type"] = 1;
+["death-type"] = 1;
 
 };
 [079] =  {
@@ -1022,7 +1022,7 @@ return {
 [105] =  {
 ["type"] = "die-action";
 ["reflexive"] = "true";
-["type"] = 255;
+["death-type"] = 255;
 
 };
 [106] =  {
@@ -1203,7 +1203,7 @@ return {
 [123] =  {
 ["type"] = "die-action";
 ["reflexive"] = "true";
-["type"] = 56;
+["death-type"] = 56;
 
 };
 [124] =  {
@@ -1381,7 +1381,7 @@ return {
 [145] =  {
 ["type"] = "die-action";
 ["reflexive"] = "true";
-["type"] = 1;
+["death-type"] = 1;
 
 };
 [146] =  {
@@ -1389,7 +1389,7 @@ return {
 ["reflexive"] = "false";
 ["inclusive-filter"] = 2;
 ["owner"] = "other";
-["type"] = 2;
+["death-type"] = 2;
 
 };
 [147] =  {
@@ -1457,7 +1457,7 @@ return {
 ["exclusive-filter"] = 4294967295;
 ["owner"] = "other";
 ["delay"] = 160;
-["type"] = 1;
+["death-type"] = 1;
 
 };
 [153] =  {
@@ -1516,7 +1516,7 @@ return {
 ["inclusive-filter"] = 2684354560;
 ["exclusive-filter"] = 4294967295;
 ["owner"] = "other";
-["type"] = 1;
+["death-type"] = 1;
 
 };
 [159] =  {
@@ -1767,7 +1767,7 @@ return {
 ["reflexive"] = "false";
 ["inclusive-filter"] = 1610612736;
 ["exclusive-filter"] = 4294967295;
-["type"] = 1;
+["death-type"] = 1;
 
 };
 [185] =  {
@@ -3156,7 +3156,7 @@ return {
 [339] =  {
 ["type"] = "die-action";
 ["reflexive"] = "true";
-["type"] = 0;
+["death-type"] = 0;
 
 };
 [340] =  {
@@ -3173,7 +3173,7 @@ return {
 [341] =  {
 ["type"] = "die-action";
 ["reflexive"] = "true";
-["type"] = 2;
+["death-type"] = 2;
 
 };
 [342] =  {
@@ -3209,7 +3209,7 @@ return {
 [345] =  {
 ["type"] = "die-action";
 ["reflexive"] = "true";
-["type"] = 1;
+["death-type"] = 1;
 
 };
 [346] =  {
@@ -3751,7 +3751,7 @@ return {
 ["reflexive"] = "false";
 ["inclusive-filter"] = 3758096384;
 ["exclusive-filter"] = 4294967295;
-["type"] = 1;
+["death-type"] = 1;
 
 };
 [423] =  {
@@ -3917,7 +3917,7 @@ return {
 ["reflexive"] = "false";
 ["inclusive-filter"] = 1610612736;
 ["exclusive-filter"] = 4294967295;
-["type"] = 1;
+["death-type"] = 1;
 
 };
 [443] =  {
@@ -4404,7 +4404,7 @@ return {
 [500] =  {
 ["type"] = "die-action";
 ["reflexive"] = "true";
-["type"] = 0;
+["death-type"] = 0;
 
 };
 [501] =  {
@@ -4452,7 +4452,7 @@ return {
 [505] =  {
 ["type"] = "die-action";
 ["reflexive"] = "true";
-["type"] = 0;
+["death-type"] = 0;
 
 };
 [506] =  {
@@ -4547,7 +4547,7 @@ return {
 [516] =  {
 ["type"] = "die-action";
 ["reflexive"] = "true";
-["type"] = 1;
+["death-type"] = 1;
 
 };
 [517] =  {
@@ -5432,7 +5432,7 @@ return {
 ["type"] = "die-action";
 ["reflexive"] = "true";
 ["initial-subject-override"] = 5;
-["type"] = 0;
+["death-type"] = 0;
 
 };
 [622] =  {
@@ -5657,28 +5657,28 @@ return {
 ["type"] = "die-action";
 ["reflexive"] = "true";
 ["initial-subject-override"] = 2;
-["type"] = 0;
+["death-type"] = 0;
 
 };
 [656] =  {
 ["type"] = "die-action";
 ["reflexive"] = "true";
 ["initial-subject-override"] = 3;
-["type"] = 0;
+["death-type"] = 0;
 
 };
 [657] =  {
 ["type"] = "die-action";
 ["reflexive"] = "true";
 ["initial-subject-override"] = 4;
-["type"] = 0;
+["death-type"] = 0;
 
 };
 [658] =  {
 ["type"] = "die-action";
 ["reflexive"] = "true";
 ["initial-subject-override"] = 5;
-["type"] = 0;
+["death-type"] = 0;
 
 };
 [659] =  {
@@ -38409,4 +38409,57 @@ _-gateship";
 [996] = "Transport Foe Placeholder";
 [997] = "Transport Friend Placeholder";
 };
+["Sounds"] = {
+	[500] = "ShotC";
+	[501] = "ExplosionCombo";
+	[503] = "explosn.02 short";
+	[510] = "ZoomChange";
+	[511] = "NaughtyBeep";
+	[512] = "Lectro Zap Mixed";
+	[517] = "WarpIn";
+	[518] = "WarpOut";
+	[519] = "SShot 1";
+	[520] = "fighter launch";
+	[521] = "Lectro Zap Mixed Low";
+	[522] = "Stealth Off";
+	[523] = "Stealth On";
+	[524] = "Spark Thump";
+	[525] = "Beep Buzzer copy.22";
+	[526] = "thonk warp 1.1";
+	[527] = "Thonk Warp 1.2";
+	[528] = "Thonk Warp 1.3";
+	[529] = "thonk warp 1.4";
+	[533] = "RocketLaunchr";
+	[534] = "Astrocrunch";
+	[537] = "audemedon missile 2";
+	[538] = "audem missile 1";
+	[539] = "laser, elejeetian sound 2";
+	[541] = "missile, elejeetian sound 1";
+	[542] = "missile, elejeetian sound 3";
+	[543] = "human laser 2";
+	[544] = "human torpedo 1";
+	[545] = "human laser 3";
+	[546] = "human torpedo 2";
+	[547] = "space blob sucks";
+	[549] = "target drone laser";
+	[551] = "target deactivate beep.snd";
+	[554] = "heavy destroyer (cantharan).8";
+	[556] = "saril destroyer";
+	[557] = "human destroyer";
+	[558] = "audemedon destroyer";
+	[559] = "gaitori destroyer";
+	[560] = "Stingy Whip Laser Misc";
+	[561] = "22";
+	[563] = "11.snd-1";
+	[564] = "11.snd-2"; --[CHECK]
+	[565] = "22.snd";
+	[566] = "22.snd-1";
+	[567] = "22.snd-2";
+	[568] = "22.snd-3";
+	[569] = "22.snd-4";
+	[570] = "22.snd-5";
+	[9800] = "jumpgate opens hifi copy";
+	[10312] = "Let's Go";
+	[28853] = "Beam Scan Modified";
+	};
 };

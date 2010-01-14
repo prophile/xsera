@@ -184,7 +184,7 @@ function update ()
 		end
 		if x >= 0 then
 			cameraRatio = cameraRatioOrig + cameraRatioOrig * multiplier * math.pow(math.abs((x - timeInterval) / timeInterval), 2)  --[[* (((x - timeInterval) * (x - timeInterval) * math.sqrt(math.abs(x - timeInterval))) / (timeInterval * timeInterval * math.sqrt(math.abs(timeInterval))))--]]
-			print(cameraRatio, timeInterval)
+		--	print(cameraRatio, timeInterval)
 		end
 		camera = { w = 640 / cameraRatio, h }
 		camera.h = camera.w / aspectRatio
@@ -391,15 +391,15 @@ function update ()
 		end
 	end
 	
-	playerShip.battery.percent = playerShip.battery.level / playerShip.battery.total
-	playerShip.energy.percent = playerShip.energy.level / playerShip.energy.total
-	playerShip.shield.percent = playerShip.shield.level / playerShip.shield.total
+	playerShip.battery.percent = playerShip.battery.current / playerShip.battery.total
+	playerShip.energy.percent = playerShip.energy.current / playerShip.energy.total
+	playerShip.shield.percent = playerShip.shield.current / playerShip.shield.total
 	if playerShip.energy.percent ~= 1.0 then
 		rechargeTimer = rechargeTimer + dt
 		if rechargeTimer >= 0.5 then
 			if playerShip.battery.percent ~= 0.0 then
-				playerShip.battery.level = playerShip.battery.level - 1
-				playerShip.energy.level = playerShip.energy.level + 1
+				playerShip.battery.current = playerShip.battery.current - 1
+				playerShip.energy.current = playerShip.energy.current + 1
 				rechargeTimer = rechargeTimer - 0.5
 			end
 		end
@@ -583,10 +583,7 @@ function render ()
 ------------------]]--
 	
 -- Arrow
-	local angle = playerShip.physicsObject.angle
-	graphics.draw_line({ x = math.cos(arrowAlpha + angle) * arrowDist + playerShip.physicsObject.position.x, y = math.sin(arrowAlpha + angle) * arrowDist + playerShip.physicsObject.position.y }, { x = math.cos(angle - arrowAlpha) * arrowDist + playerShip.physicsObject.position.x, y = math.sin(angle - arrowAlpha) * arrowDist + playerShip.physicsObject.position.y }, 1.5, ClutColour(5, 1))
-	graphics.draw_line({ x = math.cos(angle - arrowAlpha) * arrowDist + playerShip.physicsObject.position.x, y = math.sin(angle - arrowAlpha) * arrowDist + playerShip.physicsObject.position.y }, { x =math.cos(angle) * (arrowLength + arrowVar) + playerShip.physicsObject.position.x, y = math.sin(angle) * (arrowLength + arrowVar) + playerShip.physicsObject.position.y }, 1.5, ClutColour(5, 1))
-	graphics.draw_line({ x = math.cos(angle) * (arrowLength + arrowVar) + playerShip.physicsObject.position.x, y = math.sin(angle) * (arrowLength + arrowVar) + playerShip.physicsObject.position.y }, { x = math.cos(arrowAlpha + angle) * arrowDist + playerShip.physicsObject.position.x, y = math.sin(arrowAlpha + angle) * arrowDist + playerShip.physicsObject.position.y }, 1.5, ClutColour(5, 1))
+	DrawArrow()
 -- Panels
 	DrawPanels()
 -- Console

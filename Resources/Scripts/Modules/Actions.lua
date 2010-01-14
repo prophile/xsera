@@ -1,10 +1,64 @@
+function ActivateTrigger(device, owner)
+	if device.device == nil then
+	
+		callAction(device.trigger["activate"],device)
+	
+	elseif xor(owner == nil, owner.energy >= device.device["energy-cost"])
+	and xor(device.ammo == -1, device.ammo > 0)
+	and device.device.lastActivated < mode_manager.time() - device.device["fire-time"] / TIME_FACTOR then
+
+			device.device.lastActivated = mode_manager.time()
+
+			if device.ammo ~= -1 then
+				device.ammo = device.ammo - 1
+			end
+			
+			if owner ~= nil then
+				owner.energy.current = owner.energy.current - device.device["energy-cost"]
+			end
+			
+			
+			if device.position.last == #device.position then
+				device.position.last = 1
+			else
+				device.position.last = device.position.last + 1
+			end
+			
+			callAction(device.trigger["activate"],device,nil)
+				
+	end
+end
+
+
+function ExpireTrigger(owner)
+	callAction(owner.trigger["expire"],owner,nil)
+end
+
+function DestroyTrigger(owner)
+	callAction(owner.trigger["destroy"],owner,nil)
+end
+
+function CreateTrigger(owner)
+	callAction(owner.trigger["create"],owner,nil)
+end
+
+function CollideTrigger(owner,other)
+	callAction(owner.trigger["collide"],owner,other)
+end
+
+function ArriveTrigger(owner,other)
+	callAction(owner.trigger["arrive"],owner,other)
+end
 
 function callAction(trigger, source, direct)
-	local id
-	local max = trigger.id + trigger.count - 1
-	for id = trigger.id, max do
-		local action = gameData["Actions"][id]
-		actionTable[action.type](action, source, direct)
+	if trigger ~= nil then
+		local id
+		local max = trigger.id + trigger.count - 1
+		
+		for id = trigger.id, max do
+			local action = gameData["Actions"][id]
+			actionTable[action.type](action, source, direct)
+		end
 	end
 end
 
@@ -51,13 +105,13 @@ local p
 local offset = {x = 0.0, y = 0.0}
 if action.reflexive == "true" then --There may be more conditions to consider
 	if source.device ~= nil then
-		p = deepcopy(source.parent.physics)
-		offset = RotatePoint(source.position[source.position.last],p.angle)
+		p = source.parent.physics
+		offset = RotatePoint(source.position[source.position.last],p.angle-math.pi/2.0)
 	else
-		p = deepcopy(source.physics)
+		p = source.physics
 	end
 else
-	p = deepcopy(direct.physics)
+	p = direct.physics
 end
 
 --create object(s)
@@ -76,7 +130,20 @@ else
 new.physics.angle = RandomReal(0, 2.0 * math.pi)
 end
 
+if new["initial-direction"] ~= nil then
+	if new["initial-direction-range"] ~= nil then
+		new.physics.angle = new.physics.angle + math.pi *( new["initial-direction"] + math.random(0.0, new["initial-direction-range"]))/180
+	else
+		new.physics.angle = new.physics.angle + math.pi * new["initial-direction"] / 180
+	end
+end
+
+if new["initial-velocity"] == nil then
+new["initial-velocity"] = 0
+end
+
 if action["velocity-relative"] == "true" then
+
 new.physics.velocity = {
 x = p.velocity.x + SPEED_FACTOR * new["initial-velocity"] * math.cos(new.physics.angle);
 y = p.velocity.y + SPEED_FACTOR * new["initial-velocity"] * math.sin(new.physics.angle);
@@ -89,6 +156,9 @@ y =  SPEED_FACTOR * new["initial-velocity"] * math.sin(new.physics.angle);
 
 end
 
+if new.attributes["is-guided"] == true then
+	new.control.accel = true
+end
 table.insert(scen.objects,new)
 end
 end,
@@ -99,10 +169,34 @@ end,
 ["display-message-action"] = function(action, source, direct) end,
 ["enable-keys-action"] = function(action, source, direct) end,
 ["land-at-action"] = function(action, source, direct) end,
-["make-sparks-action"] = function(action, source, direct) end,
+["make-sparks-action"] = function(action, source, direct)
+--Aquire parent
+	local p
+	if action.reflexive == true then
+		p = source
+	else
+		p = direct
+	end
+	local theta = math.random(0,2*math.pi)
+	local speed = action["speed"]
+	local range = 0
+	if action["velocity-range"] ~= nil then
+		range = action["velocity-range"]
+	end
+	graphics.add_particles("Sparks", action["how-many"], p.physics.position, {x = math.cos(theta) * speed, y = math.sin(theta) * speed}, {x = range, y = range}, {x = 0, y = 0}, 0.5, 0.4)
+	
+end,
 ["nil-target-action"] = function(action, source, direct) end,
 ["no-action"] = function(action, source, direct) end,
-["play-sound-action"] = function(action, source, direct) end,
+["play-sound-action"] = function(action, source, direct)
+
+	local rsound = gameData["Sounds"][action["id-minimum"]]
+	if rsound ~= nil then
+		sound.play(rsound)
+	else
+		print("Sound '" .. action["id-minimum"] .. "' not found.")
+	end
+end,
 ["set-destination-action"] = function(action, source, direct) end,
 ["set-zoom-action"] = function(action, source, direct) end,
 }

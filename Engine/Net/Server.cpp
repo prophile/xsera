@@ -21,6 +21,16 @@ const int SERVER_MAX_CLIENTS = 8; // plucked this one out of my arse.
 unsigned int badMessage[SERVER_MAX_CLIENTS+1][5]; //[clientID][n] = time bad packet was sent
 unsigned int badMessageCount[SERVER_MAX_CLIENTS]; //number of bad packets sent
 
+std::map<int, BlowfishKey> sessionKey;
+std::map<int, BlowfishIV> sessionIV;
+void makeBlowKey(int clientID)
+{
+//ADAM	sessionKey[clientID];
+//ADAM	sessionIV[clientID];
+	// add a random number generator for this
+}
+	
+	
 void Startup ( unsigned short port, const std::string& password )
 {
 	if (serverHost)
@@ -113,7 +123,10 @@ static void BadClient(unsigned int clientID) //deal with a bad message
     badMessageCount[clientID]++;
     badMessage[clientID][badMessageCount[clientID]] = currentTime;
 }
+
 	
+
+
 Message* GetMessage ()
 {
 	ENetEvent event;
@@ -136,6 +149,16 @@ Message* GetMessage ()
 				msg->clientID = clientID;
 				clients[clientID] = event.peer;
 				badMessage[clientID][0] = 0; //clear bad-message entry so it can be used
+				Message* keymsg;
+				Message* ivmsg;
+				
+				//make and share encryption keys
+			//ADAM	makeBlowKey[clientID];
+			//ADAM	keymsg = new Message( "BLOWKEY", sessionKey[clientID], 16 ); //make a message with the blowkey
+			//ADAM	SendMessage( clientID, keymsg ); //send the blowkey
+				
+			//ADAM	ivmsg = new Message( "BLOWIV" , sessionIV[clientID], 8 ); //make a message with the blowIV
+			//ADAM	SendMessage( clientID, ivmsg ); //send the IV
 				break;
 			case ENET_EVENT_TYPE_DISCONNECT:
 				{
@@ -162,6 +185,15 @@ Message* GetMessage ()
 				else 
                 {
 					msg->clientID = clientID;
+				/*	
+					if( Blowfish::do_decrypt(msg, sessionKey[clientID], sessionIV[clientID]) == false) // msg is passed by reference. Return 0 on error.
+					{
+				 //do something with the bad message
+					} else {
+						//do something with the recieved message
+				 
+					}
+				 */ //disabled until finished implementation
 				}
 				
 				enet_packet_destroy(event.packet);

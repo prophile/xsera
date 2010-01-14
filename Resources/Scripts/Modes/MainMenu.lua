@@ -98,6 +98,8 @@ function key ( k )
         mode_manager.switch("LoadScreen")
     elseif k == "escape" then
 		os.exit()
+	elseif k == "1" then
+		mode_manager.switch("../Tests/CSTest")
     else
         print("Uninterpreted keystroke " .. k)
     end
