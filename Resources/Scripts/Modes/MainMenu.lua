@@ -68,6 +68,7 @@ function render ()
     
     graphics.draw_text(versionInformation, "CrystalClear", "left", { x = -450, y = -220 }, 28)
 	
+	graphics.draw_text("Level selected: " .. demoLevel .. " (" .. gameData["Scenarios"][demoLevel].name ..")", "CrystalClear", "right", { x = 450, y = 220 }, 60)
     graphics.end_frame()
 end
 

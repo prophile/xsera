@@ -16,7 +16,7 @@ function LoadScenario(id)
 				scen.playerShip = new
 				scen.playerShipId = ctr
 			else
-				error "There is already a an intial player ship set."
+				print("There is already a an intial player ship set.")
 			end
 		end
 		new.physics.position = state.location

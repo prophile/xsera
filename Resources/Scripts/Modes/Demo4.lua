@@ -14,7 +14,7 @@ function init()
 	last_time = mode_manager.time()
 	loadingEntities = true
 	
-	scen = LoadScenario(25)
+	scen = LoadScenario(demoLevel)
 
 	loadingEntities = false
 end
@@ -222,6 +222,7 @@ function render()
 				end
 			elseif o.beam ~= nil then
 				if o.beam.kind == 512
+				or o.beam.kind == 7680
 				or o.beam.kind == 9472
 				or o.beam.kind == "kinetic"
 				then --Kinetic Bolt
