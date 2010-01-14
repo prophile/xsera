@@ -187,7 +187,7 @@ end,
 ["make-sparks-action"] = function(action, source, direct)
 --Aquire parent
 	local p
-	if action.reflexive == true then
+	if action.reflexive == "true" then
 		p = source
 	else
 		p = direct

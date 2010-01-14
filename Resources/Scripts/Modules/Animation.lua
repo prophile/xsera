@@ -12,11 +12,8 @@ function Animate(obj)
 		
 		if obj.attributes["animation-cycle"] ~= true
 		and framesPassed > frameCount then
---		and idx ~= nil then
-
 			ExpireTrigger(obj)
 			obj.dead = true
---			table.insert(scen.destroyQueue,idx)
 		end
 		
 		local frameNumber= (framesPassed+a["frame-shape"]-a["first-shape"])%(frameCount)+a["first-shape"]

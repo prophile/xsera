@@ -75,33 +75,32 @@ function update()
 
 	KeyDoActivated()
 
-local i
+
 for i = 0, #scen.objects do
 	local o = scen.objects[i]
-	local i2
+	if o.attributes["can-collide"] == true then
+
 	for i2 = i + 1, #scen.objects do
 		local o2 = scen.objects[i2]
---		print(i..", "..i2)
-		if o.owner ~= o2.owner and physics.collisions(o.physics, o2.physics, 0) == true then
---			if o.owner ~= o2.owner then
+		if o2.attributes["can-collide"] == true
+		and o.owner ~= o2.owner and physics.collisions(o.physics, o2.physics, 0) == true then
 				local p = o.physics
-
-				p.velocity = {x = -p.velocity.x, y = -p.velocity.y}
 				local p2 = o2.physics
+				p.velocity = {x = -p.velocity.x, y = -p.velocity.y}
+				
 				p2.velocity = {x = -p2.velocity.x, y = -p2.velocity.y}
 				
 				CollideTrigger(o,o2)
 				CollideTrigger(o2,o)
+				
 				if o2.damage ~= nil then
-				o.health = o.health - o2.damage
+					o.health = o.health - o2.damage
 				end
 				if o.damage ~= nil then
-				o2.health = o2.health - o.damage
+					o2.health = o2.health - o.damage
 				end
-	--			local dx = math.cos(p.position,p2.position)
-	--			print("A")
---			end
 		end
+	end
 	end
 	
 	if o.health <= 0 then
@@ -241,17 +240,26 @@ function render()
 						o.physics.angle)
 					end
 				else
+					local color
+					if o.owner == -1 then
+						color = ClutColour(4,1)
+					elseif o.owner == scen.playerShip.owner then
+						color = ClutColour(5,1)
+					else
+						color = ClutColour(16,1)
+					end
+					
 					local iconScale = camera.w/1024
 					if o["tiny-shape"] == "solid-square" then
-						graphics.draw_rbox(o.physics.position, o["tiny-size"] * iconScale)
+						graphics.draw_rbox(o.physics.position, o["tiny-size"] * iconScale, color)
 					elseif o["tiny-shape"] == "plus" then
-						graphics.draw_rplus(o.physics.position, o["tiny-size"] * iconScale)
+						graphics.draw_rplus(o.physics.position, o["tiny-size"] * iconScale, color)
 					elseif o["tiny-shape"] == "triangle" then
-						graphics.draw_rtri(o.physics.position, o["tiny-size"] * iconScale)
+						graphics.draw_rtri(o.physics.position, o["tiny-size"] * iconScale, color)
 					elseif o["tiny-shape"] == "diamond" then
-						graphics.draw_rdia(o.physics.position, o["tiny-size"] * iconScale)
+						graphics.draw_rdia(o.physics.position, o["tiny-size"] * iconScale, color)
 					elseif o["tiny-shape"] == "framed-square" then
-						graphics.draw_rbox(o.physics.position, o["tiny-size"] * iconScale)
+						graphics.draw_rbox(o.physics.position, o["tiny-size"] * iconScale, color)
 					end
 				end
 			elseif o.beam ~= nil then
@@ -288,8 +296,6 @@ function render()
 	DrawPanels()
 	DrawArrow()
 	graphics.end_frame()
-	
---	RemoveDead()
 end
 
 
@@ -308,14 +314,6 @@ function RemoveDead()
 			physics.destroy_object(scen.objects[i].physics)
 			table.remove(scen.objects,i)
 			i = i - 1
---	if scen.destroyQueue > 0 then
---		for i = #scen.destroyQueue, 1, -1 do
---			scen.objects[scen.destroyQueue[i]].dead = true
-
---			scen.objects[scen.destroyQueue[i]].physics:destroy()
---			table.remove(scen.objects,scen.destroyQueue[i])
 		end
-		
 	end
---	scen.destroyQueue = {}
 end
