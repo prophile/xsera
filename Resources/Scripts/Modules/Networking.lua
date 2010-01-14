@@ -18,7 +18,6 @@ client = {
 			oldCmds = deepcopy(cmdQueue)
 			print("There's something in the command queue from the server!")
 			for i = 1, #cmdQueue do
-				print(cmdQueue[1])
 				table.remove(cmdQueue, 1)
 			end
 		end
@@ -38,10 +37,18 @@ client = {
 		-- get the client messages from enet
 		if type(msg) == "table" then
 			for i = 1, #msg + 1 do
-				cmdQueue[#cmdQueue + 1] = msg[i]
+				if cmdQueue == nil then
+					cmdQueue = { msg }
+				else
+					cmdQueue[#cmdQueue + 1] = msg[i]
+				end
 			end
 		else
-			cmdQueue[#cmdQueue + 1] = msg
+			if cmdQueue == nil then
+				cmdQueue = { msg }
+			else
+				cmdQueue[#cmdQueue + 1] = msg
+			end
 		end
 	end
 }
@@ -64,7 +71,6 @@ server = {
 			oldCmds = deepcopy(cmdQueue)
 			print("There's something in the command queue from the client!")
 			for i = 1, #cmdQueue do
-				print(cmdQueue[1])
 				table.remove(cmdQueue, 1)
 			end
 		end
@@ -74,7 +80,7 @@ server = {
 	addMsg = function(msg)
 		-- process the message and send it to the C++ side
 		if not isMultiplayer then
-			receiveClientMsg(msg)
+			client.receiveMsg(msg)
 		else
 			-- send message to enet
 		end
@@ -83,7 +89,7 @@ server = {
 	receiveMsg = function(msg)
 		-- get the server's messages from enet
 		if type(msg) == "table" then
-			for i = 1,	#msg + 1 do
+			for i = 1, #msg + 1 do
 				if cmdQueue == nil then
 					cmdQueue = { msg }
 				else

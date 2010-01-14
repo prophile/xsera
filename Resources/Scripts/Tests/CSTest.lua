@@ -19,26 +19,33 @@ function test1()
 		print("SERVER HAS RECEIVED MESSAGES")
 		serverMessages = server.readMsg()
 		for i = 1, #serverMessages do
-			print("'" .. serverMessages[i] .. "' is a message from the server")
+			print("'" .. serverMessages[i] .. "' is a message on the server")
+			server.addMsg(serverMessages[i] .. "<< HUR HUR CONCAT")
 		end
-		printTable(serverMessages)
 	else
 		print("SERVER HAS NOT RECEIVED MESSAGES")
+	end
+	
+	--/CLIENT
+	if client.receivedMsg() then
+		print("CLIENT HAS RECEIVED MESSAGES")
+		clientMessages = client.readMsg()
+		for i = 1, #clientMessages do
+			print("'" .. clientMessages[i] .. "' is a message on the client")
+		end
+	else
+		print("CLIENT HAS NOT RECEIVED MESSAGES")
 	end
 	
 	message = "END OF TEST 1."
 	print(message)
 end
 
-function servConcatReturn1(msg)
-	return msg .. "<< Server received this message"
-end
-
 function key(k)
 	if k == "1" then
 		test1()
 	elseif k == "2" then
-		
+		test2()
 	elseif k == "3" then
 		
 	elseif k == "4" then
