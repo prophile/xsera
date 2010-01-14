@@ -1,5 +1,9 @@
 function ActivateTrigger(device, owner)
-	if xor(owner == nil, owner.energy >= device.device["energy-cost"])
+	if device.device == nil then
+	
+		callAction(device.trigger["activate"],device)
+	
+	elseif xor(owner == nil, owner.energy >= device.device["energy-cost"])
 	and xor(device.ammo == -1, device.ammo > 0)
 	and device.device.lastActivated < mode_manager.time() - device.device["fire-time"] / TIME_FACTOR then
 
@@ -50,6 +54,7 @@ function callAction(trigger, source, direct)
 	if trigger ~= nil then
 		local id
 		local max = trigger.id + trigger.count - 1
+		
 		for id = trigger.id, max do
 			local action = gameData["Actions"][id]
 			actionTable[action.type](action, source, direct)

@@ -13,6 +13,19 @@ function NewObject(id)
 				end
 			end
 		end
+		
+		if obj.trigger.activate ~= nil and obj.trigger.activate.count > 255 then
+			obj.trigger.activate.activateInterval = math.floor(obj.trigger.activate.count/2^23)
+			obj.trigger.activate.intervalRange = math.floor(obj.trigger.activate.count/2^15)%2^7
+--			math.floor(c/2^7)%7 --No decernable use.
+			obj.trigger.activate.count = obj.trigger.activate.count%2^7
+			
+			obj.trigger.activateInterval = obj.trigger.activate.activateInterval / TIME_FACTOR
+			obj.trigger.activateRange = obj.trigger.activate.intervalRange / TIME_FACTOR
+			obj.trigger.nextActivate = mode_manager.time() + obj.trigger.activateInterval + math.random(0,obj.trigger.activateRange)
+		else
+			obj.trigger.activateInterval = 0
+		end
 	end
 	
 	local newObj = deepcopy(gameData["Objects"][id])

@@ -79,6 +79,13 @@ for i = 0, #scen.objects do
 		end
 	end
 	
+	if o.trigger.activateInterval ~= 0 then
+		if o.trigger.nextActivate <= newTime then
+			ActivateTrigger(o)
+			o.trigger.nextActivate = newTime + o.trigger.activateInterval + math.random(0,o.trigger.activateRange)
+		end
+	end
+	
 	--Fire weapons
 	if o.control.pulse == true then
 		ActivateTrigger(o.weapon.pulse, o)
