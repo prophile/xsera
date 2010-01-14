@@ -63,6 +63,11 @@ function NewObject(id)
 		--the documentation for Hera says that initial-age is in 20ths of a second but it appears to be 60ths
 	end
 
+	if newObj.animation ~= nil then
+		newObj.animation.start = mode_manager.time()
+		newObj.animation.frameTime = newObj.animation["frame-speed"] / TIME_FACTOR / 30.0 --Is the ratio here 1:1800?		
+	end
+
 	newObj.dead = false
 
 	--Prepare devices

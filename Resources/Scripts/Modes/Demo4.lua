@@ -1,4 +1,5 @@
 import('Actions')
+import('Animation')
 import('ObjectLoad')
 import('GlobalVars')
 import('Math')
@@ -197,10 +198,18 @@ function render()
 			
 			if o.sprite ~= nil then
 				if camera.w < 16384 then
-					graphics.draw_sprite("Id/"..o.sprite,
-					o.physics.position,
-					o.spriteDim,
-					o.physics.angle)
+					if o.animation ~= nil then
+						local frame = Animate(o)
+						graphics.draw_sprite("Id/"..o.sprite,
+						o.physics.position,
+						o.spriteDim,
+						2.0 * math.pi * frame / o.animation["last-shape"]) --This a kludgy way of supplying the desired frame. Need function that takes a frame index instead of angle.
+					else
+						graphics.draw_sprite("Id/"..o.sprite,
+						o.physics.position,
+						o.spriteDim,
+						o.physics.angle)
+					end
 				else
 					local iconScale = camera.w/1024
 					if o["tiny-shape"] == "solid-square" then
