@@ -31,6 +31,8 @@ function key( k )
 	elseif k == "-" then
 		camera.w = camera.w * 2
 		camera.h = camera.h * 2
+	elseif k == "/" then
+		printTable(scen.playerShip)
 	elseif k == "[" then
 		if scen.playerShipId == 0 then
 			scen.playerShipId = #scen.objects
@@ -161,17 +163,7 @@ for i = 0, #scen.objects do
 		end
 	end
 end
-	--Remove destroyed or expired objects
-	--Count backwards because the array is shifted with each deletion
-	if #scen.destroyQueue > 0 then
-		for i = #scen.destroyQueue, 1, -1 do
-			scen.objects[scen.destroyQueue[i]].dead = true
-			physics.destroy_object(scen.objects[scen.destroyQueue[i]].physics)
---			scen.objects[scen.destroyQueue[i]].physics:destroy()
-			table.remove(scen.objects,scen.destroyQueue[i])
-		end
-	end
-	scen.destroyQueue = {}
+	EmptyDestroyQueue()
 	physics.update(dt)
 end
 
@@ -199,11 +191,15 @@ function render()
 			if o.sprite ~= nil then
 				if camera.w < 16384 then
 					if o.animation ~= nil then
-						local frame = Animate(o)
+						local frame = Animate(o,obId)
+						local d = o.animation["last-shape"]
+						if o.animation["last-shape"] == 0 then
+							d = 1
+						end
 						graphics.draw_sprite("Id/"..o.sprite,
 						o.physics.position,
 						o.spriteDim,
-						2.0 * math.pi * frame / o.animation["last-shape"]) --This a kludgy way of supplying the desired frame. Need function that takes a frame index instead of angle.
+						2.0 * math.pi * frame / d) --This a kludgy way of supplying the desired frame. Need function that takes a frame index instead of angle.
 					else
 						graphics.draw_sprite("Id/"..o.sprite,
 						o.physics.position,
@@ -251,6 +247,8 @@ function render()
 		graphics.draw_text("Energy: " .. scen.playerShip.energy, "CrystalClear", "left", {x = ox, y = oy + vstep}, camera.w/fs)
 	end
 	
+	EmptyDestroyQueue()
+	
 	graphics.draw_particles()
 	DrawPanels()
 	DrawArrow()
@@ -260,4 +258,19 @@ end
 
 function quit()
 	physics.close()
+end
+
+
+function EmptyDestroyQueue()
+	--Remove destroyed or expired objects
+	--Count backwards because the array is shifted with each deletion
+	if #scen.destroyQueue > 0 then
+		for i = #scen.destroyQueue, 1, -1 do
+			scen.objects[scen.destroyQueue[i]].dead = true
+			physics.destroy_object(scen.objects[scen.destroyQueue[i]].physics)
+--			scen.objects[scen.destroyQueue[i]].physics:destroy()
+			table.remove(scen.objects,scen.destroyQueue[i])
+		end
+	end
+	scen.destroyQueue = {}
 end
