@@ -1,7 +1,7 @@
 function ActivateTrigger(device, owner)
 	if device.device == nil then
 	
-		callAction(device.trigger["activate"],device)
+		CallAction(device.trigger["activate"],device)
 	
 	elseif xor(owner == nil, owner.energy >= device.device["energy-cost"])
 	and xor(device.ammo == -1, device.ammo > 0)
@@ -24,33 +24,33 @@ function ActivateTrigger(device, owner)
 				device.position.last = device.position.last + 1
 			end
 			
-			callAction(device.trigger["activate"],device,nil)
+			CallAction(device.trigger["activate"],device,nil)
 				
 	end
 end
 
 
 function ExpireTrigger(owner)
-	callAction(owner.trigger["expire"],owner,nil)
+	CallAction(owner.trigger["expire"],owner,nil)
 end
 
 function DestroyTrigger(owner)
-	callAction(owner.trigger["destroy"],owner,nil)
+	CallAction(owner.trigger["destroy"],owner,nil)
 end
 
 function CreateTrigger(owner)
-	callAction(owner.trigger["create"],owner,nil)
+	CallAction(owner.trigger["create"],owner,nil)
 end
 
 function CollideTrigger(owner,other)
-	callAction(owner.trigger["collide"],owner,other)
+	CallAction(owner.trigger["collide"],owner,other)
 end
 
 function ArriveTrigger(owner,other)
-	callAction(owner.trigger["arrive"],owner,other)
+	CallAction(owner.trigger["arrive"],owner,other)
 end
 
-function callAction(trigger, source, direct)
+function CallAction(trigger, source, direct)
 	if trigger ~= nil then
 		local id
 		local max = trigger.id + trigger.count - 1

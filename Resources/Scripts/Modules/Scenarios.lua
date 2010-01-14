@@ -19,6 +19,13 @@ function LoadScenario(id)
 				print("There is already a an intial player ship set.")
 			end
 		end
+		
+		if state["sprite-id-override"] ~= nil then
+			new.sprite = state["sprite-id-override"]
+			x, y = graphics.sprite_dimensions("Id/" .. new.sprite)
+			new.spriteDim = {x=x,y=y}
+		end
+		
 		new.physics.position = state.location
 		scen.objects[ctr] = new
 		ctr = ctr + 1
