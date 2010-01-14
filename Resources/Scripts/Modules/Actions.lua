@@ -169,7 +169,23 @@ end,
 ["display-message-action"] = function(action, source, direct) end,
 ["enable-keys-action"] = function(action, source, direct) end,
 ["land-at-action"] = function(action, source, direct) end,
-["make-sparks-action"] = function(action, source, direct) end,
+["make-sparks-action"] = function(action, source, direct)
+--Aquire parent
+	local p
+	if action.reflexive == true then
+		p = source
+	else
+		p = direct
+	end
+	local theta = math.random(0,2*math.pi)
+	local speed = action["speed"]
+	local range = 0
+	if action["velocity-range"] ~= nil then
+		range = action["velocity-range"]
+	end
+	graphics.add_particles("Sparks", action["how-many"], p.physics.position, {x = math.cos(theta) * speed, y = math.sin(theta) * speed}, {x = range, y = range}, {x = 0, y = 0}, 0.5, 0.4)
+	
+end,
 ["nil-target-action"] = function(action, source, direct) end,
 ["no-action"] = function(action, source, direct) end,
 ["play-sound-action"] = function(action, source, direct)

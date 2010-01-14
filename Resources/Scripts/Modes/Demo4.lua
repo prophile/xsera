@@ -242,6 +242,7 @@ function render()
 		graphics.draw_text("Energy: " .. scen.playerShip.energy, "CrystalClear", "left", {x = ox, y = oy + vstep}, camera.w/fs)
 	end
 	
+	graphics.draw_particles()
 	DrawPanels()
 	DrawArrow()
 	graphics.end_frame()
