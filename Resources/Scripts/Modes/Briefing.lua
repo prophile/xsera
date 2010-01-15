@@ -118,8 +118,8 @@ function render()
 			end
 			local num = 1
 			while scenBriefing.screen[1][num] ~= nil do
-				tempx, tempy = graphics.sprite_dimensions(scenBriefing.screen[1][num].sprite)
-				graphics.draw_sprite(scenBriefing.screen[1][num].sprite, { x = -240 + scenBriefing.screen[1][num].x * 540 / 4332, y = -170 + scenBriefing.screen[1][num].y * 374 / 3000 }, { x = tempx * scenBriefing.screen[1][num].size, y = tempy * scenBriefing.screen[1][num].size }, math.pi / 2)
+				local temp = graphics.sprite_dimensions(scenBriefing.screen[1][num].sprite)
+				graphics.draw_sprite(scenBriefing.screen[1][num].sprite, { x = -240 + scenBriefing.screen[1][num].x * 540 / 4332, y = -170 + scenBriefing.screen[1][num].y * 374 / 3000 }, { x = temp.x * scenBriefing.screen[1][num].size, y = temp.y * scenBriefing.screen[1][num].size }, math.pi / 2)
 				num = num + 1
 			end
 			if menuNum ~= 2 then

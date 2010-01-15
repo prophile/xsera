@@ -1130,9 +1130,8 @@ int GFX_SpriteDimensions ( lua_State* L )
 	const char* spritesheet;
 	spritesheet = luaL_checkstring(L, 1);
 	vec2 dims = Graphics::SpriteDimensions(spritesheet);
-	lua_pushnumber(L, dims.X());
-	lua_pushnumber(L, dims.Y());
-	return 2;
+	lua_pushvec2(L, dims);
+	return 1;
 }
 
 int GFX_DrawSprite ( lua_State* L )

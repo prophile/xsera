@@ -33,8 +33,7 @@ function NewObject(id)
 	if newObj["sprite-id"] ~= nil then
 		newObj.sprite = newObj["sprite-id"]
 		
-		x, y = graphics.sprite_dimensions("Id/" .. newObj.sprite)
-		newObj.spriteDim = {x=x,y=y}
+		newObj.spriteDim = graphics.sprite_dimensions("Id/" .. newObj.sprite)
 	end
 	
 	if newObj.mass == nil then

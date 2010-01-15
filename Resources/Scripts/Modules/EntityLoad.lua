@@ -97,7 +97,7 @@ function NewEntity (entOwner, entName, entType, entDir, entSubdir, other)
 -- weapon-specific
 		if trueData.sprite ~= nil then
 			entObject.image = trueData.sprite
-			entObject.size.x, entObject.size.y = graphics.sprite_dimensions(entObject.entName)
+			entObject.size = graphics.sprite_dimensions(entObject.entName)
 		else
 			entObject.fileName = trueData.fileName
 		end
@@ -234,7 +234,7 @@ function AddProperties(entOwner, entName, entType, entDir, entSubdir, other, tru
 	if ((entType ~= "projectile") and (entType ~= "weapon")) then
 		if trueData.sprite ~= nil then
 			entObject.image = entType .. "s/" .. trueData.sprite
-			entObject.size.x, entObject.size.y = graphics.sprite_dimensions(concatString)
+			entObject.size = graphics.sprite_dimensions(concatString)
 			entObject.physicsObject.collision_radius = hypot(entObject.size.x, entObject.size.y)
 		else
 			entObject.fileName = trueData.fileName

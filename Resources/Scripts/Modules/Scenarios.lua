@@ -22,8 +22,7 @@ function LoadScenario(id)
 		
 		if state["sprite-id-override"] ~= nil then
 			new.sprite = state["sprite-id-override"]
-			x, y = graphics.sprite_dimensions("Id/" .. new.sprite)
-			new.spriteDim = {x=x,y=y}
+			new.spriteDim = graphics.sprite_dimensions("Id/" .. new.sprite)
 		end
 		
 		new.physics.position = state.location
