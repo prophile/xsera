@@ -73,7 +73,8 @@ function NewObject(id)
 		newObj.animation.start = mode_manager.time()
 		newObj.animation.frameTime = newObj.animation["frame-speed"] / TIME_FACTOR / 30.0 --Is the ratio here 1:1800?		
 	end
-
+	
+	newObj.maxHealth = newObj.health + 0
 	newObj.dead = false
 
 	--Prepare devices
@@ -100,6 +101,5 @@ function NewObject(id)
 	end
 	
 	CopyActions(newObj)
-	CreateTrigger(newObj)
 	return newObj
 end

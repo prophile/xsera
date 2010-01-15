@@ -166,6 +166,8 @@ if new.attributes["is-guided"] == true then
 end
 
 new.owner = owner
+
+CreateTrigger(new)
 table.insert(scen.objects,new)
 end
 end,

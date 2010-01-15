@@ -103,7 +103,7 @@ for i = 0, #scen.objects do
 	end
 	end
 	
-	if o.health <= 0 then
+	if o.health <= 0 and o.maxHealth ~= 0 then
 		DestroyTrigger(o)
 		o.dead = true
 	end
@@ -116,9 +116,15 @@ for i = 0, #scen.objects do
 	end
 	
 --	if o.attributes["is-guided"] == true then
-	if o ~= scen.playerShip
-	and o.owner == scen.playerShip.owner then
-		DumbSeek(o,scen.playerShip.physics.position)
+	if o ~= scen.playerShip then
+		if o.owner == scen.playerShip.owner then
+			DumbSeek(o,scen.playerShip.physics.position)
+		else
+			o.control.left = false
+			o.control.right = false
+			o.control.accel = false
+			o.control.decel = true
+		end
 	end
 	
 	if o.trigger.activateInterval ~= 0 then
