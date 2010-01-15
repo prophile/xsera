@@ -41,6 +41,12 @@ public:
      * @param x A float parameter
      * @param y Another float parameter
      */
+	void InvokeSubroutine ( const std::string& name, int reference );
+	/**
+     * Invokes a lua subroutine
+     * @param name The name of the subroutine to invoke
+     * @param reference a reference to a lua table
+     */
 	void InvokeSubroutine ( const std::string& name, float x, float y );
     /**
      * Invokes a lua subroutine

@@ -703,8 +703,16 @@ luaL_Reg registryXML[] =
 
 int MM_Switch ( lua_State* L )
 {
+	int nargs = lua_gettop(L);
 	const char* newmode = luaL_checkstring(L, 1);
-	SwitchMode(std::string(newmode));
+	if (nargs > 1)
+	{
+		SwitchMode(std::string(newmode), luaL_ref(L, 2));
+	}
+	else
+	{
+		SwitchMode(std::string(newmode));
+	}
 	return 0;
 }
 

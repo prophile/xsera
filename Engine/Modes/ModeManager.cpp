@@ -7,6 +7,7 @@
 
 static AppMode* mode = NULL;
 static AppMode* nextMode = NULL;
+int reference = NULL;
 
 class LuaMode : public AppMode
 {
@@ -32,7 +33,14 @@ public:
 	
 	virtual void Init ()
 	{
-		script->InvokeSubroutine("init");
+		if (reference == NULL)
+		{
+			script->InvokeSubroutine("init");
+		}
+		else
+		{
+			script->InvokeSubroutine("init", reference);
+		}
 	}
 	
 	virtual void Shutdown ()
@@ -122,6 +130,13 @@ const char* QueryMode()
 
 void SwitchMode ( const std::string& newmode )
 {
+	LuaMode* newMode = new LuaMode ( newmode );
+	SwitchMode ( newMode );
+}
+
+void SwitchMode ( const std::string& newmode, int ref )
+{
+	reference = ref;
 	LuaMode* newMode = new LuaMode ( newmode );
 	SwitchMode ( newMode );
 }

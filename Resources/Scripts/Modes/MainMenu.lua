@@ -100,6 +100,10 @@ function key ( k )
 		os.exit()
 	elseif k == "1" then
 		mode_manager.switch("../Tests/CSTest")
+	elseif k == "2" then
+		print("CALLING SPECIAL SWITCH")
+		tabl = { "THIS", "IS", "XSERAAAAAAAAAAAAA" }
+		mode_manager.switch("../Tests/CSTest", tabl)
     else
         print("Uninterpreted keystroke " .. k)
     end

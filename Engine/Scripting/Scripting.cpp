@@ -115,6 +115,24 @@ void LuaScript::InvokeSubroutine ( const std::string& name, const std::string& p
     }
 }
 
+void LuaScript::InvokeSubroutine ( const std::string& name, int reference )
+{
+	lua_getglobal(L, name.c_str());
+    if (!lua_isnoneornil(L, -1))
+    {
+		lua_rawgeti(L, reference, -1);
+        int rc = lua_pcall(L, 1, 0, 0);
+        if (rc > 0)
+        {
+            luaHandleError(L);
+        }
+    }
+    else
+    {
+        lua_pop(L, 1);
+    }
+}
+
 void LuaScript::InvokeSubroutine ( const std::string& name, float x, float y )
 {
 	lua_getglobal(L, name.c_str());

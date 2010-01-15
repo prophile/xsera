@@ -5,7 +5,7 @@ import('Networking')
 -- this test checks very basic local message functionality using strings as messages.
 -- this test will be unusable when messages become something more complex.
 function test1()
-	message = "RUNNING TEST 1."
+	message = { "RUNNING TEST 1." }
 	print(message)
 	
 	--/CLIENT/
@@ -37,7 +37,7 @@ function test1()
 		print("CLIENT HAS NOT RECEIVED MESSAGES")
 	end
 	
-	message = "END OF TEST 1."
+	message[2] = "END OF TEST 1."
 	print(message)
 end
 
@@ -67,7 +67,10 @@ function key(k)
 	end
 end
 
-function init()
+function init(tabl)
+	if tabl ~= nil then
+		printTable(tabl)
+	end
 	local camera = { w = 800, h = 600 }
 	graphics.set_camera(-camera.w / 2, -camera.h / 2, camera.w / 2, camera.h / 2)
 end
@@ -78,9 +81,11 @@ end
 
 function render()
 	graphics.begin_frame()
-	graphics.draw_text("ESC to go to main screen", "CrystalClear", "center", { x = 50, y = 0 }, 60)
+	graphics.draw_text("ESC to go to main screen", "CrystalClear", "center", { x = 40, y = 0 }, 40)
 	if message ~= nil then
-		graphics.draw_text(message, "CrystalClear", "center", { x = 0, y = -50 }, 30)
+		for i = 1, #message do
+			graphics.draw_text(message[i], "CrystalClear", "center", { x = 0, y = -40 * i }, 30)
+		end
 	end
 	graphics.end_frame()
 end
