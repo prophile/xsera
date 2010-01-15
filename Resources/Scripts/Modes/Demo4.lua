@@ -339,10 +339,10 @@ function DumbSeek(object, target)
 		object.control.decel = true
 	end]]
 	
---	if math.abs(ang) < 0.1 then
---		object.control.left = false
---		object.control.right = false
-	if ang <= math.pi then
+	if math.abs(ang) < 0.1 then
+		object.control.left = false
+		object.control.right = false
+	elseif ang <= math.pi then
 		object.control.left = true
 		object.control.right = false
 	else
