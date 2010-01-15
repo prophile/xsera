@@ -66,6 +66,7 @@ function reference_angle(angle)
 end
 
 function radian_range(angle)
+	angle = angle % (2.0 * math.pi)
 	if angle < 0 then
 		angle = 2 * math.pi - angle
 	elseif angle > 2 * math.pi then

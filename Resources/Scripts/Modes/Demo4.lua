@@ -115,6 +115,12 @@ for i = 0, #scen.objects do
 		end
 	end
 	
+--	if o.attributes["is-guided"] == true then
+	if o ~= scen.playerShip
+	and o.owner == scen.playerShip.owner then
+		DumbSeek(o,scen.playerShip.physics.position)
+	end
+	
 	if o.trigger.activateInterval ~= 0 then
 		if o.trigger.nextActivate <= newTime then
 			ActivateTrigger(o)
@@ -167,30 +173,32 @@ for i = 0, #scen.objects do
 			o.physics.angular_velocity = 0
 		end
 	end 
-	if o.control.accel == true then
-		-- apply a forward force in the direction the ship is facing
-		local angle = o.physics.angle
-		--Multiply by 60 because the thrust value in the data is given per FRAME not per second.
-		local thrust = o["max-thrust"] * TIME_FACTOR * SPEED_FACTOR
-		local force = { x = thrust * math.cos(angle), y = thrust * math.sin(angle) }
-		o.physics:apply_force(force)
-	elseif o.control.decel == true then
-		-- apply a reverse force in the direction opposite the direction the ship is MOVING
-		local thrust = o["max-thrust"] * TIME_FACTOR * SPEED_FACTOR
-		local force = o.physics.velocity
-		if force.x ~= 0 or force.y ~= 0 then
-			if hypot(o.physics.velocity.x, o.physics.velocity.y) <= 10 then
-				o.physics.velocity = { x = 0, y = 0 }
-			else
-				local velocityMag = hypot1(force)
-				force.x = -force.x / velocityMag
-				force.y = -force.y / velocityMag
-				force.x = force.x * thrust
-				force.y = force.y * thrust
-				if hypot1(force) > hypot1(o.physics.velocity) then
+	if o["max-thrust"] ~= nil then
+		if o.control.accel == true then
+			-- apply a forward force in the direction the ship is facing
+			local angle = o.physics.angle
+			--Multiply by 60 because the thrust value in the data is given per FRAME not per second.
+			local thrust = o["max-thrust"] * TIME_FACTOR * SPEED_FACTOR
+			local force = { x = thrust * math.cos(angle), y = thrust * math.sin(angle) }
+			o.physics:apply_force(force)
+		elseif o.control.decel == true then
+			-- apply a reverse force in the direction opposite the direction the ship is MOVING
+			local thrust = o["max-thrust"] * TIME_FACTOR * SPEED_FACTOR
+			local force = o.physics.velocity
+			if force.x ~= 0 or force.y ~= 0 then
+				if hypot(o.physics.velocity.x, o.physics.velocity.y) <= 10 then
 					o.physics.velocity = { x = 0, y = 0 }
 				else
-					o.physics:apply_force(force)
+					local velocityMag = hypot1(force)
+					force.x = -force.x / velocityMag
+					force.y = -force.y / velocityMag
+					force.x = force.x * thrust
+					force.y = force.y * thrust
+					if hypot1(force) > hypot1(o.physics.velocity) then
+						o.physics.velocity = { x = 0, y = 0 }
+					else
+						o.physics:apply_force(force)
+					end
 				end
 			end
 		end
@@ -316,4 +324,30 @@ function RemoveDead()
 			i = i - 1
 		end
 	end
+end
+
+function DumbSeek(object, target)
+	object.control.accel = true
+	local ang = find_angle(target,object.physics.position) - object.physics.angle
+
+	ang = radian_range(ang)
+--[[	if ang < math.pi / 2 then
+		object.control.accel = true 
+		object.control.decel = false
+	else 
+		object.control.accel = false
+		object.control.decel = true
+	end]]
+	
+--	if math.abs(ang) < 0.1 then
+--		object.control.left = false
+--		object.control.right = false
+	if ang <= math.pi then
+		object.control.left = true
+		object.control.right = false
+	else
+		object.control.left = false
+		object.control.right = true
+	end
+	
 end
