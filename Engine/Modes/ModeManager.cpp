@@ -7,7 +7,7 @@
 
 static AppMode* mode = NULL;
 static AppMode* nextMode = NULL;
-int reference = NULL;
+int reference = 0;
 
 class LuaMode : public AppMode
 {
@@ -33,7 +33,7 @@ public:
 	
 	virtual void Init ()
 	{
-		if (reference == NULL)
+		if (reference == 0)
 		{
 			script->InvokeSubroutine("init");
 		}
