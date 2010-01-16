@@ -267,6 +267,12 @@ function render()
 			graphics.draw_line({ x = grid_x, y = scen.playerShip.physics.position.y - (camera.h / 2.0) }, { x = grid_x, y = scen.playerShip.physics.position.y + (camera.h / 2.0) }, 1, ClutColour(5, 1))
 			i = i + 1
 		end
+		i = 0
+		while i * GRID_DIST_BLUE - (camera.h / 2.0) - 10 < (camera.h / 2.0) + 10 do
+			local grid_y = math.floor((i * GRID_DIST_BLUE + scen.playerShip.physics.position.y - (camera.h / 2.0)) / GRID_DIST_BLUE) * GRID_DIST_BLUE
+			graphics.draw_line({ x = scen.playerShip.physics.position.x - (camera.w / 2.0), y = grid_y }, { x = scen.playerShip.physics.position.x + (camera.w / 2.0), y = grid_y }, 1, ClutColour(5, 1))
+			i = i + 1
+		end
 	end
 	
 	if scen ~= nil and scen.objects ~= nil then
