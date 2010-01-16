@@ -78,7 +78,6 @@ function StopFireWeapSpecial()
 end
 
 function DoAccelerate()
-	keyboard[1][2].active = false
 	scen.playerShip.control.accel = true
 end
 
@@ -87,7 +86,6 @@ function StopAccelerate()
 end
 
 function DoDecelerate()
-	keyboard[1][3].active = false
 	scen.playerShip.control.decel = true
 end
 
@@ -96,7 +94,6 @@ function StopDecelerate()
 end
 
 function DoLeftTurn()
-	keyboard[1][4].active = false
 	scen.playerShip.control.left = true
 end
 
@@ -105,7 +102,6 @@ function StopLeftTurn()
 end
 
 function DoRightTurn()
-	keyboard[1][5].active = false
 	scen.playerShip.control.right = true
 end
 
@@ -124,7 +120,7 @@ function DoWarp()
 end
 
 function StopWarp()
-		scen.playerShip.control.warp = false
+	scen.playerShip.control.warp = false
 --[[
 	if scen.playerShip.warp.stage == "warping" then
 		scen.playerShip.warp.stage = "cooldown"
@@ -193,7 +189,7 @@ function DoScaleIn()
 end
 
 function DoScaleOut()
-	if cameraRatios[cameraRatioNum + 1] ~= nil then
+	if type(cameraRatios[cameraRatioNum + 1]) == "number" then
 		cameraChanging = true
 		cameraRatioOrig = cameraRatio
 		x = timeInterval
@@ -272,9 +268,7 @@ function DoZoom1_16()
 end
 
 function DoZoomHostile()
-	-- the following is hardcoded, but can be easily modified to not be so
-	
-	-- insta-zoom version
+	-- insta-zoom version - UNSTABLE?
 	if cameraRatioNum ~= 6 then
 		local diff = { x = computerShip.physicsObject.position.x - scen.playerShip.physicsObject.position.x, y = computerShip.physicsObject.position.y - scen.playerShip.physicsObject.position.y }
 		local calculatedRatio = 0
@@ -520,6 +514,7 @@ function KeyDeactivate(key)
 end
 
 function ActionDeactivate(name)
+	print("DEACTIVATING ", name)
 	local i = 1
 	while keyboard[i] ~= nil do
 		local j = 2

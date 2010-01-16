@@ -17,7 +17,7 @@ function NewObject(id)
 		if obj.trigger.activate ~= nil and obj.trigger.activate.count > 255 then
 			obj.trigger.activate.activateInterval = math.floor(obj.trigger.activate.count/2^23)
 			obj.trigger.activate.intervalRange = math.floor(obj.trigger.activate.count/2^15)%2^7
---			math.floor(c/2^7)%7 --No decernable use.
+--			math.floor(c/2^7)%7 --No discernable use.
 			obj.trigger.activate.count = obj.trigger.activate.count%2^7
 			
 			obj.trigger.activateInterval = obj.trigger.activate.activateInterval / TIME_FACTOR
@@ -57,7 +57,7 @@ function NewObject(id)
 	newObj.physics.angular_velocity = 0.00
 	
 	if newObj.spriteDim ~= nil then
-		newObj.physics.collision_radius = hypot1(newObj.spriteDim)/32
+		newObj.physics.collision_radius = hypot1(newObj.spriteDim) / 32
 	else
 		newObj.physics.collision_radius = 1
 	end
@@ -73,7 +73,7 @@ function NewObject(id)
 		newObj.animation.frameTime = newObj.animation["frame-speed"] / TIME_FACTOR / 30.0 --Is the ratio here 1:1800?		
 	end
 	
-	newObj.maxHealth = newObj.health + 0
+	newObj.healthMax = newObj.health + 0
 	newObj.dead = false
 
 	--Prepare devices
@@ -99,11 +99,12 @@ function NewObject(id)
 		end
 	end
 	
-	-- energy & health
-	newObj.energy = { max = newObj.energy, current = newObj.energy }
-	newObj.health = { max = newObj.health, current = newObj.health }
-	newObj.battery = { max = newObj.energy.max * 5, current = newObj.energy.max }
-	
+	-- energy & battery
+	if newObj.energy ~= nil then
+		newObj.energyMax = newObj.energy
+		newObj.battery = newObj.energy * 5
+		newObj.batteryMax = newObj.energy
+	end
 	CopyActions(newObj)
 	return newObj
 end

@@ -337,16 +337,22 @@ function DrawPanels()
 	Right Panel
 ------------------]]--
 
--- Battery (red)
-	graphics.draw_box(107, 379, 29, 386, 0, ClutColour(8, 8))
---	graphics.draw_box(scen.playerShip.battery.current / scen.playerShip.battery.max * 78 + 29, 379, 29, 386, 0, ClutColour(8, 5)) -- #TEST these commented lines should be fixed and uncommented
--- Energy (yellow)
-	graphics.draw_box(6, 379, -72.5, 386, 0, ClutColour(3, 7))
---	graphics.draw_box(scen.playerShip.energy.current / scen.playerShip.battery.max * 78.5 - 72.5, 379, -72.5, 386, 0, ClutColour(9, 6))
--- Shield (blue)
-	graphics.draw_box(-96, 379, -173, 386, 0, ClutColour(14, 8))
---	graphics.draw_box(scen.playerShip.shield.current / scen.playerShip.battery.max * 77 - 173, 379, -173, 386, 0, ClutColour(14, 6))
--- Factory resources (green - mostly)
+--	Battery (red)
+	if scen.playerShip.battery ~= nil then
+		graphics.draw_box(107, 379, 29, 386, 0, ClutColour(8, 8))
+		graphics.draw_box(scen.playerShip.battery / scen.playerShip.batteryMax * 78 + 29, 379, 29, 386, 0, ClutColour(8, 5)) -- #TEST these commented lines should be fixed and uncommented
+	end
+--	Energy (yellow)
+	if scen.playerShip.energy ~= nil then
+		graphics.draw_box(6, 379, -72.5, 386, 0, ClutColour(3, 7))
+		graphics.draw_box(scen.playerShip.energy / scen.playerShip.energyMax * 78.5 - 72.5, 379, -72.5, 386, 0, ClutColour(9, 6))
+	end
+--	Shield (blue)
+	if scen.playerShip.health ~= nil then
+		graphics.draw_box(-96, 379, -173, 386, 0, ClutColour(14, 8))
+		graphics.draw_box(scen.playerShip.health / scen.playerShip.health * 77 - 173, 379, -173, 386, 0, ClutColour(14, 6))
+	end
+--	Factory resources (green - mostly)
 	count = 1
 	if shipSelected == true then
 		if cash >= shipQuerying.c then
@@ -387,7 +393,7 @@ function DrawPanels()
 		end
 		count = count + 1
 	end
--- Factory resource bars (yellow)
+--	Factory resource bars (yellow)
 	count = 1
 	while count <= 7 do
 		if count <= resourceBars then
@@ -397,7 +403,7 @@ function DrawPanels()
 		end
 		count = count + 1
 	end
--- Factory build bar (purple)
+--	Factory build bar (purple)
 	planet = scen.planet
 	if planet ~= nil then
 		graphics.draw_line({ x = 382, y = 181 }, { x = 392, y = 181 }, 0.5, ClutColour(13, 9))
@@ -414,13 +420,13 @@ function DrawPanels()
 	Left Panel
 ------------------]]--
 	
--- Radar box (green)
+--	Radar box (green)
 	DrawRadar()
--- Communications panels (green)
+--	Communications panels (green)
 	graphics.draw_box(-63, -393, -158, -297, 0, ClutColour(5, 11))
 	graphics.draw_line({ x = -391, y = -74 }, { x = -298, y = -74 }, 1, ClutColour(12, 3))
 	graphics.draw_box(-165, -389.5, -185.5, -304, 0, ClutColour(5, 11))
--- Menu drawing
+--	Menu drawing
 	local shift = 1
 	local num = 1
 	graphics.draw_text(menuLevel[1], "CrystalClear", "left", { x = menuShift, y = topOfMenu }, 13)
@@ -438,8 +444,8 @@ function DrawPanels()
 		graphics.draw_text(scen.text[textnum], "CrystalClear", "center", { x = 0, y = -250 }, 30)
 	end
 	
--- Weapon ammo count
---OFFSET = 32 PIXELS
+--	Weapon ammo count
+--OFFSET = 32 PIXELS <= ?
 	if scen.playerShip.weapon ~= nil then
 		if scen.playerShip.weapon.pulse ~= nil and scen.playerShip.weapon.pulse.ammo ~= -1 then
 			graphics.draw_text(string.format('%03d', scen.playerShip.weapon.pulse.ammo), "CrystalClear", "left", { x = -376, y = 60 }, 13, ClutColour(5, 1))
@@ -477,9 +483,9 @@ function DrawPanels()
 			graphics.draw_line({ x = -357, y = 10 }, { x = -357, y = 9 }, 0.5, ClutColour(3, 7))
 			graphics.draw_line({ x = -347, y = 10 }, { x = -347, y = 9 }, 0.5, ClutColour(3, 7))
 			graphics.draw_box(27, -356, 10, -348, 0, ClutColour(3, 7))
-			graphics.draw_box(17 * control.energy.current / control.energy.max + 10, -356, 10, -348, 0, ClutColour(9, 6))
+			graphics.draw_box(17 * control.energy / control.energyMax + 10, -356, 10, -348, 0, ClutColour(9, 6))
 		end
-		if control.shield ~= nil then
+		if control.health ~= nil then
 			graphics.draw_line({ x = -369, y = 28 }, { x = -359, y = 28 }, 0.5, ClutColour(4, 8))
 			graphics.draw_line({ x = -369, y = 27 }, { x = -369, y = 28 }, 0.5, ClutColour(4, 8))
 			graphics.draw_line({ x = -359, y = 27 }, { x = -359, y = 28 }, 0.5, ClutColour(4, 8))
@@ -487,7 +493,7 @@ function DrawPanels()
 			graphics.draw_line({ x = -369, y = 10 }, { x = -369, y = 9 }, 0.5, ClutColour(4, 8))
 			graphics.draw_line({ x = -359, y = 10 }, { x = -359, y = 9 }, 0.5, ClutColour(4, 8))
 			graphics.draw_box(27, -367.5, 10, -360, 0, ClutColour(4, 8))
-			graphics.draw_box(17 * control.health.current / control.health.max + 10, -367.5, 10, -360, 0, ClutColour(4, 6))
+			graphics.draw_box(17 * control.health / control.healthMax + 10, -367.5, 10, -360, 0, ClutColour(4, 6))
 		end
 		if control.type == "Planet" then
 			graphics.draw_sprite(control.type .. "s/" .. control.image, { x = -380, y = 19 }, { x = 17, y = 17 }, 0)

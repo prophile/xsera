@@ -14,7 +14,7 @@ function ActivateTrigger(device, owner)
 			end
 			
 			if owner ~= nil then
-				owner.energy.current = owner.energy.current - device.device["energy-cost"]
+				owner.energy = owner.energy - device.device["energy-cost"]
 			end
 			
 			
