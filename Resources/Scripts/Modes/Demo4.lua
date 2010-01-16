@@ -261,7 +261,6 @@ function render()
 ------------------]]--
 	do
 		local i = 0
-		-- vertical lines
 		while i * GRID_DIST_BLUE - 10 < camera.w + 10 + GRID_DIST_BLUE do
 			local grid_x = math.floor((i * GRID_DIST_BLUE + scen.playerShip.physics.position.x - (camera.w / 2.0)) / GRID_DIST_BLUE) * GRID_DIST_BLUE
 			
@@ -269,7 +268,7 @@ function render()
 				if grid_x % GRID_DIST_GREEN == 0 then
 					graphics.draw_line({ x = grid_x, y = scen.playerShip.physics.position.y - (camera.h / 2.0) }, { x = grid_x, y = scen.playerShip.physics.position.y + (camera.h / 2.0) }, 1, ClutColour(5, 1))
 				else
-					graphics.draw_line({ x = grid_x, y = scen.playerShip.physics.position.y - (camera.h / 2.0) }, { x = grid_x, y = scen.playerShip.physics.position.y + (camera.h / 2.0) }, 1, ClutColour(4, 8))
+					graphics.draw_line({ x = grid_x, y = scen.playerShip.physics.position.y - (camera.h / 2.0) }, { x = grid_x, y = scen.playerShip.physics.position.y + (camera.h / 2.0) }, 1, ClutColour(14, 9))
 				end
 			else
 				if cameraRatio > 1 / 8 then
@@ -278,26 +277,23 @@ function render()
 			end
 			i = i + 1
 		end
+		
 		i = 0
-		-- horizontal lines
 		while i * GRID_DIST_BLUE - 10 < camera.h + 10 + GRID_DIST_BLUE do
 			local grid_y = math.floor((i * GRID_DIST_BLUE + scen.playerShip.physics.position.y - (camera.h / 2.0)) / GRID_DIST_BLUE) * GRID_DIST_BLUE
 			if grid_y % GRID_DIST_LIGHT_BLUE == 0 then
 				if grid_y % GRID_DIST_GREEN == 0 then
-					graphics.draw_line({ x = scen.playerShip.physics.position.x - (camera.w / 2.0), y = grid_y }, { x = scen.playerShip.physics.position.x + (camera.w / 2.0), y = grid_y }, 1, ClutColour(5, 1))
+					graphics.draw_line({ x = scen.playerShip.physics.position.x - shipAdjust - (camera.w / 2.0), y = grid_y }, { x = scen.playerShip.physics.position.x - shipAdjust + (camera.w / 2.0), y = grid_y }, 1, ClutColour(5, 1))
 				else
-					graphics.draw_line({ x = scen.playerShip.physics.position.x - (camera.w / 2.0), y = grid_y }, { x = scen.playerShip.physics.position.x + (camera.w / 2.0), y = grid_y }, 1, ClutColour(4, 8))
+					graphics.draw_line({ x = scen.playerShip.physics.position.x - shipAdjust - (camera.w / 2.0), y = grid_y }, { x = scen.playerShip.physics.position.x - shipAdjust + (camera.w / 2.0), y = grid_y }, 1, ClutColour(14, 9))
 				end
 			else
 				if cameraRatio > 1 / 8 then
-					graphics.draw_line({ x = scen.playerShip.physics.position.x - (camera.w / 2.0), y = grid_y }, { x = scen.playerShip.physics.position.x + (camera.w / 2.0), y = grid_y }, 1, ClutColour(4, 11))
+					graphics.draw_line({ x = scen.playerShip.physics.position.x - shipAdjust - (camera.w / 2.0), y = grid_y }, { x = scen.playerShip.physics.position.x - shipAdjust + (camera.w / 2.0), y = grid_y }, 1, ClutColour(4, 11))
 				end
 			end
-			print(grid_y)
 			i = i + 1
 		end
-		print("______")
-		print(scen.playerShip.physics.position.x, scen.playerShip.physics.position.y)
 	end
 	
 	if scen ~= nil and scen.objects ~= nil then
@@ -376,7 +372,7 @@ function render()
 
 	
 	graphics.draw_particles()
-	--DrawPanels()
+	DrawPanels()
 	DrawArrow()
 	graphics.end_frame()
 end

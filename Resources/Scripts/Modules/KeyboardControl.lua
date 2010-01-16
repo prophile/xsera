@@ -514,7 +514,6 @@ function KeyDeactivate(key)
 end
 
 function ActionDeactivate(name)
-	print("DEACTIVATING ", name)
 	local i = 1
 	while keyboard[i] ~= nil do
 		local j = 2
