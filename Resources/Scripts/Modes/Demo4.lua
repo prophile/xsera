@@ -86,9 +86,25 @@ for i = 0, #scen.objects do
 		and o.owner ~= o2.owner and physics.collisions(o.physics, o2.physics, 0) == true then
 				local p = o.physics
 				local p2 = o2.physics
-				p.velocity = {x = -p.velocity.x, y = -p.velocity.y}
+	
+				v1 = deepcopy(p.velocity)
+				m1 = p.mass
+				v2 = deepcopy(p2.velocity)
+				m2 = p2.mass
+				--Equation for 1D elastic collision
+--				v1 = (m1v1 + m2v2 + m1C(v2-v1))/(m1+m2)
+				C = 0.8
 				
-				p2.velocity = {x = -p2.velocity.x, y = -p2.velocity.y}
+				p.velocity = {
+				x = (m1 * v1.x + m2 *v2.x + m1 * C * ( v2.x - v1.x))/(m1+m2);
+				y = (m1 * v1.y + m2 *v2.y + m1 * C * ( v2.y - v1.y))/(m1+m2);
+				}
+				
+				p2.velocity = {
+				x = (m1 * v1.x + m2 *v2.x + m2 * C * ( v1.x - v2.x))/(m1+m2);
+				y = (m1 * v1.y + m2 *v2.y + m2 * C * ( v1.y - v2.y))/(m1+m2);
+				}
+				
 				
 				CollideTrigger(o,o2)
 				CollideTrigger(o2,o)
@@ -116,7 +132,7 @@ for i = 0, #scen.objects do
 	end
 	
 --	if o.attributes["is-guided"] == true then
-	if o ~= scen.playerShip then
+--[[	if o ~= scen.playerShip then
 		if o.owner == scen.playerShip.owner then
 			DumbSeek(o,scen.playerShip.physics.position)
 		else
@@ -126,13 +142,14 @@ for i = 0, #scen.objects do
 			o.control.decel = true
 		end
 	end
-	
+		--]]
 	if o.trigger.activateInterval ~= 0 then
 		if o.trigger.nextActivate <= newTime then
 			ActivateTrigger(o)
 			o.trigger.nextActivate = newTime + o.trigger.activateInterval + math.random(0,o.trigger.activateRange)
 		end
 	end
+
 	
 	--Fire weapons
 	if o.control.pulse == true then
