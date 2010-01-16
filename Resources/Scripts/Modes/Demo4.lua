@@ -245,16 +245,29 @@ function render()
 	graphics.begin_frame()
 
 	graphics.set_camera(
-	-scen.playerShip.physics.position.x + shipAdjust - (camera.w / 2.0),
-	-scen.playerShip.physics.position.y - (camera.h / 2.0),
-	-scen.playerShip.physics.position.x + shipAdjust + (camera.w / 2.0),
-	-scen.playerShip.physics.position.y + (camera.h / 2.0))
+		-scen.playerShip.physics.position.x + shipAdjust - (camera.w / 2.0),
+		-scen.playerShip.physics.position.y - (camera.h / 2.0),
+		-scen.playerShip.physics.position.x + shipAdjust + (camera.w / 2.0),
+		-scen.playerShip.physics.position.y + (camera.h / 2.0))
 
 	graphics.draw_starfield(3.4)
 	graphics.draw_starfield(1.8)
 	graphics.draw_starfield(0.6)
 	graphics.draw_starfield(-0.3)
 	graphics.draw_starfield(-0.9)
+	
+--[[------------------
+	Grid Drawing
+------------------]]--
+	do
+		local i = 0
+		-- vertical lines
+		while i * GRID_DIST_BLUE - (camera.w / 2.0) - 10 < (camera.w / 2.0) + 10 do
+			local grid_x = math.floor((i * GRID_DIST_BLUE + scen.playerShip.physics.position.x - (camera.w / 2.0)) / GRID_DIST_BLUE) * GRID_DIST_BLUE
+			graphics.draw_line({ x = grid_x, y = scen.playerShip.physics.position.y - (camera.h / 2.0) }, { x = grid_x, y = scen.playerShip.physics.position.y + (camera.h / 2.0) }, 1, ClutColour(5, 1))
+			i = i + 1
+		end
+	end
 	
 	if scen ~= nil and scen.objects ~= nil then
 		for obId = 0, #scen.objects do
