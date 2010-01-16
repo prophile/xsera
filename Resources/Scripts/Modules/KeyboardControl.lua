@@ -114,13 +114,18 @@ function StopRightTurn()
 end
 
 function DoWarp()
+	scen.playerShip.control.warp = true
+--[[
 	if scen.playerShip.warp.stage == "notWarping" then
 		scen.playerShip.warp.time = 0.0
 		scen.playerShip.warp.stage = "spooling"
 	end
+--]]
 end
 
 function StopWarp()
+		scen.playerShip.control.warp = false
+--[[
 	if scen.playerShip.warp.stage == "warping" then
 		scen.playerShip.warp.stage = "cooldown"
 	else
@@ -128,6 +133,7 @@ function StopWarp()
 	end
 	scen.playerShip.warp.time = 0.0
 	scen.playerShip.warp.lastPlayed = 0
+--]]
 end
 
 	--[[-----------

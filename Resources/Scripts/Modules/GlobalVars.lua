@@ -5,6 +5,8 @@ SPEED_FACTOR = 64.0
 TIME_FACTOR = 60.0 -- [ADAM] #TEST change this to dt
 BEAM_LENGTH = 32
 
+demoLevel = 25
+
 playerShip = nil
 
 releaseBuild = mode_manager.is_release()

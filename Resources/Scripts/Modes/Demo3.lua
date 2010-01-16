@@ -478,8 +478,7 @@ function render ()
 	
 	function drawPlanet(planet)
 		if cameraRatio > 1 / 8 then
-			local planetCoord = { x, y }
-			planetCoord.x, planetCoord.y = graphics.sprite_dimensions("Planets/" .. planet.image)
+			local planetCoord = graphics.sprite_dimensions("Planets/" .. planet.image)
 			graphics.draw_sprite("Planets/" .. planet.image, planet.position, planetCoord, 1)
 		else
 			if planet.owner ~= Admirals[1].ident then

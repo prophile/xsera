@@ -28,8 +28,8 @@ function SortShips ()
 end
 
 function ShipSpeed ( type )
-    local szx, szy = graphics.sprite_dimensions("Ships/" .. type)
-    local szt = math.sqrt(szx*szx + szy*szy)
+    local sz = graphics.sprite_dimensions("Ships/" .. type)
+    local szt = math.sqrt(sz.x*sz.x + sz.y*sz.y)
     return 45.0 / szt
 end
 
@@ -58,8 +58,8 @@ function render ()
     graphics.set_camera(-500, -240, 500, 240)
     graphics.draw_image("Bootloader/Xsera", { x = 0, y = 0 }, { x = 1000, y = 480 })
     for id, ship in ipairs(ships) do
-        local szx, szy = graphics.sprite_dimensions("Ships/" .. ship[3], goodSpriteSheetX, goodSpriteSheetY)
-        graphics.draw_sprite("Ships/" .. ship[3], { x = ship[1], y = ship[2] }, { x = szx * sizeFactor * DistanceFactor(ship[4]), y = szy * sizeFactor * DistanceFactor(ship[4])}, math.atan2(shipVelocity[2], shipVelocity[1]))
+        local sz = graphics.sprite_dimensions("Ships/" .. ship[3], goodSpriteSheetX, goodSpriteSheetY)
+        graphics.draw_sprite("Ships/" .. ship[3], { x = ship[1], y = ship[2] }, { x = sz.x * sizeFactor * DistanceFactor(ship[4]), y = sz.y * sizeFactor * DistanceFactor(ship[4])}, math.atan2(shipVelocity[2], shipVelocity[1]))
     end
     
     graphics.draw_text("D - Demo", "CrystalClear", "left", { x = -450, y = 0 }, 60)
@@ -68,6 +68,7 @@ function render ()
     
     graphics.draw_text(versionInformation, "CrystalClear", "left", { x = -450, y = -220 }, 28)
 	
+	graphics.draw_text("Level selected: " .. demoLevel .. " (" .. gameData["Scenarios"][demoLevel].name ..")", "CrystalClear", "right", { x = 450, y = 220 }, 60)
     graphics.end_frame()
 end
 

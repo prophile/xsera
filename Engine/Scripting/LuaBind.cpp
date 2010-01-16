@@ -163,7 +163,7 @@ int PHYS_Collisions ( lua_State* L )
 		collide = obj1->pob->Collision(obj1->pob->position, obj2->pob->position, obj1->pob->collisionRadius, obj2->pob->collisionRadius);
 	}
 	lua_pushboolean(L, collide);
-	return 0;
+	return 1;
 }
 
 int PHYS_Object_Impulse ( lua_State* L );
@@ -1130,9 +1130,8 @@ int GFX_SpriteDimensions ( lua_State* L )
 	const char* spritesheet;
 	spritesheet = luaL_checkstring(L, 1);
 	vec2 dims = Graphics::SpriteDimensions(spritesheet);
-	lua_pushnumber(L, dims.X());
-	lua_pushnumber(L, dims.Y());
-	return 2;
+	lua_pushvec2(L, dims);
+	return 1;
 }
 
 int GFX_DrawSprite ( lua_State* L )

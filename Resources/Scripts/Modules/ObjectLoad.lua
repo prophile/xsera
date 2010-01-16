@@ -13,6 +13,19 @@ function NewObject(id)
 				end
 			end
 		end
+		
+		if obj.trigger.activate ~= nil and obj.trigger.activate.count > 255 then
+			obj.trigger.activate.activateInterval = math.floor(obj.trigger.activate.count/2^23)
+			obj.trigger.activate.intervalRange = math.floor(obj.trigger.activate.count/2^15)%2^7
+--			math.floor(c/2^7)%7 --No decernable use.
+			obj.trigger.activate.count = obj.trigger.activate.count%2^7
+			
+			obj.trigger.activateInterval = obj.trigger.activate.activateInterval / TIME_FACTOR
+			obj.trigger.activateRange = obj.trigger.activate.intervalRange / TIME_FACTOR
+			obj.trigger.nextActivate = mode_manager.time() + obj.trigger.activateInterval + math.random(0,obj.trigger.activateRange)
+		else
+			obj.trigger.activateInterval = 0
+		end
 	end
 	
 	local newObj = deepcopy(gameData["Objects"][id])
@@ -20,8 +33,7 @@ function NewObject(id)
 	if newObj["sprite-id"] ~= nil then
 		newObj.sprite = newObj["sprite-id"]
 		
-		x, y = graphics.sprite_dimensions("Id/" .. newObj.sprite)
-		newObj.spriteDim = {x=x,y=y}
+		newObj.spriteDim = graphics.sprite_dimensions("Id/" .. newObj.sprite)
 	end
 	
 	if newObj.mass == nil then
@@ -42,14 +54,26 @@ function NewObject(id)
 	}
 	
 	newObj.physics = physics.new_object(newObj.mass)
-	newObj.physics.angular_velocity = 0.00	
-
+	newObj.physics.angular_velocity = 0.00
+	
+	if newObj.spriteDim ~= nil then
+		newObj.physics.collision_radius = hypot1(newObj.spriteDim)/32
+	else
+		newObj.physics.collision_radius = 1
+	end
+	
 	if newObj["initial-age"] ~= nil then
 		newObj.created = mode_manager.time()
 		newObj.age = newObj["initial-age"] / TIME_FACTOR
 		--the documentation for Hera says that initial-age is in 20ths of a second but it appears to be 60ths
 	end
 
+	if newObj.animation ~= nil then
+		newObj.animation.start = mode_manager.time()
+		newObj.animation.frameTime = newObj.animation["frame-speed"] / TIME_FACTOR / 30.0 --Is the ratio here 1:1800?		
+	end
+	
+	newObj.maxHealth = newObj.health + 0
 	newObj.dead = false
 
 	--Prepare devices
@@ -81,6 +105,5 @@ function NewObject(id)
 	newObj.battery = { max = newObj.energy.max * 5, current = newObj.energy.max }
 	
 	CopyActions(newObj)
-	CreateTrigger(newObj)
 	return newObj
 end
