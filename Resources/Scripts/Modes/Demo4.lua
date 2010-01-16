@@ -262,7 +262,7 @@ function render()
 	do
 		local i = 0
 		-- vertical lines
-		while i * GRID_DIST_BLUE - 10 < camera.w + 10 do
+		while i * GRID_DIST_BLUE - 10 < camera.w + 10 + GRID_DIST_BLUE do
 			local grid_x = math.floor((i * GRID_DIST_BLUE + scen.playerShip.physics.position.x - (camera.w / 2.0)) / GRID_DIST_BLUE) * GRID_DIST_BLUE
 			
 			if grid_x % GRID_DIST_LIGHT_BLUE == 0 then
@@ -280,7 +280,7 @@ function render()
 		end
 		i = 0
 		-- horizontal lines
-		while i * GRID_DIST_BLUE - 10 < camera.h + 10 do
+		while i * GRID_DIST_BLUE - 10 < camera.h + 10 + GRID_DIST_BLUE do
 			local grid_y = math.floor((i * GRID_DIST_BLUE + scen.playerShip.physics.position.y - (camera.h / 2.0)) / GRID_DIST_BLUE) * GRID_DIST_BLUE
 			if grid_y % GRID_DIST_LIGHT_BLUE == 0 then
 				if grid_y % GRID_DIST_GREEN == 0 then
