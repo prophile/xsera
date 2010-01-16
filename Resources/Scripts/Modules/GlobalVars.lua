@@ -68,8 +68,8 @@ arrowVar = ARROW_VAR
 arrowDist = ARROW_DIST
 arrowAlpha = CarrowAlpha
 
-GRID_DIST_BLUE = 256
-GRID_DIST_LIGHT_BLUE = 2048
-GRID_DIST_GREEN = 4096
+GRID_DIST_BLUE = 512
+GRID_DIST_LIGHT_BLUE = 4096
+GRID_DIST_GREEN = 32768
 
 keyControls = { left = false, right = false, forward = false, brake = false }
