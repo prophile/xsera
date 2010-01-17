@@ -367,12 +367,18 @@ function render()
 				or o.beam.kind == 9472
 				or o.beam.kind == "kinetic"
 				then --Kinetic Bolt
-
 					local p1 = o.physics.position
 					local p2 = RotatePoint({x=BEAM_LENGTH,y=0},o.physics.angle)
 					graphics.draw_line(p1,{x=p1.x+p2.x,y=p1.y+p2.y},1,ClutColour(o.beam.color))
-				else
+				elseif o.beam.kind == "bolt-relative" then
+					
 					graphics.draw_lightning(o.src.position, o.physics.position, 1.0, 10.0, false,ClutColour(o.beam.color))
+				elseif o.beam.kind == "bolt-to-object" then
+					graphics.draw_lightning(o.src.position, o.physics.position, 1.0, 10.0, false,ClutColour(o.beam.color))
+				elseif o.beam.kind == "static-relative" then
+					graphics.draw_line(o.src.position, o.physics.position, 3.0, ClutColour(o.beam.color))
+				elseif o.beam.kind == "static-to-object" then
+					graphics.draw_line(o.src.position, o.physics.position, 3.0, ClutColour(o.beam.color))
 				end
 			end
 		end

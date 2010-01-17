@@ -134,7 +134,8 @@ if new.beam ~= nil and new.beam.kind ~= "kinetic" then
 	new.src = p
 	if new.beam.kind == "bolt-relative"
 	or new.beam.kind == "static-relative" then
-		new.physics.position = trackingTarget
+		new.physics.position = deepcopy(trackingTarget)
+		new.physics.velocity = p.velocity
 	else
 		new.physics.position = trackingTarget
 	end
