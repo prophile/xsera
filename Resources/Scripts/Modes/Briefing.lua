@@ -15,7 +15,7 @@ background2 = { { xCoord = -280, yCoord = 175, length = 560, text = " ", boxColo
 				{ xCoord = -100, yCoord = -225, length = 170, text = "Next", boxColour = ClutColour(1, 8), textColour = ClutColour(1, 8), execute = nil, letter = "RGHT" },
 				{ xCoord = 110, yCoord = -225, length = 170, text = "Done", boxColour = ClutColour(12, 6), textColour = ClutColour(12, 6), execute = nil, letter = "RTRN" } }
 
-scenLevels = { { title = "DEMO 2", subtitle = "The Second Technical Demo", desc = "In this demo, you must destroy the Gaitori Carrier prior to taking over a nearby planet with an Ishiman Transport.", unlocked = true, mode = "Demo3" },
+scenLevels = { { title = "DEMO 4", subtitle = "The Second Technical Demo", desc = "In this demo, you must destroy the Gaitori Carrier prior to taking over a nearby planet with an Ishiman Transport.", unlocked = true, mode = "Demo4" },
 			{ title = "TUTORIAL LESSON 1", subtitle = "Moons for Goons", desc = "Learning the Ares interface", unlocked = true },
 			{ title = "CHAPTER 1", subtitle = "Easy Street", desc = "Destroy all 5 Gaitori Transports.", unlocked = true },
 			{ title = "CHAPTER 6", subtitle = "...Into the Fire", desc = "Capture the planet Hades Beta while destroying as many Gaitori power stations as possible and saving as many of the Obish stations as you can.", unlocked = true } }
