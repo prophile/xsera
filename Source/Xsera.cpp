@@ -32,9 +32,9 @@ void Startup ()
 	CompileScript("System/Class");
 	LuaScript bootScript ("System/Boot");
 	#ifdef NDEBUG
-		SwitchMode("Intro");
+		SwitchMode("Xsera/Intro");
 	#else
-		SwitchMode("MainMenu");
+		SwitchMode("Xsera/MainMenu");
 	#endif
 }
 

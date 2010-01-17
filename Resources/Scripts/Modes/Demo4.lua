@@ -21,7 +21,7 @@ end
 
 function key( k )
 	if k == "q" or k == "escape" then
-		mode_manager.switch("MainMenu")
+		mode_manager.switch("Xsera/MainMenu")
 --[[	elseif k == "=" then
 		camera.w = camera.w / 2
 		camera.h = camera.h / 2

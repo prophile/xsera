@@ -141,7 +141,7 @@ end
 
 function keyup(k)
 	if k == "escape" then
-		mode_manager.switch('AresSplash')
+		mode_manager.switch('Ares/Splash')
 	elseif k == "return" then
 		if doLevelSwitch == true then
 			if scenLevels[menuNum].mode ~= nil then

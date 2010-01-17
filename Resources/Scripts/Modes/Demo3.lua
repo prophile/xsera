@@ -77,7 +77,7 @@ end
 
 function temp_key(k)
 	if k ~= nil then
-		mode_manager.switch('Credits')
+		mode_manager.switch('Xsera/Credits')
 	end
 end
 

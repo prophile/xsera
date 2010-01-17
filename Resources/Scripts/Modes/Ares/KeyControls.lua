@@ -80,7 +80,7 @@ end
 
 function keyup(k)
 	if k == "escape" then
-		mode_manager.switch('Options')
+		mode_manager.switch('Ares/Options')
 	end
 end
 
