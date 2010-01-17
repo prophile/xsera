@@ -28,7 +28,7 @@ function LoadScenario(id)
 		new.physics.position = state.location
 		new.owner = state.owner
 		
-		CreateTrigger(new)
+--		CreateTrigger(new)
 		scen.objects[ctr] = new
 		ctr = ctr + 1
 	end

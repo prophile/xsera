@@ -129,10 +129,21 @@ new.physics.position = {
 		y = p.position.y + offset.y;
 		}
 
+
+if new.beam ~= nil and new.beam.kind ~= "kinetic" then
+	new.src = p
+	if new.beam.kind == "bolt-relative"
+	or new.beam.kind == "static-relative" then
+		new.physics.position = trackingTarget
+	else
+		new.physics.position = trackingTarget
+	end
+end
+
 if action["direction-relative"] == "true" then
-new.physics.angle = p.angle
+	new.physics.angle = p.angle
 else
-new.physics.angle = RandomReal(0, 2.0 * math.pi)
+	new.physics.angle = RandomReal(0, 2.0 * math.pi)
 end
 
 if new["initial-direction"] ~= nil then

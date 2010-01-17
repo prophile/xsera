@@ -505,7 +505,8 @@ static void RealDrawLightning ( vec2 coordinate1, vec2 coordinate2, float width,
 	for (unsigned long i = 0; i < segments; i++)
 	{
 		float delta = ((float)i / (float)(segments - 1));
-		vec2 basePosition = ((coordinate1*(1.0f-delta)) + (coordinate2*delta)) / 2.0f;
+		//This may be only a partial fix.	
+		vec2 basePosition = ((coordinate1*(1.0f-delta)) + (coordinate2*delta));// / 2.0f;
 		if (tailed)
 		{
 			delta *= 2.0f;

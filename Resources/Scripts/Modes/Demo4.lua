@@ -8,6 +8,8 @@ import('PrintRecursive')
 import('KeyboardControl')
 import('Interfaces')
 
+trackingTarget = {x = 0.0, y = 0.0}
+
 function init()
 	physics.open(0.6)
 	start_time = mode_manager.time()
@@ -16,6 +18,7 @@ function init()
 	
 	scen = LoadScenario(demoLevel)
 
+	trackingTarget = GetMouseCoords()
 	loadingEntities = false
 end
 
@@ -51,6 +54,8 @@ function key( k )
 		if scen.playerShip.health < 0 then
 			scen.playerShip.health = 0
 		end
+	elseif k == "backslash" then
+		shipSeek = not(shipSeek)
 --	elseif k == " " then
 --		DeviceActivate(scen.playerShip.weapon.beam,scen.playerShip)
 	else
@@ -70,6 +75,7 @@ function update()
 	dt = newTime - last_time
 	last_time = newTime
 
+	trackingTarget = GetMouseCoords()
 	KeyDoActivated()
 
 --[[------------------
@@ -162,8 +168,8 @@ function update()
 		
 	--	if o.attributes["is-guided"] == true then
 		if o ~= scen.playerShip then
-			if o.owner == scen.playerShip.owner then
-				DumbSeek(o,scen.playerShip.physics.position)
+			if o.owner == scen.playerShip.owner and (shipSeek == true or o.attributes["is-guided"] == true) then
+				DumbSeek(o,trackingTarget)
 			else
 				o.control.left = false
 				o.control.right = false
@@ -365,6 +371,8 @@ function render()
 					local p1 = o.physics.position
 					local p2 = RotatePoint({x=BEAM_LENGTH,y=0},o.physics.angle)
 					graphics.draw_line(p1,{x=p1.x+p2.x,y=p1.y+p2.y},1,ClutColour(o.beam.color))
+				else
+					graphics.draw_lightning(o.src.position, o.physics.position, 1.0, 10.0, false,ClutColour(o.beam.color))
 				end
 			end
 		end
@@ -435,4 +443,13 @@ function DumbSeek(object, target)
 		object.control.right = true
 	end
 	
+end
+
+
+function GetMouseCoords()
+	local x, y = mouse_position()
+	return {
+	x = scen.playerShip.physics.position.x -shipAdjust + camera.w * x - camera.w / 2;
+	y = scen.playerShip.physics.position.y  + camera.h * y - camera.h / 2;
+	}
 end

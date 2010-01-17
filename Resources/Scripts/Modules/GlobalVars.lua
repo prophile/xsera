@@ -6,6 +6,7 @@ TIME_FACTOR = 60.0 -- [ADAM] #TEST change this to dt
 BEAM_LENGTH = 32
 
 demoLevel = 25
+shipSeek = false
 
 playerShip = nil
 
