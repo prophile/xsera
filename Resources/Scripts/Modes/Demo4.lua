@@ -260,15 +260,9 @@ function render()
 						if o.animation["last-shape"] == 0 then
 							d = 1
 						end
-						graphics.draw_sprite("Id/"..o.sprite,
-						o.physics.position,
-						o.spriteDim,
-						2.0 * math.pi * frame / d) --This a kludgy way of supplying the desired frame. Need function that takes a frame index instead of angle.
+						graphics.draw_sprite_frame("Id/"..o.sprite, o.physics.position, o.spriteDim, frame)
 					else
-						graphics.draw_sprite("Id/"..o.sprite,
-						o.physics.position,
-						o.spriteDim,
-						o.physics.angle)
+						graphics.draw_sprite("Id/"..o.sprite, o.physics.position, o.spriteDim, o.physics.angle)
 					end
 				else
 					local color
