@@ -73,8 +73,6 @@ function NewObject(id)
 		newObj.animation.frameTime = newObj.animation["frame-speed"] / TIME_FACTOR / 30.0 --Is the ratio here 1:1800?		
 	end
 	
-	newObj.healthMax = newObj.health + 0
-	newObj.dead = false
 
 	--Prepare devices
 	if newObj.weapon ~= nil then
@@ -99,11 +97,14 @@ function NewObject(id)
 		end
 	end
 	
+	newObj.healthMax = newObj.health
+	newObj.dead = false
+	
 	-- energy & battery
 	if newObj.energy ~= nil then
 		newObj.energyMax = newObj.energy
 		newObj.battery = newObj.energy * 5
-		newObj.batteryMax = newObj.energy
+		newObj.batteryMax = newObj.battery
 	end
 	CopyActions(newObj)
 	return newObj
