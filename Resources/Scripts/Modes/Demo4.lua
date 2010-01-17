@@ -301,7 +301,7 @@ function render()
 			local o = scen.objects[obId]
 			
 			if o.sprite ~= nil then
-				if camera.w < 16384 then
+				if camera.w <= 16384 then
 					if o.animation ~= nil then
 						local frame = Animate(o,obId)
 						local d = o.animation["last-shape"]
@@ -372,8 +372,8 @@ function render()
 
 	
 	graphics.draw_particles()
-	DrawPanels()
 	DrawArrow()
+	DrawPanels()
 	graphics.end_frame()
 end
 

@@ -724,6 +724,33 @@ vec2 MapPoint ( vec2 windowCoords )
 	return vec2(normalisedCoords.X() * scw, normalisedCoords.Y() * sch);
 }
 
+void DrawPoint ( vec2 coord, float width, colour col )
+{
+	SetShader("Primitive");
+	DisableTexturing();
+	if (col.alpha() < 1.0f)
+	{
+		EnableBlending();
+	}
+	else
+	{
+		DisableBlending();
+	}
+	SetColour(col);
+	Matrices::SetViewMatrix(matrix2x3::Identity());
+	Matrices::SetModelMatrix(matrix2x3::Identity());
+	float quad[8] = { coord.X(), coord.Y(),
+		coord.X(), coord.Y() - 2,
+		coord.X() + 2, coord.Y() - 2,
+		coord.X() + 2, coord.Y() };
+	glVertexPointer ( 2, GL_FLOAT, 0, quad );
+	glDrawArrays ( GL_QUADS, 0, 4 );
+	/* ¡WARNING! IMMEDIATE MODE! ENTER AT YOUR OWN RISK */
+//	glBegin(GL_POINTS);
+//		glVertex2f(coord.X(), coord.Y());
+//	glEnd();
+}
+
 bool IsCulled ( vec2 position, float radius )
 {
 	if ((position.X() + radius) < cameraCorner1.X())

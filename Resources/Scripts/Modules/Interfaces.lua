@@ -315,15 +315,17 @@ function DrawRadar()
 		graphics.draw_box(radar.top - radar.length * boxSize, radar.left + radar.width * boxSize, radar.bottom + radar.length * boxSize, radar.right - radar.width * boxSize, 0, ClutColour(5, 11))
 	end
 	
-	--[[ pseudo-code: (will need to plug in to GameFreak's Demo4.lua)
 	
-	for all the ships
-		if the ship is in range of radar
-			put a dot where it is on the radar (proportionally) -- how do I draw a dot? (need new C++ function?)
+	local radarRange = { x = 2^11, y = 2^11 }
+	for i = 0, #scen.objects do
+		local o = scen.objects[i]
+		if o ~= scen.playerShip and math.abs(o.physics.position.x - scen.playerShip.physics.position.x) < radarRange.x
+		 and math.abs(o.physics.position.y - scen.playerShip.physics.position.y) < radarRange.y then
+			tab = { r = 1, g = 0, b = 0, a = 1 }
+			placement = { x = radar.left + ((o.physics.position.x - scen.playerShip.physics.position.x) / radarRange.x + 1) * radar.width / 2, y = radar.bottom + ((o.physics.position.y - scen.playerShip.physics.position.y) / radarRange.y + 1) * radar.length / 2 }
+			graphics.draw_point(placement, 10, tab)
 		end
 	end
-	
-	--]]
 end
 
 menuLevel = menuOptions
