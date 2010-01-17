@@ -78,7 +78,6 @@ function StopFireWeapSpecial()
 end
 
 function DoAccelerate()
-	keyboard[1][2].active = false
 	scen.playerShip.control.accel = true
 end
 
@@ -87,7 +86,6 @@ function StopAccelerate()
 end
 
 function DoDecelerate()
-	keyboard[1][3].active = false
 	scen.playerShip.control.decel = true
 end
 
@@ -96,7 +94,6 @@ function StopDecelerate()
 end
 
 function DoLeftTurn()
-	keyboard[1][4].active = false
 	scen.playerShip.control.left = true
 end
 
@@ -105,7 +102,6 @@ function StopLeftTurn()
 end
 
 function DoRightTurn()
-	keyboard[1][5].active = false
 	scen.playerShip.control.right = true
 end
 
@@ -124,7 +120,7 @@ function DoWarp()
 end
 
 function StopWarp()
-		scen.playerShip.control.warp = false
+	scen.playerShip.control.warp = false
 --[[
 	if scen.playerShip.warp.stage == "warping" then
 		scen.playerShip.warp.stage = "cooldown"
@@ -193,7 +189,7 @@ function DoScaleIn()
 end
 
 function DoScaleOut()
-	if cameraRatios[cameraRatioNum + 1] ~= nil then
+	if type(cameraRatios[cameraRatioNum + 1]) == "number" then
 		cameraChanging = true
 		cameraRatioOrig = cameraRatio
 		x = timeInterval
@@ -272,9 +268,7 @@ function DoZoom1_16()
 end
 
 function DoZoomHostile()
-	-- the following is hardcoded, but can be easily modified to not be so
-	
-	-- insta-zoom version
+	-- insta-zoom version - UNSTABLE?
 	if cameraRatioNum ~= 6 then
 		local diff = { x = computerShip.physicsObject.position.x - scen.playerShip.physicsObject.position.x, y = computerShip.physicsObject.position.y - scen.playerShip.physicsObject.position.y }
 		local calculatedRatio = 0
@@ -410,7 +404,7 @@ keyboard = { { "Ship",
 				{ key = "F10", name = "Zoom to 1:2", action = DoZoom1_2, active = false }, 
 				{ key = "F11", name = "Zoom to 1:4", action = DoZoom1_4, active = false }, 
 				{ key = "F12", name = "Zoom to 1:16", action = DoZoom1_16, active = false }, 
-				{ key = "F5", name = "Zoom to Closest Hostile", action = DoZoomHostile, active = false }, 
+				{ key = "ins", name = "Zoom to Closest Hostile", action = DoZoomHostile, active = false }, 
 				{ key = "home", name = "Zoom to Closest Object", action = DoZoomObject, active = false }, 
 				{ key = "pgup", name = "Zoom to All", action = DoZoomAll, active = false }, 
 				{ key = "del", name = "Message Next Page / Clear", action = DoMessageNext, active = false } },
@@ -419,8 +413,8 @@ keyboard = { { "Ship",
 				{ key = "F2", name = "Lower Volume", action = DoLowerVolume, active = false }, 
 				{ key = "F3", name = "Raise Volume", action = DoRaiseVolume, active = false }, 
 				{ key = "F4", name = "Mute Music", action = DoMuteMusic, active = false }, 
-				{ key = "", name = "Expert Net Settings", action = DoExpertNet, active = false }, 
-				{ key = "", name = "Fast Motion", active = false } }, 
+				{ key = "F5", name = "Expert Net Settings", action = DoExpertNet, active = false }, 
+				{ key = "F6", name = "Fast Motion", active = false } }, 
 			{ "HotKeys",
 				{ key = "1", name = "HotKey 1", action = DoHotkey1, active = false }, 
 				{ key = "2", name = "HotKey 2", action = DoHotkey2, active = false }, 

@@ -19,18 +19,15 @@ function init()
 	loadingEntities = false
 end
 
-local camera = {w = 1024, h = 768}
-local shipAdjust = 0
-
 function key( k )
 	if k == "q" or k == "escape" then
 		mode_manager.switch("MainMenu")
-	elseif k == "=" then
+--[[	elseif k == "=" then
 		camera.w = camera.w / 2
 		camera.h = camera.h / 2
 	elseif k == "-" then
 		camera.w = camera.w * 2
-		camera.h = camera.h * 2
+		camera.h = camera.h * 2--]]
 	elseif k == "/" then
 		printTable(scen.playerShip)
 	elseif k == "[" then
@@ -75,158 +72,189 @@ function update()
 
 	KeyDoActivated()
 
-
-for i = 0, #scen.objects do
-	local o = scen.objects[i]
-	if o.attributes["can-collide"] == true then
-
-	for i2 = i + 1, #scen.objects do
-		local o2 = scen.objects[i2]
-		if o2.attributes["can-collide"] == true
-		and o.owner ~= o2.owner and physics.collisions(o.physics, o2.physics, 0) == true then
-				local p = o.physics
-				local p2 = o2.physics
+--[[------------------
+	Camera Code
+------------------]]--
 	
-				v1 = deepcopy(p.velocity)
-				m1 = p.mass
-				v2 = deepcopy(p2.velocity)
-				m2 = p2.mass
-				--Equation for 1D elastic collision
---				v1 = (m1v1 + m2v2 + m1C(v2-v1))/(m1+m2)
-				C = 0.8
-				
-				p.velocity = {
-				x = (m1 * v1.x + m2 *v2.x + m1 * C * ( v2.x - v1.x))/(m1+m2);
-				y = (m1 * v1.y + m2 *v2.y + m1 * C * ( v2.y - v1.y))/(m1+m2);
-				}
-				
-				p2.velocity = {
-				x = (m1 * v1.x + m2 *v2.x + m2 * C * ( v1.x - v2.x))/(m1+m2);
-				y = (m1 * v1.y + m2 *v2.y + m2 * C * ( v1.y - v2.y))/(m1+m2);
-				}
-				
-				
-				CollideTrigger(o,o2)
-				CollideTrigger(o2,o)
-				
-				if o2.damage ~= nil then
-					o.health = o.health - o2.damage
-				end
-				if o.damage ~= nil then
-					o2.health = o2.health - o.damage
-				end
+	if cameraChanging == true then
+		x = x - dt
+		if x < 0 then
+			x = 0
+			cameraChanging = false
+			scen.playerShip.weapon.beam.width = cameraRatio
+			soundJustPlayed = false
+		end
+		if x >= 0 then
+			cameraRatio = cameraRatioOrig + cameraRatioOrig * multiplier * math.pow(math.abs((x - timeInterval) / timeInterval), 2)  --[[* (((x - timeInterval) * (x - timeInterval) * math.sqrt(math.abs(x - timeInterval))) / (timeInterval * timeInterval * math.sqrt(math.abs(timeInterval))))--]]
+		end
+		camera = { w = 640 / cameraRatio, h }
+		camera.h = camera.w / aspectRatio
+		shipAdjust = .045 * camera.w
+		arrowLength = ARROW_LENGTH / cameraRatio
+		arrowVar = ARROW_VAR / cameraRatio
+		arrowDist = ARROW_DIST / cameraRatio
+		if (cameraRatio < 1 / 8 and cameraRatioOrig > 1 / 8) or (cameraRatio > 1 / 8 and cameraRatioOrig < 1 / 8) then
+			if soundJustPlayed == false then
+				sound.play("ZoomChange")
+				soundJustPlayed = true
+			end
 		end
 	end
-	end
-	
-	if o.health <= 0 and o.maxHealth ~= 0 then
-		DestroyTrigger(o)
-		o.dead = true
-	end
-	--Lifetimer
-	if o.age ~= nil then
-		if o.age + o.created <= newTime then
-			ExpireTrigger(o)
+
+	for i = 0, #scen.objects do
+		local o = scen.objects[i]
+		if o.attributes["can-collide"] == true then
+
+
+			for i2 = i + 1, #scen.objects do
+				local o2 = scen.objects[i2]
+				if o2.attributes["can-collide"] == true
+				and o.owner ~= o2.owner and physics.collisions(o.physics, o2.physics, 0) == true then
+						local p = o.physics
+						local p2 = o2.physics
+						v1 = deepcopy(p.velocity)
+						m1 = p.mass
+						v2 = deepcopy(p2.velocity)
+						m2 = p2.mass
+						--Equation for 1D elastic collision
+		--				v1 = (m1v1 + m2v2 + m1C(v2-v1))/(m1+m2)
+						C = 0.8
+						
+						p.velocity = {
+						x = (m1 * v1.x + m2 *v2.x + m1 * C * ( v2.x - v1.x))/(m1+m2);
+						y = (m1 * v1.y + m2 *v2.y + m1 * C * ( v2.y - v1.y))/(m1+m2);
+						}
+						
+						p2.velocity = {
+						x = (m1 * v1.x + m2 *v2.x + m2 * C * ( v1.x - v2.x))/(m1+m2);
+						y = (m1 * v1.y + m2 *v2.y + m2 * C * ( v1.y - v2.y))/(m1+m2);
+						}
+						
+
+						CollideTrigger(o,o2)
+						CollideTrigger(o2,o)
+						if o2.damage ~= nil then
+							o.health = o.health - o2.damage
+						end
+						if o.damage ~= nil then
+							o2.health = o2.health - o.damage
+						end
+
+
+					end
+					
+				end
+			
+			end
+		
+		if o.health <= 0 and o.healthMax ~= 0 then
+			DestroyTrigger(o)
 			o.dead = true
 		end
-	end
-	
---	if o.attributes["is-guided"] == true then
---[[	if o ~= scen.playerShip then
-		if o.owner == scen.playerShip.owner then
-			DumbSeek(o,scen.playerShip.physics.position)
-		else
-			o.control.left = false
-			o.control.right = false
-			o.control.accel = false
-			o.control.decel = true
-		end
-	end
-		--]]
-	if o.trigger.activateInterval ~= 0 then
-		if o.trigger.nextActivate <= newTime then
-			ActivateTrigger(o)
-			o.trigger.nextActivate = newTime + o.trigger.activateInterval + math.random(0,o.trigger.activateRange)
-		end
-	end
 
-	
-	--Fire weapons
-	if o.control.pulse == true then
-		ActivateTrigger(o.weapon.pulse, o)
-	end
-
-	if o.control.beam == true then
-		ActivateTrigger(o.weapon.beam, o)
-	end
-
-	if o.control.special == true then
-		ActivateTrigger(o.weapon.special, o)
-	end
-	
-	
---[[------------------
-	Movement
-------------------]]--
-	if o["max-thrust"] ~= nil then
-		local v = o.physics.velocity
-		if hypot1(v) > o["max-velocity"] * SPEED_FACTOR then
-			o.physics.velocity = {
-			x = o["max-velocity"] * normalize(v.x,v.y) * SPEED_FACTOR;
-			y = o["max-velocity"] * normalize(v.y,v.x) * SPEED_FACTOR;
-			}
-			
-		end
-	end
-	
-	if o.attributes["can-turn"] == true then
-		if o.control.left == true then
-			if key_press_f6 ~= true then
-				o.physics.angular_velocity = o.rotation["max-turn-rate"]*2.0
-			else
-				o.physics.angular_velocity = o.rotation["max-turn-rate"] * 4.0
+		--Lifetimer
+		if o.age ~= nil then
+			if o.age + o.created <= newTime then
+				ExpireTrigger(o)
+				o.dead = true
 			end
-		elseif o.control.right == true then
-			if key_press_f6 ~= true then
-				o.physics.angular_velocity = -o.rotation["max-turn-rate"] * 2.0
-			else
-				o.physics.angular_velocity = -o.rotation["max-turn-rate"] * 4.0
-			end
-		else
-			o.physics.angular_velocity = 0
 		end
-	end 
-	if o["max-thrust"] ~= nil then
-		if o.control.accel == true then
-			-- apply a forward force in the direction the ship is facing
-			local angle = o.physics.angle
-			--Multiply by 60 because the thrust value in the data is given per FRAME not per second.
-			local thrust = o["max-thrust"] * TIME_FACTOR * SPEED_FACTOR
-			local force = { x = thrust * math.cos(angle), y = thrust * math.sin(angle) }
-			o.physics:apply_force(force)
-		elseif o.control.decel == true then
-			-- apply a reverse force in the direction opposite the direction the ship is MOVING
-			local thrust = o["max-thrust"] * TIME_FACTOR * SPEED_FACTOR
-			local force = o.physics.velocity
-			if force.x ~= 0 or force.y ~= 0 then
-				if hypot(o.physics.velocity.x, o.physics.velocity.y) <= 10 then
-					o.physics.velocity = { x = 0, y = 0 }
+		
+	--	if o.attributes["is-guided"] == true then
+		if o ~= scen.playerShip then
+			if o.owner == scen.playerShip.owner then
+				DumbSeek(o,scen.playerShip.physics.position)
+			else
+				o.control.left = false
+				o.control.right = false
+				o.control.accel = false
+				o.control.decel = true
+			end
+		end
+		
+		if o.trigger.activateInterval ~= 0 then
+			if o.trigger.nextActivate <= newTime then
+				ActivateTrigger(o)
+				o.trigger.nextActivate = newTime + o.trigger.activateInterval + math.random(0,o.trigger.activateRange)
+			end
+		end
+		
+		--Fire weapons
+		if o.control.pulse == true then
+			ActivateTrigger(o.weapon.pulse, o)
+		end
+
+		if o.control.beam == true then
+			ActivateTrigger(o.weapon.beam, o)
+		end
+
+		if o.control.special == true then
+			ActivateTrigger(o.weapon.special, o)
+		end
+		
+		
+	--[[------------------
+		Movement
+	------------------]]--
+		if o["max-thrust"] ~= nil then
+			local v = o.physics.velocity
+			if hypot1(v) > o["max-velocity"] * SPEED_FACTOR then
+				o.physics.velocity = {
+					x = o["max-velocity"] * normalize(v.x,v.y) * SPEED_FACTOR;
+					y = o["max-velocity"] * normalize(v.y,v.x) * SPEED_FACTOR;
+				}
+				
+			end
+		end
+		
+		if o.attributes["can-turn"] == true then
+			if o.control.left == true then
+				if key_press_f6 ~= true then
+					o.physics.angular_velocity = o.rotation["max-turn-rate"] * 2.0
 				else
-					local velocityMag = hypot1(force)
-					force.x = -force.x / velocityMag
-					force.y = -force.y / velocityMag
-					force.x = force.x * thrust
-					force.y = force.y * thrust
-					if hypot1(force) > hypot1(o.physics.velocity) then
+					o.physics.angular_velocity = o.rotation["max-turn-rate"] * 4.0
+				end
+			elseif o.control.right == true then
+				if key_press_f6 ~= true then
+					o.physics.angular_velocity = -o.rotation["max-turn-rate"] * 2.0
+				else
+					o.physics.angular_velocity = -o.rotation["max-turn-rate"] * 4.0
+				end
+			else
+				o.physics.angular_velocity = 0
+			end
+		end 
+		if o["max-thrust"] ~= nil then
+			if o.control.accel == true then
+				-- apply a forward force in the direction the ship is facing
+				local angle = o.physics.angle
+				--Multiply by 60 because the thrust value in the data is given per FRAME not per second.
+				local thrust = o["max-thrust"] * TIME_FACTOR * SPEED_FACTOR
+				local force = { x = thrust * math.cos(angle), y = thrust * math.sin(angle) }
+				o.physics:apply_force(force)
+			elseif o.control.decel == true then
+				-- apply a reverse force in the direction opposite the direction the ship is MOVING
+				local thrust = o["max-thrust"] * TIME_FACTOR * SPEED_FACTOR
+				local force = o.physics.velocity
+				if force.x ~= 0 or force.y ~= 0 then
+					if hypot(o.physics.velocity.x, o.physics.velocity.y) <= 10 then
 						o.physics.velocity = { x = 0, y = 0 }
 					else
-						o.physics:apply_force(force)
+						local velocityMag = hypot1(force)
+						force.x = -force.x / velocityMag
+						force.y = -force.y / velocityMag
+						force.x = force.x * thrust
+						force.y = force.y * thrust
+						if hypot1(force) > hypot1(o.physics.velocity) then
+							o.physics.velocity = { x = 0, y = 0 }
+						else
+							o.physics:apply_force(force)
+						end
 					end
 				end
 			end
 		end
 	end
-end
 	physics.update(dt)
 	RemoveDead()
 end
@@ -237,10 +265,10 @@ function render()
 	graphics.begin_frame()
 
 	graphics.set_camera(
-	-scen.playerShip.physics.position.x + shipAdjust - (camera.w / 2.0),
-	-scen.playerShip.physics.position.y - (camera.h / 2.0),
-	-scen.playerShip.physics.position.x + shipAdjust + (camera.w / 2.0),
-	-scen.playerShip.physics.position.y + (camera.h / 2.0))
+		-scen.playerShip.physics.position.x + shipAdjust - (camera.w / 2.0),
+		-scen.playerShip.physics.position.y - (camera.h / 2.0),
+		-scen.playerShip.physics.position.x + shipAdjust + (camera.w / 2.0),
+		-scen.playerShip.physics.position.y + (camera.h / 2.0))
 
 	graphics.draw_starfield(3.4)
 	graphics.draw_starfield(1.8)
@@ -248,12 +276,52 @@ function render()
 	graphics.draw_starfield(-0.3)
 	graphics.draw_starfield(-0.9)
 	
+--[[------------------
+	Grid Drawing
+------------------]]--
+	do
+		local i = 0
+		while i * GRID_DIST_BLUE - 10 < camera.w + 10 + GRID_DIST_BLUE do
+			local grid_x = math.floor((i * GRID_DIST_BLUE + scen.playerShip.physics.position.x - (camera.w / 2.0)) / GRID_DIST_BLUE) * GRID_DIST_BLUE
+			
+			if grid_x % GRID_DIST_LIGHT_BLUE == 0 then
+				if grid_x % GRID_DIST_GREEN == 0 then
+					graphics.draw_line({ x = grid_x, y = scen.playerShip.physics.position.y - (camera.h / 2.0) }, { x = grid_x, y = scen.playerShip.physics.position.y + (camera.h / 2.0) }, 1, ClutColour(5, 1))
+				else
+					graphics.draw_line({ x = grid_x, y = scen.playerShip.physics.position.y - (camera.h / 2.0) }, { x = grid_x, y = scen.playerShip.physics.position.y + (camera.h / 2.0) }, 1, ClutColour(14, 9))
+				end
+			else
+				if cameraRatio > 1 / 8 then
+					graphics.draw_line({ x = grid_x, y = scen.playerShip.physics.position.y - (camera.h / 2.0) }, { x = grid_x, y = scen.playerShip.physics.position.y + (camera.h / 2.0) }, 1, ClutColour(4, 11))
+				end
+			end
+			i = i + 1
+		end
+		
+		i = 0
+		while i * GRID_DIST_BLUE - 10 < camera.h + 10 + GRID_DIST_BLUE do
+			local grid_y = math.floor((i * GRID_DIST_BLUE + scen.playerShip.physics.position.y - (camera.h / 2.0)) / GRID_DIST_BLUE) * GRID_DIST_BLUE
+			if grid_y % GRID_DIST_LIGHT_BLUE == 0 then
+				if grid_y % GRID_DIST_GREEN == 0 then
+					graphics.draw_line({ x = scen.playerShip.physics.position.x - shipAdjust - (camera.w / 2.0), y = grid_y }, { x = scen.playerShip.physics.position.x - shipAdjust + (camera.w / 2.0), y = grid_y }, 1, ClutColour(5, 1))
+				else
+					graphics.draw_line({ x = scen.playerShip.physics.position.x - shipAdjust - (camera.w / 2.0), y = grid_y }, { x = scen.playerShip.physics.position.x - shipAdjust + (camera.w / 2.0), y = grid_y }, 1, ClutColour(14, 9))
+				end
+			else
+				if cameraRatio > 1 / 8 then
+					graphics.draw_line({ x = scen.playerShip.physics.position.x - shipAdjust - (camera.w / 2.0), y = grid_y }, { x = scen.playerShip.physics.position.x - shipAdjust + (camera.w / 2.0), y = grid_y }, 1, ClutColour(4, 11))
+				end
+			end
+			i = i + 1
+		end
+	end
+	
 	if scen ~= nil and scen.objects ~= nil then
 		for obId = 0, #scen.objects do
 			local o = scen.objects[obId]
 			
 			if o.sprite ~= nil then
-				if camera.w < 16384 then
+				if camera.w <= 16384/2 then
 					if o.animation ~= nil then
 						local frame = Animate(o,obId)
 						local d = o.animation["last-shape"]
@@ -294,9 +362,9 @@ function render()
 				or o.beam.kind == "kinetic"
 				then --Kinetic Bolt
 
-				local p1 = o.physics.position
-				local p2 = RotatePoint({x=BEAM_LENGTH,y=0},o.physics.angle)
-				graphics.draw_line(p1,{x=p1.x+p2.x,y=p1.y+p2.y},1,ClutColour(o.beam.color))
+					local p1 = o.physics.position
+					local p2 = RotatePoint({x=BEAM_LENGTH,y=0},o.physics.angle)
+					graphics.draw_line(p1,{x=p1.x+p2.x,y=p1.y+p2.y},1,ClutColour(o.beam.color))
 				end
 			end
 		end
@@ -318,8 +386,8 @@ function render()
 
 	
 	graphics.draw_particles()
-	DrawPanels()
 	DrawArrow()
+	DrawPanels()
 	graphics.end_frame()
 end
 

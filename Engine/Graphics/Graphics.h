@@ -197,6 +197,13 @@ float AspectRatio ();
  */
 vec2 MapPoint ( vec2 windowCoords );
 /**
+ * Draws a point "pixel" pixels wide at the given coordinates
+ * @param coords The coordinate of the point
+ * @param pixel The width of the point
+ * @param col The color of the point
+ */
+void DrawPoint ( vec2 coord, float width, colour col );
+/**
  * Checks if a circle lies entirely outside the current camera position
  * @param position The centre of the circle
  * @param radius The radius of the circle

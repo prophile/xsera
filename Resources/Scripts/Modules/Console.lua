@@ -360,17 +360,17 @@ function CoutTable (t, name, doPrint)
 end
 
 
-function LogError(text, level)
-	ConsoleAdd(text .. "(level " .. level .. ")")
-	if level > 10 then
+function LogError(text, current)
+	ConsoleAdd(text .. "(current " .. current .. ")")
+	if current > 10 then
 		os.exit()
 	end
-	if level > 5 then
-		errNotice = { start = mode_manager.time(), duration = level - 5, text = text }
+	if current > 5 then
+		errNotice = { start = mode_manager.time(), duration = current - 5, text = text }
 	end
 end
 
---[[ error level scheme:
+--[[ error current scheme:
 	1-5: non-fatal, continue
 		1: code not implemented
 		2: load error

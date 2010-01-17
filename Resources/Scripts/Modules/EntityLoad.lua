@@ -159,9 +159,9 @@ function NewEntity (entOwner, entName, entType, entDir, entSubdir, other)
 		entObject.buildTime = tonumber(trueData.time) / 200
 		entObject.life = tonumber(trueData.life)
 		entObject.turningRate = tonumber(trueData.turnrate)
-		entObject.battery = { total = 5 * tonumber(trueData.energy), level = 5 * tonumber(trueData.energy), percent = 1.0 }
-		entObject.energy = { total = tonumber(trueData.energy), level = tonumber(trueData.energy), percent = 1.0 }
-		entObject.shield = { total = tonumber(trueData.life), level = tonumber(trueData.life), percent = 1.0 }
+		entObject.battery = { max = 5 * tonumber(trueData.energy), current = 5 * tonumber(trueData.energy) }
+		entObject.energy = { max = tonumber(trueData.energy), current = tonumber(trueData.energy) }
+		entObject.shield = { max = tonumber(trueData.life), current = tonumber(trueData.life) }
 		if trueData.thrust ~= nil then
 			entObject.thrust = tonumber(trueData.thrust)
 		else

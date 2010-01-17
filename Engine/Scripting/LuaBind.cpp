@@ -977,14 +977,30 @@ int GFX_DrawBox ( lua_State* L )
 	bottom = luaL_checknumber(L, 3);
 	right = luaL_checknumber(L, 4);
 	width = luaL_checknumber(L, 5);
+	colour col = colour(0.0f, 1.0f, 0.0f, 1.0f);
 	if (nargs > 5)
 	{
-		Graphics::DrawBox(top, left, bottom, right, width, LoadColour(L, 6));
+		col = LoadColour(L, 6);
 	}
-	else
+	Graphics::DrawBox(top, left, bottom, right, width, col);
+	return 0;
+}
+
+int GFX_DrawPoint ( lua_State* L )
+{
+	int nargs = lua_gettop(L);
+	float size = 1;
+	vec2 location = luaL_checkvec2(L, 1);
+	colour col = colour(0.0f, 1.0f, 0.0f, 1.0f);
+	if (nargs > 1)
 	{
-		Graphics::DrawBox(top, left, bottom, right, width, colour(0.0f, 1.0f, 0.0f, 1.0f));
+		size = luaL_checknumber(L, 2);
 	}
+	if (nargs > 2)
+	{
+		col = LoadColour(L, 3);
+	}
+	Graphics::DrawPoint(location, size, col);
 	return 0;
 }
 
@@ -1385,6 +1401,8 @@ int GFX_EndWarp ( lua_State* L )
  *    t = { r = red_val, b = blue_val, g = green_val, a = alpha_val }\n
  * where the colour values are between 0.0 and 1.0. (optional)
  *
+ * @subsection draw_point
+ * 
  * @subsection draw_box
  * Draws a basic box.\n
  * Parameters:\n
@@ -1494,7 +1512,7 @@ int GFX_EndWarp ( lua_State* L )
  * 
  * @subsection draw_3d_ambient
  * 
- * @todo Document @ref add_particles, @ref draw_particles, @ref clear_particles, @ref begin_warp, and @ref end_warp
+ * @todo Document @ref add_particles, @ref draw_particles, @ref clear_particles, @ref begin_warp, @ref end_warp, and @ref draw_point
  * @todo Fix documentation @ref draw_image and @ref draw_sprite to better define sprites/images.
  */
 
@@ -1513,6 +1531,7 @@ luaL_Reg registryGraphics[] =
 	"text_length", GFX_TextLength,
 	"draw_line", GFX_DrawLine,
 	"draw_box", GFX_DrawBox,
+	"draw_point", GFX_DrawPoint,
 	"draw_circle", GFX_DrawCircle,
 	"draw_rtri", GFX_DrawRadarTriangle,
 	"draw_rplus", GFX_DrawRadarPlus,

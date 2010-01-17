@@ -15,14 +15,14 @@ end
 function WeaponCreate(weapon, weapData, weapOwner)
 
 	if	weapon.cooldown <= mode_manager.time() - weapon.start
-	and	weapOwner.energy.level - weapon.cost >= 0
+	and	weapOwner.energy - weapon.cost >= 0
 	and (weapon.ammo == nil or weapon.ammo > 0)
 	then
 		sound.play(weapon.sound)
 		weapon.fired = true
 		weapon.start = mode_manager.time()
 
-		weapOwner.energy.level = weapOwner.energy.level - weapon.cost
+		weapOwner.energy = weapOwner.energy - weapon.cost
 
 		if weapon.ammo ~= nil then
 			weapon.ammo = weapon.ammo - 1
@@ -84,7 +84,7 @@ function WeaponUpdate(weapon, weapData, weapOwner)
 				if computerShip ~= nil then
 					local x = computerShip.physicsObject.position.x - weapData[idx].physicsObject.position.x
 					local y = computerShip.physicsObject.position.y - weapData[idx].physicsObject.position.y
-					-- put in real collision code here [ALISTAIR, DEMO2]
+					-- put in real collision code here [ALISTAIR, DEMO3]
 					if hypot (x, y) <= computerShip.physicsObject.collision_radius * 2 / 7 then
 						ProjectileCollision(weapData, idx, weapon, computerShip)
 						return
