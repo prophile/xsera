@@ -25,30 +25,25 @@ end
 function key( k )
 	if k == "q" or k == "escape" then
 		mode_manager.switch("MainMenu")
---[[	elseif k == "=" then
-		camera.w = camera.w / 2
-		camera.h = camera.h / 2
-	elseif k == "-" then
-		camera.w = camera.w * 2
-		camera.h = camera.h * 2--]]
 	elseif k == "/" then
 		printTable(scen.playerShip)
+		print(scen.playerShip.physics.mass)
 	elseif k == "[" then
-		if scen.playerShipId == 0 then
+		if scen.playerShipId == 1 then
 			scen.playerShipId = #scen.objects
 		else
 			scen.playerShipId = scen.playerShipId - 1
 		end
 		
-		scen.playerShip = scen.objects[scen.playerShipId]
+		ChangePlayerShip()
 	elseif k == "]" then
 		if scen.playerShipId == #scen.objects then
-			scen.playerShipId = 0
+			scen.playerShipId = 1
 		else
 			scen.playerShipId = scen.playerShipId + 1
 		end
 		
-		scen.playerShip = scen.objects[scen.playerShipId]
+		ChangePlayerShip()
 	elseif k == "backspace" then
 		scen.playerShip.health = scen.playerShip.health - 1000
 		if scen.playerShip.health < 0 then
@@ -56,8 +51,6 @@ function key( k )
 		end
 	elseif k == "backslash" then
 		shipSeek = not(shipSeek)
---	elseif k == " " then
---		DeviceActivate(scen.playerShip.weapon.beam,scen.playerShip)
 	else
 		KeyActivate(k)
 	end
@@ -107,7 +100,7 @@ function update()
 		end
 	end
 
-	for i = 0, #scen.objects do
+	for i = 1, #scen.objects do
 		local o = scen.objects[i]
 		if o.attributes["can-collide"] == true then
 
@@ -124,17 +117,20 @@ function update()
 						m2 = p2.mass
 						--Equation for 1D elastic collision
 		--				v1 = (m1v1 + m2v2 + m1C(v2-v1))/(m1+m2)
-						C = 0.8
 						
-						p.velocity = {
-						x = (m1 * v1.x + m2 *v2.x + m1 * C * ( v2.x - v1.x))/(m1+m2);
-						y = (m1 * v1.y + m2 *v2.y + m1 * C * ( v2.y - v1.y))/(m1+m2);
-						}
+						if o.attributes["does-bounce"] then
+							p.velocity = {
+								x = (m1 * v1.x + m2 *v2.x + m1 * RESTITUTION_COEFFICIENT * ( v2.x - v1.x))/(m1+m2);
+								y = (m1 * v1.y + m2 *v2.y + m1 * RESTITUTION_COEFFICIENT * ( v2.y - v1.y))/(m1+m2);
+							}
+						end
 						
-						p2.velocity = {
-						x = (m1 * v1.x + m2 *v2.x + m2 * C * ( v1.x - v2.x))/(m1+m2);
-						y = (m1 * v1.y + m2 *v2.y + m2 * C * ( v1.y - v2.y))/(m1+m2);
-						}
+						if o2.attributes["does-bounce"] then
+							p2.velocity = {
+								x = (m1 * v1.x + m2 *v2.x + m2 * RESTITUTION_COEFFICIENT * ( v1.x - v2.x))/(m1+m2);
+								y = (m1 * v1.y + m2 *v2.y + m2 * RESTITUTION_COEFFICIENT * ( v1.y - v2.y))/(m1+m2);
+							}
+						end
 						
 
 						CollideTrigger(o,o2)
@@ -166,22 +162,23 @@ function update()
 			end
 		end
 		
-	--	if o.attributes["is-guided"] == true then
-		if o ~= scen.playerShip then
-			if o.owner == scen.playerShip.owner and (shipSeek == true or o.attributes["is-guided"] == true) then
-				DumbSeek(o,trackingTarget)
-			else
-				o.control.left = false
-				o.control.right = false
-				o.control.accel = false
-				o.control.decel = true
+		if o.attributes["can-engage"] == true then
+			if o ~= scen.playerShip then
+				if o.owner == scen.playerShip.owner and (shipSeek == true or o.attributes["is-guided"] == true) then
+					DumbSeek(o,trackingTarget)
+				else
+					o.control.left = false
+					o.control.right = false
+					o.control.accel = false
+					o.control.decel = true
+				end
 			end
-		end
-		
-		if o.trigger.activateInterval ~= 0 then
-			if o.trigger.nextActivate <= newTime then
-				ActivateTrigger(o)
-				o.trigger.nextActivate = newTime + o.trigger.activateInterval + math.random(0,o.trigger.activateRange)
+			
+			if o.trigger.activateInterval ~= 0 then
+				if o.trigger.nextActivate <= newTime then
+					ActivateTrigger(o)
+					o.trigger.nextActivate = newTime + o.trigger.activateInterval + math.random(0,o.trigger.activateRange)
+				end
 			end
 		end
 		
@@ -323,23 +320,20 @@ function render()
 	end
 	
 	if scen ~= nil and scen.objects ~= nil then
-		for obId = 0, #scen.objects do
+		for obId = 1, #scen.objects do
 			local o = scen.objects[obId]
 			
 			if o.sprite ~= nil then
 				if camera.w <= 16384/2 then
 					if o.animation ~= nil then
 						local frame = Animate(o,obId)
-						local d = o.animation["last-shape"]
-						if o.animation["last-shape"] == 0 then
-							d = 1
-						end
 						graphics.draw_sprite_frame("Id/"..o.sprite, o.physics.position, o.spriteDim, frame)
 					else
 						graphics.draw_sprite("Id/"..o.sprite, o.physics.position, o.spriteDim, o.physics.angle)
 					end
 				else
 					local color
+					
 					if o.owner == -1 then
 						color = ClutColour(4,1)
 					elseif o.owner == scen.playerShip.owner then
@@ -415,14 +409,19 @@ function RemoveDead()
 	--Remove destroyed or expired objects
 	--Count backwards because the array is shifted with each deletion
 	local i
-	for i = #scen.objects, 0, -1 do
+	for i = #scen.objects, 1, -1 do
 		local o = scen.objects[i]
 		if o.dead == true then
+			if scen.playerShipId >= i and i ~= 1 then
+				scen.playerShipId = scen.playerShipId - 1
+			end
 			physics.destroy_object(scen.objects[i].physics)
+			ChangePlayerShip()
 			table.remove(scen.objects,i)
 			i = i - 1
 		end
 	end
+	
 end
 
 function DumbSeek(object, target)
@@ -457,5 +456,25 @@ function GetMouseCoords()
 	return {
 	x = scen.playerShip.physics.position.x -shipAdjust + camera.w * x - camera.w / 2;
 	y = scen.playerShip.physics.position.y  + camera.h * y - camera.h / 2;
+	}
+end
+
+
+function ChangePlayerShip()
+	if scen.playerShipId > #scen.objects then
+		scen.playerShipId = #scen.objects
+	end
+
+	scen.playerShip = scen.objects[scen.playerShipId]
+		
+	scen.playerShip.control = {
+		accel = false;
+		decel = false;
+		left = false;
+		right = false;
+		beam = false;
+		pulse = false;
+		special = false;
+		warp = false;
 	}
 end
