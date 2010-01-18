@@ -86,6 +86,17 @@ y = point.x*math.sin(angle)+point.y*math.cos(angle);
 }
 end
 
+function PolarVec(mag, angle)
+return {
+x = mag*math.cos(angle);
+y = mag*math.sin(angle);
+}
+end
+
+function VecAdd(v1, v2)
+return {x = v1.x + v2.x, y = v1.y + v2.y}
+end
+
 function xor(p,q)
 	return (p and not q) or (not p and q)
 end
