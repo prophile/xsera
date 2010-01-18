@@ -40,6 +40,7 @@ function render()
 		num = num + 1
 	end
 	
+	keyboardNum = 1
 	numBoxes = 1
 	while keyboard[keyboardNum][numBoxes] ~= nil do
 		numBoxes = numBoxes + 1
@@ -79,7 +80,7 @@ end
 
 function keyup(k)
 	if k == "escape" then
-		mode_manager.switch('Options')
+		mode_manager.switch('Ares/Options')
 	end
 end
 

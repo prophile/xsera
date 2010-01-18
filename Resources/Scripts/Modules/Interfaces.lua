@@ -133,7 +133,7 @@ function DrawEscapeMenu()
 		SwitchBox( { xCoord = -125, yCoord = -30, length = 250, text = "Quit to Main Menu", boxColour = ClutColour(8, 4), textColour = ClutColour(8, 17), execute = nil, letter = "Q" } )
 	elseif down.q == "act" then
 		menu_display = nil
-		mode_manager.switch('MainMenu')
+		mode_manager.switch('Xsera/MainMenu')
 	else
 		SwitchBox( { xCoord = -125, yCoord = -30, length = 250, text = "Quit to Main Menu", boxColour = ClutColour(8, 5), textColour = ClutColour(8, 5), execute = nil, letter = "Q" } )
 	end
@@ -155,7 +155,7 @@ function DrawDefeatMenu()
 		SwitchBox( { xCoord = -125, yCoord = -50, length = 250, text = "Quit to Main Menu", boxColour = ClutColour(8, 5), textColour = ClutColour(8, 17), execute = nil, letter = "Q" } )
 	elseif down.q == "act" then
 		menu_display = nil
-		mode_manager.switch('MainMenu')
+		mode_manager.switch('Xsera/MainMenu')
 	else
 		SwitchBox( { xCoord = -125, yCoord = -50, length = 250, text = "Quit to Main Menu", boxColour = ClutColour(8, 4), textColour = ClutColour(8, 1), execute = nil, letter = "Q" } )
 	end

@@ -151,7 +151,7 @@ function ConsoleKey (k)
 			consoleDraw = false
 			isPopDown = false
 		else
-			mode_manager.switch("MainMenu")
+			mode_manager.switch("Xsera/MainMenu")
 		end
 	elseif k == "backspace" then
 		if ((consoleHistory[line] ~= ">") and (consoleHistory[line] ~= ">>")) then

@@ -64,7 +64,7 @@ function render ()
     
     graphics.draw_text("D - Demo", "CrystalClear", "left", { x = -450, y = 0 }, 60)
     graphics.draw_text("T - Test", "CrystalClear", "left", { x = -450, y = -50 }, 60)
-    graphics.draw_text("C - Credits", "CrystalClear", "left", { x = -450, y = -100 }, 60)
+    graphics.draw_text("C - Xsera/Credits", "CrystalClear", "left", { x = -450, y = -100 }, 60)
     
     graphics.draw_text(versionInformation, "CrystalClear", "left", { x = -450, y = -220 }, 28)
 	
@@ -87,14 +87,14 @@ function key ( k )
         mode_manager.switch("Demo4")
     elseif k == "x" then
 		if releaseBuild == false then
-			mode_manager.switch("ConsoleDrawer")
+			mode_manager.switch("Xsera/ConsoleDrawer")
 		else
-			mode_manager.switch("AresSplash")
+			mode_manager.switch("Ares/Splash")
 		end
     elseif k == "t" then
         mode_manager.switch("WeaponTest")
     elseif k == "c" then
-        mode_manager.switch("Credits")
+        mode_manager.switch("Xsera/Credits")
     elseif k == "tab" then
         mode_manager.switch("LoadScreen")
     elseif k == "escape" then
