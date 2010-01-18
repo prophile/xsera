@@ -37,7 +37,7 @@ function NewObject(id)
 	end
 	
 	if newObj.mass == nil then
-		newObj.mass = 0.1 --We should add a way for objects to me immobile
+		newObj.mass = 0.1
 	end
 	
 	

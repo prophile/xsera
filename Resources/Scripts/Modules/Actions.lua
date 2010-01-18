@@ -1,3 +1,5 @@
+import('Math')
+
 function ActivateTrigger(device, owner)
 	if device.device == nil then
 	
@@ -94,7 +96,24 @@ end,
 ["alter-special-action"] = function(action, source, direct) end,
 ["alter-spin-action"] = function(action, source, direct) end,
 ["alter-thrust-action"] = function(action, source, direct) end,
-["alter-velocity-action"] = function(action, source, direct) end,
+["alter-velocity-action"] = function(action, source, direct)
+	print("CALL")
+	local p
+	local angle = source.physics.angle
+	local delta = PolarVec(math.sqrt(action.minimum), angle)
+	
+	if action.reflexive == "true" then
+		p = source.physics
+	else
+		p = direct.physics
+	end
+	
+	if action.relative == "true" then
+		p.velocity = VecAdd(p.velocity, delta)
+	else
+		p.velocity = delta
+	end
+end,
 ["assume-initial-object-action"] = function(action, source, direct) end,
 ["change-score-action"] = function(action, source, direct) end,
 ["color-flash-action"] = function(action, source, direct) end,
