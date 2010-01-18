@@ -109,45 +109,58 @@ function update()
 				local o2 = scen.objects[i2]
 				if o2.attributes["can-collide"] == true
 				and o.owner ~= o2.owner and physics.collisions(o.physics, o2.physics, 0) == true then
+--[[
+Equation for 1D elastic collision:
+v1 = (m1v1 + m2v2 + m1C(v2-v1))/(m1+m2)
+
+OR
+
+Nathan's Method:
+dist = dist(v1,v2)
+angle = angleto(pos1,pos2)
+momentMag = dist * m1/(m1+m2)
+v1 = Polar2Rect(1,angle) * dist * m1 / (m1 + m2)
+v2 = Polar2Rect(1,angle+180) * dist * m2 / (m1 + m2)
+--]]
+					if o.attributes["occupies-space"] and o2.attributes["occupies-space"] then
 						local p = o.physics
 						local p2 = o2.physics
 						v1 = deepcopy(p.velocity)
 						m1 = p.mass
 						v2 = deepcopy(p2.velocity)
 						m2 = p2.mass
-						--Equation for 1D elastic collision
-		--				v1 = (m1v1 + m2v2 + m1C(v2-v1))/(m1+m2)
+--[[
+						p.velocity = {
+							x = (m1 * v1.x + m2 *v2.x + m1 * RESTITUTION_COEFFICIENT * ( v2.x - v1.x))/(m1+m2);
+							y = (m1 * v1.y + m2 *v2.y + m1 * RESTITUTION_COEFFICIENT * ( v2.y - v1.y))/(m1+m2);
+						}
 						
-						if o.attributes["does-bounce"] then
-							p.velocity = {
-								x = (m1 * v1.x + m2 *v2.x + m1 * RESTITUTION_COEFFICIENT * ( v2.x - v1.x))/(m1+m2);
-								y = (m1 * v1.y + m2 *v2.y + m1 * RESTITUTION_COEFFICIENT * ( v2.y - v1.y))/(m1+m2);
-							}
-						end
-						
-						if o2.attributes["does-bounce"] then
-							p2.velocity = {
-								x = (m1 * v1.x + m2 *v2.x + m2 * RESTITUTION_COEFFICIENT * ( v1.x - v2.x))/(m1+m2);
-								y = (m1 * v1.y + m2 *v2.y + m2 * RESTITUTION_COEFFICIENT * ( v1.y - v2.y))/(m1+m2);
-							}
-						end
-						
+						p2.velocity = {
+							x = (m1 * v1.x + m2 *v2.x + m2 * RESTITUTION_COEFFICIENT * ( v1.x - v2.x))/(m1+m2);
+							y = (m1 * v1.y + m2 *v2.y + m2 * RESTITUTION_COEFFICIENT * ( v1.y - v2.y))/(m1+m2);
+						}
+--]]
 
-						CollideTrigger(o,o2)
-						CollideTrigger(o2,o)
-						if o2.damage ~= nil then
-							o.health = o.health - o2.damage
-						end
-						if o.damage ~= nil then
-							o2.health = o2.health - o.damage
-						end
-
-
+						local dist = find_hypot(p.velocity, p2.velocity)
+						local angle = find_angle(p.position,p2.position)
+						p.velocity = RotatePoint({y = 0,x = dist * m1 / (m1+m2)}, angle)
+						p2.velocity = RotatePoint({y = 0,x = dist * m2 / (m1+m2)}, angle+math.pi)
 					end
-					
+
+					CollideTrigger(o,o2)
+					CollideTrigger(o2,o)
+
+					if o2.damage ~= nil then
+						o.health = o.health - o2.damage
+					end
+					if o.damage ~= nil then
+						o2.health = o2.health - o.damage
+					end
+
+
 				end
-			
 			end
+		end
 		
 		if o.health <= 0 and o.healthMax ~= 0 then
 			DestroyTrigger(o)
@@ -180,6 +193,8 @@ function update()
 					o.trigger.nextActivate = newTime + o.trigger.activateInterval + math.random(0,o.trigger.activateRange)
 				end
 			end
+		else
+			o.control.accel = true
 		end
 		
 		--Fire weapons
