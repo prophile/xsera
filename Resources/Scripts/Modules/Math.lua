@@ -93,12 +93,42 @@ y = mag*math.sin(angle);
 }
 end
 
-function VecAdd(v1, v2)
-return {x = v1.x + v2.x, y = v1.y + v2.y}
+--A vector always comes first
+function VecAdd(a, b)
+	if type(b) == "table" then
+		return {x = a.x + b.x, y = a.y + b.y}
+	else
+		return {x = a.x + b, y= a.y + b}
+	end
 end
 
-function VecSub(v1, v2)
-return {x = v1.x - v2.x, y = v1.y - v2.y}
+function VecSub(a, b)
+	if type(b) == "table" then
+		return {x = a.x - b.x, y = a.y - b.y}
+	else
+		return {x = a.x - b, y= a.y - b}
+	end
+end
+
+function VecMul(a, b)
+	if type(b) == "table" then
+		return {x = a.x * b.x, y = a.y * b.y}
+	else
+		return {x = a.x * b, y= a.y * b}
+	end
+end
+
+function VecDiv(v1, v2)
+	if type(b) == "table" then
+		return {x = a.x / b.x, y = a.y / b.y}
+	else
+		return {x = a.x / b, y= a.y / b}
+	end
+end
+
+function NormalizeVec(v)
+	local d = hypot1(v)
+	return {x = v.x / d, y = v.y / d}
 end
 
 function xor(p,q)

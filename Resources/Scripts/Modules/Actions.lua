@@ -153,10 +153,20 @@ if new.beam ~= nil and new.beam.kind ~= "kinetic" then
 	new.src = p
 	if new.beam.kind == "bolt-relative"
 	or new.beam.kind == "static-relative" then
-		new.offset = VecSub(trackingTarget, new.src.position)
-		new.physics.position = deepcopy(trackingTarget)
+		local offset = VecSub(trackingTarget, new.src.position)
+		new.offset = VecMul(
+		NormalizeVec(offset),
+		math.min(new.beam.range, find_hypot(new.src.position, trackingTarget)))
+		
+		new.physics.position = VecAdd(new.physics.position, new.offset)
 	else
-		new.physics.position = trackingTarget
+--[[
+--s	VecMul(NormalizeVec(), min(sqrt(new.beam.range),find_hypot(new.src.position,trackingTarget)))
+		new.beam.target = {position = trackingTarget}
+		
+		new.physics.position = VecMul(NormalizeVec(VecSub(new.beam.target.position,new.src.position)), math.min(new.beam.range,find_hypot(new.src.position,new.target.position)))
+		--new.physics.position = trackingTarget
+		--]]
 	end
 end
 
