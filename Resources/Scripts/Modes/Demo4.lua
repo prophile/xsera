@@ -350,10 +350,9 @@ function render()
 			local o = scen.objects[obId]
 			
 			if o.sprite ~= nil then
-				if camera.w <= 16384/2 then
+				if camera.w <= 8192 then
 					if o.animation ~= nil then
-						local frame = Animate(o,obId)
-						graphics.draw_sprite_frame("Id/"..o.sprite, o.physics.position, o.spriteDim, frame)
+						graphics.draw_sprite_frame("Id/"..o.sprite, o.physics.position, o.spriteDim, Animate(o))
 					else
 						graphics.draw_sprite("Id/"..o.sprite, o.physics.position, o.spriteDim, o.physics.angle)
 					end
@@ -368,7 +367,7 @@ function render()
 						color = ClutColour(16,1)
 					end
 					
-					local iconScale = camera.w/1024
+					local iconScale = camera.w / 1024
 					if o["tiny-shape"] == "solid-square" then
 						graphics.draw_rbox(o.physics.position, o["tiny-size"] * iconScale, color)
 					elseif o["tiny-shape"] == "plus" then
@@ -382,13 +381,11 @@ function render()
 					end
 				end
 			elseif o.beam ~= nil then
-				or o.beam.kind == "kinetic"
-				then --Kinetic Bolt
+				if o.beam.kind == "kinetic" then
 					local p1 = o.physics.position
 					local p2 = RotatePoint({x=BEAM_LENGTH,y=0},o.physics.angle)
 					graphics.draw_line(p1,{x=p1.x+p2.x,y=p1.y+p2.y},1,ClutColour(o.beam.color))
 				elseif o.beam.kind == "bolt-relative" then
-					
 					graphics.draw_lightning(o.src.position, o.physics.position, 1.0, 10.0, false,ClutColour(o.beam.color))
 				elseif o.beam.kind == "bolt-to-object" then
 					graphics.draw_lightning(o.src.position, o.physics.position, 1.0, 10.0, false,ClutColour(o.beam.color))
@@ -400,21 +397,6 @@ function render()
 			end
 		end
 	end
-	
-	
-	--Draw temporary status display
-	local fs = 30
-	local ox = camera.w/fs + scen.playerShip.physics.position.x - camera.w / 2
-	local oy = -camera.w/fs + scen.playerShip.physics.position.y + camera.h / 2
-	local vstep = -camera.w/fs * 1.5
-	
-	graphics.draw_text("Health: " .. scen.playerShip.health, "CrystalClear", "left", {x = ox, y = oy}, camera.w/fs)
-	
-	if scen.playerShip.energy ~= nil then
-		graphics.draw_text("Energy: " .. scen.playerShip.energy, "CrystalClear", "left", {x = ox, y = oy + vstep}, camera.w/fs)
-	end
-	
-
 	
 	graphics.draw_particles()
 	DrawArrow()
