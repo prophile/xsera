@@ -110,10 +110,14 @@ function update()
 		local o = scen.objects[i]
 		if o.attributes["can-collide"] == true then
 
-			if o.beam ~= nil
-			and (o.beam.kind == "bolt-relative"
-			or o.beam.kind == "static-relative") then
-				o.physics.position = VecAdd(o.src.position, o.offset)
+			if o.beam ~= nil then
+				if o.beam.kind == "bolt-relative"
+				or o.beam.kind == "static-relative" then
+					o.physics.position = VecAdd(o.src.position, o.offset)
+				elseif o.beam.kind == "bolt-to-object"
+					or o.beam.kind == "static-to-object" then
+					o.physics.position = VecAdd(VecMul(NormalizeVec(VecSub(o.target.position,o.src.position)), math.min(o.beam.range,find_hypot(o.src.position,o.target.position))),o.src.position)
+				end
 			end
 			
 			for i2 = i + 1, #scen.objects do
