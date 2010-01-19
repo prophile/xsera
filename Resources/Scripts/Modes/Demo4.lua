@@ -8,6 +8,8 @@ import('PrintRecursive')
 import('KeyboardControl')
 import('Interfaces')
 
+trackingTarget = {x = 0.0, y = 0.0}
+
 function init()
 	physics.open(0.6)
 	start_time = mode_manager.time()
@@ -16,6 +18,7 @@ function init()
 	
 	scen = LoadScenario(demoLevel)
 
+	trackingTarget = GetMouseCoords()
 	loadingEntities = false
 end
 
@@ -30,29 +33,30 @@ function key( k )
 		camera.h = camera.h * 2--]]
 	elseif k == "/" then
 		printTable(scen.playerShip)
+		print(scen.playerShip.physics.mass)
 	elseif k == "[" then
-		if scen.playerShipId == 0 then
+		if scen.playerShipId == 1 then
 			scen.playerShipId = #scen.objects
 		else
 			scen.playerShipId = scen.playerShipId - 1
 		end
 		
-		scen.playerShip = scen.objects[scen.playerShipId]
+		ChangePlayerShip()
 	elseif k == "]" then
 		if scen.playerShipId == #scen.objects then
-			scen.playerShipId = 0
+			scen.playerShipId = 1
 		else
 			scen.playerShipId = scen.playerShipId + 1
 		end
 		
-		scen.playerShip = scen.objects[scen.playerShipId]
+		ChangePlayerShip()
 	elseif k == "backspace" then
 		scen.playerShip.health = scen.playerShip.health - 1000
 		if scen.playerShip.health < 0 then
 			scen.playerShip.health = 0
 		end
---	elseif k == " " then
---		DeviceActivate(scen.playerShip.weapon.beam,scen.playerShip)
+	elseif k == "backslash" then
+		shipSeek = not(shipSeek)
 	else
 		KeyActivate(k)
 	end
@@ -70,6 +74,7 @@ function update()
 	dt = newTime - last_time
 	last_time = newTime
 
+	trackingTarget = GetMouseCoords()
 	KeyDoActivated()
 
 --[[------------------
@@ -101,37 +106,73 @@ function update()
 		end
 	end
 
-	for i = 0, #scen.objects do
+	for i = 1, #scen.objects do
 		local o = scen.objects[i]
 		if o.attributes["can-collide"] == true then
+
 
 			for i2 = i + 1, #scen.objects do
 				local o2 = scen.objects[i2]
 				if o2.attributes["can-collide"] == true
 				and o.owner ~= o2.owner and physics.collisions(o.physics, o2.physics, 0) == true then
-					local p = o.physics
-					local p2 = o2.physics
-					p.velocity = {x = -p.velocity.x, y = -p.velocity.y}
-					
-					p2.velocity = {x = -p2.velocity.x, y = -p2.velocity.y}
-					
+--[[
+Equation for 1D elastic collision:
+v1 = (m1v1 + m2v2 + m1C(v2-v1))/(m1+m2)
+
+OR
+
+Nathan's Method:
+dist = dist(v1,v2)
+angle = angleto(pos1,pos2)
+momentMag = dist * m1/(m1+m2)
+v1 = Polar2Rect(1,angle) * dist * m1 / (m1 + m2)
+v2 = Polar2Rect(1,angle+180) * dist * m2 / (m1 + m2)
+--]]
+					if o.attributes["occupies-space"] and o2.attributes["occupies-space"] then
+						local p = o.physics
+						local p2 = o2.physics
+						v1 = deepcopy(p.velocity)
+						m1 = p.mass
+						v2 = deepcopy(p2.velocity)
+						m2 = p2.mass
+--[[
+						p.velocity = {
+							x = (m1 * v1.x + m2 *v2.x + m1 * RESTITUTION_COEFFICIENT * ( v2.x - v1.x))/(m1+m2);
+							y = (m1 * v1.y + m2 *v2.y + m1 * RESTITUTION_COEFFICIENT * ( v2.y - v1.y))/(m1+m2);
+						}
+						
+						p2.velocity = {
+							x = (m1 * v1.x + m2 *v2.x + m2 * RESTITUTION_COEFFICIENT * ( v1.x - v2.x))/(m1+m2);
+							y = (m1 * v1.y + m2 *v2.y + m2 * RESTITUTION_COEFFICIENT * ( v1.y - v2.y))/(m1+m2);
+						}
+--]]
+
+						local dist = find_hypot(p.velocity, p2.velocity)
+						local angle = find_angle(p.position,p2.position)
+						p.velocity = RotatePoint({y = 0,x = dist * m1 / (m1+m2)}, angle)
+						p2.velocity = RotatePoint({y = 0,x = dist * m2 / (m1+m2)}, angle+math.pi)
+					end
+
 					CollideTrigger(o,o2)
 					CollideTrigger(o2,o)
-					
+
 					if o2.damage ~= nil then
 						o.health = o.health - o2.damage
 					end
 					if o.damage ~= nil then
 						o2.health = o2.health - o.damage
 					end
+
+
 				end
 			end
 		end
-	
+		
 		if o.health <= 0 and o.healthMax ~= 0 then
 			DestroyTrigger(o)
 			o.dead = true
 		end
+
 		--Lifetimer
 		if o.age ~= nil then
 			if o.age + o.created <= newTime then
@@ -140,23 +181,26 @@ function update()
 			end
 		end
 		
-	--	if o.attributes["is-guided"] == true then
-		if o ~= scen.playerShip then
-			if o.owner == scen.playerShip.owner then
-				DumbSeek(o,scen.playerShip.physics.position)
-			else
-				o.control.left = false
-				o.control.right = false
-				o.control.accel = false
-				o.control.decel = true
+		if o.attributes["can-engage"] == true then
+			if o ~= scen.playerShip then
+				if o.owner == scen.playerShip.owner and (shipSeek == true or o.attributes["is-guided"] == true) then
+					DumbSeek(o,trackingTarget)
+				else
+					o.control.left = false
+					o.control.right = false
+					o.control.accel = false
+					o.control.decel = true
+				end
 			end
-		end
-		
-		if o.trigger.activateInterval ~= 0 then
-			if o.trigger.nextActivate <= newTime then
-				ActivateTrigger(o)
-				o.trigger.nextActivate = newTime + o.trigger.activateInterval + math.random(0,o.trigger.activateRange)
+			
+			if o.trigger.activateInterval ~= 0 then
+				if o.trigger.nextActivate <= newTime then
+					ActivateTrigger(o)
+					o.trigger.nextActivate = newTime + o.trigger.activateInterval + math.random(0,o.trigger.activateRange)
+				end
 			end
+		else
+			o.control.accel = true
 		end
 		
 		--Fire weapons
@@ -297,29 +341,20 @@ function render()
 	end
 	
 	if scen ~= nil and scen.objects ~= nil then
-		for obId = 0, #scen.objects do
+		for obId = 1, #scen.objects do
 			local o = scen.objects[obId]
 			
 			if o.sprite ~= nil then
-				if camera.w <= 16384 then
+				if camera.w <= 16384/2 then
 					if o.animation ~= nil then
 						local frame = Animate(o,obId)
-						local d = o.animation["last-shape"]
-						if o.animation["last-shape"] == 0 then
-							d = 1
-						end
-						graphics.draw_sprite("Id/"..o.sprite,
-						o.physics.position,
-						o.spriteDim,
-						2.0 * math.pi * frame / d) --This a kludgy way of supplying the desired frame. Need function that takes a frame index instead of angle.
+						graphics.draw_sprite_frame("Id/"..o.sprite, o.physics.position, o.spriteDim, frame)
 					else
-						graphics.draw_sprite("Id/"..o.sprite,
-						o.physics.position,
-						o.spriteDim,
-						o.physics.angle)
+						graphics.draw_sprite("Id/"..o.sprite, o.physics.position, o.spriteDim, o.physics.angle)
 					end
 				else
 					local color
+					
 					if o.owner == -1 then
 						color = ClutColour(4,1)
 					elseif o.owner == scen.playerShip.owner then
@@ -347,10 +382,18 @@ function render()
 				or o.beam.kind == 9472
 				or o.beam.kind == "kinetic"
 				then --Kinetic Bolt
-
 					local p1 = o.physics.position
 					local p2 = RotatePoint({x=BEAM_LENGTH,y=0},o.physics.angle)
 					graphics.draw_line(p1,{x=p1.x+p2.x,y=p1.y+p2.y},1,ClutColour(o.beam.color))
+				elseif o.beam.kind == "bolt-relative" then
+					
+					graphics.draw_lightning(o.src.position, o.physics.position, 1.0, 10.0, false,ClutColour(o.beam.color))
+				elseif o.beam.kind == "bolt-to-object" then
+					graphics.draw_lightning(o.src.position, o.physics.position, 1.0, 10.0, false,ClutColour(o.beam.color))
+				elseif o.beam.kind == "static-relative" then
+					graphics.draw_line(o.src.position, o.physics.position, 3.0, ClutColour(o.beam.color))
+				elseif o.beam.kind == "static-to-object" then
+					graphics.draw_line(o.src.position, o.physics.position, 3.0, ClutColour(o.beam.color))
 				end
 			end
 		end
@@ -408,14 +451,19 @@ function RemoveDead()
 	--Remove destroyed or expired objects
 	--Count backwards because the array is shifted with each deletion
 	local i
-	for i = #scen.objects, 0, -1 do
+	for i = #scen.objects, 1, -1 do
 		local o = scen.objects[i]
 		if o.dead == true then
+			if scen.playerShipId >= i and i ~= 1 then
+				scen.playerShipId = scen.playerShipId - 1
+			end
 			physics.destroy_object(scen.objects[i].physics)
+			ChangePlayerShip()
 			table.remove(scen.objects,i)
 			i = i - 1
 		end
 	end
+	
 end
 
 function DumbSeek(object, target)
@@ -442,4 +490,33 @@ function DumbSeek(object, target)
 		object.control.right = true
 	end
 	
+end
+
+
+function GetMouseCoords()
+	local x, y = mouse_position()
+	return {
+	x = scen.playerShip.physics.position.x -shipAdjust + camera.w * x - camera.w / 2;
+	y = scen.playerShip.physics.position.y  + camera.h * y - camera.h / 2;
+	}
+end
+
+
+function ChangePlayerShip()
+	if scen.playerShipId > #scen.objects then
+		scen.playerShipId = #scen.objects
+	end
+
+	scen.playerShip = scen.objects[scen.playerShipId]
+		
+	scen.playerShip.control = {
+		accel = false;
+		decel = false;
+		left = false;
+		right = false;
+		beam = false;
+		pulse = false;
+		special = false;
+		warp = false;
+	}
 end

@@ -1,3 +1,5 @@
+import('Math')
+
 function ActivateTrigger(device, owner)
 	if device.device == nil then
 	
@@ -94,7 +96,24 @@ end,
 ["alter-special-action"] = function(action, source, direct) end,
 ["alter-spin-action"] = function(action, source, direct) end,
 ["alter-thrust-action"] = function(action, source, direct) end,
-["alter-velocity-action"] = function(action, source, direct) end,
+["alter-velocity-action"] = function(action, source, direct)
+	print("CALL")
+	local p
+	local angle = source.physics.angle
+	local delta = PolarVec(math.sqrt(action.minimum), angle)
+	
+	if action.reflexive == "true" then
+		p = source.physics
+	else
+		p = direct.physics
+	end
+	
+	if action.relative == "true" then
+		p.velocity = VecAdd(p.velocity, delta)
+	else
+		p.velocity = delta
+	end
+end,
 ["assume-initial-object-action"] = function(action, source, direct) end,
 ["change-score-action"] = function(action, source, direct) end,
 ["color-flash-action"] = function(action, source, direct) end,
@@ -129,10 +148,22 @@ new.physics.position = {
 		y = p.position.y + offset.y;
 		}
 
+
+if new.beam ~= nil and new.beam.kind ~= "kinetic" then
+	new.src = p
+	if new.beam.kind == "bolt-relative"
+	or new.beam.kind == "static-relative" then
+		new.physics.position = deepcopy(trackingTarget)
+		new.physics.velocity = p.velocity
+	else
+		new.physics.position = trackingTarget
+	end
+end
+
 if action["direction-relative"] == "true" then
-new.physics.angle = p.angle
+	new.physics.angle = p.angle
 else
-new.physics.angle = RandomReal(0, 2.0 * math.pi)
+	new.physics.angle = RandomReal(0, 2.0 * math.pi)
 end
 
 if new["initial-direction"] ~= nil then

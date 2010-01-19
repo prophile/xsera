@@ -4,7 +4,7 @@ function LoadScenario(id)
 --	scen.destroyQueue = {}
 	local datId
 	local max = scen.initial.id + scen.initial.count - 1
-	local ctr = 0
+	local ctr = 1
 	
 	for datId = scen.initial.id, max do
 		local state = gameData.InitialObject[datId]
@@ -28,7 +28,7 @@ function LoadScenario(id)
 		new.physics.position = state.location
 		new.owner = state.owner
 		
-		CreateTrigger(new)
+--		CreateTrigger(new)
 		scen.objects[ctr] = new
 		ctr = ctr + 1
 	end

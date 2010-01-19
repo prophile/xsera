@@ -317,7 +317,7 @@ function DrawRadar()
 	
 	
 	local radarRange = { x = 2^11, y = 2^11 }
-	for i = 0, #scen.objects do
+	for i = 1, #scen.objects do
 		local o = scen.objects[i]
 		if o ~= scen.playerShip and math.abs(o.physics.position.x - scen.playerShip.physics.position.x) < radarRange.x
 		 and math.abs(o.physics.position.y - scen.playerShip.physics.position.y) < radarRange.y then

@@ -1,13 +1,19 @@
 import('Math')
 import('AresCLUT')
 
+--constants
 SPEED_FACTOR = 64.0
 TIME_FACTOR = 60.0 -- [ADAM] #TEST change this to dt
 BEAM_LENGTH = 32
+RESTITUTION_COEFFICIENT = 1.0
+RESOURCES_PER_TICK = 200
+GRID_DIST_BLUE = 512
+GRID_DIST_LIGHT_BLUE = 4096
+GRID_DIST_GREEN = 32768
 
 demoLevel = 25
+shipSeek = false
 
-playerShip = nil
 
 releaseBuild = mode_manager.is_release()
 
@@ -32,22 +38,16 @@ entities = {}
 gameData = dofile("./Xsera.app/Contents/Resources/Config/data.lua") --[FIX] this is A) not cross platform in ANY way shape or form B) an ugly way of fixing it.
 --/scenvars
 
-down = { esc = false, rtrn = false, q = false, o = false }
 
 --tempvars
-RESOURCES_PER_TICK = 200
---^^is that a tempvar?^^
-firepulse = false
 showVelocity = false
 showAngles = false
-frame = 0
 printFPS = false
 resources = 0
 resourceBars = 0
 resourceTime = 0.0
 rechargeTimer = 0.0
 cash = 1000
-alliedShips = {}
 buildTimerRunning = false
 shipToBuild = nil
 shipSelected = false
@@ -57,7 +57,6 @@ soundLength = 0.25
 menuLevel = nil
 --/tempvars
 
-Admirals = {}
 
 ARROW_LENGTH = 135
 ARROW_VAR = (3 * math.sqrt(3))
@@ -67,9 +66,3 @@ arrowLength = ARROW_LENGTH
 arrowVar = ARROW_VAR
 arrowDist = ARROW_DIST
 arrowAlpha = CarrowAlpha
-
-GRID_DIST_BLUE = 512
-GRID_DIST_LIGHT_BLUE = 4096
-GRID_DIST_GREEN = 32768
-
-keyControls = { left = false, right = false, forward = false, brake = false }

@@ -1220,6 +1220,30 @@ int GFX_DrawSpriteFromSheet ( lua_State* L )
 	}
 	return 0;
 }
+	
+int GFX_DrawSpriteFrame ( lua_State* L )
+{
+	const char* spritesheet;
+	int nargs = lua_gettop(L);
+	float rot = 0.0f;
+	spritesheet = luaL_checkstring(L, 1);
+	vec2 location = luaL_checkvec2(L, 2);
+	vec2 size = luaL_checkvec2(L, 3);
+	int index = luaL_checkinteger(L, 4);
+	if (nargs > 4)
+	{
+		rot = luaL_checknumber(L, 5);
+	}
+	if (nargs > 5)
+	{
+		Graphics::DrawSpriteFrame(spritesheet, location, size, index, rot, LoadColour(L, 6));
+	}
+	else
+	{
+		Graphics::DrawSpriteFrame(spritesheet, location, size, index, rot, colour(1.0f, 1.0f, 1.0f, 1.0f));
+	}
+	return 0;
+}
 
 int GFX_BeginWarp ( lua_State* L )
 {
@@ -1500,6 +1524,7 @@ luaL_Reg registryGraphics[] =
 	"draw_image", GFX_DrawImage,
 	"draw_sprite", GFX_DrawSprite,
 	"draw_sheet_sprite", GFX_DrawSpriteFromSheet,
+	"draw_sprite_frame", GFX_DrawSpriteFrame,
 	"sprite_dimensions", GFX_SpriteDimensions,
 	"draw_starfield", GFX_DrawStarfield,
 	"draw_text", GFX_DrawText,

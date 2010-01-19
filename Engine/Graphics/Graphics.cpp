@@ -351,6 +351,33 @@ void DrawSprite ( const std::string& sheetname, int sheet_x, int sheet_y, vec2 p
 	}
 }
 
+void DrawSpriteFrame ( const std::string& sheetname, vec2 position, vec2 size, int index, float rotation, colour col )
+{
+	SetShader("Sprite");
+	EnableTexturing();
+	EnableBlending();
+	ClearColour();
+	SetColour(col);
+	SpriteSheet* sheet;
+	SheetMap::iterator iter = spriteSheets.find(sheetname);
+	if (iter == spriteSheets.end())
+	{
+		sheet = new SpriteSheet(sheetname);
+		spriteSheets[sheetname] = sheet;
+	}
+	else
+	{
+		sheet = iter->second;
+	}
+	Matrices::SetViewMatrix(matrix2x3::Translate(position));
+	Matrices::SetModelMatrix(matrix2x3::Identity());
+	glRotatef(RAD2DEG(rotation), 0.0f, 0.0f, 1.0f);
+	
+	int x = index % sheet->SheetTilesX();
+	int y = (index - x) / sheet->SheetTilesX();
+	sheet->Draw(x, y, size);
+}
+
 /* [ADAMLATER] - this is a function that allows sprites to be tiled if necessary
 void DrawSpriteTile ( const std::string& sheetname, int sheet_x, int sheet_y, vec2 position, vec2 size, float rotation, colour col )
 {
@@ -478,7 +505,8 @@ static void RealDrawLightning ( vec2 coordinate1, vec2 coordinate2, float width,
 	for (unsigned long i = 0; i < segments; i++)
 	{
 		float delta = ((float)i / (float)(segments - 1));
-		vec2 basePosition = ((coordinate1*(1.0f-delta)) + (coordinate2*delta)) / 2.0f;
+		//This may be only a partial fix.	
+		vec2 basePosition = ((coordinate1*(1.0f-delta)) + (coordinate2*delta));// / 2.0f;
 		if (tailed)
 		{
 			delta *= 2.0f;

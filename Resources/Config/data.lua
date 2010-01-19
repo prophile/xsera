@@ -16639,7 +16639,7 @@ return {
 ["initial-direction"] = 0;
 ["beam"] = {
 ["color"] = 65;
-["kind"] = 512;
+["kind"] = "kinetic";
 ["accuracy"] = 256;
 ["range"] = 768;
 };
@@ -17483,7 +17483,7 @@ return {
 ["initial-direction"] = 0;
 ["beam"] = {
 ["color"] = 241;
-["kind"] = 7680;
+["kind"] = "kinetic";
 ["accuracy"] = 256;
 ["range"] = 7936;
 };
@@ -17823,7 +17823,7 @@ return {
 ["initial-direction"] = 0;
 ["beam"] = {
 ["color"] = 129;
-["kind"] = 9472;
+["kind"] = "kinetic";
 ["accuracy"] = 256;
 ["range"] = 9728;
 };
@@ -21062,7 +21062,7 @@ return {
 ["initial-direction"] = 0;
 ["beam"] = {
 ["color"] = 193;
-["kind"] = 512;
+["kind"] = "kinetic";
 ["accuracy"] = 256;
 ["range"] = 768;
 };
@@ -23310,7 +23310,7 @@ return {
 ["initial-direction"] = 0;
 ["beam"] = {
 ["color"] = 65;
-["kind"] = 512;
+["kind"] = "kinetic";
 ["accuracy"] = 256;
 ["range"] = 768;
 };
@@ -25402,7 +25402,7 @@ return {
 ["initial-direction"] = 0;
 ["beam"] = {
 ["color"] = 17;
-["kind"] = 512;
+["kind"] = "kinetic";
 ["accuracy"] = 256;
 ["range"] = 768;
 };
@@ -26303,7 +26303,7 @@ return {
 ["initial-direction"] = 0;
 ["beam"] = {
 ["color"] = 209;
-["kind"] = 9472;
+["kind"] = "kinetic";
 ["accuracy"] = 256;
 ["range"] = 9728;
 };
@@ -26937,7 +26937,7 @@ return {
 ["initial-direction"] = 0;
 ["beam"] = {
 ["color"] = 97;
-["kind"] = 9472;
+["kind"] = "kinetic";
 ["accuracy"] = 256;
 ["range"] = 9728;
 };
@@ -27929,7 +27929,7 @@ return {
 ["initial-direction"] = 0;
 ["beam"] = {
 ["color"] = 209;
-["kind"] = 512;
+["kind"] = "kinetic";
 ["accuracy"] = 256;
 ["range"] = 768;
 };
@@ -28240,7 +28240,7 @@ return {
 ["initial-direction"] = 0;
 ["beam"] = {
 ["color"] = 177;
-["kind"] = 512;
+["kind"] = "kinetic";
 ["accuracy"] = 256;
 ["range"] = 768;
 };
@@ -29658,7 +29658,7 @@ return {
 ["initial-direction"] = 0;
 ["beam"] = {
 ["color"] = 241;
-["kind"] = 512;
+["kind"] = "kinetic";
 ["accuracy"] = 256;
 ["range"] = 768;
 };
@@ -31521,7 +31521,7 @@ return {
 ["initial-direction"] = 0;
 ["beam"] = {
 ["color"] = 177;
-["kind"] = 512;
+["kind"] = "kinetic";
 ["accuracy"] = 256;
 ["range"] = 768;
 };
@@ -33733,7 +33733,7 @@ return {
 ["initial-direction"] = 0;
 ["beam"] = {
 ["color"] = 129;
-["kind"] = 67108864;
+["kind"] = "bolt-relative";
 ["accuracy"] = 3;
 ["range"] = -2080374016;
 };
@@ -33815,7 +33815,7 @@ return {
 ["initial-direction"] = 0;
 ["beam"] = {
 ["color"] = 193;
-["kind"] = 33554432;
+["kind"] = "static-relative";
 ["accuracy"] = 838860801;
 ["range"] = 738198272;
 };
