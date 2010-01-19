@@ -110,7 +110,12 @@ function update()
 		local o = scen.objects[i]
 		if o.attributes["can-collide"] == true then
 
-
+			if o.beam ~= nil
+			and (o.beam.kind == "bolt-relative"
+			or o.beam.kind == "static-relative") then
+				o.physics.position = VecAdd(o.src.position, o.offset)
+			end
+			
 			for i2 = i + 1, #scen.objects do
 				local o2 = scen.objects[i2]
 				if o2.attributes["can-collide"] == true
@@ -377,9 +382,6 @@ function render()
 					end
 				end
 			elseif o.beam ~= nil then
-				if o.beam.kind == 512
-				or o.beam.kind == 7680
-				or o.beam.kind == 9472
 				or o.beam.kind == "kinetic"
 				then --Kinetic Bolt
 					local p1 = o.physics.position

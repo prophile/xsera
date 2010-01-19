@@ -18917,7 +18917,7 @@ return {
 ["initial-direction"] = 0;
 ["beam"] = {
 ["color"] = 1;
-["kind"] = 17408;
+["kind"] = "kinetic"; --17408;
 ["accuracy"] = 256;
 ["range"] = 17664;
 };
