@@ -24,15 +24,17 @@ GLuint CreateTexture ( SDL_Surface* surface, bool autofree, bool rectangle )
 	glBindTexture(target, texID);
 	if (surface->format->BytesPerPixel == 3)
 	{
+		GLenum format = (surface->format->Rmask) != 0xFF ? GL_BGR_EXT : GL_RGB;
 		glTexImage2D(target, 0, GL_RGB,
 					 surface->w, surface->h, 0,
-					 GL_RGB, GL_UNSIGNED_BYTE, surface->pixels);
+					 format, GL_UNSIGNED_BYTE, surface->pixels);
 	}
 	else
 	{
+		GLenum format = (surface->format->Rmask) != 0xFF ? GL_BGRA_EXT : GL_RGBA;
 		glTexImage2D(target, 0, GL_RGBA,
 					 surface->w, surface->h, 0,
-					 GL_RGBA, GL_UNSIGNED_BYTE, surface->pixels);
+					 format, GL_UNSIGNED_BYTE, surface->pixels);
 	}
 	if (autofree)
 		SDL_FreeSurface(surface);
