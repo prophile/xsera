@@ -373,10 +373,31 @@ function render()
 	
 	graphics.draw_particles()
 	DrawArrow()
+	-- Mouse
+	-- not disabled for now
+	if mouseMovement == nil then
+		-- draw mouse replacement
+		-- check to see if it's over the panels
+		-- if it's not, draw the lines coming inward
+		ship = scen.playerShip.physics.position
+		mousePos = GetMouseCoords()
+		print("COORDS", mousePos.x, mousePos.y)
+		graphics.draw_line({ x = - camera.w / 2 + ship.x, y = mousePos.y }, { x = mousePos.x - 20, y = mousePos.y }, 1.0, ClutColour(4, 8))
+		graphics.draw_line({ x = camera.w / 2 + ship.x, y = mousePos.y }, { x = mousePos.x + 20, y = mousePos.y }, 1.0, ClutColour(4, 8))
+		graphics.draw_line({ x = mousePos.x, y = -camera.h / 2 + ship.y }, { x = mousePos.x, y = mousePos.y - 20 }, 1.0, ClutColour(4, 8))
+		graphics.draw_line({ x = mousePos.x, y = camera.h / 2 + ship.y }, { x = mousePos.x, y = mousePos.y + 20 }, 1.0, ClutColour(4, 8))
+		-- if it is, draw the cursor
+		local cursor = graphics.sprite_dimensions("Misc/Cursor")
+		graphics.draw_sprite("Misc/Cursor", mousePos, cursor, 0)
+		-- check mouse idleness timer
+		--if mode_manager.time() - mouseStart >= 2.0 then
+		--	mouseMovement = false
+		--end
+	end
+	--]]
 	DrawPanels()
 	graphics.end_frame()
 end
-
 
 function quit()
 	physics.close()
