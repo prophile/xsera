@@ -229,17 +229,7 @@ v2 = Polar2Rect(1,angle+180) * dist * m2 / (m1 + m2)
 	--[[------------------
 		Movement
 	------------------]]--
-		if o["max-thrust"] ~= nil then
-			local v = o.physics.velocity
-			if hypot1(v) > o["max-velocity"] * SPEED_FACTOR then
-				o.physics.velocity = {
-					x = o["max-velocity"] * normalize(v.x,v.y) * SPEED_FACTOR;
-					y = o["max-velocity"] * normalize(v.y,v.x) * SPEED_FACTOR;
-				}
-				
-			end
-		end
-		
+
 		local rvel
 		if o.attributes["can-turn"] == true then
 			rvel = o.rotation["max-turn-rate"]
@@ -260,10 +250,15 @@ v2 = Polar2Rect(1,angle+180) * dist * m2 / (m1 + m2)
 				-- apply a forward force in the direction the ship is facing
 				local angle = o.physics.angle
 				--Multiply by 60 because the thrust value in the data is given per FRAME not per second.
+
 				local thrust = o["max-thrust"] * TIME_FACTOR * SPEED_FACTOR
 				local force = { x = thrust * math.cos(angle), y = thrust * math.sin(angle) }
 				o.physics:apply_force(force)
-			elseif o.control.decel == true then
+			end
+			
+			if o.control.decel == true
+			or hypot1(o.physics.velocity) >= o["max-velocity"] * SPEED_FACTOR then
+			
 				-- apply a reverse force in the direction opposite the direction the ship is MOVING
 				local thrust = o["max-thrust"] * TIME_FACTOR * SPEED_FACTOR
 				local force = o.physics.velocity
@@ -276,7 +271,7 @@ v2 = Polar2Rect(1,angle+180) * dist * m2 / (m1 + m2)
 						force.y = -force.y / velocityMag
 						force.x = force.x * thrust
 						force.y = force.y * thrust
-						if hypot1(force) > hypot1(o.physics.velocity) then
+						if dt * hypot1(force) / o.physics.mass > hypot1(o.physics.velocity) then
 							o.physics.velocity = { x = 0, y = 0 }
 						else
 							o.physics:apply_force(force)

@@ -100,7 +100,7 @@ end,
 	print("CALL")
 	local p
 	local angle = source.physics.angle
-	local delta = PolarVec(math.sqrt(action.minimum), angle)
+	local delta = PolarVec(math.sqrt(action.minimum)+math.random(0.0,action.range), angle)
 	
 	if action.reflexive == "true" then
 		p = source.physics
