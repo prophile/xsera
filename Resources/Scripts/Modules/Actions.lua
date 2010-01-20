@@ -165,7 +165,10 @@ if new.beam ~= nil and new.beam.kind ~= "kinetic" then
 	end
 end
 
-if action["direction-relative"] == "true" then
+
+if source.attributes["auto-target"] == true then
+	new.physics.angle = find_angle(trackingTarget, new.physics.position)
+elseif action["direction-relative"] == "true" then
 	new.physics.angle = p.angle
 else
 	new.physics.angle = RandomReal(0, 2.0 * math.pi)
