@@ -240,23 +240,21 @@ v2 = Polar2Rect(1,angle+180) * dist * m2 / (m1 + m2)
 			end
 		end
 		
+		local rvel
 		if o.attributes["can-turn"] == true then
-			if o.control.left == true then
-				if key_press_f6 ~= true then
-					o.physics.angular_velocity = o.rotation["max-turn-rate"] * 2.0
-				else
-					o.physics.angular_velocity = o.rotation["max-turn-rate"] * 4.0
-				end
-			elseif o.control.right == true then
-				if key_press_f6 ~= true then
-					o.physics.angular_velocity = -o.rotation["max-turn-rate"] * 2.0
-				else
-					o.physics.angular_velocity = -o.rotation["max-turn-rate"] * 4.0
-				end
-			else
-				o.physics.angular_velocity = 0
-			end
-		end 
+			rvel = o.rotation["max-turn-rate"]
+		else
+			rvel = DEFAULT_ROTATION_RATE
+		end
+		
+		if o.control.left == true then
+			o.physics.angular_velocity = rvel * 2.0
+		elseif o.control.right == true then
+			o.physics.angular_velocity = -rvel * 2.0
+		else
+			o.physics.angular_velocity = 0
+		end
+			
 		if o["max-thrust"] ~= nil then
 			if o.control.accel == true then
 				-- apply a forward force in the direction the ship is facing
