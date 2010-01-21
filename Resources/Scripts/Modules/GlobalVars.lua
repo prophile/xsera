@@ -24,10 +24,10 @@ releaseBuild = mode_manager.is_release()
 
 --camera vars
 cameraRatio = 1
-cameraRatios = { 2, 1, 1/2, 1/4, 1/16, "hostile" }
+cameraRatios = { 2, 1, 1/2, 1/4, 1/8, 1/16, "hostile" }
 cameraRatioNum = 2
 aspectRatio = 4 / 3
-camera = { w = 1024 / cameraRatio, h }
+camera = { w = 640 / cameraRatio, h }
 camera.h = camera.w / aspectRatio
 shipAdjust = .045 * camera.w
 timeInterval = 1

@@ -367,7 +367,7 @@ function render()
 			local o = scen.objects[obId]
 			
 			if o.sprite ~= nil then
-				if camera.w <= 8192 then
+				if camera.w <= 5120 then
 					if o.animation ~= nil then
 						graphics.draw_sprite_frame("Id/"..o.sprite, o.physics.position, o.spriteDim, Animate(o))
 					else
@@ -384,7 +384,7 @@ function render()
 						color = ClutColour(16,1)
 					end
 					
-					local iconScale = camera.w / 1024
+					local iconScale = 1/cameraRatio
 					if o["tiny-shape"] == "solid-square" then
 						graphics.draw_rbox(o.physics.position, o["tiny-size"] * iconScale, color)
 					elseif o["tiny-shape"] == "plus" then
