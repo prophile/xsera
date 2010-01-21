@@ -34,6 +34,12 @@ function NewObject(id)
 		newObj.sprite = newObj["sprite-id"]
 		
 		newObj.spriteDim = graphics.sprite_dimensions("Id/" .. newObj.sprite)
+		if newObj["natural-scale"] ~= nil then
+			newObj.spriteDim = {
+				x = newObj.spriteDim.x * newObj["natural-scale"];
+				y = newObj.spriteDim.y * newObj["natural-scale"];
+			}
+		end
 	end
 	
 	if newObj.mass == nil then

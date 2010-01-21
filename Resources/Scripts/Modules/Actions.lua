@@ -97,10 +97,9 @@ end,
 ["alter-spin-action"] = function(action, source, direct) end,
 ["alter-thrust-action"] = function(action, source, direct) end,
 ["alter-velocity-action"] = function(action, source, direct)
-	print("CALL")
 	local p
 	local angle = source.physics.angle
-	local delta = PolarVec(math.sqrt(action.minimum)+math.random(0.0,action.range), angle)
+	local delta = PolarVec(math.sqrt(action.minimum)+math.random(0.0,math.sqrt(action.range)), angle)
 	
 	if action.reflexive == "true" then
 		p = source.physics

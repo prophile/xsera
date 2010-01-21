@@ -181,7 +181,21 @@ v2 = Polar2Rect(1,angle+180) * dist * m2 / (m1 + m2)
 			DestroyTrigger(o)
 			o.dead = true
 		end
-
+		
+		if o.energy ~= nil
+		and o.energy < o.energyMax
+		and o.battery > dt then
+			o.energy = o.energy + dt * ENERGY_RECHARGE_RATE
+			o.battery = o.battery - dt * ENERGY_RECHARGE_RATE
+		end
+		
+		if o.health ~= nil
+		and o.health <= o.healthMax * SHIELD_RECHARGE_MAX
+		and	o.energy > SHIELD_RECHARGE_RATIO * SHIELD_RECHARGE_RATE * dt then
+			o.health = o.health + SHIELD_RECHARGE_RATIO * SHIELD_RECHARGE_RATE * dt
+			o.energy = o.energy - SHIELD_RECHARGE_RATE * dt
+		end
+		
 		--Lifetimer
 		if o.age ~= nil then
 			if o.age + o.created <= newTime then

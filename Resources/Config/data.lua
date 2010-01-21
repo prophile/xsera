@@ -3150,7 +3150,7 @@ return {
 ["reflexive"] = "false";
 ["relative"] = "false";
 ["minimum"] = 5120;
-["range"] = 2560;
+["range"] = 6553600;
 
 };
 [339] =  {
