@@ -182,20 +182,22 @@ v2 = Polar2Rect(1,angle+180) * dist * m2 / (m1 + m2)
 			o.dead = true
 		end
 		
-		if o.energy ~= nil
-		and o.energy < o.energyMax
-		and o.battery > dt then
-			o.energy = o.energy + dt * ENERGY_RECHARGE_RATE
-			o.battery = o.battery - dt * ENERGY_RECHARGE_RATE
+		if o.energy ~= nil then
+			if o.energy < o.energyMax
+			and o.battery > dt then
+				o.energy = o.energy + dt * ENERGY_RECHARGE_RATE
+				o.battery = o.battery - dt * ENERGY_RECHARGE_RATE
+			end
+			
+			if o.health ~= nil
+			and o.health <= o.healthMax * SHIELD_RECHARGE_MAX
+			and	o.energy > SHIELD_RECHARGE_RATIO * SHIELD_RECHARGE_RATE * dt then
+				o.health = o.health + SHIELD_RECHARGE_RATIO * SHIELD_RECHARGE_RATE * dt
+				o.energy = o.energy - SHIELD_RECHARGE_RATE * dt
 		end
-		
-		if o.health ~= nil
-		and o.health <= o.healthMax * SHIELD_RECHARGE_MAX
-		and	o.energy > SHIELD_RECHARGE_RATIO * SHIELD_RECHARGE_RATE * dt then
-			o.health = o.health + SHIELD_RECHARGE_RATIO * SHIELD_RECHARGE_RATE * dt
-			o.energy = o.energy - SHIELD_RECHARGE_RATE * dt
+			
 		end
-		
+
 		--Lifetimer
 		if o.age ~= nil then
 			if o.age + o.created <= newTime then
@@ -227,18 +229,22 @@ v2 = Polar2Rect(1,angle+180) * dist * m2 / (m1 + m2)
 		end
 		
 		--Fire weapons
-		if o.control.pulse == true then
-			ActivateTrigger(o.weapon.pulse, o)
-		end
+		if o.weapon ~= nil then
+			if o.control.pulse == true
+			and o.weapon.pulse ~= nil then
+				ActivateTrigger(o.weapon.pulse, o)
+			end
 
-		if o.control.beam == true then
-			ActivateTrigger(o.weapon.beam, o)
-		end
+			if o.control.beam == true
+			and o.weapon.beam ~= nil then
+				ActivateTrigger(o.weapon.beam, o)
+			end
 
-		if o.control.special == true then
-			ActivateTrigger(o.weapon.special, o)
+			if o.control.special == true
+			and o.weapon.special ~= nil then
+				ActivateTrigger(o.weapon.special, o)
+			end
 		end
-		
 		
 	--[[------------------
 		Movement
