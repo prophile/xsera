@@ -63,7 +63,7 @@ function NewObject(id)
 	newObj.physics.angular_velocity = 0.00
 	
 	if newObj.spriteDim ~= nil then
-		newObj.physics.collision_radius = hypot1(newObj.spriteDim) / 32
+		newObj.physics.collision_radius = hypot1(newObj.spriteDim) / 4
 	else
 		newObj.physics.collision_radius = 1
 	end

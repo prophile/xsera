@@ -77,7 +77,7 @@ obj1 and obj2 both have radii (ship to ship, ship to planet collisions)
 */
 bool Object::Collision( vec2 obj1, vec2 obj2, float radius1, float radius2 )
 {
-	if ( hypotf(obj1.X() - obj2.X(), obj1.Y() - obj2.Y()) <= (radius1 + radius2) * (radius1 + radius2))
+	if ( hypotf(obj1.X() - obj2.X(), obj1.Y() - obj2.Y()) <= (radius1 + radius2))
 	{
 		return true;
 	}

@@ -323,7 +323,7 @@ function DrawRadar()
 		and o.attributes["appear-on-radar"] == true
 		and math.abs(o.physics.position.x - scen.playerShip.physics.position.x) < radarRange.x
 		and math.abs(o.physics.position.y - scen.playerShip.physics.position.y) < radarRange.y then
-			tab = { r = 1, g = 0, b = 0, a = 1 }
+			tab = { r = 0, g = 1, b = 0, a = 1 }
 			placement = { x = radar.left + ((o.physics.position.x - scen.playerShip.physics.position.x) / radarRange.x + 1) * radar.width / 2, y = radar.bottom + ((o.physics.position.y - scen.playerShip.physics.position.y) / radarRange.y + 1) * radar.length / 2 }
 			graphics.draw_point(placement, 10, tab)
 		end
