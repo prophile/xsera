@@ -184,16 +184,16 @@ v2 = Polar2Rect(1,angle+180) * dist * m2 / (m1 + m2)
 		
 		if o.energy ~= nil then
 			if o.energy < o.energyMax
-			and o.battery > dt then
-				o.energy = o.energy + dt * ENERGY_RECHARGE_RATE
-				o.battery = o.battery - dt * ENERGY_RECHARGE_RATE
+			and o.battery > dt * BASE_RECHARGE_RATE * ENERGY_RECHARGE_RATIO then
+				o.energy = o.energy + dt * BASE_RECHARGE_RATE * ENERGY_RECHARGE_RATIO
+				o.battery = o.battery - dt * BASE_RECHARGE_RATE * ENERGY_RECHARGE_RATIO
 			end
 			
 			if o.health ~= nil
 			and o.health <= o.healthMax * SHIELD_RECHARGE_MAX
-			and	o.energy > SHIELD_RECHARGE_RATIO * SHIELD_RECHARGE_RATE * dt then
-				o.health = o.health + SHIELD_RECHARGE_RATIO * SHIELD_RECHARGE_RATE * dt
-				o.energy = o.energy - SHIELD_RECHARGE_RATE * dt
+			and	o.energy > SHIELD_RECHARGE_RATIO * BASE_RECHARGE_RATE * dt then
+				o.health = o.health + BASE_RECHARGE_RATE * dt
+				o.energy = o.energy - BASE_RECHARGE_RATE *  SHIELD_RECHARGE_RATIO * dt
 		end
 			
 		end
