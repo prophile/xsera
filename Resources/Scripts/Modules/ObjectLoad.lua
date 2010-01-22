@@ -95,6 +95,7 @@ function NewObject(id)
 			
 			weap.device.lastActivated = -weap.device["fire-time"] / TIME_FACTOR
 			
+			weap.device.lastRestock = mode_manager.time()
 			CopyActions(weap)
 
 			newObj.weapon[newObj.weapon[wid].type] = weap
