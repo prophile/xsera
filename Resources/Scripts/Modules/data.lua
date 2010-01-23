@@ -1,4 +1,4 @@
-return {
+gameData = {
 ["Actions"] = {
 [000] =  {
 ["type"] = "create-object-action";

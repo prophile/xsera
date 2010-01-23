@@ -1,13 +1,7 @@
-import('EntityLoad')
 import('BoxDrawing')
+import('GlobalVars')
 
-loadingEntities = true
-if scen == nil then
-	scen = NewEntity(nil, "demo", "Scenario")
-end
-loadingEntities = false
-
-control = scen.planet -- [HARDCODED]
+-- control = scen.planet -- [HARDCODED]
 target = nil
 
 menuShift = -391
@@ -344,7 +338,7 @@ function DrawPanels()
 --	Battery (red)
 	if scen.playerShip.battery ~= nil then
 		graphics.draw_box(107, 379, 29, 386, 0, ClutColour(8, 8))
-		graphics.draw_box(scen.playerShip.battery / scen.playerShip.batteryMax * 78 + 29, 379, 29, 386, 0, ClutColour(8, 5)) -- #TEST these commented lines should be fixed and uncommented
+		graphics.draw_box(scen.playerShip.battery / scen.playerShip.batteryMax * 78 + 29, 379, 29, 386, 0, ClutColour(8, 5))
 	end
 --	Energy (yellow)
 	if scen.playerShip.energy ~= nil then
@@ -580,6 +574,58 @@ function change_menu(menu, direction)
 	end
 end
 
+function GetMouseCoords()
+	local x, y = mouse_position()
+	return {
+		x = scen.playerShip.physics.position.x -shipAdjust + camera.w * x - camera.w / 2;
+		y = scen.playerShip.physics.position.y  + camera.h * y - camera.h / 2;
+	}
+end
+
+function DrawMouse1()
+	mousePos = GetMouseCoords()
+	if FindDist(mousePos, oldMousePos) > 0 then
+		mouseStart = mode_manager.time()
+	end
+	if mode_manager.time() - mouseStart < 2.0 then
+		ship = scen.playerShip.physics.position
+		
+		if mousePos.x > 260 / cameraRatio + ship.x then
+			mousePos.x = 260 / cameraRatio + ship.x
+		elseif mousePos.x < -320 / cameraRatio + ship.x - shipAdjust then
+			mousePos.x = -320 / cameraRatio + ship.x - shipAdjust
+		end
+		
+		if mousePos.y > 230 / cameraRatio + ship.y then
+			mousePos.y = 230 / cameraRatio + ship.y
+		elseif mousePos.y < -220 / cameraRatio + ship.y then
+			mousePos.y = -220 / cameraRatio + ship.y
+		end
+		graphics.draw_line({ x = - camera.w / 2 + ship.x, y = mousePos.y }, { x = mousePos.x - 20 / cameraRatio, y = mousePos.y }, 1.0, ClutColour(4, 8))
+		graphics.draw_line({ x = camera.w / 2 + ship.x, y = mousePos.y }, { x = mousePos.x + 20 / cameraRatio, y = mousePos.y }, 1.0, ClutColour(4, 8))
+		graphics.draw_line({ x = mousePos.x, y = -camera.h / 2 + ship.y }, { x = mousePos.x, y = mousePos.y - 20 / cameraRatio }, 1.0, ClutColour(4, 8))
+		graphics.draw_line({ x = mousePos.x, y = camera.h / 2 + ship.y }, { x = mousePos.x, y = mousePos.y + 20 / cameraRatio }, 1.0, ClutColour(4, 8))
+	end
+end
+
+function DrawMouse2()
+	ship = scen.playerShip.physics.position
+	mousePos = GetMouseCoords()
+	if mode_manager.time() - mouseStart < 2.0 and mousePos.x < -260 / cameraRatio + ship.x then
+		graphics.set_camera( -- should I have to do this? [ADAM, HACK]
+			-scen.playerShip.physics.position.x + shipAdjust - (camera.w / 2.0),
+			-scen.playerShip.physics.position.y - (camera.h / 2.0),
+			-scen.playerShip.physics.position.x + shipAdjust + (camera.w / 2.0),
+			-scen.playerShip.physics.position.y + (camera.h / 2.0))
+	
+		local cursor = graphics.sprite_dimensions("Misc/Cursor")
+		graphics.draw_sprite("Misc/Cursor", mousePos, cursor, 0)
+		
+		if mode_manager.time() - mouseStart >= 2.0 then
+			mouseMovement = false
+		end
+	end
+end
 
 function DrawArrow()
 	local angle = scen.playerShip.physics.angle

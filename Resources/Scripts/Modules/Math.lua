@@ -18,6 +18,10 @@ function find_angle(origin, dest)
 	return angle
 end
 
+function FindDist(pt1, pt2)
+	return math.abs(pt1.x - pt2.x) + math.abs(pt1.y - pt2.y)
+end
+
 function find_hypot(point1, point2)
 	return (math.sqrt((point1.y - point2.y) * (point1.y - point2.y) + (point1.x - point2.x) * (point1.x - point2.x)))
 end

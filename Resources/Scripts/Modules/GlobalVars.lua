@@ -1,5 +1,6 @@
 import('Math')
 import('AresCLUT')
+import('data')
 
 --constants
 SPEED_FACTOR = 64.0
@@ -16,15 +17,26 @@ WEAPON_RESTOCK_RATE = 4.0
 DEFAULT_ROTATION_RATE = math.pi
 RESTITUTION_COEFFICIENT = 1.0
 RESOURCES_PER_TICK = 200
+
 GRID_DIST_BLUE = 512
 GRID_DIST_LIGHT_BLUE = 4096
 GRID_DIST_GREEN = 32768
 
+ARROW_LENGTH = 135
+ARROW_VAR = (3 * math.sqrt(3))
+ARROW_DIST = hypot(6, (ARROW_LENGTH - ARROW_VAR))
+
+RELEASE_BUILD = mode_manager.is_release()
+--/constants
+
 demoLevel = 25
 shipSeek = false
 
+--mouse variables
+oldMousePos = { x = 0, y = 0 }
+mouseStart = 0
+--/mouse variables
 
-releaseBuild = mode_manager.is_release()
 
 --camera vars
 cameraRatio = 1
@@ -45,7 +57,6 @@ endGameData = nil
 loadingEntities = false
 entities = {}
 --/scenvars
-
 
 --tempvars
 showVelocity = false
@@ -69,10 +80,6 @@ menuLevel = nil
 isMultiplayer = false
 --/client-server
 
---constants
-ARROW_LENGTH = 135
-ARROW_VAR = (3 * math.sqrt(3))
-ARROW_DIST = hypot(6, (ARROW_LENGTH - ARROW_VAR))
 CarrowAlpha = math.atan2(6, ARROW_DIST)
 arrowLength = ARROW_LENGTH
 arrowVar = ARROW_VAR
