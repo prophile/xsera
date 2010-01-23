@@ -34,6 +34,12 @@ function NewObject(id)
 		newObj.sprite = newObj["sprite-id"]
 		
 		newObj.spriteDim = graphics.sprite_dimensions("Id/" .. newObj.sprite)
+		if newObj["natural-scale"] ~= nil then
+			newObj.spriteDim = {
+				x = newObj.spriteDim.x * newObj["natural-scale"];
+				y = newObj.spriteDim.y * newObj["natural-scale"];
+			}
+		end
 	end
 	
 	if newObj.mass == nil then
@@ -57,7 +63,7 @@ function NewObject(id)
 	newObj.physics.angular_velocity = 0.00
 	
 	if newObj.spriteDim ~= nil then
-		newObj.physics.collision_radius = hypot1(newObj.spriteDim) / 32
+		newObj.physics.collision_radius = hypot1(newObj.spriteDim) / 4
 	else
 		newObj.physics.collision_radius = 1
 	end
@@ -89,6 +95,7 @@ function NewObject(id)
 			
 			weap.device.lastActivated = -weap.device["fire-time"] / TIME_FACTOR
 			
+			weap.device.lastRestock = mode_manager.time()
 			CopyActions(weap)
 
 			newObj.weapon[newObj.weapon[wid].type] = weap

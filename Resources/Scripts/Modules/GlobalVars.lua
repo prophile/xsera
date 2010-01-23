@@ -4,7 +4,16 @@ import('AresCLUT')
 --constants
 SPEED_FACTOR = 64.0
 TIME_FACTOR = 60.0 -- [ADAM] #TEST change this to dt
-BEAM_LENGTH = 32
+BEAM_LENGTH = 48
+--[SCOTT] Recharge rates need tuning
+BASE_RECHARGE_RATE = 4.0
+ENERGY_RECHARGE_RATIO = 11.0
+SHIELD_RECHARGE_MAX = 1.0 / 2.0
+SHIELD_RECHARGE_RATIO = 5.0
+WEAPON_RESTOCK_RATIO = 2.0
+WEAPON_RESTOCK_RATE = 4.0
+
+DEFAULT_ROTATION_RATE = math.pi
 RESTITUTION_COEFFICIENT = 1.0
 RESOURCES_PER_TICK = 200
 GRID_DIST_BLUE = 512
@@ -19,10 +28,10 @@ releaseBuild = mode_manager.is_release()
 
 --camera vars
 cameraRatio = 1
-cameraRatios = { 2, 1, 1/2, 1/4, 1/16, "hostile" }
+cameraRatios = { 2, 1, 1/2, 1/4, 1/8, 1/16, "hostile" }
 cameraRatioNum = 2
 aspectRatio = 4 / 3
-camera = { w = 1024 / cameraRatio, h }
+camera = { w = 640 / cameraRatio, h }
 camera.h = camera.w / aspectRatio
 shipAdjust = .045 * camera.w
 timeInterval = 1

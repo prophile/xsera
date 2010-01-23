@@ -97,10 +97,9 @@ end,
 ["alter-spin-action"] = function(action, source, direct) end,
 ["alter-thrust-action"] = function(action, source, direct) end,
 ["alter-velocity-action"] = function(action, source, direct)
-	print("CALL")
 	local p
 	local angle = source.physics.angle
-	local delta = PolarVec(math.sqrt(action.minimum), angle)
+	local delta = PolarVec(math.sqrt(action.minimum)+math.random(0.0,math.sqrt(action.range)), angle)
 	
 	if action.reflexive == "true" then
 		p = source.physics
@@ -153,14 +152,22 @@ if new.beam ~= nil and new.beam.kind ~= "kinetic" then
 	new.src = p
 	if new.beam.kind == "bolt-relative"
 	or new.beam.kind == "static-relative" then
-		new.physics.position = deepcopy(trackingTarget)
-		new.physics.velocity = p.velocity
+--		local offset = VecSub(trackingTarget, new.src.position)
+		new.offset = VecMul(NormalizeVec( VecSub(trackingTarget, new.src.position)), math.min(new.beam.range, find_hypot(new.src.position, trackingTarget)))
+		
+		new.physics.position = VecAdd(new.physics.position, new.offset)
 	else
-		new.physics.position = trackingTarget
+
+		new.target = {position = trackingTarget}
+			
+		new.physics.position = VecAdd(VecMul(NormalizeVec(VecSub(new.target.position,new.src.position)), math.min(new.beam.range,find_hypot(new.src.position,new.target.position))),new.src.position)
 	end
 end
 
-if action["direction-relative"] == "true" then
+
+if source.attributes["auto-target"] == true then
+	new.physics.angle = find_angle(trackingTarget, new.physics.position)
+elseif action["direction-relative"] == "true" then
 	new.physics.angle = p.angle
 else
 	new.physics.angle = RandomReal(0, 2.0 * math.pi)

@@ -319,9 +319,11 @@ function DrawRadar()
 	local radarRange = { x = 2^11, y = 2^11 }
 	for i = 1, #scen.objects do
 		local o = scen.objects[i]
-		if o ~= scen.playerShip and math.abs(o.physics.position.x - scen.playerShip.physics.position.x) < radarRange.x
-		 and math.abs(o.physics.position.y - scen.playerShip.physics.position.y) < radarRange.y then
-			tab = { r = 1, g = 0, b = 0, a = 1 }
+		if o ~= scen.playerShip
+		and o.attributes["appear-on-radar"] == true
+		and math.abs(o.physics.position.x - scen.playerShip.physics.position.x) < radarRange.x
+		and math.abs(o.physics.position.y - scen.playerShip.physics.position.y) < radarRange.y then
+			tab = { r = 0, g = 1, b = 0, a = 1 }
 			placement = { x = radar.left + ((o.physics.position.x - scen.playerShip.physics.position.x) / radarRange.x + 1) * radar.width / 2, y = radar.bottom + ((o.physics.position.y - scen.playerShip.physics.position.y) / radarRange.y + 1) * radar.length / 2 }
 			graphics.draw_point(placement, 10, tab)
 		end
@@ -352,7 +354,7 @@ function DrawPanels()
 --	Shield (blue)
 	if scen.playerShip.health ~= nil then
 		graphics.draw_box(-96, 379, -173, 386, 0, ClutColour(14, 8))
-		graphics.draw_box(scen.playerShip.health / scen.playerShip.health * 77 - 173, 379, -173, 386, 0, ClutColour(14, 6))
+		graphics.draw_box(scen.playerShip.health / scen.playerShip.healthMax * 77 - 173, 379, -173, 386, 0, ClutColour(14, 6))
 	end
 --	Factory resources (green - mostly)
 	count = 1

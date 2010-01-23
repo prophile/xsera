@@ -110,7 +110,16 @@ function update()
 		local o = scen.objects[i]
 		if o.attributes["can-collide"] == true then
 
-
+			if o.beam ~= nil then
+				if o.beam.kind == "bolt-relative"
+				or o.beam.kind == "static-relative" then
+					o.physics.position = VecAdd(o.src.position, o.offset)
+				elseif o.beam.kind == "bolt-to-object"
+					or o.beam.kind == "static-to-object" then
+					o.physics.position = VecAdd(VecMul(NormalizeVec(VecSub(o.target.position,o.src.position)), math.min(o.beam.range,find_hypot(o.src.position,o.target.position))),o.src.position)
+				end
+			end
+			
 			for i2 = i + 1, #scen.objects do
 				local o2 = scen.objects[i2]
 				if o2.attributes["can-collide"] == true
@@ -172,6 +181,53 @@ v2 = Polar2Rect(1,angle+180) * dist * m2 / (m1 + m2)
 			DestroyTrigger(o)
 			o.dead = true
 		end
+		
+		if o.energy ~= nil then
+			if o.energy < o.energyMax
+			and o.battery > dt * ENERGY_RECHARGE_RATIO / BASE_RECHARGE_RATE then
+				o.energy = o.energy + dt * ENERGY_RECHARGE_RATIO / BASE_RECHARGE_RATE
+				o.battery = o.battery - dt * ENERGY_RECHARGE_RATIO / BASE_RECHARGE_RATE
+			end
+			
+			if o.health ~= nil
+			and o.health <= o.healthMax * SHIELD_RECHARGE_MAX
+			and	o.energy > SHIELD_RECHARGE_RATIO * dt / BASE_RECHARGE_RATE then
+				o.health = o.health + dt / BASE_RECHARGE_RATE
+				o.energy = o.energy - SHIELD_RECHARGE_RATIO * dt / BASE_RECHARGE_RATE
+			end
+			
+			if o.weapon ~= nil then
+				if o.weapon.pulse ~= nil
+				and o.weapon.pulse.ammo ~= -1
+				and o.weapon.pulse.ammo < o.weapon.pulse.device.ammo / 2
+				and o.weapon.pulse.device.lastRestock + o.weapon.pulse.device["restock-cost"] * BASE_RECHARGE_RATE * WEAPON_RESTOCK_RATE / TIME_FACTOR<= newTime
+				and o.energy >= o.weapon.pulse.device["restock-cost"] * WEAPON_RESTOCK_RATIO then
+					o.energy = o.energy - o.weapon.pulse.device["restock-cost"] * WEAPON_RESTOCK_RATIO
+					o.weapon.pulse.ammo = o.weapon.pulse.ammo + 1
+					o.weapon.pulse.device.lastRestock = newTime
+				end
+				
+				if o.weapon.beam ~= nil
+				and o.weapon.beam.ammo ~= -1
+				and o.weapon.beam.ammo < o.weapon.beam.device.ammo / 2
+				and o.weapon.beam.device.lastRestock + o.weapon.beam.device["restock-cost"] * BASE_RECHARGE_RATE * WEAPON_RESTOCK_RATE / TIME_FACTOR <= newTime
+				and o.energy >= o.weapon.beam.device["restock-cost"] * WEAPON_RESTOCK_RATIO then
+					o.energy = o.energy - o.weapon.beam.device["restock-cost"] * WEAPON_RESTOCK_RATIO
+					o.weapon.beam.ammo = o.weapon.beam.ammo + 1
+					o.weapon.beam.device.lastRestock = newTime
+				end
+				
+				if o.weapon.special ~= nil
+				and o.weapon.special.ammo ~= -1
+				and o.weapon.special.ammo < o.weapon.special.device.ammo / 2
+				and o.weapon.special.device.lastRestock + o.weapon.special.device["restock-cost"] * BASE_RECHARGE_RATE * WEAPON_RESTOCK_RATE / TIME_FACTOR <= newTime
+				and o.energy >= o.weapon.special.device["restock-cost"] * WEAPON_RESTOCK_RATIO then
+					o.energy = o.energy - o.weapon.special.device["restock-cost"] * WEAPON_RESTOCK_RATIO
+					o.weapon.special.ammo = o.weapon.special.ammo + 1
+					o.weapon.special.device.lastRestock = newTime
+				end
+			end
+		end
 
 		--Lifetimer
 		if o.age ~= nil then
@@ -204,59 +260,56 @@ v2 = Polar2Rect(1,angle+180) * dist * m2 / (m1 + m2)
 		end
 		
 		--Fire weapons
-		if o.control.pulse == true then
-			ActivateTrigger(o.weapon.pulse, o)
-		end
+		if o.weapon ~= nil then
+			if o.control.pulse == true
+			and o.weapon.pulse ~= nil then
+				ActivateTrigger(o.weapon.pulse, o)
+			end
 
-		if o.control.beam == true then
-			ActivateTrigger(o.weapon.beam, o)
-		end
+			if o.control.beam == true
+			and o.weapon.beam ~= nil then
+				ActivateTrigger(o.weapon.beam, o)
+			end
 
-		if o.control.special == true then
-			ActivateTrigger(o.weapon.special, o)
+			if o.control.special == true
+			and o.weapon.special ~= nil then
+				ActivateTrigger(o.weapon.special, o)
+			end
 		end
-		
 		
 	--[[------------------
 		Movement
 	------------------]]--
-		if o["max-thrust"] ~= nil then
-			local v = o.physics.velocity
-			if hypot1(v) > o["max-velocity"] * SPEED_FACTOR then
-				o.physics.velocity = {
-					x = o["max-velocity"] * normalize(v.x,v.y) * SPEED_FACTOR;
-					y = o["max-velocity"] * normalize(v.y,v.x) * SPEED_FACTOR;
-				}
-				
-			end
+
+		local rvel
+		if o.attributes["can-turn"] == true then
+			rvel = o.rotation["max-turn-rate"]
+		else
+			rvel = DEFAULT_ROTATION_RATE
 		end
 		
-		if o.attributes["can-turn"] == true then
-			if o.control.left == true then
-				if key_press_f6 ~= true then
-					o.physics.angular_velocity = o.rotation["max-turn-rate"] * 2.0
-				else
-					o.physics.angular_velocity = o.rotation["max-turn-rate"] * 4.0
-				end
-			elseif o.control.right == true then
-				if key_press_f6 ~= true then
-					o.physics.angular_velocity = -o.rotation["max-turn-rate"] * 2.0
-				else
-					o.physics.angular_velocity = -o.rotation["max-turn-rate"] * 4.0
-				end
-			else
-				o.physics.angular_velocity = 0
-			end
-		end 
+		if o.control.left == true then
+			o.physics.angular_velocity = rvel * 2.0
+		elseif o.control.right == true then
+			o.physics.angular_velocity = -rvel * 2.0
+		else
+			o.physics.angular_velocity = 0
+		end
+			
 		if o["max-thrust"] ~= nil then
 			if o.control.accel == true then
 				-- apply a forward force in the direction the ship is facing
 				local angle = o.physics.angle
 				--Multiply by 60 because the thrust value in the data is given per FRAME not per second.
+
 				local thrust = o["max-thrust"] * TIME_FACTOR * SPEED_FACTOR
 				local force = { x = thrust * math.cos(angle), y = thrust * math.sin(angle) }
 				o.physics:apply_force(force)
-			elseif o.control.decel == true then
+			end
+			
+			if o.control.decel == true
+			or hypot1(o.physics.velocity) >= o["max-velocity"] * SPEED_FACTOR then
+			
 				-- apply a reverse force in the direction opposite the direction the ship is MOVING
 				local thrust = o["max-thrust"] * TIME_FACTOR * SPEED_FACTOR
 				local force = o.physics.velocity
@@ -269,7 +322,7 @@ v2 = Polar2Rect(1,angle+180) * dist * m2 / (m1 + m2)
 						force.y = -force.y / velocityMag
 						force.x = force.x * thrust
 						force.y = force.y * thrust
-						if hypot1(force) > hypot1(o.physics.velocity) then
+						if dt * hypot1(force) / o.physics.mass > hypot1(o.physics.velocity) then
 							o.physics.velocity = { x = 0, y = 0 }
 						else
 							o.physics:apply_force(force)
@@ -345,10 +398,9 @@ function render()
 			local o = scen.objects[obId]
 			
 			if o.sprite ~= nil then
-				if camera.w <= 16384/2 then
+				if camera.w <= 5120 then
 					if o.animation ~= nil then
-						local frame = Animate(o,obId)
-						graphics.draw_sprite_frame("Id/"..o.sprite, o.physics.position, o.spriteDim, frame)
+						graphics.draw_sprite_frame("Id/"..o.sprite, o.physics.position, o.spriteDim, Animate(o))
 					else
 						graphics.draw_sprite("Id/"..o.sprite, o.physics.position, o.spriteDim, o.physics.angle)
 					end
@@ -363,7 +415,7 @@ function render()
 						color = ClutColour(16,1)
 					end
 					
-					local iconScale = camera.w/1024
+					local iconScale = 1/cameraRatio
 					if o["tiny-shape"] == "solid-square" then
 						graphics.draw_rbox(o.physics.position, o["tiny-size"] * iconScale, color)
 					elseif o["tiny-shape"] == "plus" then
@@ -377,16 +429,11 @@ function render()
 					end
 				end
 			elseif o.beam ~= nil then
-				if o.beam.kind == 512
-				or o.beam.kind == 7680
-				or o.beam.kind == 9472
-				or o.beam.kind == "kinetic"
-				then --Kinetic Bolt
+				if o.beam.kind == "kinetic" then
 					local p1 = o.physics.position
 					local p2 = RotatePoint({x=BEAM_LENGTH,y=0},o.physics.angle)
 					graphics.draw_line(p1,{x=p1.x+p2.x,y=p1.y+p2.y},1,ClutColour(o.beam.color))
 				elseif o.beam.kind == "bolt-relative" then
-					
 					graphics.draw_lightning(o.src.position, o.physics.position, 1.0, 10.0, false,ClutColour(o.beam.color))
 				elseif o.beam.kind == "bolt-to-object" then
 					graphics.draw_lightning(o.src.position, o.physics.position, 1.0, 10.0, false,ClutColour(o.beam.color))
@@ -398,21 +445,6 @@ function render()
 			end
 		end
 	end
-	
-	
-	--Draw temporary status display
-	local fs = 30
-	local ox = camera.w/fs + scen.playerShip.physics.position.x - camera.w / 2
-	local oy = -camera.w/fs + scen.playerShip.physics.position.y + camera.h / 2
-	local vstep = -camera.w/fs * 1.5
-	
-	graphics.draw_text("Health: " .. scen.playerShip.health, "CrystalClear", "left", {x = ox, y = oy}, camera.w/fs)
-	
-	if scen.playerShip.energy ~= nil then
-		graphics.draw_text("Energy: " .. scen.playerShip.energy, "CrystalClear", "left", {x = ox, y = oy + vstep}, camera.w/fs)
-	end
-	
-
 	
 	graphics.draw_particles()
 	DrawArrow()

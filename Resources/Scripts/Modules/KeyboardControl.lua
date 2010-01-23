@@ -42,39 +42,27 @@ end
 	--------]]--
 
 function DoFireWeap1()
-	if scen.playerShip.weapon.beam ~= nil then
-		scen.playerShip.control.beam = true
-	end
+	scen.playerShip.control.beam = true
 end
 
 function StopFireWeap1()
-	if scen.playerShip.weapon.beam ~= nil then
-		scen.playerShip.control.beam = false
-	end
+	scen.playerShip.control.beam = false
 end
 
 function DoFireWeap2()
-	if scen.playerShip.weapon.pulse ~= nil then
-		scen.playerShip.control.pulse = true
-	end
+	scen.playerShip.control.pulse = true
 end
 
 function StopFireWeap2()
-	if scen.playerShip.weapon.pulse ~= nil then
-		scen.playerShip.control.pulse = false
-	end
+	scen.playerShip.control.pulse = false
 end
 
 function DoFireWeapSpecial()
-	if scen.playerShip.weapon.special ~= nil then
-		scen.playerShip.control.special = true
-	end
+	scen.playerShip.control.special = true
 end
 
 function StopFireWeapSpecial()
-	if scen.playerShip.weapon.special ~= nil then
-		scen.playerShip.control.special = false
-	end
+	scen.playerShip.control.special = false
 end
 
 function DoAccelerate()

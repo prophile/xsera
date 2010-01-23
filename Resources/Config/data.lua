@@ -3150,7 +3150,7 @@ return {
 ["reflexive"] = "false";
 ["relative"] = "false";
 ["minimum"] = 5120;
-["range"] = 2560;
+["range"] = 6553600;
 
 };
 [339] =  {
@@ -18917,7 +18917,7 @@ return {
 ["initial-direction"] = 0;
 ["beam"] = {
 ["color"] = 1;
-["kind"] = 17408;
+["kind"] = "kinetic"; --17408;
 ["accuracy"] = 256;
 ["range"] = 17664;
 };
@@ -33735,7 +33735,7 @@ return {
 ["color"] = 129;
 ["kind"] = "bolt-relative";
 ["accuracy"] = 3;
-["range"] = -2080374016;
+["range"] = 900;
 };
 ["internal-flags"] = 0;
 
@@ -33817,7 +33817,7 @@ return {
 ["color"] = 193;
 ["kind"] = "static-relative";
 ["accuracy"] = 838860801;
-["range"] = 738198272;
+["range"] = 225;
 };
 ["internal-flags"] = 0;
 
