@@ -5,11 +5,14 @@ import('AresCLUT')
 SPEED_FACTOR = 64.0
 TIME_FACTOR = 60.0 -- [ADAM] #TEST change this to dt
 BEAM_LENGTH = 48
-BASE_RECHARGE_RATE = 1.0 --Looks right but the number 4 has some significace relative to frame rate.
+--[SCOTT] Recharge rates need tuning
+BASE_RECHARGE_RATE = 4.0
 ENERGY_RECHARGE_RATIO = 11.0
 SHIELD_RECHARGE_MAX = 1.0 / 2.0
 SHIELD_RECHARGE_RATIO = 5.0
 WEAPON_RESTOCK_RATIO = 2.0
+WEAPON_RESTOCK_RATE = 4.0
+
 DEFAULT_ROTATION_RATE = math.pi
 RESTITUTION_COEFFICIENT = 1.0
 RESOURCES_PER_TICK = 200

@@ -184,23 +184,23 @@ v2 = Polar2Rect(1,angle+180) * dist * m2 / (m1 + m2)
 		
 		if o.energy ~= nil then
 			if o.energy < o.energyMax
-			and o.battery > dt * BASE_RECHARGE_RATE * ENERGY_RECHARGE_RATIO then
-				o.energy = o.energy + dt * BASE_RECHARGE_RATE * ENERGY_RECHARGE_RATIO
-				o.battery = o.battery - dt * BASE_RECHARGE_RATE * ENERGY_RECHARGE_RATIO
+			and o.battery > dt * ENERGY_RECHARGE_RATIO / BASE_RECHARGE_RATE then
+				o.energy = o.energy + dt * ENERGY_RECHARGE_RATIO / BASE_RECHARGE_RATE
+				o.battery = o.battery - dt * ENERGY_RECHARGE_RATIO / BASE_RECHARGE_RATE
 			end
 			
 			if o.health ~= nil
 			and o.health <= o.healthMax * SHIELD_RECHARGE_MAX
-			and	o.energy > SHIELD_RECHARGE_RATIO * BASE_RECHARGE_RATE * dt then
-				o.health = o.health + BASE_RECHARGE_RATE * dt
-				o.energy = o.energy - BASE_RECHARGE_RATE *  SHIELD_RECHARGE_RATIO * dt
+			and	o.energy > SHIELD_RECHARGE_RATIO * dt / BASE_RECHARGE_RATE then
+				o.health = o.health + dt / BASE_RECHARGE_RATE
+				o.energy = o.energy - SHIELD_RECHARGE_RATIO * dt / BASE_RECHARGE_RATE
 			end
 			
 			if o.weapon ~= nil then
 				if o.weapon.pulse ~= nil
 				and o.weapon.pulse.ammo ~= -1
 				and o.weapon.pulse.ammo < o.weapon.pulse.device.ammo / 2
-				and o.weapon.pulse.device.lastRestock + o.weapon.pulse.device["restock-cost"] / TIME_FACTOR * 2.0 <= newTime
+				and o.weapon.pulse.device.lastRestock + o.weapon.pulse.device["restock-cost"] * BASE_RECHARGE_RATE * WEAPON_RESTOCK_RATE / TIME_FACTOR<= newTime
 				and o.energy >= o.weapon.pulse.device["restock-cost"] * WEAPON_RESTOCK_RATIO then
 					o.energy = o.energy - o.weapon.pulse.device["restock-cost"] * WEAPON_RESTOCK_RATIO
 					o.weapon.pulse.ammo = o.weapon.pulse.ammo + 1
@@ -210,7 +210,7 @@ v2 = Polar2Rect(1,angle+180) * dist * m2 / (m1 + m2)
 				if o.weapon.beam ~= nil
 				and o.weapon.beam.ammo ~= -1
 				and o.weapon.beam.ammo < o.weapon.beam.device.ammo / 2
-				and o.weapon.beam.device.lastRestock + o.weapon.beam.device["restock-cost"] / TIME_FACTOR <= newTime
+				and o.weapon.beam.device.lastRestock + o.weapon.beam.device["restock-cost"] * BASE_RECHARGE_RATE * WEAPON_RESTOCK_RATE / TIME_FACTOR <= newTime
 				and o.energy >= o.weapon.beam.device["restock-cost"] * WEAPON_RESTOCK_RATIO then
 					o.energy = o.energy - o.weapon.beam.device["restock-cost"] * WEAPON_RESTOCK_RATIO
 					o.weapon.beam.ammo = o.weapon.beam.ammo + 1
@@ -220,7 +220,7 @@ v2 = Polar2Rect(1,angle+180) * dist * m2 / (m1 + m2)
 				if o.weapon.special ~= nil
 				and o.weapon.special.ammo ~= -1
 				and o.weapon.special.ammo < o.weapon.special.device.ammo / 2
-				and o.weapon.special.device.lastRestock + o.weapon.special.device["restock-cost"] / TIME_FACTOR <= newTime
+				and o.weapon.special.device.lastRestock + o.weapon.special.device["restock-cost"] * BASE_RECHARGE_RATE * WEAPON_RESTOCK_RATE / TIME_FACTOR <= newTime
 				and o.energy >= o.weapon.special.device["restock-cost"] * WEAPON_RESTOCK_RATIO then
 					o.energy = o.energy - o.weapon.special.device["restock-cost"] * WEAPON_RESTOCK_RATIO
 					o.weapon.special.ammo = o.weapon.special.ammo + 1
