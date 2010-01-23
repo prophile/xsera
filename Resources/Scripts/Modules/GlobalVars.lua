@@ -1,5 +1,6 @@
 import('Math')
 import('AresCLUT')
+import('data')
 
 --constants
 SPEED_FACTOR = 64.0
@@ -16,15 +17,26 @@ WEAPON_RESTOCK_RATE = 4.0
 DEFAULT_ROTATION_RATE = math.pi
 RESTITUTION_COEFFICIENT = 1.0
 RESOURCES_PER_TICK = 200
+
 GRID_DIST_BLUE = 512
 GRID_DIST_LIGHT_BLUE = 4096
 GRID_DIST_GREEN = 32768
 
+ARROW_LENGTH = 135
+ARROW_VAR = (3 * math.sqrt(3))
+ARROW_DIST = hypot(6, (ARROW_LENGTH - ARROW_VAR))
+
+RELEASE_BUILD = mode_manager.is_release()
+--/constants
+
 demoLevel = 25
 shipSeek = false
 
+--mouse variables
+oldMousePos = { x = 0, y = 0 }
+mouseStart = 0
+--/mouse variables
 
-releaseBuild = mode_manager.is_release()
 
 --camera vars
 cameraRatio = 1
@@ -44,9 +56,7 @@ defeatTimer = 0
 endGameData = nil
 loadingEntities = false
 entities = {}
-gameData = dofile("./Xsera.app/Contents/Resources/Config/data.lua") --[FIX] this is A) not cross platform in ANY way shape or form B) an ugly way of fixing it.
 --/scenvars
-
 
 --tempvars
 showVelocity = false
@@ -66,10 +76,6 @@ soundLength = 0.25
 menuLevel = nil
 --/tempvars
 
-
-ARROW_LENGTH = 135
-ARROW_VAR = (3 * math.sqrt(3))
-ARROW_DIST = hypot(6, (ARROW_LENGTH - ARROW_VAR))
 CarrowAlpha = math.atan2(6, ARROW_DIST)
 arrowLength = ARROW_LENGTH
 arrowVar = ARROW_VAR

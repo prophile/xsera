@@ -633,19 +633,19 @@ normal_keyup = keyup
 
 function key ( k )
 	if k == "`" then
-		if releaseBuild == false then
+		if RELEASE_BUILD == false then
 			consoleDraw = true
 		end
 	elseif k == "p" then
-		if releaseBuild == false then
+		if RELEASE_BUILD == false then
 			computerShip.life = 0
 		end
 	elseif k == "o" then
-		if releaseBuild == false then
+		if RELEASE_BUILD == false then
 			menu_display = "pause_menu"
 		end
 	elseif k == "[" then
-		if releaseBuild == false then
+		if RELEASE_BUILD == false then
 			playerShip.life = 0
 			keyup = escape_keyup
 			key = escape_key

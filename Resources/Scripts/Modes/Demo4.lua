@@ -448,49 +448,9 @@ function render()
 	
 	graphics.draw_particles()
 	DrawArrow()
-	
-	ship = scen.playerShip.physics.position
-	mousePos = GetMouseCoords()
-	if mouseMovement == nil then
-		if mousePos.x > 260 / cameraRatio + ship.x then
-			mousePos.x = 260 / cameraRatio + ship.x
-		elseif mousePos.x < -320 / cameraRatio + ship.x - shipAdjust then
-			mousePos.x = -320 / cameraRatio + ship.x - shipAdjust
-		end
-		
-		if mousePos.y > 230 / cameraRatio + ship.y then
-			mousePos.y = 230 / cameraRatio + ship.y
-		elseif mousePos.y < -220 / cameraRatio + ship.y then
-			mousePos.y = -220 / cameraRatio + ship.y
-		end
-		graphics.draw_line({ x = - camera.w / 2 + ship.x, y = mousePos.y }, { x = mousePos.x - 20 / cameraRatio, y = mousePos.y }, 1.0, ClutColour(4, 8))
-		graphics.draw_line({ x = camera.w / 2 + ship.x, y = mousePos.y }, { x = mousePos.x + 20 / cameraRatio, y = mousePos.y }, 1.0, ClutColour(4, 8))
-		graphics.draw_line({ x = mousePos.x, y = -camera.h / 2 + ship.y }, { x = mousePos.x, y = mousePos.y - 20 / cameraRatio }, 1.0, ClutColour(4, 8))
-		graphics.draw_line({ x = mousePos.x, y = camera.h / 2 + ship.y }, { x = mousePos.x, y = mousePos.y + 20 / cameraRatio }, 1.0, ClutColour(4, 8))
-		-- check to see if it's over the panels
-		-- if it is, draw the cursor
-		if mousePos.x < -260 / cameraRatio + ship.x then
-			local cursor = graphics.sprite_dimensions("Misc/Cursor")
-			graphics.draw_sprite("Misc/Cursor", mousePos, cursor, 0)
-		end
-	end
-	
+	DrawMouse1()
 	DrawPanels()
-	-- Mouse, pt 2
-	if mouseMovement == nil and mousePos.x < -260 / cameraRatio + ship.x then
-		graphics.set_camera( -- should I have to do this? [ADAM, HACK]
-			-scen.playerShip.physics.position.x + shipAdjust - (camera.w / 2.0),
-			-scen.playerShip.physics.position.y - (camera.h / 2.0),
-			-scen.playerShip.physics.position.x + shipAdjust + (camera.w / 2.0),
-			-scen.playerShip.physics.position.y + (camera.h / 2.0))
-	
-		local cursor = graphics.sprite_dimensions("Misc/Cursor")
-		graphics.draw_sprite("Misc/Cursor", mousePos, cursor, 0)
-		-- check mouse idleness timer
-		--if mode_manager.time() - mouseStart >= 2.0 then
-		--	mouseMovement = false
-		--end
-	end
+	DrawMouse2()
 	
 	graphics.end_frame()
 end
@@ -544,16 +504,6 @@ function DumbSeek(object, target)
 	end
 	
 end
-
-
-function GetMouseCoords()
-	local x, y = mouse_position()
-	return {
-		x = scen.playerShip.physics.position.x -shipAdjust + camera.w * x - camera.w / 2;
-		y = scen.playerShip.physics.position.y  + camera.h * y - camera.h / 2;
-	}
-end
-
 
 function ChangePlayerShip()
 	if scen.playerShipId > #scen.objects then

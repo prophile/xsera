@@ -86,7 +86,7 @@ function key ( k )
     elseif k == "d" then
         mode_manager.switch("Demo4")
     elseif k == "x" then
-		if releaseBuild == false then
+		if RELEASE_BUILD == false then
 			mode_manager.switch("Xsera/ConsoleDrawer")
 		else
 			mode_manager.switch("Ares/Splash")
