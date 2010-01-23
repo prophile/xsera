@@ -15,7 +15,7 @@ background2 = { { xCoord = -280, yCoord = 175, length = 560, text = " ", boxColo
 				{ xCoord = -100, yCoord = -225, length = 170, text = "Next", boxColour = ClutColour(1, 8), textColour = ClutColour(1, 8), execute = nil, letter = "RGHT" },
 				{ xCoord = 110, yCoord = -225, length = 170, text = "Done", boxColour = ClutColour(12, 6), textColour = ClutColour(12, 6), execute = nil, letter = "RTRN" } }
 
-scenLevels = { { title = "DEMO 2", subtitle = "The Second Technical Demo", desc = "In this demo, you must destroy the Gaitori Carrier prior to taking over a nearby planet with an Ishiman Transport.", unlocked = true, mode = "Demo3" },
+scenLevels = { { title = "DEMO 4", subtitle = "The Second Technical Demo", desc = "In this demo, you must destroy the Gaitori Carrier prior to taking over a nearby planet with an Ishiman Transport.", unlocked = true, mode = "Demo4" },
 			{ title = "TUTORIAL LESSON 1", subtitle = "Moons for Goons", desc = "Learning the Ares interface", unlocked = true },
 			{ title = "CHAPTER 1", subtitle = "Easy Street", desc = "Destroy all 5 Gaitori Transports.", unlocked = true },
 			{ title = "CHAPTER 6", subtitle = "...Into the Fire", desc = "Capture the planet Hades Beta while destroying as many Gaitori power stations as possible and saving as many of the Obish stations as you can.", unlocked = true } }
@@ -118,8 +118,8 @@ function render()
 			end
 			local num = 1
 			while scenBriefing.screen[1][num] ~= nil do
-				tempx, tempy = graphics.sprite_dimensions(scenBriefing.screen[1][num].sprite)
-				graphics.draw_sprite(scenBriefing.screen[1][num].sprite, { x = -240 + scenBriefing.screen[1][num].x * 540 / 4332, y = -170 + scenBriefing.screen[1][num].y * 374 / 3000 }, { x = tempx * scenBriefing.screen[1][num].size, y = tempy * scenBriefing.screen[1][num].size }, math.pi / 2)
+				local temp = graphics.sprite_dimensions(scenBriefing.screen[1][num].sprite)
+				graphics.draw_sprite(scenBriefing.screen[1][num].sprite, { x = -240 + scenBriefing.screen[1][num].x * 540 / 4332, y = -170 + scenBriefing.screen[1][num].y * 374 / 3000 }, { x = temp.x * scenBriefing.screen[1][num].size, y = temp.y * scenBriefing.screen[1][num].size }, math.pi / 2)
 				num = num + 1
 			end
 			if menuNum ~= 2 then
@@ -141,7 +141,7 @@ end
 
 function keyup(k)
 	if k == "escape" then
-		mode_manager.switch('AresSplash')
+		mode_manager.switch('Ares/Splash')
 	elseif k == "return" then
 		if doLevelSwitch == true then
 			if scenLevels[menuNum].mode ~= nil then

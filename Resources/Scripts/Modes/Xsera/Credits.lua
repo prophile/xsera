@@ -14,7 +14,7 @@ function init ()
 		sound.play_music("Doomtroopers")
 	end
 	oldTime = mode_manager.time()
-	local rawInput = resource_manager.load("Config/Credits.txt")
+	local rawInput = resource_manager.load("Config/Xsera/Credits.txt")
 	local i = 1
 	local lastDist = initialDist
 	for sizeString, line in string.gmatch(rawInput, "(%**)(.-)\n") do
@@ -38,7 +38,7 @@ function key ( k )
 	elseif k == 'a' then
 		speed = speed - 10
 	elseif k == 'escape' then
-		mode_manager.switch("MainMenu")
+		mode_manager.switch("Xsera/MainMenu")
 	end
 end
 
@@ -68,6 +68,6 @@ function update ()
 		totalTime = totalTime + speed * dt
 	end
 	-- if totalTime > -rowDist[table.maxn(rowDist)] + 300 then
-	--	mode_manager.switch("MainMenu")
+	--	mode_manager.switch("Xsera/MainMenu")
 	-- end
 end

@@ -15,14 +15,14 @@ end
 function WeaponCreate(weapon, weapData, weapOwner)
 
 	if	weapon.cooldown <= mode_manager.time() - weapon.start
-	and	weapOwner.energy.current - weapon.cost >= 0
+	and	weapOwner.energy - weapon.cost >= 0
 	and (weapon.ammo == nil or weapon.ammo > 0)
 	then
 		sound.play(weapon.sound)
 		weapon.fired = true
 		weapon.start = mode_manager.time()
 
-		weapOwner.energy.current = weapOwner.energy.current - weapon.cost
+		weapOwner.energy = weapOwner.energy - weapon.cost
 
 		if weapon.ammo ~= nil then
 			weapon.ammo = weapon.ammo - 1

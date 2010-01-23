@@ -73,7 +73,7 @@ return {
 [007] =  {
 ["type"] = "die-action";
 ["reflexive"] = "true";
-["type"] = 255;
+["death-type"] = 255;
 
 };
 [008] =  {
@@ -102,7 +102,7 @@ return {
 [010] =  {
 ["type"] = "die-action";
 ["reflexive"] = "true";
-["type"] = 1;
+["death-type"] = 1;
 
 };
 [011] =  {
@@ -130,7 +130,7 @@ return {
 [013] =  {
 ["type"] = "die-action";
 ["reflexive"] = "true";
-["type"] = 1;
+["death-type"] = 1;
 
 };
 [014] =  {
@@ -227,7 +227,7 @@ return {
 [023] =  {
 ["type"] = "die-action";
 ["reflexive"] = "true";
-["type"] = 1;
+["death-type"] = 1;
 
 };
 [024] =  {
@@ -278,7 +278,7 @@ return {
 [028] =  {
 ["type"] = "die-action";
 ["reflexive"] = "true";
-["type"] = 1;
+["death-type"] = 1;
 
 };
 [029] =  {
@@ -295,7 +295,7 @@ return {
 [030] =  {
 ["type"] = "die-action";
 ["reflexive"] = "true";
-["type"] = 1;
+["death-type"] = 1;
 
 };
 [031] =  {
@@ -346,7 +346,7 @@ return {
 [035] =  {
 ["type"] = "die-action";
 ["reflexive"] = "true";
-["type"] = 1;
+["death-type"] = 1;
 
 };
 [036] =  {
@@ -408,7 +408,7 @@ return {
 [041] =  {
 ["type"] = "die-action";
 ["reflexive"] = "true";
-["type"] = 1;
+["death-type"] = 1;
 
 };
 [042] =  {
@@ -492,7 +492,7 @@ return {
 [049] =  {
 ["type"] = "die-action";
 ["reflexive"] = "true";
-["type"] = 1;
+["death-type"] = 1;
 
 };
 [050] =  {
@@ -506,7 +506,7 @@ return {
 ["type"] = "die-action";
 ["reflexive"] = "false";
 ["inclusive-filter"] = 1024;
-["type"] = 1;
+["death-type"] = 1;
 
 };
 [052] =  {
@@ -566,7 +566,7 @@ return {
 [057] =  {
 ["type"] = "die-action";
 ["reflexive"] = "true";
-["type"] = 1;
+["death-type"] = 1;
 
 };
 [058] =  {
@@ -711,7 +711,7 @@ return {
 [072] =  {
 ["type"] = "die-action";
 ["reflexive"] = "true";
-["type"] = 1;
+["death-type"] = 1;
 
 };
 [073] =  {
@@ -773,7 +773,7 @@ return {
 [078] =  {
 ["type"] = "die-action";
 ["reflexive"] = "true";
-["type"] = 1;
+["death-type"] = 1;
 
 };
 [079] =  {
@@ -1022,7 +1022,7 @@ return {
 [105] =  {
 ["type"] = "die-action";
 ["reflexive"] = "true";
-["type"] = 255;
+["death-type"] = 255;
 
 };
 [106] =  {
@@ -1203,7 +1203,7 @@ return {
 [123] =  {
 ["type"] = "die-action";
 ["reflexive"] = "true";
-["type"] = 56;
+["death-type"] = 56;
 
 };
 [124] =  {
@@ -1381,7 +1381,7 @@ return {
 [145] =  {
 ["type"] = "die-action";
 ["reflexive"] = "true";
-["type"] = 1;
+["death-type"] = 1;
 
 };
 [146] =  {
@@ -1389,7 +1389,7 @@ return {
 ["reflexive"] = "false";
 ["inclusive-filter"] = 2;
 ["owner"] = "other";
-["type"] = 2;
+["death-type"] = 2;
 
 };
 [147] =  {
@@ -1457,7 +1457,7 @@ return {
 ["exclusive-filter"] = 4294967295;
 ["owner"] = "other";
 ["delay"] = 160;
-["type"] = 1;
+["death-type"] = 1;
 
 };
 [153] =  {
@@ -1516,7 +1516,7 @@ return {
 ["inclusive-filter"] = 2684354560;
 ["exclusive-filter"] = 4294967295;
 ["owner"] = "other";
-["type"] = 1;
+["death-type"] = 1;
 
 };
 [159] =  {
@@ -1767,7 +1767,7 @@ return {
 ["reflexive"] = "false";
 ["inclusive-filter"] = 1610612736;
 ["exclusive-filter"] = 4294967295;
-["type"] = 1;
+["death-type"] = 1;
 
 };
 [185] =  {
@@ -3150,13 +3150,13 @@ return {
 ["reflexive"] = "false";
 ["relative"] = "false";
 ["minimum"] = 5120;
-["range"] = 2560;
+["range"] = 6553600;
 
 };
 [339] =  {
 ["type"] = "die-action";
 ["reflexive"] = "true";
-["type"] = 0;
+["death-type"] = 0;
 
 };
 [340] =  {
@@ -3173,7 +3173,7 @@ return {
 [341] =  {
 ["type"] = "die-action";
 ["reflexive"] = "true";
-["type"] = 2;
+["death-type"] = 2;
 
 };
 [342] =  {
@@ -3209,7 +3209,7 @@ return {
 [345] =  {
 ["type"] = "die-action";
 ["reflexive"] = "true";
-["type"] = 1;
+["death-type"] = 1;
 
 };
 [346] =  {
@@ -3751,7 +3751,7 @@ return {
 ["reflexive"] = "false";
 ["inclusive-filter"] = 3758096384;
 ["exclusive-filter"] = 4294967295;
-["type"] = 1;
+["death-type"] = 1;
 
 };
 [423] =  {
@@ -3917,7 +3917,7 @@ return {
 ["reflexive"] = "false";
 ["inclusive-filter"] = 1610612736;
 ["exclusive-filter"] = 4294967295;
-["type"] = 1;
+["death-type"] = 1;
 
 };
 [443] =  {
@@ -4404,7 +4404,7 @@ return {
 [500] =  {
 ["type"] = "die-action";
 ["reflexive"] = "true";
-["type"] = 0;
+["death-type"] = 0;
 
 };
 [501] =  {
@@ -4452,7 +4452,7 @@ return {
 [505] =  {
 ["type"] = "die-action";
 ["reflexive"] = "true";
-["type"] = 0;
+["death-type"] = 0;
 
 };
 [506] =  {
@@ -4547,7 +4547,7 @@ return {
 [516] =  {
 ["type"] = "die-action";
 ["reflexive"] = "true";
-["type"] = 1;
+["death-type"] = 1;
 
 };
 [517] =  {
@@ -5432,7 +5432,7 @@ return {
 ["type"] = "die-action";
 ["reflexive"] = "true";
 ["initial-subject-override"] = 5;
-["type"] = 0;
+["death-type"] = 0;
 
 };
 [622] =  {
@@ -5657,28 +5657,28 @@ return {
 ["type"] = "die-action";
 ["reflexive"] = "true";
 ["initial-subject-override"] = 2;
-["type"] = 0;
+["death-type"] = 0;
 
 };
 [656] =  {
 ["type"] = "die-action";
 ["reflexive"] = "true";
 ["initial-subject-override"] = 3;
-["type"] = 0;
+["death-type"] = 0;
 
 };
 [657] =  {
 ["type"] = "die-action";
 ["reflexive"] = "true";
 ["initial-subject-override"] = 4;
-["type"] = 0;
+["death-type"] = 0;
 
 };
 [658] =  {
 ["type"] = "die-action";
 ["reflexive"] = "true";
 ["initial-subject-override"] = 5;
-["type"] = 0;
+["death-type"] = 0;
 
 };
 [659] =  {
@@ -16639,7 +16639,7 @@ return {
 ["initial-direction"] = 0;
 ["beam"] = {
 ["color"] = 65;
-["kind"] = 512;
+["kind"] = "kinetic";
 ["accuracy"] = 256;
 ["range"] = 768;
 };
@@ -17483,7 +17483,7 @@ return {
 ["initial-direction"] = 0;
 ["beam"] = {
 ["color"] = 241;
-["kind"] = 7680;
+["kind"] = "kinetic";
 ["accuracy"] = 256;
 ["range"] = 7936;
 };
@@ -17823,7 +17823,7 @@ return {
 ["initial-direction"] = 0;
 ["beam"] = {
 ["color"] = 129;
-["kind"] = 9472;
+["kind"] = "kinetic";
 ["accuracy"] = 256;
 ["range"] = 9728;
 };
@@ -18917,7 +18917,7 @@ return {
 ["initial-direction"] = 0;
 ["beam"] = {
 ["color"] = 1;
-["kind"] = 17408;
+["kind"] = "kinetic"; --17408;
 ["accuracy"] = 256;
 ["range"] = 17664;
 };
@@ -21062,7 +21062,7 @@ return {
 ["initial-direction"] = 0;
 ["beam"] = {
 ["color"] = 193;
-["kind"] = 512;
+["kind"] = "kinetic";
 ["accuracy"] = 256;
 ["range"] = 768;
 };
@@ -23310,7 +23310,7 @@ return {
 ["initial-direction"] = 0;
 ["beam"] = {
 ["color"] = 65;
-["kind"] = 512;
+["kind"] = "kinetic";
 ["accuracy"] = 256;
 ["range"] = 768;
 };
@@ -25402,7 +25402,7 @@ return {
 ["initial-direction"] = 0;
 ["beam"] = {
 ["color"] = 17;
-["kind"] = 512;
+["kind"] = "kinetic";
 ["accuracy"] = 256;
 ["range"] = 768;
 };
@@ -26303,7 +26303,7 @@ return {
 ["initial-direction"] = 0;
 ["beam"] = {
 ["color"] = 209;
-["kind"] = 9472;
+["kind"] = "kinetic";
 ["accuracy"] = 256;
 ["range"] = 9728;
 };
@@ -26937,7 +26937,7 @@ return {
 ["initial-direction"] = 0;
 ["beam"] = {
 ["color"] = 97;
-["kind"] = 9472;
+["kind"] = "kinetic";
 ["accuracy"] = 256;
 ["range"] = 9728;
 };
@@ -27929,7 +27929,7 @@ return {
 ["initial-direction"] = 0;
 ["beam"] = {
 ["color"] = 209;
-["kind"] = 512;
+["kind"] = "kinetic";
 ["accuracy"] = 256;
 ["range"] = 768;
 };
@@ -28240,7 +28240,7 @@ return {
 ["initial-direction"] = 0;
 ["beam"] = {
 ["color"] = 177;
-["kind"] = 512;
+["kind"] = "kinetic";
 ["accuracy"] = 256;
 ["range"] = 768;
 };
@@ -29658,7 +29658,7 @@ return {
 ["initial-direction"] = 0;
 ["beam"] = {
 ["color"] = 241;
-["kind"] = 512;
+["kind"] = "kinetic";
 ["accuracy"] = 256;
 ["range"] = 768;
 };
@@ -31521,7 +31521,7 @@ return {
 ["initial-direction"] = 0;
 ["beam"] = {
 ["color"] = 177;
-["kind"] = 512;
+["kind"] = "kinetic";
 ["accuracy"] = 256;
 ["range"] = 768;
 };
@@ -33733,9 +33733,9 @@ return {
 ["initial-direction"] = 0;
 ["beam"] = {
 ["color"] = 129;
-["kind"] = 67108864;
+["kind"] = "bolt-relative";
 ["accuracy"] = 3;
-["range"] = -2080374016;
+["range"] = 900;
 };
 ["internal-flags"] = 0;
 
@@ -33815,9 +33815,9 @@ return {
 ["initial-direction"] = 0;
 ["beam"] = {
 ["color"] = 193;
-["kind"] = 33554432;
+["kind"] = "static-relative";
 ["accuracy"] = 838860801;
-["range"] = 738198272;
+["range"] = 225;
 };
 ["internal-flags"] = 0;
 

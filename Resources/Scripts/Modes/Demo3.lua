@@ -77,7 +77,7 @@ end
 
 function temp_key(k)
 	if k ~= nil then
-		mode_manager.switch('Credits')
+		mode_manager.switch('Xsera/Credits')
 	end
 end
 
@@ -392,14 +392,14 @@ function update ()
 	end
 	
 	playerShip.battery.percent = playerShip.battery.current / playerShip.battery.total
-	playerShip.energy.percent = playerShip.energy.current / playerShip.energy.total
+	playerShip.energy.percent = playerShip.energy / playerShip.energy.total
 	playerShip.shield.percent = playerShip.shield.current / playerShip.shield.total
 	if playerShip.energy.percent ~= 1.0 then
 		rechargeTimer = rechargeTimer + dt
 		if rechargeTimer >= 0.5 then
 			if playerShip.battery.percent ~= 0.0 then
 				playerShip.battery.current = playerShip.battery.current - 1
-				playerShip.energy.current = playerShip.energy.current + 1
+				playerShip.energy = playerShip.energy + 1
 				rechargeTimer = rechargeTimer - 0.5
 			end
 		end
@@ -478,8 +478,7 @@ function render ()
 	
 	function drawPlanet(planet)
 		if cameraRatio > 1 / 8 then
-			local planetCoord = { x, y }
-			planetCoord.x, planetCoord.y = graphics.sprite_dimensions("Planets/" .. planet.image)
+			local planetCoord = graphics.sprite_dimensions("Planets/" .. planet.image)
 			graphics.draw_sprite("Planets/" .. planet.image, planet.position, planetCoord, 1)
 		else
 			if planet.owner ~= Admirals[1].ident then

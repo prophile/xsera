@@ -66,6 +66,7 @@ function reference_angle(angle)
 end
 
 function radian_range(angle)
+	angle = angle % (2.0 * math.pi)
 	if angle < 0 then
 		angle = 2 * math.pi - angle
 	elseif angle > 2 * math.pi then
@@ -83,6 +84,51 @@ return {
 x = point.x*math.cos(angle)-point.y*math.sin(angle);
 y = point.x*math.sin(angle)+point.y*math.cos(angle);
 }
+end
+
+function PolarVec(mag, angle)
+return {
+x = mag*math.cos(angle);
+y = mag*math.sin(angle);
+}
+end
+
+--A vector always comes first
+function VecAdd(a, b)
+	if type(b) == "table" then
+		return {x = a.x + b.x, y = a.y + b.y}
+	else
+		return {x = a.x + b, y= a.y + b}
+	end
+end
+
+function VecSub(a, b)
+	if type(b) == "table" then
+		return {x = a.x - b.x, y = a.y - b.y}
+	else
+		return {x = a.x - b, y= a.y - b}
+	end
+end
+
+function VecMul(a, b)
+	if type(b) == "table" then
+		return {x = a.x * b.x, y = a.y * b.y}
+	else
+		return {x = a.x * b, y= a.y * b}
+	end
+end
+
+function VecDiv(v1, v2)
+	if type(b) == "table" then
+		return {x = a.x / b.x, y = a.y / b.y}
+	else
+		return {x = a.x / b, y= a.y / b}
+	end
+end
+
+function NormalizeVec(v)
+	local d = hypot1(v)
+	return {x = v.x / d, y = v.y / d}
 end
 
 function xor(p,q)

@@ -1,5 +1,11 @@
+import('Math')
+
 function ActivateTrigger(device, owner)
-	if xor(owner == nil, owner.energy.current >= device.device["energy-cost"])
+	if device.device == nil then
+	
+		CallAction(device.trigger["activate"],device)
+	
+	elseif xor(owner == nil, owner.energy >= device.device["energy-cost"])
 	and xor(device.ammo == -1, device.ammo > 0)
 	and device.device.lastActivated < mode_manager.time() - device.device["fire-time"] / TIME_FACTOR then
 
@@ -10,7 +16,7 @@ function ActivateTrigger(device, owner)
 			end
 			
 			if owner ~= nil then
-				owner.energy.current = owner.energy.current - device.device["energy-cost"]
+				owner.energy = owner.energy - device.device["energy-cost"]
 			end
 			
 			
@@ -20,36 +26,37 @@ function ActivateTrigger(device, owner)
 				device.position.last = device.position.last + 1
 			end
 			
-			callAction(device.trigger["activate"],device,nil)
+			CallAction(device.trigger["activate"],device,nil)
 				
 	end
 end
 
 
 function ExpireTrigger(owner)
-	callAction(owner.trigger["expire"],owner,nil)
+	CallAction(owner.trigger["expire"],owner,nil)
 end
 
 function DestroyTrigger(owner)
-	callAction(owner.trigger["destroy"],owner,nil)
+	CallAction(owner.trigger["destroy"],owner,nil)
 end
 
 function CreateTrigger(owner)
-	callAction(owner.trigger["create"],owner,nil)
+	CallAction(owner.trigger["create"],owner,nil)
 end
 
 function CollideTrigger(owner,other)
-	callAction(owner.trigger["collide"],owner,other)
+	CallAction(owner.trigger["collide"],owner,other)
 end
 
 function ArriveTrigger(owner,other)
-	callAction(owner.trigger["arrive"],owner,other)
+	CallAction(owner.trigger["arrive"],owner,other)
 end
 
-function callAction(trigger, source, direct)
+function CallAction(trigger, source, direct)
 	if trigger ~= nil then
 		local id
 		local max = trigger.id + trigger.count - 1
+		
 		for id = trigger.id, max do
 			local action = gameData["Actions"][id]
 			actionTable[action.type](action, source, direct)
@@ -89,7 +96,23 @@ end,
 ["alter-special-action"] = function(action, source, direct) end,
 ["alter-spin-action"] = function(action, source, direct) end,
 ["alter-thrust-action"] = function(action, source, direct) end,
-["alter-velocity-action"] = function(action, source, direct) end,
+["alter-velocity-action"] = function(action, source, direct)
+	local p
+	local angle = source.physics.angle
+	local delta = PolarVec(math.sqrt(action.minimum)+math.random(0.0,math.sqrt(action.range)), angle)
+	
+	if action.reflexive == "true" then
+		p = source.physics
+	else
+		p = direct.physics
+	end
+	
+	if action.relative == "true" then
+		p.velocity = VecAdd(p.velocity, delta)
+	else
+		p.velocity = delta
+	end
+end,
 ["assume-initial-object-action"] = function(action, source, direct) end,
 ["change-score-action"] = function(action, source, direct) end,
 ["color-flash-action"] = function(action, source, direct) end,
@@ -98,16 +121,21 @@ end,
 --Aquire parent data
 local p
 local offset = {x = 0.0, y = 0.0}
+local owner
 if action.reflexive == "true" then --There may be more conditions to consider
 	if source.device ~= nil then
 		p = source.parent.physics
+		owner = source.parent.owner
 		offset = RotatePoint(source.position[source.position.last],p.angle-math.pi/2.0)
 	else
 		p = source.physics
+		owner = source.owner
 	end
 else
 	p = direct.physics
+	owner = direct.owner
 end
+
 
 --create object(s)
 local count = action["how-many-min"] + math.random(0, action["how-many-range"])
@@ -119,10 +147,30 @@ new.physics.position = {
 		y = p.position.y + offset.y;
 		}
 
-if action["direction-relative"] == "true" then
-new.physics.angle = p.angle
+
+if new.beam ~= nil and new.beam.kind ~= "kinetic" then
+	new.src = p
+	if new.beam.kind == "bolt-relative"
+	or new.beam.kind == "static-relative" then
+--		local offset = VecSub(trackingTarget, new.src.position)
+		new.offset = VecMul(NormalizeVec( VecSub(trackingTarget, new.src.position)), math.min(new.beam.range, find_hypot(new.src.position, trackingTarget)))
+		
+		new.physics.position = VecAdd(new.physics.position, new.offset)
+	else
+
+		new.target = {position = trackingTarget}
+			
+		new.physics.position = VecAdd(VecMul(NormalizeVec(VecSub(new.target.position,new.src.position)), math.min(new.beam.range,find_hypot(new.src.position,new.target.position))),new.src.position)
+	end
+end
+
+
+if source.attributes["auto-target"] == true then
+	new.physics.angle = find_angle(trackingTarget, new.physics.position)
+elseif action["direction-relative"] == "true" then
+	new.physics.angle = p.angle
 else
-new.physics.angle = RandomReal(0, 2.0 * math.pi)
+	new.physics.angle = RandomReal(0, 2.0 * math.pi)
 end
 
 if new["initial-direction"] ~= nil then
@@ -154,17 +202,45 @@ end
 if new.attributes["is-guided"] == true then
 	new.control.accel = true
 end
+
+new.owner = owner
+
+CreateTrigger(new)
 table.insert(scen.objects,new)
 end
 end,
 ["create-object-set-dest-action"] = function(action, source, direct) end,
 ["declare-winner-action"] = function(action, source, direct) end,
-["die-action"] = function(action, source, direct) end,
+["die-action"] = function(action, source, direct)
+	if action.reflexive == "true" then
+		source.dead = true
+		print(source.name)
+	else
+		direct.dead = true
+		print(direct.name)
+	end
+end,
 ["disable-keys-action"] = function(action, source, direct) end,
 ["display-message-action"] = function(action, source, direct) end,
 ["enable-keys-action"] = function(action, source, direct) end,
 ["land-at-action"] = function(action, source, direct) end,
-["make-sparks-action"] = function(action, source, direct) end,
+["make-sparks-action"] = function(action, source, direct)
+--Aquire parent
+	local p
+	if action.reflexive == "true" then
+		p = source
+	else
+		p = direct
+	end
+	local theta = math.random(0,2*math.pi)
+	local speed = action["speed"]
+	local range = 0
+	if action["velocity-range"] ~= nil then
+		range = action["velocity-range"]
+	end
+	graphics.add_particles("Sparks", action["how-many"], p.physics.position, {x = math.cos(theta) * speed, y = math.sin(theta) * speed}, {x = range, y = range}, {x = 0, y = 0}, 0.5, 0.4)
+	
+end,
 ["nil-target-action"] = function(action, source, direct) end,
 ["no-action"] = function(action, source, direct) end,
 ["play-sound-action"] = function(action, source, direct)

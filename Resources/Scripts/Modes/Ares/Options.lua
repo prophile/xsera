@@ -61,11 +61,11 @@ end
 
 function keyup(k)
 	if k == "escape" then
-		mode_manager.switch('AresSplash')
+		mode_manager.switch('Ares/Splash')
 	elseif k == "return" then
-		mode_manager.switch('AresSplash')
+		mode_manager.switch('Ares/Splash')
 	elseif k == "k" then
-		mode_manager.switch('KeyControls')
+		mode_manager.switch('Ares/KeyControls')
 	end
 end
 

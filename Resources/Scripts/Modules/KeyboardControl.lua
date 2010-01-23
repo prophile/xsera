@@ -42,43 +42,30 @@ end
 	--------]]--
 
 function DoFireWeap1()
-	if scen.playerShip.weapon.beam ~= nil then
-		scen.playerShip.control.beam = true
-	end
+	scen.playerShip.control.beam = true
 end
 
 function StopFireWeap1()
-	if scen.playerShip.weapon.beam ~= nil then
-		scen.playerShip.control.beam = false
-	end
+	scen.playerShip.control.beam = false
 end
 
 function DoFireWeap2()
-	if scen.playerShip.weapon.pulse ~= nil then
-		scen.playerShip.control.pulse = true
-	end
+	scen.playerShip.control.pulse = true
 end
 
 function StopFireWeap2()
-	if scen.playerShip.weapon.pulse ~= nil then
-		scen.playerShip.control.pulse = false
-	end
+	scen.playerShip.control.pulse = false
 end
 
 function DoFireWeapSpecial()
-	if scen.playerShip.weapon.special ~= nil then
-		scen.playerShip.control.special = true
-	end
+	scen.playerShip.control.special = true
 end
 
 function StopFireWeapSpecial()
-	if scen.playerShip.weapon.special ~= nil then
-		scen.playerShip.control.special = false
-	end
+	scen.playerShip.control.special = false
 end
 
 function DoAccelerate()
-	keyboard[1][2].active = false
 	scen.playerShip.control.accel = true
 end
 
@@ -87,7 +74,6 @@ function StopAccelerate()
 end
 
 function DoDecelerate()
-	keyboard[1][3].active = false
 	scen.playerShip.control.decel = true
 end
 
@@ -96,7 +82,6 @@ function StopDecelerate()
 end
 
 function DoLeftTurn()
-	keyboard[1][4].active = false
 	scen.playerShip.control.left = true
 end
 
@@ -105,7 +90,6 @@ function StopLeftTurn()
 end
 
 function DoRightTurn()
-	keyboard[1][5].active = false
 	scen.playerShip.control.right = true
 end
 
@@ -114,13 +98,18 @@ function StopRightTurn()
 end
 
 function DoWarp()
+	scen.playerShip.control.warp = true
+--[[
 	if scen.playerShip.warp.stage == "notWarping" then
 		scen.playerShip.warp.time = 0.0
 		scen.playerShip.warp.stage = "spooling"
 	end
+--]]
 end
 
 function StopWarp()
+	scen.playerShip.control.warp = false
+--[[
 	if scen.playerShip.warp.stage == "warping" then
 		scen.playerShip.warp.stage = "cooldown"
 	else
@@ -128,6 +117,7 @@ function StopWarp()
 	end
 	scen.playerShip.warp.time = 0.0
 	scen.playerShip.warp.lastPlayed = 0
+--]]
 end
 
 	--[[-----------
@@ -187,7 +177,7 @@ function DoScaleIn()
 end
 
 function DoScaleOut()
-	if cameraRatios[cameraRatioNum + 1] ~= nil then
+	if type(cameraRatios[cameraRatioNum + 1]) == "number" then
 		cameraChanging = true
 		cameraRatioOrig = cameraRatio
 		x = timeInterval
@@ -266,9 +256,7 @@ function DoZoom1_16()
 end
 
 function DoZoomHostile()
-	-- the following is hardcoded, but can be easily modified to not be so
-	
-	-- insta-zoom version
+	-- insta-zoom version - UNSTABLE?
 	if cameraRatioNum ~= 6 then
 		local diff = { x = computerShip.physicsObject.position.x - scen.playerShip.physicsObject.position.x, y = computerShip.physicsObject.position.y - scen.playerShip.physicsObject.position.y }
 		local calculatedRatio = 0

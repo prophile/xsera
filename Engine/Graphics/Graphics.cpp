@@ -351,6 +351,33 @@ void DrawSprite ( const std::string& sheetname, int sheet_x, int sheet_y, vec2 p
 	}
 }
 
+void DrawSpriteFrame ( const std::string& sheetname, vec2 position, vec2 size, int index, float rotation, colour col )
+{
+	SetShader("Sprite");
+	EnableTexturing();
+	EnableBlending();
+	ClearColour();
+	SetColour(col);
+	SpriteSheet* sheet;
+	SheetMap::iterator iter = spriteSheets.find(sheetname);
+	if (iter == spriteSheets.end())
+	{
+		sheet = new SpriteSheet(sheetname);
+		spriteSheets[sheetname] = sheet;
+	}
+	else
+	{
+		sheet = iter->second;
+	}
+	Matrices::SetViewMatrix(matrix2x3::Translate(position));
+	Matrices::SetModelMatrix(matrix2x3::Identity());
+	glRotatef(RAD2DEG(rotation), 0.0f, 0.0f, 1.0f);
+	
+	int x = index % sheet->SheetTilesX();
+	int y = (index - x) / sheet->SheetTilesX();
+	sheet->Draw(x, y, size);
+}
+
 /* [ADAMLATER] - this is a function that allows sprites to be tiled if necessary
 void DrawSpriteTile ( const std::string& sheetname, int sheet_x, int sheet_y, vec2 position, vec2 size, float rotation, colour col )
 {
@@ -478,7 +505,8 @@ static void RealDrawLightning ( vec2 coordinate1, vec2 coordinate2, float width,
 	for (unsigned long i = 0; i < segments; i++)
 	{
 		float delta = ((float)i / (float)(segments - 1));
-		vec2 basePosition = ((coordinate1*(1.0f-delta)) + (coordinate2*delta)) / 2.0f;
+		//This may be only a partial fix.	
+		vec2 basePosition = ((coordinate1*(1.0f-delta)) + (coordinate2*delta));// / 2.0f;
 		if (tailed)
 		{
 			delta *= 2.0f;
@@ -722,6 +750,33 @@ vec2 MapPoint ( vec2 windowCoords )
 	normalisedCoords += vec2(1.0f, 1.0f);
 	normalisedCoords *= 0.5f;
 	return vec2(normalisedCoords.X() * scw, normalisedCoords.Y() * sch);
+}
+
+void DrawPoint ( vec2 coord, float width, colour col )
+{
+	SetShader("Primitive");
+	DisableTexturing();
+	if (col.alpha() < 1.0f)
+	{
+		EnableBlending();
+	}
+	else
+	{
+		DisableBlending();
+	}
+	SetColour(col);
+	Matrices::SetViewMatrix(matrix2x3::Identity());
+	Matrices::SetModelMatrix(matrix2x3::Identity());
+	float quad[8] = { coord.X(), coord.Y(),
+		coord.X(), coord.Y() - 2,
+		coord.X() + 2, coord.Y() - 2,
+		coord.X() + 2, coord.Y() };
+	glVertexPointer ( 2, GL_FLOAT, 0, quad );
+	glDrawArrays ( GL_QUADS, 0, 4 );
+	/* ¡WARNING! IMMEDIATE MODE! ENTER AT YOUR OWN RISK */
+//	glBegin(GL_POINTS);
+//		glVertex2f(coord.X(), coord.Y());
+//	glEnd();
 }
 
 bool IsCulled ( vec2 position, float radius )

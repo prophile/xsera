@@ -50,7 +50,7 @@ end
 
 function keyup(k)
 	if k == "s" then
-		mode_manager.switch('Briefing')
+		mode_manager.switch('Ares/Briefing')
 	elseif k == "n" then
 		sound.play('NaughtyBeep')
 		LogError("This command currently has no code.", 10)
@@ -82,11 +82,11 @@ function keyup(k)
 			num = num + 1
 		end
 	elseif k == "m" then
-		mode_manager.switch('MainMenu')
+		mode_manager.switch('Xsera/MainMenu')
 	elseif k == "o" then
-		mode_manager.switch('Options')
+		mode_manager.switch('Ares/Options')
 	elseif k == "a" then
-		mode_manager.switch('Credits')
+		mode_manager.switch('Xsera/Credits')
 	elseif k == "q" then
 		os.exit()
 	end
