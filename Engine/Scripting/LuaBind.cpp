@@ -691,13 +691,92 @@ static int XML_ParseFile (lua_State *L)
  * name - The name of the mode that the game is currently in.\n
  * Returns:\n
  * A table with the contents of the file in it.\n
- * Note: This function is deprecated. It will likely not be used in Xsera, and
- * is not fully functional.
  */
 
 luaL_Reg registryXML[] =
 {
 	"load", XML_ParseFile,
+	NULL, NULL
+};
+
+int WIND_IsFullScreen
+{
+	lua_pushboolean(L, ToBool(Preferences::Get("Screen/Fullscreen")));
+	return 1;
+}
+
+int WIND_SetFullScreen
+{
+	Preferences::Set("Screen/FullScreen", luaL_checknumber(L, 1));
+	Graphics::Init(ToInt(Preferences::Get("Screen/Width")), ToInt(Preferences::Get("Screen/Height")), ToBool(Preferences::Get("Screen/Fullscreen")));
+	return 0;
+}
+
+int WIND_WindowSize
+{
+	lua_pushnumber(ToInt(Preferences::Get("Screen/Width")));
+	lua_pushnumber(ToInt(Preferences::Get("Screen/Height")));
+	return 2;
+}
+
+int WIND_SetWindow
+{
+	Preferences::Set("Screen/Width", luaL_checknumber(L, 1));
+	Preferences::Set("Screen/Height", luaL_checknumber(L, 2));
+	Graphics::Init(ToInt(Preferences::Get("Screen/Width")), ToInt(Preferences::Get("Screen/Height")), ToBool(Preferences::Get("Screen/Fullscreen")));
+	return 0;
+}
+/**
+ * @page lua_window The Lua Window Registry
+ * This page contains information about the Lua Window registry.
+ * 
+ * This registry contains miscellaneous functions for modifying the SDL window's
+ * properties.
+ * 
+ * @section is_fullscreen
+ * Checks the status of the SDL window with regards to fullscreen or windowed 
+ * mode.\n
+ * Parameters: None.\n
+ * Returns:\n
+ * A boolean value of true or false - true for fullscreen, false for windowed.
+ * 
+ * @section set_fullscreen
+ * Sets the fullscreen status of the SDL window based upon the argument given.\n
+ * Parameters:\n
+ * fullscreen - a boolean value of whether or not the window should be set to 
+ * fullscreen.\n
+ * Returns:\n
+ * Initially this function will return nothing, but there are plans to allow for
+ * it to return the SDL status given (in case there's a problem with setting it
+ * to fullscreen).
+ * 
+ * @section size
+ * Gives the size of the screen in pixels.\n
+ * Parameters: None.\n
+ * Returns:\n
+ * size - a vectorized size table containing the dimensions of the window in
+ * pixels. (currently returns two values, I hope to make it a table soon)
+ * 
+ * @todo Make @ref size return a vectorized table instead of two values
+ * 
+ * @section set
+ * Setss the size of the screen in pixels.\n
+ * Parameters:\n
+ * A table of a coordinate pair, representing the size of the screen (in pixels)
+ * .\n
+ * Returns: None.\n
+ */
+
+luaL_Reg registryWindowManager[] =
+{
+	"is_fullscreen", WIND_IsFullscreen,
+	"set_fullscreen", WIND_SetFullscreen,
+	"size", WIND_WindowSize,
+	"set", WIND_SetWindow,
+//	"window_size", WIND_WindowSize,
+//	"window_size", WIND_WindowSize,
+//	"window_size", WIND_WindowSize,
+//	"window_size", WIND_WindowSize,
 	NULL, NULL
 };
 
@@ -1852,6 +1931,10 @@ int import ( lua_State* L )
  * @ref lua_preferences \n
  * This registry currently only contains one function, used for retrieving
  * preferences.
+ * 
+ * @ref lua_window \n
+ * This registry controls aspects 
+ * preferences.
  */
 
 void __LuaBind ( lua_State* L )
@@ -1868,5 +1951,6 @@ void __LuaBind ( lua_State* L )
     luaL_register(L, "sound", registrySound);
 	luaL_register(L, "preferences", registryPreferences);
 	luaL_register(L, "net_server", registryNetServer);
+	luaL_register(L, "window", registryNetServer);
 	lua_cpcall(L, luaopen_physics, NULL);
 }

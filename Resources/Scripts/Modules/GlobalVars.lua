@@ -40,7 +40,7 @@ mouseStart = 0
 
 --camera vars
 cameraRatio = 1
-cameraRatios = { 2, 1, 1/2, 1/4, 1/8, 1/16, "hostile" }
+cameraRatios = { 2, 1, 1/2, 1/4, 1/8, 1/16, "hostile", "object", "all" }
 cameraRatioNum = 2
 aspectRatio = 4 / 3
 camera = { w = 640 / cameraRatio, h }
