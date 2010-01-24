@@ -104,7 +104,7 @@ end
 
 function DrawEscapeMenu()
 	SwitchBox( { top = 85, left = -140, bottom = -60, right = 140, boxColour = ClutColour(10, 8) } )
-	graphics.draw_text("Resume, start chapter over, or quit?", "CrystalClear", "left", { x = -125, y = 65 }, 16)
+	graphics.draw_text("Resume, start chapter over, or quit?", MAIN_FONT, "left", { x = -125, y = 65 }, 16)
 	if down.esc == true then
 		SwitchBox( { xCoord = -125, yCoord = 30, length = 250, text = "Resume", boxColour = ClutLighten(ClutColour(12, 6), 1), textColour = ClutColour(12, 6), execute = nil, letter = "ESC" } )
 	elseif down.esc == "act" then
@@ -135,8 +135,8 @@ end
 
 function DrawDefeatMenu()
 	SwitchBox( { top = 85, left = -140, bottom = -60, right = 140, boxColour = ClutColour(16, 6) } )
-	graphics.draw_text("You lost your Heavy Cruiser and failed.", "CrystalClear", "left", { x = -125, y = 26 }, 16)
-	graphics.draw_text("Start chapter over, or quit?", "CrystalClear", "left", { x = -125, y = 10 }, 16)
+	graphics.draw_text("You lost your Heavy Cruiser and failed.", MAIN_FONT, "left", { x = -125, y = 26 }, 16)
+	graphics.draw_text("Start chapter over, or quit?", MAIN_FONT, "left", { x = -125, y = 10 }, 16)
 	if down.rtrn == true then
 		SwitchBox( { xCoord = -125, yCoord = -20, length = 250, text = "Start Chapter Over", boxColour = ClutLighten(ClutColour(9, 6), 1), textColour = ClutColour(9, 6), execute = nil, letter = "RTRN" } )
 	elseif down.rtrn == "act" then
@@ -159,7 +159,7 @@ storedTime = 0.0
 
 function DrawVictoryMenu()
 	SwitchBox( { xCoord = -125, yCoord = 100, length = 290, text = " ", boxColour = ClutColour(3, 7), textColour = ClutColour(3, 7), execute = nil, letter = "Results", underbox = -100 } )
-	graphics.draw_text("You did it! Congratulations!", "CrystalClear", "left", { x = -110, y = 90 }, 16)
+	graphics.draw_text("You did it! Congratulations!", MAIN_FONT, "left", { x = -110, y = 90 }, 16)
 	SwitchBox( { top = 31, left = -75, bottom = -50, right = 115, boxColour = ClutColour(3, 7), background = ClutColour(3, 14) } )
 	local startx = 113
 	local starty = 28
@@ -180,9 +180,9 @@ function DrawVictoryMenu()
 			if endGameData[ycheck][xcheck][1] == true then
 				if endGameData[ycheck][xcheck][2] ~= cClear then
 					graphics.draw_box(starty - (ycheck - 1) * 15, startx - xCoord - xlength, starty - ycheck * 15, startx - xCoord, 0, endGameData[ycheck][xcheck][2])
-					graphics.draw_text(endGameData[ycheck][xcheck][3], "CrystalClear", "left", { x = startx - xCoord - xlength + 2, y = starty - (ycheck - 1) * 15 - 6 }, 16)
+					graphics.draw_text(endGameData[ycheck][xcheck][3], MAIN_FONT, "left", { x = startx - xCoord - xlength + 2, y = starty - (ycheck - 1) * 15 - 6 }, 16)
 				else
-					graphics.draw_text(endGameData[ycheck][xcheck][3], "CrystalClear", "left", { x = startx - xCoord - xlength + 2, y = starty - (ycheck - 1) * 15 - 6 }, 16)
+					graphics.draw_text(endGameData[ycheck][xcheck][3], MAIN_FONT, "left", { x = startx - xCoord - xlength + 2, y = starty - (ycheck - 1) * 15 - 6 }, 16)
 				end
 			else
 				storedTime = storedTime + dt
@@ -248,7 +248,7 @@ function DrawInfoMenu()
 	while keyboard[num] ~= nil do
 		local subnum = 1
 		graphics.draw_box(line_num * -15 + 260, -257, line_num * -15 + 245, 277, 0, ClutColour(1, 8))
-		graphics.draw_text(keyboard[num][1], "CrystalClear", "left", { x = -252, y = line_num * -15 + 253 }, 16)
+		graphics.draw_text(keyboard[num][1], MAIN_FONT, "left", { x = -252, y = line_num * -15 + 253 }, 16)
 		line_num = line_num + 1
 		local xCoord = 0
 		local yShift = 0
@@ -266,11 +266,11 @@ function DrawInfoMenu()
 				adjust = 0
 				xCoord = -212
 			end
-			graphics.draw_text(keyboard[num][subnum + 1].name, "CrystalClear", "left", { x = xCoord, y = line_num * -15 + 254 + adjust }, 16)
+			graphics.draw_text(keyboard[num][subnum + 1].name, MAIN_FONT, "left", { x = xCoord, y = line_num * -15 + 254 + adjust }, 16)
 			if keyboard[num][subnum + 1].key_display == nil then
-				graphics.draw_text(keyboard[num][subnum + 1].key, "CrystalClear", "center", { x = xCoord - 24, y = line_num * -15 + 254 + adjust }, 16)
+				graphics.draw_text(keyboard[num][subnum + 1].key, MAIN_FONT, "center", { x = xCoord - 24, y = line_num * -15 + 254 + adjust }, 16)
 			else
-				graphics.draw_text(keyboard[num][subnum + 1].key_display, "CrystalClear", "center", { x = xCoord - 24, y = line_num * -15 + 254 + adjust }, 16)
+				graphics.draw_text(keyboard[num][subnum + 1].key_display, MAIN_FONT, "center", { x = xCoord - 24, y = line_num * -15 + 254 + adjust }, 16)
 			end
 			line_num = line_num + 1
 			subnum = subnum + 1
@@ -294,7 +294,7 @@ function DrawPauseMenu(dt)
 	timeElapsed = timeElapsed + dt
 	if timeElapsed % 0.8 > 0.4 then
 		SwitchBox( { top = 20, left = -80, bottom = -20, right = 140, boxColour = ClutColour(5, 11), background = c_half_clear } )
-		graphics.draw_text("> CAPS LOCK - PAUSED <", "CrystalClear", "center", { x = 30, y = 0 }, 23, ClutColour(5, 11))
+		graphics.draw_text("> CAPS LOCK - PAUSED <", MAIN_FONT, "center", { x = 30, y = 0 }, 23, ClutColour(5, 11))
 	end
 end
 
@@ -427,50 +427,50 @@ function DrawPanels()
 --	Menu drawing
 	local shift = 1
 	local num = 1
-	graphics.draw_text(menuLevel[1], "CrystalClear", "left", { x = menuShift, y = topOfMenu }, 13)
+	graphics.draw_text(menuLevel[1], MAIN_FONT, "left", { x = menuShift, y = topOfMenu }, 13)
 	while menuLevel[num] ~= nil do
 		if menuLevel[num][1] ~= nil then
 			if menuLevel[num][2] == true then
 				graphics.draw_box(topOfMenu + menuStride * shift + 4, -392, topOfMenu + menuStride * shift - 5, -298, 0, ClutColour(12, 10))
 			end
-			graphics.draw_text(menuLevel[num][1], "CrystalClear", "left", { x = menuShift, y = topOfMenu + menuStride * shift }, 13)
+			graphics.draw_text(menuLevel[num][1], MAIN_FONT, "left", { x = menuShift, y = topOfMenu + menuStride * shift }, 13)
 			shift = shift + 1
 		end
 		num = num + 1
 	end
 	if text_being_drawn == true then
-		graphics.draw_text(scen.text[textnum], "CrystalClear", "center", { x = 0, y = -250 }, 30)
+		graphics.draw_text(scen.text[textnum], MAIN_FONT, "center", { x = 0, y = -250 }, 30)
 	end
 	
 --	Weapon ammo count
 --OFFSET = 32 PIXELS <= ?
 	if scen.playerShip.weapon ~= nil then
 		if scen.playerShip.weapon.pulse ~= nil and scen.playerShip.weapon.pulse.ammo ~= -1 then
-			graphics.draw_text(string.format('%03d', scen.playerShip.weapon.pulse.ammo), "CrystalClear", "left", { x = -376, y = 60 }, 13, ClutColour(5, 1))
+			graphics.draw_text(string.format('%03d', scen.playerShip.weapon.pulse.ammo), MAIN_FONT, "left", { x = -376, y = 60 }, 13, ClutColour(5, 1))
 		end
 		
 		if scen.playerShip.weapon.beam ~= nil and scen.playerShip.weapon.beam.ammo ~= -1 then
-			graphics.draw_text(string.format('%03d', scen.playerShip.weapon.beam.ammo), "CrystalClear", "left", { x = -345, y = 60 }, 13, ClutColour(5, 1))
+			graphics.draw_text(string.format('%03d', scen.playerShip.weapon.beam.ammo), MAIN_FONT, "left", { x = -345, y = 60 }, 13, ClutColour(5, 1))
 		end
 		
 		if scen.playerShip.weapon.special ~= nil and scen.playerShip.weapon.special.ammo ~= -1 then
-			graphics.draw_text(string.format('%03d', scen.playerShip.weapon.special.ammo), "CrystalClear", "left", { x = -314, y = 60 }, 13, ClutColour(5, 1))
+			graphics.draw_text(string.format('%03d', scen.playerShip.weapon.special.ammo), MAIN_FONT, "left", { x = -314, y = 60 }, 13, ClutColour(5, 1))
 		end
 	end
 	control = scen.playerShip -- [HARDCODE]
 	if control ~= nil then
 		graphics.draw_box(49, -392, 40, -297, 0, ClutColour(9, 6))
-		graphics.draw_text("CONTROL", "CrystalClear", "left", { x = -389, y = 44 }, 12, ClutColour(1, 17))
+		graphics.draw_text("CONTROL", MAIN_FONT, "left", { x = -389, y = 44 }, 12, ClutColour(1, 17))
 		if control.type == "Planet" then
-			graphics.draw_text(control.name, "CrystalClear", "left", { x = -389, y = 35 }, 12)
+			graphics.draw_text(control.name, MAIN_FONT, "left", { x = -389, y = 35 }, 12)
 		else
-			graphics.draw_text(control["short-name"], "CrystalClear", "left", { x = -389, y = 35 }, 12)
+			graphics.draw_text(control["short-name"], MAIN_FONT, "left", { x = -389, y = 35 }, 12)
 		end
 		if control.ctrlObject ~= nil then
 			if control.owner == "Human/Ishiman" then
-				graphics.draw_text(control.ctrlObject.name, "CrystalClear", "left", { x = -389, y = 3 }, 12, ClutColour(5, 11))
+				graphics.draw_text(control.ctrlObject.name, MAIN_FONT, "left", { x = -389, y = 3 }, 12, ClutColour(5, 11))
 			else
-				graphics.draw_text(control.ctrlObject.name, "CrystalClear", "left", { x = -389, y = 3 }, 12, ClutColour(16, 1))
+				graphics.draw_text(control.ctrlObject.name, MAIN_FONT, "left", { x = -389, y = 3 }, 12, ClutColour(16, 1))
 			end
 		end
 		if control.energy ~= nil then
@@ -507,7 +507,7 @@ function DrawPanels()
 	end
 	if target ~= nil then
 		graphics.draw_box({ x = -8, y = -392 }, { x = -17, y = -297 }, 0, ClutColour(4, 7))
-		graphics.draw_text("TARGET", "CrystalClear", "left", { x = -389, y = -13 } , 12, ClutColour(1, 17))
+		graphics.draw_text("TARGET", MAIN_FONT, "left", { x = -389, y = -13 } , 12, ClutColour(1, 17))
 		graphics.draw_line({ x = -387, y = -32 }, { x = -372, y = -32 }, 0.5, ClutColour(1, 1))
 		graphics.draw_line({ x = -372, y = -34 }, { x = -372, y = -32 }, 0.5, ClutColour(1, 1))
 		graphics.draw_line({ x = -387, y = -34 }, { x = -387, y = -32 }, 0.5, ClutColour(1, 1))
@@ -516,12 +516,12 @@ function DrawPanels()
 		graphics.draw_line({ x = -387, y = -47 }, { x = -387, y = -49 }, 0.5, ClutColour(1, 1))
 	end
 	graphics.draw_box(-165.5, -389.5, -175.5, -358, 0, ClutColour(4, 8))
-	graphics.draw_text("RIGHT", "CrystalClear", "left", { x = -388, y = -170 }, 13, ClutColour(4, 6))
-	graphics.draw_text("Select", "CrystalClear", "left", { x = -354, y = -170 }, 13, ClutColour(4, 6))
+	graphics.draw_text("RIGHT", MAIN_FONT, "left", { x = -388, y = -170 }, 13, ClutColour(4, 6))
+	graphics.draw_text("Select", MAIN_FONT, "left", { x = -354, y = -170 }, 13, ClutColour(4, 6))
 	if menuLevel ~= menuOptions then
 		graphics.draw_box(-175.5, -389.5, -185.5, -358, 0, ClutColour(4, 8))
-		graphics.draw_text("LEFT", "CrystalClear", "left", { x = -388, y = -180 }, 13, ClutColour(4, 6))
-		graphics.draw_text("Go Back", "CrystalClear", "left", { x = -354, y = -180 }, 13, ClutColour(4, 6))
+		graphics.draw_text("LEFT", MAIN_FONT, "left", { x = -388, y = -180 }, 13, ClutColour(4, 6))
+		graphics.draw_text("Go Back", MAIN_FONT, "left", { x = -354, y = -180 }, 13, ClutColour(4, 6))
 	end
 end
 

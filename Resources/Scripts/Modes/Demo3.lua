@@ -611,7 +611,7 @@ function render ()
 	InterfaceDisplay(dt)
 -- Error Printing
 	if errNotice ~= nil then
-		graphics.draw_text(errNotice.text, "CrystalClear", "center", { x = 0, y = -150 }, 28)
+		graphics.draw_text(errNotice.text, MAIN_FONT, "center", { x = 0, y = -150 }, 28)
 		if errNotice.start + errNotice.duration < mode_manager.time() then
 			errNotice = nil
 		end

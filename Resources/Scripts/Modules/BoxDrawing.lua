@@ -9,8 +9,8 @@ function DrawInterfaceBox(box, col_mod_all, col_mod_click)
 	if box.special ~= "disabled" then
 		if box.text == "nodraw" then
 			txtlength = (box.length - 22) / 2
-		elseif ((box.length - 20) / 3.5) < graphics.text_length(box.letter, "CrystalClear", 14) then
-			txtlength = (graphics.text_length(box.letter, "CrystalClear", 14) + 20) / 2
+		elseif ((box.length - 20) / 3.5) < graphics.text_length(box.letter, MAIN_FONT, 14) then
+			txtlength = (graphics.text_length(box.letter, MAIN_FONT, 14) + 20) / 2
 		else
 			txtlength = (box.length - 20) / 7
 		end
@@ -21,13 +21,13 @@ function DrawInterfaceBox(box, col_mod_all, col_mod_click)
 	if (box.text ~= " ") and (box.text ~= "nodraw") then
 		graphics.draw_box(box.yCoord + 14, box.xCoord + 11, box.yCoord + 4, box.xCoord + 10 + txtlength * 2, 0, ClutLighten(box.boxColour, col_mod_all + 1))
 		graphics.draw_box(box.yCoord + 14, box.xCoord + 11 + txtlength * 2, box.yCoord + 4, box.xCoord + box.length - 11, 0, ClutLighten(box.boxColour, col_mod_click - 1))
-		graphics.draw_text(box.text, "CrystalClear", "center", { x = box.xCoord + 11 + txtlength * 9 / 2, y = box.yCoord + 9 }, 14 , ClutLighten(box.boxColour, col_mod_all + 1)) 
+		graphics.draw_text(box.text, MAIN_FONT, "center", { x = box.xCoord + 11 + txtlength * 9 / 2, y = box.yCoord + 9 }, 14 , ClutLighten(box.boxColour, col_mod_all + 1)) 
 	else
 		graphics.draw_box(box.yCoord + 14, box.xCoord + 11, box.yCoord + 4, box.xCoord + 10 + txtlength * 2, 0, ClutLighten(box.boxColour, col_mod_all - 1))
 		graphics.draw_box(box.yCoord + 14, box.xCoord + 11 + txtlength * 2, box.yCoord + 4, box.xCoord + box.length - 11, 0, ClutLighten(box.boxColour, col_mod_all + 1))
 	end
 	if box.special ~= "disabled" then
-		graphics.draw_text(box.letter, "CrystalClear", "center", { x = box.xCoord + 11 + txtlength, y = box.yCoord + 9 }, 14) 
+		graphics.draw_text(box.letter, MAIN_FONT, "center", { x = box.xCoord + 11 + txtlength, y = box.yCoord + 9 }, 14) 
 	end
 	if box.radio == "off" then
 		graphics.draw_box(box.yCoord + 13, box.xCoord - 2, box.yCoord + 4, box.xCoord + 5, 0, ClutLighten(box.boxColour, col_mod_all))
@@ -67,7 +67,7 @@ function DrawInterfaceBox(box, col_mod_all, col_mod_click)
 		-- bottom
 		graphics.draw_box(box.underbox + 3, box.xCoord, box.underbox, box.xCoord + box.length, 0, box.boxColour)
 		if box.uboxText ~= nil then
-			graphics.draw_text(box.uboxText, "CrystalClear", "left", { x = box.xCoord + 12, y = box.yCoord - 6 }, 14)
+			graphics.draw_text(box.uboxText, MAIN_FONT, "left", { x = box.xCoord + 12, y = box.yCoord - 6 }, 14)
 		end
 	end
 end
@@ -116,12 +116,23 @@ function DrawSmallBox(box)
 	graphics.draw_box((box.top + box.bottom) / 2 - 1, box.right - 3, box.bottom + 5, box.right, 0, ClutDarken(box.boxColour))
 	if box.title ~= nil then
 		graphics.draw_box(box.top - 5, box.left + 4, box.top - 25, box.right - 4, 0, ClutLighten(box.boxColour, 3))
-		graphics.draw_text(box.title, "CrystalClear", "left", { x = box.left + 10, y = box.top - 15 }, 18, ClutColour(1, 17))
+		graphics.draw_text(box.title, MAIN_FONT, "left", { x = box.left + 10, y = box.top - 15 }, 18, ClutColour(1, 17))
 	end
 	if box.subtitle ~= nil then
-		graphics.draw_text(box.subtitle, "CrystalClear", "left", { x = box.left + 10, y = box.top - 35 }, 18, ClutColour(1, 17))
+		graphics.draw_text(box.subtitle, MAIN_FONT, "left", { x = box.left + 10, y = box.top - 35 }, 18, ClutColour(1, 17))
 	end
---	graphics.draw_text(box.desc, "CrystalClear", "left", { x = box.left + 10, y = box.top - 55 }, 18, ClutColour(1, 17)) [TEXTFIX] re-enable when text colours are added
+--	graphics.draw_text(box.desc, MAIN_FONT, "left", { x = box.left + 10, y = box.top - 55 }, 18, ClutColour(1, 17)) [TEXTFIX] re-enable when text colours are added
+end
+
+function DrawPointerBox(box, dt)
+	-- box must be in the following structure:
+	-- box = { message, font, size, top, bottom, left, right, pointFrom = {x, y}, pointTo = {x, y}, colour, flashing }
+	
+	graphics.draw_box(box.top, box.left, box.bottom, box.right, 1, box.colour)
+	
+	-- [TODO, ADAM] add other line part later
+	
+	graphics.draw_text(box.message, box.font, "left", { x = box.left + 5, y = (box.top + box.bottom) / 2 }, box.size, box.colour)
 end
 
 function SwitchBox(box)

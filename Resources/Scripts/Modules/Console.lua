@@ -34,7 +34,7 @@ function ConsoleDraw(FONT_SIZE)
 	local i = 1
 	while consoleHistory[i] ~= nil do
 		if i <= CONSOLE_MAX then
-			graphics.draw_text(consoleHistory[i], "CrystalClear", "left", { x = -319, y = 232 - (i - 1) * FONT_SIZE + 1 }, FONT_SIZE)
+			graphics.draw_text(consoleHistory[i], MAIN_FONT, "left", { x = -319, y = 232 - (i - 1) * FONT_SIZE + 1 }, FONT_SIZE)
 			i = i + 1
 		else
 			return

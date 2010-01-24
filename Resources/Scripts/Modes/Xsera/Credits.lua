@@ -54,7 +54,7 @@ function render ()
 	graphics.set_camera(-320, -240, 320, 240)
 	for i, credit in pairs(credits) do
 		if credit ~= "" then
-			graphics.draw_text(credit, "CrystalClear", "center", { x = 0, y = rowDist[i] + totalTime } , creditSizes[i])
+			graphics.draw_text(credit, MAIN_FONT, "center", { x = 0, y = rowDist[i] + totalTime } , creditSizes[i])
 		end
 	end
 	graphics.end_frame()

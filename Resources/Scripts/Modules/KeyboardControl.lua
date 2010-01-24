@@ -1,5 +1,6 @@
 import('GlobalVars')
 import('Interfaces')
+import('Console')
 
 --[[-----------------------
 	--{{---------------
