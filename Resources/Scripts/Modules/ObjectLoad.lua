@@ -1,118 +1,130 @@
 import('GlobalVars')
 import('Actions')
 
-function NewObject(id)
+function NewObject(id, spaceObject)
+	local base = gameData["Objects"][id]
 	
-	function CopyActions(obj)
-		obj.trigger = {}
-		if obj.action ~= nil then
-			local id
-			for id = 1, #obj.action do
-				if obj.action[id] ~= nil then
-					obj.trigger[obj.action[id].trigger] = obj.action[id]
-				end
-			end
-		end
-		
-		if obj.trigger.activate ~= nil and obj.trigger.activate.count > 255 then
-			obj.trigger.activate.activateInterval = math.floor(obj.trigger.activate.count/2^23)
-			obj.trigger.activate.intervalRange = math.floor(obj.trigger.activate.count/2^15)%2^7
---			math.floor(c/2^7)%7 --No discernable use.
-			obj.trigger.activate.count = obj.trigger.activate.count%2^7
-			
-			obj.trigger.activateInterval = obj.trigger.activate.activateInterval / TIME_FACTOR
-			obj.trigger.activateRange = obj.trigger.activate.intervalRange / TIME_FACTOR
-			obj.trigger.nextActivate = mode_manager.time() + obj.trigger.activateInterval + math.random(0,obj.trigger.activateRange)
-		else
-			obj.trigger.activateInterval = 0
-		end
-	end
-	
-	local newObj = deepcopy(gameData["Objects"][id])
-	
-	if newObj["sprite-id"] ~= nil then
-		newObj.sprite = newObj["sprite-id"]
-		
-		newObj.spriteDim = graphics.sprite_dimensions("Id/" .. newObj.sprite)
-		if newObj["natural-scale"] ~= nil then
-			newObj.spriteDim = {
-				x = newObj.spriteDim.x * newObj["natural-scale"];
-				y = newObj.spriteDim.y * newObj["natural-scale"];
-			}
-		end
-	end
-	
-	if newObj.mass == nil then
-		newObj.mass = 0.1
-	end
-	
-	
-	--Generalize controls for the AI
-	newObj.control = {
-	accel = false;
-	decel = false;
-	left = false;
-	right = false;
-	beam = false;
-	pulse = false;
-	special = false;
-	warp = false;
+	local object = {
+		base = base;
+		control = {
+			accel = false;
+			decel = false;
+			left = false;
+			right = false;
+			beam = false;
+			pulse = false;
+			special = false;
+			warp = false;
+		};
+		ai = {
+			owner = nil;
+			mode = "wait";
+			target = nil;
+			dest = nil;
+		};
+		physics = physics.new_object(base.mass or 1.0);
+		gfx = {};
 	}
+		
 	
-	newObj.physics = physics.new_object(newObj.mass)
-	newObj.physics.angular_velocity = 0.00
 	
-	if newObj.spriteDim ~= nil then
-		newObj.physics.collision_radius = hypot1(newObj.spriteDim) / 4
+	if base.rotation ~= nil then
+		object.type = "rotation"
+	elseif base.animation ~= nil then
+		object.type = "animation"
+		object.gfx.startTime = mode_manager.time()
+		object.gfx.frameTime = base.animation["frame-speed"] / TIME_FACTOR / 30
+	elseif base.beam ~= nil then
+		object.type = "beam"
 	else
-		newObj.physics.collision_radius = 1
+		LogError("UNKNOWN OBJECT CLASS")
 	end
 	
-	if newObj["initial-age"] ~= nil then
-		newObj.created = mode_manager.time()
-		newObj.age = newObj["initial-age"] / TIME_FACTOR
-		--the documentation for Hera says that initial-age is in 20ths of a second but it appears to be 60ths
-	end
-
-	if newObj.animation ~= nil then
-		newObj.animation.start = mode_manager.time()
-		newObj.animation.frameTime = newObj.animation["frame-speed"] / TIME_FACTOR / 30.0 --Is the ratio here 1:1800?		
+	if base["sprite-id"] ~= nil then
+		object.gfx.sprite = "Id/"..base["sprite-id"];
+		
+		local dim = graphics.sprite_dimensions(object.gfx.sprite)
+		
+		if base["natural-scale"] ~= nil then
+			object.gfx.dimensions = {
+				x = dim.x * base["natural-scale"];
+				y = dim.y * base["natural-scale"];
+			}
+		else
+			object.gfx.dimensions = dim
+		end
+		
+		object.physics.collision_radius = hypot1(object.gfx.dimensions) / 4
+	else
+		object.physics.collision_radius = 1
 	end
 	
+	
+	if base["initial-age"] ~= nil then
+		object.age = {
+			created = mode_manager.time();
+			lifeSpan = (base["initial-age"] + math.random(0, base["initial-age"] or 0)) / TIME_FACTOR;
+		}
+	end
 
 	--Prepare devices
-	if newObj.weapon ~= nil then
-		local wid
-		for wid = 1, #newObj.weapon do
-			if newObj.weapon[newObj.weapon[wid].type] ~= nil then
-				error("More than one weapon of type '" .. newObj.weapon[wid].type .. "' defined.")
+	if base.weapon ~= nil then
+		object.weapons = {}
+		
+		for wid = 1, #base.weapon do
+			if object.weapons[base.weapon[wid].type] ~= nil then
+				LogError("More than one weapon of type '" .. newObj.weapon[wid].type .. "' defined.")
 			end
-			local weap = deepcopy(gameData["Objects"][newObj.weapon[wid].id])
-			weap.position = deepcopy(newObj.weapon[wid].position)
-			weap.position.last = 1
-			weap.ammo = deepcopy(weap.device.ammo)
-			weap.parent = newObj
 			
-			weap.device.lastActivated = -weap.device["fire-time"] / TIME_FACTOR
+			local wbase = gameData["Objects"][base.weapon[wid].id]
+			local weap = {
+				base = wbase;
+				lastPos = 1;
+				ammo = wbase.device.ammo;
+				lastActivated = -wbase.device["fire-time"] / TIME_FACTOR;
+				lastRestock = mode_manager.time();
+			}
 			
-			weap.device.lastRestock = mode_manager.time()
 			CopyActions(weap)
 
-			newObj.weapon[newObj.weapon[wid].type] = weap
+			object.weapons[base.weapon[wid].type] = weap
 		
 		
 		end
 	end
 	
-	newObj.healthMax = newObj.health
-	newObj.dead = false
+	CopyActions(object)
+	return object
+end
+
+
+
+function CopyActions(object)
+	local base = object.base
+	object.triggers = {}
 	
-	-- energy & battery
-	if newObj.energy ~= nil then
-		newObj.energyMax = newObj.energy
-		newObj.battery = newObj.energy * 5
-		newObj.batteryMax = newObj.battery
+	if base.action ~= nil then
+		for id = 1, #base.action do
+			if base.action[id] ~= nil then
+				object.triggers[base.action[id].trigger] = base.action[id]
+			end
+		end
 	end
-	CopyActions(newObj)
-	return newObj
+	
+	if object.triggers.activate ~= nil
+	and object.triggers.activate.count > 255 then
+		local activate = object.triggers.activate
+		local periodic = {
+			interval = math.floor(activate.count/2^23) / TIME_FACTOR;
+			range = math.floor(activate.count/2^15)%2^7 / TIME_FACTOR;
+		}
+		
+		periodic.next = mode_manager.time() + periodic.interval + math.random(0, periodic.range)
+
+--		math.floor(c/2^7)%7 --No discernable use.
+
+		object.triggers.activate.count = activate.count%2^7
+		
+		object.triggers.periodic = periodic
+	end
 end

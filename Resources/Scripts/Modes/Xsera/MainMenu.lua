@@ -92,7 +92,7 @@ function key ( k )
 			mode_manager.switch("Ares/Splash")
 		end
     elseif k == "t" then
-        mode_manager.switch("WeaponTest")
+        mode_manager.switch("../Tests/WeaponTest")
     elseif k == "c" then
         mode_manager.switch("Xsera/Credits")
     elseif k == "tab" then
