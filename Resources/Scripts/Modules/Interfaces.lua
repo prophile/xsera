@@ -320,7 +320,7 @@ function DrawRadar()
 	for i = 1, #scen.objects do
 		local o = scen.objects[i]
 		if o ~= scen.playerShip
-		and o.attributes["appear-on-radar"] == true
+		and o.base.attributes["appear-on-radar"] == true
 		and math.abs(o.physics.position.x - scen.playerShip.physics.position.x) < radarRange.x
 		and math.abs(o.physics.position.y - scen.playerShip.physics.position.y) < radarRange.y then
 			tab = { r = 0, g = 1, b = 0, a = 1 }
@@ -342,19 +342,19 @@ function DrawPanels()
 ------------------]]--
 
 --	Battery (red)
-	if scen.playerShip.battery ~= nil then
+	if scen.playerShip.status.battery ~= nil then
 		graphics.draw_box(107, 379, 29, 386, 0, ClutColour(8, 8))
-		graphics.draw_box(scen.playerShip.battery / scen.playerShip.batteryMax * 78 + 29, 379, 29, 386, 0, ClutColour(8, 5)) -- #TEST these commented lines should be fixed and uncommented
+		graphics.draw_box(scen.playerShip.status.battery / scen.playerShip.status.batteryMax * 78 + 29, 379, 29, 386, 0, ClutColour(8, 5)) -- #TEST these commented lines should be fixed and uncommented
 	end
 --	Energy (yellow)
-	if scen.playerShip.energy ~= nil then
+	if scen.playerShip.status.energy ~= nil then
 		graphics.draw_box(6, 379, -72.5, 386, 0, ClutColour(3, 7))
-		graphics.draw_box(scen.playerShip.energy / scen.playerShip.energyMax * 78.5 - 72.5, 379, -72.5, 386, 0, ClutColour(9, 6))
+		graphics.draw_box(scen.playerShip.status.energy / scen.playerShip.status.energyMax * 78.5 - 72.5, 379, -72.5, 386, 0, ClutColour(9, 6))
 	end
 --	Shield (blue)
-	if scen.playerShip.health ~= nil then
+	if scen.playerShip.status.health ~= nil then
 		graphics.draw_box(-96, 379, -173, 386, 0, ClutColour(14, 8))
-		graphics.draw_box(scen.playerShip.health / scen.playerShip.healthMax * 77 - 173, 379, -173, 386, 0, ClutColour(14, 6))
+		graphics.draw_box(scen.playerShip.status.health / scen.playerShip.status.healthMax * 77 - 173, 379, -173, 386, 0, ClutColour(14, 6))
 	end
 --	Factory resources (green - mostly)
 	count = 1
@@ -447,20 +447,23 @@ function DrawPanels()
 	if text_being_drawn == true then
 		graphics.draw_text(scen.text[textnum], "CrystalClear", "center", { x = 0, y = -250 }, 30)
 	end
-	
+
 --	Weapon ammo count
 --OFFSET = 32 PIXELS <= ?
-	if scen.playerShip.weapon ~= nil then
-		if scen.playerShip.weapon.pulse ~= nil and scen.playerShip.weapon.pulse.ammo ~= -1 then
-			graphics.draw_text(string.format('%03d', scen.playerShip.weapon.pulse.ammo), "CrystalClear", "left", { x = -376, y = 60 }, 13, ClutColour(5, 1))
+	if scen.playerShip.weapons ~= nil then
+		if scen.playerShip.weapons.pulse ~= nil
+		and scen.playerShip.weapons.pulse.ammo ~= -1 then
+			graphics.draw_text(string.format('%03d', scen.playerShip.weapons.pulse.ammo), "CrystalClear", "left", { x = -376, y = 60 }, 13, ClutColour(5, 1))
 		end
 		
-		if scen.playerShip.weapon.beam ~= nil and scen.playerShip.weapon.beam.ammo ~= -1 then
-			graphics.draw_text(string.format('%03d', scen.playerShip.weapon.beam.ammo), "CrystalClear", "left", { x = -345, y = 60 }, 13, ClutColour(5, 1))
+		if scen.playerShip.weapons.beam ~= nil
+		and scen.playerShip.weapons.beam.ammo ~= -1 then
+			graphics.draw_text(string.format('%03d', scen.playerShip.weapons.beam.ammo), "CrystalClear", "left", { x = -345, y = 60 }, 13, ClutColour(5, 1))
 		end
 		
-		if scen.playerShip.weapon.special ~= nil and scen.playerShip.weapon.special.ammo ~= -1 then
-			graphics.draw_text(string.format('%03d', scen.playerShip.weapon.special.ammo), "CrystalClear", "left", { x = -314, y = 60 }, 13, ClutColour(5, 1))
+		if scen.playerShip.weapons.special ~= nil
+		and scen.playerShip.weapons.special.ammo ~= -1 then
+			graphics.draw_text(string.format('%03d', scen.playerShip.weapons.special.ammo), "CrystalClear", "left", { x = -314, y = 60 }, 13, ClutColour(5, 1))
 		end
 	end
 	control = scen.playerShip -- [HARDCODE]
@@ -470,7 +473,7 @@ function DrawPanels()
 		if control.type == "Planet" then
 			graphics.draw_text(control.name, "CrystalClear", "left", { x = -389, y = 35 }, 12)
 		else
-			graphics.draw_text(control["short-name"], "CrystalClear", "left", { x = -389, y = 35 }, 12)
+			graphics.draw_text(control.short, "CrystalClear", "left", { x = -389, y = 35 }, 12)
 		end
 		if control.ctrlObject ~= nil then
 			if control.owner == "Human/Ishiman" then
@@ -479,7 +482,7 @@ function DrawPanels()
 				graphics.draw_text(control.ctrlObject.name, "CrystalClear", "left", { x = -389, y = 3 }, 12, ClutColour(16, 1))
 			end
 		end
-		if control.energy ~= nil then
+		if control.status.energy ~= nil then
 			graphics.draw_line({ x = -357, y = 28 }, { x = -347, y = 28 }, 0.5, ClutColour(3, 7))
 			graphics.draw_line({ x = -357, y = 27 }, { x = -357, y = 28 }, 0.5, ClutColour(3, 7))
 			graphics.draw_line({ x = -347, y = 27 }, { x = -347, y = 28 }, 0.5, ClutColour(3, 7))
@@ -487,9 +490,9 @@ function DrawPanels()
 			graphics.draw_line({ x = -357, y = 10 }, { x = -357, y = 9 }, 0.5, ClutColour(3, 7))
 			graphics.draw_line({ x = -347, y = 10 }, { x = -347, y = 9 }, 0.5, ClutColour(3, 7))
 			graphics.draw_box(27, -356, 10, -348, 0, ClutColour(3, 7))
-			graphics.draw_box(17 * control.energy / control.energyMax + 10, -356, 10, -348, 0, ClutColour(9, 6))
+			graphics.draw_box(17 * control.status.energy / control.status.energyMax + 10, -356, 10, -348, 0, ClutColour(9, 6))
 		end
-		if control.health ~= nil then
+		if control.status.health ~= nil then
 			graphics.draw_line({ x = -369, y = 28 }, { x = -359, y = 28 }, 0.5, ClutColour(4, 8))
 			graphics.draw_line({ x = -369, y = 27 }, { x = -369, y = 28 }, 0.5, ClutColour(4, 8))
 			graphics.draw_line({ x = -359, y = 27 }, { x = -359, y = 28 }, 0.5, ClutColour(4, 8))
@@ -497,12 +500,12 @@ function DrawPanels()
 			graphics.draw_line({ x = -369, y = 10 }, { x = -369, y = 9 }, 0.5, ClutColour(4, 8))
 			graphics.draw_line({ x = -359, y = 10 }, { x = -359, y = 9 }, 0.5, ClutColour(4, 8))
 			graphics.draw_box(27, -367.5, 10, -360, 0, ClutColour(4, 8))
-			graphics.draw_box(17 * control.health / control.healthMax + 10, -367.5, 10, -360, 0, ClutColour(4, 6))
+			graphics.draw_box(17 * control.status.health / control.status.healthMax + 10, -367.5, 10, -360, 0, ClutColour(4, 6))
 		end
 		if control.type == "Planet" then
 			graphics.draw_sprite(control.type .. "s/" .. control.image, { x = -380, y = 19 }, { x = 17, y = 17 }, 0)
 		else
-			graphics.draw_sprite("Id/" .. control.sprite, { x = -380, y = 19 }, { x = 17, y = 17 }, 3.14 / 2.0)
+			graphics.draw_sprite(control.gfx.sprite, { x = -380, y = 19 }, { x = 17, y = 17 }, 3.14 / 2.0)
 		end
 		graphics.draw_line({ x = -387, y = 28 }, { x = -372, y = 28 }, 0.5, ClutColour(1, 1))
 		graphics.draw_line({ x = -387, y = 27 }, { x = -387, y = 28 }, 0.5, ClutColour(1, 1))

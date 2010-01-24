@@ -1,10 +1,13 @@
 import('GlobalVars')
 import('Actions')
 
-function NewObject(id, spaceObject)
+function NewObject(id)
 	local base = gameData["Objects"][id]
 	
 	local object = {
+		name = base.name;
+		short = base["short-name"];
+		
 		base = base;
 		control = {
 			accel = false;
@@ -24,8 +27,16 @@ function NewObject(id, spaceObject)
 		};
 		physics = physics.new_object(base.mass or 1.0);
 		gfx = {};
+		status = {
+			health = base.health;
+			healthMax = base.health;
+			energy = base.energy;
+			energyMax = base.energy;
+			battery = base.energy and base.energy * 5;
+			batteryMax = base.energy and base.energy * 5;
+			dead = false;
+		}
 	}
-		
 	
 	
 	if base.rotation ~= nil then
