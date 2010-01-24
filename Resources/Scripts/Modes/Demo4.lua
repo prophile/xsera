@@ -481,6 +481,7 @@ end
 
 function DumbSeek(object, target)
 	object.control.accel = true
+	object.control.decel = false
 	local ang = find_angle(target,object.physics.position) - object.physics.angle
 
 	ang = radian_range(ang)
