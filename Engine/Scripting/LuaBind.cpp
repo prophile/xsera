@@ -48,6 +48,26 @@ vec2 luaL_checkvec2(lua_State* L, int narg)
 	return vec2(x, y);
 }
 
+std::string FloatToString ( float val )
+{
+	std::ostringstream o;
+	if (!(o << val))
+	{
+		printf("BAD CONVERSION?!?!?");
+	}
+	return o.str();
+}
+
+unsigned ToInt ( const std::string& value )
+{
+	return atoi(value.c_str());
+}
+
+bool ToBool ( const std::string& value )
+{
+	return value == "true";
+}
+
 vec2 luaL_optvec2(lua_State* L, int narg, vec2 defaultValue)
 {
 	if (lua_isnoneornil(L, narg))
@@ -699,37 +719,41 @@ luaL_Reg registryXML[] =
 	NULL, NULL
 };
 
-int WIND_IsFullscreen
+int WIND_IsFullscreen ( lua_State* L )
 {
 	lua_pushboolean(L, ToBool(Preferences::Get("Screen/Fullscreen")));
 	return 1;
 }
 
-int WIND_SetFullscreen
+int WIND_SetFullscreen ( lua_State* L )
 {
-	Preferences::Set("Screen/Fullscreen", luaL_checknumber(L, 1));
+	Preferences::Set("Screen/Fullscreen", luaL_checkstring(L, 1) );
 	Graphics::Init(ToInt(Preferences::Get("Screen/Width")), ToInt(Preferences::Get("Screen/Height")), ToBool(Preferences::Get("Screen/Fullscreen")));
 	return 0;
 }
 
-int WIND_ToggleFullscreen
+int WIND_ToggleFullscreen ( lua_State* L )
 {
-	Preferences::Set("Screen/Fullscreen", !Preferences::Get("Screen/Fullscreen"));
+	Preferences::Set("Screen/Fullscreen", Preferences::Get("Screen/Fullscreen") == "true" ? "false" : "true");
 	Graphics::Init(ToInt(Preferences::Get("Screen/Width")), ToInt(Preferences::Get("Screen/Height")), ToBool(Preferences::Get("Screen/Fullscreen")));
 	return 0;
 }
 
-int WIND_WindowSize
+int WIND_WindowSize ( lua_State* L )
 {
-	lua_pushnumber(ToInt(Preferences::Get("Screen/Width")));
-	lua_pushnumber(ToInt(Preferences::Get("Screen/Height")));
+	lua_pushnumber(L, ToInt(Preferences::Get("Screen/Width")));
+	lua_pushnumber(L, ToInt(Preferences::Get("Screen/Height")));
 	return 2;
 }
 
-int WIND_SetWindow
+int WIND_SetWindow ( lua_State* L )
 {
-	Preferences::Set("Screen/Width", luaL_checknumber(L, 1));
-	Preferences::Set("Screen/Height", luaL_checknumber(L, 2));
+	vec2 newSize = luaL_checkvec2(L, 1);
+	
+	std::string width = FloatToString(newSize.X());
+	std::string height = FloatToString(newSize.Y());
+	Preferences::Set("Screen/Width", width);
+	Preferences::Set("Screen/Height", height);
 	Graphics::Init(ToInt(Preferences::Get("Screen/Width")), ToInt(Preferences::Get("Screen/Height")), ToBool(Preferences::Get("Screen/Fullscreen")));
 	return 0;
 }
@@ -749,8 +773,8 @@ int WIND_SetWindow
  * @section set_fullscreen
  * Sets the fullscreen status of the SDL window based upon the argument given.\n
  * Parameters:\n
- * fullscreen - a boolean value of whether or not the window should be set to 
- * fullscreen.\n
+ * fullscreen - a string equivalent of the boolean value of whether or not the
+ * window should be set to fullscreen.\n
  * Returns:\n
  * Initially this function will return nothing, but there are plans to allow for
  * it to return the SDL status given (in case there's a problem with setting it

@@ -105,6 +105,8 @@ function key ( k )
 		print("CALLING SPECIAL SWITCH")
 		tabl = { "THIS", "IS", "XSERAAAAAAAAAAAAA" }
 		mode_manager.switch("../Tests/CSTest", tabl)
+	elseif k == "3" then
+		mode_manager.switch("../Tests/WindowTest")
     else
         print("Uninterpreted keystroke " .. k)
     end
