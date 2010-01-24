@@ -112,10 +112,24 @@ function update()
 			if o.type == "beam" then
 				if o.base.beam.kind == "bolt-relative"
 				or o.base.beam.kind == "static-relative" then
-					o.physics.position = VecAdd(o.src.position, o.offset) --[REFACTOR]
+					local src = o.gfx.source.position
+					local off = o.gfx.offset
+					local rel = o.gfx.relative.position
+					
+					o.physics.position = {
+						x = src.x + off.x + rel.x;
+						y = src.y + off.y + rel.y;
+					}
 				elseif o.base.beam.kind == "bolt-to-object"
 					or o.base.beam.kind == "static-to-object" then
-					o.physics.position = VecAdd(VecMul(NormalizeVec(VecSub(o.target.position,o.src.position)), math.min(o.base.beam.range,find_hypot(o.src.position,o.target.position))),o.src.position)--[REFACTOR]
+					local from = VecAdd(o.gfx.offset,o, gfx.source.position)
+					local dir = NormalizeVec(VecSub(o.gfx.target.position,o.gfx.source.position))
+					local len = math.min(o.base.beam.range,find_hypot(from,o.gfx.target.position))
+					
+					o.physics.position = {
+						x = dir.x * len;
+						y = dir.y * len;
+					}
 				end
 			end
 			
@@ -162,8 +176,8 @@ v2 = Polar2Rect(1,angle+180) * dist * m2 / (m1 + m2)
 						p2.velocity = PolarVec(dist * m2 / (m1+m2), angle+math.pi)
 					end
 
-					CollideTrigger(o,o2)
-					CollideTrigger(o2,o)
+					CollideTrigger(o,other)
+					CollideTrigger(other,o)
 
 					if other.base.damage ~= nil then
 						o.status.health = o.status.health - other.base.damage
@@ -403,14 +417,17 @@ function render()
 				local p1 = o.physics.position
 				local p2 = PolarVec(BEAM_LENGTH,o.physics.angle)
 				graphics.draw_line(p1,{x=p1.x+p2.x,y=p1.y+p2.y},1,ClutColour(o.base.beam.color))
-			elseif o.base.beam.kind == "bolt-relative" then
-				graphics.draw_lightning(o.src.position, o.physics.position, 1.0, 10.0, false,ClutColour(o.base.beam.color))
-			elseif o.base.beam.kind == "bolt-to-object" then
-				graphics.draw_lightning(o.src.position, o.physics.position, 1.0, 10.0, false,ClutColour(o.base.beam.color))
-			elseif o.base.beam.kind == "static-relative" then
-				graphics.draw_line(o.src.position, o.physics.position, 3.0, ClutColour(o.base.beam.color))
-			elseif o.base.beam.kind == "static-to-object" then
-				graphics.draw_line(o.src.position, o.physics.position, 3.0, ClutColour(o.base.beam.color))
+			else
+				local from = VecAdd(o.gfx.source.position, o.gfx.offset)
+				if o.base.beam.kind == "bolt-relative" then
+					graphics.draw_lightning(from, o.physics.position, 1.0, 10.0, false,ClutColour(o.base.beam.color))
+				elseif o.base.beam.kind == "bolt-to-object" then
+					graphics.draw_lightning(from, o.physics.position, 1.0, 10.0, false,ClutColour(o.base.beam.color))
+				elseif o.base.beam.kind == "static-relative" then
+					graphics.draw_line(from, o.physics.position, 3.0, ClutColour(o.base.beam.color))
+				elseif o.base.beam.kind == "static-to-object" then
+					graphics.draw_line(from, o.physics.position, 3.0, ClutColour(o.base.beam.color))
+				end
 			end
 		else
 			if cameraRatio >= 1.0/8.0 then--[FIX]
@@ -506,6 +523,10 @@ function RemoveDead()
 	--Remove destroyed or expired objects
 	for i = 1, #scen.objects do
 		local o = scen.objects[i]
+		if o == nil then
+			break
+		end
+
 		if o.status.dead == true then
 			if scen.playerShipId >= i and i ~= 1 then
 				scen.playerShipId = scen.playerShipId - 1

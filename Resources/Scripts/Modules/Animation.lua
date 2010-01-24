@@ -13,7 +13,7 @@ function Animate(object)
 		
 		if object.base.attributes["animation-cycle"] ~= true
 		and framesPassed > frameCount then
-			ExpireTrigger(obj)
+			ExpireTrigger(object)
 			object.status.dead = true
 		end
 		

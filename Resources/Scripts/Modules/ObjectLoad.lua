@@ -91,6 +91,7 @@ function NewObject(id)
 			local weap = {
 				base = wbase;
 				lastPos = 1;
+				positions = base.weapon[wid].position;
 				ammo = wbase.device.ammo;
 				lastActivated = -wbase.device["fire-time"] / TIME_FACTOR;
 				lastRestock = mode_manager.time();
