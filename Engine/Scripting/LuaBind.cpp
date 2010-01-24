@@ -699,15 +699,22 @@ luaL_Reg registryXML[] =
 	NULL, NULL
 };
 
-int WIND_IsFullScreen
+int WIND_IsFullscreen
 {
 	lua_pushboolean(L, ToBool(Preferences::Get("Screen/Fullscreen")));
 	return 1;
 }
 
-int WIND_SetFullScreen
+int WIND_SetFullscreen
 {
-	Preferences::Set("Screen/FullScreen", luaL_checknumber(L, 1));
+	Preferences::Set("Screen/Fullscreen", luaL_checknumber(L, 1));
+	Graphics::Init(ToInt(Preferences::Get("Screen/Width")), ToInt(Preferences::Get("Screen/Height")), ToBool(Preferences::Get("Screen/Fullscreen")));
+	return 0;
+}
+
+int WIND_ToggleFullscreen
+{
+	Preferences::Set("Screen/Fullscreen", !Preferences::Get("Screen/Fullscreen"));
 	Graphics::Init(ToInt(Preferences::Get("Screen/Width")), ToInt(Preferences::Get("Screen/Height")), ToBool(Preferences::Get("Screen/Fullscreen")));
 	return 0;
 }
@@ -736,7 +743,6 @@ int WIND_SetWindow
  * @section is_fullscreen
  * Checks the status of the SDL window with regards to fullscreen or windowed 
  * mode.\n
- * Parameters: None.\n
  * Returns:\n
  * A boolean value of true or false - true for fullscreen, false for windowed.
  * 
@@ -750,9 +756,11 @@ int WIND_SetWindow
  * it to return the SDL status given (in case there's a problem with setting it
  * to fullscreen).
  * 
+ * @section toggle_fullscreen
+ * Changes the fullscreen status of the SDL window. No parameters or returns.\n
+ * 
  * @section size
  * Gives the size of the screen in pixels.\n
- * Parameters: None.\n
  * Returns:\n
  * size - a vectorized size table containing the dimensions of the window in
  * pixels. (currently returns two values, I hope to make it a table soon)
@@ -760,23 +768,19 @@ int WIND_SetWindow
  * @todo Make @ref size return a vectorized table instead of two values
  * 
  * @section set
- * Setss the size of the screen in pixels.\n
+ * Sets the size of the screen in pixels.\n
  * Parameters:\n
  * A table of a coordinate pair, representing the size of the screen (in pixels)
  * .\n
- * Returns: None.\n
  */
 
 luaL_Reg registryWindowManager[] =
 {
 	"is_fullscreen", WIND_IsFullscreen,
 	"set_fullscreen", WIND_SetFullscreen,
+	"toggle_fullscreen", WIND_ToggleFullscreen,
 	"size", WIND_WindowSize,
 	"set", WIND_SetWindow,
-//	"window_size", WIND_WindowSize,
-//	"window_size", WIND_WindowSize,
-//	"window_size", WIND_WindowSize,
-//	"window_size", WIND_WindowSize,
 	NULL, NULL
 };
 
@@ -1951,6 +1955,6 @@ void __LuaBind ( lua_State* L )
     luaL_register(L, "sound", registrySound);
 	luaL_register(L, "preferences", registryPreferences);
 	luaL_register(L, "net_server", registryNetServer);
-	luaL_register(L, "window", registryNetServer);
+	luaL_register(L, "window", registryWindowManager);
 	lua_cpcall(L, luaopen_physics, NULL);
 }
