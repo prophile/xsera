@@ -27,7 +27,7 @@ function table_define (t, name, indent)
 				if next(t) then -- Table not empty
 					table.insert(out, tag .. '{')
 					for key,value in pairs(t) do
-						table.insert(out,table_r(value,key,indent .. '|  ',tableList[t]))
+						table.insert(out,table_r(value,key,indent .. '   ',tableList[t]))
 					end
 					table.insert(out,indent .. '}')
 				else
