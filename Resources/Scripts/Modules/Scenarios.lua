@@ -1,22 +1,22 @@
 function LoadScenario(id)
 	local scen = deepcopy(gameData.Scenarios[id])
 	scen.objects = {}
---	scen.destroyQueue = {}
-	local datId
+
 	local max = scen.initial.id + scen.initial.count - 1
-	local ctr = 1
 	
-	for datId = scen.initial.id, max do
-		local state = gameData.InitialObject[datId]
+	for id = scen.initial.id, max do
+		local state = gameData["InitialObject"][id]
 		local new = NewObject(state.type)
+
+		new.physics.position = state.location
+		new.ai.owner = state.owner
 
 		if state.attributes == 512 then
 			if scen.playerShip == nil then
-				new.physics.velocity = {x = 0.0, y = 0.0}
 				scen.playerShip = new
-				scen.playerShipId = ctr
+				scen.playerShipId = #scen.objects + 1
 			else
-				print("There is already a an intial player ship set.")
+				LogError("There is already a an intial player ship set.", 1)
 			end
 		end
 		
@@ -25,12 +25,7 @@ function LoadScenario(id)
 			new.spriteDim = graphics.sprite_dimensions("Id/" .. new.sprite)
 		end
 		
-		new.physics.position = state.location
-		new.owner = state.owner
-		
---		CreateTrigger(new)
-		scen.objects[ctr] = new
-		ctr = ctr + 1
+		table.insert(scen.objects, new)
 	end
 	return scen
 end
