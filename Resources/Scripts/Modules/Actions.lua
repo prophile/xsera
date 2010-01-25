@@ -97,7 +97,7 @@ actionTable = {
 	end
 	
 	if action.relative == "true" then
-		p.velocity = VecAdd(p.velocity, delta)
+		p.velocity = p.velocity +  delta
 	else
 		p.velocity = delta
 	end
@@ -109,7 +109,7 @@ end,
 ["create-object-action"] = function(action, source, direct)
 --Aquire parent data
 local srcMotion
-local offset = {x = 0.0, y = 0.0}
+local offset = vec(0,0)
 local owner = -1
 if action.reflexive == "true" then --There may be more conditions to consider
 	if source.type == nil then --Weapon firing
@@ -131,10 +131,7 @@ local count = action["how-many-min"] + math.random(0, action["how-many-range"])
 for ctr = 1, count do
 local new = NewObject(action["which-base-type"])
 
-new.physics.position = {
-		x = srcMotion.position.x + offset.x;
-		y = srcMotion.position.y + offset.y;
-		}
+new.physics.position = srcMotion.position + offset
 
 
 if new.type == "beam"
@@ -145,25 +142,19 @@ and new.base.beam.kind ~= "kinetic" then
 	if new.base.beam.kind == "bolt-relative"
 	or new.base.beam.kind == "static-relative" then
 --		local offset = VecSub(trackingTarget, new.src.position)
-		local len = math.min(new.base.beam.range, find_hypot(new.src.position, trackingTarget))
-		local dir = NormalizeVec(VecSub(trackingTarget, new.physics.position))
-		new.gfx.relative = {
-			x = dir.x * len;
-			y = dir.y * len;
-		}
+		local len = math.min(new.base.beam.range, find_hypot(new.gfx.source.position, trackingTarget))
+		local dir = NormalizeVec(trackingTarget - new.physics.position)
 		
-		new.physics.position = VecAdd(new.physics.position, new.gfx.relative)
+		new.gfx.relative = dir * len		
+		new.physics.position = new.physics.position +  new.gfx.relative
 	else
 
 		new.gfx.target = {position = trackingTarget}
 		
 		local len =  math.min(new.base.beam.range,find_hypot(new.physics.position,new.gfx.target.position))
-		local dir = NormalizeVec(VecSub(new.target.position,new.src.position))
+		local dir = NormalizeVec(new.target.position - new.gfx.source.position)
 		
-		new.physics.position = {
-			x = dir.x * len;
-			y = dir.y * len;
-		}
+		new.physics.position = dir * len
 
 	end
 end

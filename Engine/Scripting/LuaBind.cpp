@@ -94,7 +94,7 @@ int VEC_tostring (lua_State* L)
 {
 	vec2 v = luaL_checkvec2(L, 1);
 	char s[256];
-	sprintf(s, "(%f, %f)", v.X(), v.Y());
+	sprintf(s, "%f, %f", v.X(), v.Y());
 	lua_pushstring(L, s);
 	return 1;
 }

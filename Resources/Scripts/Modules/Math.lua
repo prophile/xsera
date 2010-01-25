@@ -84,55 +84,19 @@ function RandomReal ( min, max )
 end
 
 function RotatePoint(point, angle)
-return {
-x = point.x*math.cos(angle)-point.y*math.sin(angle);
-y = point.x*math.sin(angle)+point.y*math.cos(angle);
-}
+return vec(
+point.x*math.cos(angle)-point.y*math.sin(angle),
+point.x*math.sin(angle)+point.y*math.cos(angle)
+)
 end
 
 function PolarVec(mag, angle)
-return {
-x = mag*math.cos(angle);
-y = mag*math.sin(angle);
-}
+	return vec(mag*math.cos(angle),mag*math.sin(angle))
 end
 
---A vector always comes first
-function VecAdd(a, b)
-	if type(b) == "table" then
-		return {x = a.x + b.x, y = a.y + b.y}
-	else
-		return {x = a.x + b, y= a.y + b}
-	end
-end
-
-function VecSub(a, b)
-	if type(b) == "table" then
-		return {x = a.x - b.x, y = a.y - b.y}
-	else
-		return {x = a.x - b, y= a.y - b}
-	end
-end
-
-function VecMul(a, b)
-	if type(b) == "table" then
-		return {x = a.x * b.x, y = a.y * b.y}
-	else
-		return {x = a.x * b, y= a.y * b}
-	end
-end
-
-function VecDiv(v1, v2)
-	if type(b) == "table" then
-		return {x = a.x / b.x, y = a.y / b.y}
-	else
-		return {x = a.x / b, y= a.y / b}
-	end
-end
 
 function NormalizeVec(v)
-	local d = hypot1(v)
-	return {x = v.x / d, y = v.y / d}
+	return v/hypot1(v)
 end
 
 function xor(p,q)

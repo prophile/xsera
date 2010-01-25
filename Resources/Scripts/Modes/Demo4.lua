@@ -114,22 +114,19 @@ function update()
 				or o.base.beam.kind == "static-relative" then
 					local src = o.gfx.source.position
 					local off = o.gfx.offset
-					local rel = o.gfx.relative.position
+					local rel = o.gfx.relative
+					local a = src;
+					a = a + off
+					a = a + rel
+					o.physics.position = src + off + rel
 					
-					o.physics.position = {
-						x = src.x + off.x + rel.x;
-						y = src.y + off.y + rel.y;
-					}
 				elseif o.base.beam.kind == "bolt-to-object"
 					or o.base.beam.kind == "static-to-object" then
-					local from = VecAdd(o.gfx.offset,o, gfx.source.position)
-					local dir = NormalizeVec(VecSub(o.gfx.target.position,o.gfx.source.position))
+					local from = o.gfx.offset + o.gfx.source.position
+					local dir = NormalizeVec(o.gfx.target.position - o.gfx.source.position)
 					local len = math.min(o.base.beam.range,find_hypot(from,o.gfx.target.position))
 					
-					o.physics.position = {
-						x = dir.x * len;
-						y = dir.y * len;
-					}
+					o.physics.position = dir * len
 				end
 			end
 			
@@ -335,10 +332,8 @@ v2 = Polar2Rect(1,angle+180) * dist * m2 / (m1 + m2)
 						o.physics.velocity = { x = 0, y = 0 }
 					else
 						local velocityMag = hypot1(force)
-						force.x = -force.x / velocityMag
-						force.y = -force.y / velocityMag
-						force.x = force.x * thrust
-						force.y = force.y * thrust
+						force = -force * thrust / velocityMag
+
 						if dt * hypot1(force) / o.physics.mass > velocityMag then
 							o.physics.velocity = { x = 0, y = 0 }
 						else
@@ -416,9 +411,9 @@ function render()
 			if o.base.beam.kind == "kinetic" then
 				local p1 = o.physics.position
 				local p2 = PolarVec(BEAM_LENGTH,o.physics.angle)
-				graphics.draw_line(p1,{x=p1.x+p2.x,y=p1.y+p2.y},1,ClutColour(o.base.beam.color))
+				graphics.draw_line(p1, p1 + p2,1,ClutColour(o.base.beam.color))
 			else
-				local from = VecAdd(o.gfx.source.position, o.gfx.offset)
+				local from = o.gfx.source.position + o.gfx.offset
 				if o.base.beam.kind == "bolt-relative" then
 					graphics.draw_lightning(from, o.physics.position, 1.0, 10.0, false,ClutColour(o.base.beam.color))
 				elseif o.base.beam.kind == "bolt-to-object" then

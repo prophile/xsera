@@ -56,14 +56,7 @@ function NewObject(id)
 		
 		local dim = graphics.sprite_dimensions(object.gfx.sprite)
 		
-		if base["natural-scale"] ~= nil then
-			object.gfx.dimensions = {
-				x = dim.x * base["natural-scale"];
-				y = dim.y * base["natural-scale"];
-			}
-		else
-			object.gfx.dimensions = dim
-		end
+		object.gfx.dimensions = dim * (base["natural-scale"] or 1.0)
 		
 		object.physics.collision_radius = hypot1(object.gfx.dimensions) / 4
 	else
