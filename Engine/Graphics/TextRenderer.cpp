@@ -60,7 +60,7 @@ std::map<std::string, TTF_Font*> fonts;
 
 static bool ttf_initted = false;
 
-TTF_Font* GetFont ( const std::string& name )
+TTF_Font* GetFont ( const std::string& name, float size )
 {
 	if (!ttf_initted)
 	{
@@ -76,7 +76,7 @@ TTF_Font* GetFont ( const std::string& name )
 	TTF_Font* loadedFont;
 	if (!rwops)
 		goto loadFail;
-	loadedFont = TTF_OpenFontRW(rwops, 1, 72);
+	loadedFont = TTF_OpenFontRW(rwops, 1, size);
 	if (!loadedFont)
 		goto loadFail;
 	fonts[name] = loadedFont;
@@ -87,13 +87,13 @@ loadFail:
         LOG("Graphics::TextRenderer", LOG_ERROR, "Unable to load default font: %s", DEFAULT_FONT);
 		exit(1);
 	}
-	loadedFont = GetFont(DEFAULT_FONT);
+	loadedFont = GetFont(DEFAULT_FONT, size);
 	fonts[name] = loadedFont;
 	LOG("Graphics::TextRenderer", LOG_WARNING, "Unable to load font '%s', defaulted to '%s'", name.c_str(), DEFAULT_FONT);
 	return loadedFont;
 }
 
-TextEntry* GetEntry ( const std::string& font, const std::string& text )
+TextEntry* GetEntry ( const std::string& font, const std::string& text, float size )
 {
 	uint32_t hash = Hash(font + "@" + text);
 	TextEntryTable::iterator iter;
@@ -109,7 +109,7 @@ TextEntry* GetEntry ( const std::string& font, const std::string& text )
 		newEntry->texID = 0;
 		newEntry->surface = NULL;
 		newEntry->lastUse = 0.0f;
-		TTF_Font* fontObject = GetFont(font);
+		TTF_Font* fontObject = GetFont(font, size);
 		const SDL_Color fg = { 0xFF, 0xFF, 0xFF, 0xFF };
 		newEntry->surface = TTF_RenderUTF8_Blended(fontObject, text.c_str(), fg);
 		assert(newEntry->surface);
@@ -134,16 +134,16 @@ namespace Graphics
 namespace TextRenderer
 {
 
-vec2 TextDimensions ( const std::string& font, const std::string& text )
+vec2 TextDimensions ( const std::string& font, const std::string& text, float size )
 {
-	TextEntry* entry = GetEntry(font, text);
+	TextEntry* entry = GetEntry(font, text, size);
 	assert(entry);
 	return vec2(entry->surface->w, entry->surface->h);
 }
 
-GLuint TextObject ( const std::string& font, const std::string& text )
+GLuint TextObject ( const std::string& font, const std::string& text, float size )
 {
-	TextEntry* entry = GetEntry(font, text);
+	TextEntry* entry = GetEntry(font, text, size);
 	assert(entry);
 	entry->lastUse = GameTime();
 	return entry->texID;

@@ -419,11 +419,11 @@ void DrawTextSDL ( const std::string& text, const std::string& font, const char*
 	EnableTexturing();
 	EnableBlending();
 	SetColour(col);
-	GLuint texID = TextRenderer::TextObject(font, text);
+	GLuint texID = TextRenderer::TextObject(font, text, height);
 	Matrices::SetViewMatrix(matrix2x3::Translate(position));
 	Matrices::SetModelMatrix(matrix2x3::Rotation(rotation));
 	glBindTexture(GL_TEXTURE_RECTANGLE_ARB, texID);
-	vec2 dims = TextRenderer::TextDimensions(font, text);
+	vec2 dims = TextRenderer::TextDimensions(font, text, height);
 	GLfloat textureArray[] = { 0.0f, 0.0f, dims.X(), 0.0f, dims.X(), dims.Y(), 0.0f, dims.Y() };
 	vec2 halfSize;
 	if (strcmp(justify, "left") == 0)

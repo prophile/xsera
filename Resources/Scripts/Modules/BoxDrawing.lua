@@ -132,6 +132,7 @@ function DrawPointerBox(box, dt)
 	
 	-- [TODO, ADAM] add other line part later
 	
+	
 	graphics.draw_text(box.message, box.font, "left", { x = box.left + 5, y = (box.top + box.bottom) / 2 }, box.size, box.colour)
 end
 

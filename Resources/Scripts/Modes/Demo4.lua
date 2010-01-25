@@ -456,7 +456,7 @@ function render()
 	DrawMouse2()
 	
 	if TEMPVAR1 then
-		local tv1Box = { message = "LOOK HERE", font = MAIN_FONT, size = 16, top = 0, bottom = -20, left = 0, right = 150, pointFrom = { x = 0, y = -20 }, pointTo = { x = -50, y = -70 }, colour = ClutColour(2, 5), flashing = false }
+		local tv1Box = { message = "This is as long as a message can be at font 20: not long..", font = MAIN_FONT, size = 20, top = 0, bottom = -20, left = -200, right = 150, pointFrom = { x = 0, y = -20 }, pointTo = { x = -50, y = -70 }, colour = ClutColour(2, 5), flashing = false }
 		DrawPointerBox(tv1Box, dt)
 	end
 	
