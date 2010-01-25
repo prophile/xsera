@@ -24,7 +24,92 @@ extern "C"
 
 namespace
 {
+vec2 luaL_checkvec2(lua_State *L, int narg);
+void lua_pushvec2(lua_State *L, vec2 val);
+	
+int VEC_new (lua_State* L)
+{
+	float x = luaL_checknumber(L, 1);
+	float y = luaL_checknumber(L, 2);
+	vec2 v = vec2(x,y);
+	lua_pushvec2(L, v);
+	return 1;
+}
+	
+int VEC_add (lua_State* L)
+{
+	vec2 left = luaL_checkvec2(L, 1);
+	vec2 right = luaL_checkvec2(L, 2);
+	vec2 result = left + right;
+	lua_pushvec2(L, result);
+	return 1;
+}
+	
+int VEC_sub (lua_State* L)
+{
+	vec2 left = luaL_checkvec2(L, 1);
+	vec2 right = luaL_checkvec2(L, 2);
+	vec2 result = left - right;
+	lua_pushvec2(L, result);
+	return 1;
+}
 
+int VEC_mul (lua_State* L)
+{
+	vec2 left = luaL_checkvec2(L, 1);
+	if (lua_istable(L, 2))
+	{
+		vec2 right = luaL_checkvec2(L, 2);
+		float result = left * right;
+		lua_pushnumber(L, result);
+	}
+	else
+	{
+		float right = luaL_checknumber(L, 2);
+		vec2 result = left * right;
+		lua_pushvec2(L, result);
+	}
+	return 1;
+}
+
+int VEC_div (lua_State* L)
+{
+	vec2 left = luaL_checkvec2(L, 1);
+	float right = luaL_checknumber(L, 2);
+	vec2 result = left / right;
+	lua_pushvec2(L, result);
+	return 1;
+}
+
+
+int VEC_unm (lua_State* L)
+{
+	vec2 val = -luaL_checkvec2(L, 1);
+	lua_pushvec2(L, val);
+	return 1;
+}
+
+
+int VEC_tostring (lua_State* L)
+{
+	vec2 v = luaL_checkvec2(L, 1);
+	char s[256];
+	sprintf(s, "(%f, %f)", v.X(), v.Y());
+	lua_pushstring(L, s);
+	return 1;
+}
+
+luaL_Reg registryObjectVector[] =
+{
+	"__add", VEC_add,
+	"__sub", VEC_sub,
+	"__mul", VEC_mul,
+	"__div", VEC_div,
+	"__unm", VEC_unm,
+	"__tostring", VEC_tostring,
+	NULL, NULL
+};
+	
 vec2 luaL_checkvec2(lua_State* L, int narg)
 {
 	if (!lua_istable(L, narg))
@@ -82,6 +167,8 @@ void lua_pushvec2(lua_State* L, vec2 val)
 	lua_setfield(L, -2, "x");
 	lua_pushnumber(L, val.Y());
 	lua_setfield(L, -2, "y");
+	luaL_getmetatable(L, "Apollo.vec2");
+	lua_setmetatable(L, -2);
 }
 
 int PHYS_Open ( lua_State* L )
@@ -1971,7 +2058,12 @@ void __LuaBind ( lua_State* L )
 	lua_setglobal(L, "import");
 	lua_pushcfunction(L, mouse_position);
 	lua_setglobal(L, "mouse_position");
+	lua_pushcfunction(L, VEC_new);
+	lua_setglobal(L, "vec");
 	lua_cpcall(L, luaopen_component, NULL);
+	luaL_newmetatable(L, "Apollo.vec2");
+	luaL_register(L, NULL, registryObjectVector);
+	
 	luaL_register(L, "xml", registryXML);
 	luaL_register(L, "mode_manager", registryModeManager);
     luaL_register(L, "resource_manager", registryResourceManager);
