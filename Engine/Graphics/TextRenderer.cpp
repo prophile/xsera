@@ -60,40 +60,7 @@ std::map<std::string, TTF_Font*> fonts;
 
 static bool ttf_initted = false;
 
-TTF_Font* GetFont ( const std::string& name, float size )
-{
-	if (!ttf_initted)
-	{
-		TTF_Init();
-		ttf_initted = true;
-	}
-	std::map<std::string, TTF_Font*>::iterator iter = fonts.find(name);
-	if (iter != fonts.end())
-	{
-		return iter->second;
-	}
-	SDL_RWops* rwops = ResourceManager::OpenFile("Fonts/" + name + ".ttf");
-	TTF_Font* loadedFont;
-	if (!rwops)
-		goto loadFail;
-	loadedFont = TTF_OpenFontRW(rwops, 1, size);
-	if (!loadedFont)
-		goto loadFail;
-	fonts[name] = loadedFont;
-	return loadedFont;
-loadFail:
-	if (name == DEFAULT_FONT)
-	{
-        LOG("Graphics::TextRenderer", LOG_ERROR, "Unable to load default font: %s", DEFAULT_FONT);
-		exit(1);
-	}
-	loadedFont = GetFont(DEFAULT_FONT, size);
-	fonts[name] = loadedFont;
-	LOG("Graphics::TextRenderer", LOG_WARNING, "Unable to load font '%s', defaulted to '%s'", name.c_str(), DEFAULT_FONT);
-	return loadedFont;
-}
-
-TextEntry* GetEntry ( const std::string& font, const std::string& text, float size )
+TextEntry* GetEntry ( const std::string& font, const std::string& text, int size )
 {
 	uint32_t hash = Hash(font + "@" + text);
 	TextEntryTable::iterator iter;
@@ -109,7 +76,7 @@ TextEntry* GetEntry ( const std::string& font, const std::string& text, float si
 		newEntry->texID = 0;
 		newEntry->surface = NULL;
 		newEntry->lastUse = 0.0f;
-		TTF_Font* fontObject = GetFont(font, size);
+		TTF_Font* fontObject = Graphics::TextRenderer::GetFont(font, size);
 		const SDL_Color fg = { 0xFF, 0xFF, 0xFF, 0xFF };
 		newEntry->surface = TTF_RenderUTF8_Blended(fontObject, text.c_str(), fg);
 		assert(newEntry->surface);
@@ -134,14 +101,47 @@ namespace Graphics
 namespace TextRenderer
 {
 
-vec2 TextDimensions ( const std::string& font, const std::string& text, float size )
+TTF_Font* GetFont ( const std::string& name )
+{
+	if (!ttf_initted)
+	{
+		TTF_Init();
+		ttf_initted = true;
+	}
+	std::map<std::string, TTF_Font*>::iterator iter = fonts.find(name);
+	if (iter != fonts.end())
+	{
+		return iter->second;
+	}
+	SDL_RWops* rwops = ResourceManager::OpenFile("Fonts/" + name + ".ttf");
+	TTF_Font* loadedFont;
+	if (rwops)
+	{
+		if (loadedFont = TTF_OpenFontRW(rwops, 1, 72))
+		{
+			fonts[name] = loadedFont;
+			return loadedFont;
+		}
+	}
+	if (name == DEFAULT_FONT)
+	{
+		LOG("Graphics::TextRenderer", LOG_ERROR, "Unable to load default font: %s", DEFAULT_FONT);
+		exit(1);
+	}
+	loadedFont = GetFont(DEFAULT_FONT, 72);
+	fonts[name] = loadedFont;
+	LOG("Graphics::TextRenderer", LOG_WARNING, "Unable to load font '%s', defaulted to '%s'", name.c_str(), DEFAULT_FONT);
+	return loadedFont;
+}
+
+vec2 TextDimensions ( const std::string& font, const std::string& text, int size )
 {
 	TextEntry* entry = GetEntry(font, text, size);
 	assert(entry);
 	return vec2(entry->surface->w, entry->surface->h);
 }
 
-GLuint TextObject ( const std::string& font, const std::string& text, float size )
+GLuint TextObject ( const std::string& font, const std::string& text, int size )
 {
 	TextEntry* entry = GetEntry(font, text, size);
 	assert(entry);

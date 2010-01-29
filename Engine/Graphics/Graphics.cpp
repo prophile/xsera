@@ -4,6 +4,7 @@
 #include <cmath>
 #else
 #include <OpenGL/gl.h>
+#include <SDL_ttf/SDL_ttf.h>
 #endif
 #include <SDL/SDL.h>
 #include "RNG.h"
@@ -413,7 +414,24 @@ void DrawSpriteTile ( const std::string& sheetname, int sheet_x, int sheet_y, ve
 	}
 }*/
 
-void DrawTextSDL ( const std::string& text, const std::string& font, const char* justify, vec2 position, float height, colour col, float rotation )
+const int MAX_TEXTURE_SIZE = 4096;
+
+// splits regardless of words
+int imperfectSplit ( vec2 dims, std::string* bob, int maxSize )
+{
+	// bob needs to be a std::vector of std::strings, so that I can add however many strings to it
+	// yet to be figured out
+	return 1;
+}
+
+// splits along spaces, dropping the spaces
+int idealSplit ( vec2 dims, std::string* bob, int maxSize )
+{
+	// has yet to be figured out either
+	return 1;
+}
+
+void DrawTextSDL ( const std::string& text, const std::string& font, const char* justify, vec2 position, int height, colour col, float rotation )
 {
 	SetShader("Sprite");
 	EnableTexturing();
@@ -424,6 +442,17 @@ void DrawTextSDL ( const std::string& text, const std::string& font, const char*
 	Matrices::SetModelMatrix(matrix2x3::Rotation(rotation));
 	glBindTexture(GL_TEXTURE_RECTANGLE_ARB, texID);
 	vec2 dims = TextRenderer::TextDimensions(font, text, height);
+	
+	// TEMP
+	int xcoord = 0;
+	int ycoord = 0;
+	TTF_Font* fontObject = TextRenderer::GetFont(font);
+	if (TTF_SizeUTF8(fontObject, text.c_str(), &xcoord, &ycoord) == 0 && text == "This is as long as a message can be at font 20: not long..")
+	{
+		printf("The text '%s' has dimensions of %f by %f, and a height of %d\n", text.c_str(), xcoord, ycoord, height);
+	}
+	// END TEMP
+	
 	GLfloat textureArray[] = { 0.0f, 0.0f, dims.X(), 0.0f, dims.X(), dims.Y(), 0.0f, dims.Y() };
 	vec2 halfSize;
 	if (strcmp(justify, "left") == 0)
