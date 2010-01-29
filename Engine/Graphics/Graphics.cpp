@@ -446,7 +446,7 @@ void DrawTextSDL ( const std::string& text, const std::string& font, const char*
 	// TEMP
 	int xcoord = 0;
 	int ycoord = 0;
-	TTF_Font* fontObject = TextRenderer::GetFont(font);
+	TTF_Font* fontObject = TextRenderer::GetFont(font, height);
 	if (TTF_SizeUTF8(fontObject, text.c_str(), &xcoord, &ycoord) == 0 && text == "This is as long as a message can be at font 20: not long..")
 	{
 		printf("The text '%s' has dimensions of %f by %f, and a height of %d\n", text.c_str(), xcoord, ycoord, height);

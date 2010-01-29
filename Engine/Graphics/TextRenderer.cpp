@@ -101,7 +101,7 @@ namespace Graphics
 namespace TextRenderer
 {
 
-TTF_Font* GetFont ( const std::string& name )
+TTF_Font* GetFont ( const std::string& name, int size )
 {
 	if (!ttf_initted)
 	{
@@ -117,7 +117,7 @@ TTF_Font* GetFont ( const std::string& name )
 	TTF_Font* loadedFont;
 	if (rwops)
 	{
-		if (loadedFont = TTF_OpenFontRW(rwops, 1, 72))
+		if (loadedFont = TTF_OpenFontRW(rwops, 1, size))
 		{
 			fonts[name] = loadedFont;
 			return loadedFont;
@@ -128,7 +128,7 @@ TTF_Font* GetFont ( const std::string& name )
 		LOG("Graphics::TextRenderer", LOG_ERROR, "Unable to load default font: %s", DEFAULT_FONT);
 		exit(1);
 	}
-	loadedFont = GetFont(DEFAULT_FONT, 72);
+	loadedFont = GetFont(DEFAULT_FONT, size);
 	fonts[name] = loadedFont;
 	LOG("Graphics::TextRenderer", LOG_WARNING, "Unable to load font '%s', defaulted to '%s'", name.c_str(), DEFAULT_FONT);
 	return loadedFont;
