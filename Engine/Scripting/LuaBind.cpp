@@ -430,6 +430,32 @@ int PHYS_Object_Torque ( lua_State* L )
 	return 0;
 }
 
+int PHYS_Get_Collisions ( lua_State* L )
+{
+	std::vector<Physics::Collision> collisions = Physics::GetCollisions();
+	std::pair<Physics::Object *, Physics::Object *> tuple;
+	int max = collisions.size();
+	lua_newtable(L);
+	for (int ctr = 0; ctr < max; ctr++) {
+		tuple = collisions[ctr];
+
+		if (tuple.first > tuple.second) {
+			continue;
+		}
+
+		lua_pushinteger(L, ctr + 1);
+		lua_createtable(L, 2, 0);
+		lua_pushinteger(L, 1);
+		lua_pushinteger(L, tuple.first->objectID);
+		lua_rawset(L, -3);
+		lua_pushinteger(L, 2);
+		lua_pushinteger(L, tuple.second->objectID);
+		lua_rawset(L, -3);
+		lua_rawset(L, -3);
+	}
+	return 1;
+}
+
 /**
  * @page lua_physics The Lua Physics Registry
  * This page contains information about the Lua physics registry.
@@ -470,7 +496,7 @@ int PHYS_Object_Torque ( lua_State* L )
  * object - The physics object, if it exists under given ID.\n
  * nil - If there is no physics object for the given ID, nil is returned.
  * 
- * @section collisions
+ * @section test_collision
  * Given two objects and whether or not the second object is a bullet, this will
  * tell you if there is a collision.\n
  * Parameters:\n
@@ -492,7 +518,8 @@ luaL_Reg registryPhysics[] =
 	"new_object", PHYS_NewObject,
 	"destroy_object", PHYS_DestroyObject,
 	"object_from_id", PHYS_ObjectFromID,
-	"collisions", PHYS_Collisions,
+	"test_collision", PHYS_Collisions,
+	"collisions", PHYS_Get_Collisions,
 	NULL, NULL
 };
 

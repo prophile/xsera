@@ -195,7 +195,7 @@ end
 new.ai.owner = owner
 
 CreateTrigger(new)
-table.insert(scen.objects,new)
+scen.objects[new.physics.object_id] = new
 end
 end,
 ["create-object-set-dest-action"] = function(action, source, direct) end,

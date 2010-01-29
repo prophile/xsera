@@ -105,86 +105,38 @@ function update()
 		end
 	end
 
-	for i = 1, #scen.objects do
-		local o = scen.objects[i]
-		if o.base.attributes["can-collide"] == true then
+	local cols = physics.collisions()
+	
+	for idx, pair in ipairs(cols) do
+		local a = scen.objects[pair[1]]
+		local b = scen.objects[pair[2]]
+		if --a ~= nil and b ~= nil and 
+		a.base.attributes["can-collide"] == true
+		and b.base.attributes["can-collide"] == true
+		and a.ai.owner ~= b.ai.owner then
+			Collide(a,b)
+		end
+	end
 
-			if o.type == "beam" then
-				if o.base.beam.kind == "bolt-relative"
-				or o.base.beam.kind == "static-relative" then
-					local src = o.gfx.source.position
-					local off = o.gfx.offset
-					local rel = o.gfx.relative
-					local a = src;
-					a = a + off
-					a = a + rel
-					o.physics.position = src + off + rel
-					
-				elseif o.base.beam.kind == "bolt-to-object"
-					or o.base.beam.kind == "static-to-object" then
-					local from = o.gfx.offset + o.gfx.source.position
-					local dir = NormalizeVec(o.gfx.target.position - o.gfx.source.position)
-					local len = math.min(o.base.beam.range,find_hypot(from,o.gfx.target.position))
-					
-					o.physics.position = dir * len
-				end
-			end
-			
-			for i2 = i + 1, #scen.objects do
-				local other = scen.objects[i2]
-				if other.base.attributes["can-collide"] == true
-				and o.ai.owner ~= other.ai.owner and physics.collisions(o.physics, other.physics, 0) == true then
---[[
-Equation for 1D elastic collision:
-v1 = (m1v1 + m2v2 + m1C(v2-v1))/(m1+m2)
-
-OR
-
-Nathan's Method:
-dist = dist(v1,v2)
-angle = angleto(pos1,pos2)
-momentMag = dist * m1/(m1+m2)
-v1 = Polar2Rect(1,angle) * dist * m1 / (m1 + m2)
-v2 = Polar2Rect(1,angle+180) * dist * m2 / (m1 + m2)
---]]
-					if o.base.attributes["occupies-space"]
-					and other.base.attributes["occupies-space"] then
-						local p = o.physics
-						local p2 = other.physics
-						v1 = p.velocity
-						m1 = p.mass
-						v2 = p2.velocity
-						m2 = p2.mass
---[[
-						p.velocity = {
-							x = (m1 * v1.x + m2 *v2.x + m1 * RESTITUTION_COEFFICIENT * ( v2.x - v1.x))/(m1+m2);
-							y = (m1 * v1.y + m2 *v2.y + m1 * RESTITUTION_COEFFICIENT * ( v2.y - v1.y))/(m1+m2);
-						}
-						
-						p2.velocity = {
-							x = (m1 * v1.x + m2 *v2.x + m2 * RESTITUTION_COEFFICIENT * ( v1.x - v2.x))/(m1+m2);
-							y = (m1 * v1.y + m2 *v2.y + m2 * RESTITUTION_COEFFICIENT * ( v1.y - v2.y))/(m1+m2);
-						}
---]]
-
-						local dist = find_hypot(v1, v2)
-						local angle = find_angle(p.position,p2.position)
-						p.velocity = PolarVec(dist * m1 / (m1+m2), angle)
-						p2.velocity = PolarVec(dist * m2 / (m1+m2), angle+math.pi)
-					end
-
-					CollideTrigger(o,other)
-					CollideTrigger(other,o)
-
-					if other.base.damage ~= nil then
-						o.status.health = o.status.health - other.base.damage
-					end
-					if o.base.damage ~= nil then
-						other.status.health = other.status.health - o.base.damage
-					end
-
-
-				end
+	for i, o in pairs(scen.objects) do
+		if o.type == "beam" then
+			if o.base.beam.kind == "bolt-relative"
+			or o.base.beam.kind == "static-relative" then
+				local src = o.gfx.source.position
+				local off = o.gfx.offset
+				local rel = o.gfx.relative
+				local a = src;
+				a = a + off
+				a = a + rel
+				o.physics.position = src + off + rel
+				
+			elseif o.base.beam.kind == "bolt-to-object"
+				or o.base.beam.kind == "static-to-object" then
+				local from = o.gfx.offset + o.gfx.source.position
+				local dir = NormalizeVec(o.gfx.target.position - o.gfx.source.position)
+				local len = math.min(o.base.beam.range,find_hypot(from,o.gfx.target.position))
+				
+				o.physics.position = dir * len
 			end
 		end
 		
@@ -344,8 +296,8 @@ v2 = Polar2Rect(1,angle+180) * dist * m2 / (m1 + m2)
 			end
 		end
 	end
-	physics.update(dt)
 	RemoveDead()
+	physics.update(dt)
 end
 
 
@@ -367,8 +319,7 @@ function render()
 	
 	DrawGrid()
 	
-	for obId = 1, #scen.objects do
-		local o = scen.objects[obId]
+	for obId, o in pairs(scen.objects) do
 		if o.type == "beam" then
 			if o.base.beam.kind == "kinetic" then
 				local p1 = o.physics.position
@@ -438,23 +389,15 @@ end
 
 function RemoveDead()
 	--Remove destroyed or expired objects
-	for i = 1, #scen.objects do
-		local o = scen.objects[i]
-		if o == nil then
-			break
-		end
-
+	for i, o in pairs(scen.objects) do
 		if o.status.dead == true then
-			if scen.playerShipId >= i and i ~= 1 then
-				scen.playerShipId = scen.playerShipId - 1
+			if scen.playerShipId == i then
+				ChangePlayerShip()
 			end
-			physics.destroy_object(scen.objects[i].physics)
-			ChangePlayerShip()
-			table.remove(scen.objects,i)
-			i = i - 1
+			physics.destroy_object(o.physics)
+			scen.objects[i] = nil
 		end
 	end
-	
 end
 
 function DumbSeek(object, target)
@@ -485,12 +428,12 @@ function DumbSeek(object, target)
 end
 
 function ChangePlayerShip()
-	if scen.playerShipId > #scen.objects then
-		scen.playerShipId = #scen.objects
-	end
-
+	
 	scen.playerShip = scen.objects[scen.playerShipId]
-		
+	if scen.playership == nil then
+	scen.playerShipId, scen.playerShip = next(scen.objects,scen.playerShipId)
+	end
+			
 	scen.playerShip.control = {
 		accel = false;
 		decel = false;
@@ -501,4 +444,57 @@ function ChangePlayerShip()
 		special = false;
 		warp = false;
 	}
+end
+
+function Collide(a,b)
+local o = a
+local other = b
+--[[
+Equation for 1D elastic collision:
+v1 = (m1v1 + m2v2 + m1C(v2-v1))/(m1+m2)
+
+OR
+
+Nathan's Method:
+dist = dist(v1,v2)
+angle = angleto(pos1,pos2)
+momentMag = dist * m1/(m1+m2)
+v1 = Polar2Rect(1,angle) * dist * m1 / (m1 + m2)
+v2 = Polar2Rect(1,angle+180) * dist * m2 / (m1 + m2)
+--]]
+	if o.base.attributes["occupies-space"]
+	and other.base.attributes["occupies-space"] then
+		local p = o.physics
+		local p2 = other.physics
+		v1 = p.velocity
+		m1 = p.mass
+		v2 = p2.velocity
+		m2 = p2.mass
+--[[
+		p.velocity = {
+			x = (m1 * v1.x + m2 *v2.x + m1 * RESTITUTION_COEFFICIENT * ( v2.x - v1.x))/(m1+m2);
+			y = (m1 * v1.y + m2 *v2.y + m1 * RESTITUTION_COEFFICIENT * ( v2.y - v1.y))/(m1+m2);
+		}
+		
+		p2.velocity = {
+			x = (m1 * v1.x + m2 *v2.x + m2 * RESTITUTION_COEFFICIENT * ( v1.x - v2.x))/(m1+m2);
+			y = (m1 * v1.y + m2 *v2.y + m2 * RESTITUTION_COEFFICIENT * ( v1.y - v2.y))/(m1+m2);
+		}
+--]]
+
+		local dist = find_hypot(v1, v2)
+		local angle = find_angle(p.position,p2.position)
+		p.velocity = PolarVec(dist * m1 / (m1+m2), angle)
+		p2.velocity = PolarVec(dist * m2 / (m1+m2), angle+math.pi)
+	end
+
+	CollideTrigger(o,other)
+	CollideTrigger(other,o)
+
+	if other.base.damage ~= nil then
+		o.status.health = o.status.health - other.base.damage
+	end
+	if o.base.damage ~= nil then
+		other.status.health = other.status.health - o.base.damage
+	end
 end

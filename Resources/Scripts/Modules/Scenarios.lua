@@ -14,7 +14,7 @@ function LoadScenario(id)
 		if state.attributes == 512 then
 			if scen.playerShip == nil then
 				scen.playerShip = new
-				scen.playerShipId = #scen.objects + 1
+				scen.playerShipId = new.physics.object_id
 			else
 				LogError("There is already a an intial player ship set.", 1)
 			end
@@ -25,7 +25,7 @@ function LoadScenario(id)
 			new.spriteDim = graphics.sprite_dimensions("Id/" .. new.sprite)
 		end
 		
-		table.insert(scen.objects, new)
+		scen.objects[new.physics.object_id] = new
 	end
 	return scen
 end
