@@ -10,6 +10,9 @@ import('Interfaces')
 
 trackingTarget = {x = 0.0, y = 0.0}
 
+TEMPVAR1 = false
+TEMPVAR2 = false
+
 function init()
 	physics.open(0.6)
 	start_time = mode_manager.time()
@@ -25,12 +28,12 @@ end
 function key( k )
 	if k == "q" or k == "escape" then
 		mode_manager.switch("Xsera/MainMenu")
---[[	elseif k == "=" then
-		camera.w = camera.w / 2
-		camera.h = camera.h / 2
-	elseif k == "-" then
-		camera.w = camera.w * 2
-		camera.h = camera.h * 2--]]
+	elseif k == "-" then -- [TEMP] 
+		-- create a blinking pointer box that says "LOOK HERE"
+		TEMPVAR1 = not TEMPVAR1
+	elseif k == "=" then -- [TEMP]
+		-- create a non-blinking pointer box that says "LOOK THERE"
+		TEMPVAR2 = not TEMPVAR2
 	elseif k == "/" then
 		printTable(scen.playerShip)
 		print(scen.playerShip.physics.mass)
@@ -452,6 +455,16 @@ function render()
 	DrawPanels()
 	DrawMouse2()
 	
+	if TEMPVAR1 then
+		local tv1Box = { message = "This is as long as a message can be at font 20: not long..", font = MAIN_FONT, size = 20, top = 0, bottom = -20, left = -200, right = 150, pointFrom = { x = 0, y = -20 }, pointTo = { x = -50, y = -70 }, colour = ClutColour(2, 5), flashing = false }
+		DrawPointerBox(tv1Box, dt)
+	end
+	
+	if TEMPVAR2 then
+		local tv2Box = { message = "LOOK THERE", font = MAIN_FONT, size = 16, top = 50, bottom = 20, left = 50, right = 150, pointFrom = { x = 50, y = 20 }, pointTo = { x = 50, y = -70 }, colour = ClutColour(4, 5), flashing = true }
+		DrawPointerBox(tv2Box, dt)
+	end
+	
 	graphics.end_frame()
 end
 
@@ -481,6 +494,7 @@ end
 
 function DumbSeek(object, target)
 	object.control.accel = true
+	object.control.decel = false
 	local ang = find_angle(target,object.physics.position) - object.physics.angle
 
 	ang = radian_range(ang)

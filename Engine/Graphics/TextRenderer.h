@@ -15,8 +15,8 @@ namespace Graphics
 namespace TextRenderer
 {
 
-vec2 TextDimensions ( const std::string& font, const std::string& text );
-GLuint TextObject ( const std::string& font, const std::string& text );
+vec2 TextDimensions ( const std::string& font, const std::string& text, float size );
+GLuint TextObject ( const std::string& font, const std::string& text, float size );
 void Prune ();
 void Flush ();
 

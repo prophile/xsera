@@ -12,12 +12,12 @@ end
 
 function render()
 	graphics.begin_frame()
-	graphics.draw_text("1-2 - inc/dec window size", "CrystalClear", "left", { x = 50, y = 250 }, 30)
-	graphics.draw_text("3-4 - FS on/off", "CrystalClear", "left", { x = 50, y = 200 }, 30)
-	graphics.draw_text("5 - toggle FS", "CrystalClear", "left", { x = 50, y = 150 }, 30)
+	graphics.draw_text("1-2 - inc/dec window size", MAIN_FONT, "left", { x = 50, y = 250 }, 30)
+	graphics.draw_text("3-4 - FS on/off", MAIN_FONT, "left", { x = 50, y = 200 }, 30)
+	graphics.draw_text("5 - toggle FS", MAIN_FONT, "left", { x = 50, y = 150 }, 30)
 	window_size.x, window_size.y = window.size();
-	graphics.draw_text(window_size.x, "CrystalClear", "left", { x = 50, y = 100 }, 30)
-	graphics.draw_text(window_size.y, "CrystalClear", "left", { x = 50, y = 50 }, 30)
+	graphics.draw_text(window_size.x, MAIN_FONT, "left", { x = 50, y = 100 }, 30)
+	graphics.draw_text(window_size.y, MAIN_FONT, "left", { x = 50, y = 50 }, 30)
 	graphics.end_frame()
 end
 

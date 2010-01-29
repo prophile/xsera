@@ -62,13 +62,13 @@ function render ()
         graphics.draw_sprite("Ships/" .. ship[3], { x = ship[1], y = ship[2] }, { x = sz.x * sizeFactor * DistanceFactor(ship[4]), y = sz.y * sizeFactor * DistanceFactor(ship[4])}, math.atan2(shipVelocity[2], shipVelocity[1]))
     end
     
-    graphics.draw_text("D - Demo", "CrystalClear", "left", { x = -450, y = 0 }, 60)
-    graphics.draw_text("T - Test", "CrystalClear", "left", { x = -450, y = -50 }, 60)
-    graphics.draw_text("C - Xsera/Credits", "CrystalClear", "left", { x = -450, y = -100 }, 60)
+    graphics.draw_text("D - Demo", MAIN_FONT, "left", { x = -450, y = 0 }, 60)
+    graphics.draw_text("T - Test", MAIN_FONT, "left", { x = -450, y = -50 }, 60)
+    graphics.draw_text("C - Xsera/Credits", MAIN_FONT, "left", { x = -450, y = -100 }, 60)
     
-    graphics.draw_text(versionInformation, "CrystalClear", "left", { x = -450, y = -220 }, 28)
+    graphics.draw_text(versionInformation, MAIN_FONT, "left", { x = -450, y = -220 }, 28)
 	
-	graphics.draw_text("Level selected: " .. demoLevel .. " (" .. gameData["Scenarios"][demoLevel].name ..")", "CrystalClear", "right", { x = 450, y = 220 }, 60)
+	graphics.draw_text("Level selected: " .. demoLevel .. " (" .. gameData["Scenarios"][demoLevel].name ..")", MAIN_FONT, "right", { x = 450, y = 220 }, 60)
     graphics.end_frame()
 end
 
