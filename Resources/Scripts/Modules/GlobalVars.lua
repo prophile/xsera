@@ -6,7 +6,7 @@ import('data')
 SPEED_FACTOR = 64.0
 TIME_FACTOR = 60.0
 BEAM_LENGTH = 48
-MAIN_FONT = "CrystalClear"
+MAIN_FONT = "materialsans"
 --[SCOTT] Recharge rates need tuning
 BASE_RECHARGE_RATE = 4.0
 ENERGY_RECHARGE_RATIO = 11.0
