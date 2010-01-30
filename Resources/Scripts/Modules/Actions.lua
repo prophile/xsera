@@ -141,15 +141,15 @@ and new.base.beam.kind ~= "kinetic" then
 	
 	if new.base.beam.kind == "bolt-relative"
 	or new.base.beam.kind == "static-relative" then
---		local offset = VecSub(trackingTarget, new.src.position)
-		local len = math.min(new.base.beam.range, find_hypot(new.gfx.source.position, trackingTarget))
-		local dir = NormalizeVec(trackingTarget - new.physics.position)
+--		local offset = VecSub(trackingTarget.position, new.src.position)
+		local len = math.min(new.base.beam.range, find_hypot(new.gfx.source.position, trackingTarget.position))
+		local dir = NormalizeVec(trackingTarget.position - new.physics.position)
 		
 		new.gfx.relative = dir * len		
 		new.physics.position = new.physics.position +  new.gfx.relative
 	else
 
-		new.gfx.target = {position = trackingTarget}
+		new.gfx.target = trackingTarget
 		
 		local len =  math.min(new.base.beam.range,find_hypot(new.physics.position,new.gfx.target.position))
 		local dir = NormalizeVec(new.target.position - new.gfx.source.position)
@@ -161,7 +161,7 @@ end
 
 
 if source.base.attributes["auto-target"] == true then
-	new.physics.angle = find_angle(trackingTarget, new.physics.position)
+	new.physics.angle = find_angle(trackingTarget.position, new.physics.position)
 elseif action["direction-relative"] == "true" then
 	new.physics.angle = srcMotion.angle
 else

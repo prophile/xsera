@@ -8,17 +8,21 @@ import('PrintRecursive')
 import('KeyboardControl')
 import('Interfaces')
 
-trackingTarget = {x = 0.0, y = 0.0}
-
+trackingTarget = {}
+mdown = false
 function init()
 	physics.open(0.6)
 	start_time = mode_manager.time()
 	last_time = mode_manager.time()
 	loadingEntities = true
 	
+	trackingTarget = physics.new_object(1.0)
+trackingTarget.collision_radius = 10.0
+print("TTID",trackingTarget.object_id)
+	
 	scen = LoadScenario(demoLevel)
 
-	trackingTarget = GetMouseCoords()
+	trackingTarget.position = GetMouseCoords()
 	loadingEntities = false
 end
 
@@ -73,7 +77,7 @@ function update()
 	dt = newTime - last_time
 	last_time = newTime
 
-	trackingTarget = GetMouseCoords()
+
 	KeyDoActivated()
 
 --[[------------------
@@ -108,16 +112,23 @@ function update()
 	local cols = physics.collisions()
 	
 	for idx, pair in ipairs(cols) do
-		local a = scen.objects[pair[1]]
-		local b = scen.objects[pair[2]]
-		if --a ~= nil and b ~= nil and 
-		a.base.attributes["can-collide"] == true
-		and b.base.attributes["can-collide"] == true
-		and a.ai.owner ~= b.ai.owner then
-			Collide(a,b)
+		if pair[1] == 1 then
+			if mdown == true then
+				print("M HIT", pair[2], scen.objects[pair[2]].name)
+				mdown = false
+			end
+		else
+			local a = scen.objects[pair[1]]
+			local b = scen.objects[pair[2]]
+			if --a ~= nil and b ~= nil and 
+			a.base.attributes["can-collide"] == true
+			and b.base.attributes["can-collide"] == true
+			and a.ai.owner ~= b.ai.owner then
+				Collide(a,b)
+			end
 		end
 	end
-
+	mdown = false
 	for i, o in pairs(scen.objects) do
 		if o.type == "beam" then
 			if o.base.beam.kind == "bolt-relative"
@@ -297,6 +308,8 @@ function update()
 		end
 	end
 	RemoveDead()
+
+	trackingTarget.position = GetMouseCoords()
 	physics.update(dt)
 end
 
@@ -378,10 +391,18 @@ function render()
 	DrawMouse1()
 	DrawPanels()
 	DrawMouse2()
-	
 	graphics.end_frame()
 end
 
+function mouse(button)
+--	if a == "left" then
+	 mdown = true
+--	end
+end
+
+function mouseup()
+	mdown = false
+end
 function quit()
 	physics.close()
 end
@@ -403,7 +424,7 @@ end
 function DumbSeek(object, target)
 	object.control.accel = true
 	object.control.decel = false
-	local ang = find_angle(target,object.physics.position) - object.physics.angle
+	local ang = find_angle(target.position,object.physics.position) - object.physics.angle
 
 	ang = radian_range(ang)
 --[[	if ang < math.pi / 2 then
@@ -432,6 +453,9 @@ function ChangePlayerShip()
 	scen.playerShip = scen.objects[scen.playerShipId]
 	if scen.playership == nil then
 	scen.playerShipId, scen.playerShip = next(scen.objects,scen.playerShipId)
+		if scen.playerShip == nil then
+			scen.playerShipId, scen.playerShip = next(scen.objects)
+		end
 	end
 			
 	scen.playerShip.control = {
