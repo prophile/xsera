@@ -158,7 +158,7 @@ function DoSelectBase()
 end
 
 function DoTarget()
-	LogError("The command does not have any code. /placeholder", 9)
+--	No Code
 end
 
 function DoMoveOrder()

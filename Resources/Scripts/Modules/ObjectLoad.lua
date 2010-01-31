@@ -58,7 +58,7 @@ function NewObject(id)
 		
 		object.gfx.dimensions = dim * (base["natural-scale"] or 1.0)
 		
-		object.physics.collision_radius = hypot1(object.gfx.dimensions) / 4
+		object.physics.collision_radius = hypot1(object.gfx.dimensions) / 4.0
 	else
 		object.physics.collision_radius = 1
 	end

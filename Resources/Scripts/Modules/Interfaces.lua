@@ -1,8 +1,8 @@
 import('BoxDrawing')
 import('GlobalVars')
 
--- control = scen.planet -- [HARDCODED]
-target = nil
+control = {}
+target = {}
 
 menuShift = -391
 topOfMenu = -69
@@ -459,64 +459,15 @@ function DrawPanels()
 			graphics.draw_text(string.format('%03d', scen.playerShip.weapons.special.ammo), "CrystalClear", "left", { x = -314, y = 60 }, 13, ClutColour(5, 1))
 		end
 	end
-	control = scen.playerShip -- [HARDCODE]
+
 	if control ~= nil then
-		graphics.draw_box(49, -392, 40, -297, 0, ClutColour(9, 6))
-		graphics.draw_text("CONTROL", "CrystalClear", "left", { x = -389, y = 44 }, 12, ClutColour(1, 17))
-		if control.type == "Planet" then
-			graphics.draw_text(control.name, "CrystalClear", "left", { x = -389, y = 35 }, 12)
-		else
-			graphics.draw_text(control.short, "CrystalClear", "left", { x = -389, y = 35 }, 12)
-		end
-		if control.ctrlObject ~= nil then
-			if control.owner == "Human/Ishiman" then
-				graphics.draw_text(control.ctrlObject.name, "CrystalClear", "left", { x = -389, y = 3 }, 12, ClutColour(5, 11))
-			else
-				graphics.draw_text(control.ctrlObject.name, "CrystalClear", "left", { x = -389, y = 3 }, 12, ClutColour(16, 1))
-			end
-		end
-		if control.status.energy ~= nil then
-			graphics.draw_line({ x = -357, y = 28 }, { x = -347, y = 28 }, 0.5, ClutColour(3, 7))
-			graphics.draw_line({ x = -357, y = 27 }, { x = -357, y = 28 }, 0.5, ClutColour(3, 7))
-			graphics.draw_line({ x = -347, y = 27 }, { x = -347, y = 28 }, 0.5, ClutColour(3, 7))
-			graphics.draw_line({ x = -357, y = 9 }, { x = -347, y = 9 }, 0.5, ClutColour(3, 7))
-			graphics.draw_line({ x = -357, y = 10 }, { x = -357, y = 9 }, 0.5, ClutColour(3, 7))
-			graphics.draw_line({ x = -347, y = 10 }, { x = -347, y = 9 }, 0.5, ClutColour(3, 7))
-			graphics.draw_box(27, -356, 10, -348, 0, ClutColour(3, 7))
-			graphics.draw_box(17 * control.status.energy / control.status.energyMax + 10, -356, 10, -348, 0, ClutColour(9, 6))
-		end
-		if control.status.health ~= nil then
-			graphics.draw_line({ x = -369, y = 28 }, { x = -359, y = 28 }, 0.5, ClutColour(4, 8))
-			graphics.draw_line({ x = -369, y = 27 }, { x = -369, y = 28 }, 0.5, ClutColour(4, 8))
-			graphics.draw_line({ x = -359, y = 27 }, { x = -359, y = 28 }, 0.5, ClutColour(4, 8))
-			graphics.draw_line({ x = -369, y = 9 }, { x = -359, y = 9 }, 0.5, ClutColour(4, 8))
-			graphics.draw_line({ x = -369, y = 10 }, { x = -369, y = 9 }, 0.5, ClutColour(4, 8))
-			graphics.draw_line({ x = -359, y = 10 }, { x = -359, y = 9 }, 0.5, ClutColour(4, 8))
-			graphics.draw_box(27, -367.5, 10, -360, 0, ClutColour(4, 8))
-			graphics.draw_box(17 * control.status.health / control.status.healthMax + 10, -367.5, 10, -360, 0, ClutColour(4, 6))
-		end
-		if control.type == "Planet" then
-			graphics.draw_sprite(control.type .. "s/" .. control.image, { x = -380, y = 19 }, { x = 17, y = 17 }, 0)
-		else
-			graphics.draw_sprite(control.gfx.sprite, { x = -380, y = 19 }, { x = 17, y = 17 }, 3.14 / 2.0)
-		end
-		graphics.draw_line({ x = -387, y = 28 }, { x = -372, y = 28 }, 0.5, ClutColour(1, 1))
-		graphics.draw_line({ x = -387, y = 27 }, { x = -387, y = 28 }, 0.5, ClutColour(1, 1))
-		graphics.draw_line({ x = -372, y = 27 }, { x = -372, y = 28 }, 0.5, ClutColour(1, 1))
-		graphics.draw_line({ x = -387, y = 9 }, { x = -372, y = 9 }, 0.5, ClutColour(1, 1))
-		graphics.draw_line({ x = -372, y = 10 }, { x = -372, y = 9 }, 0.5, ClutColour(1, 1))
-		graphics.draw_line({ x = -387, y = 10 }, { x = -387, y = 9 }, 0.5, ClutColour(1, 1))
+		DrawTargetBox(control,true)
 	end
+
 	if target ~= nil then
-		graphics.draw_box({ x = -8, y = -392 }, { x = -17, y = -297 }, 0, ClutColour(4, 7))
-		graphics.draw_text("TARGET", "CrystalClear", "left", { x = -389, y = -13 } , 12, ClutColour(1, 17))
-		graphics.draw_line({ x = -387, y = -32 }, { x = -372, y = -32 }, 0.5, ClutColour(1, 1))
-		graphics.draw_line({ x = -372, y = -34 }, { x = -372, y = -32 }, 0.5, ClutColour(1, 1))
-		graphics.draw_line({ x = -387, y = -34 }, { x = -387, y = -32 }, 0.5, ClutColour(1, 1))
-		graphics.draw_line({ x = -387, y = -49 }, { x = -372, y = -49 }, 0.5, ClutColour(1, 1))
-		graphics.draw_line({ x = -372, y = -47 }, { x = -372, y = -49 }, 0.5, ClutColour(1, 1))
-		graphics.draw_line({ x = -387, y = -47 }, { x = -387, y = -49 }, 0.5, ClutColour(1, 1))
+		DrawTargetBox(target,false)
 	end
+
 	graphics.draw_box(-165.5, -389.5, -175.5, -358, 0, ClutColour(4, 8))
 	graphics.draw_text("RIGHT", "CrystalClear", "left", { x = -388, y = -170 }, 13, ClutColour(4, 6))
 	graphics.draw_text("Select", "CrystalClear", "left", { x = -354, y = -170 }, 13, ClutColour(4, 6))
@@ -650,9 +601,6 @@ function DrawArrow()
 end
 
 function DrawGrid()
---[[------------------
-	Grid Drawing
-------------------]]--
 	do
 		local i = 0
 		while i * GRID_DIST_BLUE - 10 < camera.w + 10 + GRID_DIST_BLUE do
@@ -689,4 +637,54 @@ function DrawGrid()
 			i = i + 1
 		end
 	end
+end
+
+
+
+function DrawTargetBox(object, isControl)
+	local off = isControl and 0 or 57
+
+	graphics.draw_box(49 - off, -392, 40 - off, -297, 0, (isControl and ClutColour(9,6) or ClutColour(4, 3)))
+	graphics.draw_text((isControl and "CONTROL" or "TARGET"), "CrystalClear", "left", { x = -389, y = 44 - off }, 12, ClutColour(1, 17))
+
+	graphics.draw_text(object.short, "CrystalClear", "left", { x = -389, y = 35 - off}, 12)
+
+	if object.nameOverride == true then
+		graphics.draw_text(object.name, "CrystalClear", "left", { x = -389, y = 3 - off }, 12, ClutColour(1, 11))
+	else
+		graphics.draw_text(object.short, "CrystalClear", "left", { x = -389, y = 3 - off }, 12, ClutColour(1, 11))
+	end
+
+	if object.status.energy ~= nil then
+		graphics.draw_line({ x = -357, y = 28 - off }, { x = -347, y = 28 - off }, 0.5, ClutColour(3, 7))
+		graphics.draw_line({ x = -357, y = 27 - off }, { x = -357, y = 28 - off }, 0.5, ClutColour(3, 7))
+		graphics.draw_line({ x = -347, y = 27 - off }, { x = -347, y = 28 - off }, 0.5, ClutColour(3, 7))
+		graphics.draw_line({ x = -357, y = 9 - off }, { x = -347, y = 9 - off }, 0.5, ClutColour(3, 7))
+		graphics.draw_line({ x = -357, y = 10 - off }, { x = -357, y = 9 - off }, 0.5, ClutColour(3, 7))
+		graphics.draw_line({ x = -347, y = 10 - off }, { x = -347, y = 9 - off }, 0.5, ClutColour(3, 7))
+		graphics.draw_box(27 - off, -356, 10 - off, -348, 0, ClutColour(3, 7))
+		graphics.draw_box(17 * object.status.energy / object.status.energyMax + 10  - off, -356, 10 - off, -348, 0, ClutColour(9, 6))
+	end
+
+	if object.status.health ~= nil then
+		graphics.draw_line({ x = -369, y = 28 - off }, { x = -359, y = 28 - off }, 0.5, ClutColour(4, 8))
+		graphics.draw_line({ x = -369, y = 27 - off }, { x = -369, y = 28 - off }, 0.5, ClutColour(4, 8))
+		graphics.draw_line({ x = -359, y = 27 - off }, { x = -359, y = 28 - off }, 0.5, ClutColour(4, 8))
+		graphics.draw_line({ x = -369, y = 9 - off }, { x = -359, y = 9 - off }, 0.5, ClutColour(4, 8))
+		graphics.draw_line({ x = -369, y = 10 - off }, { x = -369, y = 9 - off }, 0.5, ClutColour(4, 8))
+		graphics.draw_line({ x = -359, y = 10 - off }, { x = -359, y = 9 - off }, 0.5, ClutColour(4, 8))
+		graphics.draw_box(27 - off, -367.5, 10 - off, -360, 0, ClutColour(4, 8))
+		graphics.draw_box(17 * object.status.health / object.status.healthMax + 10 - off, -367.5, 10 - off, -360, 0, ClutColour(4, 6))
+	end
+
+	if object.gfx.sprite ~= nil then
+		graphics.draw_sprite(object.gfx.sprite, { x = -380, y = 19 - off }, { x = 17, y = 17 }, 3.14 / 2.0)
+	end
+
+	graphics.draw_line({ x = -387, y = 28 - off }, { x = -372, y = 28 - off }, 0.5, ClutColour(1, 1))
+	graphics.draw_line({ x = -387, y = 27 - off }, { x = -387, y = 28 - off }, 0.5, ClutColour(1, 1))
+	graphics.draw_line({ x = -372, y = 27 - off }, { x = -372, y = 28 - off }, 0.5, ClutColour(1, 1))
+	graphics.draw_line({ x = -387, y = 9 - off }, { x = -372, y = 9 - off }, 0.5, ClutColour(1, 1))
+	graphics.draw_line({ x = -372, y = 10 - off }, { x = -372, y = 9 - off }, 0.5, ClutColour(1, 1))
+	graphics.draw_line({ x = -387, y = 10 - off }, { x = -387, y = 9 - off }, 0.5, ClutColour(1, 1))
 end

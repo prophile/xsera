@@ -439,7 +439,7 @@ int PHYS_Get_Collisions ( lua_State* L )
 	for (int ctr = 0; ctr < max; ctr++) {
 		tuple = collisions[ctr];
 
-		if (tuple.first > tuple.second) {
+		if (tuple.first->objectID > tuple.second->objectID) {
 			continue;
 		}
 

@@ -10,20 +10,20 @@ import('Interfaces')
 
 trackingTarget = {}
 mdown = false
+
 function init()
 	physics.open(0.6)
 	start_time = mode_manager.time()
 	last_time = mode_manager.time()
-	loadingEntities = true
 	
 	trackingTarget = physics.new_object(1.0)
-trackingTarget.collision_radius = 10.0
-print("TTID",trackingTarget.object_id)
+	trackingTarget.collision_radius = MOUSE_RADIUS
 	
 	scen = LoadScenario(demoLevel)
 
+	control = scen.playership
+	target = nil
 	trackingTarget.position = GetMouseCoords()
-	loadingEntities = false
 end
 
 function key( k )
@@ -114,14 +114,20 @@ function update()
 	for idx, pair in ipairs(cols) do
 		if pair[1] == 1 then
 			if mdown == true then
-				print("M HIT", pair[2], scen.objects[pair[2]].name)
+				if keyboard[2][5].active == true then
+					print("TARGET SELECT")
+					target = scen.objects[pair[2]]
+				else
+					print("CONTROL SELECT")
+					control = scen.objects[pair[2]]
+				end
 				mdown = false
 			end
 		else
 			local a = scen.objects[pair[1]]
 			local b = scen.objects[pair[2]]
-			if --a ~= nil and b ~= nil and 
-			a.base.attributes["can-collide"] == true
+
+			if a.base.attributes["can-collide"] == true
 			and b.base.attributes["can-collide"] == true
 			and a.ai.owner ~= b.ai.owner then
 				Collide(a,b)
@@ -384,7 +390,7 @@ function render()
 		end
 		
 	end
-
+	graphics.draw_circle(trackingTarget.position, MOUSE_RADIUS*1.0, 1.0, ClutColour(5, 1)) --We need to scale the mouse detection area
 	
 	graphics.draw_particles()
 	DrawArrow()

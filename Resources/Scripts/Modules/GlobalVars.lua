@@ -26,6 +26,8 @@ ARROW_LENGTH = 135
 ARROW_VAR = (3 * math.sqrt(3))
 ARROW_DIST = hypot(6, (ARROW_LENGTH - ARROW_VAR))
 
+MOUSE_RADIUS = 15
+
 RELEASE_BUILD = mode_manager.is_release()
 --/constants
 
