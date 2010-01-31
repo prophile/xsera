@@ -87,3 +87,5 @@ arrowLength = ARROW_LENGTH
 arrowVar = ARROW_VAR
 arrowDist = ARROW_DIST
 arrowAlpha = CarrowAlpha
+
+weak = {__mode = "v"}

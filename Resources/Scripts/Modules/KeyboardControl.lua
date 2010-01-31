@@ -212,7 +212,25 @@ end
 	-------------]]--
 
 function DoTransferControl()
-	LogError("The command does not have any code. /placeholder", 9)
+--	if scen.playerShip.ai.owner == control.ai.owner then
+		scen.playerShip = control
+		scen.playerShipId = control.physics.object_id
+		scen.playerShip.ai.targ.target = nil
+		scen.playerShip.ai.targ.dest = nil
+		
+		scen.playerShip.control = {
+			accel = false;
+			decel = false;
+			left = false;
+			right = false;
+			beam = false;
+			pulse = false;
+			special = false;
+			warp = false;
+		}
+--	else
+		--COMPLAIN
+--	end
 end
 
 function DoZoom1_1()

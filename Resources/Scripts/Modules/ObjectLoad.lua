@@ -22,8 +22,10 @@ function NewObject(id)
 		ai = {
 			owner = nil;
 			mode = "wait";
-			target = nil;
-			dest = nil;
+			targ = {
+				target = nil;
+				dest = nil;
+			};
 		};
 		physics = physics.new_object(base.mass or 1.0);
 		gfx = {};
@@ -38,6 +40,7 @@ function NewObject(id)
 		}
 	}
 	
+	setmetatable(object.ai.targ, weak)
 	
 	if base.rotation ~= nil then
 		object.type = "rotation"
