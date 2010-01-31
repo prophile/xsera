@@ -647,14 +647,12 @@ function DrawTargetBox(object, isControl)
 	graphics.draw_box(49 - off, -392, 40 - off, -297, 0, (isControl and ClutColour(9,6) or ClutColour(4, 3)))
 	graphics.draw_text((isControl and "CONTROL" or "TARGET"), "CrystalClear", "left", { x = -389, y = 44 - off }, 12, ClutColour(1, 17))
 
-	graphics.draw_text(object.short, "CrystalClear", "left", { x = -389, y = 35 - off}, 12)
-
-	if object.nameOverride == true then
-		graphics.draw_text(object.name, "CrystalClear", "left", { x = -389, y = 3 - off }, 12, ClutColour(1, 11))
-	else
-		graphics.draw_text(object.short, "CrystalClear", "left", { x = -389, y = 3 - off }, 12, ClutColour(1, 11))
+	graphics.draw_text(object.name, "CrystalClear", "left", { x = -389, y = 35 - off}, 12)
+	
+	if object.ai.objectives.dest ~= nil then
+		graphics.draw_text(object.ai.objectives.dest.name, "CrystalClear", "left", { x = -389, y = 3 - off }, 12, ClutColour(1, 11))
 	end
-
+	
 	if object.status.energy ~= nil then
 		graphics.draw_line({ x = -357, y = 28 - off }, { x = -347, y = 28 - off }, 0.5, ClutColour(3, 7))
 		graphics.draw_line({ x = -357, y = 27 - off }, { x = -357, y = 28 - off }, 0.5, ClutColour(3, 7))

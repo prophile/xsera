@@ -162,7 +162,14 @@ function DoTarget()
 end
 
 function DoMoveOrder()
-	LogError("The command does not have any code. /placeholder", 9)
+	if control ~= nil
+	and control ~= target
+	and control ~= scen.playerShip
+	and control.base.attributes["can-accept-destination"] == true
+	and (target == nil
+	or target.base.attributes["can-be-destination"] == true) then
+		control.ai.objectives.dest = target
+	end
 end
 
 function DoScaleIn()
@@ -215,8 +222,8 @@ function DoTransferControl()
 --	if scen.playerShip.ai.owner == control.ai.owner then
 		scen.playerShip = control
 		scen.playerShipId = control.physics.object_id
-		scen.playerShip.ai.targ.target = nil
-		scen.playerShip.ai.targ.dest = nil
+		scen.playerShip.ai.objectives.target = nil
+		scen.playerShip.ai.objectives.dest = nil
 		
 		scen.playerShip.control = {
 			accel = false;
@@ -229,7 +236,7 @@ function DoTransferControl()
 			warp = false;
 		}
 --	else
-		--COMPLAIN
+--		sound.play("NaughtyBeep")
 --	end
 end
 

@@ -5,7 +5,7 @@ function NewObject(id)
 	local base = gameData["Objects"][id]
 	
 	local object = {
-		name = base.name;
+		name = base["short-name"];
 		short = base["short-name"];
 		
 		base = base;
@@ -22,7 +22,7 @@ function NewObject(id)
 		ai = {
 			owner = nil;
 			mode = "wait";
-			targ = {
+			objectives = {
 				target = nil;
 				dest = nil;
 			};
@@ -40,7 +40,7 @@ function NewObject(id)
 		}
 	}
 	
-	setmetatable(object.ai.targ, weak)
+	setmetatable(object.ai.objectives, weak)
 	
 	if base.rotation ~= nil then
 		object.type = "rotation"
