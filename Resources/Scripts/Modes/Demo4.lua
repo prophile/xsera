@@ -7,6 +7,7 @@ import('Scenarios')
 import('PrintRecursive')
 import('KeyboardControl')
 import('Interfaces')
+import('PilotAI')
 
 trackingTarget = {}
 mdown = false
@@ -135,6 +136,7 @@ function update()
 		end
 	end
 	mdown = false
+
 	for i, o in pairs(scen.objects) do
 		if o.type == "beam" then
 			if o.base.beam.kind == "bolt-relative"
@@ -177,34 +179,15 @@ function update()
 			end
 			
 			if o.weapons ~= nil then
-				if o.weapons.pulse ~= nil
-				and o.weapons.pulse.ammo ~= -1
-				and o.weapons.pulse.ammo < o.weapons.pulse.base.device.ammo / 2
-				and o.weapons.pulse.lastRestock + o.weapons.pulse.base.device["restock-cost"] * BASE_RECHARGE_RATE * WEAPON_RESTOCK_RATE / TIME_FACTOR<= newTime
-				and o.status.energy >= o.weapons.pulse.base.device["restock-cost"] * WEAPON_RESTOCK_RATIO then
-					o.status.energy = o.status.energy - o.weapons.pulse.base.device["restock-cost"] * WEAPON_RESTOCK_RATIO
-					o.weapons.pulse.ammo = o.weapons.pulse.ammo + 1
-					o.weapons.pulse.lastRestock = newTime
-				end
-				
-				if o.weapons.beam ~= nil
-				and o.weapons.beam.ammo ~= -1
-				and o.weapons.beam.ammo < o.weapons.beam.base.device.ammo / 2
-				and o.weapons.beam.lastRestock + o.weapons.beam.base.device["restock-cost"] * BASE_RECHARGE_RATE * WEAPON_RESTOCK_RATE / TIME_FACTOR <= newTime
-				and o.status.energy >= o.weapons.beam.base.device["restock-cost"] * WEAPON_RESTOCK_RATIO then
-					o.status.energy = o.status.energy - o.weapons.beam.base.device["restock-cost"] * WEAPON_RESTOCK_RATIO
-					o.weapons.beam.ammo = o.weapons.beam.ammo + 1
-					o.weapons.beam.lastRestock = newTime
-				end
-				
-				if o.weapons.special ~= nil
-				and o.weapons.special.ammo ~= -1
-				and o.weapons.special.ammo < o.weapons.special.base.device.ammo / 2
-				and o.weapons.special.lastRestock + o.weapons.special.base.device["restock-cost"] * BASE_RECHARGE_RATE * WEAPON_RESTOCK_RATE / TIME_FACTOR <= newTime
-				and o.status.energy >= o.weapons.special.base.device["restock-cost"] * WEAPON_RESTOCK_RATIO then
-					o.status.energy = o.status.energy - o.weapons.special.base.device["restock-cost"] * WEAPON_RESTOCK_RATIO
-					o.weapons.special.ammo = o.weapons.special.ammo + 1
-					o.weapons.special.lastRestock = newTime
+				for wid,weap in pairs(o.weapons) do
+					if weap.ammo ~= -1
+					and weap.ammo < weap.base.device.ammo / 2
+					and weap.lastRestock + weap.base.device["restock-cost"] * BASE_RECHARGE_RATE * WEAPON_RESTOCK_RATE / TIME_FACTOR <= newTime
+					and o.status.energy >= weap.base.device["restock-cost"] * WEAPON_RESTOCK_RATIO then
+						o.status.energy = o.status.energy - weap.base.device["restock-cost"] * WEAPON_RESTOCK_RATIO
+						weap.ammo = weap.ammo + 1
+						weap.lastRestock = newTime 
+					end
 				end
 			end
 		end
@@ -425,33 +408,6 @@ function RemoveDead()
 			scen.objects[i] = nil
 		end
 	end
-end
-
-function DumbSeek(object, target)
-	object.control.accel = true
-	object.control.decel = false
-	local ang = find_angle(target.position,object.physics.position) - object.physics.angle
-
-	ang = radian_range(ang)
---[[	if ang < math.pi / 2 then
-		object.control.accel = true 
-		object.control.decel = false
-	else 
-		object.control.accel = false
-		object.control.decel = true
-	end]]
-	
-	if math.abs(ang) < 0.1 then
-		object.control.left = false
-		object.control.right = false
-	elseif ang <= math.pi then
-		object.control.left = true
-		object.control.right = false
-	else
-		object.control.left = false
-		object.control.right = true
-	end
-	
 end
 
 function ChangePlayerShip()
