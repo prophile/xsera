@@ -1,9 +1,11 @@
 import('BoxDrawing')
 import('GlobalVars')
 
-control = {}
-target = {}
-
+selection = {
+	control = {};
+	target = {};
+}
+setmetatable(selection, weak)
 menuShift = -391
 topOfMenu = -69
 menuStride = -11
@@ -460,12 +462,12 @@ function DrawPanels()
 		end
 	end
 
-	if control ~= nil then
-		DrawTargetBox(control,true)
+	if selection.control ~= nil then
+		DrawTargetBox(selection.control,true)
 	end
 
-	if target ~= nil then
-		DrawTargetBox(target,false)
+	if selection.target ~= nil then
+		DrawTargetBox(selection.target,false)
 	end
 
 	graphics.draw_box(-165.5, -389.5, -175.5, -358, 0, ClutColour(4, 8))

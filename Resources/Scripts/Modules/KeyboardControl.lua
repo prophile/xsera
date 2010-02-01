@@ -162,13 +162,13 @@ function DoTarget()
 end
 
 function DoMoveOrder()
-	if control ~= nil
-	and control ~= target
-	and control ~= scen.playerShip
-	and control.base.attributes["can-accept-destination"] == true
-	and (target == nil
-	or target.base.attributes["can-be-destination"] == true) then
-		control.ai.objectives.dest = target
+	if selection.control ~= nil
+	and selection.control ~= selection.target
+	and selection.control ~= scen.playerShip
+	and selection.control.base.attributes["can-accept-destination"] == true
+	and (selection.target == nil
+	or selection.target.base.attributes["can-be-destination"] == true) then
+		selection.control.ai.objectives.dest = selection.target
 	end
 end
 
@@ -220,7 +220,7 @@ end
 
 function DoTransferControl()
 --	if scen.playerShip.ai.owner == control.ai.owner then
-		scen.playerShip = control
+		scen.playerShip = selection.control
 		scen.playerShipId = control.physics.object_id
 		scen.playerShip.ai.objectives.target = nil
 		scen.playerShip.ai.objectives.dest = nil

@@ -6,7 +6,9 @@ function Think(object)
 	local dist
 	if target ~= nil then
 		dist = find_hypot(object.physics.position, target.physics.position)
-		if dist < 350
+		if object.base.attributes["is-guided"] == true then
+			object.ai.mode = "goto"
+		elseif dist < 350
 		and target.ai.owner ~= object.ai.owner
 		and target.base.attributes["hated"] == true then
 			object.ai.mode = "engage"
@@ -18,33 +20,45 @@ function Think(object)
 	else
 		object.ai.mode = "wait"
 	end
-		
-		if object.ai.mode ~= "engage" then
-			object.control.beam = false
-			object.control.pulse = false
-			object.control.special = false
-		end
-		
-		if object.ai.mode == "wait" then
-			object.control.accel = false
-			object.control.decel = true
-			object.control.left = false
-			object.control.right = false
-		elseif object.ai.mode == "goto" then
+	
+	if object.ai.mode ~= "engage" then
+		object.control.beam = false
+		object.control.pulse = false
+		object.control.special = false
+	end
+	
+	if object.ai.mode == "wait" then
+		object.control.accel = false
+		object.control.decel = true
+		object.control.left = false
+		object.control.right = false
+	elseif object.ai.mode == "goto" then
+		object.control.accel = true
+		object.control.decel = false
+		TurnToward(object,target)
+	elseif object.ai.mode == "evade" then
+		TurnAway(object, target)
+	elseif object.ai.mode == "engage" then
+		if target ~= nil then
+			TurnToward(object, target)
+			if dist > 200 then
+				object.control.accel = true
+				object.control.decel = false
+			else
+				object.control.accel = false
+				object.control.decel = true
+			end
+		else
 			object.control.accel = true
 			object.control.decel = false
-			TurnToward(object,target)
-		elseif object.ai.mode == "evade" then
-			TurnAway(object, target)
-		elseif object.ai.mode == "engage" then
-			object.control.accel = true
-			object.control.decel = false
-			object.control.beam = true
-			object.control.pulse = true
-			object.control.special = true
-			TurnToward(object,target)
 		end
+	
 		
+		object.control.beam = true
+		object.control.pulse = true
+		object.control.special = true
+	end
+	
 --[[	else	
 		object.control.accel = false
 		object.control.decel = true

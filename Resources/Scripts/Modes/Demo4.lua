@@ -22,8 +22,8 @@ function init()
 	
 	scen = LoadScenario(demoLevel)
 
-	control = scen.playership
-	target = nil
+	selection.control = scen.playership
+	selection.target = nil
 	trackingTarget.position = GetMouseCoords()
 end
 
@@ -117,10 +117,10 @@ function update()
 			if mdown == true then
 				if keyboard[2][5].active == true then
 					print("TARGET SELECT")
-					target = scen.objects[pair[2]]
+					selection.target = scen.objects[pair[2]]
 				else
 					print("CONTROL SELECT")
-					control = scen.objects[pair[2]]
+					selection.control = scen.objects[pair[2]]
 				end
 				mdown = false
 			end
