@@ -1,9 +1,35 @@
 import('Math')
 
-function DumbSeek(object, target)
-	object.control.accel = true
-	object.control.decel = false
-	local ang = find_angle(target.position,object.physics.position) - object.physics.angle
+function Think(object)
+	
+	local target = object.ai.objectives.target or object.ai.objectives.dest
+
+	if target ~= nil then
+		local dist = find_hypot(object.physics.position, target.physics.position)
+		if dist > 200 then --[HARDCODE]
+			object.ai.mode = "goto"
+		else
+			object.ai.mode = "wait"
+		end
+		
+		if object.ai.mode == "wait" then
+			object.control.accel = false
+			object.control.decel = true
+			object.control.left = false
+			object.control.right = false
+		elseif object.ai.mode == "goto" then
+			object.control.accel = true
+			object.control.decel = false
+			TurnToTarget(object,target)
+		end
+	end
+end
+
+
+
+function TurnToTarget(object, target)
+
+	local ang = find_angle(target.physics.position,object.physics.position) - object.physics.angle
 
 	ang = radian_range(ang)
 --[[	if ang < math.pi / 2 then

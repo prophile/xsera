@@ -200,21 +200,8 @@ function update()
 			end
 		end
 		
-		if o.base.attributes["can-engage"] == true then
-			if o ~= scen.playerShip then
-				if o.ai.owner == scen.playerShip.ai.owner
-				and (shipSeek == true
-				or o.base.attributes["is-guided"] == true) then
-					DumbSeek(o,trackingTarget)
-				else
-					o.control.left = false
-					o.control.right = false
-					o.control.accel = false
-					o.control.decel = true
-				end
-			end
-		else
-			o.control.accel = true
+		if o ~= scen.playerShip then
+		 Think(o)
 		end
 		
 		if o.triggers.periodic ~= nil
