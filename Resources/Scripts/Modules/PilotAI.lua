@@ -1,5 +1,5 @@
-import('Math')
-import('GlobalVars')
+--import('Math')
+--import('GlobalVars')
 
 function Think(object)
 	

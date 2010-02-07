@@ -1,13 +1,13 @@
+import('GlobalVars')
 import('Actions')
 import('Animation')
 import('ObjectLoad')
-import('GlobalVars')
-import('Math')
+--import('Math')
 import('Scenarios')
 import('PrintRecursive')
 import('KeyboardControl')
-import('Interfaces')
 import('PilotAI')
+import('Interfaces')
 
 trackingTarget = {}
 mdown = false

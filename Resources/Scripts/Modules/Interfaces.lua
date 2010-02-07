@@ -1,5 +1,5 @@
 import('BoxDrawing')
-import('GlobalVars')
+--import('GlobalVars')
 
 selection = {
 	control = {};

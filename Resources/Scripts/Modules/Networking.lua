@@ -1,5 +1,5 @@
-import('GlobalVars')
-import('PrintRecursive')
+--import('GlobalVars')
+--import('PrintRecursive')
 
 --[[
 	These are functions that Lua needs if this computer is a client (or is a server, thus also a client)

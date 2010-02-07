@@ -1,5 +1,5 @@
-import('GlobalVars')
-import('Actions')
+--import('GlobalVars')
+--import('Actions')
 
 function NewObject(id)
 	local base = gameData["Objects"][id]

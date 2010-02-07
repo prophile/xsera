@@ -1,4 +1,4 @@
-import('Math')
+--import('Math')
 
 function ActivateTrigger(sender, owner)
 	if owner == nil then

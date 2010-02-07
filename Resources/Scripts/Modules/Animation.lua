@@ -1,5 +1,5 @@
-import('GlobalVars')
-import('Actions')
+--import('GlobalVars')
+--import('Actions')
 
 function Animate(object)
 	if object.gfx.fameTime == 0 then
