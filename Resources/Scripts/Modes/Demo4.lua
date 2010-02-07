@@ -30,37 +30,13 @@ end
 function key( k )
 	if k == "q" or k == "escape" then
 		mode_manager.switch("Xsera/MainMenu")
---[[	elseif k == "=" then
-		camera.w = camera.w / 2
-		camera.h = camera.h / 2
-	elseif k == "-" then
-		camera.w = camera.w * 2
-		camera.h = camera.h * 2--]]
 	elseif k == "/" then
 		printTable(scen.playerShip)
-	elseif k == "[" then
-		if scen.playerShipId == 1 then
-			scen.playerShipId = #scen.objects
-		else
-			scen.playerShipId = scen.playerShipId - 1
-		end
-		
-		ChangePlayerShip()
-	elseif k == "]" then
-		if scen.playerShipId == #scen.objects then
-			scen.playerShipId = 1
-		else
-			scen.playerShipId = scen.playerShipId + 1
-		end
-		
-		ChangePlayerShip()
 	elseif k == "backspace" then
 		scen.playerShip.status.health = scen.playerShip.status.health - 1000
 		if scen.playerShip.status.health < 0 then
 			scen.playerShip.status.health = 0
 		end
-	elseif k == "backslash" then
-		shipSeek = not(shipSeek)
 	else
 		KeyActivate(k)
 	end
