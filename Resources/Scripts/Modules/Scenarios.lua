@@ -25,6 +25,13 @@ function LoadScenario(id)
 			new.spriteDim = graphics.sprite_dimensions("Id/" .. new.sprite)
 		end
 		
+		if state["initial-destination"] ~= -1 then
+			--Convert from 0 based indexes to 2 based indexes
+			--Indexes are 2 based instead of 1 based because the cursor has a physics_object with an id of 1
+
+			new.ai.objectives.dest = scen.objects[state["initial-destination"]+2]
+		end
+
 		scen.objects[new.physics.object_id] = new
 	end
 	return scen
