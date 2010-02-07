@@ -1,7 +1,9 @@
 import('Math')
+import('GlobalVars')
 
 function Think(object)
 	
+	if CanThink(object.base.attributes) then
 	local target = object.ai.objectives.target or object.ai.objectives.dest
 	local dist
 	if target ~= nil then
@@ -59,21 +61,30 @@ function Think(object)
 		object.control.special = true
 	end
 	
---[[	else	
-		object.control.accel = false
-		object.control.decel = true
-		object.control.left = false
-		object.control.right = false
-		object.control.beam = false
-		object.control.pulse = false
-		object.control.special = false
-		object.ai.mode = "wait"]]
-		
---	end
+	else
+		object.control.accel = true
+	end
 end
 
+function CanThink(attr)
+	return attr["can-engange"] or attr["can-evade"] or attr["can-accept-destination"]
+end
+
+
 function TurnAway(object, target)
-	--NO CODE!!!
+	local ang = find_angle(target.physics.position,object.physics.position) - object.physics.angle
+	ang = radian_range(ang)
+	
+	if ang <= 0.95 * math.pi then
+		object.control.left = false
+		object.control.right = true
+	elseif ang >= 1.05 * math.pi then
+		object.control.left = true
+		object.control.right = false
+	else
+		object.control.left = false
+		object.control.right = false
+	end
 end
 
 function TurnToward(object, target)
@@ -81,23 +92,15 @@ function TurnToward(object, target)
 	local ang = find_angle(target.physics.position,object.physics.position) - object.physics.angle
 
 	ang = radian_range(ang)
---[[	if ang < math.pi / 2 then
-		object.control.accel = true 
-		object.control.decel = false
-	else 
-		object.control.accel = false
-		object.control.decel = true
-	end]]
 	
-	if math.abs(ang) < 0.2 then
+	if math.abs(ang-math.pi) >= math.pi * 0.95 then
 		object.control.left = false
 		object.control.right = false
-	elseif ang <= math.pi then
+	elseif ang <= math.pi * 0.95 then
 		object.control.left = true
 		object.control.right = false
 	else
 		object.control.left = false
 		object.control.right = true
 	end
-	
 end

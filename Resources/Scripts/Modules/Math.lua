@@ -72,9 +72,7 @@ end
 function radian_range(angle)
 	angle = angle % (2.0 * math.pi)
 	if angle < 0 then
-		angle = 2 * math.pi - angle
-	elseif angle > 2 * math.pi then
-		angle = angle - 2 * math.pi
+		angle = 2 * math.pi + angle
 	end
 	return angle
 end
