@@ -88,7 +88,7 @@ function update()
 
 	local cols = physics.collisions()
 	
-	for idx, pair in ipairs(cols) do
+	for idx, pair in pairs(cols) do
 		if pair[1] == 1 then
 			if mdown == true then
 				if keyboard[2][5].active == true then
