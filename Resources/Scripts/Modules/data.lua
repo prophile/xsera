@@ -6750,6 +6750,4470 @@ gameData = {
 
 };
 };
+["Conditions"] = {
+[000] =  {
+["type"] = "counter-condition";
+["condition-flags"] = {
+
+};
+["which-player"] = 0;
+["which-counter"] = 0;
+["amount"] = 4;
+["action"] =  {
+["id"] = 285;
+["count"] = 1;
+["trigger"] = "activate";
+};
+
+};
+[001] =  {
+["type"] = "destruction-condition";
+["condition-flags"] = {
+	["true-only-once"] = true;
+
+};
+["value"] = 1;
+["action"] =  {
+["id"] = 286;
+["count"] = 1;
+["trigger"] = "activate";
+};
+
+};
+[002] =  {
+["type"] = "destruction-condition";
+["condition-flags"] = {
+	["true-only-once"] = true;
+
+};
+["value"] = 17;
+["action"] =  {
+["id"] = 99;
+["count"] = 3;
+["trigger"] = "activate";
+};
+
+};
+[003] =  {
+["type"] = "time-condition";
+["condition-flags"] = {
+	["true-only-once"] = true;
+
+};
+["value"] = 194;
+["action"] =  {
+["id"] = 48;
+["count"] = 1;
+["trigger"] = "activate";
+};
+
+};
+[004] =  {
+["type"] = "counter-condition";
+["condition-flags"] = {
+	["true-only-once"] = true;
+
+};
+["which-player"] = 0;
+["which-counter"] = 1;
+["amount"] = 1;
+["action"] =  {
+["id"] = 82;
+["count"] = 2;
+["trigger"] = "activate";
+};
+
+};
+[005] =  {
+["type"] = "counter-condition";
+["condition-flags"] = {
+	["true-only-once"] = true;
+
+};
+["which-player"] = 0;
+["which-counter"] = 1;
+["amount"] = 4;
+["action"] =  {
+["id"] = 287;
+["count"] = 1;
+["trigger"] = "activate";
+};
+
+};
+[006] =  {
+["type"] = "counter-condition";
+["condition-flags"] = {
+
+};
+["which-player"] = 1;
+["which-counter"] = 1;
+["amount"] = 7;
+["action"] =  {
+["id"] = 288;
+["count"] = 1;
+["trigger"] = "activate";
+};
+
+};
+[007] =  {
+["type"] = "time-condition";
+["condition-flags"] = {
+	["true-only-once"] = true;
+
+};
+["value"] = 1250;
+["action"] =  {
+["id"] = 124;
+["count"] = 2;
+["trigger"] = "activate";
+};
+
+};
+[008] =  {
+["type"] = "owner-condition";
+["subject-object"] = 0;
+["condition-flags"] = {
+
+};
+["value"] = 1;
+["action"] =  {
+["id"] = 289;
+["count"] = 1;
+["trigger"] = "activate";
+};
+
+};
+[009] =  {
+["type"] = "owner-condition";
+["subject-object"] = 5;
+["condition-flags"] = {
+
+};
+["value"] = 0;
+["action"] =  {
+["id"] = 290;
+["count"] = 1;
+["trigger"] = "activate";
+};
+
+};
+[010] =  {
+["type"] = "time-condition";
+["condition-flags"] = {
+	["true-only-once"] = true;
+
+};
+["value"] = 3600;
+["action"] =  {
+["id"] = 195;
+["count"] = 2;
+["trigger"] = "activate";
+};
+
+};
+[011] =  {
+["type"] = "destruction-condition";
+["subject-object"] = 0;
+["condition-flags"] = {
+	["true-only-once"] = true;
+
+};
+["value"] = 6;
+["action"] =  {
+["id"] = 291;
+["count"] = 1;
+["trigger"] = "activate";
+};
+
+};
+[012] =  {
+["type"] = "destruction-condition";
+["condition-flags"] = {
+	["true-only-once"] = true;
+
+};
+["value"] = 17;
+["action"] =  {
+["id"] = 292;
+["count"] = 1;
+["trigger"] = "activate";
+};
+
+};
+[013] =  {
+["type"] = "counter-condition";
+["subject-object"] = 1;
+["direct-object"] = 1;
+["condition-flags"] = {
+	["true-only-once"] = true;
+
+};
+["which-player"] = 0;
+["which-counter"] = 0;
+["amount"] = 3;
+["action"] =  {
+["id"] = 112;
+["count"] = 1;
+["trigger"] = "activate";
+};
+
+};
+[014] =  {
+["type"] = "owner-condition";
+["subject-object"] = 6;
+["direct-object"] = 7;
+["condition-flags"] = {
+	["true-only-once"] = true;
+
+};
+["value"] = 0;
+["action"] =  {
+["id"] = 113;
+["count"] = 2;
+["trigger"] = "activate";
+};
+
+};
+[015] =  {
+["type"] = "owner-condition";
+["subject-object"] = 6;
+["direct-object"] = 7;
+["condition-flags"] = {
+	["true-only-once"] = true;
+
+};
+["value"] = 1;
+["action"] =  {
+["id"] = 84;
+["count"] = 2;
+["trigger"] = "activate";
+};
+
+};
+[016] =  {
+["type"] = "time-condition";
+["condition-flags"] = {
+	["true-only-once"] = true;
+
+};
+["value"] = 7200;
+["action"] =  {
+["id"] = 58;
+["count"] = 3;
+["trigger"] = "activate";
+};
+
+};
+[017] =  {
+["type"] = "owner-condition";
+["subject-object"] = 8;
+["condition-flags"] = {
+
+};
+["value"] = 0;
+["action"] =  {
+["id"] = 293;
+["count"] = 1;
+["trigger"] = "activate";
+};
+
+};
+[018] =  {
+["type"] = "owner-condition";
+["subject-object"] = 9;
+["condition-flags"] = {
+
+};
+["value"] = 1;
+["action"] =  {
+["id"] = 294;
+["count"] = 1;
+["trigger"] = "activate";
+};
+
+};
+[019] =  {
+["type"] = "proximity-condition";
+["subject-object"] = 7;
+["direct-object"] = 5;
+["condition-flags"] = {
+	["true-only-once"] = true;
+
+};
+["value"] = 320128;
+["action"] =  {
+["id"] = 126;
+["count"] = 4;
+["trigger"] = "activate";
+};
+
+};
+[020] =  {
+["type"] = "proximity-condition";
+["subject-object"] = 9;
+["direct-object"] = 5;
+["condition-flags"] = {
+	["true-only-once"] = true;
+
+};
+["value"] = 320128;
+["action"] =  {
+["id"] = 130;
+["count"] = 6;
+["trigger"] = "activate";
+};
+
+};
+[021] =  {
+["type"] = "proximity-condition";
+["subject-object"] = 7;
+["direct-object"] = 15;
+["condition-flags"] = {
+	["true-only-once"] = true;
+
+};
+["value"] = 2560000;
+["action"] =  {
+["id"] = 136;
+["count"] = 7;
+["trigger"] = "activate";
+};
+
+};
+[022] =  {
+["type"] = "destruction-condition";
+["condition-flags"] = {
+	["true-only-once"] = true;
+
+};
+["value"] = 5;
+["action"] =  {
+["id"] = 296;
+["count"] = 1;
+["trigger"] = "activate";
+};
+
+};
+[023] =  {
+["type"] = "destruction-condition";
+["condition-flags"] = {
+	["true-only-once"] = true;
+
+};
+["value"] = 10;
+["action"] =  {
+["id"] = 297;
+["count"] = 1;
+["trigger"] = "activate";
+};
+
+};
+[024] =  {
+["type"] = "proximity-condition";
+["subject-object"] = 10;
+["direct-object"] = 6;
+["condition-flags"] = {
+	["true-only-once"] = true;
+
+};
+["value"] = 320128;
+["action"] =  {
+["id"] = 202;
+["count"] = 2;
+["trigger"] = "activate";
+};
+
+};
+[025] =  {
+["type"] = "time-condition";
+["condition-flags"] = {
+	["true-only-once"] = true;
+
+};
+["value"] = 360;
+["action"] =  {
+["id"] = 169;
+["count"] = 2;
+["trigger"] = "activate";
+};
+
+};
+[026] =  {
+["type"] = "proximity-condition";
+["subject-object"] = 4;
+["direct-object"] = 0;
+["condition-flags"] = {
+	["true-only-once"] = true;
+
+};
+["value"] = 320128;
+["action"] =  {
+["id"] = 171;
+["count"] = 4;
+["trigger"] = "activate";
+};
+
+};
+[027] =  {
+["type"] = "proximity-condition";
+["subject-object"] = 4;
+["direct-object"] = 2;
+["condition-flags"] = {
+	["true-only-once"] = true;
+
+};
+["value"] = 320128;
+["action"] =  {
+["id"] = 175;
+["count"] = 3;
+["trigger"] = "activate";
+};
+
+};
+[028] =  {
+["type"] = "proximity-condition";
+["subject-object"] = 4;
+["direct-object"] = 3;
+["condition-flags"] = {
+	["true-only-once"] = true;
+
+};
+["value"] = 320128;
+["action"] =  {
+["id"] = 178;
+["count"] = 5;
+["trigger"] = "activate";
+};
+
+};
+[029] =  {
+["type"] = "time-condition";
+["condition-flags"] = {
+	["true-only-once"] = true;
+
+};
+["value"] = 18000;
+["action"] =  {
+["id"] = 187;
+["count"] = 6;
+["trigger"] = "activate";
+};
+
+};
+[030] =  {
+["type"] = "counter-condition";
+["condition-flags"] = {
+	["true-only-once"] = true;
+
+};
+["which-player"] = 0;
+["which-counter"] = 0;
+["amount"] = 5;
+["action"] =  {
+["id"] = 193;
+["count"] = 2;
+["trigger"] = "activate";
+};
+
+};
+[031] =  {
+["type"] = "owner-condition";
+["subject-object"] = 9;
+["condition-flags"] = {
+	["true-only-once"] = true;
+
+};
+["value"] = 1;
+["action"] =  {
+["id"] = 302;
+["count"] = 1;
+["trigger"] = "activate";
+};
+
+};
+[032] =  {
+["type"] = "owner-condition";
+["subject-object"] = 10;
+["condition-flags"] = {
+	["true-only-once"] = true;
+
+};
+["value"] = 0;
+["action"] =  {
+["id"] = 303;
+["count"] = 1;
+["trigger"] = "activate";
+};
+
+};
+[033] =  {
+["type"] = "owner-condition";
+["subject-object"] = 1;
+["condition-flags"] = {
+	["true-only-once"] = true;
+
+};
+["value"] = 1;
+["action"] =  {
+["id"] = 298;
+["count"] = 1;
+["trigger"] = "activate";
+};
+
+};
+[034] =  {
+["type"] = "owner-condition";
+["subject-object"] = 8;
+["condition-flags"] = {
+	["true-only-once"] = true;
+
+};
+["value"] = 0;
+["action"] =  {
+["id"] = 299;
+["count"] = 1;
+["trigger"] = "activate";
+};
+
+};
+[035] =  {
+["type"] = "owner-condition";
+["subject-object"] = 12;
+["condition-flags"] = {
+	["true-only-once"] = true;
+
+};
+["value"] = 1;
+["action"] =  {
+["id"] = 300;
+["count"] = 1;
+["trigger"] = "activate";
+};
+
+};
+[036] =  {
+["type"] = "owner-condition";
+["subject-object"] = 13;
+["condition-flags"] = {
+	["true-only-once"] = true;
+
+};
+["value"] = 0;
+["action"] =  {
+["id"] = 301;
+["count"] = 1;
+["trigger"] = "activate";
+};
+
+};
+[037] =  {
+["type"] = "counter-condition";
+["condition-flags"] = {
+	["true-only-once"] = true;
+
+};
+["which-player"] = 0;
+["which-counter"] = 1;
+["amount"] = 6;
+["action"] =  {
+["id"] = 204;
+["count"] = 3;
+["trigger"] = "activate";
+};
+
+};
+[038] =  {
+["type"] = "proximity-condition";
+["subject-object"] = 0;
+["direct-object"] = 10;
+["condition-flags"] = {
+	["true-only-once"] = true;
+
+};
+["value"] = 57992;
+["action"] =  {
+["id"] = 209;
+["count"] = 6;
+["trigger"] = "activate";
+};
+
+};
+[039] =  {
+["type"] = "proximity-condition";
+["subject-object"] = 10;
+["direct-object"] = 7;
+["condition-flags"] = {
+	["true-only-once"] = true;
+	["initially-true"] = true;
+
+};
+["value"] = 57992;
+["action"] =  {
+["id"] = 223;
+["count"] = 3;
+["trigger"] = "activate";
+};
+
+};
+[040] =  {
+["type"] = "proximity-condition";
+["subject-object"] = 2;
+["direct-object"] = 3;
+["condition-flags"] = {
+	["true-only-once"] = true;
+
+};
+["value"] = 57992;
+["action"] =  {
+["id"] = 221;
+["count"] = 2;
+["trigger"] = "activate";
+};
+
+};
+[041] =  {
+["type"] = "owner-condition";
+["subject-object"] = 0;
+["condition-flags"] = {
+	["true-only-once"] = true;
+
+};
+["value"] = 1;
+["action"] =  {
+["id"] = 305;
+["count"] = 1;
+["trigger"] = "activate";
+};
+
+};
+[042] =  {
+["type"] = "owner-condition";
+["subject-object"] = 1;
+["condition-flags"] = {
+	["true-only-once"] = true;
+
+};
+["value"] = 0;
+["action"] =  {
+["id"] = 306;
+["count"] = 1;
+["trigger"] = "activate";
+};
+
+};
+[043] =  {
+["type"] = "destruction-condition";
+["condition-flags"] = {
+	["true-only-once"] = true;
+
+};
+["value"] = 1;
+["action"] =  {
+["id"] = 241;
+["count"] = 3;
+["trigger"] = "activate";
+};
+
+};
+[044] =  {
+["type"] = "time-condition";
+["condition-flags"] = {
+	["true-only-once"] = true;
+
+};
+["value"] = 60;
+["action"] =  {
+["id"] = 244;
+["count"] = 1;
+["trigger"] = "activate";
+};
+
+};
+[045] =  {
+["type"] = "time-condition";
+["condition-flags"] = {
+	["true-only-once"] = true;
+
+};
+["value"] = 2400;
+["action"] =  {
+["id"] = 245;
+["count"] = 4;
+["trigger"] = "activate";
+};
+
+};
+[046] =  {
+["type"] = "destruction-condition";
+["condition-flags"] = {
+	["true-only-once"] = true;
+
+};
+["value"] = 0;
+["action"] =  {
+["id"] = 249;
+["count"] = 7;
+["trigger"] = "activate";
+};
+
+};
+[047] =  {
+["type"] = "no-ships-left-condition";
+["condition-flags"] = {
+	["true-only-once"] = true;
+	["initially-true"] = true;
+
+};
+["value"] = 1;
+["action"] =  {
+["id"] = 496;
+["count"] = 1;
+["trigger"] = "activate";
+};
+
+};
+[048] =  {
+["type"] = "time-condition";
+["condition-flags"] = {
+	["true-only-once"] = true;
+
+};
+["value"] = 3600;
+["action"] =  {
+["id"] = 256;
+["count"] = 7;
+["trigger"] = "activate";
+};
+
+};
+[049] =  {
+["type"] = "destruction-condition";
+["condition-flags"] = {
+	["true-only-once"] = true;
+
+};
+["value"] = 16;
+["action"] =  {
+["id"] = 267;
+["count"] = 2;
+["trigger"] = "activate";
+};
+
+};
+[050] =  {
+["type"] = "counter-condition";
+["condition-flags"] = {
+	["true-only-once"] = true;
+
+};
+["which-player"] = 0;
+["which-counter"] = 0;
+["amount"] = 5;
+["action"] =  {
+["id"] = 306;
+["count"] = 1;
+["trigger"] = "activate";
+};
+
+};
+[051] =  {
+["type"] = "counter-condition";
+["condition-flags"] = {
+	["true-only-once"] = true;
+
+};
+["which-player"] = 0;
+["which-counter"] = 0;
+["amount"] = 2;
+["action"] =  {
+["id"] = 277;
+["count"] = 2;
+["trigger"] = "activate";
+};
+
+};
+[052] =  {
+["type"] = "time-condition";
+["condition-flags"] = {
+	["true-only-once"] = true;
+
+};
+["value"] = 28167;
+["action"] =  {
+["id"] = 281;
+["count"] = 1;
+["trigger"] = "activate";
+};
+
+};
+[053] =  {
+["type"] = "owner-condition";
+["subject-object"] = 1;
+["condition-flags"] = {
+	["true-only-once"] = true;
+
+};
+["value"] = 0;
+["action"] =  {
+["id"] = 554;
+["count"] = 1;
+["trigger"] = "activate";
+};
+
+};
+[054] =  {
+["type"] = "counter-condition";
+["condition-flags"] = {
+	["true-only-once"] = true;
+
+};
+["which-player"] = 0;
+["which-counter"] = 0;
+["amount"] = 2;
+["action"] =  {
+["id"] = 284;
+["count"] = 1;
+["trigger"] = "activate";
+};
+
+};
+[055] =  {
+["type"] = "counter-condition";
+["condition-flags"] = {
+	["true-only-once"] = true;
+
+};
+["which-player"] = 0;
+["which-counter"] = 0;
+["amount"] = 5;
+["action"] =  {
+["id"] = 304;
+["count"] = 1;
+["trigger"] = "activate";
+};
+
+};
+[056] =  {
+["type"] = "owner-condition";
+["subject-object"] = 0;
+["condition-flags"] = {
+	["true-only-once"] = true;
+
+};
+["value"] = 1;
+["action"] =  {
+["id"] = 294;
+["count"] = 1;
+["trigger"] = "activate";
+};
+
+};
+[057] =  {
+["type"] = "owner-condition";
+["subject-object"] = 5;
+["condition-flags"] = {
+	["true-only-once"] = true;
+
+};
+["value"] = 0;
+["action"] =  {
+["id"] = 295;
+["count"] = 1;
+["trigger"] = "activate";
+};
+
+};
+[058] =  {
+["type"] = "time-condition";
+["condition-flags"] = {
+	["true-only-once"] = true;
+
+};
+["value"] = 3600;
+["action"] =  {
+["id"] = 195;
+["count"] = 2;
+["trigger"] = "activate";
+};
+
+};
+[059] =  {
+["type"] = "half-health-condition";
+["subject-object"] = 1;
+["condition-flags"] = {
+	["true-only-once"] = true;
+
+};
+["action"] =  {
+["id"] = 308;
+["count"] = 7;
+["trigger"] = "activate";
+};
+
+};
+[060] =  {
+["type"] = "time-condition";
+["condition-flags"] = {
+	["true-only-once"] = true;
+
+};
+["value"] = 4803;
+["action"] =  {
+["id"] = 323;
+["count"] = 2;
+["trigger"] = "activate";
+};
+
+};
+[061] =  {
+["type"] = "time-condition";
+["condition-flags"] = {
+	["true-only-once"] = true;
+
+};
+["value"] = 5500;
+["action"] =  {
+["id"] = 325;
+["count"] = 1;
+["trigger"] = "activate";
+};
+
+};
+[062] =  {
+["type"] = "time-condition";
+["condition-flags"] = {
+	["true-only-once"] = true;
+
+};
+["value"] = 3;
+["action"] =  {
+["id"] = 326;
+["count"] = 1;
+["trigger"] = "activate";
+};
+
+};
+[063] =  {
+["type"] = "counter-greater-condition";
+["condition-flags"] = {
+
+};
+["which-player"] = 0;
+["which-counter"] = 1;
+["amount"] = 10;
+["action"] =  {
+["id"] = 465;
+["count"] = 1;
+["trigger"] = "activate";
+};
+
+};
+[064] =  {
+["type"] = "proximity-condition";
+["direct-object"] = 1;
+["condition-flags"] = {
+	["true-only-once"] = true;
+
+};
+["value"] = 57992;
+["action"] =  {
+["id"] = 356;
+["count"] = 8;
+["trigger"] = "activate";
+};
+
+};
+[065] =  {
+["type"] = "proximity-condition";
+["direct-object"] = 2;
+["condition-flags"] = {
+	["true-only-once"] = true;
+
+};
+["value"] = 57992;
+["action"] =  {
+["id"] = 356;
+["count"] = 8;
+["trigger"] = "activate";
+};
+
+};
+[066] =  {
+["type"] = "is-auxiliary-object-condition";
+["subject-object"] = 3;
+["condition-flags"] = {
+	["true-only-once"] = true;
+	["initially-true"] = true;
+
+};
+["action"] =  {
+["id"] = 364;
+["count"] = 3;
+["trigger"] = "activate";
+};
+
+};
+[067] =  {
+["type"] = "is-auxiliary-object-condition";
+["subject-object"] = 3;
+["condition-flags"] = {
+	["true-only-once"] = true;
+	["initially-true"] = true;
+
+};
+["action"] =  {
+["id"] = 367;
+["count"] = 3;
+["trigger"] = "activate";
+};
+
+};
+[068] =  {
+["type"] = "is-target-object-condition";
+["subject-object"] = 1;
+["condition-flags"] = {
+	["true-only-once"] = true;
+	["initially-true"] = true;
+
+};
+["action"] =  {
+["id"] = 370;
+["count"] = 1;
+["trigger"] = "activate";
+};
+
+};
+[069] =  {
+["type"] = "is-target-object-condition";
+["subject-object"] = 2;
+["condition-flags"] = {
+	["true-only-once"] = true;
+	["initially-true"] = true;
+
+};
+["action"] =  {
+["id"] = 371;
+["count"] = 1;
+["trigger"] = "activate";
+};
+
+};
+[070] =  {
+["type"] = "proximity-condition";
+["subject-object"] = 3;
+["direct-object"] = 1;
+["condition-flags"] = {
+	["true-only-once"] = true;
+	["initially-true"] = true;
+
+};
+["value"] = 57992;
+["action"] =  {
+["id"] = 372;
+["count"] = 1;
+["trigger"] = "activate";
+};
+
+};
+[071] =  {
+["type"] = "proximity-condition";
+["subject-object"] = 3;
+["direct-object"] = 2;
+["condition-flags"] = {
+	["true-only-once"] = true;
+	["initially-true"] = true;
+
+};
+["value"] = 57992;
+["action"] =  {
+["id"] = 373;
+["count"] = 1;
+["trigger"] = "activate";
+};
+
+};
+[072] =  {
+["type"] = "is-target-object-condition";
+["subject-object"] = 1;
+["condition-flags"] = {
+	["true-only-once"] = true;
+	["initially-true"] = true;
+
+};
+["action"] =  {
+["id"] = 374;
+["count"] = 2;
+["trigger"] = "activate";
+};
+
+};
+[073] =  {
+["type"] = "is-target-object-condition";
+["subject-object"] = 2;
+["condition-flags"] = {
+	["true-only-once"] = true;
+	["initially-true"] = true;
+
+};
+["action"] =  {
+["id"] = 375;
+["count"] = 2;
+["trigger"] = "activate";
+};
+
+};
+[074] =  {
+["type"] = "is-auxiliary-object-condition";
+["subject-object"] = 3;
+["condition-flags"] = {
+	["true-only-once"] = true;
+	["initially-true"] = true;
+
+};
+["action"] =  {
+["id"] = 377;
+["count"] = 1;
+["trigger"] = "activate";
+};
+
+};
+[075] =  {
+["type"] = "proximity-condition";
+["subject-object"] = 3;
+["direct-object"] = 1;
+["condition-flags"] = {
+	["true-only-once"] = true;
+	["initially-true"] = true;
+
+};
+["value"] = 57992;
+["action"] =  {
+["id"] = 378;
+["count"] = 4;
+["trigger"] = "activate";
+};
+
+};
+[076] =  {
+["type"] = "proximity-condition";
+["subject-object"] = 3;
+["direct-object"] = 2;
+["condition-flags"] = {
+	["true-only-once"] = true;
+	["initially-true"] = true;
+
+};
+["value"] = 57992;
+["action"] =  {
+["id"] = 382;
+["count"] = 4;
+["trigger"] = "activate";
+};
+
+};
+[077] =  {
+["type"] = "proximity-condition";
+["direct-object"] = 5;
+["condition-flags"] = {
+	["true-only-once"] = true;
+
+};
+["value"] = 57992;
+["action"] =  {
+["id"] = 390;
+["count"] = 5;
+["trigger"] = "activate";
+};
+
+};
+[078] =  {
+["type"] = "is-auxiliary-object-condition";
+["subject-object"] = 5;
+["condition-flags"] = {
+	["true-only-once"] = true;
+	["initially-true"] = true;
+
+};
+["action"] =  {
+["id"] = 395;
+["count"] = 1;
+["trigger"] = "activate";
+};
+
+};
+[079] =  {
+["type"] = "proximity-condition";
+["direct-object"] = 6;
+["condition-flags"] = {
+	["true-only-once"] = true;
+
+};
+["value"] = 57992;
+["action"] =  {
+["id"] = 409;
+["count"] = 6;
+["trigger"] = "activate";
+};
+
+};
+[080] =  {
+["type"] = "proximity-condition";
+["direct-object"] = 15;
+["condition-flags"] = {
+	["true-only-once"] = true;
+
+};
+["value"] = 57992;
+["action"] =  {
+["id"] = 396;
+["count"] = 7;
+["trigger"] = "activate";
+};
+
+};
+[081] =  {
+["type"] = "proximity-condition";
+["direct-object"] = 0;
+["condition-flags"] = {
+	["true-only-once"] = true;
+
+};
+["value"] = 57992;
+["action"] =  {
+["id"] = 403;
+["count"] = 6;
+["trigger"] = "activate";
+};
+
+};
+[082] =  {
+["type"] = "proximity-condition";
+["direct-object"] = 18;
+["condition-flags"] = {
+	["true-only-once"] = true;
+
+};
+["value"] = 115612;
+["action"] =  {
+["id"] = 419;
+["count"] = 2;
+["trigger"] = "activate";
+};
+
+};
+[083] =  {
+["type"] = "counter-condition";
+["condition-flags"] = {
+	["true-only-once"] = true;
+
+};
+["which-player"] = 0;
+["which-counter"] = 0;
+["amount"] = 5;
+["action"] =  {
+["id"] = 423;
+["count"] = 1;
+["trigger"] = "activate";
+};
+
+};
+[084] =  {
+["type"] = "proximity-condition";
+["subject-object"] = 1;
+["direct-object"] = 0;
+["condition-flags"] = {
+
+};
+["value"] = 57992;
+["action"] =  {
+["id"] = 818;
+["count"] = 1;
+["trigger"] = "activate";
+};
+
+};
+[085] =  {
+["type"] = "counter-greater-condition";
+["subject-object"] = 1;
+["condition-flags"] = {
+	["true-only-once"] = true;
+	["initially-true"] = true;
+
+};
+["which-player"] = 0;
+["which-counter"] = 0;
+["amount"] = 1;
+["action"] =  {
+["id"] = 426;
+["count"] = 4;
+["trigger"] = "activate";
+};
+
+};
+[086] =  {
+["type"] = "distance-greater-condition";
+["subject-object"] = 1;
+["direct-object"] = 0;
+["condition-flags"] = {
+
+};
+["value"] = 57992;
+["action"] =  {
+["id"] = 430;
+["count"] = 2;
+["trigger"] = "activate";
+};
+
+};
+[087] =  {
+["type"] = "counter-condition";
+["condition-flags"] = {
+	["true-only-once"] = true;
+
+};
+["which-player"] = 0;
+["which-counter"] = 1;
+["amount"] = 21;
+["action"] =  {
+["id"] = 443;
+["count"] = 1;
+["trigger"] = "activate";
+};
+
+};
+[088] =  {
+["type"] = "counter-condition";
+["condition-flags"] = {
+	["true-only-once"] = true;
+
+};
+["which-player"] = 0;
+["which-counter"] = 2;
+["amount"] = 10;
+["action"] =  {
+["id"] = 487;
+["count"] = 1;
+["trigger"] = "activate";
+};
+
+};
+[089] =  {
+["type"] = "destruction-condition";
+["condition-flags"] = {
+	["true-only-once"] = true;
+
+};
+["value"] = 1;
+["action"] =  {
+["id"] = 581;
+["count"] = 1;
+["trigger"] = "activate";
+};
+
+};
+[090] =  {
+["type"] = "velocity-less-than-equal-to-condition";
+["subject-object"] = 1;
+["condition-flags"] = {
+	["true-only-once"] = true;
+
+};
+["value"] = 1280;
+["action"] =  {
+["id"] = 425;
+["count"] = 1;
+["trigger"] = "activate";
+};
+
+};
+[091] =  {
+["type"] = "counter-condition";
+["condition-flags"] = {
+	["true-only-once"] = true;
+
+};
+["which-player"] = 0;
+["which-counter"] = 0;
+["amount"] = 5;
+["action"] =  {
+["id"] = 445;
+["count"] = 1;
+["trigger"] = "activate";
+};
+
+};
+[092] =  {
+["type"] = "proximity-condition";
+["subject-object"] = 1;
+["direct-object"] = 0;
+["condition-flags"] = {
+
+};
+["value"] = 57992;
+["action"] =  {
+["id"] = 446;
+["count"] = 1;
+["trigger"] = "activate";
+};
+
+};
+[093] =  {
+["type"] = "counter-greater-condition";
+["subject-object"] = 1;
+["condition-flags"] = {
+	["true-only-once"] = true;
+	["initially-true"] = true;
+
+};
+["which-player"] = 0;
+["which-counter"] = 0;
+["amount"] = 1;
+["action"] =  {
+["id"] = 447;
+["count"] = 5;
+["trigger"] = "activate";
+};
+
+};
+[094] =  {
+["type"] = "distance-greater-condition";
+["subject-object"] = 1;
+["direct-object"] = 0;
+["condition-flags"] = {
+
+};
+["value"] = 57992;
+["action"] =  {
+["id"] = 452;
+["count"] = 1;
+["trigger"] = "activate";
+};
+
+};
+[095] =  {
+["type"] = "counter-condition";
+["condition-flags"] = {
+	["true-only-once"] = true;
+
+};
+["which-player"] = 0;
+["which-counter"] = 1;
+["amount"] = 11;
+["action"] =  {
+["id"] = 453;
+["count"] = 1;
+["trigger"] = "activate";
+};
+
+};
+[096] =  {
+["type"] = "counter-condition";
+["condition-flags"] = {
+	["true-only-once"] = true;
+
+};
+["which-player"] = 0;
+["which-counter"] = 2;
+["amount"] = 5;
+["action"] =  {
+["id"] = 486;
+["count"] = 1;
+["trigger"] = "activate";
+};
+
+};
+[097] =  {
+["type"] = "destruction-condition";
+["condition-flags"] = {
+	["true-only-once"] = true;
+
+};
+["value"] = 7;
+["action"] =  {
+["id"] = 476;
+["count"] = 1;
+["trigger"] = "activate";
+};
+
+};
+[098] =  {
+["type"] = "owner-condition";
+["subject-object"] = 3;
+["condition-flags"] = {
+	["true-only-once"] = true;
+	["initially-true"] = true;
+
+};
+["value"] = 0;
+["action"] =  {
+["id"] = 477;
+["count"] = 2;
+["trigger"] = "activate";
+};
+
+};
+[099] =  {
+["type"] = "owner-condition";
+["subject-object"] = 4;
+["condition-flags"] = {
+	["true-only-once"] = true;
+	["initially-true"] = true;
+
+};
+["value"] = 0;
+["action"] =  {
+["id"] = 479;
+["count"] = 2;
+["trigger"] = "activate";
+};
+
+};
+[100] =  {
+["type"] = "owner-condition";
+["subject-object"] = 5;
+["condition-flags"] = {
+	["true-only-once"] = true;
+	["initially-true"] = true;
+
+};
+["value"] = 0;
+["action"] =  {
+["id"] = 481;
+["count"] = 1;
+["trigger"] = "activate";
+};
+
+};
+[101] =  {
+["type"] = "owner-condition";
+["subject-object"] = 3;
+["condition-flags"] = {
+	["true-only-once"] = true;
+	["initially-true"] = true;
+
+};
+["value"] = 1;
+["action"] =  {
+["id"] = 482;
+["count"] = 2;
+["trigger"] = "activate";
+};
+
+};
+[102] =  {
+["type"] = "owner-condition";
+["subject-object"] = 4;
+["condition-flags"] = {
+	["true-only-once"] = true;
+	["initially-true"] = true;
+
+};
+["value"] = 1;
+["action"] =  {
+["id"] = 482;
+["count"] = 2;
+["trigger"] = "activate";
+};
+
+};
+[103] =  {
+["type"] = "owner-condition";
+["subject-object"] = 0;
+["condition-flags"] = {
+	["true-only-once"] = true;
+
+};
+["value"] = 1;
+["action"] =  {
+["id"] = 484;
+["count"] = 1;
+["trigger"] = "activate";
+};
+
+};
+[104] =  {
+["type"] = "time-condition";
+["condition-flags"] = {
+	["true-only-once"] = true;
+
+};
+["value"] = 4802;
+["action"] =  {
+["id"] = 497;
+["count"] = 1;
+["trigger"] = "activate";
+};
+
+};
+[105] =  {
+["type"] = "owner-condition";
+["subject-object"] = 2;
+["condition-flags"] = {
+	["true-only-once"] = true;
+
+};
+["value"] = 1;
+["action"] =  {
+["id"] = 599;
+["count"] = 1;
+["trigger"] = "activate";
+};
+
+};
+[106] =  {
+["type"] = "owner-condition";
+["subject-object"] = 3;
+["condition-flags"] = {
+	["true-only-once"] = true;
+
+};
+["value"] = 0;
+["action"] =  {
+["id"] = 600;
+["count"] = 1;
+["trigger"] = "activate";
+};
+
+};
+[107] =  {
+["type"] = "time-condition";
+["condition-flags"] = {
+	["true-only-once"] = true;
+
+};
+["value"] = 49835;
+["action"] =  {
+["id"] = 506;
+["count"] = 4;
+["trigger"] = "activate";
+};
+
+};
+[108] =  {
+["type"] = "time-condition";
+["condition-flags"] = {
+	["true-only-once"] = true;
+
+};
+["value"] = 57992;
+["action"] =  {
+["id"] = 510;
+["count"] = 1;
+["trigger"] = "activate";
+};
+
+};
+[109] =  {
+["type"] = "time-condition";
+["condition-flags"] = {
+	["true-only-once"] = true;
+
+};
+["value"] = 4802;
+["action"] =  {
+["id"] = 543;
+["count"] = 4;
+["trigger"] = "activate";
+};
+
+};
+[110] =  {
+["type"] = "owner-condition";
+["subject-object"] = 2;
+["condition-flags"] = {
+	["true-only-once"] = true;
+
+};
+["value"] = 1;
+["action"] =  {
+["id"] = 548;
+["count"] = 1;
+["trigger"] = "activate";
+};
+
+};
+[111] =  {
+["type"] = "owner-condition";
+["subject-object"] = 3;
+["condition-flags"] = {
+	["true-only-once"] = true;
+
+};
+["value"] = 0;
+["action"] =  {
+["id"] = 549;
+["count"] = 1;
+["trigger"] = "activate";
+};
+
+};
+[112] =  {
+["type"] = "time-condition";
+["condition-flags"] = {
+	["true-only-once"] = true;
+
+};
+["value"] = 4802;
+["action"] =  {
+["id"] = 547;
+["count"] = 1;
+["trigger"] = "activate";
+};
+
+};
+[113] =  {
+["type"] = "owner-condition";
+["subject-object"] = 2;
+["condition-flags"] = {
+	["true-only-once"] = true;
+
+};
+["value"] = 1;
+["action"] =  {
+["id"] = 597;
+["count"] = 1;
+["trigger"] = "activate";
+};
+
+};
+[114] =  {
+["type"] = "owner-condition";
+["subject-object"] = 3;
+["condition-flags"] = {
+	["true-only-once"] = true;
+
+};
+["value"] = 0;
+["action"] =  {
+["id"] = 598;
+["count"] = 1;
+["trigger"] = "activate";
+};
+
+};
+[115] =  {
+["type"] = "half-health-condition";
+["subject-object"] = 2;
+["condition-flags"] = {
+	["true-only-once"] = true;
+
+};
+["action"] =  {
+["id"] = 550;
+["count"] = 1;
+["trigger"] = "activate";
+};
+
+};
+[116] =  {
+["type"] = "no-ships-left-condition";
+["condition-flags"] = {
+	["true-only-once"] = true;
+	["initially-true"] = true;
+
+};
+["value"] = 1;
+["action"] =  {
+["id"] = 551;
+["count"] = 2;
+["trigger"] = "activate";
+};
+
+};
+[117] =  {
+["type"] = "owner-condition";
+["subject-object"] = 1;
+["condition-flags"] = {
+	["true-only-once"] = true;
+
+};
+["value"] = 0;
+["action"] =  {
+["id"] = 553;
+["count"] = 1;
+["trigger"] = "activate";
+};
+
+};
+[118] =  {
+["type"] = "proximity-condition";
+["subject-object"] = 4;
+["direct-object"] = 1;
+["condition-flags"] = {
+	["true-only-once"] = true;
+
+};
+["value"] = 57992;
+["action"] =  {
+["id"] = 583;
+["count"] = 1;
+["trigger"] = "activate";
+};
+
+};
+[119] =  {
+["type"] = "proximity-condition";
+["subject-object"] = 5;
+["direct-object"] = 0;
+["condition-flags"] = {
+	["true-only-once"] = true;
+
+};
+["value"] = 57992;
+["action"] =  {
+["id"] = 584;
+["count"] = 1;
+["trigger"] = "activate";
+};
+
+};
+[120] =  {
+["type"] = "destruction-condition";
+["condition-flags"] = {
+	["true-only-once"] = true;
+
+};
+["value"] = 0;
+["action"] =  {
+["id"] = 585;
+["count"] = 3;
+["trigger"] = "activate";
+};
+
+};
+[121] =  {
+["type"] = "destruction-condition";
+["condition-flags"] = {
+	["true-only-once"] = true;
+
+};
+["value"] = 1;
+["action"] =  {
+["id"] = 588;
+["count"] = 3;
+["trigger"] = "activate";
+};
+
+};
+[122] =  {
+["type"] = "counter-greater-condition";
+["condition-flags"] = {
+	["true-only-once"] = true;
+
+};
+["which-player"] = 0;
+["which-counter"] = 0;
+["amount"] = 3;
+["action"] =  {
+["id"] = 591;
+["count"] = 1;
+["trigger"] = "activate";
+};
+
+};
+[123] =  {
+["type"] = "counter-greater-condition";
+["condition-flags"] = {
+
+};
+["which-player"] = 1;
+["which-counter"] = 0;
+["amount"] = 3;
+["action"] =  {
+["id"] = 592;
+["count"] = 1;
+["trigger"] = "activate";
+};
+
+};
+[124] =  {
+["type"] = "owner-condition";
+["subject-object"] = 8;
+["condition-flags"] = {
+	["true-only-once"] = true;
+
+};
+["value"] = 0;
+["action"] =  {
+["id"] = 595;
+["count"] = 1;
+["trigger"] = "activate";
+};
+
+};
+[125] =  {
+["type"] = "owner-condition";
+["subject-object"] = 8;
+["condition-flags"] = {
+	["true-only-once"] = true;
+
+};
+["value"] = 1;
+["action"] =  {
+["id"] = 596;
+["count"] = 1;
+["trigger"] = "activate";
+};
+
+};
+[126] =  {
+["type"] = "time-condition";
+["condition-flags"] = {
+	["true-only-once"] = true;
+
+};
+["value"] = 0;
+["action"] =  {
+["id"] = 601;
+["count"] = 4;
+["trigger"] = "activate";
+};
+
+};
+[127] =  {
+["type"] = "current-computer-condition";
+["condition-flags"] = {
+	["true-only-once"] = true;
+
+};
+["x"] = 4;
+["y"] = -880292985;
+["action"] =  {
+["id"] = 605;
+["count"] = 1;
+["trigger"] = "activate";
+};
+
+};
+[128] =  {
+["type"] = "current-message-condition";
+["condition-flags"] = {
+	["true-only-once"] = true;
+
+};
+["x"] = 5701;
+["y"] = 3;
+["action"] =  {
+["id"] = 606;
+["count"] = 1;
+["trigger"] = "activate";
+};
+
+};
+[129] =  {
+["type"] = "current-computer-condition";
+["condition-flags"] = {
+	["true-only-once"] = true;
+	["initially-true"] = true;
+
+};
+["x"] = 1;
+["y"] = -880292985;
+["action"] =  {
+["id"] = 607;
+["count"] = 3;
+["trigger"] = "activate";
+};
+
+};
+[130] =  {
+["type"] = "current-message-condition";
+["condition-flags"] = {
+	["true-only-once"] = true;
+
+};
+["x"] = 5704;
+["y"] = 6;
+["action"] =  {
+["id"] = 610;
+["count"] = 3;
+["trigger"] = "activate";
+};
+
+};
+[131] =  {
+["type"] = "zoom-level-condition";
+["condition-flags"] = {
+	["true-only-once"] = true;
+	["initially-true"] = true;
+
+};
+["value"] = 0;
+["action"] =  {
+["id"] = 613;
+["count"] = 1;
+["trigger"] = "activate";
+};
+
+};
+[132] =  {
+["type"] = "current-message-condition";
+["condition-flags"] = {
+	["true-only-once"] = true;
+
+};
+["x"] = 5711;
+["y"] = 2;
+["action"] =  {
+["id"] = 614;
+["count"] = 3;
+["trigger"] = "activate";
+};
+
+};
+[133] =  {
+["type"] = "proximity-condition";
+["subject-object"] = 0;
+["direct-object"] = 5;
+["condition-flags"] = {
+	["true-only-once"] = true;
+	["initially-true"] = true;
+
+};
+["value"] = 57992;
+["action"] =  {
+["id"] = 617;
+["count"] = 2;
+["trigger"] = "activate";
+};
+
+};
+[134] =  {
+["type"] = "proximity-condition";
+["subject-object"] = 4;
+["direct-object"] = 5;
+["condition-flags"] = {
+	["true-only-once"] = true;
+	["initially-true"] = true;
+
+};
+["value"] = 57992;
+["action"] =  {
+["id"] = 619;
+["count"] = 2;
+["trigger"] = "activate";
+};
+
+};
+[135] =  {
+["type"] = "current-message-condition";
+["condition-flags"] = {
+	["true-only-once"] = true;
+
+};
+["x"] = 5711;
+["y"] = 4;
+["action"] =  {
+["id"] = 621;
+["count"] = 2;
+["trigger"] = "activate";
+};
+
+};
+[136] =  {
+["type"] = "zoom-level-condition";
+["condition-flags"] = {
+	["true-only-once"] = true;
+	["initially-true"] = true;
+
+};
+["value"] = 7;
+["action"] =  {
+["id"] = 623;
+["count"] = 1;
+["trigger"] = "activate";
+};
+
+};
+[137] =  {
+["type"] = "current-message-condition";
+["condition-flags"] = {
+	["true-only-once"] = true;
+
+};
+["x"] = 5715;
+["y"] = 1;
+["action"] =  {
+["id"] = 624;
+["count"] = 2;
+["trigger"] = "activate";
+};
+
+};
+[138] =  {
+["type"] = "current-message-condition";
+["condition-flags"] = {
+	["true-only-once"] = true;
+
+};
+["x"] = 5715;
+["y"] = 3;
+["action"] =  {
+["id"] = 626;
+["count"] = 1;
+["trigger"] = "activate";
+};
+
+};
+[139] =  {
+["type"] = "current-message-condition";
+["condition-flags"] = {
+	["true-only-once"] = true;
+
+};
+["x"] = 5715;
+["y"] = 6;
+["action"] =  {
+["id"] = 627;
+["count"] = 2;
+["trigger"] = "activate";
+};
+
+};
+[140] =  {
+["type"] = "zoom-level-condition";
+["condition-flags"] = {
+	["true-only-once"] = true;
+	["initially-true"] = true;
+
+};
+["value"] = 1;
+["action"] =  {
+["id"] = 629;
+["count"] = 1;
+["trigger"] = "activate";
+};
+
+};
+[141] =  {
+["type"] = "current-message-condition";
+["condition-flags"] = {
+	["true-only-once"] = true;
+
+};
+["x"] = 5721;
+["y"] = 2;
+["action"] =  {
+["id"] = 630;
+["count"] = 1;
+["trigger"] = "activate";
+};
+
+};
+[142] =  {
+["type"] = "current-message-condition";
+["condition-flags"] = {
+	["true-only-once"] = true;
+
+};
+["x"] = 5721;
+["y"] = 4;
+["action"] =  {
+["id"] = 631;
+["count"] = 2;
+["trigger"] = "activate";
+};
+
+};
+[143] =  {
+["type"] = "current-message-condition";
+["condition-flags"] = {
+	["true-only-once"] = true;
+
+};
+["x"] = 5721;
+["y"] = 3;
+["action"] =  {
+["id"] = 633;
+["count"] = 1;
+["trigger"] = "activate";
+};
+
+};
+[144] =  {
+["type"] = "current-message-condition";
+["condition-flags"] = {
+	["true-only-once"] = true;
+
+};
+["x"] = 5721;
+["y"] = 11;
+["action"] =  {
+["id"] = 634;
+["count"] = 1;
+["trigger"] = "activate";
+};
+
+};
+[145] =  {
+["type"] = "current-message-condition";
+["condition-flags"] = {
+	["true-only-once"] = true;
+
+};
+["x"] = 5721;
+["y"] = 17;
+["action"] =  {
+["id"] = 635;
+["count"] = 6;
+["trigger"] = "activate";
+};
+
+};
+[146] =  {
+["type"] = "destruction-condition";
+["condition-flags"] = {
+	["true-only-once"] = true;
+	["initially-true"] = true;
+
+};
+["value"] = 7;
+["action"] =  {
+["id"] = 641;
+["count"] = 1;
+["trigger"] = "activate";
+};
+
+};
+[147] =  {
+["type"] = "destruction-condition";
+["condition-flags"] = {
+	["true-only-once"] = true;
+	["initially-true"] = true;
+
+};
+["value"] = 8;
+["action"] =  {
+["id"] = 642;
+["count"] = 1;
+["trigger"] = "activate";
+};
+
+};
+[148] =  {
+["type"] = "current-computer-condition";
+["condition-flags"] = {
+	["true-only-once"] = true;
+	["initially-true"] = true;
+
+};
+["x"] = 1;
+["y"] = 3;
+["action"] =  {
+["id"] = 664;
+["count"] = 2;
+["trigger"] = "activate";
+};
+
+};
+[149] =  {
+["type"] = "current-computer-condition";
+["condition-flags"] = {
+	["true-only-once"] = true;
+	["initially-true"] = true;
+
+};
+["x"] = 4;
+["y"] = -880292985;
+["action"] =  {
+["id"] = 666;
+["count"] = 1;
+["trigger"] = "activate";
+};
+
+};
+[150] =  {
+["type"] = "time-condition";
+["condition-flags"] = {
+	["true-only-once"] = true;
+
+};
+["value"] = 0;
+["action"] =  {
+["id"] = 643;
+["count"] = 5;
+["trigger"] = "activate";
+};
+
+};
+[151] =  {
+["type"] = "current-message-condition";
+["condition-flags"] = {
+	["true-only-once"] = true;
+
+};
+["x"] = 5826;
+["y"] = -1375731712;
+["action"] =  {
+["id"] = 648;
+["count"] = 1;
+["trigger"] = "activate";
+};
+
+};
+[152] =  {
+["type"] = "is-auxiliary-object-condition";
+["subject-object"] = 1;
+["condition-flags"] = {
+	["true-only-once"] = true;
+	["initially-true"] = true;
+
+};
+["action"] =  {
+["id"] = 649;
+["count"] = 1;
+["trigger"] = "activate";
+};
+
+};
+[153] =  {
+["type"] = "current-message-condition";
+["condition-flags"] = {
+	["true-only-once"] = true;
+
+};
+["x"] = 5826;
+["y"] = -1275068416;
+["action"] =  {
+["id"] = 663;
+["count"] = 1;
+["trigger"] = "activate";
+};
+
+};
+[154] =  {
+["type"] = "is-auxiliary-object-condition";
+["subject-object"] = 6;
+["condition-flags"] = {
+	["true-only-once"] = true;
+	["initially-true"] = true;
+
+};
+["action"] =  {
+["id"] = 650;
+["count"] = 2;
+["trigger"] = "activate";
+};
+
+};
+[155] =  {
+["type"] = "current-message-condition";
+["condition-flags"] = {
+	["true-only-once"] = true;
+
+};
+["x"] = 5858;
+["y"] = -1985675264;
+["action"] =  {
+["id"] = 651;
+["count"] = 3;
+["trigger"] = "activate";
+};
+
+};
+[156] =  {
+["type"] = "is-auxiliary-object-condition";
+["subject-object"] = 5;
+["condition-flags"] = {
+	["true-only-once"] = true;
+	["initially-true"] = true;
+
+};
+["action"] =  {
+["id"] = 654;
+["count"] = 1;
+["trigger"] = "activate";
+};
+
+};
+[157] =  {
+["type"] = "current-message-condition";
+["condition-flags"] = {
+	["true-only-once"] = true;
+
+};
+["x"] = 5826;
+["y"] = -1258291200;
+["action"] =  {
+["id"] = 655;
+["count"] = 8;
+["trigger"] = "activate";
+};
+
+};
+[158] =  {
+["type"] = "is-auxiliary-object-condition";
+["subject-object"] = 1;
+["condition-flags"] = {
+	["true-only-once"] = true;
+	["initially-true"] = true;
+
+};
+["action"] =  {
+["id"] = 667;
+["count"] = 1;
+["trigger"] = "activate";
+};
+
+};
+[159] =  {
+["type"] = "current-message-condition";
+["condition-flags"] = {
+	["true-only-once"] = true;
+
+};
+["x"] = 5858;
+["y"] = -2003763200;
+["action"] =  {
+["id"] = 668;
+["count"] = 7;
+["trigger"] = "activate";
+};
+
+};
+[160] =  {
+["type"] = "is-auxiliary-object-condition";
+["subject-object"] = 5;
+["condition-flags"] = {
+	["true-only-once"] = true;
+	["initially-true"] = true;
+
+};
+["action"] =  {
+["id"] = 675;
+["count"] = 1;
+["trigger"] = "activate";
+};
+
+};
+[161] =  {
+["type"] = "current-message-condition";
+["condition-flags"] = {
+	["true-only-once"] = true;
+
+};
+["x"] = 5839;
+["y"] = -2147483648;
+["action"] =  {
+["id"] = 676;
+["count"] = 6;
+["trigger"] = "activate";
+};
+
+};
+[162] =  {
+["type"] = "is-auxiliary-object-condition";
+["subject-object"] = 2;
+["condition-flags"] = {
+	["true-only-once"] = true;
+	["initially-true"] = true;
+
+};
+["action"] =  {
+["id"] = 682;
+["count"] = 1;
+["trigger"] = "activate";
+};
+
+};
+[163] =  {
+["type"] = "current-message-condition";
+["condition-flags"] = {
+	["true-only-once"] = true;
+
+};
+["x"] = 5826;
+["y"] = -1442840576;
+["action"] =  {
+["id"] = 683;
+["count"] = 4;
+["trigger"] = "activate";
+};
+
+};
+[164] =  {
+["type"] = "current-message-condition";
+["condition-flags"] = {
+	["true-only-once"] = true;
+
+};
+["x"] = 5826;
+["y"] = -1442840576;
+["action"] =  {
+["id"] = 687;
+["count"] = 2;
+["trigger"] = "activate";
+};
+
+};
+[165] =  {
+["type"] = "is-auxiliary-object-condition";
+["subject-object"] = 5;
+["condition-flags"] = {
+	["true-only-once"] = true;
+	["initially-true"] = true;
+
+};
+["action"] =  {
+["id"] = 689;
+["count"] = 1;
+["trigger"] = "activate";
+};
+
+};
+[166] =  {
+["type"] = "current-message-condition";
+["condition-flags"] = {
+	["true-only-once"] = true;
+
+};
+["x"] = 5827;
+["y"] = -1207959552;
+["action"] =  {
+["id"] = 690;
+["count"] = 1;
+["trigger"] = "activate";
+};
+
+};
+[167] =  {
+["type"] = "is-auxiliary-object-condition";
+["subject-object"] = 6;
+["condition-flags"] = {
+	["true-only-once"] = true;
+	["initially-true"] = true;
+
+};
+["action"] =  {
+["id"] = 691;
+["count"] = 1;
+["trigger"] = "activate";
+};
+
+};
+[168] =  {
+["type"] = "current-message-condition";
+["condition-flags"] = {
+	["true-only-once"] = true;
+
+};
+["x"] = 5826;
+["y"] = -1593835520;
+["action"] =  {
+["id"] = 692;
+["count"] = 4;
+["trigger"] = "activate";
+};
+
+};
+[169] =  {
+["type"] = "is-target-object-condition";
+["subject-object"] = 1;
+["condition-flags"] = {
+	["true-only-once"] = true;
+	["initially-true"] = true;
+
+};
+["action"] =  {
+["id"] = 696;
+["count"] = 1;
+["trigger"] = "activate";
+};
+
+};
+[170] =  {
+["type"] = "current-message-condition";
+["condition-flags"] = {
+	["true-only-once"] = true;
+
+};
+["x"] = 5858;
+["y"] = -2003173376;
+["action"] =  {
+["id"] = 697;
+["count"] = 1;
+["trigger"] = "activate";
+};
+
+};
+[171] =  {
+["type"] = "is-target-object-condition";
+["subject-object"] = 6;
+["condition-flags"] = {
+	["true-only-once"] = true;
+	["initially-true"] = true;
+
+};
+["action"] =  {
+["id"] = 698;
+["count"] = 1;
+["trigger"] = "activate";
+};
+
+};
+[172] =  {
+["type"] = "current-message-condition";
+["condition-flags"] = {
+	["true-only-once"] = true;
+
+};
+["x"] = 5826;
+["y"] = -1426063360;
+["action"] =  {
+["id"] = 699;
+["count"] = 2;
+["trigger"] = "activate";
+};
+
+};
+[173] =  {
+["type"] = "is-target-object-condition";
+["subject-object"] = 7;
+["direct-object"] = 1;
+["condition-flags"] = {
+	["true-only-once"] = true;
+	["initially-true"] = true;
+
+};
+["action"] =  {
+["id"] = 701;
+["count"] = 1;
+["trigger"] = "activate";
+};
+
+};
+[174] =  {
+["type"] = "current-message-condition";
+["condition-flags"] = {
+
+};
+["x"] = 5858;
+["y"] = -2136604672;
+["action"] =  {
+["id"] = 702;
+["count"] = 3;
+["trigger"] = "activate";
+};
+
+};
+[175] =  {
+["type"] = "is-target-object-condition";
+["subject-object"] = 1;
+["condition-flags"] = {
+	["true-only-once"] = true;
+	["initially-true"] = true;
+
+};
+["action"] =  {
+["id"] = 705;
+["count"] = 1;
+["trigger"] = "activate";
+};
+
+};
+[176] =  {
+["type"] = "current-message-condition";
+["condition-flags"] = {
+
+};
+["x"] = 5827;
+["y"] = -2147483648;
+["action"] =  {
+["id"] = 706;
+["count"] = 1;
+["trigger"] = "activate";
+};
+
+};
+[177] =  {
+["type"] = "is-target-object-condition";
+["subject-object"] = 6;
+["condition-flags"] = {
+	["true-only-once"] = true;
+	["initially-true"] = true;
+
+};
+["action"] =  {
+["id"] = 707;
+["count"] = 1;
+["trigger"] = "activate";
+};
+
+};
+[178] =  {
+["type"] = "current-message-condition";
+["condition-flags"] = {
+
+};
+["x"] = 5827;
+["y"] = -2097152000;
+["action"] =  {
+["id"] = 708;
+["count"] = 1;
+["trigger"] = "activate";
+};
+
+};
+[179] =  {
+["type"] = "is-target-object-condition";
+["subject-object"] = 7;
+["condition-flags"] = {
+	["true-only-once"] = true;
+	["initially-true"] = true;
+
+};
+["action"] =  {
+["id"] = 709;
+["count"] = 1;
+["trigger"] = "activate";
+};
+
+};
+[180] =  {
+["type"] = "current-message-condition";
+["condition-flags"] = {
+	["true-only-once"] = true;
+
+};
+["x"] = 5827;
+["y"] = -1795162112;
+["action"] =  {
+["id"] = 710;
+["count"] = 2;
+["trigger"] = "activate";
+};
+
+};
+[181] =  {
+["type"] = "is-target-object-condition";
+["subject-object"] = 1;
+["condition-flags"] = {
+	["true-only-once"] = true;
+	["initially-true"] = true;
+
+};
+["action"] =  {
+["id"] = 712;
+["count"] = 1;
+["trigger"] = "activate";
+};
+
+};
+[182] =  {
+["type"] = "current-message-condition";
+["condition-flags"] = {
+	["true-only-once"] = true;
+
+};
+["x"] = 5858;
+["y"] = -2137849856;
+["action"] =  {
+["id"] = 713;
+["count"] = 1;
+["trigger"] = "activate";
+};
+
+};
+[183] =  {
+["type"] = "autopilot-condition";
+["condition-flags"] = {
+	["true-only-once"] = true;
+	["initially-true"] = true;
+
+};
+["action"] =  {
+["id"] = 714;
+["count"] = 6;
+["trigger"] = "activate";
+};
+
+};
+[184] =  {
+["type"] = "proximity-condition";
+["subject-object"] = 1;
+["direct-object"] = 5;
+["condition-flags"] = {
+	["true-only-once"] = true;
+	["initially-true"] = true;
+
+};
+["value"] = 57992;
+["action"] =  {
+["id"] = 720;
+["count"] = 4;
+["trigger"] = "activate";
+};
+
+};
+[185] =  {
+["type"] = "proximity-condition";
+["direct-object"] = 6;
+["condition-flags"] = {
+	["true-only-once"] = true;
+	["initially-true"] = true;
+
+};
+["value"] = 57992;
+["action"] =  {
+["id"] = 724;
+["count"] = 1;
+["trigger"] = "activate";
+};
+
+};
+[186] =  {
+["type"] = "not-autopilot-condition";
+["condition-flags"] = {
+	["true-only-once"] = true;
+	["initially-true"] = true;
+
+};
+["action"] =  {
+["id"] = 725;
+["count"] = 3;
+["trigger"] = "activate";
+};
+
+};
+[187] =  {
+["type"] = "time-condition";
+["condition-flags"] = {
+	["true-only-once"] = true;
+
+};
+["value"] = 0;
+["action"] =  {
+["id"] = 729;
+["count"] = 6;
+["trigger"] = "activate";
+};
+
+};
+[188] =  {
+["type"] = "current-message-condition";
+["subject-object"] = 1;
+["condition-flags"] = {
+	["true-only-once"] = true;
+
+};
+["x"] = 5900;
+["y"] = 2;
+["action"] =  {
+["id"] = 735;
+["count"] = 1;
+["trigger"] = "activate";
+};
+
+};
+[189] =  {
+["type"] = "is-auxiliary-object-condition";
+["subject-object"] = 1;
+["condition-flags"] = {
+	["true-only-once"] = true;
+	["initially-true"] = true;
+
+};
+["action"] =  {
+["id"] = 736;
+["count"] = 1;
+["trigger"] = "activate";
+};
+
+};
+[190] =  {
+["type"] = "current-message-condition";
+["condition-flags"] = {
+	["true-only-once"] = true;
+
+};
+["x"] = 5905;
+["y"] = 3;
+["action"] =  {
+["id"] = 737;
+["count"] = 1;
+["trigger"] = "activate";
+};
+
+};
+[191] =  {
+["type"] = "current-computer-condition";
+["condition-flags"] = {
+	["true-only-once"] = true;
+	["initially-true"] = true;
+
+};
+["x"] = 2;
+["y"] = -880292985;
+["action"] =  {
+["id"] = 738;
+["count"] = 1;
+["trigger"] = "activate";
+};
+
+};
+[192] =  {
+["type"] = "current-message-condition";
+["condition-flags"] = {
+	["true-only-once"] = true;
+
+};
+["x"] = 5910;
+["y"] = 5;
+["action"] =  {
+["id"] = 739;
+["count"] = 1;
+["trigger"] = "activate";
+};
+
+};
+[193] =  {
+["type"] = "current-message-condition";
+["condition-flags"] = {
+	["true-only-once"] = true;
+
+};
+["x"] = 5910;
+["y"] = 6;
+["action"] =  {
+["id"] = 740;
+["count"] = 2;
+["trigger"] = "activate";
+};
+
+};
+[194] =  {
+["type"] = "current-message-condition";
+["condition-flags"] = {
+	["true-only-once"] = true;
+
+};
+["x"] = 5910;
+["y"] = 8;
+["action"] =  {
+["id"] = 742;
+["count"] = 1;
+["trigger"] = "activate";
+};
+
+};
+[195] =  {
+["type"] = "current-message-condition";
+["condition-flags"] = {
+	["true-only-once"] = true;
+
+};
+["x"] = 5910;
+["y"] = 10;
+["action"] =  {
+["id"] = 743;
+["count"] = 2;
+["trigger"] = "activate";
+};
+
+};
+[196] =  {
+["type"] = "object-is-being-built-condition";
+["condition-flags"] = {
+	["true-only-once"] = true;
+	["initially-true"] = true;
+
+};
+["action"] =  {
+["id"] = 745;
+["count"] = 2;
+["trigger"] = "activate";
+};
+
+};
+[197] =  {
+["type"] = "counter-greater-condition";
+["condition-flags"] = {
+	["true-only-once"] = true;
+	["initially-true"] = true;
+
+};
+["which-player"] = 0;
+["which-counter"] = 0;
+["amount"] = 1;
+["action"] =  {
+["id"] = 747;
+["count"] = 2;
+["trigger"] = "activate";
+};
+
+};
+[198] =  {
+["type"] = "is-auxiliary-object-condition";
+["subject-object"] = 5;
+["condition-flags"] = {
+	["true-only-once"] = true;
+	["initially-true"] = true;
+
+};
+["action"] =  {
+["id"] = 751;
+["count"] = 1;
+["trigger"] = "activate";
+};
+
+};
+[199] =  {
+["type"] = "current-message-condition";
+["condition-flags"] = {
+	["true-only-once"] = true;
+
+};
+["x"] = 5935;
+["y"] = 3;
+["action"] =  {
+["id"] = 752;
+["count"] = 2;
+["trigger"] = "activate";
+};
+
+};
+[200] =  {
+["type"] = "is-target-object-condition";
+["subject-object"] = 2;
+["condition-flags"] = {
+	["true-only-once"] = true;
+
+};
+["action"] =  {
+["id"] = 754;
+["count"] = 6;
+["trigger"] = "activate";
+};
+
+};
+[201] =  {
+["type"] = "counter-condition";
+["condition-flags"] = {
+	["true-only-once"] = true;
+
+};
+["which-player"] = 0;
+["which-counter"] = 0;
+["amount"] = 2;
+["action"] =  {
+["id"] = 760;
+["count"] = 1;
+["trigger"] = "activate";
+};
+
+};
+[202] =  {
+["type"] = "current-message-condition";
+["condition-flags"] = {
+	["true-only-once"] = true;
+
+};
+["x"] = 5945;
+["y"] = 2;
+["action"] =  {
+["id"] = 761;
+["count"] = 1;
+["trigger"] = "activate";
+};
+
+};
+[203] =  {
+["type"] = "current-message-condition";
+["condition-flags"] = {
+	["true-only-once"] = true;
+
+};
+["x"] = 5945;
+["y"] = 3;
+["action"] =  {
+["id"] = 762;
+["count"] = 2;
+["trigger"] = "activate";
+};
+
+};
+[204] =  {
+["type"] = "is-auxiliary-object-condition";
+["subject-object"] = 2;
+["condition-flags"] = {
+	["true-only-once"] = true;
+	["initially-true"] = true;
+
+};
+["action"] =  {
+["id"] = 764;
+["count"] = 3;
+["trigger"] = "activate";
+};
+
+};
+[205] =  {
+["type"] = "is-target-object-condition";
+["subject-object"] = 1;
+["condition-flags"] = {
+	["true-only-once"] = true;
+	["initially-true"] = true;
+
+};
+["action"] =  {
+["id"] = 767;
+["count"] = 4;
+["trigger"] = "activate";
+};
+
+};
+[206] =  {
+["type"] = "proximity-condition";
+["subject-object"] = 1;
+["direct-object"] = 2;
+["condition-flags"] = {
+	["true-only-once"] = true;
+	["initially-true"] = true;
+
+};
+["value"] = 57992;
+["action"] =  {
+["id"] = 771;
+["count"] = 2;
+["trigger"] = "activate";
+};
+
+};
+[207] =  {
+["type"] = "is-auxiliary-object-condition";
+["subject-object"] = 6;
+["condition-flags"] = {
+	["true-only-once"] = true;
+	["initially-true"] = true;
+
+};
+["action"] =  {
+["id"] = 773;
+["count"] = 2;
+["trigger"] = "activate";
+};
+
+};
+[208] =  {
+["type"] = "direct-is-subject-target-condition";
+["subject-object"] = 6;
+["direct-object"] = 1;
+["condition-flags"] = {
+	["true-only-once"] = true;
+	["initially-true"] = true;
+
+};
+["action"] =  {
+["id"] = 775;
+["count"] = 1;
+["trigger"] = "activate";
+};
+
+};
+[209] =  {
+["type"] = "current-message-condition";
+["condition-flags"] = {
+	["true-only-once"] = true;
+
+};
+["x"] = 5970;
+["y"] = 3;
+["action"] =  {
+["id"] = 776;
+["count"] = 5;
+["trigger"] = "activate";
+};
+
+};
+[210] =  {
+["type"] = "owner-condition";
+["subject-object"] = 1;
+["condition-flags"] = {
+	["true-only-once"] = true;
+	["initially-true"] = true;
+
+};
+["value"] = 0;
+["action"] =  {
+["id"] = 781;
+["count"] = 2;
+["trigger"] = "activate";
+};
+
+};
+[211] =  {
+["type"] = "current-message-condition";
+["condition-flags"] = {
+	["true-only-once"] = true;
+
+};
+["x"] = 5975;
+["y"] = 2;
+["action"] =  {
+["id"] = 783;
+["count"] = 1;
+["trigger"] = "activate";
+};
+
+};
+[212] =  {
+["type"] = "is-auxiliary-object-condition";
+["subject-object"] = 6;
+["condition-flags"] = {
+	["true-only-once"] = true;
+	["initially-true"] = true;
+
+};
+["action"] =  {
+["id"] = 784;
+["count"] = 2;
+["trigger"] = "activate";
+};
+
+};
+[213] =  {
+["type"] = "is-target-object-condition";
+["subject-object"] = 4;
+["condition-flags"] = {
+	["true-only-once"] = true;
+	["initially-true"] = true;
+
+};
+["action"] =  {
+["id"] = 786;
+["count"] = 2;
+["trigger"] = "activate";
+};
+
+};
+[214] =  {
+["type"] = "direct-is-subject-target-condition";
+["subject-object"] = 6;
+["direct-object"] = 4;
+["condition-flags"] = {
+	["true-only-once"] = true;
+	["initially-true"] = true;
+
+};
+["action"] =  {
+["id"] = 788;
+["count"] = 2;
+["trigger"] = "activate";
+};
+
+};
+[215] =  {
+["type"] = "direct-is-subject-target-condition";
+["subject-object"] = 5;
+["direct-object"] = 4;
+["condition-flags"] = {
+	["true-only-once"] = true;
+	["initially-true"] = true;
+
+};
+["action"] =  {
+["id"] = 790;
+["count"] = 2;
+["trigger"] = "activate";
+};
+
+};
+[216] =  {
+["type"] = "direct-is-subject-target-condition";
+["subject-object"] = 2;
+["direct-object"] = 4;
+["condition-flags"] = {
+	["true-only-once"] = true;
+	["initially-true"] = true;
+
+};
+["action"] =  {
+["id"] = 792;
+["count"] = 1;
+["trigger"] = "activate";
+};
+
+};
+[217] =  {
+["type"] = "current-message-condition";
+["condition-flags"] = {
+	["true-only-once"] = true;
+
+};
+["x"] = 7000;
+["y"] = 2;
+["action"] =  {
+["id"] = 793;
+["count"] = 3;
+["trigger"] = "activate";
+};
+
+};
+[218] =  {
+["type"] = "is-target-object-condition";
+["subject-object"] = 0;
+["condition-flags"] = {
+	["true-only-once"] = true;
+	["initially-true"] = true;
+
+};
+["action"] =  {
+["id"] = 796;
+["count"] = 4;
+["trigger"] = "activate";
+};
+
+};
+[219] =  {
+["type"] = "direct-is-subject-target-condition";
+["subject-object"] = 2;
+["direct-object"] = 0;
+["condition-flags"] = {
+	["true-only-once"] = true;
+	["initially-true"] = true;
+
+};
+["action"] =  {
+["id"] = 800;
+["count"] = 1;
+["trigger"] = "activate";
+};
+
+};
+[220] =  {
+["type"] = "direct-is-subject-target-condition";
+["subject-object"] = 5;
+["direct-object"] = 0;
+["condition-flags"] = {
+	["true-only-once"] = true;
+	["initially-true"] = true;
+
+};
+["action"] =  {
+["id"] = 801;
+["count"] = 1;
+["trigger"] = "activate";
+};
+
+};
+[221] =  {
+["type"] = "direct-is-subject-target-condition";
+["subject-object"] = 6;
+["direct-object"] = 0;
+["condition-flags"] = {
+	["true-only-once"] = true;
+	["initially-true"] = true;
+
+};
+["action"] =  {
+["id"] = 802;
+["count"] = 2;
+["trigger"] = "activate";
+};
+
+};
+[222] =  {
+["type"] = "current-message-condition";
+["condition-flags"] = {
+	["true-only-once"] = true;
+
+};
+["x"] = 7010;
+["y"] = 3;
+["action"] =  {
+["id"] = 804;
+["count"] = 2;
+["trigger"] = "activate";
+};
+
+};
+[223] =  {
+["type"] = "current-computer-condition";
+["condition-flags"] = {
+	["true-only-once"] = true;
+	["initially-true"] = true;
+
+};
+["x"] = 3;
+["y"] = -880292985;
+["action"] =  {
+["id"] = 806;
+["count"] = 1;
+["trigger"] = "activate";
+};
+
+};
+[224] =  {
+["type"] = "current-message-condition";
+["condition-flags"] = {
+	["true-only-once"] = true;
+
+};
+["x"] = 7015;
+["y"] = 2;
+["action"] =  {
+["id"] = 807;
+["count"] = 1;
+["trigger"] = "activate";
+};
+
+};
+[225] =  {
+["type"] = "is-auxiliary-object-condition";
+["subject-object"] = 2;
+["condition-flags"] = {
+	["true-only-once"] = true;
+	["initially-true"] = true;
+
+};
+["action"] =  {
+["id"] = 808;
+["count"] = 4;
+["trigger"] = "activate";
+};
+
+};
+[226] =  {
+["type"] = "subject-is-player-condition";
+["subject-object"] = 2;
+["condition-flags"] = {
+	["true-only-once"] = true;
+	["initially-true"] = true;
+
+};
+["action"] =  {
+["id"] = 812;
+["count"] = 1;
+["trigger"] = "activate";
+};
+
+};
+[227] =  {
+["type"] = "current-message-condition";
+["condition-flags"] = {
+	["true-only-once"] = true;
+
+};
+["x"] = 5970;
+["y"] = 4;
+["action"] =  {
+["id"] = 799;
+["count"] = 1;
+["trigger"] = "activate";
+};
+
+};
+[228] =  {
+["type"] = "current-message-condition";
+["condition-flags"] = {
+	["true-only-once"] = true;
+
+};
+["x"] = 7025;
+["y"] = 5;
+["action"] =  {
+["id"] = 813;
+["count"] = 4;
+["trigger"] = "activate";
+};
+
+};
+[229] =  {
+["type"] = "no-ships-left-condition";
+["condition-flags"] = {
+	["true-only-once"] = true;
+	["initially-true"] = true;
+
+};
+["value"] = 1;
+["action"] =  {
+["id"] = 817;
+["count"] = 1;
+["trigger"] = "activate";
+};
+
+};
+[230] =  {
+["type"] = "no-condition";
+["subject-object"] = 0;
+["direct-object"] = 0;
+["condition-flags"] = {
+
+};
+["action"] =  {
+["id"] = 0;
+["count"] = 0;
+["trigger"] = "activate";
+};
+
+};
+[231] =  {
+["type"] = "no-condition";
+["subject-object"] = 0;
+["direct-object"] = 0;
+["condition-flags"] = {
+
+};
+["action"] =  {
+["id"] = 0;
+["count"] = 0;
+["trigger"] = "activate";
+};
+
+};
+[232] =  {
+["type"] = "no-condition";
+["subject-object"] = 0;
+["direct-object"] = 0;
+["condition-flags"] = {
+
+};
+["action"] =  {
+["id"] = 0;
+["count"] = 0;
+["trigger"] = "activate";
+};
+
+};
+[233] =  {
+["type"] = "no-condition";
+["subject-object"] = 0;
+["direct-object"] = 0;
+["condition-flags"] = {
+
+};
+["action"] =  {
+["id"] = 0;
+["count"] = 0;
+["trigger"] = "activate";
+};
+
+};
+[234] =  {
+["type"] = "no-condition";
+["subject-object"] = 0;
+["direct-object"] = 0;
+["condition-flags"] = {
+
+};
+["action"] =  {
+["id"] = 0;
+["count"] = 0;
+["trigger"] = "activate";
+};
+
+};
+[235] =  {
+["type"] = "no-condition";
+["subject-object"] = 0;
+["direct-object"] = 0;
+["condition-flags"] = {
+
+};
+["action"] =  {
+["id"] = 0;
+["count"] = 0;
+["trigger"] = "activate";
+};
+
+};
+[236] =  {
+["type"] = "no-condition";
+["subject-object"] = 0;
+["direct-object"] = 0;
+["condition-flags"] = {
+
+};
+["action"] =  {
+["id"] = 0;
+["count"] = 0;
+["trigger"] = "activate";
+};
+
+};
+[237] =  {
+["type"] = "no-condition";
+["subject-object"] = 0;
+["direct-object"] = 0;
+["condition-flags"] = {
+
+};
+["action"] =  {
+["id"] = 0;
+["count"] = 0;
+["trigger"] = "activate";
+};
+
+};
+[238] =  {
+["type"] = "no-condition";
+["subject-object"] = 0;
+["direct-object"] = 0;
+["condition-flags"] = {
+
+};
+["action"] =  {
+["id"] = 0;
+["count"] = 0;
+["trigger"] = "activate";
+};
+
+};
+[239] =  {
+["type"] = "no-condition";
+["subject-object"] = 0;
+["direct-object"] = 0;
+["condition-flags"] = {
+
+};
+["action"] =  {
+["id"] = 0;
+["count"] = 0;
+["trigger"] = "activate";
+};
+
+};
+[240] =  {
+["type"] = "no-condition";
+["subject-object"] = 0;
+["direct-object"] = 0;
+["condition-flags"] = {
+
+};
+["action"] =  {
+["id"] = 0;
+["count"] = 0;
+["trigger"] = "activate";
+};
+
+};
+[241] =  {
+["type"] = "no-condition";
+["subject-object"] = 0;
+["direct-object"] = 0;
+["condition-flags"] = {
+
+};
+["action"] =  {
+["id"] = 0;
+["count"] = 0;
+["trigger"] = "activate";
+};
+
+};
+[242] =  {
+["type"] = "no-condition";
+["subject-object"] = 0;
+["direct-object"] = 0;
+["condition-flags"] = {
+
+};
+["action"] =  {
+["id"] = 0;
+["count"] = 0;
+["trigger"] = "activate";
+};
+
+};
+[243] =  {
+["type"] = "no-condition";
+["subject-object"] = 0;
+["direct-object"] = 0;
+["condition-flags"] = {
+
+};
+["action"] =  {
+["id"] = 0;
+["count"] = 0;
+["trigger"] = "activate";
+};
+
+};
+[244] =  {
+["type"] = "no-condition";
+["subject-object"] = 0;
+["direct-object"] = 0;
+["condition-flags"] = {
+
+};
+["action"] =  {
+["id"] = 0;
+["count"] = 0;
+["trigger"] = "activate";
+};
+
+};
+[245] =  {
+["type"] = "no-condition";
+["subject-object"] = 0;
+["direct-object"] = 0;
+["condition-flags"] = {
+
+};
+["action"] =  {
+["id"] = 0;
+["count"] = 0;
+["trigger"] = "activate";
+};
+
+};
+[246] =  {
+["type"] = "no-condition";
+["subject-object"] = 0;
+["direct-object"] = 0;
+["condition-flags"] = {
+
+};
+["action"] =  {
+["id"] = 0;
+["count"] = 0;
+["trigger"] = "activate";
+};
+
+};
+[247] =  {
+["type"] = "no-condition";
+["subject-object"] = 0;
+["direct-object"] = 0;
+["condition-flags"] = {
+
+};
+["action"] =  {
+["id"] = 0;
+["count"] = 0;
+["trigger"] = "activate";
+};
+
+};
+[248] =  {
+["type"] = "no-condition";
+["subject-object"] = 0;
+["direct-object"] = 0;
+["condition-flags"] = {
+
+};
+["action"] =  {
+["id"] = 0;
+["count"] = 0;
+["trigger"] = "activate";
+};
+
+};
+[249] =  {
+["type"] = "no-condition";
+["subject-object"] = 0;
+["direct-object"] = 0;
+["condition-flags"] = {
+
+};
+["action"] =  {
+["id"] = 0;
+["count"] = 0;
+["trigger"] = "activate";
+};
+
+};
+[250] =  {
+["type"] = "no-condition";
+["subject-object"] = 0;
+["direct-object"] = 0;
+["condition-flags"] = {
+
+};
+["action"] =  {
+["id"] = 0;
+["count"] = 0;
+["trigger"] = "activate";
+};
+
+};
+[251] =  {
+["type"] = "no-condition";
+["subject-object"] = 0;
+["direct-object"] = 0;
+["condition-flags"] = {
+
+};
+["action"] =  {
+["id"] = 0;
+["count"] = 0;
+["trigger"] = "activate";
+};
+
+};
+[252] =  {
+["type"] = "no-condition";
+["subject-object"] = 0;
+["direct-object"] = 0;
+["condition-flags"] = {
+
+};
+["action"] =  {
+["id"] = 0;
+["count"] = 0;
+["trigger"] = "activate";
+};
+
+};
+[253] =  {
+["type"] = "no-condition";
+["subject-object"] = 0;
+["direct-object"] = 0;
+["condition-flags"] = {
+
+};
+["action"] =  {
+["id"] = 0;
+["count"] = 0;
+["trigger"] = "activate";
+};
+
+};
+[254] =  {
+["type"] = "no-condition";
+["subject-object"] = 0;
+["direct-object"] = 0;
+["condition-flags"] = {
+
+};
+["action"] =  {
+["id"] = 0;
+["count"] = 0;
+["trigger"] = "activate";
+};
+
+};
+[255] =  {
+["type"] = "no-condition";
+["subject-object"] = 0;
+["direct-object"] = 0;
+["condition-flags"] = {
+
+};
+["action"] =  {
+["id"] = 0;
+["count"] = 0;
+["trigger"] = "activate";
+};
+
+};
+[256] =  {
+["type"] = "no-condition";
+["subject-object"] = 0;
+["direct-object"] = 0;
+["condition-flags"] = {
+
+};
+["action"] =  {
+["id"] = 0;
+["count"] = 0;
+["trigger"] = "activate";
+};
+
+};
+[257] =  {
+["type"] = "no-condition";
+["subject-object"] = 0;
+["direct-object"] = 0;
+["condition-flags"] = {
+
+};
+["action"] =  {
+["id"] = 0;
+["count"] = 0;
+["trigger"] = "activate";
+};
+
+};
+[258] =  {
+["type"] = "no-condition";
+["subject-object"] = 0;
+["direct-object"] = 0;
+["condition-flags"] = {
+
+};
+["action"] =  {
+["id"] = 0;
+["count"] = 0;
+["trigger"] = "activate";
+};
+
+};
+[259] =  {
+["type"] = "no-condition";
+["subject-object"] = 0;
+["direct-object"] = 0;
+["condition-flags"] = {
+
+};
+["action"] =  {
+["id"] = 0;
+["count"] = 0;
+["trigger"] = "activate";
+};
+
+};
+[260] =  {
+["type"] = "no-condition";
+["subject-object"] = 0;
+["direct-object"] = 0;
+["condition-flags"] = {
+
+};
+["action"] =  {
+["id"] = 0;
+["count"] = 0;
+["trigger"] = "activate";
+};
+
+};
+[261] =  {
+["type"] = "no-condition";
+["subject-object"] = 0;
+["direct-object"] = 0;
+["condition-flags"] = {
+
+};
+["action"] =  {
+["id"] = 0;
+["count"] = 0;
+["trigger"] = "activate";
+};
+
+};
+[262] =  {
+["type"] = "no-condition";
+["subject-object"] = 0;
+["direct-object"] = 0;
+["condition-flags"] = {
+
+};
+["action"] =  {
+["id"] = 0;
+["count"] = 0;
+["trigger"] = "activate";
+};
+
+};
+[263] =  {
+["type"] = "no-condition";
+["subject-object"] = 0;
+["direct-object"] = 0;
+["condition-flags"] = {
+
+};
+["action"] =  {
+["id"] = 0;
+["count"] = 0;
+["trigger"] = "activate";
+};
+
+};
+[264] =  {
+["type"] = "no-condition";
+["subject-object"] = 0;
+["direct-object"] = 0;
+["condition-flags"] = {
+
+};
+["action"] =  {
+["id"] = 0;
+["count"] = 0;
+["trigger"] = "activate";
+};
+
+};
+[265] =  {
+["type"] = "no-condition";
+["subject-object"] = 0;
+["direct-object"] = 0;
+["condition-flags"] = {
+
+};
+["action"] =  {
+["id"] = 0;
+["count"] = 0;
+["trigger"] = "activate";
+};
+
+};
+[266] =  {
+["type"] = "no-condition";
+["subject-object"] = 0;
+["direct-object"] = 0;
+["condition-flags"] = {
+
+};
+["action"] =  {
+["id"] = 0;
+["count"] = 0;
+["trigger"] = "activate";
+};
+
+};
+[267] =  {
+["type"] = "no-condition";
+["subject-object"] = 0;
+["direct-object"] = 0;
+["condition-flags"] = {
+
+};
+["action"] =  {
+["id"] = 0;
+["count"] = 0;
+["trigger"] = "activate";
+};
+
+};
+[268] =  {
+["type"] = "no-condition";
+["subject-object"] = 0;
+["direct-object"] = 0;
+["condition-flags"] = {
+
+};
+["action"] =  {
+["id"] = 0;
+["count"] = 0;
+["trigger"] = "activate";
+};
+
+};
+[269] =  {
+["type"] = "no-condition";
+["subject-object"] = 0;
+["direct-object"] = 0;
+["condition-flags"] = {
+
+};
+["action"] =  {
+["id"] = 0;
+["count"] = 0;
+["trigger"] = "activate";
+};
+
+};
+[270] =  {
+["type"] = "no-condition";
+["subject-object"] = 0;
+["direct-object"] = 0;
+["condition-flags"] = {
+
+};
+["action"] =  {
+["id"] = 0;
+["count"] = 0;
+["trigger"] = "activate";
+};
+
+};
+[271] =  {
+["type"] = "no-condition";
+["subject-object"] = 0;
+["direct-object"] = 0;
+["condition-flags"] = {
+
+};
+["action"] =  {
+["id"] = 0;
+["count"] = 0;
+["trigger"] = "activate";
+};
+
+};
+[272] =  {
+["type"] = "no-condition";
+["subject-object"] = 0;
+["direct-object"] = 0;
+["condition-flags"] = {
+
+};
+["action"] =  {
+["id"] = 0;
+["count"] = 0;
+["trigger"] = "activate";
+};
+
+};
+[273] =  {
+["type"] = "no-condition";
+["subject-object"] = 0;
+["direct-object"] = 0;
+["condition-flags"] = {
+
+};
+["action"] =  {
+["id"] = 0;
+["count"] = 0;
+["trigger"] = "activate";
+};
+
+};
+[274] =  {
+["type"] = "no-condition";
+["subject-object"] = 0;
+["direct-object"] = 0;
+["condition-flags"] = {
+
+};
+["action"] =  {
+["id"] = 0;
+["count"] = 0;
+["trigger"] = "activate";
+};
+
+};
+[275] =  {
+["type"] = "no-condition";
+["subject-object"] = 0;
+["direct-object"] = 0;
+["condition-flags"] = {
+
+};
+["action"] =  {
+["id"] = 0;
+["count"] = 0;
+["trigger"] = "activate";
+};
+
+};
+[276] =  {
+["type"] = "no-condition";
+["subject-object"] = 0;
+["direct-object"] = 0;
+["condition-flags"] = {
+
+};
+["action"] =  {
+["id"] = 0;
+["count"] = 0;
+["trigger"] = "activate";
+};
+
+};
+[277] =  {
+["type"] = "no-condition";
+["subject-object"] = 0;
+["direct-object"] = 0;
+["condition-flags"] = {
+
+};
+["action"] =  {
+["id"] = 0;
+["count"] = 0;
+["trigger"] = "activate";
+};
+
+};
+[278] =  {
+["type"] = "no-condition";
+["subject-object"] = 0;
+["direct-object"] = 0;
+["condition-flags"] = {
+
+};
+["action"] =  {
+["id"] = 0;
+["count"] = 0;
+["trigger"] = "activate";
+};
+
+};
+[279] =  {
+["type"] = "no-condition";
+["subject-object"] = 0;
+["direct-object"] = 0;
+["condition-flags"] = {
+
+};
+["action"] =  {
+["id"] = 0;
+["count"] = 0;
+["trigger"] = "activate";
+};
+
+};
+[280] =  {
+["type"] = "no-condition";
+["subject-object"] = 0;
+["direct-object"] = 0;
+["condition-flags"] = {
+
+};
+["action"] =  {
+["id"] = 0;
+["count"] = 0;
+["trigger"] = "activate";
+};
+
+};
+[281] =  {
+["type"] = "no-condition";
+["subject-object"] = 0;
+["direct-object"] = 0;
+["condition-flags"] = {
+
+};
+["action"] =  {
+["id"] = 0;
+["count"] = 0;
+["trigger"] = "activate";
+};
+
+};
+[282] =  {
+["type"] = "no-condition";
+["subject-object"] = 0;
+["direct-object"] = 0;
+["condition-flags"] = {
+
+};
+["action"] =  {
+["id"] = 0;
+["count"] = 0;
+["trigger"] = "activate";
+};
+
+};
+[283] =  {
+["type"] = "no-condition";
+["subject-object"] = 0;
+["direct-object"] = 0;
+["condition-flags"] = {
+
+};
+["action"] =  {
+["id"] = 0;
+["count"] = 0;
+["trigger"] = "activate";
+};
+
+};
+[284] =  {
+["type"] = "no-condition";
+["subject-object"] = 0;
+["direct-object"] = 0;
+["condition-flags"] = {
+
+};
+["action"] =  {
+["id"] = 0;
+["count"] = 0;
+["trigger"] = "activate";
+};
+
+};
+[285] =  {
+["type"] = "no-condition";
+["subject-object"] = 0;
+["direct-object"] = 0;
+["condition-flags"] = {
+
+};
+["action"] =  {
+["id"] = 0;
+["count"] = 0;
+["trigger"] = "activate";
+};
+
+};
+[286] =  {
+["type"] = "no-condition";
+["subject-object"] = 0;
+["direct-object"] = 0;
+["condition-flags"] = {
+
+};
+["action"] =  {
+["id"] = 0;
+["count"] = 0;
+["trigger"] = "activate";
+};
+
+};
+[287] =  {
+["type"] = "no-condition";
+["subject-object"] = 0;
+["direct-object"] = 0;
+["condition-flags"] = {
+
+};
+["action"] =  {
+["id"] = 0;
+["count"] = 0;
+["trigger"] = "activate";
+};
+
+};
+[288] =  {
+["type"] = "no-condition";
+["subject-object"] = 0;
+["direct-object"] = 0;
+["condition-flags"] = {
+
+};
+["action"] =  {
+["id"] = 0;
+["count"] = 0;
+["trigger"] = "activate";
+};
+
+};
+[289] =  {
+["type"] = "no-condition";
+["subject-object"] = 0;
+["direct-object"] = 0;
+["condition-flags"] = {
+
+};
+["action"] =  {
+["id"] = 0;
+["count"] = 0;
+["trigger"] = "activate";
+};
+
+};
+[290] =  {
+["type"] = "no-condition";
+["subject-object"] = 0;
+["direct-object"] = 0;
+["condition-flags"] = {
+
+};
+["action"] =  {
+["id"] = 0;
+["count"] = 0;
+["trigger"] = "activate";
+};
+
+};
+[291] =  {
+["type"] = "no-condition";
+["subject-object"] = 0;
+["direct-object"] = 0;
+["condition-flags"] = {
+
+};
+["action"] =  {
+["id"] = 0;
+["count"] = 0;
+["trigger"] = "activate";
+};
+
+};
+[292] =  {
+["type"] = "no-condition";
+["subject-object"] = 0;
+["direct-object"] = 0;
+["condition-flags"] = {
+
+};
+["action"] =  {
+["id"] = 0;
+["count"] = 0;
+["trigger"] = "activate";
+};
+
+};
+[293] =  {
+["type"] = "no-condition";
+["subject-object"] = 0;
+["direct-object"] = 0;
+["condition-flags"] = {
+
+};
+["action"] =  {
+["id"] = 0;
+["count"] = 0;
+["trigger"] = "activate";
+};
+
+};
+[294] =  {
+["type"] = "no-condition";
+["subject-object"] = 0;
+["direct-object"] = 0;
+["condition-flags"] = {
+
+};
+["action"] =  {
+["id"] = 0;
+["count"] = 0;
+["trigger"] = "activate";
+};
+
+};
+[295] =  {
+["type"] = "no-condition";
+["subject-object"] = 0;
+["direct-object"] = 0;
+["condition-flags"] = {
+
+};
+["action"] =  {
+["id"] = 0;
+["count"] = 0;
+["trigger"] = "activate";
+};
+
+};
+[296] =  {
+["type"] = "no-condition";
+["subject-object"] = 0;
+["direct-object"] = 0;
+["condition-flags"] = {
+
+};
+["action"] =  {
+["id"] = 0;
+["count"] = 0;
+["trigger"] = "activate";
+};
+
+};
+[297] =  {
+["type"] = "no-condition";
+["subject-object"] = 0;
+["direct-object"] = 0;
+["condition-flags"] = {
+
+};
+["action"] =  {
+["id"] = 0;
+["count"] = 0;
+["trigger"] = "activate";
+};
+
+};
+[298] =  {
+["type"] = "no-condition";
+["subject-object"] = 0;
+["direct-object"] = 0;
+["condition-flags"] = {
+
+};
+["action"] =  {
+["id"] = 0;
+["count"] = 0;
+["trigger"] = "activate";
+};
+
+};
+[299] =  {
+["type"] = "no-condition";
+["subject-object"] = 0;
+["direct-object"] = 0;
+["condition-flags"] = {
+
+};
+["action"] =  {
+["id"] = 0;
+["count"] = 0;
+["trigger"] = "activate";
+};
+
+};
+};
 ["InitialObject"] = {
 [000] =  {
 ["type"] = 36;
