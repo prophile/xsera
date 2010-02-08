@@ -81,8 +81,6 @@ function key ( k )
         sizeFactor = sizeFactor + 0.1
     elseif k == "k" then
         sizeFactor = sizeFactor - 0.1
-    elseif k == "p" then
-        mode_manager.switch("fractalmonster")
     elseif k == "d" then
         mode_manager.switch("Demo4")
     elseif k == "x" then
@@ -96,7 +94,7 @@ function key ( k )
     elseif k == "c" then
         mode_manager.switch("Xsera/Credits")
     elseif k == "tab" then
-        mode_manager.switch("LoadScreen")
+        mode_manager.switch("Ares/Splash")
     elseif k == "escape" then
 		os.exit()
 	elseif k == "1" then
