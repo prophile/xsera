@@ -78,6 +78,7 @@ function update()
 		arrowLength = ARROW_LENGTH / cameraRatio
 		arrowVar = ARROW_VAR / cameraRatio
 		arrowDist = ARROW_DIST / cameraRatio
+		trackingTarget.collision_radius = MOUSE_RADIUS / cameraRatio
 		if (cameraRatio < 1 / 8 and cameraRatioOrig > 1 / 8) or (cameraRatio > 1 / 8 and cameraRatioOrig < 1 / 8) then
 			if soundJustPlayed == false then
 				sound.play("ZoomChange")
@@ -336,8 +337,7 @@ function render()
 		end
 		
 	end
-	graphics.draw_circle(trackingTarget.position, MOUSE_RADIUS*1.0, 1.0, ClutColour(5, 1)) --We need to scale the mouse detection area
-	
+	graphics.draw_circle(trackingTarget.position, trackingTarget.collision_radius, 1.0, ClutColour(5, 1))	
 	graphics.draw_particles()
 	DrawArrow()
 	DrawMouse1()

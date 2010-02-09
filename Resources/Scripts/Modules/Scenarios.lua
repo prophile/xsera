@@ -16,7 +16,7 @@ function LoadScenario(id)
 				scen.playerShip = new
 				scen.playerShipId = new.physics.object_id
 			else
-				LogError("There is already a an intial player ship set.", 1)
+				print("There is already a an intial player ship set.", 1)
 			end
 		end
 		
