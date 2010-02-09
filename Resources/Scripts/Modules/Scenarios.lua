@@ -34,5 +34,36 @@ function LoadScenario(id)
 
 		scen.objects[new.physics.object_id] = new
 	end
+
+	InitConditions(scen)
 	return scen
+end
+
+function InitConditions(scen)
+	scen.conditions = {}
+	--Ares has a limit of 4 players and 3 counters each
+	--scen.counter[player][counter]
+	scen.counters = {}
+	for pl = 1, MAX_PLAYERS do
+		scen.counters[pl] = {}
+		for ctr = 1, MAX_COUNTERS do
+			scen.counters[pl][ctr] = 0
+		end
+	end
+
+
+	local max = scen.condition.id + scen.condition.count - 1
+	for idx = scen.condition.id , max do
+		local cond = deepcopy(gameData["Conditions"][idx])
+
+		if cond["condition-flags"]["initially-true"] == true then
+			cond.isTrue = true
+			cond.hasBeenTrue = true
+		else
+			cond.isTrue = false
+			cond.hasBeenTrue = false
+		end
+
+		table.insert(scen.conditions, cond)
+	end
 end

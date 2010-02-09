@@ -3,6 +3,11 @@ import('AresCLUT')
 import('data')
 
 --constants
+
+--these limits are the values for ares but we can go MUCH higher if we want to
+MAX_PLAYERS = 4
+MAX_COUNTERS = 3 --per player
+
 SPEED_FACTOR = 64.0
 TIME_FACTOR = 60.0 -- [ADAM] #TEST change this to dt
 BEAM_LENGTH = 48
@@ -56,8 +61,6 @@ scen = nil
 victoryTimer = nil
 defeatTimer = 0
 endGameData = nil
-loadingEntities = false
-entities = {}
 --/scenvars
 
 --tempvars
