@@ -1,5 +1,6 @@
 import('GlobalVars')
 import('Actions')
+import('Conditions')
 import('Animation')
 import('ObjectLoad')
 --import('Math')
@@ -261,12 +262,17 @@ function update()
 		end
 	end
 	RemoveDead()
-
+	TestConditions(scen)
 	trackingTarget.position = GetMouseCoords()
 	physics.update(dt)
 end
 
-
+function Win()
+print("\\ \\     /\\    / /   |__  __|   |   \\ | |")
+print(" \\ \\   /  \\  / /       | |     | |\\ \\| |")
+print("  \\ \\_/ /\\ \\/ /     ___| |__   | | \\   |")
+print("   \\___/  \\__/      |______|   |_|  \\__|")
+end
 
 function render()
 	graphics.begin_frame()

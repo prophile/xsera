@@ -199,7 +199,10 @@ scen.objects[new.physics.object_id] = new
 end
 end,
 ["create-object-set-dest-action"] = function(action, source, direct) end,
-["declare-winner-action"] = function(action, source, direct) end,
+["declare-winner-action"] = function(action, source, direct)
+Win()
+print("The winner is: " .. action["which-player"])
+end,
 ["die-action"] = function(action, source, direct)
 	if action.reflexive == "true" then
 		source.status.dead = true

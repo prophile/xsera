@@ -56,12 +56,10 @@ function InitConditions(scen)
 	for idx = scen.condition.id , max do
 		local cond = deepcopy(gameData["Conditions"][idx])
 
-		if cond["condition-flags"]["initially-true"] == true then
-			cond.isTrue = true
-			cond.hasBeenTrue = true
+		if cond["condition-flags"]["initially-true"] ~= true then
+			cond.active = true
 		else
-			cond.isTrue = false
-			cond.hasBeenTrue = false
+			cond.active = false
 		end
 
 		table.insert(scen.conditions, cond)
