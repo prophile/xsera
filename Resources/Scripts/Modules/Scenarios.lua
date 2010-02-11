@@ -36,6 +36,7 @@ function LoadScenario(id)
 	end
 
 	InitConditions(scen)
+
 	return scen
 end
 
@@ -63,5 +64,38 @@ function InitConditions(scen)
 		end
 
 		table.insert(scen.conditions, cond)
+	end
+end
+
+function ParseScoreStrings(id)
+	lines = {}
+	for i, s in ipairs(gameData["Scenarios"][id]["score-string"]) do
+		local c = string.sub(s,1,1)
+		local start = 1
+		local line = {}
+		local underline = false
+		if c == "_" then
+			line.underline = true
+			c = string.sub(s,2,1)
+			start = 2
+		end
+
+		if c == "-" then
+			start = start + 1
+			line.string = string.sub(s,start)
+		else
+			--type, number, player, negval, falsestring, truestring, basestring, poststring
+			local type, number, player, negstring, falsestring, truestring, prestring, poststring = string.match(s,"(-?%d)\\(%d+)\\(-?%d+)\\([^\\]*)\\([^\\]*)\\([^\\]*)\\([^\\]*)\\([^\\]*)",start)
+
+			line.type = type
+			line.number = number
+			line.player = player
+			line.negstring = negstring
+			line.falsestring = falsestring
+			line.truestring = truestring
+			line.prestring = prestring
+			line.poststring = poststring
+
+		end
 	end
 end
