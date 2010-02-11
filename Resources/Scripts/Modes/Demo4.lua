@@ -137,7 +137,7 @@ function update()
 			end
 		end
 		
-		if o.status.health <= 0 and o.status.healthMax ~= 0 then
+		if o.status.health <= 0 and o.status.healthMax >= 1 then
 			DestroyTrigger(o)
 			o.status.dead = true
 		end
@@ -383,7 +383,7 @@ end
 function ChangePlayerShip()
 	
 	scen.playerShip = scen.objects[scen.playerShipId]
-	if scen.playership == nil then
+	if scen.playerShip == nil then
 	scen.playerShipId, scen.playerShip = next(scen.objects,scen.playerShipId)
 		if scen.playerShip == nil then
 			scen.playerShipId, scen.playerShip = next(scen.objects)

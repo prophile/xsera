@@ -219,13 +219,16 @@ end
 	-------------]]--
 
 function DoTransferControl()
---	if scen.playerShip.ai.owner == control.ai.owner then
-		scen.playerShip = selection.control
-		scen.playerShipId = control.physics.object_id
+	if selection.control ~= nil
+	and (
+	not(RELEASE_BUILD)
+	or scen.playerShip.ai.owner == control.ai.owner)
+	then
+		scen.playerShipId = selection.control.physics.object_id
 		scen.playerShip.ai.objectives.target = nil
 		scen.playerShip.ai.objectives.dest = nil
-		
-		scen.playerShip.control = {
+		ChangePlayerShip()
+--[[		scen.playerShip.control = {
 			accel = false;
 			decel = false;
 			left = false;
@@ -234,10 +237,10 @@ function DoTransferControl()
 			pulse = false;
 			special = false;
 			warp = false;
-		}
---	else
---		sound.play("NaughtyBeep")
---	end
+		}--]]
+	else
+		sound.play("NaughtyBeep")
+	end
 end
 
 function DoZoom1_1()

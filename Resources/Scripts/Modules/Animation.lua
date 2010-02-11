@@ -2,7 +2,7 @@
 --import('Actions')
 
 function Animate(object)
-	if object.gfx.fameTime == 0 then
+	if object.gfx.frameTime == 0 then
 		return 0
 	else
 		local anim = object.base.animation
