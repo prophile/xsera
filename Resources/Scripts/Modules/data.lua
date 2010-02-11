@@ -40386,11 +40386,10 @@ gameData = {
 };
 };
 ["Scenarios"] = {
-[000] = 
-{	
+[000] = {	
 ["id"] = 0;
 ["name"] = "Tutorial Lesson 1 - Moons for Goons";
-["chapter-name"] = "\i Tutorial Lesson 1\r\iMoons for Goons";
+["chapter-name"] = "\i Tutorial Lesson 1\n\iMoons for Goons";
 
 ["star-map-location"] = {
 ["x"] = 330;
@@ -40421,19 +40420,9 @@ gameData = {
 ["par-losses"] = 0;
 
 ["score-string"] = {
-
-[1] = [==[
--Destroy all 5";
-]==];
-
-[2] = [==[
-_-transports.";
-]==];
-
-[3] = [==[
-4\0\0\5\f\t\Remaining: \/5";
-]==];
-
+"-Destroy all 5";
+"_-transports.";
+"4\\0\\0\\5\\f\\t\\Remaining: \\/5";
 };
 
 ["player"] = {
@@ -40456,11 +40445,10 @@ _-transports.";
 
 };
 };
-[001] = 
-{	
+[001] = {	
 ["id"] = 1;
 ["name"] = "Chapter 1 - Easy Street";
-["chapter-name"] = "\i Chapter 1 \r\iEasy Street";
+["chapter-name"] = "\i Chapter 1 \n\iEasy Street";
 
 ["star-map-location"] = {
 ["x"] = 330;
@@ -40492,19 +40480,9 @@ _-transports.";
 ["par-losses"] = 0;
 
 ["score-string"] = {
-
-[1] = [==[
--Destroy all 5";
-]==];
-
-[2] = [==[
-_-transports.";
-]==];
-
-[3] = [==[
-4\0\0\5\f\t\Remaining: \/5";
-]==];
-
+"-Destroy all 5";
+"_-transports.";
+"4\\0\\0\\5\\f\\t\\Remaining: \\/5";
 };
 
 ["player"] = {
@@ -40535,11 +40513,10 @@ _-transports.";
 
 };
 };
-[002] = 
-{	
+[002] = {
 ["id"] = 2;
 ["name"] = "Tutorial Lesson 2 - Section on Selection";
-["chapter-name"] = "\i Tutorial Lesson 2\r\iSection on Selection";
+["chapter-name"] = "\i Tutorial Lesson 2\n\iSection on Selection";
 
 ["star-map-location"] = {
 ["x"] = 330;
@@ -40569,19 +40546,9 @@ _-transports.";
 ["par-losses"] = -1;
 
 ["score-string"] = {
-
-[1] = [==[
--Destroy all 5";
-]==];
-
-[2] = [==[
-_-transports.";
-]==];
-
-[3] = [==[
-4\0\0\5\f\t\Remaining: \/5";
-]==];
-
+"-Destroy all 5";
+"_-transports.";
+"4\\\0\\0\\5\\f\\t\\Remaining: \\/5";
 };
 
 ["player"] = {
@@ -40604,11 +40571,10 @@ _-transports.";
 
 };
 };
-[003] = 
-{	
+[003] = {
 ["id"] = 3;
 ["name"] = "Chapter 2 - The Stars Have Ears";
-["chapter-name"] = "\i Chapter 2 \r\iThe Stars Have Ears";
+["chapter-name"] = "\i Chapter 2 \n\iThe Stars Have Ears";
 
 ["star-map-location"] = {
 ["x"] = 393;
@@ -40638,19 +40604,9 @@ _-transports.";
 ["par-losses"] = 0;
 
 ["score-string"] = {
-
-[1] = [==[
--Destroy all 4";
-]==];
-
-[2] = [==[
-_-relay dishes.";
-]==];
-
-[3] = [==[
-4\0\0\4\f\t\Remaining: \/4";
-]==];
-
+"-Destroy all 4";
+"_-relay dishes.";
+"4\\0\\0\\4\\f\\t\\Remaining: \\/4";
 };
 
 ["player"] = {
@@ -40675,11 +40631,10 @@ _-relay dishes.";
 
 };
 };
-[004] = 
-{	
+[004] = {
 ["id"] = 4;
-["name"] = "Tutorial Lesson 3 - The Complete Idiotâs Guide to Commanding a Space Armada";
-["chapter-name"] = "\i Tutorial Lesson 3\r\iThe Complete Idiotâs Guide to Commanding a Space Armada";
+["name"] = "Tutorial Lesson 3 - The Complete Idiot's Guide to Commanding a Space Armada";
+["chapter-name"] = "\i Tutorial Lesson 3\n\iThe Complete Idiot's Guide to Commanding a Space Armada";
 
 ["star-map-location"] = {
 ["x"] = 330;
@@ -40709,19 +40664,9 @@ _-relay dishes.";
 ["par-losses"] = -1;
 
 ["score-string"] = {
-
-[1] = [==[
--Destroy all 5";
-]==];
-
-[2] = [==[
-_-transports.";
-]==];
-
-[3] = [==[
-4\0\0\5\f\t\Remaining: \/5";
-]==];
-
+"-Destroy all 5";
+"_-transports.";
+"4\\\0\\0\\5\\f\\t\\Remaining: \\/5";
 };
 
 ["player"] = {
@@ -40744,11 +40689,10 @@ _-transports.";
 
 };
 };
-[005] = 
-{	
+[005] = {	
 ["id"] = 5;
 ["name"] = "Chapter 3 - While The Iron Is Hot";
-["chapter-name"] = "\i Chapter 3 \r\iWhile The Iron Is Hot";
+["chapter-name"] = "\i Chapter 3 \n\iWhile The Iron Is Hot";
 
 ["star-map-location"] = {
 ["x"] = 354;
@@ -40778,15 +40722,8 @@ _-transports.";
 ["par-losses"] = 4;
 
 ["score-string"] = {
-
-[1] = [==[
--Capture Demeter";
-]==];
-
-[2] = [==[
-_-Beta";
-]==];
-
+"-Capture Demeter";
+"_-Beta";
 };
 
 ["player"] = {
@@ -40819,11 +40756,10 @@ _-Beta";
 
 };
 };
-[006] = 
-{	
+[006] = {
 ["id"] = 6;
 ["name"] = "Chapter 4 - Shoplifter 1";
-["chapter-name"] = "\i Chapter 4 \r\iShoplifter 1";
+["chapter-name"] = "\i Chapter 4 \n\iShoplifter 1";
 
 ["star-map-location"] = {
 ["x"] = 460;
@@ -40853,23 +40789,10 @@ _-Beta";
 ["par-losses"] = 0;
 
 ["score-string"] = {
-
-[1] = [==[
--Rescue 11";
-]==];
-
-[2] = [==[
-_-Obiards";
-]==];
-
-[3] = [==[
-2\0\0\0\f\t\In transport: \/5";
-]==];
-
-[4] = [==[
-2\1\0\0\f\t\Rescued: \/11";
-]==];
-
+"-Rescue 11";
+"_-Obiards";
+"2\\0\\0\\0\\f\\t\\In transport: \\/5";
+"2\\1\\0\\0\\f\\t\\Rescued: \\/11";
 };
 
 ["player"] = {
@@ -40902,11 +40825,10 @@ _-Obiards";
 
 };
 };
-[007] = 
-{	
+[007] = {
 ["id"] = 7;
 ["name"] = "Chapter 5 - Out of the Frying Pan...";
-["chapter-name"] = "\i Chapter 5 \r\iOut of the Frying Pan...";
+["chapter-name"] = "\i Chapter 5 \n\iOut of the Frying Pan...";
 
 ["star-map-location"] = {
 ["x"] = 366;
@@ -40936,15 +40858,8 @@ _-Obiards";
 ["par-losses"] = 15;
 
 ["score-string"] = {
-
-[1] = [==[
--Capture Aeneas";
-]==];
-
-[2] = [==[
-_-Beta";
-]==];
-
+"-Capture Aeneas";
+"_-Beta";
 };
 
 ["player"] = {
@@ -40985,11 +40900,10 @@ _-Beta";
 
 };
 };
-[008] = 
-{	
+[008] = {
 ["id"] = 8;
 ["name"] = "Chapter 6 - ...Into the Fire";
-["chapter-name"] = "\i Chapter 6 \r\i...Into the Fire";
+["chapter-name"] = "\i Chapter 6 \n\i...Into the Fire";
 
 ["star-map-location"] = {
 ["x"] = 431;
@@ -41019,15 +40933,8 @@ _-Beta";
 ["par-losses"] = 12;
 
 ["score-string"] = {
-
-[1] = [==[
--Capture Hades";
-]==];
-
-[2] = [==[
-_-Beta";
-]==];
-
+"-Capture Hades";
+"_-Beta";
 };
 
 ["player"] = {
@@ -41066,11 +40973,10 @@ _-Beta";
 
 };
 };
-[009] = 
-{	
+[009] = {	
 ["id"] = 9;
 ["name"] = "Chapter 7 - On the Rocks";
-["chapter-name"] = "\i Chapter 7 \r\iOn the Rocks";
+["chapter-name"] = "\i Chapter 7 \n\iOn the Rocks";
 
 ["star-map-location"] = {
 ["x"] = 401;
@@ -41103,19 +41009,9 @@ _-Beta";
 ["par-losses"] = 0;
 
 ["score-string"] = {
-
-[1] = [==[
--Collect 4";
-]==];
-
-[2] = [==[
-_-asteroid samples";
-]==];
-
-[3] = [==[
-2\1\0\0\f\t\Collected: \/4";
-]==];
-
+"-Collect 4";
+"_-asteroid samples";
+"2\\1\\0\\0\\f\\t\\Collected: \\/4";
 };
 
 ["player"] = {
@@ -41140,11 +41036,10 @@ _-asteroid samples";
 
 };
 };
-[010] = 
-{	
+[010] = {
 ["id"] = 10;
 ["name"] = "Chapter 8 - Astrotrash Plus!";
-["chapter-name"] = "\i Chapter 8 \r\iAstrotrash Plus!";
+["chapter-name"] = "\i Chapter 8 \n\iAstrotrash Plus!";
 
 ["star-map-location"] = {
 ["x"] = 286;
@@ -41174,19 +41069,9 @@ _-asteroid samples";
 ["par-losses"] = 1;
 
 ["score-string"] = {
-
-[1] = [==[
--Collect 10";
-]==];
-
-[2] = [==[
-_-asteroid samples";
-]==];
-
-[3] = [==[
-2\1\0\0\f\t\Collected: \/10";
-]==];
-
+"-Collect 10";
+"_-asteroid samples";
+"2\\1\\0\\0\\f\\t\\Collected: \\/10";
 };
 
 ["player"] = {
@@ -41217,11 +41102,10 @@ _-asteroid samples";
 
 };
 };
-[011] = 
-{	
+[011] = {
 ["id"] = 11;
 ["name"] = "Chapter 9 - Hand Over Fist";
-["chapter-name"] = "\i Chapter 9 \r\iHand Over Fist";
+["chapter-name"] = "\i Chapter 9 \n\iHand Over Fist";
 
 ["star-map-location"] = {
 ["x"] = 368;
@@ -41251,15 +41135,8 @@ _-asteroid samples";
 ["par-losses"] = 8;
 
 ["score-string"] = {
-
-[1] = [==[
--Capture Proteus";
-]==];
-
-[2] = [==[
-_-Gamma";
-]==];
-
+"-Capture Proteus";
+"_-Gamma";
 };
 
 ["player"] = {
@@ -41286,11 +41163,10 @@ _-Gamma";
 
 };
 };
-[012] = 
-{	
+[012] = {
 ["id"] = 12;
 ["name"] = "Chapter 10 - Assassin";
-["chapter-name"] = "\i Chapter 10 \r\iAssassin";
+["chapter-name"] = "\i Chapter 10 \n\iAssassin";
 
 ["star-map-location"] = {
 ["x"] = 311;
@@ -41320,15 +41196,8 @@ _-Gamma";
 ["par-losses"] = 25;
 
 ["score-string"] = {
-
-[1] = [==[
--Destroy all";
-]==];
-
-[2] = [==[
-_-hostile ships";
-]==];
-
+"-Destroy all";
+"_-hostile ships";
 };
 
 ["player"] = {
@@ -41353,11 +41222,10 @@ _-hostile ships";
 
 };
 };
-[013] = 
-{	
+[013] = {
 ["id"] = 13;
 ["name"] = "Chapter 11 - Shoplifter 2";
-["chapter-name"] = "\i Chapter 11 \r\iShoplifter 2";
+["chapter-name"] = "\i Chapter 11 \n\iShoplifter 2";
 
 ["star-map-location"] = {
 ["x"] = 160;
@@ -41388,23 +41256,10 @@ _-hostile ships";
 ["par-losses"] = 0;
 
 ["score-string"] = {
-
-[1] = [==[
--Rescue 21";
-]==];
-
-[2] = [==[
-_-humans";
-]==];
-
-[3] = [==[
-2\0\0\0\f\t\On board: \/5";
-]==];
-
-[4] = [==[
-2\1\0\0\f\t\Rescued: \/21";
-]==];
-
+"-Rescue 21";
+"_-humans";
+"2\\0\\0\\0\\f\\t\\On board: \\/5";
+"2\\1\\0\\0\\f\\t\\Rescued: \\/21";
 };
 
 ["player"] = {
@@ -41439,11 +41294,10 @@ _-humans";
 
 };
 };
-[014] = 
-{	
+[014] = {
 ["id"] = 14;
 ["name"] = "Chapter 12 - Make Way";
-["chapter-name"] = "\i Chapter 12 \r\iMake Way";
+["chapter-name"] = "\i Chapter 12 \n\iMake Way";
 
 ["star-map-location"] = {
 ["x"] = 259;
@@ -41473,31 +41327,12 @@ _-humans";
 ["par-losses"] = 20;
 
 ["score-string"] = {
-
-[1] = [==[
--Capture Fansi";
-]==];
-
-[2] = [==[
-_-Beta";
-]==];
-
-[3] = [==[
--Ensure safety";
-]==];
-
-[4] = [==[
-_-of 5 cargo ships";
-]==];
-
-[5] = [==[
--";
-]==];
-
-[6] = [==[
-2\0\0\0\f\t\Docked: \/5";
-]==];
-
+"-Capture Fansi";
+"_-Beta";
+"-Ensure safety";
+"_-of 5 cargo ships";
+"-";
+"2\\0\\0\\0\\f\\t\\Docked: \\/5";
 };
 
 ["player"] = {
@@ -41530,11 +41365,10 @@ _-of 5 cargo ships";
 
 };
 };
-[015] = 
-{	
+[015] = {
 ["id"] = 15;
 ["name"] = "Chapter 13 - Yo Ho Ho";
-["chapter-name"] = "\i Chapter 13 \r\iYo Ho Ho";
+["chapter-name"] = "\i Chapter 13 \n\iYo Ho Ho";
 
 ["star-map-location"] = {
 ["x"] = 194;
@@ -41566,23 +41400,10 @@ _-of 5 cargo ships";
 ["par-losses"] = 0;
 
 ["score-string"] = {
-
-[1] = [==[
-1\0\0\0\Retrieve escape\Escort tractor";
-]==];
-
-[2] = [==[
-_1\0\0\0\pods\tug";
-]==];
-
-[3] = [==[
-2\1\0\0\f\t\Rescued: \/6";
-]==];
-
-[4] = [==[
-1\1\0\0\N\Y\Liner secure: \";
-]==];
-
+"1\\0\\\0\\0\\Retrieve escape\\Escort tractor";
+"_1\\0\\0\\0\\pods\\tug";
+"2\\1\\0\\0\\f\\t\\Rescued: \\/6";
+"1\\1\\0\\0\\N\\Y\\Liner secure: \\";
 };
 
 ["player"] = {
@@ -41605,11 +41426,10 @@ _1\0\0\0\pods\tug";
 
 };
 };
-[016] = 
-{	
+[016] = {
 ["id"] = 16;
 ["name"] = "Chapter 14 - Captivating";
-["chapter-name"] = "\i Chapter 14 \r\iCaptivating";
+["chapter-name"] = "\i Chapter 14 \n\iCaptivating";
 
 ["star-map-location"] = {
 ["x"] = 222;
@@ -41640,23 +41460,10 @@ _1\0\0\0\pods\tug";
 ["par-losses"] = 30;
 
 ["score-string"] = {
-
-[1] = [==[
--Capture Bokleo";
-]==];
-
-[2] = [==[
-_-Gamma";
-]==];
-
-[3] = [==[
--Free Bazidanese";
-]==];
-
-[4] = [==[
-_-Ship";
-]==];
-
+"-Capture Bokleo";
+"_-Gamma";
+"-Free Bazidanese";
+"_-Ship";
 };
 
 ["player"] = {
@@ -41689,11 +41496,10 @@ _-Ship";
 
 };
 };
-[017] = 
-{	
+[017] = {
 ["id"] = 17;
 ["name"] = "Chapter 15 - The Left Hand";
-["chapter-name"] = "\i Chapter 15 \r\iThe Left Hand";
+["chapter-name"] = "\i Chapter 15 \n\iThe Left Hand";
 
 ["star-map-location"] = {
 ["x"] = 150;
@@ -41723,15 +41529,8 @@ _-Ship";
 ["par-losses"] = 17;
 
 ["score-string"] = {
-
-[1] = [==[
--Capture Thasero";
-]==];
-
-[2] = [==[
-_-Beta";
-]==];
-
+"-Capture Thasero";
+"_-Beta";
 };
 
 ["player"] = {
@@ -41762,11 +41561,10 @@ _-Beta";
 
 };
 };
-[018] = 
-{	
+[018] = {
 ["id"] = 18;
 ["name"] = "Chapter 16 - Hornet's Nest";
-["chapter-name"] = "\i Chapter 16 \r\iHornet's Nest";
+["chapter-name"] = "\i Chapter 16 \n\iHornet's Nest";
 
 ["star-map-location"] = {
 ["x"] = 104;
@@ -41797,27 +41595,11 @@ _-Beta";
 ["par-losses"] = 23;
 
 ["score-string"] = {
-
-[1] = [==[
-1\2\0\0\Protect science\Destroy jumpgate\\";
-]==];
-
-[2] = [==[
-1\2\0\0\vessel\inhibitor\\";
-]==];
-
-[3] = [==[
-1\3\0\0\\DESTROYED\\";
-]==];
-
-[4] = [==[
-1\3\0\0\\Destroy all\\";
-]==];
-
-[5] = [==[
-1\3\0\0\\hostile ships\\";
-]==];
-
+"1\\2\\0\\0\\Protect science\\Destroy jumpgate\\\\";
+"1\\2\\0\\0\\vessel\\inhibitor\\\\";
+"1\\3\\0\\0\\\\DESTROYED\\\\";
+"1\\3\\0\\0\\\\Destroy all\\\\";
+"1\\3\\0\\0\\\\hostile ships\\\\";
 };
 
 ["player"] = {
@@ -41858,11 +41640,10 @@ _-Beta";
 
 };
 };
-[019] = 
-{	
+[019] = {
 ["id"] = 19;
 ["name"] = "Chapter 17 - ...And It Feels So Good";
-["chapter-name"] = "\i Chapter 17 \r\i...And It Feels So Good";
+["chapter-name"] = "\i Chapter 17 \n\i...And It Feels So Good";
 
 ["star-map-location"] = {
 ["x"] = 156;
@@ -41892,15 +41673,8 @@ _-Beta";
 ["par-losses"] = 30;
 
 ["score-string"] = {
-
-[1] = [==[
--Capture Lalande";
-]==];
-
-[2] = [==[
-_-Beta";
-]==];
-
+"-Capture Lalande";
+"_-Beta";
 };
 
 ["player"] = {
@@ -41923,11 +41697,10 @@ _-Beta";
 
 };
 };
-[020] = 
-{	
+[020] = {
 ["id"] = 20;
 ["name"] = "Chapter 18 - Blood, Toil, Tears, and Sweat";
-["chapter-name"] = "\i Chapter 18 \r\iBlood, Toil, Tears, and Sweat";
+["chapter-name"] = "\i Chapter 18 \n\iBlood, Toil, Tears, and Sweat";
 
 ["star-map-location"] = {
 ["x"] = 182;
@@ -41957,15 +41730,8 @@ _-Beta";
 ["par-losses"] = 34;
 
 ["score-string"] = {
-
-[1] = [==[
--Capture Proxima";
-]==];
-
-[2] = [==[
-_-Alpha & Beta";
-]==];
-
+"-Capture Proxima";
+"_-Alpha & Beta";
 };
 
 ["player"] = {
@@ -42004,11 +41770,10 @@ _-Alpha & Beta";
 
 };
 };
-[021] = 
-{	
+[021] = {
 ["id"] = 21;
 ["name"] = "Chapter 19 - You Should Have Seen the One that Got Away";
-["chapter-name"] = "\i Chapter 19 \r\iYou Should Have Seen the One that Got Away";
+["chapter-name"] = "\i Chapter 19 \n\iYou Should Have Seen the One that Got Away";
 
 ["star-map-location"] = {
 ["x"] = 241;
@@ -42038,23 +41803,10 @@ _-Alpha & Beta";
 ["par-losses"] = 35;
 
 ["score-string"] = {
-
-[1] = [==[
-_-Capture Pictoris";
-]==];
-
-[2] = [==[
-Beta, 1 & 2";
-]==];
-
-[3] = [==[
--Destroy hostile";
-]==];
-
-[4] = [==[
-_-gateship";
-]==];
-
+"_-Capture Pictoris";
+"Beta, 1 & 2";
+"-Destroy hostile";
+"_-gateship";
 };
 
 ["player"] = {
@@ -42087,11 +41839,10 @@ _-gateship";
 
 };
 };
-[022] = 
-{	
+[022] = {
 ["id"] = 22;
 ["name"] = "Chapter 20 - The Mothership Connection";
-["chapter-name"] = "\i Chapter 20 \r\iThe Mothership Connection";
+["chapter-name"] = "\i Chapter 20 \n\iThe Mothership Connection";
 
 ["star-map-location"] = {
 ["x"] = 284;
@@ -42122,15 +41873,8 @@ _-gateship";
 ["par-losses"] = 0;
 
 ["score-string"] = {
-
-[1] = [==[
--Destroy hostile";
-]==];
-
-[2] = [==[
-_-gateship";
-]==];
-
+"-Destroy hostile";
+"_-gateship";
 };
 
 ["player"] = {
@@ -42169,11 +41913,10 @@ _-gateship";
 
 };
 };
-[023] = 
-{	
+[023] = {
 ["id"] = 23;
 ["name"] = "Between a Rock and a Rock";
-["chapter-name"] = "\i Between a Rock and a Rock \r\i ";
+["chapter-name"] = "\i Between a Rock and a Rock \n\i ";
 
 ["star-map-location"] = {
 ["x"] = 200;
@@ -42247,11 +41990,10 @@ _-gateship";
 
 };
 };
-[024] = 
-{	
+[024] = {
 ["id"] = 24;
 ["name"] = "**DEV-23**";
-["chapter-name"] = "\i **DEV-23** \r\i ";
+["chapter-name"] = "\i **DEV-23** \n\i ";
 
 ["star-map-location"] = {
 ["x"] = 100;
@@ -42309,8 +42051,7 @@ _-gateship";
 
 };
 };
-[025] = 
-{	
+[025] = {
 ["id"] = 25;
 ["name"] = "Space Race, the Musical!";
 ["chapter-name"] = "\i Space Race, the Musical! \i ";
@@ -42362,11 +42103,10 @@ _-gateship";
 
 };
 };
-[026] = 
-{	
+[026] = {
 ["id"] = 26;
 ["name"] = "Scratching Post";
-["chapter-name"] = "\i Scratching Post \r\i ";
+["chapter-name"] = "\i Scratching Post \n\i ";
 
 ["star-map-location"] = {
 ["x"] = 100;
@@ -42440,11 +42180,10 @@ _-gateship";
 
 };
 };
-[027] = 
-{	
+[027] = {
 ["id"] = 27;
 ["name"] = "Capture the Flagpod";
-["chapter-name"] = "\i Capture the Flagpod \r\i ";
+["chapter-name"] = "\i Capture the Flagpod \n\i ";
 
 ["star-map-location"] = {
 ["x"] = -1;
@@ -42498,11 +42237,10 @@ _-gateship";
 
 };
 };
-[028] = 
-{	
+[028] = {
 ["id"] = 28;
 ["name"] = "Spaze Warz";
-["chapter-name"] = "\i Spaze Warz \r\i ";
+["chapter-name"] = "\i Spaze Warz \n\i ";
 
 ["star-map-location"] = {
 ["x"] = -1;
@@ -42556,11 +42294,10 @@ _-gateship";
 
 };
 };
-[029] = 
-{	
+[029] = {
 ["id"] = 29;
 ["name"] = "Location, Location, Location";
-["chapter-name"] = "\i Location, Location, Location \r\i ";
+["chapter-name"] = "\i Location, Location, Location \n\i ";
 
 ["star-map-location"] = {
 ["x"] = -1;
@@ -42621,11 +42358,10 @@ _-gateship";
 
 };
 };
-[030] = 
-{	
+[030] = {
 ["id"] = 30;
 ["name"] = "Training - Moons for Goons";
-["chapter-name"] = "\i Training \r\iMoons for Goons";
+["chapter-name"] = "\i Training \n\iMoons for Goons";
 
 ["star-map-location"] = {
 ["x"] = 288;
