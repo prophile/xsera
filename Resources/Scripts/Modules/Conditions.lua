@@ -5,7 +5,6 @@ function TestConditions(scen)
 			cond.isTrue = Test[type](cond)
 			if cond.isTrue == true then
 				CallAction(cond.action)
-				GenerateStatusLines(scen)
 				if cond["condition-flags"]["true-only-once"] == true then
 					cond.active = false
 				end
@@ -16,8 +15,26 @@ end
 
 Test = {
 ["autopilot-condition"] = function(cond) end;
-["counter-condition"] = function(cond) end;
-["counter-greater-condition"] = function(cond) end;
+["counter-condition"] = function(cond)
+	local player = cond["which-player"] + 1
+	local counter = cond["which-counter"]
+	local count = scen.counters[player][counter]
+	if count == cond.amount then
+		return true
+	else
+		return false
+	end
+end;
+["counter-greater-condition"] = function(cond)
+	local player = cond["which-player"] + 1
+	local counter = cond["which-counter"]
+	local count = scen.counters[player][counter]
+	if count > cond.amount then
+		return true
+	else
+		return false
+	end
+end;
 ["current-computer-condition"] = function(cond) end;
 ["current-message-condition"] = function(cond) end;
 ["destruction-condition"] = function(cond)

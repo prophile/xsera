@@ -48,7 +48,7 @@ function InitConditions(scen)
 	scen.counters = {}
 	for pl = 1, MAX_PLAYERS do
 		scen.counters[pl] = {}
-		for ctr = 1, MAX_COUNTERS do
+		for ctr = 0, MAX_COUNTERS - 1 do
 			scen.counters[pl][ctr] = 0
 		end
 	end
@@ -77,19 +77,15 @@ function ParseScoreStrings(scen)
 		local start = 1
 		local line = {}
 		local underline = false
-		print("LOOP")
-		print("C:",c)
+		
 		if c == "_" then
 			line.underline = true
 			c = string.sub(s,2,2)
-			print("UNDERLINED")
 			start = 2
 		end
-		print("C:",c)
-		print("START:", start)
+		
 		if c == "-" then
 			line.string = string.sub(s,start+1)
-			print("SIMPLE")
 		else
 			--type, number, player, negval, falsestring, truestring, basestring, poststring
 			local type, number, player, negvalue, falsestring, truestring, prestring, poststring = string.match(s,"(-?%d)\\(%d+)\\(-?%d+)\\([^\\]*)\\([^\\]*)\\([^\\]*)\\([^\\]*)\\([^\\]*)",start)
@@ -123,7 +119,6 @@ function GetRelativePlayerId(from, code)
 end
 
 function GenerateStatusLines(scen)
-	print("GENERATE")
 	menuStatus = {"MISSION STATUS"}
 	for i, line in ipairs(scen.status) do
 		local out
@@ -144,16 +139,16 @@ function GenerateStatusLines(scen)
 			end
 		elseif line.type == 2 then
 		--[HARDCODE]
-			out = {line.prestring..scen.counters[GetRelativePlayerId(1,line.player)][line.number+1]..line.poststring, false}
+			out = {line.prestring..scen.counters[GetRelativePlayerId(1,line.player)][line.number]..line.poststring, false}
 		elseif line.type == 3 then
-	
+			print("UNIMPLEMENTED")
 		elseif line.type == 4 then
-			print("T4")
-			out = {line.prestring..(line.negvalue-scen.counters[GetRelativePlayerId(1,line.player)][line.number+1])..line.poststring, false}
+		--[HARDCODE]
+			out = {line.prestring..(line.negvalue-scen.counters[GetRelativePlayerId(1,line.player)][line.number])..line.poststring, false}
 		elseif line.type == 5 then
+			print("UNIMPLEMENTED")
 		else
-		print("TYPE: ", line.type, "(", type(line.type),")")
-		printTable(line)
+			error("INVALID STATUS MODE")
 		end
 		menuStatus[i + 1] = out
 	end

@@ -263,6 +263,7 @@ function update()
 	end
 	RemoveDead()
 	TestConditions(scen)
+	GenerateStatusLines(scen)
 	trackingTarget.position = GetMouseCoords()
 	physics.update(dt)
 end

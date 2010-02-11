@@ -103,7 +103,12 @@ actionTable = {
 	end
 end,
 ["assume-initial-object-action"] = function(action, source, direct) end,
-["change-score-action"] = function(action, source, direct) end,
+["change-score-action"] = function(action, source, direct)
+	local player = action["which-player"] + 1
+	local counter = action["which-counter"] or 0
+	local count = scen.counters[player][counter]
+	scen.counters[player][counter] = count + action.amount
+end,
 ["color-flash-action"] = function(action, source, direct) end,
 ["computer-select-action"] = function(action, source, direct) end,
 ["create-object-action"] = function(action, source, direct)
