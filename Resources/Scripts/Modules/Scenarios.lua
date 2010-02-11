@@ -36,7 +36,8 @@ function LoadScenario(id)
 	end
 
 	InitConditions(scen)
-
+	ParseScoreStrings(scen)
+	GenerateStatusLines(scen)
 	return scen
 end
 
@@ -58,44 +59,102 @@ function InitConditions(scen)
 		local cond = deepcopy(gameData["Conditions"][idx])
 
 		if cond["condition-flags"]["initially-true"] ~= true then
-			cond.active = true
-		else
-			cond.active = false
-		end
+				cond.active = true
+					cond.isTrue = true
+			else
+				cond.active = false
+					cond.isTrue = true
+			end
 
 		table.insert(scen.conditions, cond)
 	end
 end
 
-function ParseScoreStrings(id)
+function ParseScoreStrings(scen)
 	lines = {}
-	for i, s in ipairs(gameData["Scenarios"][id]["score-string"]) do
+	for i, s in ipairs(scen["score-string"]) do
 		local c = string.sub(s,1,1)
 		local start = 1
 		local line = {}
 		local underline = false
+		print("LOOP")
+		print("C:",c)
 		if c == "_" then
 			line.underline = true
-			c = string.sub(s,2,1)
+			c = string.sub(s,2,2)
+			print("UNDERLINED")
 			start = 2
 		end
-
+		print("C:",c)
+		print("START:", start)
 		if c == "-" then
-			start = start + 1
-			line.string = string.sub(s,start)
+			line.string = string.sub(s,start+1)
+			print("SIMPLE")
 		else
 			--type, number, player, negval, falsestring, truestring, basestring, poststring
-			local type, number, player, negstring, falsestring, truestring, prestring, poststring = string.match(s,"(-?%d)\\(%d+)\\(-?%d+)\\([^\\]*)\\([^\\]*)\\([^\\]*)\\([^\\]*)\\([^\\]*)",start)
+			local type, number, player, negvalue, falsestring, truestring, prestring, poststring = string.match(s,"(-?%d)\\(%d+)\\(-?%d+)\\([^\\]*)\\([^\\]*)\\([^\\]*)\\([^\\]*)\\([^\\]*)",start)
 
-			line.type = type
-			line.number = number
-			line.player = player
-			line.negstring = negstring
+			line.type = type+0
+			line.number = number+0
+			line.player = player+0
+			line.negvalue = negvalue+0
 			line.falsestring = falsestring
 			line.truestring = truestring
 			line.prestring = prestring
 			line.poststring = poststring
-
 		end
+		table.insert(lines, line)
+	end
+	scen.status = lines
+end
+
+function GetRelativePlayerId(from, code)
+	if code >= 0 then
+		return code + 1
+	elseif code == -1 then
+		return from
+	else ---2
+		local i = next(scen.players)
+		if i == from then
+			i = next(scen.players,i)
+		end
+		return i
+	end
+end
+
+function GenerateStatusLines(scen)
+	print("GENERATE")
+	menuStatus = {"MISSION STATUS"}
+	for i, line in ipairs(scen.status) do
+		local out
+		if line.string ~= nil then
+			out = {line.string, false}
+		elseif line.type == -1 then
+			--empty
+			out = {"", false}
+		elseif line.type == 0 then
+			--plain text
+			out = {line.preString, false}
+		elseif line.type == 1 then
+		--true/false
+			if scen.conditions[line.number + 1].isTrue == true then
+				out = {line.prestring..line.truestring..line.poststring,false}
+			else
+				out = {line.prestring..line.falsestring..line.poststring,false}
+			end
+		elseif line.type == 2 then
+		--[HARDCODE]
+			out = {line.prestring..scen.counters[GetRelativePlayerId(1,line.player)][line.number+1]..line.poststring, false}
+		elseif line.type == 3 then
+	
+		elseif line.type == 4 then
+			print("T4")
+			out = {line.prestring..(line.negvalue-scen.counters[GetRelativePlayerId(1,line.player)][line.number+1])..line.poststring, false}
+		elseif line.type == 5 then
+		else
+		print("TYPE: ", line.type, "(", type(line.type),")")
+		printTable(line)
+		end
+		menuStatus[i + 1] = out
 	end
 end

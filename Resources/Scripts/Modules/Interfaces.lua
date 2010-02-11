@@ -75,9 +75,13 @@ function Messages()
 	menuLevel = menuMessages
 end
 
+menuStatus = { "MISSION STATUS",
+--	{ "", false },
+	
+}
+
 function MissionStatus()
-	menuLevel = { "MISSION STATUS",
-		{ scen.briefing, false } }
+	menuLevel = menuStatus
 end
 
 menuOptions = { "MAIN MENU",

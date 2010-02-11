@@ -1,11 +1,14 @@
 function TestConditions(scen)
 	for idx, cond in pairs(scen.conditions) do
 		local type = cond.type
-		if cond.active == true
-		and Test[type](cond) == true then
-			CallAction(cond.action)
-			if cond["condition-flags"]["true-only-once"] == true then
-				cond.active = false
+		if cond.active == true then
+			cond.isTrue = Test[type](cond)
+			if cond.isTrue == true then
+				CallAction(cond.action)
+				GenerateStatusLines(scen)
+				if cond["condition-flags"]["true-only-once"] == true then
+					cond.active = false
+				end
 			end
 		end
 	end
