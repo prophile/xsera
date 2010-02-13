@@ -100,3 +100,27 @@ end
 function xor(p,q)
 	return (p and not q) or (not p and q)
 end
+
+function AimAhead(gun, target, bulletVel)
+local gPos = gun.position
+local tPos = target.position
+
+local rPos = tPos - gPos
+local rVel = target.velocity - gun.velocity
+
+local A = -bulletVel^2 + rVel * rVel
+local B = 2 * rPos * rVel
+local C = rPos * rPos
+
+--Assumes bullet is faster than target
+--use -b + math.sqrt(...
+--if target is faster
+
+local t = (-B - math.sqrt(B^2 - 4 * A * E))/(2*A)
+
+local slope = rPos + rVel * t
+
+local theta = math.atan2(slope.y, slope.x)
+
+return theta
+end
