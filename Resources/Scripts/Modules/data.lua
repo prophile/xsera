@@ -41803,8 +41803,8 @@ gameData = {
 ["par-losses"] = 35;
 
 ["score-string"] = {
-"_-Capture Pictoris";
-"Beta, 1 & 2";
+"-Capture Pictoris";
+"_-Beta, 1 & 2";
 "-Destroy hostile";
 "_-gateship";
 };

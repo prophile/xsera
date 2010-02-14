@@ -12,6 +12,8 @@ import('Interfaces')
 
 trackingTarget = {}
 mdown = false
+aimMethod = "smart"
+
 
 function init()
 	physics.open(0.6)
@@ -31,6 +33,9 @@ end
 function key( k )
 	if k == "q" or k == "escape" then
 		mode_manager.switch("Xsera/MainMenu")
+	elseif k == "x" then
+		aimMethod = aimMethod == "smart" and "dumb" or "smart"
+		print(aimMethod)
 	elseif k == "/" then
 		printTable(scen.playerShip)
 	elseif k == "backspace" then

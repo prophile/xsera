@@ -166,7 +166,17 @@ end
 
 
 if source.base.attributes["auto-target"] == true then
-	new.physics.angle = find_angle(trackingTarget.position, new.physics.position)
+--[[BEG AQUIRE TARGET]]--
+	local targ = selection.target and selection.target.physics or trackingTarget
+	if aimMethod == "smart" then
+		local vel = new.base["initial-velocity"] * SPEED_FACTOR
+		new.physics.angle = AimAhead(srcMotion, targ, vel)
+	else
+		new.physics.angle = find_angle(targ.position, new.physics.position)
+	end
+
+
+--[[END AQUIRE TARGET]]--
 elseif action["direction-relative"] == "true" then
 	new.physics.angle = srcMotion.angle
 else
