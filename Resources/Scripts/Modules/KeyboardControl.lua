@@ -173,40 +173,50 @@ function DoMoveOrder()
 end
 
 function DoScaleIn(step)
+	local MAX_POW = 1
+	local cameraPow = math.log(cameraRatioTarget)/math.log(2)
 	if step == nil then
-		if cameraRatioNum ~= 1 then
-			cameraChanging = true
-			cameraRatioOrig = cameraRatio
-			x = timeInterval
-			cameraRatioNum = cameraRatioNum - 1
-			multiplier = (cameraRatios[cameraRatioNum] - cameraRatio) / cameraRatio
+		if MAX_POW > math.floor(cameraPow) then
+			cameraPow = math.floor(cameraPow) + 1
 		end
 	else
+		cameraPow = math.min(MAX_POW,cameraPow+step)
+	end
+	
+	local newRatio = 2^cameraPow
+	
+	if newRatio ~= cameraRatio then
 		cameraChanging = true
+		cameraRatioTarget = newRatio
 		cameraRatioOrig = cameraRatio
-		x = timeInterval * step
-		local newRatio = 2^(step + math.log(cameraRatio)/math.log(2))
+		x = timeInterval * 2 * (step or 0.5)
 		multiplier = (newRatio - cameraRatio)/cameraRatio
 	end
+	
 	ActionDeactivate("Scale In")
 end
 
 function DoScaleOut(step)
-	if step == nil then 
-		if type(cameraRatios[cameraRatioNum + 1]) == "number" then
-			cameraChanging = true
-			cameraRatioOrig = cameraRatio
-			x = timeInterval
-			cameraRatioNum = cameraRatioNum + 1
-			multiplier = (cameraRatios[cameraRatioNum] - cameraRatio) / cameraRatio
+	local MIN_POW = -6
+	local cameraPow = math.log(cameraRatioTarget)/math.log(2)
+	if step == nil then
+		if MIN_POW < math.ceil(cameraPow) then
+			cameraPow = math.ceil(cameraPow) - 1
 		end
 	else
+		cameraPow = math.max(MIN_POW,cameraPow-step)
+	end
+	
+	local newRatio = 2^cameraPow
+	
+	if newRatio ~= cameraRatio then
 		cameraChanging = true
+		cameraRatioTarget = newRatio
 		cameraRatioOrig = cameraRatio
-		x = timeInterval * step
-		local newRatio = 2^(-step + math.log(cameraRatio)/math.log(2))
+		x = timeInterval * 2 * (step or 0.5)
 		multiplier = (newRatio - cameraRatio)/cameraRatio
 	end
+
 	ActionDeactivate("Scale Out")
 end
 
@@ -260,42 +270,42 @@ function DoTransferControl()
 end
 
 function DoZoom1_1()
-	if cameraRatioNum ~= 2 then
+	if cameraRatioTarget ~= 1 then
 		cameraChanging = true
 		cameraRatioOrig = cameraRatio
 		x = timeInterval
-		cameraRatioNum = 2
-		multiplier = (cameraRatios[cameraRatioNum] - cameraRatio) / cameraRatio
+		cameraRatioTarget = 1
+		multiplier = (1 - cameraRatio) / cameraRatio
 	end
 end
 
 function DoZoom1_2()
-	if cameraRatioNum ~= 3 then
+	if cameraRatioTarget ~= 1/2 then
 		cameraChanging = true
 		cameraRatioOrig = cameraRatio
 		x = timeInterval
-		cameraRatioNum = 3
-		multiplier = (cameraRatios[cameraRatioNum] - cameraRatio) / cameraRatio
+		cameraRatioTarget = 1/2 
+		multiplier = (1/2 - cameraRatio) / cameraRatio
 	end
 end
 
 function DoZoom1_4()
-	if cameraRatioNum ~= 4 then
+	if cameraRatioTarget ~= 1/4 then
 		cameraChanging = true
 		cameraRatioOrig = cameraRatio
 		x = timeInterval
-		cameraRatioNum = 4
-		multiplier = (cameraRatios[cameraRatioNum] - cameraRatio) / cameraRatio
+		cameraRatioNum = 1/4
+		multiplier = (1/4 - cameraRatio) / cameraRatio
 	end
 end
 
 function DoZoom1_16()
-	if cameraRatioNum ~= 5 then
+	if cameraRatioTarget ~= 1/16 then
 		cameraChanging = true
 		cameraRatioOrig = cameraRatio
 		x = timeInterval
-		cameraRatioNum = 5
-		multiplier = (cameraRatios[cameraRatioNum] - cameraRatio) / cameraRatio
+		cameraRatioTarget = 1/16
+		multiplier = (1/16 - cameraRatio) / cameraRatio
 	end
 end
 
