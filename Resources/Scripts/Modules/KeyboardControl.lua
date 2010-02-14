@@ -172,24 +172,40 @@ function DoMoveOrder()
 	end
 end
 
-function DoScaleIn()
-	if cameraRatioNum ~= 1 then
+function DoScaleIn(step)
+	if step == nil then
+		if cameraRatioNum ~= 1 then
+			cameraChanging = true
+			cameraRatioOrig = cameraRatio
+			x = timeInterval
+			cameraRatioNum = cameraRatioNum - 1
+			multiplier = (cameraRatios[cameraRatioNum] - cameraRatio) / cameraRatio
+		end
+	else
 		cameraChanging = true
 		cameraRatioOrig = cameraRatio
-		x = timeInterval
-		cameraRatioNum = cameraRatioNum - 1
-		multiplier = (cameraRatios[cameraRatioNum] - cameraRatio) / cameraRatio
+		x = timeInterval * step
+		local newRatio = 2^(step + math.log(cameraRatio)/math.log(2))
+		multiplier = (newRatio - cameraRatio)/cameraRatio
 	end
 	ActionDeactivate("Scale In")
 end
 
-function DoScaleOut()
-	if type(cameraRatios[cameraRatioNum + 1]) == "number" then
+function DoScaleOut(step)
+	if step == nil then 
+		if type(cameraRatios[cameraRatioNum + 1]) == "number" then
+			cameraChanging = true
+			cameraRatioOrig = cameraRatio
+			x = timeInterval
+			cameraRatioNum = cameraRatioNum + 1
+			multiplier = (cameraRatios[cameraRatioNum] - cameraRatio) / cameraRatio
+		end
+	else
 		cameraChanging = true
 		cameraRatioOrig = cameraRatio
-		x = timeInterval
-		cameraRatioNum = cameraRatioNum + 1
-		multiplier = (cameraRatios[cameraRatioNum] - cameraRatio) / cameraRatio
+		x = timeInterval * step
+		local newRatio = 2^(-step + math.log(cameraRatio)/math.log(2))
+		multiplier = (newRatio - cameraRatio)/cameraRatio
 	end
 	ActionDeactivate("Scale Out")
 end
