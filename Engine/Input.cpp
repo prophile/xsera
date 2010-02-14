@@ -160,6 +160,12 @@ std::string MouseButtonName ( Uint32 button )
 		case SDL_BUTTON_RIGHT:
 			return "right";
 			break;
+		case SDL_BUTTON_WHEELDOWN:
+			return "wheel_down";
+			break;
+		case SDL_BUTTON_WHEELUP:
+			return "wheel_up";
+			break;
 	}
 	return "unknown";
 }

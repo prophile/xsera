@@ -47,13 +47,15 @@ mouseStart = 0
 
 --camera vars
 cameraRatio = 1
-cameraRatios = { 2, 1, 1/2, 1/4, 1/8, 1/16, "hostile", "object", "all" }
-cameraRatioNum = 2
+cameraRatioTarget = 1
+--cameraRatios = { 2, 1, 1/2, 1/4, 1/8, 1/16, "hostile", "object", "all" }
+--cameraRatioNum = 2
 aspectRatio = 4 / 3
 camera = { w = 640 / cameraRatio, h }
 camera.h = camera.w / aspectRatio
 shipAdjust = .045 * camera.w
 timeInterval = 1
+x = 0
 --/camera vars
 
 --scenvars
@@ -64,9 +66,6 @@ endGameData = nil
 --/scenvars
 
 --tempvars
-showVelocity = false
-showAngles = false
-printFPS = false
 resources = 0
 resourceBars = 0
 resourceTime = 0.0

@@ -358,19 +358,23 @@ function render()
 	graphics.end_frame()
 end
 
-function mouse(button)
---	if a == "left" then
-	 mdown = true
---	end
+function mouse(button,x,y)
+	if button == "wheel_up" then
+		DoScaleIn(0.2)
+	elseif button == "wheel_down" then
+		DoScaleOut(0.2)
+	else
+		mdown = true
+	end
 end
 
 function mouseup()
 	mdown = false
 end
+
 function quit()
 	physics.close()
 end
-
 
 function RemoveDead()
 	--Remove destroyed or expired objects
