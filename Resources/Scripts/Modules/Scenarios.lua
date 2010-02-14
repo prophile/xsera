@@ -72,6 +72,11 @@ end
 
 function ParseScoreStrings(scen)
 	lines = {}
+
+	if scen["score-string"] == nil then
+		scen["score-string"] = {}
+	end
+
 	for i, s in ipairs(scen["score-string"]) do
 		local c = string.sub(s,1,1)
 		local start = 1

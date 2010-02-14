@@ -14,16 +14,16 @@ keys = {
 power = 20
 angle = 0
 
-turret = vec(100,100)
+turret = vec(300,300)
 launcher = vec(0,0)
 
 projectiles = {}
-bulletSpeed = 200
+bulletSpeed = 650
 bulletRadius = 5.0
 pigeonRadius = 10.0
 
-turnRate = 5.0
-powerUpRate = 30.0
+turnRate = 2*math.pi
+powerUpRate = 50.0
 
 
 
@@ -95,7 +95,7 @@ function key(k)
 			pigeon,
 			bulletSpeed
 		)
-		bullet.position = vec(100,100)
+		bullet.position = turret
 		bullet.velocity = PolarVec(bulletSpeed, bullet.angle)
 		
 		projectiles[bullet.object_id] = {type="b";p = bullet}
