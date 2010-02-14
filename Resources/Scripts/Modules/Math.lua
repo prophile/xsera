@@ -109,14 +109,14 @@ local rPos = tPos - gPos
 local rVel = target.velocity - gun.velocity
 
 local A = -bulletVel^2 + rVel * rVel
-local B = 2 * rPos * rVel
+local B = 2 * (rPos * rVel)
 local C = rPos * rPos
 
 --Assumes bullet is faster than target
 --use -b + math.sqrt(...
 --if target is faster
 
-local t = (-B - math.sqrt(B^2 - 4 * A * E))/(2*A)
+local t = (-B - math.sqrt(B^2 - 4 * A * C))/(2*A)
 
 local slope = rPos + rVel * t
 
