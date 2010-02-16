@@ -14,7 +14,7 @@ function init ()
 		sound.play_music("Doomtroopers")
 	end
 	oldTime = mode_manager.time()
-	local rawInput = resource_manager.load("Config/Xsera/Credits.txt")
+	local rawInput = resource_manager.load("Config/Credits.txt")
 	local i = 1
 	local lastDist = initialDist
 	for sizeString, line in string.gmatch(rawInput, "(%**)(.-)\n") do

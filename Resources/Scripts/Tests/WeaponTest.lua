@@ -1,6 +1,13 @@
+import('GlobalVars')
+import('PrintRecursive')
+import('ObjectLoad')
+
 function key ( k )
 	if k == "q" then
-		mode_manager.switch("MainMenu")
+		mode_manager.switch("Xsera/MainMenu")
+	elseif k == " " then
+		local o = NewObject(0)
+		printTable(o)
 	elseif k == "p" then
 		graphics.add_particles("Sparks", 20, { x = 0, y = 0 }, { x = 0, y = 0 }, { x = 2, y = 2 }, 0, 0.6, 3, 1)
 	end

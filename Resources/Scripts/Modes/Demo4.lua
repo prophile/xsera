@@ -1,14 +1,19 @@
+import('GlobalVars')
 import('Actions')
+import('Conditions')
 import('Animation')
 import('ObjectLoad')
-import('GlobalVars')
-import('Math')
+--import('Math')
 import('Scenarios')
 import('PrintRecursive')
 import('KeyboardControl')
+import('PilotAI')
 import('Interfaces')
 
-trackingTarget = {x = 0.0, y = 0.0}
+trackingTarget = {}
+mdown = false
+aimMethod = "smart"
+
 
 TEMPVAR1 = false
 TEMPVAR2 = false
@@ -17,12 +22,15 @@ function init()
 	physics.open(0.6)
 	start_time = mode_manager.time()
 	last_time = mode_manager.time()
-	loadingEntities = true
+	
+	trackingTarget = physics.new_object(1.0)
+	trackingTarget.collision_radius = MOUSE_RADIUS
 	
 	scen = LoadScenario(demoLevel)
 
-	trackingTarget = GetMouseCoords()
-	loadingEntities = false
+	selection.control = scen.playership
+	selection.target = nil
+	trackingTarget.position = GetMouseCoords()
 end
 
 function key( k )
@@ -34,32 +42,16 @@ function key( k )
 	elseif k == "=" then -- [TEMP]
 		-- create a non-blinking pointer box that says "LOOK THERE"
 		TEMPVAR2 = not TEMPVAR2
+	elseif k == "x" then
+		aimMethod = aimMethod == "smart" and "dumb" or "smart"
+		print(aimMethod)
 	elseif k == "/" then
 		printTable(scen.playerShip)
-		print(scen.playerShip.physics.mass)
-	elseif k == "[" then
-		if scen.playerShipId == 1 then
-			scen.playerShipId = #scen.objects
-		else
-			scen.playerShipId = scen.playerShipId - 1
-		end
-		
-		ChangePlayerShip()
-	elseif k == "]" then
-		if scen.playerShipId == #scen.objects then
-			scen.playerShipId = 1
-		else
-			scen.playerShipId = scen.playerShipId + 1
-		end
-		
-		ChangePlayerShip()
 	elseif k == "backspace" then
-		scen.playerShip.health = scen.playerShip.health - 1000
-		if scen.playerShip.health < 0 then
-			scen.playerShip.health = 0
+		scen.playerShip.status.health = scen.playerShip.status.health - 1000
+		if scen.playerShip.status.health < 0 then
+			scen.playerShip.status.health = 0
 		end
-	elseif k == "backslash" then
-		shipSeek = not(shipSeek)
 	else
 		KeyActivate(k)
 	end
@@ -77,7 +69,7 @@ function update()
 	dt = newTime - last_time
 	last_time = newTime
 
-	trackingTarget = GetMouseCoords()
+
 	KeyDoActivated()
 
 --[[------------------
@@ -89,7 +81,7 @@ function update()
 		if x < 0 then
 			x = 0
 			cameraChanging = false
-			scen.playerShip.weapon.beam.width = cameraRatio
+--			scen.playerShip.weapon.beam.width = cameraRatio
 			soundJustPlayed = false
 		end
 		if x >= 0 then
@@ -101,6 +93,7 @@ function update()
 		arrowLength = ARROW_LENGTH / cameraRatio
 		arrowVar = ARROW_VAR / cameraRatio
 		arrowDist = ARROW_DIST / cameraRatio
+		trackingTarget.collision_radius = MOUSE_RADIUS / cameraRatio
 		if (cameraRatio < 1 / 8 and cameraRatioOrig > 1 / 8) or (cameraRatio > 1 / 8 and cameraRatioOrig < 1 / 8) then
 			if soundJustPlayed == false then
 				sound.play("ZoomChange")
@@ -109,174 +102,123 @@ function update()
 		end
 	end
 
-	for i = 1, #scen.objects do
-		local o = scen.objects[i]
-		if o.attributes["can-collide"] == true then
-
-			if o.beam ~= nil then
-				if o.beam.kind == "bolt-relative"
-				or o.beam.kind == "static-relative" then
-					o.physics.position = VecAdd(o.src.position, o.offset)
-				elseif o.beam.kind == "bolt-to-object"
-					or o.beam.kind == "static-to-object" then
-					o.physics.position = VecAdd(VecMul(NormalizeVec(VecSub(o.target.position,o.src.position)), math.min(o.beam.range,find_hypot(o.src.position,o.target.position))),o.src.position)
+	local cols = physics.collisions()
+	
+	for idx, pair in pairs(cols) do
+		if pair[1] == 1 then
+			if mdown == true then
+				if keyboard[2][5].active == true then
+					print("TARGET SELECT")
+					selection.target = scen.objects[pair[2]]
+				else
+					print("CONTROL SELECT")
+					selection.control = scen.objects[pair[2]]
 				end
+				mdown = false
 			end
-			
-			for i2 = i + 1, #scen.objects do
-				local o2 = scen.objects[i2]
-				if o2.attributes["can-collide"] == true
-				and o.owner ~= o2.owner and physics.collisions(o.physics, o2.physics, 0) == true then
---[[
-Equation for 1D elastic collision:
-v1 = (m1v1 + m2v2 + m1C(v2-v1))/(m1+m2)
+		else
+			local a = scen.objects[pair[1]]
+			local b = scen.objects[pair[2]]
 
-OR
+			if a.base.attributes["can-collide"] == true
+			and b.base.attributes["can-collide"] == true
+			and a.ai.owner ~= b.ai.owner then
+				Collide(a,b)
+			end
+		end
+	end
+	mdown = false
 
-Nathan's Method:
-dist = dist(v1,v2)
-angle = angleto(pos1,pos2)
-momentMag = dist * m1/(m1+m2)
-v1 = Polar2Rect(1,angle) * dist * m1 / (m1 + m2)
-v2 = Polar2Rect(1,angle+180) * dist * m2 / (m1 + m2)
---]]
-					if o.attributes["occupies-space"] and o2.attributes["occupies-space"] then
-						local p = o.physics
-						local p2 = o2.physics
-						v1 = deepcopy(p.velocity)
-						m1 = p.mass
-						v2 = deepcopy(p2.velocity)
-						m2 = p2.mass
---[[
-						p.velocity = {
-							x = (m1 * v1.x + m2 *v2.x + m1 * RESTITUTION_COEFFICIENT * ( v2.x - v1.x))/(m1+m2);
-							y = (m1 * v1.y + m2 *v2.y + m1 * RESTITUTION_COEFFICIENT * ( v2.y - v1.y))/(m1+m2);
-						}
-						
-						p2.velocity = {
-							x = (m1 * v1.x + m2 *v2.x + m2 * RESTITUTION_COEFFICIENT * ( v1.x - v2.x))/(m1+m2);
-							y = (m1 * v1.y + m2 *v2.y + m2 * RESTITUTION_COEFFICIENT * ( v1.y - v2.y))/(m1+m2);
-						}
---]]
-
-						local dist = find_hypot(p.velocity, p2.velocity)
-						local angle = find_angle(p.position,p2.position)
-						p.velocity = RotatePoint({y = 0,x = dist * m1 / (m1+m2)}, angle)
-						p2.velocity = RotatePoint({y = 0,x = dist * m2 / (m1+m2)}, angle+math.pi)
-					end
-
-					CollideTrigger(o,o2)
-					CollideTrigger(o2,o)
-
-					if o2.damage ~= nil then
-						o.health = o.health - o2.damage
-					end
-					if o.damage ~= nil then
-						o2.health = o2.health - o.damage
-					end
-
-
-				end
+	for i, o in pairs(scen.objects) do
+		if o.type == "beam" then
+			if o.base.beam.kind == "bolt-relative"
+			or o.base.beam.kind == "static-relative" then
+				local src = o.gfx.source.position
+				local off = o.gfx.offset
+				local rel = o.gfx.relative
+				local a = src;
+				a = a + off
+				a = a + rel
+				o.physics.position = src + off + rel
+				
+			elseif o.base.beam.kind == "bolt-to-object"
+				or o.base.beam.kind == "static-to-object" then
+				local from = o.gfx.offset + o.gfx.source.position
+				local dir = NormalizeVec(o.gfx.target.position - o.gfx.source.position)
+				local len = math.min(o.base.beam.range,find_hypot(from,o.gfx.target.position))
+				
+				o.physics.position = dir * len
 			end
 		end
 		
-		if o.health <= 0 and o.healthMax ~= 0 then
+		if o.status.health <= 0 and o.status.healthMax >= 1 then
 			DestroyTrigger(o)
-			o.dead = true
+			o.status.dead = true
 		end
 		
-		if o.energy ~= nil then
-			if o.energy < o.energyMax
-			and o.battery > dt * ENERGY_RECHARGE_RATIO / BASE_RECHARGE_RATE then
-				o.energy = o.energy + dt * ENERGY_RECHARGE_RATIO / BASE_RECHARGE_RATE
-				o.battery = o.battery - dt * ENERGY_RECHARGE_RATIO / BASE_RECHARGE_RATE
+		if o.status.energy ~= nil then
+			if o.status.energy < o.status.energyMax
+			and o.status.battery > dt * ENERGY_RECHARGE_RATIO / BASE_RECHARGE_RATE then
+				o.status.energy = o.status.energy + dt * ENERGY_RECHARGE_RATIO / BASE_RECHARGE_RATE
+				o.status.battery = o.status.battery - dt * ENERGY_RECHARGE_RATIO / BASE_RECHARGE_RATE
 			end
 			
-			if o.health ~= nil
-			and o.health <= o.healthMax * SHIELD_RECHARGE_MAX
-			and	o.energy > SHIELD_RECHARGE_RATIO * dt / BASE_RECHARGE_RATE then
-				o.health = o.health + dt / BASE_RECHARGE_RATE
-				o.energy = o.energy - SHIELD_RECHARGE_RATIO * dt / BASE_RECHARGE_RATE
+			if o.status.health ~= nil
+			and o.status.health <= o.status.healthMax * SHIELD_RECHARGE_MAX
+			and	o.status.energy > SHIELD_RECHARGE_RATIO * dt / BASE_RECHARGE_RATE then
+				o.status.health = o.status.health + dt / BASE_RECHARGE_RATE
+				o.status.energy = o.status.energy - SHIELD_RECHARGE_RATIO * dt / BASE_RECHARGE_RATE
 			end
 			
-			if o.weapon ~= nil then
-				if o.weapon.pulse ~= nil
-				and o.weapon.pulse.ammo ~= -1
-				and o.weapon.pulse.ammo < o.weapon.pulse.device.ammo / 2
-				and o.weapon.pulse.device.lastRestock + o.weapon.pulse.device["restock-cost"] * BASE_RECHARGE_RATE * WEAPON_RESTOCK_RATE / TIME_FACTOR<= newTime
-				and o.energy >= o.weapon.pulse.device["restock-cost"] * WEAPON_RESTOCK_RATIO then
-					o.energy = o.energy - o.weapon.pulse.device["restock-cost"] * WEAPON_RESTOCK_RATIO
-					o.weapon.pulse.ammo = o.weapon.pulse.ammo + 1
-					o.weapon.pulse.device.lastRestock = newTime
-				end
-				
-				if o.weapon.beam ~= nil
-				and o.weapon.beam.ammo ~= -1
-				and o.weapon.beam.ammo < o.weapon.beam.device.ammo / 2
-				and o.weapon.beam.device.lastRestock + o.weapon.beam.device["restock-cost"] * BASE_RECHARGE_RATE * WEAPON_RESTOCK_RATE / TIME_FACTOR <= newTime
-				and o.energy >= o.weapon.beam.device["restock-cost"] * WEAPON_RESTOCK_RATIO then
-					o.energy = o.energy - o.weapon.beam.device["restock-cost"] * WEAPON_RESTOCK_RATIO
-					o.weapon.beam.ammo = o.weapon.beam.ammo + 1
-					o.weapon.beam.device.lastRestock = newTime
-				end
-				
-				if o.weapon.special ~= nil
-				and o.weapon.special.ammo ~= -1
-				and o.weapon.special.ammo < o.weapon.special.device.ammo / 2
-				and o.weapon.special.device.lastRestock + o.weapon.special.device["restock-cost"] * BASE_RECHARGE_RATE * WEAPON_RESTOCK_RATE / TIME_FACTOR <= newTime
-				and o.energy >= o.weapon.special.device["restock-cost"] * WEAPON_RESTOCK_RATIO then
-					o.energy = o.energy - o.weapon.special.device["restock-cost"] * WEAPON_RESTOCK_RATIO
-					o.weapon.special.ammo = o.weapon.special.ammo + 1
-					o.weapon.special.device.lastRestock = newTime
+			if o.weapons ~= nil then
+				for wid,weap in pairs(o.weapons) do
+					if weap.ammo ~= -1
+					and weap.ammo < weap.base.device.ammo / 2
+					and weap.lastRestock + weap.base.device["restock-cost"] * BASE_RECHARGE_RATE * WEAPON_RESTOCK_RATE / TIME_FACTOR <= newTime
+					and o.status.energy >= weap.base.device["restock-cost"] * WEAPON_RESTOCK_RATIO then
+						o.status.energy = o.status.energy - weap.base.device["restock-cost"] * WEAPON_RESTOCK_RATIO
+						weap.ammo = weap.ammo + 1
+						weap.lastRestock = newTime 
+					end
 				end
 			end
 		end
 
 		--Lifetimer
 		if o.age ~= nil then
-			if o.age + o.created <= newTime then
+			if o.age.lifeSpan + o.age.created <= newTime then
 				ExpireTrigger(o)
-				o.dead = true
+				o.status.dead = true
 			end
 		end
 		
-		if o.attributes["can-engage"] == true then
-			if o ~= scen.playerShip then
-				if o.owner == scen.playerShip.owner and (shipSeek == true or o.attributes["is-guided"] == true) then
-					DumbSeek(o,trackingTarget)
-				else
-					o.control.left = false
-					o.control.right = false
-					o.control.accel = false
-					o.control.decel = true
-				end
-			end
-			
-			if o.trigger.activateInterval ~= 0 then
-				if o.trigger.nextActivate <= newTime then
-					ActivateTrigger(o)
-					o.trigger.nextActivate = newTime + o.trigger.activateInterval + math.random(0,o.trigger.activateRange)
-				end
-			end
-		else
-			o.control.accel = true
+		if o ~= scen.playerShip then
+		 Think(o)
 		end
+		
+		if o.triggers.periodic ~= nil
+		and o.triggers.periodic.interval ~= 0
+		and o.triggers.periodic.next <= newTime then
+			ActivateTrigger(o)
+			o.triggers.periodic.next = newTime + o.triggers.periodic.interval + math.random(0,o.triggers.periodic.range)
+		end
+		
 		
 		--Fire weapons
-		if o.weapon ~= nil then
+		if o.weapons ~= nil then
 			if o.control.pulse == true
-			and o.weapon.pulse ~= nil then
-				ActivateTrigger(o.weapon.pulse, o)
+			and o.weapons.pulse ~= nil then
+				ActivateTrigger(o.weapons.pulse, o)
 			end
 
 			if o.control.beam == true
-			and o.weapon.beam ~= nil then
-				ActivateTrigger(o.weapon.beam, o)
+			and o.weapons.beam ~= nil then
+				ActivateTrigger(o.weapons.beam, o)
 			end
 
 			if o.control.special == true
-			and o.weapon.special ~= nil then
-				ActivateTrigger(o.weapon.special, o)
+			and o.weapons.special ~= nil then
+				ActivateTrigger(o.weapons.special, o)
 			end
 		end
 		
@@ -285,8 +227,8 @@ v2 = Polar2Rect(1,angle+180) * dist * m2 / (m1 + m2)
 	------------------]]--
 
 		local rvel
-		if o.attributes["can-turn"] == true then
-			rvel = o.rotation["max-turn-rate"]
+		if o.base.attributes["can-turn"] == true then
+			rvel = o.base.rotation["max-turn-rate"]
 		else
 			rvel = DEFAULT_ROTATION_RATE
 		end
@@ -299,33 +241,31 @@ v2 = Polar2Rect(1,angle+180) * dist * m2 / (m1 + m2)
 			o.physics.angular_velocity = 0
 		end
 			
-		if o["max-thrust"] ~= nil then
+		if o.base["max-thrust"] ~= nil then
 			if o.control.accel == true then
 				-- apply a forward force in the direction the ship is facing
 				local angle = o.physics.angle
 				--Multiply by 60 because the thrust value in the data is given per FRAME not per second.
 
-				local thrust = o["max-thrust"] * TIME_FACTOR * SPEED_FACTOR
+				local thrust = o.base["max-thrust"] * TIME_FACTOR * SPEED_FACTOR
 				local force = { x = thrust * math.cos(angle), y = thrust * math.sin(angle) }
 				o.physics:apply_force(force)
 			end
 			
 			if o.control.decel == true
-			or hypot1(o.physics.velocity) >= o["max-velocity"] * SPEED_FACTOR then
+			or hypot1(o.physics.velocity) >= o.base["max-velocity"] * SPEED_FACTOR then
 			
 				-- apply a reverse force in the direction opposite the direction the ship is MOVING
-				local thrust = o["max-thrust"] * TIME_FACTOR * SPEED_FACTOR
+				local thrust = o.base["max-thrust"] * TIME_FACTOR * SPEED_FACTOR
 				local force = o.physics.velocity
 				if force.x ~= 0 or force.y ~= 0 then
-					if hypot(o.physics.velocity.x, o.physics.velocity.y) <= 10 then
+					if hypot1(o.physics.velocity) <= 10 then
 						o.physics.velocity = { x = 0, y = 0 }
 					else
 						local velocityMag = hypot1(force)
-						force.x = -force.x / velocityMag
-						force.y = -force.y / velocityMag
-						force.x = force.x * thrust
-						force.y = force.y * thrust
-						if dt * hypot1(force) / o.physics.mass > hypot1(o.physics.velocity) then
+						force = -force * thrust / velocityMag
+
+						if dt * hypot1(force) / o.physics.mass > velocityMag then
 							o.physics.velocity = { x = 0, y = 0 }
 						else
 							o.physics:apply_force(force)
@@ -335,12 +275,22 @@ v2 = Polar2Rect(1,angle+180) * dist * m2 / (m1 + m2)
 			end
 		end
 	end
-	physics.update(dt)
 	RemoveDead()
+	TestConditions(scen)
+	GenerateStatusLines(scen)
+	trackingTarget.position = GetMouseCoords()
+	physics.update(dt)
 end
 
 local tv1Box = { message = "This is as long as a message can be at font 20: not long..", font = MAIN_FONT, size = 20, top = 0, bottom = -20, left = -200, right = 150, pointFrom = { x = 0, y = -20 }, pointTo = { x = -50, y = -70 }, colour = ClutColour(2, 5), flashing = false }
 local tv2Box = { message = "LOOK THERE", font = MAIN_FONT, size = 16, top = 50, bottom = 20, left = 50, right = 150, pointFrom = { x = 50, y = 20 }, pointTo = { x = 50, y = -70 }, colour = ClutColour(4, 5), flashing = true }
+
+function Win()
+	print("\\ \\     /\\    / /   |__  __|   |   \\ | |")
+	print(" \\ \\   /  \\  / /       | |     | |\\ \\| |")
+	print("  \\ \\_/ /\\ \\/ /     ___| |__   | | \\   |")
+	print("   \\___/  \\__/      |______|   |_|  \\__|")
+end
 
 function render()
 	graphics.begin_frame()
@@ -357,99 +307,61 @@ function render()
 	graphics.draw_starfield(-0.3)
 	graphics.draw_starfield(-0.9)
 	
---[[------------------
-	Grid Drawing
-------------------]]--
-	do
-		local i = 0
-		while i * GRID_DIST_BLUE - 10 < camera.w + 10 + GRID_DIST_BLUE do
-			local grid_x = math.floor((i * GRID_DIST_BLUE + scen.playerShip.physics.position.x - (camera.w / 2.0)) / GRID_DIST_BLUE) * GRID_DIST_BLUE
-			
-			if grid_x % GRID_DIST_LIGHT_BLUE == 0 then
-				if grid_x % GRID_DIST_GREEN == 0 then
-					graphics.draw_line({ x = grid_x, y = scen.playerShip.physics.position.y - (camera.h / 2.0) }, { x = grid_x, y = scen.playerShip.physics.position.y + (camera.h / 2.0) }, 1, ClutColour(5, 1))
-				else
-					graphics.draw_line({ x = grid_x, y = scen.playerShip.physics.position.y - (camera.h / 2.0) }, { x = grid_x, y = scen.playerShip.physics.position.y + (camera.h / 2.0) }, 1, ClutColour(14, 9))
-				end
+	DrawGrid()
+	
+	for obId, o in pairs(scen.objects) do
+		if o.type == "beam" then
+			if o.base.beam.kind == "kinetic" then
+				local p1 = o.physics.position
+				local p2 = PolarVec(BEAM_LENGTH,o.physics.angle)
+				graphics.draw_line(p1, p1 + p2,1,ClutColour(o.base.beam.color))
 			else
-				if cameraRatio > 1 / 8 then
-					graphics.draw_line({ x = grid_x, y = scen.playerShip.physics.position.y - (camera.h / 2.0) }, { x = grid_x, y = scen.playerShip.physics.position.y + (camera.h / 2.0) }, 1, ClutColour(4, 11))
+				local from = o.gfx.source.position + o.gfx.offset
+				if o.base.beam.kind == "bolt-relative" then
+					graphics.draw_lightning(from, o.physics.position, 1.0, 10.0, false,ClutColour(o.base.beam.color))
+				elseif o.base.beam.kind == "bolt-to-object" then
+					graphics.draw_lightning(from, o.physics.position, 1.0, 10.0, false,ClutColour(o.base.beam.color))
+				elseif o.base.beam.kind == "static-relative" then
+					graphics.draw_line(from, o.physics.position, 3.0, ClutColour(o.base.beam.color))
+				elseif o.base.beam.kind == "static-to-object" then
+					graphics.draw_line(from, o.physics.position, 3.0, ClutColour(o.base.beam.color))
 				end
 			end
-			i = i + 1
+		else
+			if cameraRatio >= 1.0/8.0 then--[FIX]
+				if o.type == "animation" then
+					graphics.draw_sprite_frame(o.gfx.sprite, o.physics.position, o.gfx.dimensions, Animate(o))
+				else -- Rotational
+					graphics.draw_sprite(o.gfx.sprite, o.physics.position, o.gfx.dimensions, o.physics.angle)
+				end
+			else
+				local color
+				
+				if o.ai.owner == -1 then
+					color = ClutColour(4,1)
+				elseif o.ai.owner == scen.playerShip.ai.owner then
+					color = ClutColour(5,1)
+				else
+					color = ClutColour(16,1)
+				end
+				
+				local iconScale = 1.0/cameraRatio
+				if o.base["tiny-shape"] == "solid-square" then
+					graphics.draw_rbox(o.physics.position, o.base["tiny-size"] * iconScale, color)
+				elseif o.base["tiny-shape"] == "plus" then
+					graphics.draw_rplus(o.physics.position, o.base["tiny-size"] * iconScale, color)
+				elseif o.base["tiny-shape"] == "triangle" then
+					graphics.draw_rtri(o.physics.position, o.base["tiny-size"] * iconScale, color)
+				elseif o.base["tiny-shape"] == "diamond" then
+					graphics.draw_rdia(o.physics.position, o.base["tiny-size"] * iconScale, color)
+				elseif o.base["tiny-shape"] == "framed-square" then --NOT IMPLEMENTED
+					graphics.draw_rbox(o.physics.position, o.base["tiny-size"] * iconScale, color)
+				end
+			end
 		end
 		
-		i = 0
-		while i * GRID_DIST_BLUE - 10 < camera.h + 10 + GRID_DIST_BLUE do
-			local grid_y = math.floor((i * GRID_DIST_BLUE + scen.playerShip.physics.position.y - (camera.h / 2.0)) / GRID_DIST_BLUE) * GRID_DIST_BLUE
-			if grid_y % GRID_DIST_LIGHT_BLUE == 0 then
-				if grid_y % GRID_DIST_GREEN == 0 then
-					graphics.draw_line({ x = scen.playerShip.physics.position.x - shipAdjust - (camera.w / 2.0), y = grid_y }, { x = scen.playerShip.physics.position.x - shipAdjust + (camera.w / 2.0), y = grid_y }, 1, ClutColour(5, 1))
-				else
-					graphics.draw_line({ x = scen.playerShip.physics.position.x - shipAdjust - (camera.w / 2.0), y = grid_y }, { x = scen.playerShip.physics.position.x - shipAdjust + (camera.w / 2.0), y = grid_y }, 1, ClutColour(14, 9))
-				end
-			else
-				if cameraRatio > 1 / 8 then
-					graphics.draw_line({ x = scen.playerShip.physics.position.x - shipAdjust - (camera.w / 2.0), y = grid_y }, { x = scen.playerShip.physics.position.x - shipAdjust + (camera.w / 2.0), y = grid_y }, 1, ClutColour(4, 11))
-				end
-			end
-			i = i + 1
-		end
 	end
-	
-	if scen ~= nil and scen.objects ~= nil then
-		for obId = 1, #scen.objects do
-			local o = scen.objects[obId]
-			
-			if o.sprite ~= nil then
-				if camera.w <= 5120 then
-					if o.animation ~= nil then
-						graphics.draw_sprite_frame("Id/"..o.sprite, o.physics.position, o.spriteDim, Animate(o))
-					else
-						graphics.draw_sprite("Id/"..o.sprite, o.physics.position, o.spriteDim, o.physics.angle)
-					end
-				else
-					local color
-					
-					if o.owner == -1 then
-						color = ClutColour(4,1)
-					elseif o.owner == scen.playerShip.owner then
-						color = ClutColour(5,1)
-					else
-						color = ClutColour(16,1)
-					end
-					
-					local iconScale = 1/cameraRatio
-					if o["tiny-shape"] == "solid-square" then
-						graphics.draw_rbox(o.physics.position, o["tiny-size"] * iconScale, color)
-					elseif o["tiny-shape"] == "plus" then
-						graphics.draw_rplus(o.physics.position, o["tiny-size"] * iconScale, color)
-					elseif o["tiny-shape"] == "triangle" then
-						graphics.draw_rtri(o.physics.position, o["tiny-size"] * iconScale, color)
-					elseif o["tiny-shape"] == "diamond" then
-						graphics.draw_rdia(o.physics.position, o["tiny-size"] * iconScale, color)
-					elseif o["tiny-shape"] == "framed-square" then
-						graphics.draw_rbox(o.physics.position, o["tiny-size"] * iconScale, color)
-					end
-				end
-			elseif o.beam ~= nil then
-				if o.beam.kind == "kinetic" then
-					local p1 = o.physics.position
-					local p2 = RotatePoint({x=BEAM_LENGTH,y=0},o.physics.angle)
-					graphics.draw_line(p1,{x=p1.x+p2.x,y=p1.y+p2.y},1,ClutColour(o.beam.color))
-				elseif o.beam.kind == "bolt-relative" then
-					graphics.draw_lightning(o.src.position, o.physics.position, 1.0, 10.0, false,ClutColour(o.beam.color))
-				elseif o.beam.kind == "bolt-to-object" then
-					graphics.draw_lightning(o.src.position, o.physics.position, 1.0, 10.0, false,ClutColour(o.beam.color))
-				elseif o.beam.kind == "static-relative" then
-					graphics.draw_line(o.src.position, o.physics.position, 3.0, ClutColour(o.beam.color))
-				elseif o.beam.kind == "static-to-object" then
-					graphics.draw_line(o.src.position, o.physics.position, 3.0, ClutColour(o.beam.color))
-				end
-			end
-		end
-	end
-	
+	graphics.draw_circle(trackingTarget.position, trackingTarget.collision_radius, 1.0, ClutColour(5, 1))	
 	graphics.draw_particles()
 	DrawArrow()
 	DrawMouse1()
@@ -467,64 +379,47 @@ function render()
 	graphics.end_frame()
 end
 
+function mouse(button,x,y)
+	if button == "wheel_up" then
+		DoScaleIn(0.2)
+	elseif button == "wheel_down" then
+		DoScaleOut(0.2)
+	else
+		mdown = true
+	end
+end
+
+function mouseup()
+	mdown = false
+end
+
 function quit()
 	physics.close()
 end
 
-
 function RemoveDead()
 	--Remove destroyed or expired objects
-	--Count backwards because the array is shifted with each deletion
-	local i
-	for i = #scen.objects, 1, -1 do
-		local o = scen.objects[i]
-		if o.dead == true then
-			if scen.playerShipId >= i and i ~= 1 then
-				scen.playerShipId = scen.playerShipId - 1
+	for i, o in pairs(scen.objects) do
+		if o.status.dead == true then
+			if scen.playerShipId == i then
+				ChangePlayerShip()
 			end
-			physics.destroy_object(scen.objects[i].physics)
-			ChangePlayerShip()
-			table.remove(scen.objects,i)
-			i = i - 1
+			physics.destroy_object(o.physics)
+			scen.objects[i] = nil
 		end
 	end
-	
-end
-
-function DumbSeek(object, target)
-	object.control.accel = true
-	object.control.decel = false
-	local ang = find_angle(target,object.physics.position) - object.physics.angle
-
-	ang = radian_range(ang)
---[[	if ang < math.pi / 2 then
-		object.control.accel = true 
-		object.control.decel = false
-	else 
-		object.control.accel = false
-		object.control.decel = true
-	end]]
-	
-	if math.abs(ang) < 0.1 then
-		object.control.left = false
-		object.control.right = false
-	elseif ang <= math.pi then
-		object.control.left = true
-		object.control.right = false
-	else
-		object.control.left = false
-		object.control.right = true
-	end
-	
 end
 
 function ChangePlayerShip()
-	if scen.playerShipId > #scen.objects then
-		scen.playerShipId = #scen.objects
-	end
-
+	
 	scen.playerShip = scen.objects[scen.playerShipId]
-		
+	if scen.playerShip == nil then
+	scen.playerShipId, scen.playerShip = next(scen.objects,scen.playerShipId)
+		if scen.playerShip == nil then
+			scen.playerShipId, scen.playerShip = next(scen.objects)
+		end
+	end
+			
 	scen.playerShip.control = {
 		accel = false;
 		decel = false;
@@ -535,4 +430,57 @@ function ChangePlayerShip()
 		special = false;
 		warp = false;
 	}
+end
+
+function Collide(a,b)
+local o = a
+local other = b
+--[[
+Equation for 1D elastic collision:
+v1 = (m1v1 + m2v2 + m1C(v2-v1))/(m1+m2)
+
+OR
+
+Nathan's Method:
+dist = dist(v1,v2)
+angle = angleto(pos1,pos2)
+momentMag = dist * m1/(m1+m2)
+v1 = Polar2Rect(1,angle) * dist * m1 / (m1 + m2)
+v2 = Polar2Rect(1,angle+180) * dist * m2 / (m1 + m2)
+--]]
+	if o.base.attributes["occupies-space"]
+	and other.base.attributes["occupies-space"] then
+		local p = o.physics
+		local p2 = other.physics
+		v1 = p.velocity
+		m1 = p.mass
+		v2 = p2.velocity
+		m2 = p2.mass
+--[[
+		p.velocity = {
+			x = (m1 * v1.x + m2 *v2.x + m1 * RESTITUTION_COEFFICIENT * ( v2.x - v1.x))/(m1+m2);
+			y = (m1 * v1.y + m2 *v2.y + m1 * RESTITUTION_COEFFICIENT * ( v2.y - v1.y))/(m1+m2);
+		}
+		
+		p2.velocity = {
+			x = (m1 * v1.x + m2 *v2.x + m2 * RESTITUTION_COEFFICIENT * ( v1.x - v2.x))/(m1+m2);
+			y = (m1 * v1.y + m2 *v2.y + m2 * RESTITUTION_COEFFICIENT * ( v1.y - v2.y))/(m1+m2);
+		}
+--]]
+
+		local dist = find_hypot(v1, v2)
+		local angle = find_angle(p.position,p2.position)
+		p.velocity = PolarVec(dist * m1 / (m1+m2), angle)
+		p2.velocity = PolarVec(dist * m2 / (m1+m2), angle+math.pi)
+	end
+
+	CollideTrigger(o,other)
+	CollideTrigger(other,o)
+
+	if other.base.damage ~= nil then
+		o.status.health = o.status.health - other.base.damage
+	end
+	if o.base.damage ~= nil then
+		other.status.health = other.status.health - o.base.damage
+	end
 end

@@ -1,6 +1,5 @@
-import('GlobalVars')
-import('Interfaces')
-import('Console')
+--import('GlobalVars')
+--import('Interfaces')
 
 --[[-----------------------
 	--{{---------------
@@ -159,32 +158,65 @@ function DoSelectBase()
 end
 
 function DoTarget()
-	LogError("The command does not have any code. /placeholder", 9)
+--	No Code
 end
 
 function DoMoveOrder()
-	LogError("The command does not have any code. /placeholder", 9)
+	if selection.control ~= nil
+	and selection.control ~= selection.target
+	and selection.control ~= scen.playerShip
+	and selection.control.base.attributes["can-accept-destination"] == true
+	and (selection.target == nil
+	or selection.target.base.attributes["can-be-destination"] == true) then
+		selection.control.ai.objectives.dest = selection.target
+	end
 end
 
-function DoScaleIn()
-	if cameraRatioNum ~= 1 then
-		cameraChanging = true
-		cameraRatioOrig = cameraRatio
-		x = timeInterval
-		cameraRatioNum = cameraRatioNum - 1
-		multiplier = (cameraRatios[cameraRatioNum] - cameraRatio) / cameraRatio
+function DoScaleIn(step)
+	local MAX_POW = 1
+	local cameraPow = math.log(cameraRatioTarget)/math.log(2)
+	if step == nil then
+		if MAX_POW > math.floor(cameraPow) then
+			cameraPow = math.floor(cameraPow) + 1
+		end
+	else
+		cameraPow = math.min(MAX_POW,cameraPow+step)
 	end
+	
+	local newRatio = 2^cameraPow
+	
+	if newRatio ~= cameraRatio then
+		cameraChanging = true
+		cameraRatioTarget = newRatio
+		cameraRatioOrig = cameraRatio
+		x = timeInterval * 2 * (step or 0.5)
+		multiplier = (newRatio - cameraRatio)/cameraRatio
+	end
+	
 	ActionDeactivate("Scale In")
 end
 
-function DoScaleOut()
-	if type(cameraRatios[cameraRatioNum + 1]) == "number" then
-		cameraChanging = true
-		cameraRatioOrig = cameraRatio
-		x = timeInterval
-		cameraRatioNum = cameraRatioNum + 1
-		multiplier = (cameraRatios[cameraRatioNum] - cameraRatio) / cameraRatio
+function DoScaleOut(step)
+	local MIN_POW = -6
+	local cameraPow = math.log(cameraRatioTarget)/math.log(2)
+	if step == nil then
+		if MIN_POW < math.ceil(cameraPow) then
+			cameraPow = math.ceil(cameraPow) - 1
+		end
+	else
+		cameraPow = math.max(MIN_POW,cameraPow-step)
 	end
+	
+	local newRatio = 2^cameraPow
+	
+	if newRatio ~= cameraRatio then
+		cameraChanging = true
+		cameraRatioTarget = newRatio
+		cameraRatioOrig = cameraRatio
+		x = timeInterval * 2 * (step or 0.5)
+		multiplier = (newRatio - cameraRatio)/cameraRatio
+	end
+
 	ActionDeactivate("Scale Out")
 end
 
@@ -213,46 +245,67 @@ end
 	-------------]]--
 
 function DoTransferControl()
-	LogError("The command does not have any code. /placeholder", 9)
+	if selection.control ~= nil
+	and (
+	not(RELEASE_BUILD)
+	or scen.playerShip.ai.owner == control.ai.owner)
+	then
+		scen.playerShipId = selection.control.physics.object_id
+		scen.playerShip.ai.objectives.target = nil
+		scen.playerShip.ai.objectives.dest = nil
+		ChangePlayerShip()
+--[[		scen.playerShip.control = {
+			accel = false;
+			decel = false;
+			left = false;
+			right = false;
+			beam = false;
+			pulse = false;
+			special = false;
+			warp = false;
+		}--]]
+	else
+		sound.play("NaughtyBeep")
+	end
 end
 
 function DoZoom1_1()
-	if cameraRatioNum ~= 2 then
+	if cameraRatioTarget ~= 1 then
 		cameraChanging = true
 		cameraRatioOrig = cameraRatio
 		x = timeInterval
-		cameraRatioNum = 2
-		multiplier = (cameraRatios[cameraRatioNum] - cameraRatio) / cameraRatio
+		cameraRatioTarget = 1
+		multiplier = (1 - cameraRatio) / cameraRatio
 	end
 end
 
 function DoZoom1_2()
-	if cameraRatioNum ~= 3 then
+	if cameraRatioTarget ~= 1/2 then
 		cameraChanging = true
 		cameraRatioOrig = cameraRatio
 		x = timeInterval
-		cameraRatioNum = 3
-		multiplier = (cameraRatios[cameraRatioNum] - cameraRatio) / cameraRatio
+		cameraRatioTarget = 1/2 
+		multiplier = (1/2 - cameraRatio) / cameraRatio
 	end
 end
 
 function DoZoom1_4()
-	if cameraRatioNum ~= 4 then
+	if cameraRatioTarget ~= 1/4 then
 		cameraChanging = true
 		cameraRatioOrig = cameraRatio
 		x = timeInterval
-		cameraRatioNum = 4
-		multiplier = (cameraRatios[cameraRatioNum] - cameraRatio) / cameraRatio
+		cameraRatioNum = 1/4
+		multiplier = (1/4 - cameraRatio) / cameraRatio
 	end
 end
 
 function DoZoom1_16()
-	if cameraRatioNum ~= 5 then
+	if cameraRatioTarget ~= 1/16 then
 		cameraChanging = true
 		cameraRatioOrig = cameraRatio
 		x = timeInterval
-		cameraRatioNum = 5
-		multiplier = (cameraRatios[cameraRatioNum] - cameraRatio) / cameraRatio
+		cameraRatioTarget = 1/16
+		multiplier = (1/16 - cameraRatio) / cameraRatio
 	end
 end
 

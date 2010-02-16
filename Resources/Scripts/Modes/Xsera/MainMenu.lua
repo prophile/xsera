@@ -81,8 +81,6 @@ function key ( k )
         sizeFactor = sizeFactor + 0.1
     elseif k == "k" then
         sizeFactor = sizeFactor - 0.1
-    elseif k == "p" then
-        mode_manager.switch("fractalmonster")
     elseif k == "d" then
         mode_manager.switch("Demo4")
     elseif k == "x" then
@@ -92,13 +90,21 @@ function key ( k )
 			mode_manager.switch("Ares/Splash")
 		end
     elseif k == "t" then
-        mode_manager.switch("WeaponTest")
+        mode_manager.switch("../Tests/TurretTest")
     elseif k == "c" then
         mode_manager.switch("Xsera/Credits")
     elseif k == "tab" then
-        mode_manager.switch("LoadScreen")
+        mode_manager.switch("Ares/Splash")
     elseif k == "escape" then
 		os.exit()
+	elseif k == "1" then
+		mode_manager.switch("../Tests/CSTest")
+	elseif k == "2" then
+		print("CALLING SPECIAL SWITCH")
+		tabl = { "THIS", "IS", "XSERAAAAAAAAAAAAA" }
+		mode_manager.switch("../Tests/CSTest", tabl)
+	elseif k == "3" then
+		mode_manager.switch("../Tests/WindowTest")
     else
         print("Uninterpreted keystroke " .. k)
     end

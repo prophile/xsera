@@ -3,6 +3,11 @@ import('AresCLUT')
 import('data')
 
 --constants
+
+--these limits are the values for ares but we can go MUCH higher if we want to :3
+MAX_PLAYERS = 4
+MAX_COUNTERS = 3 --per player
+
 SPEED_FACTOR = 64.0
 TIME_FACTOR = 60.0
 BEAM_LENGTH = 48
@@ -29,6 +34,8 @@ ARROW_VAR = (3 * math.sqrt(3))
 ARROW_DIST = hypot(6, (ARROW_LENGTH - ARROW_VAR))
 ARROW_ALPHA = math.atan2(6, ARROW_DIST)
 
+MOUSE_RADIUS = 15
+
 RELEASE_BUILD = mode_manager.is_release()
 --/constants
 
@@ -42,13 +49,15 @@ mouseStart = 0
 
 --camera vars
 cameraRatio = 1
-cameraRatios = { 2, 1, 1/2, 1/4, 1/8, 1/16, "hostile" }
-cameraRatioNum = 2
+cameraRatioTarget = 1
+--cameraRatios = { 2, 1, 1/2, 1/4, 1/8, 1/16, "hostile", "object", "all" }
+--cameraRatioNum = 2
 aspectRatio = 4 / 3
 camera = { w = 640 / cameraRatio, h }
 camera.h = camera.w / aspectRatio
 shipAdjust = .045 * camera.w
 timeInterval = 1
+x = 0
 --/camera vars
 
 --scenvars
@@ -56,14 +65,9 @@ scen = nil
 victoryTimer = nil
 defeatTimer = 0
 endGameData = nil
-loadingEntities = false
-entities = {}
 --/scenvars
 
 --tempvars
-showVelocity = false
-showAngles = false
-printFPS = false
 resources = 0
 resourceBars = 0
 resourceTime = 0.0
@@ -82,3 +86,9 @@ arrowLength = ARROW_LENGTH
 arrowVar = ARROW_VAR
 arrowDist = ARROW_DIST
 arrowAlpha = ARROW_ALPHA
+
+--client-server
+isMultiplayer = false
+--/client-server
+
+weak = {__mode = "v"}

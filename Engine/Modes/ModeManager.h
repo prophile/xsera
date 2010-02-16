@@ -28,6 +28,12 @@ void SwitchMode ( const std::string& newmode );
  * Switches to a new mode - a non-lua one
  * @param newMode The mode to which to switch. This should not be deleted.
  */
+void SwitchMode ( const std::string& newmode, int ref );
+/**
+ * Switches to a new mode - a non-lua one
+ * @param newMode The mode to which to switch. This should not be deleted.
+ * @param ref A reference to a lua table, data to be passed to init() of the receiving mode
+ */
 void SwitchMode ( AppMode* newMode );
 /**
  * Queries the name of the current mode
