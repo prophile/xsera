@@ -46,14 +46,37 @@ end;
 end;
 ["direct-is-subject-target-condition"] = function(cond) end;
 ["distance-greater-condition"] = function(cond) end;
-["half-health-condition"] = function(cond) end;
+["half-health-condition"] = function(cond)
+	local objectStatus = scen.objects[cond["subject-object"]+2].status
+	if objectStatus.health * 2 <= objectStatus.healthMax then
+		return true
+	else
+		return false
+	end
+end;
 ["is-auxiliary-object-condition"] = function(cond) end;
 ["is-target-object-condition"] = function(cond) end;
 ["no-condition"] = function(cond) return false end;
-["no-ships-left-condition"] = function(cond) end;
+["no-ships-left-condition"] = function(cond)
+	local player = cond["which-player"]
+	for i,o in pairs(scen.objects) do
+		if o.ai.owner == player then
+			return false
+		end
+	end
+	return true
+end;
 ["not-autopilot-condition"] = function(cond) end;
 ["object-is-being-built-condition"] = function(cond) end;
-["owner-condition"] = function(cond) end;
+["owner-condition"] = function(cond)
+	local player = cond.value
+	local object = scen.objects[cond["subject-object"] + 2]
+	if object.ai.owner == player then
+		return true
+	else
+		return false
+	end
+end;
 ["proximity-condition"] = function(cond) end;
 ["subject-is-player-condition"] = function(cond) end;
 ["time-condition"] = function(cond) end;
