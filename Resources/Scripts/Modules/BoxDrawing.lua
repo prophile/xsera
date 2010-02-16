@@ -128,15 +128,21 @@ function DrawPointerBox(box, dt)
 	-- box must contain the following:
 	-- box = { message, font, size, top, bottom, left, right, pointTo = {x, y}, colour, flashing }
 	if box.time == nil then
-		print("BRANCH UNOOO")
 		box.time = 0
-	elseif box.time > 1 then
-		box.time = box.time - 1
 	end
 	box.time = box.time + dt
+	
+	if box.time == 0.5 + dt then
+		print("RESET")
+		box.time = 0
+	elseif box.time > 0.5 then
+		print("BING")
+		box.time = 0.5
+	end
 	print(box.time)
 	
 	local pointFrom = { x, y }
+	local pointTo = { x = (box.pointTo.x - box.pointFrom.x) * box.time * 2 + box.pointFrom.x, y = (box.pointTo.y - box.pointFrom.y) * box.time * 2 + box.pointFrom.y }
 	
 	graphics.draw_box(box.top, box.left, box.bottom, box.right, 1, box.colour)
 	
@@ -152,9 +158,10 @@ function DrawPointerBox(box, dt)
 		pointFrom.y = box.left
 	end
 	
-	-- [TODO, ADAM] add flashing line part
-	if (not box.flashing) or box.time > 0.5 then
+	if not box.flashing then
 		graphics.draw_line(box.pointTo, box.pointFrom, 1, box.colour)
+	else
+		graphics.draw_line(pointTo, box.pointFrom, 1, box.colour)
 	end
 	
 	graphics.draw_text(box.message, box.font, "left", { x = box.left + 5, y = (box.top + box.bottom) / 2 }, box.size, box.colour)
