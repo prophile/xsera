@@ -449,78 +449,6 @@ function DrawPanels()
 
 --	Weapon ammo count
 --OFFSET = 32 PIXELS <= ?
-<<<<<<< HEAD:Resources/Scripts/Modules/Interfaces.lua
-	if scen.playerShip.weapon ~= nil then
-		if scen.playerShip.weapon.pulse ~= nil and scen.playerShip.weapon.pulse.ammo ~= -1 then
-			graphics.draw_text(string.format('%03d', scen.playerShip.weapon.pulse.ammo), MAIN_FONT, "left", { x = -376, y = 60 }, 13, ClutColour(5, 1))
-		end
-		
-		if scen.playerShip.weapon.beam ~= nil and scen.playerShip.weapon.beam.ammo ~= -1 then
-			graphics.draw_text(string.format('%03d', scen.playerShip.weapon.beam.ammo), MAIN_FONT, "left", { x = -345, y = 60 }, 13, ClutColour(5, 1))
-		end
-		
-		if scen.playerShip.weapon.special ~= nil and scen.playerShip.weapon.special.ammo ~= -1 then
-			graphics.draw_text(string.format('%03d', scen.playerShip.weapon.special.ammo), MAIN_FONT, "left", { x = -314, y = 60 }, 13, ClutColour(5, 1))
-		end
-	end
-	control = scen.playerShip -- [HARDCODE]
-	if control ~= nil then
-		graphics.draw_box(49, -392, 40, -297, 0, ClutColour(9, 6))
-		graphics.draw_text("CONTROL", MAIN_FONT, "left", { x = -389, y = 44 }, 12, ClutColour(1, 17))
-		if control.type == "Planet" then
-			graphics.draw_text(control.name, MAIN_FONT, "left", { x = -389, y = 35 }, 12)
-		else
-			graphics.draw_text(control["short-name"], MAIN_FONT, "left", { x = -389, y = 35 }, 12)
-		end
-		if control.ctrlObject ~= nil then
-			if control.owner == "Human/Ishiman" then
-				graphics.draw_text(control.ctrlObject.name, MAIN_FONT, "left", { x = -389, y = 3 }, 12, ClutColour(5, 11))
-			else
-				graphics.draw_text(control.ctrlObject.name, MAIN_FONT, "left", { x = -389, y = 3 }, 12, ClutColour(16, 1))
-			end
-		end
-		if control.energy ~= nil then
-			graphics.draw_line({ x = -357, y = 28 }, { x = -347, y = 28 }, 0.5, ClutColour(3, 7))
-			graphics.draw_line({ x = -357, y = 27 }, { x = -357, y = 28 }, 0.5, ClutColour(3, 7))
-			graphics.draw_line({ x = -347, y = 27 }, { x = -347, y = 28 }, 0.5, ClutColour(3, 7))
-			graphics.draw_line({ x = -357, y = 9 }, { x = -347, y = 9 }, 0.5, ClutColour(3, 7))
-			graphics.draw_line({ x = -357, y = 10 }, { x = -357, y = 9 }, 0.5, ClutColour(3, 7))
-			graphics.draw_line({ x = -347, y = 10 }, { x = -347, y = 9 }, 0.5, ClutColour(3, 7))
-			graphics.draw_box(27, -356, 10, -348, 0, ClutColour(3, 7))
-			graphics.draw_box(17 * control.energy / control.energyMax + 10, -356, 10, -348, 0, ClutColour(9, 6))
-		end
-		if control.health ~= nil then
-			graphics.draw_line({ x = -369, y = 28 }, { x = -359, y = 28 }, 0.5, ClutColour(4, 8))
-			graphics.draw_line({ x = -369, y = 27 }, { x = -369, y = 28 }, 0.5, ClutColour(4, 8))
-			graphics.draw_line({ x = -359, y = 27 }, { x = -359, y = 28 }, 0.5, ClutColour(4, 8))
-			graphics.draw_line({ x = -369, y = 9 }, { x = -359, y = 9 }, 0.5, ClutColour(4, 8))
-			graphics.draw_line({ x = -369, y = 10 }, { x = -369, y = 9 }, 0.5, ClutColour(4, 8))
-			graphics.draw_line({ x = -359, y = 10 }, { x = -359, y = 9 }, 0.5, ClutColour(4, 8))
-			graphics.draw_box(27, -367.5, 10, -360, 0, ClutColour(4, 8))
-			graphics.draw_box(17 * control.health / control.healthMax + 10, -367.5, 10, -360, 0, ClutColour(4, 6))
-		end
-		if control.type == "Planet" then
-			graphics.draw_sprite(control.type .. "s/" .. control.image, { x = -380, y = 19 }, { x = 17, y = 17 }, 0)
-		else
-			graphics.draw_sprite("Id/" .. control.sprite, { x = -380, y = 19 }, { x = 17, y = 17 }, 3.14 / 2.0)
-		end
-		graphics.draw_line({ x = -387, y = 28 }, { x = -372, y = 28 }, 0.5, ClutColour(1, 1))
-		graphics.draw_line({ x = -387, y = 27 }, { x = -387, y = 28 }, 0.5, ClutColour(1, 1))
-		graphics.draw_line({ x = -372, y = 27 }, { x = -372, y = 28 }, 0.5, ClutColour(1, 1))
-		graphics.draw_line({ x = -387, y = 9 }, { x = -372, y = 9 }, 0.5, ClutColour(1, 1))
-		graphics.draw_line({ x = -372, y = 10 }, { x = -372, y = 9 }, 0.5, ClutColour(1, 1))
-		graphics.draw_line({ x = -387, y = 10 }, { x = -387, y = 9 }, 0.5, ClutColour(1, 1))
-	end
-	if target ~= nil then
-		graphics.draw_box({ x = -8, y = -392 }, { x = -17, y = -297 }, 0, ClutColour(4, 7))
-		graphics.draw_text("TARGET", MAIN_FONT, "left", { x = -389, y = -13 } , 12, ClutColour(1, 17))
-		graphics.draw_line({ x = -387, y = -32 }, { x = -372, y = -32 }, 0.5, ClutColour(1, 1))
-		graphics.draw_line({ x = -372, y = -34 }, { x = -372, y = -32 }, 0.5, ClutColour(1, 1))
-		graphics.draw_line({ x = -387, y = -34 }, { x = -387, y = -32 }, 0.5, ClutColour(1, 1))
-		graphics.draw_line({ x = -387, y = -49 }, { x = -372, y = -49 }, 0.5, ClutColour(1, 1))
-		graphics.draw_line({ x = -372, y = -47 }, { x = -372, y = -49 }, 0.5, ClutColour(1, 1))
-		graphics.draw_line({ x = -387, y = -47 }, { x = -387, y = -49 }, 0.5, ClutColour(1, 1))
-=======
 	if scen.playerShip.weapons ~= nil then
 		if scen.playerShip.weapons.pulse ~= nil
 		and scen.playerShip.weapons.pulse.ammo ~= -1 then
@@ -540,7 +468,6 @@ function DrawPanels()
 
 	if selection.control ~= nil then
 		DrawTargetBox(selection.control,true)
->>>>>>> 7992185a25e864ccb1bc78b518ef3c3abb13a572:Resources/Scripts/Modules/Interfaces.lua
 	end
 
 	if selection.target ~= nil then
