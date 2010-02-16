@@ -125,13 +125,37 @@ function DrawSmallBox(box)
 end
 
 function DrawPointerBox(box, dt)
-	-- box must be in the following structure:
-	-- box = { message, font, size, top, bottom, left, right, pointFrom = {x, y}, pointTo = {x, y}, colour, flashing }
+	-- box must contain the following:
+	-- box = { message, font, size, top, bottom, left, right, pointTo = {x, y}, colour, flashing }
+	if box.time == nil then
+		print("BRANCH UNOOO")
+		box.time = 0
+	elseif box.time > 1 then
+		box.time = box.time - 1
+	end
+	box.time = box.time + dt
+	print(box.time)
+	
+	local pointFrom = { x, y }
 	
 	graphics.draw_box(box.top, box.left, box.bottom, box.right, 1, box.colour)
 	
-	-- [TODO, ADAM] add other line part later
+	if (box.pointTo.y >= (box.top + box.bottom) / 2) then
+		pointFrom.y = box.top
+	else
+		pointFrom.y = box.bottom
+	end
 	
+	if (box.pointTo.x >= (box.left + box.right) / 2) then
+		pointFrom.x = box.right
+	else
+		pointFrom.y = box.left
+	end
+	
+	-- [TODO, ADAM] add flashing line part
+	if (not box.flashing) or box.time > 0.5 then
+		graphics.draw_line(box.pointTo, box.pointFrom, 1, box.colour)
+	end
 	
 	graphics.draw_text(box.message, box.font, "left", { x = box.left + 5, y = (box.top + box.bottom) / 2 }, box.size, box.colour)
 end

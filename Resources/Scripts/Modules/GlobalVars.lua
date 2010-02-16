@@ -22,10 +22,12 @@ RESOURCES_PER_TICK = 200
 GRID_DIST_BLUE = 512
 GRID_DIST_LIGHT_BLUE = 4096
 GRID_DIST_GREEN = 32768
+--/constants
 
 ARROW_LENGTH = 135
 ARROW_VAR = (3 * math.sqrt(3))
 ARROW_DIST = hypot(6, (ARROW_LENGTH - ARROW_VAR))
+ARROW_ALPHA = math.atan2(6, ARROW_DIST)
 
 RELEASE_BUILD = mode_manager.is_release()
 --/constants
@@ -37,7 +39,6 @@ shipSeek = false
 oldMousePos = { x = 0, y = 0 }
 mouseStart = 0
 --/mouse variables
-
 
 --camera vars
 cameraRatio = 1
@@ -77,8 +78,7 @@ soundLength = 0.25
 menuLevel = nil
 --/tempvars
 
-CarrowAlpha = math.atan2(6, ARROW_DIST)
 arrowLength = ARROW_LENGTH
 arrowVar = ARROW_VAR
 arrowDist = ARROW_DIST
-arrowAlpha = CarrowAlpha
+arrowAlpha = ARROW_ALPHA
