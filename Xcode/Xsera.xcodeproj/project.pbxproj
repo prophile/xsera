@@ -273,7 +273,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "ln -F -s -f \"$PWD/../Resources/\" \"$BUILD_ROOT/Debug/$UNLOCALIZED_RESOURCES_FOLDER_PATH\"\n";
+			shellScript = "if [ ! -d \"$BUILD_ROOT/Debug/$UNLOCALIZED_RESOURCES_FOLDER_PATH\" ];\nthen ln -F -s -f \"$PWD/../Resources/\" \"$BUILD_ROOT/Debug/$UNLOCALIZED_RESOURCES_FOLDER_PATH\";\nfi;";
 		};
 /* End PBXShellScriptBuildPhase section */
 
