@@ -60,6 +60,7 @@ std::map<std::string, TTF_Font*> fonts;
 
 static bool ttf_initted = false;
 
+// [ADAM, ALISTAIR]: this is where size affects things... how would we figure out how to correct the size?
 TTF_Font* GetFont ( const std::string& name, float size )
 {
 	if (!ttf_initted)
@@ -110,7 +111,7 @@ TextEntry* GetEntry ( const std::string& font, const std::string& text, float si
 		newEntry->surface = NULL;
 		newEntry->lastUse = 0.0f;
 		TTF_Font* fontObject = GetFont(font, size);
-		const SDL_Color fg = { 0xFF, 0xFF, 0xFF, 0xFF };
+		const SDL_Color fg = { 0xFF, 0xFF, 0xFF, 0xFF }; // is this causing all-white text?
 		newEntry->surface = TTF_RenderUTF8_Blended(fontObject, text.c_str(), fg);
 		assert(newEntry->surface);
 		// generate textures
@@ -136,9 +137,14 @@ namespace TextRenderer
 
 vec2 TextDimensions ( const std::string& font, const std::string& text, float size )
 {
-	TextEntry* entry = GetEntry(font, text, size);
-	assert(entry);
-	return vec2(entry->surface->w, entry->surface->h);
+	int xcoord = 0;
+	int ycoord = 0;
+	TTF_Font* fontObject = GetFont(font, size);
+	if (TTF_SizeUTF8(fontObject, text.c_str(), &xcoord, &ycoord) != 0)
+	{
+		printf("Trouble with text '%s', line %d\n", text.c_str(), __LINE__);
+	}
+	return vec2(xcoord, ycoord);
 }
 
 GLuint TextObject ( const std::string& font, const std::string& text, float size )

@@ -105,6 +105,8 @@ function key ( k )
 		mode_manager.switch("../Tests/CSTest", tabl)
 	elseif k == "3" then
 		mode_manager.switch("../Tests/WindowTest")
+	elseif k == "4" then
+		mode_manager.switch("../Tests/TextTests")
     else
         print("Uninterpreted keystroke " .. k)
     end

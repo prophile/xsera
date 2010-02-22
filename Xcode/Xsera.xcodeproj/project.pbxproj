@@ -7,12 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		490CDB280ECCE572004B7D04 /* Music in Resources */ = {isa = PBXBuildFile; fileRef = 490CDB270ECCE572004B7D04 /* Music */; };
-		4930D74F0ECE22990053CC8B /* Images in Resources */ = {isa = PBXBuildFile; fileRef = 4930D74A0ECE22990053CC8B /* Images */; };
-		4932246F0F23E1970048495A /* Shaders in Resources */ = {isa = PBXBuildFile; fileRef = 493224690F23E1970048495A /* Shaders */; };
-		49554A330EDDBD1F009CA121 /* Stars in Resources */ = {isa = PBXBuildFile; fileRef = 49554A300EDDBD1F009CA121 /* Stars */; };
-		49597A130ED4D47C00173D17 /* Config in Resources */ = {isa = PBXBuildFile; fileRef = 49597A0B0ED4D47C00173D17 /* Config */; };
-		496039280ED0B555003BA716 /* Scripts in Resources */ = {isa = PBXBuildFile; fileRef = 496039250ED0B555003BA716 /* Scripts */; };
 		496924290EBE4CEA00930DDD /* SDL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 496924170EBE4CEA00930DDD /* SDL.framework */; };
 		4969242A0EBE4CEA00930DDD /* SDL_image.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 496924180EBE4CEA00930DDD /* SDL_image.framework */; };
 		4969242B0EBE4CEA00930DDD /* SDL_mixer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 496924190EBE4CEA00930DDD /* SDL_mixer.framework */; };
@@ -24,13 +18,18 @@
 		496924830EBE516100930DDD /* Xsera.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 496924820EBE516100930DDD /* Xsera.cpp */; };
 		496A28470F0ECB7B00C53BA1 /* libApollo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 496A27830F0EC9A300C53BA1 /* libApollo.a */; };
 		49A0E6940ECC3887007F3458 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49A0E6930ECC3887007F3458 /* OpenGL.framework */; };
-		49A315530ED6BDD90054BB8B /* Fonts in Resources */ = {isa = PBXBuildFile; fileRef = 49A315500ED6BDD90054BB8B /* Fonts */; };
-		49D543CB0ED5E222002FC38E /* Sprites in Resources */ = {isa = PBXBuildFile; fileRef = 49D543B80ED5E222002FC38E /* Sprites */; };
-		5766341710AF74600025BA67 /* Particles in Resources */ = {isa = PBXBuildFile; fileRef = 5766341410AF74600025BA67 /* Particles */; };
-		57FCA77F10ACF9F6002D6A9E /* Objects in Resources */ = {isa = PBXBuildFile; fileRef = 57FCA77910ACF9F6002D6A9E /* Objects */; };
-		57FCA78010ACF9F6002D6A9E /* Textures in Resources */ = {isa = PBXBuildFile; fileRef = 57FCA77C10ACF9F6002D6A9E /* Textures */; };
-		7A58AD60108919F200C4F789 /* NewResources in Resources */ = {isa = PBXBuildFile; fileRef = 7A58AD4C108919F200C4F789 /* NewResources */; };
-		7A8C71560EDB0FB700CFE5D3 /* Sounds in Resources */ = {isa = PBXBuildFile; fileRef = 7A8C711F0EDB0FB700CFE5D3 /* Sounds */; };
+		7A0E7F2F11322B70000B823C /* Config in Resources */ = {isa = PBXBuildFile; fileRef = 49597A0B0ED4D47C00173D17 /* Config */; };
+		7A0E7F3011322B70000B823C /* Particles in Resources */ = {isa = PBXBuildFile; fileRef = 5766341410AF74600025BA67 /* Particles */; };
+		7A0E7F3111322B70000B823C /* Objects in Resources */ = {isa = PBXBuildFile; fileRef = 57FCA77910ACF9F6002D6A9E /* Objects */; };
+		7A0E7F3211322B70000B823C /* Textures in Resources */ = {isa = PBXBuildFile; fileRef = 57FCA77C10ACF9F6002D6A9E /* Textures */; };
+		7A0E7F3311322B70000B823C /* Shaders in Resources */ = {isa = PBXBuildFile; fileRef = 493224690F23E1970048495A /* Shaders */; };
+		7A0E7F3411322B70000B823C /* Stars in Resources */ = {isa = PBXBuildFile; fileRef = 49554A300EDDBD1F009CA121 /* Stars */; };
+		7A0E7F3511322B70000B823C /* Sounds in Resources */ = {isa = PBXBuildFile; fileRef = 7A8C711F0EDB0FB700CFE5D3 /* Sounds */; };
+		7A0E7F3611322B70000B823C /* Fonts in Resources */ = {isa = PBXBuildFile; fileRef = 49A315500ED6BDD90054BB8B /* Fonts */; };
+		7A0E7F3711322B70000B823C /* Sprites in Resources */ = {isa = PBXBuildFile; fileRef = 49D543B80ED5E222002FC38E /* Sprites */; };
+		7A0E7F3811322B70000B823C /* NewResources in Resources */ = {isa = PBXBuildFile; fileRef = 7A58AD4C108919F200C4F789 /* NewResources */; };
+		7A0E7F3911322B70000B823C /* Images in Resources */ = {isa = PBXBuildFile; fileRef = 4930D74A0ECE22990053CC8B /* Images */; };
+		7A0E7F3A11322B70000B823C /* Music in Resources */ = {isa = PBXBuildFile; fileRef = 490CDB270ECCE572004B7D04 /* Music */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,7 +72,6 @@
 		493224690F23E1970048495A /* Shaders */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Shaders; path = ../Resources/Shaders; sourceTree = SOURCE_ROOT; };
 		49554A300EDDBD1F009CA121 /* Stars */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Stars; path = ../Resources/Stars; sourceTree = SOURCE_ROOT; };
 		49597A0B0ED4D47C00173D17 /* Config */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Config; path = ../Resources/Config; sourceTree = SOURCE_ROOT; };
-		496039250ED0B555003BA716 /* Scripts */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Scripts; path = ../Resources/Scripts; sourceTree = SOURCE_ROOT; };
 		496923DB0EBE4BC300930DDD /* Xsera.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Xsera.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		496923DE0EBE4BC300930DDD /* Xsera-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Xsera-Info.plist"; sourceTree = "<group>"; };
 		496924170EBE4CEA00930DDD /* SDL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SDL.framework; sourceTree = "<group>"; };
@@ -89,6 +87,7 @@
 		57FCA77910ACF9F6002D6A9E /* Objects */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Objects; path = ../Resources/Objects; sourceTree = SOURCE_ROOT; };
 		57FCA77C10ACF9F6002D6A9E /* Textures */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Textures; path = ../Resources/Textures; sourceTree = SOURCE_ROOT; };
 		7A58AD4C108919F200C4F789 /* NewResources */ = {isa = PBXFileReference; lastKnownFileType = folder; name = NewResources; path = ../Resources/NewResources; sourceTree = SOURCE_ROOT; };
+		7A5FEA6D1130BE22009CFD8A /* Scripts */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Scripts; path = ../Resources/Scripts; sourceTree = SOURCE_ROOT; };
 		7A8C711F0EDB0FB700CFE5D3 /* Sounds */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Sounds; path = ../Resources/Sounds; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
@@ -132,7 +131,7 @@
 		496923E20EBE4C3500930DDD /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				496039250ED0B555003BA716 /* Scripts */,
+				7A5FEA6D1130BE22009CFD8A /* Scripts */,
 				49597A0B0ED4D47C00173D17 /* Config */,
 				5766341410AF74600025BA67 /* Particles */,
 				57FCA77910ACF9F6002D6A9E /* Objects */,
@@ -186,10 +185,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 496923E10EBE4BC400930DDD /* Build configuration list for PBXNativeTarget "Xsera" */;
 			buildPhases = (
-				496923D70EBE4BC300930DDD /* Resources */,
+				7A0E7E0311321B17000B823C /* ShellScript */,
 				496924030EBE4CD600930DDD /* Copy Frameworks */,
 				496923D80EBE4BC300930DDD /* Sources */,
 				496923D90EBE4BC300930DDD /* Frameworks */,
+				7A0E7F4111322B80000B823C /* Resources */,
 			);
 			buildRules = (
 			);
@@ -240,27 +240,42 @@
 /* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
-		496923D70EBE4BC300930DDD /* Resources */ = {
+		7A0E7F4111322B80000B823C /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				490CDB280ECCE572004B7D04 /* Music in Resources */,
-				4930D74F0ECE22990053CC8B /* Images in Resources */,
-				496039280ED0B555003BA716 /* Scripts in Resources */,
-				49597A130ED4D47C00173D17 /* Config in Resources */,
-				49D543CB0ED5E222002FC38E /* Sprites in Resources */,
-				49A315530ED6BDD90054BB8B /* Fonts in Resources */,
-				7A8C71560EDB0FB700CFE5D3 /* Sounds in Resources */,
-				49554A330EDDBD1F009CA121 /* Stars in Resources */,
-				4932246F0F23E1970048495A /* Shaders in Resources */,
-				7A58AD60108919F200C4F789 /* NewResources in Resources */,
-				57FCA77F10ACF9F6002D6A9E /* Objects in Resources */,
-				57FCA78010ACF9F6002D6A9E /* Textures in Resources */,
-				5766341710AF74600025BA67 /* Particles in Resources */,
+				7A0E7F2F11322B70000B823C /* Config in Resources */,
+				7A0E7F3011322B70000B823C /* Particles in Resources */,
+				7A0E7F3111322B70000B823C /* Objects in Resources */,
+				7A0E7F3211322B70000B823C /* Textures in Resources */,
+				7A0E7F3311322B70000B823C /* Shaders in Resources */,
+				7A0E7F3411322B70000B823C /* Stars in Resources */,
+				7A0E7F3511322B70000B823C /* Sounds in Resources */,
+				7A0E7F3611322B70000B823C /* Fonts in Resources */,
+				7A0E7F3711322B70000B823C /* Sprites in Resources */,
+				7A0E7F3811322B70000B823C /* NewResources in Resources */,
+				7A0E7F3911322B70000B823C /* Images in Resources */,
+				7A0E7F3A11322B70000B823C /* Music in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		7A0E7E0311321B17000B823C /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "ln -F -s -f \"$PWD/../Resources/\" \"$BUILD_ROOT/Debug/$UNLOCALIZED_RESOURCES_FOLDER_PATH\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		496923D80EBE4BC300930DDD /* Sources */ = {

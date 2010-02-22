@@ -287,9 +287,9 @@ local tv2Box = { message = "LOOK THERE", font = MAIN_FONT, size = 16, top = 50, 
 
 function Win()
 	print("\\ \\     /\\    / /   |__  __|   |   \\ | |")
-	print(" \\ \\   /  \\  / /       | |     | |\\ \\| |")
-	print("  \\ \\_/ /\\ \\/ /     ___| |__   | | \\   |")
-	print("   \\___/  \\__/      |______|   |_|  \\__|")
+	print(" \\ \\   /  \\  / /       | |     | |\ \\| |")
+	print("  \\ \\_/ /\ \\/ /     ___| |__   | | \    |")
+	print("   \\____/  \___/      |______|   |_|  \\__|")
 end
 
 function render()
