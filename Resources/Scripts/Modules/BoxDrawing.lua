@@ -127,37 +127,53 @@ end
 function DrawPointerBox(box, dt)
 	-- box must contain the following:
 	-- box = { message, font, size, top, bottom, left, right, pointTo = {x, y}, colour, flashing }
-	if box.time == nil then
-		print("BRANCH UNOOO")
-		box.time = 0
-	elseif box.time > 1 then
-		box.time = box.time - 1
-	end
-	box.time = box.time + dt
-	print(box.time)
+	-- OR:
+	-- box = { message, font, size, colour, baseText }
+	-- for text that shows up on the bottom of the screen (not yet implemented)
 	
-	local pointFrom = { x, y }
-	
-	graphics.draw_box(box.top, box.left, box.bottom, box.right, 1, box.colour)
-	
-	if (box.pointTo.y >= (box.top + box.bottom) / 2) then
-		pointFrom.y = box.top
+	if box.baseText ~= true then
+		local pointFrom = { x, y }
+		local pointTo = { x, y }
+		
+		if box.flashing then
+			if box.time == nil then
+				box.time = 0
+			end
+			box.time = box.time + dt
+			
+			if box.time == 0.5 + dt then
+				box.time = 0
+			elseif box.time > 0.5 then
+				box.time = 0.5
+			end
+			pointTo.x = (box.pointTo.x - box.pointFrom.x) * box.time * 2 + box.pointFrom.x
+			pointTo.y = (box.pointTo.y - box.pointFrom.y) * box.time * 2 + box.pointFrom.y
+		end
+		
+		graphics.draw_box(box.top, box.left, box.bottom, box.right, 1, box.colour)
+		
+		if (box.pointTo.y >= (box.top + box.bottom) / 2) then
+			pointFrom.y = box.top
+		else
+			pointFrom.y = box.bottom
+		end
+		
+		if (box.pointTo.x >= (box.left + box.right) / 2) then
+			pointFrom.x = box.right
+		else
+			pointFrom.x = box.left
+		end
+		
+		if not box.flashing then
+			graphics.draw_line(box.pointTo, pointFrom, 1, box.colour)
+		else
+			graphics.draw_line(pointTo, pointFrom, 1, box.colour)
+		end
+		
+		graphics.draw_text(box.message, box.font, "left", { x = box.left + 5, y = (box.top + box.bottom) / 2 }, box.size, box.colour)
 	else
-		pointFrom.y = box.bottom
+		-- [TODO, ADAM] - create text that goes on the bottom
 	end
-	
-	if (box.pointTo.x >= (box.left + box.right) / 2) then
-		pointFrom.x = box.right
-	else
-		pointFrom.y = box.left
-	end
-	
-	-- [TODO, ADAM] add flashing line part
-	if (not box.flashing) or box.time > 0.5 then
-		graphics.draw_line(box.pointTo, box.pointFrom, 1, box.colour)
-	end
-	
-	graphics.draw_text(box.message, box.font, "left", { x = box.left + 5, y = (box.top + box.bottom) / 2 }, box.size, box.colour)
 end
 
 function SwitchBox(box)

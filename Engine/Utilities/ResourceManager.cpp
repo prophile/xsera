@@ -168,8 +168,6 @@ void Init ( const std::string& appname )
 	
 	searchDomains.push_back(new ResourceDomainFilesystem(userDirectory));
 	searchDomains.push_back(new ResourceDomainFilesystem(systemDirectory));
-//	[ALISTAIR, DEMO?]: Not working here :(
-//	searchDomains.push_back(new ResourceDomainFilesystem(std::string(systemDirectory) + "/NewResources"));
 	userDirectoryPath = userDirectory;
 #elif defined(WIN32)
 #else
