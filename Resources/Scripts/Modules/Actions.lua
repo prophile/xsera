@@ -7,7 +7,7 @@ function ActivateTrigger(sender, owner)
 	
 	elseif owner.status.energy >= sender.base.device["energy-cost"]
 	and (sender.base.device.ammo == -1
-	or sender.base.device.ammo > 0)
+	or sender.ammo > 0)
 	and sender.lastActivated < mode_manager.time() - sender.base.device["fire-time"] / TIME_FACTOR then
 
 			sender.lastActivated = mode_manager.time()
@@ -168,15 +168,13 @@ end
 if source.base.attributes["auto-target"] == true then
 --[[BEG AQUIRE TARGET]]--
 	local targ = selection.target and selection.target.physics or trackingTarget
+--[[END AQUIRE TARGET]]--
 	if aimMethod == "smart" then
-		local vel = new.base["initial-velocity"] * SPEED_FACTOR
+		local vel = (new.base["initial-velocity"] or 0) * SPEED_FACTOR
 		new.physics.angle = AimAhead(srcMotion, targ, vel)
 	else
 		new.physics.angle = find_angle(targ.position, new.physics.position)
 	end
-
-
---[[END AQUIRE TARGET]]--
 elseif action["direction-relative"] == "true" then
 	new.physics.angle = srcMotion.angle
 else

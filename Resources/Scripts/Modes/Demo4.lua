@@ -172,6 +172,7 @@ function update()
 			if o.weapons ~= nil then
 				for wid,weap in pairs(o.weapons) do
 					if weap.ammo ~= -1
+					and weap.base.device["restock-cost"] > 0
 					and weap.ammo < weap.base.device.ammo / 2
 					and weap.lastRestock + weap.base.device["restock-cost"] * BASE_RECHARGE_RATE * WEAPON_RESTOCK_RATE / TIME_FACTOR <= newTime
 					and o.status.energy >= weap.base.device["restock-cost"] * WEAPON_RESTOCK_RATIO then
