@@ -39,7 +39,7 @@ void Object::Update ( float timestep, float friction )
 {
     // step 1: apply resistive force
 	vec2 dragForce = -velocity.UnitVector() * fluidDragRho * velocity.ModulusSquared() * /* (2.0f * M_PI * collisionRadius) */ friction;
-	//ALASTAIR: what's this 2*pi*r stuff? It's what's causing the problem!
+	//ALISTAIR: what's this 2*pi*r stuff? It's what's causing the problem!
 	//on second thought, why is there drag in space??
 //	force += dragForce;
     // step 2: update velocity from force
@@ -77,7 +77,7 @@ obj1 and obj2 both have radii (ship to ship, ship to planet collisions)
 */
 bool Object::Collision( vec2 obj1, vec2 obj2, float radius1, float radius2 )
 {
-	if ( hypotf(obj1.X() - obj2.X(), obj1.Y() - obj2.Y()) <= (radius1 + radius2) * (radius1 + radius2))
+	if ( hypotf(obj1.X() - obj2.X(), obj1.Y() - obj2.Y()) <= (radius1 + radius2))
 	{
 		return true;
 	}

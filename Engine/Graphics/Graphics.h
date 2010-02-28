@@ -36,6 +36,16 @@ vec2 SpriteDimensions ( const std::string& sheetname );
  */
 void DrawSprite ( const std::string& sheetname, int sheet_x, int sheet_y, vec2 position, vec2 size, float rotation, colour col );
 /**
+ * Draws a specific frame from spritesheet.
+ * @param sheetname The sprite sheet to use
+ * @param position The position of the centre of the sprite in world coordinates
+ * @param size The size of the sprite in world coordinates
+ * @param the index of the sprite
+ * @param rotation The rotation of the sprite, in radians
+ * @param col The colour of the image
+ */
+void DrawSpriteFrame ( const std::string& sheetname, vec2 position, vec2 size, int index, float rotation, colour col );
+/**
  * Draws an image
  * @param imageName The name of the image
  * @param position The position of the centre of the image in world coordinates
@@ -186,6 +196,13 @@ float AspectRatio ();
  * @return The point in the camera
  */
 vec2 MapPoint ( vec2 windowCoords );
+/**
+ * Draws a point "pixel" pixels wide at the given coordinates
+ * @param coords The coordinate of the point
+ * @param pixel The width of the point
+ * @param col The color of the point
+ */
+void DrawPoint ( vec2 coord, float width, colour col );
 /**
  * Checks if a circle lies entirely outside the current camera position
  * @param position The centre of the circle

@@ -18,6 +18,10 @@ function find_angle(origin, dest)
 	return angle
 end
 
+function FindDist(pt1, pt2)
+	return math.abs(pt1.x - pt2.x) + math.abs(pt1.y - pt2.y)
+end
+
 function find_hypot(point1, point2)
 	return (math.sqrt((point1.y - point2.y) * (point1.y - point2.y) + (point1.x - point2.x) * (point1.x - point2.x)))
 end
@@ -66,10 +70,9 @@ function reference_angle(angle)
 end
 
 function radian_range(angle)
+	angle = angle % (2.0 * math.pi)
 	if angle < 0 then
-		angle = 2 * math.pi - angle
-	elseif angle > 2 * math.pi then
-		angle = angle - 2 * math.pi
+		angle = 2 * math.pi + angle
 	end
 	return angle
 end
@@ -79,12 +82,45 @@ function RandomReal ( min, max )
 end
 
 function RotatePoint(point, angle)
-return {
-x = point.x*math.cos(angle)-point.y*math.sin(angle);
-y = point.x*math.sin(angle)+point.y*math.cos(angle);
-}
+	return vec(
+	point.x*math.cos(angle)-point.y*math.sin(angle),
+	point.x*math.sin(angle)+point.y*math.cos(angle)
+	)
+end
+
+function PolarVec(mag, angle)
+	return vec(mag*math.cos(angle),mag*math.sin(angle))
+end
+
+
+function NormalizeVec(v)
+	return v/hypot1(v)
 end
 
 function xor(p,q)
 	return (p and not q) or (not p and q)
+end
+
+function AimAhead(gun, target, bulletVel)
+	local gPos = gun.position
+	local tPos = target.position
+	
+	local rPos = tPos - gPos
+	local rVel = target.velocity - gun.velocity
+	
+	local A = -bulletVel^2 + rVel * rVel
+	local B = 2 * (rPos * rVel)
+	local C = rPos * rPos
+	
+	--Assumes bullet is faster than target
+	--use -b + math.sqrt(...
+	--if target is faster
+	
+	local t = (-B - math.sqrt(B^2 - 4 * A * C))/(2*A)
+	
+	local slope = rPos + rVel * t
+	
+	local theta = math.atan2(slope.y, slope.x)
+	
+	return theta
 end

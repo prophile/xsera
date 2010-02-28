@@ -1,15 +1,11 @@
-import('EntityLoad')
 import('BoxDrawing')
+--import('GlobalVars')
 
-loadingEntities = true
-if scen == nil then
-	scen = NewEntity(nil, "demo", "Scenario")
-end
-loadingEntities = false
-
-control = scen.planet -- [HARDCODED]
-target = nil
-
+selection = {
+	control = {};
+	target = {};
+}
+setmetatable(selection, weak)
 menuShift = -391
 topOfMenu = -69
 menuStride = -11
@@ -79,9 +75,13 @@ function Messages()
 	menuLevel = menuMessages
 end
 
+menuStatus = { "MISSION STATUS",
+--	{ "", false },
+	
+}
+
 function MissionStatus()
-	menuLevel = { "MISSION STATUS",
-		{ scen.briefing, false } }
+	menuLevel = menuStatus
 end
 
 menuOptions = { "MAIN MENU",
@@ -110,7 +110,7 @@ end
 
 function DrawEscapeMenu()
 	SwitchBox( { top = 85, left = -140, bottom = -60, right = 140, boxColour = ClutColour(10, 8) } )
-	graphics.draw_text("Resume, start chapter over, or quit?", "CrystalClear", "left", { x = -125, y = 65 }, 16)
+	graphics.draw_text("Resume, start chapter over, or quit?", MAIN_FONT, "left", { x = -125, y = 65 }, 16)
 	if down.esc == true then
 		SwitchBox( { xCoord = -125, yCoord = 30, length = 250, text = "Resume", boxColour = ClutLighten(ClutColour(12, 6), 1), textColour = ClutColour(12, 6), execute = nil, letter = "ESC" } )
 	elseif down.esc == "act" then
@@ -124,7 +124,7 @@ function DrawEscapeMenu()
 	if down.rtrn == true then
 		SwitchBox( { xCoord = -125, yCoord = 0, length = 250, text = "Start Chapter Over", boxColour = ClutLighten(ClutColour(9, 6)), textColour = ClutColour(9, 6), execute = nil, letter = "RTRN" } )
 	elseif down.rtrn == "act" then
-		mode_manager.switch('Demo3')
+		mode_manager.switch('Demo4')
 		down.rtrn = false
 	else
 		SwitchBox( { xCoord = -125, yCoord = 0, length = 250, text = "Start Chapter Over", boxColour = ClutColour(9, 6), textColour = ClutColour(9, 6), execute = nil, letter = "RTRN" } )
@@ -133,7 +133,7 @@ function DrawEscapeMenu()
 		SwitchBox( { xCoord = -125, yCoord = -30, length = 250, text = "Quit to Main Menu", boxColour = ClutColour(8, 4), textColour = ClutColour(8, 17), execute = nil, letter = "Q" } )
 	elseif down.q == "act" then
 		menu_display = nil
-		mode_manager.switch('MainMenu')
+		mode_manager.switch('Xsera/MainMenu')
 	else
 		SwitchBox( { xCoord = -125, yCoord = -30, length = 250, text = "Quit to Main Menu", boxColour = ClutColour(8, 5), textColour = ClutColour(8, 5), execute = nil, letter = "Q" } )
 	end
@@ -141,13 +141,13 @@ end
 
 function DrawDefeatMenu()
 	SwitchBox( { top = 85, left = -140, bottom = -60, right = 140, boxColour = ClutColour(16, 6) } )
-	graphics.draw_text("You lost your Heavy Cruiser and failed.", "CrystalClear", "left", { x = -125, y = 26 }, 16)
-	graphics.draw_text("Start chapter over, or quit?", "CrystalClear", "left", { x = -125, y = 10 }, 16)
+	graphics.draw_text("You lost your Heavy Cruiser and failed.", MAIN_FONT, "left", { x = -125, y = 26 }, 16)
+	graphics.draw_text("Start chapter over, or quit?", MAIN_FONT, "left", { x = -125, y = 10 }, 16)
 	if down.rtrn == true then
 		SwitchBox( { xCoord = -125, yCoord = -20, length = 250, text = "Start Chapter Over", boxColour = ClutLighten(ClutColour(9, 6), 1), textColour = ClutColour(9, 6), execute = nil, letter = "RTRN" } )
 	elseif down.rtrn == "act" then
 		menu_display = nil
-		mode_manager.switch('Demo3')
+		mode_manager.switch('Demo4')
 	else
 		SwitchBox( { xCoord = -125, yCoord = -20, length = 250, text = "Start Chapter Over", boxColour = ClutColour(9, 6), textColour = ClutColour(9, 6), execute = nil, letter = "RTRN" } )
 	end
@@ -155,7 +155,7 @@ function DrawDefeatMenu()
 		SwitchBox( { xCoord = -125, yCoord = -50, length = 250, text = "Quit to Main Menu", boxColour = ClutColour(8, 5), textColour = ClutColour(8, 17), execute = nil, letter = "Q" } )
 	elseif down.q == "act" then
 		menu_display = nil
-		mode_manager.switch('MainMenu')
+		mode_manager.switch('Xsera/MainMenu')
 	else
 		SwitchBox( { xCoord = -125, yCoord = -50, length = 250, text = "Quit to Main Menu", boxColour = ClutColour(8, 4), textColour = ClutColour(8, 1), execute = nil, letter = "Q" } )
 	end
@@ -165,7 +165,7 @@ storedTime = 0.0
 
 function DrawVictoryMenu()
 	SwitchBox( { xCoord = -125, yCoord = 100, length = 290, text = " ", boxColour = ClutColour(3, 7), textColour = ClutColour(3, 7), execute = nil, letter = "Results", underbox = -100 } )
-	graphics.draw_text("You did it! Congratulations!", "CrystalClear", "left", { x = -110, y = 90 }, 16)
+	graphics.draw_text("You did it! Congratulations!", MAIN_FONT, "left", { x = -110, y = 90 }, 16)
 	SwitchBox( { top = 31, left = -75, bottom = -50, right = 115, boxColour = ClutColour(3, 7), background = ClutColour(3, 14) } )
 	local startx = 113
 	local starty = 28
@@ -186,9 +186,9 @@ function DrawVictoryMenu()
 			if endGameData[ycheck][xcheck][1] == true then
 				if endGameData[ycheck][xcheck][2] ~= cClear then
 					graphics.draw_box(starty - (ycheck - 1) * 15, startx - xCoord - xlength, starty - ycheck * 15, startx - xCoord, 0, endGameData[ycheck][xcheck][2])
-					graphics.draw_text(endGameData[ycheck][xcheck][3], "CrystalClear", "left", { x = startx - xCoord - xlength + 2, y = starty - (ycheck - 1) * 15 - 6 }, 16)
+					graphics.draw_text(endGameData[ycheck][xcheck][3], MAIN_FONT, "left", { x = startx - xCoord - xlength + 2, y = starty - (ycheck - 1) * 15 - 6 }, 16)
 				else
-					graphics.draw_text(endGameData[ycheck][xcheck][3], "CrystalClear", "left", { x = startx - xCoord - xlength + 2, y = starty - (ycheck - 1) * 15 - 6 }, 16)
+					graphics.draw_text(endGameData[ycheck][xcheck][3], MAIN_FONT, "left", { x = startx - xCoord - xlength + 2, y = starty - (ycheck - 1) * 15 - 6 }, 16)
 				end
 			else
 				storedTime = storedTime + dt
@@ -254,7 +254,7 @@ function DrawInfoMenu()
 	while keyboard[num] ~= nil do
 		local subnum = 1
 		graphics.draw_box(line_num * -15 + 260, -257, line_num * -15 + 245, 277, 0, ClutColour(1, 8))
-		graphics.draw_text(keyboard[num][1], "CrystalClear", "left", { x = -252, y = line_num * -15 + 253 }, 16)
+		graphics.draw_text(keyboard[num][1], MAIN_FONT, "left", { x = -252, y = line_num * -15 + 253 }, 16)
 		line_num = line_num + 1
 		local xCoord = 0
 		local yShift = 0
@@ -272,11 +272,11 @@ function DrawInfoMenu()
 				adjust = 0
 				xCoord = -212
 			end
-			graphics.draw_text(keyboard[num][subnum + 1].name, "CrystalClear", "left", { x = xCoord, y = line_num * -15 + 254 + adjust }, 16)
+			graphics.draw_text(keyboard[num][subnum + 1].name, MAIN_FONT, "left", { x = xCoord, y = line_num * -15 + 254 + adjust }, 16)
 			if keyboard[num][subnum + 1].key_display == nil then
-				graphics.draw_text(keyboard[num][subnum + 1].key, "CrystalClear", "center", { x = xCoord - 24, y = line_num * -15 + 254 + adjust }, 16)
+				graphics.draw_text(keyboard[num][subnum + 1].key, MAIN_FONT, "center", { x = xCoord - 24, y = line_num * -15 + 254 + adjust }, 16)
 			else
-				graphics.draw_text(keyboard[num][subnum + 1].key_display, "CrystalClear", "center", { x = xCoord - 24, y = line_num * -15 + 254 + adjust }, 16)
+				graphics.draw_text(keyboard[num][subnum + 1].key_display, MAIN_FONT, "center", { x = xCoord - 24, y = line_num * -15 + 254 + adjust }, 16)
 			end
 			line_num = line_num + 1
 			subnum = subnum + 1
@@ -300,7 +300,7 @@ function DrawPauseMenu(dt)
 	timeElapsed = timeElapsed + dt
 	if timeElapsed % 0.8 > 0.4 then
 		SwitchBox( { top = 20, left = -80, bottom = -20, right = 140, boxColour = ClutColour(5, 11), background = c_half_clear } )
-		graphics.draw_text("> CAPS LOCK - PAUSED <", "CrystalClear", "center", { x = 30, y = 0 }, 23, ClutColour(5, 11))
+		graphics.draw_text("> CAPS LOCK - PAUSED <", MAIN_FONT, "center", { x = 30, y = 0 }, 23, ClutColour(5, 11))
 	end
 end
 
@@ -315,15 +315,18 @@ function DrawRadar()
 		graphics.draw_box(radar.top - radar.length * boxSize, radar.left + radar.width * boxSize, radar.bottom + radar.length * boxSize, radar.right - radar.width * boxSize, 0, ClutColour(5, 11))
 	end
 	
-	--[[ pseudo-code: (will need to plug in to GameFreak's Demo4.lua)
 	
-	for all the ships
-		if the ship is in range of radar
-			put a dot where it is on the radar (proportionally) -- how do I draw a dot? (need new C++ function?)
+	local radarRange = { x = 2^11, y = 2^11 }
+	for i, o in pairs(scen.objects) do
+		if o ~= scen.playerShip
+		and o.base.attributes["appear-on-radar"] == true
+		and math.abs(o.physics.position.x - scen.playerShip.physics.position.x) < radarRange.x
+		and math.abs(o.physics.position.y - scen.playerShip.physics.position.y) < radarRange.y then
+			tab = { r = 0, g = 1, b = 0, a = 1 }
+			placement = { x = radar.left + ((o.physics.position.x - scen.playerShip.physics.position.x) / radarRange.x + 1) * radar.width / 2, y = radar.bottom + ((o.physics.position.y - scen.playerShip.physics.position.y) / radarRange.y + 1) * radar.length / 2 }
+			graphics.draw_point(placement, 10, tab)
 		end
 	end
-	
-	--]]
 end
 
 menuLevel = menuOptions
@@ -337,16 +340,22 @@ function DrawPanels()
 	Right Panel
 ------------------]]--
 
--- Battery (red)
-	graphics.draw_box(107, 379, 29, 386, 0, ClutColour(8, 8))
---	graphics.draw_box(scen.playerShip.battery.current / scen.playerShip.battery.max * 78 + 29, 379, 29, 386, 0, ClutColour(8, 5)) -- #TEST these commented lines should be fixed and uncommented
--- Energy (yellow)
-	graphics.draw_box(6, 379, -72.5, 386, 0, ClutColour(3, 7))
---	graphics.draw_box(scen.playerShip.energy.current / scen.playerShip.battery.max * 78.5 - 72.5, 379, -72.5, 386, 0, ClutColour(9, 6))
--- Shield (blue)
-	graphics.draw_box(-96, 379, -173, 386, 0, ClutColour(14, 8))
---	graphics.draw_box(scen.playerShip.shield.current / scen.playerShip.battery.max * 77 - 173, 379, -173, 386, 0, ClutColour(14, 6))
--- Factory resources (green - mostly)
+--	Battery (red)
+	if scen.playerShip.status.battery ~= nil then
+		graphics.draw_box(107, 379, 29, 386, 0, ClutColour(8, 8))
+		graphics.draw_box(scen.playerShip.status.battery / scen.playerShip.status.batteryMax * 78 + 29, 379, 29, 386, 0, ClutColour(8, 5)) -- #TEST these commented lines should be fixed and uncommented
+	end
+--	Energy (yellow)
+	if scen.playerShip.status.energy ~= nil then
+		graphics.draw_box(6, 379, -72.5, 386, 0, ClutColour(3, 7))
+		graphics.draw_box(scen.playerShip.status.energy / scen.playerShip.status.energyMax * 78.5 - 72.5, 379, -72.5, 386, 0, ClutColour(9, 6))
+	end
+--	Shield (blue)
+	if scen.playerShip.status.health ~= nil then
+		graphics.draw_box(-96, 379, -173, 386, 0, ClutColour(14, 8))
+		graphics.draw_box(scen.playerShip.status.health / scen.playerShip.status.healthMax * 77 - 173, 379, -173, 386, 0, ClutColour(14, 6))
+	end
+--	Factory resources (green - mostly)
 	count = 1
 	if shipSelected == true then
 		if cash >= shipQuerying.c then
@@ -387,7 +396,7 @@ function DrawPanels()
 		end
 		count = count + 1
 	end
--- Factory resource bars (yellow)
+--	Factory resource bars (yellow)
 	count = 1
 	while count <= 7 do
 		if count <= resourceBars then
@@ -397,7 +406,7 @@ function DrawPanels()
 		end
 		count = count + 1
 	end
--- Factory build bar (purple)
+--	Factory build bar (purple)
 	planet = scen.planet
 	if planet ~= nil then
 		graphics.draw_line({ x = 382, y = 181 }, { x = 392, y = 181 }, 0.5, ClutColour(13, 9))
@@ -414,110 +423,64 @@ function DrawPanels()
 	Left Panel
 ------------------]]--
 	
--- Radar box (green)
+--	Radar box (green)
 	DrawRadar()
--- Communications panels (green)
+--	Communications panels (green)
 	graphics.draw_box(-63, -393, -158, -297, 0, ClutColour(5, 11))
 	graphics.draw_line({ x = -391, y = -74 }, { x = -298, y = -74 }, 1, ClutColour(12, 3))
 	graphics.draw_box(-165, -389.5, -185.5, -304, 0, ClutColour(5, 11))
--- Menu drawing
+--	Menu drawing
 	local shift = 1
 	local num = 1
-	graphics.draw_text(menuLevel[1], "CrystalClear", "left", { x = menuShift, y = topOfMenu }, 13)
+	graphics.draw_text(menuLevel[1], MAIN_FONT, "left", { x = menuShift, y = topOfMenu }, 13)
 	while menuLevel[num] ~= nil do
 		if menuLevel[num][1] ~= nil then
 			if menuLevel[num][2] == true then
 				graphics.draw_box(topOfMenu + menuStride * shift + 4, -392, topOfMenu + menuStride * shift - 5, -298, 0, ClutColour(12, 10))
 			end
-			graphics.draw_text(menuLevel[num][1], "CrystalClear", "left", { x = menuShift, y = topOfMenu + menuStride * shift }, 13)
+			graphics.draw_text(menuLevel[num][1], MAIN_FONT, "left", { x = menuShift, y = topOfMenu + menuStride * shift }, 13)
 			shift = shift + 1
 		end
 		num = num + 1
 	end
 	if text_being_drawn == true then
-		graphics.draw_text(scen.text[textnum], "CrystalClear", "center", { x = 0, y = -250 }, 30)
+		graphics.draw_text(scen.text[textnum], MAIN_FONT, "center", { x = 0, y = -250 }, 30)
 	end
-	
--- Weapon ammo count
---OFFSET = 32 PIXELS
-	if scen.playerShip.weapon ~= nil then
-		if scen.playerShip.weapon.pulse ~= nil and scen.playerShip.weapon.pulse.ammo ~= -1 then
-			graphics.draw_text(string.format('%03d', scen.playerShip.weapon.pulse.ammo), "CrystalClear", "left", { x = -376, y = 60 }, 13, ClutColour(5, 1))
+
+--	Weapon ammo count
+--OFFSET = 32 PIXELS <= ?
+	if scen.playerShip.weapons ~= nil then
+		if scen.playerShip.weapons.pulse ~= nil
+		and scen.playerShip.weapons.pulse.ammo ~= -1 then
+			graphics.draw_text(string.format('%03d', scen.playerShip.weapons.pulse.ammo), "CrystalClear", "left", { x = -376, y = 60 }, 13, ClutColour(5, 1))
 		end
 		
-		if scen.playerShip.weapon.beam ~= nil and scen.playerShip.weapon.beam.ammo ~= -1 then
-			graphics.draw_text(string.format('%03d', scen.playerShip.weapon.beam.ammo), "CrystalClear", "left", { x = -345, y = 60 }, 13, ClutColour(5, 1))
+		if scen.playerShip.weapons.beam ~= nil
+		and scen.playerShip.weapons.beam.ammo ~= -1 then
+			graphics.draw_text(string.format('%03d', scen.playerShip.weapons.beam.ammo), "CrystalClear", "left", { x = -345, y = 60 }, 13, ClutColour(5, 1))
 		end
 		
-		if scen.playerShip.weapon.special ~= nil and scen.playerShip.weapon.special.ammo ~= -1 then
-			graphics.draw_text(string.format('%03d', scen.playerShip.weapon.special.ammo), "CrystalClear", "left", { x = -314, y = 60 }, 13, ClutColour(5, 1))
+		if scen.playerShip.weapons.special ~= nil
+		and scen.playerShip.weapons.special.ammo ~= -1 then
+			graphics.draw_text(string.format('%03d', scen.playerShip.weapons.special.ammo), "CrystalClear", "left", { x = -314, y = 60 }, 13, ClutColour(5, 1))
 		end
 	end
-	control = scen.playerShip -- [HARDCODE]
-	if control ~= nil then
-		graphics.draw_box(49, -392, 40, -297, 0, ClutColour(9, 6))
-		graphics.draw_text("CONTROL", "CrystalClear", "left", { x = -389, y = 44 }, 12, ClutColour(1, 17))
-		if control.type == "Planet" then
-			graphics.draw_text(control.name, "CrystalClear", "left", { x = -389, y = 35 }, 12)
-		else
-			graphics.draw_text(control["short-name"], "CrystalClear", "left", { x = -389, y = 35 }, 12)
-		end
-		if control.ctrlObject ~= nil then
-			if control.owner == "Human/Ishiman" then
-				graphics.draw_text(control.ctrlObject.name, "CrystalClear", "left", { x = -389, y = 3 }, 12, ClutColour(5, 11))
-			else
-				graphics.draw_text(control.ctrlObject.name, "CrystalClear", "left", { x = -389, y = 3 }, 12, ClutColour(16, 1))
-			end
-		end
-		if control.energy ~= nil then
-			graphics.draw_line({ x = -357, y = 28 }, { x = -347, y = 28 }, 0.5, ClutColour(3, 7))
-			graphics.draw_line({ x = -357, y = 27 }, { x = -357, y = 28 }, 0.5, ClutColour(3, 7))
-			graphics.draw_line({ x = -347, y = 27 }, { x = -347, y = 28 }, 0.5, ClutColour(3, 7))
-			graphics.draw_line({ x = -357, y = 9 }, { x = -347, y = 9 }, 0.5, ClutColour(3, 7))
-			graphics.draw_line({ x = -357, y = 10 }, { x = -357, y = 9 }, 0.5, ClutColour(3, 7))
-			graphics.draw_line({ x = -347, y = 10 }, { x = -347, y = 9 }, 0.5, ClutColour(3, 7))
-			graphics.draw_box(27, -356, 10, -348, 0, ClutColour(3, 7))
-			graphics.draw_box(17 * control.energy.current / control.energy.max + 10, -356, 10, -348, 0, ClutColour(9, 6))
-		end
-		if control.shield ~= nil then
-			graphics.draw_line({ x = -369, y = 28 }, { x = -359, y = 28 }, 0.5, ClutColour(4, 8))
-			graphics.draw_line({ x = -369, y = 27 }, { x = -369, y = 28 }, 0.5, ClutColour(4, 8))
-			graphics.draw_line({ x = -359, y = 27 }, { x = -359, y = 28 }, 0.5, ClutColour(4, 8))
-			graphics.draw_line({ x = -369, y = 9 }, { x = -359, y = 9 }, 0.5, ClutColour(4, 8))
-			graphics.draw_line({ x = -369, y = 10 }, { x = -369, y = 9 }, 0.5, ClutColour(4, 8))
-			graphics.draw_line({ x = -359, y = 10 }, { x = -359, y = 9 }, 0.5, ClutColour(4, 8))
-			graphics.draw_box(27, -367.5, 10, -360, 0, ClutColour(4, 8))
-			graphics.draw_box(17 * control.health.current / control.health.max + 10, -367.5, 10, -360, 0, ClutColour(4, 6))
-		end
-		if control.type == "Planet" then
-			graphics.draw_sprite(control.type .. "s/" .. control.image, { x = -380, y = 19 }, { x = 17, y = 17 }, 0)
-		else
-			graphics.draw_sprite("Id/" .. control.sprite, { x = -380, y = 19 }, { x = 17, y = 17 }, 3.14 / 2.0)
-		end
-		graphics.draw_line({ x = -387, y = 28 }, { x = -372, y = 28 }, 0.5, ClutColour(1, 1))
-		graphics.draw_line({ x = -387, y = 27 }, { x = -387, y = 28 }, 0.5, ClutColour(1, 1))
-		graphics.draw_line({ x = -372, y = 27 }, { x = -372, y = 28 }, 0.5, ClutColour(1, 1))
-		graphics.draw_line({ x = -387, y = 9 }, { x = -372, y = 9 }, 0.5, ClutColour(1, 1))
-		graphics.draw_line({ x = -372, y = 10 }, { x = -372, y = 9 }, 0.5, ClutColour(1, 1))
-		graphics.draw_line({ x = -387, y = 10 }, { x = -387, y = 9 }, 0.5, ClutColour(1, 1))
+
+	if selection.control ~= nil then
+		DrawTargetBox(selection.control,true)
 	end
-	if target ~= nil then
-		graphics.draw_box({ x = -8, y = -392 }, { x = -17, y = -297 }, 0, ClutColour(4, 7))
-		graphics.draw_text("TARGET", "CrystalClear", "left", { x = -389, y = -13 } , 12, ClutColour(1, 17))
-		graphics.draw_line({ x = -387, y = -32 }, { x = -372, y = -32 }, 0.5, ClutColour(1, 1))
-		graphics.draw_line({ x = -372, y = -34 }, { x = -372, y = -32 }, 0.5, ClutColour(1, 1))
-		graphics.draw_line({ x = -387, y = -34 }, { x = -387, y = -32 }, 0.5, ClutColour(1, 1))
-		graphics.draw_line({ x = -387, y = -49 }, { x = -372, y = -49 }, 0.5, ClutColour(1, 1))
-		graphics.draw_line({ x = -372, y = -47 }, { x = -372, y = -49 }, 0.5, ClutColour(1, 1))
-		graphics.draw_line({ x = -387, y = -47 }, { x = -387, y = -49 }, 0.5, ClutColour(1, 1))
+
+	if selection.target ~= nil then
+		DrawTargetBox(selection.target,false)
 	end
+
 	graphics.draw_box(-165.5, -389.5, -175.5, -358, 0, ClutColour(4, 8))
-	graphics.draw_text("RIGHT", "CrystalClear", "left", { x = -388, y = -170 }, 13, ClutColour(4, 6))
-	graphics.draw_text("Select", "CrystalClear", "left", { x = -354, y = -170 }, 13, ClutColour(4, 6))
+	graphics.draw_text("RIGHT", MAIN_FONT, "left", { x = -388, y = -170 }, 13, ClutColour(4, 6))
+	graphics.draw_text("Select", MAIN_FONT, "left", { x = -354, y = -170 }, 13, ClutColour(4, 6))
 	if menuLevel ~= menuOptions then
 		graphics.draw_box(-175.5, -389.5, -185.5, -358, 0, ClutColour(4, 8))
-		graphics.draw_text("LEFT", "CrystalClear", "left", { x = -388, y = -180 }, 13, ClutColour(4, 6))
-		graphics.draw_text("Go Back", "CrystalClear", "left", { x = -354, y = -180 }, 13, ClutColour(4, 6))
+		graphics.draw_text("LEFT", MAIN_FONT, "left", { x = -388, y = -180 }, 13, ClutColour(4, 6))
+		graphics.draw_text("Go Back", MAIN_FONT, "left", { x = -354, y = -180 }, 13, ClutColour(4, 6))
 	end
 end
 
@@ -570,6 +533,58 @@ function change_menu(menu, direction)
 	end
 end
 
+function GetMouseCoords()
+	local x, y = mouse_position()
+	return {
+		x = scen.playerShip.physics.position.x -shipAdjust + camera.w * x - camera.w / 2;
+		y = scen.playerShip.physics.position.y  + camera.h * y - camera.h / 2;
+	}
+end
+
+function DrawMouse1()
+	mousePos = GetMouseCoords()
+	if FindDist(mousePos, oldMousePos) > 0 then
+		mouseStart = mode_manager.time()
+	end
+	if mode_manager.time() - mouseStart < 2.0 then
+		ship = scen.playerShip.physics.position
+		
+		if mousePos.x > 260 / cameraRatio + ship.x then
+			mousePos.x = 260 / cameraRatio + ship.x
+		elseif mousePos.x < -320 / cameraRatio + ship.x - shipAdjust then
+			mousePos.x = -320 / cameraRatio + ship.x - shipAdjust
+		end
+		
+		if mousePos.y > 230 / cameraRatio + ship.y then
+			mousePos.y = 230 / cameraRatio + ship.y
+		elseif mousePos.y < -220 / cameraRatio + ship.y then
+			mousePos.y = -220 / cameraRatio + ship.y
+		end
+		graphics.draw_line({ x = - camera.w / 2 + ship.x, y = mousePos.y }, { x = mousePos.x - 20 / cameraRatio, y = mousePos.y }, 1.0, ClutColour(4, 8))
+		graphics.draw_line({ x = camera.w / 2 + ship.x, y = mousePos.y }, { x = mousePos.x + 20 / cameraRatio, y = mousePos.y }, 1.0, ClutColour(4, 8))
+		graphics.draw_line({ x = mousePos.x, y = -camera.h / 2 + ship.y }, { x = mousePos.x, y = mousePos.y - 20 / cameraRatio }, 1.0, ClutColour(4, 8))
+		graphics.draw_line({ x = mousePos.x, y = camera.h / 2 + ship.y }, { x = mousePos.x, y = mousePos.y + 20 / cameraRatio }, 1.0, ClutColour(4, 8))
+	end
+end
+
+function DrawMouse2()
+	ship = scen.playerShip.physics.position
+	mousePos = GetMouseCoords()
+	if mode_manager.time() - mouseStart < 2.0 and mousePos.x < -260 / cameraRatio + ship.x then
+		graphics.set_camera( -- should I have to do this? [ADAM, HACK]
+			-scen.playerShip.physics.position.x + shipAdjust - (camera.w / 2.0),
+			-scen.playerShip.physics.position.y - (camera.h / 2.0),
+			-scen.playerShip.physics.position.x + shipAdjust + (camera.w / 2.0),
+			-scen.playerShip.physics.position.y + (camera.h / 2.0))
+	
+		local cursor = graphics.sprite_dimensions("Misc/Cursor")
+		graphics.draw_sprite("Misc/Cursor", mousePos, cursor, 0)
+		
+		if mode_manager.time() - mouseStart >= 2.0 then
+			mouseMovement = false
+		end
+	end
+end
 
 function DrawArrow()
 	local angle = scen.playerShip.physics.angle
@@ -589,4 +604,91 @@ function DrawArrow()
 	graphics.draw_line(c1, c2, 1.5, ClutColour(5, 1))
 	graphics.draw_line(c2, c3, 1.5, ClutColour(5, 1))
 	graphics.draw_line(c3, c1, 1.5, ClutColour(5, 1))
+end
+
+function DrawGrid()
+	do
+		local i = 0
+		while i * GRID_DIST_BLUE - 10 < camera.w + 10 + GRID_DIST_BLUE do
+			local grid_x = math.floor((i * GRID_DIST_BLUE + scen.playerShip.physics.position.x - (camera.w / 2.0)) / GRID_DIST_BLUE) * GRID_DIST_BLUE
+			
+			if grid_x % GRID_DIST_LIGHT_BLUE == 0 then
+				if grid_x % GRID_DIST_GREEN == 0 then
+					graphics.draw_line({ x = grid_x, y = scen.playerShip.physics.position.y - (camera.h / 2.0) }, { x = grid_x, y = scen.playerShip.physics.position.y + (camera.h / 2.0) }, 1, ClutColour(5, 1))
+				else
+					graphics.draw_line({ x = grid_x, y = scen.playerShip.physics.position.y - (camera.h / 2.0) }, { x = grid_x, y = scen.playerShip.physics.position.y + (camera.h / 2.0) }, 1, ClutColour(14, 9))
+				end
+			else
+				if cameraRatio > 1 / 8 then
+					graphics.draw_line({ x = grid_x, y = scen.playerShip.physics.position.y - (camera.h / 2.0) }, { x = grid_x, y = scen.playerShip.physics.position.y + (camera.h / 2.0) }, 1, ClutColour(4, 11))
+				end
+			end
+			i = i + 1
+		end
+		
+		i = 0
+		while i * GRID_DIST_BLUE - 10 < camera.h + 10 + GRID_DIST_BLUE do
+			local grid_y = math.floor((i * GRID_DIST_BLUE + scen.playerShip.physics.position.y - (camera.h / 2.0)) / GRID_DIST_BLUE) * GRID_DIST_BLUE
+			if grid_y % GRID_DIST_LIGHT_BLUE == 0 then
+				if grid_y % GRID_DIST_GREEN == 0 then
+					graphics.draw_line({ x = scen.playerShip.physics.position.x - shipAdjust - (camera.w / 2.0), y = grid_y }, { x = scen.playerShip.physics.position.x - shipAdjust + (camera.w / 2.0), y = grid_y }, 1, ClutColour(5, 1))
+				else
+					graphics.draw_line({ x = scen.playerShip.physics.position.x - shipAdjust - (camera.w / 2.0), y = grid_y }, { x = scen.playerShip.physics.position.x - shipAdjust + (camera.w / 2.0), y = grid_y }, 1, ClutColour(14, 9))
+				end
+			else
+				if cameraRatio > 1 / 8 then
+					graphics.draw_line({ x = scen.playerShip.physics.position.x - shipAdjust - (camera.w / 2.0), y = grid_y }, { x = scen.playerShip.physics.position.x - shipAdjust + (camera.w / 2.0), y = grid_y }, 1, ClutColour(4, 11))
+				end
+			end
+			i = i + 1
+		end
+	end
+end
+
+
+
+function DrawTargetBox(object, isControl)
+	local off = isControl and 0 or 57
+
+	graphics.draw_box(49 - off, -392, 40 - off, -297, 0, (isControl and ClutColour(9,6) or ClutColour(4, 3)))
+	graphics.draw_text((isControl and "CONTROL" or "TARGET"), "CrystalClear", "left", { x = -389, y = 44 - off }, 12, ClutColour(1, 17))
+
+	graphics.draw_text(object.name, "CrystalClear", "left", { x = -389, y = 35 - off}, 12)
+	
+	if object.ai.objectives.dest ~= nil then
+		graphics.draw_text(object.ai.objectives.dest.name, "CrystalClear", "left", { x = -389, y = 3 - off }, 12, ClutColour(1, 11))
+	end
+	
+	if object.status.energy ~= nil then
+		graphics.draw_line({ x = -357, y = 28 - off }, { x = -347, y = 28 - off }, 0.5, ClutColour(3, 7))
+		graphics.draw_line({ x = -357, y = 27 - off }, { x = -357, y = 28 - off }, 0.5, ClutColour(3, 7))
+		graphics.draw_line({ x = -347, y = 27 - off }, { x = -347, y = 28 - off }, 0.5, ClutColour(3, 7))
+		graphics.draw_line({ x = -357, y = 9 - off }, { x = -347, y = 9 - off }, 0.5, ClutColour(3, 7))
+		graphics.draw_line({ x = -357, y = 10 - off }, { x = -357, y = 9 - off }, 0.5, ClutColour(3, 7))
+		graphics.draw_line({ x = -347, y = 10 - off }, { x = -347, y = 9 - off }, 0.5, ClutColour(3, 7))
+		graphics.draw_box(27 - off, -356, 10 - off, -348, 0, ClutColour(3, 7))
+		graphics.draw_box(17 * object.status.energy / object.status.energyMax + 10  - off, -356, 10 - off, -348, 0, ClutColour(9, 6))
+	end
+
+	if object.status.health ~= nil then
+		graphics.draw_line({ x = -369, y = 28 - off }, { x = -359, y = 28 - off }, 0.5, ClutColour(4, 8))
+		graphics.draw_line({ x = -369, y = 27 - off }, { x = -369, y = 28 - off }, 0.5, ClutColour(4, 8))
+		graphics.draw_line({ x = -359, y = 27 - off }, { x = -359, y = 28 - off }, 0.5, ClutColour(4, 8))
+		graphics.draw_line({ x = -369, y = 9 - off }, { x = -359, y = 9 - off }, 0.5, ClutColour(4, 8))
+		graphics.draw_line({ x = -369, y = 10 - off }, { x = -369, y = 9 - off }, 0.5, ClutColour(4, 8))
+		graphics.draw_line({ x = -359, y = 10 - off }, { x = -359, y = 9 - off }, 0.5, ClutColour(4, 8))
+		graphics.draw_box(27 - off, -367.5, 10 - off, -360, 0, ClutColour(4, 8))
+		graphics.draw_box(17 * object.status.health / object.status.healthMax + 10 - off, -367.5, 10 - off, -360, 0, ClutColour(4, 6))
+	end
+
+	if object.gfx.sprite ~= nil then
+		graphics.draw_sprite(object.gfx.sprite, { x = -380, y = 19 - off }, { x = 17, y = 17 }, 3.14 / 2.0)
+	end
+
+	graphics.draw_line({ x = -387, y = 28 - off }, { x = -372, y = 28 - off }, 0.5, ClutColour(1, 1))
+	graphics.draw_line({ x = -387, y = 27 - off }, { x = -387, y = 28 - off }, 0.5, ClutColour(1, 1))
+	graphics.draw_line({ x = -372, y = 27 - off }, { x = -372, y = 28 - off }, 0.5, ClutColour(1, 1))
+	graphics.draw_line({ x = -387, y = 9 - off }, { x = -372, y = 9 - off }, 0.5, ClutColour(1, 1))
+	graphics.draw_line({ x = -372, y = 10 - off }, { x = -372, y = 9 - off }, 0.5, ClutColour(1, 1))
+	graphics.draw_line({ x = -387, y = 10 - off }, { x = -387, y = 9 - off }, 0.5, ClutColour(1, 1))
 end

@@ -24,7 +24,92 @@ extern "C"
 
 namespace
 {
+vec2 luaL_checkvec2(lua_State *L, int narg);
+void lua_pushvec2(lua_State *L, vec2 val);
+	
+int VEC_new (lua_State* L)
+{
+	float x = luaL_checknumber(L, 1);
+	float y = luaL_checknumber(L, 2);
+	vec2 v = vec2(x,y);
+	lua_pushvec2(L, v);
+	return 1;
+}
+	
+int VEC_add (lua_State* L)
+{
+	vec2 left = luaL_checkvec2(L, 1);
+	vec2 right = luaL_checkvec2(L, 2);
+	vec2 result = left + right;
+	lua_pushvec2(L, result);
+	return 1;
+}
+	
+int VEC_sub (lua_State* L)
+{
+	vec2 left = luaL_checkvec2(L, 1);
+	vec2 right = luaL_checkvec2(L, 2);
+	vec2 result = left - right;
+	lua_pushvec2(L, result);
+	return 1;
+}
 
+int VEC_mul (lua_State* L)
+{
+	vec2 left = luaL_checkvec2(L, 1);
+	if (lua_istable(L, 2))
+	{
+		vec2 right = luaL_checkvec2(L, 2);
+		float result = left * right;
+		lua_pushnumber(L, result);
+	}
+	else
+	{
+		float right = luaL_checknumber(L, 2);
+		vec2 result = left * right;
+		lua_pushvec2(L, result);
+	}
+	return 1;
+}
+
+int VEC_div (lua_State* L)
+{
+	vec2 left = luaL_checkvec2(L, 1);
+	float right = luaL_checknumber(L, 2);
+	vec2 result = left / right;
+	lua_pushvec2(L, result);
+	return 1;
+}
+
+
+int VEC_unm (lua_State* L)
+{
+	vec2 val = -luaL_checkvec2(L, 1);
+	lua_pushvec2(L, val);
+	return 1;
+}
+
+
+int VEC_tostring (lua_State* L)
+{
+	vec2 v = luaL_checkvec2(L, 1);
+	char s[256];
+	sprintf(s, "%f, %f", v.X(), v.Y());
+	lua_pushstring(L, s);
+	return 1;
+}
+
+luaL_Reg registryObjectVector[] =
+{
+	"__add", VEC_add,
+	"__sub", VEC_sub,
+	"__mul", VEC_mul,
+	"__div", VEC_div,
+	"__unm", VEC_unm,
+	"__tostring", VEC_tostring,
+	NULL, NULL
+};
+	
 vec2 luaL_checkvec2(lua_State* L, int narg)
 {
 	if (!lua_istable(L, narg))
@@ -48,6 +133,26 @@ vec2 luaL_checkvec2(lua_State* L, int narg)
 	return vec2(x, y);
 }
 
+std::string FloatToString ( float val )
+{
+	std::ostringstream o;
+	if (!(o << val))
+	{
+		printf("BAD CONVERSION?!?!?");
+	}
+	return o.str();
+}
+
+unsigned ToInt ( const std::string& value )
+{
+	return atoi(value.c_str());
+}
+
+bool ToBool ( const std::string& value )
+{
+	return value == "true";
+}
+
 vec2 luaL_optvec2(lua_State* L, int narg, vec2 defaultValue)
 {
 	if (lua_isnoneornil(L, narg))
@@ -62,6 +167,8 @@ void lua_pushvec2(lua_State* L, vec2 val)
 	lua_setfield(L, -2, "x");
 	lua_pushnumber(L, val.Y());
 	lua_setfield(L, -2, "y");
+	luaL_getmetatable(L, "Apollo.vec2");
+	lua_setmetatable(L, -2);
 }
 
 int PHYS_Open ( lua_State* L )
@@ -163,7 +270,7 @@ int PHYS_Collisions ( lua_State* L )
 		collide = obj1->pob->Collision(obj1->pob->position, obj2->pob->position, obj1->pob->collisionRadius, obj2->pob->collisionRadius);
 	}
 	lua_pushboolean(L, collide);
-	return 0;
+	return 1;
 }
 
 int PHYS_Object_Impulse ( lua_State* L );
@@ -323,6 +430,32 @@ int PHYS_Object_Torque ( lua_State* L )
 	return 0;
 }
 
+int PHYS_Get_Collisions ( lua_State* L )
+{
+	std::vector<Physics::Collision> collisions = Physics::GetCollisions();
+	std::pair<Physics::Object *, Physics::Object *> tuple;
+	int max = collisions.size();
+	lua_newtable(L);
+	for (int ctr = 0; ctr < max; ctr++) {
+		tuple = collisions[ctr];
+
+		if (tuple.first->objectID > tuple.second->objectID) {
+			continue;
+		}
+
+		lua_pushinteger(L, ctr + 1);
+		lua_createtable(L, 2, 0);
+		lua_pushinteger(L, 1);
+		lua_pushinteger(L, tuple.first->objectID);
+		lua_rawset(L, -3);
+		lua_pushinteger(L, 2);
+		lua_pushinteger(L, tuple.second->objectID);
+		lua_rawset(L, -3);
+		lua_rawset(L, -3);
+	}
+	return 1;
+}
+
 /**
  * @page lua_physics The Lua Physics Registry
  * This page contains information about the Lua physics registry.
@@ -363,7 +496,7 @@ int PHYS_Object_Torque ( lua_State* L )
  * object - The physics object, if it exists under given ID.\n
  * nil - If there is no physics object for the given ID, nil is returned.
  * 
- * @section collisions
+ * @section test_collision
  * Given two objects and whether or not the second object is a bullet, this will
  * tell you if there is a collision.\n
  * Parameters:\n
@@ -385,7 +518,8 @@ luaL_Reg registryPhysics[] =
 	"new_object", PHYS_NewObject,
 	"destroy_object", PHYS_DestroyObject,
 	"object_from_id", PHYS_ObjectFromID,
-	"collisions", PHYS_Collisions,
+	"test_collision", PHYS_Collisions,
+	"collisions", PHYS_Get_Collisions,
 	NULL, NULL
 };
 
@@ -691,8 +825,6 @@ static int XML_ParseFile (lua_State *L)
  * name - The name of the mode that the game is currently in.\n
  * Returns:\n
  * A table with the contents of the file in it.\n
- * Note: This function is deprecated. It will likely not be used in Xsera, and
- * is not fully functional.
  */
 
 luaL_Reg registryXML[] =
@@ -701,10 +833,107 @@ luaL_Reg registryXML[] =
 	NULL, NULL
 };
 
+int WIND_IsFullscreen ( lua_State* L )
+{
+	lua_pushboolean(L, ToBool(Preferences::Get("Screen/Fullscreen")));
+	return 1;
+}
+
+int WIND_SetFullscreen ( lua_State* L )
+{
+	Preferences::Set("Screen/Fullscreen", luaL_checkstring(L, 1) );
+	Graphics::Init(ToInt(Preferences::Get("Screen/Width")), ToInt(Preferences::Get("Screen/Height")), ToBool(Preferences::Get("Screen/Fullscreen")));
+	return 0;
+}
+
+int WIND_ToggleFullscreen ( lua_State* L )
+{
+	Preferences::Set("Screen/Fullscreen", Preferences::Get("Screen/Fullscreen") == "true" ? "false" : "true");
+	Graphics::Init(ToInt(Preferences::Get("Screen/Width")), ToInt(Preferences::Get("Screen/Height")), ToBool(Preferences::Get("Screen/Fullscreen")));
+	return 0;
+}
+
+int WIND_WindowSize ( lua_State* L )
+{
+	lua_pushnumber(L, ToInt(Preferences::Get("Screen/Width")));
+	lua_pushnumber(L, ToInt(Preferences::Get("Screen/Height")));
+	return 2;
+}
+
+int WIND_SetWindow ( lua_State* L )
+{
+	vec2 newSize = luaL_checkvec2(L, 1);
+	
+	std::string width = FloatToString(newSize.X());
+	std::string height = FloatToString(newSize.Y());
+	Preferences::Set("Screen/Width", width);
+	Preferences::Set("Screen/Height", height);
+	Graphics::Init(ToInt(Preferences::Get("Screen/Width")), ToInt(Preferences::Get("Screen/Height")), ToBool(Preferences::Get("Screen/Fullscreen")));
+	return 0;
+}
+/**
+ * @page lua_window The Lua Window Registry
+ * This page contains information about the Lua Window registry.
+ * 
+ * This registry contains miscellaneous functions for modifying the SDL window's
+ * properties.
+ * 
+ * @section is_fullscreen
+ * Checks the status of the SDL window with regards to fullscreen or windowed 
+ * mode.\n
+ * Returns:\n
+ * A boolean value of true or false - true for fullscreen, false for windowed.
+ * 
+ * @section set_fullscreen
+ * Sets the fullscreen status of the SDL window based upon the argument given.\n
+ * Parameters:\n
+ * fullscreen - a string equivalent of the boolean value of whether or not the
+ * window should be set to fullscreen.\n
+ * Returns:\n
+ * Initially this function will return nothing, but there are plans to allow for
+ * it to return the SDL status given (in case there's a problem with setting it
+ * to fullscreen).
+ * 
+ * @section toggle_fullscreen
+ * Changes the fullscreen status of the SDL window. No parameters or returns.\n
+ * 
+ * @section size
+ * Gives the size of the screen in pixels.\n
+ * Returns:\n
+ * size - a vectorized size table containing the dimensions of the window in
+ * pixels. (currently returns two values, I hope to make it a table soon)
+ * 
+ * @todo Make @ref size return a vectorized table instead of two values
+ * 
+ * @section set
+ * Sets the size of the screen in pixels.\n
+ * Parameters:\n
+ * A table of a coordinate pair, representing the size of the screen (in pixels)
+ * .\n
+ */
+
+luaL_Reg registryWindowManager[] =
+{
+	"is_fullscreen", WIND_IsFullscreen,
+	"set_fullscreen", WIND_SetFullscreen,
+	"toggle_fullscreen", WIND_ToggleFullscreen,
+	"size", WIND_WindowSize,
+	"set", WIND_SetWindow,
+	NULL, NULL
+};
+
 int MM_Switch ( lua_State* L )
 {
+	int nargs = lua_gettop(L);
 	const char* newmode = luaL_checkstring(L, 1);
-	SwitchMode(std::string(newmode));
+	if (nargs > 1)
+	{
+		SwitchMode(std::string(newmode), luaL_ref(L, 2));
+	}
+	else
+	{
+		SwitchMode(std::string(newmode));
+	}
 	return 0;
 }
 
@@ -923,7 +1152,7 @@ int GFX_TextLength (lua_State* L )
 	const char* text = luaL_checkstring(L, 1);
 	const char* font = luaL_checkstring(L, 2);
 	float height = luaL_checknumber(L, 3);
-	vec2 dims = Graphics::TextRenderer::TextDimensions(font, text);
+	vec2 dims = Graphics::TextRenderer::TextDimensions(font, text, height);
 	dims = dims * (height / dims.Y());
 	lua_pushnumber(L, dims.X());
 	return 1;
@@ -977,14 +1206,30 @@ int GFX_DrawBox ( lua_State* L )
 	bottom = luaL_checknumber(L, 3);
 	right = luaL_checknumber(L, 4);
 	width = luaL_checknumber(L, 5);
+	colour col = colour(0.0f, 1.0f, 0.0f, 1.0f);
 	if (nargs > 5)
 	{
-		Graphics::DrawBox(top, left, bottom, right, width, LoadColour(L, 6));
+		col = LoadColour(L, 6);
 	}
-	else
+	Graphics::DrawBox(top, left, bottom, right, width, col);
+	return 0;
+}
+
+int GFX_DrawPoint ( lua_State* L )
+{
+	int nargs = lua_gettop(L);
+	float size = 1;
+	vec2 location = luaL_checkvec2(L, 1);
+	colour col = colour(0.0f, 1.0f, 0.0f, 1.0f);
+	if (nargs > 1)
 	{
-		Graphics::DrawBox(top, left, bottom, right, width, colour(0.0f, 1.0f, 0.0f, 1.0f));
+		size = luaL_checknumber(L, 2);
 	}
+	if (nargs > 2)
+	{
+		col = LoadColour(L, 3);
+	}
+	Graphics::DrawPoint(location, size, col);
 	return 0;
 }
 
@@ -1130,9 +1375,8 @@ int GFX_SpriteDimensions ( lua_State* L )
 	const char* spritesheet;
 	spritesheet = luaL_checkstring(L, 1);
 	vec2 dims = Graphics::SpriteDimensions(spritesheet);
-	lua_pushnumber(L, dims.X());
-	lua_pushnumber(L, dims.Y());
-	return 2;
+	lua_pushvec2(L, dims);
+	return 1;
 }
 
 int GFX_DrawSprite ( lua_State* L )
@@ -1202,6 +1446,30 @@ int GFX_DrawSpriteFromSheet ( lua_State* L )
 	else
 	{
 		Graphics::DrawSprite(spritesheet, sheet.X(), sheet.Y(), location, size, rot, colour(1.0f, 1.0f, 1.0f, 1.0f));
+	}
+	return 0;
+}
+	
+int GFX_DrawSpriteFrame ( lua_State* L )
+{
+	const char* spritesheet;
+	int nargs = lua_gettop(L);
+	float rot = 0.0f;
+	spritesheet = luaL_checkstring(L, 1);
+	vec2 location = luaL_checkvec2(L, 2);
+	vec2 size = luaL_checkvec2(L, 3);
+	int index = luaL_checkinteger(L, 4);
+	if (nargs > 4)
+	{
+		rot = luaL_checknumber(L, 5);
+	}
+	if (nargs > 5)
+	{
+		Graphics::DrawSpriteFrame(spritesheet, location, size, index, rot, LoadColour(L, 6));
+	}
+	else
+	{
+		Graphics::DrawSpriteFrame(spritesheet, location, size, index, rot, colour(1.0f, 1.0f, 1.0f, 1.0f));
 	}
 	return 0;
 }
@@ -1362,6 +1630,8 @@ int GFX_EndWarp ( lua_State* L )
  *    t = { r = red_val, b = blue_val, g = green_val, a = alpha_val }\n
  * where the colour values are between 0.0 and 1.0. (optional)
  *
+ * @subsection draw_point
+ * 
  * @subsection draw_box
  * Draws a basic box.\n
  * Parameters:\n
@@ -1471,7 +1741,7 @@ int GFX_EndWarp ( lua_State* L )
  * 
  * @subsection draw_3d_ambient
  * 
- * @todo Document @ref add_particles, @ref draw_particles, @ref clear_particles, @ref begin_warp, and @ref end_warp
+ * @todo Document @ref add_particles, @ref draw_particles, @ref clear_particles, @ref begin_warp, @ref end_warp, and @ref draw_point
  * @todo Fix documentation @ref draw_image and @ref draw_sprite to better define sprites/images.
  */
 
@@ -1483,12 +1753,14 @@ luaL_Reg registryGraphics[] =
 	"draw_image", GFX_DrawImage,
 	"draw_sprite", GFX_DrawSprite,
 	"draw_sheet_sprite", GFX_DrawSpriteFromSheet,
+	"draw_sprite_frame", GFX_DrawSpriteFrame,
 	"sprite_dimensions", GFX_SpriteDimensions,
 	"draw_starfield", GFX_DrawStarfield,
 	"draw_text", GFX_DrawText,
 	"text_length", GFX_TextLength,
 	"draw_line", GFX_DrawLine,
 	"draw_box", GFX_DrawBox,
+	"draw_point", GFX_DrawPoint,
 	"draw_circle", GFX_DrawCircle,
 	"draw_rtri", GFX_DrawRadarTriangle,
 	"draw_rplus", GFX_DrawRadarPlus,
@@ -1801,6 +2073,10 @@ int import ( lua_State* L )
  * @ref lua_preferences \n
  * This registry currently only contains one function, used for retrieving
  * preferences.
+ * 
+ * @ref lua_window \n
+ * This registry controls aspects 
+ * preferences.
  */
 
 void __LuaBind ( lua_State* L )
@@ -1809,7 +2085,12 @@ void __LuaBind ( lua_State* L )
 	lua_setglobal(L, "import");
 	lua_pushcfunction(L, mouse_position);
 	lua_setglobal(L, "mouse_position");
+	lua_pushcfunction(L, VEC_new);
+	lua_setglobal(L, "vec");
 	lua_cpcall(L, luaopen_component, NULL);
+	luaL_newmetatable(L, "Apollo.vec2");
+	luaL_register(L, NULL, registryObjectVector);
+	
 	luaL_register(L, "xml", registryXML);
 	luaL_register(L, "mode_manager", registryModeManager);
     luaL_register(L, "resource_manager", registryResourceManager);
@@ -1817,5 +2098,6 @@ void __LuaBind ( lua_State* L )
     luaL_register(L, "sound", registrySound);
 	luaL_register(L, "preferences", registryPreferences);
 	luaL_register(L, "net_server", registryNetServer);
+	luaL_register(L, "window", registryWindowManager);
 	lua_cpcall(L, luaopen_physics, NULL);
 }

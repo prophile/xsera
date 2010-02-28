@@ -5,7 +5,7 @@ import('Networking')
 -- this test checks very basic local message functionality using strings as messages.
 -- this test will be unusable when messages become something more complex.
 function test1()
-	message = "RUNNING TEST 1."
+	message = { "RUNNING TEST 1." }
 	print(message)
 	
 	--/CLIENT/
@@ -26,7 +26,7 @@ function test1()
 		print("SERVER HAS NOT RECEIVED MESSAGES")
 	end
 	
-	--/CLIENT
+	--/CLIENT/
 	if client.receivedMsg() then
 		print("CLIENT HAS RECEIVED MESSAGES")
 		clientMessages = client.readMsg()
@@ -37,7 +37,7 @@ function test1()
 		print("CLIENT HAS NOT RECEIVED MESSAGES")
 	end
 	
-	message = "END OF TEST 1."
+	message[2] = "END OF TEST 1."
 	print(message)
 end
 
@@ -47,27 +47,30 @@ function key(k)
 	elseif k == "2" then
 		test2()
 	elseif k == "3" then
-		
+		test3()
 	elseif k == "4" then
-		
+		test4()
 	elseif k == "5" then
-		
+		test5()
 	elseif k == "6" then
-		
+		test6()
 	elseif k == "7" then
-		
+		test7()
 	elseif k == "8" then
-		
+		test8()
 	elseif k == "9" then
-		
+		test9()
 	elseif k == "0" then
-		
+		test0()
 	elseif k == "escape" then
-		mode_manager.switch('MainMenu')
+		mode_manager.switch('Xsera/MainMenu')
 	end
 end
 
-function init()
+function init(tabl)
+	if tabl ~= nil then
+		printTable(tabl)
+	end
 	local camera = { w = 800, h = 600 }
 	graphics.set_camera(-camera.w / 2, -camera.h / 2, camera.w / 2, camera.h / 2)
 end
@@ -78,9 +81,11 @@ end
 
 function render()
 	graphics.begin_frame()
-	graphics.draw_text("ESC to go to main screen", "CrystalClear", "center", { x = 0, y = 0 }, 30)
+	graphics.draw_text("ESC to go to main screen", "CrystalClear", "center", { x = 40, y = 0 }, 40)
 	if message ~= nil then
-		graphics.draw_text(message, "CrystalClear", "center", { x = 0, y = -50 }, 30)
+		for i = 1, #message do
+			graphics.draw_text(message[i], "CrystalClear", "center", { x = 0, y = -40 * i }, 30)
+		end
 	end
 	graphics.end_frame()
 end
