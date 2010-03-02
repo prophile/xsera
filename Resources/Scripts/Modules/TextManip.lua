@@ -10,7 +10,7 @@ function textWrap(text, font, height, maxLength)
 	local totalLength = graphics.text_length(text, font, height)
 	
 	if textIsGoodSize(text, font, height, maxLength) then
-		return text, 1
+		return text
 	end
 	
 	words = textSplit(text)
@@ -21,7 +21,7 @@ function textWrap(text, font, height, maxLength)
 		text = textSplit(text, 2)
 		
 		if graphics.text_length(text[1], font, height) <= maxLength and graphics.text_length(text[2], font, height) <= maxLength then
-			return text, 2
+			return text
 		end
 	end
 	
@@ -29,6 +29,8 @@ function textWrap(text, font, height, maxLength)
 	return textJoinSlow(words, font, height, maxLength)
 end
 
+-- Checks to see if the text is short enough, and is smart enough to check all
+-- elements of a table, should a table be passed as teh "text" argument
 function textIsGoodSize(text, font, height, maxLength)
 	if type(text) ~= "table" then
 		return (graphics.text_length(text, font, height) <= maxLength)
@@ -118,5 +120,5 @@ function textJoinSlow(words, font, height, maxLength)
 		end
 		wordsLeft = wordsLeft - 1
 	end
-	return returnText, index
+	return returnText
 end
