@@ -415,7 +415,7 @@ void DrawSpriteTile ( const std::string& sheetname, int sheet_x, int sheet_y, ve
 
 void DrawTextSDL ( const std::string& text, const std::string& font, const char* justify, vec2 position, float height, colour col, float rotation )
 {
-	SetShader("Sprite");
+	SetShader("Text");
 	EnableTexturing();
 	EnableBlending();
 	SetColour(col);
@@ -431,7 +431,8 @@ void DrawTextSDL ( const std::string& text, const std::string& font, const char*
 		halfSize = (dims * (height / dims.Y()));
 		GLfloat vertexArray[8] = { 0, halfSize.Y() / 2, halfSize.X(), halfSize.Y() / 2, halfSize.X(), -halfSize.Y() / 2, 0, -halfSize.Y() / 2 };
 		glVertexPointer(2, GL_FLOAT, 0, vertexArray);
-	} else
+	}
+	else
 	{
 		halfSize = (dims * (height / dims.Y())) * 0.5f;
 		if (strcmp(justify, "right") == 0)
