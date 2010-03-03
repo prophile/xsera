@@ -12,6 +12,7 @@ endsInCloseParen = nil
 doProcessConsole = false
 nestLevel = 0
 newHistory = nil
+MAIN_FONT = "prototype"
 io.output("XseraOutput.txt")
 
 do
