@@ -142,6 +142,8 @@
 		57662F2E10AF591B0025BA67 /* ParticleSystem.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 57662F2A10AF591B0025BA67 /* ParticleSystem.cpp */; };
 		57662F2F10AF591B0025BA67 /* ParticleSystem.h in Headers */ = {isa = PBXBuildFile; fileRef = 57662F2B10AF591B0025BA67 /* ParticleSystem.h */; };
 		57966A8010AE7E8A0088327C /* RNG.h in Headers */ = {isa = PBXBuildFile; fileRef = 57966A7F10AE7E8A0088327C /* RNG.h */; };
+		57B806BC113E21C900766C6F /* GAFFile.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 57B806BA113E21C900766C6F /* GAFFile.cpp */; };
+		57B806BD113E21C900766C6F /* GAFFile.h in Headers */ = {isa = PBXBuildFile; fileRef = 57B806BB113E21C900766C6F /* GAFFile.h */; };
 		57FCA50B10ACDF9D002D6A9E /* Object3D.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 57FCA50910ACDF9D002D6A9E /* Object3D.cpp */; };
 		57FCA50C10ACDF9D002D6A9E /* Object3D.h in Headers */ = {isa = PBXBuildFile; fileRef = 57FCA50A10ACDF9D002D6A9E /* Object3D.h */; };
 /* End PBXBuildFile section */
@@ -284,6 +286,8 @@
 		57662F2A10AF591B0025BA67 /* ParticleSystem.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ParticleSystem.cpp; sourceTree = "<group>"; };
 		57662F2B10AF591B0025BA67 /* ParticleSystem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ParticleSystem.h; sourceTree = "<group>"; };
 		57966A7F10AE7E8A0088327C /* RNG.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RNG.h; sourceTree = "<group>"; };
+		57B806BA113E21C900766C6F /* GAFFile.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GAFFile.cpp; sourceTree = "<group>"; };
+		57B806BB113E21C900766C6F /* GAFFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAFFile.h; sourceTree = "<group>"; };
 		57FCA50910ACDF9D002D6A9E /* Object3D.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Object3D.cpp; sourceTree = "<group>"; };
 		57FCA50A10ACDF9D002D6A9E /* Object3D.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Object3D.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -552,6 +556,8 @@
 		496A24C00F0EB37900C53BA1 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				57B806BA113E21C900766C6F /* GAFFile.cpp */,
+				57B806BB113E21C900766C6F /* GAFFile.h */,
 				57966A7F10AE7E8A0088327C /* RNG.h */,
 				496A24C10F0EB37900C53BA1 /* Colour.cpp */,
 				496A24C20F0EB37900C53BA1 /* Colour.h */,
@@ -647,6 +653,7 @@
 				57966A8010AE7E8A0088327C /* RNG.h in Headers */,
 				57662F2D10AF591B0025BA67 /* ImageLoader.h in Headers */,
 				57662F2F10AF591B0025BA67 /* ParticleSystem.h in Headers */,
+				57B806BD113E21C900766C6F /* GAFFile.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -762,6 +769,7 @@
 				57FCA50B10ACDF9D002D6A9E /* Object3D.cpp in Sources */,
 				57662F2C10AF591B0025BA67 /* ImageLoader.cpp in Sources */,
 				57662F2E10AF591B0025BA67 /* ParticleSystem.cpp in Sources */,
+				57B806BC113E21C900766C6F /* GAFFile.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

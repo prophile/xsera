@@ -7,7 +7,24 @@
 #define BE32(x) (x)
 #define BE16(x) (x)
 #else
+#ifdef __clang__
 #define BE32(val) __builtin_bswap32(val)
+#else
+static uint32_t BE32(uint32_t val)
+{
+	union
+	{
+		char bytes[4];
+		uint32_t longVal;
+	} initial, converted;
+	initial.longVal = val;
+	converted.bytes[0] = initial.bytes[3];
+	converted.bytes[1] = initial.bytes[2];
+	converted.bytes[2] = initial.bytes[1];
+	converted.bytes[3] = initial.bytes[0];
+	return converted.longVal;
+}
+#endif
 static uint16_t BE16(uint16_t val)
 {
 	return (val << 8) | (val >> 8);
