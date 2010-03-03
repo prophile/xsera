@@ -4,6 +4,8 @@ initialDist = -200
 separationDist = 9
 speed = 33
 
+MAIN_FONT = "prototype"
+
 credits = {}
 creditSizes = {}
 rowDist = {}
