@@ -55,7 +55,7 @@ end
 function render ()
     graphics.begin_frame()
     
-    graphics.set_camera(-500, -240, 500, 240)
+	graphics.set_camera(-500, -240, 500, 240)
     graphics.draw_image("Bootloader/Xsera", { x = 0, y = 0 }, { x = 1000, y = 480 })
     for id, ship in ipairs(ships) do
         local sz = graphics.sprite_dimensions("Ships/" .. ship[3], goodSpriteSheetX, goodSpriteSheetY)

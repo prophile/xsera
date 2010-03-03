@@ -111,7 +111,7 @@ TextEntry* GetEntry ( const std::string& font, const std::string& text, float si
 		newEntry->surface = NULL;
 		newEntry->lastUse = 0.0f;
 		TTF_Font* fontObject = GetFont(font, size);
-		const SDL_Color fg = { 0xFF, 0xFF, 0xFF, 0xFF }; // is this causing all-white text?
+		const SDL_Color fg = { 0xFF, 0xFF, 0xFF, 0xFF };
 		newEntry->surface = TTF_RenderUTF8_Blended(fontObject, text.c_str(), fg);
 		assert(newEntry->surface);
 		// generate textures

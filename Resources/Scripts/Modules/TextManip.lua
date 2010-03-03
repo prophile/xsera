@@ -9,25 +9,28 @@ function textWrap(text, font, height, maxLength)
 	local words
 	local totalLength = graphics.text_length(text, font, height)
 	
-	print("TOTAL length: " .. totalLength)
 	if textIsGoodSize(text, font, height, maxLength) then
-		return text, 1
+		return text
 	end
 	
 	words = textSplit(text)
 	numWords = #words
 	
+	-- try to split the text in half
 	if totalLength / 2 <= maxLength then
-		-- try to split the text in half
 		text = textSplit(text, 2)
 		
-		-- TODO: need to check to make sure that these are of appropriate size before returning!!!
-		return text, 2
+		if graphics.text_length(text[1], font, height) <= maxLength and graphics.text_length(text[2], font, height) <= maxLength then
+			return text
+		end
 	end
 	
+	-- default
 	return textJoinSlow(words, font, height, maxLength)
 end
 
+-- Checks to see if the text is short enough, and is smart enough to check all
+-- elements of a table, should a table be passed as teh "text" argument
 function textIsGoodSize(text, font, height, maxLength)
 	if type(text) ~= "table" then
 		return (graphics.text_length(text, font, height) <= maxLength)
@@ -99,7 +102,7 @@ end
 -- one by one until the line is too long. It repeats this until all the words
 -- are used.
 -- Titled "slow" because other faster methods (estimation using the character
--- "M" as a ruler (the longest character), and also binary search)
+-- "M" as a ruler (the 'longest' character), and also binary search)
 function textJoinSlow(words, font, height, maxLength)
 	local returnText = { "" }
 	local index = 1
@@ -117,5 +120,5 @@ function textJoinSlow(words, font, height, maxLength)
 		end
 		wordsLeft = wordsLeft - 1
 	end
-	return returnText, index
+	return returnText
 end

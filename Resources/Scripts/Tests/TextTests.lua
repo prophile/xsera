@@ -9,12 +9,10 @@ function test1()
 	printTable(message)
 	local i = 2
 	local result
-	result, numLines = textWrap("This is some sampler text that is longer than we want it to be. It should be shortened up, heh", "CrystalClear", 40, 700)
---	result, numLines = textWrap("This is some sample text", "CrystalClear", 40, 700)
 	
-	print(numLines)
-	printTable(result)
-	if numLines > 1 then
+	result = textWrap("This is some sampler text that is longer than we want it to be. It should be shortened up, heh", "CrystalClear", 40, 800)
+	
+	if type(result) == "table" and #result > 1 then
 		for j = 1, #result do
 			message[i] = result[j]
 			i = i + 1
