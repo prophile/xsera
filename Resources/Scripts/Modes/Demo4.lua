@@ -361,7 +361,6 @@ function render()
 		end
 		
 	end
-<<<<<<< HEAD
 	
 	
 	--[[Draw temporary status display [ADAM] commented out because of panels
@@ -376,9 +375,8 @@ function render()
 		graphics.draw_text("Energy: " .. scen.playerShip.energy, "CrystalClear", "left", {x = ox, y = oy + vstep}, camera.w/fs)
 	end--]]
 
-=======
-	graphics.draw_circle(trackingTarget.position, trackingTarget.collision_radius, 1.0, ClutColour(5, 1))	
->>>>>>> adam/master
+--	graphics.draw_circle(trackingTarget.position, trackingTarget.collision_radius, 1.0, ClutColour(5, 1))	
+	
 	graphics.draw_particles()
 	DrawArrow()
 	DrawMouse1()
