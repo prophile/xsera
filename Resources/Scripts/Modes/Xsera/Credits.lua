@@ -4,10 +4,17 @@ initialDist = -200
 separationDist = 9
 speed = 33
 
-MAIN_FONT = "prototype"
+simpleCreditSizeBase = 20
+simpleCreditSizeScale = 8
+simpleCreditFont = "prototype"
+titleCreditSizeBase = 20
+titleCreditSizeScale = 6
+titleCreditFont = "sneakout"
+MAIN_FONT = "sneakout"
 
 credits = {}
 creditSizes = {}
+creditFonts = {}
 rowDist = {}
 
 function init ()
@@ -21,9 +28,17 @@ function init ()
 	local lastDist = initialDist
 	for sizeString, line in string.gmatch(rawInput, "(%**)(.-)\n") do
 		credits[i] = line
-		creditSizes[i] = 30 + (10 * #sizeString)
-		rowDist[i] = lastDist
-		lastDist = lastDist - separationDist - creditSizes[i]
+		if #sizeString > 0 then
+			creditSizes[i] = titleCreditSizeBase + (titleCreditSizeScale * #sizeString)
+			creditFonts[i] = titleCreditFont
+			rowDist[i] = lastDist
+			lastDist = lastDist - separationDist - creditSizes[i]
+		else
+			creditSizes[i] = simpleCreditSizeBase + (titleCreditSizeScale * #sizeString)
+			creditFonts[i] = simpleCreditFont
+			rowDist[i] = lastDist
+			lastDist = lastDist - separationDist - creditSizes[i]
+		end
 		i = i + 1
 	end
 end
@@ -56,7 +71,7 @@ function render ()
 	graphics.set_camera(-320, -240, 320, 240)
 	for i, credit in pairs(credits) do
 		if credit ~= "" then
-			graphics.draw_text(credit, MAIN_FONT, "center", { x = 0, y = rowDist[i] + totalTime } , creditSizes[i])
+			graphics.draw_text(credit, creditFonts[i], "center", { x = 0, y = rowDist[i] + totalTime } , creditSizes[i])
 		end
 	end
 	graphics.end_frame()
