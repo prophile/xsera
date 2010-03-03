@@ -12,7 +12,6 @@
 #include "Utilities/Colour.h"
 #include "Utilities/Matrix2x3.h"
 #include "Utilities/Vec2.h"
-#include "Utilities/XarFile.h"
 #include "Utilities/ResourceManager.h"
 #include "Utilities/GameTime.h"
 #include "Utilities/TestHarness.h"

@@ -3,6 +3,7 @@
 #include "ImageLoader.h"
 #include "RNG.h"
 #include "Shaders.h"
+#include <map>
 #include <assert.h>
 
 namespace Graphics

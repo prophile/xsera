@@ -11,7 +11,6 @@
 #include "TinyXML/tinyxml.h"
 #include "Net/Net.h"
 #include "Utilities/GameTime.h"
-#include "Utilities/XarFile.h"
 #include "Physics/PhysicsObject.h"
 #include "Physics/PhysicsContext.h"
 
@@ -1955,81 +1954,12 @@ int luaopen_component ( lua_State* L )
 	return 1;
 }
 
-int XAR_Open ( lua_State* L )
-{
-	const char* filename = luaL_checkstring(L, 1);
-	XarFile* file = new XarFile ( filename );
-	lua_pushlightuserdata(L, (void*)file);
-	luaL_getmetatable(L, "Apollo.XarFile");
-	lua_setmetatable(L, -2);
-	return 1;
-}
-
-int XAR_Close ( lua_State* L )
-{
-	XarFile* file = (XarFile*)luaL_checkudata(L, 1, "Apollo.XarFile");
-	assert(file);
-	delete file;
-	return 0;
-}
-
-int XAR_FileExists ( lua_State* L )
-{
-	XarFile* file = (XarFile*)luaL_checkudata(L, 1, "Apollo.XarFile");
-	assert(file);
-	const char* path = luaL_checkstring(L, 2);
-	lua_pushboolean(L, file->FileExists(path) ? 1 : 0);
-	return 1;
-}
-
-int XAR_Read ( lua_State* L )
-{
-	XarFile* file = (XarFile*)luaL_checkudata(L, 1, "Apollo.XarFile");
-	assert(file);
-	const char* path = luaL_checkstring(L, 2);
-	SDL_RWops* rwops = file->OpenFile(path);
-	if (!rwops)
-	{
-		lua_pushnil(L);
-		return 1;
-	}
-	size_t len;
-	void* data = ResourceManager::ReadFull(&len, rwops, 1);
-	lua_pushlstring(L, (const char*)data, len);
-	free(data);
-	return 1;
-}
-
-luaL_Reg registryXAR [] =
-{
-	"open", XAR_Open,
-	NULL, NULL
-};
-
-luaL_Reg registryObjectXAR [] =
-{
-	"__gc", XAR_Close,
-	"contains", XAR_FileExists,
-	"read", XAR_Read,
-	NULL, NULL
-};
-
 int mouse_position ( lua_State* L )
 {
 	vec2 mouse = Input::MousePosition();
 	lua_pushnumber(L, mouse.X());
 	lua_pushnumber(L, mouse.Y());
 	return 2;
-}
-
-int luaopen_xar ( lua_State* L )
-{
-	luaL_newmetatable(L, "Apollo.XarFile");
-	lua_pushvalue(L, -1);
-	lua_setfield(L, -2, "__index");
-	luaL_register(L, NULL, registryObjectXAR);
-	luaL_register(L, "xar", registryXAR);
-	return 1;
 }
 
 int import ( lua_State* L )

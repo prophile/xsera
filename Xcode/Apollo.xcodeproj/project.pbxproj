@@ -68,7 +68,6 @@
 		496A27B60F0EC9D800C53BA1 /* ResourceManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 496A24C70F0EB37900C53BA1 /* ResourceManager.h */; };
 		496A27B70F0EC9D800C53BA1 /* TestHarness.h in Headers */ = {isa = PBXBuildFile; fileRef = 496A24C90F0EB37900C53BA1 /* TestHarness.h */; };
 		496A27B80F0EC9D800C53BA1 /* Vec2.h in Headers */ = {isa = PBXBuildFile; fileRef = 496A24CA0F0EB37900C53BA1 /* Vec2.h */; };
-		496A27B90F0EC9D800C53BA1 /* XarFile.h in Headers */ = {isa = PBXBuildFile; fileRef = 496A24CC0F0EB37900C53BA1 /* XarFile.h */; };
 		496A27BA0F0EC9D800C53BA1 /* ModeManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 496A250F0F0EB63200C53BA1 /* ModeManager.h */; };
 		496A27BB0F0EC9EE00C53BA1 /* callbacks.c in Sources */ = {isa = PBXBuildFile; fileRef = 496A24050F0EB35E00C53BA1 /* callbacks.c */; };
 		496A27BC0F0EC9EE00C53BA1 /* host.c in Sources */ = {isa = PBXBuildFile; fileRef = 496A24100F0EB35E00C53BA1 /* host.c */; };
@@ -130,7 +129,6 @@
 		496A27F40F0EC9EE00C53BA1 /* Matrix2x3.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 496A24C40F0EB37900C53BA1 /* Matrix2x3.cpp */; };
 		496A27F50F0EC9EE00C53BA1 /* ResourceManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 496A24C60F0EB37900C53BA1 /* ResourceManager.cpp */; };
 		496A27F60F0EC9EE00C53BA1 /* TestHarness.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 496A24C80F0EB37900C53BA1 /* TestHarness.cpp */; };
-		496A27F70F0EC9EE00C53BA1 /* XarFile.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 496A24CB0F0EB37900C53BA1 /* XarFile.cpp */; };
 		496A27F80F0EC9EE00C53BA1 /* ModeManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 496A250E0F0EB63200C53BA1 /* ModeManager.cpp */; };
 		496A28380F0EC9F800C53BA1 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 496A23EA0F0EB31B00C53BA1 /* Cocoa.framework */; };
 		496A28390F0EC9F800C53BA1 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 496A23EC0F0EB31B00C53BA1 /* OpenGL.framework */; };
@@ -276,8 +274,6 @@
 		496A24C80F0EB37900C53BA1 /* TestHarness.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TestHarness.cpp; sourceTree = "<group>"; };
 		496A24C90F0EB37900C53BA1 /* TestHarness.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestHarness.h; sourceTree = "<group>"; };
 		496A24CA0F0EB37900C53BA1 /* Vec2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Vec2.h; sourceTree = "<group>"; };
-		496A24CB0F0EB37900C53BA1 /* XarFile.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = XarFile.cpp; sourceTree = "<group>"; };
-		496A24CC0F0EB37900C53BA1 /* XarFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XarFile.h; sourceTree = "<group>"; };
 		496A250E0F0EB63200C53BA1 /* ModeManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ModeManager.cpp; sourceTree = "<group>"; };
 		496A250F0F0EB63200C53BA1 /* ModeManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModeManager.h; sourceTree = "<group>"; };
 		496A277E0F0EC9A000C53BA1 /* libApollo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libApollo.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -567,8 +563,6 @@
 				496A24C80F0EB37900C53BA1 /* TestHarness.cpp */,
 				496A24C90F0EB37900C53BA1 /* TestHarness.h */,
 				496A24CA0F0EB37900C53BA1 /* Vec2.h */,
-				496A24CB0F0EB37900C53BA1 /* XarFile.cpp */,
-				496A24CC0F0EB37900C53BA1 /* XarFile.h */,
 			);
 			name = Utilities;
 			path = ../Engine/Utilities;
@@ -643,7 +637,6 @@
 				496A27B60F0EC9D800C53BA1 /* ResourceManager.h in Headers */,
 				496A27B70F0EC9D800C53BA1 /* TestHarness.h in Headers */,
 				496A27B80F0EC9D800C53BA1 /* Vec2.h in Headers */,
-				496A27B90F0EC9D800C53BA1 /* XarFile.h in Headers */,
 				496A27BA0F0EC9D800C53BA1 /* ModeManager.h in Headers */,
 				493A3C280F0EDB3900F44530 /* Logging.h in Headers */,
 				493223BB0F23B9D60048495A /* Apollo.h in Headers */,
@@ -760,7 +753,6 @@
 				496A27F40F0EC9EE00C53BA1 /* Matrix2x3.cpp in Sources */,
 				496A27F50F0EC9EE00C53BA1 /* ResourceManager.cpp in Sources */,
 				496A27F60F0EC9EE00C53BA1 /* TestHarness.cpp in Sources */,
-				496A27F70F0EC9EE00C53BA1 /* XarFile.cpp in Sources */,
 				496A27F80F0EC9EE00C53BA1 /* ModeManager.cpp in Sources */,
 				493A3C2A0F0EDB4F00F44530 /* Logging.cpp in Sources */,
 				493223950F23B5C40048495A /* Entry.cpp in Sources */,
