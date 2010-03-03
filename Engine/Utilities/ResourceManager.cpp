@@ -7,6 +7,7 @@
 #include <sys/stat.h>
 #endif
 #include "Logging.h"
+#include "GAFFile.h"
 
 namespace ResourceManager
 {
@@ -67,6 +68,35 @@ bool ResourceDomainFilesystem::FileExists ( const std::string& path )
 SDL_RWops* ResourceDomainFilesystem::OpenFile ( const std::string& path )
 {
 	return SDL_RWFromFile((_basePath + '/' + path).c_str(), "rb");
+}
+
+class ResourceDomainGAF : public ResourceDomain
+{
+private:
+	GAFFile* _file;
+public:
+	ResourceDomainGAF(const std::string& path);
+	virtual ~ResourceDomainGAF () { delete _file; }
+
+	virtual SDL_RWops* OpenFile(const std::string& path);
+};
+
+ResourceDomainGAF::ResourceDomainGAF(const std::string& path)
+{
+	SDL_RWops* rwops = OpenFile(path);
+	size_t length;
+	void* data = ReadFull(&length, rwops, 1);
+	_file = new GAFFile(data, (unsigned long)length, true);
+}
+
+SDL_RWops* ResourceDomainGAF::OpenFile(const std::string& path)
+{
+	unsigned long length;
+	const void* data = _file->GetFile(path, length);
+	if (data)
+		return SDL_RWFromConstMem(data, length);
+	else
+		return NULL;
 }
 
 std::vector<ResourceDomain*> searchDomains;
