@@ -64,7 +64,7 @@ function render ()
     
     graphics.draw_text("D - Demo", MAIN_FONT, "left", { x = -450, y = 0 }, 60)
     graphics.draw_text("T - Test", MAIN_FONT, "left", { x = -450, y = -50 }, 60)
-    graphics.draw_text("C - Xsera/Credits", MAIN_FONT, "left", { x = -450, y = -100 }, 60)
+    graphics.draw_text("C - Credits", MAIN_FONT, "left", { x = -450, y = -100 }, 60)
     
     graphics.draw_text(versionInformation, MAIN_FONT, "left", { x = -450, y = -220 }, 28)
 	
@@ -73,6 +73,28 @@ function render ()
 end
 
 function key ( k )
+	if RELEASE_BUILD == true then
+		if k == "x" then
+			mode_manager.switch("Ares/Splash")
+		end
+	else -- debug build utilities / tests
+		if k == "x" then
+			mode_manager.switch("Xsera/ConsoleDrawer")
+		elseif k == "t" then
+			mode_manager.switch("../Tests/TurretTest")
+		elseif k == "1" then
+			mode_manager.switch("../Tests/CSTest")
+		elseif k == "2" then  -- this does not work. [ALISTAIR] You said you thought of a different way to do this?
+			print("CALLING SPECIAL SWITCH")
+			tabl = { "THIS", "IS", "XSERAAAAAAAAAAAAA" }
+			mode_manager.switch("../Tests/CSTest", tabl)
+		elseif k == "3" then
+			mode_manager.switch("../Tests/WindowTest")
+		elseif k == "4" then
+			mode_manager.switch("../Tests/TextTests")
+		end
+	end
+	
     if k == "i" then
         timeFactor = timeFactor + 0.05
     elseif k == "u" then
@@ -83,30 +105,12 @@ function key ( k )
         sizeFactor = sizeFactor - 0.1
     elseif k == "d" then
         mode_manager.switch("Demo4")
-    elseif k == "x" then
-		if RELEASE_BUILD == false then
-			mode_manager.switch("Xsera/ConsoleDrawer")
-		else
-			mode_manager.switch("Ares/Splash")
-		end
-    elseif k == "t" then
-        mode_manager.switch("../Tests/TurretTest")
     elseif k == "c" then
         mode_manager.switch("Xsera/Credits")
     elseif k == "tab" then
         mode_manager.switch("Ares/Splash")
     elseif k == "escape" then
 		os.exit()
-	elseif k == "1" then
-		mode_manager.switch("../Tests/CSTest")
-	elseif k == "2" then
-		print("CALLING SPECIAL SWITCH")
-		tabl = { "THIS", "IS", "XSERAAAAAAAAAAAAA" }
-		mode_manager.switch("../Tests/CSTest", tabl)
-	elseif k == "3" then
-		mode_manager.switch("../Tests/WindowTest")
-	elseif k == "4" then
-		mode_manager.switch("../Tests/TextTests")
     else
         print("Uninterpreted keystroke " .. k)
     end
@@ -151,6 +155,7 @@ function init ()
         print("Signed off by: " .. versionData[3][1])
     end
     lastTime = mode_manager.time()
+	print(sound.current_music())
 	if sound.current_music() ~= "Doomtroopers" then
 		sound.play_music("Doomtroopers")
 	end
