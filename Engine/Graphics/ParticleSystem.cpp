@@ -58,9 +58,7 @@ void ParticleSystem::Draw ()
 	assert(texID);
 	vec2 particles[count*4];
 	vec2 texCoords[count*4];
-#ifndef NDEBUG
-	printf("Delta = %f\nHS = %f, %f\n", delta, halfParticleSize.X(), halfParticleSize.Y());
-#endif
+
 	for (unsigned long i = 0; i < count; i++)
 	{
 		vec2 pos = position[i];
