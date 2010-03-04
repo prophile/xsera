@@ -138,6 +138,10 @@ local new = NewObject(action["which-base-type"])
 
 new.physics.position = srcMotion.position + offset
 
+--[[BEG AQUIRE TARGET]]--
+	local targ = selection.target and selection.target.physics or trackingTarget
+--[[END AQUIRE TARGET]]--
+
 
 if new.type == "beam"
 and new.base.beam.kind ~= "kinetic" then
@@ -146,15 +150,14 @@ and new.base.beam.kind ~= "kinetic" then
 	
 	if new.base.beam.kind == "bolt-relative"
 	or new.base.beam.kind == "static-relative" then
---		local offset = VecSub(trackingTarget.position, new.src.position)
-		local len = math.min(new.base.beam.range, find_hypot(new.gfx.source.position, trackingTarget.position))
-		local dir = NormalizeVec(trackingTarget.position - new.physics.position)
+		local len = math.min(new.base.beam.range, find_hypot(new.gfx.source.position, targ.position))
+		local dir = NormalizeVec(targ.position - new.physics.position)
 		
 		new.gfx.relative = dir * len		
 		new.physics.position = new.physics.position +  new.gfx.relative
 	else
 
-		new.gfx.target = trackingTarget
+		new.gfx.target = targ
 		
 		local len =  math.min(new.base.beam.range,find_hypot(new.physics.position,new.gfx.target.position))
 		local dir = NormalizeVec(new.target.position - new.gfx.source.position)
@@ -166,9 +169,7 @@ end
 
 
 if source.base.attributes["auto-target"] == true then
---[[BEG AQUIRE TARGET]]--
-	local targ = selection.target and selection.target.physics or trackingTarget
---[[END AQUIRE TARGET]]--
+
 	if aimMethod == "smart" then
 		local vel = (new.base["initial-velocity"] or 0) * SPEED_FACTOR
 		new.physics.angle = AimAhead(srcMotion, targ, vel)
