@@ -1152,9 +1152,9 @@ int GFX_TextLength (lua_State* L )
 	const char* font = luaL_checkstring(L, 2);
 	float height = luaL_checknumber(L, 3);
 	vec2 dims = Graphics::TextRenderer::TextDimensions(font, text, height);
-	printf("[%f, %f]\n", dims.X(), dims.Y());
+//	printf("[%f, %f]\n", dims.X(), dims.Y());
 	dims = dims * (height / dims.Y());
-	printf("[%f, %f]\n", dims.X(), dims.Y());
+//	printf("[%f, %f]\n", dims.X(), dims.Y());
 	lua_pushnumber(L, dims.X());
 	return 1;
 }

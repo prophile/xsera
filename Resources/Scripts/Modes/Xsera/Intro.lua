@@ -25,7 +25,7 @@ function render()
 		graphics.draw_text("Presents...", MAIN_FONT, "center", { x = 0, y = -215 }, 50)
 	elseif myTime < 10 then
 		graphics.draw_text("Based upon", MAIN_FONT, "center", { x = 0, y = 250 }, 50)
-		graphics.draw_image("Panels/NLXsera/Credits", { x = 0, y = 180 }, { x = 160, y = 36 })
+		graphics.draw_image("Panels/NLCredits", { x = 0, y = 180 }, { x = 160, y = 36 })
 		graphics.draw_text("Produced by", MAIN_FONT, "center", { x = 0, y = 130 }, 50)
 		graphics.draw_image("Panels/AmbrosiaLogo", { x = 0, y = -80 }, { x = 259, y = 312 })
 	elseif myTime < 17 then

@@ -84,7 +84,7 @@ function update ()
 	if creditsRolling then
 		totalTime = totalTime + speed * dt
 	end
-	-- if totalTime > -rowDist[table.maxn(rowDist)] + 300 then
-	--	mode_manager.switch("Xsera/MainMenu")
-	-- end
+	if totalTime > -rowDist[table.maxn(rowDist)] + 300 then
+		mode_manager.switch("Xsera/MainMenu")
+	end
 end

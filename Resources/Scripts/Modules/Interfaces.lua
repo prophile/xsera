@@ -452,17 +452,17 @@ function DrawPanels()
 	if scen.playerShip.weapons ~= nil then
 		if scen.playerShip.weapons.pulse ~= nil
 		and scen.playerShip.weapons.pulse.ammo ~= -1 then
-			graphics.draw_text(string.format('%03d', scen.playerShip.weapons.pulse.ammo), "CrystalClear", "left", { x = -376, y = 60 }, 13, ClutColour(5, 1))
+			graphics.draw_text(string.format('%03d', scen.playerShip.weapons.pulse.ammo), "CrystalClear", "left", { x = -376, y = 60 }, 13, ClutColour(16, 1))
 		end
 		
 		if scen.playerShip.weapons.beam ~= nil
 		and scen.playerShip.weapons.beam.ammo ~= -1 then
-			graphics.draw_text(string.format('%03d', scen.playerShip.weapons.beam.ammo), "CrystalClear", "left", { x = -345, y = 60 }, 13, ClutColour(5, 1))
+			graphics.draw_text(string.format('%03d', scen.playerShip.weapons.beam.ammo), "CrystalClear", "left", { x = -345, y = 60 }, 13, ClutColour(16, 1))
 		end
 		
 		if scen.playerShip.weapons.special ~= nil
 		and scen.playerShip.weapons.special.ammo ~= -1 then
-			graphics.draw_text(string.format('%03d', scen.playerShip.weapons.special.ammo), "CrystalClear", "left", { x = -314, y = 60 }, 13, ClutColour(5, 1))
+			graphics.draw_text(string.format('%03d', scen.playerShip.weapons.special.ammo), "CrystalClear", "left", { x = -314, y = 60 }, 13, ClutColour(16, 1))
 		end
 	end
 
@@ -474,13 +474,13 @@ function DrawPanels()
 		DrawTargetBox(selection.target,false)
 	end
 
-	graphics.draw_box(-165.5, -389.5, -175.5, -358, 0, ClutColour(4, 8))
-	graphics.draw_text("RIGHT", MAIN_FONT, "left", { x = -388, y = -170 }, 13, ClutColour(4, 6))
-	graphics.draw_text("Select", MAIN_FONT, "left", { x = -354, y = -170 }, 13, ClutColour(4, 6))
+	graphics.draw_box(-165.5, -389.5, -175.5, -358, 0, ClutColour(4, 6))
+	graphics.draw_text("RIGHT", MAIN_FONT, "left", { x = -388, y = -170 }, 13, ClutColour(14, 5))
+	graphics.draw_text("Select", MAIN_FONT, "left", { x = -354, y = -170 }, 13, ClutColour(14, 5))
 	if menuLevel ~= menuOptions then
-		graphics.draw_box(-175.5, -389.5, -185.5, -358, 0, ClutColour(4, 8))
-		graphics.draw_text("LEFT", MAIN_FONT, "left", { x = -388, y = -180 }, 13, ClutColour(4, 6))
-		graphics.draw_text("Go Back", MAIN_FONT, "left", { x = -354, y = -180 }, 13, ClutColour(4, 6))
+		graphics.draw_box(-175.5, -389.5, -185.5, -358, 0, ClutColour(4, 6))
+		graphics.draw_text("LEFT", MAIN_FONT, "left", { x = -388, y = -180 }, 13, ClutColour(14, 5))
+		graphics.draw_text("Go Back", MAIN_FONT, "left", { x = -354, y = -180 }, 13, ClutColour(14, 5))
 	end
 end
 

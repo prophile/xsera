@@ -92,6 +92,8 @@ function key ( k )
 			mode_manager.switch("../Tests/WindowTest")
 		elseif k == "4" then
 			mode_manager.switch("../Tests/TextTests")
+		elseif k == "5" then
+			mode_manager.switch("Ares/Splash")
 		end
 	end
 	

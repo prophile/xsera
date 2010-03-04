@@ -19,15 +19,15 @@ function DrawInterfaceBox(box, col_mod_all, col_mod_click)
 	end
 	-- inner box and details
 	if (box.text ~= " ") and (box.text ~= "nodraw") then
-		graphics.draw_box(box.yCoord + 14, box.xCoord + 11, box.yCoord + 4, box.xCoord + 10 + txtlength * 2, 0, ClutLighten(box.boxColour, col_mod_all + 1))
-		graphics.draw_box(box.yCoord + 14, box.xCoord + 11 + txtlength * 2, box.yCoord + 4, box.xCoord + box.length - 11, 0, ClutLighten(box.boxColour, col_mod_click - 1))
-		graphics.draw_text(box.text, MAIN_FONT, "center", { x = box.xCoord + 11 + txtlength * 9 / 2, y = box.yCoord + 9 }, 14 , ClutLighten(box.boxColour, col_mod_all + 1)) 
+		graphics.draw_box(box.yCoord + 14, box.xCoord + 11, box.yCoord + 4, box.xCoord + 10 + txtlength * 2, 0, ClutLighten(box.boxColour, col_mod_all - 1))
+		graphics.draw_box(box.yCoord + 14, box.xCoord + 11 + txtlength * 2, box.yCoord + 4, box.xCoord + box.length - 11, 0, ClutLighten(box.boxColour, col_mod_click + 2))
+		graphics.draw_text(box.text, MAIN_FONT, "center", { x = box.xCoord + 11 + txtlength * 9 / 2, y = box.yCoord + 9 }, 14, ClutLighten(box.boxColour, col_mod_all - 3)) 
 	else
 		graphics.draw_box(box.yCoord + 14, box.xCoord + 11, box.yCoord + 4, box.xCoord + 10 + txtlength * 2, 0, ClutLighten(box.boxColour, col_mod_all - 1))
 		graphics.draw_box(box.yCoord + 14, box.xCoord + 11 + txtlength * 2, box.yCoord + 4, box.xCoord + box.length - 11, 0, ClutLighten(box.boxColour, col_mod_all + 1))
 	end
 	if box.special ~= "disabled" then
-		graphics.draw_text(box.letter, MAIN_FONT, "center", { x = box.xCoord + 11 + txtlength, y = box.yCoord + 9 }, 14) 
+		graphics.draw_text(box.letter, MAIN_FONT, "center", { x = box.xCoord + 11 + txtlength, y = box.yCoord + 9 }, 14, ClutColour(1, 17)) 
 	end
 	if box.radio == "off" then
 		graphics.draw_box(box.yCoord + 13, box.xCoord - 2, box.yCoord + 4, box.xCoord + 5, 0, ClutLighten(box.boxColour, col_mod_all))
@@ -195,11 +195,11 @@ function SwitchBox(box)
 	end
 end
 
-function ChangeSpecial(k, set, table)
+function ChangeSpecial(k, set, tbl)
 	local num = 1
-	while table[num] ~= nil do
-		if table[num].letter == k then
-			table[num].special = set
+	while tbl[num] ~= nil do
+		if tbl[num].letter == k then
+			tbl[num].special = set
 		end
 		num = num + 1
 	end
