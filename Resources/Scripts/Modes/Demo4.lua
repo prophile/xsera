@@ -10,8 +10,17 @@ import('KeyboardControl')
 import('PilotAI')
 import('Interfaces')
 
-trackingTarget = {}
+trackingTarget = {
+	position = vec(0,0);
+	velocity = vec(0,0);
+	mass = 1.0;
+	collision_radius = 1.0;
+	angle = 0.0;
+	angular_velocity = 0.0;
+}
+
 mdown = false
+mrad = MOUSE_RADIUS / cameraRatio
 aimMethod = "smart"
 
 
@@ -23,14 +32,17 @@ function init()
 	start_time = mode_manager.time()
 	last_time = mode_manager.time()
 	
-	trackingTarget = physics.new_object(1.0)
-	trackingTarget.collision_radius = MOUSE_RADIUS
-	
+	local tmp = physics.new_object(1.0)
+	physics.destroy_object(tmp)
+
+--	trackingTarget.collision_radius = MOUSE_RADIUS
+
 	scen = LoadScenario(demoLevel)
 
 	selection.control = scen.playership
 	selection.target = nil
-	trackingTarget.position = GetMouseCoords()
+
+--	trackingTarget.position = GetMouseCoords()
 end
 
 function key( k )
@@ -92,7 +104,8 @@ function update()
 		arrowLength = ARROW_LENGTH / cameraRatio
 		arrowVar = ARROW_VAR / cameraRatio
 		arrowDist = ARROW_DIST / cameraRatio
-		trackingTarget.collision_radius = MOUSE_RADIUS / cameraRatio
+--		trackingTarget.collision_radius = MOUSE_RADIUS / cameraRatio
+		mrad = MOUSE_RADIUS / cameraRatio
 		if (cameraRatio < 1 / 8 and cameraRatioOrig > 1 / 8) or (cameraRatio > 1 / 8 and cameraRatioOrig < 1 / 8) then
 			if soundJustPlayed == false then
 				sound.play("ZoomChange")
@@ -104,18 +117,20 @@ function update()
 	local cols = physics.collisions()
 	
 	for idx, pair in pairs(cols) do
-		if pair[1] == 1 then
+--		if pair[1] == 1 then
+--[==[
 			if mdown == true then
 				if keyboard[2][5].active == true then
 					print("TARGET SELECT")
-					selection.target = scen.objects[pair[2]]
+					selection.target = scen.objects[pair[2] ]
 				else
 					print("CONTROL SELECT")
-					selection.control = scen.objects[pair[2]]
+					selection.control = scen.objects[pair[2] ]
 				end
 				mdown = false
 			end
-		else
+--]==]
+--		else
 			local a = scen.objects[pair[1]]
 			local b = scen.objects[pair[2]]
 
@@ -124,7 +139,7 @@ function update()
 			and a.ai.owner ~= b.ai.owner then
 				Collide(a,b)
 			end
-		end
+--		end
 	end
 	mdown = false
 
@@ -278,7 +293,7 @@ function update()
 	RemoveDead()
 	TestConditions(scen)
 	GenerateStatusLines(scen)
-	trackingTarget.position = GetMouseCoords()
+--	trackingTarget.position = GetMouseCoords()
 	physics.update(dt)
 end
 
@@ -389,8 +404,21 @@ function mouse(button,x,y)
 	end
 end
 
-function mouseup()
+function mouse_up()
 	mdown = false
+
+	local mousePos = GetMouseCoords()
+	for i, o in pairs(scen.objects) do
+		if find_hypot(o.physics.position, mousePos) <= o.physics.collision_radius + mrad == true then
+			if keyboard[2][5].active == true then
+				print("TARGET SELECT")
+				selection.target = scen.objects[i]
+			else
+				print("CONTROL SELECT")
+				selection.control = scen.objects[i]
+			end
+		end
+	end
 end
 
 function shutdown()

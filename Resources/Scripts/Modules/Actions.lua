@@ -139,7 +139,7 @@ local new = NewObject(action["which-base-type"])
 new.physics.position = srcMotion.position + offset
 
 --[[BEG AQUIRE TARGET]]--
-	local targ = selection.target and selection.target.physics or trackingTarget
+	local targ = selection.target and selection.target.physics or GetMouseCoords()
 --[[END AQUIRE TARGET]]--
 
 
