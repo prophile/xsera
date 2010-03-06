@@ -1,4 +1,5 @@
 import('PrintRecursive')
+import('TextManip')
 
 function DrawInterfaceBox(box, col_mod_all, col_mod_click)
 	if box.underbox ~= nil then
@@ -55,12 +56,12 @@ function DrawInterfaceBox(box, col_mod_all, col_mod_click)
 	-- under box, if it exists
 	if box.underbox ~= nil then
 		-- left side
-		graphics.draw_box(box.yCoord + 1, box.xCoord, box.yCoord - 1, box.xCoord + 10, 0, box.boxColour)
+		graphics.draw_box(box.yCoord + 1, box.xCoord, box.yCoord - 1, box.xCoord + 10, 0, ClutLighten(box.boxColour))
 		graphics.draw_box(box.yCoord - 2, box.xCoord, (box.yCoord + box.underbox + 4) / 2, box.xCoord + 10, 0, box.boxColour)
 		graphics.draw_box((box.yCoord + box.underbox + 2) / 2, box.xCoord, box.underbox + 6, box.xCoord + 10, 0, ClutDarken(box.boxColour))
 		graphics.draw_box(box.underbox + 5, box.xCoord, box.underbox, box.xCoord + 10, 0, box.boxColour)
 		-- right side
-		graphics.draw_box(box.yCoord + 1, box.xCoord + box.length - 10, box.yCoord - 1, box.xCoord + box.length, 0, box.boxColour)
+		graphics.draw_box(box.yCoord + 1, box.xCoord + box.length - 10, box.yCoord - 1, box.xCoord + box.length, 0, ClutLighten(box.boxColour))
 		graphics.draw_box(box.yCoord - 2, box.xCoord + box.length - 10, (box.yCoord + box.underbox + 4) / 2, box.xCoord + box.length, 0, box.boxColour)
 		graphics.draw_box((box.yCoord + box.underbox + 2) / 2, box.xCoord + box.length - 10, box.underbox + 6, box.xCoord + box.length, 0, ClutDarken(box.boxColour))
 		graphics.draw_box(box.underbox + 5, box.xCoord + box.length - 10, box.underbox, box.xCoord + box.length, 0, box.boxColour)
@@ -170,9 +171,13 @@ function DrawPointerBox(box, dt)
 			graphics.draw_line(pointTo, pointFrom, 1, box.colour)
 		end
 		
-		graphics.draw_text(box.message, box.font, "left", { x = box.left + 5, y = (box.top + box.bottom) / 2 }, box.size, box.colour)
+		graphics.draw_text(box.message, box.font, "left", { x = box.left + 5, y = (box.top + box.bottom) / 2 }, box.size, ClutLighten(box.colour, -5))
 	else
 		-- [TODO, ADAM] - create text that goes on the bottom
+		wrappedText = textWrap(box.message, box.font, box.size, 300)
+		print(#wrappedText)
+		lines = #wrappedText
+		-- leaving this until we solve other issues related to this
 	end
 end
 
@@ -196,11 +201,9 @@ function SwitchBox(box)
 end
 
 function ChangeSpecial(k, set, tbl)
-	local num = 1
-	while tbl[num] ~= nil do
+	for num = 1, #tbl do
 		if tbl[num].letter == k then
 			tbl[num].special = set
 		end
-		num = num + 1
 	end
-end --
+end

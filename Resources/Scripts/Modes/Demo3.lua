@@ -504,7 +504,7 @@ function render ()
 			end
 		else
 			-- This explosion code is a hack. We need a way to deal with explosions in a better method.
-			-- Let's figure it out when we get Sfiera's data [ADAM]
+			-- Let's figure it out when we get Sfiera's data
 			if computerShip ~= nil then
 				if cameraRatio > 1 / 8 then
 					graphics.draw_sprite(bestExplosion.image, computerShip.physicsObject.position, bestExplosion.size, frame / 6 * math.pi)

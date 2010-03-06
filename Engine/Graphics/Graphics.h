@@ -17,6 +17,13 @@ namespace Graphics
 void Init ( int w, int h, bool fullscreen );
 
 /**
+ * Resets the graphics subsystem (in the case of graphics being changed, etc)
+ * NOTE: Not yet implemented.
+ * @todo Implement Graphics::Reset
+ */
+void Reset ();
+
+/**
  * Gets the dimensions of a sprite from a sheet
  * @param sheetname The sprite sheet - all sprites on a sheet are the same size
  * @return The size of the sprites

@@ -41,15 +41,18 @@ function ClutLighten(colour, lightness)
 	if colour.m + lightness < 1 then
 		lightness = 1 - colour.m
 	end
---	if modifier[colour.m + lightness] ~= nil then
-		return { r = CLUT[colour.c].r * modifier[colour.m + lightness], g = CLUT[colour.c].g * modifier[colour.m + lightness], b = CLUT[colour.c].b * modifier[colour.m + lightness], a = 1.0, c = colour.c, m = colour.m + lightness }
---	end
---	return { r = CLUT[colour.c].r * modifier[colour.m], g = CLUT[colour.c].g * modifier[colour.m], b = CLUT[colour.c].b * modifier[colour.m], a = 1.0, c = colour.c, m = colour.m }
+	return { r = CLUT[colour.c].r * modifier[colour.m + lightness], g = CLUT[colour.c].g * modifier[colour.m + lightness], b = CLUT[colour.c].b * modifier[colour.m + lightness], a = 1.0, c = colour.c, m = colour.m + lightness }
 end
 
 function ClutDarken(colour, darkness)
 	if darkness == nil then
 		darkness = 1
+	end
+	if colour.m + darkness > 17 then
+		darkness = 17 - colour.m
+	end
+	if colour.m + darkness < 1 then
+		darkness = 1 - colour.m
 	end
 	if modifier[colour.m - darkness] ~= nil then
 		colour.m = colour.m - darkness
