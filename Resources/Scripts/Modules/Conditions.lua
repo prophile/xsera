@@ -38,7 +38,7 @@ end;
 ["current-computer-condition"] = function(cond) end;
 ["current-message-condition"] = function(cond) end;
 ["destruction-condition"] = function(cond)
-	if scen.objects[cond.value + 2] == nil then
+	if scen.objects[cond.value + 1] == nil then
 		return true
 	else
 		return false
@@ -47,7 +47,7 @@ end;
 ["direct-is-subject-target-condition"] = function(cond) end;
 ["distance-greater-condition"] = function(cond) end;
 ["half-health-condition"] = function(cond)
-	local objectStatus = scen.objects[cond["subject-object"]+2].status
+	local objectStatus = scen.objects[cond["subject-object"]+1].status
 	if objectStatus.health * 2 <= objectStatus.healthMax then
 		return true
 	else
@@ -70,7 +70,7 @@ end;
 ["object-is-being-built-condition"] = function(cond) end;
 ["owner-condition"] = function(cond)
 	local player = cond.value
-	local object = scen.objects[cond["subject-object"] + 2]
+	local object = scen.objects[cond["subject-object"] + 1]
 	if object.ai.owner == player then
 		return true
 	else

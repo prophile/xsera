@@ -9,7 +9,7 @@ import('PrintRecursive')
 import('KeyboardControl')
 import('PilotAI')
 import('Interfaces')
-
+--[[
 trackingTarget = {
 	position = vec(0,0);
 	velocity = vec(0,0);
@@ -17,7 +17,7 @@ trackingTarget = {
 	collision_radius = 1.0;
 	angle = 0.0;
 	angular_velocity = 0.0;
-}
+}]]
 
 mdown = false
 mrad = MOUSE_RADIUS / cameraRatio
@@ -32,8 +32,8 @@ function init()
 	start_time = mode_manager.time()
 	last_time = mode_manager.time()
 	
-	local tmp = physics.new_object(1.0)
-	physics.destroy_object(tmp)
+--	local tmp = physics.new_object(1.0)
+--	physics.destroy_object(tmp)
 
 --	trackingTarget.collision_radius = MOUSE_RADIUS
 
