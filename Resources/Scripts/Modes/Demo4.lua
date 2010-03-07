@@ -361,19 +361,6 @@ function render()
 		end
 		
 	end
-	
-	
-	--[[Draw temporary status display [ADAM] commented out because of panels
-	local fs = 30
-	local ox = camera.w/fs + scen.playerShip.physics.position.x - camera.w / 2
-	local oy = -camera.w/fs + scen.playerShip.physics.position.y + camera.h / 2
-	local vstep = -camera.w/fs * 1.5
-	
-	graphics.draw_text("Health: " .. scen.playerShip.health, "CrystalClear", "left", {x = ox, y = oy}, camera.w/fs)
-	
-	if scen.playerShip.energy ~= nil then
-		graphics.draw_text("Energy: " .. scen.playerShip.energy, "CrystalClear", "left", {x = ox, y = oy + vstep}, camera.w/fs)
-	end--]]
 
 --	graphics.draw_circle(trackingTarget.position, trackingTarget.collision_radius, 1.0, ClutColour(5, 1))	
 	
@@ -408,7 +395,7 @@ function mouseup()
 	mdown = false
 end
 
-function quit()
+function shutdown()
 	physics.close()
 end
 
