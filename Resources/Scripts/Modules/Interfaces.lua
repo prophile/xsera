@@ -360,7 +360,7 @@ function DrawPanels()
 --	Shield (blue)
 	if scen.playerShip.status.health ~= nil then
 		graphics.draw_box(-219, panels.right.center.x - 11, -119, panels.right.center.x, 0, ClutColour(14, 8))
---		graphics.draw_box(scen.playerShip.status.battery / scen.playerShip.status.batteryMax * 100 - 119, panels.right.center.x - 11, -119, panels.right.center.x, 0, ClutColour(14, 6))
+		graphics.draw_box(scen.playerShip.status.battery / scen.playerShip.status.batteryMax * 100 - 219, panels.right.center.x - 11, -119, panels.right.center.x, 0, ClutColour(14, 6))
 	end
 --	Factory resources (green - mostly)
 	count = 1
@@ -370,12 +370,12 @@ function DrawPanels()
 			local drawBlue = math.ceil((shipQuerying.c) / 200) + drawGreen
 		--	print(count, "=>", drawGreen, "-[", ((cash - shipQuerying.c) / 200), "]-")
 			while count <= drawGreen do
-				graphics.draw_box(152 - 3.15 * count, 394, 150 - 3.15 * count, 397, 0, ClutColour(12, 3))
+				graphics.draw_box(152 - 3 * count, 394, 150 - 3 * count, 397, 0, ClutColour(12, 3))
 				count = count + 1
 			end
 		--	print(count, drawGreen, drawBlue)
 			while count <= drawBlue do
-				graphics.draw_box(152 - 3.15 * count, 394, 150 - 3.15 * count, 397, 0, ClutColour(14, 5))
+				graphics.draw_box(152 - 3 * count, 394, 150 - 3 * count, 397, 0, ClutColour(14, 5))
 				count = count + 1
 			end
 		--	print(count, drawBlue)
@@ -384,12 +384,12 @@ function DrawPanels()
 			local drawRed = math.ceil(shipQuerying.c / 200)
 		--	print(count, "=>", drawGreen, "-[", (cash / 200), "]-")
 			while count <= drawGreen do
-				graphics.draw_box(152 - 3.15 * count, 394, 150 - 3.15 * count, 397, 0, ClutColour(12, 3))
+				graphics.draw_box(152 - 3 * count, 394, 150 - 3 * count, 397, 0, ClutColour(12, 3))
 				count = count + 1
 			end
 		--	print(count, drawGreen, drawRed)
 			while count <= drawRed do
-				graphics.draw_box(152 - 3.15 * count, 394, 150 - 3.15 * count, 397, 0, ClutColour(2, 9))
+				graphics.draw_box(152 - 3 * count, 394, 150 - 3 * count, 397, 0, ClutColour(2, 9))
 				count = count + 1
 			end
 		--	print(count, drawRed)
@@ -397,9 +397,9 @@ function DrawPanels()
 	end
 	while count <= 100 do
 		if count > resources then
-			graphics.draw_box(152 - 3.15 * count, 394, 150 - 3.15 * count, 397, 0, ClutColour(12, 14))
+			graphics.draw_box(196 - 4 * count, panels.right.center.x + 9, 193 - 4 * count, panels.right.center.x + 12, 0, ClutColour(12, 14))
 		else
-			graphics.draw_box(152 - 3.15 * count, 394, 150 - 3.15 * count, 397, 0, ClutColour(12, 3))
+			graphics.draw_box(196 - 4 * count, panels.right.center.x + 9, 193 - 4 * count, panels.right.center.x + 12, 0, ClutColour(12, 3))
 		end
 		count = count + 1
 	end
@@ -407,24 +407,32 @@ function DrawPanels()
 	count = 1
 	while count <= 7 do
 		if count <= resourceBars then
-			graphics.draw_box(154.5 - 4.5 * count, 384, 151 - 4.5 * count, 392, 0, ClutColour(3, 3))
+			graphics.draw_box(198 - 6 * count, panels.right.center.x - 4, 193 - 6 * count, panels.right.center.x + 7, 0, ClutColour(3, 3))
 		else
-			graphics.draw_box(154.5 - 4.5 * count, 384, 151 - 4.5 * count, 392, 0, ClutColour(9, 13))
+			graphics.draw_box(198 - 6 * count, panels.right.center.x - 4, 193 - 6 * count, panels.right.center.x + 7, 0, ClutColour(9, 13))
 		end
 		count = count + 1
 	end
 --	Factory build bar (purple)
-	planet = scen.planet
-	if planet ~= nil then
-		graphics.draw_line({ x = 382, y = 181 }, { x = 392, y = 181 }, 0.5, ClutColour(13, 9))
-		graphics.draw_line({ x = 382, y = 181 }, { x = 382, y = 177 }, 0.5, ClutColour(13, 9))
-		graphics.draw_line({ x = 392, y = 177 }, { x = 392, y = 181 }, 0.5, ClutColour(13, 9))
-		graphics.draw_line({ x = 382, y = 159 }, { x = 392, y = 159 }, 0.5, ClutColour(13, 9))
-		graphics.draw_line({ x = 382, y = 163 }, { x = 382, y = 159 }, 0.5, ClutColour(13, 9))
-		graphics.draw_line({ x = 392, y = 159 }, { x = 392, y = 163 }, 0.5, ClutColour(13, 9))
+--	planet = scen.planet
+--	if planet ~= nil then
+--[[		graphics.draw_line({ x = 382, y = 181 }, { x = 392, y = 181 }, 1, ClutColour(13, 9))
+		graphics.draw_line({ x = 382, y = 181 }, { x = 382, y = 177 }, 1, ClutColour(13, 9))
+		graphics.draw_line({ x = 392, y = 177 }, { x = 392, y = 181 }, 1, ClutColour(13, 9))
+		graphics.draw_line({ x = 382, y = 159 }, { x = 392, y = 159 }, 1, ClutColour(13, 9))
+		graphics.draw_line({ x = 382, y = 163 }, { x = 382, y = 159 }, 1, ClutColour(13, 9))
+		graphics.draw_line({ x = 392, y = 159 }, { x = 392, y = 163 }, 1, ClutColour(13, 9))
+		]]
+		
+		graphics.draw_line({ x = panels.right.center.x - 7, y = 233 }, { x = panels.right.center.x + 7, y = 233 }, 1, ClutColour(13, 9))
+		graphics.draw_line({ x = panels.right.center.x - 7, y = 233 }, { x = panels.right.center.x - 7, y = 229 }, 1, ClutColour(13, 9))
+		graphics.draw_line({ x = panels.right.center.x + 7, y = 229 }, { x = panels.right.center.x + 7, y = 233 }, 1, ClutColour(13, 9))
+		graphics.draw_line({ x = panels.right.center.x - 7, y = 201 }, { x = panels.right.center.x + 7, y = 201 }, 1, ClutColour(13, 9))
+		graphics.draw_line({ x = panels.right.center.x - 7, y = 205 }, { x = panels.right.center.x - 7, y = 201 }, 1, ClutColour(13, 9))
+		graphics.draw_line({ x = panels.right.center.x + 7, y = 201 }, { x = panels.right.center.x + 7, y = 205 }, 1, ClutColour(13, 9))
 		graphics.draw_box(179, 384, 161, 390, 0, ClutColour(13, 9))
-		graphics.draw_box(18 * (100 - planet.buildqueue.percent) / 100 + 161, 384, 161, 390, 0, ClutColour(13, 5))
-	end
+		graphics.draw_box(18 * (100 - 30) / 100 + 161, 384, 161, 390, 0, ClutColour(13, 5))
+--	end
 	
 --[[------------------
 	Left Panel
