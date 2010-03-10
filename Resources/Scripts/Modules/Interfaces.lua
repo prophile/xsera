@@ -1,5 +1,6 @@
 import('BoxDrawing')
---import('GlobalVars')
+import('Camera')
+import('GlobalVars')
 
 selection = {
 	control = {};
@@ -332,13 +333,16 @@ end
 menuLevel = menuOptions
 
 function DrawPanels()
-	graphics.set_camera(-400, -300, 400, 300)
-	graphics.draw_image("Panels/SideLeft", { x = -346, y = 0 }, { x = 109, y = 607 })
-	graphics.draw_image("Panels/SideRight", { x = 387, y = -2 }, { x = 26, y = 608 })
+	updateWindow()
+	local cam = cameraToWindow()
+	printTable(cam)
+	graphics.set_camera(cam[1], cam[2], cam[3], cam[4])
+	graphics.draw_image("Panels/SideLeftTrans", { x = cam[1] + panels.left.width / 2, y = 0 }, { x = panels.left.width, y = panels.left.height })
+	graphics.draw_image("Panels/SideRightTrans", { x = cam[3] - panels.right.width / 2, y = 0 }, { x = panels.right.width, y = panels.right.height })
 
 --[[------------------
 	Right Panel
-------------------]]--
+--------------------
 
 --	Battery (red)
 	if scen.playerShip.status.battery ~= nil then
@@ -419,9 +423,9 @@ function DrawPanels()
 		graphics.draw_box(18 * (100 - planet.buildqueue.percent) / 100 + 161, 384, 161, 390, 0, ClutColour(13, 5))
 	end
 	
---[[------------------
+--------------------
 	Left Panel
-------------------]]--
+--------------------
 	
 --	Radar box (green)
 	DrawRadar()
@@ -452,17 +456,17 @@ function DrawPanels()
 	if scen.playerShip.weapons ~= nil then
 		if scen.playerShip.weapons.pulse ~= nil
 		and scen.playerShip.weapons.pulse.ammo ~= -1 then
-			graphics.draw_text(string.format('%03d', scen.playerShip.weapons.pulse.ammo), "CrystalClear", "left", { x = -376, y = 60 }, 13, ClutColour(16, 1))
+			graphics.draw_text(string.format('%03d', scen.playerShip.weapons.pulse.ammo), MAIN_FONT, "left", { x = -376, y = 60 }, 13, ClutColour(16, 1))
 		end
 		
 		if scen.playerShip.weapons.beam ~= nil
 		and scen.playerShip.weapons.beam.ammo ~= -1 then
-			graphics.draw_text(string.format('%03d', scen.playerShip.weapons.beam.ammo), "CrystalClear", "left", { x = -345, y = 60 }, 13, ClutColour(16, 1))
+			graphics.draw_text(string.format('%03d', scen.playerShip.weapons.beam.ammo), MAIN_FONT, "left", { x = -345, y = 60 }, 13, ClutColour(16, 1))
 		end
 		
 		if scen.playerShip.weapons.special ~= nil
 		and scen.playerShip.weapons.special.ammo ~= -1 then
-			graphics.draw_text(string.format('%03d', scen.playerShip.weapons.special.ammo), "CrystalClear", "left", { x = -314, y = 60 }, 13, ClutColour(16, 1))
+			graphics.draw_text(string.format('%03d', scen.playerShip.weapons.special.ammo), MAIN_FONT, "left", { x = -314, y = 60 }, 13, ClutColour(16, 1))
 		end
 	end
 
@@ -482,6 +486,7 @@ function DrawPanels()
 		graphics.draw_text("LEFT", MAIN_FONT, "left", { x = -388, y = -180 }, 13, ClutColour(14, 5))
 		graphics.draw_text("Go Back", MAIN_FONT, "left", { x = -354, y = -180 }, 13, ClutColour(14, 5))
 	end
+	--]]
 end
 
 function change_menu(menu, direction)
@@ -651,12 +656,12 @@ function DrawTargetBox(object, isControl)
 	local off = isControl and 0 or 57
 
 	graphics.draw_box(49 - off, -392, 40 - off, -297, 0, (isControl and ClutColour(9,6) or ClutColour(4, 3)))
-	graphics.draw_text((isControl and "CONTROL" or "TARGET"), "CrystalClear", "left", { x = -389, y = 44 - off }, 12, ClutColour(1, 17))
+	graphics.draw_text((isControl and "CONTROL" or "TARGET"), MAIN_FONT, "left", { x = -389, y = 44 - off }, 12, ClutColour(1, 17))
 
-	graphics.draw_text(object.name, "CrystalClear", "left", { x = -389, y = 35 - off}, 12)
+	graphics.draw_text(object.name, MAIN_FONT, "left", { x = -389, y = 35 - off}, 12)
 	
 	if object.ai.objectives.dest ~= nil then
-		graphics.draw_text(object.ai.objectives.dest.name, "CrystalClear", "left", { x = -389, y = 3 - off }, 12, ClutColour(1, 11))
+		graphics.draw_text(object.ai.objectives.dest.name, MAIN_FONT, "left", { x = -389, y = 3 - off }, 12, ClutColour(1, 11))
 	end
 	
 	if object.status.energy ~= nil then

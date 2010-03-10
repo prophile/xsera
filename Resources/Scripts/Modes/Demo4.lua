@@ -93,7 +93,7 @@ function update()
 		arrowVar = ARROW_VAR / cameraRatio
 		arrowDist = ARROW_DIST / cameraRatio
 		trackingTarget.collision_radius = MOUSE_RADIUS / cameraRatio
-		if (cameraRatio < 1 / 8 and cameraRatioOrig > 1 / 8) or (cameraRatio > 1 / 8 and cameraRatioOrig < 1 / 8) then
+		if (cameraRatio < 1 / 4 and cameraRatioOrig > 1 / 4) or (cameraRatio > 1 / 4 and cameraRatioOrig < 1 / 4) then
 			if soundJustPlayed == false then
 				sound.play("ZoomChange")
 				soundJustPlayed = true
