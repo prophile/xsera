@@ -535,10 +535,10 @@ end
 
 function GetMouseCoords()
 	local x, y = mouse_position()
-	return {
-		x = scen.playerShip.physics.position.x -shipAdjust + camera.w * x - camera.w / 2;
-		y = scen.playerShip.physics.position.y  + camera.h * y - camera.h / 2;
-	}
+	return vec(
+		scen.playerShip.physics.position.x -shipAdjust + camera.w * x - camera.w / 2,
+		scen.playerShip.physics.position.y  + camera.h * y - camera.h / 2
+	)
 end
 
 function DrawMouse1()
