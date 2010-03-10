@@ -10,7 +10,7 @@ function test1()
 	local i = 2
 	local result
 	
-	result = textWrap("This is some sampler text that is longer than we want it to be. It should be shortened up, heh", "CrystalClear", 40, 800)
+	result = textWrap("This is some sampler text that is longer than we want it to be. It should be shortened up, heh", MAIN_FONT, 40, 800)
 	
 	if type(result) == "table" and #result > 1 then
 		for j = 1, #result do
@@ -66,10 +66,10 @@ end
 
 function render()
 	graphics.begin_frame()
-	graphics.draw_text("ESC to go to main screen", "CrystalClear", "center", { x = 0, y = 240 }, 40)
+	graphics.draw_text("ESC to go to main screen", MAIN_FONT, "center", { x = 0, y = 240 }, 40)
 	if message ~= nil then
 		for i = 1, #message do
-			graphics.draw_text(message[i], "CrystalClear", "center", { x = 0, y = 200 - 40 * i }, 30)
+			graphics.draw_text(message[i], MAIN_FONT, "center", { x = 0, y = 200 - 40 * i }, 30)
 		end
 	end
 	graphics.end_frame()

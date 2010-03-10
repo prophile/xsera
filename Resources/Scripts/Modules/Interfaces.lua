@@ -337,27 +337,30 @@ function DrawPanels()
 	local cam = cameraToWindow()
 	printTable(cam)
 	graphics.set_camera(cam[1], cam[2], cam[3], cam[4])
-	graphics.draw_image("Panels/SideLeftTrans", { x = cam[1] + panels.left.width / 2, y = 0 }, { x = panels.left.width, y = panels.left.height })
-	graphics.draw_image("Panels/SideRightTrans", { x = cam[3] - panels.right.width / 2, y = 0 }, { x = panels.right.width, y = panels.right.height })
-
+	
+--	printTable(panels)
+	
+	graphics.draw_image("Panels/SideLeftTrans", panels.left.center, { x = panels.left.width, y = panels.left.height })
+	graphics.draw_image("Panels/SideRightTrans", panels.right.center, { x = panels.right.width, y = panels.right.height })
+	
 --[[------------------
 	Right Panel
---------------------
-
+-----------------]]---
+	
 --	Battery (red)
 	if scen.playerShip.status.battery ~= nil then
-		graphics.draw_box(107, 379, 29, 386, 0, ClutColour(8, 8))
-		graphics.draw_box(scen.playerShip.status.battery / scen.playerShip.status.batteryMax * 78 + 29, 379, 29, 386, 0, ClutColour(8, 5)) -- #TEST these commented lines should be fixed and uncommented
+		graphics.draw_box(138, panels.right.center.x - 11, 38, panels.right.center.x, 0, ClutColour(8, 8))
+		graphics.draw_box(scen.playerShip.status.battery / scen.playerShip.status.batteryMax * 100 + 38, panels.right.center.x - 11, 38, panels.right.center.x, 0, ClutColour(8, 5))
 	end
 --	Energy (yellow)
 	if scen.playerShip.status.energy ~= nil then
-		graphics.draw_box(6, 379, -72.5, 386, 0, ClutColour(3, 7))
-		graphics.draw_box(scen.playerShip.status.energy / scen.playerShip.status.energyMax * 78.5 - 72.5, 379, -72.5, 386, 0, ClutColour(9, 6))
+		graphics.draw_box(-91, panels.right.center.x - 11, 9, panels.right.center.x, 0, ClutColour(3, 7))
+		graphics.draw_box(scen.playerShip.status.battery / scen.playerShip.status.batteryMax * 100 - 91, panels.right.center.x - 11, -91, panels.right.center.x, 0, ClutColour(9, 6))
 	end
 --	Shield (blue)
 	if scen.playerShip.status.health ~= nil then
-		graphics.draw_box(-96, 379, -173, 386, 0, ClutColour(14, 8))
-		graphics.draw_box(scen.playerShip.status.health / scen.playerShip.status.healthMax * 77 - 173, 379, -173, 386, 0, ClutColour(14, 6))
+		graphics.draw_box(-219, panels.right.center.x - 11, -119, panels.right.center.x, 0, ClutColour(14, 8))
+--		graphics.draw_box(scen.playerShip.status.battery / scen.playerShip.status.batteryMax * 100 - 119, panels.right.center.x - 11, -119, panels.right.center.x, 0, ClutColour(14, 6))
 	end
 --	Factory resources (green - mostly)
 	count = 1
@@ -423,9 +426,9 @@ function DrawPanels()
 		graphics.draw_box(18 * (100 - planet.buildqueue.percent) / 100 + 161, 384, 161, 390, 0, ClutColour(13, 5))
 	end
 	
---------------------
+--[[------------------
 	Left Panel
---------------------
+------------------]]--
 	
 --	Radar box (green)
 	DrawRadar()
@@ -486,7 +489,6 @@ function DrawPanels()
 		graphics.draw_text("LEFT", MAIN_FONT, "left", { x = -388, y = -180 }, 13, ClutColour(14, 5))
 		graphics.draw_text("Go Back", MAIN_FONT, "left", { x = -354, y = -180 }, 13, ClutColour(14, 5))
 	end
-	--]]
 end
 
 function change_menu(menu, direction)
