@@ -414,25 +414,17 @@ function DrawPanels()
 		count = count + 1
 	end
 --	Factory build bar (purple)
---	planet = scen.planet
---	if planet ~= nil then
---[[		graphics.draw_line({ x = 382, y = 181 }, { x = 392, y = 181 }, 1, ClutColour(13, 9))
-		graphics.draw_line({ x = 382, y = 181 }, { x = 382, y = 177 }, 1, ClutColour(13, 9))
-		graphics.draw_line({ x = 392, y = 177 }, { x = 392, y = 181 }, 1, ClutColour(13, 9))
-		graphics.draw_line({ x = 382, y = 159 }, { x = 392, y = 159 }, 1, ClutColour(13, 9))
-		graphics.draw_line({ x = 382, y = 163 }, { x = 382, y = 159 }, 1, ClutColour(13, 9))
-		graphics.draw_line({ x = 392, y = 159 }, { x = 392, y = 163 }, 1, ClutColour(13, 9))
-		]]
-		
+--	planet = scen.planet -- commented out until planet implemented
+--	if planet ~= nil then -- commented out until planet implemented
 		graphics.draw_line({ x = panels.right.center.x - 7, y = 233 }, { x = panels.right.center.x + 7, y = 233 }, 1, ClutColour(13, 9))
 		graphics.draw_line({ x = panels.right.center.x - 7, y = 233 }, { x = panels.right.center.x - 7, y = 229 }, 1, ClutColour(13, 9))
 		graphics.draw_line({ x = panels.right.center.x + 7, y = 229 }, { x = panels.right.center.x + 7, y = 233 }, 1, ClutColour(13, 9))
 		graphics.draw_line({ x = panels.right.center.x - 7, y = 201 }, { x = panels.right.center.x + 7, y = 201 }, 1, ClutColour(13, 9))
 		graphics.draw_line({ x = panels.right.center.x - 7, y = 205 }, { x = panels.right.center.x - 7, y = 201 }, 1, ClutColour(13, 9))
 		graphics.draw_line({ x = panels.right.center.x + 7, y = 201 }, { x = panels.right.center.x + 7, y = 205 }, 1, ClutColour(13, 9))
-		graphics.draw_box(179, 384, 161, 390, 0, ClutColour(13, 9))
-		graphics.draw_box(18 * (100 - 30) / 100 + 161, 384, 161, 390, 0, ClutColour(13, 5))
---	end
+		graphics.draw_box(230, panels.right.center.x - 5, 205, panels.right.center.x + 5, 0, ClutColour(13, 9))
+		graphics.draw_box(25 * (100 - 30) / 100 + 205, panels.right.center.x - 5, 205, panels.right.center.x + 5, 0, ClutColour(13, 5))
+--	end -- commented out until planet implemented
 	
 --[[------------------
 	Left Panel
