@@ -669,9 +669,29 @@ function DrawTargetBox(object, isControl)
 
 	graphics.draw_text(object.name, MAIN_FONT, "left", { x = panels.left.center.x - 53, y = 44 - off }, 14)
 	
+	local isFriendly = false
 	if object.ai.objectives.dest ~= nil then
-		graphics.draw_text(object.ai.objectives.dest.name, MAIN_FONT, "left", { x = panels.left.center.x - 53, y = 3 - off }, 12, ClutColour(1, 11))
+		local col = isFriendly and ClutColour(5, 11) or ClutColour(16, 11)
+		graphics.draw_text(object.ai.objectives.dest.name, MAIN_FONT, "left", { x = panels.left.center.x - 53, y = 3 - off }, 12, col)
 	end
+	
+	if object.base.weapon ~= nil then
+		for i = 1, #object.base.weapon do
+			print("~~~~~~~~~~~~~~~")
+			print(object.base.weapon[i].id)
+			--[[ pseudocode
+			
+			if weapon.type == "beam" then
+				draw text in the beam location
+			elseif weapon.type == "pulse"
+				draw text in the pulse location
+			end
+			
+			--]]
+		end
+	end
+	
+--	printTable(object)
 	
 	if object.status.energy ~= nil then
 		graphics.draw_line({ x = panels.left.center.x - 11, y = barTop + 1 - off }, { x = panels.left.center.x - 1, y = barTop - off }, 1, ClutColour(3, 7))
