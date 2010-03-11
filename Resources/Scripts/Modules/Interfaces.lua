@@ -661,46 +661,48 @@ end
 
 function DrawTargetBox(object, isControl)
 	local off = isControl and 0 or 72
-
+	local barBot = 13 -- debug line [ADAM]
+	local barTop = 37 -- debug line [ADAM]
+	
 	graphics.draw_box(63 - off, -389, 50 - off, -279, 0, (isControl and ClutColour(9,6) or ClutColour(4, 3)))
-	graphics.draw_text((isControl and "CONTROL" or "TARGET"), MAIN_FONT, "left", { x = -389, y = 44 - off }, 12, ClutColour(1, 17))
+	graphics.draw_text((isControl and "CONTROL" or "TARGET"), MAIN_FONT, "left", { x = -389, y = 56 - off }, 12, ClutColour(1, 17))
 
-	graphics.draw_text(object.name, MAIN_FONT, "left", { x = -389, y = 56 - off }, 14)
+	graphics.draw_text(object.name, MAIN_FONT, "left", { x = -389, y = 44 - off }, 14)
 	
 	if object.ai.objectives.dest ~= nil then
 		graphics.draw_text(object.ai.objectives.dest.name, MAIN_FONT, "left", { x = -389, y = 3 - off }, 12, ClutColour(1, 11))
 	end
 	
---[[	if object.status.energy ~= nil then
-		graphics.draw_line({ x = -357, y = 28 - off }, { x = -347, y = 28 - off }, 0.5, ClutColour(3, 7))
-		graphics.draw_line({ x = -357, y = 27 - off }, { x = -357, y = 28 - off }, 0.5, ClutColour(3, 7))
-		graphics.draw_line({ x = -347, y = 27 - off }, { x = -347, y = 28 - off }, 0.5, ClutColour(3, 7))
-		graphics.draw_line({ x = -357, y = 9 - off }, { x = -347, y = 9 - off }, 0.5, ClutColour(3, 7))
-		graphics.draw_line({ x = -357, y = 10 - off }, { x = -357, y = 9 - off }, 0.5, ClutColour(3, 7))
-		graphics.draw_line({ x = -347, y = 10 - off }, { x = -347, y = 9 - off }, 0.5, ClutColour(3, 7))
-		graphics.draw_box(27 - off, -356, 10 - off, -348, 0, ClutColour(3, 7))
-		graphics.draw_box(17 * object.status.energy / object.status.energyMax + 10  - off, -356, 10 - off, -348, 0, ClutColour(9, 6))
+	if object.status.energy ~= nil then
+		graphics.draw_line({ x = -347, y = barTop + 1 - off }, { x = -337, y = barTop - off }, 1, ClutColour(3, 7))
+		graphics.draw_line({ x = -347, y = barTop - 3 - off }, { x = -347, y = barTop + 1 - off }, 1, ClutColour(3, 7))
+		graphics.draw_line({ x = -337, y = barTop - 3 - off }, { x = -337, y = barTop - off }, 1, ClutColour(3, 7))
+		graphics.draw_line({ x = -347, y = barBot - off }, { x = -337, y = barBot - off }, 1, ClutColour(3, 7))
+		graphics.draw_line({ x = -347, y =  barBot + 3 - off }, { x = -347, y = barBot - off }, 1, ClutColour(3, 7))
+		graphics.draw_line({ x = -337, y =  barBot + 3 - off }, { x = -337, y = barBot - off }, 1, ClutColour(3, 7))
+		graphics.draw_box(barTop - 1 - off, -346,  barBot + 2 - off, -339, 0, ClutColour(3, 7))
+		graphics.draw_box((barTop - barBot - 4) * object.status.energy / object.status.energyMax + barBot + 3 - off, -346, barBot + 2 - off, -339, 0, ClutColour(9, 6))
 	end
 
 	if object.status.health ~= nil then
-		graphics.draw_line({ x = -369, y = 28 - off }, { x = -359, y = 28 - off }, 0.5, ClutColour(4, 8))
-		graphics.draw_line({ x = -369, y = 27 - off }, { x = -369, y = 28 - off }, 0.5, ClutColour(4, 8))
-		graphics.draw_line({ x = -359, y = 27 - off }, { x = -359, y = 28 - off }, 0.5, ClutColour(4, 8))
-		graphics.draw_line({ x = -369, y = 9 - off }, { x = -359, y = 9 - off }, 0.5, ClutColour(4, 8))
-		graphics.draw_line({ x = -369, y = 10 - off }, { x = -369, y = 9 - off }, 0.5, ClutColour(4, 8))
-		graphics.draw_line({ x = -359, y = 10 - off }, { x = -359, y = 9 - off }, 0.5, ClutColour(4, 8))
-		graphics.draw_box(27 - off, -367.5, 10 - off, -360, 0, ClutColour(4, 8))
-		graphics.draw_box(17 * object.status.health / object.status.healthMax + 10 - off, -367.5, 10 - off, -360, 0, ClutColour(4, 6))
-	end]]
-
-	if object.gfx.sprite ~= nil then
-		graphics.draw_sprite(object.gfx.sprite, { x = -375, y = 25 - off }, { x = 40, y = 40 }, math.pi / 2.0)
+		graphics.draw_line({ x = -359, y = barTop + 1 - off }, { x = -349, y = barTop - off }, 1, ClutColour(4, 8))
+		graphics.draw_line({ x = -359, y = barTop - 3 - off }, { x = -359, y = barTop + 1 - off }, 1, ClutColour(4, 8))
+		graphics.draw_line({ x = -349, y = barTop - 3 - off }, { x = -349, y = barTop - off }, 1, ClutColour(4, 8))
+		graphics.draw_line({ x = -359, y = barBot - off }, { x = -349, y = barBot - off }, 1, ClutColour(4, 8))
+		graphics.draw_line({ x = -359, y =  barBot + 3 - off }, { x = -359, y = barBot - off }, 1, ClutColour(4, 8))
+		graphics.draw_line({ x = -349, y =  barBot + 3 - off }, { x = -349, y = barBot - off }, 1, ClutColour(4, 8))
+		graphics.draw_box(barTop - 1 - off, -358,  barBot + 2 - off, -351, 0, ClutColour(4, 8))
+		graphics.draw_box((barTop - barBot - 4) * object.status.health / object.status.healthMax +  barBot + 3 - off, -358,  barBot + 2 - off, -351, 0, ClutColour(4, 6))
 	end
 
-	graphics.draw_line({ x = -382, y = 32 - off }, { x = -362, y = 32 - off }, 0.5, ClutColour(1, 1))
-	graphics.draw_line({ x = -382, y = 30 - off }, { x = -382, y = 32 - off }, 0.5, ClutColour(1, 1))
-	graphics.draw_line({ x = -362, y = 30 - off }, { x = -362, y = 32 - off }, 0.5, ClutColour(1, 1))
-	graphics.draw_line({ x = -382, y = 9 - off }, { x = -362, y = 9 - off }, 0.5, ClutColour(1, 1))
-	graphics.draw_line({ x = -362, y = 10 - off }, { x = -362, y = 9 - off }, 0.5, ClutColour(1, 1))
-	graphics.draw_line({ x = -382, y = 10 - off }, { x = -382, y = 9 - off }, 0.5, ClutColour(1, 1))
+	if object.gfx.sprite ~= nil then
+		graphics.draw_sprite(object.gfx.sprite, { x = -378, y = 26 - off }, { x = 28, y = 28 }, math.pi / 2.0) -- TODO [ADAM] Having { x = 28, y = 28 } is stretching the sprite unless it is a square sprite. Convert to actual sprite's dimensions, maximum of 28
+	end
+
+	graphics.draw_line({ x = -387, y = barTop + 1 - off }, { x = -367, y = barTop - off }, 1, ClutColour(1, 1))
+	graphics.draw_line({ x = -387, y = barTop - 3 - off }, { x = -387, y = barTop + 1 - off }, 1, ClutColour(1, 1))
+	graphics.draw_line({ x = -367, y = barTop - 3 - off }, { x = -367, y = barTop - off }, 1, ClutColour(1, 1))
+	graphics.draw_line({ x = -387, y = barBot - off }, { x = -367, y = barBot - off }, 1, ClutColour(1, 1))
+	graphics.draw_line({ x = -367, y =  barBot + 3 - off }, { x = -367, y = barBot - off }, 1, ClutColour(1, 1))
+	graphics.draw_line({ x = -387, y =  barBot + 3 - off }, { x = -387, y = barBot - off }, 1, ClutColour(1, 1))
 end
