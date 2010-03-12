@@ -14,10 +14,6 @@ trackingTarget = {}
 mdown = false
 aimMethod = "smart"
 
-
-TEMPVAR1 = false
-TEMPVAR2 = false
-
 function init()
 	physics.open(0.6)
 	start_time = mode_manager.time()
@@ -36,12 +32,6 @@ end
 function key( k )
 	if k == "q" or k == "escape" then
 		mode_manager.switch("Xsera/MainMenu")
-	elseif k == "-" then -- [TEMP] 
-		-- create a blinking pointer box that says "LOOK HERE"
-		TEMPVAR1 = not TEMPVAR1
-	elseif k == "=" then -- [TEMP]
-		-- create a non-blinking pointer box that says "LOOK THERE"
-		TEMPVAR2 = not TEMPVAR2
 	elseif k == "x" then
 		aimMethod = aimMethod == "smart" and "dumb" or "smart"
 		print(aimMethod)
@@ -369,14 +359,6 @@ function render()
 	DrawMouse1()
 	DrawPanels()
 	DrawMouse2()
-	
-	if TEMPVAR1 then
-		DrawPointerBox(tv1Box, dt)
-	end
-	
-	if TEMPVAR2 then
-		DrawPointerBox(tv2Box, dt)
-	end
 	
 	graphics.end_frame()
 end
