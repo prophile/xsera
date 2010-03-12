@@ -1,6 +1,7 @@
 import('BoxDrawing')
 import('Camera')
 import('GlobalVars')
+import('TextManip')
 
 selection = {
 	control = {};
@@ -542,6 +543,24 @@ function change_menu(menu, direction)
 		if menu[num][3] ~= nil then
 			menu[num][3]()
 		end
+	end
+end
+
+function DrawDialogueBox(text)
+	local cam = cameraToWindow()
+	local length = cam[3] * 2 - panels.left.width - panels.right.width - 20
+	local lines = textWrap(text, MAIN_FONT, 16, length)
+	
+	graphics.set_camera(cam[1], cam[2], cam[3], cam[4])
+	
+	if type(lines) == "table" then
+		graphics.draw_box(#lines * 18 + cam[2] + 13, panels.left.center.x + panels.left.width / 2, cam[2] + 12, panels.right.center.x - panels.right.width / 2, 1, ClutColour(4, 10))
+		for i = 1, #lines do
+			graphics.draw_text(lines[i], MAIN_FONT, "left", { x = panels.left.center.x + panels.left.width / 2 + 5, y = (#lines - i + 1) * 18 + cam[2] + 4 }, 16)
+		end
+	else
+		graphics.draw_box(38 + cam[2], panels.left.center.x + panels.left.width / 2, cam[2] + 12, panels.right.center.x - panels.right.width / 2, 1, ClutColour(4, 10))
+		graphics.draw_text(lines, MAIN_FONT, "left", { x = panels.left.center.x + panels.left.width / 2 + 5, y = 25 + cam[2] }, 16)
 	end
 end
 

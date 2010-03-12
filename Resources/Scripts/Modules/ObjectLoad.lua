@@ -17,7 +17,7 @@ function NewObject(id)
 			beam = false;
 			pulse = false;
 			special = false;
-			warp = false;
+			warp = { stage = "notWarping", time = 0, lastPlayed = 0 };
 		};
 		ai = {
 			owner = nil;
