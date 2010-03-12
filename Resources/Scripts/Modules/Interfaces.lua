@@ -553,25 +553,34 @@ function GetMouseCoords()
 	}
 end
 
+local realPos = { x, y }
+
 function DrawMouse1()
 	mousePos = GetMouseCoords()
+	
 	if FindDist(mousePos, oldMousePos) > 0 then
 		mouseStart = mode_manager.time()
 	end
-	if mode_manager.time() - mouseStart < 2.0 then
+	if mode_manager.time() - mouseStart >= 2.0 then
+		mouseMovement = false
+	else
 		ship = scen.playerShip.physics.position
 		
-		if mousePos.x > 260 / cameraRatio + ship.x then
-			mousePos.x = 260 / cameraRatio + ship.x
-		elseif mousePos.x < -320 / cameraRatio + ship.x - shipAdjust then
-			mousePos.x = -320 / cameraRatio + ship.x - shipAdjust
+		realPos.x = (mousePos.x - ship.x + shipAdjust) * cameraRatio / 320 * cameraToWindow()[3]
+		realPos.y = (mousePos.y - ship.y) * cameraRatio / 240 * cameraToWindow()[4]
+		
+		if realPos.x > panels.right.center.x - panels.right.width / 2 - 10 then
+			mousePos.x = (panels.right.center.x - panels.right.width / 2 - 10) / cameraToWindow()[3] * 320 / cameraRatio - shipAdjust + ship.x
+		elseif realPos.x < panels.left.center.x + panels.left.width / 2 then
+			mousePos.x = (panels.right.center.x + panels.right.width / 2) / cameraToWindow()[3] * 320 / cameraRatio - shipAdjust + ship.x
 		end
 		
-		if mousePos.y > 230 / cameraRatio + ship.y then
-			mousePos.y = 230 / cameraRatio + ship.y
-		elseif mousePos.y < -220 / cameraRatio + ship.y then
-			mousePos.y = -220 / cameraRatio + ship.y
+		if realPos.y > WINDOW.height / 2 - 10 then
+			mousePos.y = (WINDOW.height / 2 - 10) / cameraToWindow()[4] * 240 / cameraRatio + ship.y
+		elseif realPos.y < -WINDOW.height / 2 + 10 then
+			mousePos.y = (-WINDOW.height / 2 + 10) / cameraToWindow()[4] * 240 / cameraRatio + ship.y
 		end
+		
 		graphics.draw_line({ x = - camera.w / 2 + ship.x, y = mousePos.y }, { x = mousePos.x - 20 / cameraRatio, y = mousePos.y }, 1.0, ClutColour(4, 8))
 		graphics.draw_line({ x = camera.w / 2 + ship.x, y = mousePos.y }, { x = mousePos.x + 20 / cameraRatio, y = mousePos.y }, 1.0, ClutColour(4, 8))
 		graphics.draw_line({ x = mousePos.x, y = -camera.h / 2 + ship.y }, { x = mousePos.x, y = mousePos.y - 20 / cameraRatio }, 1.0, ClutColour(4, 8))
@@ -581,20 +590,11 @@ end
 
 function DrawMouse2()
 	ship = scen.playerShip.physics.position
-	mousePos = GetMouseCoords()
-	if mode_manager.time() - mouseStart < 2.0 and mousePos.x < -260 / cameraRatio + ship.x then
-		graphics.set_camera( -- should I have to do this? [ADAM, HACK]
-			-scen.playerShip.physics.position.x + shipAdjust - (camera.w / 2.0),
-			-scen.playerShip.physics.position.y - (camera.h / 2.0),
-			-scen.playerShip.physics.position.x + shipAdjust + (camera.w / 2.0),
-			-scen.playerShip.physics.position.y + (camera.h / 2.0))
 	
-		local cursor = graphics.sprite_dimensions("Misc/Cursor")
-		graphics.draw_sprite("Misc/Cursor", mousePos, cursor, 0)
-		
-		if mode_manager.time() - mouseStart >= 2.0 then
-			mouseMovement = false
-		end
+	if mode_manager.time() - mouseStart < 2.0 and realPos.x < panels.left.center.x + panels.left.width / 2 then
+		local cam = cameraToWindow()
+		graphics.set_camera(cam[1], cam[2], cam[3], cam[4])
+		graphics.draw_sprite("Misc/Cursor", realPos, graphics.sprite_dimensions("Misc/Cursor"), 0)
 	end
 end
 
@@ -657,68 +657,62 @@ function DrawGrid()
 	end
 end
 
-
-
 function DrawTargetBox(object, isControl)
 	local off = isControl and 0 or 72
 	local barBot = 13 -- debug line [ADAM]
 	local barTop = 37 -- debug line [ADAM]
 	
 	graphics.draw_box(63 - off, panels.left.center.x - 53, 50 - off, panels.left.center.x + 57, 0, (isControl and ClutColour(9,6) or ClutColour(4, 3)))
-	graphics.draw_text((isControl and "CONTROL" or "TARGET"), MAIN_FONT, "left", { x = panels.left.center.x - 53, y = 56 - off }, 12, ClutColour(1, 17))
-
+	graphics.draw_text((isControl and "CONTROL" or "TARGET"), MAIN_FONT, "left", { x = panels.left.center.x - 53, y = 56 - off }, 14, ClutColour(1, 17))
 	graphics.draw_text(object.name, MAIN_FONT, "left", { x = panels.left.center.x - 53, y = 44 - off }, 14)
 	
 	local isFriendly = false
 	if object.ai.objectives.dest ~= nil then
-		local col = isFriendly and ClutColour(5, 11) or ClutColour(16, 11)
-		graphics.draw_text(object.ai.objectives.dest.name, MAIN_FONT, "left", { x = panels.left.center.x - 53, y = 3 - off }, 12, col)
+		local col = isFriendly and ClutColour(5, 11) or ClutColour(16, 4)
+		graphics.draw_text(object.ai.objectives.dest.name, MAIN_FONT, "left", { x = panels.left.center.x - 53, y = 4 - off }, 14, col)
 	end
 	
+	-- display the beam and pulse weapons
 	if object.base.weapon ~= nil then
 		for i = 1, #object.base.weapon do
-			print("~~~~~~~~~~~~~~~")
-			print(object.base.weapon[i].id)
-			--[[ pseudocode
-			
-			if weapon.type == "beam" then
-				draw text in the beam location
-			elseif weapon.type == "pulse"
-				draw text in the pulse location
+			if object.base.weapon[i].type == "beam" then
+				graphics.draw_text(gameData.Objects[object.base.weapon[i].id]["short-name"], MAIN_FONT, "left", { x = panels.left.center.x - 6, y = 20 - off }, 14)
+			elseif object.base.weapon[i].type == "pulse" then
+				graphics.draw_text(gameData.Objects[object.base.weapon[i].id]["short-name"], MAIN_FONT, "left", { x = panels.left.center.x - 6, y = 30 - off }, 14)
 			end
-			
-			--]]
 		end
 	end
 	
---	printTable(object)
-	
+	-- mini energy bar
 	if object.status.energy ~= nil then
-		graphics.draw_line({ x = panels.left.center.x - 11, y = barTop + 1 - off }, { x = panels.left.center.x - 1, y = barTop - off }, 1, ClutColour(3, 7))
-		graphics.draw_line({ x = panels.left.center.x - 11, y = barTop - 3 - off }, { x = panels.left.center.x - 11, y = barTop + 1 - off }, 1, ClutColour(3, 7))
-		graphics.draw_line({ x = panels.left.center.x - 1, y = barTop - 3 - off }, { x = panels.left.center.x - 1, y = barTop - off }, 1, ClutColour(3, 7))
-		graphics.draw_line({ x = panels.left.center.x - 11, y = barBot - off }, { x = panels.left.center.x - 1, y = barBot - off }, 1, ClutColour(3, 7))
-		graphics.draw_line({ x = panels.left.center.x - 11, y =  barBot + 3 - off }, { x = panels.left.center.x - 11, y = barBot - off }, 1, ClutColour(3, 7))
-		graphics.draw_line({ x = panels.left.center.x - 1, y =  barBot + 3 - off }, { x = panels.left.center.x - 1, y = barBot - off }, 1, ClutColour(3, 7))
-		graphics.draw_box(barTop - 1 - off, panels.left.center.x - 10,  barBot + 2 - off, panels.left.center.x - 3, 0, ClutColour(3, 7))
-		graphics.draw_box((barTop - barBot - 4) * object.status.energy / object.status.energyMax + barBot + 3 - off, panels.left.center.x - 10, barBot + 2 - off, panels.left.center.x - 3, 0, ClutColour(9, 6))
+		graphics.draw_line({ x = panels.left.center.x - 17, y = barTop + 1 - off }, { x = panels.left.center.x - 7, y = barTop - off }, 1, ClutColour(3, 7))
+		graphics.draw_line({ x = panels.left.center.x - 17, y = barTop - 3 - off }, { x = panels.left.center.x - 17, y = barTop + 1 - off }, 1, ClutColour(3, 7))
+		graphics.draw_line({ x = panels.left.center.x - 7, y = barTop - 3 - off }, { x = panels.left.center.x - 7, y = barTop - off }, 1, ClutColour(3, 7))
+		graphics.draw_line({ x = panels.left.center.x - 17, y = barBot - off }, { x = panels.left.center.x - 7, y = barBot - off }, 1, ClutColour(3, 7))
+		graphics.draw_line({ x = panels.left.center.x - 17, y =  barBot + 3 - off }, { x = panels.left.center.x - 17, y = barBot - off }, 1, ClutColour(3, 7))
+		graphics.draw_line({ x = panels.left.center.x - 7, y =  barBot + 3 - off }, { x = panels.left.center.x - 7, y = barBot - off }, 1, ClutColour(3, 7))
+		graphics.draw_box(barTop - 1 - off, panels.left.center.x - 16,  barBot + 2 - off, panels.left.center.x - 9, 0, ClutColour(3, 7))
+		graphics.draw_box((barTop - barBot - 4) * object.status.energy / object.status.energyMax + barBot + 3 - off, panels.left.center.x - 16, barBot + 2 - off, panels.left.center.x - 9, 0, ClutColour(9, 6))
 	end
-
+	
+	-- mini health bar
 	if object.status.health ~= nil then
-		graphics.draw_line({ x = panels.left.center.x - 23, y = barTop + 1 - off }, { x = panels.left.center.x - 13, y = barTop - off }, 1, ClutColour(4, 8))
-		graphics.draw_line({ x = panels.left.center.x - 23, y = barTop - 3 - off }, { x = panels.left.center.x - 23, y = barTop + 1 - off }, 1, ClutColour(4, 8))
-		graphics.draw_line({ x = panels.left.center.x - 13, y = barTop - 3 - off }, { x = panels.left.center.x - 13, y = barTop - off }, 1, ClutColour(4, 8))
-		graphics.draw_line({ x = panels.left.center.x - 23, y = barBot - off }, { x = panels.left.center.x - 13, y = barBot - off }, 1, ClutColour(4, 8))
-		graphics.draw_line({ x = panels.left.center.x - 23, y = barBot + 3 - off }, { x = panels.left.center.x - 23, y = barBot - off }, 1, ClutColour(4, 8))
-		graphics.draw_line({ x = panels.left.center.x - 13, y = barBot + 3 - off }, { x = panels.left.center.x - 13, y = barBot - off }, 1, ClutColour(4, 8))
-		graphics.draw_box(barTop - 1 - off, panels.left.center.x - 22,  barBot + 2 - off, panels.left.center.x - 15, 0, ClutColour(4, 8))
-		graphics.draw_box((barTop - barBot - 4) * object.status.health / object.status.healthMax +  barBot + 3 - off, panels.left.center.x - 22,  barBot + 2 - off, panels.left.center.x - 15, 0, ClutColour(4, 6))
+		graphics.draw_line({ x = panels.left.center.x - 29, y = barTop + 1 - off }, { x = panels.left.center.x - 19, y = barTop - off }, 1, ClutColour(4, 8))
+		graphics.draw_line({ x = panels.left.center.x - 29, y = barTop - 3 - off }, { x = panels.left.center.x - 29, y = barTop + 1 - off }, 1, ClutColour(4, 8))
+		graphics.draw_line({ x = panels.left.center.x - 19, y = barTop - 3 - off }, { x = panels.left.center.x - 19, y = barTop - off }, 1, ClutColour(4, 8))
+		graphics.draw_line({ x = panels.left.center.x - 29, y = barBot - off }, { x = panels.left.center.x - 19, y = barBot - off }, 1, ClutColour(4, 8))
+		graphics.draw_line({ x = panels.left.center.x - 29, y = barBot + 3 - off }, { x = panels.left.center.x - 29, y = barBot - off }, 1, ClutColour(4, 8))
+		graphics.draw_line({ x = panels.left.center.x - 19, y = barBot + 3 - off }, { x = panels.left.center.x - 19, y = barBot - off }, 1, ClutColour(4, 8))
+		graphics.draw_box(barTop - 1 - off, panels.left.center.x - 28,  barBot + 2 - off, panels.left.center.x - 21, 0, ClutColour(4, 8))
+		graphics.draw_box((barTop - barBot - 4) * object.status.health / object.status.healthMax +  barBot + 3 - off, panels.left.center.x - 28,  barBot + 2 - off, panels.left.center.x - 21, 0, ClutColour(4, 6))
 	end
 
+	-- mini sprite
 	if object.gfx.sprite ~= nil then
 		graphics.draw_sprite(object.gfx.sprite, { x = panels.left.center.x - 42, y = 26 - off }, { x = 28, y = 28 }, math.pi / 2.0) -- TODO [ADAM] Having { x = 28, y = 28 } is stretching the sprite unless it is a square sprite. Convert to actual sprite's dimensions, maximum of 28
 	end
-
+	
+	-- brackets around sprite
 	graphics.draw_line({ x = panels.left.center.x - 51, y = barTop + 1 - off }, { x = panels.left.center.x - 31, y = barTop - off }, 1, ClutColour(1, 1))
 	graphics.draw_line({ x = panels.left.center.x - 51, y = barTop - 3 - off }, { x = panels.left.center.x - 51, y = barTop + 1 - off }, 1, ClutColour(1, 1))
 	graphics.draw_line({ x = panels.left.center.x - 31, y = barTop - 3 - off }, { x = panels.left.center.x - 31, y = barTop - off }, 1, ClutColour(1, 1))

@@ -381,7 +381,7 @@ function render()
 	graphics.end_frame()
 end
 
-function mouse(button,x,y)
+function mouse(button, x, y)
 	if button == "wheel_up" then
 		DoScaleIn(0.2)
 	elseif button == "wheel_down" then
