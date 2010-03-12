@@ -1,14 +1,15 @@
 import('BoxDrawing')
---import('GlobalVars')
+import('Camera')
+import('GlobalVars')
 
 selection = {
 	control = {};
 	target = {};
 }
 setmetatable(selection, weak)
-menuShift = -391
-topOfMenu = -69
-menuStride = -11
+menuShift = 54
+topOfMenu = -87
+menuStride = -13
 shipSelected = false
 menuShipyard = { "BUILD", {} }
 
@@ -304,7 +305,8 @@ function DrawPauseMenu(dt)
 	end
 end
 
-radar = { top = 184, left = -394, bottom = 100, right = -303, width = 91, length = 84 }
+updateWindow()
+radar = { top = 237, left = panels.left.center.x - 58, bottom = 127, right = panels.left.center.x + 52, width = 110, length = 110 }
 
 function DrawRadar()
 	graphics.draw_box(radar.top, radar.left, radar.bottom, radar.right, 0, ClutColour(5, 13)) -- background (dark green)
@@ -332,43 +334,50 @@ end
 menuLevel = menuOptions
 
 function DrawPanels()
-	graphics.set_camera(-400, -300, 400, 300)
-	graphics.draw_image("Panels/SideLeft", { x = -346, y = 0 }, { x = 109, y = 607 })
-	graphics.draw_image("Panels/SideRight", { x = 387, y = -2 }, { x = 26, y = 608 })
-
+	updateWindow()
+	local cam = cameraToWindow()
+--	printTable(cam)
+	graphics.set_camera(cam[1], cam[2], cam[3], cam[4])
+	
+--	printTable(panels)
+	
+	graphics.draw_image("Panels/SideLeftTrans", panels.left.center, { x = panels.left.width, y = panels.left.height })
+	graphics.draw_image("Panels/SideRightTrans", panels.right.center, { x = panels.right.width, y = panels.right.height })
+	
 --[[------------------
 	Right Panel
-------------------]]--
-
+-----------------]]---
+	
 --	Battery (red)
 	if scen.playerShip.status.battery ~= nil then
-		graphics.draw_box(107, 379, 29, 386, 0, ClutColour(8, 8))
-		graphics.draw_box(scen.playerShip.status.battery / scen.playerShip.status.batteryMax * 78 + 29, 379, 29, 386, 0, ClutColour(8, 5)) -- #TEST these commented lines should be fixed and uncommented
+		graphics.draw_box(138, panels.right.center.x - 11, 38, panels.right.center.x, 0, ClutColour(8, 8))
+		graphics.draw_box(scen.playerShip.status.battery / scen.playerShip.status.batteryMax * 100 + 38, panels.right.center.x - 11, 38, panels.right.center.x, 0, ClutColour(8, 5))
 	end
 --	Energy (yellow)
 	if scen.playerShip.status.energy ~= nil then
-		graphics.draw_box(6, 379, -72.5, 386, 0, ClutColour(3, 7))
-		graphics.draw_box(scen.playerShip.status.energy / scen.playerShip.status.energyMax * 78.5 - 72.5, 379, -72.5, 386, 0, ClutColour(9, 6))
+		graphics.draw_box(-91, panels.right.center.x - 11, 9, panels.right.center.x, 0, ClutColour(3, 7))
+		graphics.draw_box(scen.playerShip.status.energy / scen.playerShip.status.energyMax * 100 - 91, panels.right.center.x - 11, -91, panels.right.center.x, 0, ClutColour(9, 6))
 	end
 --	Shield (blue)
 	if scen.playerShip.status.health ~= nil then
-		graphics.draw_box(-96, 379, -173, 386, 0, ClutColour(14, 8))
-		graphics.draw_box(scen.playerShip.status.health / scen.playerShip.status.healthMax * 77 - 173, 379, -173, 386, 0, ClutColour(14, 6))
+		graphics.draw_box(-219, panels.right.center.x - 11, -119, panels.right.center.x, 0, ClutColour(14, 8))
+		graphics.draw_box(scen.playerShip.status.health / scen.playerShip.status.healthMax * 100 - 219, panels.right.center.x - 11, -119, panels.right.center.x, 0, ClutColour(14, 6))
 	end
 --	Factory resources (green - mostly)
 	count = 1
-	if shipSelected == true then
+	shipQuerying = { c = 500 } -- HARDCODED for test
+--	if shipSelected == true then
 		if cash >= shipQuerying.c then
 			local drawGreen = math.floor((cash - shipQuerying.c) / 200)
 			local drawBlue = math.ceil((shipQuerying.c) / 200) + drawGreen
 		--	print(count, "=>", drawGreen, "-[", ((cash - shipQuerying.c) / 200), "]-")
 			while count <= drawGreen do
-				graphics.draw_box(152 - 3.15 * count, 394, 150 - 3.15 * count, 397, 0, ClutColour(12, 3))
+			graphics.draw_box(196 - 4 * count, panels.right.center.x + 9, 193 - 4 * count, panels.right.center.x + 12, 0, ClutColour(12, 3))
 				count = count + 1
 			end
 		--	print(count, drawGreen, drawBlue)
 			while count <= drawBlue do
-				graphics.draw_box(152 - 3.15 * count, 394, 150 - 3.15 * count, 397, 0, ClutColour(14, 5))
+			graphics.draw_box(196 - 4 * count, panels.right.center.x + 9, 193 - 4 * count, panels.right.center.x + 12, 0, ClutColour(14, 5))
 				count = count + 1
 			end
 		--	print(count, drawBlue)
@@ -377,22 +386,22 @@ function DrawPanels()
 			local drawRed = math.ceil(shipQuerying.c / 200)
 		--	print(count, "=>", drawGreen, "-[", (cash / 200), "]-")
 			while count <= drawGreen do
-				graphics.draw_box(152 - 3.15 * count, 394, 150 - 3.15 * count, 397, 0, ClutColour(12, 3))
+			graphics.draw_box(196 - 4 * count, panels.right.center.x + 9, 193 - 4 * count, panels.right.center.x + 12, 0, ClutColour(12, 3))
 				count = count + 1
 			end
 		--	print(count, drawGreen, drawRed)
 			while count <= drawRed do
-				graphics.draw_box(152 - 3.15 * count, 394, 150 - 3.15 * count, 397, 0, ClutColour(2, 9))
+			graphics.draw_box(196 - 4 * count, panels.right.center.x + 9, 193 - 4 * count, panels.right.center.x + 12, 0, ClutColour(2, 9))
 				count = count + 1
 			end
 		--	print(count, drawRed)
 		end
-	end
+--	end
 	while count <= 100 do
 		if count > resources then
-			graphics.draw_box(152 - 3.15 * count, 394, 150 - 3.15 * count, 397, 0, ClutColour(12, 14))
+			graphics.draw_box(196 - 4 * count, panels.right.center.x + 9, 193 - 4 * count, panels.right.center.x + 12, 0, ClutColour(12, 14))
 		else
-			graphics.draw_box(152 - 3.15 * count, 394, 150 - 3.15 * count, 397, 0, ClutColour(12, 3))
+			graphics.draw_box(196 - 4 * count, panels.right.center.x + 9, 193 - 4 * count, panels.right.center.x + 12, 0, ClutColour(12, 3))
 		end
 		count = count + 1
 	end
@@ -400,24 +409,24 @@ function DrawPanels()
 	count = 1
 	while count <= 7 do
 		if count <= resourceBars then
-			graphics.draw_box(154.5 - 4.5 * count, 384, 151 - 4.5 * count, 392, 0, ClutColour(3, 3))
+			graphics.draw_box(198 - 6 * count, panels.right.center.x - 4, 193 - 6 * count, panels.right.center.x + 7, 0, ClutColour(3, 3))
 		else
-			graphics.draw_box(154.5 - 4.5 * count, 384, 151 - 4.5 * count, 392, 0, ClutColour(9, 13))
+			graphics.draw_box(198 - 6 * count, panels.right.center.x - 4, 193 - 6 * count, panels.right.center.x + 7, 0, ClutColour(9, 13))
 		end
 		count = count + 1
 	end
 --	Factory build bar (purple)
-	planet = scen.planet
-	if planet ~= nil then
-		graphics.draw_line({ x = 382, y = 181 }, { x = 392, y = 181 }, 0.5, ClutColour(13, 9))
-		graphics.draw_line({ x = 382, y = 181 }, { x = 382, y = 177 }, 0.5, ClutColour(13, 9))
-		graphics.draw_line({ x = 392, y = 177 }, { x = 392, y = 181 }, 0.5, ClutColour(13, 9))
-		graphics.draw_line({ x = 382, y = 159 }, { x = 392, y = 159 }, 0.5, ClutColour(13, 9))
-		graphics.draw_line({ x = 382, y = 163 }, { x = 382, y = 159 }, 0.5, ClutColour(13, 9))
-		graphics.draw_line({ x = 392, y = 159 }, { x = 392, y = 163 }, 0.5, ClutColour(13, 9))
-		graphics.draw_box(179, 384, 161, 390, 0, ClutColour(13, 9))
-		graphics.draw_box(18 * (100 - planet.buildqueue.percent) / 100 + 161, 384, 161, 390, 0, ClutColour(13, 5))
-	end
+--	planet = scen.planet -- commented out until planet implemented
+--	if planet ~= nil then -- commented out until planet implemented
+		graphics.draw_line({ x = panels.right.center.x - 8, y = 232 }, { x = panels.right.center.x + 7, y = 232 }, 1, ClutColour(13, 9))
+		graphics.draw_line({ x = panels.right.center.x - 7, y = 232 }, { x = panels.right.center.x - 7, y = 228 }, 1, ClutColour(13, 9))
+		graphics.draw_line({ x = panels.right.center.x + 7, y = 228 }, { x = panels.right.center.x + 7, y = 232 }, 1, ClutColour(13, 9))
+		graphics.draw_line({ x = panels.right.center.x - 7, y = 201 }, { x = panels.right.center.x + 7, y = 201 }, 1, ClutColour(13, 9))
+		graphics.draw_line({ x = panels.right.center.x - 7, y = 205 }, { x = panels.right.center.x - 7, y = 201 }, 1, ClutColour(13, 9))
+		graphics.draw_line({ x = panels.right.center.x + 7, y = 201 }, { x = panels.right.center.x + 7, y = 205 }, 1, ClutColour(13, 9))
+		graphics.draw_box(230, panels.right.center.x - 6, 204, panels.right.center.x + 5, 0, ClutColour(13, 9))
+		graphics.draw_box(25 * (100 - 30) / 100 + 204, panels.right.center.x - 6, 204, panels.right.center.x + 5, 0, ClutColour(13, 5))
+--	end -- commented out until planet implemented
 	
 --[[------------------
 	Left Panel
@@ -426,19 +435,18 @@ function DrawPanels()
 --	Radar box (green)
 	DrawRadar()
 --	Communications panels (green)
-	graphics.draw_box(-63, -393, -158, -297, 0, ClutColour(5, 11))
-	graphics.draw_line({ x = -391, y = -74 }, { x = -298, y = -74 }, 1, ClutColour(12, 3))
-	graphics.draw_box(-165, -389.5, -185.5, -304, 0, ClutColour(5, 11))
+	graphics.draw_box(-80, panels.left.center.x - 55, -200, panels.left.center.x + 57, 0, ClutColour(5, 11))
+	graphics.draw_line({ x = panels.left.center.x - 55, y = -94 }, { x = panels.left.center.x + 57, y = -94 }, 1, ClutColour(12, 3))
 --	Menu drawing
 	local shift = 1
 	local num = 1
-	graphics.draw_text(menuLevel[1], MAIN_FONT, "left", { x = menuShift, y = topOfMenu }, 13)
+	graphics.draw_text(menuLevel[1], MAIN_FONT, "left", { x = panels.left.center.x - menuShift, y = topOfMenu }, 15)
 	while menuLevel[num] ~= nil do
 		if menuLevel[num][1] ~= nil then
 			if menuLevel[num][2] == true then
-				graphics.draw_box(topOfMenu + menuStride * shift + 4, -392, topOfMenu + menuStride * shift - 5, -298, 0, ClutColour(12, 10))
+				graphics.draw_box(topOfMenu + menuStride * shift + 6, panels.left.center.x - menuShift, topOfMenu + menuStride * shift - 7, panels.left.center.x - menuShift + 112, 0, ClutColour(12, 10))
 			end
-			graphics.draw_text(menuLevel[num][1], MAIN_FONT, "left", { x = menuShift, y = topOfMenu + menuStride * shift }, 13)
+			graphics.draw_text(menuLevel[num][1], MAIN_FONT, "left", { x = panels.left.center.x - menuShift, y = topOfMenu + menuStride * shift }, 15)
 			shift = shift + 1
 		end
 		num = num + 1
@@ -446,41 +454,45 @@ function DrawPanels()
 	if text_being_drawn == true then
 		graphics.draw_text(scen.text[textnum], MAIN_FONT, "center", { x = 0, y = -250 }, 30)
 	end
-
+	
 --	Weapon ammo count
 --OFFSET = 32 PIXELS <= ?
 	if scen.playerShip.weapons ~= nil then
 		if scen.playerShip.weapons.pulse ~= nil
 		and scen.playerShip.weapons.pulse.ammo ~= -1 then
-			graphics.draw_text(string.format('%03d', scen.playerShip.weapons.pulse.ammo), "CrystalClear", "left", { x = -376, y = 60 }, 13, ClutColour(16, 1))
+			graphics.draw_text(string.format('%03d', scen.playerShip.weapons.pulse.ammo), MAIN_FONT, "left", { x = panels.left.center.x - 34, y = 77 }, 15, ClutColour(16, 1))
 		end
 		
 		if scen.playerShip.weapons.beam ~= nil
 		and scen.playerShip.weapons.beam.ammo ~= -1 then
-			graphics.draw_text(string.format('%03d', scen.playerShip.weapons.beam.ammo), "CrystalClear", "left", { x = -345, y = 60 }, 13, ClutColour(16, 1))
+			graphics.draw_text(string.format('%03d', scen.playerShip.weapons.beam.ammo), MAIN_FONT, "left", { x = panels.left.center.x, y = 77 }, 15, ClutColour(16, 1))
 		end
 		
 		if scen.playerShip.weapons.special ~= nil
 		and scen.playerShip.weapons.special.ammo ~= -1 then
-			graphics.draw_text(string.format('%03d', scen.playerShip.weapons.special.ammo), "CrystalClear", "left", { x = -314, y = 60 }, 13, ClutColour(16, 1))
+			graphics.draw_text(string.format('%03d', scen.playerShip.weapons.special.ammo), MAIN_FONT, "left", { x = panels.left.center.x + 38, y = 77 }, 15, ClutColour(16, 1))
 		end
 	end
-
+	
 	if selection.control ~= nil then
-		DrawTargetBox(selection.control,true)
+		DrawTargetBox(selection.control, true)
 	end
-
+	
 	if selection.target ~= nil then
-		DrawTargetBox(selection.target,false)
+		DrawTargetBox(selection.target, false)
 	end
-
-	graphics.draw_box(-165.5, -389.5, -175.5, -358, 0, ClutColour(4, 6))
-	graphics.draw_text("RIGHT", MAIN_FONT, "left", { x = -388, y = -170 }, 13, ClutColour(14, 5))
-	graphics.draw_text("Select", MAIN_FONT, "left", { x = -354, y = -170 }, 13, ClutColour(14, 5))
+	
+--	printTable(panels)
+	
+	graphics.draw_box(-208, panels.left.center.x - 52, -234, panels.left.center.x + 49, 0, ClutColour(5, 11))
+	
+	graphics.draw_box(-208, panels.left.center.x - 51, -221, panels.left.center.x - 16, 0, ClutColour(4, 6))
+	graphics.draw_text("RIGHT", MAIN_FONT, "left", { x = panels.left.center.x - 51, y = -215 }, 15, ClutColour(14, 5))
+	graphics.draw_text("Select", MAIN_FONT, "left", { x = panels.left.center.x - 10, y = -215 }, 15, ClutColour(14, 5))
 	if menuLevel ~= menuOptions then
-		graphics.draw_box(-175.5, -389.5, -185.5, -358, 0, ClutColour(4, 6))
-		graphics.draw_text("LEFT", MAIN_FONT, "left", { x = -388, y = -180 }, 13, ClutColour(14, 5))
-		graphics.draw_text("Go Back", MAIN_FONT, "left", { x = -354, y = -180 }, 13, ClutColour(14, 5))
+		graphics.draw_box(-221, panels.left.center.x - 52, -234, panels.left.center.x - 16, 0, ClutColour(4, 6))
+		graphics.draw_text("LEFT", MAIN_FONT, "left", { x = panels.left.center.x - 49, y = -227 }, 15, ClutColour(14, 5))
+		graphics.draw_text("Go Back", MAIN_FONT, "left", { x = panels.left.center.x - 10, y = -227 }, 15, ClutColour(14, 5))
 	end
 end
 
@@ -541,25 +553,34 @@ function GetMouseCoords()
 	)
 end
 
+local realPos = { x, y }
+
 function DrawMouse1()
 	mousePos = GetMouseCoords()
+	
 	if FindDist(mousePos, oldMousePos) > 0 then
 		mouseStart = mode_manager.time()
 	end
-	if mode_manager.time() - mouseStart < 2.0 then
+	if mode_manager.time() - mouseStart >= 2.0 then
+		mouseMovement = false
+	else
 		ship = scen.playerShip.physics.position
 		
-		if mousePos.x > 260 / cameraRatio + ship.x then
-			mousePos.x = 260 / cameraRatio + ship.x
-		elseif mousePos.x < -320 / cameraRatio + ship.x - shipAdjust then
-			mousePos.x = -320 / cameraRatio + ship.x - shipAdjust
+		realPos.x = (mousePos.x - ship.x + shipAdjust) * cameraRatio / 320 * cameraToWindow()[3]
+		realPos.y = (mousePos.y - ship.y) * cameraRatio / 240 * cameraToWindow()[4]
+		
+		if realPos.x > panels.right.center.x - panels.right.width / 2 - 10 then
+			mousePos.x = (panels.right.center.x - panels.right.width / 2 - 10) / cameraToWindow()[3] * 320 / cameraRatio - shipAdjust + ship.x
+		elseif realPos.x < panels.left.center.x + panels.left.width / 2 then
+			mousePos.x = (panels.right.center.x + panels.right.width / 2) / cameraToWindow()[3] * 320 / cameraRatio - shipAdjust + ship.x
 		end
 		
-		if mousePos.y > 230 / cameraRatio + ship.y then
-			mousePos.y = 230 / cameraRatio + ship.y
-		elseif mousePos.y < -220 / cameraRatio + ship.y then
-			mousePos.y = -220 / cameraRatio + ship.y
+		if realPos.y > WINDOW.height / 2 - 10 then
+			mousePos.y = (WINDOW.height / 2 - 10) / cameraToWindow()[4] * 240 / cameraRatio + ship.y
+		elseif realPos.y < -WINDOW.height / 2 + 10 then
+			mousePos.y = (-WINDOW.height / 2 + 10) / cameraToWindow()[4] * 240 / cameraRatio + ship.y
 		end
+		
 		graphics.draw_line({ x = - camera.w / 2 + ship.x, y = mousePos.y }, { x = mousePos.x - 20 / cameraRatio, y = mousePos.y }, 1.0, ClutColour(4, 8))
 		graphics.draw_line({ x = camera.w / 2 + ship.x, y = mousePos.y }, { x = mousePos.x + 20 / cameraRatio, y = mousePos.y }, 1.0, ClutColour(4, 8))
 		graphics.draw_line({ x = mousePos.x, y = -camera.h / 2 + ship.y }, { x = mousePos.x, y = mousePos.y - 20 / cameraRatio }, 1.0, ClutColour(4, 8))
@@ -569,20 +590,11 @@ end
 
 function DrawMouse2()
 	ship = scen.playerShip.physics.position
-	mousePos = GetMouseCoords()
-	if mode_manager.time() - mouseStart < 2.0 and mousePos.x < -260 / cameraRatio + ship.x then
-		graphics.set_camera( -- should I have to do this? [ADAM, HACK]
-			-scen.playerShip.physics.position.x + shipAdjust - (camera.w / 2.0),
-			-scen.playerShip.physics.position.y - (camera.h / 2.0),
-			-scen.playerShip.physics.position.x + shipAdjust + (camera.w / 2.0),
-			-scen.playerShip.physics.position.y + (camera.h / 2.0))
 	
-		local cursor = graphics.sprite_dimensions("Misc/Cursor")
-		graphics.draw_sprite("Misc/Cursor", mousePos, cursor, 0)
-		
-		if mode_manager.time() - mouseStart >= 2.0 then
-			mouseMovement = false
-		end
+	if mode_manager.time() - mouseStart < 2.0 and realPos.x < panels.left.center.x + panels.left.width / 2 then
+		local cam = cameraToWindow()
+		graphics.set_camera(cam[1], cam[2], cam[3], cam[4])
+		graphics.draw_sprite("Misc/Cursor", realPos, graphics.sprite_dimensions("Misc/Cursor"), 0)
 	end
 end
 
@@ -645,50 +657,66 @@ function DrawGrid()
 	end
 end
 
-
-
 function DrawTargetBox(object, isControl)
-	local off = isControl and 0 or 57
-
-	graphics.draw_box(49 - off, -392, 40 - off, -297, 0, (isControl and ClutColour(9,6) or ClutColour(4, 3)))
-	graphics.draw_text((isControl and "CONTROL" or "TARGET"), "CrystalClear", "left", { x = -389, y = 44 - off }, 12, ClutColour(1, 17))
-
-	graphics.draw_text(object.name, "CrystalClear", "left", { x = -389, y = 35 - off}, 12)
+	local off = isControl and 0 or 72
+	local barBot = 13 -- debug line [ADAM]
+	local barTop = 37 -- debug line [ADAM]
 	
+	graphics.draw_box(63 - off, panels.left.center.x - 53, 50 - off, panels.left.center.x + 57, 0, (isControl and ClutColour(9,6) or ClutColour(4, 3)))
+	graphics.draw_text((isControl and "CONTROL" or "TARGET"), MAIN_FONT, "left", { x = panels.left.center.x - 53, y = 56 - off }, 14, ClutColour(1, 17))
+	graphics.draw_text(object.name, MAIN_FONT, "left", { x = panels.left.center.x - 53, y = 44 - off }, 14)
+	
+	local isFriendly = false
 	if object.ai.objectives.dest ~= nil then
-		graphics.draw_text(object.ai.objectives.dest.name, "CrystalClear", "left", { x = -389, y = 3 - off }, 12, ClutColour(1, 11))
+		local col = isFriendly and ClutColour(5, 11) or ClutColour(16, 4)
+		graphics.draw_text(object.ai.objectives.dest.name, MAIN_FONT, "left", { x = panels.left.center.x - 53, y = 4 - off }, 14, col)
 	end
 	
+	-- display the beam and pulse weapons
+	if object.base.weapon ~= nil then
+		for i = 1, #object.base.weapon do
+			if object.base.weapon[i].type == "beam" then
+				graphics.draw_text(gameData.Objects[object.base.weapon[i].id]["short-name"], MAIN_FONT, "left", { x = panels.left.center.x - 6, y = 20 - off }, 14)
+			elseif object.base.weapon[i].type == "pulse" then
+				graphics.draw_text(gameData.Objects[object.base.weapon[i].id]["short-name"], MAIN_FONT, "left", { x = panels.left.center.x - 6, y = 30 - off }, 14)
+			end
+		end
+	end
+	
+	-- mini energy bar
 	if object.status.energy ~= nil then
-		graphics.draw_line({ x = -357, y = 28 - off }, { x = -347, y = 28 - off }, 0.5, ClutColour(3, 7))
-		graphics.draw_line({ x = -357, y = 27 - off }, { x = -357, y = 28 - off }, 0.5, ClutColour(3, 7))
-		graphics.draw_line({ x = -347, y = 27 - off }, { x = -347, y = 28 - off }, 0.5, ClutColour(3, 7))
-		graphics.draw_line({ x = -357, y = 9 - off }, { x = -347, y = 9 - off }, 0.5, ClutColour(3, 7))
-		graphics.draw_line({ x = -357, y = 10 - off }, { x = -357, y = 9 - off }, 0.5, ClutColour(3, 7))
-		graphics.draw_line({ x = -347, y = 10 - off }, { x = -347, y = 9 - off }, 0.5, ClutColour(3, 7))
-		graphics.draw_box(27 - off, -356, 10 - off, -348, 0, ClutColour(3, 7))
-		graphics.draw_box(17 * object.status.energy / object.status.energyMax + 10  - off, -356, 10 - off, -348, 0, ClutColour(9, 6))
+		graphics.draw_line({ x = panels.left.center.x - 17, y = barTop + 1 - off }, { x = panels.left.center.x - 7, y = barTop - off }, 1, ClutColour(3, 7))
+		graphics.draw_line({ x = panels.left.center.x - 17, y = barTop - 3 - off }, { x = panels.left.center.x - 17, y = barTop + 1 - off }, 1, ClutColour(3, 7))
+		graphics.draw_line({ x = panels.left.center.x - 7, y = barTop - 3 - off }, { x = panels.left.center.x - 7, y = barTop - off }, 1, ClutColour(3, 7))
+		graphics.draw_line({ x = panels.left.center.x - 17, y = barBot - off }, { x = panels.left.center.x - 7, y = barBot - off }, 1, ClutColour(3, 7))
+		graphics.draw_line({ x = panels.left.center.x - 17, y =  barBot + 3 - off }, { x = panels.left.center.x - 17, y = barBot - off }, 1, ClutColour(3, 7))
+		graphics.draw_line({ x = panels.left.center.x - 7, y =  barBot + 3 - off }, { x = panels.left.center.x - 7, y = barBot - off }, 1, ClutColour(3, 7))
+		graphics.draw_box(barTop - 1 - off, panels.left.center.x - 16,  barBot + 2 - off, panels.left.center.x - 9, 0, ClutColour(3, 7))
+		graphics.draw_box((barTop - barBot - 4) * object.status.energy / object.status.energyMax + barBot + 3 - off, panels.left.center.x - 16, barBot + 2 - off, panels.left.center.x - 9, 0, ClutColour(9, 6))
 	end
-
+	
+	-- mini health bar
 	if object.status.health ~= nil then
-		graphics.draw_line({ x = -369, y = 28 - off }, { x = -359, y = 28 - off }, 0.5, ClutColour(4, 8))
-		graphics.draw_line({ x = -369, y = 27 - off }, { x = -369, y = 28 - off }, 0.5, ClutColour(4, 8))
-		graphics.draw_line({ x = -359, y = 27 - off }, { x = -359, y = 28 - off }, 0.5, ClutColour(4, 8))
-		graphics.draw_line({ x = -369, y = 9 - off }, { x = -359, y = 9 - off }, 0.5, ClutColour(4, 8))
-		graphics.draw_line({ x = -369, y = 10 - off }, { x = -369, y = 9 - off }, 0.5, ClutColour(4, 8))
-		graphics.draw_line({ x = -359, y = 10 - off }, { x = -359, y = 9 - off }, 0.5, ClutColour(4, 8))
-		graphics.draw_box(27 - off, -367.5, 10 - off, -360, 0, ClutColour(4, 8))
-		graphics.draw_box(17 * object.status.health / object.status.healthMax + 10 - off, -367.5, 10 - off, -360, 0, ClutColour(4, 6))
+		graphics.draw_line({ x = panels.left.center.x - 29, y = barTop + 1 - off }, { x = panels.left.center.x - 19, y = barTop - off }, 1, ClutColour(4, 8))
+		graphics.draw_line({ x = panels.left.center.x - 29, y = barTop - 3 - off }, { x = panels.left.center.x - 29, y = barTop + 1 - off }, 1, ClutColour(4, 8))
+		graphics.draw_line({ x = panels.left.center.x - 19, y = barTop - 3 - off }, { x = panels.left.center.x - 19, y = barTop - off }, 1, ClutColour(4, 8))
+		graphics.draw_line({ x = panels.left.center.x - 29, y = barBot - off }, { x = panels.left.center.x - 19, y = barBot - off }, 1, ClutColour(4, 8))
+		graphics.draw_line({ x = panels.left.center.x - 29, y = barBot + 3 - off }, { x = panels.left.center.x - 29, y = barBot - off }, 1, ClutColour(4, 8))
+		graphics.draw_line({ x = panels.left.center.x - 19, y = barBot + 3 - off }, { x = panels.left.center.x - 19, y = barBot - off }, 1, ClutColour(4, 8))
+		graphics.draw_box(barTop - 1 - off, panels.left.center.x - 28,  barBot + 2 - off, panels.left.center.x - 21, 0, ClutColour(4, 8))
+		graphics.draw_box((barTop - barBot - 4) * object.status.health / object.status.healthMax +  barBot + 3 - off, panels.left.center.x - 28,  barBot + 2 - off, panels.left.center.x - 21, 0, ClutColour(4, 6))
 	end
 
+	-- mini sprite
 	if object.gfx.sprite ~= nil then
-		graphics.draw_sprite(object.gfx.sprite, { x = -380, y = 19 - off }, { x = 17, y = 17 }, 3.14 / 2.0)
+		graphics.draw_sprite(object.gfx.sprite, { x = panels.left.center.x - 42, y = 26 - off }, { x = 28, y = 28 }, math.pi / 2.0) -- TODO [ADAM] Having { x = 28, y = 28 } is stretching the sprite unless it is a square sprite. Convert to actual sprite's dimensions, maximum of 28
 	end
-
-	graphics.draw_line({ x = -387, y = 28 - off }, { x = -372, y = 28 - off }, 0.5, ClutColour(1, 1))
-	graphics.draw_line({ x = -387, y = 27 - off }, { x = -387, y = 28 - off }, 0.5, ClutColour(1, 1))
-	graphics.draw_line({ x = -372, y = 27 - off }, { x = -372, y = 28 - off }, 0.5, ClutColour(1, 1))
-	graphics.draw_line({ x = -387, y = 9 - off }, { x = -372, y = 9 - off }, 0.5, ClutColour(1, 1))
-	graphics.draw_line({ x = -372, y = 10 - off }, { x = -372, y = 9 - off }, 0.5, ClutColour(1, 1))
-	graphics.draw_line({ x = -387, y = 10 - off }, { x = -387, y = 9 - off }, 0.5, ClutColour(1, 1))
+	
+	-- brackets around sprite
+	graphics.draw_line({ x = panels.left.center.x - 51, y = barTop + 1 - off }, { x = panels.left.center.x - 31, y = barTop - off }, 1, ClutColour(1, 1))
+	graphics.draw_line({ x = panels.left.center.x - 51, y = barTop - 3 - off }, { x = panels.left.center.x - 51, y = barTop + 1 - off }, 1, ClutColour(1, 1))
+	graphics.draw_line({ x = panels.left.center.x - 31, y = barTop - 3 - off }, { x = panels.left.center.x - 31, y = barTop - off }, 1, ClutColour(1, 1))
+	graphics.draw_line({ x = panels.left.center.x - 51, y = barBot - off }, { x = panels.left.center.x - 31, y = barBot - off }, 1, ClutColour(1, 1))
+	graphics.draw_line({ x = panels.left.center.x - 31, y =  barBot + 3 - off }, { x = panels.left.center.x - 31, y = barBot - off }, 1, ClutColour(1, 1))
+	graphics.draw_line({ x = panels.left.center.x - 51, y =  barBot + 3 - off }, { x = panels.left.center.x - 51, y = barBot - off }, 1, ClutColour(1, 1))
 end

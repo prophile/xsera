@@ -56,7 +56,7 @@ typedef std::map<uint32_t, TextEntry*> TextEntryTable;
 TextEntryTable textEntries;
 
 std::map<std::string, TTF_Font*> fonts;
-#define DEFAULT_FONT "CrystalClear"
+#define DEFAULT_FONT "prototype"
 
 static bool ttf_initted = false;
 
