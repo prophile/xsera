@@ -58,10 +58,9 @@ function update()
 	local newTime = mode_manager.time()
 	dt = newTime - last_time
 	last_time = newTime
-
-
+	
 	KeyDoActivated()
-
+	
 --[[------------------
 	Camera Code
 ------------------]]--
@@ -265,15 +264,40 @@ function update()
 			end
 		end
 	end
+	
+--[[------------------
+	Warping Code
+------------------]]-- it's a pair of lightsabers!
+	
+	warp = scen.playerShip.control.warp
+	warpSpeed = scen.playerShip.base["warp-speed"] * SPEED_FACTOR
+	
+	if warp.stage ~= "notWarping" then
+		if warp.stage == "warping" then
+			scen.playerShip.physics.velocity = { x = scen.playerShip.base["warp-speed"] * SPEED_FACTOR * math.cos(scen.playerShip.physics.angle), y = scen.playerShip.base["warp-speed"] * SPEED_FACTOR * math.sin(scen.playerShip.physics.angle) }
+		elseif warp.stage == "cooldown" then
+			slowDownTime = 2 -- [HARDCODED]
+			if (warp.time < slowDownTime) then
+				warp.time = warp.time + dt
+				scen.playerShip.physics.velocity = {
+					x = (scen.playerShip.base["max-velocity"] * SPEED_FACTOR + (scen.playerShip.base["warp-speed"] * SPEED_FACTOR - scen.playerShip.base["max-velocity"] * SPEED_FACTOR) * (slowDownTime - warp.time) / slowDownTime) * math.cos(scen.playerShip.physics.angle),
+					y = (scen.playerShip.base["max-velocity"] * SPEED_FACTOR + (scen.playerShip.base["warp-speed"] * SPEED_FACTOR - scen.playerShip.base["max-velocity"] * SPEED_FACTOR) * (slowDownTime - warp.time) / slowDownTime) * math.sin(scen.playerShip.physics.angle) }
+			else
+				sound.play("WarpOut")
+				scen.playerShip.physics.velocity = { x = scen.playerShip.base["max-velocity"] * SPEED_FACTOR * normalize(scen.playerShip.physics.velocity.x, scen.playerShip.physics.velocity.y), y = scen.playerShip.base["max-velocity"] * SPEED_FACTOR * normalize(scen.playerShip.physics.velocity.y, scen.playerShip.physics.velocity.x) }
+				warp.stage = "notWarping"
+			end
+		end
+	elseif hypot(scen.playerShip.physics.velocity.x, scen.playerShip.physics.velocity.y) > scen.playerShip.base["max-velocity"] * SPEED_FACTOR then
+		scen.playerShip.physics.velocity = { x = scen.playerShip.base["max-velocity"] * SPEED_FACTOR * normalize(scen.playerShip.physics.velocity.x, scen.playerShip.physics.velocity.y), y = scen.playerShip.base["max-velocity"] * SPEED_FACTOR * normalize(scen.playerShip.physics.velocity.y, scen.playerShip.physics.velocity.x) }
+	end
+	
 	RemoveDead()
 	TestConditions(scen)
 	GenerateStatusLines(scen)
 	trackingTarget.position = GetMouseCoords()
 	physics.update(dt)
 end
-
-local tv1Box = { message = "This is as long as a message can be at font 20: not long..", font = MAIN_FONT, size = 20, top = 0, bottom = -20, left = -200, right = 150, pointFrom = { x = 0, y = -20 }, pointTo = { x = -50, y = -70 }, colour = ClutColour(2, 5), flashing = false }
-local tv2Box = { message = "LOOK THERE", font = MAIN_FONT, size = 16, top = 50, bottom = 20, left = 50, right = 150, pointFrom = { x = 50, y = 20 }, pointTo = { x = 50, y = -70 }, colour = ClutColour(4, 5), flashing = true }
 
 function Win()
 	print("\\ \\     /\\    / /   |__  __|   |   \\ | |")

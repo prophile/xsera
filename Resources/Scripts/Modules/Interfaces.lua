@@ -553,7 +553,6 @@ function DrawDialogueBox(text)
 	
 	graphics.set_camera(cam[1], cam[2], cam[3], cam[4])
 	
-	lines = { "TEST", "TEST", "TEST", "TEST", "TEST", "TEST", "TEST", "TEST", "TEST", "TEST", "TEST", "TEST", "TEST", "TEST", "TEST", "TEST", "TEST", "TEST", "TEST", "TEST", "TEST", "TEST", "TEST", "TEST", "TEST" }
 	if type(lines) == "table" then
 		graphics.draw_box(#lines * 18 + cam[2] + 13, panels.left.center.x + panels.left.width / 2, cam[2] + 12, panels.right.center.x - panels.right.width / 2, 1, ClutColour(4, 10))
 		for i = 1, #lines do

@@ -205,20 +205,6 @@ function update ()
 ------------------]]-- it's a pair of lightsabers!
 	
 	if playerShip.warp.stage ~= "notWarping" then
-		playerShip.warp.time = playerShip.warp.time + dt
-		
-		if playerShip.warp.stage == "spooling" then
-			if math.ceil(playerShip.warp.time / soundLength) > playerShip.warp.lastPlayed then
-				playerShip.warp.lastPlayed = playerShip.warp.lastPlayed + 1
-				if playerShip.warp.lastPlayed ~= 5 then
-					sound.play("Warp" .. playerShip.warp.lastPlayed)
-				else
-					playerShip.warp.stage = "warping"
-					sound.play("WarpIn")
-					playerShip.warp.lastPlayed = 0
-				end
-			end
-		end
 		if playerShip.warp.stage == "warping" then
 			playerShip.physicsObject.velocity = { x = playerShip.warpSpeed * math.cos(playerShip.physicsObject.angle), y = playerShip.warpSpeed * math.sin(playerShip.physicsObject.angle) }
 		elseif playerShip.warp.stage == "cooldown" then
