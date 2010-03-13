@@ -314,7 +314,9 @@ function render()
 		-scen.playerShip.physics.position.y - (camera.h / 2.0),
 		-scen.playerShip.physics.position.x + shipAdjust + (camera.w / 2.0),
 		-scen.playerShip.physics.position.y + (camera.h / 2.0))
-
+	
+    graphics.begin_warp(scen.playerShip.control.warp.lastPlayed, (2.5*math.pi) - math.atan2(scen.playerShip.physics.velocity.x, scen.playerShip.physics.velocity.y), cameraRatio)
+	
 	graphics.draw_starfield(3.4)
 	graphics.draw_starfield(1.8)
 	graphics.draw_starfield(0.6)
@@ -379,6 +381,9 @@ function render()
 --	graphics.draw_circle(trackingTarget.position, trackingTarget.collision_radius, 1.0, ClutColour(5, 1))	
 	
 	graphics.draw_particles()
+	
+	graphics.end_warp()
+	
 	DrawArrow()
 	DrawMouse1()
 	DrawPanels()
