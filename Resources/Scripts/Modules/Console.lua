@@ -32,15 +32,10 @@ end
 
 
 function ConsoleDraw(FONT_SIZE)
-	graphics.set_camera(-320, -240, 320, 240)
+	graphics.set_camera(-240 * aspectRatio, -240, 240 * aspectRatio, 240)
 	local i = 1
-	while consoleHistory[i] ~= nil do
-		if i <= CONSOLE_MAX then
-			graphics.draw_text(consoleHistory[i], MAIN_FONT, "left", { x = -319, y = 232 - (i - 1) * FONT_SIZE + 1 }, FONT_SIZE)
-			i = i + 1
-		else
-			return
-		end
+	for i = 1, #consoleHistory do
+		graphics.draw_text(consoleHistory[i], MAIN_FONT, "left", { x = -240 * aspectRatio + 1, y = 232 - (i - 1) * FONT_SIZE + 1 }, FONT_SIZE)
 	end
 end
 

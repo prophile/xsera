@@ -344,7 +344,7 @@ function render()
 				end
 			end
 		else
-			if cameraRatio >= 1.0/8.0 then--[FIX]
+			if cameraRatio >= 1 / 4 then
 				if o.type == "animation" then
 					graphics.draw_sprite_frame(o.gfx.sprite, o.physics.position, o.gfx.dimensions, Animate(o))
 				else -- Rotational

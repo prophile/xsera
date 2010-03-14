@@ -1,6 +1,7 @@
 import('Math')
 import('AresCLUT')
 import('data')
+import('Camera')
 
 --constants
 
@@ -53,7 +54,7 @@ cameraRatio = 1
 cameraRatioTarget = 1
 --cameraRatios = { 2, 1, 1/2, 1/4, 1/8, 1/16, "hostile", "object", "all" }
 --cameraRatioNum = 2
-aspectRatio = 4 / 3
+aspectRatio = WINDOW.width / WINDOW.height
 camera = { w = 640 / cameraRatio, h }
 camera.h = camera.w / aspectRatio
 shipAdjust = .045 * camera.w

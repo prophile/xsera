@@ -142,8 +142,10 @@ void Init ( int frequency, int resolution, int sources )
 	Mix_AllocateChannels(sources);
 	Mix_VolumeMusic(volume_music);
 	Mix_Volume(-1, volume_sound);
+#ifndef NDEBUG
 	if (getenv("APOLLO_MUSIC_DISABLE"))
-		disable_music = true;
+//		disable_music = true;
+#endif
 	effectMapLock = SDL_CreateMutex();
 	preloadQueueLock = SDL_CreateMutex();
 	preloadQueueCondition = SDL_CreateCond();
@@ -175,9 +177,10 @@ void PlaySoundSDL ( const std::string& name, float gain, float pan )
 
 void PlayMusic ( const std::string& music )
 {
-	if (disable_music)
-		return;
+//	if (disable_music)
+//		return;
 	Mix_Music* mus = MusicNamed(music);
+	printf("%d", mus);
 	if (mus)
 	{
 		Mix_PlayMusic(mus, -1);
