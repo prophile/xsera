@@ -26,10 +26,8 @@ function LoadScenario(id)
 		end
 		
 		if state["initial-destination"] ~= -1 then
-			--Convert from 0 based indexes to 2 based indexes
-			--Indexes are 2 based instead of 1 based because the cursor has a physics_object with an id of 1
-
-			new.ai.objectives.dest = scen.objects[state["initial-destination"]+2]
+			--Convert from 0 based indexes to 1 based indexes
+			new.ai.objectives.dest = scen.objects[state["initial-destination"]+1]
 		end
 
 		scen.objects[new.physics.object_id] = new
