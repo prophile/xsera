@@ -116,6 +116,7 @@ static bool disable_music = false;
 
 void Init ( int frequency, int resolution, int sources )
 {
+	Mix_Init(MIX_INIT_MOD|MIX_INIT_OGG);
 	int volume_sound = MIX_MAX_VOLUME, volume_music = MIX_MAX_VOLUME;
 	Uint16 format;
 	switch (resolution)
