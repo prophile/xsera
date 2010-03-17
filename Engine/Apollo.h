@@ -19,8 +19,6 @@
 #include "Modes/ModeManager.h"
 #include "Graphics/Graphics.h"
 #include "Net/Net.h"
-#include "Physics/PhysicsObject.h"
-#include "Physics/PhysicsContext.h"
 #include "Scripting/Scripting.h"
 #include "Scripting/Compile.h"
 #include "Sound/Sound.h"
