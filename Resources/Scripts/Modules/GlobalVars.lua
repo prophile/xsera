@@ -78,10 +78,10 @@ cash = 1000
 buildTimerRunning = false
 shipToBuild = nil
 shipSelected = false
-shipQuerying = { n, p, r, c, t }
+-- shipQuerying = { n, p, r, c, t }
 shipBuilding = { n, p, r, c, t }
 soundLength = 0.25
-menuLevel = nil
+menuLevel = menuOptions
 --/tempvars
 
 arrowLength = ARROW_LENGTH

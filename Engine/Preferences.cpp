@@ -81,6 +81,7 @@ void Save ()
 		buffer.append(iter->first + ":" + iter->second + "\n");
 	}
 	ResourceManager::WriteFile("Config/Preferences.cfg", buffer.data(), buffer.length());
+	ResourceManager::WriteFile("Config/Preferences.cfg", buffer.data(), sizeof(buffer.data()));
 }
 
 }

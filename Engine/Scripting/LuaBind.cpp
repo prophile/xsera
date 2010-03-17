@@ -544,7 +544,8 @@ int Pref_Get ( lua_State* L )
 {
 	const char* arg = luaL_checkstring(L, 1);
 	std::string push = Preferences::Get(arg, "nil");
-//	lua_pushstring(L, push);
+	// [TODO, ADAM] Make this not hardcoded... I think we have to recognize what type "push" is and format it accordingly
+	//	lua_pushstring(L, push);
 	if (push == "true") // [HARDCODED]
 	{
 		lua_pushboolean(L, true);
@@ -555,6 +556,15 @@ int Pref_Get ( lua_State* L )
 	return 1;
 }
 
+int Pref_Set ( lua_State* L )
+{
+	const char* arg = luaL_checkstring(L, 1);
+	const char* set = luaL_checkstring(L, 2);
+	Preferences::Set(arg, set);
+	Preferences::Save();
+	return 0;
+}
+
 /**
  * @page lua_preferences The Lua Preferences Registry
  * This page contains information about the Lua preferences registry.
@@ -562,12 +572,12 @@ int Pref_Get ( lua_State* L )
  * This registry currently only contains one function, used for retrieving
  * preferences. In Lua, it is called called like so: "preferences.get(name)".
  * 
- * @section xml_get get
+ * @section pref_get get
  * Finds and returns a particular preference.\n
  * Parameters:\n
  * name - The name of the preference to be fetched.\n
  * Returns:\n
- * boolean - The status of the requested preference.
+ * boolean - The status of the requested preference. (currently, this is hardcoded)
  * 
  * @todo Make @ref xml_get un-hardcoded.
  */
@@ -575,6 +585,7 @@ int Pref_Get ( lua_State* L )
 luaL_Reg registryPreferences[] = 
 {
 	"get", Pref_Get,
+	"set", Pref_Set,
 	NULL, NULL
 };
 

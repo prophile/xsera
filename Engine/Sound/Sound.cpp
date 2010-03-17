@@ -72,7 +72,6 @@ void PreloadingThread ()
 
 const char* extensions[] =
 {
-	".s3m",
 	".ogg",
 	".xm",
 	".mod",

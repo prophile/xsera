@@ -4,10 +4,12 @@ import('GlobalVars')
 import('TextManip')
 
 selection = {
-	control = {};
-	target = {};
+	control = {},
+	target = {}
 }
+
 setmetatable(selection, weak)
+
 menuShift = 54
 topOfMenu = -87
 menuStride = -13
@@ -68,7 +70,7 @@ function Special()
 end
 
 menuMessages = { "MESSAGES",
-	{ "Next Page/Clear", true, DoMessageNext },
+	{ "Next Page/Clear", true, nil },
 	{ "Previous Page", false, nil },
 	{ "Last Message", false, nil }
 }
@@ -118,7 +120,7 @@ function DrawEscapeMenu()
 	elseif down.esc == "act" then
 		keyup = normal_keyup
 		key = normal_key
-		down.esc = false
+		down = { esc = false, rtrn = false, q = false, o = false, caps = false }
 		menu_display = nil
 	else
 		SwitchBox( { xCoord = -125, yCoord = 30, length = 250, text = "Resume", boxColour = ClutColour(12, 6), textColour = ClutColour(12, 6), execute = nil, letter = "ESC" } )
@@ -231,7 +233,7 @@ function DrawInfoMenu()
 	elseif down.esc == "act" then
 		keyup = normal_keyup
 		key = normal_key
-		down.esc = false
+		down = { esc = false, rtrn = false, q = false, o = false, caps = false }
 		menu_display = nil
 		return
 	else
@@ -239,7 +241,7 @@ function DrawInfoMenu()
 	end
 	local x = 245
 	local col_switch = true
-	while x - 15 >= -188 do
+	while x - 15 >= -203 do
 		if col_switch == false then
 			col_switch = true
 			graphics.draw_box(x, -257, x - 15, 277, 0, ClutColour(16, 11))
@@ -295,13 +297,16 @@ end
 local timeElapsed = 0
 
 function DrawPauseMenu(dt)
-	if down.o == true then
+	if down.caps == "act" then
 		menu_display = nil
+		keyup = normal_keyup
+		key = normal_key
+		down = { esc = false, rtrn = false, q = false, o = false, caps = false }
 		return
 	end
 	timeElapsed = timeElapsed + dt
-	if timeElapsed % 0.8 > 0.4 then
-		SwitchBox( { top = 20, left = -80, bottom = -20, right = 140, boxColour = ClutColour(5, 11), background = c_half_clear } )
+	if timeElapsed % 0.8 > 0.4 then -- cycles between displaying and not displaying every .4 seconds
+		SwitchBox( { top = 20, left = -90, bottom = -20, right = 150, boxColour = ClutColour(5, 11), background = c_half_clear } )
 		graphics.draw_text("> CAPS LOCK - PAUSED <", MAIN_FONT, "center", { x = 30, y = 0 }, 23, ClutColour(5, 11))
 	end
 end
@@ -336,7 +341,7 @@ menuLevel = menuOptions
 
 function DrawPanels()
 	updateWindow()
-	local cam = cameraToWindow()
+	local cam = CameraToWindow()
 --	printTable(cam)
 	graphics.set_camera(cam[1], cam[2], cam[3], cam[4])
 	
@@ -362,23 +367,23 @@ function DrawPanels()
 --	Shield (blue)
 	if scen.playerShip.status.health ~= nil then
 		graphics.draw_box(-219, panels.right.center.x - 11, -119, panels.right.center.x, 0, ClutColour(14, 8))
-		graphics.draw_box(scen.playerShip.status.health / scen.playerShip.status.healthMax * 100 - 219, panels.right.center.x - 11, -119, panels.right.center.x, 0, ClutColour(14, 6))
+		graphics.draw_box(scen.playerShip.status.health / scen.playerShip.status.healthMax * 100 - 219, panels.right.center.x - 11, -219, panels.right.center.x, 0, ClutColour(14, 6))
 	end
 --	Factory resources (green - mostly)
 	count = 1
-	shipQuerying = { c = 500 } -- HARDCODED for test
---	if shipSelected == true then
+--	shipQuerying = { c = 500 } -- HARDCODED for test
+	if shipQuerying ~= nil then
 		if cash >= shipQuerying.c then
 			local drawGreen = math.floor((cash - shipQuerying.c) / 200)
 			local drawBlue = math.ceil((shipQuerying.c) / 200) + drawGreen
 		--	print(count, "=>", drawGreen, "-[", ((cash - shipQuerying.c) / 200), "]-")
 			while count <= drawGreen do
-			graphics.draw_box(196 - 4 * count, panels.right.center.x + 9, 193 - 4 * count, panels.right.center.x + 12, 0, ClutColour(12, 3))
+				graphics.draw_box(196 - 4 * count, panels.right.center.x + 9, 193 - 4 * count, panels.right.center.x + 12, 0, ClutColour(12, 3))
 				count = count + 1
 			end
 		--	print(count, drawGreen, drawBlue)
 			while count <= drawBlue do
-			graphics.draw_box(196 - 4 * count, panels.right.center.x + 9, 193 - 4 * count, panels.right.center.x + 12, 0, ClutColour(14, 5))
+				graphics.draw_box(196 - 4 * count, panels.right.center.x + 9, 193 - 4 * count, panels.right.center.x + 12, 0, ClutColour(14, 5))
 				count = count + 1
 			end
 		--	print(count, drawBlue)
@@ -387,17 +392,17 @@ function DrawPanels()
 			local drawRed = math.ceil(shipQuerying.c / 200)
 		--	print(count, "=>", drawGreen, "-[", (cash / 200), "]-")
 			while count <= drawGreen do
-			graphics.draw_box(196 - 4 * count, panels.right.center.x + 9, 193 - 4 * count, panels.right.center.x + 12, 0, ClutColour(12, 3))
+				graphics.draw_box(196 - 4 * count, panels.right.center.x + 9, 193 - 4 * count, panels.right.center.x + 12, 0, ClutColour(12, 3))
 				count = count + 1
 			end
 		--	print(count, drawGreen, drawRed)
 			while count <= drawRed do
-			graphics.draw_box(196 - 4 * count, panels.right.center.x + 9, 193 - 4 * count, panels.right.center.x + 12, 0, ClutColour(2, 9))
+				graphics.draw_box(196 - 4 * count, panels.right.center.x + 9, 193 - 4 * count, panels.right.center.x + 12, 0, ClutColour(2, 9))
 				count = count + 1
 			end
 		--	print(count, drawRed)
 		end
---	end
+	end
 	while count <= 100 do
 		if count > resources then
 			graphics.draw_box(196 - 4 * count, panels.right.center.x + 9, 193 - 4 * count, panels.right.center.x + 12, 0, ClutColour(12, 14))
@@ -547,7 +552,7 @@ function change_menu(menu, direction)
 end
 
 function DrawDialogueBox(text)
-	local cam = cameraToWindow()
+	local cam = CameraToWindow()
 	local length = cam[3] * 2 - panels.left.width - panels.right.width - 20
 	local lines = textWrap(text, MAIN_FONT, 16, length)
 	
@@ -585,19 +590,19 @@ function DrawMouse1()
 	else
 		ship = scen.playerShip.physics.position
 		
-		realPos.x = (mousePos.x - ship.x + shipAdjust) * cameraRatio / 320 * cameraToWindow()[3]
-		realPos.y = (mousePos.y - ship.y) * cameraRatio / 240 * cameraToWindow()[4]
+		realPos.x = (mousePos.x - ship.x + shipAdjust) * cameraRatio / 320 * CameraToWindow()[3]
+		realPos.y = (mousePos.y - ship.y) * cameraRatio / 320 * CameraToWindow()[3]
 		
 		if realPos.x > panels.right.center.x - panels.right.width / 2 - 10 then
-			mousePos.x = (panels.right.center.x - panels.right.width / 2 - 10) / cameraToWindow()[3] * 320 / cameraRatio - shipAdjust + ship.x
+			mousePos.x = (panels.right.center.x - panels.right.width / 2 - 10) / CameraToWindow()[3] * 320 / cameraRatio - shipAdjust + ship.x
 		elseif realPos.x < panels.left.center.x + panels.left.width / 2 then
-			mousePos.x = (panels.right.center.x + panels.right.width / 2) / cameraToWindow()[3] * 320 / cameraRatio - shipAdjust + ship.x
+			mousePos.x = (panels.right.center.x + panels.right.width / 2) / CameraToWindow()[3] * 320 / cameraRatio - shipAdjust + ship.x
 		end
 		
 		if realPos.y > WINDOW.height / 2 - 10 then
-			mousePos.y = (WINDOW.height / 2 - 10) / cameraToWindow()[4] * 240 / cameraRatio + ship.y
+			mousePos.y = (WINDOW.height / 2 - 10) / CameraToWindow()[4] * 240 / cameraRatio + ship.y
 		elseif realPos.y < -WINDOW.height / 2 + 10 then
-			mousePos.y = (-WINDOW.height / 2 + 10) / cameraToWindow()[4] * 240 / cameraRatio + ship.y
+			mousePos.y = (-WINDOW.height / 2 + 10) / CameraToWindow()[4] * 240 / cameraRatio + ship.y
 		end
 		
 		graphics.draw_line({ x = - camera.w / 2 + ship.x, y = mousePos.y }, { x = mousePos.x - 20 / cameraRatio, y = mousePos.y }, 1.0, ClutColour(4, 8))
@@ -611,8 +616,6 @@ function DrawMouse2()
 	ship = scen.playerShip.physics.position
 	
 	if mode_manager.time() - mouseStart < 2.0 and realPos.x < panels.left.center.x + panels.left.width / 2 then
-		local cam = cameraToWindow()
-		graphics.set_camera(cam[1], cam[2], cam[3], cam[4])
 		graphics.draw_sprite("Misc/Cursor", realPos, graphics.sprite_dimensions("Misc/Cursor"), 0)
 	end
 end
