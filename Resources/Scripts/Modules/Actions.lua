@@ -150,7 +150,7 @@ and new.base.beam.kind ~= "kinetic" then
 	
 	if new.base.beam.kind == "bolt-relative"
 	or new.base.beam.kind == "static-relative" then
-		local len = math.min(new.base.beam.range, find_hypot(new.gfx.source.position, targ.position))
+		local len = math.min(new.base.beam.range, hypot2(new.gfx.source.position, targ.position))
 		local dir = NormalizeVec(targ.position - new.physics.position)
 		
 		new.gfx.relative = dir * len		
@@ -159,7 +159,7 @@ and new.base.beam.kind ~= "kinetic" then
 
 		new.gfx.target = targ
 		
-		local len =  math.min(new.base.beam.range,find_hypot(new.physics.position,new.gfx.target.position))
+		local len =  math.min(new.base.beam.range,hypot2(new.physics.position,new.gfx.target.position))
 		local dir = NormalizeVec(new.target.position - new.gfx.source.position)
 		
 		new.physics.position = dir * len

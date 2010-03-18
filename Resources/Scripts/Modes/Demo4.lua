@@ -161,7 +161,7 @@ function update()
 					or o.base.beam.kind == "static-to-object" then
 					local from = o.gfx.offset + o.gfx.source.position
 					local dir = NormalizeVec(o.gfx.target.position - o.gfx.source.position)
-					local len = math.min(o.base.beam.range,find_hypot(from,o.gfx.target.position))
+					local len = math.min(o.base.beam.range,hypot2(from,o.gfx.target.position))
 					
 					o.physics.position = dir * len
 				end
@@ -443,7 +443,7 @@ function mouse_up()
 
 	local mousePos = GetMouseCoords()
 	for i, o in pairs(scen.objects) do
-		if find_hypot(o.physics.position, mousePos) <= o.physics.collision_radius + mrad == true then
+		if hypot2(o.physics.position, mousePos) <= o.physics.collision_radius + mrad == true then
 			if keyboard[2][5].active == true then
 				print("TARGET SELECT")
 				selection.target = scen.objects[i]
@@ -530,7 +530,7 @@ v2 = Polar2Rect(1,angle+180) * dist * m2 / (m1 + m2)
 		}
 --]]
 
-		local dist = find_hypot(v1, v2)
+		local dist = hypot2(v1, v2)
 		local angle = find_angle(p.position,p2.position)
 		p.velocity = PolarVec(dist * m1 / (m1+m2), angle)
 		p2.velocity = PolarVec(dist * m2 / (m1+m2), angle+math.pi)

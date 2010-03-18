@@ -7,7 +7,7 @@ function Think(object)
 	local target = object.ai.objectives.target or object.ai.objectives.dest
 	local dist
 	if target ~= nil then
-		dist = find_hypot(object.physics.position, target.physics.position)
+		dist = hypot2(object.physics.position, target.physics.position)
 		if object.base.attributes["is-guided"] == true then
 			object.ai.mode = "goto"
 		elseif dist < 350

@@ -582,7 +582,7 @@ local realPos = { x, y }
 function DrawMouse1()
 	mousePos = GetMouseCoords()
 	
-	if FindDist(mousePos, oldMousePos) > 0 then
+	if hypot2(mousePos, oldMousePos) > 0 then
 		mouseStart = mode_manager.time()
 	end
 	if mode_manager.time() - mouseStart >= 2.0 then
