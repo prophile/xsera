@@ -95,6 +95,8 @@ function key ( k )
 			mode_manager.switch("Ares/Splash")
 		elseif k == "6" then
 			mode_manager.switch("../Tests/PreferenceTest")
+		elseif k == "7" then
+			mode_manager.switch("../Tests/PhysicsTest")
 		end
 	end
 	

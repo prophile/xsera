@@ -57,8 +57,6 @@
 		496A27AB0F0EC9D800C53BA1 /* Input.h in Headers */ = {isa = PBXBuildFile; fileRef = 496A24AB0F0EB37900C53BA1 /* Input.h */; };
 		496A27AC0F0EC9D800C53BA1 /* MessageDecode.h in Headers */ = {isa = PBXBuildFile; fileRef = 496A24AF0F0EB37900C53BA1 /* MessageDecode.h */; };
 		496A27AD0F0EC9D800C53BA1 /* Net.h in Headers */ = {isa = PBXBuildFile; fileRef = 496A24B00F0EB37900C53BA1 /* Net.h */; };
-		496A27AE0F0EC9D800C53BA1 /* PhysicsContext.h in Headers */ = {isa = PBXBuildFile; fileRef = 496A24B40F0EB37900C53BA1 /* PhysicsContext.h */; };
-		496A27AF0F0EC9D800C53BA1 /* PhysicsObject.h in Headers */ = {isa = PBXBuildFile; fileRef = 496A24B60F0EB37900C53BA1 /* PhysicsObject.h */; };
 		496A27B00F0EC9D800C53BA1 /* Compile.h in Headers */ = {isa = PBXBuildFile; fileRef = 496A24B90F0EB37900C53BA1 /* Compile.h */; };
 		496A27B10F0EC9D800C53BA1 /* Scripting.h in Headers */ = {isa = PBXBuildFile; fileRef = 496A24BC0F0EB37900C53BA1 /* Scripting.h */; };
 		496A27B20F0EC9D800C53BA1 /* Sound.h in Headers */ = {isa = PBXBuildFile; fileRef = 496A24BF0F0EB37900C53BA1 /* Sound.h */; };
@@ -119,8 +117,6 @@
 		496A27EA0F0EC9EE00C53BA1 /* Client.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 496A24AD0F0EB37900C53BA1 /* Client.cpp */; };
 		496A27EB0F0EC9EE00C53BA1 /* MessageDecode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 496A24AE0F0EB37900C53BA1 /* MessageDecode.cpp */; };
 		496A27EC0F0EC9EE00C53BA1 /* Server.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 496A24B10F0EB37900C53BA1 /* Server.cpp */; };
-		496A27ED0F0EC9EE00C53BA1 /* PhysicsContext.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 496A24B30F0EB37900C53BA1 /* PhysicsContext.cpp */; };
-		496A27EE0F0EC9EE00C53BA1 /* PhysicsObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 496A24B50F0EB37900C53BA1 /* PhysicsObject.cpp */; };
 		496A27EF0F0EC9EE00C53BA1 /* Compile.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 496A24B80F0EB37900C53BA1 /* Compile.cpp */; };
 		496A27F00F0EC9EE00C53BA1 /* LuaBind.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 496A24BA0F0EB37900C53BA1 /* LuaBind.cpp */; };
 		496A27F10F0EC9EE00C53BA1 /* Scripting.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 496A24BB0F0EB37900C53BA1 /* Scripting.cpp */; };
@@ -255,10 +251,6 @@
 		496A24AF0F0EB37900C53BA1 /* MessageDecode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageDecode.h; sourceTree = "<group>"; };
 		496A24B00F0EB37900C53BA1 /* Net.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Net.h; sourceTree = "<group>"; };
 		496A24B10F0EB37900C53BA1 /* Server.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Server.cpp; sourceTree = "<group>"; };
-		496A24B30F0EB37900C53BA1 /* PhysicsContext.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PhysicsContext.cpp; sourceTree = "<group>"; };
-		496A24B40F0EB37900C53BA1 /* PhysicsContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhysicsContext.h; sourceTree = "<group>"; };
-		496A24B50F0EB37900C53BA1 /* PhysicsObject.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PhysicsObject.cpp; sourceTree = "<group>"; };
-		496A24B60F0EB37900C53BA1 /* PhysicsObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhysicsObject.h; sourceTree = "<group>"; };
 		496A24B80F0EB37900C53BA1 /* Compile.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Compile.cpp; sourceTree = "<group>"; };
 		496A24B90F0EB37900C53BA1 /* Compile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Compile.h; sourceTree = "<group>"; };
 		496A24BA0F0EB37900C53BA1 /* LuaBind.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LuaBind.cpp; sourceTree = "<group>"; };
@@ -521,10 +513,6 @@
 		496A24B20F0EB37900C53BA1 /* Physics */ = {
 			isa = PBXGroup;
 			children = (
-				496A24B30F0EB37900C53BA1 /* PhysicsContext.cpp */,
-				496A24B40F0EB37900C53BA1 /* PhysicsContext.h */,
-				496A24B50F0EB37900C53BA1 /* PhysicsObject.cpp */,
-				496A24B60F0EB37900C53BA1 /* PhysicsObject.h */,
 			);
 			name = Physics;
 			path = ../Engine/Physics;
@@ -632,8 +620,6 @@
 				496A27AB0F0EC9D800C53BA1 /* Input.h in Headers */,
 				496A27AC0F0EC9D800C53BA1 /* MessageDecode.h in Headers */,
 				496A27AD0F0EC9D800C53BA1 /* Net.h in Headers */,
-				496A27AE0F0EC9D800C53BA1 /* PhysicsContext.h in Headers */,
-				496A27AF0F0EC9D800C53BA1 /* PhysicsObject.h in Headers */,
 				496A27B00F0EC9D800C53BA1 /* Compile.h in Headers */,
 				496A27B10F0EC9D800C53BA1 /* Scripting.h in Headers */,
 				496A27B20F0EC9D800C53BA1 /* Sound.h in Headers */,
@@ -750,8 +736,6 @@
 				496A27EA0F0EC9EE00C53BA1 /* Client.cpp in Sources */,
 				496A27EB0F0EC9EE00C53BA1 /* MessageDecode.cpp in Sources */,
 				496A27EC0F0EC9EE00C53BA1 /* Server.cpp in Sources */,
-				496A27ED0F0EC9EE00C53BA1 /* PhysicsContext.cpp in Sources */,
-				496A27EE0F0EC9EE00C53BA1 /* PhysicsObject.cpp in Sources */,
 				496A27EF0F0EC9EE00C53BA1 /* Compile.cpp in Sources */,
 				496A27F00F0EC9EE00C53BA1 /* LuaBind.cpp in Sources */,
 				496A27F10F0EC9EE00C53BA1 /* Scripting.cpp in Sources */,
