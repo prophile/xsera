@@ -1,19 +1,16 @@
 import('Math')
 
 Physics = {
-	system = { friction, gravity, gravityIsLoc, gravMass },
+	system = { gravity, gravityIsLoc, gravMass },
 	GRAVITY = 6.6742e-11,
 	
-	NewSystem = function(friction, gravity, gravityIsLoc, gravMass)
-		if friction == nil then
-			friction = vec(0, 0)
-		end
+	NewSystem = function(gravity, gravityIsLoc, gravMass)
 		if gravity == nil then
 			gravity = vec(0, 0)
 			gravityIsLoc = false
 		end
 		
-		system = { friction = friction, gravity = gravity, gravityIsLoc = gravityIsLoc, gravMass = gravMass }
+		system = { gravity = gravity, gravityIsLoc = gravityIsLoc, gravMass = gravMass }
 	end,
 	
 	UpdateSystem = function(dt, objects)
@@ -25,10 +22,10 @@ Physics = {
 					local distY = o.position.y - system.gravity.y
 					local hypot = hypot(distX, distY)
 					local grav = GRAVITY * (system.gravMass * o.mass) / (distX^2 + distY^2)
-					Physics.UpdateObject(o, dt, system.friction, { x = grav / hypot * distX, y = grav / hypot * distY } )
+					Physics.UpdateObject(o, dt, { x = grav / hypot * distX, y = grav / hypot * distY } )
 					-- the above line really needs to be tested
 				else
-					Physics.UpdateObject(o, dt, system.friction, system.gravity)
+					Physics.UpdateObject(o, dt, system.gravity)
 				end
 			end
 		end
@@ -50,10 +47,11 @@ Physics = {
 		obj.velocity = newVelocity
 	end,
 	
-	UpdateObject = function(obj, dt, friction, gravity)
-		obj.force = obj.force + (gravity * dt * dt) - friction
+	UpdateObject = function(obj, dt, gravity)
+		obj.force = obj.force + gravity * obj.mass
+		print(obj.force)
 		
-		obj.velocity = obj.velocity + (obj.force * dt)
+		obj.velocity = obj.velocity + (obj.force * dt) / obj.mass
 		obj.position = obj.position + (obj.velocity * dt)
 		
 		obj.angularVelocity = obj.angularVelocity + (obj.torque * dt)

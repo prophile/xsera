@@ -9,6 +9,8 @@ local objects = {}
 local dt = 0
 local st = 0
 local lastTime = 0
+local testSelected = false
+local testNum = 0
 
 function addMessage(msg)
 	messages[#messages + 1] = msg
@@ -35,9 +37,13 @@ function update()
 	
 	if #messages >= 7 and st > 0.1 then
 		st = st % 0.1
-		print(objects[1].velocity.x)
-		messages[1] = string.format("VELOCITY X: %.2f", objects[1].velocity.x)
-		messages[2] = string.format("VELOCITY Y: %.2f", objects[1].velocity.y)
+		if testNum == "1" then
+			messages[1] = string.format("VELOCITY X: %f", objects[1].velocity.x)
+			messages[2] = string.format("VELOCITY Y: %f", objects[1].velocity.y)
+		else
+			messages[1] = string.format("FORCE X: %.2f", objects[1].force.x)
+			messages[2] = string.format("FORCE Y: %.2f", objects[1].force.y)
+		end
 		messages[3] = string.format("POSITION X: %.2f", objects[1].position.x)
 		messages[4] = string.format("POSITION Y: %.2f", objects[1].position.y)
 	end
@@ -56,19 +62,50 @@ function render()
 end
 
 function key(k)
+	if not testSelected then
+		if k == "escape" then
+			mode_manager.switch("Xsera/MainMenu")
+		elseif k == "1" or k == "2" then
+			testSelected = true
+			testNum = k
+		end
+		return
+	end
+	
 	if k == "escape" then
 		mode_manager.switch("Xsera/MainMenu")
-	elseif k == "1" then
-		addMessage("Creating system without gravity / friction.")
+	elseif testNum == "1" then
+		test1(k)
+	elseif testNum == "2" then
+		test2(k)
+	end
+end
+
+function test1(k)
+	print(k)
+	if k == "1" then
+		addMessage("Creating system without gravity.")
 		Physics.NewSystem()
 	elseif k == "2" then
 		addMessage("Creating object of mass 1, velocity and position (0, 0).")
 		addObject(Physics.NewObject())
 	elseif k == "3" then
 		objects[1].velocity = objects[1].velocity + vec(0, .1)
-	--	addMessage("Velocity increased by (0, .1)")
 	elseif k == "4" then
 		objects[1].velocity = objects[1].velocity + vec(.1, 0)
-	--	addMessage("Velocity increased by (.1, 0)")
+	end
+end
+
+function test2(k)
+	if k == "1" then
+		addMessage("Creating system with Earth gravity straight down.")
+		Physics.NewSystem(vec(0, -9.8))
+	elseif k == "2" then
+		addMessage("Creating object of mass 10, velocity and position (0, 0).")
+		addObject(Physics.NewObject(vec(0, 0), vec(0, 0), 10))
+	elseif k == "3" then
+		objects[1].force = objects[1].force + vec(0, .1)
+	elseif k == "4" then
+		objects[1].force = objects[1].force + vec(.1, 0)
 	end
 end
