@@ -265,32 +265,31 @@ function update()
 ------------------]]-- it's a pair of lightsabers!
 		
 		warp = scen.playerShip.control.warp
-		warpSpeed = scen.playerShip.base["warp-speed"] * SPEED_FACTOR
+		local warpSpeed = scen.playerShip.base["warp-speed"] * SPEED_FACTOR
+		local maxSpeed = scen.playerShip.base["max-velocity"] * SPEED_FACTOR
 		
 		if scen.playerShip.control.warp ~= false and warp.stage ~= "notWarping" then
 			if warp.stage == "warping" then
-				scen.playerShip.physics.velocity = { x = scen.playerShip.base["warp-speed"] * SPEED_FACTOR * math.cos(scen.playerShip.physics.angle), y = scen.playerShip.base["warp-speed"] * SPEED_FACTOR * math.sin(scen.playerShip.physics.angle) }
+				scen.playerShip.physics.velocity = PolarVec(warpSpeed,scen.playerShip.physics.angle)
 			elseif warp.stage == "cooldown" then
 				slowDownTime = 2 -- [HARDCODED]
 				if (warp.time < slowDownTime) then
 					warp.time = warp.time + dt
-					scen.playerShip.physics.velocity = {
-						x = (scen.playerShip.base["max-velocity"] * SPEED_FACTOR + (scen.playerShip.base["warp-speed"] * SPEED_FACTOR - scen.playerShip.base["max-velocity"] * SPEED_FACTOR) * (slowDownTime - warp.time) / slowDownTime) * math.cos(scen.playerShip.physics.angle),
-						y = (scen.playerShip.base["max-velocity"] * SPEED_FACTOR + (scen.playerShip.base["warp-speed"] * SPEED_FACTOR - scen.playerShip.base["max-velocity"] * SPEED_FACTOR) * (slowDownTime - warp.time) / slowDownTime) * math.sin(scen.playerShip.physics.angle) }
+					local magnitude = maxSpeed + (warpSpeed - maxSpeed) * (slowDownTime - warp.time) / slowDownTime
+					scen.playerShip.physics.velocity = PolarVec(magnitude,scen.playerShip.physics.angle)
 				else
 					sound.play("WarpOut")
-					scen.playerShip.physics.velocity = { x = scen.playerShip.base["max-velocity"] * SPEED_FACTOR * normalize(scen.playerShip.physics.velocity.x, scen.playerShip.physics.velocity.y), y = scen.playerShip.base["max-velocity"] * SPEED_FACTOR * normalize(scen.playerShip.physics.velocity.y, scen.playerShip.physics.velocity.x) }
+					scen.playerShip.physics.velocity = NormalizeVec(scen.playerShip.physics.velocity) * maxSpeed
 					warp.stage = "notWarping"
 				end
 			end
-		elseif hypot(scen.playerShip.physics.velocity.x, scen.playerShip.physics.velocity.y) > scen.playerShip.base["max-velocity"] * SPEED_FACTOR then
-			scen.playerShip.physics.velocity = { x = scen.playerShip.base["max-velocity"] * SPEED_FACTOR * normalize(scen.playerShip.physics.velocity.x, scen.playerShip.physics.velocity.y), y = scen.playerShip.base["max-velocity"] * SPEED_FACTOR * normalize(scen.playerShip.physics.velocity.y, scen.playerShip.physics.velocity.x) }
+		elseif hypot1(scen.playerShip.physics.velocity) > maxSpeed then
+			scen.playerShip.physics.velocity = NormalizeVec(scen.playerShip.physics.velocity) * maxSpeed
 		end
-		
+
 		RemoveDead()
 		TestConditions(scen)
 		GenerateStatusLines(scen)
-	--	trackingTarget.position = GetMouseCoords()
 		
 		physics.update(dt)
 	end
