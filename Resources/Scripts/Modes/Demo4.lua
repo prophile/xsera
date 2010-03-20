@@ -9,15 +9,6 @@ import('PrintRecursive')
 import('KeyboardControl')
 import('PilotAI')
 import('Interfaces')
---[[
-trackingTarget = {
-	position = vec(0,0);
-	velocity = vec(0,0);
-	mass = 1.0;
-	collision_radius = 1.0;
-	angle = 0.0;
-	angular_velocity = 0.0;
-}]]
 
 mdown = false
 mrad = MOUSE_RADIUS / cameraRatio
@@ -31,18 +22,11 @@ function init()
 	physics.open(0.6)
 	start_time = mode_manager.time()
 	last_time = mode_manager.time()
-	
---	local tmp = physics.new_object(1.0)
---	physics.destroy_object(tmp)
-
---	trackingTarget.collision_radius = MOUSE_RADIUS
 
 	scen = LoadScenario(demoLevel)
 
 	selection.control = scen.playership
 	selection.target = nil
-
---	trackingTarget.position = GetMouseCoords()
 end
 
 function key( k )
@@ -104,7 +88,6 @@ function update()
 		arrowLength = ARROW_LENGTH / cameraRatio
 		arrowVar = ARROW_VAR / cameraRatio
 		arrowDist = ARROW_DIST / cameraRatio
---		trackingTarget.collision_radius = MOUSE_RADIUS / cameraRatio
 		mrad = MOUSE_RADIUS / cameraRatio
 		if (cameraRatio < 1 / 8 and cameraRatioOrig > 1 / 8) or (cameraRatio > 1 / 8 and cameraRatioOrig < 1 / 8) then
 			if soundJustPlayed == false then
@@ -117,29 +100,14 @@ function update()
 	local cols = physics.collisions()
 	
 	for idx, pair in pairs(cols) do
---		if pair[1] == 1 then
---[==[
-			if mdown == true then
-				if keyboard[2][5].active == true then
-					print("TARGET SELECT")
-					selection.target = scen.objects[pair[2] ]
-				else
-					print("CONTROL SELECT")
-					selection.control = scen.objects[pair[2] ]
-				end
-				mdown = false
-			end
---]==]
---		else
-			local a = scen.objects[pair[1]]
-			local b = scen.objects[pair[2]]
+		local a = scen.objects[pair[1]]
+		local b = scen.objects[pair[2]]
 
-			if a.base.attributes["can-collide"] == true
-			and b.base.attributes["can-collide"] == true
-			and a.ai.owner ~= b.ai.owner then
-				Collide(a,b)
-			end
---		end
+		if a.base.attributes["can-collide"] == true
+		and b.base.attributes["can-collide"] == true
+		and a.ai.owner ~= b.ai.owner then
+			Collide(a,b)
+		end
 	end
 	mdown = false
 
@@ -293,7 +261,6 @@ function update()
 	RemoveDead()
 	TestConditions(scen)
 	GenerateStatusLines(scen)
---	trackingTarget.position = GetMouseCoords()
 	physics.update(dt)
 end
 
