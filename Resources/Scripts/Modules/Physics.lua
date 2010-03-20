@@ -3,6 +3,7 @@ import('Math')
 Physics = {
 	system = { gravity, gravityIsLoc, gravMass },
 	GRAVITY = 6.6742e-11,
+	ID = 0,
 	
 	NewSystem = function(gravity, gravityIsLoc, gravMass)
 		if gravity == nil then
@@ -22,21 +23,32 @@ Physics = {
 					local distY = o.position.y - system.gravity.y
 					local hypot = hypot(distX, distY)
 					local grav = GRAVITY * (system.gravMass * o.mass) / (distX^2 + distY^2)
-					Physics.UpdateObject(o, dt, { x = grav / hypot * distX, y = grav / hypot * distY } )
+					Physics.UpdateObject(o.physics, dt, { x = grav / hypot * distX, y = grav / hypot * distY } )
 					-- the above line really needs to be tested
 				else
-					Physics.UpdateObject(o, dt, system.gravity)
+					Physics.UpdateObject(o.physics, dt, system.gravity)
 				end
 			end
 		end
 	end,
 	
-	NewObject = function(vel, pos, mass)
-		return { velocity = vel or vec(0, 0), angle = 0, angularVelocity = 0, torque = 0, mass = mass or 1, position = pos or vec(0, 0), force = vec(0, 0) }
+	NewObject = function(mass, vel, pos)
+		Physics.ID = Physics.ID + 1
+		return { velocity = vel or vec(0, 0), angle = 0, angularVelocity = 0, torque = 0, mass = mass or 1, position = pos or vec(0, 0), force = vec(0, 0), object_id = Physics.ID }
 	end,
 	
 	ApplyImpulse = function(obj, impulse)
-		obj.velocity = obj.velocity + (impulse / obj.mass)
+		if obj.mass == nil then
+			if obj.object_id == nil then
+				print("ERROR: NON-STANDARD OBJECT BEING PASSED!")
+				printTable(obj, "obj")
+				print(debug.traceback())
+				os.exit()
+			end
+			print("WARNING: OBJECT (ID: " .. obj.object_id .. ") DOES NOT HAVE MASS!")
+		else
+			obj.velocity = obj.velocity + (impulse / obj.mass)
+		end
 	end,
 	
 	ApplyAngularImpulse = function(obj, impulse)
@@ -49,7 +61,6 @@ Physics = {
 	
 	UpdateObject = function(obj, dt, gravity)
 		obj.force = obj.force + gravity * obj.mass
-		print(obj.force)
 		
 		obj.velocity = obj.velocity + (obj.force * dt) / obj.mass
 		obj.position = obj.position + (obj.velocity * dt)

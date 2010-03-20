@@ -29,7 +29,7 @@ function LoadScenario(id)
 			--Convert from 0 based indexes to 1 based indexes
 			new.ai.objectives.dest = scen.objects[state["initial-destination"]+1]
 		end
-
+		
 		scen.objects[new.physics.object_id] = new
 	end
 

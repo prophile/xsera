@@ -45,7 +45,7 @@ demoLevel = 25
 shipSeek = false
 
 --mouse variables
-oldMousePos = { x = 0, y = 0 }
+oldMousePos = vec(0, 0)
 mouseStart = 0
 --/mouse variables
 

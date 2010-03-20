@@ -21,7 +21,7 @@ scenLevels = { { title = "DEMO 4", subtitle = "The Second Technical Demo", desc 
 			{ title = "CHAPTER 6", subtitle = "...Into the Fire", desc = "Capture the planet Hades Beta while destroying as many Gaitori power stations as possible and saving as many of the Obish stations as you can.", unlocked = true } }
 
 -- scenBriefing is hardcoded to work only with Demo3, in the future it will load whatever scenario data that I need
-scenBriefing = { planet = { x = 0, y = 0 },
+scenBriefing = { planet = vec(0, 0),
 	screen = { { { sprite = "Ships/Ishiman/HeavyCruiser", x = 0, y = 0, size = 0.2 },
 				{ sprite = "Planets/Saturny", x = 2500, y = 2500, size = 0.3 },
 				{ sprite = "Planets/AnotherEarth", x = 100, y = 100, size = 0.3 },

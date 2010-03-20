@@ -43,7 +43,7 @@ end
 --------------------------]]--
 
 mouse_movement = false
-mousePos = { x = 0, y = 0 }
+mousePos = vec(0, 0)
 mouseStart = 0
 cameraRatioOrig = nil
 cameraRatioT = cameraRatio
@@ -253,7 +253,7 @@ function update ()
         local force = playerShip.physicsObject.velocity
 		if force.x ~= 0 or force.y ~= 0 then
 			if hypot(playerShip.physicsObject.velocity.x, playerShip.physicsObject.velocity.y) <= 10 then
-				playerShip.physicsObject.velocity = { x = 0, y = 0 }
+				playerShip.physicsObject.velocity = vec(0, 0)
 			else
 				local velocityMag = hypot(force.x, force.y)
 				force.x = -force.x / velocityMag
@@ -261,7 +261,7 @@ function update ()
 				force.x = force.x * playerShip.reverseThrust
 				force.y = force.y * playerShip.reverseThrust
 				if hypot1(force) > hypot1(playerShip.physicsObject.velocity) then
-					playerShip.physicsObject.velocity = { x = 0, y = 0 }
+					playerShip.physicsObject.velocity = vec(0, 0)
 				else
 					playerShip.physicsObject:apply_force(force)
 				end

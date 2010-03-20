@@ -56,7 +56,7 @@ function render ()
     graphics.begin_frame()
     
 	graphics.set_camera(-240 * aspectRatio, -240, 240 * aspectRatio, 240)
-    graphics.draw_image("Bootloader/Xsera", { x = 0, y = 0 }, { x = 480 * aspectRatio, y = 480 })
+    graphics.draw_image("Bootloader/Xsera", vec(0, 0), { x = 480 * aspectRatio, y = 480 })
     for id, ship in ipairs(ships) do
         local sz = graphics.sprite_dimensions("Ships/" .. ship[3], goodSpriteSheetX, goodSpriteSheetY)
         graphics.draw_sprite("Ships/" .. ship[3], { x = ship[1], y = ship[2] }, { x = sz.x * sizeFactor * DistanceFactor(ship[4]), y = sz.y * sizeFactor * DistanceFactor(ship[4])}, math.atan2(shipVelocity[2], shipVelocity[1]))

@@ -9,7 +9,7 @@ function key ( k )
 		local o = NewObject(0)
 		printTable(o)
 	elseif k == "p" then
-		graphics.add_particles("Sparks", 20, { x = 0, y = 0 }, { x = 0, y = 0 }, { x = 2, y = 2 }, 0, 0.6, 3, 1)
+		graphics.add_particles("Sparks", 20, vec(0, 0), vec(0, 0), { x = 2, y = 2 }, 0, 0.6, 3, 1)
 	end
 end
 

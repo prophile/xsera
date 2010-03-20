@@ -27,7 +27,7 @@ function NewObject(id)
 				dest = nil;
 			};
 		};
-		physics = physics.new_object(base.mass or 1.0);
+		physics = Physics.NewObject(base.mass or 1.0);
 		gfx = {};
 		status = {
 			health = base.health;

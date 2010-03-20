@@ -11,6 +11,7 @@ import('PilotAI')
 import('Interfaces')
 import('PopDownConsole')
 import('Camera')
+import('Physics')
 
 --[[
 trackingTarget = {
@@ -27,7 +28,7 @@ mrad = MOUSE_RADIUS / cameraRatio
 aimMethod = "smart"
 
 function init()
-	physics.open(0.6)
+	Physics.NewSystem()
 	start_time = mode_manager.time()
 	last_time = mode_manager.time()
 	
@@ -116,7 +117,8 @@ function update()
 			end
 		end
 
-		local cols = physics.collisions()
+--[[
+		local cols = physics.collisions() -- [QUADTREE]
 		
 		for idx, pair in pairs(cols) do
 --			if pair[1] == 1 then
@@ -133,8 +135,8 @@ function update()
 				end
 --]==]
 --			else
-				local a = scen.objects[pair[1]]
-				local b = scen.objects[pair[2]]
+				local a = scen.objects[ pair[1] ]
+				local b = scen.objects[ pair[2] ]
 
 				if a.base.attributes["can-collide"] == true
 				and b.base.attributes["can-collide"] == true
@@ -143,7 +145,7 @@ function update()
 				end
 --			end
 		end
-		mdown = false
+		mdown = false]]
 
 		for i, o in pairs(scen.objects) do
 			if o.type == "beam" then
@@ -265,27 +267,27 @@ function update()
 					--Multiply by 60 because the thrust value in the data is given per FRAME not per second.
 
 					local thrust = o.base["max-thrust"] * TIME_FACTOR * SPEED_FACTOR
-					local force = { x = thrust * math.cos(angle), y = thrust * math.sin(angle) }
-					o.physics:apply_force(force)
+					local force = vec(thrust * math.cos(angle), thrust * math.sin(angle))
+					Physics.ApplyImpulse(o.physics, force)
 				end
 				
 				if o.control.decel == true
-				or hypot1(o.physics.velocity) >= o.base["max-velocity"] * SPEED_FACTOR then
+					or hypot1(o.physics.velocity) >= o.base["max-velocity"] * SPEED_FACTOR then
 				
 					-- apply a reverse force in the direction opposite the direction the ship is MOVING
 					local thrust = o.base["max-thrust"] * TIME_FACTOR * SPEED_FACTOR
 					local force = o.physics.velocity
 					if force.x ~= 0 or force.y ~= 0 then
 						if hypot1(o.physics.velocity) <= 10 then
-							o.physics.velocity = { x = 0, y = 0 }
+							o.physics.velocity = vec(0, 0)
 						else
 							local velocityMag = hypot1(force)
 							force = -force * thrust / velocityMag
-
+							
 							if dt * hypot1(force) / o.physics.mass > velocityMag then
-								o.physics.velocity = { x = 0, y = 0 }
+								o.physics.velocity = vec(0, 0)
 							else
-								o.physics:apply_force(force)
+								Physics.ApplyImpulse(o.physics, force)
 							end
 						end
 					end
@@ -325,7 +327,7 @@ function update()
 		GenerateStatusLines(scen)
 	--	trackingTarget.position = GetMouseCoords()
 		
-		physics.update(dt)
+		Physics.UpdateSystem(dt, scen.objects)
 	end
 end
 
@@ -456,7 +458,7 @@ function mouse_up()
 end
 
 function shutdown()
-	physics.close()
+--	physics.close() -- what would I do in a closing physics function? [ADAM] [CLEANUP]
 end
 
 function RemoveDead()

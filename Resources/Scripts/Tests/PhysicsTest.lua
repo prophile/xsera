@@ -11,6 +11,7 @@ local st = 0
 local lastTime = 0
 local testSelected = false
 local testNum = 0
+local forceToApply = vec(0, 0)
 
 function addMessage(msg)
 	messages[#messages + 1] = msg
@@ -41,6 +42,7 @@ function update()
 			messages[1] = string.format("VELOCITY X: %f", objects[1].velocity.x)
 			messages[2] = string.format("VELOCITY Y: %f", objects[1].velocity.y)
 		else
+			objects[1].force = objects[1].force + forceToApply
 			messages[1] = string.format("FORCE X: %.2f", objects[1].force.x)
 			messages[2] = string.format("FORCE Y: %.2f", objects[1].force.y)
 		end
@@ -102,10 +104,11 @@ function test2(k)
 		Physics.NewSystem(vec(0, -9.8))
 	elseif k == "2" then
 		addMessage("Creating object of mass 10, velocity and position (0, 0).")
-		addObject(Physics.NewObject(vec(0, 0), vec(0, 0), 10))
+		addObject(Physics.NewObject(10, vec(0, 0), vec(0, 0)))
 	elseif k == "3" then
-		objects[1].force = objects[1].force + vec(0, .1)
+		forceToApply = forceToApply + vec(0, .1)
 	elseif k == "4" then
+		forceToApply = forceToApply + vec(.1, 0)
 		objects[1].force = objects[1].force + vec(.1, 0)
 	end
 end
