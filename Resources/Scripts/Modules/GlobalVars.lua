@@ -1,6 +1,7 @@
 import('Math')
 import('AresCLUT')
 import('data')
+import('Camera')
 
 --constants
 
@@ -11,7 +12,8 @@ MAX_COUNTERS = 3 --per player
 SPEED_FACTOR = 64.0
 TIME_FACTOR = 60.0
 BEAM_LENGTH = 48
-MAIN_FONT = "CrystalClear"
+MAIN_FONT = "prototype"
+TITLE_FONT = "sneakout"
 --[SCOTT] Recharge rates need tuning
 BASE_RECHARGE_RATE = 4.0
 ENERGY_RECHARGE_RATIO = 11.0
@@ -52,7 +54,7 @@ cameraRatio = 1
 cameraRatioTarget = 1
 --cameraRatios = { 2, 1, 1/2, 1/4, 1/8, 1/16, "hostile", "object", "all" }
 --cameraRatioNum = 2
-aspectRatio = 4 / 3
+aspectRatio = WINDOW.width / WINDOW.height
 camera = { w = 640 / cameraRatio, h }
 camera.h = camera.w / aspectRatio
 shipAdjust = .045 * camera.w
@@ -76,10 +78,10 @@ cash = 1000
 buildTimerRunning = false
 shipToBuild = nil
 shipSelected = false
-shipQuerying = { n, p, r, c, t }
+-- shipQuerying = { n, p, r, c, t }
 shipBuilding = { n, p, r, c, t }
 soundLength = 0.25
-menuLevel = nil
+menuLevel = menuOptions
 --/tempvars
 
 arrowLength = ARROW_LENGTH

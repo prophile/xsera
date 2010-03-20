@@ -81,10 +81,10 @@ end
 
 function render()
 	graphics.begin_frame()
-	graphics.draw_text("ESC to go to main screen", "CrystalClear", "center", { x = 40, y = 0 }, 40)
+	graphics.draw_text("ESC to go to main screen", MAIN_FONT, "center", { x = 40, y = 0 }, 40)
 	if message ~= nil then
 		for i = 1, #message do
-			graphics.draw_text(message[i], "CrystalClear", "center", { x = 0, y = -40 * i }, 30)
+			graphics.draw_text(message[i], MAIN_FONT, "center", { x = 0, y = -40 * i }, 30)
 		end
 	end
 	graphics.end_frame()

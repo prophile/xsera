@@ -1,3 +1,5 @@
+import('GlobalVars')
+
 creditsRolling = true
 totalTime = 0.0
 initialDist = -200
@@ -6,11 +8,8 @@ speed = 33
 
 simpleCreditSizeBase = 20
 simpleCreditSizeScale = 8
-simpleCreditFont = "prototype"
 titleCreditSizeBase = 20
 titleCreditSizeScale = 6
-titleCreditFont = "sneakout"
-MAIN_FONT = "sneakout"
 
 credits = {}
 creditSizes = {}
@@ -30,12 +29,12 @@ function init ()
 		credits[i] = line
 		if #sizeString > 0 then
 			creditSizes[i] = titleCreditSizeBase + (titleCreditSizeScale * #sizeString)
-			creditFonts[i] = titleCreditFont
+			creditFonts[i] = TITLE_FONT
 			rowDist[i] = lastDist
 			lastDist = lastDist - separationDist - creditSizes[i]
 		else
 			creditSizes[i] = simpleCreditSizeBase + (titleCreditSizeScale * #sizeString)
-			creditFonts[i] = simpleCreditFont
+			creditFonts[i] = MAIN_FONT
 			rowDist[i] = lastDist
 			lastDist = lastDist - separationDist - creditSizes[i]
 		end

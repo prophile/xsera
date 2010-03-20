@@ -177,6 +177,16 @@ void WriteFile ( const std::string& name, const void* data, size_t len )
 {
 	std::string path = userDirectoryPath + '/' + name;
 	CreateDirectoryWithIntermediates(path.substr(0, path.find_last_of('/')));
+	if (!FileExists(path))
+	{
+		LOG("ResourceManager", LOG_NOTICE, "This file does not exist: %s", path.c_str());
+		LOG("ResourceManager", LOG_NOTICE, "Creating file...");
+		if (WriteFile(name) == NULL)
+		{
+			LOG("ResourceManager", LOG_ERROR, "Unable to create file\n");
+			exit(1);
+		}
+	}
 	FILE* fp = fopen(path.c_str(), "rb");
 	assert(fp);
 	fwrite(data, 1, len, fp);

@@ -1,11 +1,13 @@
---import('GlobalVars')
---import('Interfaces')
+import('GlobalVars')
+import('Interfaces')
 
 --[[-----------------------
 	--{{---------------
 		Key In Menu
 	---------------}}--
 -----------------------]]--
+
+down = { esc = false, rtrn = false, q = false, o = false, caps = false }
 
 function escape_keyup(k)
     if k == "escape" then
@@ -16,6 +18,8 @@ function escape_keyup(k)
         down.rtrn = "act"
     elseif k == "q" then
         down.q = "act"
+	elseif k == "Mcaps" then
+		down.caps = "act"
 	end
 end
 
@@ -98,26 +102,35 @@ function StopRightTurn()
 end
 
 function DoWarp()
-	scen.playerShip.control.warp = true
---[[
-	if scen.playerShip.warp.stage == "notWarping" then
-		scen.playerShip.warp.time = 0.0
-		scen.playerShip.warp.stage = "spooling"
+	if scen.playerShip.base["warp-speed"] ~= nil then
+		local warp = scen.playerShip.control.warp -- to save my keyboard
+		if warp.stage == "notWarping" then
+			warp.time = mode_manager.time()
+			warp.stage = "spooling"
+		elseif warp.stage == "spooling" and mode_manager.time() - warp.time > .2 then
+			warp.time = mode_manager.time()
+			warp.lastPlayed = warp.lastPlayed + 1
+			if warp.lastPlayed == 5 then
+				warp.stage = "warping"
+				sound.play("WarpIn")
+			else
+				sound.play("Warp" .. warp.lastPlayed)
+			end
+		end
 	end
---]]
 end
 
 function StopWarp()
-	scen.playerShip.control.warp = false
---[[
-	if scen.playerShip.warp.stage == "warping" then
-		scen.playerShip.warp.stage = "cooldown"
-	else
-		scen.playerShip.warp.stage = "notWarping"
+	if scen.playerShip.base["warp-speed"] ~= nil then
+		local warp = scen.playerShip.control.warp -- to save my keyboard
+		if warp.stage == "warping" then
+			warp.stage = "cooldown"
+		else
+			warp.stage = "notWarping"
+		end
+		warp.time = 0
+		warp.lastPlayed = 0
 	end
-	scen.playerShip.warp.time = 0.0
-	scen.playerShip.warp.lastPlayed = 0
---]]
 end
 
 	--[[-----------
@@ -368,6 +381,20 @@ function DoExpertNet()
 	LogError("The command does not have any code. /placeholder", 9)
 end
 
+function DoEscapeMenu()
+	menu_display = "esc_menu"
+	keyup = escape_keyup
+	key = escape_key
+	keyboard[4][8].active = false
+end
+
+function DoPause()
+	menu_display = "pause_menu"
+	keyup = escape_keyup
+	key = escape_key
+	keyboard[4][9].active = false
+end
+
 	--[[-----------
 		HotKeys
 	-----------]]--
@@ -456,7 +483,9 @@ keyboard = { { "Ship",
 				{ key = "F3", name = "Raise Volume", action = DoRaiseVolume, active = false }, 
 				{ key = "F4", name = "Mute Music", action = DoMuteMusic, active = false }, 
 				{ key = "F5", name = "Expert Net Settings", action = DoExpertNet, active = false }, 
-				{ key = "F6", name = "Fast Motion", active = false } }, 
+				{ key = "F6", name = "Fast Motion", active = false }, 
+				{ key = "escape", name = "Escape Menu", action = DoEscapeMenu, active = false }, 
+				{ key = "Mcaps", name = "Pause", action = DoPause, active = false } }, 
 			{ "HotKeys",
 				{ key = "1", name = "HotKey 1", action = DoHotkey1, active = false }, 
 				{ key = "2", name = "HotKey 2", action = DoHotkey2, active = false }, 
@@ -476,72 +505,54 @@ keyboard = { { "Ship",
 ---------------------------------]]--
 
 function ReassignKey(name, key)
-	local i = 1
-	while keyboard[i] ~= nil do
-		local j = 2
-		while keyboard[i][j] ~= nil do
+	for i = 1, #keyboard do
+		for j = 2, #keyboard[i] do
 			if keyboard[i][j].key == key then
 				keyboard[i][j].key = nil
 			end
 			if keyboard[i][j].menu == menu then
 				keyboard[i][j].key = key
 			end
-			j = j + 1
 		end
-		i = i + 1
 	end
 end
 
 function KeyIsUnassigned()
-	local i = 1
-	while keyboard[i] ~= nil do
-		local j = 2
-		while keyboard[i][j] ~= nil do
+	for i = 1, #keyboard do
+		for j = 2, #keyboard[i] do
 			if keyboard[i][j].key == nil then
-				return true, keyboard[i][j].menu
+				return true, keyboard[i][j].name
 			end
-			j = j + 1
 		end
-		i = i + 1
 	end
 	return false
 end
 
 function KeyActivate(key)
-	local i = 1
-	while keyboard[i] ~= nil do
-		local j = 2
-		while keyboard[i][j] ~= nil do
+	for i = 1, #keyboard do
+		for j = 2, #keyboard[i] do
 			if keyboard[i][j].key == key then
 				keyboard[i][j].active = true
 				return
 			end
-			j = j + 1
 		end
-		i = i + 1
 	end
 end
 
 function ActionActivate(name)
-	local i = 1
-	while keyboard[i] ~= nil do
-		local j = 2
-		while keyboard[i][j] ~= nil do
+	for i = 1, #keyboard do
+		for j = 2, #keyboard[i] do
 			if keyboard[i][j].name == name then
 				keyboard[i][j].active = true
 				return
 			end
-			j = j + 1
 		end
-		i = i + 1
 	end
 end
 
 function KeyDeactivate(key)
-	local i = 1
-	while keyboard[i] ~= nil do
-		local j = 2
-		while keyboard[i][j] ~= nil do
+	for i = 1, #keyboard do
+		for j = 2, #keyboard[i] do
 			if keyboard[i][j].key == key then
 				keyboard[i][j].active = false
 				if keyboard[i][j].deaction ~= nil then
@@ -549,17 +560,13 @@ function KeyDeactivate(key)
 				end
 				return
 			end
-			j = j + 1
 		end
-		i = i + 1
 	end
 end
 
 function ActionDeactivate(name)
-	local i = 1
-	while keyboard[i] ~= nil do
-		local j = 2
-		while keyboard[i][j] ~= nil do
+	for i = 1, #keyboard do
+		for j = 2, #keyboard[i] do
 			if keyboard[i][j].name == name then
 				keyboard[i][j].active = false
 				if keyboard[i][j].deaction ~= nil then
@@ -567,24 +574,62 @@ function ActionDeactivate(name)
 				end
 				return
 			end
-			j = j + 1
 		end
-		i = i + 1
 	end
 end
 
 function KeyDoActivated()
-	local i = 1
-	while keyboard[i] ~= nil do
-		local j = 2
-		while keyboard[i][j] ~= nil do
+	for i = 1, #keyboard do
+		for j = 2, #keyboard[i] do
 			if keyboard[i][j].active == true then
 				if keyboard[i][j].action ~= nil then
 					keyboard[i][j].action()
 				end
 			end
-			j = j + 1
 		end
-		i = i + 1
+	end
+end
+
+--[[[
+	- @function KeyToName
+	- Given a key `key`, will attempt to find the name of the corresponding
+	- action taken when that key is pressed. If the name associated with `key`
+	- is not found, nothing is returned.
+	- @param key
+		The key value to be searched for
+	- @return name
+		If such a key is bound (it triggers an event when pressed), then the
+		name of that action is returned.
+--]]
+
+function KeyToName(key)
+	for i = 1, #keyboard do
+		for j = 2, #keyboard[i] do
+			if keyboard[i][j].key == key then
+				return keyboard[i][j].name
+			end
+		end
+	end
+end
+
+--[[[
+	- @function NameToKey
+	- Given a name `name`, will attempt to find the name of the key that will
+		trigger it. If the key associated with `name` is not found, nothing is
+		returned.
+	- @param key
+		The key value to be searched for
+	- @return name
+		If such a key is bound (it triggers an event when pressed), then the
+		name of that action is returned.
+--]]
+
+function NameToKey(name)
+	for i = 1, #keyboard do
+		for j = 2, #keyboard[i] do
+			if keyboard[i][j].name == name then
+				return keyboard[i][j].key
+			end
+		end
 	end
 end

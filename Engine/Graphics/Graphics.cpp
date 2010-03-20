@@ -27,6 +27,13 @@
 #define DEG2RAD(x) ((x / 180.0f) * M_PI)
 #define RAD2DEG(x) ((x / M_PI) * 180.0f)
 
+static GLuint warpFBO = 0;
+static GLuint warpTex = 0;
+static float warpMag = 0.0f;
+static float warpAngle = 0.0f;
+static float warpScale = 0.0f;
+static const float WARP_MAG_THRESHOLD = 0.001f;
+
 const static float circlePoints[] = {
    0.000, 1.000,
    0.098, 0.995,
@@ -224,7 +231,7 @@ void Init ( int w, int h, bool fullscreen )
 	glEnable ( GL_BLEND );
 	glBlendFunc ( GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA );
 	
-	glEnable ( GL_LINE_SMOOTH );
+//	glEnable ( GL_LINE_SMOOTH );
 	glEnable ( GL_POINT_SMOOTH );
 	
 	glHint ( GL_LINE_SMOOTH_HINT, GL_NICEST );
@@ -239,6 +246,27 @@ void Init ( int w, int h, bool fullscreen )
 	const char* renderer = (const char*)glGetString(GL_RENDERER);
 	haveFBO = strstr(extensions, "GL_EXT_framebuffer_object");
 	noWarpFX = strstr(renderer, "Intel");
+}
+
+unsigned ToInt ( const std::string& value )
+{
+	return atoi(value.c_str());
+}
+
+bool ToBool ( const std::string& value )
+{
+	return value == "true";
+}
+
+void Reset ()
+{
+//	SDL_SetVideoMode(ToInt(Preferences::Get("Screen/Width")), ToInt(Preferences::Get("Screen/Height")), 0, SDL_ResizeEvent);
+
+//	these two lines work:
+//	glDeleteFramebuffersEXT(1, &warpFBO);
+//	warpFBO = 0;
+	
+//	SetProjectionMatrix( matrix2x3::Ortho(left, right, bottom, top) ); // what are left, right, bottom, top?
 }
 
 static bool texturingEnabled = false;
@@ -820,13 +848,6 @@ void EndFrame ()
 #endif
 	TextRenderer::Prune();
 }
-
-static GLuint warpFBO = 0;
-static GLuint warpTex = 0;
-static float warpMag = 0.0f;
-static float warpAngle = 0.0f;
-static float warpScale = 0.0f;
-static const float WARP_MAG_THRESHOLD = 0.001f;
 
 void BeginWarp ( float magnitude, float angle, float scale )
 {

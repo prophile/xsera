@@ -20,8 +20,7 @@ local execs = {	{ xCoord = SPLASH_SHIFT_LEFT, yCoord = TOP_OF_SPLASH, length = S
 function init()
 	sound.stop_music()
 	local num = 1
-	graphics.set_camera(-320, -240, 320, 240)
---	graphics.set_camera(-480, -360, 480, 360)
+	graphics.set_camera(-240 * aspectRatio, -240, 240 * aspectRatio, 240)
 end
 
 function update()
@@ -38,6 +37,7 @@ function render()
 		SwitchBox(execs[num])
 		num = num + 1
 	end
+	
 	-- Error Printing
 	if errNotice ~= nil then
 		graphics.draw_text(errNotice.text, MAIN_FONT, "left", { x = -315, y = 225 }, 28)

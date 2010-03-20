@@ -55,20 +55,19 @@ end
 function render ()
     graphics.begin_frame()
     
-	graphics.set_camera(-500, -240, 500, 240)
-    graphics.draw_image("Bootloader/Xsera", { x = 0, y = 0 }, { x = 1000, y = 480 })
+	graphics.set_camera(-240 * aspectRatio, -240, 240 * aspectRatio, 240)
+    graphics.draw_image("Bootloader/Xsera", { x = 0, y = 0 }, { x = 480 * aspectRatio, y = 480 })
     for id, ship in ipairs(ships) do
         local sz = graphics.sprite_dimensions("Ships/" .. ship[3], goodSpriteSheetX, goodSpriteSheetY)
         graphics.draw_sprite("Ships/" .. ship[3], { x = ship[1], y = ship[2] }, { x = sz.x * sizeFactor * DistanceFactor(ship[4]), y = sz.y * sizeFactor * DistanceFactor(ship[4])}, math.atan2(shipVelocity[2], shipVelocity[1]))
     end
     
-    graphics.draw_text("D - Demo", MAIN_FONT, "left", { x = -450, y = 0 }, 60)
-    graphics.draw_text("T - Test", MAIN_FONT, "left", { x = -450, y = -50 }, 60)
-    graphics.draw_text("C - Credits", MAIN_FONT, "left", { x = -450, y = -100 }, 60)
+    graphics.draw_text("D - Demo", MAIN_FONT, "left", { x = -240 * aspectRatio + 30, y = 0 }, 45)
+    graphics.draw_text("C - Credits", MAIN_FONT, "left", { x = -240 * aspectRatio + 30, y = -50 }, 45)
     
-    graphics.draw_text(versionInformation, MAIN_FONT, "left", { x = -450, y = -220 }, 28)
+    graphics.draw_text(versionInformation, MAIN_FONT, "left", { x = -240 * aspectRatio + 10, y = -220 }, 20)
 	
-	graphics.draw_text("Level selected: " .. demoLevel .. " (" .. gameData["Scenarios"][demoLevel].name ..")", MAIN_FONT, "right", { x = 450, y = 220 }, 60)
+	graphics.draw_text("Level selected: " .. demoLevel .. " (" .. gameData["Scenarios"][demoLevel].name ..")", MAIN_FONT, "right", { x = 240 * aspectRatio - 10, y = 220 }, 30)
     graphics.end_frame()
 end
 
@@ -94,6 +93,8 @@ function key ( k )
 			mode_manager.switch("../Tests/TextTests")
 		elseif k == "5" then
 			mode_manager.switch("Ares/Splash")
+		elseif k == "6" then
+			mode_manager.switch("../Tests/PreferenceTest")
 		end
 	end
 	
@@ -159,7 +160,7 @@ function init ()
     lastTime = mode_manager.time()
 	print(sound.current_music())
 	if sound.current_music() ~= "Doomtroopers" then
-		sound.play_music("Doomtroopers")
+		sound.play_music("FRED")
 	end
 end
 
