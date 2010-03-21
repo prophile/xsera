@@ -13,16 +13,6 @@ import('PopDownConsole')
 import('Camera')
 import('Physics')
 
---[[
-trackingTarget = {
-	position = vec(0,0);
-	velocity = vec(0,0);
-	mass = 1.0;
-	collision_radius = 1.0;
-	angle = 0.0;
-	angularVelocity = 0.0;
-}]]
-
 mdown = false
 mrad = MOUSE_RADIUS / cameraRatio
 aimMethod = "smart"
@@ -31,18 +21,11 @@ function init()
 	Physics.NewSystem()
 	start_time = mode_manager.time()
 	last_time = mode_manager.time()
-	
---	local tmp = physics.new_object(1.0)
---	physics.destroy_object(tmp)
-
---	trackingTarget.collision_radius = MOUSE_RADIUS
 
 	scen = LoadScenario(demoLevel)
 
 	selection.control = scen.playership
 	selection.target = nil
-
---	trackingTarget.position = GetMouseCoords()
 end
 
 function key( k )
@@ -108,7 +91,6 @@ function update()
 			arrowLength = ARROW_LENGTH / cameraRatio
 			arrowVar = ARROW_VAR / cameraRatio
 			arrowDist = ARROW_DIST / cameraRatio
---			trackingTarget.collision_radius = MOUSE_RADIUS / cameraRatio
 			if (cameraRatio < 1 / 4 and cameraRatioOrig > 1 / 4) or (cameraRatio > 1 / 4 and cameraRatioOrig < 1 / 4) then
 				if soundJustPlayed == false then
 					sound.play("ZoomChange")
@@ -116,37 +98,22 @@ function update()
 				end
 			end
 		end
-
---[[
-		local cols = physics.collisions() -- [QUADTREE]
+	
+		--[[ commenting out due to new physics system (which currently lacks collision detection)
+		local cols = physics.collisions()
 		
 		for idx, pair in pairs(cols) do
---			if pair[1] == 1 then
---[==[
-				if mdown == true then
-					if keyboard[2][5].active == true then
-						print("TARGET SELECT")
-						selection.target = scen.objects[ pair[2] ]
-					else
-						print("CONTROL SELECT")
-						selection.control = scen.objects[ pair[2] ]
-					end
-					mdown = false
-				end
---]==]
---			else
-				local a = scen.objects[ pair[1] ]
-				local b = scen.objects[ pair[2] ]
+			local a = scen.objects[pair[1] ]
+			local b = scen.objects[pair[2] ]
 
-				if a.base.attributes["can-collide"] == true
-				and b.base.attributes["can-collide"] == true
-				and a.ai.owner ~= b.ai.owner then
-					Collide(a,b)
-				end
---			end
+			if a.base.attributes["can-collide"] == true
+			and b.base.attributes["can-collide"] == true
+			and a.ai.owner ~= b.ai.owner then
+				Collide(a,b)
+			end
 		end
-		mdown = false]]
-
+		mdown = false--]]
+		
 		for i, o in pairs(scen.objects) do
 			if o.type == "beam" then
 				if o.base.beam.kind == "bolt-relative"
@@ -298,32 +265,37 @@ function update()
 	Warping Code
 ------------------]]-- it's a pair of lightsabers!
 		
-		warp = scen.playerShip.warp
-		warpSpeed = scen.playerShip.base["warp-speed"] * SPEED_FACTOR
+		warp = scen.playerShip.control.warp
+		local warpSpeed = scen.playerShip.base["warp-speed"] * SPEED_FACTOR
+		local maxSpeed = scen.playerShip.base["max-velocity"] * SPEED_FACTOR
 		
 		if scen.playerShip.control.warp == true then
 			if warp.stage == "warping" then
-				scen.playerShip.physics.velocity = { x = scen.playerShip.base["warp-speed"] * SPEED_FACTOR * math.cos(scen.playerShip.physics.angle), y = scen.playerShip.base["warp-speed"] * SPEED_FACTOR * math.sin(scen.playerShip.physics.angle) }
+				scen.playerShip.physics.velocity = PolarVec(warpSpeed,scen.playerShip.physics.angle)
 			elseif warp.stage == "cooldown" then
 				slowDownTime = 2 -- [HARDCODED]
 				if (mode_manager.time() - warp.time < slowDownTime) then
 					scen.playerShip.physics.velocity = {
 						x = (scen.playerShip.base["max-velocity"] * SPEED_FACTOR + (scen.playerShip.base["warp-speed"] * SPEED_FACTOR - scen.playerShip.base["max-velocity"] * SPEED_FACTOR) * (slowDownTime - warp.time) / slowDownTime) * math.cos(scen.playerShip.physics.angle),
 						y = (scen.playerShip.base["max-velocity"] * SPEED_FACTOR + (scen.playerShip.base["warp-speed"] * SPEED_FACTOR - scen.playerShip.base["max-velocity"] * SPEED_FACTOR) * (slowDownTime - warp.time) / slowDownTime) * math.sin(scen.playerShip.physics.angle) }
+--[[ MERGE RESOLVE: This is what GameFreak had (above is what I had)
+				if (warp.time < slowDownTime) then
+					warp.time = warp.time + dt
+					local magnitude = maxSpeed + (warpSpeed - maxSpeed) * (slowDownTime - warp.time) / slowDownTime
+					scen.playerShip.physics.velocity = PolarVec(magnitude,scen.playerShip.physics.angle)--]]
 				else
 					sound.play("WarpOut")
-					scen.playerShip.physics.velocity = { x = scen.playerShip.base["max-velocity"] * SPEED_FACTOR * normalize(scen.playerShip.physics.velocity.x, scen.playerShip.physics.velocity.y), y = scen.playerShip.base["max-velocity"] * SPEED_FACTOR * normalize(scen.playerShip.physics.velocity.y, scen.playerShip.physics.velocity.x) }
+					scen.playerShip.physics.velocity = NormalizeVec(scen.playerShip.physics.velocity) * maxSpeed
 					warp.stage = "notWarping"
 				end
 			end
-		elseif hypot(scen.playerShip.physics.velocity.x, scen.playerShip.physics.velocity.y) > scen.playerShip.base["max-velocity"] * SPEED_FACTOR then
-			scen.playerShip.physics.velocity = { x = scen.playerShip.base["max-velocity"] * SPEED_FACTOR * normalize(scen.playerShip.physics.velocity.x, scen.playerShip.physics.velocity.y), y = scen.playerShip.base["max-velocity"] * SPEED_FACTOR * normalize(scen.playerShip.physics.velocity.y, scen.playerShip.physics.velocity.x) }
+		elseif hypot1(scen.playerShip.physics.velocity) > maxSpeed then
+			scen.playerShip.physics.velocity = NormalizeVec(scen.playerShip.physics.velocity) * maxSpeed
 		end
-		
+
 		RemoveDead()
 		TestConditions(scen)
 		GenerateStatusLines(scen)
-	--	trackingTarget.position = GetMouseCoords()
 		
 		Physics.UpdateSystem(dt, scen.objects)
 	end
