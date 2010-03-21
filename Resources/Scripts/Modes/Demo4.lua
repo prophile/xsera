@@ -265,7 +265,7 @@ function update()
 	Warping Code
 ------------------]]-- it's a pair of lightsabers!
 		
-		warp = scen.playerShip.control.warp
+		warp = scen.playerShip.warp
 		local warpSpeed = scen.playerShip.base["warp-speed"] * SPEED_FACTOR
 		local maxSpeed = scen.playerShip.base["max-velocity"] * SPEED_FACTOR
 		
@@ -274,15 +274,10 @@ function update()
 				scen.playerShip.physics.velocity = PolarVec(warpSpeed,scen.playerShip.physics.angle)
 			elseif warp.stage == "cooldown" then
 				slowDownTime = 2 -- [HARDCODED]
+				local slowingDown = mode_manager.time() - warp.time
 				if (mode_manager.time() - warp.time < slowDownTime) then
-					scen.playerShip.physics.velocity = {
-						x = (scen.playerShip.base["max-velocity"] * SPEED_FACTOR + (scen.playerShip.base["warp-speed"] * SPEED_FACTOR - scen.playerShip.base["max-velocity"] * SPEED_FACTOR) * (slowDownTime - warp.time) / slowDownTime) * math.cos(scen.playerShip.physics.angle),
-						y = (scen.playerShip.base["max-velocity"] * SPEED_FACTOR + (scen.playerShip.base["warp-speed"] * SPEED_FACTOR - scen.playerShip.base["max-velocity"] * SPEED_FACTOR) * (slowDownTime - warp.time) / slowDownTime) * math.sin(scen.playerShip.physics.angle) }
---[[ MERGE RESOLVE: This is what GameFreak had (above is what I had)
-				if (warp.time < slowDownTime) then
-					warp.time = warp.time + dt
-					local magnitude = maxSpeed + (warpSpeed - maxSpeed) * (slowDownTime - warp.time) / slowDownTime
-					scen.playerShip.physics.velocity = PolarVec(magnitude,scen.playerShip.physics.angle)--]]
+					local magnitude = (scen.playerShip.base["warp-speed"] - scen.playerShip.base["max-velocity"]) * SPEED_FACTOR * (slowDownTime - slowingDown) / slowDownTime + scen.playerShip.base["max-velocity"] * SPEED_FACTOR
+					scen.playerShip.physics.velocity = PolarVec(magnitude, scen.playerShip.physics.angle)
 				else
 					sound.play("WarpOut")
 					scen.playerShip.physics.velocity = NormalizeVec(scen.playerShip.physics.velocity) * maxSpeed
@@ -390,8 +385,17 @@ function render()
 
 	graphics.draw_particles()
 	
-	local warpDegree = (mode_manager.time() - scen.playerShip.warp.time > 1) and 1 or (mode_manager.time() - scen.playerShip.warp.time)
+	local warpDegree -- convoluted >_< (perhaps this should be put in scen.playerShip.warp?) [ADAM, FIX]
+	if scen.playerShip.warp.stage == "cooldown" then
+		warpDegree = 1 - (mode_manager.time() - scen.playerShip.warp.time) / 2
+	elseif scen.playerShip.warp.stage == "notWarping" then
+		warpDegree = 0
+	else
+		warpDegree = (mode_manager.time() - scen.playerShip.warp.time > 1) and 1 or (mode_manager.time() - scen.playerShip.warp.time)
+	end
 	graphics.end_warp(warpDegree, (2.5*math.pi) - scen.playerShip.physics.angle, cameraRatio, scen.playerShip.physics.position)
+	
+	-- [ADAM] FIX: In order for the player's ship to not distort, ship must be drawn here
 	
 	DrawArrow()
 	DrawMouse1()
