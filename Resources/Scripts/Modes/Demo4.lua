@@ -265,8 +265,7 @@ function update()
 					-- apply a forward force in the direction the ship is facing
 					local angle = o.physics.angle
 					
-					--Multiply by 60 because the thrust value in the data is given per FRAME not per second.
-					local thrust = o.base["max-thrust"] * TIME_FACTOR * SPEED_FACTOR
+					local thrust = o.base["max-thrust"] * SPEED_FACTOR
 					local force = vec(thrust * math.cos(angle), thrust * math.sin(angle))
 					Physics.ApplyImpulse(o.physics, force)
 				end
@@ -275,7 +274,7 @@ function update()
 					or hypot1(o.physics.velocity) >= o.base["max-velocity"] * SPEED_FACTOR then
 					
 					-- apply a reverse force in the direction opposite the direction the ship is MOVING
-					local thrust = o.base["max-thrust"] * TIME_FACTOR * SPEED_FACTOR
+					local thrust = o.base["max-thrust"] * SPEED_FACTOR
 					local force = o.physics.velocity
 					if force.x ~= 0 or force.y ~= 0 then
 						if hypot1(o.physics.velocity) <= 10 then
