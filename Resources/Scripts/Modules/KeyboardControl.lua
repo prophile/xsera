@@ -103,15 +103,15 @@ end
 
 function DoWarp()
 	if scen.playerShip.base["warp-speed"] ~= nil then
-		local warp = scen.playerShip.control.warp -- to save my keyboard
+		local warp = scen.playerShip.warp -- to save my keyboard
 		if warp.stage == "notWarping" then
 			warp.time = mode_manager.time()
 			warp.stage = "spooling"
-		elseif warp.stage == "spooling" and mode_manager.time() - warp.time > .2 then
-			warp.time = mode_manager.time()
+		elseif warp.stage == "spooling" and mode_manager.time() - warp.time > .2 * warp.lastPlayed then
 			warp.lastPlayed = warp.lastPlayed + 1
 			if warp.lastPlayed == 5 then
 				warp.stage = "warping"
+				scen.playerShip.control.warp = true
 				sound.play("WarpIn")
 			else
 				sound.play("Warp" .. warp.lastPlayed)
@@ -122,13 +122,13 @@ end
 
 function StopWarp()
 	if scen.playerShip.base["warp-speed"] ~= nil then
-		local warp = scen.playerShip.control.warp -- to save my keyboard
+		local warp = scen.playerShip.warp -- to save my keyboard
 		if warp.stage == "warping" then
 			warp.stage = "cooldown"
+			warp.time = mode_manager.time()
 		else
 			warp.stage = "notWarping"
 		end
-		warp.time = 0
 		warp.lastPlayed = 0
 	end
 end

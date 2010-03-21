@@ -20,7 +20,7 @@ trackingTarget = {
 	mass = 1.0;
 	collision_radius = 1.0;
 	angle = 0.0;
-	angular_velocity = 0.0;
+	angularVelocity = 0.0;
 }]]
 
 mdown = false
@@ -126,10 +126,10 @@ function update()
 				if mdown == true then
 					if keyboard[2][5].active == true then
 						print("TARGET SELECT")
-						selection.target = scen.objects[pair[2] ]
+						selection.target = scen.objects[ pair[2] ]
 					else
 						print("CONTROL SELECT")
-						selection.control = scen.objects[pair[2] ]
+						selection.control = scen.objects[ pair[2] ]
 					end
 					mdown = false
 				end
@@ -253,19 +253,19 @@ function update()
 			end
 			
 			if o.control.left == true then
-				o.physics.angular_velocity = rvel * 2.0
+				o.physics.angularVelocity = rvel * 2.0
 			elseif o.control.right == true then
-				o.physics.angular_velocity = -rvel * 2.0
+				o.physics.angularVelocity = -rvel * 2.0
 			else
-				o.physics.angular_velocity = 0
+				o.physics.angularVelocity = 0
 			end
 				
 			if o.base["max-thrust"] ~= nil then
 				if o.control.accel == true then
 					-- apply a forward force in the direction the ship is facing
 					local angle = o.physics.angle
+					
 					--Multiply by 60 because the thrust value in the data is given per FRAME not per second.
-
 					local thrust = o.base["max-thrust"] * TIME_FACTOR * SPEED_FACTOR
 					local force = vec(thrust * math.cos(angle), thrust * math.sin(angle))
 					Physics.ApplyImpulse(o.physics, force)
@@ -273,7 +273,7 @@ function update()
 				
 				if o.control.decel == true
 					or hypot1(o.physics.velocity) >= o.base["max-velocity"] * SPEED_FACTOR then
-				
+					
 					-- apply a reverse force in the direction opposite the direction the ship is MOVING
 					local thrust = o.base["max-thrust"] * TIME_FACTOR * SPEED_FACTOR
 					local force = o.physics.velocity
@@ -284,7 +284,7 @@ function update()
 							local velocityMag = hypot1(force)
 							force = -force * thrust / velocityMag
 							
-							if dt * hypot1(force) / o.physics.mass > velocityMag then
+							if dt * velocityMag / o.physics.mass > velocityMag then
 								o.physics.velocity = vec(0, 0)
 							else
 								Physics.ApplyImpulse(o.physics, force)
@@ -299,16 +299,15 @@ function update()
 	Warping Code
 ------------------]]-- it's a pair of lightsabers!
 		
-		warp = scen.playerShip.control.warp
+		warp = scen.playerShip.warp
 		warpSpeed = scen.playerShip.base["warp-speed"] * SPEED_FACTOR
 		
-		if scen.playerShip.control.warp ~= false and warp.stage ~= "notWarping" then
+		if scen.playerShip.control.warp == true then
 			if warp.stage == "warping" then
 				scen.playerShip.physics.velocity = { x = scen.playerShip.base["warp-speed"] * SPEED_FACTOR * math.cos(scen.playerShip.physics.angle), y = scen.playerShip.base["warp-speed"] * SPEED_FACTOR * math.sin(scen.playerShip.physics.angle) }
 			elseif warp.stage == "cooldown" then
 				slowDownTime = 2 -- [HARDCODED]
-				if (warp.time < slowDownTime) then
-					warp.time = warp.time + dt
+				if (mode_manager.time() - warp.time < slowDownTime) then
 					scen.playerShip.physics.velocity = {
 						x = (scen.playerShip.base["max-velocity"] * SPEED_FACTOR + (scen.playerShip.base["warp-speed"] * SPEED_FACTOR - scen.playerShip.base["max-velocity"] * SPEED_FACTOR) * (slowDownTime - warp.time) / slowDownTime) * math.cos(scen.playerShip.physics.angle),
 						y = (scen.playerShip.base["max-velocity"] * SPEED_FACTOR + (scen.playerShip.base["warp-speed"] * SPEED_FACTOR - scen.playerShip.base["max-velocity"] * SPEED_FACTOR) * (slowDownTime - warp.time) / slowDownTime) * math.sin(scen.playerShip.physics.angle) }
@@ -347,8 +346,14 @@ function render()
 		-scen.playerShip.physics.position.x + shipAdjust + (camera.w / 2.0),
 		-scen.playerShip.physics.position.y + (camera.h / 2.0))
 	
-	if scen.playerShip.control.warp ~= false then
-		graphics.begin_warp(scen.playerShip.control.warp.lastPlayed, (2.5*math.pi) - math.atan2(scen.playerShip.physics.velocity.x, scen.playerShip.physics.velocity.y), cameraRatio)
+	if scen.playerShip.warp == true then
+		local warpDegree
+		if warp.status == cooldown then
+			warpDegree = (mode_manager.time() - scen.playerShip.warp.time > 1) and 1 or (mode_manager.time() - scen.playerShip.warp.time)		
+		else
+			warpDegree = slowDownTime - (mode_manager.time() - scen.playerShip.warp.time)
+		end
+		graphics.begin_warp(warpDegree, (2.5*math.pi) - scen.playerShip.physics.angle, cameraRatio)
 	end
 	
 	graphics.draw_starfield(3.4)
@@ -364,7 +369,7 @@ function render()
 			if o.base.beam.kind == "kinetic" then
 				local p1 = o.physics.position
 				local p2 = PolarVec(BEAM_LENGTH,o.physics.angle)
-				graphics.draw_line(p1, p1 + p2,1,ClutColour(o.base.beam.color))
+				graphics.draw_line(p1, p1 + p2, 1, ClutColour(o.base.beam.color))
 			else
 				local from = o.gfx.source.position + o.gfx.offset
 				if o.base.beam.kind == "bolt-relative" then
@@ -414,7 +419,8 @@ function render()
 
 	graphics.draw_particles()
 	
-	graphics.end_warp()
+	local warpDegree = (mode_manager.time() - scen.playerShip.warp.time > 1) and 1 or (mode_manager.time() - scen.playerShip.warp.time)
+	graphics.end_warp(warpDegree, (2.5*math.pi) - scen.playerShip.physics.angle, cameraRatio, scen.playerShip.physics.position)
 	
 	DrawArrow()
 	DrawMouse1()
@@ -468,7 +474,6 @@ function RemoveDead()
 			if scen.playerShipId == i then
 				ChangePlayerShip()
 			end
-			physics.destroy_object(o.physics)
 			scen.objects[i] = nil
 		end
 	end

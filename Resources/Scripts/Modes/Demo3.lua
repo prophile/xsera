@@ -228,18 +228,18 @@ function update ()
 	
     if keyboard[1][4].active == true then
 		if key_press_f6 ~= true then
-			playerShip.physicsObject.angular_velocity = playerShip.turningRate
+			playerShip.physicsObject.angularVelocity = playerShip.turningRate
 		else
-			playerShip.physicsObject.angular_velocity = playerShip.turningRate / 10
+			playerShip.physicsObject.angularVelocity = playerShip.turningRate / 10
 		end
     elseif keyboard[1][5].active == true then
 		if key_press_f6 ~= true then
-			playerShip.physicsObject.angular_velocity = -playerShip.turningRate
+			playerShip.physicsObject.angularVelocity = -playerShip.turningRate
 		else
-			playerShip.physicsObject.angular_velocity = -playerShip.turningRate / 10
+			playerShip.physicsObject.angularVelocity = -playerShip.turningRate / 10
 		end
     else
-        playerShip.physicsObject.angular_velocity = 0
+        playerShip.physicsObject.angularVelocity = 0
     end
 	
 	if keyboard[1][2].active == true and playerShip.warp.stage == "notWarping" then
