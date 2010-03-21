@@ -10,7 +10,7 @@ MAX_PLAYERS = 4
 MAX_COUNTERS = 3 --per player
 
 SPEED_FACTOR = 64.0
-TIME_FACTOR = 60.0
+TIME_FACTOR = 1.0
 BEAM_LENGTH = 48
 MAIN_FONT = "prototype"
 TITLE_FONT = "sneakout"
