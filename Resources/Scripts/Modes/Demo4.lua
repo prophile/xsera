@@ -393,8 +393,10 @@ function render()
 	else
 		warpDegree = (mode_manager.time() - scen.playerShip.warp.time > 1) and 1 or (mode_manager.time() - scen.playerShip.warp.time)
 	end
-	graphics.end_warp(warpDegree, (2.5*math.pi) - scen.playerShip.physics.angle, cameraRatio, scen.playerShip.physics.position)
-	
+--	DEBUG version, keep:
+--	graphics.end_warp(warpDegree, (2.5*math.pi) - scen.playerShip.physics.angle, cameraRatio, scen.playerShip.physics.position)
+	graphics.end_warp()
+		
 	-- [ADAM] FIX: In order for the player's ship to not distort, ship must be drawn here
 	
 	DrawArrow()
