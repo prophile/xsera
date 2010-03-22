@@ -321,7 +321,6 @@ function render()
 			warpDegree = slowDownTime - (mode_manager.time() - scen.playerShip.warp.time)
 		end
 		graphics.begin_warp(warpDegree, (2.5*math.pi) - scen.playerShip.physics.angle, cameraRatio)
-		print("WARPPPP")
 	end
 	
 	graphics.draw_starfield(3.4)
