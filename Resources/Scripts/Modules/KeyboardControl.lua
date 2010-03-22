@@ -107,11 +107,11 @@ function DoWarp()
 		if warp.stage == "notWarping" then
 			warp.time = mode_manager.time()
 			warp.stage = "spooling"
+			scen.playerShip.control.warp = true
 		elseif warp.stage == "spooling" and mode_manager.time() - warp.time > .2 * warp.lastPlayed then
 			warp.lastPlayed = warp.lastPlayed + 1
 			if warp.lastPlayed == 5 then
 				warp.stage = "warping"
-				scen.playerShip.control.warp = true
 				sound.play("WarpIn")
 			else
 				sound.play("Warp" .. warp.lastPlayed)
@@ -128,6 +128,7 @@ function StopWarp()
 			warp.time = mode_manager.time()
 		else
 			warp.stage = "notWarping"
+			scen.playerShip.control.warp = false
 		end
 		warp.lastPlayed = 0
 	end

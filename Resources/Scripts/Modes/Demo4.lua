@@ -282,6 +282,7 @@ function update()
 					sound.play("WarpOut")
 					scen.playerShip.physics.velocity = NormalizeVec(scen.playerShip.physics.velocity) * maxSpeed
 					warp.stage = "notWarping"
+					scen.playerShip.control.warp = false
 				end
 			end
 		elseif hypot1(scen.playerShip.physics.velocity) > maxSpeed then
@@ -312,7 +313,7 @@ function render()
 		-scen.playerShip.physics.position.x + shipAdjust + (camera.w / 2.0),
 		-scen.playerShip.physics.position.y + (camera.h / 2.0))
 	
-	if scen.playerShip.warp == true then
+	if scen.playerShip.control.warp == true then
 		local warpDegree
 		if warp.status == cooldown then
 			warpDegree = (mode_manager.time() - scen.playerShip.warp.time > 1) and 1 or (mode_manager.time() - scen.playerShip.warp.time)		
@@ -320,6 +321,7 @@ function render()
 			warpDegree = slowDownTime - (mode_manager.time() - scen.playerShip.warp.time)
 		end
 		graphics.begin_warp(warpDegree, (2.5*math.pi) - scen.playerShip.physics.angle, cameraRatio)
+		print("WARPPPP")
 	end
 	
 	graphics.draw_starfield(3.4)

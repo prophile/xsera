@@ -215,6 +215,7 @@ function update ()
 				sound.play("WarpOut")
 				playerShip.physicsObject.velocity = { x = playerShip.maxSpeed * normalize(playerShip.physicsObject.velocity.x, playerShip.physicsObject.velocity.y), y = playerShip.maxSpeed * normalize(playerShip.physicsObject.velocity.y, playerShip.physicsObject.velocity.x) }
 				playerShip.warp.stage = "notWarping"
+				scen.playerShip.control.warp = false
 			end
 		end
 	elseif hypot (playerShip.physicsObject.velocity.x, playerShip.physicsObject.velocity.y) > playerShip.maxSpeed then
