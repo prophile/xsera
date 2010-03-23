@@ -332,7 +332,6 @@
 				496A24AA0F0EB37900C53BA1 /* Input.cpp */,
 				496A24AB0F0EB37900C53BA1 /* Input.h */,
 				496A24AC0F0EB37900C53BA1 /* Net */,
-				496A24B20F0EB37900C53BA1 /* Physics */,
 				496A24B70F0EB37900C53BA1 /* Scripting */,
 				496A24BD0F0EB37900C53BA1 /* Sound */,
 				496A24C00F0EB37900C53BA1 /* Utilities */,
@@ -508,14 +507,6 @@
 			);
 			name = Net;
 			path = ../Engine/Net;
-			sourceTree = SOURCE_ROOT;
-		};
-		496A24B20F0EB37900C53BA1 /* Physics */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Physics;
-			path = ../Engine/Physics;
 			sourceTree = SOURCE_ROOT;
 		};
 		496A24B70F0EB37900C53BA1 /* Scripting */ = {

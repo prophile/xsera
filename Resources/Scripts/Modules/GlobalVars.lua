@@ -5,6 +5,14 @@ import('Camera')
 
 --constants
 
+WARP_TIME = 2.0
+
+WARP_IDLE = 0
+WARP_SPOOLING = 1
+WARP_ABORTING = 1.5
+WARP_RUNNING = 2
+WARP_COOLING = 3
+
 --these limits are the values for ares but we can go MUCH higher if we want to :3
 MAX_PLAYERS = 4
 MAX_COUNTERS = 3 --per player
@@ -12,6 +20,7 @@ MAX_COUNTERS = 3 --per player
 SPEED_FACTOR = 64.0
 TIME_FACTOR = 60.0
 BEAM_LENGTH = 48
+
 MAIN_FONT = "prototype"
 TITLE_FONT = "sneakout"
 --[SCOTT] Recharge rates need tuning

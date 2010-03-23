@@ -101,36 +101,21 @@ function StopRightTurn()
 	scen.playerShip.control.right = false
 end
 
+--MARK: WARPING KEY FUNCTIONS
 function DoWarp()
 	if scen.playerShip.base["warp-speed"] ~= nil then
-		local warp = scen.playerShip.warp -- to save my keyboard
-		if warp.stage == "notWarping" then
-			warp.time = mode_manager.time()
-			warp.stage = "spooling"
-			scen.playerShip.control.warp = true
-		elseif warp.stage == "spooling" and mode_manager.time() - warp.time > .2 * warp.lastPlayed then
-			warp.lastPlayed = warp.lastPlayed + 1
-			if warp.lastPlayed == 5 then
-				warp.stage = "warping"
-				sound.play("WarpIn")
-			else
-				sound.play("Warp" .. warp.lastPlayed)
-			end
-		end
+		scen.playerShip.control.warp = true
 	end
 end
 
 function StopWarp()
 	if scen.playerShip.base["warp-speed"] ~= nil then
-		local warp = scen.playerShip.warp -- to save my keyboard
-		if warp.stage == "warping" then
-			warp.stage = "cooldown"
-			warp.time = mode_manager.time()
-		else
-			warp.stage = "notWarping"
-			scen.playerShip.control.warp = false
+		scen.playerShip.control.warp = false
+		if scen.playerShip.warp.stage == WARP_SPOOLING then
+			scen.playerShip.warp.stage = WARP_ABORTING
+		elseif  scen.playerShip.warp.stage == WARP_RUNNING then
+			scen.playerShip.warp.stage = WARP_COOLING
 		end
-		warp.lastPlayed = 0
 	end
 end
 
