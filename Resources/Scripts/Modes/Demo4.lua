@@ -229,43 +229,47 @@ function update()
 			end
 				
 			if o.base["max-thrust"] ~= nil then
-				if o.control.accel == true then
-					-- apply a forward force in the direction the ship is facing
-					local angle = o.physics.angle
-					
-					local thrust = o.base["max-thrust"] * SPEED_FACTOR
-					local force = vec(thrust * math.cos(angle), thrust * math.sin(angle))
-					Physics.ApplyImpulse(o.physics, force)
-				end
-				
-				if o.control.decel == true
-					or hypot1(o.physics.velocity) >= o.base["max-velocity"] * SPEED_FACTOR then
-					
-					-- apply a reverse force in the direction opposite the direction the ship is MOVING
-					local thrust = o.base["max-thrust"] * SPEED_FACTOR
-					local force = o.physics.velocity
-					if force.x ~= 0 or force.y ~= 0 then
-						if hypot1(o.physics.velocity) <= 10 then
-							o.physics.velocity = vec(0, 0)
-						else
-							local velocityMag = hypot1(force)
-							force = -force * thrust / velocityMag
-							
-							if dt * velocityMag / o.physics.mass > velocityMag then
+				if o.warp.stage < WARP_RUNNING then
+					if o.control.accel == true then
+						-- apply a forward force in the direction the ship is facing
+						local angle = o.physics.angle
+						local thrust = o.base["max-thrust"] * SPEED_FACTOR
+						local force = vec(thrust * math.cos(angle), thrust * math.sin(angle))
+						Physics.ApplyImpulse(o.physics, force)
+					end
+
+					if o.control.decel == true
+						or hypot1(o.physics.velocity) >= o.base["max-velocity"] * SPEED_FACTOR then
+						-- apply a reverse force in the direction opposite the direction the ship is MOVING
+						local thrust = o.base["max-thrust"] * SPEED_FACTOR
+						local force = o.physics.velocity
+						if force.x ~= 0 or force.y ~= 0 then
+							if hypot1(o.physics.velocity) <= 10 then
 								o.physics.velocity = vec(0, 0)
 							else
-								Physics.ApplyImpulse(o.physics, force)
+								local velocityMag = hypot1(force)
+								force = -force * thrust / velocityMag
+								if dt * velocityMag / o.physics.mass > velocityMag then
+									o.physics.velocity = vec(0, 0)
+								else
+									Physics.ApplyImpulse(o.physics, force)
+								end
 							end
 						end
 					end
+				elseif o.base["warp-speed"] ~= nil then
+					local velocityMag = math.max(o.warp.factor * o.base["warp-speed"], o.base["max-velocity"]) * SPEED_FACTOR
+					o.physics.velocity = PolarVec(velocityMag, o.physics.angle)
 				end
 			end
 		end
 		
 --[[------------------
-	Warping Code
+--MARK:Warping Code
 ------------------]]-- it's a pair of lightsabers!
+		local warp = scen.playerShip.warp
 		
+--[[
 		warp = scen.playerShip.warp
 		local warpSpeed = scen.playerShip.base["warp-speed"] * SPEED_FACTOR
 		local maxSpeed = scen.playerShip.base["max-velocity"] * SPEED_FACTOR
@@ -279,14 +283,33 @@ function update()
 					local magnitude = (scen.playerShip.base["warp-speed"] - scen.playerShip.base["max-velocity"]) * SPEED_FACTOR * (SLOW_FROM_WARP - slowingDown) / SLOW_FROM_WARP + scen.playerShip.base["max-velocity"] * SPEED_FACTOR
 					scen.playerShip.physics.velocity = PolarVec(magnitude, scen.playerShip.physics.angle)
 				else
-					sound.play("WarpOut")
-					scen.playerShip.physics.velocity = NormalizeVec(scen.playerShip.physics.velocity) * maxSpeed
-					warp.stage = "notWarping"
-					scen.playerShip.control.warp = false
+--]]
+		if scen.playerShip.control.warp == true
+		and warp.stage < WARP_COOLING then
+			if warp.factor < 1.0 then
+				warp.stage = WARP_SPOOLING
+				warp.factor = warp.factor + dt / WARP_TIME
+				if warp.factor >= warp.lastPlayed / WARP_TIME / 5 then
+					warp.lastPlayed = warp.lastPlayed + 1
+					sound.play("Warp"..warp.lastPlayed)
+				end
+				if warp.factor >= 1.0 then
+					warp.stage = WARP_RUNNING
+					warp.factor = 1.0
+					warp.lastPlayed = 5
+					sound.play("WarpIn")
 				end
 			end
-		elseif hypot1(scen.playerShip.physics.velocity) > maxSpeed then
-			scen.playerShip.physics.velocity = NormalizeVec(scen.playerShip.physics.velocity) * maxSpeed
+		elseif warp.stage >= WARP_ABORTING then
+			if warp.factor > 0.0 then
+				warp.factor = warp.factor - dt / WARP_TIME
+				if warp.factor <= 0.0 then
+					warp.factor = 0.0
+					warp.lastPlayed = 0
+					warp.stage = WARP_IDLE
+					sound.play("WarpOut")
+				end
+			end
 		end
 
 		RemoveDead()
@@ -312,17 +335,14 @@ function render()
 		-scen.playerShip.physics.position.y - (camera.h / 2.0),
 		-scen.playerShip.physics.position.x + shipAdjust + (camera.w / 2.0),
 		-scen.playerShip.physics.position.y + (camera.h / 2.0))
-	
-	if scen.playerShip.control.warp == true then
-		local warpDegree
-		if warp.status == cooldown then
-			warpDegree = (mode_manager.time() - scen.playerShip.warp.time > 1) and 1 or (mode_manager.time() - scen.playerShip.warp.time)		
-		else
-			warpDegree = slowDownTime - (mode_manager.time() - scen.playerShip.warp.time)
-		end
-		graphics.begin_warp(warpDegree, (2.5*math.pi) - scen.playerShip.physics.angle, cameraRatio)
+
+--MARK: RENDER WARP
+	if scen.playerShip.warp.stage ~= WARP_IDLE then
+		graphics.begin_warp(scen.playerShip.warp.factor,scen.playerShip.physics.angle, cameraRatio)
+	else
+		graphics.begin_warp(0,0,1)
 	end
-	
+
 	graphics.draw_starfield(3.4)
 	graphics.draw_starfield(1.8)
 	graphics.draw_starfield(0.6)
@@ -385,17 +405,9 @@ function render()
 	end
 
 	graphics.draw_particles()
-	
-	local warpDegree -- convoluted >_< (perhaps this should be put in scen.playerShip.warp?) [ADAM, FIX]
-	if scen.playerShip.warp.stage == "cooldown" then
-		warpDegree = 1 - (mode_manager.time() - scen.playerShip.warp.time) / 2
-	elseif scen.playerShip.warp.stage == "notWarping" then
-		warpDegree = 0
-	else
-		warpDegree = (mode_manager.time() - scen.playerShip.warp.time > 1) and 1 or (mode_manager.time() - scen.playerShip.warp.time)
-	end
+
 --	DEBUG version, keep:
---	graphics.end_warp(warpDegree, (2.5*math.pi) - scen.playerShip.physics.angle, cameraRatio, scen.playerShip.physics.position)
+--	graphics.end_warp(scen.playerShip.warp.factor, scen.playerShip.physics.angle, cameraRatio, scen.playerShip.physics.position)
 	graphics.end_warp()
 		
 	-- [ADAM] FIX: In order for the player's ship to not distort, ship must be drawn here

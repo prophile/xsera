@@ -1126,23 +1126,19 @@ int GFX_BeginWarp ( lua_State* L )
 int GFX_EndWarp ( lua_State* L )
 {
 	Graphics::EndWarp();
-/*	
-	float magnitude = luaL_checknumber(L, 1);
-	float angle = luaL_checknumber(L, 2);
-	float scale = luaL_checknumber(L, 3);
-	vec2 position = luaL_checkvec2(L, 4);
-	Graphics::DrawCircle(position, 45 * scale, 5, colour(1,0,0,1));
-	Graphics::DrawCircle(position, 45 * scale * magnitude, 5, colour(0,1,0,1));
-	*/
+
+	int argCount = lua_gettop(L);
+	if (argCount == 4) {
+		float magnitude = luaL_checknumber(L, 1);
+		float angle = luaL_checknumber(L, 2);
+		float scale = luaL_checknumber(L, 3);
+		vec2 position = luaL_checkvec2(L, 4);
+		Graphics::DrawCircle(position, 45 * scale, 5, colour(1,0,0,1));
+		Graphics::DrawCircle(position, 45 * scale * magnitude, 5, colour(0,1,0,1));
+	}
+
 	return 0;
 }
-
-/*
-int GFX_EndWarp ( lua_State* L )
-{
-	Graphics::EndWarp();
-	return 0;
-}*/
 
 /**
  * @page lua_graphics The Lua Graphics Registry

@@ -19,7 +19,11 @@ function NewObject(id)
 			special = false;
 			warp = false;
 		};
-		warp = { stage = "notWarping", time = 0, lastPlayed = 0 };
+		warp = {
+			stage = WARP_IDLE;
+			factor = 0;
+			lastPlayed = 0;
+			};
 		ai = {
 			owner = nil;
 			mode = "wait";
