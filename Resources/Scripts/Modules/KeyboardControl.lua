@@ -108,7 +108,7 @@ function DoWarp()
 			warp.time = mode_manager.time()
 			warp.stage = "spooling"
 			scen.playerShip.control.warp = true
-		elseif warp.stage == "spooling" and mode_manager.time() - warp.time > .2 * warp.lastPlayed then
+		elseif warp.stage == "spooling" and mode_manager.time() - warp.time > WARP_SOUND_LENGTH * warp.lastPlayed then
 			warp.lastPlayed = warp.lastPlayed + 1
 			if warp.lastPlayed == 5 then
 				warp.stage = "warping"
@@ -203,7 +203,7 @@ function DoScaleIn(step)
 		cameraChanging = true
 		cameraRatioTarget = newRatio
 		cameraRatioOrig = cameraRatio
-		x = timeInterval * 2 * (step or 0.5)
+		zoomTime = timeInterval * 2 * (step or 0.5)
 		multiplier = (newRatio - cameraRatio)/cameraRatio
 	end
 	
@@ -227,7 +227,7 @@ function DoScaleOut(step)
 		cameraChanging = true
 		cameraRatioTarget = newRatio
 		cameraRatioOrig = cameraRatio
-		x = timeInterval * 2 * (step or 0.5)
+		zoomTime = timeInterval * 2 * (step or 0.5)
 		multiplier = (newRatio - cameraRatio)/cameraRatio
 	end
 
@@ -287,7 +287,7 @@ function DoZoom1_1()
 	if cameraRatioTarget ~= 1 then
 		cameraChanging = true
 		cameraRatioOrig = cameraRatio
-		x = timeInterval
+		zoomTime = timeInterval
 		cameraRatioTarget = 1
 		multiplier = (1 - cameraRatio) / cameraRatio
 	end
@@ -297,7 +297,7 @@ function DoZoom1_2()
 	if cameraRatioTarget ~= 1/2 then
 		cameraChanging = true
 		cameraRatioOrig = cameraRatio
-		x = timeInterval
+		zoomTime = timeInterval
 		cameraRatioTarget = 1/2 
 		multiplier = (1/2 - cameraRatio) / cameraRatio
 	end
@@ -307,7 +307,7 @@ function DoZoom1_4()
 	if cameraRatioTarget ~= 1/4 then
 		cameraChanging = true
 		cameraRatioOrig = cameraRatio
-		x = timeInterval
+		zoomTie = timeInterval
 		cameraRatioNum = 1/4
 		multiplier = (1/4 - cameraRatio) / cameraRatio
 	end
@@ -317,7 +317,7 @@ function DoZoom1_16()
 	if cameraRatioTarget ~= 1/16 then
 		cameraChanging = true
 		cameraRatioOrig = cameraRatio
-		x = timeInterval
+		zoomTime = timeInterval
 		cameraRatioTarget = 1/16
 		multiplier = (1/16 - cameraRatio) / cameraRatio
 	end
@@ -337,7 +337,7 @@ function DoZoomHostile()
 		
 		cameraChanging = false
 		cameraRatioOrig = cameraRatio
-		x = timeInterval
+		zoomTime = timeInterval
 		cameraRatioNum = 6
 		multiplier = (calculatedRatio - cameraRatio) / cameraRatio
 	end

@@ -75,17 +75,18 @@ function update()
 ------------------]]--
 		
 		if cameraChanging == true then
-			x = x - dt
-			if x < 0 then
-				x = 0
+			print(zoomTime)
+			zoomTime = zoomTime - dt
+			if zoomTime < 0 then
+				zoomTime = 0
 				cameraChanging = false
 --				scen.playerShip.weapon.beam.width = cameraRatio
 				soundJustPlayed = false
 			end
-			if x >= 0 then
-				cameraRatio = cameraRatioOrig + cameraRatioOrig * multiplier * math.pow(math.abs((x - timeInterval) / timeInterval), 2)  --[[* (((x - timeInterval) * (x - timeInterval) * math.sqrt(math.abs(x - timeInterval))) / (timeInterval * timeInterval * math.sqrt(math.abs(timeInterval))))--]]
+			if zoomTime >= 0 then
+				cameraRatio = cameraRatioOrig + cameraRatioOrig * multiplier * math.pow(math.abs((timeInterval - zoomTime) / timeInterval), 2)  --[[* (((x - timeInterval) * (x - timeInterval) * math.sqrt(math.abs(x - timeInterval))) / (timeInterval * timeInterval * math.sqrt(math.abs(timeInterval))))--]]
 			end
-			camera = { w = 640 / cameraRatio, h }
+			camera = { w = WINDOW.width / cameraRatio, h }
 			camera.h = camera.w / aspectRatio
 			shipAdjust = .045 * camera.w
 			arrowLength = ARROW_LENGTH / cameraRatio
@@ -273,10 +274,9 @@ function update()
 			if warp.stage == "warping" then
 				scen.playerShip.physics.velocity = PolarVec(warpSpeed,scen.playerShip.physics.angle)
 			elseif warp.stage == "cooldown" then
-				slowDownTime = 2 -- [HARDCODED]
 				local slowingDown = mode_manager.time() - warp.time
-				if (mode_manager.time() - warp.time < slowDownTime) then
-					local magnitude = (scen.playerShip.base["warp-speed"] - scen.playerShip.base["max-velocity"]) * SPEED_FACTOR * (slowDownTime - slowingDown) / slowDownTime + scen.playerShip.base["max-velocity"] * SPEED_FACTOR
+				if (mode_manager.time() - warp.time < SLOW_FROM_WARP) then
+					local magnitude = (scen.playerShip.base["warp-speed"] - scen.playerShip.base["max-velocity"]) * SPEED_FACTOR * (SLOW_FROM_WARP - slowingDown) / SLOW_FROM_WARP + scen.playerShip.base["max-velocity"] * SPEED_FACTOR
 					scen.playerShip.physics.velocity = PolarVec(magnitude, scen.playerShip.physics.angle)
 				else
 					sound.play("WarpOut")
