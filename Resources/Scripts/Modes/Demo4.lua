@@ -271,6 +271,7 @@ function update()
 		
 		if scen.playerShip.control.warp == true
 		and warp.stage < WARP_COOLING then
+			print(warp.factor)
 			if warp.factor < 1.0 then
 				warp.stage = WARP_SPOOLING
 				warp.factor = warp.factor + dt / WARP_TIME
@@ -288,11 +289,16 @@ function update()
 		elseif warp.stage >= WARP_ABORTING then
 			if warp.factor > 0.0 then
 				warp.factor = warp.factor - dt / WARP_TIME
+				if warp.stage == WARP_ABORTING then
+					warp.factor = warp.factor - dt / WARP_TIME * 4
+				end
 				if warp.factor <= 0.0 then
 					warp.factor = 0.0
 					warp.lastPlayed = 0
+					if warp.stage ~= WARP_ABORTING then
+						sound.play("WarpOut")
+					end
 					warp.stage = WARP_IDLE
-					sound.play("WarpOut")
 				end
 			end
 		end
