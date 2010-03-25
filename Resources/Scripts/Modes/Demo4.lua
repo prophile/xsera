@@ -274,7 +274,7 @@ function update()
 			if warp.factor < 1.0 then
 				warp.stage = WARP_SPOOLING
 				warp.factor = warp.factor + dt / WARP_TIME
-				if warp.factor >= warp.lastPlayed / WARP_TIME / 5 then
+				if warp.factor >= warp.lastPlayed * WARP_TIME / 5 then
 					warp.lastPlayed = warp.lastPlayed + 1
 					sound.play("Warp"..warp.lastPlayed)
 				end
