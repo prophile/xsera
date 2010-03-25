@@ -5,7 +5,8 @@ import('Camera')
 
 RELEASE_BUILD = mode_manager.is_release()
 
-WARP_TIME = 1 --NEEDS ADJUSTMENT
+WARP_TIME = 1.2
+WARP_OUT_TIME = 5 / 3
 
 WARP_IDLE = 0
 WARP_SPOOLING = 1
