@@ -265,7 +265,7 @@ function update()
 		end
 		
 --[[------------------
---MARK:Warping Code
+	Warping Code
 ------------------]]-- it's a pair of lightsabers!
 		local warp = scen.playerShip.warp
 		
@@ -326,13 +326,8 @@ function render()
 		-scen.playerShip.physics.position.x + shipAdjust + (camera.w / 2.0),
 		-scen.playerShip.physics.position.y + (camera.h / 2.0))
 
---MARK: RENDER WARP
-	if scen.playerShip.warp.stage ~= WARP_IDLE then
-		graphics.begin_warp(scen.playerShip.warp.factor,scen.playerShip.physics.angle, cameraRatio)
-	else
-		graphics.begin_warp(0,0,1)
-	end
-
+	graphics.begin_warp(scen.playerShip.warp.factor,scen.playerShip.physics.angle, cameraRatio)
+	
 	graphics.draw_starfield(3.4)
 	graphics.draw_starfield(1.8)
 	graphics.draw_starfield(0.6)
