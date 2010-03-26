@@ -1607,9 +1607,8 @@ int luaopen_component ( lua_State* L )
 int mouse_position ( lua_State* L )
 {
 	vec2 mouse = Input::MousePosition();
-	lua_pushnumber(L, mouse.X());
-	lua_pushnumber(L, mouse.Y());
-	return 2;
+	lua_pushvec2(L, mouse);
+	return 1;
 }
 
 int import ( lua_State* L )

@@ -570,10 +570,10 @@ function DrawDialogueBox(text)
 end
 
 function GetMouseCoords()
-	local x, y = mouse_position()
+	local mPos = mouse_position()
 	return vec(
-		scen.playerShip.physics.position.x -shipAdjust + camera.w * x - camera.w / 2,
-		scen.playerShip.physics.position.y  + camera.h * y - camera.h / 2
+		scen.playerShip.physics.position.x -shipAdjust + camera.w * mPos.x - camera.w / 2,
+		scen.playerShip.physics.position.y  + camera.h * mPos.y - camera.h / 2
 	)
 end
 
