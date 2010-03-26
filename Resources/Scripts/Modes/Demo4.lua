@@ -402,7 +402,7 @@ function render()
 	DrawPanels()
 	
 	local cam = CameraToWindow()
---	graphics.set_camera(cam[1], cam[2], cam[3], cam[4])
+	graphics.set_camera(cam[1], cam[2], cam[3], cam[4])
 	DrawMouse2()
 	
 	InterfaceDisplay(dt)

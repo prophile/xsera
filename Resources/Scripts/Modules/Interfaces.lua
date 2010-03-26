@@ -590,19 +590,19 @@ function DrawMouse1()
 	else
 		ship = scen.playerShip.physics.position
 		
-		realPos.x = (mousePos.x - ship.x + shipAdjust) * cameraRatio / 320 * CameraToWindow()[3]
-		realPos.y = (mousePos.y - ship.y) * cameraRatio / 320 * CameraToWindow()[3]
+		realPos.x = (mousePos.x - ship.x + shipAdjust) * cameraRatio
+		realPos.y = (mousePos.y - ship.y) * cameraRatio
 		
 		if realPos.x > panels.right.center.x - panels.right.width / 2 - 10 then
-			mousePos.x = (panels.right.center.x - panels.right.width / 2 - 10) / CameraToWindow()[3] * 320 / cameraRatio - shipAdjust + ship.x
+			mousePos.x = (panels.right.center.x - panels.right.width / 2 - 10) / cameraRatio - shipAdjust + ship.x
 		elseif realPos.x < panels.left.center.x + panels.left.width / 2 then
-			mousePos.x = (panels.right.center.x + panels.right.width / 2) / CameraToWindow()[3] * 320 / cameraRatio - shipAdjust + ship.x
+			mousePos.x = (panels.right.center.x + panels.right.width / 2) / cameraRatio - shipAdjust + ship.x
 		end
 		
 		if realPos.y > WINDOW.height / 2 - 10 then
-			mousePos.y = (WINDOW.height / 2 - 10) / CameraToWindow()[4] * 240 / cameraRatio + ship.y
+			mousePos.y = (WINDOW.height / 2 - 10) / cameraRatio + ship.y
 		elseif realPos.y < -WINDOW.height / 2 + 10 then
-			mousePos.y = (-WINDOW.height / 2 + 10) / CameraToWindow()[4] * 240 / cameraRatio + ship.y
+			mousePos.y = (-WINDOW.height / 2 + 10) / cameraRatio + ship.y
 		end
 		
 		graphics.draw_line({ x = - camera.w / 2 + ship.x, y = mousePos.y }, { x = mousePos.x - 20 / cameraRatio, y = mousePos.y }, 1.0, ClutColour(4, 8))
