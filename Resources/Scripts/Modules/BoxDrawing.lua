@@ -218,15 +218,17 @@ end
 
 function ChangeSpecialByLoc(loc, set, tbl)
 	for num = 1, #tbl do
-		if tbl[num].yCoord <= loc.y and tbl[num].yCoord + 18 >= loc.y then -- check y coordinates
-			if tbl[num].xCoord <= loc.x and tbl[num].xCoord + tbl[num].length >= loc.x then -- check x coordinates
-				tbl[num].special = set
-				if set == nil then
-					if tbl[num].execute == nil then
-						sound.play("NaughtyBeep")
-						LogError("This command currently has no code.", 10)
-					else
-						tbl[num].execute()
+		if tbl[num].yCoord then
+			if tbl[num].yCoord <= loc.y and tbl[num].yCoord + 18 >= loc.y then -- check y coordinates
+				if tbl[num].xCoord <= loc.x and tbl[num].xCoord + tbl[num].length >= loc.x then -- check x coordinates
+					tbl[num].special = set
+					if set == nil then
+						if tbl[num].execute == nil then
+							sound.play("NaughtyBeep")
+							LogError("This command currently has no code.", 10)
+						else
+							tbl[num].execute()
+						end
 					end
 				end
 			end
