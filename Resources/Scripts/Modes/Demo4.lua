@@ -26,6 +26,9 @@ function init()
 
 	selection.control = scen.playership
 	selection.target = nil
+	
+	window.mouse_toggle()
+	print("BLARG")
 end
 
 function key( k )

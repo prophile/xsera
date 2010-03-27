@@ -509,6 +509,16 @@ int WIND_SetWindow ( lua_State* L )
 	Graphics::Init(ToInt(Preferences::Get("Screen/Width")), ToInt(Preferences::Get("Screen/Height")), ToBool(Preferences::Get("Screen/Fullscreen")));
 	return 0;
 }
+
+int WIND_MouseToggle ( lua_State* L )
+{
+	if (SDL_ShowCursor(SDL_QUERY) == SDL_ENABLE)
+		SDL_ShowCursor(SDL_DISABLE);
+	else
+		SDL_ShowCursor(SDL_ENABLE);
+	return 0;
+}
+
 /**
  * @page lua_window The Lua Window Registry
  * This page contains information about the Lua Window registry.
@@ -557,6 +567,7 @@ luaL_Reg registryWindowManager[] =
 	"toggle_fullscreen", WIND_ToggleFullscreen,
 	"size", WIND_WindowSize,
 	"set", WIND_SetWindow,
+	"mouse_toggle", WIND_MouseToggle,
 	NULL, NULL
 };
 

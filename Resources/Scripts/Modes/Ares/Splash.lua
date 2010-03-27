@@ -24,12 +24,10 @@ local execs = {
 
 function init()
 	sound.stop_music()
-	local num = 1
 	graphics.set_camera(-240 * aspectRatio, -240, 240 * aspectRatio, 240)
 end
 
 function update()
-	
 	-- mouse button handling
 	if mup then
 		mup = false
