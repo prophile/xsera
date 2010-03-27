@@ -87,7 +87,7 @@ function key(k)
 		
 		local bullet = physics.new_object(1)
 		bullet.collision_radius = bulletRadius
-		bullet.angle = AimAhead(
+		bullet.angle = AimTurret(
 			{
 				position = turret;
 				velocity = vec(0,0);

@@ -172,7 +172,7 @@ if source.base.attributes["auto-target"] == true then
 
 	if aimMethod == "smart" then
 		local vel = (new.base["initial-velocity"] or 0) * SPEED_FACTOR
-		new.physics.angle = AimAhead(srcMotion, targ, vel)
+		new.physics.angle = AimTurret(srcMotion, targ, vel)
 	else
 		new.physics.angle = find_angle(targ.position, new.physics.position)
 	end

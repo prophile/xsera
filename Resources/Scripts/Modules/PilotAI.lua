@@ -89,7 +89,7 @@ end
 
 function TurnToward(object, target)
 
-	local ang = find_angle(target.physics.position,object.physics.position) - object.physics.angle
+	local ang = AimFixed(object.physics,target.physics, hypot1(object.physics.velocity)) - object.physics.angle
 
 	ang = radian_range(ang)
 	
@@ -104,3 +104,54 @@ function TurnToward(object, target)
 		object.control.right = true
 	end
 end
+
+
+function AimFixed(parent, target, bulletVel)
+	--Grrrr
+	if getmetatable(target.position) == nil then
+		return parent.angle
+	end
+
+	local distance = hypot2(parent.position,target.position)
+	local time = distance/bulletVel
+
+
+	local initialOffset = target.position - parent.position
+	local velocityDiff = target.velocity - parent.velocity
+
+	local finalOffset = initialOffset + velocityDiff * time
+
+	local absAngle = math.atan2(finalOffset.y,finalOffset.x)
+
+	return absAngle
+end
+
+--Used to calculate absolute angle at which to fire the turret.
+function AimTurret(gun, target, bulletVel)
+	local gPos = gun.position
+	local tPos = target.position
+
+	local rPos = tPos - gPos
+	local rVel = target.velocity - gun.velocity
+
+	local A = -bulletVel^2 + rVel * rVel
+	local B = 2 * (rPos * rVel)
+	local C = rPos * rPos
+
+	--Assumes bullet is faster than target
+	--use -b + math.sqrt(...
+	--if target is faster
+
+	local t = (-B - math.sqrt(B^2 - 4 * A * C))/(2*A)
+
+	local slope = rPos + rVel * t
+
+	local theta = math.atan2(slope.y, slope.x)
+
+	return theta
+end
+
+
+
+
+
