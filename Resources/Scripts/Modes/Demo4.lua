@@ -339,57 +339,10 @@ function render()
 	
 	DrawGrid()
 	
-	for obId, o in pairs(scen.objects) do
-		if o.type == "beam" then
-			if o.base.beam.kind == "kinetic" then
-				local p1 = o.physics.position
-				local p2 = PolarVec(BEAM_LENGTH,o.physics.angle)
-				graphics.draw_line(p1, p1 + p2, 1, ClutColour(o.base.beam.color))
-			else
-				local from = o.gfx.source.position + o.gfx.offset
-				if o.base.beam.kind == "bolt-relative" then
-					graphics.draw_lightning(from, o.physics.position, 1.0, 10.0, false,ClutColour(o.base.beam.color))
-				elseif o.base.beam.kind == "bolt-to-object" then
-					graphics.draw_lightning(from, o.physics.position, 1.0, 10.0, false,ClutColour(o.base.beam.color))
-				elseif o.base.beam.kind == "static-relative" then
-					graphics.draw_line(from, o.physics.position, 3.0, ClutColour(o.base.beam.color))
-				elseif o.base.beam.kind == "static-to-object" then
-					graphics.draw_line(from, o.physics.position, 3.0, ClutColour(o.base.beam.color))
-				end
-			end
-		else
-			if cameraRatio >= 1 / 4 then
-				if o.type == "animation" then
-					graphics.draw_sprite_frame(o.gfx.sprite, o.physics.position, o.gfx.dimensions, Animate(o))
-				else -- Rotational
-					graphics.draw_sprite(o.gfx.sprite, o.physics.position, o.gfx.dimensions, o.physics.angle)
-				end
-			else
-				local color
-				
-				if o.ai.owner == -1 then
-					color = ClutColour(4,1)
-				elseif o.ai.owner == scen.playerShip.ai.owner then
-					color = ClutColour(5,1)
-				else
-					color = ClutColour(16,1)
-				end
-				
-				local iconScale = 1.0/cameraRatio
-				if o.base["tiny-shape"] == "solid-square" then
-					graphics.draw_rbox(o.physics.position, o.base["tiny-size"] * iconScale, color)
-				elseif o.base["tiny-shape"] == "plus" then
-					graphics.draw_rplus(o.physics.position, o.base["tiny-size"] * iconScale, color)
-				elseif o.base["tiny-shape"] == "triangle" then
-					graphics.draw_rtri(o.physics.position, o.base["tiny-size"] * iconScale, color)
-				elseif o.base["tiny-shape"] == "diamond" then
-					graphics.draw_rdia(o.physics.position, o.base["tiny-size"] * iconScale, color)
-				elseif o.base["tiny-shape"] == "framed-square" then --NOT IMPLEMENTED
-					graphics.draw_rbox(o.physics.position, o.base["tiny-size"] * iconScale, color)
-				end
-			end
+	for objectId, object in pairs(scen.objects) do
+		if objectId ~= scen.playerShipId then
+			DrawObject(object)
 		end
-		
 	end
 
 	graphics.draw_particles()
@@ -398,7 +351,7 @@ function render()
 --	graphics.end_warp(scen.playerShip.warp.factor, scen.playerShip.physics.angle, cameraRatio, scen.playerShip.physics.position)
 	graphics.end_warp()
 		
-	-- [ADAM] FIX: In order for the player's ship to not distort, ship must be drawn here
+	DrawObject(scen.playerShip)
 	
 	DrawArrow()
 	DrawMouse1()
@@ -529,5 +482,59 @@ v2 = Polar2Rect(1,angle+180) * dist * m2 / (m1 + m2)
 	end
 	if o.base.damage ~= nil then
 		other.status.health = other.status.health - o.base.damage
+	end
+end
+
+
+
+function DrawObject(o)
+	if o.type == "beam" then
+		if o.base.beam.kind == "kinetic" then
+			local p1 = o.physics.position
+			local p2 = PolarVec(BEAM_LENGTH,o.physics.angle)
+			graphics.draw_line(p1, p1 + p2, 1, ClutColour(o.base.beam.color))
+		else
+			local from = o.gfx.source.position + o.gfx.offset
+			if o.base.beam.kind == "bolt-relative" then
+				graphics.draw_lightning(from, o.physics.position, 1.0, 10.0, false,ClutColour(o.base.beam.color))
+			elseif o.base.beam.kind == "bolt-to-object" then
+				graphics.draw_lightning(from, o.physics.position, 1.0, 10.0, false,ClutColour(o.base.beam.color))
+			elseif o.base.beam.kind == "static-relative" then
+				graphics.draw_line(from, o.physics.position, 3.0, ClutColour(o.base.beam.color))
+			elseif o.base.beam.kind == "static-to-object" then
+				graphics.draw_line(from, o.physics.position, 3.0, ClutColour(o.base.beam.color))
+			end
+		end
+	else
+		if cameraRatio >= 1 / 4 then
+			if o.type == "animation" then
+				graphics.draw_sprite_frame(o.gfx.sprite, o.physics.position, o.gfx.dimensions, Animate(o))
+			else -- Rotational
+				graphics.draw_sprite(o.gfx.sprite, o.physics.position, o.gfx.dimensions, o.physics.angle)
+			end
+		else
+			local color
+
+			if o.ai.owner == -1 then
+				color = ClutColour(4,1)
+			elseif o.ai.owner == scen.playerShip.ai.owner then
+				color = ClutColour(5,1)
+			else
+				color = ClutColour(16,1)
+			end
+
+			local iconScale = 1.0/cameraRatio
+			if o.base["tiny-shape"] == "solid-square" then
+				graphics.draw_rbox(o.physics.position, o.base["tiny-size"] * iconScale, color)
+			elseif o.base["tiny-shape"] == "plus" then
+				graphics.draw_rplus(o.physics.position, o.base["tiny-size"] * iconScale, color)
+			elseif o.base["tiny-shape"] == "triangle" then
+				graphics.draw_rtri(o.physics.position, o.base["tiny-size"] * iconScale, color)
+			elseif o.base["tiny-shape"] == "diamond" then
+				graphics.draw_rdia(o.physics.position, o.base["tiny-size"] * iconScale, color)
+			elseif o.base["tiny-shape"] == "framed-square" then --NOT IMPLEMENTED
+				graphics.draw_rbox(o.physics.position, o.base["tiny-size"] * iconScale, color)
+			end
+		end
 	end
 end
