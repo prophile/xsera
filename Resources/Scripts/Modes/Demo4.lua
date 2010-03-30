@@ -20,6 +20,7 @@ aimMethod = "smart"
 function init()
 	Physics.NewSystem()
 	start_time = mode_manager.time()
+	realTime = mode_manager.time()
 	last_time = mode_manager.time()
 
 	scen = LoadScenario(demoLevel)
@@ -28,7 +29,6 @@ function init()
 	selection.target = nil
 	
 	window.mouse_toggle()
-	print("BLARG")
 end
 
 function key( k )
@@ -69,8 +69,10 @@ function update()
 	local newTime = mode_manager.time()
 	dt = newTime - last_time
 	last_time = newTime
-	
+
 	if menu_display == nil and consoleDraw == false then
+		realTime = realTime + dt
+
 		KeyDoActivated()
 		
 --[[------------------
@@ -178,11 +180,11 @@ function update()
 						if weap.ammo ~= -1
 						and weap.base.device["restock-cost"] > 0
 						and weap.ammo < weap.base.device.ammo / 2
-						and weap.lastRestock + weap.base.device["restock-cost"] * BASE_RECHARGE_RATE * WEAPON_RESTOCK_RATE / TIME_FACTOR <= newTime
+						and weap.lastRestock + weap.base.device["restock-cost"] * BASE_RECHARGE_RATE * WEAPON_RESTOCK_RATE / TIME_FACTOR <= realTime
 						and o.status.energy >= weap.base.device["restock-cost"] * WEAPON_RESTOCK_RATIO then
 							o.status.energy = o.status.energy - weap.base.device["restock-cost"] * WEAPON_RESTOCK_RATIO
 							weap.ammo = weap.ammo + 1
-							weap.lastRestock = newTime 
+							weap.lastRestock = realTime
 						end
 					end
 				end
@@ -190,7 +192,7 @@ function update()
 
 			--Lifetimer
 			if o.age ~= nil then
-				if o.age.lifeSpan + o.age.created <= newTime then
+				if o.age.lifeSpan + o.age.created <= realTime then
 					ExpireTrigger(o)
 					o.status.dead = true
 				end
@@ -202,9 +204,9 @@ function update()
 			
 			if o.triggers.periodic ~= nil
 			and o.triggers.periodic.interval ~= 0
-			and o.triggers.periodic.next <= newTime then
+			and o.triggers.periodic.next <= realTime then
 				ActivateTrigger(o)
-				o.triggers.periodic.next = newTime + o.triggers.periodic.interval + math.random(0,o.triggers.periodic.range)
+				o.triggers.periodic.next = realTime + o.triggers.periodic.interval + math.random(0,o.triggers.periodic.range)
 			end
 			
 			
