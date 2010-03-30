@@ -118,6 +118,20 @@ function update()
 		end
 		mdown = false--]]
 		
+		--It might be better to do this in Physics.UpdateSystem
+		for ai, a in pairs(scen.objects) do
+			for bi, b in pairs(scen.objects) do
+				if ai > bi then
+					if a.base.attributes["can-collide"] == true
+					and b.base.attributes["can-collide"] == true
+					and a.ai.owner ~= b.ai.owner
+					and hypot2(a.physics.position,b.physics.position) <= (a.physics.collision_radius + b.physics.collision_radius) then
+						Collide(a,b)
+					end
+				end
+			end
+		end
+
 		for i, o in pairs(scen.objects) do
 			if o.type == "beam" then
 				if o.base.beam.kind == "bolt-relative"
