@@ -412,6 +412,7 @@ end
 
 function shutdown()
 --	physics.close() -- what would I do in a closing physics function? [ADAM] [CLEANUP]
+--It was because the old physics system needed to be explicitly cleared when changing modes.
 end
 
 function RemoveDead()
@@ -419,11 +420,24 @@ function RemoveDead()
 	for i, o in pairs(scen.objects) do
 		if o.status.dead == true then
 			if scen.playerShipId == i then
-				ChangePlayerShip()
+				AddPlayerBody()
 			end
 			scen.objects[i] = nil
 		end
 	end
+end
+
+function AddPlayerBody()
+	local body = NewObject(22)--[SCOTT][HARDCODE]
+	body.ai.owner = scen.playerShip.ai.owner
+	body.physics.velocity = scen.playerShip.physics.velocity
+	body.physics.position = scen.playerShip.physics.position
+	body.physics.angle = scen.playerShip.physics.angle
+
+	scen.playerShipId = body.physics.object_id
+	scen.objects[body.physics.object_id] = body
+	--[SCOTT] We need a module for ship selection.
+	ChangePlayerShip()
 end
 
 function ChangePlayerShip()
