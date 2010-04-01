@@ -23,8 +23,8 @@ function MakeShip()
 		return
 	end
 	scen.planet.buildqueue.factor = shipBuilding.t
-	scen.planet.buildqueue.time = mode_manager.time()
-	scen.planet.buildqueue.current = mode_manager.time() - scen.planet.buildqueue.time
+	scen.planet.buildqueue.time = realTime
+	scen.planet.buildqueue.current = realTime - scen.planet.buildqueue.time
 	cash = cash - shipBuilding.c
 	buildTimerRunning = true
 end

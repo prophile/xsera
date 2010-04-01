@@ -51,7 +51,7 @@ function NewObject(id)
 		object.type = "rotation"
 	elseif base.animation ~= nil then
 		object.type = "animation"
-		object.gfx.startTime = mode_manager.time()
+		object.gfx.startTime = realTime
 		object.gfx.frameTime = base.animation["frame-speed"] / TIME_FACTOR / 30
 	elseif base.beam ~= nil then
 		object.type = "beam"
@@ -74,7 +74,7 @@ function NewObject(id)
 	
 	if base["initial-age"] ~= nil then
 		object.age = {
-			created = mode_manager.time();
+			created = realTime;
 			lifeSpan = (base["initial-age"] + math.random(0, base["initial-age"] or 0)) / TIME_FACTOR;
 		}
 	end
@@ -95,7 +95,7 @@ function NewObject(id)
 				positions = base.weapon[wid].position;
 				ammo = wbase.device.ammo;
 				lastActivated = -wbase.device["fire-time"] / TIME_FACTOR;
-				lastRestock = mode_manager.time();
+				lastRestock = realTime
 			}
 			
 			CopyActions(weap)
@@ -132,9 +132,9 @@ function CopyActions(object)
 			range = math.floor(activate.count/2^15)%2^7 / TIME_FACTOR;
 		}
 		
-		periodic.next = mode_manager.time() + periodic.interval + math.random(0, periodic.range)
+		periodic.next = realTime + periodic.interval + math.random(0, periodic.range)
 
---		math.floor(c/2^7)%7 --No discernable use.
+--		math.floor(c/2^7)%7 --No discernable use. But do not delete!
 
 		object.triggers.activate.count = activate.count%2^7
 		

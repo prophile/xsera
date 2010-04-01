@@ -8,9 +8,9 @@ function ActivateTrigger(sender, owner)
 	elseif owner.status.energy >= sender.base.device["energy-cost"]
 	and (sender.base.device.ammo == -1
 	or sender.ammo > 0)
-	and sender.lastActivated < mode_manager.time() - sender.base.device["fire-time"] / TIME_FACTOR then
+	and sender.lastActivated < realTime - sender.base.device["fire-time"] / TIME_FACTOR then
 
-			sender.lastActivated = mode_manager.time()
+			sender.lastActivated = realTime
 
 			if sender.ammo ~= -1 then
 				sender.ammo = sender.ammo - 1
