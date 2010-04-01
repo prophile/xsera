@@ -142,6 +142,7 @@
 		57B806BD113E21C900766C6F /* GAFFile.h in Headers */ = {isa = PBXBuildFile; fileRef = 57B806BB113E21C900766C6F /* GAFFile.h */; };
 		57FCA50B10ACDF9D002D6A9E /* Object3D.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 57FCA50910ACDF9D002D6A9E /* Object3D.cpp */; };
 		57FCA50C10ACDF9D002D6A9E /* Object3D.h in Headers */ = {isa = PBXBuildFile; fileRef = 57FCA50A10ACDF9D002D6A9E /* Object3D.h */; };
+		D221494111652EA4009575A0 /* bit.c in Sources */ = {isa = PBXBuildFile; fileRef = D221494011652EA4009575A0 /* bit.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -282,6 +283,7 @@
 		57B806BB113E21C900766C6F /* GAFFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAFFile.h; sourceTree = "<group>"; };
 		57FCA50910ACDF9D002D6A9E /* Object3D.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Object3D.cpp; sourceTree = "<group>"; };
 		57FCA50A10ACDF9D002D6A9E /* Object3D.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Object3D.h; sourceTree = "<group>"; };
+		D221494011652EA4009575A0 /* bit.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = bit.c; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -448,6 +450,7 @@
 				496A244A0F0EB35E00C53BA1 /* lzio.c */,
 				496A244B0F0EB35E00C53BA1 /* lzio.h */,
 				496A244C0F0EB35E00C53BA1 /* print.c */,
+				D221494011652EA4009575A0 /* bit.c */,
 			);
 			path = Lua;
 			sourceTree = "<group>";
@@ -745,6 +748,7 @@
 				57662F2C10AF591B0025BA67 /* ImageLoader.cpp in Sources */,
 				57662F2E10AF591B0025BA67 /* ParticleSystem.cpp in Sources */,
 				57B806BC113E21C900766C6F /* GAFFile.cpp in Sources */,
+				D221494111652EA4009575A0 /* bit.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

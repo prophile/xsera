@@ -97,6 +97,8 @@ function key ( k )
 			mode_manager.switch("../Tests/PreferenceTest")
 		elseif k == "7" then
 			mode_manager.switch("../Tests/PhysicsTest")
+		elseif k == "8" then
+			mode_manager.switch("../Tests/Bits")
 		end
 	end
 	
