@@ -79,7 +79,22 @@ end;
 end;
 ["proximity-condition"] = function(cond) end;
 ["subject-is-player-condition"] = function(cond) end;
-["time-condition"] = function(cond) end;
-["velocity-less-than-equal-to-condition"] = function(cond) end;
+["time-condition"] = function(cond)
+	--[[
+	May need to measure from when the condition is first tested. Instead of scenario start.
+	--]]
+	if cond.value / TIME_FACTOR >= realtime then
+		return true
+	else
+		return false
+	end
+end;
+["velocity-less-than-equal-to-condition"] = function(cond)
+	if cond.value * SPEED_FACTOR >= hypot1(scen.objects[cond["subject-object"] + 1]) then
+		return true
+	else
+		return false
+	end
+end;
 ["zoom-level-condition"] = function(cond) end;
 }
