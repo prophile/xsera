@@ -128,15 +128,15 @@ function CopyActions(object)
 	and object.triggers.activate.count > 255 then
 		local activate = object.triggers.activate
 		local periodic = {
-			interval = math.floor(activate.count/2^23) / TIME_FACTOR;
-			range = math.floor(activate.count/2^15)%2^7 / TIME_FACTOR;
+			interval = bit.rshift(activate.count,24);
+			range = bit.band(bit.rshift(activate.count,16),0xff) / TIME_FACTOR;
 		}
 		
 		periodic.next = realTime + periodic.interval + math.random(0, periodic.range)
 
 --		math.floor(c/2^7)%7 --No discernable use. But do not delete!
 
-		object.triggers.activate.count = activate.count%2^7
+		object.triggers.activate.count = bit.band(activate.count,0xff)
 		
 		object.triggers.periodic = periodic
 	end
