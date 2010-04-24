@@ -45,7 +45,15 @@ end;
 	end
 end;
 ["direct-is-subject-target-condition"] = function(cond) end;
-["distance-greater-condition"] = function(cond) end;
+["distance-greater-condition"] = function(cond)
+	local subject = scen.objects[cond["subject-object"]+1]
+	local direct = scen.objects[cond["direct-object"]+1]
+	if hypot2(subject.physics.position, direct.physics.position) > math.sqrt(cond.value) then
+		return true
+	else
+		return false
+	end
+end;
 ["half-health-condition"] = function(cond)
 	local objectStatus = scen.objects[cond["subject-object"]+1].status
 	if objectStatus.health * 2 <= objectStatus.healthMax then
@@ -77,7 +85,15 @@ end;
 		return false
 	end
 end;
-["proximity-condition"] = function(cond) end;
+["proximity-condition"] = function(cond)
+	local subject = scen.objects[cond["subject-object"]+1]
+	local direct = scen.objects[cond["direct-object"]+1]
+	if hypot2(subject.physics.position, direct.physics.position) > math.sqrt(cond.value) then
+		return true
+	else
+		return false
+	end
+end;
 ["subject-is-player-condition"] = function(cond) end;
 ["time-condition"] = function(cond)
 	--[[
