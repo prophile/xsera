@@ -74,8 +74,40 @@ actionTable = {
 ["alter-base-type-action"] = function(action, source, direct) end,
 ["alter-cloak-action"] = function(action, source, direct) end,
 ["alter-condition-true-yet-action"] = function(action, source, direct) end,
-["alter-damage-action"] = function(action, source, direct) end,
-["alter-energy-action"] = function(action, source, direct) end,
+["alter-damage-action"] = function(action, source, direct)
+	local p
+	if action["initial-subject-override"] ~= nil then
+		p = scen.objects[action["initial-subject-override"]]
+	elseif action.reflexive == true then
+		p = source
+	else
+		p = direct
+	end
+
+	if p ~= nil then
+		p.status.health = p.status.health + action.value
+		if p.status.health > p.status.healthMax then
+			p.status.health = p.status.healthMax
+		end
+	end
+end,
+["alter-energy-action"] = function(action, source, direct)
+	local p
+	if action["initial-subject-override"] ~= nil then
+		p = scen.objects[action["initial-subject-override"]]
+	elseif action.reflexive == true then
+		p = source
+	else
+		p = direct
+	end
+
+	if p ~= nil then
+		p.status.energy = p.status.energy + action.value
+		if p.status.energy > p.status.energyMax then
+			p.status.energy = p.status.energyMax
+		end
+	end
+end,
 ["alter-hidden-action"] = function(action, source, direct) end,
 ["alter-location-action"] = function(action, source, direct) end,
 ["alter-max-velocity-action"] = function(action, source, direct) end,
@@ -95,7 +127,7 @@ actionTable = {
 	else
 		p = direct.physics
 	end
-	
+
 	if action.relative == true then
 		p.velocity = p.velocity +  delta
 	else
