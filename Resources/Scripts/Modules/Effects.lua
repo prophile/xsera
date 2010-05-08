@@ -39,11 +39,14 @@ Effect = {
 	local h = camera.h/2.0
 	
 	local color = ClutColour(effect.color)
+	local delta = effect.age/effect.life
 	
 	if blinkMode == "triangle" then
-		color.a = -math.abs(2*(effect.age/effect.life)-1)+1
+		color.a = -math.abs(2*delta - 1)+1
+	elseif blinkMode == "flash" then
+		color.a = 1.0 - (delta*delta)
 	else -- sine
-		color.a = math.sin(math.pi * (effect.age/effect.life))
+		color.a = math.sin(math.pi * delta)
 	end
 	
 	graphics.draw_box(pos.y + h, pos.x - w, pos.y - h, pos.x + w, 0,color)
