@@ -2,32 +2,32 @@ gameData = {
 ["Actions"] = {
 [000] =  {
 ["type"] = "create-object-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["which-base-type"] = 29;
 ["how-many-min"] = 1;
 ["how-many-range"] = 0;
-["velocity-relative"] = "false";
-["direction-relative"] = "true";
+["velocity-relative"] = false;
+["direction-relative"] = true;
 ["random-distance"] = 0;
 
 };
 [001] =  {
 ["type"] = "create-object-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["which-base-type"] = 2;
 ["how-many-min"] = 1;
 ["how-many-range"] = 0;
-["velocity-relative"] = "true";
-["direction-relative"] = "true";
+["velocity-relative"] = true;
+["direction-relative"] = true;
 ["random-distance"] = 0;
 
 };
 [002] =  {
 ["type"] = "play-sound-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["priority"] = 3;
 ["persistence"] = 10;
-["absolute"] = "false";
+["absolute"] = false;
 ["volume-minimum"] = 255;
 ["volume-range"] = 0;
 ["id-minimum"] = 500;
@@ -36,7 +36,7 @@ gameData = {
 };
 [003] =  {
 ["type"] = "alter-offline-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["owner"] = "other";
 ["minimum"] = -7680;
 ["range"] = 15360;
@@ -44,16 +44,16 @@ gameData = {
 };
 [004] =  {
 ["type"] = "alter-thrust-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["owner"] = "other";
-["relative"] = "true";
+["relative"] = true;
 ["minimum"] = 12;
 ["range"] = 0;
 
 };
 [005] =  {
 ["type"] = "alter-spin-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["owner"] = "other";
 ["minimum"] = -512;
 ["range"] = 1024;
@@ -61,27 +61,27 @@ gameData = {
 };
 [006] =  {
 ["type"] = "create-object-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["which-base-type"] = 53;
 ["how-many-min"] = 1;
 ["how-many-range"] = 0;
-["velocity-relative"] = "false";
-["direction-relative"] = "true";
+["velocity-relative"] = false;
+["direction-relative"] = true;
 ["random-distance"] = 0;
 
 };
 [007] =  {
 ["type"] = "die-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["death-type"] = 255;
 
 };
 [008] =  {
 ["type"] = "play-sound-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["priority"] = 3;
 ["persistence"] = 10;
-["absolute"] = "false";
+["absolute"] = false;
 ["volume-minimum"] = 255;
 ["volume-range"] = 0;
 ["id-minimum"] = 502;
@@ -90,77 +90,77 @@ gameData = {
 };
 [009] =  {
 ["type"] = "create-object-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["which-base-type"] = 53;
 ["how-many-min"] = 1;
 ["how-many-range"] = 0;
-["velocity-relative"] = "false";
-["direction-relative"] = "true";
+["velocity-relative"] = false;
+["direction-relative"] = true;
 ["random-distance"] = 0;
 
 };
 [010] =  {
 ["type"] = "die-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["death-type"] = 1;
 
 };
 [011] =  {
 ["type"] = "create-object-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["which-base-type"] = 3;
 ["how-many-min"] = 1;
 ["how-many-range"] = 0;
-["velocity-relative"] = "true";
-["direction-relative"] = "true";
+["velocity-relative"] = true;
+["direction-relative"] = true;
 ["random-distance"] = 0;
 
 };
 [012] =  {
 ["type"] = "create-object-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["which-base-type"] = 8;
 ["how-many-min"] = 1;
 ["how-many-range"] = 0;
-["velocity-relative"] = "false";
-["direction-relative"] = "true";
+["velocity-relative"] = false;
+["direction-relative"] = true;
 ["random-distance"] = 0;
 
 };
 [013] =  {
 ["type"] = "die-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["death-type"] = 1;
 
 };
 [014] =  {
 ["type"] = "create-object-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["which-base-type"] = 9;
 ["how-many-min"] = 1;
 ["how-many-range"] = 0;
-["velocity-relative"] = "true";
-["direction-relative"] = "true";
+["velocity-relative"] = true;
+["direction-relative"] = true;
 ["random-distance"] = 0;
 
 };
 [015] =  {
 ["type"] = "create-object-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["which-base-type"] = 29;
 ["how-many-min"] = 1;
 ["how-many-range"] = 0;
-["velocity-relative"] = "false";
-["direction-relative"] = "true";
+["velocity-relative"] = false;
+["direction-relative"] = true;
 ["random-distance"] = 0;
 
 };
 [016] =  {
 ["type"] = "play-sound-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["priority"] = 3;
 ["persistence"] = 20;
-["absolute"] = "false";
+["absolute"] = false;
 ["volume-minimum"] = 255;
 ["volume-range"] = 0;
 ["id-minimum"] = 503;
@@ -169,7 +169,7 @@ gameData = {
 };
 [017] =  {
 ["type"] = "make-sparks-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["how-many"] = 10;
 ["speed"] = 20;
 ["velocity-range"] = 2.0;
@@ -177,21 +177,21 @@ gameData = {
 };
 [018] =  {
 ["type"] = "create-object-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["which-base-type"] = 26;
 ["how-many-min"] = 2;
 ["how-many-range"] = 3;
-["velocity-relative"] = "true";
-["direction-relative"] = "true";
+["velocity-relative"] = true;
+["direction-relative"] = true;
 ["random-distance"] = 0;
 
 };
 [019] =  {
 ["type"] = "play-sound-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["priority"] = 3;
 ["persistence"] = 10;
-["absolute"] = "false";
+["absolute"] = false;
 ["volume-minimum"] = 255;
 ["volume-range"] = 0;
 ["id-minimum"] = 505;
@@ -200,42 +200,42 @@ gameData = {
 };
 [020] =  {
 ["type"] = "create-object-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["which-base-type"] = 34;
 ["how-many-min"] = 1;
 ["how-many-range"] = 0;
-["velocity-relative"] = "false";
-["direction-relative"] = "true";
+["velocity-relative"] = false;
+["direction-relative"] = true;
 ["random-distance"] = 0;
 
 };
 [021] =  {
 ["type"] = "alter-velocity-action";
-["reflexive"] = "false";
-["relative"] = "true";
+["reflexive"] = false;
+["relative"] = true;
 ["minimum"] = 6144;
 ["range"] = 6144;
 
 };
 [022] =  {
 ["type"] = "alter-offline-action";
-["reflexive"] = "false";
+["reflexive"] = false;
 ["minimum"] = -512;
 ["range"] = 1024;
 
 };
 [023] =  {
 ["type"] = "die-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["death-type"] = 1;
 
 };
 [024] =  {
 ["type"] = "play-sound-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["priority"] = 5;
 ["persistence"] = 60;
-["absolute"] = "false";
+["absolute"] = false;
 ["volume-minimum"] = 255;
 ["volume-range"] = 0;
 ["id-minimum"] = 501;
@@ -244,99 +244,99 @@ gameData = {
 };
 [025] =  {
 ["type"] = "create-object-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["which-base-type"] = 11;
 ["how-many-min"] = 1;
 ["how-many-range"] = 2;
-["velocity-relative"] = "false";
-["direction-relative"] = "true";
+["velocity-relative"] = false;
+["direction-relative"] = true;
 ["random-distance"] = 32;
 
 };
 [026] =  {
 ["type"] = "create-object-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["which-base-type"] = 12;
 ["how-many-min"] = 1;
 ["how-many-range"] = 2;
-["velocity-relative"] = "false";
-["direction-relative"] = "true";
+["velocity-relative"] = false;
+["direction-relative"] = true;
 ["random-distance"] = 32;
 
 };
 [027] =  {
 ["type"] = "create-object-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["which-base-type"] = 8;
 ["how-many-min"] = 1;
 ["how-many-range"] = 0;
-["velocity-relative"] = "false";
-["direction-relative"] = "true";
+["velocity-relative"] = false;
+["direction-relative"] = true;
 ["random-distance"] = 0;
 
 };
 [028] =  {
 ["type"] = "die-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["death-type"] = 1;
 
 };
 [029] =  {
 ["type"] = "create-object-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["which-base-type"] = 79;
 ["how-many-min"] = 1;
 ["how-many-range"] = 0;
-["velocity-relative"] = "false";
-["direction-relative"] = "true";
+["velocity-relative"] = false;
+["direction-relative"] = true;
 ["random-distance"] = 0;
 
 };
 [030] =  {
 ["type"] = "die-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["death-type"] = 1;
 
 };
 [031] =  {
 ["type"] = "create-object-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["which-base-type"] = 35;
 ["how-many-min"] = 1;
 ["how-many-range"] = 0;
-["velocity-relative"] = "false";
-["direction-relative"] = "true";
+["velocity-relative"] = false;
+["direction-relative"] = true;
 ["random-distance"] = 0;
 
 };
 [032] =  {
 ["type"] = "create-object-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["which-base-type"] = 35;
 ["how-many-min"] = 1;
 ["how-many-range"] = 0;
-["velocity-relative"] = "false";
-["direction-relative"] = "true";
+["velocity-relative"] = false;
+["direction-relative"] = true;
 ["random-distance"] = 0;
 
 };
 [033] =  {
 ["type"] = "create-object-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["which-base-type"] = 16;
 ["how-many-min"] = 1;
 ["how-many-range"] = 0;
-["velocity-relative"] = "true";
-["direction-relative"] = "true";
+["velocity-relative"] = true;
+["direction-relative"] = true;
 ["random-distance"] = 0;
 
 };
 [034] =  {
 ["type"] = "play-sound-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["priority"] = 3;
 ["persistence"] = 10;
-["absolute"] = "false";
+["absolute"] = false;
 ["volume-minimum"] = 255;
 ["volume-range"] = 0;
 ["id-minimum"] = 504;
@@ -345,49 +345,49 @@ gameData = {
 };
 [035] =  {
 ["type"] = "die-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["death-type"] = 1;
 
 };
 [036] =  {
 ["type"] = "create-object-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["which-base-type"] = 52;
 ["how-many-min"] = 1;
 ["how-many-range"] = 0;
-["velocity-relative"] = "false";
-["direction-relative"] = "true";
+["velocity-relative"] = false;
+["direction-relative"] = true;
 ["random-distance"] = 0;
 
 };
 [037] =  {
 ["type"] = "create-object-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["which-base-type"] = 5;
 ["how-many-min"] = 1;
 ["how-many-range"] = 0;
-["velocity-relative"] = "true";
-["direction-relative"] = "true";
+["velocity-relative"] = true;
+["direction-relative"] = true;
 ["random-distance"] = 0;
 
 };
 [038] =  {
 ["type"] = "create-object-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["which-base-type"] = 21;
 ["how-many-min"] = 1;
 ["how-many-range"] = 0;
-["velocity-relative"] = "true";
-["direction-relative"] = "true";
+["velocity-relative"] = true;
+["direction-relative"] = true;
 ["random-distance"] = 0;
 
 };
 [039] =  {
 ["type"] = "play-sound-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["priority"] = 3;
 ["persistence"] = 10;
-["absolute"] = "false";
+["absolute"] = false;
 ["volume-minimum"] = 255;
 ["volume-range"] = 0;
 ["id-minimum"] = 512;
@@ -396,27 +396,27 @@ gameData = {
 };
 [040] =  {
 ["type"] = "create-object-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["which-base-type"] = 8;
 ["how-many-min"] = 1;
 ["how-many-range"] = 0;
-["velocity-relative"] = "false";
-["direction-relative"] = "true";
+["velocity-relative"] = false;
+["direction-relative"] = true;
 ["random-distance"] = 0;
 
 };
 [041] =  {
 ["type"] = "die-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["death-type"] = 1;
 
 };
 [042] =  {
 ["type"] = "play-sound-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["priority"] = 3;
 ["persistence"] = 20;
-["absolute"] = "false";
+["absolute"] = false;
 ["volume-minimum"] = 255;
 ["volume-range"] = 0;
 ["id-minimum"] = 517;
@@ -425,10 +425,10 @@ gameData = {
 };
 [043] =  {
 ["type"] = "play-sound-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["priority"] = 3;
 ["persistence"] = 20;
-["absolute"] = "false";
+["absolute"] = false;
 ["volume-minimum"] = 255;
 ["volume-range"] = 0;
 ["id-minimum"] = 518;
@@ -437,7 +437,7 @@ gameData = {
 };
 [044] =  {
 ["type"] = "land-at-action";
-["reflexive"] = "false";
+["reflexive"] = false;
 ["inclusive-filter"] = 4029677568;
 ["exclusive-filter"] = 4294967295;
 ["owner"] = "other";
@@ -446,13 +446,13 @@ gameData = {
 };
 [045] =  {
 ["type"] = "play-sound-action";
-["reflexive"] = "false";
+["reflexive"] = false;
 ["inclusive-filter"] = 4029677568;
 ["exclusive-filter"] = 4294967295;
 ["owner"] = "other";
 ["priority"] = 5;
 ["persistence"] = 20;
-["absolute"] = "true";
+["absolute"] = true;
 ["volume-minimum"] = 255;
 ["volume-range"] = 0;
 ["id-minimum"] = 513;
@@ -461,21 +461,21 @@ gameData = {
 };
 [046] =  {
 ["type"] = "create-object-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["which-base-type"] = 81;
 ["how-many-min"] = 1;
 ["how-many-range"] = 0;
-["velocity-relative"] = "true";
-["direction-relative"] = "true";
+["velocity-relative"] = true;
+["direction-relative"] = true;
 ["random-distance"] = 0;
 
 };
 [047] =  {
 ["type"] = "play-sound-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["priority"] = 3;
 ["persistence"] = 5;
-["absolute"] = "false";
+["absolute"] = false;
 ["volume-minimum"] = 255;
 ["volume-range"] = 0;
 ["id-minimum"] = 534;
@@ -484,38 +484,38 @@ gameData = {
 };
 [048] =  {
 ["type"] = "display-message-action";
-["reflexive"] = "false";
+["reflexive"] = false;
 ["message-id"] = 4220;
 ["page"] = 1;
 
 };
 [049] =  {
 ["type"] = "die-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["death-type"] = 1;
 
 };
 [050] =  {
 ["type"] = "alter-energy-action";
-["reflexive"] = "false";
+["reflexive"] = false;
 ["inclusive-filter"] = 1024;
 ["value"] = 150;
 
 };
 [051] =  {
 ["type"] = "die-action";
-["reflexive"] = "false";
+["reflexive"] = false;
 ["inclusive-filter"] = 1024;
 ["death-type"] = 1;
 
 };
 [052] =  {
 ["type"] = "play-sound-action";
-["reflexive"] = "false";
+["reflexive"] = false;
 ["inclusive-filter"] = 1024;
 ["priority"] = 3;
 ["persistence"] = 10;
-["absolute"] = "false";
+["absolute"] = false;
 ["volume-minimum"] = 255;
 ["volume-range"] = 0;
 ["id-minimum"] = 514;
@@ -524,10 +524,10 @@ gameData = {
 };
 [053] =  {
 ["type"] = "play-sound-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["priority"] = 4;
 ["persistence"] = 60;
-["absolute"] = "false";
+["absolute"] = false;
 ["volume-minimum"] = 255;
 ["volume-range"] = 0;
 ["id-minimum"] = 515;
@@ -536,66 +536,66 @@ gameData = {
 };
 [054] =  {
 ["type"] = "create-object-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["which-base-type"] = 11;
 ["how-many-min"] = 1;
 ["how-many-range"] = 2;
-["velocity-relative"] = "false";
-["direction-relative"] = "true";
+["velocity-relative"] = false;
+["direction-relative"] = true;
 ["random-distance"] = 0;
 
 };
 [055] =  {
 ["type"] = "create-object-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["which-base-type"] = 22;
 ["how-many-min"] = 1;
 ["how-many-range"] = 2;
-["velocity-relative"] = "false";
-["direction-relative"] = "true";
+["velocity-relative"] = false;
+["direction-relative"] = true;
 ["random-distance"] = 0;
 
 };
 [056] =  {
 ["type"] = "alter-special-action";
-["reflexive"] = "false";
+["reflexive"] = false;
 ["inclusive-filter"] = 1024;
 ["value"] = 6;
 
 };
 [057] =  {
 ["type"] = "die-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["death-type"] = 1;
 
 };
 [058] =  {
 ["type"] = "alter-hidden-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["minimum"] = 15;
 ["range"] = 0;
 
 };
 [059] =  {
 ["type"] = "alter-hidden-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["minimum"] = 16;
 ["range"] = 0;
 
 };
 [060] =  {
 ["type"] = "alter-hidden-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["minimum"] = 17;
 ["range"] = 0;
 
 };
 [061] =  {
 ["type"] = "play-sound-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["priority"] = 3;
 ["persistence"] = 20;
-["absolute"] = "false";
+["absolute"] = false;
 ["volume-minimum"] = 255;
 ["volume-range"] = 0;
 ["id-minimum"] = 501;
@@ -604,7 +604,7 @@ gameData = {
 };
 [062] =  {
 ["type"] = "make-sparks-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["how-many"] = 10;
 ["speed"] = 20;
 ["velocity-range"] = 2.0;
@@ -612,10 +612,10 @@ gameData = {
 };
 [063] =  {
 ["type"] = "play-sound-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["priority"] = 3;
 ["persistence"] = 20;
-["absolute"] = "false";
+["absolute"] = false;
 ["volume-minimum"] = 255;
 ["volume-range"] = 0;
 ["id-minimum"] = 501;
@@ -624,18 +624,18 @@ gameData = {
 };
 [064] =  {
 ["type"] = "create-object-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["which-base-type"] = 29;
 ["how-many-min"] = 1;
 ["how-many-range"] = 0;
-["velocity-relative"] = "false";
-["direction-relative"] = "true";
+["velocity-relative"] = false;
+["direction-relative"] = true;
 ["random-distance"] = 0;
 
 };
 [065] =  {
 ["type"] = "change-score-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["which-player"] = 0;
 ["which-score"] = 0;
 ["amount"] = 1;
@@ -643,43 +643,43 @@ gameData = {
 };
 [066] =  {
 ["type"] = "create-object-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["which-base-type"] = 29;
 ["how-many-min"] = 1;
 ["how-many-range"] = 0;
-["velocity-relative"] = "false";
-["direction-relative"] = "true";
+["velocity-relative"] = false;
+["direction-relative"] = true;
 ["random-distance"] = 0;
 
 };
 [067] =  {
 ["type"] = "create-object-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["which-base-type"] = 35;
 ["how-many-min"] = 1;
 ["how-many-range"] = 0;
-["velocity-relative"] = "false";
-["direction-relative"] = "true";
+["velocity-relative"] = false;
+["direction-relative"] = true;
 ["random-distance"] = 0;
 
 };
 [068] =  {
 ["type"] = "create-object-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["which-base-type"] = 40;
 ["how-many-min"] = 1;
 ["how-many-range"] = 0;
-["velocity-relative"] = "true";
-["direction-relative"] = "true";
+["velocity-relative"] = true;
+["direction-relative"] = true;
 ["random-distance"] = 0;
 
 };
 [069] =  {
 ["type"] = "play-sound-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["priority"] = 0;
 ["persistence"] = 10;
-["absolute"] = "false";
+["absolute"] = false;
 ["volume-minimum"] = 255;
 ["volume-range"] = 0;
 ["id-minimum"] = 550;
@@ -688,46 +688,46 @@ gameData = {
 };
 [070] =  {
 ["type"] = "create-object-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["which-base-type"] = 124;
 ["how-many-min"] = 1;
 ["how-many-range"] = 0;
-["velocity-relative"] = "true";
-["direction-relative"] = "true";
+["velocity-relative"] = true;
+["direction-relative"] = true;
 ["random-distance"] = 0;
 
 };
 [071] =  {
 ["type"] = "create-object-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["which-base-type"] = 8;
 ["how-many-min"] = 1;
 ["how-many-range"] = 0;
-["velocity-relative"] = "false";
-["direction-relative"] = "true";
+["velocity-relative"] = false;
+["direction-relative"] = true;
 ["random-distance"] = 0;
 
 };
 [072] =  {
 ["type"] = "die-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["death-type"] = 1;
 
 };
 [073] =  {
 ["type"] = "create-object-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["which-base-type"] = 29;
 ["how-many-min"] = 1;
 ["how-many-range"] = 0;
-["velocity-relative"] = "false";
-["direction-relative"] = "true";
+["velocity-relative"] = false;
+["direction-relative"] = true;
 ["random-distance"] = 0;
 
 };
 [074] =  {
 ["type"] = "land-at-action";
-["reflexive"] = "false";
+["reflexive"] = false;
 ["inclusive-filter"] = 1048576;
 ["owner"] = "other";
 ["landing-speed"] = 32;
@@ -735,12 +735,12 @@ gameData = {
 };
 [075] =  {
 ["type"] = "play-sound-action";
-["reflexive"] = "false";
+["reflexive"] = false;
 ["inclusive-filter"] = 1048576;
 ["owner"] = "other";
 ["priority"] = 5;
 ["persistence"] = 20;
-["absolute"] = "true";
+["absolute"] = true;
 ["volume-minimum"] = 255;
 ["volume-range"] = 0;
 ["id-minimum"] = 513;
@@ -749,21 +749,21 @@ gameData = {
 };
 [076] =  {
 ["type"] = "create-object-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["which-base-type"] = 29;
 ["how-many-min"] = 1;
 ["how-many-range"] = 0;
-["velocity-relative"] = "false";
-["direction-relative"] = "true";
+["velocity-relative"] = false;
+["direction-relative"] = true;
 ["random-distance"] = 0;
 
 };
 [077] =  {
 ["type"] = "play-sound-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["priority"] = 3;
 ["persistence"] = 10;
-["absolute"] = "false";
+["absolute"] = false;
 ["volume-minimum"] = 255;
 ["volume-range"] = 0;
 ["id-minimum"] = 519;
@@ -772,24 +772,24 @@ gameData = {
 };
 [078] =  {
 ["type"] = "die-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["death-type"] = 1;
 
 };
 [079] =  {
 ["type"] = "create-object-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["which-base-type"] = 43;
 ["how-many-min"] = 2;
 ["how-many-range"] = 0;
-["velocity-relative"] = "true";
-["direction-relative"] = "true";
+["velocity-relative"] = true;
+["direction-relative"] = true;
 ["random-distance"] = 0;
 
 };
 [080] =  {
 ["type"] = "declare-winner-action";
-["reflexive"] = "false";
+["reflexive"] = false;
 ["which-player"] = 0;
 ["next-level"] = 3;
 ["text-id"] = 9000;
@@ -797,7 +797,7 @@ gameData = {
 };
 [081] =  {
 ["type"] = "declare-winner-action";
-["reflexive"] = "false";
+["reflexive"] = false;
 ["which-player"] = 1;
 ["next-level"] = -1;
 ["text-id"] = 10203;
@@ -805,7 +805,7 @@ gameData = {
 };
 [082] =  {
 ["type"] = "display-message-action";
-["reflexive"] = "false";
+["reflexive"] = false;
 ["delay"] = 120;
 ["message-id"] = 4221;
 ["page"] = 1;
@@ -813,29 +813,29 @@ gameData = {
 };
 [083] =  {
 ["type"] = "alter-hidden-action";
-["reflexive"] = "false";
+["reflexive"] = false;
 ["minimum"] = 7;
 ["range"] = 2;
 
 };
 [084] =  {
 ["type"] = "alter-condition-true-yet-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["value"] = 1;
 
 };
 [085] =  {
 ["type"] = "alter-owner-action";
-["reflexive"] = "false";
-["relative"] = "false";
+["reflexive"] = false;
+["relative"] = false;
 
 };
 [086] =  {
 ["type"] = "play-sound-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["priority"] = 3;
 ["persistence"] = 10;
-["absolute"] = "false";
+["absolute"] = false;
 ["volume-minimum"] = 255;
 ["volume-range"] = 0;
 ["id-minimum"] = 520;
@@ -844,21 +844,21 @@ gameData = {
 };
 [087] =  {
 ["type"] = "create-object-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["which-base-type"] = 14;
 ["how-many-min"] = 1;
 ["how-many-range"] = 0;
-["velocity-relative"] = "false";
-["direction-relative"] = "true";
+["velocity-relative"] = false;
+["direction-relative"] = true;
 ["random-distance"] = 0;
 
 };
 [088] =  {
 ["type"] = "play-sound-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["priority"] = 2;
 ["persistence"] = 10;
-["absolute"] = "false";
+["absolute"] = false;
 ["volume-minimum"] = 255;
 ["volume-range"] = 0;
 ["id-minimum"] = 520;
@@ -867,21 +867,21 @@ gameData = {
 };
 [089] =  {
 ["type"] = "create-object-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["which-base-type"] = 13;
 ["how-many-min"] = 1;
 ["how-many-range"] = 0;
-["velocity-relative"] = "false";
-["direction-relative"] = "true";
+["velocity-relative"] = false;
+["direction-relative"] = true;
 ["random-distance"] = 0;
 
 };
 [090] =  {
 ["type"] = "play-sound-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["priority"] = 0;
 ["persistence"] = 10;
-["absolute"] = "false";
+["absolute"] = false;
 ["volume-minimum"] = 255;
 ["volume-range"] = 0;
 ["id-minimum"] = 521;
@@ -890,21 +890,21 @@ gameData = {
 };
 [091] =  {
 ["type"] = "create-object-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["which-base-type"] = 49;
 ["how-many-min"] = 1;
 ["how-many-range"] = 3;
-["velocity-relative"] = "false";
-["direction-relative"] = "true";
+["velocity-relative"] = false;
+["direction-relative"] = true;
 ["random-distance"] = 0;
 
 };
 [092] =  {
 ["type"] = "play-sound-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["priority"] = 4;
 ["persistence"] = 20;
-["absolute"] = "false";
+["absolute"] = false;
 ["volume-minimum"] = 255;
 ["volume-range"] = 0;
 ["id-minimum"] = 515;
@@ -913,77 +913,77 @@ gameData = {
 };
 [093] =  {
 ["type"] = "create-object-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["which-base-type"] = 11;
 ["how-many-min"] = 8;
 ["how-many-range"] = 8;
-["velocity-relative"] = "false";
-["direction-relative"] = "true";
+["velocity-relative"] = false;
+["direction-relative"] = true;
 ["random-distance"] = 0;
 
 };
 [094] =  {
 ["type"] = "create-object-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["which-base-type"] = 12;
 ["how-many-min"] = 8;
 ["how-many-range"] = 8;
-["velocity-relative"] = "false";
-["direction-relative"] = "false";
+["velocity-relative"] = false;
+["direction-relative"] = false;
 ["random-distance"] = 0;
 
 };
 [095] =  {
 ["type"] = "create-object-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["which-base-type"] = 51;
 ["how-many-min"] = 8;
 ["how-many-range"] = 8;
-["velocity-relative"] = "true";
-["direction-relative"] = "false";
+["velocity-relative"] = true;
+["direction-relative"] = false;
 ["random-distance"] = 0;
 
 };
 [096] =  {
 ["type"] = "alter-hidden-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["minimum"] = 1;
 ["range"] = -63594;
 
 };
 [097] =  {
 ["type"] = "alter-cloak-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 
 };
 [098] =  {
 ["type"] = "create-object-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["which-base-type"] = 43;
 ["how-many-min"] = 1;
 ["how-many-range"] = 0;
-["velocity-relative"] = "true";
-["direction-relative"] = "true";
+["velocity-relative"] = true;
+["direction-relative"] = true;
 ["random-distance"] = 0;
 
 };
 [099] =  {
 ["type"] = "alter-hidden-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["minimum"] = 12;
 ["range"] = 0;
 
 };
 [100] =  {
 ["type"] = "alter-hidden-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["minimum"] = 13;
 ["range"] = 0;
 
 };
 [101] =  {
 ["type"] = "display-message-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["delay"] = 120;
 ["message-id"] = 4210;
 ["page"] = 1;
@@ -991,18 +991,18 @@ gameData = {
 };
 [102] =  {
 ["type"] = "create-object-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["which-base-type"] = 66;
 ["how-many-min"] = 1;
 ["how-many-range"] = 0;
-["velocity-relative"] = "true";
-["direction-relative"] = "true";
+["velocity-relative"] = true;
+["direction-relative"] = true;
 ["random-distance"] = 0;
 
 };
 [103] =  {
 ["type"] = "alter-offline-action";
-["reflexive"] = "false";
+["reflexive"] = false;
 ["owner"] = "other";
 ["minimum"] = 0;
 ["range"] = 5;
@@ -1010,27 +1010,27 @@ gameData = {
 };
 [104] =  {
 ["type"] = "create-object-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["which-base-type"] = 8;
 ["how-many-min"] = 1;
 ["how-many-range"] = 0;
-["velocity-relative"] = "false";
-["direction-relative"] = "false";
+["velocity-relative"] = false;
+["direction-relative"] = false;
 ["random-distance"] = 0;
 
 };
 [105] =  {
 ["type"] = "die-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["death-type"] = 255;
 
 };
 [106] =  {
 ["type"] = "play-sound-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["priority"] = 3;
 ["persistence"] = 10;
-["absolute"] = "false";
+["absolute"] = false;
 ["volume-minimum"] = 255;
 ["volume-range"] = 0;
 ["id-minimum"] = 530;
@@ -1039,10 +1039,10 @@ gameData = {
 };
 [107] =  {
 ["type"] = "play-sound-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["priority"] = 3;
 ["persistence"] = 10;
-["absolute"] = "false";
+["absolute"] = false;
 ["volume-minimum"] = 255;
 ["volume-range"] = 0;
 ["id-minimum"] = 531;
@@ -1051,43 +1051,43 @@ gameData = {
 };
 [108] =  {
 ["type"] = "create-object-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["which-base-type"] = 71;
 ["how-many-min"] = 1;
 ["how-many-range"] = 0;
-["velocity-relative"] = "true";
-["direction-relative"] = "true";
+["velocity-relative"] = true;
+["direction-relative"] = true;
 ["random-distance"] = 0;
 
 };
 [109] =  {
 ["type"] = "create-object-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["which-base-type"] = 69;
 ["how-many-min"] = 1;
 ["how-many-range"] = 0;
-["velocity-relative"] = "true";
-["direction-relative"] = "true";
+["velocity-relative"] = true;
+["direction-relative"] = true;
 ["random-distance"] = 0;
 
 };
 [110] =  {
 ["type"] = "create-object-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["which-base-type"] = 72;
 ["how-many-min"] = 1;
 ["how-many-range"] = 0;
-["velocity-relative"] = "true";
-["direction-relative"] = "true";
+["velocity-relative"] = true;
+["direction-relative"] = true;
 ["random-distance"] = 0;
 
 };
 [111] =  {
 ["type"] = "play-sound-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["priority"] = 3;
 ["persistence"] = 30;
-["absolute"] = "false";
+["absolute"] = false;
 ["volume-minimum"] = 255;
 ["volume-range"] = 0;
 ["id-minimum"] = 533;
@@ -1096,29 +1096,29 @@ gameData = {
 };
 [112] =  {
 ["type"] = "alter-base-type-action";
-["reflexive"] = "true";
-["preserve-weapons"] = "false";
+["reflexive"] = true;
+["preserve-weapons"] = false;
 ["new-id"] = 67;
 
 };
 [113] =  {
 ["type"] = "alter-condition-true-yet-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["value"] = 2;
 
 };
 [114] =  {
 ["type"] = "alter-owner-action";
-["reflexive"] = "false";
-["relative"] = "false";
+["reflexive"] = false;
+["relative"] = false;
 
 };
 [115] =  {
 ["type"] = "play-sound-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["priority"] = 4;
 ["persistence"] = 30;
-["absolute"] = "false";
+["absolute"] = false;
 ["volume-minimum"] = 255;
 ["volume-range"] = 0;
 ["id-minimum"] = 532;
@@ -1127,62 +1127,62 @@ gameData = {
 };
 [116] =  {
 ["type"] = "create-object-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["which-base-type"] = 257;
 ["how-many-min"] = 1;
 ["how-many-range"] = 0;
-["velocity-relative"] = "false";
-["direction-relative"] = "false";
+["velocity-relative"] = false;
+["direction-relative"] = false;
 ["random-distance"] = 0;
 
 };
 [117] =  {
 ["type"] = "create-object-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["which-base-type"] = 84;
 ["how-many-min"] = 3;
 ["how-many-range"] = 0;
-["velocity-relative"] = "true";
-["direction-relative"] = "true";
+["velocity-relative"] = true;
+["direction-relative"] = true;
 ["random-distance"] = 0;
 
 };
 [118] =  {
 ["type"] = "create-object-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["which-base-type"] = 35;
 ["how-many-min"] = 1;
 ["how-many-range"] = 0;
-["velocity-relative"] = "false";
-["direction-relative"] = "false";
+["velocity-relative"] = false;
+["direction-relative"] = false;
 ["random-distance"] = 0;
 
 };
 [119] =  {
 ["type"] = "create-object-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["which-base-type"] = 85;
 ["how-many-min"] = 3;
 ["how-many-range"] = 0;
-["velocity-relative"] = "true";
-["direction-relative"] = "true";
+["velocity-relative"] = true;
+["direction-relative"] = true;
 ["random-distance"] = 0;
 
 };
 [120] =  {
 ["type"] = "create-object-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["which-base-type"] = 35;
 ["how-many-min"] = 1;
 ["how-many-range"] = 0;
-["velocity-relative"] = "false";
-["direction-relative"] = "false";
+["velocity-relative"] = false;
+["direction-relative"] = false;
 ["random-distance"] = 0;
 
 };
 [121] =  {
 ["type"] = "change-score-action";
-["reflexive"] = "false";
+["reflexive"] = false;
 ["which-player"] = 0;
 ["which-score"] = 1;
 ["amount"] = 1;
@@ -1190,10 +1190,10 @@ gameData = {
 };
 [122] =  {
 ["type"] = "play-sound-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["priority"] = 3;
 ["persistence"] = 5;
-["absolute"] = "false";
+["absolute"] = false;
 ["volume-minimum"] = 255;
 ["volume-range"] = 0;
 ["id-minimum"] = 514;
@@ -1202,27 +1202,27 @@ gameData = {
 };
 [123] =  {
 ["type"] = "die-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["death-type"] = 56;
 
 };
 [124] =  {
 ["type"] = "display-message-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["message-id"] = 4200;
 ["page"] = 2;
 
 };
 [125] =  {
 ["type"] = "alter-hidden-action";
-["reflexive"] = "false";
+["reflexive"] = false;
 ["minimum"] = 1;
 ["range"] = 0;
 
 };
 [126] =  {
 ["type"] = "display-message-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["delay"] = 120;
 ["message-id"] = 5320;
 ["page"] = 1;
@@ -1230,7 +1230,7 @@ gameData = {
 };
 [127] =  {
 ["type"] = "set-destination-action";
-["reflexive"] = "false";
+["reflexive"] = false;
 ["delay"] = 480;
 ["initial-subject-override"] = 5;
 ["initial-direct-override"] = 9;
@@ -1238,7 +1238,7 @@ gameData = {
 };
 [128] =  {
 ["type"] = "display-message-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["delay"] = 360;
 ["message-id"] = 5330;
 ["page"] = 1;
@@ -1246,7 +1246,7 @@ gameData = {
 };
 [129] =  {
 ["type"] = "alter-hidden-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["delay"] = 120;
 ["minimum"] = 15;
 ["range"] = 0;
@@ -1254,7 +1254,7 @@ gameData = {
 };
 [130] =  {
 ["type"] = "set-destination-action";
-["reflexive"] = "false";
+["reflexive"] = false;
 ["delay"] = 360;
 ["initial-subject-override"] = 10;
 ["initial-direct-override"] = 6;
@@ -1262,28 +1262,28 @@ gameData = {
 };
 [131] =  {
 ["type"] = "set-destination-action";
-["reflexive"] = "false";
+["reflexive"] = false;
 ["initial-subject-override"] = 3;
 ["initial-direct-override"] = 10;
 
 };
 [132] =  {
 ["type"] = "set-destination-action";
-["reflexive"] = "false";
+["reflexive"] = false;
 ["initial-subject-override"] = 4;
 ["initial-direct-override"] = 10;
 
 };
 [133] =  {
 ["type"] = "set-destination-action";
-["reflexive"] = "false";
+["reflexive"] = false;
 ["initial-subject-override"] = 8;
 ["initial-direct-override"] = 10;
 
 };
 [134] =  {
 ["type"] = "display-message-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["delay"] = 360;
 ["message-id"] = 5360;
 ["page"] = 1;
@@ -1291,28 +1291,28 @@ gameData = {
 };
 [135] =  {
 ["type"] = "alter-hidden-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["minimum"] = 11;
 ["range"] = 3;
 
 };
 [136] =  {
 ["type"] = "alter-owner-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["initial-subject-override"] = 7;
 ["initial-direct-override"] = 7;
-["relative"] = "false";
+["relative"] = false;
 
 };
 [137] =  {
 ["type"] = "alter-damage-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["value"] = 5000;
 
 };
 [138] =  {
 ["type"] = "display-message-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["delay"] = 180;
 ["message-id"] = 5340;
 ["page"] = 1;
@@ -1320,10 +1320,10 @@ gameData = {
 };
 [139] =  {
 ["type"] = "play-sound-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["priority"] = 5;
 ["persistence"] = 30;
-["absolute"] = "false";
+["absolute"] = false;
 ["volume-minimum"] = 255;
 ["volume-range"] = 0;
 ["id-minimum"] = 17406;
@@ -1332,25 +1332,25 @@ gameData = {
 };
 [140] =  {
 ["type"] = "create-object-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["delay"] = 180;
 ["which-base-type"] = 90;
 ["how-many-min"] = 20;
 ["how-many-range"] = 10;
-["velocity-relative"] = "true";
-["direction-relative"] = "false";
+["velocity-relative"] = true;
+["direction-relative"] = false;
 ["random-distance"] = 0;
 
 };
 [141] =  {
 ["type"] = "alter-damage-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["value"] = -100000;
 
 };
 [142] =  {
 ["type"] = "display-message-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["delay"] = 120;
 ["message-id"] = 5350;
 ["page"] = 1;
@@ -1358,35 +1358,35 @@ gameData = {
 };
 [143] =  {
 ["type"] = "create-object-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["which-base-type"] = 90;
 ["how-many-min"] = 20;
 ["how-many-range"] = 10;
-["velocity-relative"] = "true";
-["direction-relative"] = "true";
+["velocity-relative"] = true;
+["direction-relative"] = true;
 ["random-distance"] = 0;
 
 };
 [144] =  {
 ["type"] = "create-object-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["which-base-type"] = 79;
 ["how-many-min"] = 1;
 ["how-many-range"] = 0;
-["velocity-relative"] = "false";
-["direction-relative"] = "true";
+["velocity-relative"] = false;
+["direction-relative"] = true;
 ["random-distance"] = 0;
 
 };
 [145] =  {
 ["type"] = "die-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["death-type"] = 1;
 
 };
 [146] =  {
 ["type"] = "die-action";
-["reflexive"] = "false";
+["reflexive"] = false;
 ["inclusive-filter"] = 2;
 ["owner"] = "other";
 ["death-type"] = 2;
@@ -1394,10 +1394,10 @@ gameData = {
 };
 [147] =  {
 ["type"] = "play-sound-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["priority"] = 3;
 ["persistence"] = 20;
-["absolute"] = "false";
+["absolute"] = false;
 ["volume-minimum"] = 255;
 ["volume-range"] = 0;
 ["id-minimum"] = 520;
@@ -1406,29 +1406,29 @@ gameData = {
 };
 [148] =  {
 ["type"] = "create-object-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["which-base-type"] = 38;
 ["how-many-min"] = 1;
 ["how-many-range"] = 0;
-["velocity-relative"] = "true";
-["direction-relative"] = "true";
+["velocity-relative"] = true;
+["direction-relative"] = true;
 ["random-distance"] = 0;
 
 };
 [149] =  {
 ["type"] = "alter-velocity-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["inclusive-filter"] = 1342177280;
 ["exclusive-filter"] = 4294967295;
 ["owner"] = "other";
-["relative"] = "false";
+["relative"] = false;
 ["minimum"] = 0;
 ["range"] = 0;
 
 };
 [150] =  {
 ["type"] = "alter-max-velocity-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["inclusive-filter"] = 1342177280;
 ["exclusive-filter"] = 4294967295;
 ["owner"] = "other";
@@ -1437,13 +1437,13 @@ gameData = {
 };
 [151] =  {
 ["type"] = "play-sound-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["inclusive-filter"] = 1342177280;
 ["exclusive-filter"] = 4294967295;
 ["owner"] = "other";
 ["priority"] = 3;
 ["persistence"] = 10;
-["absolute"] = "false";
+["absolute"] = false;
 ["volume-minimum"] = 255;
 ["volume-range"] = 0;
 ["id-minimum"] = 570;
@@ -1452,7 +1452,7 @@ gameData = {
 };
 [152] =  {
 ["type"] = "die-action";
-["reflexive"] = "false";
+["reflexive"] = false;
 ["inclusive-filter"] = 1342177280;
 ["exclusive-filter"] = 4294967295;
 ["owner"] = "other";
@@ -1462,37 +1462,37 @@ gameData = {
 };
 [153] =  {
 ["type"] = "alter-owner-action";
-["reflexive"] = "false";
+["reflexive"] = false;
 ["inclusive-filter"] = 1342177280;
 ["exclusive-filter"] = 4294967295;
 ["owner"] = "other";
-["relative"] = "true";
+["relative"] = true;
 ["owner"] = "other";
 
 };
 [154] =  {
 ["type"] = "alter-max-velocity-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["value"] = -1;
 
 };
 [155] =  {
 ["type"] = "create-object-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["which-base-type"] = 97;
 ["how-many-min"] = 1;
 ["how-many-range"] = 0;
-["velocity-relative"] = "true";
-["direction-relative"] = "true";
+["velocity-relative"] = true;
+["direction-relative"] = true;
 ["random-distance"] = 0;
 
 };
 [156] =  {
 ["type"] = "play-sound-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["priority"] = 4;
 ["persistence"] = 30;
-["absolute"] = "false";
+["absolute"] = false;
 ["volume-minimum"] = 255;
 ["volume-range"] = 0;
 ["id-minimum"] = 10312;
@@ -1501,18 +1501,18 @@ gameData = {
 };
 [157] =  {
 ["type"] = "create-object-set-dest-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["which-base-type"] = 99;
 ["how-many-min"] = 6;
 ["how-many-range"] = 0;
-["velocity-relative"] = "true";
-["direction-relative"] = "true";
+["velocity-relative"] = true;
+["direction-relative"] = true;
 ["random-distance"] = 0;
 
 };
 [158] =  {
 ["type"] = "die-action";
-["reflexive"] = "false";
+["reflexive"] = false;
 ["inclusive-filter"] = 2684354560;
 ["exclusive-filter"] = 4294967295;
 ["owner"] = "other";
@@ -1521,13 +1521,13 @@ gameData = {
 };
 [159] =  {
 ["type"] = "play-sound-action";
-["reflexive"] = "false";
+["reflexive"] = false;
 ["inclusive-filter"] = 2684354560;
 ["exclusive-filter"] = 4294967295;
 ["owner"] = "other";
 ["priority"] = 4;
 ["persistence"] = 60;
-["absolute"] = "true";
+["absolute"] = true;
 ["volume-minimum"] = 255;
 ["volume-range"] = 0;
 ["id-minimum"] = 31989;
@@ -1536,7 +1536,7 @@ gameData = {
 };
 [160] =  {
 ["type"] = "alter-occupation-action";
-["reflexive"] = "false";
+["reflexive"] = false;
 ["inclusive-filter"] = 2684354560;
 ["exclusive-filter"] = 4294967295;
 ["owner"] = "other";
@@ -1545,7 +1545,7 @@ gameData = {
 };
 [161] =  {
 ["type"] = "activate-special-action";
-["reflexive"] = "false";
+["reflexive"] = false;
 ["inclusive-filter"] = 2684354560;
 ["exclusive-filter"] = 4294967295;
 ["owner"] = "other";
@@ -1553,21 +1553,21 @@ gameData = {
 };
 [162] =  {
 ["type"] = "create-object-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["which-base-type"] = 29;
 ["how-many-min"] = 1;
 ["how-many-range"] = 0;
-["velocity-relative"] = "false";
-["direction-relative"] = "false";
+["velocity-relative"] = false;
+["direction-relative"] = false;
 ["random-distance"] = 0;
 
 };
 [163] =  {
 ["type"] = "play-sound-action";
-["reflexive"] = "false";
+["reflexive"] = false;
 ["priority"] = 3;
 ["persistence"] = 20;
-["absolute"] = "false";
+["absolute"] = false;
 ["volume-minimum"] = 255;
 ["volume-range"] = 0;
 ["id-minimum"] = 12558;
@@ -1576,21 +1576,21 @@ gameData = {
 };
 [164] =  {
 ["type"] = "create-object-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["which-base-type"] = 35;
 ["how-many-min"] = 1;
 ["how-many-range"] = 0;
-["velocity-relative"] = "false";
-["direction-relative"] = "false";
+["velocity-relative"] = false;
+["direction-relative"] = false;
 ["random-distance"] = 0;
 
 };
 [165] =  {
 ["type"] = "play-sound-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["priority"] = 3;
 ["persistence"] = 20;
-["absolute"] = "false";
+["absolute"] = false;
 ["volume-minimum"] = 255;
 ["volume-range"] = 0;
 ["id-minimum"] = 536;
@@ -1599,47 +1599,47 @@ gameData = {
 };
 [166] =  {
 ["type"] = "create-object-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["which-base-type"] = 107;
 ["how-many-min"] = 8;
 ["how-many-range"] = 4;
-["velocity-relative"] = "false";
-["direction-relative"] = "false";
+["velocity-relative"] = false;
+["direction-relative"] = false;
 ["random-distance"] = 0;
 
 };
 [167] =  {
 ["type"] = "create-object-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["which-base-type"] = 106;
 ["how-many-min"] = 1;
 ["how-many-range"] = 0;
-["velocity-relative"] = "false";
-["direction-relative"] = "true";
+["velocity-relative"] = false;
+["direction-relative"] = true;
 ["random-distance"] = 0;
 
 };
 [168] =  {
 ["type"] = "create-object-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["which-base-type"] = 105;
 ["how-many-min"] = 1;
 ["how-many-range"] = 2;
-["velocity-relative"] = "true";
-["direction-relative"] = "true";
+["velocity-relative"] = true;
+["direction-relative"] = true;
 ["random-distance"] = 0;
 
 };
 [169] =  {
 ["type"] = "display-message-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["message-id"] = 6200;
 ["page"] = 1;
 
 };
 [170] =  {
 ["type"] = "set-destination-action";
-["reflexive"] = "false";
+["reflexive"] = false;
 ["delay"] = 120;
 ["initial-subject-override"] = 4;
 ["initial-direct-override"] = 0;
@@ -1647,11 +1647,11 @@ gameData = {
 };
 [171] =  {
 ["type"] = "play-sound-action";
-["reflexive"] = "false";
+["reflexive"] = false;
 ["owner"] = "other";
 ["priority"] = 5;
 ["persistence"] = 60;
-["absolute"] = "false";
+["absolute"] = false;
 ["volume-minimum"] = 255;
 ["volume-range"] = 0;
 ["id-minimum"] = 17406;
@@ -1660,7 +1660,7 @@ gameData = {
 };
 [172] =  {
 ["type"] = "display-message-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["delay"] = 360;
 ["message-id"] = 6200;
 ["page"] = 1;
@@ -1668,7 +1668,7 @@ gameData = {
 };
 [173] =  {
 ["type"] = "set-destination-action";
-["reflexive"] = "false";
+["reflexive"] = false;
 ["delay"] = 120;
 ["initial-subject-override"] = 4;
 ["initial-direct-override"] = 2;
@@ -1676,17 +1676,17 @@ gameData = {
 };
 [174] =  {
 ["type"] = "alter-hidden-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["minimum"] = 6;
 ["range"] = 0;
 
 };
 [175] =  {
 ["type"] = "play-sound-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["priority"] = 5;
 ["persistence"] = 60;
-["absolute"] = "true";
+["absolute"] = true;
 ["volume-minimum"] = 255;
 ["volume-range"] = 0;
 ["id-minimum"] = 17406;
@@ -1695,7 +1695,7 @@ gameData = {
 };
 [176] =  {
 ["type"] = "display-message-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["delay"] = 360;
 ["message-id"] = 6200;
 ["page"] = 1;
@@ -1703,7 +1703,7 @@ gameData = {
 };
 [177] =  {
 ["type"] = "set-destination-action";
-["reflexive"] = "false";
+["reflexive"] = false;
 ["delay"] = 120;
 ["initial-subject-override"] = 4;
 ["initial-direct-override"] = 3;
@@ -1711,10 +1711,10 @@ gameData = {
 };
 [178] =  {
 ["type"] = "play-sound-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["priority"] = 5;
 ["persistence"] = 60;
-["absolute"] = "true";
+["absolute"] = true;
 ["volume-minimum"] = 255;
 ["volume-range"] = 0;
 ["id-minimum"] = 17406;
@@ -1723,7 +1723,7 @@ gameData = {
 };
 [179] =  {
 ["type"] = "display-message-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["delay"] = 360;
 ["message-id"] = 6200;
 ["page"] = 1;
@@ -1731,7 +1731,7 @@ gameData = {
 };
 [180] =  {
 ["type"] = "display-message-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["delay"] = 360;
 ["message-id"] = 6200;
 ["page"] = 1;
@@ -1739,7 +1739,7 @@ gameData = {
 };
 [181] =  {
 ["type"] = "alter-hidden-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["delay"] = 180;
 ["minimum"] = 7;
 ["range"] = 4;
@@ -1747,14 +1747,14 @@ gameData = {
 };
 [182] =  {
 ["type"] = "set-destination-action";
-["reflexive"] = "false";
+["reflexive"] = false;
 ["initial-subject-override"] = 4;
 ["initial-direct-override"] = 0;
 
 };
 [183] =  {
 ["type"] = "change-score-action";
-["reflexive"] = "false";
+["reflexive"] = false;
 ["inclusive-filter"] = 1610612736;
 ["exclusive-filter"] = 4294967295;
 ["which-player"] = 0;
@@ -1764,7 +1764,7 @@ gameData = {
 };
 [184] =  {
 ["type"] = "die-action";
-["reflexive"] = "false";
+["reflexive"] = false;
 ["inclusive-filter"] = 1610612736;
 ["exclusive-filter"] = 4294967295;
 ["death-type"] = 1;
@@ -1772,36 +1772,36 @@ gameData = {
 };
 [185] =  {
 ["type"] = "create-object-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["which-base-type"] = 61;
 ["how-many-min"] = 2;
 ["how-many-range"] = 0;
-["velocity-relative"] = "false";
-["direction-relative"] = "false";
+["velocity-relative"] = false;
+["direction-relative"] = false;
 ["random-distance"] = 0;
 
 };
 [186] =  {
 ["type"] = "create-object-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["which-base-type"] = 117;
 ["how-many-min"] = 1;
 ["how-many-range"] = 0;
-["velocity-relative"] = "false";
-["direction-relative"] = "false";
+["velocity-relative"] = false;
+["direction-relative"] = false;
 ["random-distance"] = 0;
 
 };
 [187] =  {
 ["type"] = "display-message-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["message-id"] = 5300;
 ["page"] = 1;
 
 };
 [188] =  {
 ["type"] = "alter-hidden-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["delay"] = 1200;
 ["minimum"] = 3;
 ["range"] = 0;
@@ -1809,7 +1809,7 @@ gameData = {
 };
 [189] =  {
 ["type"] = "alter-hidden-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["delay"] = 1200;
 ["minimum"] = 5;
 ["range"] = 0;
@@ -1817,7 +1817,7 @@ gameData = {
 };
 [190] =  {
 ["type"] = "alter-hidden-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["delay"] = 1200;
 ["minimum"] = 6;
 ["range"] = 0;
@@ -1825,7 +1825,7 @@ gameData = {
 };
 [191] =  {
 ["type"] = "alter-hidden-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["delay"] = 1200;
 ["minimum"] = 7;
 ["range"] = 0;
@@ -1833,7 +1833,7 @@ gameData = {
 };
 [192] =  {
 ["type"] = "alter-hidden-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["delay"] = 1200;
 ["minimum"] = 8;
 ["range"] = 0;
@@ -1841,28 +1841,28 @@ gameData = {
 };
 [193] =  {
 ["type"] = "alter-hidden-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["minimum"] = 1;
 ["range"] = 0;
 
 };
 [194] =  {
 ["type"] = "display-message-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["message-id"] = 5301;
 ["page"] = 1;
 
 };
 [195] =  {
 ["type"] = "display-message-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["message-id"] = 5310;
 ["page"] = 1;
 
 };
 [196] =  {
 ["type"] = "alter-hidden-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["delay"] = 400;
 ["minimum"] = 4;
 ["range"] = 0;
@@ -1870,10 +1870,10 @@ gameData = {
 };
 [197] =  {
 ["type"] = "play-sound-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["priority"] = 3;
 ["persistence"] = 20;
-["absolute"] = "false";
+["absolute"] = false;
 ["volume-minimum"] = 255;
 ["volume-range"] = 0;
 ["id-minimum"] = 567;
@@ -1882,21 +1882,21 @@ gameData = {
 };
 [198] =  {
 ["type"] = "create-object-set-dest-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["which-base-type"] = 121;
 ["how-many-min"] = 6;
 ["how-many-range"] = 0;
-["velocity-relative"] = "true";
-["direction-relative"] = "true";
+["velocity-relative"] = true;
+["direction-relative"] = true;
 ["random-distance"] = 0;
 
 };
 [199] =  {
 ["type"] = "play-sound-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["priority"] = 3;
 ["persistence"] = 14;
-["absolute"] = "false";
+["absolute"] = false;
 ["volume-minimum"] = 255;
 ["volume-range"] = 0;
 ["id-minimum"] = 524;
@@ -1905,31 +1905,31 @@ gameData = {
 };
 [200] =  {
 ["type"] = "alter-velocity-action";
-["reflexive"] = "true";
-["relative"] = "false";
+["reflexive"] = true;
+["relative"] = false;
 ["minimum"] = -3840;
 ["range"] = 0;
 
 };
 [201] =  {
 ["type"] = "alter-velocity-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["delay"] = 7;
-["relative"] = "false";
+["relative"] = false;
 ["minimum"] = 0;
 ["range"] = 0;
 
 };
 [202] =  {
 ["type"] = "display-message-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["message-id"] = 5370;
 ["page"] = 1;
 
 };
 [203] =  {
 ["type"] = "declare-winner-action";
-["reflexive"] = "false";
+["reflexive"] = false;
 ["delay"] = 360;
 ["which-player"] = 0;
 ["next-level"] = 8;
@@ -1938,7 +1938,7 @@ gameData = {
 };
 [204] =  {
 ["type"] = "alter-hidden-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["delay"] = 90;
 ["minimum"] = 10;
 ["range"] = 0;
@@ -1946,7 +1946,7 @@ gameData = {
 };
 [205] =  {
 ["type"] = "display-message-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["delay"] = 30;
 ["message-id"] = 5400;
 ["page"] = 1;
@@ -1954,7 +1954,7 @@ gameData = {
 };
 [206] =  {
 ["type"] = "alter-hidden-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["delay"] = 900;
 ["minimum"] = 16;
 ["range"] = 2;
@@ -1962,10 +1962,10 @@ gameData = {
 };
 [207] =  {
 ["type"] = "play-sound-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["priority"] = 3;
 ["persistence"] = 10;
-["absolute"] = "false";
+["absolute"] = false;
 ["volume-minimum"] = 255;
 ["volume-range"] = 0;
 ["id-minimum"] = 519;
@@ -1974,29 +1974,29 @@ gameData = {
 };
 [208] =  {
 ["type"] = "create-object-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["which-base-type"] = 131;
 ["how-many-min"] = 1;
 ["how-many-range"] = 0;
-["velocity-relative"] = "true";
-["direction-relative"] = "true";
+["velocity-relative"] = true;
+["direction-relative"] = true;
 ["random-distance"] = 0;
 
 };
 [209] =  {
 ["type"] = "alter-base-type-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["initial-subject-override"] = 0;
-["preserve-weapons"] = "false";
+["preserve-weapons"] = false;
 ["new-id"] = 126;
 
 };
 [210] =  {
 ["type"] = "play-sound-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["priority"] = 4;
 ["persistence"] = 30;
-["absolute"] = "false";
+["absolute"] = false;
 ["volume-minimum"] = 255;
 ["volume-range"] = 0;
 ["id-minimum"] = 17406;
@@ -2005,37 +2005,37 @@ gameData = {
 };
 [211] =  {
 ["type"] = "alter-condition-true-yet-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["value"] = 2;
 
 };
 [212] =  {
 ["type"] = "set-destination-action";
-["reflexive"] = "false";
+["reflexive"] = false;
 ["initial-subject-override"] = 0;
 ["initial-direct-override"] = 10;
 
 };
 [213] =  {
 ["type"] = "display-message-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["message-id"] = 5401;
 ["page"] = 1;
 
 };
 [214] =  {
 ["type"] = "set-destination-action";
-["reflexive"] = "false";
+["reflexive"] = false;
 ["initial-subject-override"] = 10;
 ["initial-direct-override"] = 7;
 
 };
 [215] =  {
 ["type"] = "play-sound-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["priority"] = 3;
 ["persistence"] = 20;
-["absolute"] = "false";
+["absolute"] = false;
 ["volume-minimum"] = 255;
 ["volume-range"] = 0;
 ["id-minimum"] = 520;
@@ -2044,21 +2044,21 @@ gameData = {
 };
 [216] =  {
 ["type"] = "create-object-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["which-base-type"] = 112;
 ["how-many-min"] = 1;
 ["how-many-range"] = 0;
-["velocity-relative"] = "true";
-["direction-relative"] = "true";
+["velocity-relative"] = true;
+["direction-relative"] = true;
 ["random-distance"] = 0;
 
 };
 [217] =  {
 ["type"] = "play-sound-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["priority"] = 3;
 ["persistence"] = 10;
-["absolute"] = "false";
+["absolute"] = false;
 ["volume-minimum"] = 255;
 ["volume-range"] = 0;
 ["id-minimum"] = 28007;
@@ -2067,21 +2067,21 @@ gameData = {
 };
 [218] =  {
 ["type"] = "create-object-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["which-base-type"] = 133;
 ["how-many-min"] = 1;
 ["how-many-range"] = 0;
-["velocity-relative"] = "true";
-["direction-relative"] = "true";
+["velocity-relative"] = true;
+["direction-relative"] = true;
 ["random-distance"] = 0;
 
 };
 [219] =  {
 ["type"] = "play-sound-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["priority"] = 3;
 ["persistence"] = 10;
-["absolute"] = "false";
+["absolute"] = false;
 ["volume-minimum"] = 255;
 ["volume-range"] = 0;
 ["id-minimum"] = 28853;
@@ -2090,18 +2090,18 @@ gameData = {
 };
 [220] =  {
 ["type"] = "create-object-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["which-base-type"] = 136;
 ["how-many-min"] = 1;
 ["how-many-range"] = 0;
-["velocity-relative"] = "true";
-["direction-relative"] = "true";
+["velocity-relative"] = true;
+["direction-relative"] = true;
 ["random-distance"] = 0;
 
 };
 [221] =  {
 ["type"] = "display-message-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["delay"] = 120;
 ["message-id"] = 4570;
 ["page"] = 1;
@@ -2109,7 +2109,7 @@ gameData = {
 };
 [222] =  {
 ["type"] = "alter-hidden-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["delay"] = 180;
 ["minimum"] = 7;
 ["range"] = 2;
@@ -2117,14 +2117,14 @@ gameData = {
 };
 [223] =  {
 ["type"] = "set-destination-action";
-["reflexive"] = "false";
+["reflexive"] = false;
 ["initial-subject-override"] = 0;
 ["initial-direct-override"] = 7;
 
 };
 [224] =  {
 ["type"] = "land-at-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["delay"] = 60;
 ["initial-subject-override"] = 0;
 ["initial-direct-override"] = 7;
@@ -2133,7 +2133,7 @@ gameData = {
 };
 [225] =  {
 ["type"] = "alter-hidden-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["delay"] = 10;
 ["minimum"] = 19;
 ["range"] = 0;
@@ -2141,7 +2141,7 @@ gameData = {
 };
 [226] =  {
 ["type"] = "declare-winner-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["which-player"] = 0;
 ["next-level"] = 17;
 ["text-id"] = 11401;
@@ -2149,10 +2149,10 @@ gameData = {
 };
 [227] =  {
 ["type"] = "play-sound-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["priority"] = 4;
 ["persistence"] = 20;
-["absolute"] = "false";
+["absolute"] = false;
 ["volume-minimum"] = 255;
 ["volume-range"] = 0;
 ["id-minimum"] = 9800;
@@ -2161,10 +2161,10 @@ gameData = {
 };
 [228] =  {
 ["type"] = "play-sound-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["priority"] = 3;
 ["persistence"] = 10;
-["absolute"] = "false";
+["absolute"] = false;
 ["volume-minimum"] = 255;
 ["volume-range"] = 0;
 ["id-minimum"] = 538;
@@ -2173,21 +2173,21 @@ gameData = {
 };
 [229] =  {
 ["type"] = "create-object-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["which-base-type"] = 144;
 ["how-many-min"] = 1;
 ["how-many-range"] = 0;
-["velocity-relative"] = "true";
-["direction-relative"] = "true";
+["velocity-relative"] = true;
+["direction-relative"] = true;
 ["random-distance"] = 0;
 
 };
 [230] =  {
 ["type"] = "play-sound-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["priority"] = 3;
 ["persistence"] = 10;
-["absolute"] = "false";
+["absolute"] = false;
 ["volume-minimum"] = 255;
 ["volume-range"] = 0;
 ["id-minimum"] = 537;
@@ -2196,21 +2196,21 @@ gameData = {
 };
 [231] =  {
 ["type"] = "create-object-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["which-base-type"] = 146;
 ["how-many-min"] = 1;
 ["how-many-range"] = 0;
-["velocity-relative"] = "true";
-["direction-relative"] = "true";
+["velocity-relative"] = true;
+["direction-relative"] = true;
 ["random-distance"] = 0;
 
 };
 [232] =  {
 ["type"] = "play-sound-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["priority"] = 3;
 ["persistence"] = 20;
-["absolute"] = "false";
+["absolute"] = false;
 ["volume-minimum"] = 255;
 ["volume-range"] = 0;
 ["id-minimum"] = 520;
@@ -2219,21 +2219,21 @@ gameData = {
 };
 [233] =  {
 ["type"] = "create-object-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["which-base-type"] = 147;
 ["how-many-min"] = 1;
 ["how-many-range"] = 0;
-["velocity-relative"] = "true";
-["direction-relative"] = "true";
+["velocity-relative"] = true;
+["direction-relative"] = true;
 ["random-distance"] = 0;
 
 };
 [234] =  {
 ["type"] = "play-sound-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["priority"] = 3;
 ["persistence"] = 10;
-["absolute"] = "false";
+["absolute"] = false;
 ["volume-minimum"] = 255;
 ["volume-range"] = 0;
 ["id-minimum"] = 540;
@@ -2242,21 +2242,21 @@ gameData = {
 };
 [235] =  {
 ["type"] = "create-object-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["which-base-type"] = 153;
 ["how-many-min"] = 1;
 ["how-many-range"] = 0;
-["velocity-relative"] = "true";
-["direction-relative"] = "true";
+["velocity-relative"] = true;
+["direction-relative"] = true;
 ["random-distance"] = 0;
 
 };
 [236] =  {
 ["type"] = "play-sound-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["priority"] = 3;
 ["persistence"] = 10;
-["absolute"] = "false";
+["absolute"] = false;
 ["volume-minimum"] = 255;
 ["volume-range"] = 0;
 ["id-minimum"] = 539;
@@ -2265,21 +2265,21 @@ gameData = {
 };
 [237] =  {
 ["type"] = "create-object-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["which-base-type"] = 155;
 ["how-many-min"] = 1;
 ["how-many-range"] = 0;
-["velocity-relative"] = "true";
-["direction-relative"] = "true";
+["velocity-relative"] = true;
+["direction-relative"] = true;
 ["random-distance"] = 0;
 
 };
 [238] =  {
 ["type"] = "play-sound-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["priority"] = 3;
 ["persistence"] = 15;
-["absolute"] = "false";
+["absolute"] = false;
 ["volume-minimum"] = 255;
 ["volume-range"] = 0;
 ["id-minimum"] = 533;
@@ -2288,29 +2288,29 @@ gameData = {
 };
 [239] =  {
 ["type"] = "create-object-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["which-base-type"] = 156;
 ["how-many-min"] = 1;
 ["how-many-range"] = 0;
-["velocity-relative"] = "true";
-["direction-relative"] = "true";
+["velocity-relative"] = true;
+["direction-relative"] = true;
 ["random-distance"] = 0;
 
 };
 [240] =  {
 ["type"] = "create-object-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["which-base-type"] = 158;
 ["how-many-min"] = 1;
 ["how-many-range"] = 2;
-["velocity-relative"] = "true";
-["direction-relative"] = "true";
+["velocity-relative"] = true;
+["direction-relative"] = true;
 ["random-distance"] = 0;
 
 };
 [241] =  {
 ["type"] = "declare-winner-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["which-player"] = 1;
 ["next-level"] = -1;
 ["text-id"] = 11701;
@@ -2318,39 +2318,39 @@ gameData = {
 };
 [242] =  {
 ["type"] = "alter-condition-true-yet-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["value"] = 1;
 
 };
 [243] =  {
 ["type"] = "alter-condition-true-yet-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["value"] = 2;
 
 };
 [244] =  {
 ["type"] = "display-message-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["message-id"] = 5240;
 ["page"] = 1;
 
 };
 [245] =  {
 ["type"] = "display-message-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["message-id"] = 5241;
 ["page"] = 2;
 
 };
 [246] =  {
 ["type"] = "alter-condition-true-yet-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["value"] = 0;
 
 };
 [247] =  {
 ["type"] = "set-destination-action";
-["reflexive"] = "false";
+["reflexive"] = false;
 ["delay"] = 1200;
 ["initial-subject-override"] = 3;
 ["initial-direct-override"] = 0;
@@ -2358,32 +2358,32 @@ gameData = {
 };
 [248] =  {
 ["type"] = "set-destination-action";
-["reflexive"] = "false";
+["reflexive"] = false;
 ["initial-subject-override"] = 4;
 ["initial-direct-override"] = 0;
 
 };
 [249] =  {
 ["type"] = "alter-condition-true-yet-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["value"] = 0;
 
 };
 [250] =  {
 ["type"] = "alter-condition-true-yet-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["value"] = 1;
 
 };
 [251] =  {
 ["type"] = "alter-condition-true-yet-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["value"] = 2;
 
 };
 [252] =  {
 ["type"] = "display-message-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["delay"] = 360;
 ["message-id"] = 5243;
 ["page"] = 1;
@@ -2391,7 +2391,7 @@ gameData = {
 };
 [253] =  {
 ["type"] = "alter-hidden-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["delay"] = 360;
 ["minimum"] = 20;
 ["range"] = 4;
@@ -2399,7 +2399,7 @@ gameData = {
 };
 [254] =  {
 ["type"] = "alter-hidden-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["delay"] = 360;
 ["minimum"] = 14;
 ["range"] = 5;
@@ -2407,21 +2407,21 @@ gameData = {
 };
 [255] =  {
 ["type"] = "alter-condition-true-yet-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["delay"] = 360;
 ["value"] = 4;
 
 };
 [256] =  {
 ["type"] = "display-message-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["message-id"] = 6200;
 ["page"] = 1;
 
 };
 [257] =  {
 ["type"] = "alter-hidden-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["delay"] = 600;
 ["minimum"] = 23;
 ["range"] = 4;
@@ -2429,7 +2429,7 @@ gameData = {
 };
 [258] =  {
 ["type"] = "alter-hidden-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["delay"] = 1200;
 ["minimum"] = 5;
 ["range"] = 1;
@@ -2437,7 +2437,7 @@ gameData = {
 };
 [259] =  {
 ["type"] = "alter-hidden-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["delay"] = 1200;
 ["minimum"] = 7;
 ["range"] = 1;
@@ -2445,7 +2445,7 @@ gameData = {
 };
 [260] =  {
 ["type"] = "alter-hidden-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["delay"] = 1200;
 ["minimum"] = 9;
 ["range"] = 1;
@@ -2453,7 +2453,7 @@ gameData = {
 };
 [261] =  {
 ["type"] = "alter-hidden-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["delay"] = 1200;
 ["minimum"] = 11;
 ["range"] = 1;
@@ -2461,7 +2461,7 @@ gameData = {
 };
 [262] =  {
 ["type"] = "alter-hidden-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["delay"] = 1200;
 ["minimum"] = 13;
 ["range"] = 1;
@@ -2469,20 +2469,20 @@ gameData = {
 };
 [263] =  {
 ["type"] = "create-object-action";
-["reflexive"] = "false";
+["reflexive"] = false;
 ["inclusive-filter"] = 805306368;
 ["exclusive-filter"] = 4294967295;
 ["which-base-type"] = 117;
 ["how-many-min"] = 1;
 ["how-many-range"] = 0;
-["velocity-relative"] = "false";
-["direction-relative"] = "false";
+["velocity-relative"] = false;
+["direction-relative"] = false;
 ["random-distance"] = 0;
 
 };
 [264] =  {
 ["type"] = "land-at-action";
-["reflexive"] = "false";
+["reflexive"] = false;
 ["inclusive-filter"] = 805306368;
 ["exclusive-filter"] = 4294967295;
 ["delay"] = 120;
@@ -2491,10 +2491,10 @@ gameData = {
 };
 [265] =  {
 ["type"] = "play-sound-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["priority"] = 3;
 ["persistence"] = 10;
-["absolute"] = "false";
+["absolute"] = false;
 ["volume-minimum"] = 255;
 ["volume-range"] = 0;
 ["id-minimum"] = 519;
@@ -2503,35 +2503,35 @@ gameData = {
 };
 [266] =  {
 ["type"] = "create-object-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["which-base-type"] = 163;
 ["how-many-min"] = 1;
 ["how-many-range"] = 0;
-["velocity-relative"] = "true";
-["direction-relative"] = "true";
+["velocity-relative"] = true;
+["direction-relative"] = true;
 ["random-distance"] = 0;
 
 };
 [267] =  {
 ["type"] = "alter-hidden-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["minimum"] = 18;
 ["range"] = 4;
 
 };
 [268] =  {
 ["type"] = "alter-hidden-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["minimum"] = 28;
 ["range"] = 4;
 
 };
 [269] =  {
 ["type"] = "play-sound-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["priority"] = 3;
 ["persistence"] = 10;
-["absolute"] = "false";
+["absolute"] = false;
 ["volume-minimum"] = 255;
 ["volume-range"] = 0;
 ["id-minimum"] = 520;
@@ -2540,32 +2540,32 @@ gameData = {
 };
 [270] =  {
 ["type"] = "create-object-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["which-base-type"] = 165;
 ["how-many-min"] = 1;
 ["how-many-range"] = 0;
-["velocity-relative"] = "false";
-["direction-relative"] = "true";
+["velocity-relative"] = false;
+["direction-relative"] = true;
 ["random-distance"] = 0;
 
 };
 [271] =  {
 ["type"] = "create-object-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["which-base-type"] = 170;
 ["how-many-min"] = 1;
 ["how-many-range"] = 0;
-["velocity-relative"] = "true";
-["direction-relative"] = "true";
+["velocity-relative"] = true;
+["direction-relative"] = true;
 ["random-distance"] = 0;
 
 };
 [272] =  {
 ["type"] = "play-sound-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["priority"] = 3;
 ["persistence"] = 10;
-["absolute"] = "false";
+["absolute"] = false;
 ["volume-minimum"] = 255;
 ["volume-range"] = 0;
 ["id-minimum"] = 543;
@@ -2574,10 +2574,10 @@ gameData = {
 };
 [273] =  {
 ["type"] = "play-sound-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["priority"] = 3;
 ["persistence"] = 10;
-["absolute"] = "false";
+["absolute"] = false;
 ["volume-minimum"] = 255;
 ["volume-range"] = 0;
 ["id-minimum"] = 546;
@@ -2586,28 +2586,28 @@ gameData = {
 };
 [274] =  {
 ["type"] = "create-object-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["which-base-type"] = 172;
 ["how-many-min"] = 1;
 ["how-many-range"] = 0;
-["velocity-relative"] = "true";
-["direction-relative"] = "true";
+["velocity-relative"] = true;
+["direction-relative"] = true;
 ["random-distance"] = 0;
 
 };
 [275] =  {
 ["type"] = "alter-owner-action";
-["reflexive"] = "false";
+["reflexive"] = false;
 ["inclusive-filter"] = 4029677568;
 ["exclusive-filter"] = 4294967295;
 ["owner"] = "other";
-["relative"] = "true";
+["relative"] = true;
 ["owner"] = "other";
 
 };
 [276] =  {
 ["type"] = "change-score-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["which-player"] = 0;
 ["which-score"] = 0;
 ["amount"] = 1;
@@ -2615,23 +2615,23 @@ gameData = {
 };
 [277] =  {
 ["type"] = "alter-owner-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["initial-subject-override"] = 0;
-["relative"] = "false";
+["relative"] = false;
 
 };
 [278] =  {
 ["type"] = "alter-absolute-cash-action";
-["reflexive"] = "false";
+["reflexive"] = false;
 ["value"] = 2560000;
 
 };
 [279] =  {
 ["type"] = "play-sound-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["priority"] = 3;
 ["persistence"] = 10;
-["absolute"] = "false";
+["absolute"] = false;
 ["volume-minimum"] = 255;
 ["volume-range"] = 0;
 ["id-minimum"] = 545;
@@ -2640,36 +2640,36 @@ gameData = {
 };
 [280] =  {
 ["type"] = "create-object-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["which-base-type"] = 176;
 ["how-many-min"] = 1;
 ["how-many-range"] = 0;
-["velocity-relative"] = "true";
-["direction-relative"] = "true";
+["velocity-relative"] = true;
+["direction-relative"] = true;
 ["random-distance"] = 0;
 
 };
 [281] =  {
 ["type"] = "alter-hidden-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["minimum"] = 31;
 ["range"] = 3;
 
 };
 [282] =  {
 ["type"] = "create-object-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["which-base-type"] = 29;
 ["how-many-min"] = 1;
 ["how-many-range"] = 0;
-["velocity-relative"] = "false";
-["direction-relative"] = "false";
+["velocity-relative"] = false;
+["direction-relative"] = false;
 ["random-distance"] = 0;
 
 };
 [283] =  {
 ["type"] = "change-score-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["which-player"] = 0;
 ["which-score"] = 0;
 ["amount"] = 1;
@@ -2677,14 +2677,14 @@ gameData = {
 };
 [284] =  {
 ["type"] = "set-destination-action";
-["reflexive"] = "false";
+["reflexive"] = false;
 ["initial-subject-override"] = 17;
 ["initial-direct-override"] = 6;
 
 };
 [285] =  {
 ["type"] = "declare-winner-action";
-["reflexive"] = "false";
+["reflexive"] = false;
 ["which-player"] = 0;
 ["next-level"] = 5;
 ["text-id"] = 10301;
@@ -2692,7 +2692,7 @@ gameData = {
 };
 [286] =  {
 ["type"] = "declare-winner-action";
-["reflexive"] = "false";
+["reflexive"] = false;
 ["which-player"] = 1;
 ["next-level"] = -1;
 ["text-id"] = 10302;
@@ -2700,7 +2700,7 @@ gameData = {
 };
 [287] =  {
 ["type"] = "declare-winner-action";
-["reflexive"] = "false";
+["reflexive"] = false;
 ["which-player"] = 0;
 ["next-level"] = 11;
 ["text-id"] = 10801;
@@ -2708,7 +2708,7 @@ gameData = {
 };
 [288] =  {
 ["type"] = "declare-winner-action";
-["reflexive"] = "false";
+["reflexive"] = false;
 ["which-player"] = 1;
 ["next-level"] = -1;
 ["text-id"] = 10802;
@@ -2716,7 +2716,7 @@ gameData = {
 };
 [289] =  {
 ["type"] = "declare-winner-action";
-["reflexive"] = "false";
+["reflexive"] = false;
 ["which-player"] = 1;
 ["next-level"] = -1;
 ["text-id"] = 11001;
@@ -2724,7 +2724,7 @@ gameData = {
 };
 [290] =  {
 ["type"] = "declare-winner-action";
-["reflexive"] = "false";
+["reflexive"] = false;
 ["which-player"] = 0;
 ["next-level"] = 13;
 ["text-id"] = 11002;
@@ -2732,7 +2732,7 @@ gameData = {
 };
 [291] =  {
 ["type"] = "declare-winner-action";
-["reflexive"] = "false";
+["reflexive"] = false;
 ["which-player"] = 1;
 ["next-level"] = -1;
 ["text-id"] = 11101;
@@ -2740,7 +2740,7 @@ gameData = {
 };
 [292] =  {
 ["type"] = "declare-winner-action";
-["reflexive"] = "false";
+["reflexive"] = false;
 ["which-player"] = 0;
 ["next-level"] = 14;
 ["text-id"] = 4065;
@@ -2748,7 +2748,7 @@ gameData = {
 };
 [293] =  {
 ["type"] = "declare-winner-action";
-["reflexive"] = "false";
+["reflexive"] = false;
 ["which-player"] = 0;
 ["next-level"] = 18;
 ["text-id"] = 11501;
@@ -2756,7 +2756,7 @@ gameData = {
 };
 [294] =  {
 ["type"] = "declare-winner-action";
-["reflexive"] = "false";
+["reflexive"] = false;
 ["which-player"] = 1;
 ["next-level"] = -1;
 ["text-id"] = 10401;
@@ -2764,7 +2764,7 @@ gameData = {
 };
 [295] =  {
 ["type"] = "declare-winner-action";
-["reflexive"] = "false";
+["reflexive"] = false;
 ["which-player"] = 0;
 ["next-level"] = 7;
 ["text-id"] = 10402;
@@ -2772,7 +2772,7 @@ gameData = {
 };
 [296] =  {
 ["type"] = "declare-winner-action";
-["reflexive"] = "false";
+["reflexive"] = false;
 ["which-player"] = 1;
 ["next-level"] = -1;
 ["text-id"] = 10501;
@@ -2780,7 +2780,7 @@ gameData = {
 };
 [297] =  {
 ["type"] = "declare-winner-action";
-["reflexive"] = "false";
+["reflexive"] = false;
 ["which-player"] = 1;
 ["next-level"] = -1;
 ["text-id"] = 10502;
@@ -2788,7 +2788,7 @@ gameData = {
 };
 [298] =  {
 ["type"] = "declare-winner-action";
-["reflexive"] = "false";
+["reflexive"] = false;
 ["which-player"] = 1;
 ["next-level"] = -1;
 ["text-id"] = 10601;
@@ -2796,7 +2796,7 @@ gameData = {
 };
 [299] =  {
 ["type"] = "declare-winner-action";
-["reflexive"] = "false";
+["reflexive"] = false;
 ["which-player"] = 0;
 ["next-level"] = 9;
 ["text-id"] = 10602;
@@ -2804,7 +2804,7 @@ gameData = {
 };
 [300] =  {
 ["type"] = "declare-winner-action";
-["reflexive"] = "false";
+["reflexive"] = false;
 ["which-player"] = 1;
 ["next-level"] = -1;
 ["text-id"] = 10701;
@@ -2812,7 +2812,7 @@ gameData = {
 };
 [301] =  {
 ["type"] = "declare-winner-action";
-["reflexive"] = "false";
+["reflexive"] = false;
 ["which-player"] = 0;
 ["next-level"] = 10;
 ["text-id"] = 10702;
@@ -2820,7 +2820,7 @@ gameData = {
 };
 [302] =  {
 ["type"] = "declare-winner-action";
-["reflexive"] = "false";
+["reflexive"] = false;
 ["which-player"] = 1;
 ["next-level"] = -1;
 ["text-id"] = 11301;
@@ -2828,7 +2828,7 @@ gameData = {
 };
 [303] =  {
 ["type"] = "declare-winner-action";
-["reflexive"] = "false";
+["reflexive"] = false;
 ["which-player"] = 0;
 ["next-level"] = 16;
 ["text-id"] = 11302;
@@ -2836,7 +2836,7 @@ gameData = {
 };
 [304] =  {
 ["type"] = "declare-winner-action";
-["reflexive"] = "false";
+["reflexive"] = false;
 ["which-player"] = 0;
 ["next-level"] = 3;
 ["text-id"] = 10201;
@@ -2844,7 +2844,7 @@ gameData = {
 };
 [305] =  {
 ["type"] = "declare-winner-action";
-["reflexive"] = "false";
+["reflexive"] = false;
 ["which-player"] = 1;
 ["next-level"] = -1;
 ["text-id"] = 11601;
@@ -2852,7 +2852,7 @@ gameData = {
 };
 [306] =  {
 ["type"] = "declare-winner-action";
-["reflexive"] = "false";
+["reflexive"] = false;
 ["which-player"] = 0;
 ["next-level"] = 19;
 ["text-id"] = 11602;
@@ -2860,61 +2860,61 @@ gameData = {
 };
 [307] =  {
 ["type"] = "create-object-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["which-base-type"] = 7;
 ["how-many-min"] = 1;
 ["how-many-range"] = 0;
-["velocity-relative"] = "false";
-["direction-relative"] = "false";
+["velocity-relative"] = false;
+["direction-relative"] = false;
 ["random-distance"] = 256;
 
 };
 [308] =  {
 ["type"] = "set-destination-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 
 };
 [309] =  {
 ["type"] = "alter-velocity-action";
-["reflexive"] = "true";
-["relative"] = "false";
+["reflexive"] = true;
+["relative"] = false;
 ["minimum"] = 0;
 ["range"] = 0;
 
 };
 [310] =  {
 ["type"] = "create-object-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["which-base-type"] = 183;
 ["how-many-min"] = 1;
 ["how-many-range"] = 0;
-["velocity-relative"] = "false";
-["direction-relative"] = "false";
+["velocity-relative"] = false;
+["direction-relative"] = false;
 ["random-distance"] = 0;
 
 };
 [311] =  {
 ["type"] = "land-at-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["landing-speed"] = 128;
 
 };
 [312] =  {
 ["type"] = "alter-base-type-action";
-["reflexive"] = "true";
-["preserve-weapons"] = "false";
+["reflexive"] = true;
+["preserve-weapons"] = false;
 ["new-id"] = 224;
 
 };
 [313] =  {
 ["type"] = "alter-damage-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["value"] = 80000;
 
 };
 [314] =  {
 ["type"] = "display-message-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["delay"] = 60;
 ["message-id"] = 5520;
 ["page"] = 1;
@@ -2922,116 +2922,116 @@ gameData = {
 };
 [315] =  {
 ["type"] = "create-object-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["which-base-type"] = 184;
 ["how-many-min"] = 1;
 ["how-many-range"] = 2;
-["velocity-relative"] = "true";
-["direction-relative"] = "true";
+["velocity-relative"] = true;
+["direction-relative"] = true;
 ["random-distance"] = 1024;
 
 };
 [316] =  {
 ["type"] = "create-object-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["which-base-type"] = 195;
 ["how-many-min"] = -4;
 ["how-many-range"] = 6;
-["velocity-relative"] = "true";
-["direction-relative"] = "true";
+["velocity-relative"] = true;
+["direction-relative"] = true;
 ["random-distance"] = 1024;
 
 };
 [317] =  {
 ["type"] = "alter-velocity-action";
-["reflexive"] = "true";
-["relative"] = "true";
+["reflexive"] = true;
+["relative"] = true;
 ["minimum"] = 0;
 ["range"] = 512;
 
 };
 [318] =  {
 ["type"] = "create-object-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["which-base-type"] = 189;
 ["how-many-min"] = -10;
 ["how-many-range"] = 12;
-["velocity-relative"] = "true";
-["direction-relative"] = "true";
+["velocity-relative"] = true;
+["direction-relative"] = true;
 ["random-distance"] = 2;
 
 };
 [319] =  {
 ["type"] = "activate-special-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 
 };
 [320] =  {
 ["type"] = "create-object-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["which-base-type"] = 7;
 ["how-many-min"] = 0;
 ["how-many-range"] = 2;
-["velocity-relative"] = "false";
-["direction-relative"] = "false";
+["velocity-relative"] = false;
+["direction-relative"] = false;
 ["random-distance"] = 256;
 
 };
 [321] =  {
 ["type"] = "create-object-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["which-base-type"] = 14;
 ["how-many-min"] = 0;
 ["how-many-range"] = 2;
-["velocity-relative"] = "false";
-["direction-relative"] = "false";
+["velocity-relative"] = false;
+["direction-relative"] = false;
 ["random-distance"] = 256;
 
 };
 [322] =  {
 ["type"] = "create-object-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["which-base-type"] = 59;
 ["how-many-min"] = 0;
 ["how-many-range"] = 2;
-["velocity-relative"] = "false";
-["direction-relative"] = "false";
+["velocity-relative"] = false;
+["direction-relative"] = false;
 ["random-distance"] = 256;
 
 };
 [323] =  {
 ["type"] = "alter-hidden-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["minimum"] = 1;
 ["range"] = 2;
 
 };
 [324] =  {
 ["type"] = "alter-hidden-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["minimum"] = 4;
 ["range"] = 2;
 
 };
 [325] =  {
 ["type"] = "alter-hidden-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["minimum"] = 7;
 ["range"] = 0;
 
 };
 [326] =  {
 ["type"] = "alter-velocity-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["initial-subject-override"] = 0;
-["relative"] = "false";
+["relative"] = false;
 ["minimum"] = 0;
 ["range"] = 0;
 
 };
 [327] =  {
 ["type"] = "alter-offline-action";
-["reflexive"] = "false";
+["reflexive"] = false;
 ["owner"] = "other";
 ["minimum"] = 0;
 ["range"] = 15360;
@@ -3039,10 +3039,10 @@ gameData = {
 };
 [328] =  {
 ["type"] = "play-sound-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["priority"] = 3;
 ["persistence"] = 10;
-["absolute"] = "false";
+["absolute"] = false;
 ["volume-minimum"] = 255;
 ["volume-range"] = 0;
 ["id-minimum"] = 547;
@@ -3051,83 +3051,83 @@ gameData = {
 };
 [329] =  {
 ["type"] = "alter-age-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["value"] = 180;
 
 };
 [330] =  {
 ["type"] = "create-object-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["delay"] = 120;
 ["which-base-type"] = 200;
 ["how-many-min"] = -1;
 ["how-many-range"] = 4;
-["velocity-relative"] = "false";
-["direction-relative"] = "false";
+["velocity-relative"] = false;
+["direction-relative"] = false;
 ["random-distance"] = 2;
 
 };
 [331] =  {
 ["type"] = "create-object-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["which-base-type"] = 257;
 ["how-many-min"] = 1;
 ["how-many-range"] = 0;
-["velocity-relative"] = "true";
-["direction-relative"] = "true";
+["velocity-relative"] = true;
+["direction-relative"] = true;
 ["random-distance"] = 0;
 
 };
 [332] =  {
 ["type"] = "create-object-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["which-base-type"] = 190;
 ["how-many-min"] = 2;
 ["how-many-range"] = 2;
-["velocity-relative"] = "true";
-["direction-relative"] = "true";
+["velocity-relative"] = true;
+["direction-relative"] = true;
 ["random-distance"] = 0;
 
 };
 [333] =  {
 ["type"] = "create-object-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["which-base-type"] = 191;
 ["how-many-min"] = 2;
 ["how-many-range"] = 2;
-["velocity-relative"] = "true";
-["direction-relative"] = "true";
+["velocity-relative"] = true;
+["direction-relative"] = true;
 ["random-distance"] = 0;
 
 };
 [334] =  {
 ["type"] = "create-object-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["which-base-type"] = 35;
 ["how-many-min"] = 1;
 ["how-many-range"] = 0;
-["velocity-relative"] = "false";
-["direction-relative"] = "false";
+["velocity-relative"] = false;
+["direction-relative"] = false;
 ["random-distance"] = 0;
 
 };
 [335] =  {
 ["type"] = "create-object-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["which-base-type"] = 193;
 ["how-many-min"] = 1;
 ["how-many-range"] = 0;
-["velocity-relative"] = "true";
-["direction-relative"] = "true";
+["velocity-relative"] = true;
+["direction-relative"] = true;
 ["random-distance"] = 0;
 
 };
 [336] =  {
 ["type"] = "play-sound-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["priority"] = 3;
 ["persistence"] = 10;
-["absolute"] = "false";
+["absolute"] = false;
 ["volume-minimum"] = 255;
 ["volume-range"] = 0;
 ["id-minimum"] = 544;
@@ -3136,106 +3136,106 @@ gameData = {
 };
 [337] =  {
 ["type"] = "create-object-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["which-base-type"] = 194;
 ["how-many-min"] = 1;
 ["how-many-range"] = 0;
-["velocity-relative"] = "false";
-["direction-relative"] = "false";
+["velocity-relative"] = false;
+["direction-relative"] = false;
 ["random-distance"] = 0;
 
 };
 [338] =  {
 ["type"] = "alter-velocity-action";
-["reflexive"] = "false";
-["relative"] = "false";
+["reflexive"] = false;
+["relative"] = false;
 ["minimum"] = 5120;
 ["range"] = 6553600;
 
 };
 [339] =  {
 ["type"] = "die-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["death-type"] = 0;
 
 };
 [340] =  {
 ["type"] = "create-object-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["which-base-type"] = 52;
 ["how-many-min"] = 1;
 ["how-many-range"] = 0;
-["velocity-relative"] = "false";
-["direction-relative"] = "false";
+["velocity-relative"] = false;
+["direction-relative"] = false;
 ["random-distance"] = 0;
 
 };
 [341] =  {
 ["type"] = "die-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["death-type"] = 2;
 
 };
 [342] =  {
 ["type"] = "create-object-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["which-base-type"] = 195;
 ["how-many-min"] = 1;
 ["how-many-range"] = 1;
-["velocity-relative"] = "true";
-["direction-relative"] = "true";
+["velocity-relative"] = true;
+["direction-relative"] = true;
 ["random-distance"] = 1024;
 
 };
 [343] =  {
 ["type"] = "alter-velocity-action";
-["reflexive"] = "false";
-["relative"] = "true";
+["reflexive"] = false;
+["relative"] = true;
 ["minimum"] = 25600;
 ["range"] = 0;
 
 };
 [344] =  {
 ["type"] = "create-object-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["which-base-type"] = 79;
 ["how-many-min"] = 1;
 ["how-many-range"] = 0;
-["velocity-relative"] = "false";
-["direction-relative"] = "false";
+["velocity-relative"] = false;
+["direction-relative"] = false;
 ["random-distance"] = 0;
 
 };
 [345] =  {
 ["type"] = "die-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["death-type"] = 1;
 
 };
 [346] =  {
 ["type"] = "alter-offline-action";
-["reflexive"] = "false";
+["reflexive"] = false;
 ["minimum"] = 10240;
 ["range"] = 0;
 
 };
 [347] =  {
 ["type"] = "create-object-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["which-base-type"] = 199;
 ["how-many-min"] = 1;
 ["how-many-range"] = 0;
-["velocity-relative"] = "true";
-["direction-relative"] = "true";
+["velocity-relative"] = true;
+["direction-relative"] = true;
 ["random-distance"] = 0;
 
 };
 [348] =  {
 ["type"] = "play-sound-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["priority"] = 3;
 ["persistence"] = 10;
-["absolute"] = "false";
+["absolute"] = false;
 ["volume-minimum"] = 180;
 ["volume-range"] = 0;
 ["id-minimum"] = 549;
@@ -3244,21 +3244,21 @@ gameData = {
 };
 [349] =  {
 ["type"] = "create-object-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["which-base-type"] = 35;
 ["how-many-min"] = 1;
 ["how-many-range"] = 0;
-["velocity-relative"] = "false";
-["direction-relative"] = "false";
+["velocity-relative"] = false;
+["direction-relative"] = false;
 ["random-distance"] = 0;
 
 };
 [350] =  {
 ["type"] = "play-sound-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["priority"] = 3;
 ["persistence"] = 10;
-["absolute"] = "false";
+["absolute"] = false;
 ["volume-minimum"] = 255;
 ["volume-range"] = 0;
 ["id-minimum"] = 548;
@@ -3267,23 +3267,23 @@ gameData = {
 };
 [351] =  {
 ["type"] = "alter-damage-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["value"] = 250;
 
 };
 [352] =  {
 ["type"] = "alter-base-type-action";
-["reflexive"] = "true";
-["preserve-weapons"] = "false";
+["reflexive"] = true;
+["preserve-weapons"] = false;
 ["new-id"] = 201;
 
 };
 [353] =  {
 ["type"] = "play-sound-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["priority"] = 4;
 ["persistence"] = 10;
-["absolute"] = "true";
+["absolute"] = true;
 ["volume-minimum"] = 255;
 ["volume-range"] = 0;
 ["id-minimum"] = 551;
@@ -3292,11 +3292,11 @@ gameData = {
 };
 [354] =  {
 ["type"] = "play-sound-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["delay"] = 360;
 ["priority"] = 3;
 ["persistence"] = 10;
-["absolute"] = "false";
+["absolute"] = false;
 ["volume-minimum"] = 255;
 ["volume-range"] = 0;
 ["id-minimum"] = 525;
@@ -3305,205 +3305,205 @@ gameData = {
 };
 [355] =  {
 ["type"] = "alter-base-type-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["delay"] = 60;
-["preserve-weapons"] = "false";
+["preserve-weapons"] = false;
 ["new-id"] = 188;
 
 };
 [356] =  {
 ["type"] = "alter-condition-true-yet-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["value"] = 13;
 
 };
 [357] =  {
 ["type"] = "alter-condition-true-yet-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["value"] = 14;
 
 };
 [358] =  {
 ["type"] = "alter-condition-true-yet-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["value"] = 15;
 
 };
 [359] =  {
 ["type"] = "display-message-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["message-id"] = 5500;
 ["page"] = 1;
 
 };
 [360] =  {
 ["type"] = "alter-condition-true-yet-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["value"] = 0;
 
 };
 [361] =  {
 ["type"] = "alter-condition-true-yet-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["value"] = 1;
 
 };
 [362] =  {
 ["type"] = "alter-condition-true-yet-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["value"] = 11;
 
 };
 [363] =  {
 ["type"] = "alter-condition-true-yet-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["value"] = 12;
 
 };
 [364] =  {
 ["type"] = "display-message-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["message-id"] = 5501;
 ["page"] = 1;
 
 };
 [365] =  {
 ["type"] = "alter-condition-true-yet-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["value"] = 8;
 
 };
 [366] =  {
 ["type"] = "alter-condition-true-yet-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["value"] = 4;
 
 };
 [367] =  {
 ["type"] = "display-message-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["message-id"] = 5502;
 ["page"] = 1;
 
 };
 [368] =  {
 ["type"] = "alter-condition-true-yet-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["value"] = 9;
 
 };
 [369] =  {
 ["type"] = "alter-condition-true-yet-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["value"] = 5;
 
 };
 [370] =  {
 ["type"] = "display-message-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["message-id"] = 5503;
 ["page"] = 1;
 
 };
 [371] =  {
 ["type"] = "display-message-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["message-id"] = 5503;
 ["page"] = 1;
 
 };
 [372] =  {
 ["type"] = "display-message-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["message-id"] = 5504;
 ["page"] = 1;
 
 };
 [373] =  {
 ["type"] = "display-message-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["message-id"] = 5504;
 ["page"] = 1;
 
 };
 [374] =  {
 ["type"] = "display-message-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["message-id"] = 5505;
 ["page"] = 1;
 
 };
 [375] =  {
 ["type"] = "alter-condition-true-yet-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["value"] = 10;
 
 };
 [376] =  {
 ["type"] = "display-message-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["message-id"] = 5505;
 ["page"] = 1;
 
 };
 [377] =  {
 ["type"] = "display-message-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["message-id"] = 5503;
 ["page"] = 1;
 
 };
 [378] =  {
 ["type"] = "alter-condition-true-yet-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["value"] = 3;
 
 };
 [379] =  {
 ["type"] = "alter-condition-true-yet-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["value"] = 9;
 
 };
 [380] =  {
 ["type"] = "alter-condition-true-yet-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["value"] = 12;
 
 };
 [381] =  {
 ["type"] = "alter-condition-true-yet-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["value"] = 7;
 
 };
 [382] =  {
 ["type"] = "alter-condition-true-yet-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["value"] = 2;
 
 };
 [383] =  {
 ["type"] = "alter-condition-true-yet-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["value"] = 8;
 
 };
 [384] =  {
 ["type"] = "alter-condition-true-yet-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["value"] = 6;
 
 };
 [385] =  {
 ["type"] = "alter-condition-true-yet-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["value"] = 11;
 
 };
 [386] =  {
 ["type"] = "display-message-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["delay"] = 360;
 ["message-id"] = 5508;
 ["page"] = 1;
@@ -3511,13 +3511,13 @@ gameData = {
 };
 [387] =  {
 ["type"] = "set-destination-action";
-["reflexive"] = "false";
+["reflexive"] = false;
 ["initial-direct-override"] = 5;
 
 };
 [388] =  {
 ["type"] = "land-at-action";
-["reflexive"] = "false";
+["reflexive"] = false;
 ["delay"] = 120;
 ["initial-direct-override"] = 5;
 ["landing-speed"] = 128;
@@ -3525,180 +3525,180 @@ gameData = {
 };
 [389] =  {
 ["type"] = "alter-condition-true-yet-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["delay"] = 2400;
 ["value"] = 13;
 
 };
 [390] =  {
 ["type"] = "alter-condition-true-yet-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["value"] = 0;
 
 };
 [391] =  {
 ["type"] = "alter-condition-true-yet-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["value"] = 2;
 
 };
 [392] =  {
 ["type"] = "alter-condition-true-yet-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["value"] = 15;
 
 };
 [393] =  {
 ["type"] = "display-message-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["message-id"] = 5506;
 ["page"] = 1;
 
 };
 [394] =  {
 ["type"] = "alter-condition-true-yet-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["value"] = 14;
 
 };
 [395] =  {
 ["type"] = "display-message-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["message-id"] = 5507;
 ["page"] = 1;
 
 };
 [396] =  {
 ["type"] = "alter-condition-true-yet-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["value"] = 0;
 
 };
 [397] =  {
 ["type"] = "alter-condition-true-yet-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["value"] = 2;
 
 };
 [398] =  {
 ["type"] = "alter-condition-true-yet-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["value"] = 13;
 
 };
 [399] =  {
 ["type"] = "alter-condition-true-yet-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["value"] = 14;
 
 };
 [400] =  {
 ["type"] = "alter-condition-true-yet-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["value"] = 15;
 
 };
 [401] =  {
 ["type"] = "alter-condition-true-yet-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["value"] = 17;
 
 };
 [402] =  {
 ["type"] = "display-message-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["message-id"] = 5510;
 ["page"] = 1;
 
 };
 [403] =  {
 ["type"] = "alter-condition-true-yet-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["value"] = 0;
 
 };
 [404] =  {
 ["type"] = "alter-condition-true-yet-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["value"] = 2;
 
 };
 [405] =  {
 ["type"] = "alter-condition-true-yet-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["value"] = 13;
 
 };
 [406] =  {
 ["type"] = "alter-condition-true-yet-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["value"] = 14;
 
 };
 [407] =  {
 ["type"] = "alter-condition-true-yet-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["value"] = 15;
 
 };
 [408] =  {
 ["type"] = "display-message-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["message-id"] = 5511;
 ["page"] = 3;
 
 };
 [409] =  {
 ["type"] = "alter-condition-true-yet-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["value"] = 0;
 
 };
 [410] =  {
 ["type"] = "alter-condition-true-yet-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["value"] = 2;
 
 };
 [411] =  {
 ["type"] = "alter-condition-true-yet-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["value"] = 13;
 
 };
 [412] =  {
 ["type"] = "alter-condition-true-yet-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["value"] = 14;
 
 };
 [413] =  {
 ["type"] = "alter-condition-true-yet-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["value"] = 16;
 
 };
 [414] =  {
 ["type"] = "display-message-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["message-id"] = 5509;
 ["page"] = 1;
 
 };
 [415] =  {
 ["type"] = "alter-damage-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["value"] = 1000;
 
 };
 [416] =  {
 ["type"] = "play-sound-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["initial-subject-override"] = 0;
 ["initial-direct-override"] = 0;
 ["priority"] = 4;
 ["persistence"] = 10;
-["absolute"] = "false";
+["absolute"] = false;
 ["volume-minimum"] = 255;
 ["volume-range"] = 0;
 ["id-minimum"] = 551;
@@ -3707,29 +3707,29 @@ gameData = {
 };
 [417] =  {
 ["type"] = "alter-base-type-action";
-["reflexive"] = "true";
-["preserve-weapons"] = "false";
+["reflexive"] = true;
+["preserve-weapons"] = false;
 ["new-id"] = 204;
 
 };
 [418] =  {
 ["type"] = "alter-base-type-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["delay"] = 360;
-["preserve-weapons"] = "false";
+["preserve-weapons"] = false;
 ["new-id"] = 203;
 
 };
 [419] =  {
 ["type"] = "alter-hidden-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["minimum"] = 22;
 ["range"] = 0;
 
 };
 [420] =  {
 ["type"] = "declare-winner-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["delay"] = 60;
 ["which-player"] = 0;
 ["next-level"] = 2;
@@ -3738,7 +3738,7 @@ gameData = {
 };
 [421] =  {
 ["type"] = "change-score-action";
-["reflexive"] = "false";
+["reflexive"] = false;
 ["inclusive-filter"] = 3758096384;
 ["exclusive-filter"] = 4294967295;
 ["which-player"] = 0;
@@ -3748,7 +3748,7 @@ gameData = {
 };
 [422] =  {
 ["type"] = "die-action";
-["reflexive"] = "false";
+["reflexive"] = false;
 ["inclusive-filter"] = 3758096384;
 ["exclusive-filter"] = 4294967295;
 ["death-type"] = 1;
@@ -3756,39 +3756,39 @@ gameData = {
 };
 [423] =  {
 ["type"] = "alter-base-type-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["initial-subject-override"] = 1;
-["preserve-weapons"] = "true";
+["preserve-weapons"] = true;
 ["new-id"] = 129;
 
 };
 [424] =  {
 ["type"] = "set-destination-action";
-["reflexive"] = "false";
+["reflexive"] = false;
 ["delay"] = 3;
 ["initial-direct-override"] = 0;
 
 };
 [425] =  {
 ["type"] = "alter-condition-true-yet-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["value"] = 2;
 
 };
 [426] =  {
 ["type"] = "create-object-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["which-base-type"] = 207;
 ["how-many-min"] = 1;
 ["how-many-range"] = 0;
-["velocity-relative"] = "true";
-["direction-relative"] = "true";
+["velocity-relative"] = true;
+["direction-relative"] = true;
 ["random-distance"] = 0;
 
 };
 [427] =  {
 ["type"] = "change-score-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["which-player"] = 0;
 ["which-score"] = 0;
 ["amount"] = -1;
@@ -3796,106 +3796,106 @@ gameData = {
 };
 [428] =  {
 ["type"] = "alter-condition-true-yet-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["value"] = 0;
 
 };
 [429] =  {
 ["type"] = "alter-base-type-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["initial-subject-override"] = 1;
-["preserve-weapons"] = "true";
+["preserve-weapons"] = true;
 ["new-id"] = 206;
 
 };
 [430] =  {
 ["type"] = "alter-condition-true-yet-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["value"] = 2;
 
 };
 [431] =  {
 ["type"] = "alter-condition-true-yet-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["value"] = 7;
 
 };
 [432] =  {
 ["type"] = "alter-offline-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["minimum"] = -7680;
 ["range"] = 15360;
 
 };
 [433] =  {
 ["type"] = "alter-spin-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["minimum"] = -256;
 ["range"] = 256;
 
 };
 [434] =  {
 ["type"] = "alter-velocity-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["delay"] = 20;
-["relative"] = "true";
+["relative"] = true;
 ["minimum"] = 128;
 ["range"] = 128;
 
 };
 [435] =  {
 ["type"] = "alter-base-type-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["delay"] = 270;
-["preserve-weapons"] = "true";
+["preserve-weapons"] = true;
 ["new-id"] = 208;
 
 };
 [436] =  {
 ["type"] = "alter-base-type-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["delay"] = 270;
-["preserve-weapons"] = "true";
+["preserve-weapons"] = true;
 ["new-id"] = 205;
 
 };
 [437] =  {
 ["type"] = "create-object-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["which-base-type"] = 211;
 ["how-many-min"] = 1;
 ["how-many-range"] = 0;
-["velocity-relative"] = "false";
-["direction-relative"] = "false";
+["velocity-relative"] = false;
+["direction-relative"] = false;
 ["random-distance"] = 0;
 
 };
 [438] =  {
 ["type"] = "create-object-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["which-base-type"] = 205;
 ["how-many-min"] = 10;
 ["how-many-range"] = 0;
-["velocity-relative"] = "false";
-["direction-relative"] = "false";
+["velocity-relative"] = false;
+["direction-relative"] = false;
 ["random-distance"] = 16;
 
 };
 [439] =  {
 ["type"] = "alter-base-type-action";
-["reflexive"] = "true";
-["preserve-weapons"] = "false";
+["reflexive"] = true;
+["preserve-weapons"] = false;
 ["new-id"] = 209;
 
 };
 [440] =  {
 ["type"] = "play-sound-action";
-["reflexive"] = "false";
+["reflexive"] = false;
 ["inclusive-filter"] = 1610612736;
 ["exclusive-filter"] = 4294967295;
 ["priority"] = 3;
 ["persistence"] = 10;
-["absolute"] = "false";
+["absolute"] = false;
 ["volume-minimum"] = 255;
 ["volume-range"] = 0;
 ["id-minimum"] = 31989;
@@ -3904,7 +3904,7 @@ gameData = {
 };
 [441] =  {
 ["type"] = "change-score-action";
-["reflexive"] = "false";
+["reflexive"] = false;
 ["inclusive-filter"] = 1610612736;
 ["exclusive-filter"] = 4294967295;
 ["which-player"] = 0;
@@ -3914,7 +3914,7 @@ gameData = {
 };
 [442] =  {
 ["type"] = "die-action";
-["reflexive"] = "false";
+["reflexive"] = false;
 ["inclusive-filter"] = 1610612736;
 ["exclusive-filter"] = 4294967295;
 ["death-type"] = 1;
@@ -3922,7 +3922,7 @@ gameData = {
 };
 [443] =  {
 ["type"] = "declare-winner-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["which-player"] = 0;
 ["next-level"] = 15;
 ["text-id"] = 11201;
@@ -3930,38 +3930,38 @@ gameData = {
 };
 [444] =  {
 ["type"] = "alter-owner-action";
-["reflexive"] = "true";
-["relative"] = "false";
+["reflexive"] = true;
+["relative"] = false;
 
 };
 [445] =  {
 ["type"] = "alter-base-type-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["initial-subject-override"] = 1;
-["preserve-weapons"] = "true";
+["preserve-weapons"] = true;
 ["new-id"] = 88;
 
 };
 [446] =  {
 ["type"] = "alter-condition-true-yet-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["value"] = 2;
 
 };
 [447] =  {
 ["type"] = "create-object-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["which-base-type"] = 214;
 ["how-many-min"] = 1;
 ["how-many-range"] = 0;
-["velocity-relative"] = "true";
-["direction-relative"] = "true";
+["velocity-relative"] = true;
+["direction-relative"] = true;
 ["random-distance"] = 0;
 
 };
 [448] =  {
 ["type"] = "change-score-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["which-player"] = 0;
 ["which-score"] = 0;
 ["amount"] = -1;
@@ -3969,33 +3969,33 @@ gameData = {
 };
 [449] =  {
 ["type"] = "alter-condition-true-yet-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["value"] = 0;
 
 };
 [450] =  {
 ["type"] = "activate-special-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["initial-subject-override"] = 6;
 
 };
 [451] =  {
 ["type"] = "alter-base-type-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["initial-subject-override"] = 1;
-["preserve-weapons"] = "true";
+["preserve-weapons"] = true;
 ["new-id"] = 217;
 
 };
 [452] =  {
 ["type"] = "alter-condition-true-yet-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["value"] = 2;
 
 };
 [453] =  {
 ["type"] = "declare-winner-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["which-player"] = 0;
 ["next-level"] = 8;
 ["text-id"] = 10502;
@@ -4003,103 +4003,103 @@ gameData = {
 };
 [454] =  {
 ["type"] = "alter-offline-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["minimum"] = -7680;
 ["range"] = 15360;
 
 };
 [455] =  {
 ["type"] = "alter-spin-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["minimum"] = -256;
 ["range"] = 256;
 
 };
 [456] =  {
 ["type"] = "alter-velocity-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["delay"] = 20;
-["relative"] = "true";
+["relative"] = true;
 ["minimum"] = 128;
 ["range"] = 128;
 
 };
 [457] =  {
 ["type"] = "alter-base-type-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["delay"] = 270;
-["preserve-weapons"] = "true";
+["preserve-weapons"] = true;
 ["new-id"] = 213;
 
 };
 [458] =  {
 ["type"] = "alter-base-type-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["delay"] = 270;
-["preserve-weapons"] = "true";
+["preserve-weapons"] = true;
 ["new-id"] = 212;
 
 };
 [459] =  {
 ["type"] = "create-object-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["which-base-type"] = 211;
 ["how-many-min"] = 1;
 ["how-many-range"] = 0;
-["velocity-relative"] = "false";
-["direction-relative"] = "false";
+["velocity-relative"] = false;
+["direction-relative"] = false;
 ["random-distance"] = 0;
 
 };
 [460] =  {
 ["type"] = "create-object-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["which-base-type"] = 212;
 ["how-many-min"] = 5;
 ["how-many-range"] = 0;
-["velocity-relative"] = "false";
-["direction-relative"] = "false";
+["velocity-relative"] = false;
+["direction-relative"] = false;
 ["random-distance"] = 16;
 
 };
 [461] =  {
 ["type"] = "activate-special-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["initial-subject-override"] = 7;
 
 };
 [462] =  {
 ["type"] = "alter-base-type-action";
-["reflexive"] = "true";
-["preserve-weapons"] = "false";
+["reflexive"] = true;
+["preserve-weapons"] = false;
 ["new-id"] = 215;
 
 };
 [463] =  {
 ["type"] = "create-object-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["which-base-type"] = 37;
 ["how-many-min"] = 1;
 ["how-many-range"] = 2;
-["velocity-relative"] = "true";
-["direction-relative"] = "false";
+["velocity-relative"] = true;
+["direction-relative"] = false;
 ["random-distance"] = 256;
 
 };
 [464] =  {
 ["type"] = "create-object-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["which-base-type"] = 38;
 ["how-many-min"] = 1;
 ["how-many-range"] = 4;
-["velocity-relative"] = "false";
-["direction-relative"] = "false";
+["velocity-relative"] = false;
+["direction-relative"] = false;
 ["random-distance"] = 256;
 
 };
 [465] =  {
 ["type"] = "declare-winner-action";
-["reflexive"] = "false";
+["reflexive"] = false;
 ["which-player"] = 0;
 ["next-level"] = 12;
 ["text-id"] = 10901;
@@ -4107,71 +4107,71 @@ gameData = {
 };
 [466] =  {
 ["type"] = "alter-base-type-action";
-["reflexive"] = "true";
-["preserve-weapons"] = "false";
+["reflexive"] = true;
+["preserve-weapons"] = false;
 ["new-id"] = 220;
 
 };
 [467] =  {
 ["type"] = "create-object-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["which-base-type"] = 29;
 ["how-many-min"] = 0;
 ["how-many-range"] = 3;
-["velocity-relative"] = "true";
-["direction-relative"] = "false";
+["velocity-relative"] = true;
+["direction-relative"] = false;
 ["random-distance"] = 128;
 
 };
 [468] =  {
 ["type"] = "create-object-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["delay"] = 20;
 ["which-base-type"] = 52;
 ["how-many-min"] = 0;
 ["how-many-range"] = 2;
-["velocity-relative"] = "true";
-["direction-relative"] = "false";
+["velocity-relative"] = true;
+["direction-relative"] = false;
 ["random-distance"] = 128;
 
 };
 [469] =  {
 ["type"] = "create-object-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["delay"] = 20;
 ["which-base-type"] = 34;
 ["how-many-min"] = 0;
 ["how-many-range"] = 4;
-["velocity-relative"] = "true";
-["direction-relative"] = "false";
+["velocity-relative"] = true;
+["direction-relative"] = false;
 ["random-distance"] = 128;
 
 };
 [470] =  {
 ["type"] = "create-object-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["delay"] = 20;
 ["which-base-type"] = 8;
 ["how-many-min"] = 0;
 ["how-many-range"] = 4;
-["velocity-relative"] = "true";
-["direction-relative"] = "false";
+["velocity-relative"] = true;
+["direction-relative"] = false;
 ["random-distance"] = 128;
 
 };
 [471] =  {
 ["type"] = "alter-hidden-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["minimum"] = 4;
 ["range"] = 7;
 
 };
 [472] =  {
 ["type"] = "play-sound-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["priority"] = 4;
 ["persistence"] = 20;
-["absolute"] = "false";
+["absolute"] = false;
 ["volume-minimum"] = 255;
 ["volume-range"] = 0;
 ["id-minimum"] = 515;
@@ -4180,24 +4180,24 @@ gameData = {
 };
 [473] =  {
 ["type"] = "create-object-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["which-base-type"] = 221;
 ["how-many-min"] = 11;
 ["how-many-range"] = 0;
-["velocity-relative"] = "false";
-["direction-relative"] = "false";
+["velocity-relative"] = false;
+["direction-relative"] = false;
 ["random-distance"] = 0;
 
 };
 [474] =  {
 ["type"] = "alter-condition-true-yet-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["value"] = 1;
 
 };
 [475] =  {
 ["type"] = "color-flash-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["length"] = 128;
 ["color"] = 2;
 ["shade"] = 15;
@@ -4205,37 +4205,37 @@ gameData = {
 };
 [476] =  {
 ["type"] = "alter-condition-true-yet-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["value"] = 1;
 
 };
 [477] =  {
 ["type"] = "alter-condition-true-yet-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["value"] = 2;
 
 };
 [478] =  {
 ["type"] = "alter-condition-true-yet-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["value"] = 4;
 
 };
 [479] =  {
 ["type"] = "alter-condition-true-yet-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["value"] = 3;
 
 };
 [480] =  {
 ["type"] = "alter-condition-true-yet-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["value"] = 5;
 
 };
 [481] =  {
 ["type"] = "declare-winner-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["which-player"] = 0;
 ["next-level"] = 23;
 ["text-id"] = 12001;
@@ -4243,19 +4243,19 @@ gameData = {
 };
 [482] =  {
 ["type"] = "alter-condition-true-yet-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["value"] = 2;
 
 };
 [483] =  {
 ["type"] = "alter-condition-true-yet-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["value"] = 1;
 
 };
 [484] =  {
 ["type"] = "declare-winner-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["which-player"] = 1;
 ["next-level"] = -1;
 ["text-id"] = 12002;
@@ -4263,7 +4263,7 @@ gameData = {
 };
 [485] =  {
 ["type"] = "change-score-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["which-player"] = 0;
 ["which-score"] = 2;
 ["amount"] = 1;
@@ -4271,7 +4271,7 @@ gameData = {
 };
 [486] =  {
 ["type"] = "declare-winner-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["which-player"] = 1;
 ["next-level"] = -1;
 ["text-id"] = 10501;
@@ -4279,7 +4279,7 @@ gameData = {
 };
 [487] =  {
 ["type"] = "declare-winner-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["which-player"] = 1;
 ["next-level"] = -1;
 ["text-id"] = 11202;
@@ -4287,20 +4287,20 @@ gameData = {
 };
 [488] =  {
 ["type"] = "create-object-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["initial-subject-override"] = 0;
 ["initial-direct-override"] = 0;
 ["which-base-type"] = 29;
 ["how-many-min"] = 1;
 ["how-many-range"] = 0;
-["velocity-relative"] = "false";
-["direction-relative"] = "false";
+["velocity-relative"] = false;
+["direction-relative"] = false;
 ["random-distance"] = 0;
 
 };
 [489] =  {
 ["type"] = "declare-winner-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["which-player"] = 1;
 ["next-level"] = -1;
 ["text-id"] = 11802;
@@ -4308,18 +4308,18 @@ gameData = {
 };
 [490] =  {
 ["type"] = "create-object-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["which-base-type"] = 29;
 ["how-many-min"] = 1;
 ["how-many-range"] = 0;
-["velocity-relative"] = "false";
-["direction-relative"] = "false";
+["velocity-relative"] = false;
+["direction-relative"] = false;
 ["random-distance"] = 0;
 
 };
 [491] =  {
 ["type"] = "declare-winner-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["which-player"] = 1;
 ["next-level"] = -1;
 ["text-id"] = 11403;
@@ -4327,18 +4327,18 @@ gameData = {
 };
 [492] =  {
 ["type"] = "create-object-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["which-base-type"] = 29;
 ["how-many-min"] = 1;
 ["how-many-range"] = 0;
-["velocity-relative"] = "false";
-["direction-relative"] = "false";
+["velocity-relative"] = false;
+["direction-relative"] = false;
 ["random-distance"] = 0;
 
 };
 [493] =  {
 ["type"] = "declare-winner-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["which-player"] = 1;
 ["next-level"] = -1;
 ["text-id"] = 11402;
@@ -4346,10 +4346,10 @@ gameData = {
 };
 [494] =  {
 ["type"] = "play-sound-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["priority"] = 3;
 ["persistence"] = 10;
-["absolute"] = "false";
+["absolute"] = false;
 ["volume-minimum"] = 255;
 ["volume-range"] = 0;
 ["id-minimum"] = 544;
@@ -4358,18 +4358,18 @@ gameData = {
 };
 [495] =  {
 ["type"] = "create-object-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["which-base-type"] = 227;
 ["how-many-min"] = 1;
 ["how-many-range"] = 0;
-["velocity-relative"] = "true";
-["direction-relative"] = "true";
+["velocity-relative"] = true;
+["direction-relative"] = true;
 ["random-distance"] = 4;
 
 };
 [496] =  {
 ["type"] = "declare-winner-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["which-player"] = 0;
 ["next-level"] = 20;
 ["text-id"] = 11702;
@@ -4377,64 +4377,64 @@ gameData = {
 };
 [497] =  {
 ["type"] = "alter-hidden-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["minimum"] = 6;
 ["range"] = 1;
 
 };
 [498] =  {
 ["type"] = "alter-velocity-action";
-["reflexive"] = "false";
-["relative"] = "true";
+["reflexive"] = false;
+["relative"] = true;
 ["minimum"] = -12;
 ["range"] = 0;
 
 };
 [499] =  {
 ["type"] = "create-object-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["which-base-type"] = 53;
 ["how-many-min"] = 1;
 ["how-many-range"] = 0;
-["velocity-relative"] = "false";
-["direction-relative"] = "true";
+["velocity-relative"] = false;
+["direction-relative"] = true;
 ["random-distance"] = 0;
 
 };
 [500] =  {
 ["type"] = "die-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["death-type"] = 0;
 
 };
 [501] =  {
 ["type"] = "create-object-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["which-base-type"] = 184;
 ["how-many-min"] = -2;
 ["how-many-range"] = 5;
-["velocity-relative"] = "true";
-["direction-relative"] = "true";
+["velocity-relative"] = true;
+["direction-relative"] = true;
 ["random-distance"] = 1024;
 
 };
 [502] =  {
 ["type"] = "create-object-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["which-base-type"] = 195;
 ["how-many-min"] = -12;
 ["how-many-range"] = 14;
-["velocity-relative"] = "true";
-["direction-relative"] = "true";
+["velocity-relative"] = true;
+["direction-relative"] = true;
 ["random-distance"] = 1024;
 
 };
 [503] =  {
 ["type"] = "play-sound-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["priority"] = 3;
 ["persistence"] = 15;
-["absolute"] = "false";
+["absolute"] = false;
 ["volume-minimum"] = 255;
 ["volume-range"] = 0;
 ["id-minimum"] = 552;
@@ -4443,7 +4443,7 @@ gameData = {
 };
 [504] =  {
 ["type"] = "make-sparks-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["how-many"] = 2;
 ["speed"] = 20;
 ["velocity-range"] = 3.0;
@@ -4451,51 +4451,51 @@ gameData = {
 };
 [505] =  {
 ["type"] = "die-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["death-type"] = 0;
 
 };
 [506] =  {
 ["type"] = "alter-damage-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["initial-subject-override"] = 2;
 ["value"] = -10000;
 
 };
 [507] =  {
 ["type"] = "alter-damage-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["initial-subject-override"] = 3;
 ["value"] = -10000;
 
 };
 [508] =  {
 ["type"] = "alter-damage-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["initial-subject-override"] = 4;
 ["value"] = -10000;
 
 };
 [509] =  {
 ["type"] = "alter-damage-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["initial-subject-override"] = 5;
 ["value"] = -10000;
 
 };
 [510] =  {
 ["type"] = "display-message-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["message-id"] = 6123;
 ["page"] = 1;
 
 };
 [511] =  {
 ["type"] = "play-sound-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["priority"] = 3;
 ["persistence"] = 10;
-["absolute"] = "false";
+["absolute"] = false;
 ["volume-minimum"] = 255;
 ["volume-range"] = 0;
 ["id-minimum"] = 554;
@@ -4504,18 +4504,18 @@ gameData = {
 };
 [512] =  {
 ["type"] = "create-object-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["which-base-type"] = 232;
 ["how-many-min"] = 1;
 ["how-many-range"] = 0;
-["velocity-relative"] = "false";
-["direction-relative"] = "true";
+["velocity-relative"] = false;
+["direction-relative"] = true;
 ["random-distance"] = 0;
 
 };
 [513] =  {
 ["type"] = "make-sparks-action";
-["reflexive"] = "false";
+["reflexive"] = false;
 ["how-many"] = 20;
 ["speed"] = 8;
 ["velocity-range"] = 5.0;
@@ -4523,10 +4523,10 @@ gameData = {
 };
 [514] =  {
 ["type"] = "play-sound-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["priority"] = 1;
 ["persistence"] = 10;
-["absolute"] = "false";
+["absolute"] = false;
 ["volume-minimum"] = 255;
 ["volume-range"] = 0;
 ["id-minimum"] = 542;
@@ -4535,27 +4535,27 @@ gameData = {
 };
 [515] =  {
 ["type"] = "create-object-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["which-base-type"] = 233;
 ["how-many-min"] = 1;
 ["how-many-range"] = 0;
-["velocity-relative"] = "true";
-["direction-relative"] = "true";
+["velocity-relative"] = true;
+["direction-relative"] = true;
 ["random-distance"] = 0;
 
 };
 [516] =  {
 ["type"] = "die-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["death-type"] = 1;
 
 };
 [517] =  {
 ["type"] = "play-sound-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["priority"] = 3;
 ["persistence"] = 10;
-["absolute"] = "false";
+["absolute"] = false;
 ["volume-minimum"] = 255;
 ["volume-range"] = 0;
 ["id-minimum"] = 558;
@@ -4564,21 +4564,21 @@ gameData = {
 };
 [518] =  {
 ["type"] = "create-object-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["which-base-type"] = 236;
 ["how-many-min"] = 1;
 ["how-many-range"] = 0;
-["velocity-relative"] = "true";
-["direction-relative"] = "true";
+["velocity-relative"] = true;
+["direction-relative"] = true;
 ["random-distance"] = 0;
 
 };
 [519] =  {
 ["type"] = "play-sound-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["priority"] = 101;
 ["persistence"] = 10;
-["absolute"] = "false";
+["absolute"] = false;
 ["volume-minimum"] = 255;
 ["volume-range"] = 0;
 ["id-minimum"] = 556;
@@ -4587,21 +4587,21 @@ gameData = {
 };
 [520] =  {
 ["type"] = "create-object-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["which-base-type"] = 239;
 ["how-many-min"] = 1;
 ["how-many-range"] = 0;
-["velocity-relative"] = "true";
-["direction-relative"] = "true";
+["velocity-relative"] = true;
+["direction-relative"] = true;
 ["random-distance"] = 8;
 
 };
 [521] =  {
 ["type"] = "play-sound-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["priority"] = 3;
 ["persistence"] = 10;
-["absolute"] = "false";
+["absolute"] = false;
 ["volume-minimum"] = 255;
 ["volume-range"] = 0;
 ["id-minimum"] = 557;
@@ -4610,21 +4610,21 @@ gameData = {
 };
 [522] =  {
 ["type"] = "create-object-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["which-base-type"] = 242;
 ["how-many-min"] = 1;
 ["how-many-range"] = 0;
-["velocity-relative"] = "true";
-["direction-relative"] = "true";
+["velocity-relative"] = true;
+["direction-relative"] = true;
 ["random-distance"] = 0;
 
 };
 [523] =  {
 ["type"] = "play-sound-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["priority"] = 3;
 ["persistence"] = 10;
-["absolute"] = "false";
+["absolute"] = false;
 ["volume-minimum"] = 255;
 ["volume-range"] = 0;
 ["id-minimum"] = 559;
@@ -4633,21 +4633,21 @@ gameData = {
 };
 [524] =  {
 ["type"] = "create-object-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["which-base-type"] = 245;
 ["how-many-min"] = 1;
 ["how-many-range"] = 0;
-["velocity-relative"] = "true";
-["direction-relative"] = "true";
+["velocity-relative"] = true;
+["direction-relative"] = true;
 ["random-distance"] = 0;
 
 };
 [525] =  {
 ["type"] = "play-sound-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["priority"] = 3;
 ["persistence"] = 20;
-["absolute"] = "false";
+["absolute"] = false;
 ["volume-minimum"] = 255;
 ["volume-range"] = 0;
 ["id-minimum"] = 566;
@@ -4656,21 +4656,21 @@ gameData = {
 };
 [526] =  {
 ["type"] = "create-object-set-dest-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["which-base-type"] = 248;
 ["how-many-min"] = 6;
 ["how-many-range"] = 0;
-["velocity-relative"] = "true";
-["direction-relative"] = "true";
+["velocity-relative"] = true;
+["direction-relative"] = true;
 ["random-distance"] = 0;
 
 };
 [527] =  {
 ["type"] = "play-sound-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["priority"] = 3;
 ["persistence"] = 0;
-["absolute"] = "false";
+["absolute"] = false;
 ["volume-minimum"] = 255;
 ["volume-range"] = 0;
 ["id-minimum"] = 569;
@@ -4679,21 +4679,21 @@ gameData = {
 };
 [528] =  {
 ["type"] = "create-object-set-dest-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["which-base-type"] = 252;
 ["how-many-min"] = 10;
 ["how-many-range"] = 0;
-["velocity-relative"] = "false";
-["direction-relative"] = "false";
+["velocity-relative"] = false;
+["direction-relative"] = false;
 ["random-distance"] = 4;
 
 };
 [529] =  {
 ["type"] = "play-sound-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["priority"] = 3;
 ["persistence"] = 20;
-["absolute"] = "false";
+["absolute"] = false;
 ["volume-minimum"] = 255;
 ["volume-range"] = 0;
 ["id-minimum"] = 568;
@@ -4702,32 +4702,32 @@ gameData = {
 };
 [530] =  {
 ["type"] = "create-object-set-dest-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["which-base-type"] = 253;
 ["how-many-min"] = 6;
 ["how-many-range"] = 0;
-["velocity-relative"] = "true";
-["direction-relative"] = "true";
+["velocity-relative"] = true;
+["direction-relative"] = true;
 ["random-distance"] = 0;
 
 };
 [531] =  {
 ["type"] = "create-object-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["which-base-type"] = 255;
 ["how-many-min"] = 1;
 ["how-many-range"] = 2;
-["velocity-relative"] = "false";
-["direction-relative"] = "false";
+["velocity-relative"] = false;
+["direction-relative"] = false;
 ["random-distance"] = 16;
 
 };
 [532] =  {
 ["type"] = "play-sound-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["priority"] = 3;
 ["persistence"] = 20;
-["absolute"] = "false";
+["absolute"] = false;
 ["volume-minimum"] = 255;
 ["volume-range"] = 0;
 ["id-minimum"] = 561;
@@ -4736,17 +4736,17 @@ gameData = {
 };
 [533] =  {
 ["type"] = "alter-base-type-action";
-["reflexive"] = "true";
-["preserve-weapons"] = "true";
+["reflexive"] = true;
+["preserve-weapons"] = true;
 ["new-id"] = 72;
 
 };
 [534] =  {
 ["type"] = "play-sound-action";
-["reflexive"] = "false";
+["reflexive"] = false;
 ["priority"] = 3;
 ["persistence"] = 30;
-["absolute"] = "false";
+["absolute"] = false;
 ["volume-minimum"] = 255;
 ["volume-range"] = 0;
 ["id-minimum"] = 563;
@@ -4755,21 +4755,21 @@ gameData = {
 };
 [535] =  {
 ["type"] = "create-object-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["which-base-type"] = 258;
 ["how-many-min"] = 1;
 ["how-many-range"] = 0;
-["velocity-relative"] = "false";
-["direction-relative"] = "true";
+["velocity-relative"] = false;
+["direction-relative"] = true;
 ["random-distance"] = 0;
 
 };
 [536] =  {
 ["type"] = "play-sound-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["priority"] = 3;
 ["persistence"] = 30;
-["absolute"] = "false";
+["absolute"] = false;
 ["volume-minimum"] = 255;
 ["volume-range"] = 0;
 ["id-minimum"] = 564;
@@ -4778,43 +4778,43 @@ gameData = {
 };
 [537] =  {
 ["type"] = "create-object-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["which-base-type"] = 260;
 ["how-many-min"] = 1;
 ["how-many-range"] = 0;
-["velocity-relative"] = "false";
-["direction-relative"] = "true";
+["velocity-relative"] = false;
+["direction-relative"] = true;
 ["random-distance"] = 0;
 
 };
 [538] =  {
 ["type"] = "create-object-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["which-base-type"] = 262;
 ["how-many-min"] = 1;
 ["how-many-range"] = 0;
-["velocity-relative"] = "false";
-["direction-relative"] = "true";
+["velocity-relative"] = false;
+["direction-relative"] = true;
 ["random-distance"] = 0;
 
 };
 [539] =  {
 ["type"] = "create-object-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["which-base-type"] = 263;
 ["how-many-min"] = 1;
 ["how-many-range"] = 0;
-["velocity-relative"] = "true";
-["direction-relative"] = "true";
+["velocity-relative"] = true;
+["direction-relative"] = true;
 ["random-distance"] = 0;
 
 };
 [540] =  {
 ["type"] = "play-sound-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["priority"] = 3;
 ["persistence"] = 15;
-["absolute"] = "false";
+["absolute"] = false;
 ["volume-minimum"] = 255;
 ["volume-range"] = 0;
 ["id-minimum"] = 565;
@@ -4823,64 +4823,64 @@ gameData = {
 };
 [541] =  {
 ["type"] = "create-object-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["which-base-type"] = 265;
 ["how-many-min"] = 1;
 ["how-many-range"] = 2;
-["velocity-relative"] = "true";
-["direction-relative"] = "true";
+["velocity-relative"] = true;
+["direction-relative"] = true;
 ["random-distance"] = 4096;
 
 };
 [542] =  {
 ["type"] = "create-object-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["which-base-type"] = 195;
 ["how-many-min"] = -4;
 ["how-many-range"] = 5;
-["velocity-relative"] = "false";
-["direction-relative"] = "true";
+["velocity-relative"] = false;
+["direction-relative"] = true;
 ["random-distance"] = 4096;
 
 };
 [543] =  {
 ["type"] = "alter-hidden-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["minimum"] = 5;
 ["range"] = 6;
 
 };
 [544] =  {
 ["type"] = "alter-owner-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["initial-subject-override"] = 2;
-["relative"] = "false";
+["relative"] = false;
 
 };
 [545] =  {
 ["type"] = "alter-owner-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["initial-subject-override"] = 3;
-["relative"] = "false";
+["relative"] = false;
 
 };
 [546] =  {
 ["type"] = "alter-absolute-cash-action";
-["reflexive"] = "false";
+["reflexive"] = false;
 ["initial-subject-override"] = 3;
 ["value"] = 2560000;
 
 };
 [547] =  {
 ["type"] = "alter-hidden-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["minimum"] = 9;
 ["range"] = 1;
 
 };
 [548] =  {
 ["type"] = "declare-winner-action";
-["reflexive"] = "false";
+["reflexive"] = false;
 ["which-player"] = 1;
 ["next-level"] = -1;
 ["text-id"] = 11802;
@@ -4888,7 +4888,7 @@ gameData = {
 };
 [549] =  {
 ["type"] = "declare-winner-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["which-player"] = 0;
 ["next-level"] = 21;
 ["text-id"] = 11801;
@@ -4896,14 +4896,14 @@ gameData = {
 };
 [550] =  {
 ["type"] = "display-message-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["message-id"] = 5170;
 ["page"] = 1;
 
 };
 [551] =  {
 ["type"] = "display-message-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["delay"] = 360;
 ["message-id"] = 5171;
 ["page"] = 1;
@@ -4911,7 +4911,7 @@ gameData = {
 };
 [552] =  {
 ["type"] = "alter-hidden-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["delay"] = 360;
 ["minimum"] = 12;
 ["range"] = 20;
@@ -4919,7 +4919,7 @@ gameData = {
 };
 [553] =  {
 ["type"] = "declare-winner-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["which-player"] = 0;
 ["next-level"] = -1;
 ["text-id"] = 12101;
@@ -4927,7 +4927,7 @@ gameData = {
 };
 [554] =  {
 ["type"] = "declare-winner-action";
-["reflexive"] = "false";
+["reflexive"] = false;
 ["which-player"] = 0;
 ["next-level"] = 22;
 ["text-id"] = 11901;
@@ -4935,7 +4935,7 @@ gameData = {
 };
 [555] =  {
 ["type"] = "land-at-action";
-["reflexive"] = "false";
+["reflexive"] = false;
 ["inclusive-filter"] = 4029677568;
 ["exclusive-filter"] = 4294967295;
 ["landing-speed"] = 32;
@@ -4943,12 +4943,12 @@ gameData = {
 };
 [556] =  {
 ["type"] = "play-sound-action";
-["reflexive"] = "false";
+["reflexive"] = false;
 ["inclusive-filter"] = 4029677568;
 ["exclusive-filter"] = 4294967295;
 ["priority"] = 5;
 ["persistence"] = 20;
-["absolute"] = "true";
+["absolute"] = true;
 ["volume-minimum"] = 255;
 ["volume-range"] = 0;
 ["id-minimum"] = 513;
@@ -4957,10 +4957,10 @@ gameData = {
 };
 [557] =  {
 ["type"] = "play-sound-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["priority"] = 3;
 ["persistence"] = 10;
-["absolute"] = "false";
+["absolute"] = false;
 ["volume-minimum"] = 255;
 ["volume-range"] = 0;
 ["id-minimum"] = 571;
@@ -4969,58 +4969,58 @@ gameData = {
 };
 [558] =  {
 ["type"] = "alter-location-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["initial-direct-override"] = 3;
 ["value"] = 600;
 
 };
 [559] =  {
 ["type"] = "alter-damage-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["value"] = 1000;
 
 };
 [560] =  {
 ["type"] = "alter-velocity-action";
-["reflexive"] = "true";
-["relative"] = "false";
+["reflexive"] = true;
+["relative"] = false;
 ["minimum"] = 0;
 ["range"] = 0;
 
 };
 [561] =  {
 ["type"] = "alter-base-type-action";
-["reflexive"] = "true";
-["preserve-weapons"] = "false";
+["reflexive"] = true;
+["preserve-weapons"] = false;
 ["new-id"] = 280;
 
 };
 [562] =  {
 ["type"] = "alter-damage-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["value"] = 1000;
 
 };
 [563] =  {
 ["type"] = "alter-base-type-action";
-["reflexive"] = "true";
-["preserve-weapons"] = "false";
+["reflexive"] = true;
+["preserve-weapons"] = false;
 ["new-id"] = 279;
 
 };
 [564] =  {
 ["type"] = "alter-base-type-action";
-["reflexive"] = "false";
-["preserve-weapons"] = "false";
+["reflexive"] = false;
+["preserve-weapons"] = false;
 ["new-id"] = 272;
 
 };
 [565] =  {
 ["type"] = "play-sound-action";
-["reflexive"] = "false";
+["reflexive"] = false;
 ["priority"] = 5;
 ["persistence"] = 10;
-["absolute"] = "false";
+["absolute"] = false;
 ["volume-minimum"] = 255;
 ["volume-range"] = 0;
 ["id-minimum"] = 551;
@@ -5029,35 +5029,35 @@ gameData = {
 };
 [566] =  {
 ["type"] = "nil-target-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 
 };
 [567] =  {
 ["type"] = "alter-age-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["value"] = -1;
 
 };
 [568] =  {
 ["type"] = "alter-base-type-action";
-["reflexive"] = "true";
-["preserve-weapons"] = "false";
+["reflexive"] = true;
+["preserve-weapons"] = false;
 ["new-id"] = 278;
 
 };
 [569] =  {
 ["type"] = "alter-base-type-action";
-["reflexive"] = "false";
-["preserve-weapons"] = "false";
+["reflexive"] = false;
+["preserve-weapons"] = false;
 ["new-id"] = 273;
 
 };
 [570] =  {
 ["type"] = "play-sound-action";
-["reflexive"] = "false";
+["reflexive"] = false;
 ["priority"] = 5;
 ["persistence"] = 10;
-["absolute"] = "false";
+["absolute"] = false;
 ["volume-minimum"] = 255;
 ["volume-range"] = 0;
 ["id-minimum"] = 551;
@@ -5066,15 +5066,15 @@ gameData = {
 };
 [571] =  {
 ["type"] = "nil-target-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 
 };
 [572] =  {
 ["type"] = "play-sound-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["priority"] = 3;
 ["persistence"] = 10;
-["absolute"] = "false";
+["absolute"] = false;
 ["volume-minimum"] = 255;
 ["volume-range"] = 0;
 ["id-minimum"] = 571;
@@ -5083,61 +5083,61 @@ gameData = {
 };
 [573] =  {
 ["type"] = "alter-location-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["initial-direct-override"] = 2;
 ["value"] = 600;
 
 };
 [574] =  {
 ["type"] = "alter-damage-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["value"] = 1000;
 
 };
 [575] =  {
 ["type"] = "alter-velocity-action";
-["reflexive"] = "true";
-["relative"] = "false";
+["reflexive"] = true;
+["relative"] = false;
 ["minimum"] = 0;
 ["range"] = 0;
 
 };
 [576] =  {
 ["type"] = "alter-base-type-action";
-["reflexive"] = "true";
-["preserve-weapons"] = "false";
+["reflexive"] = true;
+["preserve-weapons"] = false;
 ["new-id"] = 281;
 
 };
 [577] =  {
 ["type"] = "alter-damage-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["value"] = 1000;
 
 };
 [578] =  {
 ["type"] = "alter-base-type-action";
-["reflexive"] = "true";
-["preserve-weapons"] = "false";
+["reflexive"] = true;
+["preserve-weapons"] = false;
 ["new-id"] = 277;
 
 };
 [579] =  {
 ["type"] = "alter-age-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["value"] = -1;
 
 };
 [580] =  {
 ["type"] = "alter-base-type-action";
-["reflexive"] = "true";
-["preserve-weapons"] = "false";
+["reflexive"] = true;
+["preserve-weapons"] = false;
 ["new-id"] = 276;
 
 };
 [581] =  {
 ["type"] = "declare-winner-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["which-player"] = 1;
 ["next-level"] = -1;
 ["text-id"] = 11203;
@@ -5145,13 +5145,13 @@ gameData = {
 };
 [582] =  {
 ["type"] = "alter-owner-action";
-["reflexive"] = "true";
-["relative"] = "true";
+["reflexive"] = true;
+["relative"] = true;
 
 };
 [583] =  {
 ["type"] = "declare-winner-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["which-player"] = 1;
 ["next-level"] = -1;
 ["text-id"] = 6251;
@@ -5159,7 +5159,7 @@ gameData = {
 };
 [584] =  {
 ["type"] = "declare-winner-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["which-player"] = 0;
 ["next-level"] = -1;
 ["text-id"] = 6250;
@@ -5167,7 +5167,7 @@ gameData = {
 };
 [585] =  {
 ["type"] = "change-score-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["which-player"] = 0;
 ["which-score"] = 0;
 ["amount"] = 1;
@@ -5175,7 +5175,7 @@ gameData = {
 };
 [586] =  {
 ["type"] = "alter-hidden-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["delay"] = 360;
 ["minimum"] = 0;
 ["range"] = 0;
@@ -5183,13 +5183,13 @@ gameData = {
 };
 [587] =  {
 ["type"] = "alter-condition-true-yet-action";
-["reflexive"] = "false";
+["reflexive"] = false;
 ["value"] = 0;
 
 };
 [588] =  {
 ["type"] = "change-score-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["which-player"] = 1;
 ["which-score"] = 0;
 ["amount"] = 1;
@@ -5197,7 +5197,7 @@ gameData = {
 };
 [589] =  {
 ["type"] = "alter-hidden-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["delay"] = 360;
 ["minimum"] = 1;
 ["range"] = 0;
@@ -5205,13 +5205,13 @@ gameData = {
 };
 [590] =  {
 ["type"] = "alter-condition-true-yet-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["value"] = 1;
 
 };
 [591] =  {
 ["type"] = "declare-winner-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["which-player"] = 1;
 ["next-level"] = -1;
 ["text-id"] = 6351;
@@ -5219,7 +5219,7 @@ gameData = {
 };
 [592] =  {
 ["type"] = "declare-winner-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["which-player"] = 0;
 ["next-level"] = -1;
 ["text-id"] = 6350;
@@ -5227,10 +5227,10 @@ gameData = {
 };
 [593] =  {
 ["type"] = "play-sound-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["priority"] = 3;
 ["persistence"] = 10;
-["absolute"] = "false";
+["absolute"] = false;
 ["volume-minimum"] = 255;
 ["volume-range"] = 0;
 ["id-minimum"] = 557;
@@ -5239,18 +5239,18 @@ gameData = {
 };
 [594] =  {
 ["type"] = "create-object-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["which-base-type"] = 242;
 ["how-many-min"] = 1;
 ["how-many-range"] = 0;
-["velocity-relative"] = "false";
-["direction-relative"] = "false";
+["velocity-relative"] = false;
+["direction-relative"] = false;
 ["random-distance"] = 0;
 
 };
 [595] =  {
 ["type"] = "declare-winner-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["which-player"] = 0;
 ["next-level"] = -1;
 ["text-id"] = 6300;
@@ -5258,7 +5258,7 @@ gameData = {
 };
 [596] =  {
 ["type"] = "declare-winner-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["which-player"] = 1;
 ["next-level"] = 188;
 ["text-id"] = 6301;
@@ -5266,7 +5266,7 @@ gameData = {
 };
 [597] =  {
 ["type"] = "declare-winner-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["which-player"] = 1;
 ["next-level"] = -1;
 ["text-id"] = 6151;
@@ -5274,7 +5274,7 @@ gameData = {
 };
 [598] =  {
 ["type"] = "declare-winner-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["which-player"] = 0;
 ["next-level"] = -1;
 ["text-id"] = 6150;
@@ -5282,7 +5282,7 @@ gameData = {
 };
 [599] =  {
 ["type"] = "declare-winner-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["which-player"] = 1;
 ["next-level"] = -1;
 ["text-id"] = 6101;
@@ -5290,7 +5290,7 @@ gameData = {
 };
 [600] =  {
 ["type"] = "declare-winner-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["which-player"] = 0;
 ["next-level"] = -1;
 ["text-id"] = 6100;
@@ -5298,273 +5298,273 @@ gameData = {
 };
 [601] =  {
 ["type"] = "disable-keys-action";
-["reflexive"] = "false";
+["reflexive"] = false;
 ["key-mask"] = 4177559551;
 
 };
 [602] =  {
 ["type"] = "set-zoom-action";
-["reflexive"] = "false";
+["reflexive"] = false;
 ["zoom-level"] = 1;
 
 };
 [603] =  {
 ["type"] = "alter-velocity-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["initial-subject-override"] = 0;
-["relative"] = "false";
+["relative"] = false;
 ["minimum"] = 0;
 ["range"] = 0;
 
 };
 [604] =  {
 ["type"] = "display-message-action";
-["reflexive"] = "false";
+["reflexive"] = false;
 ["message-id"] = 5700;
 ["page"] = 1;
 
 };
 [605] =  {
 ["type"] = "display-message-action";
-["reflexive"] = "false";
+["reflexive"] = false;
 ["message-id"] = 5701;
 ["page"] = 3;
 
 };
 [606] =  {
 ["type"] = "alter-condition-true-yet-action";
-["reflexive"] = "false";
+["reflexive"] = false;
 ["value"] = 3;
 
 };
 [607] =  {
 ["type"] = "display-message-action";
-["reflexive"] = "false";
+["reflexive"] = false;
 ["message-id"] = 5750;
 ["page"] = 1;
 
 };
 [608] =  {
 ["type"] = "enable-keys-action";
-["reflexive"] = "false";
+["reflexive"] = false;
 ["key-mask"] = 2485616640;
 
 };
 [609] =  {
 ["type"] = "alter-condition-true-yet-action";
-["reflexive"] = "false";
+["reflexive"] = false;
 ["value"] = 22;
 
 };
 [610] =  {
 ["type"] = "set-zoom-action";
-["reflexive"] = "false";
+["reflexive"] = false;
 ["zoom-level"] = 3;
 
 };
 [611] =  {
 ["type"] = "alter-condition-true-yet-action";
-["reflexive"] = "false";
+["reflexive"] = false;
 ["value"] = 5;
 
 };
 [612] =  {
 ["type"] = "enable-keys-action";
-["reflexive"] = "false";
+["reflexive"] = false;
 ["key-mask"] = 373841920;
 
 };
 [613] =  {
 ["type"] = "display-message-action";
-["reflexive"] = "false";
+["reflexive"] = false;
 ["message-id"] = 5711;
 ["page"] = 4;
 
 };
 [614] =  {
 ["type"] = "set-destination-action";
-["reflexive"] = "false";
+["reflexive"] = false;
 ["initial-subject-override"] = 5;
 ["initial-direct-override"] = 0;
 
 };
 [615] =  {
 ["type"] = "alter-condition-true-yet-action";
-["reflexive"] = "false";
+["reflexive"] = false;
 ["value"] = 7;
 
 };
 [616] =  {
 ["type"] = "set-zoom-action";
-["reflexive"] = "false";
+["reflexive"] = false;
 ["zoom-level"] = 5;
 
 };
 [617] =  {
 ["type"] = "set-destination-action";
-["reflexive"] = "false";
+["reflexive"] = false;
 ["initial-subject-override"] = 5;
 ["initial-direct-override"] = 4;
 
 };
 [618] =  {
 ["type"] = "alter-condition-true-yet-action";
-["reflexive"] = "false";
+["reflexive"] = false;
 ["delay"] = 120;
 ["value"] = 8;
 
 };
 [619] =  {
 ["type"] = "set-destination-action";
-["reflexive"] = "false";
+["reflexive"] = false;
 ["initial-subject-override"] = 5;
 ["initial-direct-override"] = 0;
 
 };
 [620] =  {
 ["type"] = "alter-condition-true-yet-action";
-["reflexive"] = "false";
+["reflexive"] = false;
 ["delay"] = 120;
 ["value"] = 7;
 
 };
 [621] =  {
 ["type"] = "die-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["initial-subject-override"] = 5;
 ["death-type"] = 0;
 
 };
 [622] =  {
 ["type"] = "alter-condition-true-yet-action";
-["reflexive"] = "false";
+["reflexive"] = false;
 ["value"] = 10;
 
 };
 [623] =  {
 ["type"] = "display-message-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["message-id"] = 5715;
 ["page"] = 6;
 
 };
 [624] =  {
 ["type"] = "disable-keys-action";
-["reflexive"] = "false";
+["reflexive"] = false;
 ["key-mask"] = 2828558336;
 
 };
 [625] =  {
 ["type"] = "set-zoom-action";
-["reflexive"] = "false";
+["reflexive"] = false;
 ["zoom-level"] = 7;
 
 };
 [626] =  {
 ["type"] = "alter-damage-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["initial-subject-override"] = 2;
 ["value"] = -249;
 
 };
 [627] =  {
 ["type"] = "alter-condition-true-yet-action";
-["reflexive"] = "false";
+["reflexive"] = false;
 ["value"] = 14;
 
 };
 [628] =  {
 ["type"] = "enable-keys-action";
-["reflexive"] = "false";
+["reflexive"] = false;
 ["key-mask"] = 374890496;
 
 };
 [629] =  {
 ["type"] = "display-message-action";
-["reflexive"] = "false";
+["reflexive"] = false;
 ["message-id"] = 5721;
 ["page"] = 21;
 
 };
 [630] =  {
 ["type"] = "enable-keys-action";
-["reflexive"] = "false";
+["reflexive"] = false;
 ["key-mask"] = 12582924;
 
 };
 [631] =  {
 ["type"] = "enable-keys-action";
-["reflexive"] = "false";
+["reflexive"] = false;
 ["key-mask"] = 131;
 
 };
 [632] =  {
 ["type"] = "set-zoom-action";
-["reflexive"] = "false";
+["reflexive"] = false;
 ["zoom-level"] = 1;
 
 };
 [633] =  {
 ["type"] = "set-zoom-action";
-["reflexive"] = "false";
+["reflexive"] = false;
 ["zoom-level"] = 4;
 
 };
 [634] =  {
 ["type"] = "enable-keys-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["key-mask"] = 112;
 
 };
 [635] =  {
 ["type"] = "alter-hidden-action";
-["reflexive"] = "false";
+["reflexive"] = false;
 ["minimum"] = 7;
 ["range"] = 1;
 
 };
 [636] =  {
 ["type"] = "alter-cloak-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["initial-subject-override"] = 8;
 
 };
 [637] =  {
 ["type"] = "alter-max-velocity-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["initial-subject-override"] = 8;
 ["value"] = 0;
 
 };
 [638] =  {
 ["type"] = "alter-max-velocity-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["initial-subject-override"] = 7;
 ["value"] = 0;
 
 };
 [639] =  {
 ["type"] = "alter-owner-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["initial-subject-override"] = 4;
-["relative"] = "false";
+["relative"] = false;
 
 };
 [640] =  {
 ["type"] = "alter-condition-true-yet-action";
-["reflexive"] = "false";
+["reflexive"] = false;
 ["value"] = 20;
 
 };
 [641] =  {
 ["type"] = "alter-condition-true-yet-action";
-["reflexive"] = "false";
+["reflexive"] = false;
 ["value"] = 21;
 
 };
 [642] =  {
 ["type"] = "declare-winner-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["which-player"] = 0;
 ["next-level"] = 2;
 ["text-id"] = 7050;
@@ -5572,484 +5572,484 @@ gameData = {
 };
 [643] =  {
 ["type"] = "display-message-action";
-["reflexive"] = "false";
+["reflexive"] = false;
 ["message-id"] = 5800;
 ["page"] = 3;
 
 };
 [644] =  {
 ["type"] = "alter-velocity-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["initial-subject-override"] = 0;
-["relative"] = "false";
+["relative"] = false;
 ["minimum"] = 0;
 ["range"] = 0;
 
 };
 [645] =  {
 ["type"] = "alter-velocity-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["initial-subject-override"] = 1;
-["relative"] = "false";
+["relative"] = false;
 ["minimum"] = 0;
 ["range"] = 0;
 
 };
 [646] =  {
 ["type"] = "disable-keys-action";
-["reflexive"] = "false";
+["reflexive"] = false;
 ["key-mask"] = 2015395827;
 
 };
 [647] =  {
 ["type"] = "set-zoom-action";
-["reflexive"] = "false";
+["reflexive"] = false;
 ["zoom-level"] = 2;
 
 };
 [648] =  {
 ["type"] = "alter-condition-true-yet-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["value"] = 2;
 
 };
 [649] =  {
 ["type"] = "display-message-action";
-["reflexive"] = "false";
+["reflexive"] = false;
 ["message-id"] = 5803;
 ["page"] = 8;
 
 };
 [650] =  {
 ["type"] = "display-message-action";
-["reflexive"] = "false";
+["reflexive"] = false;
 ["message-id"] = 5811;
 ["page"] = 2;
 
 };
 [651] =  {
 ["type"] = "alter-hidden-action";
-["reflexive"] = "false";
+["reflexive"] = false;
 ["minimum"] = 2;
 ["range"] = 3;
 
 };
 [652] =  {
 ["type"] = "set-zoom-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["zoom-level"] = 7;
 
 };
 [653] =  {
 ["type"] = "alter-condition-true-yet-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["value"] = 6;
 
 };
 [654] =  {
 ["type"] = "display-message-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["message-id"] = 5813;
 ["page"] = 2;
 
 };
 [655] =  {
 ["type"] = "die-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["initial-subject-override"] = 2;
 ["death-type"] = 0;
 
 };
 [656] =  {
 ["type"] = "die-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["initial-subject-override"] = 3;
 ["death-type"] = 0;
 
 };
 [657] =  {
 ["type"] = "die-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["initial-subject-override"] = 4;
 ["death-type"] = 0;
 
 };
 [658] =  {
 ["type"] = "die-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["initial-subject-override"] = 5;
 ["death-type"] = 0;
 
 };
 [659] =  {
 ["type"] = "alter-condition-true-yet-action";
-["reflexive"] = "false";
+["reflexive"] = false;
 ["initial-subject-override"] = 5;
 ["value"] = 8;
 
 };
 [660] =  {
 ["type"] = "set-zoom-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["zoom-level"] = 2;
 
 };
 [661] =  {
 ["type"] = "enable-keys-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["key-mask"] = 1792;
 
 };
 [662] =  {
 ["type"] = "disable-keys-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["key-mask"] = 2147483648;
 
 };
 [663] =  {
 ["type"] = "alter-condition-true-yet-action";
-["reflexive"] = "false";
+["reflexive"] = false;
 ["value"] = 4;
 
 };
 [664] =  {
 ["type"] = "display-message-action";
-["reflexive"] = "false";
+["reflexive"] = false;
 ["message-id"] = 5751;
 ["page"] = 1;
 
 };
 [665] =  {
 ["type"] = "alter-condition-true-yet-action";
-["reflexive"] = "false";
+["reflexive"] = false;
 ["value"] = 23;
 
 };
 [666] =  {
 ["type"] = "display-message-action";
-["reflexive"] = "false";
+["reflexive"] = false;
 ["message-id"] = 5704;
 ["page"] = 7;
 
 };
 [667] =  {
 ["type"] = "display-message-action";
-["reflexive"] = "false";
+["reflexive"] = false;
 ["message-id"] = 5815;
 ["page"] = 2;
 
 };
 [668] =  {
 ["type"] = "alter-hidden-action";
-["reflexive"] = "false";
+["reflexive"] = false;
 ["minimum"] = 2;
 ["range"] = 3;
 
 };
 [669] =  {
 ["type"] = "alter-absolute-location-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["initial-subject-override"] = 2;
 ["value"] = 80;
 
 };
 [670] =  {
 ["type"] = "alter-absolute-location-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["initial-subject-override"] = 3;
 ["value"] = 60;
 
 };
 [671] =  {
 ["type"] = "alter-absolute-location-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["initial-subject-override"] = 4;
 ["value"] = 80;
 
 };
 [672] =  {
 ["type"] = "alter-absolute-location-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["initial-subject-override"] = 5;
 ["value"] = 60;
 
 };
 [673] =  {
 ["type"] = "alter-condition-true-yet-action";
-["reflexive"] = "false";
+["reflexive"] = false;
 ["value"] = 10;
 
 };
 [674] =  {
 ["type"] = "set-zoom-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["zoom-level"] = 3;
 
 };
 [675] =  {
 ["type"] = "display-message-action";
-["reflexive"] = "false";
+["reflexive"] = false;
 ["message-id"] = 5817;
 ["page"] = 2;
 
 };
 [676] =  {
 ["type"] = "alter-condition-true-yet-action";
-["reflexive"] = "false";
+["reflexive"] = false;
 ["value"] = 12;
 
 };
 [677] =  {
 ["type"] = "alter-absolute-location-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["initial-subject-override"] = 2;
 ["value"] = 6000;
 
 };
 [678] =  {
 ["type"] = "alter-absolute-location-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["initial-subject-override"] = 3;
 ["value"] = 5950;
 
 };
 [679] =  {
 ["type"] = "alter-absolute-location-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["initial-subject-override"] = 4;
 ["value"] = 5900;
 
 };
 [680] =  {
 ["type"] = "alter-absolute-location-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["initial-subject-override"] = 5;
 ["value"] = 5850;
 
 };
 [681] =  {
 ["type"] = "set-zoom-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["zoom-level"] = 7;
 
 };
 [682] =  {
 ["type"] = "display-message-action";
-["reflexive"] = "false";
+["reflexive"] = false;
 ["message-id"] = 5819;
 ["page"] = 4;
 
 };
 [683] =  {
 ["type"] = "alter-absolute-location-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["initial-subject-override"] = 2;
 ["value"] = 500;
 
 };
 [684] =  {
 ["type"] = "alter-absolute-location-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["initial-subject-override"] = 3;
 ["value"] = 500;
 
 };
 [685] =  {
 ["type"] = "alter-absolute-location-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["initial-subject-override"] = 4;
 ["value"] = 500;
 
 };
 [686] =  {
 ["type"] = "alter-absolute-location-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["initial-subject-override"] = 5;
 ["value"] = 500;
 
 };
 [687] =  {
 ["type"] = "set-zoom-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["zoom-level"] = 1;
 
 };
 [688] =  {
 ["type"] = "alter-condition-true-yet-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["value"] = 15;
 
 };
 [689] =  {
 ["type"] = "display-message-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["message-id"] = 5823;
 ["page"] = 2;
 
 };
 [690] =  {
 ["type"] = "alter-condition-true-yet-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["value"] = 17;
 
 };
 [691] =  {
 ["type"] = "display-message-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["message-id"] = 5825;
 ["page"] = 2;
 
 };
 [692] =  {
 ["type"] = "alter-condition-true-yet-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["value"] = 19;
 
 };
 [693] =  {
 ["type"] = "disable-keys-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["key-mask"] = 1792;
 
 };
 [694] =  {
 ["type"] = "enable-keys-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["key-mask"] = 2147485696;
 
 };
 [695] =  {
 ["type"] = "set-zoom-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["zoom-level"] = 2;
 
 };
 [696] =  {
 ["type"] = "display-message-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["message-id"] = 5827;
 ["page"] = 4;
 
 };
 [697] =  {
 ["type"] = "alter-condition-true-yet-action";
-["reflexive"] = "false";
+["reflexive"] = false;
 ["value"] = 21;
 
 };
 [698] =  {
 ["type"] = "display-message-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["message-id"] = 5831;
 ["page"] = 2;
 
 };
 [699] =  {
 ["type"] = "alter-hidden-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["minimum"] = 7;
 ["range"] = 0;
 
 };
 [700] =  {
 ["type"] = "alter-condition-true-yet-action";
-["reflexive"] = "false";
+["reflexive"] = false;
 ["value"] = 23;
 
 };
 [701] =  {
 ["type"] = "display-message-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["message-id"] = 5833;
 ["page"] = 2;
 
 };
 [702] =  {
 ["type"] = "alter-condition-true-yet-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["value"] = 25;
 
 };
 [703] =  {
 ["type"] = "disable-keys-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["key-mask"] = 2147483648;
 
 };
 [704] =  {
 ["type"] = "enable-keys-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["key-mask"] = 1792;
 
 };
 [705] =  {
 ["type"] = "display-message-action";
-["reflexive"] = "false";
+["reflexive"] = false;
 ["message-id"] = 5835;
 ["page"] = 1;
 
 };
 [706] =  {
 ["type"] = "alter-condition-true-yet-action";
-["reflexive"] = "false";
+["reflexive"] = false;
 ["value"] = 27;
 
 };
 [707] =  {
 ["type"] = "display-message-action";
-["reflexive"] = "false";
+["reflexive"] = false;
 ["message-id"] = 5836;
 ["page"] = 1;
 
 };
 [708] =  {
 ["type"] = "alter-condition-true-yet-action";
-["reflexive"] = "false";
+["reflexive"] = false;
 ["value"] = 29;
 
 };
 [709] =  {
 ["type"] = "display-message-action";
-["reflexive"] = "false";
+["reflexive"] = false;
 ["message-id"] = 5837;
 ["page"] = 3;
 
 };
 [710] =  {
 ["type"] = "enable-keys-action";
-["reflexive"] = "false";
+["reflexive"] = false;
 ["key-mask"] = 2147483776;
 
 };
 [711] =  {
 ["type"] = "alter-condition-true-yet-action";
-["reflexive"] = "false";
+["reflexive"] = false;
 ["value"] = 31;
 
 };
 [712] =  {
 ["type"] = "display-message-action";
-["reflexive"] = "false";
+["reflexive"] = false;
 ["message-id"] = 5840;
 ["page"] = 1;
 
 };
 [713] =  {
 ["type"] = "alter-condition-true-yet-action";
-["reflexive"] = "false";
+["reflexive"] = false;
 ["value"] = 33;
 
 };
 [714] =  {
 ["type"] = "display-message-action";
-["reflexive"] = "false";
+["reflexive"] = false;
 ["message-id"] = 5841;
 ["page"] = 1;
 
 };
 [715] =  {
 ["type"] = "set-zoom-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["initial-subject-override"] = 1;
 ["initial-direct-override"] = 5;
 ["zoom-level"] = 6;
@@ -6057,19 +6057,19 @@ gameData = {
 };
 [716] =  {
 ["type"] = "alter-condition-true-yet-action";
-["reflexive"] = "false";
+["reflexive"] = false;
 ["value"] = 34;
 
 };
 [717] =  {
 ["type"] = "disable-keys-action";
-["reflexive"] = "false";
+["reflexive"] = false;
 ["key-mask"] = 3758129151;
 
 };
 [718] =  {
 ["type"] = "set-destination-action";
-["reflexive"] = "false";
+["reflexive"] = false;
 ["delay"] = 120;
 ["initial-subject-override"] = 1;
 ["initial-direct-override"] = 5;
@@ -6077,40 +6077,40 @@ gameData = {
 };
 [719] =  {
 ["type"] = "alter-condition-true-yet-action";
-["reflexive"] = "false";
+["reflexive"] = false;
 ["value"] = 34;
 
 };
 [720] =  {
 ["type"] = "display-message-action";
-["reflexive"] = "false";
+["reflexive"] = false;
 ["message-id"] = 5842;
 ["page"] = 1;
 
 };
 [721] =  {
 ["type"] = "enable-keys-action";
-["reflexive"] = "false";
+["reflexive"] = false;
 ["initial-subject-override"] = 0;
 ["key-mask"] = 2684383119;
 
 };
 [722] =  {
 ["type"] = "alter-condition-true-yet-action";
-["reflexive"] = "false";
+["reflexive"] = false;
 ["initial-subject-override"] = 0;
 ["value"] = 36;
 
 };
 [723] =  {
 ["type"] = "alter-condition-true-yet-action";
-["reflexive"] = "false";
+["reflexive"] = false;
 ["value"] = 35;
 
 };
 [724] =  {
 ["type"] = "declare-winner-action";
-["reflexive"] = "false";
+["reflexive"] = false;
 ["initial-subject-override"] = 0;
 ["initial-direct-override"] = 0;
 ["which-player"] = 0;
@@ -6120,110 +6120,110 @@ gameData = {
 };
 [725] =  {
 ["type"] = "disable-keys-action";
-["reflexive"] = "false";
+["reflexive"] = false;
 ["key-mask"] = 1073741827;
 
 };
 [726] =  {
 ["type"] = "alter-velocity-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["initial-subject-override"] = 0;
-["relative"] = "false";
+["relative"] = false;
 ["minimum"] = 0;
 ["range"] = 0;
 
 };
 [727] =  {
 ["type"] = "display-message-action";
-["reflexive"] = "false";
+["reflexive"] = false;
 ["message-id"] = 5843;
 ["page"] = 1;
 
 };
 [728] =  {
 ["type"] = "display-message-action";
-["reflexive"] = "false";
+["reflexive"] = false;
 ["message-id"] = 5843;
 ["page"] = 1;
 
 };
 [729] =  {
 ["type"] = "alter-velocity-action";
-["reflexive"] = "false";
+["reflexive"] = false;
 ["initial-subject-override"] = 0;
-["relative"] = "false";
+["relative"] = false;
 ["minimum"] = 0;
 ["range"] = 0;
 
 };
 [730] =  {
 ["type"] = "disable-keys-action";
-["reflexive"] = "false";
+["reflexive"] = false;
 ["key-mask"] = 1476399347;
 
 };
 [731] =  {
 ["type"] = "set-zoom-action";
-["reflexive"] = "false";
+["reflexive"] = false;
 ["zoom-level"] = 2;
 
 };
 [732] =  {
 ["type"] = "alter-absolute-cash-action";
-["reflexive"] = "false";
+["reflexive"] = false;
 ["value"] = 640000;
 
 };
 [733] =  {
 ["type"] = "display-message-action";
-["reflexive"] = "false";
+["reflexive"] = false;
 ["message-id"] = 5900;
 ["page"] = 2;
 
 };
 [734] =  {
 ["type"] = "alter-owner-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["delay"] = 160;
 ["initial-subject-override"] = 1;
-["relative"] = "false";
+["relative"] = false;
 
 };
 [735] =  {
 ["type"] = "alter-condition-true-yet-action";
-["reflexive"] = "false";
+["reflexive"] = false;
 ["value"] = 2;
 
 };
 [736] =  {
 ["type"] = "display-message-action";
-["reflexive"] = "false";
+["reflexive"] = false;
 ["message-id"] = 5905;
 ["page"] = 3;
 
 };
 [737] =  {
 ["type"] = "alter-condition-true-yet-action";
-["reflexive"] = "false";
+["reflexive"] = false;
 ["value"] = 4;
 
 };
 [738] =  {
 ["type"] = "display-message-action";
-["reflexive"] = "false";
+["reflexive"] = false;
 ["message-id"] = 5910;
 ["page"] = 10;
 
 };
 [739] =  {
 ["type"] = "alter-absolute-cash-action";
-["reflexive"] = "false";
+["reflexive"] = false;
 ["value"] = 6000000;
 
 };
 [740] =  {
 ["type"] = "alter-absolute-cash-action";
-["reflexive"] = "false";
+["reflexive"] = false;
 ["initial-subject-override"] = 0;
 ["initial-direct-override"] = 0;
 ["value"] = -6000000;
@@ -6231,65 +6231,65 @@ gameData = {
 };
 [741] =  {
 ["type"] = "computer-select-action";
-["reflexive"] = "false";
+["reflexive"] = false;
 ["screen"] = 2;
 ["line"] = 3;
 
 };
 [742] =  {
 ["type"] = "computer-select-action";
-["reflexive"] = "false";
+["reflexive"] = false;
 ["screen"] = 2;
 ["line"] = 2;
 
 };
 [743] =  {
 ["type"] = "enable-keys-action";
-["reflexive"] = "false";
+["reflexive"] = false;
 ["key-mask"] = 268435456;
 
 };
 [744] =  {
 ["type"] = "alter-condition-true-yet-action";
-["reflexive"] = "false";
+["reflexive"] = false;
 ["value"] = 9;
 
 };
 [745] =  {
 ["type"] = "display-message-action";
-["reflexive"] = "false";
+["reflexive"] = false;
 ["message-id"] = 5925;
 ["page"] = 1;
 
 };
 [746] =  {
 ["type"] = "disable-keys-action";
-["reflexive"] = "false";
+["reflexive"] = false;
 ["key-mask"] = 268435456;
 
 };
 [747] =  {
 ["type"] = "display-message-action";
-["reflexive"] = "false";
+["reflexive"] = false;
 ["message-id"] = 5930;
 ["page"] = 2;
 
 };
 [748] =  {
 ["type"] = "alter-condition-true-yet-action";
-["reflexive"] = "false";
+["reflexive"] = false;
 ["value"] = 11;
 
 };
 [749] =  {
 ["type"] = "assume-initial-object-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["which-initial-object"] = 5;
 
 };
 [750] =  {
 ["type"] = "change-score-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["which-player"] = 0;
 ["which-score"] = 0;
 ["amount"] = 1;
@@ -6297,199 +6297,199 @@ gameData = {
 };
 [751] =  {
 ["type"] = "display-message-action";
-["reflexive"] = "false";
+["reflexive"] = false;
 ["message-id"] = 5935;
 ["page"] = 3;
 
 };
 [752] =  {
 ["type"] = "set-zoom-action";
-["reflexive"] = "false";
+["reflexive"] = false;
 ["zoom-level"] = 7;
 
 };
 [753] =  {
 ["type"] = "alter-condition-true-yet-action";
-["reflexive"] = "false";
+["reflexive"] = false;
 ["value"] = 13;
 
 };
 [754] =  {
 ["type"] = "display-message-action";
-["reflexive"] = "false";
+["reflexive"] = false;
 ["message-id"] = 5940;
 ["page"] = 1;
 
 };
 [755] =  {
 ["type"] = "set-zoom-action";
-["reflexive"] = "false";
+["reflexive"] = false;
 ["zoom-level"] = 2;
 
 };
 [756] =  {
 ["type"] = "computer-select-action";
-["reflexive"] = "false";
+["reflexive"] = false;
 ["screen"] = 2;
 ["line"] = 3;
 
 };
 [757] =  {
 ["type"] = "alter-condition-true-yet-action";
-["reflexive"] = "false";
+["reflexive"] = false;
 ["value"] = 14;
 
 };
 [758] =  {
 ["type"] = "disable-keys-action";
-["reflexive"] = "false";
+["reflexive"] = false;
 ["key-mask"] = 2147485440;
 
 };
 [759] =  {
 ["type"] = "enable-keys-action";
-["reflexive"] = "false";
+["reflexive"] = false;
 ["key-mask"] = 268435456;
 
 };
 [760] =  {
 ["type"] = "display-message-action";
-["reflexive"] = "false";
+["reflexive"] = false;
 ["message-id"] = 5945;
 ["page"] = 3;
 
 };
 [761] =  {
 ["type"] = "set-zoom-action";
-["reflexive"] = "false";
+["reflexive"] = false;
 ["zoom-level"] = 7;
 
 };
 [762] =  {
 ["type"] = "alter-condition-true-yet-action";
-["reflexive"] = "false";
+["reflexive"] = false;
 ["value"] = 17;
 
 };
 [763] =  {
 ["type"] = "enable-keys-action";
-["reflexive"] = "false";
+["reflexive"] = false;
 ["key-mask"] = 2147485440;
 
 };
 [764] =  {
 ["type"] = "display-message-action";
-["reflexive"] = "false";
+["reflexive"] = false;
 ["message-id"] = 5950;
 ["page"] = 1;
 
 };
 [765] =  {
 ["type"] = "set-zoom-action";
-["reflexive"] = "false";
+["reflexive"] = false;
 ["zoom-level"] = 2;
 
 };
 [766] =  {
 ["type"] = "alter-condition-true-yet-action";
-["reflexive"] = "false";
+["reflexive"] = false;
 ["value"] = 18;
 
 };
 [767] =  {
 ["type"] = "display-message-action";
-["reflexive"] = "false";
+["reflexive"] = false;
 ["message-id"] = 5955;
 ["page"] = 3;
 
 };
 [768] =  {
 ["type"] = "set-zoom-action";
-["reflexive"] = "false";
+["reflexive"] = false;
 ["zoom-level"] = 7;
 
 };
 [769] =  {
 ["type"] = "alter-condition-true-yet-action";
-["reflexive"] = "false";
+["reflexive"] = false;
 ["value"] = 19;
 
 };
 [770] =  {
 ["type"] = "enable-keys-action";
-["reflexive"] = "false";
+["reflexive"] = false;
 ["key-mask"] = 4096;
 
 };
 [771] =  {
 ["type"] = "display-message-action";
-["reflexive"] = "false";
+["reflexive"] = false;
 ["message-id"] = 5960;
 ["page"] = 2;
 
 };
 [772] =  {
 ["type"] = "alter-condition-true-yet-action";
-["reflexive"] = "false";
+["reflexive"] = false;
 ["value"] = 20;
 
 };
 [773] =  {
 ["type"] = "display-message-action";
-["reflexive"] = "false";
+["reflexive"] = false;
 ["message-id"] = 5965;
 ["page"] = 1;
 
 };
 [774] =  {
 ["type"] = "alter-condition-true-yet-action";
-["reflexive"] = "false";
+["reflexive"] = false;
 ["value"] = 21;
 
 };
 [775] =  {
 ["type"] = "display-message-action";
-["reflexive"] = "false";
+["reflexive"] = false;
 ["message-id"] = 5970;
 ["page"] = 4;
 
 };
 [776] =  {
 ["type"] = "alter-owner-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["initial-subject-override"] = 1;
-["relative"] = "false";
+["relative"] = false;
 
 };
 [777] =  {
 ["type"] = "set-zoom-action";
-["reflexive"] = "true";
+["reflexive"] = true;
 ["initial-subject-override"] = 1;
 ["zoom-level"] = 4;
 
 };
 [778] =  {
 ["type"] = "alter-absolute-cash-action";
-["reflexive"] = "false";
+["reflexive"] = false;
 ["value"] = -3276800;
 
 };
 [779] =  {
 ["type"] = "alter-hidden-action";
-["reflexive"] = "false";
+["reflexive"] = false;
 ["minimum"] = 3;
 ["range"] = 0;
 
 };
 [780] =  {
 ["type"] = "alter-condition-true-yet-action";
-["reflexive"] = "false";
+["reflexive"] = false;
 ["value"] = 23;
 
 };
 [781] =  {
 ["type"] = "display-message-action";
-["reflexive"] = "false";
+["reflexive"] = false;
 ["delay"] = 280;
 ["message-id"] = 5975;
 ["page"] = 2;
@@ -6497,233 +6497,233 @@ gameData = {
 };
 [782] =  {
 ["type"] = "alter-hidden-action";
-["reflexive"] = "false";
+["reflexive"] = false;
 ["minimum"] = 4;
 ["range"] = 0;
 
 };
 [783] =  {
 ["type"] = "alter-condition-true-yet-action";
-["reflexive"] = "false";
+["reflexive"] = false;
 ["value"] = 25;
 
 };
 [784] =  {
 ["type"] = "display-message-action";
-["reflexive"] = "false";
+["reflexive"] = false;
 ["message-id"] = 5980;
 ["page"] = 1;
 
 };
 [785] =  {
 ["type"] = "alter-condition-true-yet-action";
-["reflexive"] = "false";
+["reflexive"] = false;
 ["value"] = 26;
 
 };
 [786] =  {
 ["type"] = "display-message-action";
-["reflexive"] = "false";
+["reflexive"] = false;
 ["message-id"] = 5985;
 ["page"] = 1;
 
 };
 [787] =  {
 ["type"] = "alter-condition-true-yet-action";
-["reflexive"] = "false";
+["reflexive"] = false;
 ["value"] = 27;
 
 };
 [788] =  {
 ["type"] = "display-message-action";
-["reflexive"] = "false";
+["reflexive"] = false;
 ["message-id"] = 5990;
 ["page"] = 1;
 
 };
 [789] =  {
 ["type"] = "alter-condition-true-yet-action";
-["reflexive"] = "false";
+["reflexive"] = false;
 ["value"] = 28;
 
 };
 [790] =  {
 ["type"] = "display-message-action";
-["reflexive"] = "false";
+["reflexive"] = false;
 ["message-id"] = 5995;
 ["page"] = 1;
 
 };
 [791] =  {
 ["type"] = "alter-condition-true-yet-action";
-["reflexive"] = "false";
+["reflexive"] = false;
 ["value"] = 29;
 
 };
 [792] =  {
 ["type"] = "display-message-action";
-["reflexive"] = "false";
+["reflexive"] = false;
 ["message-id"] = 7000;
 ["page"] = 2;
 
 };
 [793] =  {
 ["type"] = "disable-keys-action";
-["reflexive"] = "false";
+["reflexive"] = false;
 ["key-mask"] = 2147483648;
 
 };
 [794] =  {
 ["type"] = "set-zoom-action";
-["reflexive"] = "false";
+["reflexive"] = false;
 ["zoom-level"] = 1;
 
 };
 [795] =  {
 ["type"] = "alter-condition-true-yet-action";
-["reflexive"] = "false";
+["reflexive"] = false;
 ["value"] = 31;
 
 };
 [796] =  {
 ["type"] = "display-message-action";
-["reflexive"] = "false";
+["reflexive"] = false;
 ["message-id"] = 7005;
 ["page"] = 1;
 
 };
 [797] =  {
 ["type"] = "alter-condition-true-yet-action";
-["reflexive"] = "false";
+["reflexive"] = false;
 ["value"] = 32;
 
 };
 [798] =  {
 ["type"] = "enable-keys-action";
-["reflexive"] = "false";
+["reflexive"] = false;
 ["key-mask"] = 2147483648;
 
 };
 [799] =  {
 ["type"] = "set-zoom-action";
-["reflexive"] = "false";
+["reflexive"] = false;
 ["zoom-level"] = 7;
 
 };
 [800] =  {
 ["type"] = "alter-condition-true-yet-action";
-["reflexive"] = "false";
+["reflexive"] = false;
 ["value"] = 33;
 
 };
 [801] =  {
 ["type"] = "alter-condition-true-yet-action";
-["reflexive"] = "false";
+["reflexive"] = false;
 ["value"] = 34;
 
 };
 [802] =  {
 ["type"] = "display-message-action";
-["reflexive"] = "false";
+["reflexive"] = false;
 ["message-id"] = 7010;
 ["page"] = 3;
 
 };
 [803] =  {
 ["type"] = "computer-select-action";
-["reflexive"] = "false";
+["reflexive"] = false;
 ["screen"] = 1;
 ["line"] = 4;
 
 };
 [804] =  {
 ["type"] = "alter-condition-true-yet-action";
-["reflexive"] = "false";
+["reflexive"] = false;
 ["value"] = 36;
 
 };
 [805] =  {
 ["type"] = "computer-select-action";
-["reflexive"] = "false";
+["reflexive"] = false;
 ["screen"] = 1;
 ["line"] = 2;
 
 };
 [806] =  {
 ["type"] = "display-message-action";
-["reflexive"] = "false";
+["reflexive"] = false;
 ["message-id"] = 7015;
 ["page"] = 2;
 
 };
 [807] =  {
 ["type"] = "alter-condition-true-yet-action";
-["reflexive"] = "false";
+["reflexive"] = false;
 ["value"] = 38;
 
 };
 [808] =  {
 ["type"] = "display-message-action";
-["reflexive"] = "false";
+["reflexive"] = false;
 ["message-id"] = 7020;
 ["page"] = 1;
 
 };
 [809] =  {
 ["type"] = "enable-keys-action";
-["reflexive"] = "false";
+["reflexive"] = false;
 ["key-mask"] = 134217728;
 
 };
 [810] =  {
 ["type"] = "computer-select-action";
-["reflexive"] = "false";
+["reflexive"] = false;
 ["screen"] = 3;
 ["line"] = 1;
 
 };
 [811] =  {
 ["type"] = "alter-condition-true-yet-action";
-["reflexive"] = "false";
+["reflexive"] = false;
 ["value"] = 39;
 
 };
 [812] =  {
 ["type"] = "display-message-action";
-["reflexive"] = "false";
+["reflexive"] = false;
 ["message-id"] = 7025;
 ["page"] = 5;
 
 };
 [813] =  {
 ["type"] = "alter-hidden-action";
-["reflexive"] = "false";
+["reflexive"] = false;
 ["minimum"] = 7;
 ["range"] = 9;
 
 };
 [814] =  {
 ["type"] = "alter-condition-true-yet-action";
-["reflexive"] = "false";
+["reflexive"] = false;
 ["delay"] = 360;
 ["value"] = 42;
 
 };
 [815] =  {
 ["type"] = "enable-keys-action";
-["reflexive"] = "false";
+["reflexive"] = false;
 ["key-mask"] = 4228382719;
 
 };
 [816] =  {
 ["type"] = "set-zoom-action";
-["reflexive"] = "false";
+["reflexive"] = false;
 ["zoom-level"] = 5;
 
 };
 [817] =  {
 ["type"] = "declare-winner-action";
-["reflexive"] = "false";
+["reflexive"] = false;
 ["which-player"] = 0;
 ["next-level"] = 6;
 ["text-id"] = 7052;
@@ -6731,20 +6731,20 @@ gameData = {
 };
 [818] =  {
 ["type"] = "alter-condition-true-yet-action";
-["reflexive"] = "false";
+["reflexive"] = false;
 ["value"] = 7;
 
 };
 [819] =  {
 ["type"] = "no-action";
-["reflexive"] = "false";
+["reflexive"] = false;
 ["initial-subject-override"] = 0;
 ["initial-direct-override"] = 0;
 
 };
 [820] =  {
 ["type"] = "no-action";
-["reflexive"] = "false";
+["reflexive"] = false;
 ["initial-subject-override"] = 0;
 ["initial-direct-override"] = 0;
 

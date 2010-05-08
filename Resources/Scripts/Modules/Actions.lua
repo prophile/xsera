@@ -90,13 +90,13 @@ actionTable = {
 	local angle = source.physics.angle
 	local delta = PolarVec(math.sqrt(action.minimum)+math.random(0.0,math.sqrt(action.range)), angle)
 	
-	if action.reflexive == "true" then
+	if action.reflexive == true then
 		p = source.physics
 	else
 		p = direct.physics
 	end
 	
-	if action.relative == "true" then
+	if action.relative == true then
 		p.velocity = p.velocity +  delta
 	else
 		p.velocity = delta
@@ -116,7 +116,7 @@ end,
 local srcMotion
 local offset = vec(0,0)
 local owner = -1
-if action.reflexive == "true" then --There may be more conditions to consider
+if action.reflexive == true then --There may be more conditions to consider
 	if source.type == nil then --Weapon firing
 		srcMotion = direct.physics
 		offset = RotatePoint(source.positions[source.lastPos],srcMotion.angle-math.pi/2.0)
@@ -176,7 +176,7 @@ if source.base.attributes["auto-target"] == true then
 	else
 		new.physics.angle = find_angle(targ.position, new.physics.position)
 	end
-elseif action["direction-relative"] == "true" then
+elseif action["direction-relative"] == true then
 	new.physics.angle = srcMotion.angle
 else
 	new.physics.angle = RandomReal(0, 2.0 * math.pi)
@@ -188,7 +188,7 @@ end
 
 local iv = new.base["initial-velocity"] or 0.0
 
-if action["velocity-relative"] == "true" then
+if action["velocity-relative"] == true then
 
 new.physics.velocity = {
 x = srcMotion.velocity.x + SPEED_FACTOR * iv * math.cos(new.physics.angle);
@@ -218,7 +218,7 @@ Win()
 print("The winner is: " .. action["which-player"])
 end,
 ["die-action"] = function(action, source, direct)
-	if action.reflexive == "true" then
+	if action.reflexive == true then
 		source.status.dead = true
 	else
 		direct.status.dead = true
@@ -231,7 +231,7 @@ end,
 ["make-sparks-action"] = function(action, source, direct)
 --Aquire parent
 	local parent
-	if action.reflexive == "true" then
+	if action.reflexive == true then
 		parent = source
 	else
 		parent = direct
