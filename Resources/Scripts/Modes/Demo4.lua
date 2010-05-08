@@ -12,6 +12,7 @@ import('Interfaces')
 import('PopDownConsole')
 import('Camera')
 import('Physics')
+import('Effects')
 
 mdown = false
 mrad = MOUSE_RADIUS / cameraRatio
@@ -46,6 +47,11 @@ function key( k )
 	elseif k == "x" then
 		aimMethod = aimMethod == "smart" and "dumb" or "smart"
 		print(aimMethod)
+	elseif k == "f" then
+		AddEffects("flash", 1, 0.25,{})
+	elseif k == "g" then
+		blinkMode = (blinkMode == "triangle" and "sine" or "triangle")
+		print(blinkMode)
 	elseif k == "/" then
 		printTable(scen.playerShip)
 	elseif k == "backspace" then
@@ -325,6 +331,7 @@ function update()
 		TestConditions(scen)
 		GenerateStatusLines(scen)
 		
+		UpdateEffects(dt)
 		Physics.UpdateSystem(dt, scen.objects)
 	end
 end
@@ -368,6 +375,7 @@ function render()
 	graphics.end_warp()
 		
 	DrawObject(scen.playerShip)
+	DrawEffects()
 	
 	DrawArrow()
 	DrawMouse1()

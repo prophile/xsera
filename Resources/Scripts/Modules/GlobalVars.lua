@@ -52,6 +52,7 @@ WARP_SOUND_LENGTH = 0.3
 
 demoLevel = 25
 shipSeek = false
+blinkMode = "triangle"
 
 --mouse variables
 oldMousePos = vec(0, 0)
