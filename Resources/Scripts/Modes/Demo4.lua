@@ -50,7 +50,7 @@ function key( k )
 	elseif k == "f" then
 		AddEffects("flash", 1, 0.25,{})
 	elseif k == "g" then
-		blinkMode = (blinkMode == "triangle" and "sine" or "triangle")
+		blinkMode = (blinkMode == "triangle" and "flash" or "triangle")
 		print(blinkMode)
 	elseif k == "/" then
 		printTable(scen.playerShip)
