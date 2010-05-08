@@ -25,13 +25,48 @@ end
 CAMERA_RATIO_OPTIONS = {
 	2, 1/2, 1/4, 1/16,
 	function() -- zoom to nearest hostile object
-		return 1/8 -- [TEMP, ADAM] this is a test value to see if the camera ratio functions work
+		--[TEMP, SCOTT] this is temporary untill we have a more efficient technique
+		local pos = scen.playerShip.position
+		local dist = 0;
+		for id, o in pairs(scen.objects) do
+			if id ~= playerShipId and o.ai.owner ~= scen.playerShip.ai.owner then
+				if dist > 0 then
+					dist = math.min(hypot2(pos,o.physics.position), dist)
+				else
+					dist = hypot2(pos,o.physics.position)
+				end
+			end
+		end
+		local ratio = WINDOW.w / distance
+		return ratio
 	end,
 	function() -- zoom to nearest object
-		return 1/9 -- [TEMP, ADAM] this is a test value to see if the camera ratio functions work
+		--[TEMP, SCOTT] this is temporary untill we have a more efficient technique
+		local pos = scen.playerShip.position
+		local dist = 0;
+		for id, o in pairs(scen.objects) do
+			if id ~= playerShipId then
+				if dist > 0 then
+					dist = math.min(hypot2(pos,o.physics.position), dist)
+				else
+					dist = hypot2(pos,o.physics.position)
+				end
+			end
+		end
+		local ratio = WINDOW.w / distance
+		return ratio
 	end,
 	function() -- zoom to all
-		return 1/10 -- [TEMP, ADAM] this is a test value to see if the camera ratio functions work
+		--[TEMP, SCOTT] this is temporary untill we have a more efficient technique
+		local pos = scen.playerShip.position
+		local dist = 0
+		for id, o in pairs(scen.objects) do
+			if id ~= playerShipId then
+				dist = math.max(hypot2(pos,o.physics.position), dist)
+			end
+		end
+		local ratio = WINDOW.w / distance
+		return ratio
 	end
 }
 

@@ -80,7 +80,6 @@ function update()
 ------------------]]--
 		
 		if cameraChanging == true then
-			print(zoomTime)
 			zoomTime = zoomTime - dt
 			if zoomTime < 0 then
 				zoomTime = 0
