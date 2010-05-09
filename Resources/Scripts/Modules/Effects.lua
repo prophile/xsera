@@ -32,8 +32,9 @@ function DrawEffects()
 	end
 end
 
-Effect = {
-["flash"] = function(effect)
+Effect = {}
+
+function Effect.flash(effect)
 	local pos = scen.playerShip.physics.position
 	local w = camera.w/2.0
 	local h = camera.h/2.0
@@ -49,6 +50,6 @@ Effect = {
 		color.a = math.sin(math.pi * delta)
 	end
 	
-	graphics.draw_box(pos.y + h, pos.x - w, pos.y - h, pos.x + w, 0,color)
-end;
-}
+	graphics.draw_box(pos.y + h, pos.x - w, pos.y - h, pos.x + w, 0, color)
+end
+
