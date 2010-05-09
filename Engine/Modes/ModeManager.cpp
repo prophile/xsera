@@ -2,7 +2,7 @@
 #include <SDL/SDL.h>
 #include "input.h"
 
-#include "Logging.h"
+#include "Engine/Logging.h"
 #include "Graphics.h"
 
 static AppMode* mode = NULL;
