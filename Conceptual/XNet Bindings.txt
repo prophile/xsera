@@ -1,0 +1,25 @@
+local peer = xnet.create(port)
+peer:start_listening() -> void
+peer:stop_listening() -> void
+peer:connect(host, port) -> bool
+peer:disconnect(connID) -> void
+peer:attach(function plugin(plugin, peer, command, source, data) end) -> ID
+peer:receive(source, message, plugin) -> void
+peer:send(receiver, message, plugin) -> void
+
+commands:
+  update                  data=dt               source=nil
+  attached                data=nil              source=nil
+  did_connect             data={hostname, port} source=connID
+  did_disconnect          data=nil              source=connID
+  did_receive_message     data=message          source=connID
+  audit_connection        data={hostname, port} source=nil
+  audit_outgoing_message  data=connectionID     source=nil
+
+messages are a table;
+  id
+  data
+  is_reliable
+  is_ordered
+  is_sequenced
+  -- other metadata
