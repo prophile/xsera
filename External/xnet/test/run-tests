@@ -1,0 +1,118 @@
+#!/usr/bin/env php
+<?php
+
+error_reporting(E_ALL | E_STRICT);
+
+$pattern = isset($argv[1]) ? $argv[1] : '*';
+$schedule = 'schedule';
+
+// open the schedule
+$sched = file($schedule);
+
+$schedule = array();
+$current_key = 'system';
+foreach ($sched as $line)
+{
+	$line = trim(preg_replace('/#(.+)$/', '', $line));
+	if ($line == '')
+		continue;
+	if (preg_match('/^(.+):$/', $line, $matches))
+	{
+		$current_key = $matches[1];
+		continue;
+	}
+	$parts = explode(' ', $line);
+	$type = array_shift($parts);
+	$test = implode(' ', $parts);
+	if (!fnmatch($pattern, $test))
+		continue;
+	if (!isset($schedule[$current_key]))
+		$schedule[$current_key] = array();
+	$schedule[$current_key][] = array($test, $type);
+}
+
+$total_passes = 0;
+$total_fails  = 0;
+$total_xfails = 0;
+$total_fixes  = 0;
+
+function compile($test)
+{
+	system("g++ -o /tmp/test -I.. -I. -L.. -lxnet -fno-rtti $test.cpp 2>/tmp/test-error.out", $rv);
+	return ($rv == 0) ? "/tmp/test" : false;
+}
+
+// run tests
+foreach ($schedule as $key => $subsched)
+{
+	printf("Running tests on %s:\n", $key);
+	$passes = 0;
+	$fails  = 0;
+	$xfails = 0;
+	$fixes  = 0;
+	foreach ($subsched as $list)
+	{
+		$test = $list[0];
+		$type = $list[1];
+		$columns = 70 - strlen("$type $test...");
+		echo "$type $test.";
+		flush();
+		$target = compile($test);
+		echo ".";
+		flush();
+		if ($target)
+			system($target . " 2>/tmp/test-error.out", $rv);
+		echo ".";
+		echo str_repeat(' ', $columns);
+		$success = $target && ($rv == 0);
+		if ($success && $type == 'TEST')
+		{
+			$passes++;
+			echo "      [OK]\n";
+		}
+		else if (!$success && $type == 'TEST')
+		{
+			$fails++;
+			echo "  [FAILED]\n";
+		}
+		else if (!$success && $type == 'XFAIL')
+		{
+			$xfails++;
+			echo "   [XFAIL]\n";
+		}
+		else if ($success && $type == 'XFAIL')
+		{
+			$fixes++;
+			echo "   [FIXED]\n";
+		}
+		if (!$success)
+		{	
+			clearstatcache();
+			$size = filesize("/tmp/test-error.out");
+			if ($size > 2048)
+			{
+				// too big to just display
+				$filename = tempnam("/tmp", "stderr-");
+				rename("/tmp/test-error.out", $filename);
+				echo "OUTPUT TOO LARGE! See $filename\n";
+			}
+			else if ($size > 0)
+			{
+				echo "=== OUTPUT ===\n";
+				readfile("/tmp/test-error.out");
+				echo "==============\n";
+			}
+		}
+		flush();
+	}
+	echo "$passes passes, $fails failures, $xfails xfails, $fixes fixes\n";
+	echo "-----\n";
+	$total_passes += $passes;
+	$total_fails  += $fails;
+	$total_xfails += $xfails;
+	$total_fixes  += $fixes;
+}
+echo "     Total tests passed: $total_passes\n";
+echo "     Total tests failed: $total_fails\n";
+echo "Total expected failures: $total_xfails\n";
+if ($total_fixes) echo "   Total fixed failures: $total_fixes\n";

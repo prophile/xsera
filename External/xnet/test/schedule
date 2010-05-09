@@ -1,0 +1,13 @@
+#Test Harness:
+#TEST harness/0000-harness-success
+#XFAIL harness/0001-harness-fail
+#XFAIL harness/0002-harness-success-unexpected
+Serialiser:
+TEST serialiser/0000-basic
+XFAIL serialiser/0001-64bit
+Local Only Socket Provider:
+TEST local-socket/0000-send-receive
+Peer:
+TEST peer/0000-basic
+TEST peer/0001-plugin-allow-connections
+TEST peer/0002-connection
