@@ -213,6 +213,7 @@ function update()
 --[[------------------
 	Movement
 ------------------]]--
+			Warp(o)
 
 			local rvel
 			if o.base.attributes["can-turn"] == true then
@@ -220,7 +221,7 @@ function update()
 			else
 				rvel = DEFAULT_ROTATION_RATE
 			end
-			
+
 			if o.control.left == true then
 				o.physics.angularVelocity = rvel * 2.0
 			elseif o.control.right == true then
@@ -228,7 +229,7 @@ function update()
 			else
 				o.physics.angularVelocity = 0
 			end
-				
+
 			if o.base["max-thrust"] ~= nil then
 				if o.warp.stage < WARP_RUNNING then
 					if o.control.accel == true then
@@ -265,44 +266,6 @@ function update()
 			end
 		end
 		
---[[------------------
-	Warping Code
-------------------]]-- it's a pair of lightsabers!
-		local warp = scen.playerShip.warp
-		
-		if scen.playerShip.control.warp == true
-		and warp.stage < WARP_COOLING then
-			if warp.factor < 1.0 then
-				warp.stage = WARP_SPOOLING
-				warp.factor = warp.factor + dt / WARP_TIME
-				if warp.factor >= warp.lastPlayed / 4 then
-					warp.lastPlayed = warp.lastPlayed + 1
-					sound.play("Warp"..warp.lastPlayed)
-				end
-				if warp.factor >= 1.0 then
-					warp.stage = WARP_RUNNING
-					warp.factor = 1.0
-					warp.lastPlayed = 5
-					sound.play("WarpIn")
-				end
-			end
-		elseif warp.stage >= WARP_ABORTING then
-			if warp.factor > 0.0 then
-				warp.factor = warp.factor - dt / WARP_OUT_TIME
-				if warp.stage == WARP_ABORTING then
-					warp.factor = warp.factor - dt / WARP_OUT_TIME * 4
-				end
-				if warp.factor <= 0.0 then
-					warp.factor = 0.0
-					warp.lastPlayed = 0
-					if warp.stage == WARP_COOLING then
-						sound.play("WarpOut")
-					end
-					warp.stage = WARP_IDLE
-				end
-			end
-		end
-
 		RemoveDead()
 		TestConditions(scen)
 		GenerateStatusLines(scen)
@@ -495,7 +458,49 @@ v2 = Polar2Rect(1,angle+180) * dist * m2 / (m1 + m2)
 	end
 end
 
+function Warp(object)
+	local warp = object.warp
 
+	if object.control.warp == true
+	and warp.stage < WARP_COOLING then
+		if warp.factor < 1.0 then
+			warp.stage = WARP_SPOOLING
+			warp.factor = warp.factor + dt / WARP_TIME
+			if warp.factor >= warp.lastPlayed / 4 then
+				warp.lastPlayed = warp.lastPlayed + 1
+				sound.play("Warp"..warp.lastPlayed)
+			end
+			if warp.factor >= 1.0 then
+				warp.stage = WARP_RUNNING
+				warp.factor = 1.0
+				warp.lastPlayed = 5
+
+				local flare = NewObject(32)--[SCOTT][HARDCODE]
+				flare.physics.position = object.physics.position + PolarVec(-object.physics.collision_radius*1.5,object.physics.angle)
+				CreateTrigger(flare)
+				scen.objects[flare.physics.object_id] = flare
+			end
+		end
+	elseif warp.stage >= WARP_ABORTING then
+		if warp.factor > 0.0 then
+			warp.factor = warp.factor - dt / WARP_OUT_TIME
+			if warp.stage == WARP_ABORTING then
+				warp.factor = warp.factor - dt / WARP_OUT_TIME * 4
+			end
+			if warp.factor <= 0.0 then
+				warp.factor = 0.0
+				warp.lastPlayed = 0
+				if warp.stage == WARP_COOLING then
+					local flare = NewObject(33)--[SCOTT][HARDCODE]
+				flare.physics.position = object.physics.position + PolarVec(-object.physics.collision_radius*1.5,object.physics.angle)
+				CreateTrigger(flare)
+				scen.objects[flare.physics.object_id] = flare
+				end
+				warp.stage = WARP_IDLE
+			end
+		end
+	end
+end
 
 function DrawObject(o)
 	if o.type == "beam" then
