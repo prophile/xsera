@@ -15,7 +15,7 @@ import('Physics')
 import('Effects')
 
 mdown = false
-mrad = MOUSE_RADIUS / cameraRatio
+mrad = MOUSE_RADIUS / cameraRatio.current
 aimMethod = "smart"
 
 function init()
@@ -287,7 +287,7 @@ function render()
 
 	CameraToObject(scen.playerShip)
 
-	graphics.begin_warp(scen.playerShip.warp.factor,scen.playerShip.physics.angle, cameraRatio)
+	graphics.begin_warp(scen.playerShip.warp.factor,scen.playerShip.physics.angle, cameraRatio.current)
 	
 	graphics.draw_starfield(3.4)
 	graphics.draw_starfield(1.8)
@@ -306,7 +306,7 @@ function render()
 	graphics.draw_particles()
 
 --	DEBUG version, keep:
---	graphics.end_warp(scen.playerShip.warp.factor, scen.playerShip.physics.angle, cameraRatio, scen.playerShip.physics.position)
+--	graphics.end_warp(scen.playerShip.warp.factor, scen.playerShip.physics.angle, cameraRatio.current, scen.playerShip.physics.position)
 	graphics.end_warp()
 		
 	DrawObject(scen.playerShip)
@@ -323,6 +323,10 @@ function render()
 	InterfaceDisplay(dt)
 	PopDownConsole()
 	
+	--debug
+	local zoomLevels = {
+	"[2:1]","[1:1]","[1:2]","[1:4]","[1:16]","[closest hostile]", "[closest object]", "[all objects]"}
+	graphics.draw_text(zoomLevels[cameraRatio.target], MAIN_FONT, "left", {x=100, y=100},30)
 	graphics.end_frame()
 end
 
@@ -521,7 +525,7 @@ function DrawObject(o)
 			end
 		end
 	else
-		if cameraRatio >= 1 / 4 then
+		if cameraRatio.current >= 1 / 4 then
 			if o.type == "animation" then
 				graphics.draw_sprite_frame(o.gfx.sprite, o.physics.position, o.gfx.dimensions, Animate(o))
 			else -- Rotational
@@ -538,7 +542,7 @@ function DrawObject(o)
 				color = ClutColour(16,1)
 			end
 
-			local iconScale = 1.0/cameraRatio
+			local iconScale = 1.0/cameraRatio.current
 			if o.base["tiny-shape"] == "solid-square" then
 				graphics.draw_rbox(o.physics.position, o.base["tiny-size"] * iconScale, color)
 			elseif o.base["tiny-shape"] == "plus" then

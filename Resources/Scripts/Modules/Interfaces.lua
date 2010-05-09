@@ -316,10 +316,10 @@ radar = { top = 237, left = panels.left.center.x - 58, bottom = 127, right = pan
 
 function DrawRadar()
 	graphics.draw_box(radar.top, radar.left, radar.bottom, radar.right, 0, ClutColour(5, 13)) -- background (dark green)
-	if cameraRatio <= 1 / 8 then
+	if cameraRatio.current <= 1 / 8 then
 		graphics.draw_box(radar.top, radar.left, radar.bottom, radar.right, 1, ClutColour(5, 11)) -- foreground (light green with edge)
 	else
-		boxSize = (cameraRatio * 8 - 1) / cameraRatio / 16
+		boxSize = (cameraRatio.current * 8 - 1) / cameraRatio.current / 16
 		graphics.draw_box(radar.top - radar.length * boxSize, radar.left + radar.width * boxSize, radar.bottom + radar.length * boxSize, radar.right - radar.width * boxSize, 0, ClutColour(5, 11))
 	end
 	
@@ -590,25 +590,25 @@ function DrawMouse1()
 	else
 		ship = scen.playerShip.physics.position
 		
-		realPos.x = (mousePos.x - ship.x + shipAdjust) * cameraRatio
-		realPos.y = (mousePos.y - ship.y) * cameraRatio
+		realPos.x = (mousePos.x - ship.x + shipAdjust) * cameraRatio.current
+		realPos.y = (mousePos.y - ship.y) * cameraRatio.current
 		
 		if realPos.x > panels.right.center.x - panels.right.width / 2 - 10 then
-			mousePos.x = (panels.right.center.x - panels.right.width / 2 - 10) / cameraRatio - shipAdjust + ship.x
+			mousePos.x = (panels.right.center.x - panels.right.width / 2 - 10) / cameraRatio.current - shipAdjust + ship.x
 		elseif realPos.x < panels.left.center.x + panels.left.width / 2 then
-			mousePos.x = (panels.right.center.x + panels.right.width / 2) / cameraRatio - shipAdjust + ship.x
+			mousePos.x = (panels.right.center.x + panels.right.width / 2) / cameraRatio.current - shipAdjust + ship.x
 		end
 		
 		if realPos.y > WINDOW.height / 2 - 10 then
-			mousePos.y = (WINDOW.height / 2 - 10) / cameraRatio + ship.y
+			mousePos.y = (WINDOW.height / 2 - 10) / cameraRatio.current + ship.y
 		elseif realPos.y < -WINDOW.height / 2 + 10 then
-			mousePos.y = (-WINDOW.height / 2 + 10) / cameraRatio + ship.y
+			mousePos.y = (-WINDOW.height / 2 + 10) / cameraRatio.current + ship.y
 		end
 		
-		graphics.draw_line({ x = - camera.w / 2 + ship.x, y = mousePos.y }, { x = mousePos.x - 20 / cameraRatio, y = mousePos.y }, 1.0, ClutColour(4, 8))
-		graphics.draw_line({ x = camera.w / 2 + ship.x, y = mousePos.y }, { x = mousePos.x + 20 / cameraRatio, y = mousePos.y }, 1.0, ClutColour(4, 8))
-		graphics.draw_line({ x = mousePos.x, y = -camera.h / 2 + ship.y }, { x = mousePos.x, y = mousePos.y - 20 / cameraRatio }, 1.0, ClutColour(4, 8))
-		graphics.draw_line({ x = mousePos.x, y = camera.h / 2 + ship.y }, { x = mousePos.x, y = mousePos.y + 20 / cameraRatio }, 1.0, ClutColour(4, 8))
+		graphics.draw_line({ x = - camera.w / 2 + ship.x, y = mousePos.y }, { x = mousePos.x - 20 / cameraRatio.current, y = mousePos.y }, 1.0, ClutColour(4, 8))
+		graphics.draw_line({ x = camera.w / 2 + ship.x, y = mousePos.y }, { x = mousePos.x + 20 / cameraRatio.current, y = mousePos.y }, 1.0, ClutColour(4, 8))
+		graphics.draw_line({ x = mousePos.x, y = -camera.h / 2 + ship.y }, { x = mousePos.x, y = mousePos.y - 20 / cameraRatio.current }, 1.0, ClutColour(4, 8))
+		graphics.draw_line({ x = mousePos.x, y = camera.h / 2 + ship.y }, { x = mousePos.x, y = mousePos.y + 20 / cameraRatio.current }, 1.0, ClutColour(4, 8))
 	end
 end
 
@@ -653,7 +653,7 @@ function DrawGrid()
 					graphics.draw_line({ x = grid_x, y = scen.playerShip.physics.position.y - (camera.h / 2.0) }, { x = grid_x, y = scen.playerShip.physics.position.y + (camera.h / 2.0) }, 1, ClutColour(14, 9))
 				end
 			else
-				if cameraRatio > 1 / 8 then
+				if cameraRatio.current > 1 / 8 then
 					graphics.draw_line({ x = grid_x, y = scen.playerShip.physics.position.y - (camera.h / 2.0) }, { x = grid_x, y = scen.playerShip.physics.position.y + (camera.h / 2.0) }, 1, ClutColour(4, 11))
 				end
 			end
@@ -670,7 +670,7 @@ function DrawGrid()
 					graphics.draw_line({ x = scen.playerShip.physics.position.x - shipAdjust - (camera.w / 2.0), y = grid_y }, { x = scen.playerShip.physics.position.x - shipAdjust + (camera.w / 2.0), y = grid_y }, 1, ClutColour(14, 9))
 				end
 			else
-				if cameraRatio > 1 / 8 then
+				if cameraRatio.current > 1 / 8 then
 					graphics.draw_line({ x = scen.playerShip.physics.position.x - shipAdjust - (camera.w / 2.0), y = grid_y }, { x = scen.playerShip.physics.position.x - shipAdjust + (camera.w / 2.0), y = grid_y }, 1, ClutColour(4, 11))
 				end
 			end

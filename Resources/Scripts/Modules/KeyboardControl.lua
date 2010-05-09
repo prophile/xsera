@@ -171,51 +171,19 @@ function DoMoveOrder()
 	end
 end
 
-function DoScaleIn(step)
-	local MAX_POW = 1
-	local cameraPow = math.log(cameraRatioTarget)/math.log(2)
-	if step == nil then
-		if MAX_POW > math.floor(cameraPow) then
-			cameraPow = math.floor(cameraPow) + 1
-		end
-	else
-		cameraPow = math.min(MAX_POW,cameraPow+step)
+function DoScaleIn()
+	if cameraRatio.target > 1 then
+		cameraRatio.target = cameraRatio.target - 1
+		zoomTime = timeInterval
 	end
-	
-	local newRatio = 2^cameraPow
-	
-	if newRatio ~= cameraRatio then
-		cameraChanging = true
-		cameraRatioTarget = newRatio
-		cameraRatioOrig = cameraRatio
-		zoomTime = timeInterval * 2 * (step or 0.5)
-		multiplier = (newRatio - cameraRatio)/cameraRatio
-	end
-	
 	ActionDeactivate("Scale In")
 end
 
-function DoScaleOut(step)
-	local MIN_POW = -6
-	local cameraPow = math.log(cameraRatioTarget)/math.log(2)
-	if step == nil then
-		if MIN_POW < math.ceil(cameraPow) then
-			cameraPow = math.ceil(cameraPow) - 1
-		end
-	else
-		cameraPow = math.max(MIN_POW,cameraPow-step)
+function DoScaleOut()
+	if cameraRatio.target < #CAMERA_RATIO_OPTIONS then
+		cameraRatio.target = cameraRatio.target + 1
+		zoomTime = timeInterval
 	end
-	
-	local newRatio = 2^cameraPow
-	
-	if newRatio ~= cameraRatio then
-		cameraChanging = true
-		cameraRatioTarget = newRatio
-		cameraRatioOrig = cameraRatio
-		zoomTime = timeInterval * 2 * (step or 0.5)
-		multiplier = (newRatio - cameraRatio)/cameraRatio
-	end
-
 	ActionDeactivate("Scale Out")
 end
 
