@@ -77,43 +77,16 @@ function update()
 	last_time = newTime
 
 	if menu_display == nil and consoleDraw == false then
-		realTime = realTime + dt
 		if keyboard[4][7].active == true then
 			dt = dt * 50
 		end
 
+		realTime = realTime + dt
+		
+		CameraInterpolate(dt)
+		
 		KeyDoActivated()
-		
---[[------------------
-	Camera Code
-------------------]]--
-		
-		if cameraChanging == true then
-			print(zoomTime)
-			zoomTime = zoomTime - dt
-			if zoomTime < 0 then
-				zoomTime = 0
-				cameraChanging = false
---				scen.playerShip.weapon.beam.width = cameraRatio
-				soundJustPlayed = false
-			end
-			if zoomTime >= 0 then
-				cameraRatio = cameraRatioOrig + cameraRatioOrig * multiplier * math.pow(math.abs((timeInterval - zoomTime) / timeInterval), 2)  --[[* (((x - timeInterval) * (x - timeInterval) * math.sqrt(math.abs(x - timeInterval))) / (timeInterval * timeInterval * math.sqrt(math.abs(timeInterval))))--]]
-			end
-			camera = { w = WINDOW.width / cameraRatio, h }
-			camera.h = camera.w / aspectRatio
-			shipAdjust = .045 * camera.w
-			arrowLength = ARROW_LENGTH / cameraRatio
-			arrowVar = ARROW_VAR / cameraRatio
-			arrowDist = ARROW_DIST / cameraRatio
-			if (cameraRatio < 1 / 4 and cameraRatioOrig > 1 / 4) or (cameraRatio > 1 / 4 and cameraRatioOrig < 1 / 4) then
-				if soundJustPlayed == false then
-					sound.play("ZoomChange")
-					soundJustPlayed = true
-				end
-			end
-		end
-	
+
 		--[[ commenting out due to new physics system (which currently lacks collision detection)
 		local cols = physics.collisions()
 		
@@ -349,11 +322,7 @@ end
 function render()
 	graphics.begin_frame()
 
-	graphics.set_camera(
-		-scen.playerShip.physics.position.x + shipAdjust - (camera.w / 2.0),
-		-scen.playerShip.physics.position.y - (camera.h / 2.0),
-		-scen.playerShip.physics.position.x + shipAdjust + (camera.w / 2.0),
-		-scen.playerShip.physics.position.y + (camera.h / 2.0))
+	CameraToObject(scen.playerShip)
 
 	graphics.begin_warp(scen.playerShip.warp.factor,scen.playerShip.physics.angle, cameraRatio)
 	
