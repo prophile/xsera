@@ -3,18 +3,14 @@ peer:start_listening() -> void
 peer:stop_listening() -> void
 peer:connect(host, port) -> bool
 peer:disconnect(connID) -> void
-peer:attach(function plugin(plugin, peer, command, source, data) end) -> ID
-peer:receive(source, message, plugin) -> void
-peer:send(receiver, message, plugin) -> void
-
-commands:
-  update                  data=dt               source=nil
-  attached                data=nil              source=nil
-  did_connect             data={hostname, port} source=connID
-  did_disconnect          data=nil              source=connID
-  did_receive_message     data=message          source=connID
-  audit_connection        data={hostname, port} source=nil
-  audit_outgoing_message  data=connectionID     source=nil
+peer:new_plugin() -> plugin table
+plugin:_send(receiver, message) -> void (low level thing, called from within plugin only)
+plugin:update(dt) -> void
+plugin:did_connect(connectionID, hostname, port) -> void
+plugin:did_disconnect(connectionID) -> void
+plugin:did_receive_message(connectionID, message) -> void
+plugin:audit_connection(hostname, port) -> bool
+plugin:audit_outgoing_message(connectionID, message) -> bool
 
 messages are a table;
   id
