@@ -73,7 +73,7 @@ function update()
 	if menu_display == nil and consoleDraw == false then
 		realTime = realTime + dt
 		if keyboard[4][7].active == true then
-			dt = dt * 8
+			dt = dt * 50
 		end
 
 		KeyDoActivated()
