@@ -1,6 +1,7 @@
 function LoadScenario(id)
 	local scen = deepcopy(gameData.Scenarios[id])
 	scen.objects = {}
+	scen.effects = {flash = {}}
 
 	local max = scen.initial.id + scen.initial.count - 1
 	

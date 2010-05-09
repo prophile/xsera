@@ -1,0 +1,22 @@
+local peer = xnet.create(port)
+peer:start_listening() -> void
+peer:stop_listening() -> void
+peer:connect(host, port) -> bool
+peer:disconnect(connID) -> void
+peer:new_plugin() -> plugin table
+plugin:_disconnect(connectionID) -> void (defined by system, called from within plugin only)
+plugin:_send(receiver, message) -> void (defined by system, called from within plugin only)
+plugin:update(dt) -> void (defined by user)
+plugin:did_connect(connectionID, hostname, port) -> void (defined by user)
+plugin:did_disconnect(connectionID) -> void (defined by user)
+plugin:did_receive_message(connectionID, message) -> void (defined by user)
+plugin:audit_connection(hostname, port) -> bool (defined by user)
+plugin:audit_outgoing_message(connectionID, message) -> bool (defined by user)
+
+messages are a table;
+  id
+  data
+  is_reliable
+  is_ordered
+  is_sequenced
+  -- other metadata

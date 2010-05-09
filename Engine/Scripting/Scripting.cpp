@@ -1,6 +1,6 @@
 #include "Scripting.h"
 #include "ResourceManager.h"
-#include "Logging.h"
+#include "Engine/Logging.h"
 
 extern "C"
 {

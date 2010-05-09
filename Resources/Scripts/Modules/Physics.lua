@@ -47,7 +47,7 @@ Physics = {
 			end
 			print("WARNING: OBJECT (ID: " .. obj.object_id .. ") DOES NOT HAVE MASS!")
 		else
-			obj.velocity = obj.velocity + (impulse / obj.mass)
+			obj.velocity = obj.velocity + (impulse / obj.mass) * (dt * TIME_FACTOR)
 		end
 	end,
 	
