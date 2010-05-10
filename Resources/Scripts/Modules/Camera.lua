@@ -37,7 +37,7 @@ CAMERA_RATIO_OPTIONS = {
 				end
 			end
 		end
-		local ratio = WINDOW.width / dist
+		local ratio = WINDOW.height / 3 / dist
 		return ratio
 	end,
 	function() -- zoom to nearest object
@@ -53,7 +53,7 @@ CAMERA_RATIO_OPTIONS = {
 				end
 			end
 		end
-		local ratio = WINDOW.width / dist
+		local ratio = WINDOW.height / 3 / dist
 		return ratio
 	end,
 	function() -- zoom to all
@@ -65,7 +65,7 @@ CAMERA_RATIO_OPTIONS = {
 				dist = math.max(hypot2(pos,o.physics.position), dist)
 			end
 		end
-		local ratio = WINDOW.width / dist
+		local ratio = WINDOW.height / 3 / dist
 		return ratio
 	end
 }
@@ -78,18 +78,19 @@ function CameraInterpolate(dt)
 	local zoomGoal
 	if cameraRatio.target < CAMERA_DYNAMIC_THRESHOLD then
 		--Normal scaling
---		if cameraRatio.num ~= cameraRatio.target then
-			zoomGoal = CAMERA_RATIO_OPTIONS[cameraRatio.target]
-	--	end
+		zoomGoal = CAMERA_RATIO_OPTIONS[cameraRatio.target]
 	else
 		--Dynamic scaling
 		zoomGoal = CAMERA_RATIO_OPTIONS[cameraRatio.target]()
 	end
-
+--[ [
 	local zoomTime = math.max(math.abs(math.log(zoomGoal/cameraRatio.current)/math.log(2)),1)
 	if zoomTime ~= 0 then
 	cameraRatio.current = cameraRatio.current + (zoomGoal-cameraRatio.current)*(zoomTime*dt)
 	end
+--]]
+
+
 	print(cameraRatio.current)
 	camera = { w = WINDOW.width / cameraRatio.current, h }
 	camera.h = camera.w / aspectRatio
