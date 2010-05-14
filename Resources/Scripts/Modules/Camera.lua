@@ -23,9 +23,7 @@ end
 
 CAMERA_RATIO_OPTIONS = {
 	2, 1, 1/2, 1/4, 1/16,
-	function() -- zoom to nearest hostile object
-		--[TEMP, SCOTT] this is temporary untill we have a more efficient technique
-
+	function() -- zoom to nearest hostile
 		local object, distance = GetClosestHostile(scen.playerShip)
 
 		local ratio = WINDOW.height / 3 / distance
@@ -33,8 +31,6 @@ CAMERA_RATIO_OPTIONS = {
 		return ratio
 	end,
 	function() -- zoom to nearest object
-		--[TEMP, SCOTT] this is temporary untill we have a more efficient technique
-
 		local object, distance = GetClosestObject(scen.playerShip)
 
 		local ratio = WINDOW.height / 3 / distance
@@ -42,15 +38,10 @@ CAMERA_RATIO_OPTIONS = {
 		return ratio
 	end,
 	function() -- zoom to all
-		--[TEMP, SCOTT] this is temporary untill we have a more efficient technique
-		local pos = scen.playerShip.physics.position
-		local dist = 0
-		for id, o in pairs(scen.objects) do
-			if id ~= playerShipId then
-				dist = math.max(hypot2(pos,o.physics.position), dist)
-			end
-		end
-		local ratio = WINDOW.height / 3 / dist
+		local object, distance = GetFurthestObject(scen.playerShip)
+
+		local ratio = WINDOW.height / 3 / distance
+		ratio = math.min(ratio, 2.0)
 		return ratio
 	end
 }
