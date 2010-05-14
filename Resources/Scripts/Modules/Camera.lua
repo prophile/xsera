@@ -25,18 +25,11 @@ CAMERA_RATIO_OPTIONS = {
 	2, 1, 1/2, 1/4, 1/16,
 	function() -- zoom to nearest hostile object
 		--[TEMP, SCOTT] this is temporary untill we have a more efficient technique
-		local pos = scen.playerShip.physics.position
-		local dist = 0;
-		for id, o in pairs(scen.objects) do
-			if id ~= playerShipId and o.ai.owner ~= scen.playerShip.ai.owner then
-				if dist == 0 then
-					dist = hypot2(pos,o.physics.position)
-				else
-					dist = math.min(hypot2(pos,o.physics.position), dist)
-				end
-			end
-		end
-		local ratio = WINDOW.height / 3 / dist
+
+		local object, distance = GetClosestHostile(scen.playerShip)
+
+		local ratio = WINDOW.height / 3 / distance
+		ratio = math.min(ratio, 2.0)
 		return ratio
 	end,
 	function() -- zoom to nearest object
@@ -94,8 +87,6 @@ function CameraInterpolate(dt)
 		sound.play("ZoomChange")
 	end
 
-
-	print(cameraRatio.current)
 	camera = { w = WINDOW.width / cameraRatio.current, h }
 	camera.h = camera.w / aspectRatio
 	shipAdjust = .045 * camera.w

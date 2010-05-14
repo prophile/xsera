@@ -13,6 +13,7 @@ import('PopDownConsole')
 import('Camera')
 import('Physics')
 import('Effects')
+import('Proximity')
 
 mdown = false
 mrad = MOUSE_RADIUS / cameraRatio.current
