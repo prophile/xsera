@@ -34,18 +34,11 @@ CAMERA_RATIO_OPTIONS = {
 	end,
 	function() -- zoom to nearest object
 		--[TEMP, SCOTT] this is temporary untill we have a more efficient technique
-		local pos = scen.playerShip.physics.position
-		local dist = 0;
-		for id, o in pairs(scen.objects) do
-			if id ~= playerShipId then
-				if dist > 0 then
-					dist = math.min(hypot2(pos,o.physics.position), dist)
-				else
-					dist = hypot2(pos,o.physics.position)
-				end
-			end
-		end
-		local ratio = WINDOW.height / 3 / dist
+
+		local object, distance = GetClosestObject(scen.playerShip)
+
+		local ratio = WINDOW.height / 3 / distance
+		ratio = math.min(ratio, 2.0)
 		return ratio
 	end,
 	function() -- zoom to all
