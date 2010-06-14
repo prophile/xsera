@@ -119,6 +119,13 @@ function RandomReal ( min, max )
     return (math.random() * (max - min)) + min
 end
 
+function RandomVec(ranges)
+	return vec(
+		RandomReal(ranges.x[1],ranges.x[2]),
+		RandomReal(ranges.y[1],ranges.y[2])
+	)
+end
+
 function RotatePoint(point, angle)
 	return vec(
 	point.x*math.cos(angle)-point.y*math.sin(angle),

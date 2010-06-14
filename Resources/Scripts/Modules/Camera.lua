@@ -39,3 +39,38 @@ CAMERA_RATIO = { curr = 1, num = 2, target = 1 }
 -- should I add a function that checks to make sure that the camera ratio is the
 -- same as the target, and adjusting if not? [ADAM, TODO]
 
+function CameraInterpolate(dt)
+	if cameraChanging == true then
+		zoomTime = zoomTime - dt
+		if zoomTime < 0 then
+			zoomTime = 0
+			cameraChanging = false
+--				scen.playerShip.weapon.beam.width = cameraRatio
+			soundJustPlayed = false
+		end
+		if zoomTime >= 0 then
+			cameraRatio = cameraRatioOrig + cameraRatioOrig * multiplier * math.pow(math.abs((timeInterval - zoomTime) / timeInterval), 2)  --[[* (((x - timeInterval) * (x - timeInterval) * math.sqrt(math.abs(x - timeInterval))) / (timeInterval * timeInterval * math.sqrt(math.abs(timeInterval))))--]]
+		end
+		camera = { w = WINDOW.width / cameraRatio, h }
+		camera.h = camera.w / aspectRatio
+		shipAdjust = .045 * camera.w
+		arrowLength = ARROW_LENGTH / cameraRatio
+		arrowVar = ARROW_VAR / cameraRatio
+		arrowDist = ARROW_DIST / cameraRatio
+		if (cameraRatio < 1 / 4 and cameraRatioOrig > 1 / 4) or (cameraRatio > 1 / 4 and cameraRatioOrig < 1 / 4) then
+			if soundJustPlayed == false then
+				sound.play("ZoomChange")
+				soundJustPlayed = true
+			end
+		end
+	end
+end
+
+function CameraToObject(object)
+	local pos = object.physics.position
+graphics.set_camera(
+		-pos.x + shipAdjust - (camera.w / 2.0),
+		-pos.y - (camera.h / 2.0),
+		-pos.x + shipAdjust + (camera.w / 2.0),
+		-pos.y + (camera.h / 2.0))
+end
