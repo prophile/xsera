@@ -1,6 +1,6 @@
 import('GlobalVars')
 import('Interfaces')
-
+import('Console')
 --[[-----------------------
 	--{{---------------
 		Key In Menu
@@ -188,8 +188,10 @@ function DoScaleIn(step)
 		cameraChanging = true
 		cameraRatioTarget = newRatio
 		cameraRatioOrig = cameraRatio
-		zoomTime = timeInterval * 2 * (step or 0.5)
-		multiplier = (newRatio - cameraRatio)/cameraRatio
+		if(zoomTime == 0) then -- prevents zoom speed from resetting if zoom setting is changed mid-zoom.
+			zoomTime = timeInterval * 1 * (step or 0.5)
+		end
+		multiplier = (newRatio - cameraRatioOrig)/cameraRatioOrig
 	end
 	
 	ActionDeactivate("Scale In")
@@ -212,7 +214,9 @@ function DoScaleOut(step)
 		cameraChanging = true
 		cameraRatioTarget = newRatio
 		cameraRatioOrig = cameraRatio
-		zoomTime = timeInterval * 2 * (step or 0.5)
+		if(zoomTime == 0) then
+			zoomTime = timeInterval * 2 * (step or 0.5)
+		end
 		multiplier = (newRatio - cameraRatio)/cameraRatio
 	end
 
@@ -310,22 +314,26 @@ end
 
 function DoZoomHostile()
 	-- insta-zoom version - UNSTABLE?
-	if cameraRatioNum ~= 6 then
-		local diff = { x = computerShip.physicsObject.position.x - scen.playerShip.physicsObject.position.x, y = computerShip.physicsObject.position.y - scen.playerShip.physicsObject.position.y }
-		local calculatedRatio = 0
-		
-		if aspectRatio > (diff.x / diff.y) then
-			calculatedRatio = 640 / (diff.y * 2 * aspectRatio)
-		else
-			calculatedRatio = 640 / (diff.x * 2)
-		end
-		
-		cameraChanging = false
-		cameraRatioOrig = cameraRatio
-		zoomTime = timeInterval
-		cameraRatioNum = 6
-		multiplier = (calculatedRatio - cameraRatio) / cameraRatio
-	end
+	--Find target zoom distance in pixels
+--	if(WINDOW.width <= WINDOW.height) then
+--		zoomRadius = WINDOW.width
+--	else
+--		zoomRadius = WINDOW.height
+--	end
+--	
+--	if cameraRatioNum ~= 6 then
+		--local diff = { x = computerShip.physicsObject.position.x - scen.playerShip.physicsObject.position.x, y = computerShip.physicsObject.position.y - scen.playerShip.physicsObject.position.y }
+--		local calculatedRatio = 0
+--		
+--		if aspectRatio > (diff.x / diff.y) then
+--			calculatedRatio = 640 / (diff.y * 2 * aspectRatio)
+--		else
+--			calculatedRatio = 640 / (diff.x * 2)
+--		end
+		requestedCamRatio = 1 / 4
+		cameraSnap = true
+		cameraChanging = true
+--	end
 end
 
 function DoZoomObject()
@@ -459,7 +467,7 @@ keyboard = { { "Ship",
 				{ key = "F10", name = "Zoom to 1:2", action = DoZoom1_2, active = false }, 
 				{ key = "F11", name = "Zoom to 1:4", action = DoZoom1_4, active = false }, 
 				{ key = "F12", name = "Zoom to 1:16", action = DoZoom1_16, active = false }, 
-				{ key = "ins", name = "Zoom to Closest Hostile", action = DoZoomHostile, active = false }, 
+				{ key = "m", name = "Zoom to Closest Hostile", action = DoZoomHostile, active = false }, 
 				{ key = "home", name = "Zoom to Closest Object", action = DoZoomObject, active = false }, 
 				{ key = "pgup", name = "Zoom to All", action = DoZoomAll, active = false }, 
 				{ key = "del", name = "Message Next Page / Clear", action = DoMessageNext, active = false } },

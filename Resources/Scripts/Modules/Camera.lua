@@ -39,7 +39,7 @@ CAMERA_RATIO = { curr = 1, num = 2, target = 1 }
 -- should I add a function that checks to make sure that the camera ratio is the
 -- same as the target, and adjusting if not? [ADAM, TODO]
 
-function CameraInterpolate(dt)
+function CameraInterpolate(dt) --note: this function now controlls both quadratic zooming and snap zooming
 	if cameraChanging == true then
 		zoomTime = zoomTime - dt
 		if zoomTime < 0 then
@@ -64,6 +64,19 @@ function CameraInterpolate(dt)
 			end
 		end
 	end
+end
+
+function CameraSnap()
+--	if cameraChanging == true then
+		cameraRatio = requestedCamRatio
+		camera = { w = WINDOW.width / cameraRatio, h }
+		camera.h = camera.w / aspectRatio
+		shipAdjust = .045 * camera.w
+		arrowLength = ARROW_LENGTH / cameraRatio
+		arrowVar = ARROW_VAR / cameraRatio
+		arrowDist = ARROW_DIST / cameraRatio
+--	end
+	cameraSnap = false
 end
 
 function CameraToObject(object)
