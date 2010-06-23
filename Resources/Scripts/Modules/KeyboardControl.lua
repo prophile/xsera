@@ -330,8 +330,8 @@ function DoZoomHostile()
 --		else
 --			calculatedRatio = 640 / (diff.x * 2)
 --		end
-		LogError("DoZoomHostile" , 9)
-		requestedCamRatio = 1 / 4
+		cameraRatioOrig = cameraRatio
+		cameraRatioTarget = 1 / 4
 		cameraSnap = true
 		cameraChanging = true
 --	end
