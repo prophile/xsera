@@ -85,7 +85,7 @@ function update()
 		if cameraSnap == false then
 			CameraInterpolate(dt)
 		else
-			cameraSnap()
+			CameraSnap()
 			cameraSnap = false
 		end
 		
