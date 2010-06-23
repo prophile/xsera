@@ -311,7 +311,7 @@ function DrawPauseMenu(dt)
 	end
 end
 
-updateWindow()
+UpdateWindow()
 radar = { top = 237, left = panels.left.center.x - 58, bottom = 127, right = panels.left.center.x + 52, width = 110, length = 110 }
 
 function DrawRadar()
@@ -340,7 +340,7 @@ end
 menuLevel = menuOptions
 
 function DrawPanels()
-	updateWindow()
+	UpdateWindow()
 	local cam = CameraToWindow()
 --	printTable(cam)
 	graphics.set_camera(cam[1], cam[2], cam[3], cam[4])

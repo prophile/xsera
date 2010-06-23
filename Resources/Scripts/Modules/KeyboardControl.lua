@@ -172,6 +172,7 @@ function DoMoveOrder()
 end
 
 function DoScaleIn(step)
+--[[ with all due respect this code is nasty
 	local MAX_POW = 1
 	local cameraPow = math.log(cameraRatioTarget)/math.log(2)
 	if step == nil then
@@ -192,12 +193,23 @@ function DoScaleIn(step)
 			zoomTime = timeInterval * 1 * (step or 0.5)
 		end
 		multiplier = (newRatio - cameraRatioOrig)/cameraRatioOrig
-	end
+	end--]]
 	
+    if not RELEASE_BUILD then
+        -- do instant change
+        if CAMERA_RATIO.num ~= 1 then
+            InstantCamera(CAMERA_RATIO.num - 1)
+            CAMERA_RATIO.num = CAMERA_RATIO.num - 1
+        end
+    else
+        -- do ease-in (to be implemented later)
+    end
+    
 	ActionDeactivate("Scale In")
 end
 
 function DoScaleOut(step)
+--[[ with all due respect this code is nasty
 	local MIN_POW = -6
 	local cameraPow = math.log(cameraRatioTarget)/math.log(2)
 	if step == nil then
@@ -218,8 +230,18 @@ function DoScaleOut(step)
 			zoomTime = timeInterval * 2 * (step or 0.5)
 		end
 		multiplier = (newRatio - cameraRatio)/cameraRatio
-	end
-
+	end--]]
+    
+    if not RELEASE_BUILD then
+        -- do instant change
+        if CAMERA_RATIO.num ~= #CAMERA_RATIO_OPTIONS then
+            InstantCamera(CAMERA_RATIO.num + 1)
+            CAMERA_RATIO.num = CAMERA_RATIO.num + 1
+        end
+    else
+        -- do ease-in (to be implemented later)
+    end
+    
 	ActionDeactivate("Scale Out")
 end
 
