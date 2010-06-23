@@ -68,7 +68,7 @@ end
 
 function CameraSnap()
 --	if cameraChanging == true then
-		cameraRatio = requestedCamRatio
+		cameraRatio = cameraRatioTarget
 		camera = { w = WINDOW.width / cameraRatio, h }
 		camera.h = camera.w / aspectRatio
 		shipAdjust = .045 * camera.w
