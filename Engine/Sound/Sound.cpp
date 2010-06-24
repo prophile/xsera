@@ -111,8 +111,6 @@ std::string songName;
 
 using namespace Internal;
 
-static bool disable_music = false;
-
 void Init ( int frequency, int resolution, int sources )
 {
 	Mix_Init(MIX_INIT_MOD|MIX_INIT_OGG);
@@ -142,10 +140,6 @@ void Init ( int frequency, int resolution, int sources )
 	Mix_AllocateChannels(sources);
 	Mix_VolumeMusic(volume_music);
 	Mix_Volume(-1, volume_sound);
-#ifndef NDEBUG
-	if (getenv("APOLLO_MUSIC_DISABLE"))
-//		disable_music = true;
-#endif
 	effectMapLock = SDL_CreateMutex();
 	preloadQueueLock = SDL_CreateMutex();
 	preloadQueueCondition = SDL_CreateCond();
@@ -159,7 +153,7 @@ void Preload ( const std::string& name )
 	SDL_CondSignal(preloadQueueCondition);
 }
 
-void PlaySoundSDL ( const std::string& name, float gain, float pan )
+void PlaySound ( const std::string& name, float gain, float pan )
 {
 	Mix_Chunk* chunk = SoundNamed(name);
 	if (!chunk)
@@ -177,8 +171,6 @@ void PlaySoundSDL ( const std::string& name, float gain, float pan )
 
 void PlayMusic ( const std::string& music )
 {
-//	if (disable_music)
-//		return;
 	Mix_Music* mus = MusicNamed(music);
 	printf("%d", mus);
 	if (mus)
