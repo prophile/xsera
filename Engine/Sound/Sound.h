@@ -26,7 +26,7 @@ void Preload ( const std::string& name );
  * @param gain The gain of the sound. 1 is normal gain, 2 is twice as loud, et cetera.
  * @param pan The pan of the sound. 0 is central, -1 is full left, 1 is full right
  */
-void PlaySoundSDL ( const std::string& name, float gain = 1.0f, float pan = 0.0f );
+void PlaySound ( const std::string& name, float gain = 1.0f, float pan = 0.0f );
 /**
  * Plays music
  * @param music The name of the track to play

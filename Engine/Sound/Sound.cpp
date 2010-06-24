@@ -159,7 +159,7 @@ void Preload ( const std::string& name )
 	SDL_CondSignal(preloadQueueCondition);
 }
 
-void PlaySoundSDL ( const std::string& name, float gain, float pan )
+void PlaySound ( const std::string& name, float gain, float pan )
 {
 	Mix_Chunk* chunk = SoundNamed(name);
 	if (!chunk)
