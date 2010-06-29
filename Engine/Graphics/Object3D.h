@@ -25,6 +25,7 @@ private:
 	GLuint texVBO;
 	GLuint tangentVBO;
 	GLuint texture;
+	float offX, offY, intScale;
 	unsigned int nverts;
 	void LoadObject(const std::string& name);
 	void LoadTexture(const std::string& name);

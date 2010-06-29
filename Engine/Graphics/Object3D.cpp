@@ -350,6 +350,7 @@ void Object3D::LoadTexture(const std::string& name)
 }
 
 Object3D::Object3D ( const std::string& name )
+: offX(-0.5f), offY(-0.5f), intScale(1.0f)
 {
 	// load the texture
 	LoadTexture(name);
@@ -383,6 +384,8 @@ void Object3D::Draw ( float scale, float angle, float bank )
 	glPushMatrix();
 	glEnableClientState(GL_NORMAL_ARRAY);
 	glRotatef(bank, 1.0f, 1.0f, 1.0f);
+	glScalef(intScale, intScale, intScale);
+	glTranslatef(offX, offY, 0.0f);
 	//glRotatef(90.0f, 1.0f, 0.0f, 0.0f);
 	// bind the VBOs
 	glBindBuffer(GL_ARRAY_BUFFER, vertexVBO);
