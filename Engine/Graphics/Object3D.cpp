@@ -218,7 +218,7 @@ void Object3D::Draw ( float scale, float angle, float bank )
 	transformation *= matrix2x3::Scale(scale);
 	transformation *= matrix2x3::Rotation(angle);
 	Matrices::SetModelMatrix(transformation);
-	//glPushMatrix(GL_MODELVIEW_MATRIX);
+	glPushMatrix(GL_MODELVIEW_MATRIX);
 	glRotatef(bank, 1.0f, 0.0f, 0.0f);
 	// bind the VBOs
 	glBindBuffer(GL_ARRAY_BUFFER, vertexVBO);
@@ -230,7 +230,7 @@ void Object3D::Draw ( float scale, float angle, float bank )
 	// draw all the faces
 	glDrawArrays(GL_TRIANGLES, 0, nverts);
 	glBindBuffer(GL_ARRAY_BUFFER, 0);
-	//glPopMatrix();
+	glPopMatrix();
 }
 
 }
