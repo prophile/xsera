@@ -28,31 +28,31 @@ varying vec3 N;
 
 void main()
 {
-	vec2 texCoord = TX;
-	vec3 HalfDir  = normalize(LightDir + EyeDir);
-	vec4 fullSample = texture2D(tex, texCoord);
-	vec3 sample = fullSample.rgb;
-	float specSample = fullSample.a;
-	vec3 tnorm = normalize(N);
-	vec3 light;
-     light =        C1 * L22 * (tnorm.x * tnorm.x - tnorm.y * tnorm.y) +
-                    C3 * L20 * tnorm.z * tnorm.z +
-                    C4 * L00 -
-                    C5 * L20 +
-                    2.0 * C1 * L2m2 * tnorm.x * tnorm.y +
-                    2.0 * C1 * L21 * tnorm.x * tnorm.z +
-                    2.0 * C1 * L2m1 * tnorm.y * tnorm.z +
-                    2.0 * C2 * L11 * tnorm.x +
-                    2.0 * C2 * L1m1 * tnorm.y +
-                    2.0 * C2 * L10 * tnorm.z;
-	vec3 L = normalize(LightDir);
-	float NdL = dot(tnorm, L);
-	if (NdL > 0.0)
-	{
-		float NdotHV = max(dot(tnorm, HalfDir), 0.0);
-		float powf = pow(NdotHV, SHININESS);
-		light += SPECSCALE * powf * LightCol * specSample;
-	}
-	gl_FragColor = vec4(light * sample, 1.0);
-	//gl_FragColor = vec4(tnorm, 1.0);
+    vec2 texCoord = TX;
+    vec3 HalfDir  = normalize(LightDir + EyeDir);
+    vec4 fullSample = texture2D(tex, texCoord);
+    vec3 sample = fullSample.rgb;
+    float specSample = fullSample.a;
+    vec3 tnorm = normalize(N);
+    vec3 light;
+    light = C1 * L22 * (tnorm.x * tnorm.x - tnorm.y * tnorm.y) +
+            C3 * L20 * tnorm.z * tnorm.z +
+            C4 * L00 -
+            C5 * L20 +
+            2.0 * C1 * L2m2 * tnorm.x * tnorm.y +
+            2.0 * C1 * L21 * tnorm.x * tnorm.z +
+            2.0 * C1 * L2m1 * tnorm.y * tnorm.z +
+            2.0 * C2 * L11 * tnorm.x +
+            2.0 * C2 * L1m1 * tnorm.y +
+            2.0 * C2 * L10 * tnorm.z;
+    vec3 L = normalize(LightDir);
+    float NdL = dot(tnorm, L);
+    if (NdL > 0.0)
+    {
+        float NdotHV = max(dot(tnorm, HalfDir), 0.0);
+        float powf = pow(NdotHV, SHININESS);
+        light += SPECSCALE * powf * LightCol * specSample;
+    }
+    gl_FragColor = vec4(light * sample, 1.0);
+    //gl_FragColor = vec4(tnorm, 1.0);
 }
