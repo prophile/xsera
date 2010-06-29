@@ -3,7 +3,7 @@
 uniform sampler2D tex;
 
 const float SHININESS = 11.0;
-const float SPECSCALE = 8.0;
+const float SPECSCALE = 2.0;
 
 const float C1 = 0.429043;
 const float C2 = 0.511664;
