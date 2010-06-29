@@ -1,5 +1,3 @@
-#define SPECTEX
-
 uniform sampler2D tex;
 
 const float SHININESS = 11.0;
@@ -48,7 +46,6 @@ void main()
                     2.0 * C2 * L1m1 * tnorm.y +
                     2.0 * C2 * L10 * tnorm.z;
 	vec3 L = normalize(LightDir);
-#ifdef SPECTEX
 	float NdL = dot(tnorm, L);
 	if (NdL > 0.0)
 	{
@@ -56,7 +53,6 @@ void main()
 		float powf = pow(NdotHV, SHININESS);
 		light += SPECSCALE * powf * LightCol * specSample;
 	}
-#endif
 	gl_FragColor = vec4(light * sample, 1.0);
 	//gl_FragColor = vec4(tnorm, 1.0);
 }
