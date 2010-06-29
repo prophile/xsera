@@ -769,7 +769,6 @@ void DrawObject3DAmbient ( std::string name, vec2 centre, float scale, float ang
 	//glUniform3f(UniformLocation("Ambient"), ambient.red(), ambient.green(), ambient.blue());
 	SetShader("3DBase");
 	glUniform1i(UniformLocation("tex"), 0);
-	glUniform1i(UniformLocation("specTex"), 1);
 	Matrices::SetViewMatrix(matrix2x3::Translate(centre));
 	obj->Draw(scale, angle, bank);
 }

@@ -1,9 +1,6 @@
 #define SPECTEX
 
 uniform sampler2D tex;
-#ifdef SPECTEX
-uniform sampler2D specTex;
-#endif
 
 const float SHININESS = 11.0;
 const float SPECSCALE = 18.0;
@@ -35,7 +32,9 @@ void main()
 {
 	vec2 texCoord = TX;
 	vec3 HalfDir  = normalize(LightDir + EyeDir);
-
+	vec4 fullSample = texture2D(tex, texCoord);
+	vec3 sample = fullSample.rgb;
+	float specSample = fullSample.a;
 	vec3 tnorm = normalize(N);
 	vec3 light;
      light =        C1 * L22 * (tnorm.x * tnorm.x - tnorm.y * tnorm.y) +
@@ -48,7 +47,6 @@ void main()
                     2.0 * C2 * L11 * tnorm.x +
                     2.0 * C2 * L1m1 * tnorm.y +
                     2.0 * C2 * L10 * tnorm.z;
-	vec3 sample = texture2D(tex, texCoord).rgb;
 	vec3 L = normalize(LightDir);
 #ifdef SPECTEX
 	float NdL = dot(tnorm, L);
@@ -56,7 +54,7 @@ void main()
 	{
 		float NdotHV = max(dot(tnorm, HalfDir), 0.0);
 		float powf = pow(NdotHV, SHININESS);
-		light += SPECSCALE * powf * LightCol * texture2D(specTex, texCoord).rgb;
+		light += SPECSCALE * powf * LightCol * specSample;
 	}
 #endif
 	gl_FragColor = vec4(light * sample, 1.0);

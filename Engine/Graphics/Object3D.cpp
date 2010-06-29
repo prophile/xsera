@@ -218,12 +218,12 @@ void Object3D::LoadObject ( const std::string& name )
 			texes[1] = StringToInt(PopWord(lines[1], '/')) - 1;
 			texes[2] = StringToInt(PopWord(lines[2], '/')) - 1;
 			if (quad)
-				texes[3] = StringToInt(PopWord(lines[3], '/'));
+				texes[3] = StringToInt(PopWord(lines[3], '/')) - 1;
 			norms[0] = StringToInt(PopWord(lines[0], '/')) - 1;
 			norms[1] = StringToInt(PopWord(lines[1], '/')) - 1;
 			norms[2] = StringToInt(PopWord(lines[2], '/')) - 1;
 			if (quad)
-				norms[3] = StringToInt(PopWord(lines[3], '/'));
+				norms[3] = StringToInt(PopWord(lines[3], '/')) - 1;
 			faceTriple triple;
 			triple.vertices[0] = vertices[0];
 			triple.vertices[1] = vertices[1];
@@ -335,30 +335,30 @@ void Object3D::LoadObject ( const std::string& name )
 	SDL_RWclose(objFile);
 }
 
-void Object3D::LoadTexture ( const std::string& name )
+void Object3D::LoadTexture(const std::string& name)
 {
-	texture = GetTexture("Textures/" + name + "_diffuse.png");
+	SDL_Surface* diffuse = ImageLoader::LoadImage("Textures/" + name + "_diffuse.png");
+	assert(diffuse);
+	SDL_Surface* specular = ImageLoader::LoadImage("Textures/" + name + "_spec.png");
+	assert(specular);
+	SDL_Surface* res = ImageLoader::Zip(diffuse, specular);
+	assert(res);
+	SDL_FreeSurface(specular);
+	SDL_FreeSurface(diffuse);
+	texture = ImageLoader::CreateTexture(res, true, false);
 	assert(texture);
-}
-
-void Object3D::LoadSpecTexture(const std::string& name)
-{
-	specTexture = GetTexture("Textures/" + name + "_spec.png");
-	assert(specTexture);
 }
 
 Object3D::Object3D ( const std::string& name )
 {
 	// load the texture
 	LoadTexture(name);
-	LoadSpecTexture(name);
 	LoadObject(name);
 }
 
 Object3D::~Object3D ()
 {
 	glDeleteTextures(1, &texture);
-	glDeleteTextures(1, &specTexture);
 	glDeleteBuffers(1, &vertexVBO);
 	glDeleteBuffers(1, &texVBO);
 	glDeleteBuffers(1, &normalsVBO);
@@ -367,9 +367,6 @@ Object3D::~Object3D ()
 
 void Object3D::BindTextures ()
 {
-	glActiveTexture(GL_TEXTURE1);
-	glBindTexture(GL_TEXTURE_2D, specTexture);
-	glActiveTexture(GL_TEXTURE0);
 	glBindTexture(GL_TEXTURE_2D, texture);
 }
 

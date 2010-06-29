@@ -25,11 +25,9 @@ private:
 	GLuint texVBO;
 	GLuint tangentVBO;
 	GLuint texture;
-	GLuint specTexture;
 	unsigned int nverts;
-	void LoadObject ( const std::string& name );
-	void LoadTexture ( const std::string& name );
-	void LoadSpecTexture(const std::string& name);
+	void LoadObject(const std::string& name);
+	void LoadTexture(const std::string& name);
 public:
 	Object3D ( const std::string& name );
 	~Object3D ();
