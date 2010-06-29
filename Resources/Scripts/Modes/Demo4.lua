@@ -82,8 +82,12 @@ function update()
 		end
 
 		realTime = realTime + dt
-		
-		CameraInterpolate(dt)
+		if cameraSnap == false then
+			CameraInterpolate(dt)
+		else
+			CameraSnap()
+			cameraSnap = false
+		end
 		
 		KeyDoActivated()
 
