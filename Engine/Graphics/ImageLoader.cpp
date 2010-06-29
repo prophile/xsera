@@ -9,27 +9,32 @@ namespace ImageLoader
 
 SDL_Surface* Zip(SDL_Surface* colour, SDL_Surface* alpha)
 {
-	assert(colour->w == alpha->w);
-	assert(colour->h == alpha->h);
+	if (alpha)
+	{
+		assert(colour->w == alpha->w);
+		assert(colour->h == alpha->h);
+	}
 	SDL_Surface* sfc = SDL_CreateRGBSurface(SDL_SWSURFACE, colour->w, colour->h, 32,
 	                                        0x000000FF,
 	                                        0x0000FF00,
 	                                        0x00FF0000,
 	                                        0xFF000000);
 	const char* cpixels = static_cast<const char*>(colour->pixels);
-	const char* apixels = static_cast<const char*>(alpha->pixels);
+	const char* apixels = alpha ? static_cast<const char*>(alpha->pixels) : NULL;
 	char* dpixels = static_cast<char*>(sfc->pixels);
 	int pixcount = colour->w * colour->h;
 	for (int i = 0; i < pixcount; ++i)
 	{
-		uint8_t cR, cG, cB, aR, dead;
+		uint8_t cR, cG, cB, aR = 0x00, dead;
 		uint32_t res;
 		SDL_GetRGBA(*(uint32_t*)cpixels, colour->format, &cR, &cG, &cB, &dead);
-		SDL_GetRGBA(*(uint32_t*)apixels, alpha->format, &aR, &dead, &dead, &dead);
+		if (alpha)
+			SDL_GetRGBA(*(uint32_t*)apixels, alpha->format, &aR, &dead, &dead, &dead);
 		res = SDL_MapRGBA(sfc->format, cR, cG, cB, aR);
 		memcpy(dpixels, &res, sfc->format->BytesPerPixel);
 		cpixels += colour->format->BytesPerPixel;
-		apixels += alpha->format->BytesPerPixel;
+		if (alpha)
+			apixels += alpha->format->BytesPerPixel;
 		dpixels += sfc->format->BytesPerPixel;
 	}
 	return sfc;

@@ -340,7 +340,7 @@ void Object3D::LoadTexture(const std::string& name)
 	SDL_Surface* diffuse = ImageLoader::LoadImage("Textures/" + name + "_diffuse.png");
 	assert(diffuse);
 	SDL_Surface* specular = ImageLoader::LoadImage("Textures/" + name + "_spec.png");
-	assert(specular);
+	//assert(specular); // if it fails to load, it's fine - zip'll fill it in
 	SDL_Surface* res = ImageLoader::Zip(diffuse, specular);
 	assert(res);
 	SDL_FreeSurface(specular);
