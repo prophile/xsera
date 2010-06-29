@@ -27,7 +27,45 @@ struct vector3
 {
 	float x, y, z;
 	vector3 ( float _x, float _y, float _z ) : x(_x), y(_y), z(_z) {}
+	vector3 () : x(0.0f), y(0.0f), z(0.0f) {}
+
+	vector3 operator-(const vector3& v3) const
+	{
+		return vector3(x - v3.x, y - v3.y, z - v3.z);
+	}
+
+	vector3 operator-() const
+	{
+		return vector3() - *this;
+	}
+
+	bool operator==(const vector3& ov3) const
+	{
+		return x == ov3.x &&
+		       y == ov3.y &&
+			   z == ov3.z;
+	}
 };
+
+inline vector3 cross(vector3 a, vector3 b)
+{
+	vector3 result(0.0f, 0.0f, 0.0f);
+	result.x = a.y*b.z - a.z*b.y;
+	result.y = a.z*b.x - a.x*b.z;
+	result.z = a.x*b.y - a.y*b.x;
+	return result;
+}
+
+inline vector3 unit(vector3 a)
+{
+	float mag = sqrtf(a.x*a.x + a.y*a.y + a.z*a.z);
+	if (mag < 0.001)
+		return vector3(0.0, 0.0, 1.0);
+	a.x /= mag;
+	a.y /= mag;
+	a.z /= mag;
+	return a;
+}
 
 struct vector2
 {
@@ -40,7 +78,7 @@ GLuint GetTexture ( const std::string& path )
 	SDL_Surface* surface = ImageLoader::LoadImage(path);
 	if (!surface)
 		return NULL;
-	return ImageLoader::CreateTexture(surface, true);
+	return ImageLoader::CreateTexture(surface, true, false);
 }
 
 void StripComments ( std::string& line )
@@ -108,16 +146,30 @@ float StringToFloat ( const std::string& string )
 
 unsigned int StringToInt ( const std::string& string )
 {
+	if (string.empty())
+		return 0;
 	return atoi(string.c_str());
 }
+
+struct faceTriple
+{
+	int vertices[3];
+	int texes[3];
+	int norms[3];
+};
 
 }
 
 void Object3D::LoadObject ( const std::string& name )
 {
+	assert(sizeof(vector2) == 2*sizeof(float));
+	assert(sizeof(vector3) == 3*sizeof(float));
 	std::vector<vector3> fileVertices, faceVertices;
-	std::vector<vector3> fileNormals, faceNormals;
 	std::vector<vector2> fileTexCoords, faceTexCoords;
+	std::vector<vector3> fileNormals, faceNormals;
+	std::vector<vector3> faceTangents;
+	std::vector<faceTriple> faceTriples;
+	bool normalGen = true;
 	SDL_RWops* objFile = ResourceManager::OpenFile("Objects/" + name + ".obj");
 	assert(objFile);
 	// fill vertices, tex coords, and faces
@@ -132,56 +184,154 @@ void Object3D::LoadObject ( const std::string& name )
 			float z = StringToFloat(PopWord(line));
 			fileVertices.push_back(vector3(x, y, z));
 		}
-		else if (type == "vn")
-		{
-			float x = StringToFloat(PopWord(line));
-			float y = StringToFloat(PopWord(line));
-			float z = StringToFloat(PopWord(line));
-			fileNormals.push_back(vector3(x, y, z));
-		}
 		else if (type == "vt")
 		{
 			float x = StringToFloat(PopWord(line));
 			float y = StringToFloat(PopWord(line));
 			fileTexCoords.push_back(vector2(x, y));
 		}
+		else if (type == "vn")
+		{
+			float x = StringToFloat(PopWord(line));
+			float y = StringToFloat(PopWord(line));
+			float z = StringToFloat(PopWord(line));
+			fileNormals.push_back(vector3(x, y, z));
+			normalGen = false;
+		}
 		else if (type == "f")
 		{
-			std::string firstVertex  = PopWord(line);
-			std::string secondVertex = PopWord(line);
-			std::string thirdVertex  = PopWord(line);
-			unsigned int vtx, tex, norm;
-			vtx  = StringToInt(PopWord(firstVertex, '/'));
-			tex  = StringToInt(PopWord(firstVertex, '/'));
-			norm = StringToInt(PopWord(firstVertex, '/'));
-			faceVertices.push_back(fileVertices[vtx]);
-			faceTexCoords.push_back(fileTexCoords[tex]);
-			faceNormals.push_back(fileNormals[norm]);
-			vtx  = StringToInt(PopWord(secondVertex, '/'));
-			tex  = StringToInt(PopWord(secondVertex, '/'));
-			norm = StringToInt(PopWord(secondVertex, '/'));
-			faceVertices.push_back(fileVertices[vtx]);
-			faceTexCoords.push_back(fileTexCoords[tex]);
-			faceNormals.push_back(fileNormals[norm]);
-			vtx  = StringToInt(PopWord(thirdVertex, '/'));
-			tex  = StringToInt(PopWord(thirdVertex, '/'));
-			norm = StringToInt(PopWord(thirdVertex, '/'));
-			faceVertices.push_back(fileVertices[vtx]);
-			faceTexCoords.push_back(fileTexCoords[tex]);
-			faceNormals.push_back(fileNormals[norm]);
+			std::string lines[4];
+			lines[0] = PopWord(line);
+			lines[1] = PopWord(line);
+			lines[2] = PopWord(line);
+			lines[3] = PopWord(line);
+			unsigned int vertices[4];
+			unsigned int texes[4];
+			unsigned int norms[4];
+			bool quad = lines[3] != "";
+			vertices[0] = StringToInt(PopWord(lines[0], '/')) - 1;
+			vertices[1] = StringToInt(PopWord(lines[1], '/')) - 1;
+			vertices[2] = StringToInt(PopWord(lines[2], '/')) - 1;
+			if (quad)
+				vertices[3] = StringToInt(PopWord(lines[3], '/')) - 1;
+			texes[0] = StringToInt(PopWord(lines[0], '/')) - 1;
+			texes[1] = StringToInt(PopWord(lines[1], '/')) - 1;
+			texes[2] = StringToInt(PopWord(lines[2], '/')) - 1;
+			if (quad)
+				texes[3] = StringToInt(PopWord(lines[3], '/'));
+			norms[0] = StringToInt(PopWord(lines[0], '/')) - 1;
+			norms[1] = StringToInt(PopWord(lines[1], '/')) - 1;
+			norms[2] = StringToInt(PopWord(lines[2], '/')) - 1;
+			if (quad)
+				norms[3] = StringToInt(PopWord(lines[3], '/'));
+			faceTriple triple;
+			triple.vertices[0] = vertices[0];
+			triple.vertices[1] = vertices[1];
+			triple.vertices[2] = vertices[2];
+			triple.texes[0] = texes[0];
+			triple.texes[1] = texes[1];
+			triple.texes[2] = texes[2];
+			triple.norms[0] = norms[0];
+			triple.norms[1] = norms[1];
+			triple.norms[2] = norms[2];
+			faceTriples.push_back(triple);
+			if (quad)
+			{
+				triple.vertices[1] = vertices[2];
+				triple.vertices[2] = vertices[3];
+				triple.texes[1] = texes[2];
+				triple.texes[2] = texes[3];
+				triple.norms[1] = norms[2];
+				triple.norms[2] = norms[3];
+				faceTriples.push_back(triple);
+			}
 		}
 	}
-	glGenBuffers(1, &vertexVBO);
-	glGenBuffers(1, &texVBO);
-	glGenBuffers(1, &normalsVBO);
-	glBindBuffer(GL_ARRAY_BUFFER, vertexVBO);
-	glBufferData(GL_ARRAY_BUFFER, faceVertices.size() * sizeof(vector3), &(faceVertices.front()), GL_STATIC_DRAW);
-	glBindBuffer(GL_ARRAY_BUFFER, normalsVBO);
-	glBufferData(GL_ARRAY_BUFFER, faceNormals.size() * sizeof(vector3), &(faceNormals.front()), GL_STATIC_DRAW);
-	glBindBuffer(GL_ARRAY_BUFFER, texVBO);
-	glBufferData(GL_ARRAY_BUFFER, faceTexCoords.size() * sizeof(vector2), &(faceTexCoords.front()), GL_STATIC_DRAW);
-	glBindBuffer(GL_ARRAY_BUFFER, 0);
+	for (std::vector<faceTriple>::iterator iter = faceTriples.begin();
+										   iter != faceTriples.end();
+										   ++iter)
+	{
+		unsigned int vtx, tex, norm;
+		float u[3];
+		vector3 vertices[3];
+		vtx  = iter->vertices[0];
+		tex  = iter->texes[0];
+		norm = iter->norms[0];
+		vertices[0] = fileVertices[vtx];
+		u[0] = fileTexCoords[tex].x;
+		faceVertices.push_back(fileVertices[vtx]);
+		faceTexCoords.push_back(fileTexCoords[tex]);
+		if (!normalGen)
+			faceNormals.push_back(fileNormals[norm]);
+		vtx  = iter->vertices[1];
+		tex  = iter->texes[1];
+		norm = iter->norms[1];
+		vertices[1] = fileVertices[vtx];
+		u[1] = fileTexCoords[tex].x;
+		faceVertices.push_back(fileVertices[vtx]);
+		faceTexCoords.push_back(fileTexCoords[tex]);
+		if (!normalGen)
+			faceNormals.push_back(fileNormals[norm]);
+		vtx  = iter->vertices[2];
+		tex  = iter->texes[2];
+		norm = iter->norms[2];
+		vertices[2] = fileVertices[vtx];
+		u[2] = fileTexCoords[tex].x;
+		faceVertices.push_back(fileVertices[vtx]);
+		faceTexCoords.push_back(fileTexCoords[tex]);
+		if (!normalGen)
+			faceNormals.push_back(fileNormals[norm]);
+		// generate normals and tangents
+		assert(!(vertices[1] == vertices[0]));
+		assert(!(vertices[2] == vertices[0]));
+		assert(!(vertices[2] == vertices[1]));
+		vector3 AB = vertices[1] - vertices[0];
+		vector3 AC = vertices[2] - vertices[0];
+		vector3 normal = unit(cross(AB, AC));
+		vector3 tangent;
+		if (u[0] >= u[1] && u[1] >= u[2])
+			tangent = AB;
+		else if (u[0] < u[1] && u[1] < u[2])
+			tangent = -AB;
+		else if (u[0] >= u[1] && u[1] < u[2])
+			tangent = AC;
+		else if (u[0] < u[1] && u[1] >= u[2])
+			tangent = -AC;
+		tangent = unit(tangent);
+		if (normalGen)
+		{
+			faceNormals.push_back(normal);
+			faceNormals.push_back(normal);
+			faceNormals.push_back(normal);
+		}
+		faceTangents.push_back(tangent);
+		faceTangents.push_back(tangent);
+		faceTangents.push_back(tangent);
+	}
+	GLuint bufs[4];
+	glGenBuffers(4, bufs);
+	vertexVBO  = bufs[0];
+	texVBO     = bufs[1];
+	normalsVBO = bufs[2];
+	tangentVBO = bufs[3];
 	nverts = faceVertices.size();
+	//printf("Read %d vertices = %d triangles\n", nverts, nverts / 3);
+	assert(faceVertices.size() == faceNormals.size());
+	assert(faceVertices.size() == faceTexCoords.size());
+	assert(faceVertices.size() == faceTangents.size());
+	vector3* vtxPtr  = (vector3*)&(faceVertices.front());
+	vector3* normPtr = (vector3*)&(faceNormals.front());
+	vector2* texPtr  = (vector2*)&(faceTexCoords.front());
+	vector3* tgtPtr  = (vector3*)&(faceTangents.front());
+	glBindBuffer(GL_ARRAY_BUFFER, vertexVBO);
+	glBufferData(GL_ARRAY_BUFFER, nverts * sizeof(vector3), vtxPtr, GL_STATIC_DRAW);
+	glBindBuffer(GL_ARRAY_BUFFER, normalsVBO);
+	glBufferData(GL_ARRAY_BUFFER, nverts * sizeof(vector3), normPtr, GL_STATIC_DRAW);
+	glBindBuffer(GL_ARRAY_BUFFER, texVBO);
+	glBufferData(GL_ARRAY_BUFFER, nverts * sizeof(vector2), texPtr, GL_STATIC_DRAW);
+	glBindBuffer(GL_ARRAY_BUFFER, tangentVBO);
+	glBufferData(GL_ARRAY_BUFFER, nverts * sizeof(vector3), tgtPtr, GL_STATIC_DRAW);
+	glBindBuffer(GL_ARRAY_BUFFER, 0);
 	SDL_RWclose(objFile);
 }
 
@@ -191,23 +341,35 @@ void Object3D::LoadTexture ( const std::string& name )
 	assert(texture);
 }
 
+void Object3D::LoadSpecTexture(const std::string& name)
+{
+	specTexture = GetTexture("Textures/" + name + "_spec.png");
+	assert(specTexture);
+}
+
 Object3D::Object3D ( const std::string& name )
 {
 	// load the texture
 	LoadTexture(name);
+	LoadSpecTexture(name);
 	LoadObject(name);
 }
 
 Object3D::~Object3D ()
 {
 	glDeleteTextures(1, &texture);
+	glDeleteTextures(1, &specTexture);
 	glDeleteBuffers(1, &vertexVBO);
 	glDeleteBuffers(1, &texVBO);
 	glDeleteBuffers(1, &normalsVBO);
+	glDeleteBuffers(1, &tangentVBO);
 }
 
 void Object3D::BindTextures ()
 {
+	glActiveTexture(GL_TEXTURE1);
+	glBindTexture(GL_TEXTURE_2D, specTexture);
+	glActiveTexture(GL_TEXTURE0);
 	glBindTexture(GL_TEXTURE_2D, texture);
 }
 
@@ -218,8 +380,13 @@ void Object3D::Draw ( float scale, float angle, float bank )
 	transformation *= matrix2x3::Scale(scale);
 	transformation *= matrix2x3::Rotation(angle);
 	Matrices::SetModelMatrix(transformation);
-	glPushMatrix(GL_MODELVIEW_MATRIX);
-	glRotatef(bank, 1.0f, 0.0f, 0.0f);
+	glEnable(GL_DEPTH_TEST);
+	//glEnable(GL_CULL_FACE);
+	glDepthMask(GL_TRUE);
+	glPushMatrix();
+	glEnableClientState(GL_NORMAL_ARRAY);
+	glRotatef(bank, 1.0f, 1.0f, 1.0f);
+	//glRotatef(90.0f, 1.0f, 0.0f, 0.0f);
 	// bind the VBOs
 	glBindBuffer(GL_ARRAY_BUFFER, vertexVBO);
 	glVertexPointer(3, GL_FLOAT, 0, NULL);
@@ -228,9 +395,13 @@ void Object3D::Draw ( float scale, float angle, float bank )
 	glBindBuffer(GL_ARRAY_BUFFER, texVBO);
 	glTexCoordPointer(2, GL_FLOAT, 0, NULL);
 	// draw all the faces
-	glDrawArrays(GL_TRIANGLES, 0, nverts);
 	glBindBuffer(GL_ARRAY_BUFFER, 0);
+	glDrawArrays(GL_TRIANGLES, 0, nverts);
+	glDisableClientState(GL_NORMAL_ARRAY);
 	glPopMatrix();
+	glDepthMask(GL_FALSE);
+	glDisable(GL_DEPTH_TEST);
+	glDisable(GL_CULL_FACE);
 }
 
 }

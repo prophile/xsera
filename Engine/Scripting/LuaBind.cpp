@@ -960,11 +960,10 @@ int GFX_DrawObject3DAmbient ( lua_State* L )
 {
 	std::string object = luaL_checkstring(L, 1);
 	vec2 location = luaL_checkvec2(L, 2);
-	colour col = LoadColour(L, 3);
-	float scale = luaL_checknumber(L, 4);
-	float angle = luaL_checknumber(L, 5);
-	float bank = luaL_optnumber(L, 6, 0.0);
-	Graphics::DrawObject3DAmbient(object, location, col, scale, angle, bank);
+	float scale = luaL_checknumber(L, 3);
+	float angle = luaL_checknumber(L, 4);
+	float bank = luaL_optnumber(L, 5, 0.0);
+	Graphics::DrawObject3DAmbient(object, location, scale, angle, bank);
 	return 0;
 }
 

@@ -60,4 +60,5 @@ void main()
 	}
 #endif
 	gl_FragColor = vec4(light * sample, 1.0);
+	//gl_FragColor = vec4(tnorm, 1.0);
 }

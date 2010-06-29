@@ -99,6 +99,8 @@ function key ( k )
 			mode_manager.switch("../Tests/PhysicsTest")
 		elseif k == "8" then
 			mode_manager.switch("../Tests/Bits")
+		elseif k == "9" then
+			mode_manager.switch("../Tests/3DTest")
 		end
 	end
 	
