@@ -198,7 +198,7 @@ void Object3D::LoadObject ( const std::string& name )
 			fileNormals.push_back(vector3(x, y, z));
 			normalGen = false;
 		}
-		else if (type == "f")
+		else if (type == "f" || type == "fo")
 		{
 			std::string lines[4];
 			lines[0] = PopWord(line);
@@ -209,21 +209,21 @@ void Object3D::LoadObject ( const std::string& name )
 			unsigned int texes[4];
 			unsigned int norms[4];
 			bool quad = lines[3] != "";
-			vertices[0] = StringToInt(PopWord(lines[0], '/')) - 1;
-			vertices[1] = StringToInt(PopWord(lines[1], '/')) - 1;
-			vertices[2] = StringToInt(PopWord(lines[2], '/')) - 1;
+			vertices[0] = StringToInt(PopWord(lines[0], '/'));
+			vertices[1] = StringToInt(PopWord(lines[1], '/'));
+			vertices[2] = StringToInt(PopWord(lines[2], '/'));
 			if (quad)
-				vertices[3] = StringToInt(PopWord(lines[3], '/')) - 1;
-			texes[0] = StringToInt(PopWord(lines[0], '/')) - 1;
-			texes[1] = StringToInt(PopWord(lines[1], '/')) - 1;
-			texes[2] = StringToInt(PopWord(lines[2], '/')) - 1;
+				vertices[3] = StringToInt(PopWord(lines[3], '/'));
+			texes[0] = StringToInt(PopWord(lines[0], '/'));
+			texes[1] = StringToInt(PopWord(lines[1], '/'));
+			texes[2] = StringToInt(PopWord(lines[2], '/'));
 			if (quad)
-				texes[3] = StringToInt(PopWord(lines[3], '/')) - 1;
-			norms[0] = StringToInt(PopWord(lines[0], '/')) - 1;
-			norms[1] = StringToInt(PopWord(lines[1], '/')) - 1;
-			norms[2] = StringToInt(PopWord(lines[2], '/')) - 1;
+				texes[3] = StringToInt(PopWord(lines[3], '/'));
+			norms[0] = StringToInt(PopWord(lines[0], '/'));
+			norms[1] = StringToInt(PopWord(lines[1], '/'));
+			norms[2] = StringToInt(PopWord(lines[2], '/'));
 			if (quad)
-				norms[3] = StringToInt(PopWord(lines[3], '/')) - 1;
+				norms[3] = StringToInt(PopWord(lines[3], '/'));
 			faceTriple triple;
 			triple.vertices[0] = vertices[0];
 			triple.vertices[1] = vertices[1];
@@ -254,27 +254,27 @@ void Object3D::LoadObject ( const std::string& name )
 		unsigned int vtx, tex, norm;
 		float u[3];
 		vector3 vertices[3];
-		vtx  = iter->vertices[0];
-		tex  = iter->texes[0];
-		norm = iter->norms[0];
+		vtx  = iter->vertices[0] - 1;
+		tex  = iter->texes[0] ? iter->texes[0] - 1 : iter->vertices[0] - 1;
+		norm = iter->norms[0] - 1;
 		vertices[0] = fileVertices[vtx];
 		u[0] = fileTexCoords[tex].x;
 		faceVertices.push_back(fileVertices[vtx]);
 		faceTexCoords.push_back(fileTexCoords[tex]);
 		if (!normalGen)
 			faceNormals.push_back(fileNormals[norm]);
-		vtx  = iter->vertices[1];
-		tex  = iter->texes[1];
-		norm = iter->norms[1];
+		vtx  = iter->vertices[1] - 1;
+		tex  = iter->texes[1] ? iter->texes[1] - 1 : iter->vertices[1] - 1;
+		norm = iter->norms[1] - 1;
 		vertices[1] = fileVertices[vtx];
 		u[1] = fileTexCoords[tex].x;
 		faceVertices.push_back(fileVertices[vtx]);
 		faceTexCoords.push_back(fileTexCoords[tex]);
 		if (!normalGen)
 			faceNormals.push_back(fileNormals[norm]);
-		vtx  = iter->vertices[2];
-		tex  = iter->texes[2];
-		norm = iter->norms[2];
+		vtx  = iter->vertices[2] - 1;
+		tex  = iter->texes[2] ? iter->texes[2] - 1 : iter->vertices[2] - 1;
+		norm = iter->norms[2] - 1;
 		vertices[2] = fileVertices[vtx];
 		u[2] = fileTexCoords[tex].x;
 		faceVertices.push_back(fileVertices[vtx]);
