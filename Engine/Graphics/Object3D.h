@@ -23,15 +23,15 @@ private:
 	GLuint vertexVBO;
 	GLuint normalsVBO;
 	GLuint texVBO;
+	GLuint tangentVBO;
 	GLuint texture;
+	float offX, offY, intScale;
 	unsigned int nverts;
-	void LoadObject ( const std::string& name );
-	void LoadTexture ( const std::string& name );
+	void LoadObject(const std::string& name);
+	void LoadTexture(const std::string& name);
 public:
 	Object3D ( const std::string& name );
 	~Object3D ();
-	
-	std::string ShaderType () { return "D"; }
 	
 	void BindTextures ();
 	void Draw ( float scale, float angle, float bank = 0.0f );

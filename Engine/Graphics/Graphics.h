@@ -160,7 +160,7 @@ void AddParticles ( const std::string& name, unsigned long particleCount, vec2 c
  * @param angle The angle of the object
  * @param bank The bank of the object
  */
-void DrawObject3DAmbient ( std::string name, vec2 centre, colour ambient, float scale, float angle, float bank = 0.0f );
+void DrawObject3DAmbient ( std::string name, vec2 centre, float scale, float angle, float bank = 0.0f );
 /**
  * Draws a 3D object for directional lighting
  * @param centre The centre of the object

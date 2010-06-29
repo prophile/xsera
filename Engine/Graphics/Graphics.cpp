@@ -197,7 +197,7 @@ void Init ( int w, int h, bool fullscreen )
 	SDL_GL_SetAttribute ( SDL_GL_GREEN_SIZE, 8 );
 	SDL_GL_SetAttribute ( SDL_GL_ALPHA_SIZE, 0 );
 	SDL_GL_SetAttribute ( SDL_GL_DOUBLEBUFFER, 1 );
-	SDL_GL_SetAttribute ( SDL_GL_DEPTH_SIZE, 0 );
+	SDL_GL_SetAttribute ( SDL_GL_DEPTH_SIZE, 24 );
 	SDL_GL_SetAttribute ( SDL_GL_MULTISAMPLESAMPLES, 4 );
 	SDL_GL_SetAttribute ( SDL_GL_MULTISAMPLEBUFFERS, 1 );
 	SDL_GL_SetAttribute ( SDL_GL_SWAP_CONTROL, 1 );
@@ -226,10 +226,16 @@ void Init ( int w, int h, bool fullscreen )
 	scw = w;
 	sch = h;
 	
-	glClear ( GL_COLOR_BUFFER_BIT );
-	
+	glClear ( GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT );
+
+	glDepthMask(GL_FALSE);
+
 	glEnable ( GL_BLEND );
 	glBlendFunc ( GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA );
+
+	glClearDepth(1.0);
+	glDepthFunc(GL_LESS);
+	glCullFace(GL_CCW);
 	
 //	glEnable ( GL_LINE_SMOOTH );
 	glEnable ( GL_POINT_SMOOTH );
@@ -754,14 +760,15 @@ static Object3D* GetObject3D ( std::string name )
 	}
 }
 
-void DrawObject3DAmbient ( std::string name, vec2 centre, colour ambient, float scale, float angle, float bank )
+void DrawObject3DAmbient ( std::string name, vec2 centre, float scale, float angle, float bank )
 {
 	Object3D* obj = GetObject3D(name);
 	EnableTexturing();
 	DisableBlending();
 	obj->BindTextures();
-	glUniform3f(UniformLocation("Ambient"), ambient.red(), ambient.green(), ambient.blue());
-	SetShader("3DAmbient" + obj->ShaderType());
+	//glUniform3f(UniformLocation("Ambient"), ambient.red(), ambient.green(), ambient.blue());
+	SetShader("3DBase");
+	glUniform1i(UniformLocation("tex"), 0);
 	Matrices::SetViewMatrix(matrix2x3::Translate(centre));
 	obj->Draw(scale, angle, bank);
 }
@@ -833,7 +840,9 @@ void SetCamera ( vec2 corner1, vec2 corner2, float rotation )
 
 void BeginFrame ()
 {
-	glClear(GL_COLOR_BUFFER_BIT);
+	glDepthMask(GL_TRUE);
+	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+	glDepthMask(GL_FALSE);
 	Matrices::SetViewMatrix(matrix2x3::Identity());
 	Matrices::SetModelMatrix(matrix2x3::Identity());
 	starfieldNumber = 1;
