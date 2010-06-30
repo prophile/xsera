@@ -350,7 +350,7 @@ void Object3D::LoadTexture(const std::string& name)
 }
 
 Object3D::Object3D ( const std::string& name )
-: offX(-0.5f), offY(-0.5f), intScale(1.0f)
+: offX(-0.5f), offY(-0.5f), intScale(1.0f), shininess(11.0f), specScale(1.2f)
 {
 	// load the texture
 	LoadTexture(name);

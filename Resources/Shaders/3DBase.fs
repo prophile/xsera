@@ -1,7 +1,7 @@
 uniform sampler2D tex;
 
-const float SHININESS = 11.0;
-const float SPECSCALE = 2.0;
+uniform float shininess;
+uniform float specularScale;
 
 const float C1 = 0.429043;
 const float C2 = 0.511664;
@@ -50,8 +50,8 @@ void main()
     if (NdL > 0.0)
     {
         float NdotHV = max(dot(tnorm, HalfDir), 0.0);
-        float powf = pow(NdotHV, SHININESS);
-        light += SPECSCALE * powf * LightCol * specSample;
+        float powf = pow(NdotHV, shininess);
+        light += specularScale * powf * LightCol * specSample;
     }
     gl_FragColor = vec4(light * sample, 1.0);
     //gl_FragColor = vec4(tnorm, 1.0);

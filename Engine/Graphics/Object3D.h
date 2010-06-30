@@ -26,6 +26,7 @@ private:
 	GLuint tangentVBO;
 	GLuint texture;
 	float offX, offY, intScale;
+	float shininess, specScale;
 	unsigned int nverts;
 	void LoadObject(const std::string& name);
 	void LoadTexture(const std::string& name);
@@ -35,6 +36,8 @@ public:
 	
 	void BindTextures ();
 	void Draw ( float scale, float angle, float bank = 0.0f );
+	float Shininess() const { return shininess; }
+	float SpecularScale() const { return specScale; }
 };
 
 }
