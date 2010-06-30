@@ -48,7 +48,6 @@
 		496A27A20F0EC9D800C53BA1 /* lundump.h in Headers */ = {isa = PBXBuildFile; fileRef = 496A24470F0EB35E00C53BA1 /* lundump.h */; };
 		496A27A30F0EC9D800C53BA1 /* lvm.h in Headers */ = {isa = PBXBuildFile; fileRef = 496A24490F0EB35E00C53BA1 /* lvm.h */; };
 		496A27A40F0EC9D800C53BA1 /* lzio.h in Headers */ = {isa = PBXBuildFile; fileRef = 496A244B0F0EB35E00C53BA1 /* lzio.h */; };
-		496A27A50F0EC9D800C53BA1 /* neural-network.h in Headers */ = {isa = PBXBuildFile; fileRef = 496A244F0F0EB35E00C53BA1 /* neural-network.h */; };
 		496A27A60F0EC9D800C53BA1 /* tinyxml.h in Headers */ = {isa = PBXBuildFile; fileRef = 496A24520F0EB35E00C53BA1 /* tinyxml.h */; };
 		496A27A70F0EC9D800C53BA1 /* Graphics.h in Headers */ = {isa = PBXBuildFile; fileRef = 496A24A30F0EB37900C53BA1 /* Graphics.h */; };
 		496A27A80F0EC9D800C53BA1 /* SpriteSheet.h in Headers */ = {isa = PBXBuildFile; fileRef = 496A24A50F0EB37900C53BA1 /* SpriteSheet.h */; };
@@ -105,7 +104,6 @@
 		496A27DE0F0EC9EE00C53BA1 /* lvm.c in Sources */ = {isa = PBXBuildFile; fileRef = 496A24480F0EB35E00C53BA1 /* lvm.c */; };
 		496A27DF0F0EC9EE00C53BA1 /* lzio.c in Sources */ = {isa = PBXBuildFile; fileRef = 496A244A0F0EB35E00C53BA1 /* lzio.c */; };
 		496A27E00F0EC9EE00C53BA1 /* print.c in Sources */ = {isa = PBXBuildFile; fileRef = 496A244C0F0EB35E00C53BA1 /* print.c */; };
-		496A27E10F0EC9EE00C53BA1 /* neural-network.c in Sources */ = {isa = PBXBuildFile; fileRef = 496A244E0F0EB35E00C53BA1 /* neural-network.c */; };
 		496A27E20F0EC9EE00C53BA1 /* tinyxml.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 496A24510F0EB35E00C53BA1 /* tinyxml.cpp */; };
 		496A27E30F0EC9EE00C53BA1 /* tinyxmlerror.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 496A24530F0EB35E00C53BA1 /* tinyxmlerror.cpp */; };
 		496A27E40F0EC9EE00C53BA1 /* tinyxmlparser.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 496A24540F0EB35E00C53BA1 /* tinyxmlparser.cpp */; };
@@ -258,8 +256,6 @@
 		496A244A0F0EB35E00C53BA1 /* lzio.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = lzio.c; sourceTree = "<group>"; };
 		496A244B0F0EB35E00C53BA1 /* lzio.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lzio.h; sourceTree = "<group>"; };
 		496A244C0F0EB35E00C53BA1 /* print.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = print.c; sourceTree = "<group>"; };
-		496A244E0F0EB35E00C53BA1 /* neural-network.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "neural-network.c"; sourceTree = "<group>"; };
-		496A244F0F0EB35E00C53BA1 /* neural-network.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "neural-network.h"; sourceTree = "<group>"; };
 		496A24510F0EB35E00C53BA1 /* tinyxml.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = tinyxml.cpp; sourceTree = "<group>"; };
 		496A24520F0EB35E00C53BA1 /* tinyxml.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tinyxml.h; sourceTree = "<group>"; };
 		496A24530F0EB35E00C53BA1 /* tinyxmlerror.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = tinyxmlerror.cpp; sourceTree = "<group>"; };
@@ -410,7 +406,6 @@
 				493223CE0F23BB360048495A /* SDLMain.m */,
 				496A24040F0EB35E00C53BA1 /* eNet */,
 				496A24170F0EB35E00C53BA1 /* Lua */,
-				496A244D0F0EB35E00C53BA1 /* NeuralNetwork */,
 				496A24500F0EB35E00C53BA1 /* TinyXML */,
 			);
 			name = External;
@@ -508,15 +503,6 @@
 				D221494011652EA4009575A0 /* bit.c */,
 			);
 			path = Lua;
-			sourceTree = "<group>";
-		};
-		496A244D0F0EB35E00C53BA1 /* NeuralNetwork */ = {
-			isa = PBXGroup;
-			children = (
-				496A244E0F0EB35E00C53BA1 /* neural-network.c */,
-				496A244F0F0EB35E00C53BA1 /* neural-network.h */,
-			);
-			path = NeuralNetwork;
 			sourceTree = "<group>";
 		};
 		496A24500F0EB35E00C53BA1 /* TinyXML */ = {
@@ -712,7 +698,6 @@
 				496A27A20F0EC9D800C53BA1 /* lundump.h in Headers */,
 				496A27A30F0EC9D800C53BA1 /* lvm.h in Headers */,
 				496A27A40F0EC9D800C53BA1 /* lzio.h in Headers */,
-				496A27A50F0EC9D800C53BA1 /* neural-network.h in Headers */,
 				496A27A60F0EC9D800C53BA1 /* tinyxml.h in Headers */,
 				496A27A70F0EC9D800C53BA1 /* Graphics.h in Headers */,
 				496A27A80F0EC9D800C53BA1 /* SpriteSheet.h in Headers */,
@@ -838,7 +823,6 @@
 				496A27DE0F0EC9EE00C53BA1 /* lvm.c in Sources */,
 				496A27DF0F0EC9EE00C53BA1 /* lzio.c in Sources */,
 				496A27E00F0EC9EE00C53BA1 /* print.c in Sources */,
-				496A27E10F0EC9EE00C53BA1 /* neural-network.c in Sources */,
 				496A27E20F0EC9EE00C53BA1 /* tinyxml.cpp in Sources */,
 				496A27E30F0EC9EE00C53BA1 /* tinyxmlerror.cpp in Sources */,
 				496A27E40F0EC9EE00C53BA1 /* tinyxmlparser.cpp in Sources */,
