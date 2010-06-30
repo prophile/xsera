@@ -581,6 +581,7 @@ local realPos = { x, y }
 
 function DrawMouse1()
 	mousePos = GetMouseCoords()
+	if mouse_still_time() > 2.0 then return end
 	
 	if hypot2(mousePos, oldMousePos) > 0 then
 		mouseStart = mode_manager.time()
