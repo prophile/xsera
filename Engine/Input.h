@@ -64,6 +64,10 @@ Event* Next ();
  * Fetches the position of the mouse
  */
 vec2 MousePosition ();
+/**
+ * Time since the last movement of the mouse.
+ */
+float MouseStillTime ();
 
 }
 
