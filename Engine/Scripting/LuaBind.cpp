@@ -1614,6 +1614,13 @@ int luaopen_component ( lua_State* L )
 	return 1;
 }
 
+int mouse_still_time ( lua_State* L )
+{
+	float stillTime = Input::MouseStillTime();
+	lua_pushnumber(L, stillTime);
+	return 1;
+}
+
 int mouse_position ( lua_State* L )
 {
 	vec2 mouse = Input::MousePosition();
@@ -1676,6 +1683,8 @@ void __LuaBind ( lua_State* L )
 	lua_setglobal(L, "import");
 	lua_pushcfunction(L, mouse_position);
 	lua_setglobal(L, "mouse_position");
+	lua_pushcfunction(L, mouse_still_time);
+	lua_setglobal(L, "mouse_still_time");
 	lua_pushcfunction(L, VEC_new);
 	lua_setglobal(L, "vec");
 	lua_cpcall(L, luaopen_component, NULL);
