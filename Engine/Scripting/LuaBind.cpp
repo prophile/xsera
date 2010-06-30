@@ -1688,10 +1688,6 @@ void __LuaBind ( lua_State* L )
 {
 	lua_pushcfunction(L, import);
 	lua_setglobal(L, "import");
-	lua_pushcfunction(L, IN_Position);
-	lua_setglobal(L, "mouse_position");
-	lua_pushcfunction(L, IN_StillTime);
-	lua_setglobal(L, "mouse_still_time");
 	lua_pushcfunction(L, VEC_new);
 	lua_setglobal(L, "vec");
 	lua_cpcall(L, luaopen_component, NULL);
