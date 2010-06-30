@@ -79,7 +79,7 @@ function update()
 	-- mouse button handling
 	if mup then
 		mup = false
-		mousePos = mouse_position()
+		mousePos = input.mouse_position()
 		mousePos.x = mousePos.x * 480 * aspectRatio - 240 * aspectRatio
 		mousePos.y = mousePos.y * 480 - 240
 		ChangeSpecialByLoc(mousePos, nil, background)
@@ -89,7 +89,7 @@ function update()
 		-- up a dialogue to tell the user to press the new key for that function
 		ChangeSpecialByLoc(mousePos, nil, currPanel)
 	elseif mdown then
-		mousePos = mouse_position()
+		mousePos = input.mouse_position()
 		mousePos.x = mousePos.x * 480 * aspectRatio - 240 * aspectRatio
 		mousePos.y = mousePos.y * 480 - 240
 		ChangeSpecialByLoc(mousePos, "click", background)
