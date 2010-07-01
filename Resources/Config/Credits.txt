@@ -8,23 +8,23 @@ Based on "Ares" by Nathan Lamont
 Copyright 1997-2001, 2008
 
 *Programmers
-Adam "adam_0" Hintz
-Alistair "prophile" Lynn
-Scott "GameFreak" McClaugherty
-Andrew "LANS" Moscoe
+Adam Hintz
+Alistair Lynn
+Scott McClaugherty
+Andrew Moscoe
 
 *Ares Data Extractor
-Chris "Sfiera" Pickel
+Chris Pickel
 
 *Coordinator
-Nick "nfreader" Farley
+Nick Farley
 
 *Contact to Mr. Lamont
-Steven "RedSteven" Edwards
+Steven Edwards
 
 *Sound
 Modified sounds created by:
-Taylor "Rickton" Vaughan
+Taylor Vaughan
 All original sounds copyright Nathan Lamont
 See Read Me for more information
 
