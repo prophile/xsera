@@ -123,8 +123,10 @@ void SetShader ( const std::string& name )
 		size_t len;
 		char* buffer = (char*)ResourceManager::ReadFull(&len, vertexOps, 1);
 		std::string vertex ( buffer, len );
+		free(buffer);
 		buffer = (char*)ResourceManager::ReadFull(&len, fragmentOps, 1);
 		std::string fragment ( buffer, len );
+		free(buffer);
 		AddShader(name, vertex, fragment);
 		// call self
 		SetShader(name);
