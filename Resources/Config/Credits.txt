@@ -34,6 +34,8 @@ Graphics overhaul:
 All original graphics copyright Nathan Lamont
 See Read Me for more information
 
+	
+
 ,,Copyright (c) 2010 Adam Hintz, Alistair Lynn,
 ,,Scott McClaugherty & Brainpen Productions
 

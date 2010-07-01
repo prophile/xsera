@@ -84,7 +84,7 @@ function CameraFollow(dt, zoomLevel)
 end
 
 function CameraSnap()
---	if cameraChanging == true then
+	if cameraChanging == true then
 		cameraRatio = cameraRatioTarget
 		camera = { w = WINDOW.width / cameraRatio, h }
 		camera.h = camera.w / aspectRatio
@@ -92,8 +92,7 @@ function CameraSnap()
 		arrowLength = ARROW_LENGTH / cameraRatio
 		arrowVar = ARROW_VAR / cameraRatio
 		arrowDist = ARROW_DIST / cameraRatio
---	end
-	cameraSnap = false
+	end
 end
 
 -- Adam's replacement for CameraSnap()

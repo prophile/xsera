@@ -189,9 +189,10 @@ function DoScaleIn(step)
 		cameraChanging = true
 		cameraRatioTarget = newRatio
 		cameraRatioOrig = cameraRatio
-		if(zoomTime == 0) then -- prevents zoom speed from resetting if zoom setting is changed mid-zoom.
+		cameraSnap = false
+		--if(zoomTime == 0) then -- prevents zoom speed from resetting if zoom setting is changed mid-zoom.
 			zoomTime = timeInterval * 1 * (step or 0.5)
-		end
+		--end
 		multiplier = (newRatio - cameraRatioOrig)/cameraRatioOrig
 	end--]]
 	
@@ -226,9 +227,10 @@ function DoScaleOut(step)
 		cameraChanging = true
 		cameraRatioTarget = newRatio
 		cameraRatioOrig = cameraRatio
-		if(zoomTime == 0) then
+		cameraSnap = false
+		--if(zoomTime == 0) then
 			zoomTime = timeInterval * 2 * (step or 0.5)
-		end
+		--end
 		multiplier = (newRatio - cameraRatio)/cameraRatio
 	end--]]
     
