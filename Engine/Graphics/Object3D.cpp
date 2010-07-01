@@ -383,7 +383,7 @@ void Object3D::Draw ( float scale, float angle, float bank )
 	glDepthMask(GL_TRUE);
 	glPushMatrix();
 	glEnableClientState(GL_NORMAL_ARRAY);
-	glRotatef(bank, 1.0f, 1.0f, 1.0f);
+	glRotatef(bank, 0.0f, 1.0f, 0.0f);
 	glScalef(intScale, intScale, intScale);
 	glTranslatef(offX, offY, 0.0f);
 	//glRotatef(90.0f, 1.0f, 0.0f, 0.0f);
