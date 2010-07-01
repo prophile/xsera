@@ -49,6 +49,24 @@ static void PrintLogShader ( GLuint object )
 	putchar('\n');
 }
 
+static void ParseIncludes ( std::string& shader )
+{
+	std::string::size_type pos;
+	while ((pos = shader.find("#pragma import ")) != std::string::npos)
+	{
+		size_t len;
+		pos += strlen("#pragma import ");
+		std::string::size_type endPos = shader.find_first_of('\n', pos);
+		std::string fileName = shader.substr(pos, endPos - pos);
+		SDL_RWops* rwops = ResourceManager::OpenFile("Shaders/" + fileName + ".inc");
+		char* buffer = (char*)ResourceManager::ReadFull(&len, rwops, 1);
+		std::string include ( buffer, len );
+		free(buffer);
+		pos -= strlen("#pragma import ");
+		shader.replace(pos, endPos - pos, include);
+	}
+}
+
 class Shader
 {
 private:
