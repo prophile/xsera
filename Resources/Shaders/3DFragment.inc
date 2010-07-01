@@ -1,5 +1,6 @@
 varying vec2 TX;
 varying vec3 N;
+varying vec3 V;
 
 const vec3 EyeDir   = vec3(0.0, 0.0, 1.0);
 
@@ -12,6 +13,9 @@ vec3 peturbNormal(in vec3 normal, in vec2 texCoords);
 vec2 peturbTexCoords(in vec3 normal, in vec2 texCoords);
 vec3 calculateDiffuseLight(in vec3 normal);
 vec3 calculateSpecularLight(in vec3 normal, in float exponent);
+
+vec3 lightDirection(in vec3 vertex);
+vec3 lightColour(in vec3 vertex);
 
 void main()
 {
