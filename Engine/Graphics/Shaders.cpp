@@ -74,6 +74,10 @@ private:
 public:
 	Shader ( std::string vertexProgram, std::string fragmentProgram )
 	{
+		// preprocess
+		ParseIncludes(vertexProgram);
+		ParseIncludes(fragmentProgram);
+
 		// compile the vertex shader
 		const char* source = vertexProgram.data();
 		GLint len = vertexProgram.length();
