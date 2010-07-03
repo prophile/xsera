@@ -245,6 +245,15 @@ void Init ( int w, int h, bool fullscreen )
 #ifdef __MACH__
     glHint ( GL_TRANSFORM_HINT_APPLE, GL_FASTEST );
 #endif
+
+	const GLfloat projectionMatrix[] = { 1.0f, 0.0f, 0.0f, 0.0f,
+	                                     0.0f, 1.0f, 0.0f, 0.0f,
+										 0.0f, 0.0f, 0.001f, 0.0f,
+										 0.0f, 0.0f, -0.5f, 1.0f };
+
+	glMatrixMode(GL_PROJECTION);
+	glLoadMatrixf(projectionMatrix);
+	glMatrixMode(GL_MODELVIEW);
 	
 	glEnableClientState ( GL_VERTEX_ARRAY );
 	
