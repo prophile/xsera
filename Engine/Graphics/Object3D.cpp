@@ -345,7 +345,7 @@ void Object3D::LoadTexture(const std::string& name)
 	assert(res);
 	SDL_FreeSurface(specular);
 	SDL_FreeSurface(diffuse);
-	texture = ImageLoader::CreateTexture(res, true, false);
+	texture = ImageLoader::CreateTexture(res, true, false, true);
 	assert(texture);
 }
 
