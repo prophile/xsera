@@ -374,19 +374,22 @@ void Object3D::BindTextures ()
 void Object3D::Draw ( float scale, float angle, float bank )
 {
 	// set up matrices
-	matrix2x3 transformation;
+	/*matrix2x3 transformation;
 	transformation *= matrix2x3::Scale(scale);
 	transformation *= matrix2x3::Rotation(angle);
-	Matrices::SetModelMatrix(transformation);
+	Matrices::SetModelMatrix(transformation);*/
+	Matrices::SetModelMatrix(matrix2x3::Identity());
 	glEnable(GL_DEPTH_TEST);
 	//glEnable(GL_CULL_FACE);
 	glDepthMask(GL_TRUE);
 	glPushMatrix();
 	glEnableClientState(GL_NORMAL_ARRAY);
+	//glRotatef(30.0f, 0.0f, 1.0f, 0.0f);
+	glScalef(scale, scale, scale);
+	glRotatef(180.0f*(angle/M_PI), 0.0f, 0.0f, 1.0f);
 	glRotatef(bank, 0.0f, 1.0f, 0.0f);
 	glScalef(intScale, intScale, intScale);
 	glTranslatef(offX, offY, 0.0f);
-	//glRotatef(90.0f, 1.0f, 0.0f, 0.0f);
 	// bind the VBOs
 	glBindBuffer(GL_ARRAY_BUFFER, vertexVBO);
 	glVertexPointer(3, GL_FLOAT, 0, NULL);
