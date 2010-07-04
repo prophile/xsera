@@ -70,6 +70,9 @@ void Init(int frequency, int resolution, int sources)
 	//alGenBuffers(2, musicBufs);
 	soundSourceCount = sources;
 	atexit(DieUnpleasantly);
+	alDistanceModel(AL_INVERSE_DISTANCE_CLAMPED);
+	alSpeedOfSound(1400.0);
+	alDopplerFactor(0.7);
 }
 
 static ALuint GetFreeSource()
@@ -89,7 +92,7 @@ void PlaySound(const std::string& name, float gain)
 	ALuint buf    = GetSound(name);
 	ALuint source = GetFreeSource();
 	alSourcei(source, AL_BUFFER, buf);
-	alSourcei(source, AL_SOURCE_RELATIVE, AL_FALSE);
+	alSourcei(source, AL_SOURCE_RELATIVE, AL_TRUE);
 	alSourcef(source, AL_GAIN, gain);
 	alSourcePlay(source);
 }
@@ -100,8 +103,9 @@ void PlaySoundPositional(const std::string& name, vec2 pos, float gain)
 	ALuint buf    = GetSound(name);
 	ALuint source = GetFreeSource();
 	alSourcei(source, AL_BUFFER, buf);
-	alSourcei(source, AL_SOURCE_RELATIVE, AL_TRUE);
+	alSourcei(source, AL_SOURCE_RELATIVE, AL_FALSE);
 	alSourcefv(source, AL_POSITION, fpos);
+	alSourcef(source, AL_REFERENCE_DISTANCE, 50.0);
 	alSourcef(source, AL_GAIN, gain);
 	alSourcePlay(source);
 }
