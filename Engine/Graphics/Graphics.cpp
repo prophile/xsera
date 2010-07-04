@@ -10,6 +10,27 @@
 #include "ParticleSystem.h"
 #include <list>
 
+/*
+
+A QUICK NOTE ON VERTEX ATTRIBUTES
+
+On ATI hardware, you can use any numbers you want. However! On NVidia hardware,
+the built-in attributes will collide with user-specified attributes if you try
+to use both, and hilarity ensues. Here is a table of collisions:
+
+gl_Vertex         0
+gl_Normal         2
+gl_Color          3
+gl_SecondaryColor 4
+gl_FogCoord       5
+gl_MultiTexCoordN 8+N
+
+We don't use gl_Color, gl_SecondaryColor or gl_FogCoord, nor do we use
+gl_MultiTexCoordN where N >= 1. Therefore if we start off custom attributes at
+1, the only gotcha is that we MUST skip 2.
+
+*/
+
 //#define DISABLE_WARP_EFFECTS
 
 #include "Apollo.h"
