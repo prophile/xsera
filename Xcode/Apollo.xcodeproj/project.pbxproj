@@ -130,6 +130,7 @@
 		496A283B0F0EC9F800C53BA1 /* SDL_image.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 496A23F00F0EB31B00C53BA1 /* SDL_image.framework */; };
 		496A283C0F0EC9F800C53BA1 /* SDL_mixer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 496A23F20F0EB31B00C53BA1 /* SDL_mixer.framework */; };
 		496A283D0F0EC9F800C53BA1 /* SDL_ttf.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 496A23F40F0EB31B00C53BA1 /* SDL_ttf.framework */; };
+		5715EBAD11E00F8F00897669 /* alure.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5715EBAC11E00F8F00897669 /* alure.framework */; };
 		5725775C10ADB48E003A8259 /* Server.h in Headers */ = {isa = PBXBuildFile; fileRef = 5725775A10ADB48E003A8259 /* Server.h */; };
 		57662F2C10AF591B0025BA67 /* ImageLoader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 57662F2810AF591B0025BA67 /* ImageLoader.cpp */; };
 		57662F2D10AF591B0025BA67 /* ImageLoader.h in Headers */ = {isa = PBXBuildFile; fileRef = 57662F2910AF591B0025BA67 /* ImageLoader.h */; };
@@ -295,6 +296,7 @@
 		496A250E0F0EB63200C53BA1 /* ModeManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ModeManager.cpp; sourceTree = "<group>"; };
 		496A250F0F0EB63200C53BA1 /* ModeManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModeManager.h; sourceTree = "<group>"; };
 		496A277E0F0EC9A000C53BA1 /* libApollo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libApollo.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		5715EBAC11E00F8F00897669 /* alure.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = alure.framework; path = ../External/alure.framework; sourceTree = SOURCE_ROOT; };
 		5725775910ADB48E003A8259 /* Server.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Server.cpp; path = ../Engine/Server.cpp; sourceTree = SOURCE_ROOT; };
 		5725775A10ADB48E003A8259 /* Server.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Server.h; path = ../Engine/Server.h; sourceTree = SOURCE_ROOT; };
 		57662F2810AF591B0025BA67 /* ImageLoader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ImageLoader.cpp; sourceTree = "<group>"; };
@@ -341,6 +343,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5715EBAD11E00F8F00897669 /* alure.framework in Frameworks */,
 				496A28380F0EC9F800C53BA1 /* Cocoa.framework in Frameworks */,
 				496A28390F0EC9F800C53BA1 /* OpenGL.framework in Frameworks */,
 				496A283A0F0EC9F800C53BA1 /* SDL.framework in Frameworks */,
@@ -365,6 +368,7 @@
 				496A23F00F0EB31B00C53BA1 /* SDL_image.framework */,
 				496A23F20F0EB31B00C53BA1 /* SDL_mixer.framework */,
 				496A23F40F0EB31B00C53BA1 /* SDL_ttf.framework */,
+				5715EBAC11E00F8F00897669 /* alure.framework */,
 			);
 			sourceTree = "<group>";
 		};
@@ -897,7 +901,10 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				COPY_PHASE_STRIP = NO;
-				FRAMEWORK_SEARCH_PATHS = ../External;
+				FRAMEWORK_SEARCH_PATHS = (
+					../External,
+					"\"$(SRCROOT)/../External\"",
+				);
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_FIX_AND_CONTINUE = YES;
@@ -925,7 +932,10 @@
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				FRAMEWORK_SEARCH_PATHS = ../External;
+				FRAMEWORK_SEARCH_PATHS = (
+					../External,
+					"\"$(SRCROOT)/../External\"",
+				);
 				GCC_CHECK_RETURN_VALUE_OF_OPERATOR_NEW = NO;
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_ENABLE_FIX_AND_CONTINUE = NO;
@@ -964,7 +974,10 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				COPY_PHASE_STRIP = NO;
-				FRAMEWORK_SEARCH_PATHS = ../External;
+				FRAMEWORK_SEARCH_PATHS = (
+					../External,
+					"\"$(SRCROOT)/../External\"",
+				);
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_FIX_AND_CONTINUE = YES;
