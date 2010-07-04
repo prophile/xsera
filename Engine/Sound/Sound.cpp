@@ -7,13 +7,31 @@
 namespace Sound
 {
 
+const int CHUNK_LENGTH = 16386;
+
 typedef std::map<std::string, ALuint> BufferMap;
 BufferMap sounds;
 
 int soundSourceCount;
 ALuint* soundSources;
 ALuint musicSource;
+ALuint musicBufs[2];
+alureStream* currentMusicStream = NULL;
+std::string currentMusicName = "";
 int soundSourceIndex = 0;
+
+ALubyte* GetSoundData(const std::string& path, size_t& length)
+{
+	SDL_RWops* rwops = ResourceManager::OpenFile(path + ".aiff");
+	if (!rwops)
+		rwops = ResourceManager::OpenFile(path + ".ogg");
+	if (!rwops)
+	{
+		length = 0;
+		return NULL;
+	}
+	return (ALubyte*)ResourceManager::ReadFull(&length, rwops, 1);
+}
 
 static ALuint GetSound(const std::string& name)
 {
@@ -21,10 +39,8 @@ static ALuint GetSound(const std::string& name)
 	if (iter != sounds.end())
 		return iter->second;
 	size_t length;
-	SDL_RWops* rwops = ResourceManager::OpenFile("Sounds/" + name + ".aiff");
-	assert(rwops);
-	void* data = ResourceManager::ReadFull(&length, rwops, 1);
-	ALuint buf = alureCreateBufferFromMemory((const ALubyte*)data, length);
+	ALubyte* data = GetSoundData("Sounds/" + name, length);
+	ALuint buf = alureCreateBufferFromMemory(data, length);
 	free(data);
 	sounds.insert(std::make_pair(name, buf));
 	return buf;
@@ -44,6 +60,7 @@ void Init(int frequency, int resolution, int sources)
 	soundSources = new ALuint[sources];
 	alGenSources(sources, soundSources);
 	alGenSources(1, &musicSource);
+	//alGenBuffers(2, musicBufs);
 	soundSourceCount = sources;
 }
 
@@ -67,12 +84,30 @@ void PlaySound(const std::string& name, float gain, float pan)
 	alSourcePlay(source);
 }
 
+static void MusicEndCallback(void* ud, ALuint source)
+{
+	alureDestroyStream(currentMusicStream, 2, musicBufs);
+	currentMusicStream = NULL;
+	currentMusicName = "";
+	free(ud);
+}
+
 void PlayMusic(const std::string& name)
 {
+	if (currentMusicStream)
+		alureStopSource(musicSource, AL_TRUE);
+	size_t length;
+	ALubyte* data = GetSoundData("Music/" + name, length);
+	currentMusicName = name;
+	currentMusicStream = alureCreateStreamFromStaticMemory(data, length, CHUNK_LENGTH, 2, musicBufs);
+	alurePlaySourceStream(musicSource, currentMusicStream, 2, 1, MusicEndCallback, data);
 }
 
 void StopMusic()
 {
+	if (!currentMusicStream)
+		return;
+	alureStopSource(musicSource, AL_TRUE);
 }
 
 std::string MusicName()
