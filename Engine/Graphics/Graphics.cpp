@@ -885,6 +885,8 @@ void BeginWarp ( float magnitude, float angle, float scale )
 		glGenTextures(1, &warpTex);
 		glBindFramebufferEXT(GL_FRAMEBUFFER_EXT, warpFBO);
 		glBindTexture(GL_TEXTURE_RECTANGLE_ARB, warpTex);
+		glTexParameteri(GL_TEXTURE_RECTANGLE_ARB, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
+		glTexParameteri(GL_TEXTURE_RECTANGLE_ARB, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
 		glTexImage2D(GL_TEXTURE_RECTANGLE_ARB, 0, GL_RGBA8, scw, sch, 0, GL_RGBA, GL_UNSIGNED_BYTE, NULL);
 		glFramebufferTexture2DEXT(GL_FRAMEBUFFER_EXT, GL_COLOR_ATTACHMENT0_EXT, GL_TEXTURE_RECTANGLE_ARB, warpTex, 0);
 		GLuint status = glCheckFramebufferStatusEXT(GL_FRAMEBUFFER_EXT);
