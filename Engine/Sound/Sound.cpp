@@ -158,11 +158,14 @@ std::string MusicName()
 
 float MusicVolume()
 {
-	return 1.0f;
+	ALfloat rv;
+	alGetSourcefv(musicSource, AL_GAIN, &rv);
+	return rv;
 }
 
 void SetMusicVolume(float mvol)
 {
+	alSourcef(musicSource, AL_GAIN, mvol);
 }
 
 float SoundVolume()
