@@ -3,3 +3,4 @@
 #pragma import 3DPeturbationNone
 #pragma import 3DDiffuseSphericalHarmonics
 #pragma import 3DSpecularBasic
+#pragma import 3DPostProcessNone

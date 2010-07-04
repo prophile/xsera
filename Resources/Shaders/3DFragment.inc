@@ -18,6 +18,8 @@ vec3 calculateSpecularLight(in vec3 normal, in float exponent);
 vec3 lightDirection(in vec3 vertex);
 vec3 lightColour(in vec3 vertex);
 
+vec3 postprocessColour(in vec3 colour);
+
 void main()
 {
 	vec3 normal = normalize(N);
@@ -27,5 +29,5 @@ void main()
 	vec4 sample = texture2D(tex0, texCoord);
 	vec3 light = calculateDiffuseLight(normal);
 	light += sample.a * specularScale * calculateSpecularLight(normal, shininess);
-	gl_FragColor = vec4(light * sample.rgb, 1.0);
+	gl_FragColor = vec4(postprocessColour(light * sample.rgb), 1.0);
 }
