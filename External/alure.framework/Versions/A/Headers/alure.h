@@ -18,18 +18,22 @@
 extern "C" {
 #endif
 
-#if defined(_WIN32)
- #if defined(ALURE_BUILD_LIBRARY)
-  #define ALURE_API __declspec(dllexport)
+#ifndef ALURE_STATIC_LIBRARY
+ #if defined(_WIN32)
+  #if defined(ALURE_BUILD_LIBRARY)
+   #define ALURE_API __declspec(dllexport)
+  #else
+   #define ALURE_API __declspec(dllimport)
+  #endif
  #else
-  #define ALURE_API __declspec(dllimport)
+  #if defined(ALURE_BUILD_LIBRARY) && defined(HAVE_GCC_VISIBILITY)
+   #define ALURE_API __attribute__((visibility("protected")))
+  #else
+   #define ALURE_API extern
+  #endif
  #endif
 #else
- #if defined(ALURE_BUILD_LIBRARY) && defined(HAVE_GCC_VISIBILITY)
-  #define ALURE_API __attribute__((visibility("default")))
- #else
-  #define ALURE_API extern
- #endif
+ #define ALURE_API
 #endif
 
 #if defined(_WIN32)
@@ -61,6 +65,8 @@ ALURE_API ALenum ALURE_APIENTRY alureGetSampleFormat(ALuint channels, ALuint bit
 
 ALURE_API ALboolean ALURE_APIENTRY alureSleep(ALfloat duration);
 
+ALURE_API ALboolean ALURE_APIENTRY alureStreamSizeIsMicroSec(ALboolean useus);
+
 ALURE_API ALuint ALURE_APIENTRY alureCreateBufferFromFile(const ALchar *fname);
 ALURE_API ALuint ALURE_APIENTRY alureCreateBufferFromMemory(const ALubyte *data, ALsizei length);
 ALURE_API ALboolean ALURE_APIENTRY alureBufferDataFromFile(const ALchar *fname, ALuint buffer);
@@ -73,12 +79,14 @@ ALURE_API alureStream* ALURE_APIENTRY alureCreateStreamFromCallback(
     ALuint (*callback)(void *userdata, ALubyte *data, ALuint bytes),
     void *userdata, ALenum format, ALuint samplerate,
     ALsizei chunkLength, ALsizei numBufs, ALuint *bufs);
-ALURE_API ALboolean ALURE_APIENTRY alureGetStreamFormat(alureStream *stream,
-    ALenum *format, ALuint *frequency, ALuint *blockAlign);
+ALURE_API ALsizei ALURE_APIENTRY alureGetStreamFrequency(alureStream *stream);
 ALURE_API ALsizei ALURE_APIENTRY alureBufferDataFromStream(alureStream *stream, ALsizei numBufs, ALuint *bufs);
 ALURE_API ALboolean ALURE_APIENTRY alureRewindStream(alureStream *stream);
 ALURE_API ALboolean ALURE_APIENTRY alureSetStreamOrder(alureStream *stream, ALuint order);
 ALURE_API ALboolean ALURE_APIENTRY alureDestroyStream(alureStream *stream, ALsizei numBufs, ALuint *bufs);
+
+ALURE_API void ALURE_APIENTRY alureUpdate(void);
+ALURE_API ALboolean ALURE_APIENTRY alureUpdateInterval(ALfloat interval);
 
 ALURE_API ALboolean ALURE_APIENTRY alurePlaySourceStream(ALuint source,
     alureStream *stream, ALsizei numBufs, ALsizei loopcount,
@@ -86,7 +94,8 @@ ALURE_API ALboolean ALURE_APIENTRY alurePlaySourceStream(ALuint source,
 ALURE_API ALboolean ALURE_APIENTRY alurePlaySource(ALuint source,
     void (*callback)(void *userdata, ALuint source), void *userdata);
 ALURE_API ALboolean ALURE_APIENTRY alureStopSource(ALuint source, ALboolean run_callback);
-ALURE_API ALboolean ALURE_APIENTRY alurePauseSource(ALuint source, ALboolean resume);
+ALURE_API ALboolean ALURE_APIENTRY alurePauseSource(ALuint source);
+ALURE_API ALboolean ALURE_APIENTRY alureResumeSource(ALuint source);
 ALURE_API alureUInt64 ALURE_APIENTRY alureGetSourceOffset(ALuint source);
 
 ALURE_API ALboolean ALURE_APIENTRY alureInstallDecodeCallbacks(ALint index,
@@ -117,19 +126,23 @@ typedef ALuint          (ALURE_APIENTRY *LPALURECREATEBUFFERFROMFILE)(const ALch
 typedef ALuint          (ALURE_APIENTRY *LPALURECREATEBUFFERFROMMEMORY)(const ALubyte*,ALsizei);
 typedef ALboolean       (ALURE_APIENTRY *LPALUREBUFFERDATAFROMFILE)(const ALchar *fname, ALuint buffer);
 typedef ALboolean       (ALURE_APIENTRY *LPALUREBUFFERDATAFROMMEMORY)(const ALubyte *fdata, ALsizei length, ALuint buffer);
+typedef ALboolean       (ALURE_APIENTRY *LPALURESTREAMSIZEISMICROSEC)(ALboolean);
 typedef alureStream*    (ALURE_APIENTRY *LPALURECREATESTREAMFROMFILE)(const ALchar*,ALsizei,ALsizei,ALuint*);
 typedef alureStream*    (ALURE_APIENTRY *LPALURECREATESTREAMFROMMEMORY)(const ALubyte*,ALuint,ALsizei,ALsizei,ALuint*);
 typedef alureStream*    (ALURE_APIENTRY *LPALURECREATESTREAMFROMSTATICMEMORY)(const ALubyte*,ALuint,ALsizei,ALsizei,ALuint*);
 typedef alureStream*    (ALURE_APIENTRY *LPALURECREATESTREAMFROMCALLBACK)(ALuint(*)(void*,ALubyte*,ALuint),void*,ALenum,ALuint,ALsizei,ALsizei,ALuint*);
-typedef ALboolean       (ALURE_APIENTRY *LPALUREGETSTREAMFORMAT)(alureStream*,ALenum*,ALuint*,ALuint*);
+typedef ALsizei         (ALURE_APIENTRY *LPALUREGETSTREAMFREQUENCY)(alureStream*);
 typedef ALsizei         (ALURE_APIENTRY *LPALUREBUFFERDATAFROMSTREAM)(alureStream*,ALsizei,ALuint*);
 typedef ALboolean       (ALURE_APIENTRY *LPALUREREWINDSTREAM)(alureStream*);
 typedef ALboolean       (ALURE_APIENTRY *LPALURESETSTREAMORDER)(alureStream*,ALuint);
 typedef ALboolean       (ALURE_APIENTRY *LPALUREDESTROYSTREAM)(alureStream*,ALsizei,ALuint*);
+typedef void            (ALURE_APIENTRY *LPALUREUPDATE)(void);
+typedef ALboolean       (ALURE_APIENTRY *LPALUREUPDATEINTERVAL)(ALfloat);
 typedef ALboolean       (ALURE_APIENTRY *LPALUREPLAYSOURCESTREAM)(ALuint,alureStream*,ALsizei,ALsizei,void(*)(void*,ALuint),void*);
 typedef ALboolean       (ALURE_APIENTRY *LPALUREPLAYSOURCE)(ALuint,void(*)(void*,ALuint),void*);
 typedef ALboolean       (ALURE_APIENTRY *LPALURESTOPSOURCE)(ALuint,ALboolean);
-typedef ALboolean       (ALURE_APIENTRY *LPALUREPAUSESOURCE)(ALuint,ALboolean);
+typedef ALboolean       (ALURE_APIENTRY *LPALUREPAUSESOURCE)(ALuint);
+typedef ALboolean       (ALURE_APIENTRY *LPALURERESUMESOURCE)(ALuint);
 typedef alureUInt64     (ALURE_APIENTRY *LPALUREGETSOURCEOFFSET)(ALuint);
 typedef ALboolean       (ALURE_APIENTRY *LPALUREINSTALLDECODECALLBACKS)(ALint,void*(*)(const char*),void*(*)(const ALubyte*,ALuint),ALboolean(*)(void*,ALenum*,ALuint*,ALuint*),ALuint(*)(void*,ALubyte*,ALuint),ALboolean(*)(void*),void(*)(void*));
 typedef ALboolean       (ALURE_APIENTRY *LPALURESETIOCALLBACKS)(void*(*)(const char*,ALuint),void(*)(void*),ALsizei(*)(void*,ALubyte*,ALuint),ALsizei(*)(void*,const ALubyte*,ALuint),alureInt64(*)(void*,alureInt64,int));
