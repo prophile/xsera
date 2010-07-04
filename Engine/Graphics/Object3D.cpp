@@ -2,6 +2,7 @@
 #include "Matrix2x3.h"
 #include "Utilities/ResourceManager.h"
 #include "ImageLoader.h"
+#include "Shaders.h"
 
 namespace Graphics
 {
@@ -383,6 +384,7 @@ void Object3D::Draw ( float scale, float angle, float bank )
 	glDepthMask(GL_TRUE);
 	glPushMatrix();
 	glEnableClientState(GL_NORMAL_ARRAY);
+	glEnableVertexAttribArray(1);
 	glRotatef(bank, 0.0f, 1.0f, 0.0f);
 	glScalef(intScale, intScale, intScale);
 	glTranslatef(offX, offY, 0.0f);
@@ -394,9 +396,13 @@ void Object3D::Draw ( float scale, float angle, float bank )
 	glNormalPointer(GL_FLOAT, 0, NULL);
 	glBindBuffer(GL_ARRAY_BUFFER, texVBO);
 	glTexCoordPointer(2, GL_FLOAT, 0, NULL);
+	Shaders::BindAttribute(1, "Tangent");
+	glBindBuffer(GL_ARRAY_BUFFER, tangentVBO);
+	glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 0, NULL);
 	// draw all the faces
 	glBindBuffer(GL_ARRAY_BUFFER, 0);
 	glDrawArrays(GL_TRIANGLES, 0, nverts);
+	glDisableVertexAttribArray(1);
 	glDisableClientState(GL_NORMAL_ARRAY);
 	glPopMatrix();
 	glDepthMask(GL_FALSE);

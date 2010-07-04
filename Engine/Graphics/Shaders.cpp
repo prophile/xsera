@@ -171,6 +171,11 @@ GLuint UniformLocation ( const std::string& name )
 	return location;
 }
 
+void BindAttribute ( GLuint index, const std::string& name )
+{
+	glBindAttribLocation(currentShader, index, name.c_str());
+}
+
 }
 
 }
