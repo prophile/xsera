@@ -84,7 +84,7 @@ void Preload(const std::string& name)
 	GetSound(name);
 }
 
-void PlaySound(const std::string& name, float gain, float pan)
+void PlaySound(const std::string& name, float gain)
 {
 	ALuint buf    = GetSound(name);
 	ALuint source = GetFreeSource();

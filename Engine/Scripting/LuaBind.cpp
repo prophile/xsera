@@ -1447,9 +1447,7 @@ int Sound_Play ( lua_State* L )
     sound = luaL_checkstring(L, 1);
     if (nargs > 1)
         volume = luaL_checknumber(L, 2);
-    if (nargs > 2)
-        pan = luaL_checknumber(L, 3);
-    Sound::PlaySound (sound, volume, pan);
+    Sound::PlaySound (sound, volume);
     return 0;
 }
 
