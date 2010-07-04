@@ -777,7 +777,6 @@ void DrawObject3DAmbient ( std::string name, vec2 centre, float scale, float ang
 	obj->BindTextures();
 	//glUniform3f(UniformLocation("Ambient"), ambient.red(), ambient.green(), ambient.blue());
 	SetShader("3DBase");
-	glUniform1i(UniformLocation("tex"), 0);
 	glUniform1f(UniformLocation("specularScale"), obj->SpecularScale());
 	glUniform1f(UniformLocation("shininess"), obj->Shininess());
 	Matrices::SetViewMatrix(matrix2x3::Translate(centre));

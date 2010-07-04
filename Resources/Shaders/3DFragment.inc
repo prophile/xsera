@@ -4,7 +4,7 @@ varying vec3 V;
 
 const vec3 EyeDir   = vec3(0.0, 0.0, 1.0);
 
-uniform sampler2D tex;
+uniform sampler2D tex0;
 
 uniform float shininess;
 uniform float specularScale;
@@ -22,7 +22,7 @@ void main()
 	vec3 normal = normalize(N);
 	normal = peturbNormal(normal, TX);
 	vec2 texCoord = peturbTexCoords(normal, TX);
-	vec4 sample = texture2D(tex, texCoord);
+	vec4 sample = texture2D(tex0, texCoord);
 	vec3 light = calculateDiffuseLight(normal);
 	light += sample.a * specularScale * calculateSpecularLight(normal, shininess);
 	gl_FragColor = vec4(light * sample.rgb, 1.0);

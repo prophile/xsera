@@ -115,6 +115,15 @@ public:
 		{
 			currentShader = programObject;
 			glUseProgram(programObject);
+			// bind textures
+			for (int i = 0; i < 4; ++i)
+			{
+				char name[6];
+				sprintf(name, "tex%d", i);
+				GLint pos = glGetUniformLocation(programObject, name);
+				if (pos != -1)
+					glUniform1i(pos, i);
+			}
 		}
 	}
 };
