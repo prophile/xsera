@@ -89,6 +89,7 @@ void PlaySound(const std::string& name, float gain)
 	ALuint buf    = GetSound(name);
 	ALuint source = GetFreeSource();
 	alSourcei(source, AL_BUFFER, buf);
+	alSourcef(source, AL_GAIN, gain);
 	alSourcePlay(source);
 }
 
