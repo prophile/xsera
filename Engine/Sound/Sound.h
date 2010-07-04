@@ -2,6 +2,7 @@
 #define __apollo_sound_sound_h
 
 #include <string>
+#include "Utilities/Vec2.h"
 
 namespace Sound
 {
@@ -26,6 +27,19 @@ void Preload ( const std::string& name );
  * @param gain The gain of the sound. 1 is normal gain, 2 is twice as loud, et cetera.
  */
 void PlaySound ( const std::string& name, float gain = 1.0f );
+/**
+ * Plays a sound, positionally
+ * @param name The name of the sound
+ * @param pos The origin of the sound
+ * @param gain The gain of the sound
+ */
+void PlaySoundPositional ( const std::string& name, vec2 pos, float gain = 1.0f );
+/**
+ * Set the position of the listener.
+ * @param pos The listener's position.
+ * @param vel The listener's velocity.
+ */
+void SetListener(vec2 pos, vec2 vel);
 /**
  * Plays music
  * @param music The name of the track to play

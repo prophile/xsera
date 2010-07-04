@@ -89,8 +89,37 @@ void PlaySound(const std::string& name, float gain)
 	ALuint buf    = GetSound(name);
 	ALuint source = GetFreeSource();
 	alSourcei(source, AL_BUFFER, buf);
+	alSourcei(source, AL_SOURCE_RELATIVE, AL_FALSE);
 	alSourcef(source, AL_GAIN, gain);
 	alSourcePlay(source);
+}
+
+void PlaySoundPositional(const std::string& name, vec2 pos, float gain)
+{
+	ALfloat fpos[] = {pos.X(), pos.Y(), 0.0f};
+	ALuint buf    = GetSound(name);
+	ALuint source = GetFreeSource();
+	alSourcei(source, AL_BUFFER, buf);
+	alSourcei(source, AL_SOURCE_RELATIVE, AL_TRUE);
+	alSourcefv(source, AL_POSITION, fpos);
+	alSourcef(source, AL_GAIN, gain);
+	alSourcePlay(source);
+}
+
+static ALfloat forientation[] = {1.0f, 0.0f, 0.0f, 0.0f, 0.0f, 1.0f};
+
+void SetListener(vec2 pos, vec2 vel)
+{
+	ALfloat fpos[] = {pos.X(), pos.Y(), 0.0f};
+	ALfloat fvel[] = {vel.X(), vel.Y(), 0.0f};
+	alListenerfv(AL_POSITION, fpos);
+	alListenerfv(AL_VELOCITY, fvel);
+	if (vel.ModulusSquared() > 0.2f)
+	{
+		forientation[0] = fvel[0];
+		forientation[1] = fvel[1];
+	}
+	alListenerfv(AL_ORIENTATION, forientation);
 }
 
 static void MusicEndCallback(void* ud, ALuint source)
