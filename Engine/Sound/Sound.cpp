@@ -21,6 +21,11 @@ alureStream* currentMusicStream = NULL;
 std::string currentMusicName = "";
 int soundSourceIndex = 0;
 
+void DieUnpleasantly()
+{
+	StopMusic();
+}
+
 ALubyte* GetSoundData(const std::string& path, size_t& length)
 {
 	SDL_RWops* rwops = ResourceManager::OpenFile(path + ".aiff");
@@ -63,6 +68,7 @@ void Init(int frequency, int resolution, int sources)
 	alGenSources(1, &musicSource);
 	//alGenBuffers(2, musicBufs);
 	soundSourceCount = sources;
+	atexit(DieUnpleasantly);
 }
 
 static ALuint GetFreeSource()
