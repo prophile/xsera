@@ -20,6 +20,11 @@ bool ToBool ( const std::string& value )
 	return value == "true";
 }
 
+float ToFloat ( const std::string& value )
+{
+	return (float)atof(value.c_str());
+}
+
 void Startup ()
 {
 	// do init stuff
@@ -28,6 +33,8 @@ void Startup ()
 	Preferences::Load();
 	Graphics::Init(ToInt(Preferences::Get("Screen/Width")), ToInt(Preferences::Get("Screen/Height")), ToBool(Preferences::Get("Screen/Fullscreen")));
 	Sound::Init(ToInt(Preferences::Get("Audio/SamplingRate")), ToInt(Preferences::Get("Audio/Resolution")), ToInt(Preferences::Get("Audio/Channels")));
+	Sound::SetMusicVolume(ToFloat(Preferences::Get("Audio/MusicVolume")));
+	Sound::SetSoundVolume(ToFloat(Preferences::Get("Audio/SoundVolume")));
 	// compile class script
 	CompileScript("System/Class");
 	LuaScript bootScript ("System/Boot");
