@@ -89,22 +89,27 @@ void Preload(const std::string& name)
 
 void PlaySound(const std::string& name, float gain)
 {
+	const static ALfloat fz[] = { 0.0f, 0.0f, 0.0f };
 	ALuint buf    = GetSound(name);
 	ALuint source = GetFreeSource();
 	alSourcei(source, AL_BUFFER, buf);
 	alSourcei(source, AL_SOURCE_RELATIVE, AL_TRUE);
 	alSourcef(source, AL_GAIN, gain);
+	alSourcefv(source, AL_POSITION, fz);
+	alSourcefv(source, AL_VELOCITY, fz);
 	alSourcePlay(source);
 }
 
-void PlaySoundPositional(const std::string& name, vec2 pos, float gain)
+void PlaySoundPositional(const std::string& name, vec2 pos, vec2 vel, float gain)
 {
 	ALfloat fpos[] = {pos.X(), pos.Y(), 0.0f};
+	ALfloat fvel[] = {vel.X(), vel.Y(), 0.0f};
 	ALuint buf    = GetSound(name);
 	ALuint source = GetFreeSource();
 	alSourcei(source, AL_BUFFER, buf);
 	alSourcei(source, AL_SOURCE_RELATIVE, AL_FALSE);
 	alSourcefv(source, AL_POSITION, fpos);
+	alSourcefv(source, AL_VELOCITY, fvel);
 	alSourcef(source, AL_REFERENCE_DISTANCE, 50.0);
 	alSourcef(source, AL_GAIN, gain);
 	alSourcePlay(source);

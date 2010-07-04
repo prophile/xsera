@@ -1455,8 +1455,9 @@ int Sound_PlayPositional ( lua_State* L )
 {
 	const char* sound = luaL_checkstring(L, 1);
 	vec2 pos = luaL_checkvec2(L, 2);
-	float volume = luaL_optnumber(L, 3, 1.0);
-	Sound::PlaySoundPositional(sound, pos, volume);
+	vec2 vel = luaL_checkvec2(L, 3);
+	float volume = luaL_optnumber(L, 4, 1.0);
+	Sound::PlaySoundPositional(sound, pos, vel, volume);
 	return 0;
 }
 

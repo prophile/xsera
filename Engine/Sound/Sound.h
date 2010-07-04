@@ -33,7 +33,7 @@ void PlaySound ( const std::string& name, float gain = 1.0f );
  * @param pos The origin of the sound
  * @param gain The gain of the sound
  */
-void PlaySoundPositional ( const std::string& name, vec2 pos, float gain = 1.0f );
+void PlaySoundPositional ( const std::string& name, vec2 pos, vec2 vel = vec2(0.0f, 0.0f), float gain = 1.0f );
 /**
  * Set the position of the listener.
  * @param pos The listener's position.
