@@ -24,6 +24,7 @@ int soundSourceIndex = 0;
 void DieUnpleasantly()
 {
 	StopMusic();
+	alureShutdownDevice();
 }
 
 ALubyte* GetSoundData(const std::string& path, size_t& length)
