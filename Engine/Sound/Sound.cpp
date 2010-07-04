@@ -3,6 +3,7 @@
 #include <map>
 #include "ResourceManager.h"
 #include <assert.h>
+#include "Engine/Logging.h"
 
 namespace Sound
 {
@@ -101,6 +102,9 @@ void PlayMusic(const std::string& name)
 	currentMusicName = name;
 	currentMusicStream = alureCreateStreamFromStaticMemory(data, length, CHUNK_LENGTH, 2, musicBufs);
 	alurePlaySourceStream(musicSource, currentMusicStream, 2, 1, MusicEndCallback, data);
+	LOG("Sound", LOG_MESSAGE, "Music: %s", name.c_str());
+	if (!data)
+		LOG("Sound", LOG_WARNING, "failed to find music");
 }
 
 void StopMusic()
