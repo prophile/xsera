@@ -273,6 +273,7 @@ bool ToBool ( const std::string& value )
 	return value == "true";
 }
 
+// [WIP] [ADAM]
 void Reset ()
 {
 //	SDL_SetVideoMode(ToInt(Preferences::Get("Screen/Width")), ToInt(Preferences::Get("Screen/Height")), 0, SDL_ResizeEvent);

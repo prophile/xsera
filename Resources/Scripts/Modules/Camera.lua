@@ -23,16 +23,30 @@ function UpdateWindow()
 end
 
 CAMERA_RATIO_OPTIONS = {
-	2, 1/2, 1/4, 1/16--[[,
+    function() -- Zoom to 2:1
+        return 2
+    end,
+    function() -- Zoom to 1:1
+        return 1
+    end,
+    function() -- Zoom to 1:2
+        return 1/2
+    end,
+    function() --
+        return 1/4
+    end,
+    function()
+        return 1/16
+    end,
 	function() -- zoom to nearest hostile object
-		return 1/8 -- [TEMP, ADAM] this is a test value to see if the camera ratio functions work
+		return 1/8 -- [TEMP] [ADAM] [DEMO3] need to make the algorithm for this
 	end,
 	function() -- zoom to nearest object
-		return 1/9 -- [TEMP, ADAM] this is a test value to see if the camera ratio functions work
+		return 1/9 -- [TEMP] [ADAM] [DEMO3] need to make the algorithm for this
 	end,
 	function() -- zoom to all
-		return 1/10 -- [TEMP, ADAM] this is a test value to see if the camera ratio functions work
-	end--]]
+		return 1/10 -- [TEMP] [ADAM] [DEMO3] need to make the algorithm for this
+	end
 }
 
 CAMERA_RATIO = { curr = 1, num = 2, target = 1 }
@@ -41,9 +55,9 @@ CAMERA_RATIO = { curr = 1, num = 2, target = 1 }
 -- to the proper value once we reachy the target
 
 -- should I add a function that checks to make sure that the camera ratio is the
--- same as the target, and adjusting if not? [ADAM, TODO]
+-- same as the target, and adjusting if not? [ADAM] [TODO]
 
-function CameraInterpolate(dt) --note: this function now controlls both quadratic zooming and snap zooming (not good from a code design philosophy)
+function CameraInterpolate(dt) -- note: this function now controlls both quadratic zooming and snap zooming (not good from a code design philosophy)
 	if cameraChanging == true then
 		zoomTime = zoomTime - dt
 		if zoomTime < 0 then
@@ -75,6 +89,7 @@ end
 function CameraEaseIn(dt, zoomLevel)
     zoomLevel = zoomLevel or 1 -- optional arguments, huzzah
     
+    -- yet to be written [ADAM] [DEMO3]
 end
 
 -- To be used when the camera is in algorithmic zooms, possibly (may be built
@@ -99,7 +114,7 @@ end
 function InstantCamera(zoomLevel)
     zoomLevel = zoomLevel or 1 -- optional arguments, huzzah
     print(zoomLevel, "ZOOM LEVEL")
-    CAMERA_RATIO.target = CAMERA_RATIO_OPTIONS[zoomLevel] -- currently, no error checking
+    CAMERA_RATIO.target = CAMERA_RATIO_OPTIONS[zoomLevel]() -- currently, no error checking
     CAMERA_RATIO.curr = CAMERA_RATIO.target
     
     ChangeCamAndWindow()
