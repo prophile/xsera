@@ -1,6 +1,7 @@
 #include "Scripting.h"
 #include "ResourceManager.h"
 #include "Engine/Logging.h"
+#include "Compile.h"
 
 extern "C"
 {
@@ -42,6 +43,12 @@ static void luaLoad ( lua_State* L, const std::string& path )
 	if (ResourceManager::FileExists("Scripts/" + path + ".lo"))
 	{
 		fullpath = "Scripts/" + path + ".lo";
+	}
+	else
+	{
+#ifdef NDEBUG
+		CompileScript(path);
+#endif
 	}
 	SDL_RWops* rwops = ResourceManager::OpenFile(fullpath);
     if (rwops)
