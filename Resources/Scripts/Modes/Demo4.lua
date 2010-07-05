@@ -83,8 +83,12 @@ function update()
 		end
 
 		realTime = realTime + dt
-		
-		CameraInterpolate(dt)
+		if cameraSnap == false then
+			CameraInterpolate(dt)
+		else
+			CameraSnap()
+			cameraSnap = false
+		end
 		
 		KeyDoActivated()
 
@@ -295,6 +299,10 @@ function render()
 	graphics.draw_starfield(0.6)
 	graphics.draw_starfield(-0.3)
 	graphics.draw_starfield(-0.9)
+
+	--	DEBUG version, keep:
+	--	graphics.end_warp(scen.playerShip.warp.factor, scen.playerShip.physics.angle, cameraRatio, scen.playerShip.physics.position)
+	graphics.end_warp()
 	
 	DrawGrid()
 	
@@ -305,10 +313,6 @@ function render()
 	end
 
 	graphics.draw_particles()
-
---	DEBUG version, keep:
---	graphics.end_warp(scen.playerShip.warp.factor, scen.playerShip.physics.angle, cameraRatio.current, scen.playerShip.physics.position)
-	graphics.end_warp()
 		
 	DrawObject(scen.playerShip)
 	DrawEffects()

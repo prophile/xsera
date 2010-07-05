@@ -311,7 +311,7 @@ function DrawPauseMenu(dt)
 	end
 end
 
-updateWindow()
+UpdateWindow()
 radar = { top = 237, left = panels.left.center.x - 58, bottom = 127, right = panels.left.center.x + 52, width = 110, length = 110 }
 
 function DrawRadar()
@@ -340,7 +340,7 @@ end
 menuLevel = menuOptions
 
 function DrawPanels()
-	updateWindow()
+	UpdateWindow()
 	local cam = CameraToWindow()
 --	printTable(cam)
 	graphics.set_camera(cam[1], cam[2], cam[3], cam[4])
@@ -570,7 +570,7 @@ function DrawDialogueBox(text)
 end
 
 function GetMouseCoords()
-	local mPos = mouse_position()
+	local mPos = input.mouse_position()
 	return vec(
 		scen.playerShip.physics.position.x -shipAdjust + camera.w * mPos.x - camera.w / 2,
 		scen.playerShip.physics.position.y  + camera.h * mPos.y - camera.h / 2
@@ -581,6 +581,7 @@ local realPos = { x, y }
 
 function DrawMouse1()
 	mousePos = GetMouseCoords()
+	if input.mouse_still_time() > 2.0 then return end
 	
 	if hypot2(mousePos, oldMousePos) > 0 then
 		mouseStart = mode_manager.time()

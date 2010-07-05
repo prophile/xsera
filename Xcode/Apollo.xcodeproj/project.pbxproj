@@ -48,7 +48,6 @@
 		496A27A20F0EC9D800C53BA1 /* lundump.h in Headers */ = {isa = PBXBuildFile; fileRef = 496A24470F0EB35E00C53BA1 /* lundump.h */; };
 		496A27A30F0EC9D800C53BA1 /* lvm.h in Headers */ = {isa = PBXBuildFile; fileRef = 496A24490F0EB35E00C53BA1 /* lvm.h */; };
 		496A27A40F0EC9D800C53BA1 /* lzio.h in Headers */ = {isa = PBXBuildFile; fileRef = 496A244B0F0EB35E00C53BA1 /* lzio.h */; };
-		496A27A50F0EC9D800C53BA1 /* neural-network.h in Headers */ = {isa = PBXBuildFile; fileRef = 496A244F0F0EB35E00C53BA1 /* neural-network.h */; };
 		496A27A60F0EC9D800C53BA1 /* tinyxml.h in Headers */ = {isa = PBXBuildFile; fileRef = 496A24520F0EB35E00C53BA1 /* tinyxml.h */; };
 		496A27A70F0EC9D800C53BA1 /* Graphics.h in Headers */ = {isa = PBXBuildFile; fileRef = 496A24A30F0EB37900C53BA1 /* Graphics.h */; };
 		496A27A80F0EC9D800C53BA1 /* SpriteSheet.h in Headers */ = {isa = PBXBuildFile; fileRef = 496A24A50F0EB37900C53BA1 /* SpriteSheet.h */; };
@@ -105,7 +104,6 @@
 		496A27DE0F0EC9EE00C53BA1 /* lvm.c in Sources */ = {isa = PBXBuildFile; fileRef = 496A24480F0EB35E00C53BA1 /* lvm.c */; };
 		496A27DF0F0EC9EE00C53BA1 /* lzio.c in Sources */ = {isa = PBXBuildFile; fileRef = 496A244A0F0EB35E00C53BA1 /* lzio.c */; };
 		496A27E00F0EC9EE00C53BA1 /* print.c in Sources */ = {isa = PBXBuildFile; fileRef = 496A244C0F0EB35E00C53BA1 /* print.c */; };
-		496A27E10F0EC9EE00C53BA1 /* neural-network.c in Sources */ = {isa = PBXBuildFile; fileRef = 496A244E0F0EB35E00C53BA1 /* neural-network.c */; };
 		496A27E20F0EC9EE00C53BA1 /* tinyxml.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 496A24510F0EB35E00C53BA1 /* tinyxml.cpp */; };
 		496A27E30F0EC9EE00C53BA1 /* tinyxmlerror.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 496A24530F0EB35E00C53BA1 /* tinyxmlerror.cpp */; };
 		496A27E40F0EC9EE00C53BA1 /* tinyxmlparser.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 496A24540F0EB35E00C53BA1 /* tinyxmlparser.cpp */; };
@@ -132,7 +130,7 @@
 		496A283B0F0EC9F800C53BA1 /* SDL_image.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 496A23F00F0EB31B00C53BA1 /* SDL_image.framework */; };
 		496A283C0F0EC9F800C53BA1 /* SDL_mixer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 496A23F20F0EB31B00C53BA1 /* SDL_mixer.framework */; };
 		496A283D0F0EC9F800C53BA1 /* SDL_ttf.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 496A23F40F0EB31B00C53BA1 /* SDL_ttf.framework */; };
-		5725775C10ADB48E003A8259 /* Server.h in Headers */ = {isa = PBXBuildFile; fileRef = 5725775A10ADB48E003A8259 /* Server.h */; };
+		5715EBAD11E00F8F00897669 /* alure.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5715EBAC11E00F8F00897669 /* alure.framework */; };
 		57662F2C10AF591B0025BA67 /* ImageLoader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 57662F2810AF591B0025BA67 /* ImageLoader.cpp */; };
 		57662F2D10AF591B0025BA67 /* ImageLoader.h in Headers */ = {isa = PBXBuildFile; fileRef = 57662F2910AF591B0025BA67 /* ImageLoader.h */; };
 		57662F2E10AF591B0025BA67 /* ParticleSystem.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 57662F2A10AF591B0025BA67 /* ParticleSystem.cpp */; };
@@ -258,8 +256,6 @@
 		496A244A0F0EB35E00C53BA1 /* lzio.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = lzio.c; sourceTree = "<group>"; };
 		496A244B0F0EB35E00C53BA1 /* lzio.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lzio.h; sourceTree = "<group>"; };
 		496A244C0F0EB35E00C53BA1 /* print.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = print.c; sourceTree = "<group>"; };
-		496A244E0F0EB35E00C53BA1 /* neural-network.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "neural-network.c"; sourceTree = "<group>"; };
-		496A244F0F0EB35E00C53BA1 /* neural-network.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "neural-network.h"; sourceTree = "<group>"; };
 		496A24510F0EB35E00C53BA1 /* tinyxml.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = tinyxml.cpp; sourceTree = "<group>"; };
 		496A24520F0EB35E00C53BA1 /* tinyxml.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tinyxml.h; sourceTree = "<group>"; };
 		496A24530F0EB35E00C53BA1 /* tinyxmlerror.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = tinyxmlerror.cpp; sourceTree = "<group>"; };
@@ -299,8 +295,7 @@
 		496A250E0F0EB63200C53BA1 /* ModeManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ModeManager.cpp; sourceTree = "<group>"; };
 		496A250F0F0EB63200C53BA1 /* ModeManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModeManager.h; sourceTree = "<group>"; };
 		496A277E0F0EC9A000C53BA1 /* libApollo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libApollo.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		5725775910ADB48E003A8259 /* Server.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Server.cpp; path = ../Engine/Server.cpp; sourceTree = SOURCE_ROOT; };
-		5725775A10ADB48E003A8259 /* Server.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Server.h; path = ../Engine/Server.h; sourceTree = SOURCE_ROOT; };
+		5715EBAC11E00F8F00897669 /* alure.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = alure.framework; path = ../External/alure.framework; sourceTree = SOURCE_ROOT; };
 		57662F2810AF591B0025BA67 /* ImageLoader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ImageLoader.cpp; sourceTree = "<group>"; };
 		57662F2910AF591B0025BA67 /* ImageLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageLoader.h; sourceTree = "<group>"; };
 		57662F2A10AF591B0025BA67 /* ParticleSystem.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ParticleSystem.cpp; sourceTree = "<group>"; };
@@ -345,6 +340,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5715EBAD11E00F8F00897669 /* alure.framework in Frameworks */,
 				496A28380F0EC9F800C53BA1 /* Cocoa.framework in Frameworks */,
 				496A28390F0EC9F800C53BA1 /* OpenGL.framework in Frameworks */,
 				496A283A0F0EC9F800C53BA1 /* SDL.framework in Frameworks */,
@@ -369,14 +365,13 @@
 				496A23F00F0EB31B00C53BA1 /* SDL_image.framework */,
 				496A23F20F0EB31B00C53BA1 /* SDL_mixer.framework */,
 				496A23F40F0EB31B00C53BA1 /* SDL_ttf.framework */,
+				5715EBAC11E00F8F00897669 /* alure.framework */,
 			);
 			sourceTree = "<group>";
 		};
 		496A23DA0F0EB21700C53BA1 /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				5725775910ADB48E003A8259 /* Server.cpp */,
-				5725775A10ADB48E003A8259 /* Server.h */,
 				493223BA0F23B9D60048495A /* Apollo.h */,
 				49118E690F251D2B004710D9 /* Preferences.cpp */,
 				49118E6A0F251D2B004710D9 /* Preferences.h */,
@@ -410,7 +405,6 @@
 				493223CE0F23BB360048495A /* SDLMain.m */,
 				496A24040F0EB35E00C53BA1 /* eNet */,
 				496A24170F0EB35E00C53BA1 /* Lua */,
-				496A244D0F0EB35E00C53BA1 /* NeuralNetwork */,
 				496A24500F0EB35E00C53BA1 /* TinyXML */,
 			);
 			name = External;
@@ -508,15 +502,6 @@
 				D221494011652EA4009575A0 /* bit.c */,
 			);
 			path = Lua;
-			sourceTree = "<group>";
-		};
-		496A244D0F0EB35E00C53BA1 /* NeuralNetwork */ = {
-			isa = PBXGroup;
-			children = (
-				496A244E0F0EB35E00C53BA1 /* neural-network.c */,
-				496A244F0F0EB35E00C53BA1 /* neural-network.h */,
-			);
-			path = NeuralNetwork;
 			sourceTree = "<group>";
 		};
 		496A24500F0EB35E00C53BA1 /* TinyXML */ = {
@@ -712,7 +697,6 @@
 				496A27A20F0EC9D800C53BA1 /* lundump.h in Headers */,
 				496A27A30F0EC9D800C53BA1 /* lvm.h in Headers */,
 				496A27A40F0EC9D800C53BA1 /* lzio.h in Headers */,
-				496A27A50F0EC9D800C53BA1 /* neural-network.h in Headers */,
 				496A27A60F0EC9D800C53BA1 /* tinyxml.h in Headers */,
 				496A27A70F0EC9D800C53BA1 /* Graphics.h in Headers */,
 				496A27A80F0EC9D800C53BA1 /* SpriteSheet.h in Headers */,
@@ -735,7 +719,6 @@
 				493223BB0F23B9D60048495A /* Apollo.h in Headers */,
 				493224620F23DE030048495A /* Shaders.h in Headers */,
 				49118E6C0F251D2B004710D9 /* Preferences.h in Headers */,
-				5725775C10ADB48E003A8259 /* Server.h in Headers */,
 				57FCA50C10ACDF9D002D6A9E /* Object3D.h in Headers */,
 				57966A8010AE7E8A0088327C /* RNG.h in Headers */,
 				57662F2D10AF591B0025BA67 /* ImageLoader.h in Headers */,
@@ -838,7 +821,6 @@
 				496A27DE0F0EC9EE00C53BA1 /* lvm.c in Sources */,
 				496A27DF0F0EC9EE00C53BA1 /* lzio.c in Sources */,
 				496A27E00F0EC9EE00C53BA1 /* print.c in Sources */,
-				496A27E10F0EC9EE00C53BA1 /* neural-network.c in Sources */,
 				496A27E20F0EC9EE00C53BA1 /* tinyxml.cpp in Sources */,
 				496A27E30F0EC9EE00C53BA1 /* tinyxmlerror.cpp in Sources */,
 				496A27E40F0EC9EE00C53BA1 /* tinyxmlparser.cpp in Sources */,
@@ -913,7 +895,10 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				COPY_PHASE_STRIP = NO;
-				FRAMEWORK_SEARCH_PATHS = ../External;
+				FRAMEWORK_SEARCH_PATHS = (
+					../External,
+					"\"$(SRCROOT)/../External\"",
+				);
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_FIX_AND_CONTINUE = YES;
@@ -941,7 +926,10 @@
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				FRAMEWORK_SEARCH_PATHS = ../External;
+				FRAMEWORK_SEARCH_PATHS = (
+					../External,
+					"\"$(SRCROOT)/../External\"",
+				);
 				GCC_CHECK_RETURN_VALUE_OF_OPERATOR_NEW = NO;
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_ENABLE_FIX_AND_CONTINUE = NO;
@@ -980,7 +968,10 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				COPY_PHASE_STRIP = NO;
-				FRAMEWORK_SEARCH_PATHS = ../External;
+				FRAMEWORK_SEARCH_PATHS = (
+					../External,
+					"\"$(SRCROOT)/../External\"",
+				);
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_FIX_AND_CONTINUE = YES;

@@ -1,4 +1,5 @@
 #include "Input.h"
+#include "GameTime.h"
 
 #include <SDL/SDL.h>
 #include <SDL/SDL_OpenGL.h>
@@ -10,6 +11,8 @@ namespace Input
 
 namespace Internal
 {
+
+static float mouseBase = 0.0f;
 
 std::string MapKey ( SDLKey k )
 {
@@ -145,6 +148,7 @@ void UpdateMouse ( Sint16 px, Sint16 py )
     SDL_Surface* screen = SDL_GetVideoSurface();
     mousePosition.X() = float(px) / float(screen->w);
     mousePosition.Y() = 1.0f - (float(py) / float(screen->h));
+	mouseBase = GameTime();
 }
 
 std::string MouseButtonName ( Uint32 button )
@@ -225,6 +229,11 @@ Event* Next ()
 vec2 MousePosition ()
 {
 	return mousePosition;
+}
+
+float MouseStillTime ()
+{
+	return GameTime() - mouseBase;
 }
 
 }

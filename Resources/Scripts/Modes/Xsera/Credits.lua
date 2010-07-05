@@ -25,15 +25,19 @@ function init ()
 	local rawInput = resource_manager.load("Config/Credits.txt")
 	local i = 1
 	local lastDist = initialDist
-	for sizeString, line in string.gmatch(rawInput, "(%**)(.-)\n") do
+	for sizeString, line in string.gmatch(rawInput, "([%*|,]*)(.-)\n") do
+		local modifier = 1
 		credits[i] = line
+		if string.find(sizeString, ",") then
+			modifier = -0.75
+		end
 		if #sizeString > 0 then
-			creditSizes[i] = titleCreditSizeBase + (titleCreditSizeScale * #sizeString)
+			creditSizes[i] = titleCreditSizeBase + (titleCreditSizeScale * #sizeString) * modifier
 			creditFonts[i] = TITLE_FONT
 			rowDist[i] = lastDist
 			lastDist = lastDist - separationDist - creditSizes[i]
 		else
-			creditSizes[i] = simpleCreditSizeBase + (titleCreditSizeScale * #sizeString)
+			creditSizes[i] = simpleCreditSizeBase + (titleCreditSizeScale * #sizeString) * modifier
 			creditFonts[i] = MAIN_FONT
 			rowDist[i] = lastDist
 			lastDist = lastDist - separationDist - creditSizes[i]

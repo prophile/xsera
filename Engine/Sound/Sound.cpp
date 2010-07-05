@@ -1,222 +1,189 @@
 #include "Sound.h"
-#ifdef WIN32
-#include <SDL/SDL_mixer.h>
-#else
-#include <SDL_mixer/SDL_mixer.h>
-#endif
-#include <SDL/SDL.h>
-#include <queue>
-
+#include <alure/alure.h>
 #include <map>
-#include <math.h>
-#include "Utilities/ResourceManager.h"
+#include "ResourceManager.h"
+#include <assert.h>
 #include "Engine/Logging.h"
 
 namespace Sound
 {
 
-namespace Internal
+const int CHUNK_LENGTH = 16386;
+
+typedef std::map<std::string, ALuint> BufferMap;
+BufferMap sounds;
+
+int soundSourceCount;
+ALuint* soundSources;
+ALuint musicSource;
+ALuint musicBufs[2];
+alureStream* currentMusicStream = NULL;
+std::string currentMusicName = "";
+int soundSourceIndex = 0;
+
+void DieUnpleasantly()
 {
+	StopMusic();
+	alureShutdownDevice();
+}
 
-typedef std::map<std::string, Mix_Chunk*> EffectsMap;
-typedef std::map<std::string, Mix_Music*> MusicMap;
-std::queue<std::string> preloadQueue;
-EffectsMap effects;
-MusicMap musics;
-
-SDL_mutex* effectMapLock = NULL;
-SDL_mutex* preloadQueueLock = NULL;
-SDL_cond* preloadQueueCondition = NULL;
-
-Mix_Chunk* SoundNamed ( const std::string& name )
+ALubyte* GetSoundData(const std::string& path, size_t& length)
 {
-	SDL_LockMutex(effectMapLock);
-	EffectsMap::iterator iter = effects.find(name);
-	if (iter == effects.end())
+	SDL_RWops* rwops = ResourceManager::OpenFile(path + ".aiff");
+	if (!rwops)
+		rwops = ResourceManager::OpenFile(path + ".ogg");
+	if (!rwops)
 	{
-		// load the sound
-		std::string path = "Sounds/" + name + ".aiff";
-		SDL_RWops* ops = ResourceManager::OpenFile(path);
-		Mix_Chunk* newChunk = Mix_LoadWAV_RW(ops, 1);
-		if (!newChunk)
-		{
-            LOG("Sound", LOG_WARNING, "Decoding sound '%s' failed! Error: %s", name.c_str(), Mix_GetError());
-			effects[name] = NULL;
-			SDL_UnlockMutex(effectMapLock);
-			return NULL;
-		}
-		effects[name] = newChunk;
-		SDL_UnlockMutex(effectMapLock);
-		return newChunk;
+		length = 0;
+		return NULL;
 	}
-	else
-	{
-		SDL_UnlockMutex(effectMapLock);
+	return (ALubyte*)ResourceManager::ReadFull(&length, rwops, 1);
+}
+
+static ALuint GetSound(const std::string& name)
+{
+	BufferMap::iterator iter = sounds.find(name);
+	if (iter != sounds.end())
 		return iter->second;
-	}
+	size_t length;
+	ALubyte* data = GetSoundData("Sounds/" + name, length);
+	ALuint buf = alureCreateBufferFromMemory(data, length);
+	free(data);
+	sounds.insert(std::make_pair(name, buf));
+	return buf;
 }
 
-void PreloadingThread ()
+void Init(int frequency, int resolution, int sources)
 {
-	SDL_LockMutex(preloadQueueLock);
-	while (SDL_CondWait(preloadQueueCondition, preloadQueueLock))
+	(void)resolution;
+	--sources; // one spare source for music
+	ALCint attribs[] = {
+		ALC_FREQUENCY, frequency,
+		ALC_MONO_SOURCES, sources,
+		ALC_STEREO_SOURCES, 1,
+		0
+	};
+	alureInitDevice(NULL, attribs);
+	soundSources = new ALuint[sources];
+	alGenSources(sources, soundSources);
+	alGenSources(1, &musicSource);
+	//alGenBuffers(2, musicBufs);
+	soundSourceCount = sources;
+	atexit(DieUnpleasantly);
+	alDistanceModel(AL_INVERSE_DISTANCE_CLAMPED);
+	alSpeedOfSound(1400.0);
+	alDopplerFactor(0.7);
+}
+
+static ALuint GetFreeSource()
+{
+	int idx = soundSourceIndex++;
+	soundSourceIndex = soundSourceIndex % soundSourceCount;
+	return soundSources[idx];
+}
+
+void Preload(const std::string& name)
+{
+	GetSound(name);
+}
+
+void PlaySound(const std::string& name, float gain)
+{
+	const static ALfloat fz[] = { 0.0f, 0.0f, 0.0f };
+	ALuint buf    = GetSound(name);
+	ALuint source = GetFreeSource();
+	alSourcei(source, AL_BUFFER, buf);
+	alSourcei(source, AL_SOURCE_RELATIVE, AL_TRUE);
+	alSourcef(source, AL_GAIN, gain);
+	alSourcefv(source, AL_POSITION, fz);
+	alSourcefv(source, AL_VELOCITY, fz);
+	alSourcePlay(source);
+}
+
+void PlaySoundPositional(const std::string& name, vec2 pos, vec2 vel, float gain)
+{
+	ALfloat fpos[] = {pos.X(), pos.Y(), 0.0f};
+	ALfloat fvel[] = {vel.X(), vel.Y(), 0.0f};
+	ALuint buf    = GetSound(name);
+	ALuint source = GetFreeSource();
+	alSourcei(source, AL_BUFFER, buf);
+	alSourcei(source, AL_SOURCE_RELATIVE, AL_FALSE);
+	alSourcefv(source, AL_POSITION, fpos);
+	alSourcefv(source, AL_VELOCITY, fvel);
+	alSourcef(source, AL_REFERENCE_DISTANCE, 50.0);
+	alSourcef(source, AL_GAIN, gain);
+	alSourcePlay(source);
+}
+
+static ALfloat forientation[] = {1.0f, 0.0f, 0.0f, 0.0f, 0.0f, 1.0f};
+
+void SetListener(vec2 pos, vec2 vel)
+{
+	ALfloat fpos[] = {pos.X(), pos.Y(), 0.0f};
+	ALfloat fvel[] = {vel.X(), vel.Y(), 0.0f};
+	alListenerfv(AL_POSITION, fpos);
+	alListenerfv(AL_VELOCITY, fvel);
+	if (vel.ModulusSquared() > 0.2f)
 	{
-		while (!preloadQueue.empty())
-		{
-			std::string nextSound = preloadQueue.front();
-			preloadQueue.pop();
-			SoundNamed(nextSound); 
-		}
+		forientation[0] = fvel[0];
+		forientation[1] = fvel[1];
 	}
+	alListenerfv(AL_ORIENTATION, forientation);
 }
 
-const char* extensions[] =
+static void MusicEndCallback(void* ud, ALuint source)
 {
-	".ogg",
-	".xm",
-	".mod",
-	".aiff",
-	NULL
-};
-
-Mix_Music* MusicNamed ( const std::string& name )
-{
-	MusicMap::iterator iter = musics.find(name);
-	if (iter == musics.end())
-	{
-		// load the sound
-		Mix_Music* newMusic = NULL;
-		for (unsigned i = 0; extensions[i] != NULL; i++)
-		{
-			std::string path = "Music/" + name + extensions[i];
-			SDL_RWops* ops = ResourceManager::OpenFile(path);
-			if (!ops)
-				continue;
-			newMusic = Mix_LoadMUS_RW(ops);
-			if (newMusic)
-				break;
-		}
-		musics[name] = newMusic;
-		return newMusic;
-	}
-	else
-	{
-		return iter->second;
-	}
+	alureDestroyStream(currentMusicStream, 2, musicBufs);
+	currentMusicStream = NULL;
+	currentMusicName = "";
+	free(ud);
 }
 
-std::string songName;
-
+void PlayMusic(const std::string& name)
+{
+	if (currentMusicStream)
+		alureStopSource(musicSource, AL_TRUE);
+	size_t length;
+	ALubyte* data = GetSoundData("Music/" + name, length);
+	currentMusicName = name;
+	currentMusicStream = alureCreateStreamFromStaticMemory(data, length, CHUNK_LENGTH, 2, musicBufs);
+	alurePlaySourceStream(musicSource, currentMusicStream, 2, 1, MusicEndCallback, data);
+	LOG("Sound", LOG_MESSAGE, "Music: %s", name.c_str());
+	if (!data)
+		LOG("Sound", LOG_WARNING, "failed to find music");
 }
 
-using namespace Internal;
-
-static bool disable_music = false;
-
-void Init ( int frequency, int resolution, int sources )
+void StopMusic()
 {
-	Mix_Init(MIX_INIT_MOD|MIX_INIT_OGG);
-	int volume_sound = MIX_MAX_VOLUME, volume_music = MIX_MAX_VOLUME;
-	Uint16 format;
-	switch (resolution)
-	{
-		case 8:
-			format = AUDIO_S8;
-			break;
-		case 16:
-			format = AUDIO_S16SYS;
-			break;
-/*		case 24:
-#if SDL_BYTEORDER == SDL_LIL_ENDIAN
-			format = 0x8018;
-#else
-			format = 0x9018;
-#endif
-			break;*/
-		default:
-            LOG("Sound", LOG_NOTICE, "Unsupported audio format, defaulting to 16-bit");
-			format = AUDIO_S16SYS;
-			break;
-	}
-	Mix_OpenAudio(frequency, format, 2, 4096);
-	Mix_AllocateChannels(sources);
-	Mix_VolumeMusic(volume_music);
-	Mix_Volume(-1, volume_sound);
-#ifndef NDEBUG
-	if (getenv("APOLLO_MUSIC_DISABLE"))
-//		disable_music = true;
-#endif
-	effectMapLock = SDL_CreateMutex();
-	preloadQueueLock = SDL_CreateMutex();
-	preloadQueueCondition = SDL_CreateCond();
-}
-
-void Preload ( const std::string& name )
-{
-	SDL_LockMutex(preloadQueueLock);
-	preloadQueue.push(name);
-	SDL_UnlockMutex(preloadQueueLock);
-	SDL_CondSignal(preloadQueueCondition);
-}
-
-void PlaySoundSDL ( const std::string& name, float gain, float pan )
-{
-	Mix_Chunk* chunk = SoundNamed(name);
-	if (!chunk)
+	if (!currentMusicStream)
 		return;
-	Uint8 ipan = pan * 127;
-	int ivolume = gain * (MIX_MAX_VOLUME / 2);
-	int channel = Mix_GroupAvailable(-1);
-	Mix_UnregisterAllEffects(channel);
-	if (ipan != 127)
-		Mix_SetPanning(channel, 0xFF - ipan, ipan);
-	if (fabs(gain - 1.0f) > 0.0003f)
-		Mix_SetDistance(channel, 1 / gain);
-	Mix_PlayChannel(channel, chunk, 0);
+	alureStopSource(musicSource, AL_TRUE);
 }
 
-void PlayMusic ( const std::string& music )
+std::string MusicName()
 {
-//	if (disable_music)
-//		return;
-	Mix_Music* mus = MusicNamed(music);
-	printf("%d", mus);
-	if (mus)
-	{
-		Mix_PlayMusic(mus, -1);
-		songName = music;
-	}
+	return "";
 }
 
-void StopMusic ()
+float MusicVolume()
 {
-	songName = "(no song)";
-	Mix_HaltMusic();
+	ALfloat rv;
+	alGetSourcefv(musicSource, AL_GAIN, &rv);
+	return rv;
 }
 
-std::string MusicName ()
+void SetMusicVolume(float mvol)
 {
-	return songName;
+	alSourcef(musicSource, AL_GAIN, mvol);
 }
 
-float MusicVolume ()
+float SoundVolume()
 {
-	return Mix_VolumeMusic(-1) / (float)MIX_MAX_VOLUME;
+	return 1.0f;
 }
 
-void SetMusicVolume ( float _mvol )
+void SetSoundVolume(float mvol)
 {
-	Mix_VolumeMusic(_mvol * MIX_MAX_VOLUME);
-}
-
-float SoundVolume ()
-{
-	return Mix_Volume(-1, -1) / (float)MIX_MAX_VOLUME;
-}
-
-void SetSoundVolume ( float _mvol )
-{
-	Mix_Volume(-1, MIX_MAX_VOLUME * _mvol);
 }
 
 }

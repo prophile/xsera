@@ -10,6 +10,27 @@
 #include "ParticleSystem.h"
 #include <list>
 
+/*
+
+A QUICK NOTE ON VERTEX ATTRIBUTES
+
+On ATI hardware, you can use any numbers you want. However! On NVidia hardware,
+the built-in attributes will collide with user-specified attributes if you try
+to use both, and hilarity ensues. Here is a table of collisions:
+
+gl_Vertex         0
+gl_Normal         2
+gl_Color          3
+gl_SecondaryColor 4
+gl_FogCoord       5
+gl_MultiTexCoordN 8+N
+
+We don't use gl_Color, gl_SecondaryColor or gl_FogCoord, nor do we use
+gl_MultiTexCoordN where N >= 1. Therefore if we start off custom attributes at
+1, the only gotcha is that we MUST skip 2.
+
+*/
+
 //#define DISABLE_WARP_EFFECTS
 
 #include "Apollo.h"
@@ -197,7 +218,7 @@ void Init ( int w, int h, bool fullscreen )
 	SDL_GL_SetAttribute ( SDL_GL_GREEN_SIZE, 8 );
 	SDL_GL_SetAttribute ( SDL_GL_ALPHA_SIZE, 0 );
 	SDL_GL_SetAttribute ( SDL_GL_DOUBLEBUFFER, 1 );
-	SDL_GL_SetAttribute ( SDL_GL_DEPTH_SIZE, 0 );
+	SDL_GL_SetAttribute ( SDL_GL_DEPTH_SIZE, 24 );
 	SDL_GL_SetAttribute ( SDL_GL_MULTISAMPLESAMPLES, 4 );
 	SDL_GL_SetAttribute ( SDL_GL_MULTISAMPLEBUFFERS, 1 );
 	SDL_GL_SetAttribute ( SDL_GL_SWAP_CONTROL, 1 );
@@ -226,10 +247,16 @@ void Init ( int w, int h, bool fullscreen )
 	scw = w;
 	sch = h;
 	
-	glClear ( GL_COLOR_BUFFER_BIT );
-	
+	glClear ( GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT );
+
+	glDepthMask(GL_FALSE);
+
 	glEnable ( GL_BLEND );
 	glBlendFunc ( GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA );
+
+	glClearDepth(1.0);
+	glDepthFunc(GL_LESS);
+	glCullFace(GL_CCW);
 	
 //	glEnable ( GL_LINE_SMOOTH );
 	glEnable ( GL_POINT_SMOOTH );
@@ -239,6 +266,15 @@ void Init ( int w, int h, bool fullscreen )
 #ifdef __MACH__
     glHint ( GL_TRANSFORM_HINT_APPLE, GL_FASTEST );
 #endif
+
+	const GLfloat projectionMatrix[] = { 1.0f, 0.0f, 0.0f, 0.0f,
+	                                     0.0f, 1.0f, 0.0f, 0.0f,
+										 0.0f, 0.0f, 0.001f, 0.0f,
+										 0.0f, 0.0f, -0.5f, 1.0f };
+
+	glMatrixMode(GL_PROJECTION);
+	glLoadMatrixf(projectionMatrix);
+	glMatrixMode(GL_MODELVIEW);
 	
 	glEnableClientState ( GL_VERTEX_ARRAY );
 	
@@ -754,14 +790,16 @@ static Object3D* GetObject3D ( std::string name )
 	}
 }
 
-void DrawObject3DAmbient ( std::string name, vec2 centre, colour ambient, float scale, float angle, float bank )
+void DrawObject3DAmbient ( std::string name, vec2 centre, float scale, float angle, float bank )
 {
 	Object3D* obj = GetObject3D(name);
 	EnableTexturing();
 	DisableBlending();
 	obj->BindTextures();
-	glUniform3f(UniformLocation("Ambient"), ambient.red(), ambient.green(), ambient.blue());
-	SetShader("3DAmbient" + obj->ShaderType());
+	//glUniform3f(UniformLocation("Ambient"), ambient.red(), ambient.green(), ambient.blue());
+	SetShader("3DBase");
+	glUniform1f(UniformLocation("specularScale"), obj->SpecularScale());
+	glUniform1f(UniformLocation("shininess"), obj->Shininess());
 	Matrices::SetViewMatrix(matrix2x3::Translate(centre));
 	obj->Draw(scale, angle, bank);
 }
@@ -833,7 +871,9 @@ void SetCamera ( vec2 corner1, vec2 corner2, float rotation )
 
 void BeginFrame ()
 {
-	glClear(GL_COLOR_BUFFER_BIT);
+	glDepthMask(GL_TRUE);
+	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+	glDepthMask(GL_FALSE);
 	Matrices::SetViewMatrix(matrix2x3::Identity());
 	Matrices::SetModelMatrix(matrix2x3::Identity());
 	starfieldNumber = 1;
@@ -865,6 +905,8 @@ void BeginWarp ( float magnitude, float angle, float scale )
 		glGenTextures(1, &warpTex);
 		glBindFramebufferEXT(GL_FRAMEBUFFER_EXT, warpFBO);
 		glBindTexture(GL_TEXTURE_RECTANGLE_ARB, warpTex);
+		glTexParameteri(GL_TEXTURE_RECTANGLE_ARB, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
+		glTexParameteri(GL_TEXTURE_RECTANGLE_ARB, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
 		glTexImage2D(GL_TEXTURE_RECTANGLE_ARB, 0, GL_RGBA8, scw, sch, 0, GL_RGBA, GL_UNSIGNED_BYTE, NULL);
 		glFramebufferTexture2DEXT(GL_FRAMEBUFFER_EXT, GL_COLOR_ATTACHMENT0_EXT, GL_TEXTURE_RECTANGLE_ARB, warpTex, 0);
 		GLuint status = glCheckFramebufferStatusEXT(GL_FRAMEBUFFER_EXT);

@@ -12,6 +12,7 @@ namespace Shaders
 
 void SetShader ( const std::string& name );
 GLuint UniformLocation ( const std::string& name );
+void BindAttribute ( GLuint index, const std::string& name );
 
 }
 

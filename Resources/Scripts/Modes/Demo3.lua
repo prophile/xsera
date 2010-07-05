@@ -580,7 +580,7 @@ function render ()
 		-- draw mouse replacement
 		-- check to see if it's over the panels
 		-- if it's not, draw the lines coming inward
-		mousePos.x, mousePos.y = mouse_position()
+		mousePos.x, mousePos.y = input.mouse_position()
 		graphics.draw_line({ x = -410, y = mousePos.y }, { x = mousePos.x - 20, y = mousePos.y }, 1.0, ClutColour(4, 8))
 		graphics.draw_line({ x = 410, y = mousePos.y }, { x = mousePos.x + 20, y = mousePos.y }, 1.0, ClutColour(4, 8))
 		graphics.draw_line({ x = mousePos.x, y = -310 }, { x = mousePos.x, y = mousePos.y - 20 }, 1.0, ClutColour(4, 8))

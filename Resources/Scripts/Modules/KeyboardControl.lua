@@ -1,6 +1,6 @@
 import('GlobalVars')
 import('Interfaces')
-
+import('Console')
 --[[-----------------------
 	--{{---------------
 		Key In Menu
@@ -385,7 +385,7 @@ keyboard = { { "Ship",
 				{ key = "F10", name = "Zoom to 1:2", action = DoZoom1_2, active = false }, 
 				{ key = "F11", name = "Zoom to 1:4", action = DoZoom1_4, active = false }, 
 				{ key = "F12", name = "Zoom to 1:16", action = DoZoom1_16, active = false }, 
-				{ key = "ins", name = "Zoom to Closest Hostile", action = DoZoomHostile, active = false }, 
+				{ key = "m", name = "Zoom to Closest Hostile", action = DoZoomHostile, active = false }, 
 				{ key = "home", name = "Zoom to Closest Object", action = DoZoomObject, active = false }, 
 				{ key = "pgup", name = "Zoom to All", action = DoZoomAll, active = false }, 
 				{ key = "del", name = "Message Next Page / Clear", action = DoMessageNext, active = false } },

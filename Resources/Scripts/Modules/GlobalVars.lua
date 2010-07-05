@@ -59,6 +59,9 @@ oldMousePos = vec(0, 0)
 mouseStart = 0
 --/mouse variables
 
+cameraSnap = false
+requestedCamRatio = 1
+
 --scenvars
 scen = nil
 victoryTimer = nil

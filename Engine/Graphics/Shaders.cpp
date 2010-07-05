@@ -49,6 +49,24 @@ static void PrintLogShader ( GLuint object )
 	putchar('\n');
 }
 
+static void ParseIncludes ( std::string& shader )
+{
+	std::string::size_type pos;
+	while ((pos = shader.find("#pragma import ")) != std::string::npos)
+	{
+		size_t len;
+		pos += strlen("#pragma import ");
+		std::string::size_type endPos = shader.find_first_of('\n', pos);
+		std::string fileName = shader.substr(pos, endPos - pos);
+		SDL_RWops* rwops = ResourceManager::OpenFile("Shaders/" + fileName + ".inc");
+		char* buffer = (char*)ResourceManager::ReadFull(&len, rwops, 1);
+		std::string include ( buffer, len );
+		free(buffer);
+		pos -= strlen("#pragma import ");
+		shader.replace(pos, endPos - pos, include);
+	}
+}
+
 class Shader
 {
 private:
@@ -56,6 +74,10 @@ private:
 public:
 	Shader ( std::string vertexProgram, std::string fragmentProgram )
 	{
+		// preprocess
+		ParseIncludes(vertexProgram);
+		ParseIncludes(fragmentProgram);
+
 		// compile the vertex shader
 		const char* source = vertexProgram.data();
 		GLint len = vertexProgram.length();
@@ -93,6 +115,15 @@ public:
 		{
 			currentShader = programObject;
 			glUseProgram(programObject);
+			// bind textures
+			for (int i = 0; i < 4; ++i)
+			{
+				char name[6];
+				sprintf(name, "tex%d", i);
+				GLint pos = glGetUniformLocation(programObject, name);
+				if (pos != -1)
+					glUniform1i(pos, i);
+			}
 		}
 	}
 };
@@ -123,8 +154,10 @@ void SetShader ( const std::string& name )
 		size_t len;
 		char* buffer = (char*)ResourceManager::ReadFull(&len, vertexOps, 1);
 		std::string vertex ( buffer, len );
+		free(buffer);
 		buffer = (char*)ResourceManager::ReadFull(&len, fragmentOps, 1);
 		std::string fragment ( buffer, len );
+		free(buffer);
 		AddShader(name, vertex, fragment);
 		// call self
 		SetShader(name);
@@ -136,6 +169,11 @@ GLuint UniformLocation ( const std::string& name )
 	GLuint location = glGetUniformLocation(currentShader, name.c_str());
 	assert(location != -1UL);
 	return location;
+}
+
+void BindAttribute ( GLuint index, const std::string& name )
+{
+	glBindAttribLocation(currentShader, index, name.c_str());
 }
 
 }
