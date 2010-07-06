@@ -942,4 +942,20 @@ void EndWarp ()
 #endif
 }
 
+void PreloadSpriteSheet(const std::string& sheetname)
+{
+	SpriteSheet* sheet;
+	SheetMap::iterator iter = spriteSheets.find(sheetname);
+	if (iter == spriteSheets.end())
+	{
+		sheet = new SpriteSheet(sheetname);
+		spriteSheets[sheetname] = sheet;
+	}
+}
+
+void PreloadFont(const std::string& fontname)
+{
+	TextRenderer::TextDimensions(fontname, "", 2);
+}
+
 }
