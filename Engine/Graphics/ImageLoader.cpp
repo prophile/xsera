@@ -107,6 +107,51 @@ GLuint CreateTexture ( SDL_Surface* surface, bool autofree, bool rectangle, bool
 	return texID;
 }
 
+static inline uint8_t heightAt(SDL_Surface* surface, int x, int y)
+{
+	if (!surface) return 0;
+	if (x < 0) x = 0;
+	if (y < 0) y = 0;
+	if (x >= surface->w) x = surface->w - 1;
+	if (y >= surface->h) y = surface->h - 1;
+	return *((unsigned char*)surface->pixels + surface->format->BytesPerPixel*(surface->w*y + x));
+}
+
+#define HEIGHTAT(x, y) *((unsigned char*)heightMap->pixels + bpp*(width*(y) + x))
+
+SDL_Surface* CreateBumpMap(SDL_Surface* heightMap)
+{
+	int width  = heightMap ? heightMap->w : 1;
+	int height = heightMap ? heightMap->h : 1;
+	SDL_Surface* surface = SDL_CreateRGBSurface(SDL_SWSURFACE, width, height, 32, 0x000000FF, 0x0000FF00, 0x00FF0000, 0xFF000000);
+	for (int y = 0; y < height; ++y)
+	{
+		for (int x = 0; x < width; ++x)
+		{
+			short Vdiff, Hdiff;
+			float VdiffF, HdiffF;
+			float TC;
+			unsigned char L, R, U, D;
+			Uint32 rgba;
+			L = heightAt(heightMap, x - 1, y);
+			R = heightAt(heightMap, x + 1, y);
+			U = heightAt(heightMap, x, y - 1);
+			D = heightAt(heightMap, x, y + 1);
+			Vdiff = (short)D - (short)U;
+			Hdiff = (short)R - (short)L;
+			VdiffF = Vdiff / 255.0f;
+			HdiffF = Hdiff / 255.0f;
+			TC = sqrtf(VdiffF*VdiffF + HdiffF*HdiffF - 1.0f);
+			VdiffF += 1.0f; VdiffF *= 0.5f;
+			HdiffF += 1.0f; HdiffF *= 0.5f;
+			TC     += 1.0f; TC     *= 0.5f;
+			rgba = SDL_MapRGBA(surface->format, HdiffF, VdiffF, TC, heightAt(heightMap, x, y));
+			*((Uint32*)surface->pixels + y*width + x) = rgba;
+		}
+	}
+	return surface;
+}
+
 }
 
 }
