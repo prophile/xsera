@@ -1456,6 +1456,9 @@ luaL_Reg registryGraphics[] =
 	"begin_warp", GFX_BeginWarp,
 	"end_warp", GFX_EndWarp,
 	"draw_3d_ambient", GFX_DrawObject3DAmbient,
+	"preload_sprite_sheet", GFX_PreloadSpriteSheet,
+	"preload_image", GFX_PreloadImage,
+	"preload_font", GFX_PreloadFont,
     NULL, NULL
 };
 
