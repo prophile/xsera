@@ -328,6 +328,8 @@ function render()
 	PopDownConsole()
 	
 	graphics.end_frame()
+
+	sound.listener(scen.playerShip.physics.position, scen.playerShip.physics.velocity)
 end
 
 function mouse(button, x, y)
