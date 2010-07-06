@@ -1,0 +1,15 @@
+Comment tags:
+
+Comment tags are designated by short, all caps strings enclosed by square brackets ('[' and ']'). These tags are used to designate areas that need work or may need attention at some future time. These tags may be in Lua or C++ files.
+
+Listed below are some tags. This list should eventually become comprehensive, please add tags as you find them and list their uses.
+
+Tags:
+
+[ADAM] - Something for Adam to look at in the future.
+[ALISTAIR] - Something for Alistair to look at in the future. There may be some [ALASTAIR] tags still out there.
+[SCOTT] - Something for Scott to look at in the future.
+[DEMO3] - Something to be done by Demo 3.
+[FIX] - Code that needs to somehow be fixed.
+[WIP] - Code that is a work in progress and should not be removed or messed with except by its author (or with permission).
+[HARDCODED] - Marks code that is hardcoded and should be made more flexible in the future.
