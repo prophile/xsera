@@ -87,7 +87,6 @@
 		7A58AD4C108919F200C4F789 /* NewResources */ = {isa = PBXFileReference; lastKnownFileType = folder; name = NewResources; path = ../Resources/NewResources; sourceTree = SOURCE_ROOT; };
 		7A5FEA6D1130BE22009CFD8A /* Scripts */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Scripts; path = ../Resources/Scripts; sourceTree = SOURCE_ROOT; };
 		7A8C711F0EDB0FB700CFE5D3 /* Sounds */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Sounds; path = ../Resources/Sounds; sourceTree = SOURCE_ROOT; };
-		D2CF0DA8119B100E00F5D0ED /* Proximity.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Proximity.lua; path = ../Resources/Scripts/Modules/Proximity.lua; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,7 +118,6 @@
 				496923E20EBE4C3500930DDD /* Resources */,
 				496923DC0EBE4BC300930DDD /* Products */,
 				496923DE0EBE4BC300930DDD /* Xsera-Info.plist */,
-				5715EBE411E0104800897669 /* OpenAL.framework */,
 			);
 			sourceTree = "<group>";
 		};
@@ -135,7 +133,6 @@
 			isa = PBXGroup;
 			children = (
 				7A5FEA6D1130BE22009CFD8A /* Scripts */,
-				D2CF0DA8119B100E00F5D0ED /* Proximity.lua */,
 				49597A0B0ED4D47C00173D17 /* Config */,
 				5766341410AF74600025BA67 /* Particles */,
 				57FCA77910ACF9F6002D6A9E /* Objects */,
@@ -155,6 +152,7 @@
 		496923E30EBE4C3900930DDD /* External */ = {
 			isa = PBXGroup;
 			children = (
+				5715EBE411E0104800897669 /* OpenAL.framework */,
 				49A0E6930ECC3887007F3458 /* OpenGL.framework */,
 				496924170EBE4CEA00930DDD /* SDL.framework */,
 				496924180EBE4CEA00930DDD /* SDL_image.framework */,
