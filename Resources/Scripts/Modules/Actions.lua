@@ -295,7 +295,8 @@ actionTable["play-sound-action"] = function(action, source, direct)
 		parent = direct
 	end
 	if rsound ~= nil then
-		if ((source.ai or direct.ai).creator == scen.playerShip.physics.object_id) then
+		if parent == nil or parent.physics == nil or
+		   ((source.ai or direct.ai).creator == scen.playerShip.physics.object_id) then
 			sound.play(rsound)
 		else
 			sound.play_positional(rsound, parent.physics.position, parent.physics.velocity)
