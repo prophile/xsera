@@ -55,10 +55,6 @@ CAMERA_RATIO = { curr = 1, num = 2, target = 1 }
 -- should I add a function that checks to make sure that the camera ratio is the
 -- same as the target, and adjusting if not? [ADAM] [TODO]
 
-<<<<<<< HEAD
-function CameraInterpolate(dt) -- note: this function now controlls both quadratic zooming and snap zooming (not good from a code design philosophy)
-	if cameraChanging == true then
-=======
 function CameraInterpolate(dt)
 	local oldRatio = cameraRatio.current
 	local zoomGoal
@@ -90,7 +86,6 @@ function CameraInterpolate(dt)
 	--[==[
 	if cameraRatio. >= CAMERA_DYNAMIC_THRESHOLD
 	or  then
->>>>>>> gamefreak/zooming
 		zoomTime = zoomTime - dt
 		if zoomTime < 0 then
 			zoomTime = 0
