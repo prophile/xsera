@@ -15,6 +15,7 @@
 #include "Utilities/ResourceManager.h"
 #include "Utilities/GameTime.h"
 #include "Utilities/TestHarness.h"
+#include "Utilities/MachinePower.h"
 #include "Input.h"
 #include "Modes/ModeManager.h"
 #include "Graphics/Graphics.h"

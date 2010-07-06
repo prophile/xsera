@@ -165,6 +165,8 @@
 		57A29DDA11963F940074B901 /* SocketProvider.h in Headers */ = {isa = PBXBuildFile; fileRef = 57A29DD611963F940074B901 /* SocketProvider.h */; };
 		57B806BC113E21C900766C6F /* GAFFile.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 57B806BA113E21C900766C6F /* GAFFile.cpp */; };
 		57B806BD113E21C900766C6F /* GAFFile.h in Headers */ = {isa = PBXBuildFile; fileRef = 57B806BB113E21C900766C6F /* GAFFile.h */; };
+		57DFB0C711E3992F00941E61 /* MachinePower.h in Headers */ = {isa = PBXBuildFile; fileRef = 57DFB0C611E3992F00941E61 /* MachinePower.h */; };
+		57DFB0C911E3993700941E61 /* MachinePower.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 57DFB0C811E3993700941E61 /* MachinePower.cpp */; };
 		57FCA50B10ACDF9D002D6A9E /* Object3D.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 57FCA50910ACDF9D002D6A9E /* Object3D.cpp */; };
 		57FCA50C10ACDF9D002D6A9E /* Object3D.h in Headers */ = {isa = PBXBuildFile; fileRef = 57FCA50A10ACDF9D002D6A9E /* Object3D.h */; };
 		D221494111652EA4009575A0 /* bit.c in Sources */ = {isa = PBXBuildFile; fileRef = D221494011652EA4009575A0 /* bit.c */; };
@@ -330,6 +332,8 @@
 		57A29DD611963F940074B901 /* SocketProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SocketProvider.h; sourceTree = "<group>"; };
 		57B806BA113E21C900766C6F /* GAFFile.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GAFFile.cpp; sourceTree = "<group>"; };
 		57B806BB113E21C900766C6F /* GAFFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAFFile.h; sourceTree = "<group>"; };
+		57DFB0C611E3992F00941E61 /* MachinePower.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MachinePower.h; sourceTree = "<group>"; };
+		57DFB0C811E3993700941E61 /* MachinePower.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MachinePower.cpp; sourceTree = "<group>"; };
 		57FCA50910ACDF9D002D6A9E /* Object3D.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Object3D.cpp; sourceTree = "<group>"; };
 		57FCA50A10ACDF9D002D6A9E /* Object3D.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Object3D.h; sourceTree = "<group>"; };
 		D221494011652EA4009575A0 /* bit.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = bit.c; sourceTree = "<group>"; };
@@ -578,6 +582,8 @@
 		496A24C00F0EB37900C53BA1 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				57DFB0C811E3993700941E61 /* MachinePower.cpp */,
+				57DFB0C611E3992F00941E61 /* MachinePower.h */,
 				57B806BA113E21C900766C6F /* GAFFile.cpp */,
 				57B806BB113E21C900766C6F /* GAFFile.h */,
 				57966A7F10AE7E8A0088327C /* RNG.h */,
@@ -737,6 +743,7 @@
 				57A29DD111963F8D0074B901 /* Splitting.h in Headers */,
 				57A29DD811963F940074B901 /* LocalOnly.h in Headers */,
 				57A29DDA11963F940074B901 /* SocketProvider.h in Headers */,
+				57DFB0C711E3992F00941E61 /* MachinePower.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -865,6 +872,7 @@
 				57A29DD011963F8D0074B901 /* Splitting.cpp in Sources */,
 				57A29DD711963F940074B901 /* LocalOnly.cpp in Sources */,
 				57A29DD911963F940074B901 /* SocketProvider.cpp in Sources */,
+				57DFB0C911E3993700941E61 /* MachinePower.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
