@@ -87,7 +87,7 @@
 		7A58AD4C108919F200C4F789 /* NewResources */ = {isa = PBXFileReference; lastKnownFileType = folder; name = NewResources; path = ../Resources/NewResources; sourceTree = SOURCE_ROOT; };
 		7A5FEA6D1130BE22009CFD8A /* Scripts */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Scripts; path = ../Resources/Scripts; sourceTree = SOURCE_ROOT; };
 		7A8C711F0EDB0FB700CFE5D3 /* Sounds */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Sounds; path = ../Resources/Sounds; sourceTree = SOURCE_ROOT; };
-		D2CF0DA8119B100E00F5D0ED /* Proximity.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.lua; name = Proximity.lua; path = ../Resources/Scripts/Modules/Proximity.lua; sourceTree = SOURCE_ROOT; };
+		D2CF0DA8119B100E00F5D0ED /* Proximity.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Proximity.lua; path = ../Resources/Scripts/Modules/Proximity.lua; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
