@@ -37,8 +37,6 @@ void Startup ()
 	Sound::SetSoundVolume(ToFloat(Preferences::Get("Audio/SoundVolume")));
 	Graphics::BeginFrame();
 	Graphics::EndFrame();
-	// compile class script
-	CompileScript("System/Class");
 	LuaScript bootScript ("System/Boot");
 	#ifdef NDEBUG
 		SwitchMode("Xsera/Intro");
