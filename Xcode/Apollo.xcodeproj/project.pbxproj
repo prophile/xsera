@@ -908,7 +908,7 @@
 				GCC_ENABLE_FIX_AND_CONTINUE = YES;
 				GCC_MODEL_TUNING = G5;
 				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_VERSION = 4.0;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
 				HEADER_SEARCH_PATHS = (
 					..,
 					../Engine,
@@ -918,6 +918,7 @@
 					../External/SDL.framework/Headers,
 				);
 				INSTALL_PATH = /usr/local/lib;
+				LLVM_LTO = NO;
 				PREBINDING = NO;
 				PRODUCT_NAME = Apollo;
 			};
@@ -940,7 +941,7 @@
 				GCC_MODEL_TUNING = G5;
 				GCC_OPTIMIZATION_LEVEL = 3;
 				GCC_PREPROCESSOR_DEFINITIONS = NDEBUG;
-				GCC_VERSION = 4.0;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
 				HEADER_SEARCH_PATHS = (
 					..,
 					../Engine,
@@ -950,7 +951,7 @@
 					../External/SDL.framework/Headers,
 				);
 				INSTALL_PATH = /usr/local/lib;
-				LLVM_LTO = NO;
+				LLVM_LTO = YES;
 				PREBINDING = NO;
 				PRODUCT_NAME = Apollo;
 				ZERO_LINK = NO;
@@ -984,7 +985,7 @@
 				GCC_MODEL_TUNING = G5;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = "NDEBUG=1";
-				GCC_VERSION = 4.0;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
 				HEADER_SEARCH_PATHS = (
 					..,
 					../Engine,
@@ -994,6 +995,7 @@
 					../External/SDL.framework/Headers,
 				);
 				INSTALL_PATH = /usr/local/lib;
+				LLVM_LTO = NO;
 				PREBINDING = NO;
 				PRODUCT_NAME = Apollo;
 			};
