@@ -35,6 +35,8 @@ void Startup ()
 	Sound::Init(ToInt(Preferences::Get("Audio/SamplingRate")), ToInt(Preferences::Get("Audio/Resolution")), ToInt(Preferences::Get("Audio/Channels")));
 	Sound::SetMusicVolume(ToFloat(Preferences::Get("Audio/MusicVolume")));
 	Sound::SetSoundVolume(ToFloat(Preferences::Get("Audio/SoundVolume")));
+	Graphics::BeginFrame();
+	Graphics::EndFrame();
 	// compile class script
 	CompileScript("System/Class");
 	LuaScript bootScript ("System/Boot");
