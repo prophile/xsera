@@ -1150,6 +1150,27 @@ int GFX_EndWarp ( lua_State* L )
 	return 0;
 }
 
+int GFX_PreloadSpriteSheet ( lua_State* L )
+{
+	const char* sheet = luaL_checkstring(L, 1);
+	Graphics::PreloadSpriteSheet(sheet);
+	return 0;
+}
+
+int GFX_PreloadImage ( lua_State* L )
+{
+	const char* image = luaL_checkstring(L, 1);
+	Graphics::PreloadImage(image);
+	return 0;
+}
+
+int GFX_PreloadFont ( lua_State* L )
+{
+	const char* font = luaL_checkstring(L, 1);
+	Graphics::PreloadFont(font);
+	return 0;
+}
+
 /**
  * @page lua_graphics The Lua Graphics Registry
  * This page contains information about the Lua graphics registry.
