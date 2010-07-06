@@ -2,11 +2,10 @@ WINDOW = { width, height }
 WINDOW.width, WINDOW.height = window.size()
 
 panels = { left = { width = 128, height = 768, center = { x = -WINDOW.width / 2, y = 0 } }, right = { width = 32, height = 768, center = { x = WINDOW.width / 2, y = 0 } } }
+cameraRatio = { current = 1, num = 2, target = 1 }
 
-cameraRatio = 1
-cameraRatioTarget = 1
 aspectRatio = WINDOW.width / WINDOW.height
-camera = { w = WINDOW.width / cameraRatio, h }
+camera = { w = WINDOW.width / cameraRatio.current, h }
 camera.h = camera.w / aspectRatio
 shipAdjust = .045 * camera.w
 timeInterval = 1
@@ -23,31 +22,30 @@ function UpdateWindow()
 end
 
 CAMERA_RATIO_OPTIONS = {
-    function() -- Zoom to 2:1
-        return 2
-    end,
-    function() -- Zoom to 1:1
-        return 1
-    end,
-    function() -- Zoom to 1:2
-        return 1/2
-    end,
-    function() --
-        return 1/4
-    end,
-    function()
-        return 1/16
-    end,
-	function() -- zoom to nearest hostile object
-		return 1/8 -- [TEMP] [ADAM] [DEMO3] need to make the algorithm for this
+	2, 1, 1/2, 1/4, 1/16,
+	function() -- zoom to nearest hostile
+		local object, distance = GetClosestHostile(scen.playerShip)
+
+		local ratio = WINDOW.height / 3 / distance
+		ratio = math.min(ratio, 2.0)
+		return ratio
 	end,
 	function() -- zoom to nearest object
-		return 1/9 -- [TEMP] [ADAM] [DEMO3] need to make the algorithm for this
+		local object, distance = GetClosestObject(scen.playerShip)
+
+		local ratio = WINDOW.height / 3 / distance
+		ratio = math.min(ratio, 2.0)
+		return ratio
 	end,
 	function() -- zoom to all
-		return 1/10 -- [TEMP] [ADAM] [DEMO3] need to make the algorithm for this
+		local object, distance = GetFurthestObject(scen.playerShip)
+
+		local ratio = WINDOW.height / 3 / distance
+		ratio = math.min(ratio, 2.0)
+		return ratio
 	end
 }
+CAMERA_DYNAMIC_THRESHOLD = 6
 
 CAMERA_RATIO = { curr = 1, num = 2, target = 1 }
 -- how this works when not zooming: curr = target = CAMERA_RATIO_OPTIONS[num]
@@ -57,8 +55,42 @@ CAMERA_RATIO = { curr = 1, num = 2, target = 1 }
 -- should I add a function that checks to make sure that the camera ratio is the
 -- same as the target, and adjusting if not? [ADAM] [TODO]
 
+<<<<<<< HEAD
 function CameraInterpolate(dt) -- note: this function now controlls both quadratic zooming and snap zooming (not good from a code design philosophy)
 	if cameraChanging == true then
+=======
+function CameraInterpolate(dt)
+	local oldRatio = cameraRatio.current
+	local zoomGoal
+	if cameraRatio.target < CAMERA_DYNAMIC_THRESHOLD then
+		--Normal scaling
+		zoomGoal = CAMERA_RATIO_OPTIONS[cameraRatio.target]
+	else
+		--Dynamic scaling
+		zoomGoal = CAMERA_RATIO_OPTIONS[cameraRatio.target]()
+	end
+
+	local zoomTime = math.max(math.abs(math.log(zoomGoal/cameraRatio.current)/math.log(2)),1)
+	if zoomTime ~= 0 then
+	cameraRatio.current = cameraRatio.current + (zoomGoal-cameraRatio.current)*(zoomTime*dt)
+	end
+
+	if (cameraRatio.current < 1 / 4 and oldRatio > 1 / 4)
+	or (cameraRatio.current > 1 / 4 and oldRatio < 1 / 4) then
+		sound.play("ZoomChange")
+	end
+
+	camera = { w = WINDOW.width / cameraRatio.current, h }
+	camera.h = camera.w / aspectRatio
+	shipAdjust = .045 * camera.w
+	arrowLength = ARROW_LENGTH / cameraRatio.current
+	arrowVar = ARROW_VAR / cameraRatio.current
+	arrowDist = ARROW_DIST / cameraRatio.current
+
+	--[==[
+	if cameraRatio. >= CAMERA_DYNAMIC_THRESHOLD
+	or  then
+>>>>>>> gamefreak/zooming
 		zoomTime = zoomTime - dt
 		if zoomTime < 0 then
 			zoomTime = 0
@@ -66,8 +98,10 @@ function CameraInterpolate(dt) -- note: this function now controlls both quadrat
 --				scen.playerShip.weapon.beam.width = cameraRatio
 			soundJustPlayed = false
 		end
+
 		if zoomTime >= 0 then
-			cameraRatio = cameraRatioOrig + cameraRatioOrig * multiplier * math.pow(math.abs((timeInterval - zoomTime) / timeInterval), 2)  --[[* (((x - timeInterval) * (x - timeInterval) * math.sqrt(math.abs(x - timeInterval))) / (timeInterval * timeInterval * math.sqrt(math.abs(timeInterval))))--]]
+			cameraRatio = cameraRatioOrig + cameraRatioOrig * multiplier * math.pow(math.abs((timeInterval - zoomTime) / timeInterval), 2)
+			 --[[* (((x - timeInterval) * (x - timeInterval) * math.sqrt(math.abs(x - timeInterval))) / (timeInterval * timeInterval * math.sqrt(math.abs(timeInterval))))--]]
 		end
 		camera = { w = WINDOW.width / cameraRatio, h }
 		camera.h = camera.w / aspectRatio
@@ -75,13 +109,16 @@ function CameraInterpolate(dt) -- note: this function now controlls both quadrat
 		arrowLength = ARROW_LENGTH / cameraRatio
 		arrowVar = ARROW_VAR / cameraRatio
 		arrowDist = ARROW_DIST / cameraRatio
+
 		if (cameraRatio < 1 / 4 and cameraRatioOrig > 1 / 4) or (cameraRatio > 1 / 4 and cameraRatioOrig < 1 / 4) then
 			if soundJustPlayed == false then
 				sound.play("ZoomChange")
 				soundJustPlayed = true
 			end
 		end
+
 	end
+	--]==]
 end
 
 -- Adam's replacement for CameraInterpolate(dt)

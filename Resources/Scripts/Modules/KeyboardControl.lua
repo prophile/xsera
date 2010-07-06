@@ -171,79 +171,17 @@ function DoMoveOrder()
 	end
 end
 
-function DoScaleIn(step)
---[[ with all due respect this code is nasty
-	local MAX_POW = 1
-	local cameraPow = math.log(cameraRatioTarget)/math.log(2)
-	if step == nil then
-		if MAX_POW > math.floor(cameraPow) then
-			cameraPow = math.floor(cameraPow) + 1
-		end
-	else
-		cameraPow = math.min(MAX_POW,cameraPow+step)
+function DoScaleIn()
+	if cameraRatio.target > 1 then
+		cameraRatio.target = cameraRatio.target - 1
 	end
-	
-	local newRatio = 2^cameraPow
-	
-	if newRatio ~= cameraRatio then
-		cameraChanging = true
-		cameraRatioTarget = newRatio
-		cameraRatioOrig = cameraRatio
-		cameraSnap = false
-		--if(zoomTime == 0) then -- prevents zoom speed from resetting if zoom setting is changed mid-zoom.
-			zoomTime = timeInterval * 1 * (step or 0.5)
-		--end
-		multiplier = (newRatio - cameraRatioOrig)/cameraRatioOrig
-	end--]]
-	
-    if not RELEASE_BUILD then
-        -- do instant change
-        if CAMERA_RATIO.num ~= 1 then
-            InstantCamera(CAMERA_RATIO.num - 1)
-            CAMERA_RATIO.num = CAMERA_RATIO.num - 1
-        end
-    else
-        -- do ease-in (to be implemented later)
-    end
-    
 	ActionDeactivate("Scale In")
 end
 
-function DoScaleOut(step)
---[[ with all due respect this code is nasty
-	local MIN_POW = -6
-	local cameraPow = math.log(cameraRatioTarget)/math.log(2)
-	if step == nil then
-		if MIN_POW < math.ceil(cameraPow) then
-			cameraPow = math.ceil(cameraPow) - 1
-		end
-	else
-		cameraPow = math.max(MIN_POW,cameraPow-step)
+function DoScaleOut()
+	if cameraRatio.target < #CAMERA_RATIO_OPTIONS then
+		cameraRatio.target = cameraRatio.target + 1
 	end
-	
-	local newRatio = 2^cameraPow
-	
-	if newRatio ~= cameraRatio then
-		cameraChanging = true
-		cameraRatioTarget = newRatio
-		cameraRatioOrig = cameraRatio
-		cameraSnap = false
-		--if(zoomTime == 0) then
-			zoomTime = timeInterval * 2 * (step or 0.5)
-		--end
-		multiplier = (newRatio - cameraRatio)/cameraRatio
-	end--]]
-    
-    if not RELEASE_BUILD then
-        -- do instant change
-        if CAMERA_RATIO.num ~= #CAMERA_RATIO_OPTIONS then
-            InstantCamera(CAMERA_RATIO.num + 1)
-            CAMERA_RATIO.num = CAMERA_RATIO.num + 1
-        end
-    else
-        -- do ease-in (to be implemented later)
-    end
-    
 	ActionDeactivate("Scale Out")
 end
 
@@ -297,76 +235,31 @@ function DoTransferControl()
 end
 
 function DoZoom1_1()
-	if cameraRatioTarget ~= 1 then
-		cameraChanging = true
-		cameraRatioOrig = cameraRatio
-		zoomTime = timeInterval
-		cameraRatioTarget = 1
-		multiplier = (1 - cameraRatio) / cameraRatio
-	end
+	cameraRatio.target = 2
 end
 
 function DoZoom1_2()
-	if cameraRatioTarget ~= 1/2 then
-		cameraChanging = true
-		cameraRatioOrig = cameraRatio
-		zoomTime = timeInterval
-		cameraRatioTarget = 1/2 
-		multiplier = (1/2 - cameraRatio) / cameraRatio
-	end
+	cameraRatio.target = 3
 end
 
 function DoZoom1_4()
-	if cameraRatioTarget ~= 1/4 then
-		cameraChanging = true
-		cameraRatioOrig = cameraRatio
-		zoomTie = timeInterval
-		cameraRatioNum = 1/4
-		multiplier = (1/4 - cameraRatio) / cameraRatio
-	end
+	cameraRatio.target = 4
 end
 
 function DoZoom1_16()
-	if cameraRatioTarget ~= 1/16 then
-		cameraChanging = true
-		cameraRatioOrig = cameraRatio
-		zoomTime = timeInterval
-		cameraRatioTarget = 1/16
-		multiplier = (1/16 - cameraRatio) / cameraRatio
-	end
+	cameraRatio.target = 5
 end
 
 function DoZoomHostile()
-	-- insta-zoom version - UNSTABLE?
-	--Find target zoom distance in pixels
---	if(WINDOW.width <= WINDOW.height) then
---		zoomRadius = WINDOW.width
---	else
---		zoomRadius = WINDOW.height
---	end
---	
---	if cameraRatioNum ~= 6 then
-		--local diff = { x = computerShip.physicsObject.position.x - scen.playerShip.physicsObject.position.x, y = computerShip.physicsObject.position.y - scen.playerShip.physicsObject.position.y }
---		local calculatedRatio = 0
---		
---		if aspectRatio > (diff.x / diff.y) then
---			calculatedRatio = 640 / (diff.y * 2 * aspectRatio)
---		else
---			calculatedRatio = 640 / (diff.x * 2)
---		end
-		cameraRatioOrig = cameraRatio
-		cameraRatioTarget = 1 / 4
-		cameraSnap = true
-		cameraChanging = true
---	end
+	cameraRatio.target = 6
 end
 
 function DoZoomObject()
-	LogError("The command does not have any code. /placeholder", 9)
+	cameraRatio.target = 7
 end
 
 function DoZoomAll()
-	LogError("The command does not have any code. /placeholder", 9)
+	cameraRatio.target = 8
 end
 
 function DoMessageNext()
