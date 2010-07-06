@@ -242,6 +242,7 @@ actionTable["create-object-action"] = function(action, source, direct)
 		end
 		
 		new.ai.owner = owner
+		new.ai.creator = srcMotion.object_id
 		
 		CreateTrigger(new)
 		scen.objects[new.physics.object_id] = new
@@ -286,6 +287,7 @@ end
 --actionTable["nil-target-action"] = noAction
 --actionTable["no-action"]         = noAction
 actionTable["play-sound-action"] = function(action, source, direct)
+--	((source.ai or direct.ai).creator == scen.playerShip.physics.object_id)
 
 	local rsound = gameData["Sounds"][action["id-minimum"]]
 	if rsound ~= nil then
