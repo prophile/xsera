@@ -239,7 +239,7 @@ void Init ( int w, int h, bool fullscreen )
 			if (!SDL_SetVideoMode(w, h, 0, flags))
 			{
                 LOG("Graphics", LOG_ERROR, "Bad graphics driver.");
-				exit(1);
+				abort();
 			}
 		}
 	}

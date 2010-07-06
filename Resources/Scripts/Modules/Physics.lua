@@ -40,10 +40,8 @@ Physics = {
 	ApplyImpulse = function(obj, impulse)
 		if obj.mass == nil then
 			if obj.object_id == nil then
-				print("ERROR: NON-STANDARD OBJECT BEING PASSED!")
 				printTable(obj, "obj")
-				print(debug.traceback())
-				os.exit()
+				error("non-standard object passed", 2)
 			end
 			print("WARNING: OBJECT (ID: " .. obj.object_id .. ") DOES NOT HAVE MASS!")
 		else

@@ -21,7 +21,7 @@ alureStream* currentMusicStream = NULL;
 std::string currentMusicName = "";
 int soundSourceIndex = 0;
 
-void DieUnpleasantly()
+void Quit()
 {
 	StopMusic();
 	alureShutdownDevice();
@@ -69,7 +69,6 @@ void Init(int frequency, int resolution, int sources)
 	alGenSources(1, &musicSource);
 	//alGenBuffers(2, musicBufs);
 	soundSourceCount = sources;
-	atexit(DieUnpleasantly);
 	alDistanceModel(AL_INVERSE_DISTANCE_CLAMPED);
 	alSpeedOfSound(1400.0);
 	alDopplerFactor(0.7);

@@ -119,7 +119,7 @@ function key ( k )
     elseif k == "tab" then
         mode_manager.switch("Ares/Splash")
     elseif k == "escape" then
-		os.exit()
+		mode_manager.quit()
     else
         print("Uninterpreted keystroke " .. k)
     end

@@ -609,6 +609,13 @@ int MM_Release ( lua_State* L )
 	#endif
 }
 
+int MM_Quit ( lua_State* L )
+{
+	QuitEngine();
+	// unreachable!
+	return 0;
+}
+
 /**
  * @page lua_mode_manager The Lua Mode Manager Registry
  * This page contains information about the Lua mode manager registry.
@@ -651,6 +658,7 @@ luaL_Reg registryModeManager[] =
 	"time", MM_Time,
 	"query", MM_Query,
 	"is_release", MM_Release,
+	"quit", MM_Quit,
 	NULL, NULL
 };
 

@@ -360,7 +360,7 @@ end
 function LogError(text, current)
 	ConsoleAdd(text .. "(current " .. current .. ")")
 	if current > 10 then
-		os.exit()
+		mode_manager.quit()
 	end
 	if current > 5 then
 		errNotice = { start = mode_manager.time(), duration = current - 5, text = text }

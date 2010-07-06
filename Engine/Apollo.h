@@ -2,7 +2,7 @@
 #define __apollo_h
 
 #ifdef WIN32
-#define assert(x) { if (! ( x ) ) { printf("Assertion failure: %s\n\tFile: %s\n\tLine: %d\n", # x , __FILE__, __LINE__ ); exit(1); } }
+#define assert(x) { if (! ( x ) ) { printf("Assertion failure: %s\n\tFile: %s\n\tLine: %d\n", # x , __FILE__, __LINE__ ); abort(); } }
 #undef SendMessage
 #undef GetMessage	//apparently, these are windows directives
 #endif
