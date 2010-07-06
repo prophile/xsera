@@ -30,6 +30,8 @@ void Startup ()
 	// do init stuff
 	InitModeManager();
 	ResourceManager::Init("Xsera");
+	// check machine power
+	CheckMachinePowerSanity();
 	Preferences::Load();
 	Graphics::Init(ToInt(Preferences::Get("Screen/Width")), ToInt(Preferences::Get("Screen/Height")), ToBool(Preferences::Get("Screen/Fullscreen")));
 	Sound::Init(ToInt(Preferences::Get("Audio/SamplingRate")), ToInt(Preferences::Get("Audio/Resolution")), ToInt(Preferences::Get("Audio/Channels")));
