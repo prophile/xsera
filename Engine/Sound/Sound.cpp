@@ -73,6 +73,7 @@ void Init(int frequency, int resolution, int sources)
 	alDistanceModel(AL_INVERSE_DISTANCE_CLAMPED);
 	alSpeedOfSound(1400.0);
 	alDopplerFactor(0.7);
+	alureUpdateInterval(0.03333f);
 }
 
 static ALuint GetFreeSource()
