@@ -174,7 +174,7 @@ end
 function DoScaleIn(step)
 --[[ with all due respect this code is nasty
 	local MAX_POW = 1
-	local cameraPow = math.log(cameraRatioTarget)/math.log(2)
+	local cameraPow = math.log(cameraRatio.target)/math.log(2)
 	if step == nil then
 		if MAX_POW > math.floor(cameraPow) then
 			cameraPow = math.floor(cameraPow) + 1
@@ -185,22 +185,22 @@ function DoScaleIn(step)
 	
 	local newRatio = 2^cameraPow
 	
-	if newRatio ~= cameraRatio then
+	if newRatio ~= cameraRatio.curr then
 		cameraChanging = true
-		cameraRatioTarget = newRatio
-		cameraRatioOrig = cameraRatio
+		cameraRatio.target = newRatio
+		cameraRatio.orig = cameraRatio.curr
 		cameraSnap = false
 		--if(zoomTime == 0) then -- prevents zoom speed from resetting if zoom setting is changed mid-zoom.
 			zoomTime = timeInterval * 1 * (step or 0.5)
 		--end
-		multiplier = (newRatio - cameraRatioOrig)/cameraRatioOrig
+		multiplier = (newRatio - cameraRatio.orig)/cameraRatio.orig
 	end--]]
 	
     if not RELEASE_BUILD then
         -- do instant change
-        if CAMERA_RATIO.num ~= 1 then
-            InstantCamera(CAMERA_RATIO.num - 1)
-            CAMERA_RATIO.num = CAMERA_RATIO.num - 1
+        if cameraRatio.num ~= 1 then
+            InstantCamera(cameraRatio.num - 1)
+            cameraRatio.num = cameraRatio.num - 1
         end
     else
         -- do ease-in (to be implemented later)
@@ -212,7 +212,7 @@ end
 function DoScaleOut(step)
 --[[ with all due respect this code is nasty
 	local MIN_POW = -6
-	local cameraPow = math.log(cameraRatioTarget)/math.log(2)
+	local cameraPow = math.log(cameraRatio.target)/math.log(2)
 	if step == nil then
 		if MIN_POW < math.ceil(cameraPow) then
 			cameraPow = math.ceil(cameraPow) - 1
@@ -223,22 +223,22 @@ function DoScaleOut(step)
 	
 	local newRatio = 2^cameraPow
 	
-	if newRatio ~= cameraRatio then
+	if newRatio ~= cameraRatio.curr then
 		cameraChanging = true
-		cameraRatioTarget = newRatio
-		cameraRatioOrig = cameraRatio
+		cameraRatio.target = newRatio
+		cameraRatio.orig = cameraRatio.curr
 		cameraSnap = false
 		--if(zoomTime == 0) then
 			zoomTime = timeInterval * 2 * (step or 0.5)
 		--end
-		multiplier = (newRatio - cameraRatio)/cameraRatio
+		multiplier = (newRatio - cameraRatio.curr)/cameraRatio.curr
 	end--]]
     
     if not RELEASE_BUILD then
         -- do instant change
-        if CAMERA_RATIO.num ~= #CAMERA_RATIO_OPTIONS then
-            InstantCamera(CAMERA_RATIO.num + 1)
-            CAMERA_RATIO.num = CAMERA_RATIO.num + 1
+        if cameraRatio.num ~= #CAMERA_RATIO_OPTIONS then
+            InstantCamera(cameraRatio.num + 1)
+            cameraRatio.num = cameraRatio.num + 1
         end
     else
         -- do ease-in (to be implemented later)
@@ -297,42 +297,42 @@ function DoTransferControl()
 end
 
 function DoZoom1_1()
-	if cameraRatioTarget ~= 1 then
+	if cameraRatio.target ~= 1 then
 		cameraChanging = true
-		cameraRatioOrig = cameraRatio
+		cameraRatio.orig = cameraRatio.curr
 		zoomTime = timeInterval
-		cameraRatioTarget = 1
-		multiplier = (1 - cameraRatio) / cameraRatio
+		cameraRatio.target = 1
+		multiplier = (1 - cameraRatio.curr) / cameraRatio.curr
 	end
 end
 
 function DoZoom1_2()
-	if cameraRatioTarget ~= 1/2 then
+	if cameraRatio.target ~= 1/2 then
 		cameraChanging = true
-		cameraRatioOrig = cameraRatio
+		cameraRatio.orig = cameraRatio.curr
 		zoomTime = timeInterval
-		cameraRatioTarget = 1/2 
-		multiplier = (1/2 - cameraRatio) / cameraRatio
+		cameraRatio.target = 1/2 
+		multiplier = (1/2 - cameraRatio.curr) / cameraRatio.curr
 	end
 end
 
 function DoZoom1_4()
-	if cameraRatioTarget ~= 1/4 then
+	if cameraRatio.target ~= 1/4 then
 		cameraChanging = true
-		cameraRatioOrig = cameraRatio
+		cameraRatio.orig = cameraRatio.curr
 		zoomTie = timeInterval
-		cameraRatioNum = 1/4
-		multiplier = (1/4 - cameraRatio) / cameraRatio
+		cameraRatio.num = 1/4
+		multiplier = (1/4 - cameraRatio.curr) / cameraRatio.curr
 	end
 end
 
 function DoZoom1_16()
-	if cameraRatioTarget ~= 1/16 then
+	if cameraRatio.target ~= 1/16 then
 		cameraChanging = true
-		cameraRatioOrig = cameraRatio
+		cameraRatio.orig = cameraRatio.curr
 		zoomTime = timeInterval
-		cameraRatioTarget = 1/16
-		multiplier = (1/16 - cameraRatio) / cameraRatio
+		cameraRatio.target = 1/16
+		multiplier = (1/16 - cameraRatio.curr) / cameraRatio.curr
 	end
 end
 
@@ -345,7 +345,7 @@ function DoZoomHostile()
 --		zoomRadius = WINDOW.height
 --	end
 --	
---	if cameraRatioNum ~= 6 then
+--	if cameraRatio.num ~= 6 then
 		--local diff = { x = computerShip.physicsObject.position.x - scen.playerShip.physicsObject.position.x, y = computerShip.physicsObject.position.y - scen.playerShip.physicsObject.position.y }
 --		local calculatedRatio = 0
 --		
@@ -354,8 +354,8 @@ function DoZoomHostile()
 --		else
 --			calculatedRatio = 640 / (diff.x * 2)
 --		end
-		cameraRatioOrig = cameraRatio
-		cameraRatioTarget = 1 / 4
+		cameraRatio.orig = cameraRatio.curr
+		cameraRatio.target = 1 / 4
 		cameraSnap = true
 		cameraChanging = true
 --	end

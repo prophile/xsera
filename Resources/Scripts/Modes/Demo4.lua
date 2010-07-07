@@ -15,7 +15,7 @@ import('Physics')
 import('Effects')
 
 mdown = false
-mrad = MOUSE_RADIUS / cameraRatio
+mrad = MOUSE_RADIUS / cameraRatio.curr
 aimMethod = "smart"
 
 function init()
@@ -291,7 +291,7 @@ function render()
 
 	CameraToObject(scen.playerShip)
 
-	graphics.begin_warp(scen.playerShip.warp.factor,scen.playerShip.physics.angle, cameraRatio)
+	graphics.begin_warp(scen.playerShip.warp.factor,scen.playerShip.physics.angle, cameraRatio.curr)
 	
 	graphics.draw_starfield(3.4)
 	graphics.draw_starfield(1.8)
@@ -299,8 +299,8 @@ function render()
 	graphics.draw_starfield(-0.3)
 	graphics.draw_starfield(-0.9)
 
-	--	DEBUG version, keep:
-	--	graphics.end_warp(scen.playerShip.warp.factor, scen.playerShip.physics.angle, cameraRatio, scen.playerShip.physics.position)
+	--	DEBUG version, keep:  
+	--	graphics.end_warp(scen.playerShip.warp.factor, scen.playerShip.physics.angle, cameraRatio.curr, scen.playerShip.physics.position) 
 	graphics.end_warp()
 	
 	DrawGrid()
@@ -525,7 +525,7 @@ function DrawObject(o)
 			end
 		end
 	else
-		if cameraRatio >= 1 / 4 then
+		if cameraRatio.curr >= 1 / 4 then
 			if o.type == "animation" then
 				graphics.draw_sprite_frame(o.gfx.sprite, o.physics.position, o.gfx.dimensions, Animate(o))
 			else -- Rotational
@@ -542,7 +542,7 @@ function DrawObject(o)
 				color = ClutColour(16,1)
 			end
 
-			local iconScale = 1.0/cameraRatio
+			local iconScale = 1.0 / cameraRatio.curr
 			if o.base["tiny-shape"] == "solid-square" then
 				graphics.draw_rbox(o.physics.position, o.base["tiny-size"] * iconScale, color)
 			elseif o.base["tiny-shape"] == "plus" then

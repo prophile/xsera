@@ -45,8 +45,6 @@ end
 mouse_movement = false
 mousePos = vec(0, 0)
 mouseStart = 0
-cameraRatioOrig = nil
-cameraRatioT = cameraRatio
 
 function init ()
 	start_time = mode_manager.time()
@@ -138,40 +136,40 @@ function update ()
 	--]]
 	
 	--[[ this structure needs to be removed
-	if cameraRatioNum > 5 and cameraChanging == false then
+	if cameraRatio.num > 5 and cameraChanging == false then
 		-- this is constantly modified, but not done smoothly, so it looks bad
 		
-		if cameraRatioNum == 6 then
+		if cameraRatio.num == 6 then
 			local diff = { x = math.abs(computerShip.physicsObject.position.x - playerShip.physicsObject.position.x) + computerShip.size.x / 2, y = math.abs(computerShip.physicsObject.position.y - playerShip.physicsObject.position.y) + computerShip.size.y / 2 }
 			
-			cameraRatioOrig = cameraRatio
+			cameraRatio.orig = cameraRatio.curr
 			if (math.abs(hypot1(diff) / hypot1(camera)) > 0.5) then
 				cameraChanging = true
 				x = 0.6
 				timeInterval = 0.6
-				cameraRatioOrig = cameraRatio
+				cameraRatio.orig = cameraRatio.curr
 			else
 				if diff.x == 0 or diff.y == 0 or aspectRatio == 0 then
-					cameraRatio = 2
+					cameraRatio.curr = 2
 				else
-					cameraRatio = (440) / (hypot1(diff) * 2)
+					cameraRatio.curr = (440) / (hypot1(diff) * 2)
 				end
 			end
 		else
-			print("DONT DO EET") -- temp error message because cameraRatioNum is greater than 5 but not equal to 6, somehow
+			print("DONT DO EET") -- temp error message because cameraRatio.num is greater than 5 but not equal to 6, somehow
 		end
-		if cameraRatio > 2 then
-			cameraRatio = 2
+		if cameraRatio.curr > 2 then
+			cameraRatio.curr = 2
 		end
-		if (cameraRatio < 1 / 8 and cameraRatioOrig > 1 / 8) or (cameraRatio > 1 / 8 and cameraRatioOrig < 1 / 8) then
+		if (cameraRatio.curr < 1 / 8 and cameraRatio.orig > 1 / 8) or (cameraRatio.curr > 1 / 8 and cameraRatio.orig < 1 / 8) then
 			sound.play("ZoomChange")
 		end
-		camera = { w = 640 / cameraRatio, h }
+		camera = { w = 640 / cameraRatio.curr, h }
 		camera.h = camera.w / aspectRatio
 		shipAdjust = .045 * camera.w
-		arrowLength = ARROW_LENGTH / cameraRatio
-		arrowVar = ARROW_VAR / cameraRatio
-		arrowDist = ARROW_DIST / cameraRatio
+		arrowLength = ARROW_LENGTH / cameraRatio.curr
+		arrowVar = ARROW_VAR / cameraRatio.curr
+		arrowDist = ARROW_DIST / cameraRatio.curr
 	end--]]
 	
 	if cameraChanging == true then
@@ -179,20 +177,20 @@ function update ()
 		if x < 0 then
 			x = 0
 			cameraChanging = false
-			playerShip.beam.width = cameraRatio
+			playerShip.beam.width = cameraRatio.curr
 			soundJustPlayed = false
 		end
 		if x >= 0 then
-			cameraRatio = cameraRatioOrig + cameraRatioOrig * multiplier * math.pow(math.abs((x - timeInterval) / timeInterval), 2)  --[[* (((x - timeInterval) * (x - timeInterval) * math.sqrt(math.abs(x - timeInterval))) / (timeInterval * timeInterval * math.sqrt(math.abs(timeInterval))))--]]
-		--	print(cameraRatio, timeInterval)
+			cameraRatio.curr = cameraRatio.orig + cameraRatio.orig * multiplier * math.pow(math.abs((x - timeInterval) / timeInterval), 2)  --[[* (((x - timeInterval) * (x - timeInterval) * math.sqrt(math.abs(x - timeInterval))) / (timeInterval * timeInterval * math.sqrt(math.abs(timeInterval))))--]]
+		--	print(cameraRatio.curr, timeInterval)
 		end
-		camera = { w = 640 / cameraRatio, h }
+		camera = { w = 640 / cameraRatio.curr, h }
 		camera.h = camera.w / aspectRatio
 		shipAdjust = .045 * camera.w
-		arrowLength = ARROW_LENGTH / cameraRatio
-		arrowVar = ARROW_VAR / cameraRatio
-		arrowDist = ARROW_DIST / cameraRatio
-		if (cameraRatio < 1 / 8 and cameraRatioOrig > 1 / 8) or (cameraRatio > 1 / 8 and cameraRatioOrig < 1 / 8) then
+		arrowLength = ARROW_LENGTH / cameraRatio.curr
+		arrowVar = ARROW_VAR / cameraRatio.curr
+		arrowDist = ARROW_DIST / cameraRatio.curr
+		if (cameraRatio.curr < 1 / 8 and cameraRatio.orig > 1 / 8) or (cameraRatio.curr > 1 / 8 and cameraRatio.orig < 1 / 8) then
 			if soundJustPlayed == false then
 				sound.play("ZoomChange")
 				soundJustPlayed = true
@@ -420,7 +418,7 @@ function render ()
     else
     	warpStatus = 0.0
     end
-    graphics.begin_warp(warpStatus, (2.5*math.pi) - math.atan2(playerShip.physicsObject.velocity.x, playerShip.physicsObject.velocity.y), cameraRatio)
+    graphics.begin_warp(warpStatus, (2.5*math.pi) - math.atan2(playerShip.physicsObject.velocity.x, playerShip.physicsObject.velocity.y), cameraRatio.curr)
 	-- extract camera coordinates from here during update() and place finalized numbers here
 	graphics.set_camera(-playerShip.physicsObject.position.x + shipAdjust - (camera.w / 2.0), -playerShip.physicsObject.position.y - (camera.h / 2.0), -playerShip.physicsObject.position.x + shipAdjust + (camera.w / 2.0), -playerShip.physicsObject.position.y + (camera.h / 2.0))
 	graphics.draw_starfield(3.4)
@@ -448,7 +446,7 @@ function render ()
 				graphics.draw_line({ x = i * GRID_DIST_BLUE, y = -60000 }, { x = i * GRID_DIST_BLUE, y = 60000 }, 1, ClutColour(4, 8))
 			end
 		else
-			if cameraRatio > 1 / 8 then
+			if cameraRatio.curr > 1 / 8 then
 				graphics.draw_line({ x = -60000, y = -i * GRID_DIST_BLUE }, { x = 60000, y = -i * GRID_DIST_BLUE }, 1, ClutColour(4, 11))
 				graphics.draw_line({ x = -60000, y = i * GRID_DIST_BLUE }, { x = 60000, y = i * GRID_DIST_BLUE }, 1, ClutColour(4, 11))
 				graphics.draw_line({ x = -i * GRID_DIST_BLUE, y = -60000 }, { x = -i * GRID_DIST_BLUE, y = 60000 }, 1, ClutColour(4, 11))
@@ -464,7 +462,7 @@ function render ()
 	
 	
 	function drawPlanet(planet)
-		if cameraRatio > 1 / 8 then
+		if cameraRatio.curr > 1 / 8 then
 			local planetCoord = graphics.sprite_dimensions("Planets/" .. planet.image)
 			graphics.draw_sprite("Planets/" .. planet.image, planet.position, planetCoord, 1)
 		else
@@ -484,7 +482,7 @@ function render ()
 ------------------]]--
 	if computerShip ~= nil then
 		if computerShip.life > 0 then
-			if cameraRatio > 1 / 8 then
+			if cameraRatio.curr > 1 / 8 then
 				graphics.draw_sprite("Ships/Gaitori/Carrier", computerShip.physicsObject.position, computerShip.size, computerShip.physicsObject.angle)
 			else
 				graphics.draw_rdia(computerShip.physicsObject.position, 60, ClutColour(16, 1) )
@@ -493,7 +491,7 @@ function render ()
 			-- This explosion code is a hack. We need a way to deal with explosions in a better method.
 			-- Let's figure it out when we get Sfiera's data
 			if computerShip ~= nil then
-				if cameraRatio > 1 / 8 then
+				if cameraRatio.curr > 1 / 8 then
 					graphics.draw_sprite(bestExplosion.image, computerShip.physicsObject.position, bestExplosion.size, frame / 6 * math.pi)
 				end
 				if frame == 0 then
@@ -510,7 +508,7 @@ function render ()
 	if otherShip ~= nil then
 		num = 1
 		while otherShip[num] ~= nil do
-			if cameraRatio > 1 / 8 then
+			if cameraRatio.curr > 1 / 8 then
 				if otherShip[num].name ~= "Transport" then
 					graphics.draw_sprite(otherShip[num].image, otherShip[num].physicsObject.position, otherShip[num].size, otherShip[num].physicsObject.angle)
 				else
@@ -558,7 +556,7 @@ function render ()
 	
     graphics.end_warp()
     
-    if cameraRatio > 1 / 8 then
+    if cameraRatio.curr > 1 / 8 then
 		graphics.draw_sprite(playerShip.image, playerShip.physicsObject.position, playerShip.size, playerShip.physicsObject.angle)
 	else
 		graphics.draw_rtri(playerShip.physicsObject.position, 60)

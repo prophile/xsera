@@ -3,6 +3,12 @@ import('AresCLUT')
 import('data')
 import('Camera')
 
+--[[
+    [TODO]
+    This file needs to be better split into chunks so that the information is
+    decipherable.
+--]]
+
 RELEASE_BUILD = mode_manager.is_release()
 
 WARP_TIME = 1.2

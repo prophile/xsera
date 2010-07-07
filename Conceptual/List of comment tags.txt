@@ -12,4 +12,6 @@ Tags:
 [DEMO3] - Something to be done by Demo 3.
 [FIX] - Code that needs to somehow be fixed.
 [WIP] - Code that is a work in progress and should not be removed or messed with except by its author (or with permission).
-[HARDCODED] - Marks code that is hardcoded and should be made more flexible in the future.
+[HARDCODE] or [HARDCODED] - Marks code that is hardcoded and should be made more flexible in the future.
+[TEMPORARY] - Code that will eventually be deleted
+[CLEANUP] - Code that's nasty that needs to be cleaned up
