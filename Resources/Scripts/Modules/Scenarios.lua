@@ -12,7 +12,7 @@ function LoadScenario(id)
 		new.physics.position = state.location
 		new.ai.owner = state.owner
 
-		if state.attributes == 512 then
+		if state.attributes.initialPlayerShip == true then
 			if scen.playerShip == nil then
 				scen.playerShip = new
 				scen.playerShipId = new.physics.object_id
@@ -21,14 +21,14 @@ function LoadScenario(id)
 			end
 		end
 		
-		if state["sprite-id-override"] ~= nil then
-			new.sprite = state["sprite-id-override"]
+		if state.spriteIdOverride ~= -1 then
+			new.sprite = state.spriteIdOverride
 			new.spriteDim = graphics.sprite_dimensions("Id/" .. new.sprite)
 		end
 		
-		if state["initial-destination"] ~= -1 then
+		if state.initialDstination. ~= -1 then
 			--Convert from 0 based indexes to 1 based indexes
-			new.ai.objectives.dest = scen.objects[state["initial-destination"]+1]
+			new.ai.objectives.dest = scen.objects[state.initialDestination.+1]
 		end
 		
 		scen.objects[new.physics.object_id] = new

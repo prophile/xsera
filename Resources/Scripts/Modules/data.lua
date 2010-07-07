@@ -11215,9723 +11215,13828 @@ gameData = {
 };
 };
 ["InitialObject"] = {
-[000] =  {
-["type"] = 36;
-["owner"] = 1;
-["location"] = {
-["x"]=7043;
-["y"]=4521;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 1.0;
-["distance-range"] = 500;
-["rotation-minimum"] = 0;
-["rotation-range"] = 360;
-["initial-destination"] = -1;
-["attributes"] = 0;
-
-};
-[001] =  {
-["type"] = 61;
-["owner"] = 0;
-["location"] = {
-["x"]=7652;
-["y"]=8695;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 500;
-["rotation-minimum"] = 0;
-["rotation-range"] = 360;
-["initial-destination"] = -1;
-["attributes"] = 512;
-
-};
-[002] =  {
-["type"] = 37;
-["owner"] = 1;
-["location"] = {
-["x"]=6434;
-["y"]=4695;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 500;
-["rotation-minimum"] = 0;
-["rotation-range"] = 360;
-["initial-destination"] = 0;
-["attributes"] = 33554432;
-
-};
-[003] =  {
-["type"] = 37;
-["owner"] = 1;
-["location"] = {
-["x"]=2608;
-["y"]=2086;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 500;
-["rotation-minimum"] = 0;
-["rotation-range"] = 360;
-["initial-destination"] = 16;
-["attributes"] = 33554432;
-
-};
-[004] =  {
-["type"] = 37;
-["owner"] = 1;
-["location"] = {
-["x"]=3739;
-["y"]=2434;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 500;
-["rotation-minimum"] = 0;
-["rotation-range"] = 360;
-["initial-destination"] = 16;
-["attributes"] = 33554432;
-
-};
-[005] =  {
-["type"] = 64;
-["owner"] = 1;
-["location"] = {
-["x"]=-347;
-["y"]=-1913;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 500;
-["rotation-minimum"] = 0;
-["rotation-range"] = 360;
-["initial-destination"] = 17;
-["attributes"] = 33554432;
-
-};
-[006] =  {
-["type"] = 37;
-["owner"] = 1;
-["location"] = {
-["x"]=-1130;
-["y"]=-2347;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 500;
-["rotation-minimum"] = 0;
-["rotation-range"] = 360;
-["initial-destination"] = 17;
-["attributes"] = 33554432;
-
-};
-[007] =  {
-["type"] = 37;
-["owner"] = 1;
-["location"] = {
-["x"]=-347;
-["y"]=-2782;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 500;
-["rotation-minimum"] = 0;
-["rotation-range"] = 360;
-["initial-destination"] = 17;
-["attributes"] = 33554432;
-
-};
-[008] =  {
-["type"] = 64;
-["owner"] = 1;
-["location"] = {
-["x"]=-1043;
-["y"]=-5043;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 500;
-["rotation-minimum"] = 0;
-["rotation-range"] = 360;
-["initial-destination"] = 18;
-["attributes"] = 33554432;
-
-};
-[009] =  {
-["type"] = 37;
-["owner"] = 1;
-["location"] = {
-["x"]=-2695;
-["y"]=-4173;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 500;
-["rotation-minimum"] = 0;
-["rotation-range"] = 360;
-["initial-destination"] = 18;
-["attributes"] = 33554432;
-
-};
-[010] =  {
-["type"] = 37;
-["owner"] = 1;
-["location"] = {
-["x"]=-1826;
-["y"]=-4434;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 500;
-["rotation-minimum"] = 0;
-["rotation-range"] = 360;
-["initial-destination"] = 18;
-["attributes"] = 33554432;
-
-};
-[011] =  {
-["type"] = 37;
-["owner"] = 1;
-["location"] = {
-["x"]=-1913;
-["y"]=-4956;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 500;
-["rotation-minimum"] = 0;
-["rotation-range"] = 360;
-["initial-destination"] = 18;
-["attributes"] = 33554432;
-
-};
-[012] =  {
-["type"] = 42;
-["owner"] = 0;
-["location"] = {
-["x"]=-8695;
-["y"]=6782;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 500;
-["rotation-minimum"] = 0;
-["rotation-range"] = 360;
-["initial-destination"] = 1;
-["attributes"] = 32;
-
-};
-[013] =  {
-["type"] = 42;
-["owner"] = 0;
-["location"] = {
-["x"]=-6695;
-["y"]=8347;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 500;
-["rotation-minimum"] = 0;
-["rotation-range"] = 360;
-["initial-destination"] = 1;
-["attributes"] = 32;
-
-};
-[014] =  {
-["type"] = 104;
-["owner"] = 1;
-["location"] = {
-["x"]=-1652;
-["y"]=-4173;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 1.0;
-["distance-range"] = 500;
-["rotation-minimum"] = 0;
-["rotation-range"] = 360;
-["sprite-id-override"] = 1200;
-["initial-destination"] = -1;
-["attributes"] = 0;
-
-};
-[015] =  {
-["type"] = 27;
-["owner"] = -1;
-["location"] = {
-["x"]=0;
-["y"]=0;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 500;
-["rotation-minimum"] = 0;
-["rotation-range"] = 360;
-["initial-destination"] = -1;
-["attributes"] = 0;
-
-};
-[016] =  {
-["type"] = 36;
-["owner"] = 1;
-["location"] = {
-["x"]=3217;
-["y"]=2000;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 1.0;
-["distance-range"] = 500;
-["rotation-minimum"] = 0;
-["rotation-range"] = 360;
-["initial-destination"] = -1;
-["attributes"] = 0;
-
-};
-[017] =  {
-["type"] = 36;
-["owner"] = 1;
-["location"] = {
-["x"]=2000;
-["y"]=-1130;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 1.0;
-["distance-range"] = 500;
-["rotation-minimum"] = 0;
-["rotation-range"] = 360;
-["initial-destination"] = -1;
-["attributes"] = 0;
-
-};
-[018] =  {
-["type"] = 36;
-["owner"] = 1;
-["location"] = {
-["x"]=1043;
-["y"]=-4347;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 1.0;
-["distance-range"] = 500;
-["rotation-minimum"] = 0;
-["rotation-range"] = 360;
-["initial-destination"] = -1;
-["attributes"] = 0;
-
-};
-[019] =  {
-["type"] = 62;
-["owner"] = 1;
-["location"] = {
-["x"]=-22129;
-["y"]=-17913;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 500;
-["rotation-minimum"] = 0;
-["rotation-range"] = 360;
-["initial-destination"] = -1;
-["attributes"] = 0;
-
-};
-[020] =  {
-["type"] = 80;
-["owner"] = 0;
-["location"] = {
-["x"]=-2696;
-["y"]=4347;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 500;
-["rotation-minimum"] = 0;
-["rotation-range"] = 360;
-["initial-destination"] = 5;
-["attributes"] = 0;
-
-};
-[021] =  {
-["type"] = 83;
-["owner"] = 1;
-["location"] = {
-["x"]=-8000;
-["y"]=-8800;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 1.0;
-["distance-range"] = 500;
-["rotation-minimum"] = 0;
-["rotation-range"] = 360;
-["initial-destination"] = -1;
-["attributes"] = 0;
-
-};
-[022] =  {
-["type"] = 23;
-["owner"] = 0;
-["location"] = {
-["x"]=-4000;
-["y"]=3000;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 1.0;
-["distance-range"] = 500;
-["rotation-minimum"] = 0;
-["rotation-range"] = 360;
-["sprite-id-override"] = 1001;
-["initial-destination"] = -1;
-["attributes"] = 0;
-
-};
-[023] =  {
-["type"] = 27;
-["owner"] = -1;
-["location"] = {
-["x"]=200;
-["y"]=-200;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 500;
-["rotation-minimum"] = 0;
-["rotation-range"] = 360;
-["initial-destination"] = -1;
-["attributes"] = 0;
-
-};
-[024] =  {
-["type"] = 61;
-["owner"] = 0;
-["location"] = {
-["x"]=-3678;
-["y"]=3497;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 500;
-["rotation-minimum"] = 0;
-["rotation-range"] = 360;
-["initial-destination"] = -1;
-["attributes"] = 512;
-
-};
-[025] =  {
-["type"] = 59;
-["owner"] = 1;
-["location"] = {
-["x"]=-6978;
-["y"]=-8804;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 500;
-["rotation-minimum"] = 0;
-["rotation-range"] = 360;
-["initial-destination"] = 2;
-["attributes"] = 33554432;
-
-};
-[026] =  {
-["type"] = 17;
-["owner"] = 1;
-["location"] = {
-["x"]=-11760;
-["y"]=-17673;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 500;
-["rotation-minimum"] = 0;
-["rotation-range"] = 360;
-["initial-destination"] = 1;
-["attributes"] = 33554464;
-
-};
-[027] =  {
-["type"] = 59;
-["owner"] = 1;
-["location"] = {
-["x"]=-10543;
-["y"]=-17325;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 500;
-["rotation-minimum"] = 0;
-["rotation-range"] = 360;
-["initial-destination"] = 7;
-["attributes"] = 33554464;
-
-};
-[028] =  {
-["type"] = 59;
-["owner"] = 1;
-["location"] = {
-["x"]=-11673;
-["y"]=-16021;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 500;
-["rotation-minimum"] = 0;
-["rotation-range"] = 360;
-["initial-destination"] = 7;
-["attributes"] = 33554464;
-
-};
-[029] =  {
-["type"] = 23;
-["owner"] = 0;
-["location"] = {
-["x"]=12043;
-["y"]=38956;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 1.0;
-["distance-range"] = 500;
-["rotation-minimum"] = 0;
-["rotation-range"] = 360;
-["sprite-id-override"] = 1002;
-["initial-destination"] = -1;
-["attributes"] = 0;
-
-};
-[030] =  {
-["type"] = 45;
-["owner"] = 1;
-["location"] = {
-["x"]=-33825;
-["y"]=-32695;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 500;
-["rotation-minimum"] = 0;
-["rotation-range"] = 360;
-["initial-destination"] = -1;
-["attributes"] = 32;
-
-};
-[031] =  {
-["type"] = 0;
-["owner"] = 0;
-["location"] = {
-["x"]=13586;
-["y"]=39456;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 500;
-["rotation-minimum"] = 0;
-["rotation-range"] = 360;
-["initial-destination"] = -1;
-["attributes"] = 512;
-
-};
-[032] =  {
-["type"] = 7;
-["owner"] = 1;
-["location"] = {
-["x"]=6260;
-["y"]=-7478;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 500;
-["rotation-minimum"] = 0;
-["rotation-range"] = 360;
-["initial-destination"] = -1;
-["attributes"] = 512;
-
-};
-[033] =  {
-["type"] = 23;
-["owner"] = -1;
-["location"] = {
-["x"]=-7999;
-["y"]=13652;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 1.0;
-["distance-range"] = 500;
-["rotation-minimum"] = 0;
-["rotation-range"] = 360;
-["sprite-id-override"] = 1003;
-["initial-destination"] = -1;
-["attributes"] = 0;
-
-};
-[034] =  {
-["type"] = 23;
-["owner"] = 1;
-["location"] = {
-["x"]=7304;
-["y"]=-7565;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 1.0;
-["distance-range"] = 500;
-["rotation-minimum"] = 0;
-["rotation-range"] = 360;
-["sprite-id-override"] = 1004;
-["initial-destination"] = -1;
-["attributes"] = 0;
-
-};
-[035] =  {
-["type"] = 27;
-["owner"] = -1;
-["location"] = {
-["x"]=-600;
-["y"]=9000;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 500;
-["rotation-minimum"] = 0;
-["rotation-range"] = 360;
-["initial-destination"] = -1;
-["attributes"] = 0;
-
-};
-[036] =  {
-["type"] = 61;
-["owner"] = 0;
-["location"] = {
-["x"]=1565;
-["y"]=6521;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 360;
-["initial-destination"] = 6;
-["attributes"] = 512;
-
-};
-[037] =  {
-["type"] = 27;
-["owner"] = -1;
-["location"] = {
-["x"]=1913;
-["y"]=-2086;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 360;
-["initial-destination"] = -1;
-["attributes"] = 0;
-
-};
-[038] =  {
-["type"] = 0;
-["owner"] = 0;
-["location"] = {
-["x"]=956;
-["y"]=7565;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 360;
-["initial-destination"] = 6;
-["attributes"] = 0;
-
-};
-[039] =  {
-["type"] = 13;
-["owner"] = 0;
-["location"] = {
-["x"]=1913;
-["y"]=8086;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 360;
-["initial-destination"] = 6;
-["attributes"] = 0;
-
-};
-[040] =  {
-["type"] = 13;
-["owner"] = 0;
-["location"] = {
-["x"]=2173;
-["y"]=7391;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 360;
-["initial-destination"] = 6;
-["attributes"] = 0;
-
-};
-[041] =  {
-["type"] = 42;
-["owner"] = 0;
-["location"] = {
-["x"]=521;
-["y"]=6782;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 360;
-["initial-destination"] = 6;
-["attributes"] = 0;
-
-};
-[042] =  {
-["type"] = 47;
-["owner"] = 0;
-["location"] = {
-["x"]=2434;
-["y"]=6782;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 360;
-["initial-destination"] = -1;
-["attributes"] = 0;
-
-};
-[043] =  {
-["type"] = 61;
-["owner"] = 0;
-["location"] = {
-["x"]=2782;
-["y"]=8521;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 360;
-["initial-destination"] = 6;
-["attributes"] = 0;
-
-};
-[044] =  {
-["type"] = 42;
-["owner"] = 0;
-["location"] = {
-["x"]=2956;
-["y"]=7739;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 360;
-["initial-destination"] = 6;
-["attributes"] = 0;
-
-};
-[045] =  {
-["type"] = 13;
-["owner"] = 0;
-["location"] = {
-["x"]=1043;
-["y"]=8782;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 360;
-["initial-destination"] = 6;
-["attributes"] = 0;
-
-};
-[046] =  {
-["type"] = 62;
-["owner"] = 1;
-["location"] = {
-["x"]=1478;
-["y"]=1826;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 360;
-["initial-destination"] = 17;
-["attributes"] = 33554432;
-
-};
-[047] =  {
-["type"] = 62;
-["owner"] = 1;
-["location"] = {
-["x"]=2869;
-["y"]=1913;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 360;
-["initial-destination"] = 17;
-["attributes"] = 33554432;
-
-};
-[048] =  {
-["type"] = 7;
-["owner"] = 1;
-["location"] = {
-["x"]=1130;
-["y"]=1130;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 360;
-["initial-destination"] = 17;
-["attributes"] = 33554432;
-
-};
-[049] =  {
-["type"] = 37;
-["owner"] = 1;
-["location"] = {
-["x"]=2260;
-["y"]=956;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 360;
-["initial-destination"] = 17;
-["attributes"] = 33554432;
-
-};
-[050] =  {
-["type"] = 37;
-["owner"] = 1;
-["location"] = {
-["x"]=3217;
-["y"]=1391;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 360;
-["initial-destination"] = 17;
-["attributes"] = 33554432;
-
-};
-[051] =  {
-["type"] = 23;
-["owner"] = -1;
-["location"] = {
-["x"]=-434;
-["y"]=2260;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 1.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 360;
-["sprite-id-override"] = 1005;
-["initial-destination"] = -1;
-["attributes"] = 0;
-
-};
-[052] =  {
-["type"] = 45;
-["owner"] = 1;
-["location"] = {
-["x"]=-1652;
-["y"]=3217;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 360;
-["initial-destination"] = 6;
-["attributes"] = 33554432;
-
-};
-[053] =  {
-["type"] = 45;
-["owner"] = 1;
-["location"] = {
-["x"]=2000;
-["y"]=2695;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 360;
-["initial-destination"] = 1;
-["attributes"] = 512;
-
-};
-[054] =  {
-["type"] = 14;
-["owner"] = 1;
-["location"] = {
-["x"]=-1565;
-["y"]=2695;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 360;
-["initial-destination"] = 16;
-["attributes"] = 33554432;
-
-};
-[055] =  {
-["type"] = 14;
-["owner"] = 1;
-["location"] = {
-["x"]=-782;
-["y"]=3565;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 360;
-["initial-destination"] = 16;
-["attributes"] = 33554432;
-
-};
-[056] =  {
-["type"] = 7;
-["owner"] = 1;
-["location"] = {
-["x"]=-1565;
-["y"]=869;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 360;
-["initial-destination"] = 16;
-["attributes"] = 33554432;
-
-};
-[057] =  {
-["type"] = 7;
-["owner"] = 1;
-["location"] = {
-["x"]=-2956;
-["y"]=1043;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 360;
-["initial-destination"] = 16;
-["attributes"] = 33554432;
-
-};
-[058] =  {
-["type"] = 7;
-["owner"] = 1;
-["location"] = {
-["x"]=-1565;
-["y"]=-260;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 360;
-["initial-destination"] = 16;
-["attributes"] = 33554432;
-
-};
-[059] =  {
-["type"] = 7;
-["owner"] = 1;
-["location"] = {
-["x"]=-3043;
-["y"]=-86;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 360;
-["initial-destination"] = 16;
-["attributes"] = 33554432;
-
-};
-[060] =  {
-["type"] = 7;
-["owner"] = 1;
-["location"] = {
-["x"]=-1913;
-["y"]=2086;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 360;
-["initial-destination"] = 16;
-["attributes"] = 33554432;
-
-};
-[061] =  {
-["type"] = 61;
-["owner"] = 0;
-["location"] = {
-["x"]=18261;
-["y"]=73651;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = -1;
-["attributes"] = 512;
-
-};
-[062] =  {
-["type"] = 77;
-["owner"] = 0;
-["location"] = {
-["x"]=0;
-["y"]=0;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = -1;
-["attributes"] = 0;
-
-};
-[063] =  {
-["type"] = 75;
-["owner"] = 1;
-["location"] = {
-["x"]=-341;
-["y"]=-85;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = -1;
-["attributes"] = 0;
-
-};
-[064] =  {
-["type"] = 75;
-["owner"] = 1;
-["location"] = {
-["x"]=287;
-["y"]=-235;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = -1;
-["attributes"] = 0;
-
-};
-[065] =  {
-["type"] = 75;
-["owner"] = 1;
-["location"] = {
-["x"]=173;
-["y"]=260;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = -1;
-["attributes"] = 0;
-
-};
-[066] =  {
-["type"] = 62;
-["owner"] = 1;
-["location"] = {
-["x"]=-10782;
-["y"]=-12955;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = -1;
-["attributes"] = 0;
-
-};
-[067] =  {
-["type"] = 23;
-["owner"] = 1;
-["location"] = {
-["x"]=434;
-["y"]=-869;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 1.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["sprite-id-override"] = 1006;
-["initial-destination"] = -1;
-["attributes"] = 0;
-
-};
-[068] =  {
-["type"] = 78;
-["owner"] = 1;
-["location"] = {
-["x"]=-260;
-["y"]=-608;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = -1;
-["attributes"] = 0;
-
-};
-[069] =  {
-["type"] = 23;
-["owner"] = 1;
-["location"] = {
-["x"]=-4782;
-["y"]=-21477;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 1.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["sprite-id-override"] = 1007;
-["initial-destination"] = -1;
-["attributes"] = 0;
-
-};
-[070] =  {
-["type"] = 23;
-["owner"] = 0;
-["location"] = {
-["x"]=22783;
-["y"]=72259;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 1.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["sprite-id-override"] = 1008;
-["initial-destination"] = -1;
-["attributes"] = 33554432;
-
-};
-[071] =  {
-["type"] = 47;
-["owner"] = 0;
-["location"] = {
-["x"]=15826;
-["y"]=80607;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = 9;
-["attributes"] = 0;
-
-};
-[072] =  {
-["type"] = 47;
-["owner"] = 0;
-["location"] = {
-["x"]=32260;
-["y"]=74433;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = 9;
-["attributes"] = 0;
-
-};
-[073] =  {
-["type"] = 45;
-["owner"] = 1;
-["location"] = {
-["x"]=-12434;
-["y"]=-19826;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = -1;
-["attributes"] = 0;
-
-};
-[074] =  {
-["type"] = 45;
-["owner"] = 1;
-["location"] = {
-["x"]=-5738;
-["y"]=-18868;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = -1;
-["attributes"] = 0;
-
-};
-[075] =  {
-["type"] = 45;
-["owner"] = 1;
-["location"] = {
-["x"]=-15043;
-["y"]=-14347;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = -1;
-["attributes"] = 0;
-
-};
-[076] =  {
-["type"] = 45;
-["owner"] = 1;
-["location"] = {
-["x"]=-10173;
-["y"]=-15391;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = -1;
-["attributes"] = 32;
-
-};
-[077] =  {
-["type"] = 45;
-["owner"] = 1;
-["location"] = {
-["x"]=-16434;
-["y"]=-16259;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = -1;
-["attributes"] = 32;
-
-};
-[078] =  {
-["type"] = 17;
-["owner"] = 1;
-["location"] = {
-["x"]=-8869;
-["y"]=-20086;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = 16;
-["attributes"] = 33554464;
-
-};
-[079] =  {
-["type"] = 23;
-["owner"] = 0;
-["location"] = {
-["x"]=260;
-["y"]=4695;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 1.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["sprite-id-override"] = 1009;
-["initial-destination"] = -1;
-["attributes"] = 0;
-
-};
-[080] =  {
-["type"] = 0;
-["owner"] = 0;
-["location"] = {
-["x"]=782;
-["y"]=4782;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = -1;
-["attributes"] = 512;
-
-};
-[081] =  {
-["type"] = 27;
-["owner"] = -1;
-["location"] = {
-["x"]=-3478;
-["y"]=86;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = -1;
-["attributes"] = 0;
-
-};
-[082] =  {
-["type"] = 37;
-["owner"] = 1;
-["location"] = {
-["x"]=-1251;
-["y"]=-8336;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = -1;
-["attributes"] = 512;
-
-};
-[083] =  {
-["type"] = 87;
-["owner"] = 1;
-["location"] = {
-["x"]=260;
-["y"]=-8695;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = -1;
-["attributes"] = 32;
-
-};
-[084] =  {
-["type"] = 23;
-["owner"] = 1;
-["location"] = {
-["x"]=-347;
-["y"]=-7477;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 1.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["sprite-id-override"] = 1010;
-["initial-destination"] = -1;
-["attributes"] = 0;
-
-};
-[085] =  {
-["type"] = 284;
-["owner"] = 0;
-["location"] = {
-["x"]=-2956;
-["y"]=0;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = -1;
-["attributes"] = 512;
-
-};
-[086] =  {
-["type"] = 284;
-["owner"] = 1;
-["location"] = {
-["x"]=2955;
-["y"]=87;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = -1;
-["attributes"] = 512;
-
-};
-[087] =  {
-["type"] = 93;
-["owner"] = -1;
-["location"] = {
-["x"]=0;
-["y"]=-700;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = -1;
-["attributes"] = 0;
-
-};
-[088] =  {
-["type"] = 93;
-["owner"] = -1;
-["location"] = {
-["x"]=-700;
-["y"]=0;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = -1;
-["attributes"] = 0;
-
-};
-[089] =  {
-["type"] = 93;
-["owner"] = -1;
-["location"] = {
-["x"]=700;
-["y"]=0;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = -1;
-["attributes"] = 0;
-
-};
-[090] =  {
-["type"] = -1;
-["owner"] = 0;
-["location"] = {
-["x"]=0;
-["y"]=7565;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = 6;
-["attributes"] = 33554432;
-
-};
-[091] =  {
-["type"] = -1;
-["owner"] = 0;
-["location"] = {
-["x"]=-1043;
-["y"]=9043;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = 6;
-["attributes"] = 33554432;
-
-};
-[092] =  {
-["type"] = -1;
-["owner"] = 0;
-["location"] = {
-["x"]=-18608;
-["y"]=-18608;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = 5;
-["attributes"] = 33554432;
-
-};
-[093] =  {
-["type"] = -1;
-["owner"] = 0;
-["location"] = {
-["x"]=-16869;
-["y"]=-17565;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = 5;
-["attributes"] = 33554432;
-
-};
-[094] =  {
-["type"] = -1;
-["owner"] = 0;
-["location"] = {
-["x"]=9913;
-["y"]=521;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["sprite-id-override"] = 1200;
-["initial-destination"] = -1;
-["attributes"] = 0;
-
-};
-[095] =  {
-["type"] = -1;
-["owner"] = 0;
-["location"] = {
-["x"]=8173;
-["y"]=-521;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = 9;
-["attributes"] = 33554432;
-
-};
-[096] =  {
-["type"] = -1;
-["owner"] = 1;
-["location"] = {
-["x"]=14608;
-["y"]=-17391;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = 6;
-["attributes"] = 33554464;
-
-};
-[097] =  {
-["type"] = -1;
-["owner"] = 1;
-["location"] = {
-["x"]=12347;
-["y"]=-16521;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = 11;
-["attributes"] = 33554464;
-
-};
-[098] =  {
-["type"] = -1;
-["owner"] = 1;
-["location"] = {
-["x"]=14782;
-["y"]=-14782;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = 10;
-["attributes"] = 33554464;
-
-};
-[099] =  {
-["type"] = -1;
-["owner"] = 1;
-["location"] = {
-["x"]=16695;
-["y"]=-15304;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = 13;
-["attributes"] = 32;
-
-};
-[100] =  {
-["type"] = -1;
-["owner"] = 1;
-["location"] = {
-["x"]=13650;
-["y"]=-6087;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = 5;
-["attributes"] = 33554464;
-
-};
-[101] =  {
-["type"] = 0;
-["owner"] = 0;
-["location"] = {
-["x"]=0;
-["y"]=0;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = -1;
-["attributes"] = 512;
-
-};
-[102] =  {
-["type"] = 23;
-["owner"] = 0;
-["location"] = {
-["x"]=1130;
-["y"]=1304;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 1.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["sprite-id-override"] = 1011;
-["initial-destination"] = -1;
-["attributes"] = 0;
-
-};
-[103] =  {
-["type"] = 95;
-["owner"] = 0;
-["location"] = {
-["x"]=1913;
-["y"]=521;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = 1;
-["attributes"] = 0;
-
-};
-[104] =  {
-["type"] = 94;
-["owner"] = 1;
-["location"] = {
-["x"]=-11391;
-["y"]=-9304;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = -1;
-["attributes"] = 0;
-
-};
-[105] =  {
-["type"] = 95;
-["owner"] = 0;
-["location"] = {
-["x"]=1652;
-["y"]=2173;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = 1;
-["attributes"] = 0;
-
-};
-[106] =  {
-["type"] = 243;
-["owner"] = 1;
-["location"] = {
-["x"]=-9664;
-["y"]=-8245;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = -1;
-["attributes"] = 0;
-
-};
-[107] =  {
-["type"] = 93;
-["owner"] = 1;
-["location"] = {
-["x"]=-4004;
-["y"]=-3990;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = -1;
-["attributes"] = 0;
-
-};
-[108] =  {
-["type"] = 93;
-["owner"] = 1;
-["location"] = {
-["x"]=-9184;
-["y"]=-9367;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = -1;
-["attributes"] = 0;
-
-};
-[109] =  {
-["type"] = 23;
-["owner"] = 1;
-["location"] = {
-["x"]=-9130;
-["y"]=-9304;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 1.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["sprite-id-override"] = 1012;
-["initial-destination"] = -1;
-["attributes"] = 0;
-
-};
-[110] =  {
-["type"] = 114;
-["owner"] = 0;
-["location"] = {
-["x"]=0;
-["y"]=3739;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 1.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = -1;
-["attributes"] = 0;
-
-};
-[111] =  {
-["type"] = 114;
-["owner"] = 0;
-["location"] = {
-["x"]=3826;
-["y"]=2434;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 1.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = -1;
-["attributes"] = 0;
-
-};
-[112] =  {
-["type"] = 114;
-["owner"] = 0;
-["location"] = {
-["x"]=-5043;
-["y"]=2173;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 1.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = -1;
-["attributes"] = 0;
-
-};
-[113] =  {
-["type"] = 114;
-["owner"] = 1;
-["location"] = {
-["x"]=0;
-["y"]=-4434;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 1.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = -1;
-["attributes"] = 0;
-
-};
-[114] =  {
-["type"] = 114;
-["owner"] = 1;
-["location"] = {
-["x"]=5739;
-["y"]=-4869;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 1.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = -1;
-["attributes"] = 0;
-
-};
-[115] =  {
-["type"] = 114;
-["owner"] = 1;
-["location"] = {
-["x"]=-6521;
-["y"]=-7739;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 1.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = -1;
-["attributes"] = 0;
-
-};
-[116] =  {
-["type"] = 93;
-["owner"] = 0;
-["location"] = {
-["x"]=4032;
-["y"]=2477;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = -1;
-["attributes"] = 0;
-
-};
-[117] =  {
-["type"] = 93;
-["owner"] = 0;
-["location"] = {
-["x"]=-196;
-["y"]=3956;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = -1;
-["attributes"] = 0;
-
-};
-[118] =  {
-["type"] = 93;
-["owner"] = 0;
-["location"] = {
-["x"]=-5272;
-["y"]=2130;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = -1;
-["attributes"] = 0;
-
-};
-[119] =  {
-["type"] = 93;
-["owner"] = 1;
-["location"] = {
-["x"]=-6369;
-["y"]=-7368;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = -1;
-["attributes"] = 0;
-
-};
-[120] =  {
-["type"] = 93;
-["owner"] = 1;
-["location"] = {
-["x"]=141;
-["y"]=-4282;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = -1;
-["attributes"] = 0;
-
-};
-[121] =  {
-["type"] = 93;
-["owner"] = 1;
-["location"] = {
-["x"]=5532;
-["y"]=-4716;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = -1;
-["attributes"] = 0;
-
-};
-[122] =  {
-["type"] = 23;
-["owner"] = 0;
-["location"] = {
-["x"]=0;
-["y"]=9478;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 1.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["sprite-id-override"] = 1013;
-["initial-destination"] = -1;
-["attributes"] = 0;
-
-};
-[123] =  {
-["type"] = 111;
-["owner"] = 1;
-["location"] = {
-["x"]=1652;
-["y"]=-9130;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 1.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["sprite-id-override"] = 1014;
-["initial-destination"] = -1;
-["attributes"] = 0;
-
-};
-[124] =  {
-["type"] = 0;
-["owner"] = 0;
-["location"] = {
-["x"]=956;
-["y"]=8782;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = -1;
-["attributes"] = 512;
-
-};
-[125] =  {
-["type"] = 64;
-["owner"] = 1;
-["location"] = {
-["x"]=-86;
-["y"]=-9130;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = -1;
-["attributes"] = 0;
-
-};
-[126] =  {
-["type"] = -1;
-["owner"] = -1;
-["location"] = {
-["x"]=-5043;
-["y"]=5304;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 1.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["sprite-id-override"] = 1015;
-["initial-destination"] = -1;
-["attributes"] = 0;
-
-};
-[127] =  {
-["type"] = -1;
-["owner"] = -1;
-["location"] = {
-["x"]=-4754;
-["y"]=5549;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 1.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["sprite-id-override"] = 1016;
-["initial-destination"] = -1;
-["attributes"] = 0;
-
-};
-[128] =  {
-["type"] = -1;
-["owner"] = -1;
-["location"] = {
-["x"]=-2086;
-["y"]=-2260;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 1.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["sprite-id-override"] = 1017;
-["initial-destination"] = -1;
-["attributes"] = 0;
-
-};
-[129] =  {
-["type"] = -1;
-["owner"] = -1;
-["location"] = {
-["x"]=3739;
-["y"]=-9217;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 1.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["sprite-id-override"] = 1018;
-["initial-destination"] = -1;
-["attributes"] = 0;
-
-};
-[130] =  {
-["type"] = -1;
-["owner"] = 0;
-["location"] = {
-["x"]=-2348;
-["y"]=12870;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = -1;
-["attributes"] = 33554432;
-
-};
-[131] =  {
-["type"] = -1;
-["owner"] = 0;
-["location"] = {
-["x"]=-1650;
-["y"]=14521;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = -1;
-["attributes"] = 512;
-
-};
-[132] =  {
-["type"] = -1;
-["owner"] = 1;
-["location"] = {
-["x"]=-695;
-["y"]=-434;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = 4;
-["attributes"] = 33554464;
-
-};
-[133] =  {
-["type"] = -1;
-["owner"] = 1;
-["location"] = {
-["x"]=6521;
-["y"]=-14086;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = 4;
-["attributes"] = 33554464;
-
-};
-[134] =  {
-["type"] = -1;
-["owner"] = 1;
-["location"] = {
-["x"]=7303;
-["y"]=-12869;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = 7;
-["attributes"] = 33554464;
-
-};
-[135] =  {
-["type"] = -1;
-["owner"] = 1;
-["location"] = {
-["x"]=5565;
-["y"]=-13739;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = 7;
-["attributes"] = 33554464;
-
-};
-[136] =  {
-["type"] = -1;
-["owner"] = 1;
-["location"] = {
-["x"]=8695;
-["y"]=-13043;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = 7;
-["attributes"] = 33554464;
-
-};
-[137] =  {
-["type"] = -1;
-["owner"] = 1;
-["location"] = {
-["x"]=7478;
-["y"]=-15478;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = 7;
-["attributes"] = 33554464;
-
-};
-[138] =  {
-["type"] = 115;
-["owner"] = 0;
-["location"] = {
-["x"]=-14609;
-["y"]=-14259;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = -1;
-["attributes"] = 0;
-
-};
-[139] =  {
-["type"] = 116;
-["owner"] = 0;
-["location"] = {
-["x"]=-14609;
-["y"]=-14259;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = -1;
-["attributes"] = 32;
-
-};
-[140] =  {
-["type"] = 0;
-["owner"] = 0;
-["location"] = {
-["x"]=-21999;
-["y"]=-15478;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = 9;
-["attributes"] = 512;
-
-};
-[141] =  {
-["type"] = 118;
-["owner"] = 0;
-["location"] = {
-["x"]=0;
-["y"]=4347;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = 0;
-["attributes"] = 33554464;
-
-};
-[142] =  {
-["type"] = 104;
-["owner"] = -1;
-["location"] = {
-["x"]=3821;
-["y"]=9473;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.75;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = -1;
-["attributes"] = 33554432;
-
-};
-[143] =  {
-["type"] = 118;
-["owner"] = 0;
-["location"] = {
-["x"]=0;
-["y"]=4347;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = 0;
-["attributes"] = 33554464;
-
-};
-[144] =  {
-["type"] = 118;
-["owner"] = 0;
-["location"] = {
-["x"]=0;
-["y"]=4347;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = 0;
-["attributes"] = 33554464;
-
-};
-[145] =  {
-["type"] = 118;
-["owner"] = 0;
-["location"] = {
-["x"]=0;
-["y"]=4347;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = 0;
-["attributes"] = 33554464;
-
-};
-[146] =  {
-["type"] = 118;
-["owner"] = 0;
-["location"] = {
-["x"]=0;
-["y"]=4347;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = 0;
-["attributes"] = 33554464;
-
-};
-[147] =  {
-["type"] = 23;
-["owner"] = 0;
-["location"] = {
-["x"]=-11133;
-["y"]=-18088;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 1.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["sprite-id-override"] = 1019;
-["initial-destination"] = -1;
-["attributes"] = 0;
-
-};
-[148] =  {
-["type"] = 23;
-["owner"] = 1;
-["location"] = {
-["x"]=22957;
-["y"]=43826;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 1.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["sprite-id-override"] = 1020;
-["initial-destination"] = -1;
-["attributes"] = 0;
-
-};
-[149] =  {
-["type"] = 104;
-["owner"] = -1;
-["location"] = {
-["x"]=695;
-["y"]=3826;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.75;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = -1;
-["attributes"] = 0;
-
-};
-[150] =  {
-["type"] = 45;
-["owner"] = 1;
-["location"] = {
-["x"]=20173;
-["y"]=4173;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = -1;
-["attributes"] = 0;
-
-};
-[151] =  {
-["type"] = 93;
-["owner"] = -2;
-["location"] = {
-["x"]=-2346;
-["y"]=956;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = -1;
-["attributes"] = 0;
-
-};
-[152] =  {
-["type"] = 93;
-["owner"] = 1;
-["location"] = {
-["x"]=6935;
-["y"]=14868;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = -1;
-["attributes"] = 0;
-
-};
-[153] =  {
-["type"] = 119;
-["owner"] = 1;
-["location"] = {
-["x"]=21913;
-["y"]=8000;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = 11;
-["attributes"] = 33554432;
-
-};
-[154] =  {
-["type"] = 119;
-["owner"] = 1;
-["location"] = {
-["x"]=18086;
-["y"]=2434;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = 4;
-["attributes"] = 33554432;
-
-};
-[155] =  {
-["type"] = 125;
-["owner"] = 0;
-["location"] = {
-["x"]=0;
-["y"]=0;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = -1;
-["attributes"] = 33554432;
-
-};
-[156] =  {
-["type"] = 128;
-["owner"] = -1;
-["location"] = {
-["x"]=-1304;
-["y"]=-956;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = -1;
-["attributes"] = 0;
-
-};
-[157] =  {
-["type"] = 128;
-["owner"] = -1;
-["location"] = {
-["x"]=1304;
-["y"]=1043;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = -1;
-["attributes"] = 0;
-
-};
-[158] =  {
-["type"] = 128;
-["owner"] = -1;
-["location"] = {
-["x"]=1739;
-["y"]=-2173;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = -1;
-["attributes"] = 0;
-
-};
-[159] =  {
-["type"] = 128;
-["owner"] = -1;
-["location"] = {
-["x"]=-2260;
-["y"]=1739;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = -1;
-["attributes"] = 0;
-
-};
-[160] =  {
-["type"] = 128;
-["owner"] = -1;
-["location"] = {
-["x"]=173;
-["y"]=-1478;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = -1;
-["attributes"] = 0;
-
-};
-[161] =  {
-["type"] = 128;
-["owner"] = -1;
-["location"] = {
-["x"]=3565;
-["y"]=86;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = -1;
-["attributes"] = 0;
-
-};
-[162] =  {
-["type"] = 137;
-["owner"] = 0;
-["location"] = {
-["x"]=2238;
-["y"]=6174;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 1.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = -1;
-["attributes"] = 0;
-
-};
-[163] =  {
-["type"] = 141;
-["owner"] = 0;
-["location"] = {
-["x"]=2168;
-["y"]=6075;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = -1;
-["attributes"] = 0;
-
-};
-[164] =  {
-["type"] = 141;
-["owner"] = 0;
-["location"] = {
-["x"]=2357;
-["y"]=6179;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = -1;
-["attributes"] = 0;
-
-};
-[165] =  {
-["type"] = 127;
-["owner"] = 0;
-["location"] = {
-["x"]=2238;
-["y"]=6174;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = 0;
-["attributes"] = 33554464;
-
-};
-[166] =  {
-["type"] = 129;
-["owner"] = 0;
-["location"] = {
-["x"]=1391;
-["y"]=6434;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = -1;
-["attributes"] = 512;
-
-};
-[167] =  {
-["type"] = 87;
-["owner"] = 1;
-["location"] = {
-["x"]=4174;
-["y"]=24782;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = -1;
-["attributes"] = 0;
-
-};
-[168] =  {
-["type"] = 37;
-["owner"] = 1;
-["location"] = {
-["x"]=9827;
-["y"]=27826;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = -1;
-["attributes"] = 0;
-
-};
-[169] =  {
-["type"] = 37;
-["owner"] = 1;
-["location"] = {
-["x"]=3217;
-["y"]=29826;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = -1;
-["attributes"] = 0;
-
-};
-[170] =  {
-["type"] = 64;
-["owner"] = 1;
-["location"] = {
-["x"]=9217;
-["y"]=23739;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = -1;
-["attributes"] = 0;
-
-};
-[171] =  {
-["type"] = 113;
-["owner"] = 1;
-["location"] = {
-["x"]=-7739;
-["y"]=-8521;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = -1;
-["attributes"] = 32;
-
-};
-[172] =  {
-["type"] = 110;
-["owner"] = 1;
-["location"] = {
-["x"]=-6782;
-["y"]=-9217;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = -1;
-["attributes"] = 32;
-
-};
-[173] =  {
-["type"] = 110;
-["owner"] = 1;
-["location"] = {
-["x"]=-8608;
-["y"]=-7478;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = -1;
-["attributes"] = 32;
-
-};
-[174] =  {
-["type"] = 117;
-["owner"] = 0;
-["location"] = {
-["x"]=2238;
-["y"]=6174;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = -1;
-["attributes"] = 32;
-
-};
-[175] =  {
-["type"] = 141;
-["owner"] = 0;
-["location"] = {
-["x"]=2173;
-["y"]=6260;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = -1;
-["attributes"] = 0;
-
-};
-[176] =  {
-["type"] = 23;
-["owner"] = 0;
-["location"] = {
-["x"]=0;
-["y"]=6000;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 1.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["sprite-id-override"] = 1026;
-["initial-destination"] = -1;
-["attributes"] = 0;
-
-};
-[177] =  {
-["type"] = 23;
-["owner"] = 1;
-["location"] = {
-["x"]=0;
-["y"]=-7478;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 1.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["sprite-id-override"] = 1028;
-["initial-destination"] = -1;
-["attributes"] = 0;
-
-};
-[178] =  {
-["type"] = 104;
-["owner"] = 1;
-["location"] = {
-["x"]=0;
-["y"]=0;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 1.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["sprite-id-override"] = 572;
-["initial-destination"] = -1;
-["attributes"] = 0;
-
-};
-[179] =  {
-["type"] = 129;
-["owner"] = 0;
-["location"] = {
-["x"]=869;
-["y"]=6521;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = -1;
-["attributes"] = 512;
-
-};
-[180] =  {
-["type"] = 138;
-["owner"] = 1;
-["location"] = {
-["x"]=956;
-["y"]=-7130;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = -1;
-["attributes"] = 0;
-
-};
-[181] =  {
-["type"] = 47;
-["owner"] = 0;
-["location"] = {
-["x"]=-782;
-["y"]=6521;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = 0;
-["attributes"] = 0;
-
-};
-[182] =  {
-["type"] = 67;
-["owner"] = 0;
-["location"] = {
-["x"]=86;
-["y"]=7478;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = 0;
-["attributes"] = 0;
-
-};
-[183] =  {
-["type"] = 113;
-["owner"] = 1;
-["location"] = {
-["x"]=-9565;
-["y"]=-9565;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = -1;
-["attributes"] = 32;
-
-};
-[184] =  {
-["type"] = 113;
-["owner"] = 1;
-["location"] = {
-["x"]=-8695;
-["y"]=-9130;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = -1;
-["attributes"] = 32;
-
-};
-[185] =  {
-["type"] = 148;
-["owner"] = 1;
-["location"] = {
-["x"]=-9565;
-["y"]=-8000;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = -1;
-["attributes"] = 32;
-
-};
-[186] =  {
-["type"] = 160;
-["owner"] = 1;
-["location"] = {
-["x"]=0;
-["y"]=0;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 1.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = -1;
-["attributes"] = 0;
-
-};
-[187] =  {
-["type"] = 109;
-["owner"] = 0;
-["location"] = {
-["x"]=174;
-["y"]=7739;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = 1;
-["attributes"] = 33554432;
-
-};
-[188] =  {
-["type"] = 151;
-["owner"] = 0;
-["location"] = {
-["x"]=86;
-["y"]=7826;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = 0;
-["attributes"] = 512;
-
-};
-[189] =  {
-["type"] = 129;
-["owner"] = 0;
-["location"] = {
-["x"]=435;
-["y"]=8086;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = 1;
-["attributes"] = 33554432;
-
-};
-[190] =  {
-["type"] = 129;
-["owner"] = 0;
-["location"] = {
-["x"]=-173;
-["y"]=6695;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = 1;
-["attributes"] = 33554432;
-
-};
-[191] =  {
-["type"] = 147;
-["owner"] = 1;
-["location"] = {
-["x"]=174;
-["y"]=-2000;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = 1;
-["attributes"] = 33554432;
-
-};
-[192] =  {
-["type"] = 147;
-["owner"] = 1;
-["location"] = {
-["x"]=-695;
-["y"]=-2086;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = 1;
-["attributes"] = 33554432;
-
-};
-[193] =  {
-["type"] = 147;
-["owner"] = 1;
-["location"] = {
-["x"]=-347;
-["y"]=-2608;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = 1;
-["attributes"] = 33554432;
-
-};
-[194] =  {
-["type"] = 147;
-["owner"] = 1;
-["location"] = {
-["x"]=-217;
-["y"]=-1521;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = 1;
-["attributes"] = 33554432;
-
-};
-[195] =  {
-["type"] = 147;
-["owner"] = 1;
-["location"] = {
-["x"]=-260;
-["y"]=-2434;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = 1;
-["attributes"] = 33554432;
-
-};
-[196] =  {
-["type"] = 148;
-["owner"] = 1;
-["location"] = {
-["x"]=-957;
-["y"]=-174;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = 0;
-["attributes"] = 33554432;
-
-};
-[197] =  {
-["type"] = 149;
-["owner"] = 1;
-["location"] = {
-["x"]=1130;
-["y"]=-43;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = 0;
-["attributes"] = 33554432;
-
-};
-[198] =  {
-["type"] = 142;
-["owner"] = 1;
-["location"] = {
-["x"]=43;
-["y"]=-391;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = 0;
-["attributes"] = 33554432;
-
-};
-[199] =  {
-["type"] = 117;
-["owner"] = 0;
-["location"] = {
-["x"]=-86;
-["y"]=9217;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = -1;
-["attributes"] = 32;
-
-};
-[200] =  {
-["type"] = 47;
-["owner"] = 0;
-["location"] = {
-["x"]=-86;
-["y"]=9217;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = -1;
-["attributes"] = 32;
-
-};
-[201] =  {
-["type"] = 47;
-["owner"] = 0;
-["location"] = {
-["x"]=-86;
-["y"]=9217;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = -1;
-["attributes"] = 32;
-
-};
-[202] =  {
-["type"] = 47;
-["owner"] = 0;
-["location"] = {
-["x"]=-86;
-["y"]=9217;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = -1;
-["attributes"] = 32;
-
-};
-[203] =  {
-["type"] = 129;
-["owner"] = 0;
-["location"] = {
-["x"]=-86;
-["y"]=9217;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = 14;
-["attributes"] = 32;
-
-};
-[204] =  {
-["type"] = 129;
-["owner"] = 0;
-["location"] = {
-["x"]=-86;
-["y"]=9217;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = 15;
-["attributes"] = 32;
-
-};
-[205] =  {
-["type"] = 129;
-["owner"] = 0;
-["location"] = {
-["x"]=-86;
-["y"]=9217;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = 16;
-["attributes"] = 32;
-
-};
-[206] =  {
-["type"] = 148;
-["owner"] = 1;
-["location"] = {
-["x"]=6608;
-["y"]=-7478;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = -1;
-["attributes"] = 32;
-
-};
-[207] =  {
-["type"] = 148;
-["owner"] = 1;
-["location"] = {
-["x"]=5043;
-["y"]=-7826;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = -1;
-["attributes"] = 32;
-
-};
-[208] =  {
-["type"] = 142;
-["owner"] = 1;
-["location"] = {
-["x"]=6000;
-["y"]=-8173;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = 20;
-["attributes"] = 32;
-
-};
-[209] =  {
-["type"] = 142;
-["owner"] = 1;
-["location"] = {
-["x"]=5478;
-["y"]=-6695;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = 20;
-["attributes"] = 32;
-
-};
-[210] =  {
-["type"] = 149;
-["owner"] = 1;
-["location"] = {
-["x"]=6434;
-["y"]=-6347;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = 21;
-["attributes"] = 32;
-
-};
-[211] =  {
-["type"] = -1;
-["owner"] = 0;
-["location"] = {
-["x"]=3217;
-["y"]=-2695;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 1.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = -1;
-["attributes"] = 0;
-
-};
-[212] =  {
-["type"] = 23;
-["owner"] = 0;
-["location"] = {
-["x"]=0;
-["y"]=8000;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 1.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = -1;
-["attributes"] = 0;
-
-};
-[213] =  {
-["type"] = 23;
-["owner"] = 1;
-["location"] = {
-["x"]=0;
-["y"]=-8000;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 1.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = -1;
-["attributes"] = 0;
-
-};
-[214] =  {
-["type"] = 276;
-["owner"] = 0;
-["location"] = {
-["x"]=8000;
-["y"]=8000;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = -1;
-["attributes"] = 0;
-
-};
-[215] =  {
-["type"] = 278;
-["owner"] = 1;
-["location"] = {
-["x"]=-8000;
-["y"]=-8000;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = -1;
-["attributes"] = 0;
-
-};
-[216] =  {
-["type"] = 274;
-["owner"] = 0;
-["location"] = {
-["x"]=0;
-["y"]=8000;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = -1;
-["attributes"] = 0;
-
-};
-[217] =  {
-["type"] = 275;
-["owner"] = 1;
-["location"] = {
-["x"]=0;
-["y"]=-8000;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = -1;
-["attributes"] = 0;
-
-};
-[218] =  {
-["type"] = 272;
-["owner"] = 0;
-["location"] = {
-["x"]=273;
-["y"]=8478;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = -1;
-["attributes"] = 512;
-
-};
-[219] =  {
-["type"] = 272;
-["owner"] = 0;
-["location"] = {
-["x"]=-957;
-["y"]=8826;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = -1;
-["attributes"] = 0;
-
-};
-[220] =  {
-["type"] = 272;
-["owner"] = 0;
-["location"] = {
-["x"]=-131;
-["y"]=8696;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = -1;
-["attributes"] = 0;
-
-};
-[221] =  {
-["type"] = 272;
-["owner"] = 0;
-["location"] = {
-["x"]=1434;
-["y"]=8348;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = -1;
-["attributes"] = 0;
-
-};
-[222] =  {
-["type"] = 272;
-["owner"] = 0;
-["location"] = {
-["x"]=-1000;
-["y"]=7261;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = -1;
-["attributes"] = 0;
-
-};
-[223] =  {
-["type"] = 272;
-["owner"] = 0;
-["location"] = {
-["x"]=-610;
-["y"]=8717;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = -1;
-["attributes"] = 0;
-
-};
-[224] =  {
-["type"] = 272;
-["owner"] = 0;
-["location"] = {
-["x"]=1608;
-["y"]=7566;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = -1;
-["attributes"] = 0;
-
-};
-[225] =  {
-["type"] = 272;
-["owner"] = 0;
-["location"] = {
-["x"]=391;
-["y"]=7044;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = -1;
-["attributes"] = 0;
-
-};
-[226] =  {
-["type"] = 273;
-["owner"] = 1;
-["location"] = {
-["x"]=783;
-["y"]=-6870;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = -1;
-["attributes"] = 512;
-
-};
-[227] =  {
-["type"] = 273;
-["owner"] = 1;
-["location"] = {
-["x"]=1260;
-["y"]=-7476;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = -1;
-["attributes"] = 0;
-
-};
-[228] =  {
-["type"] = 273;
-["owner"] = 1;
-["location"] = {
-["x"]=-174;
-["y"]=-7477;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = -1;
-["attributes"] = 0;
-
-};
-[229] =  {
-["type"] = 273;
-["owner"] = 1;
-["location"] = {
-["x"]=-783;
-["y"]=-5477;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = -1;
-["attributes"] = 0;
-
-};
-[230] =  {
-["type"] = 273;
-["owner"] = 1;
-["location"] = {
-["x"]=695;
-["y"]=-6432;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = 1;
-["attributes"] = 0;
-
-};
-[231] =  {
-["type"] = 273;
-["owner"] = 1;
-["location"] = {
-["x"]=-2;
-["y"]=-6695;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = 1;
-["attributes"] = 0;
-
-};
-[232] =  {
-["type"] = 273;
-["owner"] = 1;
-["location"] = {
-["x"]=-2174;
-["y"]=-6520;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = 1;
-["attributes"] = 0;
-
-};
-[233] =  {
-["type"] = 273;
-["owner"] = 1;
-["location"] = {
-["x"]=-783;
-["y"]=-5999;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = 1;
-["attributes"] = 0;
-
-};
-[234] =  {
-["type"] = 23;
-["owner"] = 0;
-["location"] = {
-["x"]=0;
-["y"]=10000;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 1.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = -1;
-["attributes"] = 0;
-
-};
-[235] =  {
-["type"] = 23;
-["owner"] = 1;
-["location"] = {
-["x"]=0;
-["y"]=-10000;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 1.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = -1;
-["attributes"] = 0;
-
-};
-[236] =  {
-["type"] = 45;
-["owner"] = 0;
-["location"] = {
-["x"]=256;
-["y"]=10000;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = 0;
-["attributes"] = 0;
-
-};
-[237] =  {
-["type"] = 45;
-["owner"] = 0;
-["location"] = {
-["x"]=-256;
-["y"]=10000;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = 0;
-["attributes"] = 0;
-
-};
-[238] =  {
-["type"] = 45;
-["owner"] = 0;
-["location"] = {
-["x"]=0;
-["y"]=10256;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = 0;
-["attributes"] = 0;
-
-};
-[239] =  {
-["type"] = 45;
-["owner"] = 1;
-["location"] = {
-["x"]=-256;
-["y"]=-10000;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = 1;
-["attributes"] = 0;
-
-};
-[240] =  {
-["type"] = 45;
-["owner"] = 1;
-["location"] = {
-["x"]=256;
-["y"]=-10000;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = 1;
-["attributes"] = 0;
-
-};
-[241] =  {
-["type"] = 45;
-["owner"] = 1;
-["location"] = {
-["x"]=0;
-["y"]=-10256;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = 1;
-["attributes"] = 0;
-
-};
-[242] =  {
-["type"] = 270;
-["owner"] = -1;
-["location"] = {
-["x"]=0;
-["y"]=0;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.25;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = -1;
-["attributes"] = 0;
-
-};
-[243] =  {
-["type"] = 270;
-["owner"] = -1;
-["location"] = {
-["x"]=-700;
-["y"]=0;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.25;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = -1;
-["attributes"] = 0;
-
-};
-[244] =  {
-["type"] = 270;
-["owner"] = -1;
-["location"] = {
-["x"]=700;
-["y"]=0;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.25;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = -1;
-["attributes"] = 0;
-
-};
-[245] =  {
-["type"] = 270;
-["owner"] = -1;
-["location"] = {
-["x"]=0;
-["y"]=-700;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.25;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = -1;
-["attributes"] = 0;
-
-};
-[246] =  {
-["type"] = 270;
-["owner"] = -1;
-["location"] = {
-["x"]=0;
-["y"]=700;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.25;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = 0;
-["attributes"] = 0;
-
-};
-[247] =  {
-["type"] = 93;
-["owner"] = -1;
-["location"] = {
-["x"]=-700;
-["y"]=-700;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = -1;
-["attributes"] = 0;
-
-};
-[248] =  {
-["type"] = 93;
-["owner"] = -1;
-["location"] = {
-["x"]=700;
-["y"]=-700;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = -1;
-["attributes"] = 0;
-
-};
-[249] =  {
-["type"] = 93;
-["owner"] = -1;
-["location"] = {
-["x"]=-700;
-["y"]=700;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = -1;
-["attributes"] = 0;
-
-};
-[250] =  {
-["type"] = 93;
-["owner"] = -1;
-["location"] = {
-["x"]=700;
-["y"]=700;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = -1;
-["attributes"] = 0;
-
-};
-[251] =  {
-["type"] = 270;
-["owner"] = -1;
-["location"] = {
-["x"]=0;
-["y"]=5000;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.25;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = -1;
-["attributes"] = 0;
-
-};
-[252] =  {
-["type"] = 270;
-["owner"] = -1;
-["location"] = {
-["x"]=0;
-["y"]=-5000;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.25;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = -1;
-["attributes"] = 0;
-
-};
-[253] =  {
-["type"] = -1;
-["owner"] = 1;
-["location"] = {
-["x"]=-3565;
-["y"]=-9304;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = 0;
-["attributes"] = 32;
-
-};
-[254] =  {
-["type"] = -1;
-["owner"] = 1;
-["location"] = {
-["x"]=-3565;
-["y"]=-9304;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = 0;
-["attributes"] = 32;
-
-};
-[255] =  {
-["type"] = -1;
-["owner"] = 1;
-["location"] = {
-["x"]=-3565;
-["y"]=-9304;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = 0;
-["attributes"] = 32;
-
-};
-[256] =  {
-["type"] = -1;
-["owner"] = 1;
-["location"] = {
-["x"]=-3565;
-["y"]=-9304;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = 0;
-["attributes"] = 32;
-
-};
-[257] =  {
-["type"] = -1;
-["owner"] = 1;
-["location"] = {
-["x"]=-3565;
-["y"]=-9304;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = 0;
-["attributes"] = 32;
-
-};
-[258] =  {
-["type"] = -1;
-["owner"] = 1;
-["location"] = {
-["x"]=-3565;
-["y"]=-9304;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = 0;
-["attributes"] = 32;
-
-};
-[259] =  {
-["type"] = 23;
-["owner"] = -1;
-["location"] = {
-["x"]=1390;
-["y"]=-2696;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 1.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = -1;
-["attributes"] = 0;
-
-};
-[260] =  {
-["type"] = 23;
-["owner"] = -1;
-["location"] = {
-["x"]=-9044;
-["y"]=-17130;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 1.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["sprite-id-override"] = 1021;
-["initial-destination"] = -1;
-["attributes"] = 0;
-
-};
-[261] =  {
-["type"] = 166;
-["owner"] = 0;
-["location"] = {
-["x"]=-2434;
-["y"]=3218;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = -1;
-["attributes"] = 512;
-
-};
-[262] =  {
-["type"] = 174;
-["owner"] = 0;
-["location"] = {
-["x"]=-1392;
-["y"]=3305;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = 0;
-["attributes"] = 33554432;
-
-};
-[263] =  {
-["type"] = 174;
-["owner"] = 0;
-["location"] = {
-["x"]=-2086;
-["y"]=4348;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = 0;
-["attributes"] = 33554432;
-
-};
-[264] =  {
-["type"] = 174;
-["owner"] = 0;
-["location"] = {
-["x"]=-2792;
-["y"]=5228;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = 0;
-["attributes"] = 33554432;
-
-};
-[265] =  {
-["type"] = 174;
-["owner"] = 0;
-["location"] = {
-["x"]=-3737;
-["y"]=6184;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = 0;
-["attributes"] = 33554432;
-
-};
-[266] =  {
-["type"] = 174;
-["owner"] = 0;
-["location"] = {
-["x"]=-4868;
-["y"]=7543;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = 0;
-["attributes"] = 33554432;
-
-};
-[267] =  {
-["type"] = 177;
-["owner"] = 1;
-["location"] = {
-["x"]=-3391;
-["y"]=-9043;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = 1;
-["attributes"] = 33554432;
-
-};
-[268] =  {
-["type"] = 167;
-["owner"] = 0;
-["location"] = {
-["x"]=1826;
-["y"]=-1652;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = 0;
-["attributes"] = 0;
-
-};
-[269] =  {
-["type"] = 167;
-["owner"] = 0;
-["location"] = {
-["x"]=1478;
-["y"]=-3391;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = 0;
-["attributes"] = 0;
-
-};
-[270] =  {
-["type"] = 45;
-["owner"] = 1;
-["location"] = {
-["x"]=869;
-["y"]=-2260;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = -1;
-["attributes"] = 0;
-
-};
-[271] =  {
-["type"] = 45;
-["owner"] = 1;
-["location"] = {
-["x"]=1913;
-["y"]=-2173;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = -1;
-["attributes"] = 0;
-
-};
-[272] =  {
-["type"] = 17;
-["owner"] = 1;
-["location"] = {
-["x"]=1044;
-["y"]=-1304;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = 8;
-["attributes"] = 0;
-
-};
-[273] =  {
-["type"] = 7;
-["owner"] = 1;
-["location"] = {
-["x"]=0;
-["y"]=0;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = 12;
-["attributes"] = 33554432;
-
-};
-[274] =  {
-["type"] = 164;
-["owner"] = 0;
-["location"] = {
-["x"]=1652;
-["y"]=-2695;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = 10;
-["attributes"] = 0;
-
-};
-[275] =  {
-["type"] = 164;
-["owner"] = 0;
-["location"] = {
-["x"]=782;
-["y"]=-2695;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = 11;
-["attributes"] = 0;
-
-};
-[276] =  {
-["type"] = 149;
-["owner"] = 1;
-["location"] = {
-["x"]=1217;
-["y"]=-1739;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = -1;
-["attributes"] = 0;
-
-};
-[277] =  {
-["type"] = 149;
-["owner"] = 1;
-["location"] = {
-["x"]=1043;
-["y"]=-1913;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = -1;
-["attributes"] = 0;
-
-};
-[278] =  {
-["type"] = 165;
-["owner"] = 0;
-["location"] = {
-["x"]=-2782;
-["y"]=3739;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = 2;
-["attributes"] = 0;
-
-};
-[279] =  {
-["type"] = 165;
-["owner"] = 0;
-["location"] = {
-["x"]=-3218;
-["y"]=4086;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = 19;
-["attributes"] = 0;
-
-};
-[280] =  {
-["type"] = 165;
-["owner"] = 0;
-["location"] = {
-["x"]=-3217;
-["y"]=4565;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = 20;
-["attributes"] = 0;
-
-};
-[281] =  {
-["type"] = 165;
-["owner"] = 0;
-["location"] = {
-["x"]=-2739;
-["y"]=4391;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = 21;
-["attributes"] = 0;
-
-};
-[282] =  {
-["type"] = 165;
-["owner"] = 0;
-["location"] = {
-["x"]=-2478;
-["y"]=4173;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = 22;
-["attributes"] = 0;
-
-};
-[283] =  {
-["type"] = 165;
-["owner"] = 0;
-["location"] = {
-["x"]=-2347;
-["y"]=3913;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = 23;
-["attributes"] = 0;
-
-};
-[284] =  {
-["type"] = 142;
-["owner"] = 1;
-["location"] = {
-["x"]=2521;
-["y"]=-3478;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = 8;
-["attributes"] = 33554432;
-
-};
-[285] =  {
-["type"] = 142;
-["owner"] = 1;
-["location"] = {
-["x"]=-2869;
-["y"]=-7826;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = 8;
-["attributes"] = 33554432;
-
-};
-[286] =  {
-["type"] = 167;
-["owner"] = 0;
-["location"] = {
-["x"]=-2086;
-["y"]=5913;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = 5;
-["attributes"] = 0;
-
-};
-[287] =  {
-["type"] = 167;
-["owner"] = 0;
-["location"] = {
-["x"]=-3739;
-["y"]=5478;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = 5;
-["attributes"] = 0;
-
-};
-[288] =  {
-["type"] = 166;
-["owner"] = 0;
-["location"] = {
-["x"]=-2260;
-["y"]=6695;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = 27;
-["attributes"] = 0;
-
-};
-[289] =  {
-["type"] = 166;
-["owner"] = 0;
-["location"] = {
-["x"]=-4434;
-["y"]=5652;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = 28;
-["attributes"] = 0;
-
-};
-[290] =  {
-["type"] = 148;
-["owner"] = 1;
-["location"] = {
-["x"]=-28869;
-["y"]=-34782;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = 0;
-["attributes"] = 33554464;
-
-};
-[291] =  {
-["type"] = 148;
-["owner"] = 1;
-["location"] = {
-["x"]=-26086;
-["y"]=-34086;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = 0;
-["attributes"] = 33554464;
-
-};
-[292] =  {
-["type"] = 148;
-["owner"] = 1;
-["location"] = {
-["x"]=-28173;
-["y"]=-31304;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = 1;
-["attributes"] = 33554464;
-
-};
-[293] =  {
-["type"] = 148;
-["owner"] = 1;
-["location"] = {
-["x"]=0;
-["y"]=0;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = 1;
-["attributes"] = 33554464;
-
-};
-[294] =  {
-["type"] = 23;
-["owner"] = 1;
-["location"] = {
-["x"]=0;
-["y"]=-97391;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 1.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["sprite-id-override"] = 643;
-["initial-destination"] = -1;
-["attributes"] = 0;
-
-};
-[295] =  {
-["type"] = 179;
-["owner"] = 1;
-["location"] = {
-["x"]=-694;
-["y"]=-35129;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = 0;
-["attributes"] = 33554432;
-
-};
-[296] =  {
-["type"] = 179;
-["owner"] = 1;
-["location"] = {
-["x"]=-347;
-["y"]=-42782;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = 0;
-["attributes"] = 33554432;
-
-};
-[297] =  {
-["type"] = 179;
-["owner"] = 1;
-["location"] = {
-["x"]=0;
-["y"]=-47999;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = 0;
-["attributes"] = 33554432;
-
-};
-[298] =  {
-["type"] = 179;
-["owner"] = 1;
-["location"] = {
-["x"]=-173;
-["y"]=-53564;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = 0;
-["attributes"] = 33554432;
-
-};
-[299] =  {
-["type"] = 179;
-["owner"] = 1;
-["location"] = {
-["x"]=-522;
-["y"]=-57565;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = 0;
-["attributes"] = 33554432;
-
-};
-[300] =  {
-["type"] = 0;
-["owner"] = 0;
-["location"] = {
-["x"]=0;
-["y"]=-23652;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = 5;
-["attributes"] = 512;
-
-};
-[301] =  {
-["type"] = 38;
-["owner"] = 1;
-["location"] = {
-["x"]=-87;
-["y"]=-33912;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = 1;
-["attributes"] = 33554432;
-
-};
-[302] =  {
-["type"] = 38;
-["owner"] = 1;
-["location"] = {
-["x"]=-782;
-["y"]=-33651;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = 1;
-["attributes"] = 33554432;
-
-};
-[303] =  {
-["type"] = 38;
-["owner"] = 1;
-["location"] = {
-["x"]=87;
-["y"]=-41390;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = 2;
-["attributes"] = 33554432;
-
-};
-[304] =  {
-["type"] = 38;
-["owner"] = 1;
-["location"] = {
-["x"]=-695;
-["y"]=-41129;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = 2;
-["attributes"] = 33554432;
-
-};
-[305] =  {
-["type"] = 38;
-["owner"] = 1;
-["location"] = {
-["x"]=0;
-["y"]=-46607;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = 3;
-["attributes"] = 33554432;
-
-};
-[306] =  {
-["type"] = 38;
-["owner"] = 1;
-["location"] = {
-["x"]=-43;
-["y"]=-46869;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = 3;
-["attributes"] = 33554432;
-
-};
-[307] =  {
-["type"] = 38;
-["owner"] = 1;
-["location"] = {
-["x"]=-348;
-["y"]=-46345;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = 3;
-["attributes"] = 33554432;
-
-};
-[308] =  {
-["type"] = 37;
-["owner"] = 1;
-["location"] = {
-["x"]=-348;
-["y"]=-52173;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = 4;
-["attributes"] = 0;
-
-};
-[309] =  {
-["type"] = 37;
-["owner"] = 1;
-["location"] = {
-["x"]=-1217;
-["y"]=-56172;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = 5;
-["attributes"] = 33554432;
-
-};
-[310] =  {
-["type"] = 37;
-["owner"] = 1;
-["location"] = {
-["x"]=-347;
-["y"]=-56172;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = 5;
-["attributes"] = 33554432;
-
-};
-[311] =  {
-["type"] = 37;
-["owner"] = 1;
-["location"] = {
-["x"]=696;
-["y"]=-55999;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = 5;
-["attributes"] = 33554432;
-
-};
-[312] =  {
-["type"] = 23;
-["owner"] = 0;
-["location"] = {
-["x"]=1913;
-["y"]=6434;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 1.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["sprite-id-override"] = 1022;
-["initial-destination"] = -1;
-["attributes"] = 0;
-
-};
-[313] =  {
-["type"] = 111;
-["owner"] = 0;
-["location"] = {
-["x"]=3130;
-["y"]=6173;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 1.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["sprite-id-override"] = 1009;
-["initial-destination"] = -1;
-["attributes"] = 0;
-
-};
-[314] =  {
-["type"] = 114;
-["owner"] = 0;
-["location"] = {
-["x"]=1217;
-["y"]=9043;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 1.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = -1;
-["attributes"] = 0;
-
-};
-[315] =  {
-["type"] = 111;
-["owner"] = 1;
-["location"] = {
-["x"]=-8956;
-["y"]=-8173;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 1.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["sprite-id-override"] = 1010;
-["initial-destination"] = -1;
-["attributes"] = 0;
-
-};
-[316] =  {
-["type"] = 111;
-["owner"] = 1;
-["location"] = {
-["x"]=-5739;
-["y"]=-10955;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 1.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["sprite-id-override"] = 1011;
-["initial-destination"] = -1;
-["attributes"] = 0;
-
-};
-[317] =  {
-["type"] = 23;
-["owner"] = 1;
-["location"] = {
-["x"]=-7565;
-["y"]=-9391;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 1.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["sprite-id-override"] = 1023;
-["initial-destination"] = -1;
-["attributes"] = 0;
-
-};
-[318] =  {
-["type"] = 166;
-["owner"] = 0;
-["location"] = {
-["x"]=2347;
-["y"]=6260;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = -1;
-["attributes"] = 512;
-
-};
-[319] =  {
-["type"] = 223;
-["owner"] = 1;
-["location"] = {
-["x"]=-8608;
-["y"]=-9217;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = -1;
-["attributes"] = 0;
-
-};
-[320] =  {
-["type"] = 45;
-["owner"] = 1;
-["location"] = {
-["x"]=-7391;
-["y"]=-10173;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = -1;
-["attributes"] = 0;
-
-};
-[321] =  {
-["type"] = 45;
-["owner"] = 1;
-["location"] = {
-["x"]=-9738;
-["y"]=-8348;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = -1;
-["attributes"] = 0;
-
-};
-[322] =  {
-["type"] = 167;
-["owner"] = 0;
-["location"] = {
-["x"]=14347;
-["y"]=17825;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = 0;
-["attributes"] = 0;
-
-};
-[323] =  {
-["type"] = 167;
-["owner"] = 0;
-["location"] = {
-["x"]=1913;
-["y"]=7391;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = 0;
-["attributes"] = 0;
-
-};
-[324] =  {
-["type"] = 181;
-["owner"] = 0;
-["location"] = {
-["x"]=-87;
-["y"]=2520;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = -1;
-["attributes"] = 512;
-
-};
-[325] =  {
-["type"] = 23;
-["owner"] = 1;
-["location"] = {
-["x"]=9739;
-["y"]=-3043;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 1.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["sprite-id-override"] = 1036;
-["initial-destination"] = -1;
-["attributes"] = 0;
-
-};
-[326] =  {
-["type"] = 180;
-["owner"] = 1;
-["location"] = {
-["x"]=8347;
-["y"]=-1304;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = 1;
-["attributes"] = 33554944;
-
-};
-[327] =  {
-["type"] = 196;
-["owner"] = -1;
-["location"] = {
-["x"]=-3042;
-["y"]=6086;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = -1;
-["attributes"] = 0;
-
-};
-[328] =  {
-["type"] = 45;
-["owner"] = 1;
-["location"] = {
-["x"]=10523;
-["y"]=-10522;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = -1;
-["attributes"] = 32;
-
-};
-[329] =  {
-["type"] = 45;
-["owner"] = 1;
-["location"] = {
-["x"]=9739;
-["y"]=-11478;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = -1;
-["attributes"] = 32;
-
-};
-[330] =  {
-["type"] = 45;
-["owner"] = 1;
-["location"] = {
-["x"]=10695;
-["y"]=-11651;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = -1;
-["attributes"] = 32;
-
-};
-[331] =  {
-["type"] = 45;
-["owner"] = 1;
-["location"] = {
-["x"]=10000;
-["y"]=-10609;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = -1;
-["attributes"] = 32;
-
-};
-[332] =  {
-["type"] = 45;
-["owner"] = 1;
-["location"] = {
-["x"]=11391;
-["y"]=-10348;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = -1;
-["attributes"] = 32;
-
-};
-[333] =  {
-["type"] = 45;
-["owner"] = 1;
-["location"] = {
-["x"]=11305;
-["y"]=-11477;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = -1;
-["attributes"] = 32;
-
-};
-[334] =  {
-["type"] = 62;
-["owner"] = 1;
-["location"] = {
-["x"]=11304;
-["y"]=-10956;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = -1;
-["attributes"] = 32;
-
-};
-[335] =  {
-["type"] = 62;
-["owner"] = 1;
-["location"] = {
-["x"]=10174;
-["y"]=-11304;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = -1;
-["attributes"] = 32;
-
-};
-[336] =  {
-["type"] = 178;
-["owner"] = 0;
-["location"] = {
-["x"]=8088;
-["y"]=6609;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = 1;
-["attributes"] = 33554464;
-
-};
-[337] =  {
-["type"] = 178;
-["owner"] = 0;
-["location"] = {
-["x"]=8218;
-["y"]=6577;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = 1;
-["attributes"] = 33554464;
-
-};
-[338] =  {
-["type"] = 178;
-["owner"] = 0;
-["location"] = {
-["x"]=7980;
-["y"]=6619;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = 1;
-["attributes"] = 33554464;
-
-};
-[339] =  {
-["type"] = 178;
-["owner"] = 0;
-["location"] = {
-["x"]=8034;
-["y"]=6739;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = 1;
-["attributes"] = 33554464;
-
-};
-[340] =  {
-["type"] = 178;
-["owner"] = 0;
-["location"] = {
-["x"]=8164;
-["y"]=6685;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = 1;
-["attributes"] = 33554464;
-
-};
-[341] =  {
-["type"] = 178;
-["owner"] = 0;
-["location"] = {
-["x"]=8023;
-["y"]=6539;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = 1;
-["attributes"] = 33554464;
-
-};
-[342] =  {
-["type"] = 178;
-["owner"] = 0;
-["location"] = {
-["x"]=8147;
-["y"]=6533;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = 1;
-["attributes"] = 33554464;
-
-};
-[343] =  {
-["type"] = 178;
-["owner"] = 0;
-["location"] = {
-["x"]=8299;
-["y"]=6734;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = 1;
-["attributes"] = 33554464;
-
-};
-[344] =  {
-["type"] = 178;
-["owner"] = 0;
-["location"] = {
-["x"]=7882;
-["y"]=6550;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = 1;
-["attributes"] = 33554464;
-
-};
-[345] =  {
-["type"] = 178;
-["owner"] = 0;
-["location"] = {
-["x"]=8251;
-["y"]=6484;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = 1;
-["attributes"] = 33554464;
-
-};
-[346] =  {
-["type"] = 167;
-["owner"] = 0;
-["location"] = {
-["x"]=8056;
-["y"]=6484;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = 16;
-["attributes"] = 33554464;
-
-};
-[347] =  {
-["type"] = 167;
-["owner"] = 0;
-["location"] = {
-["x"]=8348;
-["y"]=6647;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = 17;
-["attributes"] = 33554464;
-
-};
-[348] =  {
-["type"] = 167;
-["owner"] = 0;
-["location"] = {
-["x"]=7925;
-["y"]=6717;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = 18;
-["attributes"] = 33554464;
-
-};
-[349] =  {
-["type"] = 167;
-["owner"] = 0;
-["location"] = {
-["x"]=8196;
-["y"]=6788;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = 19;
-["attributes"] = 33554464;
-
-};
-[350] =  {
-["type"] = 164;
-["owner"] = 0;
-["location"] = {
-["x"]=8018;
-["y"]=6897;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = 0;
-["attributes"] = 33554464;
-
-};
-[351] =  {
-["type"] = 166;
-["owner"] = 0;
-["location"] = {
-["x"]=8267;
-["y"]=6875;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = 0;
-["attributes"] = 33554464;
-
-};
-[352] =  {
-["type"] = 166;
-["owner"] = 0;
-["location"] = {
-["x"]=7925;
-["y"]=6837;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = 23;
-["attributes"] = 33554464;
-
-};
-[353] =  {
-["type"] = 166;
-["owner"] = 0;
-["location"] = {
-["x"]=8120;
-["y"]=6782;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = 25;
-["attributes"] = 33554464;
-
-};
-[354] =  {
-["type"] = 165;
-["owner"] = 0;
-["location"] = {
-["x"]=8142;
-["y"]=6886;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = 13;
-["attributes"] = 33554464;
-
-};
-[355] =  {
-["type"] = 164;
-["owner"] = 0;
-["location"] = {
-["x"]=8045;
-["y"]=6853;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = 28;
-["attributes"] = 33554464;
-
-};
-[356] =  {
-["type"] = 166;
-["owner"] = 0;
-["location"] = {
-["x"]=8403;
-["y"]=6864;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = 14;
-["attributes"] = 33554464;
-
-};
-[357] =  {
-["type"] = 61;
-["owner"] = 0;
-["location"] = {
-["x"]=-22956;
-["y"]=-1391;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = -1;
-["attributes"] = 512;
-
-};
-[358] =  {
-["type"] = 14;
-["owner"] = 1;
-["location"] = {
-["x"]=0;
-["y"]=-3565;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = -1;
-["attributes"] = 32;
-
-};
-[359] =  {
-["type"] = 182;
-["owner"] = -1;
-["location"] = {
-["x"]=0;
-["y"]=32768;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = -1;
-["attributes"] = 0;
-
-};
-[360] =  {
-["type"] = 185;
-["owner"] = -1;
-["location"] = {
-["x"]=0;
-["y"]=-32768;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = -1;
-["attributes"] = 0;
-
-};
-[361] =  {
-["type"] = 80;
-["owner"] = 0;
-["location"] = {
-["x"]=-24000;
-["y"]=-2259;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = 0;
-["attributes"] = 32;
-
-};
-[362] =  {
-["type"] = 80;
-["owner"] = 0;
-["location"] = {
-["x"]=-24000;
-["y"]=-2259;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = 0;
-["attributes"] = 32;
-
-};
-[363] =  {
-["type"] = 80;
-["owner"] = 0;
-["location"] = {
-["x"]=-23305;
-["y"]=-2259;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = 0;
-["attributes"] = 32;
-
-};
-[364] =  {
-["type"] = 186;
-["owner"] = 1;
-["location"] = {
-["x"]=32768;
-["y"]=0;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = -1;
-["attributes"] = 32;
-
-};
-[365] =  {
-["type"] = 23;
-["owner"] = 0;
-["location"] = {
-["x"]=0;
-["y"]=-85;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 1.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = -1;
-["attributes"] = 0;
-
-};
-[366] =  {
-["type"] = 111;
-["owner"] = 0;
-["location"] = {
-["x"]=-86;
-["y"]=-6260;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 1.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["sprite-id-override"] = 591;
-["initial-destination"] = -1;
-["attributes"] = 0;
-
-};
-[367] =  {
-["type"] = 111;
-["owner"] = 0;
-["location"] = {
-["x"]=0;
-["y"]=-9478;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 1.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["sprite-id-override"] = 591;
-["initial-destination"] = -1;
-["attributes"] = 0;
-
-};
-[368] =  {
-["type"] = 188;
-["owner"] = 0;
-["location"] = {
-["x"]=0;
-["y"]=-4869;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = 1;
-["attributes"] = 0;
-
-};
-[369] =  {
-["type"] = 203;
-["owner"] = 0;
-["location"] = {
-["x"]=87;
-["y"]=109;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = 0;
-["attributes"] = 512;
-
-};
-[370] =  {
-["type"] = 111;
-["owner"] = 0;
-["location"] = {
-["x"]=-9739;
-["y"]=-86;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 1.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["sprite-id-override"] = 1024;
-["initial-destination"] = -1;
-["attributes"] = 0;
-
-};
-[371] =  {
-["type"] = 111;
-["owner"] = 1;
-["location"] = {
-["x"]=7478;
-["y"]=0;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 1.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["sprite-id-override"] = 591;
-["initial-destination"] = -1;
-["attributes"] = 0;
-
-};
-[372] =  {
-["type"] = 188;
-["owner"] = 1;
-["location"] = {
-["x"]=7826;
-["y"]=-2260;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = 6;
-["attributes"] = 33554432;
-
-};
-[373] =  {
-["type"] = 111;
-["owner"] = 1;
-["location"] = {
-["x"]=13391;
-["y"]=173;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 1.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["sprite-id-override"] = 591;
-["initial-destination"] = -1;
-["attributes"] = 0;
-
-};
-[374] =  {
-["type"] = 188;
-["owner"] = 1;
-["location"] = {
-["x"]=13739;
-["y"]=2956;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = 8;
-["attributes"] = 33554432;
-
-};
-[375] =  {
-["type"] = 188;
-["owner"] = 1;
-["location"] = {
-["x"]=13217;
-["y"]=-1739;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = 8;
-["attributes"] = 33554432;
-
-};
-[376] =  {
-["type"] = 111;
-["owner"] = 1;
-["location"] = {
-["x"]=19130;
-["y"]=173;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 1.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["sprite-id-override"] = 591;
-["initial-destination"] = -1;
-["attributes"] = 0;
-
-};
-[377] =  {
-["type"] = 188;
-["owner"] = 1;
-["location"] = {
-["x"]=18782;
-["y"]=-1043;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = 11;
-["attributes"] = 33554432;
-
-};
-[378] =  {
-["type"] = 188;
-["owner"] = 1;
-["location"] = {
-["x"]=18608;
-["y"]=1565;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = 11;
-["attributes"] = 0;
-
-};
-[379] =  {
-["type"] = 188;
-["owner"] = 1;
-["location"] = {
-["x"]=18782;
-["y"]=173;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = 11;
-["attributes"] = 33554432;
-
-};
-[380] =  {
-["type"] = 111;
-["owner"] = 0;
-["location"] = {
-["x"]=0;
-["y"]=9391;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 1.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["sprite-id-override"] = 591;
-["initial-destination"] = -1;
-["attributes"] = 0;
-
-};
-[381] =  {
-["type"] = 203;
-["owner"] = 0;
-["location"] = {
-["x"]=1739;
-["y"]=10086;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = 15;
-["attributes"] = 0;
-
-};
-[382] =  {
-["type"] = 203;
-["owner"] = 0;
-["location"] = {
-["x"]=-2608;
-["y"]=10086;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = 15;
-["attributes"] = 0;
-
-};
-[383] =  {
-["type"] = 137;
-["owner"] = 0;
-["location"] = {
-["x"]=-17391;
-["y"]=16695;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 1.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = -1;
-["attributes"] = 0;
-
-};
-[384] =  {
-["type"] = 141;
-["owner"] = 0;
-["location"] = {
-["x"]=-16956;
-["y"]=16521;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = -1;
-["attributes"] = 0;
-
-};
-[385] =  {
-["type"] = 141;
-["owner"] = 0;
-["location"] = {
-["x"]=-17358;
-["y"]=17119;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = -1;
-["attributes"] = 0;
-
-};
-[386] =  {
-["type"] = 141;
-["owner"] = 0;
-["location"] = {
-["x"]=-17836;
-["y"]=16532;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = -1;
-["attributes"] = 0;
-
-};
-[387] =  {
-["type"] = 117;
-["owner"] = 0;
-["location"] = {
-["x"]=-17401;
-["y"]=16716;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = -1;
-["attributes"] = 32;
-
-};
-[388] =  {
-["type"] = 286;
-["owner"] = 0;
-["location"] = {
-["x"]=0;
-["y"]=0;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["sprite-id-override"] = 599;
-["initial-destination"] = -1;
-["attributes"] = 0;
-
-};
-[389] =  {
-["type"] = 206;
-["owner"] = 0;
-["location"] = {
-["x"]=521;
-["y"]=3304;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = -1;
-["attributes"] = 512;
-
-};
-[390] =  {
-["type"] = 210;
-["owner"] = 1;
-["location"] = {
-["x"]=-3564;
-["y"]=-22347;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 1.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = -1;
-["attributes"] = 0;
-
-};
-[391] =  {
-["type"] = 210;
-["owner"] = 1;
-["location"] = {
-["x"]=2434;
-["y"]=-36869;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 1.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = -1;
-["attributes"] = 0;
-
-};
-[392] =  {
-["type"] = 210;
-["owner"] = 1;
-["location"] = {
-["x"]=521;
-["y"]=-10608;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 1.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = -1;
-["attributes"] = 0;
-
-};
-[393] =  {
-["type"] = 112;
-["owner"] = 1;
-["location"] = {
-["x"]=1739;
-["y"]=-8782;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = 4;
-["attributes"] = 33554432;
-
-};
-[394] =  {
-["type"] = 14;
-["owner"] = 1;
-["location"] = {
-["x"]=-521;
-["y"]=-8782;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = 4;
-["attributes"] = 33554432;
-
-};
-[395] =  {
-["type"] = 14;
-["owner"] = 1;
-["location"] = {
-["x"]=260;
-["y"]=-9043;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = 4;
-["attributes"] = 33554432;
-
-};
-[396] =  {
-["type"] = 13;
-["owner"] = 0;
-["location"] = {
-["x"]=1304;
-["y"]=3478;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = 1;
-["attributes"] = 33554432;
-
-};
-[397] =  {
-["type"] = 13;
-["owner"] = 0;
-["location"] = {
-["x"]=-347;
-["y"]=4000;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = 1;
-["attributes"] = 33554432;
-
-};
-[398] =  {
-["type"] = 7;
-["owner"] = 1;
-["location"] = {
-["x"]=-1741;
-["y"]=-22173;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = 2;
-["attributes"] = 33554432;
-
-};
-[399] =  {
-["type"] = 62;
-["owner"] = 1;
-["location"] = {
-["x"]=-5217;
-["y"]=-23304;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = 2;
-["attributes"] = 33554432;
-
-};
-[400] =  {
-["type"] = 110;
-["owner"] = 1;
-["location"] = {
-["x"]=4869;
-["y"]=-33391;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = 3;
-["attributes"] = 33554432;
-
-};
-[401] =  {
-["type"] = 110;
-["owner"] = 1;
-["location"] = {
-["x"]=-1043;
-["y"]=-35478;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = 3;
-["attributes"] = 33554432;
-
-};
-[402] =  {
-["type"] = 110;
-["owner"] = 1;
-["location"] = {
-["x"]=5217;
-["y"]=-34782;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = 3;
-["attributes"] = 33554432;
-
-};
-[403] =  {
-["type"] = 225;
-["owner"] = 0;
-["location"] = {
-["x"]=0;
-["y"]=0;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = -1;
-["attributes"] = 0;
-
-};
-[404] =  {
-["type"] = 217;
-["owner"] = 0;
-["location"] = {
-["x"]=695;
-["y"]=956;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = 0;
-["attributes"] = 0;
-
-};
-[405] =  {
-["type"] = 216;
-["owner"] = 1;
-["location"] = {
-["x"]=-5130;
-["y"]=-6086;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 1.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = -1;
-["attributes"] = 0;
-
-};
-[406] =  {
-["type"] = 216;
-["owner"] = 1;
-["location"] = {
-["x"]=4086;
-["y"]=-7130;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 1.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = -1;
-["attributes"] = 0;
-
-};
-[407] =  {
-["type"] = 216;
-["owner"] = 1;
-["location"] = {
-["x"]=-1042;
-["y"]=-11652;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 1.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = -1;
-["attributes"] = 0;
-
-};
-[408] =  {
-["type"] = 61;
-["owner"] = 0;
-["location"] = {
-["x"]=-608;
-["y"]=956;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = 0;
-["attributes"] = 512;
-
-};
-[409] =  {
-["type"] = 42;
-["owner"] = 0;
-["location"] = {
-["x"]=260;
-["y"]=1826;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = 1;
-["attributes"] = 33554432;
-
-};
-[410] =  {
-["type"] = 218;
-["owner"] = 1;
-["location"] = {
-["x"]=520;
-["y"]=-18956;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = -1;
-["attributes"] = 0;
-
-};
-[411] =  {
-["type"] = 37;
-["owner"] = 1;
-["location"] = {
-["x"]=-4175;
-["y"]=-6610;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = 2;
-["attributes"] = 33554432;
-
-};
-[412] =  {
-["type"] = 37;
-["owner"] = 1;
-["location"] = {
-["x"]=3129;
-["y"]=-7566;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = 3;
-["attributes"] = 33554432;
-
-};
-[413] =  {
-["type"] = 37;
-["owner"] = 1;
-["location"] = {
-["x"]=3998;
-["y"]=-7566;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = 3;
-["attributes"] = 33554432;
-
-};
-[414] =  {
-["type"] = 37;
-["owner"] = 1;
-["location"] = {
-["x"]=-436;
-["y"]=-10696;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = 4;
-["attributes"] = 33554432;
-
-};
-[415] =  {
-["type"] = 37;
-["owner"] = 1;
-["location"] = {
-["x"]=-262;
-["y"]=-11653;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = 4;
-["attributes"] = 33554432;
-
-};
-[416] =  {
-["type"] = 64;
-["owner"] = 1;
-["location"] = {
-["x"]=-697;
-["y"]=-9653;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = 4;
-["attributes"] = 33554432;
-
-};
-[417] =  {
-["type"] = 37;
-["owner"] = 1;
-["location"] = {
-["x"]=-4175;
-["y"]=-6610;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = 2;
-["attributes"] = 33554432;
-
-};
-[418] =  {
-["type"] = 38;
-["owner"] = 1;
-["location"] = {
-["x"]=-3826;
-["y"]=-7043;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = 2;
-["attributes"] = 33554432;
-
-};
-[419] =  {
-["type"] = 38;
-["owner"] = 1;
-["location"] = {
-["x"]=4347;
-["y"]=-5652;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = 9;
-["attributes"] = 33554432;
-
-};
-[420] =  {
-["type"] = 228;
-["owner"] = -1;
-["location"] = {
-["x"]=0;
-["y"]=32767;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = -1;
-["attributes"] = 0;
-
-};
-[421] =  {
-["type"] = 229;
-["owner"] = -1;
-["location"] = {
-["x"]=0;
-["y"]=-32767;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = -1;
-["attributes"] = 0;
-
-};
-[422] =  {
-["type"] = 23;
-["owner"] = 0;
-["location"] = {
-["x"]=28260;
-["y"]=27129;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 1.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["sprite-id-override"] = 1025;
-["initial-destination"] = -1;
-["attributes"] = 0;
-
-};
-[423] =  {
-["type"] = 23;
-["owner"] = 1;
-["location"] = {
-["x"]=-28260;
-["y"]=-27129;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 1.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["sprite-id-override"] = 1026;
-["initial-destination"] = -1;
-["attributes"] = 0;
-
-};
-[424] =  {
-["type"] = 104;
-["owner"] = -1;
-["location"] = {
-["x"]=-6261;
-["y"]=22261;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 1.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = -1;
-["attributes"] = 0;
-
-};
-[425] =  {
-["type"] = 104;
-["owner"] = -1;
-["location"] = {
-["x"]=6621;
-["y"]=-22621;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 1.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = -1;
-["attributes"] = 0;
-
-};
-[426] =  {
-["type"] = 129;
-["owner"] = 0;
-["location"] = {
-["x"]=28520;
-["y"]=27129;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = 2;
-["attributes"] = 544;
-
-};
-[427] =  {
-["type"] = 129;
-["owner"] = 1;
-["location"] = {
-["x"]=-21131;
-["y"]=-18608;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = 3;
-["attributes"] = 544;
-
-};
-[428] =  {
-["type"] = 23;
-["owner"] = 0;
-["location"] = {
-["x"]=9000;
-["y"]=0;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 1.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["sprite-id-override"] = 1027;
-["initial-destination"] = -1;
-["attributes"] = 0;
-
-};
-[429] =  {
-["type"] = 23;
-["owner"] = 1;
-["location"] = {
-["x"]=-9000;
-["y"]=0;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 1.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["sprite-id-override"] = 1028;
-["initial-destination"] = -1;
-["attributes"] = 0;
-
-};
-[430] =  {
-["type"] = 23;
-["owner"] = 2;
-["location"] = {
-["x"]=0;
-["y"]=9000;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 1.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["sprite-id-override"] = 1029;
-["initial-destination"] = -1;
-["attributes"] = 0;
-
-};
-[431] =  {
-["type"] = 129;
-["owner"] = 0;
-["location"] = {
-["x"]=9000;
-["y"]=0;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = 0;
-["attributes"] = 512;
-
-};
-[432] =  {
-["type"] = 129;
-["owner"] = 1;
-["location"] = {
-["x"]=-9000;
-["y"]=0;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = 1;
-["attributes"] = 512;
-
-};
-[433] =  {
-["type"] = 129;
-["owner"] = 2;
-["location"] = {
-["x"]=0;
-["y"]=9000;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = 2;
-["attributes"] = 512;
-
-};
-[434] =  {
-["type"] = 129;
-["owner"] = 0;
-["location"] = {
-["x"]=0;
-["y"]=1565;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = -1;
-["attributes"] = 512;
-
-};
-[435] =  {
-["type"] = 0;
-["owner"] = 0;
-["location"] = {
-["x"]=782;
-["y"]=1130;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = 0;
-["attributes"] = 0;
-
-};
-[436] =  {
-["type"] = 0;
-["owner"] = 0;
-["location"] = {
-["x"]=-869;
-["y"]=1304;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = 0;
-["attributes"] = 0;
-
-};
-[437] =  {
-["type"] = 0;
-["owner"] = 0;
-["location"] = {
-["x"]=521;
-["y"]=1739;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = 0;
-["attributes"] = 0;
-
-};
-[438] =  {
-["type"] = 0;
-["owner"] = 0;
-["location"] = {
-["x"]=-434;
-["y"]=1782;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = 0;
-["attributes"] = 0;
-
-};
-[439] =  {
-["type"] = 47;
-["owner"] = 0;
-["location"] = {
-["x"]=-260;
-["y"]=1239;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = 0;
-["attributes"] = 0;
-
-};
-[440] =  {
-["type"] = 47;
-["owner"] = 0;
-["location"] = {
-["x"]=217;
-["y"]=1086;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = 0;
-["attributes"] = 0;
-
-};
-[441] =  {
-["type"] = 19;
-["owner"] = 0;
-["location"] = {
-["x"]=239;
-["y"]=1543;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = 0;
-["attributes"] = 0;
-
-};
-[442] =  {
-["type"] = 19;
-["owner"] = 0;
-["location"] = {
-["x"]=-260;
-["y"]=1565;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = 0;
-["attributes"] = 0;
-
-};
-[443] =  {
-["type"] = 19;
-["owner"] = 0;
-["location"] = {
-["x"]=-43;
-["y"]=1369;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = 0;
-["attributes"] = 0;
-
-};
-[444] =  {
-["type"] = 61;
-["owner"] = 0;
-["location"] = {
-["x"]=173;
-["y"]=1934;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = 0;
-["attributes"] = 0;
-
-};
-[445] =  {
-["type"] = 61;
-["owner"] = 0;
-["location"] = {
-["x"]=195;
-["y"]=2239;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = 10;
-["attributes"] = 0;
-
-};
-[446] =  {
-["type"] = 61;
-["owner"] = 0;
-["location"] = {
-["x"]=239;
-["y"]=2478;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = 11;
-["attributes"] = 0;
-
-};
-[447] =  {
-["type"] = 61;
-["owner"] = 0;
-["location"] = {
-["x"]=326;
-["y"]=2913;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = 12;
-["attributes"] = 0;
-
-};
-[448] =  {
-["type"] = 61;
-["owner"] = 0;
-["location"] = {
-["x"]=391;
-["y"]=3368;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = 13;
-["attributes"] = 0;
-
-};
-[449] =  {
-["type"] = 13;
-["owner"] = 0;
-["location"] = {
-["x"]=804;
-["y"]=1652;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = 5;
-["attributes"] = 0;
-
-};
-[450] =  {
-["type"] = 13;
-["owner"] = 0;
-["location"] = {
-["x"]=1065;
-["y"]=1782;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = 15;
-["attributes"] = 0;
-
-};
-[451] =  {
-["type"] = 13;
-["owner"] = 0;
-["location"] = {
-["x"]=1304;
-["y"]=2021;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = 16;
-["attributes"] = 0;
-
-};
-[452] =  {
-["type"] = 87;
-["owner"] = 1;
-["location"] = {
-["x"]=0;
-["y"]=-2759;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = -1;
-["attributes"] = 0;
-
-};
-[453] =  {
-["type"] = 87;
-["owner"] = 1;
-["location"] = {
-["x"]=-457;
-["y"]=-2716;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = 18;
-["attributes"] = 0;
-
-};
-[454] =  {
-["type"] = 87;
-["owner"] = 1;
-["location"] = {
-["x"]=738;
-["y"]=-2564;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = -1;
-["attributes"] = 0;
-
-};
-[455] =  {
-["type"] = 87;
-["owner"] = 1;
-["location"] = {
-["x"]=-933;
-["y"]=-2347;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = -1;
-["attributes"] = 0;
-
-};
-[456] =  {
-["type"] = 87;
-["owner"] = 1;
-["location"] = {
-["x"]=304;
-["y"]=-2130;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = -1;
-["attributes"] = 0;
-
-};
-[457] =  {
-["type"] = 37;
-["owner"] = 1;
-["location"] = {
-["x"]=-1282;
-["y"]=-2477;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = -1;
-["attributes"] = 0;
-
-};
-[458] =  {
-["type"] = 37;
-["owner"] = 1;
-["location"] = {
-["x"]=1478;
-["y"]=-2434;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = -1;
-["attributes"] = 0;
-
-};
-[459] =  {
-["type"] = 37;
-["owner"] = 1;
-["location"] = {
-["x"]=-1890;
-["y"]=-2477;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = 18;
-["attributes"] = 33554432;
-
-};
-[460] =  {
-["type"] = 37;
-["owner"] = 1;
-["location"] = {
-["x"]=1129;
-["y"]=-2804;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = 18;
-["attributes"] = 33554432;
-
-};
-[461] =  {
-["type"] = 37;
-["owner"] = 1;
-["location"] = {
-["x"]=-977;
-["y"]=-2977;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = 18;
-["attributes"] = 0;
-
-};
-[462] =  {
-["type"] = 37;
-["owner"] = 1;
-["location"] = {
-["x"]=-173;
-["y"]=-4194;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = 18;
-["attributes"] = 33554432;
-
-};
-[463] =  {
-["type"] = 64;
-["owner"] = 1;
-["location"] = {
-["x"]=413;
-["y"]=-3977;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = 18;
-["attributes"] = 33554432;
-
-};
-[464] =  {
-["type"] = 64;
-["owner"] = 1;
-["location"] = {
-["x"]=-1086;
-["y"]=-4478;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = 18;
-["attributes"] = 33554432;
-
-};
-[465] =  {
-["type"] = 64;
-["owner"] = 1;
-["location"] = {
-["x"]=1063;
-["y"]=-4411;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = 19;
-["attributes"] = 33554432;
-
-};
-[466] =  {
-["type"] = 64;
-["owner"] = 1;
-["location"] = {
-["x"]=630;
-["y"]=-4782;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = 31;
-["attributes"] = 33554432;
-
-};
-[467] =  {
-["type"] = 64;
-["owner"] = 1;
-["location"] = {
-["x"]=195;
-["y"]=-4978;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = 32;
-["attributes"] = 33554432;
-
-};
-[468] =  {
-["type"] = 64;
-["owner"] = 1;
-["location"] = {
-["x"]=-174;
-["y"]=-5108;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = 33;
-["attributes"] = 33554432;
-
-};
-[469] =  {
-["type"] = 64;
-["owner"] = 1;
-["location"] = {
-["x"]=-696;
-["y"]=-5238;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = 34;
-["attributes"] = 33554432;
-
-};
-[470] =  {
-["type"] = 64;
-["owner"] = 1;
-["location"] = {
-["x"]=-1391;
-["y"]=-5260;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = 35;
-["attributes"] = 33554432;
-
-};
-[471] =  {
-["type"] = 37;
-["owner"] = 1;
-["location"] = {
-["x"]=-1956;
-["y"]=-4826;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = 36;
-["attributes"] = 33554432;
-
-};
-[472] =  {
-["type"] = 64;
-["owner"] = 1;
-["location"] = {
-["x"]=-2130;
-["y"]=-5065;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = 36;
-["attributes"] = 33554432;
-
-};
-[473] =  {
-["type"] = 64;
-["owner"] = 1;
-["location"] = {
-["x"]=-2152;
-["y"]=-4108;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = 36;
-["attributes"] = 33554432;
-
-};
-[474] =  {
-["type"] = 266;
-["owner"] = -1;
-["location"] = {
-["x"]=0;
-["y"]=32767;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = -1;
-["attributes"] = 0;
-
-};
-[475] =  {
-["type"] = 267;
-["owner"] = -1;
-["location"] = {
-["x"]=0;
-["y"]=-32767;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = -1;
-["attributes"] = 0;
-
-};
-[476] =  {
-["type"] = 23;
-["owner"] = -1;
-["location"] = {
-["x"]=28260;
-["y"]=27129;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 1.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["sprite-id-override"] = 1030;
-["initial-destination"] = -1;
-["attributes"] = 0;
-
-};
-[477] =  {
-["type"] = 23;
-["owner"] = -1;
-["location"] = {
-["x"]=-28260;
-["y"]=-27129;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 1.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["sprite-id-override"] = 1031;
-["initial-destination"] = -1;
-["attributes"] = 0;
-
-};
-[478] =  {
-["type"] = 104;
-["owner"] = -1;
-["location"] = {
-["x"]=0;
-["y"]=0;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 1.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = -1;
-["attributes"] = 0;
-
-};
-[479] =  {
-["type"] = 129;
-["owner"] = 0;
-["location"] = {
-["x"]=28520;
-["y"]=28522;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = -1;
-["attributes"] = 544;
-
-};
-[480] =  {
-["type"] = 151;
-["owner"] = 0;
-["location"] = {
-["x"]=28957;
-["y"]=27652;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = -1;
-["attributes"] = 32;
-
-};
-[481] =  {
-["type"] = 151;
-["owner"] = 0;
-["location"] = {
-["x"]=28167;
-["y"]=27126;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = -1;
-["attributes"] = 32;
-
-};
-[482] =  {
-["type"] = 151;
-["owner"] = 0;
-["location"] = {
-["x"]=28866;
-["y"]=26603;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = -1;
-["attributes"] = 32;
-
-};
-[483] =  {
-["type"] = 164;
-["owner"] = 0;
-["location"] = {
-["x"]=29474;
-["y"]=27559;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = 2;
-["attributes"] = 32;
-
-};
-[484] =  {
-["type"] = 164;
-["owner"] = 0;
-["location"] = {
-["x"]=29213;
-["y"]=26343;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = 2;
-["attributes"] = 32;
-
-};
-[485] =  {
-["type"] = 148;
-["owner"] = 1;
-["location"] = {
-["x"]=-29218;
-["y"]=-25044;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = -1;
-["attributes"] = 544;
-
-};
-[486] =  {
-["type"] = 270;
-["owner"] = -1;
-["location"] = {
-["x"]=9391;
-["y"]=-9043;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.5;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = -1;
-["attributes"] = 0;
-
-};
-[487] =  {
-["type"] = 270;
-["owner"] = -1;
-["location"] = {
-["x"]=-8000;
-["y"]=9043;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.5;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = -1;
-["attributes"] = 0;
-
-};
-[488] =  {
-["type"] = 266;
-["owner"] = -1;
-["location"] = {
-["x"]=0;
-["y"]=32767;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = -1;
-["attributes"] = 0;
-
-};
-[489] =  {
-["type"] = 267;
-["owner"] = -1;
-["location"] = {
-["x"]=0;
-["y"]=-32767;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = -1;
-["attributes"] = 0;
-
-};
-[490] =  {
-["type"] = 23;
-["owner"] = 0;
-["location"] = {
-["x"]=0;
-["y"]=16384;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 1.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["sprite-id-override"] = 1032;
-["initial-destination"] = -1;
-["attributes"] = 0;
-
-};
-[491] =  {
-["type"] = 23;
-["owner"] = 1;
-["location"] = {
-["x"]=0;
-["y"]=-16384;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 1.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["sprite-id-override"] = 1033;
-["initial-destination"] = -1;
-["attributes"] = 0;
-
-};
-[492] =  {
-["type"] = 270;
-["owner"] = -1;
-["location"] = {
-["x"]=0;
-["y"]=9000;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.25;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = -1;
-["attributes"] = 0;
-
-};
-[493] =  {
-["type"] = 270;
-["owner"] = -1;
-["location"] = {
-["x"]=0;
-["y"]=-9000;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.25;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = -1;
-["attributes"] = 0;
-
-};
-[494] =  {
-["type"] = 270;
-["owner"] = -1;
-["location"] = {
-["x"]=9000;
-["y"]=0;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.25;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = -1;
-["attributes"] = 0;
-
-};
-[495] =  {
-["type"] = 270;
-["owner"] = -1;
-["location"] = {
-["x"]=-9000;
-["y"]=0;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.25;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = -1;
-["attributes"] = 0;
-
-};
-[496] =  {
-["type"] = 104;
-["owner"] = -1;
-["location"] = {
-["x"]=0;
-["y"]=0;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 1.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = -1;
-["attributes"] = 0;
-
-};
-[497] =  {
-["type"] = 129;
-["owner"] = 0;
-["location"] = {
-["x"]=0;
-["y"]=16380;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = -1;
-["attributes"] = 544;
-
-};
-[498] =  {
-["type"] = 129;
-["owner"] = 1;
-["location"] = {
-["x"]=0;
-["y"]=-16380;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = -1;
-["attributes"] = 544;
-
-};
-[499] =  {
-["type"] = -1;
-["owner"] = -1;
-["location"] = {
-["x"]=0;
-["y"]=0;
-};["real-object-number"] = -1;
-["real-object-id"] = -1;
-["earning"] = 1.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = -1;
-["attributes"] = 0;
-
-};
-[500] =  {
-["type"] = 0;
-["owner"] = 0;
-["location"] = {
-["x"]=0;
-["y"]=0;
-};["real-object-number"] = 0;
-["real-object-id"] = 0;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = -1;
-["attributes"] = 512;
-
-};
-[501] =  {
-["type"] = 0;
-["owner"] = 0;
-["location"] = {
-["x"]=-3000;
-["y"]=3000;
-};["real-object-number"] = 0;
-["real-object-id"] = 0;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = -1;
-["attributes"] = 0;
-
-};
-[502] =  {
-["type"] = 24;
-["owner"] = 0;
-["location"] = {
-["x"]=0;
-["y"]=3000;
-};["real-object-number"] = 0;
-["real-object-id"] = 0;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = -1;
-["attributes"] = 0;
-
-};
-[503] =  {
-["type"] = 47;
-["owner"] = 0;
-["location"] = {
-["x"]=3000;
-["y"]=3000;
-};["real-object-number"] = 0;
-["real-object-id"] = 0;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = -1;
-["attributes"] = 0;
-
-};
-[504] =  {
-["type"] = 23;
-["owner"] = -1;
-["location"] = {
-["x"]=5000;
-["y"]=0;
-};["real-object-number"] = 0;
-["real-object-id"] = 0;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = -1;
-["attributes"] = 0;
-
-};
-[505] =  {
-["type"] = 287;
-["owner"] = 1;
-["location"] = {
-["x"]=3000;
-["y"]=-1000;
-};["real-object-number"] = 0;
-["real-object-id"] = 0;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = -1;
-["attributes"] = 33554448;
-
-};
-[506] =  {
-["type"] = 0;
-["owner"] = 0;
-["location"] = {
-["x"]=3000;
-["y"]=3000;
-};["real-object-number"] = 0;
-["real-object-id"] = 0;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = -1;
-["attributes"] = 32;
-
-};
-[507] =  {
-["type"] = 25;
-["owner"] = 1;
-["location"] = {
-["x"]=3000;
-["y"]=-6000;
-};["real-object-number"] = 0;
-["real-object-id"] = 0;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = 7;
-["attributes"] = 33554464;
-
-};
-[508] =  {
-["type"] = 25;
-["owner"] = 1;
-["location"] = {
-["x"]=3250;
-["y"]=-6250;
-};["real-object-number"] = 0;
-["real-object-id"] = 0;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = 8;
-["attributes"] = 33554464;
-
-};
-[509] =  {
-["type"] = 0;
-["owner"] = 0;
-["location"] = {
-["x"]=0;
-["y"]=0;
-};["real-object-number"] = 0;
-["real-object-id"] = 0;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = -1;
-["attributes"] = 512;
-
-};
-[510] =  {
-["type"] = 61;
-["owner"] = 0;
-["location"] = {
-["x"]=60;
-["y"]=-400;
-};["real-object-number"] = 0;
-["real-object-id"] = 0;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = -1;
-["attributes"] = 33554432;
-
-};
-[511] =  {
-["type"] = 19;
-["owner"] = 0;
-["location"] = {
-["x"]=6000;
-["y"]=-100;
-};["real-object-number"] = 0;
-["real-object-id"] = 0;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = 2;
-["attributes"] = 33554464;
-
-};
-[512] =  {
-["type"] = 13;
-["owner"] = 0;
-["location"] = {
-["x"]=6000;
-["y"]=0;
-};["real-object-number"] = 0;
-["real-object-id"] = 0;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = 3;
-["attributes"] = 33554464;
-
-};
-[513] =  {
-["type"] = 0;
-["owner"] = 0;
-["location"] = {
-["x"]=6000;
-["y"]=100;
-};["real-object-number"] = 0;
-["real-object-id"] = 0;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = 4;
-["attributes"] = 33554464;
-
-};
-[514] =  {
-["type"] = 24;
-["owner"] = 0;
-["location"] = {
-["x"]=6000;
-["y"]=200;
-};["real-object-number"] = 0;
-["real-object-id"] = 0;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = 5;
-["attributes"] = 33554464;
-
-};
-[515] =  {
-["type"] = 23;
-["owner"] = 0;
-["location"] = {
-["x"]=-200;
-["y"]=-100;
-};["real-object-number"] = 0;
-["real-object-id"] = 0;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = -1;
-["attributes"] = 0;
-
-};
-[516] =  {
-["type"] = 287;
-["owner"] = 1;
-["location"] = {
-["x"]=0;
-["y"]=200;
-};["real-object-number"] = 0;
-["real-object-id"] = 0;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = 7;
-["attributes"] = 33554480;
-
-};
-[517] =  {
-["type"] = 0;
-["owner"] = 0;
-["location"] = {
-["x"]=0;
-["y"]=0;
-};["real-object-number"] = 0;
-["real-object-id"] = 0;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = -1;
-["attributes"] = 512;
-
-};
-[518] =  {
-["type"] = 23;
-["owner"] = 0;
-["location"] = {
-["x"]=-200;
-["y"]=-200;
-};["real-object-number"] = 0;
-["real-object-id"] = 0;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = -1;
-["attributes"] = 0;
-
-};
-[519] =  {
-["type"] = 61;
-["owner"] = 0;
-["location"] = {
-["x"]=6000;
-["y"]=0;
-};["real-object-number"] = 0;
-["real-object-id"] = 0;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = -1;
-["attributes"] = 0;
-
-};
-[520] =  {
-["type"] = 24;
-["owner"] = 0;
-["location"] = {
-["x"]=200;
-["y"]=200;
-};["real-object-number"] = 0;
-["real-object-id"] = 0;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = -1;
-["attributes"] = 32;
-
-};
-[521] =  {
-["type"] = 24;
-["owner"] = 0;
-["location"] = {
-["x"]=400;
-["y"]=400;
-};["real-object-number"] = 0;
-["real-object-id"] = 0;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = -1;
-["attributes"] = 32;
-
-};
-[522] =  {
-["type"] = 13;
-["owner"] = 0;
-["location"] = {
-["x"]=200;
-["y"]=250;
-};["real-object-number"] = 0;
-["real-object-id"] = 0;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = -1;
-["attributes"] = 32;
-
-};
-[523] =  {
-["type"] = 13;
-["owner"] = 0;
-["location"] = {
-["x"]=250;
-["y"]=200;
-};["real-object-number"] = 0;
-["real-object-id"] = 0;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = -1;
-["attributes"] = 32;
-
-};
-[524] =  {
-["type"] = 25;
-["owner"] = 1;
-["location"] = {
-["x"]=6000;
-["y"]=-3000;
-};["real-object-number"] = 0;
-["real-object-id"] = 0;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = -1;
-["attributes"] = 33554464;
-
-};
-[525] =  {
-["type"] = 25;
-["owner"] = 1;
-["location"] = {
-["x"]=6100;
-["y"]=-3000;
-};["real-object-number"] = 0;
-["real-object-id"] = 0;
-["earning"] = 0.0;
-["distance-range"] = 1000;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = -1;
-["attributes"] = 33554464;
-
-};
-[526] =  {
-["type"] = 25;
-["owner"] = 1;
-["location"] = {
-["x"]=6000;
-["y"]=-3100;
-};["real-object-number"] = 0;
-["real-object-id"] = 0;
-["earning"] = 0.0;
-["distance-range"] = 1000;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = -1;
-["attributes"] = 33554464;
-
-};
-[527] =  {
-["type"] = 25;
-["owner"] = 1;
-["location"] = {
-["x"]=6200;
-["y"]=-3000;
-};["real-object-number"] = 0;
-["real-object-id"] = 0;
-["earning"] = 0.0;
-["distance-range"] = 1000;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = -1;
-["attributes"] = 33554464;
-
-};
-[528] =  {
-["type"] = 25;
-["owner"] = 1;
-["location"] = {
-["x"]=5900;
-["y"]=-3000;
-};["real-object-number"] = 0;
-["real-object-id"] = 0;
-["earning"] = 0.0;
-["distance-range"] = 1000;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = -1;
-["attributes"] = 33554464;
-
-};
-[529] =  {
-["type"] = 25;
-["owner"] = 1;
-["location"] = {
-["x"]=5950;
-["y"]=-3200;
-};["real-object-number"] = 0;
-["real-object-id"] = 0;
-["earning"] = 0.0;
-["distance-range"] = 1000;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = -1;
-["attributes"] = 33554464;
-
-};
-[530] =  {
-["type"] = 25;
-["owner"] = 1;
-["location"] = {
-["x"]=6300;
-["y"]=-3000;
-};["real-object-number"] = 0;
-["real-object-id"] = 0;
-["earning"] = 0.0;
-["distance-range"] = 1000;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = -1;
-["attributes"] = 33554464;
-
-};
-[531] =  {
-["type"] = 25;
-["owner"] = 1;
-["location"] = {
-["x"]=6410;
-["y"]=-3400;
-};["real-object-number"] = 0;
-["real-object-id"] = 0;
-["earning"] = 0.0;
-["distance-range"] = 1000;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = -1;
-["attributes"] = 33554464;
-
-};
-[532] =  {
-["type"] = 25;
-["owner"] = 1;
-["location"] = {
-["x"]=6000;
-["y"]=-3000;
-};["real-object-number"] = 0;
-["real-object-id"] = 0;
-["earning"] = 0.0;
-["distance-range"] = 1000;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = -1;
-["attributes"] = 33554464;
-
-};
-[533] =  {
-["type"] = 25;
-["owner"] = 1;
-["location"] = {
-["x"]=6000;
-["y"]=-3000;
-};["real-object-number"] = 0;
-["real-object-id"] = 0;
-["earning"] = 0.0;
-["distance-range"] = 1000;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["initial-destination"] = -1;
-["attributes"] = 33554464;
-
-};
-[534] =  {
-["type"] = 0;
-["owner"] = 0;
-["location"] = {
-["x"]=0;
-["y"]=0;
-};["real-object-number"] = 0;
-["real-object-id"] = 0;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["sprite-id-override"] = 0;
-["initial-destination"] = 0;
-["attributes"] = 0;
-
-};
-[535] =  {
-["type"] = 0;
-["owner"] = 0;
-["location"] = {
-["x"]=0;
-["y"]=0;
-};["real-object-number"] = 0;
-["real-object-id"] = 0;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["sprite-id-override"] = 0;
-["initial-destination"] = 0;
-["attributes"] = 0;
-
-};
-[536] =  {
-["type"] = 0;
-["owner"] = 0;
-["location"] = {
-["x"]=0;
-["y"]=0;
-};["real-object-number"] = 0;
-["real-object-id"] = 0;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["sprite-id-override"] = 0;
-["initial-destination"] = 0;
-["attributes"] = 0;
-
-};
-[537] =  {
-["type"] = 0;
-["owner"] = 0;
-["location"] = {
-["x"]=0;
-["y"]=0;
-};["real-object-number"] = 0;
-["real-object-id"] = 0;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["sprite-id-override"] = 0;
-["initial-destination"] = 0;
-["attributes"] = 0;
-
-};
-[538] =  {
-["type"] = 0;
-["owner"] = 0;
-["location"] = {
-["x"]=0;
-["y"]=0;
-};["real-object-number"] = 0;
-["real-object-id"] = 0;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["sprite-id-override"] = 0;
-["initial-destination"] = 0;
-["attributes"] = 0;
-
-};
-[539] =  {
-["type"] = 0;
-["owner"] = 0;
-["location"] = {
-["x"]=0;
-["y"]=0;
-};["real-object-number"] = 0;
-["real-object-id"] = 0;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["sprite-id-override"] = 0;
-["initial-destination"] = 0;
-["attributes"] = 0;
-
-};
-[540] =  {
-["type"] = 0;
-["owner"] = 0;
-["location"] = {
-["x"]=0;
-["y"]=0;
-};["real-object-number"] = 0;
-["real-object-id"] = 0;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["sprite-id-override"] = 0;
-["initial-destination"] = 0;
-["attributes"] = 0;
-
-};
-[541] =  {
-["type"] = 0;
-["owner"] = 0;
-["location"] = {
-["x"]=0;
-["y"]=0;
-};["real-object-number"] = 0;
-["real-object-id"] = 0;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["sprite-id-override"] = 0;
-["initial-destination"] = 0;
-["attributes"] = 0;
-
-};
-[542] =  {
-["type"] = 0;
-["owner"] = 0;
-["location"] = {
-["x"]=0;
-["y"]=0;
-};["real-object-number"] = 0;
-["real-object-id"] = 0;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["sprite-id-override"] = 0;
-["initial-destination"] = 0;
-["attributes"] = 0;
-
-};
-[543] =  {
-["type"] = 0;
-["owner"] = 0;
-["location"] = {
-["x"]=0;
-["y"]=0;
-};["real-object-number"] = 0;
-["real-object-id"] = 0;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["sprite-id-override"] = 0;
-["initial-destination"] = 0;
-["attributes"] = 0;
-
-};
-[544] =  {
-["type"] = 0;
-["owner"] = 0;
-["location"] = {
-["x"]=0;
-["y"]=0;
-};["real-object-number"] = 0;
-["real-object-id"] = 0;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["sprite-id-override"] = 0;
-["initial-destination"] = 0;
-["attributes"] = 0;
-
-};
-[545] =  {
-["type"] = 0;
-["owner"] = 0;
-["location"] = {
-["x"]=0;
-["y"]=0;
-};["real-object-number"] = 0;
-["real-object-id"] = 0;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["sprite-id-override"] = 0;
-["initial-destination"] = 0;
-["attributes"] = 0;
-
-};
-[546] =  {
-["type"] = 0;
-["owner"] = 0;
-["location"] = {
-["x"]=0;
-["y"]=0;
-};["real-object-number"] = 0;
-["real-object-id"] = 0;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["sprite-id-override"] = 0;
-["initial-destination"] = 0;
-["attributes"] = 0;
-
-};
-[547] =  {
-["type"] = 0;
-["owner"] = 0;
-["location"] = {
-["x"]=0;
-["y"]=0;
-};["real-object-number"] = 0;
-["real-object-id"] = 0;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["sprite-id-override"] = 0;
-["initial-destination"] = 0;
-["attributes"] = 0;
-
-};
-[548] =  {
-["type"] = 0;
-["owner"] = 0;
-["location"] = {
-["x"]=0;
-["y"]=0;
-};["real-object-number"] = 0;
-["real-object-id"] = 0;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["sprite-id-override"] = 0;
-["initial-destination"] = 0;
-["attributes"] = 0;
-
-};
-[549] =  {
-["type"] = 0;
-["owner"] = 0;
-["location"] = {
-["x"]=0;
-["y"]=0;
-};["real-object-number"] = 0;
-["real-object-id"] = 0;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["sprite-id-override"] = 0;
-["initial-destination"] = 0;
-["attributes"] = 0;
-
-};
-[550] =  {
-["type"] = 0;
-["owner"] = 0;
-["location"] = {
-["x"]=0;
-["y"]=0;
-};["real-object-number"] = 0;
-["real-object-id"] = 0;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["sprite-id-override"] = 0;
-["initial-destination"] = 0;
-["attributes"] = 0;
-
-};
-[551] =  {
-["type"] = 0;
-["owner"] = 0;
-["location"] = {
-["x"]=0;
-["y"]=0;
-};["real-object-number"] = 0;
-["real-object-id"] = 0;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["sprite-id-override"] = 0;
-["initial-destination"] = 0;
-["attributes"] = 0;
-
-};
-[552] =  {
-["type"] = 0;
-["owner"] = 0;
-["location"] = {
-["x"]=0;
-["y"]=0;
-};["real-object-number"] = 0;
-["real-object-id"] = 0;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["sprite-id-override"] = 0;
-["initial-destination"] = 0;
-["attributes"] = 0;
-
-};
-[553] =  {
-["type"] = 0;
-["owner"] = 0;
-["location"] = {
-["x"]=0;
-["y"]=0;
-};["real-object-number"] = 0;
-["real-object-id"] = 0;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["sprite-id-override"] = 0;
-["initial-destination"] = 0;
-["attributes"] = 0;
-
-};
-[554] =  {
-["type"] = 0;
-["owner"] = 0;
-["location"] = {
-["x"]=0;
-["y"]=0;
-};["real-object-number"] = 0;
-["real-object-id"] = 0;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["sprite-id-override"] = 0;
-["initial-destination"] = 0;
-["attributes"] = 0;
-
-};
-[555] =  {
-["type"] = 0;
-["owner"] = 0;
-["location"] = {
-["x"]=0;
-["y"]=0;
-};["real-object-number"] = 0;
-["real-object-id"] = 0;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["sprite-id-override"] = 0;
-["initial-destination"] = 0;
-["attributes"] = 0;
-
-};
-[556] =  {
-["type"] = 0;
-["owner"] = 0;
-["location"] = {
-["x"]=0;
-["y"]=0;
-};["real-object-number"] = 0;
-["real-object-id"] = 0;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["sprite-id-override"] = 0;
-["initial-destination"] = 0;
-["attributes"] = 0;
-
-};
-[557] =  {
-["type"] = 0;
-["owner"] = 0;
-["location"] = {
-["x"]=0;
-["y"]=0;
-};["real-object-number"] = 0;
-["real-object-id"] = 0;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["sprite-id-override"] = 0;
-["initial-destination"] = 0;
-["attributes"] = 0;
-
-};
-[558] =  {
-["type"] = 0;
-["owner"] = 0;
-["location"] = {
-["x"]=0;
-["y"]=0;
-};["real-object-number"] = 0;
-["real-object-id"] = 0;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["sprite-id-override"] = 0;
-["initial-destination"] = 0;
-["attributes"] = 0;
-
-};
-[559] =  {
-["type"] = 0;
-["owner"] = 0;
-["location"] = {
-["x"]=0;
-["y"]=0;
-};["real-object-number"] = 0;
-["real-object-id"] = 0;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["sprite-id-override"] = 0;
-["initial-destination"] = 0;
-["attributes"] = 0;
-
-};
-[560] =  {
-["type"] = 0;
-["owner"] = 0;
-["location"] = {
-["x"]=0;
-["y"]=0;
-};["real-object-number"] = 0;
-["real-object-id"] = 0;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["sprite-id-override"] = 0;
-["initial-destination"] = 0;
-["attributes"] = 0;
-
-};
-[561] =  {
-["type"] = 0;
-["owner"] = 0;
-["location"] = {
-["x"]=0;
-["y"]=0;
-};["real-object-number"] = 0;
-["real-object-id"] = 0;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["sprite-id-override"] = 0;
-["initial-destination"] = 0;
-["attributes"] = 0;
-
-};
-[562] =  {
-["type"] = 0;
-["owner"] = 0;
-["location"] = {
-["x"]=0;
-["y"]=0;
-};["real-object-number"] = 0;
-["real-object-id"] = 0;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["sprite-id-override"] = 0;
-["initial-destination"] = 0;
-["attributes"] = 0;
-
-};
-[563] =  {
-["type"] = 0;
-["owner"] = 0;
-["location"] = {
-["x"]=0;
-["y"]=0;
-};["real-object-number"] = 0;
-["real-object-id"] = 0;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["sprite-id-override"] = 0;
-["initial-destination"] = 0;
-["attributes"] = 0;
-
-};
-[564] =  {
-["type"] = 0;
-["owner"] = 0;
-["location"] = {
-["x"]=0;
-["y"]=0;
-};["real-object-number"] = 0;
-["real-object-id"] = 0;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["sprite-id-override"] = 0;
-["initial-destination"] = 0;
-["attributes"] = 0;
-
-};
-[565] =  {
-["type"] = 0;
-["owner"] = 0;
-["location"] = {
-["x"]=0;
-["y"]=0;
-};["real-object-number"] = 0;
-["real-object-id"] = 0;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["sprite-id-override"] = 0;
-["initial-destination"] = 0;
-["attributes"] = 0;
-
-};
-[566] =  {
-["type"] = 0;
-["owner"] = 0;
-["location"] = {
-["x"]=0;
-["y"]=0;
-};["real-object-number"] = 0;
-["real-object-id"] = 0;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["sprite-id-override"] = 0;
-["initial-destination"] = 0;
-["attributes"] = 0;
-
-};
-[567] =  {
-["type"] = 0;
-["owner"] = 0;
-["location"] = {
-["x"]=0;
-["y"]=0;
-};["real-object-number"] = 0;
-["real-object-id"] = 0;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["sprite-id-override"] = 0;
-["initial-destination"] = 0;
-["attributes"] = 0;
-
-};
-[568] =  {
-["type"] = 0;
-["owner"] = 0;
-["location"] = {
-["x"]=0;
-["y"]=0;
-};["real-object-number"] = 0;
-["real-object-id"] = 0;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["sprite-id-override"] = 0;
-["initial-destination"] = 0;
-["attributes"] = 0;
-
-};
-[569] =  {
-["type"] = 0;
-["owner"] = 0;
-["location"] = {
-["x"]=0;
-["y"]=0;
-};["real-object-number"] = 0;
-["real-object-id"] = 0;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["sprite-id-override"] = 0;
-["initial-destination"] = 0;
-["attributes"] = 0;
-
-};
-[570] =  {
-["type"] = 0;
-["owner"] = 0;
-["location"] = {
-["x"]=0;
-["y"]=0;
-};["real-object-number"] = 0;
-["real-object-id"] = 0;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["sprite-id-override"] = 0;
-["initial-destination"] = 0;
-["attributes"] = 0;
-
-};
-[571] =  {
-["type"] = 0;
-["owner"] = 0;
-["location"] = {
-["x"]=0;
-["y"]=0;
-};["real-object-number"] = 0;
-["real-object-id"] = 0;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["sprite-id-override"] = 0;
-["initial-destination"] = 0;
-["attributes"] = 0;
-
-};
-[572] =  {
-["type"] = 0;
-["owner"] = 0;
-["location"] = {
-["x"]=0;
-["y"]=0;
-};["real-object-number"] = 0;
-["real-object-id"] = 0;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["sprite-id-override"] = 0;
-["initial-destination"] = 0;
-["attributes"] = 0;
-
-};
-[573] =  {
-["type"] = 0;
-["owner"] = 0;
-["location"] = {
-["x"]=0;
-["y"]=0;
-};["real-object-number"] = 0;
-["real-object-id"] = 0;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["sprite-id-override"] = 0;
-["initial-destination"] = 0;
-["attributes"] = 0;
-
-};
-[574] =  {
-["type"] = 0;
-["owner"] = 0;
-["location"] = {
-["x"]=0;
-["y"]=0;
-};["real-object-number"] = 0;
-["real-object-id"] = 0;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["sprite-id-override"] = 0;
-["initial-destination"] = 0;
-["attributes"] = 0;
-
-};
-[575] =  {
-["type"] = 0;
-["owner"] = 0;
-["location"] = {
-["x"]=0;
-["y"]=0;
-};["real-object-number"] = 0;
-["real-object-id"] = 0;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["sprite-id-override"] = 0;
-["initial-destination"] = 0;
-["attributes"] = 0;
-
-};
-[576] =  {
-["type"] = 0;
-["owner"] = 0;
-["location"] = {
-["x"]=0;
-["y"]=0;
-};["real-object-number"] = 0;
-["real-object-id"] = 0;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["sprite-id-override"] = 0;
-["initial-destination"] = 0;
-["attributes"] = 0;
-
-};
-[577] =  {
-["type"] = 0;
-["owner"] = 0;
-["location"] = {
-["x"]=0;
-["y"]=0;
-};["real-object-number"] = 0;
-["real-object-id"] = 0;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["sprite-id-override"] = 0;
-["initial-destination"] = 0;
-["attributes"] = 0;
-
-};
-[578] =  {
-["type"] = 0;
-["owner"] = 0;
-["location"] = {
-["x"]=0;
-["y"]=0;
-};["real-object-number"] = 0;
-["real-object-id"] = 0;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["sprite-id-override"] = 0;
-["initial-destination"] = 0;
-["attributes"] = 0;
-
-};
-[579] =  {
-["type"] = 0;
-["owner"] = 0;
-["location"] = {
-["x"]=0;
-["y"]=0;
-};["real-object-number"] = 0;
-["real-object-id"] = 0;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["sprite-id-override"] = 0;
-["initial-destination"] = 0;
-["attributes"] = 0;
-
-};
-[580] =  {
-["type"] = 1;
-["owner"] = 2;
-["location"] = {
-["x"]=3;
-["y"]=4;
-};["real-object-number"] = 0;
-["real-object-id"] = 0;
-["earning"] = 5.0;
-["distance-range"] = 6;
-["rotation-minimum"] = 7;
-["rotation-range"] = 8;
-["sprite-id-override"] = 9;
-["initial-destination"] = 13;
-["attributes"] = 0;
-
-};
-[581] =  {
-["type"] = 0;
-["owner"] = 0;
-["location"] = {
-["x"]=0;
-["y"]=0;
-};["real-object-number"] = 0;
-["real-object-id"] = 0;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["sprite-id-override"] = 0;
-["initial-destination"] = 0;
-["attributes"] = 0;
-
-};
-[582] =  {
-["type"] = 0;
-["owner"] = 0;
-["location"] = {
-["x"]=0;
-["y"]=0;
-};["real-object-number"] = 0;
-["real-object-id"] = 0;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["sprite-id-override"] = 0;
-["initial-destination"] = 0;
-["attributes"] = 0;
-
-};
-[583] =  {
-["type"] = 0;
-["owner"] = 0;
-["location"] = {
-["x"]=0;
-["y"]=0;
-};["real-object-number"] = 0;
-["real-object-id"] = 0;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["sprite-id-override"] = 0;
-["initial-destination"] = 0;
-["attributes"] = 0;
-
-};
-[584] =  {
-["type"] = 0;
-["owner"] = 0;
-["location"] = {
-["x"]=0;
-["y"]=0;
-};["real-object-number"] = 0;
-["real-object-id"] = 0;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["sprite-id-override"] = 0;
-["initial-destination"] = 0;
-["attributes"] = 0;
-
-};
-[585] =  {
-["type"] = 0;
-["owner"] = 0;
-["location"] = {
-["x"]=0;
-["y"]=0;
-};["real-object-number"] = 0;
-["real-object-id"] = 0;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["sprite-id-override"] = 0;
-["initial-destination"] = 0;
-["attributes"] = 0;
-
-};
-[586] =  {
-["type"] = 0;
-["owner"] = 0;
-["location"] = {
-["x"]=0;
-["y"]=0;
-};["real-object-number"] = 0;
-["real-object-id"] = 0;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["sprite-id-override"] = 0;
-["initial-destination"] = 0;
-["attributes"] = 0;
-
-};
-[587] =  {
-["type"] = 0;
-["owner"] = 0;
-["location"] = {
-["x"]=0;
-["y"]=0;
-};["real-object-number"] = 0;
-["real-object-id"] = 0;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["sprite-id-override"] = 0;
-["initial-destination"] = 0;
-["attributes"] = 0;
-
-};
-[588] =  {
-["type"] = 0;
-["owner"] = 0;
-["location"] = {
-["x"]=0;
-["y"]=0;
-};["real-object-number"] = 0;
-["real-object-id"] = 0;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["sprite-id-override"] = 0;
-["initial-destination"] = 0;
-["attributes"] = 0;
-
-};
-[589] =  {
-["type"] = 0;
-["owner"] = 0;
-["location"] = {
-["x"]=0;
-["y"]=0;
-};["real-object-number"] = 0;
-["real-object-id"] = 0;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["sprite-id-override"] = 0;
-["initial-destination"] = 0;
-["attributes"] = 0;
-
-};
-[590] =  {
-["type"] = 0;
-["owner"] = 0;
-["location"] = {
-["x"]=0;
-["y"]=0;
-};["real-object-number"] = 0;
-["real-object-id"] = 0;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["sprite-id-override"] = 0;
-["initial-destination"] = 0;
-["attributes"] = 0;
-
-};
-[591] =  {
-["type"] = 0;
-["owner"] = 0;
-["location"] = {
-["x"]=0;
-["y"]=0;
-};["real-object-number"] = 0;
-["real-object-id"] = 0;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["sprite-id-override"] = 0;
-["initial-destination"] = 0;
-["attributes"] = 0;
-
-};
-[592] =  {
-["type"] = 0;
-["owner"] = 0;
-["location"] = {
-["x"]=0;
-["y"]=0;
-};["real-object-number"] = 0;
-["real-object-id"] = 0;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["sprite-id-override"] = 0;
-["initial-destination"] = 0;
-["attributes"] = 0;
-
-};
-[593] =  {
-["type"] = 0;
-["owner"] = 0;
-["location"] = {
-["x"]=0;
-["y"]=0;
-};["real-object-number"] = 0;
-["real-object-id"] = 0;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["sprite-id-override"] = 0;
-["initial-destination"] = 0;
-["attributes"] = 0;
-
-};
-[594] =  {
-["type"] = 0;
-["owner"] = 0;
-["location"] = {
-["x"]=0;
-["y"]=0;
-};["real-object-number"] = 0;
-["real-object-id"] = 0;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["sprite-id-override"] = 0;
-["initial-destination"] = 0;
-["attributes"] = 0;
-
-};
-[595] =  {
-["type"] = 0;
-["owner"] = 0;
-["location"] = {
-["x"]=0;
-["y"]=0;
-};["real-object-number"] = 0;
-["real-object-id"] = 0;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["sprite-id-override"] = 0;
-["initial-destination"] = 0;
-["attributes"] = 0;
-
-};
-[596] =  {
-["type"] = 0;
-["owner"] = 0;
-["location"] = {
-["x"]=0;
-["y"]=0;
-};["real-object-number"] = 0;
-["real-object-id"] = 0;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["sprite-id-override"] = 0;
-["initial-destination"] = 0;
-["attributes"] = 0;
-
-};
-[597] =  {
-["type"] = 0;
-["owner"] = 0;
-["location"] = {
-["x"]=0;
-["y"]=0;
-};["real-object-number"] = 0;
-["real-object-id"] = 0;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["sprite-id-override"] = 0;
-["initial-destination"] = 0;
-["attributes"] = 0;
-
-};
-[598] =  {
-["type"] = 0;
-["owner"] = 0;
-["location"] = {
-["x"]=0;
-["y"]=0;
-};["real-object-number"] = 0;
-["real-object-id"] = 0;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["sprite-id-override"] = 0;
-["initial-destination"] = 0;
-["attributes"] = 0;
-
-};
-[599] =  {
-["type"] = 0;
-["owner"] = 0;
-["location"] = {
-["x"]=0;
-["y"]=0;
-};["real-object-number"] = 0;
-["real-object-id"] = 0;
-["earning"] = 0.0;
-["distance-range"] = 0;
-["rotation-minimum"] = 0;
-["rotation-range"] = 0;
-["sprite-id-override"] = 0;
-["initial-destination"] = 0;
-["attributes"] = 0;
-
-};
-};
+[0] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 500;
+earning = 1;
+initialDestination = -1;
+location = {x = 4521, y = 7043};
+nameResId = 4100;
+nameStrNum = 10;
+owner = 1;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 360;
+spriteIdOverride = -1;
+type = 36;
+},
+
+[1] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = true;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 500;
+earning = 0;
+initialDestination = -1;
+location = {x = 8695, y = 7652};
+nameResId = -1;
+nameStrNum = -1;
+owner = 0;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 360;
+spriteIdOverride = -1;
+type = 61;
+},
+
+[2] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = true;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 500;
+earning = 0;
+initialDestination = 0;
+location = {x = 4695, y = 6434};
+nameResId = -1;
+nameStrNum = -1;
+owner = 1;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 360;
+spriteIdOverride = -1;
+type = 37;
+},
+
+[3] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = true;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 500;
+earning = 0;
+initialDestination = 16;
+location = {x = 2086, y = 2608};
+nameResId = -1;
+nameStrNum = -1;
+owner = 1;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 360;
+spriteIdOverride = -1;
+type = 37;
+},
+
+[4] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = true;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 500;
+earning = 0;
+initialDestination = 16;
+location = {x = 2434, y = 3739};
+nameResId = -1;
+nameStrNum = -1;
+owner = 1;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 360;
+spriteIdOverride = -1;
+type = 37;
+},
+
+[5] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = true;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 500;
+earning = 0;
+initialDestination = 17;
+location = {x = -1913, y = -347};
+nameResId = -1;
+nameStrNum = -1;
+owner = 1;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 360;
+spriteIdOverride = -1;
+type = 64;
+},
+
+[6] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = true;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 500;
+earning = 0;
+initialDestination = 17;
+location = {x = -2347, y = -1130};
+nameResId = -1;
+nameStrNum = -1;
+owner = 1;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 360;
+spriteIdOverride = -1;
+type = 37;
+},
+
+[7] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = true;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 500;
+earning = 0;
+initialDestination = 17;
+location = {x = -2782, y = -347};
+nameResId = -1;
+nameStrNum = -1;
+owner = 1;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 360;
+spriteIdOverride = -1;
+type = 37;
+},
+
+[8] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = true;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 500;
+earning = 0;
+initialDestination = 18;
+location = {x = -5043, y = -1043};
+nameResId = -1;
+nameStrNum = -1;
+owner = 1;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 360;
+spriteIdOverride = -1;
+type = 64;
+},
+
+[9] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = true;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 500;
+earning = 0;
+initialDestination = 18;
+location = {x = -4173, y = -2695};
+nameResId = -1;
+nameStrNum = -1;
+owner = 1;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 360;
+spriteIdOverride = -1;
+type = 37;
+},
+
+[10] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = true;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 500;
+earning = 0;
+initialDestination = 18;
+location = {x = -4434, y = -1826};
+nameResId = -1;
+nameStrNum = -1;
+owner = 1;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 360;
+spriteIdOverride = -1;
+type = 37;
+},
+
+[11] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = true;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 500;
+earning = 0;
+initialDestination = 18;
+location = {x = -4956, y = -1913};
+nameResId = -1;
+nameStrNum = -1;
+owner = 1;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 360;
+spriteIdOverride = -1;
+type = 37;
+},
+
+[12] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = true;
+staticDestination = false;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 500;
+earning = 0;
+initialDestination = 1;
+location = {x = 6782, y = -8695};
+nameResId = -1;
+nameStrNum = -1;
+owner = 0;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 360;
+spriteIdOverride = -1;
+type = 42;
+},
+
+[13] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = true;
+staticDestination = false;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 500;
+earning = 0;
+initialDestination = 1;
+location = {x = 8347, y = -6695};
+nameResId = -1;
+nameStrNum = -1;
+owner = 0;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 360;
+spriteIdOverride = -1;
+type = 42;
+},
+
+[14] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 500;
+earning = 1;
+initialDestination = -1;
+location = {x = -4173, y = -1652};
+nameResId = 4100;
+nameStrNum = 9;
+owner = 1;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 360;
+spriteIdOverride = 1200;
+type = 104;
+},
+
+[15] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 500;
+earning = 0;
+initialDestination = -1;
+location = {x = 0, y = 0};
+nameResId = 4100;
+nameStrNum = 8;
+owner = -1;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 360;
+spriteIdOverride = -1;
+type = 27;
+},
+
+[16] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 500;
+earning = 1;
+initialDestination = -1;
+location = {x = 2000, y = 3217};
+nameResId = 4100;
+nameStrNum = 11;
+owner = 1;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 360;
+spriteIdOverride = -1;
+type = 36;
+},
+
+[17] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 500;
+earning = 1;
+initialDestination = -1;
+location = {x = -1130, y = 2000};
+nameResId = 4100;
+nameStrNum = 12;
+owner = 1;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 360;
+spriteIdOverride = -1;
+type = 36;
+},
+
+[18] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 500;
+earning = 1;
+initialDestination = -1;
+location = {x = -4347, y = 1043};
+nameResId = 4100;
+nameStrNum = 27;
+owner = 1;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 360;
+spriteIdOverride = -1;
+type = 36;
+},
+
+[19] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 500;
+earning = 0;
+initialDestination = -1;
+location = {x = -17913, y = -22129};
+nameResId = -1;
+nameStrNum = -1;
+owner = 1;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 360;
+spriteIdOverride = -1;
+type = 62;
+},
+
+[20] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 500;
+earning = 0;
+initialDestination = 5;
+location = {x = 4347, y = -2696};
+nameResId = -1;
+nameStrNum = -1;
+owner = 0;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 360;
+spriteIdOverride = -1;
+type = 80;
+},
+
+[21] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 500;
+earning = 1;
+initialDestination = -1;
+location = {x = -8800, y = -8000};
+nameResId = 4100;
+nameStrNum = 17;
+owner = 1;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 360;
+spriteIdOverride = -1;
+type = 83;
+},
+
+[22] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 500;
+earning = 1;
+initialDestination = -1;
+location = {x = 3000, y = -4000};
+nameResId = 4100;
+nameStrNum = 7;
+owner = 0;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 360;
+spriteIdOverride = 1001;
+type = 23;
+},
+
+[23] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 500;
+earning = 0;
+initialDestination = -1;
+location = {x = -200, y = 200};
+nameResId = 4100;
+nameStrNum = 5;
+owner = -1;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 360;
+spriteIdOverride = -1;
+type = 27;
+},
+
+[24] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = true;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 500;
+earning = 0;
+initialDestination = -1;
+location = {x = 3497, y = -3678};
+nameResId = -1;
+nameStrNum = -1;
+owner = 0;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 360;
+spriteIdOverride = -1;
+type = 61;
+},
+
+[25] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = true;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 500;
+earning = 0;
+initialDestination = 2;
+location = {x = -8804, y = -6978};
+nameResId = -1;
+nameStrNum = -1;
+owner = 1;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 360;
+spriteIdOverride = -1;
+type = 59;
+},
+
+[26] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = true;
+staticDestination = true;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 500;
+earning = 0;
+initialDestination = 1;
+location = {x = -17673, y = -11760};
+nameResId = -1;
+nameStrNum = -1;
+owner = 1;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 360;
+spriteIdOverride = -1;
+type = 17;
+},
+
+[27] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = true;
+staticDestination = true;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 500;
+earning = 0;
+initialDestination = 7;
+location = {x = -17325, y = -10543};
+nameResId = -1;
+nameStrNum = -1;
+owner = 1;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 360;
+spriteIdOverride = -1;
+type = 59;
+},
+
+[28] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = true;
+staticDestination = true;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 500;
+earning = 0;
+initialDestination = 7;
+location = {x = -16021, y = -11673};
+nameResId = -1;
+nameStrNum = -1;
+owner = 1;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 360;
+spriteIdOverride = -1;
+type = 59;
+},
+
+[29] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {100, 200, 300, 800, 600, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 500;
+earning = 1;
+initialDestination = -1;
+location = {x = 38956, y = 12043};
+nameResId = 4100;
+nameStrNum = 2;
+owner = 0;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 360;
+spriteIdOverride = 1002;
+type = 23;
+},
+
+[30] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = true;
+staticDestination = false;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 500;
+earning = 0;
+initialDestination = -1;
+location = {x = -32695, y = -33825};
+nameResId = -1;
+nameStrNum = -1;
+owner = 1;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 360;
+spriteIdOverride = -1;
+type = 45;
+},
+
+[31] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = true;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 500;
+earning = 0;
+initialDestination = -1;
+location = {x = 39456, y = 13586};
+nameResId = -1;
+nameStrNum = -1;
+owner = 0;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 360;
+spriteIdOverride = -1;
+type = 0;
+},
+
+[32] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = true;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 500;
+earning = 0;
+initialDestination = -1;
+location = {x = -7478, y = 6260};
+nameResId = -1;
+nameStrNum = -1;
+owner = 1;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 360;
+spriteIdOverride = -1;
+type = 7;
+},
+
+[33] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {100, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 500;
+earning = 1;
+initialDestination = -1;
+location = {x = 13652, y = -7999};
+nameResId = 4100;
+nameStrNum = 3;
+owner = -1;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 360;
+spriteIdOverride = 1003;
+type = 23;
+},
+
+[34] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {100, 200, 300, 800, 600, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 500;
+earning = 1;
+initialDestination = -1;
+location = {x = -7565, y = 7304};
+nameResId = 4100;
+nameStrNum = 4;
+owner = 1;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 360;
+spriteIdOverride = 1004;
+type = 23;
+},
+
+[35] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 500;
+earning = 0;
+initialDestination = -1;
+location = {x = 9000, y = -600};
+nameResId = 4100;
+nameStrNum = 1;
+owner = -1;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 360;
+spriteIdOverride = -1;
+type = 27;
+},
+
+[36] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = true;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = 6;
+location = {x = 6521, y = 1565};
+nameResId = -1;
+nameStrNum = -1;
+owner = 0;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 360;
+spriteIdOverride = -1;
+type = 61;
+},
+
+[37] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = -1;
+location = {x = -2086, y = 1913};
+nameResId = -1;
+nameStrNum = -1;
+owner = -1;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 360;
+spriteIdOverride = -1;
+type = 27;
+},
+
+[38] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = 6;
+location = {x = 7565, y = 956};
+nameResId = -1;
+nameStrNum = -1;
+owner = 0;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 360;
+spriteIdOverride = -1;
+type = 0;
+},
+
+[39] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = 6;
+location = {x = 8086, y = 1913};
+nameResId = -1;
+nameStrNum = -1;
+owner = 0;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 360;
+spriteIdOverride = -1;
+type = 13;
+},
+
+[40] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = 6;
+location = {x = 7391, y = 2173};
+nameResId = -1;
+nameStrNum = -1;
+owner = 0;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 360;
+spriteIdOverride = -1;
+type = 13;
+},
+
+[41] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = 6;
+location = {x = 6782, y = 521};
+nameResId = -1;
+nameStrNum = -1;
+owner = 0;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 360;
+spriteIdOverride = -1;
+type = 42;
+},
+
+[42] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = -1;
+location = {x = 6782, y = 2434};
+nameResId = -1;
+nameStrNum = -1;
+owner = 0;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 360;
+spriteIdOverride = -1;
+type = 47;
+},
+
+[43] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = 6;
+location = {x = 8521, y = 2782};
+nameResId = -1;
+nameStrNum = -1;
+owner = 0;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 360;
+spriteIdOverride = -1;
+type = 61;
+},
+
+[44] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = 6;
+location = {x = 7739, y = 2956};
+nameResId = -1;
+nameStrNum = -1;
+owner = 0;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 360;
+spriteIdOverride = -1;
+type = 42;
+},
+
+[45] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = 6;
+location = {x = 8782, y = 1043};
+nameResId = -1;
+nameStrNum = -1;
+owner = 0;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 360;
+spriteIdOverride = -1;
+type = 13;
+},
+
+[46] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = true;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = 17;
+location = {x = 1826, y = 1478};
+nameResId = -1;
+nameStrNum = -1;
+owner = 1;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 360;
+spriteIdOverride = -1;
+type = 62;
+},
+
+[47] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = true;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = 17;
+location = {x = 1913, y = 2869};
+nameResId = -1;
+nameStrNum = -1;
+owner = 1;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 360;
+spriteIdOverride = -1;
+type = 62;
+},
+
+[48] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = true;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = 17;
+location = {x = 1130, y = 1130};
+nameResId = -1;
+nameStrNum = -1;
+owner = 1;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 360;
+spriteIdOverride = -1;
+type = 7;
+},
+
+[49] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = true;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = 17;
+location = {x = 956, y = 2260};
+nameResId = -1;
+nameStrNum = -1;
+owner = 1;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 360;
+spriteIdOverride = -1;
+type = 37;
+},
+
+[50] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = true;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = 17;
+location = {x = 1391, y = 3217};
+nameResId = -1;
+nameStrNum = -1;
+owner = 1;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 360;
+spriteIdOverride = -1;
+type = 37;
+},
+
+[51] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 1;
+initialDestination = -1;
+location = {x = 2260, y = -434};
+nameResId = 4100;
+nameStrNum = 13;
+owner = -1;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 360;
+spriteIdOverride = 1005;
+type = 23;
+},
+
+[52] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = true;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = 6;
+location = {x = 3217, y = -1652};
+nameResId = -1;
+nameStrNum = -1;
+owner = 1;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 360;
+spriteIdOverride = -1;
+type = 45;
+},
+
+[53] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = true;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = 1;
+location = {x = 2695, y = 2000};
+nameResId = -1;
+nameStrNum = -1;
+owner = 1;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 360;
+spriteIdOverride = -1;
+type = 45;
+},
+
+[54] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = true;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = 16;
+location = {x = 2695, y = -1565};
+nameResId = -1;
+nameStrNum = -1;
+owner = 1;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 360;
+spriteIdOverride = -1;
+type = 14;
+},
+
+[55] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = true;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = 16;
+location = {x = 3565, y = -782};
+nameResId = -1;
+nameStrNum = -1;
+owner = 1;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 360;
+spriteIdOverride = -1;
+type = 14;
+},
+
+[56] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = true;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = 16;
+location = {x = 869, y = -1565};
+nameResId = -1;
+nameStrNum = -1;
+owner = 1;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 360;
+spriteIdOverride = -1;
+type = 7;
+},
+
+[57] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = true;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = 16;
+location = {x = 1043, y = -2956};
+nameResId = -1;
+nameStrNum = -1;
+owner = 1;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 360;
+spriteIdOverride = -1;
+type = 7;
+},
+
+[58] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = true;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = 16;
+location = {x = -260, y = -1565};
+nameResId = -1;
+nameStrNum = -1;
+owner = 1;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 360;
+spriteIdOverride = -1;
+type = 7;
+},
+
+[59] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = true;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = 16;
+location = {x = -86, y = -3043};
+nameResId = -1;
+nameStrNum = -1;
+owner = 1;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 360;
+spriteIdOverride = -1;
+type = 7;
+},
+
+[60] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = true;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = 16;
+location = {x = 2086, y = -1913};
+nameResId = -1;
+nameStrNum = -1;
+owner = 1;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 360;
+spriteIdOverride = -1;
+type = 7;
+},
+
+[61] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = true;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = -1;
+location = {x = 73651, y = 18261};
+nameResId = -1;
+nameStrNum = -1;
+owner = 0;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 61;
+},
+
+[62] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = -1;
+location = {x = 0, y = 0};
+nameResId = -1;
+nameStrNum = -1;
+owner = 0;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 77;
+},
+
+[63] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = -1;
+location = {x = -85, y = -341};
+nameResId = -1;
+nameStrNum = -1;
+owner = 1;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 75;
+},
+
+[64] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = -1;
+location = {x = -235, y = 287};
+nameResId = -1;
+nameStrNum = -1;
+owner = 1;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 75;
+},
+
+[65] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = -1;
+location = {x = 260, y = 173};
+nameResId = -1;
+nameStrNum = -1;
+owner = 1;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 75;
+},
+
+[66] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = -1;
+location = {x = -12955, y = -10782};
+nameResId = -1;
+nameStrNum = -1;
+owner = 1;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 62;
+},
+
+[67] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 1;
+initialDestination = -1;
+location = {x = -869, y = 434};
+nameResId = 4100;
+nameStrNum = 15;
+owner = 1;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = 1006;
+type = 23;
+},
+
+[68] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = -1;
+location = {x = -608, y = -260};
+nameResId = -1;
+nameStrNum = -1;
+owner = 1;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 78;
+},
+
+[69] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {100, 200, 800, 300, 250, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 1;
+initialDestination = -1;
+location = {x = -21477, y = -4782};
+nameResId = 4100;
+nameStrNum = 16;
+owner = 1;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = 1007;
+type = 23;
+},
+
+[70] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = true;
+};
+canBuild = {100, 200, 800, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 1;
+initialDestination = -1;
+location = {x = 72259, y = 22783};
+nameResId = 4100;
+nameStrNum = 14;
+owner = 0;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = 1008;
+type = 23;
+},
+
+[71] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = 9;
+location = {x = 80607, y = 15826};
+nameResId = 4300;
+nameStrNum = 7;
+owner = 0;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 47;
+},
+
+[72] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = 9;
+location = {x = 74433, y = 32260};
+nameResId = 4300;
+nameStrNum = 6;
+owner = 0;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 47;
+},
+
+[73] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = -1;
+location = {x = -19826, y = -12434};
+nameResId = 4300;
+nameStrNum = 2;
+owner = 1;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 45;
+},
+
+[74] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = -1;
+location = {x = -18868, y = -5738};
+nameResId = 4300;
+nameStrNum = 4;
+owner = 1;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 45;
+},
+
+[75] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = -1;
+location = {x = -14347, y = -15043};
+nameResId = 5001;
+nameStrNum = 8;
+owner = 1;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 45;
+},
+
+[76] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = true;
+staticDestination = false;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = -1;
+location = {x = -15391, y = -10173};
+nameResId = -1;
+nameStrNum = -1;
+owner = 1;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 45;
+},
+
+[77] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = true;
+staticDestination = false;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = -1;
+location = {x = -16259, y = -16434};
+nameResId = -1;
+nameStrNum = -1;
+owner = 1;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 45;
+},
+
+[78] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = true;
+staticDestination = true;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = 16;
+location = {x = -20086, y = -8869};
+nameResId = -1;
+nameStrNum = -1;
+owner = 1;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 17;
+},
+
+[79] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {100, 200, 800, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 1;
+initialDestination = -1;
+location = {x = 4695, y = 260};
+nameResId = 4100;
+nameStrNum = 25;
+owner = 0;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = 1009;
+type = 23;
+},
+
+[80] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = true;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = -1;
+location = {x = 4782, y = 782};
+nameResId = -1;
+nameStrNum = -1;
+owner = 0;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 0;
+},
+
+[81] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = -1;
+location = {x = 86, y = -3478};
+nameResId = 4100;
+nameStrNum = 24;
+owner = -1;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 27;
+},
+
+[82] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = true;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = -1;
+location = {x = -8336, y = -1251};
+nameResId = -1;
+nameStrNum = -1;
+owner = 1;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 37;
+},
+
+[83] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = true;
+staticDestination = false;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = -1;
+location = {x = -8695, y = 260};
+nameResId = -1;
+nameStrNum = -1;
+owner = 1;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 87;
+},
+
+[84] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {100, 200, 300, 800, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 1;
+initialDestination = -1;
+location = {x = -7477, y = -347};
+nameResId = 4100;
+nameStrNum = 26;
+owner = 1;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = 1010;
+type = 23;
+},
+
+[85] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = true;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = -1;
+location = {x = 0, y = -2956};
+nameResId = -1;
+nameStrNum = -1;
+owner = 0;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 284;
+},
+
+[86] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = true;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = -1;
+location = {x = 87, y = 2955};
+nameResId = -1;
+nameStrNum = -1;
+owner = 1;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 284;
+},
+
+[87] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = -1;
+location = {x = -700, y = 0};
+nameResId = -1;
+nameStrNum = -1;
+owner = -1;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 93;
+},
+
+[88] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = -1;
+location = {x = 0, y = -700};
+nameResId = -1;
+nameStrNum = -1;
+owner = -1;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 93;
+},
+
+[89] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = -1;
+location = {x = 0, y = 700};
+nameResId = -1;
+nameStrNum = -1;
+owner = -1;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 93;
+},
+
+[90] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = true;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = 6;
+location = {x = 7565, y = 0};
+nameResId = -1;
+nameStrNum = -1;
+owner = 0;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = -1;
+},
+
+[91] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = true;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = 6;
+location = {x = 9043, y = -1043};
+nameResId = -1;
+nameStrNum = -1;
+owner = 0;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = -1;
+},
+
+[92] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = true;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = 5;
+location = {x = -18608, y = -18608};
+nameResId = -1;
+nameStrNum = -1;
+owner = 0;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = -1;
+},
+
+[93] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = true;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = 5;
+location = {x = -17565, y = -16869};
+nameResId = -1;
+nameStrNum = -1;
+owner = 0;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = -1;
+},
+
+[94] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = -1;
+location = {x = 521, y = 9913};
+nameResId = 4400;
+nameStrNum = 2;
+owner = 0;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = 1200;
+type = -1;
+},
+
+[95] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = true;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = 9;
+location = {x = -521, y = 8173};
+nameResId = -1;
+nameStrNum = -1;
+owner = 0;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = -1;
+},
+
+[96] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = true;
+staticDestination = true;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = 6;
+location = {x = -17391, y = 14608};
+nameResId = -1;
+nameStrNum = -1;
+owner = 1;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = -1;
+},
+
+[97] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = true;
+staticDestination = true;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = 11;
+location = {x = -16521, y = 12347};
+nameResId = -1;
+nameStrNum = -1;
+owner = 1;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = -1;
+},
+
+[98] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = true;
+staticDestination = true;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = 10;
+location = {x = -14782, y = 14782};
+nameResId = -1;
+nameStrNum = -1;
+owner = 1;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = -1;
+},
+
+[99] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = true;
+staticDestination = false;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = 13;
+location = {x = -15304, y = 16695};
+nameResId = -1;
+nameStrNum = -1;
+owner = 1;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = -1;
+},
+
+[100] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = true;
+staticDestination = true;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = 5;
+location = {x = -6087, y = 13650};
+nameResId = -1;
+nameStrNum = -1;
+owner = 1;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = -1;
+},
+
+[101] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = true;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = -1;
+location = {x = 0, y = 0};
+nameResId = -1;
+nameStrNum = -1;
+owner = 0;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 0;
+},
+
+[102] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {100, 200, 800, 850, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 1;
+initialDestination = -1;
+location = {x = 1304, y = 1130};
+nameResId = 4100;
+nameStrNum = 32;
+owner = 0;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = 1011;
+type = 23;
+},
+
+[103] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = 1;
+location = {x = 521, y = 1913};
+nameResId = -1;
+nameStrNum = -1;
+owner = 0;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 95;
+},
+
+[104] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = -1;
+location = {x = -9304, y = -11391};
+nameResId = -1;
+nameStrNum = -1;
+owner = 1;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 94;
+},
+
+[105] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = 1;
+location = {x = 2173, y = 1652};
+nameResId = -1;
+nameStrNum = -1;
+owner = 0;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 95;
+},
+
+[106] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = -1;
+location = {x = -8245, y = -9664};
+nameResId = -1;
+nameStrNum = -1;
+owner = 1;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 243;
+},
+
+[107] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = -1;
+location = {x = -3990, y = -4004};
+nameResId = -1;
+nameStrNum = -1;
+owner = 1;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 93;
+},
+
+[108] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = -1;
+location = {x = -9367, y = -9184};
+nameResId = -1;
+nameStrNum = -1;
+owner = 1;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 93;
+},
+
+[109] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {100, 200, 800, 850, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 1;
+initialDestination = -1;
+location = {x = -9304, y = -9130};
+nameResId = 4100;
+nameStrNum = 33;
+owner = 1;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = 1012;
+type = 23;
+},
+
+[110] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 1;
+initialDestination = -1;
+location = {x = 3739, y = 0};
+nameResId = 4100;
+nameStrNum = 38;
+owner = 0;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 114;
+},
+
+[111] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 1;
+initialDestination = -1;
+location = {x = 2434, y = 3826};
+nameResId = 4100;
+nameStrNum = 39;
+owner = 0;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 114;
+},
+
+[112] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 1;
+initialDestination = -1;
+location = {x = 2173, y = -5043};
+nameResId = 4100;
+nameStrNum = 37;
+owner = 0;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 114;
+},
+
+[113] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 1;
+initialDestination = -1;
+location = {x = -4434, y = 0};
+nameResId = 4100;
+nameStrNum = 41;
+owner = 1;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 114;
+},
+
+[114] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 1;
+initialDestination = -1;
+location = {x = -4869, y = 5739};
+nameResId = 4100;
+nameStrNum = 42;
+owner = 1;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 114;
+},
+
+[115] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 1;
+initialDestination = -1;
+location = {x = -7739, y = -6521};
+nameResId = 4100;
+nameStrNum = 40;
+owner = 1;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 114;
+},
+
+[116] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = -1;
+location = {x = 2477, y = 4032};
+nameResId = -1;
+nameStrNum = -1;
+owner = 0;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 93;
+},
+
+[117] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = -1;
+location = {x = 3956, y = -196};
+nameResId = -1;
+nameStrNum = -1;
+owner = 0;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 93;
+},
+
+[118] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = -1;
+location = {x = 2130, y = -5272};
+nameResId = -1;
+nameStrNum = -1;
+owner = 0;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 93;
+},
+
+[119] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = -1;
+location = {x = -7368, y = -6369};
+nameResId = -1;
+nameStrNum = -1;
+owner = 1;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 93;
+},
+
+[120] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = -1;
+location = {x = -4282, y = 141};
+nameResId = -1;
+nameStrNum = -1;
+owner = 1;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 93;
+},
+
+[121] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = -1;
+location = {x = -4716, y = 5532};
+nameResId = -1;
+nameStrNum = -1;
+owner = 1;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 93;
+},
+
+[122] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {100, 200, 800, 850, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 1;
+initialDestination = -1;
+location = {x = 9478, y = 0};
+nameResId = 4100;
+nameStrNum = 35;
+owner = 0;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = 1013;
+type = 23;
+},
+
+[123] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {100, 200, 300, 800, 850, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 1;
+initialDestination = -1;
+location = {x = -9130, y = 1652};
+nameResId = 4100;
+nameStrNum = 36;
+owner = 1;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = 1014;
+type = 111;
+},
+
+[124] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = true;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = -1;
+location = {x = 8782, y = 956};
+nameResId = -1;
+nameStrNum = -1;
+owner = 0;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 0;
+},
+
+[125] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = -1;
+location = {x = -9130, y = -86};
+nameResId = -1;
+nameStrNum = -1;
+owner = 1;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 64;
+},
+
+[126] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 1;
+initialDestination = -1;
+location = {x = 5304, y = -5043};
+nameResId = 4400;
+nameStrNum = 2;
+owner = -1;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = 1015;
+type = -1;
+},
+
+[127] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 1;
+initialDestination = -1;
+location = {x = 5549, y = -4754};
+nameResId = 4400;
+nameStrNum = 3;
+owner = -1;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = 1016;
+type = -1;
+},
+
+[128] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 1;
+initialDestination = -1;
+location = {x = -2260, y = -2086};
+nameResId = 4400;
+nameStrNum = 4;
+owner = -1;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = 1017;
+type = -1;
+},
+
+[129] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 1;
+initialDestination = -1;
+location = {x = -9217, y = 3739};
+nameResId = 4400;
+nameStrNum = 5;
+owner = -1;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = 1018;
+type = -1;
+},
+
+[130] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = true;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = -1;
+location = {x = 12870, y = -2348};
+nameResId = -1;
+nameStrNum = -1;
+owner = 0;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = -1;
+},
+
+[131] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = true;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = -1;
+location = {x = 14521, y = -1650};
+nameResId = -1;
+nameStrNum = -1;
+owner = 0;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = -1;
+},
+
+[132] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = true;
+staticDestination = true;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = 4;
+location = {x = -434, y = -695};
+nameResId = -1;
+nameStrNum = -1;
+owner = 1;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = -1;
+},
+
+[133] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = true;
+staticDestination = true;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = 4;
+location = {x = -14086, y = 6521};
+nameResId = -1;
+nameStrNum = -1;
+owner = 1;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = -1;
+},
+
+[134] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = true;
+staticDestination = true;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = 7;
+location = {x = -12869, y = 7303};
+nameResId = -1;
+nameStrNum = -1;
+owner = 1;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = -1;
+},
+
+[135] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = true;
+staticDestination = true;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = 7;
+location = {x = -13739, y = 5565};
+nameResId = -1;
+nameStrNum = -1;
+owner = 1;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = -1;
+},
+
+[136] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = true;
+staticDestination = true;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = 7;
+location = {x = -13043, y = 8695};
+nameResId = -1;
+nameStrNum = -1;
+owner = 1;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = -1;
+},
+
+[137] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = true;
+staticDestination = true;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = 7;
+location = {x = -15478, y = 7478};
+nameResId = -1;
+nameStrNum = -1;
+owner = 1;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = -1;
+},
+
+[138] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = -1;
+location = {x = -14259, y = -14609};
+nameResId = 4100;
+nameStrNum = 23;
+owner = 0;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 115;
+},
+
+[139] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = true;
+staticDestination = false;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = -1;
+location = {x = -14259, y = -14609};
+nameResId = -1;
+nameStrNum = -1;
+owner = 0;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 116;
+},
+
+[140] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = true;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = 9;
+location = {x = -15478, y = -21999};
+nameResId = -1;
+nameStrNum = -1;
+owner = 0;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 0;
+},
+
+[141] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = true;
+staticDestination = true;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = 0;
+location = {x = 4347, y = 0};
+nameResId = -1;
+nameStrNum = -1;
+owner = 0;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 118;
+},
+
+[142] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = true;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0.75;
+initialDestination = -1;
+location = {x = 9473, y = 3821};
+nameResId = 4100;
+nameStrNum = 22;
+owner = -1;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 104;
+},
+
+[143] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = true;
+staticDestination = true;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = 0;
+location = {x = 4347, y = 0};
+nameResId = -1;
+nameStrNum = -1;
+owner = 0;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 118;
+},
+
+[144] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = true;
+staticDestination = true;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = 0;
+location = {x = 4347, y = 0};
+nameResId = -1;
+nameStrNum = -1;
+owner = 0;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 118;
+},
+
+[145] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = true;
+staticDestination = true;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = 0;
+location = {x = 4347, y = 0};
+nameResId = -1;
+nameStrNum = -1;
+owner = 0;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 118;
+},
+
+[146] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = true;
+staticDestination = true;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = 0;
+location = {x = 4347, y = 0};
+nameResId = -1;
+nameStrNum = -1;
+owner = 0;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 118;
+},
+
+[147] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {100, 200, 300, 800, 850, 860, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 1;
+initialDestination = -1;
+location = {x = -18088, y = -11133};
+nameResId = 4100;
+nameStrNum = 19;
+owner = 0;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = 1019;
+type = 23;
+},
+
+[148] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {100, 200, 300, 800, 850, 860, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 1;
+initialDestination = -1;
+location = {x = 43826, y = 22957};
+nameResId = 4100;
+nameStrNum = 20;
+owner = 1;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = 1020;
+type = 23;
+},
+
+[149] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0.75;
+initialDestination = -1;
+location = {x = 3826, y = 695};
+nameResId = 4100;
+nameStrNum = 21;
+owner = -1;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 104;
+},
+
+[150] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = -1;
+location = {x = 4173, y = 20173};
+nameResId = -1;
+nameStrNum = -1;
+owner = 1;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 45;
+},
+
+[151] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = -1;
+location = {x = 956, y = -2346};
+nameResId = -1;
+nameStrNum = -1;
+owner = -2;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 93;
+},
+
+[152] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = -1;
+location = {x = 14868, y = 6935};
+nameResId = -1;
+nameStrNum = -1;
+owner = 1;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 93;
+},
+
+[153] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = true;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = 11;
+location = {x = 8000, y = 21913};
+nameResId = -1;
+nameStrNum = -1;
+owner = 1;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 119;
+},
+
+[154] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = true;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = 4;
+location = {x = 2434, y = 18086};
+nameResId = -1;
+nameStrNum = -1;
+owner = 1;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 119;
+},
+
+[155] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = true;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = -1;
+location = {x = 0, y = 0};
+nameResId = -1;
+nameStrNum = -1;
+owner = 0;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 125;
+},
+
+[156] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = -1;
+location = {x = -956, y = -1304};
+nameResId = -1;
+nameStrNum = -1;
+owner = -1;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 128;
+},
+
+[157] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = -1;
+location = {x = 1043, y = 1304};
+nameResId = -1;
+nameStrNum = -1;
+owner = -1;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 128;
+},
+
+[158] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = -1;
+location = {x = -2173, y = 1739};
+nameResId = -1;
+nameStrNum = -1;
+owner = -1;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 128;
+},
+
+[159] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = -1;
+location = {x = 1739, y = -2260};
+nameResId = -1;
+nameStrNum = -1;
+owner = -1;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 128;
+},
+
+[160] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = -1;
+location = {x = -1478, y = 173};
+nameResId = -1;
+nameStrNum = -1;
+owner = -1;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 128;
+},
+
+[161] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = -1;
+location = {x = 86, y = 3565};
+nameResId = -1;
+nameStrNum = -1;
+owner = -1;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 128;
+},
+
+[162] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 1;
+initialDestination = -1;
+location = {x = 6174, y = 2238};
+nameResId = 4100;
+nameStrNum = 43;
+owner = 0;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 137;
+},
+
+[163] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = -1;
+location = {x = 6075, y = 2168};
+nameResId = -1;
+nameStrNum = -1;
+owner = 0;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 141;
+},
+
+[164] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = -1;
+location = {x = 6179, y = 2357};
+nameResId = -1;
+nameStrNum = -1;
+owner = 0;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 141;
+},
+
+[165] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = true;
+staticDestination = true;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = 0;
+location = {x = 6174, y = 2238};
+nameResId = -1;
+nameStrNum = -1;
+owner = 0;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 127;
+},
+
+[166] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = true;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = -1;
+location = {x = 6434, y = 1391};
+nameResId = -1;
+nameStrNum = -1;
+owner = 0;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 129;
+},
+
+[167] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = -1;
+location = {x = 24782, y = 4174};
+nameResId = -1;
+nameStrNum = -1;
+owner = 1;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 87;
+},
+
+[168] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = -1;
+location = {x = 27826, y = 9827};
+nameResId = -1;
+nameStrNum = -1;
+owner = 1;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 37;
+},
+
+[169] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = -1;
+location = {x = 29826, y = 3217};
+nameResId = -1;
+nameStrNum = -1;
+owner = 1;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 37;
+},
+
+[170] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = -1;
+location = {x = 23739, y = 9217};
+nameResId = -1;
+nameStrNum = -1;
+owner = 1;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 64;
+},
+
+[171] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = true;
+staticDestination = false;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = -1;
+location = {x = -8521, y = -7739};
+nameResId = -1;
+nameStrNum = -1;
+owner = 1;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 113;
+},
+
+[172] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = true;
+staticDestination = false;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = -1;
+location = {x = -9217, y = -6782};
+nameResId = -1;
+nameStrNum = -1;
+owner = 1;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 110;
+},
+
+[173] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = true;
+staticDestination = false;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = -1;
+location = {x = -7478, y = -8608};
+nameResId = -1;
+nameStrNum = -1;
+owner = 1;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 110;
+},
+
+[174] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = true;
+staticDestination = false;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = -1;
+location = {x = 6174, y = 2238};
+nameResId = -1;
+nameStrNum = -1;
+owner = 0;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 117;
+},
+
+[175] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = -1;
+location = {x = 6260, y = 2173};
+nameResId = -1;
+nameStrNum = -1;
+owner = 0;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 141;
+},
+
+[176] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {100, 200, 300, 800, 860, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 1;
+initialDestination = -1;
+location = {x = 6000, y = 0};
+nameResId = 4100;
+nameStrNum = 45;
+owner = 0;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = 1026;
+type = 23;
+},
+
+[177] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {100, 200, 300, 800, 860, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 1;
+initialDestination = -1;
+location = {x = -7478, y = 0};
+nameResId = 4100;
+nameStrNum = 46;
+owner = 1;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = 1028;
+type = 23;
+},
+
+[178] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 1;
+initialDestination = -1;
+location = {x = 0, y = 0};
+nameResId = 4100;
+nameStrNum = 47;
+owner = 1;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = 572;
+type = 104;
+},
+
+[179] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = true;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = -1;
+location = {x = 6521, y = 869};
+nameResId = -1;
+nameStrNum = -1;
+owner = 0;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 129;
+},
+
+[180] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = -1;
+location = {x = -7130, y = 956};
+nameResId = -1;
+nameStrNum = -1;
+owner = 1;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 138;
+},
+
+[181] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = 0;
+location = {x = 6521, y = -782};
+nameResId = -1;
+nameStrNum = -1;
+owner = 0;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 47;
+},
+
+[182] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = 0;
+location = {x = 7478, y = 86};
+nameResId = -1;
+nameStrNum = -1;
+owner = 0;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 67;
+},
+
+[183] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = true;
+staticDestination = false;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = -1;
+location = {x = -9565, y = -9565};
+nameResId = -1;
+nameStrNum = -1;
+owner = 1;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 113;
+},
+
+[184] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = true;
+staticDestination = false;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = -1;
+location = {x = -9130, y = -8695};
+nameResId = -1;
+nameStrNum = -1;
+owner = 1;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 113;
+},
+
+[185] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = true;
+staticDestination = false;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = -1;
+location = {x = -8000, y = -9565};
+nameResId = -1;
+nameStrNum = -1;
+owner = 1;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 148;
+},
+
+[186] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 1;
+initialDestination = -1;
+location = {x = 0, y = 0};
+nameResId = 5000;
+nameStrNum = 161;
+owner = 1;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 160;
+},
+
+[187] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = true;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = 1;
+location = {x = 7739, y = 174};
+nameResId = -1;
+nameStrNum = -1;
+owner = 0;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 109;
+},
+
+[188] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = true;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = 0;
+location = {x = 7826, y = 86};
+nameResId = -1;
+nameStrNum = -1;
+owner = 0;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 151;
+},
+
+[189] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = true;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = 1;
+location = {x = 8086, y = 435};
+nameResId = -1;
+nameStrNum = -1;
+owner = 0;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 129;
+},
+
+[190] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = true;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = 1;
+location = {x = 6695, y = -173};
+nameResId = -1;
+nameStrNum = -1;
+owner = 0;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 129;
+},
+
+[191] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = true;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = 1;
+location = {x = -2000, y = 174};
+nameResId = -1;
+nameStrNum = -1;
+owner = 1;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 147;
+},
+
+[192] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = true;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = 1;
+location = {x = -2086, y = -695};
+nameResId = -1;
+nameStrNum = -1;
+owner = 1;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 147;
+},
+
+[193] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = true;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = 1;
+location = {x = -2608, y = -347};
+nameResId = -1;
+nameStrNum = -1;
+owner = 1;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 147;
+},
+
+[194] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = true;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = 1;
+location = {x = -1521, y = -217};
+nameResId = -1;
+nameStrNum = -1;
+owner = 1;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 147;
+},
+
+[195] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = true;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = 1;
+location = {x = -2434, y = -260};
+nameResId = -1;
+nameStrNum = -1;
+owner = 1;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 147;
+},
+
+[196] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = true;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = 0;
+location = {x = -174, y = -957};
+nameResId = -1;
+nameStrNum = -1;
+owner = 1;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 148;
+},
+
+[197] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = true;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = 0;
+location = {x = -43, y = 1130};
+nameResId = -1;
+nameStrNum = -1;
+owner = 1;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 149;
+},
+
+[198] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = true;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = 0;
+location = {x = -391, y = 43};
+nameResId = -1;
+nameStrNum = -1;
+owner = 1;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 142;
+},
+
+[199] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = true;
+staticDestination = false;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = -1;
+location = {x = 9217, y = -86};
+nameResId = -1;
+nameStrNum = -1;
+owner = 0;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 117;
+},
+
+[200] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = true;
+staticDestination = false;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = -1;
+location = {x = 9217, y = -86};
+nameResId = -1;
+nameStrNum = -1;
+owner = 0;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 47;
+},
+
+[201] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = true;
+staticDestination = false;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = -1;
+location = {x = 9217, y = -86};
+nameResId = -1;
+nameStrNum = -1;
+owner = 0;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 47;
+},
+
+[202] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = true;
+staticDestination = false;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = -1;
+location = {x = 9217, y = -86};
+nameResId = -1;
+nameStrNum = -1;
+owner = 0;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 47;
+},
+
+[203] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = true;
+staticDestination = false;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = 14;
+location = {x = 9217, y = -86};
+nameResId = -1;
+nameStrNum = -1;
+owner = 0;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 129;
+},
+
+[204] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = true;
+staticDestination = false;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = 15;
+location = {x = 9217, y = -86};
+nameResId = -1;
+nameStrNum = -1;
+owner = 0;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 129;
+},
+
+[205] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = true;
+staticDestination = false;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = 16;
+location = {x = 9217, y = -86};
+nameResId = -1;
+nameStrNum = -1;
+owner = 0;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 129;
+},
+
+[206] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = true;
+staticDestination = false;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = -1;
+location = {x = -7478, y = 6608};
+nameResId = -1;
+nameStrNum = -1;
+owner = 1;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 148;
+},
+
+[207] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = true;
+staticDestination = false;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = -1;
+location = {x = -7826, y = 5043};
+nameResId = -1;
+nameStrNum = -1;
+owner = 1;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 148;
+},
+
+[208] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = true;
+staticDestination = false;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = 20;
+location = {x = -8173, y = 6000};
+nameResId = -1;
+nameStrNum = -1;
+owner = 1;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 142;
+},
+
+[209] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = true;
+staticDestination = false;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = 20;
+location = {x = -6695, y = 5478};
+nameResId = -1;
+nameStrNum = -1;
+owner = 1;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 142;
+},
+
+[210] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = true;
+staticDestination = false;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = 21;
+location = {x = -6347, y = 6434};
+nameResId = -1;
+nameStrNum = -1;
+owner = 1;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 149;
+},
+
+[211] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 1;
+initialDestination = -1;
+location = {x = -2695, y = 3217};
+nameResId = 4400;
+nameStrNum = 2;
+owner = 0;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = -1;
+},
+
+[212] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 1;
+initialDestination = -1;
+location = {x = 8000, y = 0};
+nameResId = 4100;
+nameStrNum = 107;
+owner = 0;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 23;
+},
+
+[213] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 1;
+initialDestination = -1;
+location = {x = -8000, y = 0};
+nameResId = 4100;
+nameStrNum = 108;
+owner = 1;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 23;
+},
+
+[214] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = -1;
+location = {x = 8000, y = 8000};
+nameResId = -1;
+nameStrNum = -1;
+owner = 0;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 276;
+},
+
+[215] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = -1;
+location = {x = -8000, y = -8000};
+nameResId = -1;
+nameStrNum = -1;
+owner = 1;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 278;
+},
+
+[216] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = -1;
+location = {x = 8000, y = 0};
+nameResId = -1;
+nameStrNum = -1;
+owner = 0;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 274;
+},
+
+[217] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = -1;
+location = {x = -8000, y = 0};
+nameResId = -1;
+nameStrNum = -1;
+owner = 1;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 275;
+},
+
+[218] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = true;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = -1;
+location = {x = 8478, y = 273};
+nameResId = -1;
+nameStrNum = -1;
+owner = 0;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 272;
+},
+
+[219] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = -1;
+location = {x = 8826, y = -957};
+nameResId = -1;
+nameStrNum = -1;
+owner = 0;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 272;
+},
+
+[220] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = -1;
+location = {x = 8696, y = -131};
+nameResId = -1;
+nameStrNum = -1;
+owner = 0;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 272;
+},
+
+[221] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = -1;
+location = {x = 8348, y = 1434};
+nameResId = -1;
+nameStrNum = -1;
+owner = 0;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 272;
+},
+
+[222] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = -1;
+location = {x = 7261, y = -1000};
+nameResId = -1;
+nameStrNum = -1;
+owner = 0;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 272;
+},
+
+[223] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = -1;
+location = {x = 8717, y = -610};
+nameResId = -1;
+nameStrNum = -1;
+owner = 0;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 272;
+},
+
+[224] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = -1;
+location = {x = 7566, y = 1608};
+nameResId = -1;
+nameStrNum = -1;
+owner = 0;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 272;
+},
+
+[225] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = -1;
+location = {x = 7044, y = 391};
+nameResId = -1;
+nameStrNum = -1;
+owner = 0;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 272;
+},
+
+[226] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = true;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = -1;
+location = {x = -6870, y = 783};
+nameResId = -1;
+nameStrNum = -1;
+owner = 1;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 273;
+},
+
+[227] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = -1;
+location = {x = -7476, y = 1260};
+nameResId = -1;
+nameStrNum = -1;
+owner = 1;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 273;
+},
+
+[228] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = -1;
+location = {x = -7477, y = -174};
+nameResId = -1;
+nameStrNum = -1;
+owner = 1;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 273;
+},
+
+[229] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = -1;
+location = {x = -5477, y = -783};
+nameResId = -1;
+nameStrNum = -1;
+owner = 1;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 273;
+},
+
+[230] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = 1;
+location = {x = -6432, y = 695};
+nameResId = -1;
+nameStrNum = -1;
+owner = 1;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 273;
+},
+
+[231] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = 1;
+location = {x = -6695, y = -2};
+nameResId = -1;
+nameStrNum = -1;
+owner = 1;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 273;
+},
+
+[232] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = 1;
+location = {x = -6520, y = -2174};
+nameResId = -1;
+nameStrNum = -1;
+owner = 1;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 273;
+},
+
+[233] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = 1;
+location = {x = -5999, y = -783};
+nameResId = -1;
+nameStrNum = -1;
+owner = 1;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 273;
+},
+
+[234] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {200, 300, 860, 500, 450, 800, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 1;
+initialDestination = -1;
+location = {x = 10000, y = 0};
+nameResId = 4100;
+nameStrNum = 98;
+owner = 0;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 23;
+},
+
+[235] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {200, 300, 860, 500, 450, 800, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 1;
+initialDestination = -1;
+location = {x = -10000, y = 0};
+nameResId = 4100;
+nameStrNum = 99;
+owner = 1;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 23;
+},
+
+[236] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = 0;
+location = {x = 10000, y = 256};
+nameResId = -1;
+nameStrNum = -1;
+owner = 0;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 45;
+},
+
+[237] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = 0;
+location = {x = 10000, y = -256};
+nameResId = -1;
+nameStrNum = -1;
+owner = 0;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 45;
+},
+
+[238] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = 0;
+location = {x = 10256, y = 0};
+nameResId = -1;
+nameStrNum = -1;
+owner = 0;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 45;
+},
+
+[239] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = 1;
+location = {x = -10000, y = -256};
+nameResId = -1;
+nameStrNum = -1;
+owner = 1;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 45;
+},
+
+[240] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = 1;
+location = {x = -10000, y = 256};
+nameResId = -1;
+nameStrNum = -1;
+owner = 1;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 45;
+},
+
+[241] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = 1;
+location = {x = -10256, y = 0};
+nameResId = -1;
+nameStrNum = -1;
+owner = 1;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 45;
+},
+
+[242] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0.25;
+initialDestination = -1;
+location = {x = 0, y = 0};
+nameResId = 4100;
+nameStrNum = 102;
+owner = -1;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 270;
+},
+
+[243] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0.25;
+initialDestination = -1;
+location = {x = 0, y = -700};
+nameResId = 4100;
+nameStrNum = 103;
+owner = -1;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 270;
+},
+
+[244] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0.25;
+initialDestination = -1;
+location = {x = 0, y = 700};
+nameResId = 4100;
+nameStrNum = 104;
+owner = -1;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 270;
+},
+
+[245] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0.25;
+initialDestination = -1;
+location = {x = -700, y = 0};
+nameResId = 4100;
+nameStrNum = 105;
+owner = -1;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 270;
+},
+
+[246] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0.25;
+initialDestination = 0;
+location = {x = 700, y = 0};
+nameResId = 4100;
+nameStrNum = 106;
+owner = -1;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 270;
+},
+
+[247] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = -1;
+location = {x = -700, y = -700};
+nameResId = -1;
+nameStrNum = -1;
+owner = -1;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 93;
+},
+
+[248] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = -1;
+location = {x = -700, y = 700};
+nameResId = -1;
+nameStrNum = -1;
+owner = -1;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 93;
+},
+
+[249] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = -1;
+location = {x = 700, y = -700};
+nameResId = -1;
+nameStrNum = -1;
+owner = -1;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 93;
+},
+
+[250] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = -1;
+location = {x = 700, y = 700};
+nameResId = -1;
+nameStrNum = -1;
+owner = -1;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 93;
+},
+
+[251] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {850, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0.25;
+initialDestination = -1;
+location = {x = 5000, y = 0};
+nameResId = 4100;
+nameStrNum = 100;
+owner = -1;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 270;
+},
+
+[252] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {850, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0.25;
+initialDestination = -1;
+location = {x = -5000, y = 0};
+nameResId = 4100;
+nameStrNum = 101;
+owner = -1;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 270;
+},
+
+[253] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = true;
+staticDestination = false;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = 0;
+location = {x = -9304, y = -3565};
+nameResId = -1;
+nameStrNum = -1;
+owner = 1;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = -1;
+},
+
+[254] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = true;
+staticDestination = false;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = 0;
+location = {x = -9304, y = -3565};
+nameResId = -1;
+nameStrNum = -1;
+owner = 1;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = -1;
+},
+
+[255] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = true;
+staticDestination = false;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = 0;
+location = {x = -9304, y = -3565};
+nameResId = -1;
+nameStrNum = -1;
+owner = 1;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = -1;
+},
+
+[256] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = true;
+staticDestination = false;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = 0;
+location = {x = -9304, y = -3565};
+nameResId = -1;
+nameStrNum = -1;
+owner = 1;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = -1;
+},
+
+[257] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = true;
+staticDestination = false;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = 0;
+location = {x = -9304, y = -3565};
+nameResId = -1;
+nameStrNum = -1;
+owner = 1;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = -1;
+},
+
+[258] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = true;
+staticDestination = false;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = 0;
+location = {x = -9304, y = -3565};
+nameResId = -1;
+nameStrNum = -1;
+owner = 1;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = -1;
+},
+
+[259] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {100, 200, 300, 800, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 1;
+initialDestination = -1;
+location = {x = -2696, y = 1390};
+nameResId = 4100;
+nameStrNum = 50;
+owner = -1;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 23;
+},
+
+[260] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {100, 200, 300, 800, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 1;
+initialDestination = -1;
+location = {x = -17130, y = -9044};
+nameResId = 4100;
+nameStrNum = 51;
+owner = -1;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = 1021;
+type = 23;
+},
+
+[261] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = true;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = -1;
+location = {x = 3218, y = -2434};
+nameResId = -1;
+nameStrNum = -1;
+owner = 0;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 166;
+},
+
+[262] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = true;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = 0;
+location = {x = 3305, y = -1392};
+nameResId = -1;
+nameStrNum = -1;
+owner = 0;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 174;
+},
+
+[263] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = true;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = 0;
+location = {x = 4348, y = -2086};
+nameResId = -1;
+nameStrNum = -1;
+owner = 0;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 174;
+},
+
+[264] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = true;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = 0;
+location = {x = 5228, y = -2792};
+nameResId = -1;
+nameStrNum = -1;
+owner = 0;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 174;
+},
+
+[265] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = true;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = 0;
+location = {x = 6184, y = -3737};
+nameResId = -1;
+nameStrNum = -1;
+owner = 0;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 174;
+},
+
+[266] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = true;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = 0;
+location = {x = 7543, y = -4868};
+nameResId = -1;
+nameStrNum = -1;
+owner = 0;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 174;
+},
+
+[267] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = true;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = 1;
+location = {x = -9043, y = -3391};
+nameResId = -1;
+nameStrNum = -1;
+owner = 1;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 177;
+},
+
+[268] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = 0;
+location = {x = -1652, y = 1826};
+nameResId = -1;
+nameStrNum = -1;
+owner = 0;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 167;
+},
+
+[269] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = 0;
+location = {x = -3391, y = 1478};
+nameResId = -1;
+nameStrNum = -1;
+owner = 0;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 167;
+},
+
+[270] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = -1;
+location = {x = -2260, y = 869};
+nameResId = -1;
+nameStrNum = -1;
+owner = 1;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 45;
+},
+
+[271] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = -1;
+location = {x = -2173, y = 1913};
+nameResId = -1;
+nameStrNum = -1;
+owner = 1;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 45;
+},
+
+[272] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = 8;
+location = {x = -1304, y = 1044};
+nameResId = -1;
+nameStrNum = -1;
+owner = 1;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 17;
+},
+
+[273] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = true;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = 12;
+location = {x = 0, y = 0};
+nameResId = -1;
+nameStrNum = -1;
+owner = 1;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 7;
+},
+
+[274] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = 10;
+location = {x = -2695, y = 1652};
+nameResId = -1;
+nameStrNum = -1;
+owner = 0;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 164;
+},
+
+[275] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = 11;
+location = {x = -2695, y = 782};
+nameResId = -1;
+nameStrNum = -1;
+owner = 0;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 164;
+},
+
+[276] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = -1;
+location = {x = -1739, y = 1217};
+nameResId = -1;
+nameStrNum = -1;
+owner = 1;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 149;
+},
+
+[277] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = -1;
+location = {x = -1913, y = 1043};
+nameResId = -1;
+nameStrNum = -1;
+owner = 1;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 149;
+},
+
+[278] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = 2;
+location = {x = 3739, y = -2782};
+nameResId = -1;
+nameStrNum = -1;
+owner = 0;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 165;
+},
+
+[279] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = 19;
+location = {x = 4086, y = -3218};
+nameResId = -1;
+nameStrNum = -1;
+owner = 0;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 165;
+},
+
+[280] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = 20;
+location = {x = 4565, y = -3217};
+nameResId = -1;
+nameStrNum = -1;
+owner = 0;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 165;
+},
+
+[281] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = 21;
+location = {x = 4391, y = -2739};
+nameResId = -1;
+nameStrNum = -1;
+owner = 0;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 165;
+},
+
+[282] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = 22;
+location = {x = 4173, y = -2478};
+nameResId = -1;
+nameStrNum = -1;
+owner = 0;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 165;
+},
+
+[283] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = 23;
+location = {x = 3913, y = -2347};
+nameResId = -1;
+nameStrNum = -1;
+owner = 0;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 165;
+},
+
+[284] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = true;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = 8;
+location = {x = -3478, y = 2521};
+nameResId = -1;
+nameStrNum = -1;
+owner = 1;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 142;
+},
+
+[285] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = true;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = 8;
+location = {x = -7826, y = -2869};
+nameResId = -1;
+nameStrNum = -1;
+owner = 1;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 142;
+},
+
+[286] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = 5;
+location = {x = 5913, y = -2086};
+nameResId = -1;
+nameStrNum = -1;
+owner = 0;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 167;
+},
+
+[287] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = 5;
+location = {x = 5478, y = -3739};
+nameResId = -1;
+nameStrNum = -1;
+owner = 0;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 167;
+},
+
+[288] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = 27;
+location = {x = 6695, y = -2260};
+nameResId = -1;
+nameStrNum = -1;
+owner = 0;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 166;
+},
+
+[289] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = 28;
+location = {x = 5652, y = -4434};
+nameResId = -1;
+nameStrNum = -1;
+owner = 0;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 166;
+},
+
+[290] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = true;
+staticDestination = true;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = 0;
+location = {x = -34782, y = -28869};
+nameResId = -1;
+nameStrNum = -1;
+owner = 1;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 148;
+},
+
+[291] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = true;
+staticDestination = true;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = 0;
+location = {x = -34086, y = -26086};
+nameResId = -1;
+nameStrNum = -1;
+owner = 1;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 148;
+},
+
+[292] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = true;
+staticDestination = true;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = 1;
+location = {x = -31304, y = -28173};
+nameResId = -1;
+nameStrNum = -1;
+owner = 1;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 148;
+},
+
+[293] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = true;
+staticDestination = true;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = 1;
+location = {x = 0, y = 0};
+nameResId = -1;
+nameStrNum = -1;
+owner = 1;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 148;
+},
+
+[294] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 1;
+initialDestination = -1;
+location = {x = -97391, y = 0};
+nameResId = 4100;
+nameStrNum = 71;
+owner = 1;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = 643;
+type = 23;
+},
+
+[295] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = true;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = 0;
+location = {x = -35129, y = -694};
+nameResId = -1;
+nameStrNum = -1;
+owner = 1;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 179;
+},
+
+[296] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = true;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = 0;
+location = {x = -42782, y = -347};
+nameResId = -1;
+nameStrNum = -1;
+owner = 1;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 179;
+},
+
+[297] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = true;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = 0;
+location = {x = -47999, y = 0};
+nameResId = -1;
+nameStrNum = -1;
+owner = 1;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 179;
+},
+
+[298] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = true;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = 0;
+location = {x = -53564, y = -173};
+nameResId = -1;
+nameStrNum = -1;
+owner = 1;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 179;
+},
+
+[299] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = true;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = 0;
+location = {x = -57565, y = -522};
+nameResId = -1;
+nameStrNum = -1;
+owner = 1;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 179;
+},
+
+[300] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = true;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = 5;
+location = {x = -23652, y = 0};
+nameResId = -1;
+nameStrNum = -1;
+owner = 0;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 0;
+},
+
+[301] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = true;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = 1;
+location = {x = -33912, y = -87};
+nameResId = -1;
+nameStrNum = -1;
+owner = 1;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 38;
+},
+
+[302] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = true;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = 1;
+location = {x = -33651, y = -782};
+nameResId = -1;
+nameStrNum = -1;
+owner = 1;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 38;
+},
+
+[303] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = true;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = 2;
+location = {x = -41390, y = 87};
+nameResId = -1;
+nameStrNum = -1;
+owner = 1;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 38;
+},
+
+[304] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = true;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = 2;
+location = {x = -41129, y = -695};
+nameResId = -1;
+nameStrNum = -1;
+owner = 1;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 38;
+},
+
+[305] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = true;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = 3;
+location = {x = -46607, y = 0};
+nameResId = -1;
+nameStrNum = -1;
+owner = 1;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 38;
+},
+
+[306] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = true;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = 3;
+location = {x = -46869, y = -43};
+nameResId = -1;
+nameStrNum = -1;
+owner = 1;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 38;
+},
+
+[307] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = true;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = 3;
+location = {x = -46345, y = -348};
+nameResId = -1;
+nameStrNum = -1;
+owner = 1;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 38;
+},
+
+[308] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = 4;
+location = {x = -52173, y = -348};
+nameResId = -1;
+nameStrNum = -1;
+owner = 1;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 37;
+},
+
+[309] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = true;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = 5;
+location = {x = -56172, y = -1217};
+nameResId = -1;
+nameStrNum = -1;
+owner = 1;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 37;
+},
+
+[310] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = true;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = 5;
+location = {x = -56172, y = -347};
+nameResId = -1;
+nameStrNum = -1;
+owner = 1;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 37;
+},
+
+[311] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = true;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = 5;
+location = {x = -55999, y = 696};
+nameResId = -1;
+nameStrNum = -1;
+owner = 1;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 37;
+},
+
+[312] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {100, 200, 300, 800, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 1;
+initialDestination = -1;
+location = {x = 6434, y = 1913};
+nameResId = 4100;
+nameStrNum = 64;
+owner = 0;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = 1022;
+type = 23;
+},
+
+[313] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {100, 200, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 1;
+initialDestination = -1;
+location = {x = 6173, y = 3130};
+nameResId = 4100;
+nameStrNum = 67;
+owner = 0;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = 1009;
+type = 111;
+},
+
+[314] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 1;
+initialDestination = -1;
+location = {x = 9043, y = 1217};
+nameResId = 4100;
+nameStrNum = 66;
+owner = 0;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 114;
+},
+
+[315] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {100, 200, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 1;
+initialDestination = -1;
+location = {x = -8173, y = -8956};
+nameResId = 4100;
+nameStrNum = 68;
+owner = 1;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = 1010;
+type = 111;
+},
+
+[316] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {100, 250, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 1;
+initialDestination = -1;
+location = {x = -10955, y = -5739};
+nameResId = 4100;
+nameStrNum = 69;
+owner = 1;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = 1011;
+type = 111;
+},
+
+[317] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {100, 200, 300, 800, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 1;
+initialDestination = -1;
+location = {x = -9391, y = -7565};
+nameResId = 4100;
+nameStrNum = 65;
+owner = 1;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = 1023;
+type = 23;
+},
+
+[318] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = true;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = -1;
+location = {x = 6260, y = 2347};
+nameResId = -1;
+nameStrNum = -1;
+owner = 0;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 166;
+},
+
+[319] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = -1;
+location = {x = -9217, y = -8608};
+nameResId = -1;
+nameStrNum = -1;
+owner = 1;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 223;
+},
+
+[320] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = -1;
+location = {x = -10173, y = -7391};
+nameResId = -1;
+nameStrNum = -1;
+owner = 1;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 45;
+},
+
+[321] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = -1;
+location = {x = -8348, y = -9738};
+nameResId = -1;
+nameStrNum = -1;
+owner = 1;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 45;
+},
+
+[322] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = 0;
+location = {x = 17825, y = 14347};
+nameResId = -1;
+nameStrNum = -1;
+owner = 0;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 167;
+},
+
+[323] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = 0;
+location = {x = 7391, y = 1913};
+nameResId = -1;
+nameStrNum = -1;
+owner = 0;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 167;
+},
+
+[324] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = true;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = -1;
+location = {x = 2520, y = -87};
+nameResId = -1;
+nameStrNum = -1;
+owner = 0;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 181;
+},
+
+[325] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 1;
+initialDestination = -1;
+location = {x = -3043, y = 9739};
+nameResId = 4100;
+nameStrNum = 96;
+owner = 1;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = 1036;
+type = 23;
+},
+
+[326] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = true;
+initiallyHidden = false;
+staticDestination = true;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = 1;
+location = {x = -1304, y = 8347};
+nameResId = -1;
+nameStrNum = -1;
+owner = 1;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 180;
+},
+
+[327] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = -1;
+location = {x = 6086, y = -3042};
+nameResId = -1;
+nameStrNum = -1;
+owner = -1;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 196;
+},
+
+[328] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = true;
+staticDestination = false;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = -1;
+location = {x = -10522, y = 10523};
+nameResId = -1;
+nameStrNum = -1;
+owner = 1;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 45;
+},
+
+[329] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = true;
+staticDestination = false;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = -1;
+location = {x = -11478, y = 9739};
+nameResId = -1;
+nameStrNum = -1;
+owner = 1;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 45;
+},
+
+[330] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = true;
+staticDestination = false;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = -1;
+location = {x = -11651, y = 10695};
+nameResId = -1;
+nameStrNum = -1;
+owner = 1;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 45;
+},
+
+[331] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = true;
+staticDestination = false;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = -1;
+location = {x = -10609, y = 10000};
+nameResId = -1;
+nameStrNum = -1;
+owner = 1;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 45;
+},
+
+[332] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = true;
+staticDestination = false;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = -1;
+location = {x = -10348, y = 11391};
+nameResId = -1;
+nameStrNum = -1;
+owner = 1;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 45;
+},
+
+[333] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = true;
+staticDestination = false;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = -1;
+location = {x = -11477, y = 11305};
+nameResId = -1;
+nameStrNum = -1;
+owner = 1;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 45;
+},
+
+[334] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = true;
+staticDestination = false;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = -1;
+location = {x = -10956, y = 11304};
+nameResId = -1;
+nameStrNum = -1;
+owner = 1;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 62;
+},
+
+[335] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = true;
+staticDestination = false;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = -1;
+location = {x = -11304, y = 10174};
+nameResId = -1;
+nameStrNum = -1;
+owner = 1;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 62;
+},
+
+[336] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = true;
+staticDestination = true;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = 1;
+location = {x = 6609, y = 8088};
+nameResId = -1;
+nameStrNum = -1;
+owner = 0;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 178;
+},
+
+[337] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = true;
+staticDestination = true;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = 1;
+location = {x = 6577, y = 8218};
+nameResId = -1;
+nameStrNum = -1;
+owner = 0;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 178;
+},
+
+[338] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = true;
+staticDestination = true;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = 1;
+location = {x = 6619, y = 7980};
+nameResId = -1;
+nameStrNum = -1;
+owner = 0;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 178;
+},
+
+[339] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = true;
+staticDestination = true;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = 1;
+location = {x = 6739, y = 8034};
+nameResId = -1;
+nameStrNum = -1;
+owner = 0;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 178;
+},
+
+[340] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = true;
+staticDestination = true;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = 1;
+location = {x = 6685, y = 8164};
+nameResId = -1;
+nameStrNum = -1;
+owner = 0;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 178;
+},
+
+[341] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = true;
+staticDestination = true;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = 1;
+location = {x = 6539, y = 8023};
+nameResId = -1;
+nameStrNum = -1;
+owner = 0;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 178;
+},
+
+[342] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = true;
+staticDestination = true;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = 1;
+location = {x = 6533, y = 8147};
+nameResId = -1;
+nameStrNum = -1;
+owner = 0;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 178;
+},
+
+[343] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = true;
+staticDestination = true;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = 1;
+location = {x = 6734, y = 8299};
+nameResId = -1;
+nameStrNum = -1;
+owner = 0;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 178;
+},
+
+[344] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = true;
+staticDestination = true;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = 1;
+location = {x = 6550, y = 7882};
+nameResId = -1;
+nameStrNum = -1;
+owner = 0;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 178;
+},
+
+[345] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = true;
+staticDestination = true;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = 1;
+location = {x = 6484, y = 8251};
+nameResId = -1;
+nameStrNum = -1;
+owner = 0;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 178;
+},
+
+[346] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = true;
+staticDestination = true;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = 16;
+location = {x = 6484, y = 8056};
+nameResId = -1;
+nameStrNum = -1;
+owner = 0;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 167;
+},
+
+[347] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = true;
+staticDestination = true;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = 17;
+location = {x = 6647, y = 8348};
+nameResId = -1;
+nameStrNum = -1;
+owner = 0;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 167;
+},
+
+[348] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = true;
+staticDestination = true;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = 18;
+location = {x = 6717, y = 7925};
+nameResId = -1;
+nameStrNum = -1;
+owner = 0;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 167;
+},
+
+[349] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = true;
+staticDestination = true;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = 19;
+location = {x = 6788, y = 8196};
+nameResId = -1;
+nameStrNum = -1;
+owner = 0;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 167;
+},
+
+[350] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = true;
+staticDestination = true;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = 0;
+location = {x = 6897, y = 8018};
+nameResId = -1;
+nameStrNum = -1;
+owner = 0;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 164;
+},
+
+[351] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = true;
+staticDestination = true;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = 0;
+location = {x = 6875, y = 8267};
+nameResId = -1;
+nameStrNum = -1;
+owner = 0;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 166;
+},
+
+[352] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = true;
+staticDestination = true;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = 23;
+location = {x = 6837, y = 7925};
+nameResId = -1;
+nameStrNum = -1;
+owner = 0;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 166;
+},
+
+[353] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = true;
+staticDestination = true;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = 25;
+location = {x = 6782, y = 8120};
+nameResId = -1;
+nameStrNum = -1;
+owner = 0;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 166;
+},
+
+[354] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = true;
+staticDestination = true;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = 13;
+location = {x = 6886, y = 8142};
+nameResId = -1;
+nameStrNum = -1;
+owner = 0;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 165;
+},
+
+[355] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = true;
+staticDestination = true;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = 28;
+location = {x = 6853, y = 8045};
+nameResId = -1;
+nameStrNum = -1;
+owner = 0;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 164;
+},
+
+[356] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = true;
+staticDestination = true;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = 14;
+location = {x = 6864, y = 8403};
+nameResId = -1;
+nameStrNum = -1;
+owner = 0;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 166;
+},
+
+[357] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = true;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = -1;
+location = {x = -1391, y = -22956};
+nameResId = -1;
+nameStrNum = -1;
+owner = 0;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 61;
+},
+
+[358] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = true;
+staticDestination = false;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = -1;
+location = {x = -3565, y = 0};
+nameResId = -1;
+nameStrNum = -1;
+owner = 1;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 14;
+},
+
+[359] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = -1;
+location = {x = 32768, y = 0};
+nameResId = -1;
+nameStrNum = -1;
+owner = -1;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 182;
+},
+
+[360] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = -1;
+location = {x = -32768, y = 0};
+nameResId = -1;
+nameStrNum = -1;
+owner = -1;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 185;
+},
+
+[361] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = true;
+staticDestination = false;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = 0;
+location = {x = -2259, y = -24000};
+nameResId = -1;
+nameStrNum = -1;
+owner = 0;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 80;
+},
+
+[362] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = true;
+staticDestination = false;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = 0;
+location = {x = -2259, y = -24000};
+nameResId = -1;
+nameStrNum = -1;
+owner = 0;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 80;
+},
+
+[363] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = true;
+staticDestination = false;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = 0;
+location = {x = -2259, y = -23305};
+nameResId = -1;
+nameStrNum = -1;
+owner = 0;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 80;
+},
+
+[364] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = true;
+staticDestination = false;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = -1;
+location = {x = 0, y = 32768};
+nameResId = -1;
+nameStrNum = -1;
+owner = 1;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 186;
+},
+
+[365] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 1;
+initialDestination = -1;
+location = {x = -85, y = 0};
+nameResId = 4100;
+nameStrNum = 53;
+owner = 0;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 23;
+},
+
+[366] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 1;
+initialDestination = -1;
+location = {x = -6260, y = -86};
+nameResId = 4100;
+nameStrNum = 54;
+owner = 0;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = 591;
+type = 111;
+},
+
+[367] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 1;
+initialDestination = -1;
+location = {x = -9478, y = 0};
+nameResId = 4100;
+nameStrNum = 55;
+owner = 0;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = 591;
+type = 111;
+},
+
+[368] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = 1;
+location = {x = -4869, y = 0};
+nameResId = -1;
+nameStrNum = -1;
+owner = 0;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 188;
+},
+
+[369] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = true;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = 0;
+location = {x = 109, y = 87};
+nameResId = -1;
+nameStrNum = -1;
+owner = 0;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 203;
+},
+
+[370] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {1802, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 1;
+initialDestination = -1;
+location = {x = -86, y = -9739};
+nameResId = 4100;
+nameStrNum = 59;
+owner = 0;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = 1024;
+type = 111;
+},
+
+[371] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 1;
+initialDestination = -1;
+location = {x = 0, y = 7478};
+nameResId = 4100;
+nameStrNum = 56;
+owner = 1;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = 591;
+type = 111;
+},
+
+[372] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = true;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = 6;
+location = {x = -2260, y = 7826};
+nameResId = -1;
+nameStrNum = -1;
+owner = 1;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 188;
+},
+
+[373] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 1;
+initialDestination = -1;
+location = {x = 173, y = 13391};
+nameResId = 4100;
+nameStrNum = 57;
+owner = 1;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = 591;
+type = 111;
+},
+
+[374] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = true;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = 8;
+location = {x = 2956, y = 13739};
+nameResId = -1;
+nameStrNum = -1;
+owner = 1;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 188;
+},
+
+[375] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = true;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = 8;
+location = {x = -1739, y = 13217};
+nameResId = -1;
+nameStrNum = -1;
+owner = 1;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 188;
+},
+
+[376] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 1;
+initialDestination = -1;
+location = {x = 173, y = 19130};
+nameResId = 4100;
+nameStrNum = 58;
+owner = 1;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = 591;
+type = 111;
+},
+
+[377] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = true;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = 11;
+location = {x = -1043, y = 18782};
+nameResId = -1;
+nameStrNum = -1;
+owner = 1;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 188;
+},
+
+[378] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = 11;
+location = {x = 1565, y = 18608};
+nameResId = -1;
+nameStrNum = -1;
+owner = 1;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 188;
+},
+
+[379] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = true;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = 11;
+location = {x = 173, y = 18782};
+nameResId = -1;
+nameStrNum = -1;
+owner = 1;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 188;
+},
+
+[380] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 1;
+initialDestination = -1;
+location = {x = 9391, y = 0};
+nameResId = 4100;
+nameStrNum = 60;
+owner = 0;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = 591;
+type = 111;
+},
+
+[381] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = 15;
+location = {x = 10086, y = 1739};
+nameResId = -1;
+nameStrNum = -1;
+owner = 0;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 203;
+},
+
+[382] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = 15;
+location = {x = 10086, y = -2608};
+nameResId = -1;
+nameStrNum = -1;
+owner = 0;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 203;
+},
+
+[383] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 1;
+initialDestination = -1;
+location = {x = 16695, y = -17391};
+nameResId = 4100;
+nameStrNum = 61;
+owner = 0;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 137;
+},
+
+[384] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = -1;
+location = {x = 16521, y = -16956};
+nameResId = -1;
+nameStrNum = -1;
+owner = 0;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 141;
+},
+
+[385] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = -1;
+location = {x = 17119, y = -17358};
+nameResId = -1;
+nameStrNum = -1;
+owner = 0;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 141;
+},
+
+[386] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = -1;
+location = {x = 16532, y = -17836};
+nameResId = -1;
+nameStrNum = -1;
+owner = 0;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 141;
+},
+
+[387] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = true;
+staticDestination = false;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = -1;
+location = {x = 16716, y = -17401};
+nameResId = -1;
+nameStrNum = -1;
+owner = 0;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 117;
+},
+
+[388] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = -1;
+location = {x = 0, y = 0};
+nameResId = 4300;
+nameStrNum = 12;
+owner = 0;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = 599;
+type = 286;
+},
+
+[389] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = true;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = -1;
+location = {x = 3304, y = 521};
+nameResId = -1;
+nameStrNum = -1;
+owner = 0;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 206;
+},
+
+[390] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 1;
+initialDestination = -1;
+location = {x = -22347, y = -3564};
+nameResId = 4100;
+nameStrNum = 82;
+owner = 1;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 210;
+},
+
+[391] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 1;
+initialDestination = -1;
+location = {x = -36869, y = 2434};
+nameResId = 4100;
+nameStrNum = 83;
+owner = 1;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 210;
+},
+
+[392] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 1;
+initialDestination = -1;
+location = {x = -10608, y = 521};
+nameResId = 4100;
+nameStrNum = 84;
+owner = 1;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 210;
+},
+
+[393] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = true;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = 4;
+location = {x = -8782, y = 1739};
+nameResId = -1;
+nameStrNum = -1;
+owner = 1;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 112;
+},
+
+[394] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = true;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = 4;
+location = {x = -8782, y = -521};
+nameResId = -1;
+nameStrNum = -1;
+owner = 1;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 14;
+},
+
+[395] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = true;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = 4;
+location = {x = -9043, y = 260};
+nameResId = -1;
+nameStrNum = -1;
+owner = 1;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 14;
+},
+
+[396] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = true;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = 1;
+location = {x = 3478, y = 1304};
+nameResId = -1;
+nameStrNum = -1;
+owner = 0;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 13;
+},
+
+[397] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = true;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = 1;
+location = {x = 4000, y = -347};
+nameResId = -1;
+nameStrNum = -1;
+owner = 0;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 13;
+},
+
+[398] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = true;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = 2;
+location = {x = -22173, y = -1741};
+nameResId = -1;
+nameStrNum = -1;
+owner = 1;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 7;
+},
+
+[399] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = true;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = 2;
+location = {x = -23304, y = -5217};
+nameResId = -1;
+nameStrNum = -1;
+owner = 1;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 62;
+},
+
+[400] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = true;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = 3;
+location = {x = -33391, y = 4869};
+nameResId = -1;
+nameStrNum = -1;
+owner = 1;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 110;
+},
+
+[401] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = true;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = 3;
+location = {x = -35478, y = -1043};
+nameResId = -1;
+nameStrNum = -1;
+owner = 1;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 110;
+},
+
+[402] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = true;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = 3;
+location = {x = -34782, y = 5217};
+nameResId = -1;
+nameStrNum = -1;
+owner = 1;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 110;
+},
+
+[403] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = -1;
+location = {x = 0, y = 0};
+nameResId = 4300;
+nameStrNum = 6;
+owner = 0;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 225;
+},
+
+[404] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = 0;
+location = {x = 956, y = 695};
+nameResId = -1;
+nameStrNum = -1;
+owner = 0;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 217;
+},
+
+[405] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 1;
+initialDestination = -1;
+location = {x = -6086, y = -5130};
+nameResId = 4100;
+nameStrNum = 85;
+owner = 1;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 216;
+},
+
+[406] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 1;
+initialDestination = -1;
+location = {x = -7130, y = 4086};
+nameResId = 4100;
+nameStrNum = 86;
+owner = 1;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 216;
+},
+
+[407] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 1;
+initialDestination = -1;
+location = {x = -11652, y = -1042};
+nameResId = 4100;
+nameStrNum = 87;
+owner = 1;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 216;
+},
+
+[408] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = true;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = 0;
+location = {x = 956, y = -608};
+nameResId = -1;
+nameStrNum = -1;
+owner = 0;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 61;
+},
+
+[409] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = true;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = 1;
+location = {x = 1826, y = 260};
+nameResId = -1;
+nameStrNum = -1;
+owner = 0;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 42;
+},
+
+[410] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = -1;
+location = {x = -18956, y = 520};
+nameResId = -1;
+nameStrNum = -1;
+owner = 1;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 218;
+},
+
+[411] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = true;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = 2;
+location = {x = -6610, y = -4175};
+nameResId = -1;
+nameStrNum = -1;
+owner = 1;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 37;
+},
+
+[412] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = true;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = 3;
+location = {x = -7566, y = 3129};
+nameResId = -1;
+nameStrNum = -1;
+owner = 1;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 37;
+},
+
+[413] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = true;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = 3;
+location = {x = -7566, y = 3998};
+nameResId = -1;
+nameStrNum = -1;
+owner = 1;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 37;
+},
+
+[414] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = true;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = 4;
+location = {x = -10696, y = -436};
+nameResId = -1;
+nameStrNum = -1;
+owner = 1;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 37;
+},
+
+[415] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = true;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = 4;
+location = {x = -11653, y = -262};
+nameResId = -1;
+nameStrNum = -1;
+owner = 1;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 37;
+},
+
+[416] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = true;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = 4;
+location = {x = -9653, y = -697};
+nameResId = -1;
+nameStrNum = -1;
+owner = 1;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 64;
+},
+
+[417] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = true;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = 2;
+location = {x = -6610, y = -4175};
+nameResId = -1;
+nameStrNum = -1;
+owner = 1;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 37;
+},
+
+[418] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = true;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = 2;
+location = {x = -7043, y = -3826};
+nameResId = -1;
+nameStrNum = -1;
+owner = 1;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 38;
+},
+
+[419] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = true;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = 9;
+location = {x = -5652, y = 4347};
+nameResId = -1;
+nameStrNum = -1;
+owner = 1;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 38;
+},
+
+[420] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = -1;
+location = {x = 32767, y = 0};
+nameResId = -1;
+nameStrNum = -1;
+owner = -1;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 228;
+},
+
+[421] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = -1;
+location = {x = -32767, y = 0};
+nameResId = -1;
+nameStrNum = -1;
+owner = -1;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 229;
+},
+
+[422] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {200, 300, 860, 500, 450, 800, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 1;
+initialDestination = -1;
+location = {x = 27129, y = 28260};
+nameResId = 4100;
+nameStrNum = 2;
+owner = 0;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = 1025;
+type = 23;
+},
+
+[423] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {200, 300, 860, 500, 450, 800, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 1;
+initialDestination = -1;
+location = {x = -27129, y = -28260};
+nameResId = 4100;
+nameStrNum = 3;
+owner = 1;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = 1026;
+type = 23;
+},
+
+[424] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 1;
+initialDestination = -1;
+location = {x = 22261, y = -6261};
+nameResId = 4100;
+nameStrNum = 21;
+owner = -1;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 104;
+},
+
+[425] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 1;
+initialDestination = -1;
+location = {x = -22621, y = 6621};
+nameResId = 4100;
+nameStrNum = 22;
+owner = -1;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 104;
+},
+
+[426] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = true;
+initiallyHidden = true;
+staticDestination = false;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = 2;
+location = {x = 27129, y = 28520};
+nameResId = -1;
+nameStrNum = -1;
+owner = 0;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 129;
+},
+
+[427] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = true;
+initiallyHidden = true;
+staticDestination = false;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = 3;
+location = {x = -18608, y = -21131};
+nameResId = -1;
+nameStrNum = -1;
+owner = 1;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 129;
+},
+
+[428] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {100, 200, 300, 500, 450, 800, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 1;
+initialDestination = -1;
+location = {x = 0, y = 9000};
+nameResId = 4100;
+nameStrNum = 2;
+owner = 0;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = 1027;
+type = 23;
+},
+
+[429] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {100, 200, 300, 500, 450, 800, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 1;
+initialDestination = -1;
+location = {x = 0, y = -9000};
+nameResId = 4100;
+nameStrNum = 3;
+owner = 1;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = 1028;
+type = 23;
+},
+
+[430] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {100, 200, 300, 400, 450, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 1;
+initialDestination = -1;
+location = {x = 9000, y = 0};
+nameResId = 4100;
+nameStrNum = 4;
+owner = 2;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = 1029;
+type = 23;
+},
+
+[431] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = true;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = 0;
+location = {x = 0, y = 9000};
+nameResId = -1;
+nameStrNum = -1;
+owner = 0;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 129;
+},
+
+[432] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = true;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = 1;
+location = {x = 0, y = -9000};
+nameResId = -1;
+nameStrNum = -1;
+owner = 1;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 129;
+},
+
+[433] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = true;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = 2;
+location = {x = 9000, y = 0};
+nameResId = -1;
+nameStrNum = -1;
+owner = 2;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 129;
+},
+
+[434] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = true;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = -1;
+location = {x = 1565, y = 0};
+nameResId = -1;
+nameStrNum = -1;
+owner = 0;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 129;
+},
+
+[435] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = 0;
+location = {x = 1130, y = 782};
+nameResId = -1;
+nameStrNum = -1;
+owner = 0;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 0;
+},
+
+[436] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = 0;
+location = {x = 1304, y = -869};
+nameResId = -1;
+nameStrNum = -1;
+owner = 0;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 0;
+},
+
+[437] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = 0;
+location = {x = 1739, y = 521};
+nameResId = -1;
+nameStrNum = -1;
+owner = 0;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 0;
+},
+
+[438] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = 0;
+location = {x = 1782, y = -434};
+nameResId = -1;
+nameStrNum = -1;
+owner = 0;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 0;
+},
+
+[439] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = 0;
+location = {x = 1239, y = -260};
+nameResId = -1;
+nameStrNum = -1;
+owner = 0;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 47;
+},
+
+[440] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = 0;
+location = {x = 1086, y = 217};
+nameResId = -1;
+nameStrNum = -1;
+owner = 0;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 47;
+},
+
+[441] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = 0;
+location = {x = 1543, y = 239};
+nameResId = -1;
+nameStrNum = -1;
+owner = 0;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 19;
+},
+
+[442] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = 0;
+location = {x = 1565, y = -260};
+nameResId = -1;
+nameStrNum = -1;
+owner = 0;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 19;
+},
+
+[443] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = 0;
+location = {x = 1369, y = -43};
+nameResId = -1;
+nameStrNum = -1;
+owner = 0;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 19;
+},
+
+[444] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = 0;
+location = {x = 1934, y = 173};
+nameResId = -1;
+nameStrNum = -1;
+owner = 0;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 61;
+},
+
+[445] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = 10;
+location = {x = 2239, y = 195};
+nameResId = -1;
+nameStrNum = -1;
+owner = 0;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 61;
+},
+
+[446] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = 11;
+location = {x = 2478, y = 239};
+nameResId = -1;
+nameStrNum = -1;
+owner = 0;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 61;
+},
+
+[447] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = 12;
+location = {x = 2913, y = 326};
+nameResId = -1;
+nameStrNum = -1;
+owner = 0;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 61;
+},
+
+[448] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = 13;
+location = {x = 3368, y = 391};
+nameResId = -1;
+nameStrNum = -1;
+owner = 0;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 61;
+},
+
+[449] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = 5;
+location = {x = 1652, y = 804};
+nameResId = -1;
+nameStrNum = -1;
+owner = 0;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 13;
+},
+
+[450] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = 15;
+location = {x = 1782, y = 1065};
+nameResId = -1;
+nameStrNum = -1;
+owner = 0;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 13;
+},
+
+[451] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = 16;
+location = {x = 2021, y = 1304};
+nameResId = -1;
+nameStrNum = -1;
+owner = 0;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 13;
+},
+
+[452] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = -1;
+location = {x = -2759, y = 0};
+nameResId = -1;
+nameStrNum = -1;
+owner = 1;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 87;
+},
+
+[453] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = 18;
+location = {x = -2716, y = -457};
+nameResId = -1;
+nameStrNum = -1;
+owner = 1;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 87;
+},
+
+[454] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = -1;
+location = {x = -2564, y = 738};
+nameResId = -1;
+nameStrNum = -1;
+owner = 1;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 87;
+},
+
+[455] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = -1;
+location = {x = -2347, y = -933};
+nameResId = -1;
+nameStrNum = -1;
+owner = 1;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 87;
+},
+
+[456] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = -1;
+location = {x = -2130, y = 304};
+nameResId = -1;
+nameStrNum = -1;
+owner = 1;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 87;
+},
+
+[457] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = -1;
+location = {x = -2477, y = -1282};
+nameResId = -1;
+nameStrNum = -1;
+owner = 1;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 37;
+},
+
+[458] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = -1;
+location = {x = -2434, y = 1478};
+nameResId = -1;
+nameStrNum = -1;
+owner = 1;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 37;
+},
+
+[459] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = true;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = 18;
+location = {x = -2477, y = -1890};
+nameResId = -1;
+nameStrNum = -1;
+owner = 1;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 37;
+},
+
+[460] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = true;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = 18;
+location = {x = -2804, y = 1129};
+nameResId = -1;
+nameStrNum = -1;
+owner = 1;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 37;
+},
+
+[461] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = 18;
+location = {x = -2977, y = -977};
+nameResId = -1;
+nameStrNum = -1;
+owner = 1;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 37;
+},
+
+[462] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = true;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = 18;
+location = {x = -4194, y = -173};
+nameResId = -1;
+nameStrNum = -1;
+owner = 1;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 37;
+},
+
+[463] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = true;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = 18;
+location = {x = -3977, y = 413};
+nameResId = -1;
+nameStrNum = -1;
+owner = 1;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 64;
+},
+
+[464] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = true;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = 18;
+location = {x = -4478, y = -1086};
+nameResId = -1;
+nameStrNum = -1;
+owner = 1;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 64;
+},
+
+[465] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = true;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = 19;
+location = {x = -4411, y = 1063};
+nameResId = -1;
+nameStrNum = -1;
+owner = 1;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 64;
+},
+
+[466] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = true;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = 31;
+location = {x = -4782, y = 630};
+nameResId = -1;
+nameStrNum = -1;
+owner = 1;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 64;
+},
+
+[467] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = true;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = 32;
+location = {x = -4978, y = 195};
+nameResId = -1;
+nameStrNum = -1;
+owner = 1;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 64;
+},
+
+[468] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = true;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = 33;
+location = {x = -5108, y = -174};
+nameResId = -1;
+nameStrNum = -1;
+owner = 1;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 64;
+},
+
+[469] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = true;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = 34;
+location = {x = -5238, y = -696};
+nameResId = -1;
+nameStrNum = -1;
+owner = 1;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 64;
+},
+
+[470] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = true;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = 35;
+location = {x = -5260, y = -1391};
+nameResId = -1;
+nameStrNum = -1;
+owner = 1;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 64;
+},
+
+[471] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = true;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = 36;
+location = {x = -4826, y = -1956};
+nameResId = -1;
+nameStrNum = -1;
+owner = 1;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 37;
+},
+
+[472] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = true;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = 36;
+location = {x = -5065, y = -2130};
+nameResId = -1;
+nameStrNum = -1;
+owner = 1;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 64;
+},
+
+[473] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = true;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = 36;
+location = {x = -4108, y = -2152};
+nameResId = -1;
+nameStrNum = -1;
+owner = 1;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 64;
+},
+
+[474] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = -1;
+location = {x = 32767, y = 0};
+nameResId = -1;
+nameStrNum = -1;
+owner = -1;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 266;
+},
+
+[475] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = -1;
+location = {x = -32767, y = 0};
+nameResId = -1;
+nameStrNum = -1;
+owner = -1;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 267;
+},
+
+[476] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {200, 300, 860, 500, 450, 800, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 1;
+initialDestination = -1;
+location = {x = 27129, y = 28260};
+nameResId = 4100;
+nameStrNum = 88;
+owner = -1;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = 1030;
+type = 23;
+},
+
+[477] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {200, 300, 860, 500, 450, 800, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 1;
+initialDestination = -1;
+location = {x = -27129, y = -28260};
+nameResId = 4100;
+nameStrNum = 89;
+owner = -1;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = 1031;
+type = 23;
+},
+
+[478] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 1;
+initialDestination = -1;
+location = {x = 0, y = 0};
+nameResId = 4100;
+nameStrNum = 92;
+owner = -1;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 104;
+},
+
+[479] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = true;
+initiallyHidden = true;
+staticDestination = false;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = -1;
+location = {x = 28522, y = 28520};
+nameResId = -1;
+nameStrNum = -1;
+owner = 0;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 129;
+},
+
+[480] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = true;
+staticDestination = false;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = -1;
+location = {x = 27652, y = 28957};
+nameResId = -1;
+nameStrNum = -1;
+owner = 0;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 151;
+},
+
+[481] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = true;
+staticDestination = false;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = -1;
+location = {x = 27126, y = 28167};
+nameResId = -1;
+nameStrNum = -1;
+owner = 0;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 151;
+},
+
+[482] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = true;
+staticDestination = false;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = -1;
+location = {x = 26603, y = 28866};
+nameResId = -1;
+nameStrNum = -1;
+owner = 0;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 151;
+},
+
+[483] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = true;
+staticDestination = false;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = 2;
+location = {x = 27559, y = 29474};
+nameResId = -1;
+nameStrNum = -1;
+owner = 0;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 164;
+},
+
+[484] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = true;
+staticDestination = false;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = 2;
+location = {x = 26343, y = 29213};
+nameResId = -1;
+nameStrNum = -1;
+owner = 0;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 164;
+},
+
+[485] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = true;
+initiallyHidden = true;
+staticDestination = false;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = -1;
+location = {x = -25044, y = -29218};
+nameResId = -1;
+nameStrNum = -1;
+owner = 1;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 148;
+},
+
+[486] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0.5;
+initialDestination = -1;
+location = {x = -9043, y = 9391};
+nameResId = 4100;
+nameStrNum = 90;
+owner = -1;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 270;
+},
+
+[487] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0.5;
+initialDestination = -1;
+location = {x = 9043, y = -8000};
+nameResId = 4100;
+nameStrNum = 91;
+owner = -1;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 270;
+},
+
+[488] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = -1;
+location = {x = 32767, y = 0};
+nameResId = -1;
+nameStrNum = -1;
+owner = -1;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 266;
+},
+
+[489] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = -1;
+location = {x = -32767, y = 0};
+nameResId = -1;
+nameStrNum = -1;
+owner = -1;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 267;
+},
+
+[490] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {200, 300, 860, 500, 450, 800, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 1;
+initialDestination = -1;
+location = {x = 16384, y = 0};
+nameResId = 4100;
+nameStrNum = 88;
+owner = 0;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = 1032;
+type = 23;
+},
+
+[491] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {200, 300, 860, 500, 450, 800, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 1;
+initialDestination = -1;
+location = {x = -16384, y = 0};
+nameResId = 4100;
+nameStrNum = 89;
+owner = 1;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = 1033;
+type = 23;
+},
+
+[492] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0.25;
+initialDestination = -1;
+location = {x = 9000, y = 0};
+nameResId = 4100;
+nameStrNum = 90;
+owner = -1;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 270;
+},
+
+[493] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0.25;
+initialDestination = -1;
+location = {x = -9000, y = 0};
+nameResId = 4100;
+nameStrNum = 91;
+owner = -1;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 270;
+},
+
+[494] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0.25;
+initialDestination = -1;
+location = {x = 0, y = 9000};
+nameResId = 4100;
+nameStrNum = 93;
+owner = -1;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 270;
+},
+
+[495] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0.25;
+initialDestination = -1;
+location = {x = 0, y = -9000};
+nameResId = 4100;
+nameStrNum = 94;
+owner = -1;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 270;
+},
+
+[496] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 1;
+initialDestination = -1;
+location = {x = 0, y = 0};
+nameResId = 4100;
+nameStrNum = 92;
+owner = -1;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 104;
+},
+
+[497] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = true;
+initiallyHidden = true;
+staticDestination = false;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = -1;
+location = {x = 16380, y = 0};
+nameResId = -1;
+nameStrNum = -1;
+owner = 0;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 129;
+},
+
+[498] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = true;
+initiallyHidden = true;
+staticDestination = false;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 0;
+initialDestination = -1;
+location = {x = -16380, y = 0};
+nameResId = -1;
+nameStrNum = -1;
+owner = 1;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 129;
+},
+
+[499] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+distanceRange = 0;
+earning = 1;
+initialDestination = -1;
+location = {x = 0, y = 0};
+nameResId = -1;
+nameStrNum = -1;
+owner = -1;
+realObjectId = -1;
+realObjectNumber = -1;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = -1;
+},
+
+[500] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = true;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {-1, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+distanceRange = 0;
+earning = 0;
+initialDestination = -1;
+location = {x = 0, y = 0};
+nameResId = -1;
+nameStrNum = -1;
+owner = 0;
+realObjectId = 0;
+realObjectNumber = 0;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 0;
+},
+
+[501] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {-1, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+distanceRange = 0;
+earning = 0;
+initialDestination = -1;
+location = {x = 3000, y = -3000};
+nameResId = -1;
+nameStrNum = -1;
+owner = 0;
+realObjectId = 0;
+realObjectNumber = 0;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 0;
+},
+
+[502] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {-1, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+distanceRange = 0;
+earning = 0;
+initialDestination = -1;
+location = {x = 3000, y = 0};
+nameResId = -1;
+nameStrNum = -1;
+owner = 0;
+realObjectId = 0;
+realObjectNumber = 0;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 24;
+},
+
+[503] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {-1, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+distanceRange = 0;
+earning = 0;
+initialDestination = -1;
+location = {x = 3000, y = 3000};
+nameResId = -1;
+nameStrNum = -1;
+owner = 0;
+realObjectId = 0;
+realObjectNumber = 0;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 47;
+},
+
+[504] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {-1, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+distanceRange = 0;
+earning = 0;
+initialDestination = -1;
+location = {x = 0, y = 5000};
+nameResId = 4100;
+nameStrNum = 109;
+owner = -1;
+realObjectId = 0;
+realObjectNumber = 0;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 23;
+},
+
+[505] = {
+attributes = {
+fixedRace = true;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = true;
+};
+canBuild = {-1, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+distanceRange = 0;
+earning = 0;
+initialDestination = -1;
+location = {x = -1000, y = 3000};
+nameResId = -1;
+nameStrNum = -1;
+owner = 1;
+realObjectId = 0;
+realObjectNumber = 0;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 287;
+},
+
+[506] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = true;
+staticDestination = false;
+};
+canBuild = {-1, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+distanceRange = 0;
+earning = 0;
+initialDestination = -1;
+location = {x = 3000, y = 3000};
+nameResId = -1;
+nameStrNum = -1;
+owner = 0;
+realObjectId = 0;
+realObjectNumber = 0;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 0;
+},
+
+[507] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = true;
+staticDestination = true;
+};
+canBuild = {-1, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+distanceRange = 0;
+earning = 0;
+initialDestination = 7;
+location = {x = -6000, y = 3000};
+nameResId = -1;
+nameStrNum = -1;
+owner = 1;
+realObjectId = 0;
+realObjectNumber = 0;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 25;
+},
+
+[508] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = true;
+staticDestination = true;
+};
+canBuild = {-1, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+distanceRange = 0;
+earning = 0;
+initialDestination = 8;
+location = {x = -6250, y = 3250};
+nameResId = -1;
+nameStrNum = -1;
+owner = 1;
+realObjectId = 0;
+realObjectNumber = 0;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 25;
+},
+
+[509] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = true;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {-1, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+distanceRange = 0;
+earning = 0;
+initialDestination = -1;
+location = {x = 0, y = 0};
+nameResId = -1;
+nameStrNum = -1;
+owner = 0;
+realObjectId = 0;
+realObjectNumber = 0;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 0;
+},
+
+[510] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = true;
+};
+canBuild = {-1, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+distanceRange = 0;
+earning = 0;
+initialDestination = -1;
+location = {x = -400, y = 60};
+nameResId = -1;
+nameStrNum = -1;
+owner = 0;
+realObjectId = 0;
+realObjectNumber = 0;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 61;
+},
+
+[511] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = true;
+staticDestination = true;
+};
+canBuild = {-1, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+distanceRange = 0;
+earning = 0;
+initialDestination = 2;
+location = {x = -100, y = 6000};
+nameResId = -1;
+nameStrNum = -1;
+owner = 0;
+realObjectId = 0;
+realObjectNumber = 0;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 19;
+},
+
+[512] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = true;
+staticDestination = true;
+};
+canBuild = {-1, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+distanceRange = 0;
+earning = 0;
+initialDestination = 3;
+location = {x = 0, y = 6000};
+nameResId = -1;
+nameStrNum = -1;
+owner = 0;
+realObjectId = 0;
+realObjectNumber = 0;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 13;
+},
+
+[513] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = true;
+staticDestination = true;
+};
+canBuild = {-1, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+distanceRange = 0;
+earning = 0;
+initialDestination = 4;
+location = {x = 100, y = 6000};
+nameResId = -1;
+nameStrNum = -1;
+owner = 0;
+realObjectId = 0;
+realObjectNumber = 0;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 0;
+},
+
+[514] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = true;
+staticDestination = true;
+};
+canBuild = {-1, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+distanceRange = 0;
+earning = 0;
+initialDestination = 5;
+location = {x = 200, y = 6000};
+nameResId = -1;
+nameStrNum = -1;
+owner = 0;
+realObjectId = 0;
+realObjectNumber = 0;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 24;
+},
+
+[515] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {-1, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+distanceRange = 0;
+earning = 0;
+initialDestination = -1;
+location = {x = -100, y = -200};
+nameResId = 4100;
+nameStrNum = 109;
+owner = 0;
+realObjectId = 0;
+realObjectNumber = 0;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 23;
+},
+
+[516] = {
+attributes = {
+fixedRace = true;
+initialPlayerShip = false;
+initiallyHidden = true;
+staticDestination = true;
+};
+canBuild = {-1, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+distanceRange = 0;
+earning = 0;
+initialDestination = 7;
+location = {x = 200, y = 0};
+nameResId = -1;
+nameStrNum = -1;
+owner = 1;
+realObjectId = 0;
+realObjectNumber = 0;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 287;
+},
+
+[517] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = true;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {-1, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+distanceRange = 0;
+earning = 0;
+initialDestination = -1;
+location = {x = 0, y = 0};
+nameResId = -1;
+nameStrNum = -1;
+owner = 0;
+realObjectId = 0;
+realObjectNumber = 0;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 0;
+},
+
+[518] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {267, 450, 500, -1, 0, 0, 0, 0, 0, 0, 0, 0};
+distanceRange = 0;
+earning = 0;
+initialDestination = -1;
+location = {x = -200, y = -200};
+nameResId = 4100;
+nameStrNum = 109;
+owner = 0;
+realObjectId = 0;
+realObjectNumber = 0;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 23;
+},
+
+[519] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {-1, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+distanceRange = 0;
+earning = 0;
+initialDestination = -1;
+location = {x = 0, y = 6000};
+nameResId = -1;
+nameStrNum = -1;
+owner = 0;
+realObjectId = 0;
+realObjectNumber = 0;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 61;
+},
+
+[520] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = true;
+staticDestination = false;
+};
+canBuild = {-1, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+distanceRange = 0;
+earning = 0;
+initialDestination = -1;
+location = {x = 200, y = 200};
+nameResId = -1;
+nameStrNum = -1;
+owner = 0;
+realObjectId = 0;
+realObjectNumber = 0;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 24;
+},
+
+[521] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = true;
+staticDestination = false;
+};
+canBuild = {-1, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+distanceRange = 0;
+earning = 0;
+initialDestination = -1;
+location = {x = 400, y = 400};
+nameResId = -1;
+nameStrNum = -1;
+owner = 0;
+realObjectId = 0;
+realObjectNumber = 0;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 24;
+},
+
+[522] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = true;
+staticDestination = false;
+};
+canBuild = {-1, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+distanceRange = 0;
+earning = 0;
+initialDestination = -1;
+location = {x = 250, y = 200};
+nameResId = -1;
+nameStrNum = -1;
+owner = 0;
+realObjectId = 0;
+realObjectNumber = 0;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 13;
+},
+
+[523] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = true;
+staticDestination = false;
+};
+canBuild = {-1, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+distanceRange = 0;
+earning = 0;
+initialDestination = -1;
+location = {x = 200, y = 250};
+nameResId = -1;
+nameStrNum = -1;
+owner = 0;
+realObjectId = 0;
+realObjectNumber = 0;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 13;
+},
+
+[524] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = true;
+staticDestination = true;
+};
+canBuild = {-1, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+distanceRange = 0;
+earning = 0;
+initialDestination = -1;
+location = {x = -3000, y = 6000};
+nameResId = -1;
+nameStrNum = -1;
+owner = 1;
+realObjectId = 0;
+realObjectNumber = 0;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 25;
+},
+
+[525] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = true;
+staticDestination = true;
+};
+canBuild = {-1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+distanceRange = 1000;
+earning = 0;
+initialDestination = -1;
+location = {x = -3000, y = 6100};
+nameResId = -1;
+nameStrNum = -1;
+owner = 1;
+realObjectId = 0;
+realObjectNumber = 0;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 25;
+},
+
+[526] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = true;
+staticDestination = true;
+};
+canBuild = {-1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+distanceRange = 1000;
+earning = 0;
+initialDestination = -1;
+location = {x = -3100, y = 6000};
+nameResId = -1;
+nameStrNum = -1;
+owner = 1;
+realObjectId = 0;
+realObjectNumber = 0;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 25;
+},
+
+[527] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = true;
+staticDestination = true;
+};
+canBuild = {-1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+distanceRange = 1000;
+earning = 0;
+initialDestination = -1;
+location = {x = -3000, y = 6200};
+nameResId = -1;
+nameStrNum = -1;
+owner = 1;
+realObjectId = 0;
+realObjectNumber = 0;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 25;
+},
+
+[528] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = true;
+staticDestination = true;
+};
+canBuild = {-1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+distanceRange = 1000;
+earning = 0;
+initialDestination = -1;
+location = {x = -3000, y = 5900};
+nameResId = -1;
+nameStrNum = -1;
+owner = 1;
+realObjectId = 0;
+realObjectNumber = 0;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 25;
+},
+
+[529] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = true;
+staticDestination = true;
+};
+canBuild = {-1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+distanceRange = 1000;
+earning = 0;
+initialDestination = -1;
+location = {x = -3200, y = 5950};
+nameResId = -1;
+nameStrNum = -1;
+owner = 1;
+realObjectId = 0;
+realObjectNumber = 0;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 25;
+},
+
+[530] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = true;
+staticDestination = true;
+};
+canBuild = {-1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+distanceRange = 1000;
+earning = 0;
+initialDestination = -1;
+location = {x = -3000, y = 6300};
+nameResId = -1;
+nameStrNum = -1;
+owner = 1;
+realObjectId = 0;
+realObjectNumber = 0;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 25;
+},
+
+[531] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = true;
+staticDestination = true;
+};
+canBuild = {-1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+distanceRange = 1000;
+earning = 0;
+initialDestination = -1;
+location = {x = -3400, y = 6410};
+nameResId = -1;
+nameStrNum = -1;
+owner = 1;
+realObjectId = 0;
+realObjectNumber = 0;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 25;
+},
+
+[532] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = true;
+staticDestination = true;
+};
+canBuild = {-1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+distanceRange = 1000;
+earning = 0;
+initialDestination = -1;
+location = {x = -3000, y = 6000};
+nameResId = -1;
+nameStrNum = -1;
+owner = 1;
+realObjectId = 0;
+realObjectNumber = 0;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 25;
+},
+
+[533] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = true;
+staticDestination = true;
+};
+canBuild = {-1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+distanceRange = 1000;
+earning = 0;
+initialDestination = -1;
+location = {x = -3000, y = 6000};
+nameResId = -1;
+nameStrNum = -1;
+owner = 1;
+realObjectId = 0;
+realObjectNumber = 0;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = -1;
+type = 25;
+},
+
+[534] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+distanceRange = 0;
+earning = 0;
+initialDestination = 0;
+location = {x = 0, y = 0};
+nameResId = 0;
+nameStrNum = 0;
+owner = 0;
+realObjectId = 0;
+realObjectNumber = 0;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = 0;
+type = 0;
+},
+
+[535] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+distanceRange = 0;
+earning = 0;
+initialDestination = 0;
+location = {x = 0, y = 0};
+nameResId = 0;
+nameStrNum = 0;
+owner = 0;
+realObjectId = 0;
+realObjectNumber = 0;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = 0;
+type = 0;
+},
+
+[536] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+distanceRange = 0;
+earning = 0;
+initialDestination = 0;
+location = {x = 0, y = 0};
+nameResId = 0;
+nameStrNum = 0;
+owner = 0;
+realObjectId = 0;
+realObjectNumber = 0;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = 0;
+type = 0;
+},
+
+[537] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+distanceRange = 0;
+earning = 0;
+initialDestination = 0;
+location = {x = 0, y = 0};
+nameResId = 0;
+nameStrNum = 0;
+owner = 0;
+realObjectId = 0;
+realObjectNumber = 0;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = 0;
+type = 0;
+},
+
+[538] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+distanceRange = 0;
+earning = 0;
+initialDestination = 0;
+location = {x = 0, y = 0};
+nameResId = 0;
+nameStrNum = 0;
+owner = 0;
+realObjectId = 0;
+realObjectNumber = 0;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = 0;
+type = 0;
+},
+
+[539] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+distanceRange = 0;
+earning = 0;
+initialDestination = 0;
+location = {x = 0, y = 0};
+nameResId = 0;
+nameStrNum = 0;
+owner = 0;
+realObjectId = 0;
+realObjectNumber = 0;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = 0;
+type = 0;
+},
+
+[540] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+distanceRange = 0;
+earning = 0;
+initialDestination = 0;
+location = {x = 0, y = 0};
+nameResId = 0;
+nameStrNum = 0;
+owner = 0;
+realObjectId = 0;
+realObjectNumber = 0;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = 0;
+type = 0;
+},
+
+[541] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+distanceRange = 0;
+earning = 0;
+initialDestination = 0;
+location = {x = 0, y = 0};
+nameResId = 0;
+nameStrNum = 0;
+owner = 0;
+realObjectId = 0;
+realObjectNumber = 0;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = 0;
+type = 0;
+},
+
+[542] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+distanceRange = 0;
+earning = 0;
+initialDestination = 0;
+location = {x = 0, y = 0};
+nameResId = 0;
+nameStrNum = 0;
+owner = 0;
+realObjectId = 0;
+realObjectNumber = 0;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = 0;
+type = 0;
+},
+
+[543] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+distanceRange = 0;
+earning = 0;
+initialDestination = 0;
+location = {x = 0, y = 0};
+nameResId = 0;
+nameStrNum = 0;
+owner = 0;
+realObjectId = 0;
+realObjectNumber = 0;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = 0;
+type = 0;
+},
+
+[544] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+distanceRange = 0;
+earning = 0;
+initialDestination = 0;
+location = {x = 0, y = 0};
+nameResId = 0;
+nameStrNum = 0;
+owner = 0;
+realObjectId = 0;
+realObjectNumber = 0;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = 0;
+type = 0;
+},
+
+[545] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+distanceRange = 0;
+earning = 0;
+initialDestination = 0;
+location = {x = 0, y = 0};
+nameResId = 0;
+nameStrNum = 0;
+owner = 0;
+realObjectId = 0;
+realObjectNumber = 0;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = 0;
+type = 0;
+},
+
+[546] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+distanceRange = 0;
+earning = 0;
+initialDestination = 0;
+location = {x = 0, y = 0};
+nameResId = 0;
+nameStrNum = 0;
+owner = 0;
+realObjectId = 0;
+realObjectNumber = 0;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = 0;
+type = 0;
+},
+
+[547] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+distanceRange = 0;
+earning = 0;
+initialDestination = 0;
+location = {x = 0, y = 0};
+nameResId = 0;
+nameStrNum = 0;
+owner = 0;
+realObjectId = 0;
+realObjectNumber = 0;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = 0;
+type = 0;
+},
+
+[548] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+distanceRange = 0;
+earning = 0;
+initialDestination = 0;
+location = {x = 0, y = 0};
+nameResId = 0;
+nameStrNum = 0;
+owner = 0;
+realObjectId = 0;
+realObjectNumber = 0;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = 0;
+type = 0;
+},
+
+[549] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+distanceRange = 0;
+earning = 0;
+initialDestination = 0;
+location = {x = 0, y = 0};
+nameResId = 0;
+nameStrNum = 0;
+owner = 0;
+realObjectId = 0;
+realObjectNumber = 0;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = 0;
+type = 0;
+},
+
+[550] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+distanceRange = 0;
+earning = 0;
+initialDestination = 0;
+location = {x = 0, y = 0};
+nameResId = 0;
+nameStrNum = 0;
+owner = 0;
+realObjectId = 0;
+realObjectNumber = 0;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = 0;
+type = 0;
+},
+
+[551] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+distanceRange = 0;
+earning = 0;
+initialDestination = 0;
+location = {x = 0, y = 0};
+nameResId = 0;
+nameStrNum = 0;
+owner = 0;
+realObjectId = 0;
+realObjectNumber = 0;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = 0;
+type = 0;
+},
+
+[552] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+distanceRange = 0;
+earning = 0;
+initialDestination = 0;
+location = {x = 0, y = 0};
+nameResId = 0;
+nameStrNum = 0;
+owner = 0;
+realObjectId = 0;
+realObjectNumber = 0;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = 0;
+type = 0;
+},
+
+[553] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+distanceRange = 0;
+earning = 0;
+initialDestination = 0;
+location = {x = 0, y = 0};
+nameResId = 0;
+nameStrNum = 0;
+owner = 0;
+realObjectId = 0;
+realObjectNumber = 0;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = 0;
+type = 0;
+},
+
+[554] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+distanceRange = 0;
+earning = 0;
+initialDestination = 0;
+location = {x = 0, y = 0};
+nameResId = 0;
+nameStrNum = 0;
+owner = 0;
+realObjectId = 0;
+realObjectNumber = 0;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = 0;
+type = 0;
+},
+
+[555] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+distanceRange = 0;
+earning = 0;
+initialDestination = 0;
+location = {x = 0, y = 0};
+nameResId = 0;
+nameStrNum = 0;
+owner = 0;
+realObjectId = 0;
+realObjectNumber = 0;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = 0;
+type = 0;
+},
+
+[556] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+distanceRange = 0;
+earning = 0;
+initialDestination = 0;
+location = {x = 0, y = 0};
+nameResId = 0;
+nameStrNum = 0;
+owner = 0;
+realObjectId = 0;
+realObjectNumber = 0;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = 0;
+type = 0;
+},
+
+[557] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+distanceRange = 0;
+earning = 0;
+initialDestination = 0;
+location = {x = 0, y = 0};
+nameResId = 0;
+nameStrNum = 0;
+owner = 0;
+realObjectId = 0;
+realObjectNumber = 0;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = 0;
+type = 0;
+},
+
+[558] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+distanceRange = 0;
+earning = 0;
+initialDestination = 0;
+location = {x = 0, y = 0};
+nameResId = 0;
+nameStrNum = 0;
+owner = 0;
+realObjectId = 0;
+realObjectNumber = 0;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = 0;
+type = 0;
+},
+
+[559] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+distanceRange = 0;
+earning = 0;
+initialDestination = 0;
+location = {x = 0, y = 0};
+nameResId = 0;
+nameStrNum = 0;
+owner = 0;
+realObjectId = 0;
+realObjectNumber = 0;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = 0;
+type = 0;
+},
+
+[560] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+distanceRange = 0;
+earning = 0;
+initialDestination = 0;
+location = {x = 0, y = 0};
+nameResId = 0;
+nameStrNum = 0;
+owner = 0;
+realObjectId = 0;
+realObjectNumber = 0;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = 0;
+type = 0;
+},
+
+[561] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+distanceRange = 0;
+earning = 0;
+initialDestination = 0;
+location = {x = 0, y = 0};
+nameResId = 0;
+nameStrNum = 0;
+owner = 0;
+realObjectId = 0;
+realObjectNumber = 0;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = 0;
+type = 0;
+},
+
+[562] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+distanceRange = 0;
+earning = 0;
+initialDestination = 0;
+location = {x = 0, y = 0};
+nameResId = 0;
+nameStrNum = 0;
+owner = 0;
+realObjectId = 0;
+realObjectNumber = 0;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = 0;
+type = 0;
+},
+
+[563] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+distanceRange = 0;
+earning = 0;
+initialDestination = 0;
+location = {x = 0, y = 0};
+nameResId = 0;
+nameStrNum = 0;
+owner = 0;
+realObjectId = 0;
+realObjectNumber = 0;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = 0;
+type = 0;
+},
+
+[564] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+distanceRange = 0;
+earning = 0;
+initialDestination = 0;
+location = {x = 0, y = 0};
+nameResId = 0;
+nameStrNum = 0;
+owner = 0;
+realObjectId = 0;
+realObjectNumber = 0;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = 0;
+type = 0;
+},
+
+[565] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+distanceRange = 0;
+earning = 0;
+initialDestination = 0;
+location = {x = 0, y = 0};
+nameResId = 0;
+nameStrNum = 0;
+owner = 0;
+realObjectId = 0;
+realObjectNumber = 0;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = 0;
+type = 0;
+},
+
+[566] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+distanceRange = 0;
+earning = 0;
+initialDestination = 0;
+location = {x = 0, y = 0};
+nameResId = 0;
+nameStrNum = 0;
+owner = 0;
+realObjectId = 0;
+realObjectNumber = 0;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = 0;
+type = 0;
+},
+
+[567] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+distanceRange = 0;
+earning = 0;
+initialDestination = 0;
+location = {x = 0, y = 0};
+nameResId = 0;
+nameStrNum = 0;
+owner = 0;
+realObjectId = 0;
+realObjectNumber = 0;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = 0;
+type = 0;
+},
+
+[568] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+distanceRange = 0;
+earning = 0;
+initialDestination = 0;
+location = {x = 0, y = 0};
+nameResId = 0;
+nameStrNum = 0;
+owner = 0;
+realObjectId = 0;
+realObjectNumber = 0;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = 0;
+type = 0;
+},
+
+[569] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+distanceRange = 0;
+earning = 0;
+initialDestination = 0;
+location = {x = 0, y = 0};
+nameResId = 0;
+nameStrNum = 0;
+owner = 0;
+realObjectId = 0;
+realObjectNumber = 0;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = 0;
+type = 0;
+},
+
+[570] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+distanceRange = 0;
+earning = 0;
+initialDestination = 0;
+location = {x = 0, y = 0};
+nameResId = 0;
+nameStrNum = 0;
+owner = 0;
+realObjectId = 0;
+realObjectNumber = 0;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = 0;
+type = 0;
+},
+
+[571] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+distanceRange = 0;
+earning = 0;
+initialDestination = 0;
+location = {x = 0, y = 0};
+nameResId = 0;
+nameStrNum = 0;
+owner = 0;
+realObjectId = 0;
+realObjectNumber = 0;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = 0;
+type = 0;
+},
+
+[572] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+distanceRange = 0;
+earning = 0;
+initialDestination = 0;
+location = {x = 0, y = 0};
+nameResId = 0;
+nameStrNum = 0;
+owner = 0;
+realObjectId = 0;
+realObjectNumber = 0;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = 0;
+type = 0;
+},
+
+[573] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+distanceRange = 0;
+earning = 0;
+initialDestination = 0;
+location = {x = 0, y = 0};
+nameResId = 0;
+nameStrNum = 0;
+owner = 0;
+realObjectId = 0;
+realObjectNumber = 0;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = 0;
+type = 0;
+},
+
+[574] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+distanceRange = 0;
+earning = 0;
+initialDestination = 0;
+location = {x = 0, y = 0};
+nameResId = 0;
+nameStrNum = 0;
+owner = 0;
+realObjectId = 0;
+realObjectNumber = 0;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = 0;
+type = 0;
+},
+
+[575] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+distanceRange = 0;
+earning = 0;
+initialDestination = 0;
+location = {x = 0, y = 0};
+nameResId = 0;
+nameStrNum = 0;
+owner = 0;
+realObjectId = 0;
+realObjectNumber = 0;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = 0;
+type = 0;
+},
+
+[576] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+distanceRange = 0;
+earning = 0;
+initialDestination = 0;
+location = {x = 0, y = 0};
+nameResId = 0;
+nameStrNum = 0;
+owner = 0;
+realObjectId = 0;
+realObjectNumber = 0;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = 0;
+type = 0;
+},
+
+[577] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+distanceRange = 0;
+earning = 0;
+initialDestination = 0;
+location = {x = 0, y = 0};
+nameResId = 0;
+nameStrNum = 0;
+owner = 0;
+realObjectId = 0;
+realObjectNumber = 0;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = 0;
+type = 0;
+},
+
+[578] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+distanceRange = 0;
+earning = 0;
+initialDestination = 0;
+location = {x = 0, y = 0};
+nameResId = 0;
+nameStrNum = 0;
+owner = 0;
+realObjectId = 0;
+realObjectNumber = 0;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = 0;
+type = 0;
+},
+
+[579] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+distanceRange = 0;
+earning = 0;
+initialDestination = 0;
+location = {x = 0, y = 0};
+nameResId = 0;
+nameStrNum = 0;
+owner = 0;
+realObjectId = 0;
+realObjectNumber = 0;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = 0;
+type = 0;
+},
+
+[580] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {10, 11, 12, -1, 0, 0, 0, 0, 0, 0, 0, 0};
+distanceRange = 6;
+earning = 5;
+initialDestination = 13;
+location = {x = 4, y = 3};
+nameResId = 14;
+nameStrNum = 15;
+owner = 2;
+realObjectId = 0;
+realObjectNumber = 0;
+rotationMinimum = 7;
+rotationRange = 8;
+spriteIdOverride = 9;
+type = 1;
+},
+
+[581] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+distanceRange = 0;
+earning = 0;
+initialDestination = 0;
+location = {x = 0, y = 0};
+nameResId = 0;
+nameStrNum = 0;
+owner = 0;
+realObjectId = 0;
+realObjectNumber = 0;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = 0;
+type = 0;
+},
+
+[582] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+distanceRange = 0;
+earning = 0;
+initialDestination = 0;
+location = {x = 0, y = 0};
+nameResId = 0;
+nameStrNum = 0;
+owner = 0;
+realObjectId = 0;
+realObjectNumber = 0;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = 0;
+type = 0;
+},
+
+[583] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+distanceRange = 0;
+earning = 0;
+initialDestination = 0;
+location = {x = 0, y = 0};
+nameResId = 0;
+nameStrNum = 0;
+owner = 0;
+realObjectId = 0;
+realObjectNumber = 0;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = 0;
+type = 0;
+},
+
+[584] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+distanceRange = 0;
+earning = 0;
+initialDestination = 0;
+location = {x = 0, y = 0};
+nameResId = 0;
+nameStrNum = 0;
+owner = 0;
+realObjectId = 0;
+realObjectNumber = 0;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = 0;
+type = 0;
+},
+
+[585] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+distanceRange = 0;
+earning = 0;
+initialDestination = 0;
+location = {x = 0, y = 0};
+nameResId = 0;
+nameStrNum = 0;
+owner = 0;
+realObjectId = 0;
+realObjectNumber = 0;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = 0;
+type = 0;
+},
+
+[586] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+distanceRange = 0;
+earning = 0;
+initialDestination = 0;
+location = {x = 0, y = 0};
+nameResId = 0;
+nameStrNum = 0;
+owner = 0;
+realObjectId = 0;
+realObjectNumber = 0;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = 0;
+type = 0;
+},
+
+[587] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+distanceRange = 0;
+earning = 0;
+initialDestination = 0;
+location = {x = 0, y = 0};
+nameResId = 0;
+nameStrNum = 0;
+owner = 0;
+realObjectId = 0;
+realObjectNumber = 0;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = 0;
+type = 0;
+},
+
+[588] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+distanceRange = 0;
+earning = 0;
+initialDestination = 0;
+location = {x = 0, y = 0};
+nameResId = 0;
+nameStrNum = 0;
+owner = 0;
+realObjectId = 0;
+realObjectNumber = 0;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = 0;
+type = 0;
+},
+
+[589] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+distanceRange = 0;
+earning = 0;
+initialDestination = 0;
+location = {x = 0, y = 0};
+nameResId = 0;
+nameStrNum = 0;
+owner = 0;
+realObjectId = 0;
+realObjectNumber = 0;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = 0;
+type = 0;
+},
+
+[590] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+distanceRange = 0;
+earning = 0;
+initialDestination = 0;
+location = {x = 0, y = 0};
+nameResId = 0;
+nameStrNum = 0;
+owner = 0;
+realObjectId = 0;
+realObjectNumber = 0;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = 0;
+type = 0;
+},
+
+[591] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+distanceRange = 0;
+earning = 0;
+initialDestination = 0;
+location = {x = 0, y = 0};
+nameResId = 0;
+nameStrNum = 0;
+owner = 0;
+realObjectId = 0;
+realObjectNumber = 0;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = 0;
+type = 0;
+},
+
+[592] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+distanceRange = 0;
+earning = 0;
+initialDestination = 0;
+location = {x = 0, y = 0};
+nameResId = 0;
+nameStrNum = 0;
+owner = 0;
+realObjectId = 0;
+realObjectNumber = 0;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = 0;
+type = 0;
+},
+
+[593] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+distanceRange = 0;
+earning = 0;
+initialDestination = 0;
+location = {x = 0, y = 0};
+nameResId = 0;
+nameStrNum = 0;
+owner = 0;
+realObjectId = 0;
+realObjectNumber = 0;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = 0;
+type = 0;
+},
+
+[594] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+distanceRange = 0;
+earning = 0;
+initialDestination = 0;
+location = {x = 0, y = 0};
+nameResId = 0;
+nameStrNum = 0;
+owner = 0;
+realObjectId = 0;
+realObjectNumber = 0;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = 0;
+type = 0;
+},
+
+[595] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+distanceRange = 0;
+earning = 0;
+initialDestination = 0;
+location = {x = 0, y = 0};
+nameResId = 0;
+nameStrNum = 0;
+owner = 0;
+realObjectId = 0;
+realObjectNumber = 0;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = 0;
+type = 0;
+},
+
+[596] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+distanceRange = 0;
+earning = 0;
+initialDestination = 0;
+location = {x = 0, y = 0};
+nameResId = 0;
+nameStrNum = 0;
+owner = 0;
+realObjectId = 0;
+realObjectNumber = 0;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = 0;
+type = 0;
+},
+
+[597] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+distanceRange = 0;
+earning = 0;
+initialDestination = 0;
+location = {x = 0, y = 0};
+nameResId = 0;
+nameStrNum = 0;
+owner = 0;
+realObjectId = 0;
+realObjectNumber = 0;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = 0;
+type = 0;
+},
+
+[598] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+distanceRange = 0;
+earning = 0;
+initialDestination = 0;
+location = {x = 0, y = 0};
+nameResId = 0;
+nameStrNum = 0;
+owner = 0;
+realObjectId = 0;
+realObjectNumber = 0;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = 0;
+type = 0;
+},
+
+[599] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = false;
+};
+canBuild = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+distanceRange = 0;
+earning = 0;
+initialDestination = 0;
+location = {x = 0, y = 0};
+nameResId = 0;
+nameStrNum = 0;
+owner = 0;
+realObjectId = 0;
+realObjectNumber = 0;
+rotationMinimum = 0;
+rotationRange = 0;
+spriteIdOverride = 0;
+type = 0;
+},
+
+[600] = {
+attributes = {
+fixedRace = false;
+initialPlayerShip = false;
+initiallyHidden = false;
+staticDestination = true;
+};
+canBuild = {-8454144, -8454144, -8454144, -8454144, -8454144, -8454144, -8454144, -8454144, -8454144, -8454144, -8454144, -8454144};
+distanceRange = -8454144;
+earning = -33024;
+initialDestination = -8454144;
+location = {x = 0, y = 0};
+nameResId = -8454144;
+nameStrNum = -8454144;
+owner = -8454144;
+realObjectId = -8454144;
+realObjectNumber = -8454144;
+rotationMinimum = -8454144;
+rotationRange = -8454144;
+spriteIdOverride = -8454144;
+type = -8454144;
+},};
 ["Objects"] = {
 [000] =  {
 ["name"] = "Cruiser";
