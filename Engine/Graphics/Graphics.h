@@ -248,6 +248,22 @@ void BeginWarp ( float magnitude, float angle, float scale );
  */
 void EndWarp ();
 
+/**
+ * Pre-load a sprite sheet.
+ */
+void PreloadSpriteSheet(const std::string& sheetname);
+
+/**
+ * Pre-load an image.
+ */
+inline void PreloadImage(const std::string& image)
+	{ PreloadSpriteSheet("+" + image); }
+
+/**
+ * Pre-load a font.
+ */
+void PreloadFont(const std::string& font);
+
 }
 
 #endif

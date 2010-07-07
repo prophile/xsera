@@ -4,6 +4,7 @@
 
 #include "Engine/Logging.h"
 #include "Graphics.h"
+#include "Sound.h"
 
 static AppMode* mode = NULL;
 static AppMode* nextMode = NULL;
@@ -77,7 +78,7 @@ public:
 				break;
 			case Input::Event::QUIT:
 				// TODO: interpret this better: maybe just handle it like an ESC?
-				exit(0);
+				QuitEngine();
 				break;
 			default: break;
 		}
@@ -145,6 +146,12 @@ void SwitchMode ( AppMode* newmode )
 {
 	if (nextMode) delete nextMode;
 	nextMode = newmode;
+}
+
+void QuitEngine()
+{
+	Sound::Quit();
+	exit(0);
 }
 
 // 

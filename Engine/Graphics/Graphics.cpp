@@ -239,7 +239,7 @@ void Init ( int w, int h, bool fullscreen )
 			if (!SDL_SetVideoMode(w, h, 0, flags))
 			{
                 LOG("Graphics", LOG_ERROR, "Bad graphics driver.");
-				exit(1);
+				abort();
 			}
 		}
 	}
@@ -941,6 +941,22 @@ void EndWarp ()
 	DisableBlending();
 	glDrawArrays(GL_QUADS, 0, 4);
 #endif
+}
+
+void PreloadSpriteSheet(const std::string& sheetname)
+{
+	SpriteSheet* sheet;
+	SheetMap::iterator iter = spriteSheets.find(sheetname);
+	if (iter == spriteSheets.end())
+	{
+		sheet = new SpriteSheet(sheetname);
+		spriteSheets[sheetname] = sheet;
+	}
+}
+
+void PreloadFont(const std::string& fontname)
+{
+	TextRenderer::TextDimensions(fontname, "", 2);
 }
 
 }

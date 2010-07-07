@@ -51,7 +51,7 @@ SpriteSheet::SpriteSheet ( const std::string& name )
 	{
         // TODO: make this work gracefully
         LOG("Graphics::SpriteSheet", LOG_ERROR, "Failed to load image: %s", name.c_str());
-		exit(1);
+		abort();
 		delete configRWOps;
 	}
 	if (configRWOps)
@@ -67,7 +67,7 @@ SpriteSheet::SpriteSheet ( const std::string& name )
 		if (xmlDoc->Error())
 		{
             LOG("Graphics::SpriteSheet", LOG_ERROR, "XML error: %s", xmlDoc->ErrorDesc());
-			exit(1);
+			abort();
 		}
 		TiXmlElement* root = xmlDoc->RootElement();
 		assert(root);
@@ -128,7 +128,7 @@ void SpriteSheet::Draw ( int x, int y, const vec2& size )
 	if (scaleFactor <= 0)
 	{
 		printf("Trouble with scaleFactor value.");
-		exit(101);
+		abort();
 	}
 	float vx = halfSize.X() * scaleFactor, vy = halfSize.Y() * scaleFactor;
 	GLfloat vertices[] = { -vx, -vy, vx, -vy, vx, vy, -vx, vy };
@@ -155,7 +155,7 @@ void SpriteSheet::DrawTile ( int x, int y, float vx, float vy, const vec2& size 
 	if (scaleFactor <= 0)
 	{
 		printf("Trouble with scaleFactor value.");
-		exit(101);
+		abort();
 	}
 	GLfloat vertices[] = { -vx, -vy, vx, -vy, vx, vy, -vx, vy };
 	float texBLX, texBLY, texWidth = tileSizeX, texHeight = tileSizeY;

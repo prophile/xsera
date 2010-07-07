@@ -21,9 +21,11 @@ alureStream* currentMusicStream = NULL;
 std::string currentMusicName = "";
 int soundSourceIndex = 0;
 
-void DieUnpleasantly()
+void Quit()
 {
+	alureUpdateInterval(0);
 	StopMusic();
+	alureSleep(0.1f);
 	alureShutdownDevice();
 }
 
@@ -59,8 +61,8 @@ void Init(int frequency, int resolution, int sources)
 	--sources; // one spare source for music
 	ALCint attribs[] = {
 		ALC_FREQUENCY, frequency,
-		ALC_MONO_SOURCES, sources,
-		ALC_STEREO_SOURCES, 1,
+		/*ALC_MONO_SOURCES, sources,
+		ALC_STEREO_SOURCES, 1,*/
 		0
 	};
 	alureInitDevice(NULL, attribs);
@@ -69,10 +71,10 @@ void Init(int frequency, int resolution, int sources)
 	alGenSources(1, &musicSource);
 	//alGenBuffers(2, musicBufs);
 	soundSourceCount = sources;
-	atexit(DieUnpleasantly);
 	alDistanceModel(AL_INVERSE_DISTANCE_CLAMPED);
 	alSpeedOfSound(1400.0);
 	alDopplerFactor(0.7);
+	alureUpdateInterval(0.03333f);
 }
 
 static ALuint GetFreeSource()
@@ -92,6 +94,7 @@ void PlaySound(const std::string& name, float gain)
 	const static ALfloat fz[] = { 0.0f, 0.0f, 0.0f };
 	ALuint buf    = GetSound(name);
 	ALuint source = GetFreeSource();
+	LOG("Sound", LOG_NOTICE, "playing sound %s on channel %d", name.c_str(), source);
 	alSourcei(source, AL_BUFFER, buf);
 	alSourcei(source, AL_SOURCE_RELATIVE, AL_TRUE);
 	alSourcef(source, AL_GAIN, gain);

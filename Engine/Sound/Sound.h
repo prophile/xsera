@@ -16,6 +16,11 @@ namespace Sound
 void Init ( int frequency, int resolution, int sources );
 
 /**
+ * Shut down the sound subsystem.
+ */
+void Quit ();
+
+/**
  * Preloads a sound
  *
  * @param name The name of the sound to preload

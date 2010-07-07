@@ -39,6 +39,10 @@ void SwitchMode ( AppMode* newMode );
  * Queries the name of the current mode
  */
 const char* QueryMode ();
+/**
+ * Shuts down the engine.
+ */
+void QuitEngine();
 
 class AppMode
 {

@@ -165,6 +165,8 @@
 		57A29DDA11963F940074B901 /* SocketProvider.h in Headers */ = {isa = PBXBuildFile; fileRef = 57A29DD611963F940074B901 /* SocketProvider.h */; };
 		57B806BC113E21C900766C6F /* GAFFile.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 57B806BA113E21C900766C6F /* GAFFile.cpp */; };
 		57B806BD113E21C900766C6F /* GAFFile.h in Headers */ = {isa = PBXBuildFile; fileRef = 57B806BB113E21C900766C6F /* GAFFile.h */; };
+		57DFB0C711E3992F00941E61 /* MachinePower.h in Headers */ = {isa = PBXBuildFile; fileRef = 57DFB0C611E3992F00941E61 /* MachinePower.h */; };
+		57DFB0C911E3993700941E61 /* MachinePower.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 57DFB0C811E3993700941E61 /* MachinePower.cpp */; };
 		57FCA50B10ACDF9D002D6A9E /* Object3D.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 57FCA50910ACDF9D002D6A9E /* Object3D.cpp */; };
 		57FCA50C10ACDF9D002D6A9E /* Object3D.h in Headers */ = {isa = PBXBuildFile; fileRef = 57FCA50A10ACDF9D002D6A9E /* Object3D.h */; };
 		D221494111652EA4009575A0 /* bit.c in Sources */ = {isa = PBXBuildFile; fileRef = D221494011652EA4009575A0 /* bit.c */; };
@@ -330,6 +332,8 @@
 		57A29DD611963F940074B901 /* SocketProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SocketProvider.h; sourceTree = "<group>"; };
 		57B806BA113E21C900766C6F /* GAFFile.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GAFFile.cpp; sourceTree = "<group>"; };
 		57B806BB113E21C900766C6F /* GAFFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAFFile.h; sourceTree = "<group>"; };
+		57DFB0C611E3992F00941E61 /* MachinePower.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MachinePower.h; sourceTree = "<group>"; };
+		57DFB0C811E3993700941E61 /* MachinePower.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MachinePower.cpp; sourceTree = "<group>"; };
 		57FCA50910ACDF9D002D6A9E /* Object3D.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Object3D.cpp; sourceTree = "<group>"; };
 		57FCA50A10ACDF9D002D6A9E /* Object3D.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Object3D.h; sourceTree = "<group>"; };
 		D221494011652EA4009575A0 /* bit.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = bit.c; sourceTree = "<group>"; };
@@ -578,6 +582,8 @@
 		496A24C00F0EB37900C53BA1 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				57DFB0C811E3993700941E61 /* MachinePower.cpp */,
+				57DFB0C611E3992F00941E61 /* MachinePower.h */,
 				57B806BA113E21C900766C6F /* GAFFile.cpp */,
 				57B806BB113E21C900766C6F /* GAFFile.h */,
 				57966A7F10AE7E8A0088327C /* RNG.h */,
@@ -737,6 +743,7 @@
 				57A29DD111963F8D0074B901 /* Splitting.h in Headers */,
 				57A29DD811963F940074B901 /* LocalOnly.h in Headers */,
 				57A29DDA11963F940074B901 /* SocketProvider.h in Headers */,
+				57DFB0C711E3992F00941E61 /* MachinePower.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -865,6 +872,7 @@
 				57A29DD011963F8D0074B901 /* Splitting.cpp in Sources */,
 				57A29DD711963F940074B901 /* LocalOnly.cpp in Sources */,
 				57A29DD911963F940074B901 /* SocketProvider.cpp in Sources */,
+				57DFB0C911E3993700941E61 /* MachinePower.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -874,19 +882,22 @@
 		496A23C50F0EB1F700C53BA1 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 				COPY_PHASE_STRIP = NO;
-				GCC_VERSION = 4.0;
-				SDKROOT = macosx10.4;
+				GCC_VERSION = 4.2;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx10.5;
 			};
 			name = Debug;
 		};
 		496A23C60F0EB1F700C53BA1 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 				COPY_PHASE_STRIP = YES;
 				GCC_PREPROCESSOR_DEFINITIONS = NDEBUG;
-				GCC_VERSION = 4.0;
-				SDKROOT = macosx10.4;
+				GCC_VERSION = 4.2;
+				SDKROOT = macosx10.5;
 			};
 			name = Release;
 		};
@@ -894,6 +905,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 				COPY_PHASE_STRIP = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					../External,
@@ -904,39 +916,7 @@
 				GCC_ENABLE_FIX_AND_CONTINUE = YES;
 				GCC_MODEL_TUNING = G5;
 				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_VERSION = 4.0;
-				HEADER_SEARCH_PATHS = (
-					..,
-					../Engine,
-					../External,
-					../External/Lua,
-					../External/eNet,
-					../External/SDL.framework/Headers,
-				);
-				INSTALL_PATH = /usr/local/lib;
-				PREBINDING = NO;
-				PRODUCT_NAME = Apollo;
-			};
-			name = Debug;
-		};
-		496A27800F0EC9A300C53BA1 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				COPY_PHASE_STRIP = YES;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				FRAMEWORK_SEARCH_PATHS = (
-					../External,
-					"\"$(SRCROOT)/../External\"",
-				);
-				GCC_CHECK_RETURN_VALUE_OF_OPERATOR_NEW = NO;
-				GCC_C_LANGUAGE_STANDARD = c99;
-				GCC_ENABLE_FIX_AND_CONTINUE = NO;
-				GCC_MODEL_TUNING = G5;
-				GCC_OPTIMIZATION_LEVEL = 3;
-				GCC_PREPROCESSOR_DEFINITIONS = NDEBUG;
-				GCC_VERSION = 4.0;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
 				HEADER_SEARCH_PATHS = (
 					..,
 					../Engine,
@@ -949,6 +929,39 @@
 				LLVM_LTO = NO;
 				PREBINDING = NO;
 				PRODUCT_NAME = Apollo;
+			};
+			name = Debug;
+		};
+		496A27800F0EC9A300C53BA1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				FRAMEWORK_SEARCH_PATHS = (
+					../External,
+					"\"$(SRCROOT)/../External\"",
+				);
+				GCC_CHECK_RETURN_VALUE_OF_OPERATOR_NEW = NO;
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_MODEL_TUNING = G5;
+				GCC_OPTIMIZATION_LEVEL = 3;
+				GCC_PREPROCESSOR_DEFINITIONS = NDEBUG;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				HEADER_SEARCH_PATHS = (
+					..,
+					../Engine,
+					../External,
+					../External/Lua,
+					../External/eNet,
+					../External/SDL.framework/Headers,
+				);
+				INSTALL_PATH = /usr/local/lib;
+				LLVM_LTO = YES;
+				PREBINDING = NO;
+				PRODUCT_NAME = Apollo;
 				ZERO_LINK = NO;
 			};
 			name = Release;
@@ -956,10 +969,11 @@
 		D2D842FB1124A8C700564113 /* Debug (quiet) */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 				COPY_PHASE_STRIP = NO;
 				GCC_PREPROCESSOR_DEFINITIONS = NDEBUG;
-				GCC_VERSION = 4.0;
-				SDKROOT = macosx10.4;
+				GCC_VERSION = 4.2;
+				SDKROOT = macosx10.5;
 			};
 			name = "Debug (quiet)";
 		};
@@ -967,6 +981,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 				COPY_PHASE_STRIP = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					../External,
@@ -978,7 +993,7 @@
 				GCC_MODEL_TUNING = G5;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = "NDEBUG=1";
-				GCC_VERSION = 4.0;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
 				HEADER_SEARCH_PATHS = (
 					..,
 					../Engine,
@@ -988,6 +1003,7 @@
 					../External/SDL.framework/Headers,
 				);
 				INSTALL_PATH = /usr/local/lib;
+				LLVM_LTO = NO;
 				PREBINDING = NO;
 				PRODUCT_NAME = Apollo;
 			};

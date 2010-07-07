@@ -167,7 +167,7 @@ void SetShader ( const std::string& name )
 GLuint UniformLocation ( const std::string& name )
 {
 	GLuint location = glGetUniformLocation(currentShader, name.c_str());
-	assert(location != -1UL);
+	assert(location != (GLuint)-1);
 	return location;
 }
 

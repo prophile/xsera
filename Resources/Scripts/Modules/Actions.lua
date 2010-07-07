@@ -242,6 +242,7 @@ actionTable["create-object-action"] = function(action, source, direct)
 		end
 		
 		new.ai.owner = owner
+		new.ai.creator = srcMotion.object_id
 		
 		CreateTrigger(new)
 		scen.objects[new.physics.object_id] = new
@@ -286,10 +287,20 @@ end
 --actionTable["nil-target-action"] = noAction
 --actionTable["no-action"]         = noAction
 actionTable["play-sound-action"] = function(action, source, direct)
-
 	local rsound = gameData["Sounds"][action["id-minimum"]]
+	local parent
+	if action.reflexive == true then
+		parent = source
+	else
+		parent = direct
+	end
 	if rsound ~= nil then
-		sound.play(rsound)
+		if parent == nil or parent.physics == nil or
+		   ((source.ai or direct.ai).creator == scen.playerShip.physics.object_id) then
+			sound.play(rsound)
+		else
+			sound.play_positional(rsound, parent.physics.position, parent.physics.velocity)
+		end
 	else
 		print("Sound '" .. action["id-minimum"] .. "' not found.")
 	end

@@ -20,7 +20,7 @@ local execs = {
 	{ xCoord = SPLASH_SHIFT_LEFT, yCoord = TOP_OF_SPLASH - 4 * SPLASH_STRIDE, length = SPLASH_SHIFT_RIGHT - SPLASH_SHIFT_LEFT, text = "Options", justify = "left", boxColour = ClutColour(12, 6), textColour = ClutColour(13, 9), execute = function() mode_manager.switch('Ares/Options') end, letter = "O" },
 	{ xCoord = SPLASH_SHIFT_LEFT, yCoord = TOP_OF_SPLASH - 5 * SPLASH_STRIDE, length = SPLASH_SHIFT_RIGHT - SPLASH_SHIFT_LEFT, text = "About Ares and Xsera", justify = "left", boxColour = ClutColour(1, 6), textColour = ClutColour(13, 9), execute = function() mode_manager.switch('Xsera/Credits') end, letter = "A" },
 	{ xCoord = SPLASH_SHIFT_LEFT, yCoord = TOP_OF_SPLASH - 6 * SPLASH_STRIDE, length = SPLASH_SHIFT_RIGHT - SPLASH_SHIFT_LEFT, text = "Xsera Main Menu", justify = "left", boxColour = ClutColour(9, 6), textColour = ClutColour(13, 9), execute = function() mode_manager.switch('Xsera/MainMenu') end, letter = "M" },
-	{ xCoord = SPLASH_SHIFT_LEFT, yCoord = TOP_OF_SPLASH - 7 * SPLASH_STRIDE, length = SPLASH_SHIFT_RIGHT - SPLASH_SHIFT_LEFT, text = "Quit", justify = "left", boxColour = ClutColour(8, 4), textColour = ClutColour(13, 9), execute = function() os.exit() end, letter = "Q" } }
+	{ xCoord = SPLASH_SHIFT_LEFT, yCoord = TOP_OF_SPLASH - 7 * SPLASH_STRIDE, length = SPLASH_SHIFT_RIGHT - SPLASH_SHIFT_LEFT, text = "Quit", justify = "left", boxColour = ClutColour(8, 4), textColour = ClutColour(13, 9), execute = function() mode_manager.quit() end, letter = "Q" } }
 
 function init()
 	sound.stop_music()

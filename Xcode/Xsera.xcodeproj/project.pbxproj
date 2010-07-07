@@ -281,23 +281,25 @@
 		496923CC0EBE4B7600930DDD /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(NATIVE_ARCH)";
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 0.0.2;
 				GCC_PREPROCESSOR_DEFINITIONS = "";
-				GCC_VERSION = 4.0;
-				SDKROOT = macosx10.4;
+				GCC_VERSION = 4.2;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx10.5;
 			};
 			name = Debug;
 		};
 		496923CD0EBE4B7600930DDD /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 				COPY_PHASE_STRIP = YES;
+				DEPLOYMENT_POSTPROCESSING = YES;
 				GCC_PREPROCESSOR_DEFINITIONS = NDEBUG;
-				GCC_VERSION = 4.0;
-				SDKROOT = macosx10.4;
+				GCC_VERSION = 4.2;
+				SDKROOT = macosx10.5;
 			};
 			name = Release;
 		};
@@ -305,7 +307,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 				COPY_PHASE_STRIP = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -318,7 +320,7 @@
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = NO;
 				GCC_PREFIX_HEADER = "";
-				GCC_VERSION = 4.0;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
 				HEADER_SEARCH_PATHS = (
 					"$(SRCROOT)/../External",
 					"$(SRCROOT)/../External/SDL.framework/Headers",
@@ -329,6 +331,7 @@
 				);
 				INFOPLIST_FILE = "Xsera-Info.plist";
 				INSTALL_PATH = "$(HOME)/Applications";
+				LLVM_LTO = NO;
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = (
 					"-framework",
@@ -345,7 +348,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -357,7 +360,7 @@
 				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = NO;
 				GCC_PREFIX_HEADER = "";
-				GCC_VERSION = 4.0;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
 				HEADER_SEARCH_PATHS = (
 					"$(SRCROOT)/../External",
 					"$(SRCROOT)/../External/SDL.framework/Headers",
@@ -368,6 +371,7 @@
 				);
 				INFOPLIST_FILE = "Xsera-Info.plist";
 				INSTALL_PATH = "$(HOME)/Applications";
+				LLVM_LTO = YES;
 				OTHER_LDFLAGS = (
 					"-framework",
 					Foundation,
@@ -383,12 +387,13 @@
 		D2D8433D1124AB1900564113 /* Debug (quiet) */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(NATIVE_ARCH)";
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 0.0.2;
 				GCC_PREPROCESSOR_DEFINITIONS = "";
-				GCC_VERSION = 4.0;
-				SDKROOT = macosx10.4;
+				GCC_VERSION = 4.2;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx10.5;
 			};
 			name = "Debug (quiet)";
 		};
@@ -396,7 +401,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 				COPY_PHASE_STRIP = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -409,7 +414,7 @@
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = NO;
 				GCC_PREFIX_HEADER = "";
-				GCC_VERSION = 4.0;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
 				HEADER_SEARCH_PATHS = (
 					"$(SRCROOT)/../External",
 					"$(SRCROOT)/../External/SDL.framework/Headers",
@@ -420,6 +425,7 @@
 				);
 				INFOPLIST_FILE = "Xsera-Info.plist";
 				INSTALL_PATH = "$(HOME)/Applications";
+				LLVM_LTO = NO;
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = (
 					"-framework",

@@ -609,6 +609,13 @@ int MM_Release ( lua_State* L )
 	#endif
 }
 
+int MM_Quit ( lua_State* L )
+{
+	QuitEngine();
+	// unreachable!
+	return 0;
+}
+
 /**
  * @page lua_mode_manager The Lua Mode Manager Registry
  * This page contains information about the Lua mode manager registry.
@@ -651,6 +658,7 @@ luaL_Reg registryModeManager[] =
 	"time", MM_Time,
 	"query", MM_Query,
 	"is_release", MM_Release,
+	"quit", MM_Quit,
 	NULL, NULL
 };
 
@@ -1150,6 +1158,27 @@ int GFX_EndWarp ( lua_State* L )
 	return 0;
 }
 
+int GFX_PreloadSpriteSheet ( lua_State* L )
+{
+	const char* sheet = luaL_checkstring(L, 1);
+	Graphics::PreloadSpriteSheet(sheet);
+	return 0;
+}
+
+int GFX_PreloadImage ( lua_State* L )
+{
+	const char* image = luaL_checkstring(L, 1);
+	Graphics::PreloadImage(image);
+	return 0;
+}
+
+int GFX_PreloadFont ( lua_State* L )
+{
+	const char* font = luaL_checkstring(L, 1);
+	Graphics::PreloadFont(font);
+	return 0;
+}
+
 /**
  * @page lua_graphics The Lua Graphics Registry
  * This page contains information about the Lua graphics registry.
@@ -1435,6 +1464,9 @@ luaL_Reg registryGraphics[] =
 	"begin_warp", GFX_BeginWarp,
 	"end_warp", GFX_EndWarp,
 	"draw_3d_ambient", GFX_DrawObject3DAmbient,
+	"preload_sprite_sheet", GFX_PreloadSpriteSheet,
+	"preload_image", GFX_PreloadImage,
+	"preload_font", GFX_PreloadFont,
     NULL, NULL
 };
 

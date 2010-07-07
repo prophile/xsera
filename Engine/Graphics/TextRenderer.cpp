@@ -86,7 +86,7 @@ loadFail:
 	if (name == DEFAULT_FONT)
 	{
         LOG("Graphics::TextRenderer", LOG_ERROR, "Unable to load default font: %s", DEFAULT_FONT);
-		exit(1);
+		abort();
 	}
 	loadedFont = GetFont(DEFAULT_FONT, size);
 	fonts[name] = loadedFont;

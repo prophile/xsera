@@ -30,13 +30,15 @@ void Startup ()
 	// do init stuff
 	InitModeManager();
 	ResourceManager::Init("Xsera");
+	// check machine power
+	CheckMachinePowerSanity();
 	Preferences::Load();
 	Graphics::Init(ToInt(Preferences::Get("Screen/Width")), ToInt(Preferences::Get("Screen/Height")), ToBool(Preferences::Get("Screen/Fullscreen")));
 	Sound::Init(ToInt(Preferences::Get("Audio/SamplingRate")), ToInt(Preferences::Get("Audio/Resolution")), ToInt(Preferences::Get("Audio/Channels")));
 	Sound::SetMusicVolume(ToFloat(Preferences::Get("Audio/MusicVolume")));
 	Sound::SetSoundVolume(ToFloat(Preferences::Get("Audio/SoundVolume")));
-	// compile class script
-	CompileScript("System/Class");
+	Graphics::BeginFrame();
+	Graphics::EndFrame();
 	LuaScript bootScript ("System/Boot");
 	#ifdef NDEBUG
 		SwitchMode("Xsera/Intro");

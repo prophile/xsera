@@ -184,7 +184,7 @@ void WriteFile ( const std::string& name, const void* data, size_t len )
 		if (WriteFile(name) == NULL)
 		{
 			LOG("ResourceManager", LOG_ERROR, "Unable to create file\n");
-			exit(1);
+			abort();
 		}
 	}
 	FILE* fp = fopen(path.c_str(), "rb");

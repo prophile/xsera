@@ -40,16 +40,16 @@ static void luaHandleError ( lua_State* L )
 static void luaLoad ( lua_State* L, const std::string& path )
 {
 	std::string fullpath = "Scripts/" + path + ".lua";
+#ifdef NDEBUG
 	if (ResourceManager::FileExists("Scripts/" + path + ".lo"))
 	{
 		fullpath = "Scripts/" + path + ".lo";
 	}
 	else
 	{
-#ifdef NDEBUG
 		CompileScript(path);
-#endif
 	}
+#endif
 	SDL_RWops* rwops = ResourceManager::OpenFile(fullpath);
     if (rwops)
     {
