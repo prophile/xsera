@@ -118,7 +118,6 @@
 				496923E20EBE4C3500930DDD /* Resources */,
 				496923DC0EBE4BC300930DDD /* Products */,
 				496923DE0EBE4BC300930DDD /* Xsera-Info.plist */,
-				5715EBE411E0104800897669 /* OpenAL.framework */,
 			);
 			sourceTree = "<group>";
 		};
@@ -153,6 +152,7 @@
 		496923E30EBE4C3900930DDD /* External */ = {
 			isa = PBXGroup;
 			children = (
+				5715EBE411E0104800897669 /* OpenAL.framework */,
 				49A0E6930ECC3887007F3458 /* OpenGL.framework */,
 				496924170EBE4CEA00930DDD /* SDL.framework */,
 				496924180EBE4CEA00930DDD /* SDL_image.framework */,
