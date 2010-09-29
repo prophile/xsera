@@ -786,7 +786,7 @@ int GFX_DrawText ( lua_State* L )
 	const char* font = luaL_checkstring(L, 2);
 	const char* justify = luaL_checkstring(L, 3);
 	vec2 location = luaL_checkvec2(L, 4);
-	float height = luaL_checknumber(L, 5);
+	int height = luaL_checknumber(L, 5);
 	float rotation = 0.0f;
 	if (nargs >= 7)
 	{
