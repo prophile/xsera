@@ -207,6 +207,13 @@ int Pref_Set ( lua_State* L )
  * Returns:\n
  * boolean - The status of the requested preference. (currently, this is hardcoded)
  * 
+ * @section pref_get get
+ * Finds and returns a particular preference.\n
+ * Parameters:\n
+ * arg - The name of the preference to be set.\n
+ * set - The value to set the preference to.\n
+ * 
+ * 
  * @todo Make @ref xml_get un-hardcoded.
  */
 
@@ -463,6 +470,9 @@ static int XML_ParseFile (lua_State *L)
  * name - The name of the mode that the game is currently in.\n
  * Returns:\n
  * A table with the contents of the file in it.\n
+ * 
+ * @todo Determine whether we should keep this function, make / use an XML
+ * library, or switch to YAML.
  */
 
 luaL_Reg registryXML[] =
@@ -650,6 +660,10 @@ int MM_Quit ( lua_State* L )
  * Returns the game's current build mode. This function has no parameters.\n
  * Returns:\n
  * bool - True if the game's current build is a release build, false if not.
+ * 
+ * @section quit
+ * Kill the engine and exit the program. This function has no parameters or
+ * arguments.\n
  */
 
 luaL_Reg registryModeManager[] =
@@ -810,9 +824,7 @@ int GFX_TextLength (lua_State* L )
 	const char* font = luaL_checkstring(L, 2);
 	float height = luaL_checknumber(L, 3);
 	vec2 dims = Graphics::TextRenderer::TextDimensions(font, text, height);
-//	printf("[%f, %f]\n", dims.X(), dims.Y());
 	dims = dims * (height / dims.Y());
-//	printf("[%f, %f]\n", dims.X(), dims.Y());
 	lua_pushnumber(L, dims.X());
 	return 1;
 }
@@ -1208,9 +1220,9 @@ int GFX_PreloadFont ( lua_State* L )
  * @section sprites Sprites
  * 
  * @subsection draw_image
- * Draws an "image", which is functionally different from a sprite. In general,
- * a sprite has rotational capabilities and / or multiple frames, like most
- * ships, where an image does not, like panels on the sides of the screen.\n
+ * Draws an "image", which is functionally different from a sprite. An image is
+ * a single picture, unlike a sprite, which is several panels which can be
+ * combined to form an animation or rotations of the same object.\n
  * Parameters:\n
  * imgname - The name of the image to be drawn\n
  * loc_x - The x location of where the center of the image should be\n
@@ -1225,9 +1237,9 @@ int GFX_PreloadFont ( lua_State* L )
  * where the colour values are between 0.0 and 1.0. (optional)
  * 
  * @subsection draw_sprite
- * Draws a "sprite", which is functionally different from an image. In general,
- * a sprite has rotational capabilities and / or multiple frames, like a ship,
- * where an image does not, like panels on the sides of the screen.
+ * Draws a "sprite", which is functionally different from an image. A sprite is
+ * defined to be an image with several panels which can be combined to form an
+ * animation or rotations of the same object.
  * Parameters:\n
  * spritesheet - The name of the file containing the sprites\n
  * loc_x - The x location of where the center of the sprite should be\n
@@ -1242,14 +1254,16 @@ int GFX_PreloadFont ( lua_State* L )
  *    t = { r = red_val, b = blue_val, g = green_val, a = alpha_val }\n
  * where the colour values are between 0.0 and 1.0. (optional)
  * 
+ * @subsection draw_sprite_frame
+ * 
  * @subsection draw_sheet_sprite
  * Draws a given sprite from within a sprite sheet.\n
  * Parameters:\n
  * spritesheet - The name of the sprite sheet to be drawn\n
- * sheet_x - ?\n
- * sheet_y - ?\n
- * loc_x - The x location of where the center of the sprite should be\n
- * loc_y - The y location of where the center of the sprite should be\n
+ * sheet_x - the x-coordinate of the sprite on the sheet\n
+ * sheet_y - the y-coordinate of the sprite on the sheet\n
+ * loc_x - The x-coordinate of where the center of the sprite should be drawn\n
+ * loc_y - The y-coordinate of where the center of the sprite should be drawn\n
  * size_x - The x size, in pixels, of the sprite\n
  * size_y - The y size, in pixels, of the sprite - note that size_x and size_y
  * should be in the same ratio of x:y as the original image, or stretching may
@@ -1259,8 +1273,6 @@ int GFX_PreloadFont ( lua_State* L )
  * colour - The colour to be applied to the sprite, in the form of a table:\n
  *    t = { r = red_val, b = blue_val, g = green_val, a = alpha_val }\n
  * where the colour values are between 0.0 and 1.0. (optional)
- * @todo define sheet_x and sheet_y for @ref draw_sheet_sprite
- * @todo add in table reading for colours to @ref draw_sheet_sprite
  * 
  * @subsection sprite_dimensions
  * Returns the dimensions for a given sprite.\n
@@ -1321,6 +1333,12 @@ int GFX_PreloadFont ( lua_State* L )
  * where the colour values are between 0.0 and 1.0. (optional)
  *
  * @subsection draw_point
+ * Draws a point of the given size, color, and location to the screen.\n
+ * Parameters:\n
+ * location - A vector giving the location where the point should be drawn.\n
+ * size - The size (or radius) in pixels of the point to be drawn.\n
+ * colour - The colour to be applied to the point, in the form of a table:\n
+ *    t = { r = red_val, b = blue_val, g = green_val, a = alpha_val }\n
  * 
  * @subsection draw_box
  * Draws a basic box.\n
@@ -1404,6 +1422,7 @@ int GFX_PreloadFont ( lua_State* L )
  *
  * @subsection draw_lightning
  * Draws lightning effects needed for certain weapons.\n
+ * Parameters:\n
  * x1 - The x coordinate of the starting point.\n
  * y1 - The y coordinate of the starting point.\n
  * x2 - The x coordinate of the ending point.\n
@@ -1417,7 +1436,6 @@ int GFX_PreloadFont ( lua_State* L )
  * colour - The colour to be applied to the lightning, in the form of a table:\n
  *    t = { r = red_val, b = blue_val, g = green_val, a = alpha_val }\n
  * where the colour values are between 0.0 and 1.0. (optional)
- * @todo figure out "chaos" and "tailed" properties of @ref draw_lightning
  * 
  * @subsection add_particles
  * 
@@ -1426,13 +1444,29 @@ int GFX_PreloadFont ( lua_State* L )
  * @subsection clear_particles
  * 
  * @subsection begin_warp
+ * begin_warp marks the beginning of items to be drawn in a warped style.
+ * Everything drawn between a @ref begin_warp and @ref end_warp call pair will be drawn
+ * with the warped style effect over it.\n
+ * Parameters:\n
+ * magnitude - How much the warp effect distorts objects.
+ * angle - At what angle the distortion shader distorts objects - this should be
+ * the same as the direction the ship is pointing.
  * 
  * @subsection end_warp
+ * end_warp marks the ending of items to be drawn in a warped style. Closes a
+ * @ref begin_warp call to end the distortion.
  * 
  * @subsection draw_3d_ambient
  * 
- * @todo Document @ref add_particles, @ref draw_particles, @ref clear_particles, @ref begin_warp, @ref end_warp, and @ref draw_point
- * @todo Fix documentation @ref draw_image and @ref draw_sprite to better define sprites/images.
+ * @section preloading Preloading
+ * 
+ * @subsection preload_sprite_sheet
+ * 
+ * @subsection preload_image
+ * 
+ * @subsection preload_font
+ * 
+ * @todo Document @ref preload_sprite_sheet, @ref preload_image, @ref preload_font, @ref draw_sprite_frame, @ref add_particles, @ref draw_particles, @ref clear_particles, and @ref draw_point and @ref draw_3d_ambient
  */
 
 luaL_Reg registryGraphics[] =
