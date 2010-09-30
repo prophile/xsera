@@ -77,7 +77,6 @@ public:
 				script->InvokeSubroutine("mouse_up", event.object, mouseMapped.X(), mouseMapped.Y());
 				break;
 			case Input::Event::QUIT:
-				// TODO: interpret this better: maybe just handle it like an ESC?
 				QuitEngine();
 				break;
 			default: break;

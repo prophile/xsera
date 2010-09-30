@@ -169,7 +169,6 @@
 		57DFB0C911E3993700941E61 /* MachinePower.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 57DFB0C811E3993700941E61 /* MachinePower.cpp */; };
 		57FCA50B10ACDF9D002D6A9E /* Object3D.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 57FCA50910ACDF9D002D6A9E /* Object3D.cpp */; };
 		57FCA50C10ACDF9D002D6A9E /* Object3D.h in Headers */ = {isa = PBXBuildFile; fileRef = 57FCA50A10ACDF9D002D6A9E /* Object3D.h */; };
-		7A5CCC861252E9FE008FA412 /* asdf.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7A5CCC851252E9FE008FA412 /* asdf.cpp */; };
 		D221494111652EA4009575A0 /* bit.c in Sources */ = {isa = PBXBuildFile; fileRef = D221494011652EA4009575A0 /* bit.c */; };
 /* End PBXBuildFile section */
 
@@ -337,8 +336,6 @@
 		57DFB0C811E3993700941E61 /* MachinePower.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MachinePower.cpp; sourceTree = "<group>"; };
 		57FCA50910ACDF9D002D6A9E /* Object3D.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Object3D.cpp; sourceTree = "<group>"; };
 		57FCA50A10ACDF9D002D6A9E /* Object3D.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Object3D.h; sourceTree = "<group>"; };
-		7A5CCC821252E9F0008FA412 /* asdf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = asdf; path = ../../../../asdf; sourceTree = SOURCE_ROOT; };
-		7A5CCC851252E9FE008FA412 /* asdf.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = asdf.cpp; path = ../../../../asdf.cpp; sourceTree = SOURCE_ROOT; };
 		D221494011652EA4009575A0 /* bit.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = bit.c; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -562,8 +559,6 @@
 		496A24B70F0EB37900C53BA1 /* Scripting */ = {
 			isa = PBXGroup;
 			children = (
-				7A5CCC851252E9FE008FA412 /* asdf.cpp */,
-				7A5CCC821252E9F0008FA412 /* asdf */,
 				496A24B80F0EB37900C53BA1 /* Compile.cpp */,
 				496A24B90F0EB37900C53BA1 /* Compile.h */,
 				496A24BA0F0EB37900C53BA1 /* LuaBind.cpp */,
@@ -878,7 +873,6 @@
 				57A29DD711963F940074B901 /* LocalOnly.cpp in Sources */,
 				57A29DD911963F940074B901 /* SocketProvider.cpp in Sources */,
 				57DFB0C911E3993700941E61 /* MachinePower.cpp in Sources */,
-				7A5CCC861252E9FE008FA412 /* asdf.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
