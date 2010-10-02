@@ -1798,7 +1798,9 @@ int import ( lua_State* L )
  * preferences.
  * 
  * @ref lua_window \n
- * This registry controls aspects 
+ * This registry controls aspects of the window (mostly those controlled
+ * directly by SDL, such as window size, fullscreen status, and even if the
+ * mouse is displaying on the screen).
  * preferences.
  */
 
