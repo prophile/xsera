@@ -106,7 +106,14 @@ luaL_Reg registryObjectVector[] =
 	"__tostring", VEC_tostring,
 	NULL, NULL
 };
-	
+
+/**
+ * Checks the given vector for validity (that it is a table with x and y values)
+ * @param L A pointer to the lua_State containing the Lua stack.
+ * @param narg The argument number of the pointer on the L stack that you would
+ * like to check for validity.
+ * @return A vec2 of the vector at narg, if it is valid.
+ */
 vec2 luaL_checkvec2(lua_State* L, int narg)
 {
 	if (!lua_istable(L, narg))
@@ -130,21 +137,39 @@ vec2 luaL_checkvec2(lua_State* L, int narg)
 	return vec2(x, y);
 }
 
-std::string FloatToString ( float val )
+/**
+ * Converts a float to a std::string.
+ * @param value The float value to convert to a string.
+ * @return The std::string version of the float.
+ */
+std::string FloatToString ( float& value )
 {
 	std::ostringstream o;
-	if (!(o << val))
+    
+	if (!(o << value))
 	{
-		printf("BAD CONVERSION?!?!?");
+		printf("Failed conversion.");
 	}
 	return o.str();
 }
 
+/**
+ * Converts a std::string to an integer value.
+ * @param value The value to be converted to integer.
+ * @return The converted integer.
+ * @todo @ref ToInt is a one-line function... do we really need it?
+ */
 unsigned ToInt ( const std::string& value )
 {
 	return atoi(value.c_str());
 }
 
+/**
+ * Converts a std::string to a boolean value.
+ * @param value The value to be converted to boolean.
+ * @return The converted boolean.
+ * @todo @ref ToBool is a one-line function... do we really need it?
+ */
 bool ToBool ( const std::string& value )
 {
 	return value == "true";
@@ -157,7 +182,16 @@ vec2 luaL_optvec2(lua_State* L, int narg, vec2 defaultValue)
 	return luaL_checkvec2(L, narg);
 }
 
-void lua_pushvec2(lua_State* L, vec2 val)
+/**
+ * Returns a vector to Lua
+ * @param L A pointer to the lua_State containing the Lua stack.
+ * @param val A vec2 representing the value you would like to push. This value
+ * is passed as a table containing elements x and y, which are the values for x
+ * and y in this argument.
+ *
+ * @todo Does @ref lua_pushvec2 use pass-by-value? *gasp*
+ */
+void lua_pushvec2( lua_State* L, vec2 val )
 {
 	lua_createtable(L, 0, 2);
 	lua_pushnumber(L, val.X());

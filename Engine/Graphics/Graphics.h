@@ -32,7 +32,8 @@ vec2 SpriteDimensions ( const std::string& sheetname );
 /**
  * Draws a sprite.
  * @note For rotational sprites, pass 0 for sheet_x and sheet_y
- * @note This may be used to draw images, using a '+' before the name of the sprite sheet
+ * @note This may be used to draw images, using a '+' before the name of the
+ * sprite sheet
  * @param sheetname The sprite sheet to use
  * @param sheet_x The x position on the sprite sheet
  * @param sheet_y The y position on the sprite sheet
@@ -64,7 +65,8 @@ inline void DrawImage ( const std::string& imageName, vec2 position, vec2 size )
  * Draws a string of text
  * @param text The text to draw
  * @param font The font to use
- * @param justify The justification of the text (should be "left", "right", or "center")
+ * @param justify The justification of the text (should be "left", "right", or
+ * "center")
  * @param position The position of the centre of the text on-screen
  * @param height The height of the text
  * @param col The colour of the text
@@ -86,8 +88,8 @@ void DrawLine ( vec2 coordinate1, vec2 coordinate2, float width, colour col );
  * @param width The width of the lightning, in pixels
  * @param chaos The chaos of the lightning
  * @param col The colour of the lightning
- * @param tailed If tailed is true, the lightning tapers down to the endpoint. If
- * tailed is false, the lightning does not taper down to the endpoint but
+ * @param tailed If tailed is true, the lightning tapers down to the endpoint.
+ * If tailed is false, the lightning does not taper down to the endpoint but
  * instead ends somewhere around the endpoint.
  */
 void DrawLightning ( vec2 coordinate1, vec2 coordinate2, float width, float chaos, colour col, bool tailed );
@@ -147,7 +149,8 @@ void ClearParticles ();
  * @param velocity The average of the particle system
  * @param velocityVariance The variation in the velocity of the particles
  * @param acceleration The acceleration of the particles
- * @param sizeFactor The factor of the original size that particles will grow to over their lifetime
+ * @param sizeFactor The factor of the original size that particles will grow to
+ * over their lifetime
  * @param lifetime The lifetime of the particles
  */
 void AddParticles ( const std::string& name, unsigned long particleCount, vec2 centre, vec2 velocity, vec2 velocityVariance, vec2 acceleration, float sizeFactor, float lifetime );
@@ -198,7 +201,8 @@ void DrawObject3DGlow ( std::string name, vec2 centre, float glow, float scale, 
  */
 float AspectRatio ();
 /**
- * Maps a point in window coordinates to a corresponding point in the current camera
+ * Maps a point in window coordinates to a corresponding point in the current
+ * camera
  * @param windowCoords The point to be mapped
  * @return The point in the camera
  */
