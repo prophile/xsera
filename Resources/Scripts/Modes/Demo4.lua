@@ -99,8 +99,8 @@ function update()
 			local a = scen.objects[pair[1] ]
 			local b = scen.objects[pair[2] ]
 
-			if a.base.attributes["can-collide"] == true
-			and b.base.attributes["can-collide"] == true
+			if a.base.attributes.canCollide == true
+			and b.base.attributes.canCollide == true
 			and a.ai.owner ~= b.ai.owner then
 				Collide(a,b)
 			end
@@ -111,10 +111,10 @@ function update()
 		for ai, a in pairs(scen.objects) do
 			for bi, b in pairs(scen.objects) do
 				if ai > bi then
-					if a.base.attributes["can-collide"] == true
-					and b.base.attributes["can-collide"] == true
+					if a.base.attributes.canCollide == true
+					and b.base.attributes.canCollide == true
 					and a.ai.owner ~= b.ai.owner
-					and hypot2(a.physics.position,b.physics.position) <= (a.physics.collision_radius + b.physics.collision_radius) then
+					and hypot2(a.physics.position, b.physics.position) <= (a.physics.collision_radius + b.physics.collision_radius) then
 						Collide(a,b)
 					end
 				end
@@ -123,8 +123,13 @@ function update()
 
 		for i, o in pairs(scen.objects) do
 			if o.type == "beam" then
-				if o.base.beam.kind == "bolt-relative"
-				or o.base.beam.kind == "static-relative" then
+				--[[
+				BITS	HEX	FLAG
+				001	0x1	RELATIVE
+				010	0x2	STATIC
+				100	0x4	BOLT
+				--]]
+				if o.base.beam.mode == "relative" then
 					local src = o.gfx.source.position
 					local off = o.gfx.offset
 					local rel = o.gfx.relative
@@ -133,8 +138,7 @@ function update()
 					a = a + rel
 					o.physics.position = src + off + rel
 					
-				elseif o.base.beam.kind == "bolt-to-object"
-					or o.base.beam.kind == "static-to-object" then
+				elseif o.base.beam.mode == "direct" then
 					local from = o.gfx.offset + o.gfx.source.position
 					local dir = NormalizeVec(o.gfx.target.position - o.gfx.source.position)
 					local len = math.min(o.base.beam.range,hypot2(from,o.gfx.target.position))

@@ -5,12 +5,12 @@ local actionTable = {}
 function ActivateTrigger(sender, owner)
 	if owner == nil then
 	
-		CallAction(sender.triggers["activate"],sender)
+		CallAction(sender.triggers.activate,sender)
 	
-	elseif owner.status.energy >= sender.base.device["energy-cost"]
+	elseif owner.status.energy >= sender.base.device.energyCost
 	and (sender.base.device.ammo == -1
 	or sender.ammo > 0)
-	and sender.lastActivated < realTime - sender.base.device["fire-time"] / TIME_FACTOR then
+	and sender.lastActivated < realTime - sender.base.device.reload / TIME_FACTOR then
 
 			sender.lastActivated = realTime
 
@@ -19,7 +19,7 @@ function ActivateTrigger(sender, owner)
 			end
 			
 --			if owner ~= nil then
-			owner.status.energy = owner.status.energy - sender.base.device["energy-cost"]
+			owner.status.energy = owner.status.energy - sender.base.device.energyCost
 --			end
 			
 			
@@ -29,7 +29,7 @@ function ActivateTrigger(sender, owner)
 				sender.lastPos = sender.lastPos + 1
 			end
 			
-			CallAction(sender.triggers["activate"],sender,owner)
+			CallAction(sender.triggers.activate,sender,owner)
 				
 	end
 end

@@ -1,15 +1,15 @@
 function LoadScenario(id)
-	local scen = deepcopy(gameData.Scenarios[id])
+	local scen = deepcopy(data.scenarios[id])
 	scen.objects = {}
 	scen.effects = {flash = {}}
 
-	local max = scen.initial.id + scen.initial.count - 1
+	local max = scen.initialObjects.first + scen.initialObjects.count - 1
 	
-	for id = scen.initial.id, max do
-		local state = gameData["InitialObject"][id]
+	for id = scen.initialObjects.first, max do
+		local state = data.initials[id]
 		local new = NewObject(state.type)
 
-		new.physics.position = state.location
+		new.physics.position = state.position
 		new.ai.owner = state.owner
 
 		if state.attributes.initialPlayerShip == true then
@@ -26,9 +26,9 @@ function LoadScenario(id)
 			new.spriteDim = graphics.sprite_dimensions("Id/" .. new.sprite)
 		end
 		
-		if state.initialDstination. ~= -1 then
+		if state.initialDestination ~= -1 then
 			--Convert from 0 based indexes to 1 based indexes
-			new.ai.objectives.dest = scen.objects[state.initialDestination.+1]
+			new.ai.objectives.dest = scen.objects[state.initialDestination + 1]
 		end
 		
 		scen.objects[new.physics.object_id] = new
@@ -55,7 +55,7 @@ function InitConditions(scen)
 
 	local max = scen.condition.id + scen.condition.count - 1
 	for idx = scen.condition.id , max do
-		local cond = deepcopy(gameData["Conditions"][idx])
+		local cond = deepcopy(data.conditions[idx])
 
 		if cond["condition-flags"]["initially-true"] ~= true then
 				cond.active = true

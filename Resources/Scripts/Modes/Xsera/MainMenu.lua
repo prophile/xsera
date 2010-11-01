@@ -67,7 +67,7 @@ function render ()
     
     graphics.draw_text(versionInformation, MAIN_FONT, "left", { x = -240 * aspectRatio + 10, y = -220 }, 20)
 	
-	graphics.draw_text("Level selected: " .. demoLevel .. " (" .. gameData["Scenarios"][demoLevel].name ..")", MAIN_FONT, "right", { x = 240 * aspectRatio - 10, y = 220 }, 30)
+	graphics.draw_text("Level selected: " .. demoLevel .. " (" .. data.scenarios[demoLevel].name ..")", MAIN_FONT, "right", { x = 240 * aspectRatio - 10, y = 220 }, 30)
     graphics.end_frame()
 end
 
