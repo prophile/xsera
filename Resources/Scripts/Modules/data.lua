@@ -1,4 +1,14729 @@
 data = {
+	race = {
+		[0] = {
+			advantage = 1.3984375;
+			singular = "Human";
+			military = "UNS Resistance";
+			homeWorld = "Earth";
+			plural = "Humans";
+			id = 900;
+		};
+		[1] = {
+			advantage = 2.1484375;
+			singular = "Ishiman";
+			military = "Ishiman Protectorate";
+			homeWorld = "Ishima";
+			plural = "Ishimans";
+			id = 100;
+		};
+		[2] = {
+			advantage = 3.0;
+			singular = "Elejeetian";
+			military = "Elejeetian Empire";
+			homeWorld = "Elejee";
+			plural = "Elejeetians";
+			id = 800;
+		};
+		[3] = {
+			advantage = 1.75;
+			singular = "Obish";
+			military = "Free Worlds of Obain";
+			homeWorld = "Obain";
+			plural = "Obiards";
+			id = 400;
+		};
+		[4] = {
+			advantage = 1.75;
+			singular = "Bazidanese";
+			military = "Bazidanese Star League";
+			homeWorld = "Bazidan";
+			plural = "Bazidanese";
+			id = 500;
+		};
+		[5] = {
+			advantage = 2.0;
+			singular = "Cantharan";
+			military = "Cantharan Order";
+			homeWorld = "Cantharis";
+			plural = "Cantharans";
+			id = 200;
+		};
+		[6] = {
+			advantage = 1.0;
+			singular = "Gaitori";
+			military = "Gaitori Union";
+			homeWorld = "Gaitor";
+			plural = "Gaitori";
+			id = 300;
+		};
+		[7] = {
+			advantage = 2.5;
+			singular = "Salrilian";
+			military = "Prophets of Salril";
+			homeWorld = "Salril";
+			plural = "Salrilians";
+			id = 600;
+		};
+		[8] = {
+			advantage = 2.75;
+			singular = "Audemedon";
+			military = "Audemedon Axis";
+			homeWorld = "Axis";
+			plural = "Audemedons";
+			id = 700;
+		};
+		[9] = {
+			advantage = 0.5;
+			singular = "Grolk";
+			military = "Grolk";
+			homeWorld = "Space Force of Grolk";
+			plural = "Grolk";
+			id = 1100;
+		};
+		[10] = {
+			advantage = 1.0;
+			singular = "Unused Race 1";
+			military = "Military";
+			homeWorld = "Homeworld";
+			plural = "Plural";
+			id = 1200;
+		};
+		[11] = {
+			advantage = 2.0;
+			singular = "Unused Race 2";
+			military = "Military";
+			homeWorld = "Homeworld";
+			plural = "Plural";
+			id = 1300;
+		};
+		[12] = {
+			advantage = 3.0;
+			singular = "Unused Race 3";
+			military = "Military";
+			homeWorld = "Homeworld";
+			plural = "Plural";
+			id = 1400;
+		};
+		[13] = {
+			advantage = 4.0;
+			singular = "Unused Race 4";
+			military = "Military";
+			homeWorld = "Homeworld";
+			plural = "Plural";
+			id = 1500;
+		};
+		[14] = {
+			advantage = 5.0;
+			singular = "Unused Race 5";
+			military = "Military";
+			homeWorld = "Homeworld";
+			plural = "Plural";
+			id = 1600;
+		};
+		[15] = {
+			advantage = 6.0;
+			singular = "Unused Race 6";
+			military = "Military";
+			homeWorld = "Homeworld";
+			plural = "Plural";
+			id = 1700;
+		};
+	};
+	briefings = {
+		[0] = {
+			content = 4103;
+			kind = "freestanding";
+			range = {
+				y = 0;
+				x = 0;
+			};
+			title = "The Gaitori";
+		};
+		[1] = {
+			kind = "object";
+			title = "Myrmidon";
+			content = 4100;
+			visible = true;
+			range = {
+				y = 0;
+				x = 0;
+			};
+			objectId = 15;
+		};
+		[2] = {
+			kind = "object";
+			title = "Cruiser";
+			content = 4104;
+			visible = true;
+			range = {
+				y = 0;
+				x = 0;
+			};
+			objectId = 1;
+		};
+		[3] = {
+			kind = "object";
+			title = "Relay Dish 1";
+			content = 4101;
+			visible = true;
+			range = {
+				y = 0;
+				x = 0;
+			};
+			objectId = 0;
+		};
+		[4] = {
+			kind = "object";
+			title = "Cruiser";
+			content = 4102;
+			visible = true;
+			range = {
+				y = 0;
+				x = 0;
+			};
+			objectId = 2;
+		};
+		[5] = {
+			kind = "object";
+			title = "Relay Dish 2";
+			content = 4105;
+			visible = true;
+			range = {
+				y = 0;
+				x = 0;
+			};
+			objectId = 16;
+		};
+		[6] = {
+			kind = "object";
+			title = "Relay Dish 3";
+			content = 4106;
+			visible = true;
+			range = {
+				y = 0;
+				x = 0;
+			};
+			objectId = 17;
+		};
+		[7] = {
+			kind = "object";
+			title = "Relay Dish 4";
+			content = 4108;
+			visible = true;
+			range = {
+				y = 0;
+				x = 0;
+			};
+			objectId = 18;
+		};
+		[8] = {
+			kind = "object";
+			title = "Myrmidon Station";
+			content = 4107;
+			visible = true;
+			range = {
+				y = 0;
+				x = 0;
+			};
+			objectId = 14;
+		};
+		[9] = {
+			content = 4109;
+			kind = "freestanding";
+			range = {
+				y = 0;
+				x = 0;
+			};
+			title = "Obish Escorts";
+		};
+		[10] = {
+			content = 4013;
+			kind = "freestanding";
+			range = {
+				y = 0;
+				x = 0;
+			};
+			title = "Philemon";
+		};
+		[11] = {
+			kind = "object";
+			title = "Asteroid IR7-7e";
+			content = 4030;
+			visible = true;
+			range = {
+				y = 0;
+				x = 0;
+			};
+			objectId = 2;
+		};
+		[12] = {
+			kind = "object";
+			title = "Asteroid IR7-7e";
+			content = 4037;
+			visible = true;
+			range = {
+				y = 0;
+				x = 0;
+			};
+			objectId = 2;
+		};
+		[13] = {
+			kind = "object";
+			title = "Asteroid IR7-7e";
+			content = 4031;
+			visible = true;
+			range = {
+				y = 0;
+				x = 0;
+			};
+			objectId = 2;
+		};
+		[14] = {
+			kind = "object";
+			title = "Astrominer";
+			content = 4032;
+			visible = true;
+			range = {
+				y = 0;
+				x = 0;
+			};
+			objectId = 1;
+		};
+		[15] = {
+			kind = "object";
+			title = "Philemon Beta";
+			content = 4033;
+			visible = true;
+			range = {
+				y = 0;
+				x = 0;
+			};
+			objectId = 5;
+		};
+		[16] = {
+			kind = "object";
+			title = "Schooner";
+			content = 4034;
+			visible = true;
+			range = {
+				y = 0;
+				x = 0;
+			};
+			objectId = 6;
+		};
+		[17] = {
+			kind = "object";
+			title = "Heavy Cruiser";
+			content = 4035;
+			visible = true;
+			range = {
+				y = 0;
+				x = 0;
+			};
+			objectId = 0;
+		};
+		[18] = {
+			content = 4036;
+			kind = "freestanding";
+			range = {
+				y = 0;
+				x = 0;
+			};
+			title = "Philemon";
+		};
+		[19] = {
+			content = 4020;
+			kind = "freestanding";
+			range = {
+				y = 0;
+				x = 0;
+			};
+			title = "Proteus";
+		};
+		[20] = {
+			kind = "object";
+			title = "Proteus Alpha";
+			content = 4021;
+			visible = true;
+			range = {
+				y = 0;
+				x = 0;
+			};
+			objectId = 0;
+		};
+		[21] = {
+			kind = "object";
+			title = "Proteus Alpha";
+			content = 4022;
+			visible = true;
+			range = {
+				y = 0;
+				x = 0;
+			};
+			objectId = 0;
+		};
+		[22] = {
+			kind = "object";
+			title = "Proteus Alpha";
+			content = 4023;
+			visible = true;
+			range = {
+				y = 0;
+				x = 0;
+			};
+			objectId = 0;
+		};
+		[23] = {
+			kind = "object";
+			title = "Philemon Beta";
+			content = 4024;
+			visible = true;
+			range = {
+				y = 0;
+				x = 0;
+			};
+			objectId = 4;
+		};
+		[24] = {
+			kind = "object";
+			title = "Proteus Gamma";
+			content = 4025;
+			visible = true;
+			range = {
+				y = 0;
+				x = 0;
+			};
+			objectId = 5;
+		};
+		[25] = {
+			kind = "object";
+			title = "Proteus Gamma";
+			content = 4026;
+			visible = true;
+			range = {
+				y = 0;
+				x = 0;
+			};
+			objectId = 5;
+		};
+		[26] = {
+			kind = "object";
+			title = "Proteus Gamma";
+			content = 4027;
+			visible = true;
+			range = {
+				y = 0;
+				x = 0;
+			};
+			objectId = 5;
+		};
+		[27] = {
+			kind = "object";
+			title = "Proteus Gamma";
+			content = 4028;
+			visible = true;
+			range = {
+				y = 0;
+				x = 0;
+			};
+			objectId = 5;
+		};
+		[28] = {
+			content = 4029;
+			kind = "freestanding";
+			range = {
+				y = 0;
+				x = 0;
+			};
+			title = "Proteus Gamma";
+		};
+		[29] = {
+			content = 4040;
+			kind = "freestanding";
+			range = {
+				y = 0;
+				x = 0;
+			};
+			title = "Sprist System";
+		};
+		[30] = {
+			kind = "object";
+			title = "";
+			content = 4041;
+			visible = true;
+			range = {
+				y = 0;
+				x = 0;
+			};
+			objectId = 17;
+		};
+		[31] = {
+			kind = "object";
+			title = "The Open Eye of Zom";
+			content = 4042;
+			visible = false;
+			range = {
+				y = 0;
+				x = 0;
+			};
+			objectId = 16;
+		};
+		[32] = {
+			kind = "object";
+			title = "ISN 2020187";
+			content = 4043;
+			visible = false;
+			range = {
+				y = 0;
+				x = 0;
+			};
+			objectId = 6;
+		};
+		[33] = {
+			content = 4003;
+			kind = "absolute";
+			range = {
+				y = 0;
+				x = 0;
+			};
+			title = "The Gaitori";
+		};
+		[34] = {
+			content = 4050;
+			kind = "freestanding";
+			range = {
+				y = 0;
+				x = 0;
+			};
+			title = "Bokleo Alpha";
+		};
+		[35] = {
+			kind = "object";
+			title = "Bazidanese";
+			content = 4051;
+			visible = false;
+			range = {
+				y = 0;
+				x = 0;
+			};
+			objectId = 1;
+		};
+		[36] = {
+			kind = "object";
+			title = "Tractor Moor";
+			content = 4052;
+			visible = true;
+			range = {
+				y = 0;
+				x = 0;
+			};
+			objectId = 2;
+		};
+		[37] = {
+			kind = "object";
+			title = "Border Drone";
+			content = 4053;
+			visible = true;
+			range = {
+				y = 0;
+				x = 0;
+			};
+			objectId = 7;
+		};
+		[38] = {
+			kind = "object";
+			title = "Bokleo Beta";
+			content = 4054;
+			visible = true;
+			range = {
+				y = 0;
+				x = 0;
+			};
+			objectId = 6;
+		};
+		[39] = {
+			kind = "object";
+			title = "Bokleo Gamma";
+			content = 4055;
+			visible = true;
+			range = {
+				y = 0;
+				x = 0;
+			};
+			objectId = 8;
+		};
+		[40] = {
+			kind = "object";
+			title = "Bokleo Alpha";
+			content = 4056;
+			visible = true;
+			range = {
+				y = 0;
+				x = 0;
+			};
+			objectId = 9;
+		};
+		[41] = {
+			kind = "object";
+			title = "ISN 8738810";
+			content = 4057;
+			visible = true;
+			range = {
+				y = 0;
+				x = 0;
+			};
+			objectId = 10;
+		};
+		[42] = {
+			kind = "object";
+			title = "ISN 2020187";
+			content = 4058;
+			visible = true;
+			range = {
+				y = 0;
+				x = 0;
+			};
+			objectId = 11;
+		};
+		[43] = {
+			kind = "object";
+			title = "The Gentle Fingers of Zom";
+			content = 4059;
+			visible = true;
+			range = {
+				y = 0;
+				x = 0;
+			};
+			objectId = 12;
+		};
+		[44] = {
+			kind = "object";
+			title = "The Chaste Dream of Doz";
+			content = 4060;
+			visible = true;
+			range = {
+				y = 0;
+				x = 0;
+			};
+			objectId = 13;
+		};
+		[45] = {
+			kind = "object";
+			title = "The Silent Question of Doz";
+			content = 4061;
+			visible = true;
+			range = {
+				y = 0;
+				x = 0;
+			};
+			objectId = 14;
+		};
+		[46] = {
+			kind = "object";
+			title = "Heavy Cruiser";
+			content = 4062;
+			visible = true;
+			range = {
+				y = 0;
+				x = 0;
+			};
+			objectId = 0;
+		};
+		[47] = {
+			content = 4300;
+			kind = "absolute";
+			range = {
+				y = 0;
+				x = 0;
+			};
+			title = "Fansi";
+		};
+		[48] = {
+			kind = "object";
+			title = "Orbital Shipyard";
+			content = 4310;
+			visible = false;
+			range = {
+				y = 0;
+				x = 0;
+			};
+			objectId = 0;
+		};
+		[49] = {
+			kind = "object";
+			title = "Cargo Ship";
+			content = 4320;
+			visible = true;
+			range = {
+				y = 0;
+				x = 0;
+			};
+			objectId = 11;
+		};
+		[50] = {
+			kind = "object";
+			title = "Flak Drone";
+			content = 4330;
+			visible = false;
+			range = {
+				y = 0;
+				x = 0;
+			};
+			objectId = 13;
+		};
+		[51] = {
+			kind = "object";
+			title = "Bunker Station 1";
+			content = 4340;
+			visible = true;
+			range = {
+				y = 0;
+				x = 0;
+			};
+			objectId = 11;
+		};
+		[52] = {
+			kind = "object";
+			title = "Bunker Station 2";
+			content = 4350;
+			visible = true;
+			range = {
+				y = 0;
+				x = 0;
+			};
+			objectId = 4;
+		};
+		[53] = {
+			kind = "object";
+			title = "Fansi Alpha";
+			content = 4360;
+			visible = true;
+			range = {
+				y = 0;
+				x = 0;
+			};
+			objectId = 9;
+		};
+		[54] = {
+			kind = "object";
+			title = "Engineer Pod";
+			content = 4370;
+			visible = true;
+			range = {
+				y = 0;
+				x = 0;
+			};
+			objectId = 9;
+		};
+		[55] = {
+			kind = "object";
+			title = "Assault Transport";
+			content = 4380;
+			visible = true;
+			range = {
+				y = 0;
+				x = 0;
+			};
+			objectId = 9;
+		};
+		[56] = {
+			kind = "object";
+			title = "Fansi Beta";
+			content = 4390;
+			visible = true;
+			range = {
+				y = 0;
+				x = 0;
+			};
+			objectId = 10;
+		};
+		[57] = {
+			kind = "object";
+			title = "Engineer Pod";
+			content = 4400;
+			visible = false;
+			range = {
+				y = 0;
+				x = 0;
+			};
+			objectId = 10;
+		};
+		[58] = {
+			kind = "object";
+			title = "Carrier";
+			content = 4410;
+			visible = true;
+			range = {
+				y = 0;
+				x = 0;
+			};
+			objectId = 12;
+		};
+		[59] = {
+			content = 4070;
+			kind = "freestanding";
+			range = {
+				y = 0;
+				x = 0;
+			};
+			title = "Demeter";
+		};
+		[60] = {
+			kind = "object";
+			title = "Cruiser";
+			content = 4071;
+			visible = true;
+			range = {
+				y = 0;
+				x = 0;
+			};
+			objectId = 1;
+		};
+		[61] = {
+			kind = "object";
+			title = "Demeter Alpha";
+			content = 4072;
+			visible = true;
+			range = {
+				y = 0;
+				x = 0;
+			};
+			objectId = 0;
+		};
+		[62] = {
+			kind = "object";
+			title = "Demeter Alpha";
+			content = 4073;
+			visible = true;
+			range = {
+				y = 0;
+				x = 0;
+			};
+			objectId = 0;
+		};
+		[63] = {
+			kind = "object";
+			title = "Demeter Beta";
+			content = 4074;
+			visible = true;
+			range = {
+				y = 0;
+				x = 0;
+			};
+			objectId = 5;
+		};
+		[64] = {
+			kind = "object";
+			title = "Demeter Beta";
+			content = 4075;
+			visible = true;
+			range = {
+				y = 0;
+				x = 0;
+			};
+			objectId = 5;
+		};
+		[65] = {
+			kind = "object";
+			title = "Demeter Beta";
+			content = 4076;
+			visible = true;
+			range = {
+				y = 0;
+				x = 0;
+			};
+			objectId = 5;
+		};
+		[66] = {
+			content = 4150;
+			kind = "freestanding";
+			range = {
+				y = 0;
+				x = 0;
+			};
+			title = "Elysium System";
+		};
+		[67] = {
+			content = 4151;
+			kind = "freestanding";
+			range = {
+				y = 0;
+				x = 0;
+			};
+			title = "Elysium System";
+		};
+		[68] = {
+			kind = "object";
+			title = "Cruiser";
+			content = 4152;
+			visible = true;
+			range = {
+				y = 0;
+				x = 0;
+			};
+			objectId = 0;
+		};
+		[69] = {
+			kind = "object";
+			title = "Transport";
+			content = 4153;
+			visible = true;
+			range = {
+				y = 0;
+				x = 0;
+			};
+			objectId = 5;
+		};
+		[70] = {
+			kind = "object";
+			title = "Transport";
+			content = 4156;
+			visible = true;
+			range = {
+				y = 0;
+				x = 0;
+			};
+			objectId = 7;
+		};
+		[71] = {
+			kind = "object";
+			title = "Battlecruiser";
+			content = 4155;
+			visible = true;
+			range = {
+				y = 0;
+				x = 0;
+			};
+			objectId = 6;
+		};
+		[72] = {
+			kind = "object";
+			title = "Transport";
+			content = 4154;
+			visible = true;
+			range = {
+				y = 0;
+				x = 0;
+			};
+			objectId = 9;
+		};
+		[73] = {
+			content = 4250;
+			kind = "freestanding";
+			range = {
+				y = 0;
+				x = 0;
+			};
+			title = "Aeneas System";
+		};
+		[74] = {
+			kind = "object";
+			title = "Cruiser";
+			content = 4255;
+			visible = false;
+			range = {
+				y = 0;
+				x = 0;
+			};
+			objectId = 0;
+		};
+		[75] = {
+			kind = "object";
+			title = "Aeneas Beta";
+			content = 4251;
+			visible = false;
+			range = {
+				y = 0;
+				x = 0;
+			};
+			objectId = 8;
+		};
+		[76] = {
+			kind = "object";
+			title = "Aeneas Alpha";
+			content = 4256;
+			visible = false;
+			range = {
+				y = 0;
+				x = 0;
+			};
+			objectId = 1;
+		};
+		[77] = {
+			kind = "object";
+			title = "Aeneas Alpha";
+			content = 4252;
+			visible = false;
+			range = {
+				y = 0;
+				x = 0;
+			};
+			objectId = 1;
+		};
+		[78] = {
+			kind = "object";
+			title = "Aeneas Beta";
+			content = 4253;
+			visible = true;
+			range = {
+				y = 0;
+				x = 0;
+			};
+			objectId = 8;
+		};
+		[79] = {
+			kind = "object";
+			title = "Flak Drone";
+			content = 4254;
+			visible = false;
+			range = {
+				y = 0;
+				x = 0;
+			};
+			objectId = 6;
+		};
+		[80] = {
+			kind = "object";
+			title = "Heavy Destroyer";
+			content = 4257;
+			visible = false;
+			range = {
+				y = 0;
+				x = 0;
+			};
+			objectId = 5;
+		};
+		[81] = {
+			content = 4450;
+			kind = "no point";
+			range = {
+				y = 0;
+				x = 0;
+			};
+			title = "Hades System";
+		};
+		[82] = {
+			kind = "object";
+			title = "Hades Alpha";
+			content = 4451;
+			visible = false;
+			range = {
+				y = 0;
+				x = 0;
+			};
+			objectId = 12;
+		};
+		[83] = {
+			kind = "object";
+			title = "Power Station O-1";
+			content = 4452;
+			visible = true;
+			range = {
+				y = 0;
+				x = 0;
+			};
+			objectId = 2;
+		};
+		[84] = {
+			kind = "object";
+			title = "Power Station O-2";
+			content = 4453;
+			visible = true;
+			range = {
+				y = 0;
+				x = 0;
+			};
+			objectId = 0;
+		};
+		[85] = {
+			kind = "object";
+			title = "Power Station O-3";
+			content = 4454;
+			visible = true;
+			range = {
+				y = 0;
+				x = 0;
+			};
+			objectId = 1;
+		};
+		[86] = {
+			kind = "object";
+			title = "Hades Beta";
+			content = 4455;
+			visible = true;
+			range = {
+				y = 0;
+				x = 0;
+			};
+			objectId = 13;
+		};
+		[87] = {
+			kind = "object";
+			title = "Power Station G-1";
+			content = 4456;
+			visible = true;
+			range = {
+				y = 0;
+				x = 0;
+			};
+			objectId = 5;
+		};
+		[88] = {
+			kind = "object";
+			title = "Power Station G-2";
+			content = 4457;
+			visible = true;
+			range = {
+				y = 0;
+				x = 0;
+			};
+			objectId = 3;
+		};
+		[89] = {
+			kind = "object";
+			title = "Power Station G-3";
+			content = 4458;
+			visible = true;
+			range = {
+				y = 0;
+				x = 0;
+			};
+			objectId = 4;
+		};
+		[90] = {
+			content = 4500;
+			kind = "freestanding";
+			range = {
+				y = 0;
+				x = 0;
+			};
+			title = "EACSR Banadee";
+		};
+		[91] = {
+			content = 4506;
+			kind = "freestanding";
+			range = {
+				y = 0;
+				x = 0;
+			};
+			title = "EACSR Banadee";
+		};
+		[92] = {
+			kind = "object";
+			title = "Heavy Destroyer";
+			content = 4501;
+			visible = true;
+			range = {
+				y = 0;
+				x = 0;
+			};
+			objectId = 11;
+		};
+		[93] = {
+			content = 4502;
+			kind = "freestanding";
+			range = {
+				y = 0;
+				x = 0;
+			};
+			title = "Secorem";
+		};
+		[94] = {
+			content = 4503;
+			kind = "freestanding";
+			range = {
+				y = 0;
+				x = 0;
+			};
+			title = "Escape Pod";
+		};
+		[95] = {
+			kind = "object";
+			title = "Secorem Jump Gate";
+			content = 4504;
+			visible = true;
+			range = {
+				y = 0;
+				x = 0;
+			};
+			objectId = 7;
+		};
+		[96] = {
+			content = 4505;
+			kind = "freestanding";
+			range = {
+				y = 0;
+				x = 0;
+			};
+			title = "Secorem";
+		};
+		[97] = {
+			content = 4550;
+			kind = "freestanding";
+			range = {
+				y = 0;
+				x = 0;
+			};
+			title = "Thasero Station";
+		};
+		[98] = {
+			kind = "object";
+			title = "Thasero Alpha";
+			content = 4551;
+			visible = true;
+			range = {
+				y = 0;
+				x = 0;
+			};
+			objectId = 0;
+		};
+		[99] = {
+			kind = "object";
+			title = "Heavy Destroyer";
+			content = 4552;
+			visible = true;
+			range = {
+				y = 0;
+				x = 0;
+			};
+			objectId = 3;
+		};
+		[100] = {
+			kind = "object";
+			title = "Carrier";
+			content = 4553;
+			visible = false;
+			range = {
+				y = 0;
+				x = 0;
+			};
+			objectId = 5;
+		};
+		[101] = {
+			kind = "object";
+			title = "Battleship";
+			content = 4554;
+			visible = true;
+			range = {
+				y = 0;
+				x = 0;
+			};
+			objectId = 6;
+		};
+		[102] = {
+			kind = "object";
+			title = "Thasero Station";
+			content = 4556;
+			visible = false;
+			range = {
+				y = 0;
+				x = 0;
+			};
+			objectId = 2;
+		};
+		[103] = {
+			kind = "object";
+			title = "Thasero Beta";
+			content = 4557;
+			visible = false;
+			range = {
+				y = 0;
+				x = 0;
+			};
+			objectId = 1;
+		};
+		[104] = {
+			kind = "object";
+			title = "Thasero Beta";
+			content = 4558;
+			visible = true;
+			range = {
+				y = 0;
+				x = 0;
+			};
+			objectId = 1;
+		};
+		[105] = {
+			content = 4559;
+			kind = "freestanding";
+			range = {
+				y = 0;
+				x = 0;
+			};
+			title = "The Actualizer";
+		};
+		[106] = {
+			content = 4600;
+			kind = "freestanding";
+			range = {
+				y = 0;
+				x = 0;
+			};
+			title = "Ser System";
+		};
+		[107] = {
+			content = 4601;
+			kind = "freestanding";
+			range = {
+				y = 0;
+				x = 0;
+			};
+			title = "Ser System";
+		};
+		[108] = {
+			kind = "object";
+			title = "Research Vessel";
+			content = 4602;
+			visible = true;
+			range = {
+				y = 0;
+				x = 0;
+			};
+			objectId = 1;
+		};
+		[109] = {
+			kind = "object";
+			title = "Cruiser";
+			content = 4603;
+			visible = true;
+			range = {
+				y = 0;
+				x = 0;
+			};
+			objectId = 2;
+		};
+		[110] = {
+			kind = "object";
+			title = "Heavy Destroyer";
+			content = 4604;
+			visible = true;
+			range = {
+				y = 0;
+				x = 0;
+			};
+			objectId = 3;
+		};
+		[111] = {
+			kind = "object";
+			title = "Omisha Station";
+			content = 4650;
+			visible = false;
+			range = {
+				y = 0;
+				x = 0;
+			};
+			objectId = 0;
+		};
+		[112] = {
+			kind = "object";
+			title = "Command Buoy A";
+			content = 4655;
+			visible = true;
+			range = {
+				y = 0;
+				x = 0;
+			};
+			objectId = 1;
+		};
+		[113] = {
+			kind = "object";
+			title = "Build Moon";
+			content = 4652;
+			visible = true;
+			range = {
+				y = 0;
+				x = 0;
+			};
+			objectId = 5;
+		};
+		[114] = {
+			kind = "object";
+			title = "Combat Buoy A";
+			content = 4653;
+			visible = false;
+			range = {
+				y = 0;
+				x = 0;
+			};
+			objectId = 6;
+		};
+		[115] = {
+			kind = "object";
+			title = "Extra Ships";
+			content = 4654;
+			visible = true;
+			range = {
+				y = 0;
+				x = 0;
+			};
+			objectId = 15;
+		};
+		[116] = {
+			kind = "object";
+			title = "Omisha Jump Gate";
+			content = 4656;
+			visible = true;
+			range = {
+				y = 0;
+				x = 0;
+			};
+			objectId = 18;
+		};
+		[117] = {
+			content = 4700;
+			kind = "freestanding";
+			range = {
+				y = 0;
+				x = 0;
+			};
+			title = "Palyos Belt";
+		};
+		[118] = {
+			kind = "object";
+			title = "Heavy Cruiser";
+			content = 4701;
+			visible = false;
+			range = {
+				y = 0;
+				x = 0;
+			};
+			objectId = 0;
+		};
+		[119] = {
+			kind = "object";
+			title = "Astrominer";
+			content = 4702;
+			visible = false;
+			range = {
+				y = 0;
+				x = 0;
+			};
+			objectId = 4;
+		};
+		[120] = {
+			content = 4703;
+			kind = "freestanding";
+			range = {
+				y = 0;
+				x = 0;
+			};
+			title = "Asteroid";
+		};
+		[121] = {
+			content = 4800;
+			kind = "freestanding";
+			range = {
+				y = 0;
+				x = 0;
+			};
+			title = "Charon System";
+		};
+		[122] = {
+			kind = "object";
+			title = "Cruiser";
+			content = 4801;
+			visible = false;
+			range = {
+				y = 0;
+				x = 0;
+			};
+			objectId = 6;
+		};
+		[123] = {
+			kind = "object";
+			title = "Transport";
+			content = 4802;
+			visible = true;
+			range = {
+				y = 0;
+				x = 0;
+			};
+			objectId = 1;
+		};
+		[124] = {
+			kind = "object";
+			title = "Fighter";
+			content = 4803;
+			visible = true;
+			range = {
+				y = 0;
+				x = 0;
+			};
+			objectId = 7;
+		};
+		[125] = {
+			kind = "object";
+			title = "Charon Station";
+			content = 4804;
+			visible = true;
+			range = {
+				y = 0;
+				x = 0;
+			};
+			objectId = 0;
+		};
+		[126] = {
+			content = 4900;
+			kind = "freestanding";
+			range = {
+				y = 0;
+				x = 0;
+			};
+			title = "Heshac System";
+		};
+		[127] = {
+			content = 4901;
+			kind = "freestanding";
+			range = {
+				y = 0;
+				x = 0;
+			};
+			title = "Heshac System";
+		};
+		[128] = {
+			kind = "object";
+			title = "Heavy Destroyer";
+			content = 4902;
+			visible = false;
+			range = {
+				y = 0;
+				x = 0;
+			};
+			objectId = 1;
+		};
+		[129] = {
+			kind = "object";
+			title = "";
+			content = 4903;
+			visible = true;
+			range = {
+				y = 0;
+				x = 0;
+			};
+			objectId = 0;
+		};
+		[130] = {
+			kind = "object";
+			title = "Lab";
+			content = 4904;
+			visible = false;
+			range = {
+				y = 0;
+				x = 0;
+			};
+			objectId = 2;
+		};
+		[131] = {
+			kind = "object";
+			title = "Heavy Destroyer";
+			content = 4905;
+			visible = false;
+			range = {
+				y = 0;
+				x = 0;
+			};
+			objectId = 1;
+		};
+		[132] = {
+			kind = "object";
+			title = "Cruiser";
+			content = 4906;
+			visible = true;
+			range = {
+				y = 0;
+				x = 0;
+			};
+			objectId = 12;
+		};
+		[133] = {
+			content = 4907;
+			kind = "freestanding";
+			range = {
+				y = 0;
+				x = 0;
+			};
+			title = "Heshac System";
+		};
+		[134] = {
+			content = 5100;
+			kind = "freestanding";
+			range = {
+				y = 0;
+				x = 0;
+			};
+			title = "Beta Pictoris";
+		};
+		[135] = {
+			kind = "object";
+			title = "Gate Ship";
+			content = 5101;
+			visible = true;
+			range = {
+				y = 0;
+				x = 0;
+			};
+			objectId = 7;
+		};
+		[136] = {
+			kind = "object";
+			title = "Pictoris Alpha";
+			content = 5102;
+			visible = true;
+			range = {
+				y = 0;
+				x = 0;
+			};
+			objectId = 0;
+		};
+		[137] = {
+			kind = "object";
+			title = "Pictoris Alpha 1";
+			content = 5103;
+			visible = true;
+			range = {
+				y = 0;
+				x = 0;
+			};
+			objectId = 1;
+		};
+		[138] = {
+			kind = "object";
+			title = "Power Station BP1";
+			content = 5104;
+			visible = true;
+			range = {
+				y = 0;
+				x = 0;
+			};
+			objectId = 2;
+		};
+		[139] = {
+			kind = "object";
+			title = "Pictoris Beta";
+			content = 5105;
+			visible = false;
+			range = {
+				y = 0;
+				x = 0;
+			};
+			objectId = 5;
+		};
+		[140] = {
+			kind = "object";
+			title = "Gate Ship";
+			content = 5106;
+			visible = false;
+			range = {
+				y = 0;
+				x = 0;
+			};
+			objectId = 7;
+		};
+		[141] = {
+			content = 5150;
+			kind = "freestanding";
+			range = {
+				y = 0;
+				x = 0;
+			};
+			title = "Sol";
+		};
+		[142] = {
+			content = 5151;
+			kind = "freestanding";
+			range = {
+				y = 0;
+				x = 0;
+			};
+			title = "Sol";
+		};
+		[143] = {
+			kind = "object";
+			title = "Modified Cruiser";
+			content = 5152;
+			visible = true;
+			range = {
+				y = 0;
+				x = 0;
+			};
+			objectId = 0;
+		};
+		[144] = {
+			content = 5153;
+			kind = "freestanding";
+			range = {
+				y = 0;
+				x = 0;
+			};
+			title = "Sol";
+		};
+		[145] = {
+			kind = "object";
+			title = "Gate Ship";
+			content = 5154;
+			visible = false;
+			range = {
+				y = 0;
+				x = 0;
+			};
+			objectId = 2;
+		};
+		[146] = {
+			content = 5155;
+			kind = "freestanding";
+			range = {
+				y = 0;
+				x = 0;
+			};
+			title = "Sol";
+		};
+		[147] = {
+			content = 5050;
+			kind = "freestanding";
+			range = {
+				y = 0;
+				x = 0;
+			};
+			title = "Proxima Centauri System";
+		};
+		[148] = {
+			kind = "object";
+			title = "Gunship";
+			content = 5051;
+			visible = false;
+			range = {
+				y = 0;
+				x = 0;
+			};
+			objectId = 2;
+		};
+		[149] = {
+			kind = "object";
+			title = "Transport";
+			content = 5052;
+			visible = true;
+			range = {
+				y = 0;
+				x = 0;
+			};
+			objectId = 8;
+		};
+		[150] = {
+			kind = "object";
+			title = "Carrier";
+			content = 5053;
+			visible = true;
+			range = {
+				y = 0;
+				x = 0;
+			};
+			objectId = 24;
+		};
+		[151] = {
+			kind = "object";
+			title = "Transport";
+			content = 5054;
+			visible = true;
+			range = {
+				y = 0;
+				x = 0;
+			};
+			objectId = 3;
+		};
+		[152] = {
+			kind = "object";
+			title = "Carrier";
+			content = 5055;
+			visible = false;
+			range = {
+				y = 0;
+				x = 0;
+			};
+			objectId = 9;
+		};
+		[153] = {
+			kind = "object";
+			title = "Proxima Beta";
+			content = 5056;
+			visible = false;
+			range = {
+				y = 0;
+				x = 0;
+			};
+			objectId = 1;
+		};
+		[154] = {
+			content = 5000;
+			kind = "freestanding";
+			range = {
+				y = 0;
+				x = 0;
+			};
+			title = "Lalande";
+		};
+		[155] = {
+			kind = "object";
+			title = "Heavy Destroyer";
+			content = 5001;
+			visible = true;
+			range = {
+				y = 0;
+				x = 0;
+			};
+			objectId = 5;
+		};
+		[156] = {
+			kind = "object";
+			title = "Cruiser";
+			content = 5002;
+			visible = false;
+			range = {
+				y = 0;
+				x = 0;
+			};
+			objectId = 6;
+		};
+		[157] = {
+			kind = "object";
+			title = "Bunker Station";
+			content = 5003;
+			visible = true;
+			range = {
+				y = 0;
+				x = 0;
+			};
+			objectId = 4;
+		};
+		[158] = {
+			kind = "object";
+			title = "Outpost 1";
+			content = 5004;
+			visible = true;
+			range = {
+				y = 0;
+				x = 0;
+			};
+			objectId = 12;
+		};
+		[159] = {
+			kind = "object";
+			title = "Lalande Beta";
+			content = 5005;
+			visible = true;
+			range = {
+				y = 0;
+				x = 0;
+			};
+			objectId = 3;
+		};
+		[160] = {
+			content = 4750;
+			kind = "freestanding";
+			range = {
+				y = 0;
+				x = 0;
+			};
+			title = "Elysium System";
+		};
+		[161] = {
+			content = 4751;
+			kind = "freestanding";
+			range = {
+				y = 0;
+				x = 0;
+			};
+			title = "Elysium System";
+		};
+		[162] = {
+			kind = "object";
+			title = "Heavy Cruiser";
+			content = 4752;
+			visible = true;
+			range = {
+				y = 0;
+				x = 0;
+			};
+			objectId = 5;
+		};
+		[163] = {
+			kind = "object";
+			title = "Transport";
+			content = 4753;
+			visible = true;
+			range = {
+				y = 0;
+				x = 0;
+			};
+			objectId = 1;
+		};
+		[164] = {
+			kind = "object";
+			title = "Cell 1";
+			content = 4754;
+			visible = false;
+			range = {
+				y = 0;
+				x = 0;
+			};
+			objectId = 3;
+		};
+		[165] = {
+			kind = "object";
+			title = "Passenger Liner";
+			content = 4755;
+			visible = false;
+			range = {
+				y = 0;
+				x = 0;
+			};
+			objectId = 0;
+		};
+		[166] = {
+			content = 4756;
+			kind = "freestanding";
+			range = {
+				y = 0;
+				x = 0;
+			};
+			title = "Elysium System";
+		};
+		[167] = {
+			kind = "object";
+			title = "Escort";
+			content = 4757;
+			visible = false;
+			range = {
+				y = 0;
+				x = 0;
+			};
+			objectId = 6;
+		};
+		[168] = {
+			content = 4758;
+			kind = "freestanding";
+			range = {
+				y = 0;
+				x = 0;
+			};
+			title = "Elysium System";
+		};
+		[169] = {
+			content = -1;
+			kind = "no point";
+			range = {
+				y = 0;
+				x = 0;
+			};
+			title = "";
+		};
+		[170] = {
+			content = -1;
+			kind = "no point";
+			range = {
+				y = 0;
+				x = 0;
+			};
+			title = "";
+		};
+		[171] = {
+			content = -1;
+			kind = "no point";
+			range = {
+				y = 0;
+				x = 0;
+			};
+			title = "";
+		};
+		[172] = {
+			content = -1;
+			kind = "no point";
+			range = {
+				y = 0;
+				x = 0;
+			};
+			title = "";
+		};
+		[173] = {
+			content = -1;
+			kind = "no point";
+			range = {
+				y = 0;
+				x = 0;
+			};
+			title = "";
+		};
+		[174] = {
+			content = -1;
+			kind = "no point";
+			range = {
+				y = 0;
+				x = 0;
+			};
+			title = "";
+		};
+		[175] = {
+			content = -1;
+			kind = "no point";
+			range = {
+				y = 0;
+				x = 0;
+			};
+			title = "";
+		};
+		[176] = {
+			content = -1;
+			kind = "no point";
+			range = {
+				y = 0;
+				x = 0;
+			};
+			title = "";
+		};
+		[177] = {
+			content = -1;
+			kind = "no point";
+			range = {
+				y = 0;
+				x = 0;
+			};
+			title = "";
+		};
+		[178] = {
+			content = -1;
+			kind = "no point";
+			range = {
+				y = 0;
+				x = 0;
+			};
+			title = "";
+		};
+		[179] = {
+			content = -1;
+			kind = "no point";
+			range = {
+				y = 0;
+				x = 0;
+			};
+			title = "";
+		};
+		[180] = {
+			content = -1;
+			kind = "no point";
+			range = {
+				y = 0;
+				x = 0;
+			};
+			title = "";
+		};
+		[181] = {
+			content = -1;
+			kind = "no point";
+			range = {
+				y = 0;
+				x = 0;
+			};
+			title = "";
+		};
+		[182] = {
+			content = -1;
+			kind = "no point";
+			range = {
+				y = 0;
+				x = 0;
+			};
+			title = "";
+		};
+		[183] = {
+			content = -1;
+			kind = "no point";
+			range = {
+				y = 0;
+				x = 0;
+			};
+			title = "";
+		};
+		[184] = {
+			content = -1;
+			kind = "no point";
+			range = {
+				y = 0;
+				x = 0;
+			};
+			title = "";
+		};
+		[185] = {
+			content = -1;
+			kind = "no point";
+			range = {
+				y = 0;
+				x = 0;
+			};
+			title = "";
+		};
+		[186] = {
+			content = -1;
+			kind = "no point";
+			range = {
+				y = 0;
+				x = 0;
+			};
+			title = "";
+		};
+		[187] = {
+			content = -1;
+			kind = "no point";
+			range = {
+				y = 0;
+				x = 0;
+			};
+			title = "";
+		};
+		[188] = {
+			content = -1;
+			kind = "no point";
+			range = {
+				y = 0;
+				x = 0;
+			};
+			title = "";
+		};
+		[189] = {
+			content = -1;
+			kind = "no point";
+			range = {
+				y = 0;
+				x = 0;
+			};
+			title = "";
+		};
+		[190] = {
+			content = -1;
+			kind = "no point";
+			range = {
+				y = 0;
+				x = 0;
+			};
+			title = "";
+		};
+		[191] = {
+			content = -1;
+			kind = "no point";
+			range = {
+				y = 0;
+				x = 0;
+			};
+			title = "";
+		};
+		[192] = {
+			content = -1;
+			kind = "no point";
+			range = {
+				y = 0;
+				x = 0;
+			};
+			title = "";
+		};
+		[193] = {
+			content = -1;
+			kind = "no point";
+			range = {
+				y = 0;
+				x = 0;
+			};
+			title = "";
+		};
+		[194] = {
+			content = -1;
+			kind = "no point";
+			range = {
+				y = 0;
+				x = 0;
+			};
+			title = "";
+		};
+		[195] = {
+			content = -1;
+			kind = "no point";
+			range = {
+				y = 0;
+				x = 0;
+			};
+			title = "";
+		};
+		[196] = {
+			content = -1;
+			kind = "no point";
+			range = {
+				y = 0;
+				x = 0;
+			};
+			title = "";
+		};
+		[197] = {
+			content = -1;
+			kind = "no point";
+			range = {
+				y = 0;
+				x = 0;
+			};
+			title = "";
+		};
+		[198] = {
+			content = -1;
+			kind = "no point";
+			range = {
+				y = 0;
+				x = 0;
+			};
+			title = "";
+		};
+		[199] = {
+			content = -1;
+			kind = "no point";
+			range = {
+				y = 0;
+				x = 0;
+			};
+			title = "";
+		};
+	};
+	actions = {
+		[0] = {
+			velocityRelative = false;
+			distanceRange = 0;
+			reflexive = true;
+			min = 1;
+			inclusiveFilter = 0;
+			directionRelative = true;
+			delay = 0;
+			subjectOverride = -1;
+			range = 0;
+			baseType = 29;
+			directOverride = -1;
+			owner = 0;
+			type = "create object";
+			exclusiveFilter = 0;
+		};
+		[1] = {
+			velocityRelative = true;
+			distanceRange = 0;
+			reflexive = true;
+			min = 1;
+			inclusiveFilter = 0;
+			directionRelative = true;
+			delay = 0;
+			subjectOverride = -1;
+			range = 0;
+			baseType = 2;
+			directOverride = -1;
+			owner = 0;
+			type = "create object";
+			exclusiveFilter = 0;
+		};
+		[2] = {
+			volume = 16711680;
+			priority = 3;
+			isAbsolute = true;
+			reflexive = true;
+			soundId = 0;
+			inclusiveFilter = 0;
+			volumeRange = 16711680;
+			delay = 0;
+			subjectOverride = -1;
+			persistence = -1392508928;
+			directOverride = -1;
+			owner = 0;
+			type = "play sound";
+			exclusiveFilter = 0;
+			soundRange = 32768000;
+		};
+		[3] = {
+			reflexive = true;
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = -1;
+			range = 15360;
+			minimum = -7680;
+			directOverride = -1;
+			owner = -1;
+			type = "alter offline";
+			exclusiveFilter = 0;
+		};
+		[4] = {
+			relative = true;
+			reflexive = true;
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = -1;
+			range = 0;
+			minimum = 12;
+			directOverride = -1;
+			owner = -1;
+			type = "alter thrust";
+			exclusiveFilter = 0;
+		};
+		[5] = {
+			reflexive = true;
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = -1;
+			range = 1024;
+			minimum = -512;
+			directOverride = -1;
+			owner = -1;
+			type = "alter current turn rate";
+			exclusiveFilter = 0;
+		};
+		[6] = {
+			velocityRelative = false;
+			distanceRange = 0;
+			reflexive = true;
+			min = 1;
+			inclusiveFilter = 0;
+			directionRelative = true;
+			delay = 0;
+			subjectOverride = -1;
+			range = 0;
+			baseType = 53;
+			directOverride = -1;
+			owner = 0;
+			type = "create object";
+			exclusiveFilter = 0;
+		};
+		[7] = {
+			reflexive = true;
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = -1;
+			directOverride = -1;
+			owner = 0;
+			type = "die";
+			exclusiveFilter = 0;
+		};
+		[8] = {
+			volume = 0;
+			priority = 3;
+			isAbsolute = true;
+			reflexive = true;
+			soundId = 0;
+			inclusiveFilter = 0;
+			volumeRange = 16711680;
+			delay = 0;
+			subjectOverride = -1;
+			persistence = 2046820352;
+			directOverride = -1;
+			owner = 0;
+			type = "play sound";
+			exclusiveFilter = 0;
+			soundRange = 32899072;
+		};
+		[9] = {
+			velocityRelative = false;
+			distanceRange = 0;
+			reflexive = true;
+			min = 1;
+			inclusiveFilter = 0;
+			directionRelative = true;
+			delay = 0;
+			subjectOverride = -1;
+			range = 0;
+			baseType = 53;
+			directOverride = -1;
+			owner = 0;
+			type = "create object";
+			exclusiveFilter = 0;
+		};
+		[10] = {
+			reflexive = true;
+			how = "expire";
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = -1;
+			directOverride = -1;
+			owner = 0;
+			type = "die";
+			exclusiveFilter = 0;
+		};
+		[11] = {
+			velocityRelative = true;
+			distanceRange = 0;
+			reflexive = true;
+			min = 1;
+			inclusiveFilter = 0;
+			directionRelative = true;
+			delay = 0;
+			subjectOverride = -1;
+			range = 0;
+			baseType = 3;
+			directOverride = -1;
+			owner = 0;
+			type = "create object";
+			exclusiveFilter = 0;
+		};
+		[12] = {
+			velocityRelative = false;
+			distanceRange = 0;
+			reflexive = true;
+			min = 1;
+			inclusiveFilter = 0;
+			directionRelative = true;
+			delay = 0;
+			subjectOverride = -1;
+			range = 0;
+			baseType = 8;
+			directOverride = -1;
+			owner = 0;
+			type = "create object";
+			exclusiveFilter = 0;
+		};
+		[13] = {
+			reflexive = true;
+			how = "expire";
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = -1;
+			directOverride = -1;
+			owner = 0;
+			type = "die";
+			exclusiveFilter = 0;
+		};
+		[14] = {
+			velocityRelative = true;
+			distanceRange = 0;
+			reflexive = true;
+			min = 1;
+			inclusiveFilter = 0;
+			directionRelative = true;
+			delay = 0;
+			subjectOverride = -1;
+			range = 0;
+			baseType = 9;
+			directOverride = -1;
+			owner = 0;
+			type = "create object";
+			exclusiveFilter = 0;
+		};
+		[15] = {
+			velocityRelative = false;
+			distanceRange = 0;
+			reflexive = true;
+			min = 1;
+			inclusiveFilter = 0;
+			directionRelative = true;
+			delay = 0;
+			subjectOverride = -1;
+			range = 0;
+			baseType = 29;
+			directOverride = -1;
+			owner = 0;
+			type = "create object";
+			exclusiveFilter = 0;
+		};
+		[16] = {
+			volume = 0;
+			priority = 3;
+			isAbsolute = true;
+			reflexive = true;
+			soundId = 0;
+			inclusiveFilter = 0;
+			volumeRange = 16711680;
+			delay = 0;
+			subjectOverride = -1;
+			persistence = 0;
+			directOverride = -1;
+			owner = 0;
+			type = "play sound";
+			exclusiveFilter = 0;
+			soundRange = 32964608;
+		};
+		[17] = {
+			count = 10;
+			reflexive = true;
+			inclusiveFilter = 0;
+			velocityRange = 2.0;
+			delay = 0;
+			subjectOverride = -1;
+			color = 1;
+			directOverride = -1;
+			veloctiy = 20;
+			owner = 0;
+			type = "make sparks";
+			exclusiveFilter = 0;
+		};
+		[18] = {
+			velocityRelative = true;
+			distanceRange = 0;
+			reflexive = true;
+			min = 2;
+			inclusiveFilter = 0;
+			directionRelative = true;
+			delay = 0;
+			subjectOverride = -1;
+			range = 3;
+			baseType = 26;
+			directOverride = -1;
+			owner = 0;
+			type = "create object";
+			exclusiveFilter = 0;
+		};
+		[19] = {
+			volume = 11796480;
+			priority = 3;
+			isAbsolute = true;
+			reflexive = true;
+			soundId = 0;
+			inclusiveFilter = 0;
+			volumeRange = 16711680;
+			delay = 0;
+			subjectOverride = -1;
+			persistence = 50331648;
+			directOverride = -1;
+			owner = 0;
+			type = "play sound";
+			exclusiveFilter = 0;
+			soundRange = 33095680;
+		};
+		[20] = {
+			velocityRelative = false;
+			distanceRange = 0;
+			reflexive = true;
+			min = 1;
+			inclusiveFilter = 0;
+			directionRelative = true;
+			delay = 0;
+			subjectOverride = -1;
+			range = 0;
+			baseType = 34;
+			directOverride = -1;
+			owner = 0;
+			type = "create object";
+			exclusiveFilter = 0;
+		};
+		[21] = {
+			relative = true;
+			reflexive = false;
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = -1;
+			range = 6144;
+			minimum = 6144;
+			directOverride = -1;
+			owner = 0;
+			type = "alter velocity";
+			exclusiveFilter = 0;
+		};
+		[22] = {
+			reflexive = false;
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = -1;
+			range = 1024;
+			minimum = -512;
+			directOverride = -1;
+			owner = 0;
+			type = "alter offline";
+			exclusiveFilter = 0;
+		};
+		[23] = {
+			reflexive = true;
+			how = "expire";
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = -1;
+			directOverride = -1;
+			owner = 0;
+			type = "die";
+			exclusiveFilter = 0;
+		};
+		[24] = {
+			volume = 1310720;
+			priority = 5;
+			isAbsolute = true;
+			reflexive = true;
+			soundId = 0;
+			inclusiveFilter = 0;
+			volumeRange = 16711680;
+			delay = 0;
+			subjectOverride = -1;
+			persistence = 520093696;
+			directOverride = -1;
+			owner = 0;
+			type = "play sound";
+			exclusiveFilter = 0;
+			soundRange = 32833536;
+		};
+		[25] = {
+			velocityRelative = false;
+			distanceRange = 32;
+			reflexive = true;
+			min = 1;
+			inclusiveFilter = 0;
+			directionRelative = true;
+			delay = 0;
+			subjectOverride = -1;
+			range = 2;
+			baseType = 11;
+			directOverride = -1;
+			owner = 0;
+			type = "create object";
+			exclusiveFilter = 0;
+		};
+		[26] = {
+			velocityRelative = false;
+			distanceRange = 32;
+			reflexive = true;
+			min = 1;
+			inclusiveFilter = 0;
+			directionRelative = true;
+			delay = 0;
+			subjectOverride = -1;
+			range = 2;
+			baseType = 12;
+			directOverride = -1;
+			owner = 0;
+			type = "create object";
+			exclusiveFilter = 0;
+		};
+		[27] = {
+			velocityRelative = false;
+			distanceRange = 0;
+			reflexive = true;
+			min = 1;
+			inclusiveFilter = 0;
+			directionRelative = true;
+			delay = 0;
+			subjectOverride = -1;
+			range = 0;
+			baseType = 8;
+			directOverride = -1;
+			owner = 0;
+			type = "create object";
+			exclusiveFilter = 0;
+		};
+		[28] = {
+			reflexive = true;
+			how = "expire";
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = -1;
+			directOverride = -1;
+			owner = 0;
+			type = "die";
+			exclusiveFilter = 0;
+		};
+		[29] = {
+			velocityRelative = false;
+			distanceRange = 0;
+			reflexive = true;
+			min = 1;
+			inclusiveFilter = 0;
+			directionRelative = true;
+			delay = 0;
+			subjectOverride = -1;
+			range = 0;
+			baseType = 79;
+			directOverride = -1;
+			owner = 0;
+			type = "create object";
+			exclusiveFilter = 0;
+		};
+		[30] = {
+			reflexive = true;
+			how = "expire";
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = -1;
+			directOverride = -1;
+			owner = 0;
+			type = "die";
+			exclusiveFilter = 0;
+		};
+		[31] = {
+			velocityRelative = false;
+			distanceRange = 0;
+			reflexive = true;
+			min = 1;
+			inclusiveFilter = 0;
+			directionRelative = true;
+			delay = 0;
+			subjectOverride = -1;
+			range = 0;
+			baseType = 35;
+			directOverride = -1;
+			owner = 0;
+			type = "create object";
+			exclusiveFilter = 0;
+		};
+		[32] = {
+			velocityRelative = false;
+			distanceRange = 0;
+			reflexive = true;
+			min = 1;
+			inclusiveFilter = 0;
+			directionRelative = true;
+			delay = 0;
+			subjectOverride = -1;
+			range = 0;
+			baseType = 35;
+			directOverride = -1;
+			owner = 0;
+			type = "create object";
+			exclusiveFilter = 0;
+		};
+		[33] = {
+			velocityRelative = true;
+			distanceRange = 0;
+			reflexive = true;
+			min = 1;
+			inclusiveFilter = 0;
+			directionRelative = true;
+			delay = 0;
+			subjectOverride = -1;
+			range = 0;
+			baseType = 16;
+			directOverride = -1;
+			owner = 0;
+			type = "create object";
+			exclusiveFilter = 0;
+		};
+		[34] = {
+			volume = 15990784;
+			priority = 3;
+			isAbsolute = true;
+			reflexive = true;
+			soundId = 0;
+			inclusiveFilter = 0;
+			volumeRange = 16711680;
+			delay = 0;
+			subjectOverride = -1;
+			persistence = -1392508928;
+			directOverride = -1;
+			owner = 0;
+			type = "play sound";
+			exclusiveFilter = 0;
+			soundRange = 33030144;
+		};
+		[35] = {
+			reflexive = true;
+			how = "expire";
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = -1;
+			directOverride = -1;
+			owner = 0;
+			type = "die";
+			exclusiveFilter = 0;
+		};
+		[36] = {
+			velocityRelative = false;
+			distanceRange = 0;
+			reflexive = true;
+			min = 1;
+			inclusiveFilter = 0;
+			directionRelative = true;
+			delay = 0;
+			subjectOverride = -1;
+			range = 0;
+			baseType = 52;
+			directOverride = -1;
+			owner = 0;
+			type = "create object";
+			exclusiveFilter = 0;
+		};
+		[37] = {
+			velocityRelative = true;
+			distanceRange = 0;
+			reflexive = true;
+			min = 1;
+			inclusiveFilter = 0;
+			directionRelative = true;
+			delay = 0;
+			subjectOverride = -1;
+			range = 0;
+			baseType = 5;
+			directOverride = -1;
+			owner = 0;
+			type = "create object";
+			exclusiveFilter = 0;
+		};
+		[38] = {
+			velocityRelative = true;
+			distanceRange = 0;
+			reflexive = true;
+			min = 1;
+			inclusiveFilter = 0;
+			directionRelative = true;
+			delay = 0;
+			subjectOverride = -1;
+			range = 0;
+			baseType = 21;
+			directOverride = -1;
+			owner = 0;
+			type = "create object";
+			exclusiveFilter = 0;
+		};
+		[39] = {
+			volume = 15204352;
+			priority = 3;
+			isAbsolute = true;
+			reflexive = true;
+			soundId = 0;
+			inclusiveFilter = 0;
+			volumeRange = 16711680;
+			delay = 0;
+			subjectOverride = -1;
+			persistence = -1392508928;
+			directOverride = -1;
+			owner = 0;
+			type = "play sound";
+			exclusiveFilter = 0;
+			soundRange = 33554432;
+		};
+		[40] = {
+			velocityRelative = false;
+			distanceRange = 0;
+			reflexive = true;
+			min = 1;
+			inclusiveFilter = 0;
+			directionRelative = true;
+			delay = 0;
+			subjectOverride = -1;
+			range = 0;
+			baseType = 8;
+			directOverride = -1;
+			owner = 0;
+			type = "create object";
+			exclusiveFilter = 0;
+		};
+		[41] = {
+			reflexive = true;
+			how = "expire";
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = -1;
+			directOverride = -1;
+			owner = 0;
+			type = "die";
+			exclusiveFilter = 0;
+		};
+		[42] = {
+			volume = 0;
+			priority = 3;
+			isAbsolute = true;
+			reflexive = true;
+			soundId = 0;
+			inclusiveFilter = 0;
+			volumeRange = 16711680;
+			delay = 0;
+			subjectOverride = -1;
+			persistence = 0;
+			directOverride = -1;
+			owner = 0;
+			type = "play sound";
+			exclusiveFilter = 0;
+			soundRange = 33882112;
+		};
+		[43] = {
+			volume = 65536;
+			priority = 3;
+			isAbsolute = true;
+			reflexive = true;
+			soundId = 0;
+			inclusiveFilter = 0;
+			volumeRange = 16711680;
+			delay = 0;
+			subjectOverride = -1;
+			persistence = 0;
+			directOverride = -1;
+			owner = 0;
+			type = "play sound";
+			exclusiveFilter = 0;
+			soundRange = 33947648;
+		};
+		[44] = {
+			reflexive = false;
+			inclusiveFilter = 4029677568;
+			speed = 32;
+			delay = 0;
+			subjectOverride = -1;
+			directOverride = -1;
+			owner = -1;
+			type = "land at";
+			exclusiveFilter = 4294967295;
+		};
+		[45] = {
+			volume = 24313856;
+			priority = 5;
+			isAbsolute = true;
+			reflexive = false;
+			soundId = 0;
+			inclusiveFilter = 4029677568;
+			volumeRange = 16711680;
+			delay = 0;
+			subjectOverride = -1;
+			persistence = 1593835520;
+			directOverride = -1;
+			owner = -1;
+			type = "play sound";
+			exclusiveFilter = 4294967295;
+			soundRange = 33619968;
+		};
+		[46] = {
+			velocityRelative = true;
+			distanceRange = 0;
+			reflexive = true;
+			min = 1;
+			inclusiveFilter = 0;
+			directionRelative = true;
+			delay = 0;
+			subjectOverride = -1;
+			range = 0;
+			baseType = 81;
+			directOverride = -1;
+			owner = 0;
+			type = "create object";
+			exclusiveFilter = 0;
+		};
+		[47] = {
+			volume = 16711680;
+			priority = 3;
+			isAbsolute = true;
+			reflexive = true;
+			soundId = 0;
+			inclusiveFilter = 0;
+			volumeRange = 16711680;
+			delay = 0;
+			subjectOverride = -1;
+			persistence = 0;
+			directOverride = -1;
+			owner = 0;
+			type = "play sound";
+			exclusiveFilter = 0;
+			soundRange = 34996224;
+		};
+		[48] = {
+			reflexive = false;
+			inclusiveFilter = 0;
+			page = 1;
+			delay = 0;
+			subjectOverride = -1;
+			directOverride = -1;
+			owner = 0;
+			type = "display message";
+			id = 4220;
+			exclusiveFilter = 0;
+		};
+		[49] = {
+			reflexive = true;
+			how = "expire";
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = -1;
+			directOverride = -1;
+			owner = 0;
+			type = "die";
+			exclusiveFilter = 0;
+		};
+		[50] = {
+			reflexive = false;
+			inclusiveFilter = 1024;
+			value = 150;
+			delay = 0;
+			subjectOverride = -1;
+			directOverride = -1;
+			owner = 0;
+			type = "alter energy";
+			exclusiveFilter = 0;
+		};
+		[51] = {
+			reflexive = false;
+			how = "expire";
+			inclusiveFilter = 1024;
+			delay = 0;
+			subjectOverride = -1;
+			directOverride = -1;
+			owner = 0;
+			type = "die";
+			exclusiveFilter = 0;
+		};
+		[52] = {
+			volume = 0;
+			priority = 3;
+			isAbsolute = true;
+			reflexive = false;
+			soundId = 0;
+			inclusiveFilter = 1024;
+			volumeRange = 16711680;
+			delay = 0;
+			subjectOverride = -1;
+			persistence = 0;
+			directOverride = -1;
+			owner = 0;
+			type = "play sound";
+			exclusiveFilter = 0;
+			soundRange = 33685504;
+		};
+		[53] = {
+			volume = 7077888;
+			priority = 4;
+			isAbsolute = true;
+			reflexive = true;
+			soundId = 0;
+			inclusiveFilter = 0;
+			volumeRange = 16711680;
+			delay = 0;
+			subjectOverride = -1;
+			persistence = -117440512;
+			directOverride = -1;
+			owner = 0;
+			type = "play sound";
+			exclusiveFilter = 0;
+			soundRange = 33751040;
+		};
+		[54] = {
+			velocityRelative = false;
+			distanceRange = 0;
+			reflexive = true;
+			min = 1;
+			inclusiveFilter = 0;
+			directionRelative = true;
+			delay = 0;
+			subjectOverride = -1;
+			range = 2;
+			baseType = 11;
+			directOverride = -1;
+			owner = 0;
+			type = "create object";
+			exclusiveFilter = 0;
+		};
+		[55] = {
+			velocityRelative = false;
+			distanceRange = 0;
+			reflexive = true;
+			min = 1;
+			inclusiveFilter = 0;
+			directionRelative = true;
+			delay = 0;
+			subjectOverride = -1;
+			range = 2;
+			baseType = 22;
+			directOverride = -1;
+			owner = 0;
+			type = "create object";
+			exclusiveFilter = 0;
+		};
+		[56] = {
+			reflexive = false;
+			inclusiveFilter = 1024;
+			delay = 0;
+			subjectOverride = -1;
+			directOverride = -1;
+			owner = 0;
+			type = "alter special weapon";
+			id = 6;
+			exclusiveFilter = 0;
+		};
+		[57] = {
+			reflexive = true;
+			how = "expire";
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = -1;
+			directOverride = -1;
+			owner = 0;
+			type = "die";
+			exclusiveFilter = 0;
+		};
+		[58] = {
+			reflexive = true;
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = -1;
+			range = 0;
+			minimum = 15;
+			directOverride = -1;
+			owner = 0;
+			type = "alter hidden";
+			exclusiveFilter = 0;
+		};
+		[59] = {
+			reflexive = true;
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = -1;
+			range = 0;
+			minimum = 16;
+			directOverride = -1;
+			owner = 0;
+			type = "alter hidden";
+			exclusiveFilter = 0;
+		};
+		[60] = {
+			reflexive = true;
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = -1;
+			range = 0;
+			minimum = 17;
+			directOverride = -1;
+			owner = 0;
+			type = "alter hidden";
+			exclusiveFilter = 0;
+		};
+		[61] = {
+			volume = 2097152;
+			priority = 3;
+			isAbsolute = true;
+			reflexive = true;
+			soundId = 0;
+			inclusiveFilter = 0;
+			volumeRange = 16711680;
+			delay = 0;
+			subjectOverride = -1;
+			persistence = -1392508928;
+			directOverride = -1;
+			owner = 0;
+			type = "play sound";
+			exclusiveFilter = 0;
+			soundRange = 32833536;
+		};
+		[62] = {
+			count = 10;
+			reflexive = true;
+			inclusiveFilter = 0;
+			velocityRange = 2.0;
+			delay = 0;
+			subjectOverride = -1;
+			color = 1;
+			directOverride = -1;
+			veloctiy = 20;
+			owner = 0;
+			type = "make sparks";
+			exclusiveFilter = 0;
+		};
+		[63] = {
+			volume = 6291456;
+			priority = 3;
+			isAbsolute = true;
+			reflexive = true;
+			soundId = 0;
+			inclusiveFilter = 0;
+			volumeRange = 16711680;
+			delay = 0;
+			subjectOverride = -1;
+			persistence = 0;
+			directOverride = -1;
+			owner = 0;
+			type = "play sound";
+			exclusiveFilter = 0;
+			soundRange = 32833536;
+		};
+		[64] = {
+			velocityRelative = false;
+			distanceRange = 0;
+			reflexive = true;
+			min = 1;
+			inclusiveFilter = 0;
+			directionRelative = true;
+			delay = 0;
+			subjectOverride = -1;
+			range = 0;
+			baseType = 29;
+			directOverride = -1;
+			owner = 0;
+			type = "create object";
+			exclusiveFilter = 0;
+		};
+		[65] = {
+			reflexive = true;
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = -1;
+			amount = 1;
+			score = 0;
+			directOverride = -1;
+			plsyer = 0;
+			owner = 0;
+			type = "change score";
+			exclusiveFilter = 0;
+		};
+		[66] = {
+			velocityRelative = false;
+			distanceRange = 0;
+			reflexive = true;
+			min = 1;
+			inclusiveFilter = 0;
+			directionRelative = true;
+			delay = 0;
+			subjectOverride = -1;
+			range = 0;
+			baseType = 29;
+			directOverride = -1;
+			owner = 0;
+			type = "create object";
+			exclusiveFilter = 0;
+		};
+		[67] = {
+			velocityRelative = false;
+			distanceRange = 0;
+			reflexive = true;
+			min = 1;
+			inclusiveFilter = 0;
+			directionRelative = true;
+			delay = 0;
+			subjectOverride = -1;
+			range = 0;
+			baseType = 35;
+			directOverride = -1;
+			owner = 0;
+			type = "create object";
+			exclusiveFilter = 0;
+		};
+		[68] = {
+			velocityRelative = true;
+			distanceRange = 0;
+			reflexive = true;
+			min = 1;
+			inclusiveFilter = 0;
+			directionRelative = true;
+			delay = 0;
+			subjectOverride = -1;
+			range = 0;
+			baseType = 40;
+			directOverride = -1;
+			owner = 0;
+			type = "create object";
+			exclusiveFilter = 0;
+		};
+		[69] = {
+			volume = 65536;
+			priority = 0;
+			isAbsolute = true;
+			reflexive = true;
+			soundId = 0;
+			inclusiveFilter = 0;
+			volumeRange = 16711680;
+			delay = 0;
+			subjectOverride = -1;
+			persistence = 0;
+			directOverride = -1;
+			owner = 0;
+			type = "play sound";
+			exclusiveFilter = 0;
+			soundRange = 36044800;
+		};
+		[70] = {
+			velocityRelative = true;
+			distanceRange = 0;
+			reflexive = true;
+			min = 1;
+			inclusiveFilter = 0;
+			directionRelative = true;
+			delay = 0;
+			subjectOverride = -1;
+			range = 0;
+			baseType = 124;
+			directOverride = -1;
+			owner = 0;
+			type = "create object";
+			exclusiveFilter = 0;
+		};
+		[71] = {
+			velocityRelative = false;
+			distanceRange = 0;
+			reflexive = true;
+			min = 1;
+			inclusiveFilter = 0;
+			directionRelative = true;
+			delay = 0;
+			subjectOverride = -1;
+			range = 0;
+			baseType = 8;
+			directOverride = -1;
+			owner = 0;
+			type = "create object";
+			exclusiveFilter = 0;
+		};
+		[72] = {
+			reflexive = true;
+			how = "expire";
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = -1;
+			directOverride = -1;
+			owner = 0;
+			type = "die";
+			exclusiveFilter = 0;
+		};
+		[73] = {
+			velocityRelative = false;
+			distanceRange = 0;
+			reflexive = true;
+			min = 1;
+			inclusiveFilter = 0;
+			directionRelative = true;
+			delay = 0;
+			subjectOverride = -1;
+			range = 0;
+			baseType = 29;
+			directOverride = -1;
+			owner = 0;
+			type = "create object";
+			exclusiveFilter = 0;
+		};
+		[74] = {
+			reflexive = false;
+			inclusiveFilter = 1048576;
+			speed = 32;
+			delay = 0;
+			subjectOverride = -1;
+			directOverride = -1;
+			owner = -1;
+			type = "land at";
+			exclusiveFilter = 0;
+		};
+		[75] = {
+			volume = 16777216;
+			priority = 5;
+			isAbsolute = true;
+			reflexive = false;
+			soundId = 0;
+			inclusiveFilter = 1048576;
+			volumeRange = 16711680;
+			delay = 0;
+			subjectOverride = -1;
+			persistence = 0;
+			directOverride = -1;
+			owner = -1;
+			type = "play sound";
+			exclusiveFilter = 0;
+			soundRange = 33619968;
+		};
+		[76] = {
+			velocityRelative = false;
+			distanceRange = 0;
+			reflexive = true;
+			min = 1;
+			inclusiveFilter = 0;
+			directionRelative = true;
+			delay = 0;
+			subjectOverride = -1;
+			range = 0;
+			baseType = 29;
+			directOverride = -1;
+			owner = 0;
+			type = "create object";
+			exclusiveFilter = 0;
+		};
+		[77] = {
+			volume = 0;
+			priority = 3;
+			isAbsolute = true;
+			reflexive = true;
+			soundId = 0;
+			inclusiveFilter = 0;
+			volumeRange = 16711680;
+			delay = 0;
+			subjectOverride = -1;
+			persistence = 0;
+			directOverride = -1;
+			owner = 0;
+			type = "play sound";
+			exclusiveFilter = 0;
+			soundRange = 34013184;
+		};
+		[78] = {
+			reflexive = true;
+			how = "expire";
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = -1;
+			directOverride = -1;
+			owner = 0;
+			type = "die";
+			exclusiveFilter = 0;
+		};
+		[79] = {
+			velocityRelative = true;
+			distanceRange = 0;
+			reflexive = true;
+			min = 2;
+			inclusiveFilter = 0;
+			directionRelative = true;
+			delay = 0;
+			subjectOverride = -1;
+			range = 0;
+			baseType = 43;
+			directOverride = -1;
+			owner = 0;
+			type = "create object";
+			exclusiveFilter = 0;
+		};
+		[80] = {
+			reflexive = false;
+			player = 0;
+			inclusiveFilter = 0;
+			text = 9000;
+			nextLevel = 3;
+			delay = 0;
+			subjectOverride = -1;
+			directOverride = -1;
+			owner = 0;
+			type = "declare winner";
+			exclusiveFilter = 0;
+		};
+		[81] = {
+			reflexive = false;
+			player = 1;
+			inclusiveFilter = 0;
+			text = 10203;
+			nextLevel = -1;
+			delay = 0;
+			subjectOverride = -1;
+			directOverride = -1;
+			owner = 0;
+			type = "declare winner";
+			exclusiveFilter = 0;
+		};
+		[82] = {
+			reflexive = false;
+			inclusiveFilter = 0;
+			page = 1;
+			delay = 120;
+			subjectOverride = -1;
+			directOverride = -1;
+			owner = 0;
+			type = "display message";
+			id = 4221;
+			exclusiveFilter = 0;
+		};
+		[83] = {
+			reflexive = false;
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = -1;
+			range = 2;
+			minimum = 7;
+			directOverride = -1;
+			owner = 0;
+			type = "alter hidden";
+			exclusiveFilter = 0;
+		};
+		[84] = {
+			reflexive = true;
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = -1;
+			range = 0;
+			minimum = 1;
+			directOverride = -1;
+			owner = 0;
+			type = "alter active condition";
+			exclusiveFilter = 0;
+			conditionTrue = false;
+		};
+		[85] = {
+			reflexive = false;
+			inclusiveFilter = 0;
+			value = 1;
+			delay = 0;
+			subjectOverride = -1;
+			useObjectsOwner = false;
+			directOverride = -1;
+			owner = 0;
+			type = "alter owner";
+			exclusiveFilter = 0;
+		};
+		[86] = {
+			volume = 65536;
+			priority = 3;
+			isAbsolute = true;
+			reflexive = true;
+			soundId = 0;
+			inclusiveFilter = 0;
+			volumeRange = 16711680;
+			delay = 0;
+			subjectOverride = -1;
+			persistence = 0;
+			directOverride = -1;
+			owner = 0;
+			type = "play sound";
+			exclusiveFilter = 0;
+			soundRange = 34078720;
+		};
+		[87] = {
+			velocityRelative = false;
+			distanceRange = 0;
+			reflexive = true;
+			min = 1;
+			inclusiveFilter = 0;
+			directionRelative = true;
+			delay = 0;
+			subjectOverride = -1;
+			range = 0;
+			baseType = 14;
+			directOverride = -1;
+			owner = 0;
+			type = "create object";
+			exclusiveFilter = 0;
+		};
+		[88] = {
+			volume = 65536;
+			priority = 2;
+			isAbsolute = true;
+			reflexive = true;
+			soundId = 0;
+			inclusiveFilter = 0;
+			volumeRange = 16711680;
+			delay = 0;
+			subjectOverride = -1;
+			persistence = 0;
+			directOverride = -1;
+			owner = 0;
+			type = "play sound";
+			exclusiveFilter = 0;
+			soundRange = 34078720;
+		};
+		[89] = {
+			velocityRelative = false;
+			distanceRange = 0;
+			reflexive = true;
+			min = 1;
+			inclusiveFilter = 0;
+			directionRelative = true;
+			delay = 0;
+			subjectOverride = -1;
+			range = 0;
+			baseType = 13;
+			directOverride = -1;
+			owner = 0;
+			type = "create object";
+			exclusiveFilter = 0;
+		};
+		[90] = {
+			volume = 65536;
+			priority = 0;
+			isAbsolute = true;
+			reflexive = true;
+			soundId = 0;
+			inclusiveFilter = 0;
+			volumeRange = 16711680;
+			delay = 0;
+			subjectOverride = -1;
+			persistence = 0;
+			directOverride = -1;
+			owner = 0;
+			type = "play sound";
+			exclusiveFilter = 0;
+			soundRange = 34144256;
+		};
+		[91] = {
+			velocityRelative = false;
+			distanceRange = 0;
+			reflexive = true;
+			min = 1;
+			inclusiveFilter = 0;
+			directionRelative = true;
+			delay = 0;
+			subjectOverride = -1;
+			range = 3;
+			baseType = 49;
+			directOverride = -1;
+			owner = 0;
+			type = "create object";
+			exclusiveFilter = 0;
+		};
+		[92] = {
+			volume = 786432;
+			priority = 4;
+			isAbsolute = true;
+			reflexive = true;
+			soundId = 0;
+			inclusiveFilter = 0;
+			volumeRange = 16711680;
+			delay = 0;
+			subjectOverride = -1;
+			persistence = 0;
+			directOverride = -1;
+			owner = 0;
+			type = "play sound";
+			exclusiveFilter = 0;
+			soundRange = 33751040;
+		};
+		[93] = {
+			velocityRelative = false;
+			distanceRange = 0;
+			reflexive = true;
+			min = 8;
+			inclusiveFilter = 0;
+			directionRelative = true;
+			delay = 0;
+			subjectOverride = -1;
+			range = 8;
+			baseType = 11;
+			directOverride = -1;
+			owner = 0;
+			type = "create object";
+			exclusiveFilter = 0;
+		};
+		[94] = {
+			velocityRelative = false;
+			distanceRange = 0;
+			reflexive = true;
+			min = 8;
+			inclusiveFilter = 0;
+			directionRelative = false;
+			delay = 0;
+			subjectOverride = -1;
+			range = 8;
+			baseType = 12;
+			directOverride = -1;
+			owner = 0;
+			type = "create object";
+			exclusiveFilter = 0;
+		};
+		[95] = {
+			velocityRelative = true;
+			distanceRange = 0;
+			reflexive = true;
+			min = 8;
+			inclusiveFilter = 0;
+			directionRelative = false;
+			delay = 0;
+			subjectOverride = -1;
+			range = 8;
+			baseType = 51;
+			directOverride = -1;
+			owner = 0;
+			type = "create object";
+			exclusiveFilter = 0;
+		};
+		[96] = {
+			reflexive = true;
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = -1;
+			range = -63594;
+			minimum = 1;
+			directOverride = -1;
+			owner = 0;
+			type = "alter hidden";
+			exclusiveFilter = 0;
+		};
+		[97] = {
+			reflexive = true;
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = -1;
+			directOverride = -1;
+			owner = 0;
+			type = "alter cloak";
+			exclusiveFilter = 0;
+		};
+		[98] = {
+			velocityRelative = true;
+			distanceRange = 0;
+			reflexive = true;
+			min = 1;
+			inclusiveFilter = 0;
+			directionRelative = true;
+			delay = 0;
+			subjectOverride = -1;
+			range = 0;
+			baseType = 43;
+			directOverride = -1;
+			owner = 0;
+			type = "create object";
+			exclusiveFilter = 0;
+		};
+		[99] = {
+			reflexive = true;
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = -1;
+			range = 0;
+			minimum = 12;
+			directOverride = -1;
+			owner = 0;
+			type = "alter hidden";
+			exclusiveFilter = 0;
+		};
+		[100] = {
+			reflexive = true;
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = -1;
+			range = 0;
+			minimum = 13;
+			directOverride = -1;
+			owner = 0;
+			type = "alter hidden";
+			exclusiveFilter = 0;
+		};
+		[101] = {
+			reflexive = true;
+			inclusiveFilter = 0;
+			page = 1;
+			delay = 120;
+			subjectOverride = -1;
+			directOverride = -1;
+			owner = 0;
+			type = "display message";
+			id = 4210;
+			exclusiveFilter = 0;
+		};
+		[102] = {
+			velocityRelative = true;
+			distanceRange = 0;
+			reflexive = true;
+			min = 1;
+			inclusiveFilter = 0;
+			directionRelative = true;
+			delay = 0;
+			subjectOverride = -1;
+			range = 0;
+			baseType = 66;
+			directOverride = -1;
+			owner = 0;
+			type = "create object";
+			exclusiveFilter = 0;
+		};
+		[103] = {
+			reflexive = false;
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = -1;
+			range = 5;
+			minimum = 0;
+			directOverride = -1;
+			owner = -1;
+			type = "alter offline";
+			exclusiveFilter = 0;
+		};
+		[104] = {
+			velocityRelative = false;
+			distanceRange = 0;
+			reflexive = true;
+			min = 1;
+			inclusiveFilter = 0;
+			directionRelative = false;
+			delay = 0;
+			subjectOverride = -1;
+			range = 0;
+			baseType = 8;
+			directOverride = -1;
+			owner = 0;
+			type = "create object";
+			exclusiveFilter = 0;
+		};
+		[105] = {
+			reflexive = true;
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = -1;
+			directOverride = -1;
+			owner = 0;
+			type = "die";
+			exclusiveFilter = 0;
+		};
+		[106] = {
+			volume = 5505024;
+			priority = 3;
+			isAbsolute = true;
+			reflexive = true;
+			soundId = 0;
+			inclusiveFilter = 0;
+			volumeRange = 16711680;
+			delay = 0;
+			subjectOverride = -1;
+			persistence = -1392508928;
+			directOverride = -1;
+			owner = 0;
+			type = "play sound";
+			exclusiveFilter = 0;
+			soundRange = 34734080;
+		};
+		[107] = {
+			volume = 0;
+			priority = 3;
+			isAbsolute = true;
+			reflexive = true;
+			soundId = 0;
+			inclusiveFilter = 0;
+			volumeRange = 16711680;
+			delay = 0;
+			subjectOverride = -1;
+			persistence = -1392508928;
+			directOverride = -1;
+			owner = 0;
+			type = "play sound";
+			exclusiveFilter = 0;
+			soundRange = 34799616;
+		};
+		[108] = {
+			velocityRelative = true;
+			distanceRange = 0;
+			reflexive = true;
+			min = 1;
+			inclusiveFilter = 0;
+			directionRelative = true;
+			delay = 0;
+			subjectOverride = -1;
+			range = 0;
+			baseType = 71;
+			directOverride = -1;
+			owner = 0;
+			type = "create object";
+			exclusiveFilter = 0;
+		};
+		[109] = {
+			velocityRelative = true;
+			distanceRange = 0;
+			reflexive = true;
+			min = 1;
+			inclusiveFilter = 0;
+			directionRelative = true;
+			delay = 0;
+			subjectOverride = -1;
+			range = 0;
+			baseType = 69;
+			directOverride = -1;
+			owner = 0;
+			type = "create object";
+			exclusiveFilter = 0;
+		};
+		[110] = {
+			velocityRelative = true;
+			distanceRange = 0;
+			reflexive = true;
+			min = 1;
+			inclusiveFilter = 0;
+			directionRelative = true;
+			delay = 0;
+			subjectOverride = -1;
+			range = 0;
+			baseType = 72;
+			directOverride = -1;
+			owner = 0;
+			type = "create object";
+			exclusiveFilter = 0;
+		};
+		[111] = {
+			volume = 0;
+			priority = 3;
+			isAbsolute = true;
+			reflexive = true;
+			soundId = 0;
+			inclusiveFilter = 0;
+			volumeRange = 16711680;
+			delay = 0;
+			subjectOverride = -1;
+			persistence = 0;
+			directOverride = -1;
+			owner = 0;
+			type = "play sound";
+			exclusiveFilter = 0;
+			soundRange = 34930688;
+		};
+		[112] = {
+			reflexive = true;
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = -1;
+			directOverride = -1;
+			owner = 0;
+			type = "alter base type";
+			id = 67;
+			exclusiveFilter = 0;
+			retainAmmmoCount = false;
+		};
+		[113] = {
+			reflexive = true;
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = -1;
+			range = 0;
+			minimum = 2;
+			directOverride = -1;
+			owner = 0;
+			type = "alter active condition";
+			exclusiveFilter = 0;
+			conditionTrue = false;
+		};
+		[114] = {
+			reflexive = false;
+			inclusiveFilter = 0;
+			value = 0;
+			delay = 0;
+			subjectOverride = -1;
+			useObjectsOwner = false;
+			directOverride = -1;
+			owner = 0;
+			type = "alter owner";
+			exclusiveFilter = 0;
+		};
+		[115] = {
+			volume = 0;
+			priority = 4;
+			isAbsolute = true;
+			reflexive = true;
+			soundId = 0;
+			inclusiveFilter = 0;
+			volumeRange = 16711680;
+			delay = 0;
+			subjectOverride = -1;
+			persistence = 1711276032;
+			directOverride = -1;
+			owner = 0;
+			type = "play sound";
+			exclusiveFilter = 0;
+			soundRange = 34865152;
+		};
+		[116] = {
+			velocityRelative = false;
+			distanceRange = 0;
+			reflexive = true;
+			min = 1;
+			inclusiveFilter = 0;
+			directionRelative = false;
+			delay = 0;
+			subjectOverride = -1;
+			range = 0;
+			baseType = 257;
+			directOverride = -1;
+			owner = 0;
+			type = "create object";
+			exclusiveFilter = 0;
+		};
+		[117] = {
+			velocityRelative = true;
+			distanceRange = 0;
+			reflexive = true;
+			min = 3;
+			inclusiveFilter = 0;
+			directionRelative = true;
+			delay = 0;
+			subjectOverride = -1;
+			range = 0;
+			baseType = 84;
+			directOverride = -1;
+			owner = 0;
+			type = "create object";
+			exclusiveFilter = 0;
+		};
+		[118] = {
+			velocityRelative = false;
+			distanceRange = 0;
+			reflexive = true;
+			min = 1;
+			inclusiveFilter = 0;
+			directionRelative = false;
+			delay = 0;
+			subjectOverride = -1;
+			range = 0;
+			baseType = 35;
+			directOverride = -1;
+			owner = 0;
+			type = "create object";
+			exclusiveFilter = 0;
+		};
+		[119] = {
+			velocityRelative = true;
+			distanceRange = 0;
+			reflexive = true;
+			min = 3;
+			inclusiveFilter = 0;
+			directionRelative = true;
+			delay = 0;
+			subjectOverride = -1;
+			range = 0;
+			baseType = 85;
+			directOverride = -1;
+			owner = 0;
+			type = "create object";
+			exclusiveFilter = 0;
+		};
+		[120] = {
+			velocityRelative = false;
+			distanceRange = 0;
+			reflexive = true;
+			min = 1;
+			inclusiveFilter = 0;
+			directionRelative = false;
+			delay = 0;
+			subjectOverride = -1;
+			range = 0;
+			baseType = 35;
+			directOverride = -1;
+			owner = 0;
+			type = "create object";
+			exclusiveFilter = 0;
+		};
+		[121] = {
+			reflexive = false;
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = -1;
+			amount = 1;
+			score = 1;
+			directOverride = -1;
+			plsyer = 0;
+			owner = 0;
+			type = "change score";
+			exclusiveFilter = 0;
+		};
+		[122] = {
+			volume = 7864320;
+			priority = 3;
+			isAbsolute = true;
+			reflexive = true;
+			soundId = 0;
+			inclusiveFilter = 0;
+			volumeRange = 16711680;
+			delay = 0;
+			subjectOverride = -1;
+			persistence = -2113929216;
+			directOverride = -1;
+			owner = 0;
+			type = "play sound";
+			exclusiveFilter = 0;
+			soundRange = 33685504;
+		};
+		[123] = {
+			reflexive = true;
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = -1;
+			directOverride = -1;
+			owner = 0;
+			type = "die";
+			exclusiveFilter = 0;
+		};
+		[124] = {
+			reflexive = true;
+			inclusiveFilter = 0;
+			page = 2;
+			delay = 0;
+			subjectOverride = -1;
+			directOverride = -1;
+			owner = 0;
+			type = "display message";
+			id = 4200;
+			exclusiveFilter = 0;
+		};
+		[125] = {
+			reflexive = false;
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = -1;
+			range = 0;
+			minimum = 1;
+			directOverride = -1;
+			owner = 0;
+			type = "alter hidden";
+			exclusiveFilter = 0;
+		};
+		[126] = {
+			reflexive = true;
+			inclusiveFilter = 0;
+			page = 1;
+			delay = 120;
+			subjectOverride = -1;
+			directOverride = -1;
+			owner = 0;
+			type = "display message";
+			id = 5320;
+			exclusiveFilter = 0;
+		};
+		[127] = {
+			reflexive = false;
+			inclusiveFilter = 0;
+			delay = 480;
+			subjectOverride = 5;
+			directOverride = 9;
+			owner = 0;
+			type = "set destination";
+			exclusiveFilter = 0;
+		};
+		[128] = {
+			reflexive = true;
+			inclusiveFilter = 0;
+			page = 1;
+			delay = 360;
+			subjectOverride = -1;
+			directOverride = -1;
+			owner = 0;
+			type = "display message";
+			id = 5330;
+			exclusiveFilter = 0;
+		};
+		[129] = {
+			reflexive = true;
+			inclusiveFilter = 0;
+			delay = 120;
+			subjectOverride = -1;
+			range = 0;
+			minimum = 15;
+			directOverride = -1;
+			owner = 0;
+			type = "alter hidden";
+			exclusiveFilter = 0;
+		};
+		[130] = {
+			reflexive = false;
+			inclusiveFilter = 0;
+			delay = 360;
+			subjectOverride = 10;
+			directOverride = 6;
+			owner = 0;
+			type = "set destination";
+			exclusiveFilter = 0;
+		};
+		[131] = {
+			reflexive = false;
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = 3;
+			directOverride = 10;
+			owner = 0;
+			type = "set destination";
+			exclusiveFilter = 0;
+		};
+		[132] = {
+			reflexive = false;
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = 4;
+			directOverride = 10;
+			owner = 0;
+			type = "set destination";
+			exclusiveFilter = 0;
+		};
+		[133] = {
+			reflexive = false;
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = 8;
+			directOverride = 10;
+			owner = 0;
+			type = "set destination";
+			exclusiveFilter = 0;
+		};
+		[134] = {
+			reflexive = true;
+			inclusiveFilter = 0;
+			page = 1;
+			delay = 360;
+			subjectOverride = -1;
+			directOverride = -1;
+			owner = 0;
+			type = "display message";
+			id = 5360;
+			exclusiveFilter = 0;
+		};
+		[135] = {
+			reflexive = true;
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = -1;
+			range = 3;
+			minimum = 11;
+			directOverride = -1;
+			owner = 0;
+			type = "alter hidden";
+			exclusiveFilter = 0;
+		};
+		[136] = {
+			reflexive = true;
+			inclusiveFilter = 0;
+			value = 1;
+			delay = 0;
+			subjectOverride = 7;
+			useObjectsOwner = false;
+			directOverride = 7;
+			owner = 0;
+			type = "alter owner";
+			exclusiveFilter = 0;
+		};
+		[137] = {
+			reflexive = true;
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = -1;
+			amount = 5000;
+			directOverride = -1;
+			owner = 0;
+			type = "alter health";
+			exclusiveFilter = 0;
+		};
+		[138] = {
+			reflexive = true;
+			inclusiveFilter = 0;
+			page = 1;
+			delay = 180;
+			subjectOverride = -1;
+			directOverride = -1;
+			owner = 0;
+			type = "display message";
+			id = 5340;
+			exclusiveFilter = 0;
+		};
+		[139] = {
+			volume = 1310720;
+			priority = 5;
+			isAbsolute = true;
+			reflexive = true;
+			soundId = 0;
+			inclusiveFilter = 0;
+			volumeRange = 16711680;
+			delay = 0;
+			subjectOverride = -1;
+			persistence = 0;
+			directOverride = -1;
+			owner = 0;
+			type = "play sound";
+			exclusiveFilter = 0;
+			soundRange = 1140719616;
+		};
+		[140] = {
+			velocityRelative = true;
+			distanceRange = 0;
+			reflexive = true;
+			min = 20;
+			inclusiveFilter = 0;
+			directionRelative = false;
+			delay = 180;
+			subjectOverride = -1;
+			range = 10;
+			baseType = 90;
+			directOverride = -1;
+			owner = 0;
+			type = "create object";
+			exclusiveFilter = 0;
+		};
+		[141] = {
+			reflexive = true;
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = -1;
+			amount = -100000;
+			directOverride = -1;
+			owner = 0;
+			type = "alter health";
+			exclusiveFilter = 0;
+		};
+		[142] = {
+			reflexive = true;
+			inclusiveFilter = 0;
+			page = 1;
+			delay = 120;
+			subjectOverride = -1;
+			directOverride = -1;
+			owner = 0;
+			type = "display message";
+			id = 5350;
+			exclusiveFilter = 0;
+		};
+		[143] = {
+			velocityRelative = true;
+			distanceRange = 0;
+			reflexive = true;
+			min = 20;
+			inclusiveFilter = 0;
+			directionRelative = true;
+			delay = 0;
+			subjectOverride = -1;
+			range = 10;
+			baseType = 90;
+			directOverride = -1;
+			owner = 0;
+			type = "create object";
+			exclusiveFilter = 0;
+		};
+		[144] = {
+			velocityRelative = false;
+			distanceRange = 0;
+			reflexive = true;
+			min = 1;
+			inclusiveFilter = 0;
+			directionRelative = true;
+			delay = 0;
+			subjectOverride = -1;
+			range = 0;
+			baseType = 79;
+			directOverride = -1;
+			owner = 0;
+			type = "create object";
+			exclusiveFilter = 0;
+		};
+		[145] = {
+			reflexive = true;
+			how = "expire";
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = -1;
+			directOverride = -1;
+			owner = 0;
+			type = "die";
+			exclusiveFilter = 0;
+		};
+		[146] = {
+			reflexive = false;
+			how = "destroy";
+			inclusiveFilter = 2;
+			delay = 0;
+			subjectOverride = -1;
+			directOverride = -1;
+			owner = -1;
+			type = "die";
+			exclusiveFilter = 0;
+		};
+		[147] = {
+			volume = 4128768;
+			priority = 3;
+			isAbsolute = true;
+			reflexive = true;
+			soundId = 0;
+			inclusiveFilter = 0;
+			volumeRange = 16711680;
+			delay = 0;
+			subjectOverride = -1;
+			persistence = 1610612736;
+			directOverride = -1;
+			owner = 0;
+			type = "play sound";
+			exclusiveFilter = 0;
+			soundRange = 34078720;
+		};
+		[148] = {
+			velocityRelative = true;
+			distanceRange = 0;
+			reflexive = true;
+			min = 1;
+			inclusiveFilter = 0;
+			directionRelative = true;
+			delay = 0;
+			subjectOverride = -1;
+			range = 0;
+			baseType = 38;
+			directOverride = -1;
+			owner = 0;
+			type = "create object";
+			exclusiveFilter = 0;
+		};
+		[149] = {
+			relative = false;
+			reflexive = true;
+			inclusiveFilter = 1342177280;
+			delay = 0;
+			subjectOverride = -1;
+			range = 0;
+			minimum = 0;
+			directOverride = -1;
+			owner = -1;
+			type = "alter velocity";
+			exclusiveFilter = 4294967295;
+		};
+		[150] = {
+			reflexive = true;
+			inclusiveFilter = 1342177280;
+			value = 0;
+			delay = 0;
+			subjectOverride = -1;
+			directOverride = -1;
+			owner = -1;
+			type = "alter max velocity";
+			exclusiveFilter = 4294967295;
+		};
+		[151] = {
+			volume = 0;
+			priority = 3;
+			isAbsolute = true;
+			reflexive = true;
+			soundId = 0;
+			inclusiveFilter = 1342177280;
+			volumeRange = 16711680;
+			delay = 0;
+			subjectOverride = -1;
+			persistence = 0;
+			directOverride = -1;
+			owner = -1;
+			type = "play sound";
+			exclusiveFilter = 4294967295;
+			soundRange = 37355520;
+		};
+		[152] = {
+			reflexive = false;
+			how = "expire";
+			inclusiveFilter = 1342177280;
+			delay = 160;
+			subjectOverride = -1;
+			directOverride = -1;
+			owner = -1;
+			type = "die";
+			exclusiveFilter = 4294967295;
+		};
+		[153] = {
+			reflexive = false;
+			inclusiveFilter = 1342177280;
+			value = 0;
+			delay = 0;
+			subjectOverride = -1;
+			useObjectsOwner = true;
+			directOverride = -1;
+			owner = -1;
+			type = "alter owner";
+			exclusiveFilter = 4294967295;
+		};
+		[154] = {
+			reflexive = true;
+			inclusiveFilter = 0;
+			value = -1;
+			delay = 0;
+			subjectOverride = -1;
+			directOverride = -1;
+			owner = 0;
+			type = "alter max velocity";
+			exclusiveFilter = 0;
+		};
+		[155] = {
+			velocityRelative = true;
+			distanceRange = 0;
+			reflexive = true;
+			min = 1;
+			inclusiveFilter = 0;
+			directionRelative = true;
+			delay = 0;
+			subjectOverride = -1;
+			range = 0;
+			baseType = 97;
+			directOverride = -1;
+			owner = 0;
+			type = "create object";
+			exclusiveFilter = 0;
+		};
+		[156] = {
+			volume = 327680;
+			priority = 4;
+			isAbsolute = true;
+			reflexive = true;
+			soundId = 0;
+			inclusiveFilter = 0;
+			volumeRange = 16711680;
+			delay = 0;
+			subjectOverride = -1;
+			persistence = 0;
+			directOverride = -1;
+			owner = 0;
+			type = "play sound";
+			exclusiveFilter = 0;
+			soundRange = 675807232;
+		};
+		[157] = {
+			velocityRelative = true;
+			distanceRange = 0;
+			reflexive = true;
+			min = 6;
+			inclusiveFilter = 0;
+			directionRelative = true;
+			delay = 0;
+			subjectOverride = -1;
+			range = 0;
+			baseType = 99;
+			directOverride = -1;
+			owner = 0;
+			type = "create object set destination";
+			exclusiveFilter = 0;
+		};
+		[158] = {
+			reflexive = false;
+			how = "expire";
+			inclusiveFilter = 2684354560;
+			delay = 0;
+			subjectOverride = -1;
+			directOverride = -1;
+			owner = -1;
+			type = "die";
+			exclusiveFilter = 4294967295;
+		};
+		[159] = {
+			volume = 16777216;
+			priority = 4;
+			isAbsolute = true;
+			reflexive = false;
+			soundId = 0;
+			inclusiveFilter = 2684354560;
+			volumeRange = 16711680;
+			delay = 0;
+			subjectOverride = -1;
+			persistence = 16777216;
+			directOverride = -1;
+			owner = -1;
+			type = "play sound";
+			exclusiveFilter = 4294967295;
+			soundRange = 2096431104;
+		};
+		[160] = {
+			reflexive = false;
+			inclusiveFilter = 2684354560;
+			value = 1;
+			delay = 0;
+			subjectOverride = -1;
+			directOverride = -1;
+			owner = -1;
+			type = "alter occupation";
+			exclusiveFilter = 4294967295;
+		};
+		[161] = {
+			reflexive = false;
+			inclusiveFilter = 2684354560;
+			delay = 0;
+			subjectOverride = -1;
+			directOverride = -1;
+			owner = -1;
+			type = "activate special";
+			exclusiveFilter = 4294967295;
+		};
+		[162] = {
+			velocityRelative = false;
+			distanceRange = 0;
+			reflexive = true;
+			min = 1;
+			inclusiveFilter = 0;
+			directionRelative = false;
+			delay = 0;
+			subjectOverride = -1;
+			range = 0;
+			baseType = 29;
+			directOverride = -1;
+			owner = 0;
+			type = "create object";
+			exclusiveFilter = 0;
+		};
+		[163] = {
+			volume = 13172736;
+			priority = 3;
+			isAbsolute = true;
+			reflexive = false;
+			soundId = 0;
+			inclusiveFilter = 0;
+			volumeRange = 16711680;
+			delay = 0;
+			subjectOverride = -1;
+			persistence = -1610612736;
+			directOverride = -1;
+			owner = 0;
+			type = "play sound";
+			exclusiveFilter = 0;
+			soundRange = 823001088;
+		};
+		[164] = {
+			velocityRelative = false;
+			distanceRange = 0;
+			reflexive = true;
+			min = 1;
+			inclusiveFilter = 0;
+			directionRelative = false;
+			delay = 0;
+			subjectOverride = -1;
+			range = 0;
+			baseType = 35;
+			directOverride = -1;
+			owner = 0;
+			type = "create object";
+			exclusiveFilter = 0;
+		};
+		[165] = {
+			volume = 1638400;
+			priority = 3;
+			isAbsolute = true;
+			reflexive = true;
+			soundId = 0;
+			inclusiveFilter = 0;
+			volumeRange = 16711680;
+			delay = 0;
+			subjectOverride = -1;
+			persistence = 1677721600;
+			directOverride = -1;
+			owner = 0;
+			type = "play sound";
+			exclusiveFilter = 0;
+			soundRange = 35127296;
+		};
+		[166] = {
+			velocityRelative = false;
+			distanceRange = 0;
+			reflexive = true;
+			min = 8;
+			inclusiveFilter = 0;
+			directionRelative = false;
+			delay = 0;
+			subjectOverride = -1;
+			range = 4;
+			baseType = 107;
+			directOverride = -1;
+			owner = 0;
+			type = "create object";
+			exclusiveFilter = 0;
+		};
+		[167] = {
+			velocityRelative = false;
+			distanceRange = 0;
+			reflexive = true;
+			min = 1;
+			inclusiveFilter = 0;
+			directionRelative = true;
+			delay = 0;
+			subjectOverride = -1;
+			range = 0;
+			baseType = 106;
+			directOverride = -1;
+			owner = 0;
+			type = "create object";
+			exclusiveFilter = 0;
+		};
+		[168] = {
+			velocityRelative = true;
+			distanceRange = 0;
+			reflexive = true;
+			min = 1;
+			inclusiveFilter = 0;
+			directionRelative = true;
+			delay = 0;
+			subjectOverride = -1;
+			range = 2;
+			baseType = 105;
+			directOverride = -1;
+			owner = 0;
+			type = "create object";
+			exclusiveFilter = 0;
+		};
+		[169] = {
+			reflexive = true;
+			inclusiveFilter = 0;
+			page = 1;
+			delay = 0;
+			subjectOverride = -1;
+			directOverride = -1;
+			owner = 0;
+			type = "display message";
+			id = 6200;
+			exclusiveFilter = 0;
+		};
+		[170] = {
+			reflexive = false;
+			inclusiveFilter = 0;
+			delay = 120;
+			subjectOverride = 4;
+			directOverride = 0;
+			owner = 0;
+			type = "set destination";
+			exclusiveFilter = 0;
+		};
+		[171] = {
+			volume = 4456448;
+			priority = 5;
+			isAbsolute = true;
+			reflexive = false;
+			soundId = 0;
+			inclusiveFilter = 0;
+			volumeRange = 16711680;
+			delay = 0;
+			subjectOverride = -1;
+			persistence = 939524096;
+			directOverride = -1;
+			owner = -1;
+			type = "play sound";
+			exclusiveFilter = 0;
+			soundRange = 1140719616;
+		};
+		[172] = {
+			reflexive = true;
+			inclusiveFilter = 0;
+			page = 1;
+			delay = 360;
+			subjectOverride = -1;
+			directOverride = -1;
+			owner = 0;
+			type = "display message";
+			id = 6200;
+			exclusiveFilter = 0;
+		};
+		[173] = {
+			reflexive = false;
+			inclusiveFilter = 0;
+			delay = 120;
+			subjectOverride = 4;
+			directOverride = 2;
+			owner = 0;
+			type = "set destination";
+			exclusiveFilter = 0;
+		};
+		[174] = {
+			reflexive = true;
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = -1;
+			range = 0;
+			minimum = 6;
+			directOverride = -1;
+			owner = 0;
+			type = "alter hidden";
+			exclusiveFilter = 0;
+		};
+		[175] = {
+			volume = 120848384;
+			priority = 5;
+			isAbsolute = true;
+			reflexive = true;
+			soundId = 0;
+			inclusiveFilter = 0;
+			volumeRange = 16711680;
+			delay = 0;
+			subjectOverride = -1;
+			persistence = 2063597568;
+			directOverride = -1;
+			owner = 0;
+			type = "play sound";
+			exclusiveFilter = 0;
+			soundRange = 1140719616;
+		};
+		[176] = {
+			reflexive = true;
+			inclusiveFilter = 0;
+			page = 1;
+			delay = 360;
+			subjectOverride = -1;
+			directOverride = -1;
+			owner = 0;
+			type = "display message";
+			id = 6200;
+			exclusiveFilter = 0;
+		};
+		[177] = {
+			reflexive = false;
+			inclusiveFilter = 0;
+			delay = 120;
+			subjectOverride = 4;
+			directOverride = 3;
+			owner = 0;
+			type = "set destination";
+			exclusiveFilter = 0;
+		};
+		[178] = {
+			volume = -600768512;
+			priority = 5;
+			isAbsolute = true;
+			reflexive = true;
+			soundId = 0;
+			inclusiveFilter = 0;
+			volumeRange = 16711680;
+			delay = 0;
+			subjectOverride = -1;
+			persistence = 0;
+			directOverride = -1;
+			owner = 0;
+			type = "play sound";
+			exclusiveFilter = 0;
+			soundRange = 1140719616;
+		};
+		[179] = {
+			reflexive = true;
+			inclusiveFilter = 0;
+			page = 1;
+			delay = 360;
+			subjectOverride = -1;
+			directOverride = -1;
+			owner = 0;
+			type = "display message";
+			id = 6200;
+			exclusiveFilter = 0;
+		};
+		[180] = {
+			reflexive = true;
+			inclusiveFilter = 0;
+			page = 1;
+			delay = 360;
+			subjectOverride = -1;
+			directOverride = -1;
+			owner = 0;
+			type = "display message";
+			id = 6200;
+			exclusiveFilter = 0;
+		};
+		[181] = {
+			reflexive = true;
+			inclusiveFilter = 0;
+			delay = 180;
+			subjectOverride = -1;
+			range = 4;
+			minimum = 7;
+			directOverride = -1;
+			owner = 0;
+			type = "alter hidden";
+			exclusiveFilter = 0;
+		};
+		[182] = {
+			reflexive = false;
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = 4;
+			directOverride = 0;
+			owner = 0;
+			type = "set destination";
+			exclusiveFilter = 0;
+		};
+		[183] = {
+			reflexive = false;
+			inclusiveFilter = 1610612736;
+			delay = 0;
+			subjectOverride = -1;
+			amount = 1;
+			score = 0;
+			directOverride = -1;
+			plsyer = 0;
+			owner = 0;
+			type = "change score";
+			exclusiveFilter = 4294967295;
+		};
+		[184] = {
+			reflexive = false;
+			how = "expire";
+			inclusiveFilter = 1610612736;
+			delay = 0;
+			subjectOverride = -1;
+			directOverride = -1;
+			owner = 0;
+			type = "die";
+			exclusiveFilter = 4294967295;
+		};
+		[185] = {
+			velocityRelative = false;
+			distanceRange = 0;
+			reflexive = true;
+			min = 2;
+			inclusiveFilter = 0;
+			directionRelative = false;
+			delay = 0;
+			subjectOverride = -1;
+			range = 0;
+			baseType = 61;
+			directOverride = -1;
+			owner = 0;
+			type = "create object";
+			exclusiveFilter = 0;
+		};
+		[186] = {
+			velocityRelative = false;
+			distanceRange = 0;
+			reflexive = true;
+			min = 1;
+			inclusiveFilter = 0;
+			directionRelative = false;
+			delay = 0;
+			subjectOverride = -1;
+			range = 0;
+			baseType = 117;
+			directOverride = -1;
+			owner = 0;
+			type = "create object";
+			exclusiveFilter = 0;
+		};
+		[187] = {
+			reflexive = true;
+			inclusiveFilter = 0;
+			page = 1;
+			delay = 0;
+			subjectOverride = -1;
+			directOverride = -1;
+			owner = 0;
+			type = "display message";
+			id = 5300;
+			exclusiveFilter = 0;
+		};
+		[188] = {
+			reflexive = true;
+			inclusiveFilter = 0;
+			delay = 1200;
+			subjectOverride = -1;
+			range = 0;
+			minimum = 3;
+			directOverride = -1;
+			owner = 0;
+			type = "alter hidden";
+			exclusiveFilter = 0;
+		};
+		[189] = {
+			reflexive = true;
+			inclusiveFilter = 0;
+			delay = 1200;
+			subjectOverride = -1;
+			range = 0;
+			minimum = 5;
+			directOverride = -1;
+			owner = 0;
+			type = "alter hidden";
+			exclusiveFilter = 0;
+		};
+		[190] = {
+			reflexive = true;
+			inclusiveFilter = 0;
+			delay = 1200;
+			subjectOverride = -1;
+			range = 0;
+			minimum = 6;
+			directOverride = -1;
+			owner = 0;
+			type = "alter hidden";
+			exclusiveFilter = 0;
+		};
+		[191] = {
+			reflexive = true;
+			inclusiveFilter = 0;
+			delay = 1200;
+			subjectOverride = -1;
+			range = 0;
+			minimum = 7;
+			directOverride = -1;
+			owner = 0;
+			type = "alter hidden";
+			exclusiveFilter = 0;
+		};
+		[192] = {
+			reflexive = true;
+			inclusiveFilter = 0;
+			delay = 1200;
+			subjectOverride = -1;
+			range = 0;
+			minimum = 8;
+			directOverride = -1;
+			owner = 0;
+			type = "alter hidden";
+			exclusiveFilter = 0;
+		};
+		[193] = {
+			reflexive = true;
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = -1;
+			range = 0;
+			minimum = 1;
+			directOverride = -1;
+			owner = 0;
+			type = "alter hidden";
+			exclusiveFilter = 0;
+		};
+		[194] = {
+			reflexive = true;
+			inclusiveFilter = 0;
+			page = 1;
+			delay = 0;
+			subjectOverride = -1;
+			directOverride = -1;
+			owner = 0;
+			type = "display message";
+			id = 5301;
+			exclusiveFilter = 0;
+		};
+		[195] = {
+			reflexive = true;
+			inclusiveFilter = 0;
+			page = 1;
+			delay = 0;
+			subjectOverride = -1;
+			directOverride = -1;
+			owner = 0;
+			type = "display message";
+			id = 5310;
+			exclusiveFilter = 0;
+		};
+		[196] = {
+			reflexive = true;
+			inclusiveFilter = 0;
+			delay = 400;
+			subjectOverride = -1;
+			range = 0;
+			minimum = 4;
+			directOverride = -1;
+			owner = 0;
+			type = "alter hidden";
+			exclusiveFilter = 0;
+		};
+		[197] = {
+			volume = 393216;
+			priority = 3;
+			isAbsolute = true;
+			reflexive = true;
+			soundId = 0;
+			inclusiveFilter = 0;
+			volumeRange = 16711680;
+			delay = 0;
+			subjectOverride = -1;
+			persistence = 0;
+			directOverride = -1;
+			owner = 0;
+			type = "play sound";
+			exclusiveFilter = 0;
+			soundRange = 37158912;
+		};
+		[198] = {
+			velocityRelative = true;
+			distanceRange = 0;
+			reflexive = true;
+			min = 6;
+			inclusiveFilter = 0;
+			directionRelative = true;
+			delay = 0;
+			subjectOverride = -1;
+			range = 0;
+			baseType = 121;
+			directOverride = -1;
+			owner = 0;
+			type = "create object set destination";
+			exclusiveFilter = 0;
+		};
+		[199] = {
+			volume = 0;
+			priority = 3;
+			isAbsolute = true;
+			reflexive = true;
+			soundId = 0;
+			inclusiveFilter = 0;
+			volumeRange = 16711680;
+			delay = 0;
+			subjectOverride = -1;
+			persistence = 16777216;
+			directOverride = -1;
+			owner = 0;
+			type = "play sound";
+			exclusiveFilter = 0;
+			soundRange = 34340864;
+		};
+		[200] = {
+			relative = false;
+			reflexive = true;
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = -1;
+			range = 0;
+			minimum = -3840;
+			directOverride = -1;
+			owner = 0;
+			type = "alter velocity";
+			exclusiveFilter = 0;
+		};
+		[201] = {
+			relative = false;
+			reflexive = true;
+			inclusiveFilter = 0;
+			delay = 7;
+			subjectOverride = -1;
+			range = 0;
+			minimum = 0;
+			directOverride = -1;
+			owner = 0;
+			type = "alter velocity";
+			exclusiveFilter = 0;
+		};
+		[202] = {
+			reflexive = true;
+			inclusiveFilter = 0;
+			page = 1;
+			delay = 0;
+			subjectOverride = -1;
+			directOverride = -1;
+			owner = 0;
+			type = "display message";
+			id = 5370;
+			exclusiveFilter = 0;
+		};
+		[203] = {
+			reflexive = false;
+			player = 0;
+			inclusiveFilter = 0;
+			text = 10503;
+			nextLevel = 8;
+			delay = 360;
+			subjectOverride = -1;
+			directOverride = -1;
+			owner = 0;
+			type = "declare winner";
+			exclusiveFilter = 0;
+		};
+		[204] = {
+			reflexive = true;
+			inclusiveFilter = 0;
+			delay = 90;
+			subjectOverride = -1;
+			range = 0;
+			minimum = 10;
+			directOverride = -1;
+			owner = 0;
+			type = "alter hidden";
+			exclusiveFilter = 0;
+		};
+		[205] = {
+			reflexive = true;
+			inclusiveFilter = 0;
+			page = 1;
+			delay = 30;
+			subjectOverride = -1;
+			directOverride = -1;
+			owner = 0;
+			type = "display message";
+			id = 5400;
+			exclusiveFilter = 0;
+		};
+		[206] = {
+			reflexive = true;
+			inclusiveFilter = 0;
+			delay = 900;
+			subjectOverride = -1;
+			range = 2;
+			minimum = 16;
+			directOverride = -1;
+			owner = 0;
+			type = "alter hidden";
+			exclusiveFilter = 0;
+		};
+		[207] = {
+			volume = 2097152;
+			priority = 3;
+			isAbsolute = true;
+			reflexive = true;
+			soundId = 0;
+			inclusiveFilter = 0;
+			volumeRange = 16711680;
+			delay = 0;
+			subjectOverride = -1;
+			persistence = 0;
+			directOverride = -1;
+			owner = 0;
+			type = "play sound";
+			exclusiveFilter = 0;
+			soundRange = 34013184;
+		};
+		[208] = {
+			velocityRelative = true;
+			distanceRange = 0;
+			reflexive = true;
+			min = 1;
+			inclusiveFilter = 0;
+			directionRelative = true;
+			delay = 0;
+			subjectOverride = -1;
+			range = 0;
+			baseType = 131;
+			directOverride = -1;
+			owner = 0;
+			type = "create object";
+			exclusiveFilter = 0;
+		};
+		[209] = {
+			reflexive = true;
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = 0;
+			directOverride = -1;
+			owner = 0;
+			type = "alter base type";
+			id = 126;
+			exclusiveFilter = 0;
+			retainAmmmoCount = false;
+		};
+		[210] = {
+			volume = 131072;
+			priority = 4;
+			isAbsolute = true;
+			reflexive = true;
+			soundId = 0;
+			inclusiveFilter = 0;
+			volumeRange = 16711680;
+			delay = 0;
+			subjectOverride = -1;
+			persistence = -1560281088;
+			directOverride = -1;
+			owner = 0;
+			type = "play sound";
+			exclusiveFilter = 0;
+			soundRange = 1140719616;
+		};
+		[211] = {
+			reflexive = true;
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = -1;
+			range = 0;
+			minimum = 2;
+			directOverride = -1;
+			owner = 0;
+			type = "alter active condition";
+			exclusiveFilter = 0;
+			conditionTrue = false;
+		};
+		[212] = {
+			reflexive = false;
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = 0;
+			directOverride = 10;
+			owner = 0;
+			type = "set destination";
+			exclusiveFilter = 0;
+		};
+		[213] = {
+			reflexive = true;
+			inclusiveFilter = 0;
+			page = 1;
+			delay = 0;
+			subjectOverride = -1;
+			directOverride = -1;
+			owner = 0;
+			type = "display message";
+			id = 5401;
+			exclusiveFilter = 0;
+		};
+		[214] = {
+			reflexive = false;
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = 10;
+			directOverride = 7;
+			owner = 0;
+			type = "set destination";
+			exclusiveFilter = 0;
+		};
+		[215] = {
+			volume = 1310720;
+			priority = 3;
+			isAbsolute = true;
+			reflexive = true;
+			soundId = 0;
+			inclusiveFilter = 0;
+			volumeRange = 16711680;
+			delay = 0;
+			subjectOverride = -1;
+			persistence = 33554432;
+			directOverride = -1;
+			owner = 0;
+			type = "play sound";
+			exclusiveFilter = 0;
+			soundRange = 34078720;
+		};
+		[216] = {
+			velocityRelative = true;
+			distanceRange = 0;
+			reflexive = true;
+			min = 1;
+			inclusiveFilter = 0;
+			directionRelative = true;
+			delay = 0;
+			subjectOverride = -1;
+			range = 0;
+			baseType = 112;
+			directOverride = -1;
+			owner = 0;
+			type = "create object";
+			exclusiveFilter = 0;
+		};
+		[217] = {
+			volume = 3670016;
+			priority = 3;
+			isAbsolute = true;
+			reflexive = true;
+			soundId = 0;
+			inclusiveFilter = 0;
+			volumeRange = 16711680;
+			delay = 0;
+			subjectOverride = -1;
+			persistence = 2130706432;
+			directOverride = -1;
+			owner = 0;
+			type = "play sound";
+			exclusiveFilter = 0;
+			soundRange = 1835466752;
+		};
+		[218] = {
+			velocityRelative = true;
+			distanceRange = 0;
+			reflexive = true;
+			min = 1;
+			inclusiveFilter = 0;
+			directionRelative = true;
+			delay = 0;
+			subjectOverride = -1;
+			range = 0;
+			baseType = 133;
+			directOverride = -1;
+			owner = 0;
+			type = "create object";
+			exclusiveFilter = 0;
+		};
+		[219] = {
+			volume = 15204352;
+			priority = 3;
+			isAbsolute = true;
+			reflexive = true;
+			soundId = 0;
+			inclusiveFilter = 0;
+			volumeRange = 16711680;
+			delay = 0;
+			subjectOverride = -1;
+			persistence = 0;
+			directOverride = -1;
+			owner = 0;
+			type = "play sound";
+			exclusiveFilter = 0;
+			soundRange = 1890910208;
+		};
+		[220] = {
+			velocityRelative = true;
+			distanceRange = 0;
+			reflexive = true;
+			min = 1;
+			inclusiveFilter = 0;
+			directionRelative = true;
+			delay = 0;
+			subjectOverride = -1;
+			range = 0;
+			baseType = 136;
+			directOverride = -1;
+			owner = 0;
+			type = "create object";
+			exclusiveFilter = 0;
+		};
+		[221] = {
+			reflexive = true;
+			inclusiveFilter = 0;
+			page = 1;
+			delay = 120;
+			subjectOverride = -1;
+			directOverride = -1;
+			owner = 0;
+			type = "display message";
+			id = 4570;
+			exclusiveFilter = 0;
+		};
+		[222] = {
+			reflexive = true;
+			inclusiveFilter = 0;
+			delay = 180;
+			subjectOverride = -1;
+			range = 2;
+			minimum = 7;
+			directOverride = -1;
+			owner = 0;
+			type = "alter hidden";
+			exclusiveFilter = 0;
+		};
+		[223] = {
+			reflexive = false;
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = 0;
+			directOverride = 7;
+			owner = 0;
+			type = "set destination";
+			exclusiveFilter = 0;
+		};
+		[224] = {
+			reflexive = true;
+			inclusiveFilter = 0;
+			speed = 128;
+			delay = 60;
+			subjectOverride = 0;
+			directOverride = 7;
+			owner = 0;
+			type = "land at";
+			exclusiveFilter = 0;
+		};
+		[225] = {
+			reflexive = true;
+			inclusiveFilter = 0;
+			delay = 10;
+			subjectOverride = -1;
+			range = 0;
+			minimum = 19;
+			directOverride = -1;
+			owner = 0;
+			type = "alter hidden";
+			exclusiveFilter = 0;
+		};
+		[226] = {
+			reflexive = true;
+			player = 0;
+			inclusiveFilter = 0;
+			text = 11401;
+			nextLevel = 17;
+			delay = 0;
+			subjectOverride = -1;
+			directOverride = -1;
+			owner = 0;
+			type = "declare winner";
+			exclusiveFilter = 0;
+		};
+		[227] = {
+			volume = 1310720;
+			priority = 4;
+			isAbsolute = true;
+			reflexive = true;
+			soundId = 0;
+			inclusiveFilter = 0;
+			volumeRange = 16711680;
+			delay = 0;
+			subjectOverride = -1;
+			persistence = 0;
+			directOverride = -1;
+			owner = 0;
+			type = "play sound";
+			exclusiveFilter = 0;
+			soundRange = 642252800;
+		};
+		[228] = {
+			volume = 3407872;
+			priority = 3;
+			isAbsolute = true;
+			reflexive = true;
+			soundId = 0;
+			inclusiveFilter = 0;
+			volumeRange = 16711680;
+			delay = 0;
+			subjectOverride = -1;
+			persistence = 2113929216;
+			directOverride = -1;
+			owner = 0;
+			type = "play sound";
+			exclusiveFilter = 0;
+			soundRange = 35258368;
+		};
+		[229] = {
+			velocityRelative = true;
+			distanceRange = 0;
+			reflexive = true;
+			min = 1;
+			inclusiveFilter = 0;
+			directionRelative = true;
+			delay = 0;
+			subjectOverride = -1;
+			range = 0;
+			baseType = 144;
+			directOverride = -1;
+			owner = 0;
+			type = "create object";
+			exclusiveFilter = 0;
+		};
+		[230] = {
+			volume = 5570560;
+			priority = 3;
+			isAbsolute = true;
+			reflexive = true;
+			soundId = 0;
+			inclusiveFilter = 0;
+			volumeRange = 16711680;
+			delay = 0;
+			subjectOverride = -1;
+			persistence = -1610612736;
+			directOverride = -1;
+			owner = 0;
+			type = "play sound";
+			exclusiveFilter = 0;
+			soundRange = 35192832;
+		};
+		[231] = {
+			velocityRelative = true;
+			distanceRange = 0;
+			reflexive = true;
+			min = 1;
+			inclusiveFilter = 0;
+			directionRelative = true;
+			delay = 0;
+			subjectOverride = -1;
+			range = 0;
+			baseType = 146;
+			directOverride = -1;
+			owner = 0;
+			type = "create object";
+			exclusiveFilter = 0;
+		};
+		[232] = {
+			volume = 983040;
+			priority = 3;
+			isAbsolute = true;
+			reflexive = true;
+			soundId = 0;
+			inclusiveFilter = 0;
+			volumeRange = 16711680;
+			delay = 0;
+			subjectOverride = -1;
+			persistence = 0;
+			directOverride = -1;
+			owner = 0;
+			type = "play sound";
+			exclusiveFilter = 0;
+			soundRange = 34078720;
+		};
+		[233] = {
+			velocityRelative = true;
+			distanceRange = 0;
+			reflexive = true;
+			min = 1;
+			inclusiveFilter = 0;
+			directionRelative = true;
+			delay = 0;
+			subjectOverride = -1;
+			range = 0;
+			baseType = 147;
+			directOverride = -1;
+			owner = 0;
+			type = "create object";
+			exclusiveFilter = 0;
+		};
+		[234] = {
+			volume = 7864320;
+			priority = 3;
+			isAbsolute = true;
+			reflexive = true;
+			soundId = 0;
+			inclusiveFilter = 0;
+			volumeRange = 16711680;
+			delay = 0;
+			subjectOverride = -1;
+			persistence = 2113929216;
+			directOverride = -1;
+			owner = 0;
+			type = "play sound";
+			exclusiveFilter = 0;
+			soundRange = 35389440;
+		};
+		[235] = {
+			velocityRelative = true;
+			distanceRange = 0;
+			reflexive = true;
+			min = 1;
+			inclusiveFilter = 0;
+			directionRelative = true;
+			delay = 0;
+			subjectOverride = -1;
+			range = 0;
+			baseType = 153;
+			directOverride = -1;
+			owner = 0;
+			type = "create object";
+			exclusiveFilter = 0;
+		};
+		[236] = {
+			volume = 65536;
+			priority = 3;
+			isAbsolute = true;
+			reflexive = true;
+			soundId = 0;
+			inclusiveFilter = 0;
+			volumeRange = 16711680;
+			delay = 0;
+			subjectOverride = -1;
+			persistence = -2113929216;
+			directOverride = -1;
+			owner = 0;
+			type = "play sound";
+			exclusiveFilter = 0;
+			soundRange = 35323904;
+		};
+		[237] = {
+			velocityRelative = true;
+			distanceRange = 0;
+			reflexive = true;
+			min = 1;
+			inclusiveFilter = 0;
+			directionRelative = true;
+			delay = 0;
+			subjectOverride = -1;
+			range = 0;
+			baseType = 155;
+			directOverride = -1;
+			owner = 0;
+			type = "create object";
+			exclusiveFilter = 0;
+		};
+		[238] = {
+			volume = 9961472;
+			priority = 3;
+			isAbsolute = true;
+			reflexive = true;
+			soundId = 0;
+			inclusiveFilter = 0;
+			volumeRange = 16711680;
+			delay = 0;
+			subjectOverride = -1;
+			persistence = 0;
+			directOverride = -1;
+			owner = 0;
+			type = "play sound";
+			exclusiveFilter = 0;
+			soundRange = 34930688;
+		};
+		[239] = {
+			velocityRelative = true;
+			distanceRange = 0;
+			reflexive = true;
+			min = 1;
+			inclusiveFilter = 0;
+			directionRelative = true;
+			delay = 0;
+			subjectOverride = -1;
+			range = 0;
+			baseType = 156;
+			directOverride = -1;
+			owner = 0;
+			type = "create object";
+			exclusiveFilter = 0;
+		};
+		[240] = {
+			velocityRelative = true;
+			distanceRange = 0;
+			reflexive = true;
+			min = 1;
+			inclusiveFilter = 0;
+			directionRelative = true;
+			delay = 0;
+			subjectOverride = -1;
+			range = 2;
+			baseType = 158;
+			directOverride = -1;
+			owner = 0;
+			type = "create object";
+			exclusiveFilter = 0;
+		};
+		[241] = {
+			reflexive = true;
+			player = 1;
+			inclusiveFilter = 0;
+			text = 11701;
+			nextLevel = -1;
+			delay = 0;
+			subjectOverride = -1;
+			directOverride = -1;
+			owner = 0;
+			type = "declare winner";
+			exclusiveFilter = 0;
+		};
+		[242] = {
+			reflexive = true;
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = -1;
+			range = 0;
+			minimum = 1;
+			directOverride = -1;
+			owner = 0;
+			type = "alter active condition";
+			exclusiveFilter = 0;
+			conditionTrue = true;
+		};
+		[243] = {
+			reflexive = true;
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = -1;
+			range = 0;
+			minimum = 2;
+			directOverride = -1;
+			owner = 0;
+			type = "alter active condition";
+			exclusiveFilter = 0;
+			conditionTrue = true;
+		};
+		[244] = {
+			reflexive = true;
+			inclusiveFilter = 0;
+			page = 1;
+			delay = 0;
+			subjectOverride = -1;
+			directOverride = -1;
+			owner = 0;
+			type = "display message";
+			id = 5240;
+			exclusiveFilter = 0;
+		};
+		[245] = {
+			reflexive = true;
+			inclusiveFilter = 0;
+			page = 2;
+			delay = 0;
+			subjectOverride = -1;
+			directOverride = -1;
+			owner = 0;
+			type = "display message";
+			id = 5241;
+			exclusiveFilter = 0;
+		};
+		[246] = {
+			reflexive = true;
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = -1;
+			range = 0;
+			minimum = 0;
+			directOverride = -1;
+			owner = 0;
+			type = "alter active condition";
+			exclusiveFilter = 0;
+			conditionTrue = true;
+		};
+		[247] = {
+			reflexive = false;
+			inclusiveFilter = 0;
+			delay = 1200;
+			subjectOverride = 3;
+			directOverride = 0;
+			owner = 0;
+			type = "set destination";
+			exclusiveFilter = 0;
+		};
+		[248] = {
+			reflexive = false;
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = 4;
+			directOverride = 0;
+			owner = 0;
+			type = "set destination";
+			exclusiveFilter = 0;
+		};
+		[249] = {
+			reflexive = true;
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = -1;
+			range = 0;
+			minimum = 0;
+			directOverride = -1;
+			owner = 0;
+			type = "alter active condition";
+			exclusiveFilter = 0;
+			conditionTrue = true;
+		};
+		[250] = {
+			reflexive = true;
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = -1;
+			range = 0;
+			minimum = 1;
+			directOverride = -1;
+			owner = 0;
+			type = "alter active condition";
+			exclusiveFilter = 0;
+			conditionTrue = true;
+		};
+		[251] = {
+			reflexive = true;
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = -1;
+			range = 0;
+			minimum = 2;
+			directOverride = -1;
+			owner = 0;
+			type = "alter active condition";
+			exclusiveFilter = 0;
+			conditionTrue = true;
+		};
+		[252] = {
+			reflexive = true;
+			inclusiveFilter = 0;
+			page = 1;
+			delay = 360;
+			subjectOverride = -1;
+			directOverride = -1;
+			owner = 0;
+			type = "display message";
+			id = 5243;
+			exclusiveFilter = 0;
+		};
+		[253] = {
+			reflexive = true;
+			inclusiveFilter = 0;
+			delay = 360;
+			subjectOverride = -1;
+			range = 4;
+			minimum = 20;
+			directOverride = -1;
+			owner = 0;
+			type = "alter hidden";
+			exclusiveFilter = 0;
+		};
+		[254] = {
+			reflexive = true;
+			inclusiveFilter = 0;
+			delay = 360;
+			subjectOverride = -1;
+			range = 5;
+			minimum = 14;
+			directOverride = -1;
+			owner = 0;
+			type = "alter hidden";
+			exclusiveFilter = 0;
+		};
+		[255] = {
+			reflexive = true;
+			inclusiveFilter = 0;
+			delay = 360;
+			subjectOverride = -1;
+			range = 0;
+			minimum = 4;
+			directOverride = -1;
+			owner = 0;
+			type = "alter active condition";
+			exclusiveFilter = 0;
+			conditionTrue = false;
+		};
+		[256] = {
+			reflexive = true;
+			inclusiveFilter = 0;
+			page = 1;
+			delay = 0;
+			subjectOverride = -1;
+			directOverride = -1;
+			owner = 0;
+			type = "display message";
+			id = 6200;
+			exclusiveFilter = 0;
+		};
+		[257] = {
+			reflexive = true;
+			inclusiveFilter = 0;
+			delay = 600;
+			subjectOverride = -1;
+			range = 4;
+			minimum = 23;
+			directOverride = -1;
+			owner = 0;
+			type = "alter hidden";
+			exclusiveFilter = 0;
+		};
+		[258] = {
+			reflexive = true;
+			inclusiveFilter = 0;
+			delay = 1200;
+			subjectOverride = -1;
+			range = 1;
+			minimum = 5;
+			directOverride = -1;
+			owner = 0;
+			type = "alter hidden";
+			exclusiveFilter = 0;
+		};
+		[259] = {
+			reflexive = true;
+			inclusiveFilter = 0;
+			delay = 1200;
+			subjectOverride = -1;
+			range = 1;
+			minimum = 7;
+			directOverride = -1;
+			owner = 0;
+			type = "alter hidden";
+			exclusiveFilter = 0;
+		};
+		[260] = {
+			reflexive = true;
+			inclusiveFilter = 0;
+			delay = 1200;
+			subjectOverride = -1;
+			range = 1;
+			minimum = 9;
+			directOverride = -1;
+			owner = 0;
+			type = "alter hidden";
+			exclusiveFilter = 0;
+		};
+		[261] = {
+			reflexive = true;
+			inclusiveFilter = 0;
+			delay = 1200;
+			subjectOverride = -1;
+			range = 1;
+			minimum = 11;
+			directOverride = -1;
+			owner = 0;
+			type = "alter hidden";
+			exclusiveFilter = 0;
+		};
+		[262] = {
+			reflexive = true;
+			inclusiveFilter = 0;
+			delay = 1200;
+			subjectOverride = -1;
+			range = 1;
+			minimum = 13;
+			directOverride = -1;
+			owner = 0;
+			type = "alter hidden";
+			exclusiveFilter = 0;
+		};
+		[263] = {
+			velocityRelative = false;
+			distanceRange = 0;
+			reflexive = false;
+			min = 1;
+			inclusiveFilter = 805306368;
+			directionRelative = false;
+			delay = 0;
+			subjectOverride = -1;
+			range = 0;
+			baseType = 117;
+			directOverride = -1;
+			owner = 0;
+			type = "create object";
+			exclusiveFilter = 4294967295;
+		};
+		[264] = {
+			reflexive = false;
+			inclusiveFilter = 805306368;
+			speed = 80;
+			delay = 120;
+			subjectOverride = -1;
+			directOverride = -1;
+			owner = 0;
+			type = "land at";
+			exclusiveFilter = 4294967295;
+		};
+		[265] = {
+			volume = 16252928;
+			priority = 3;
+			isAbsolute = true;
+			reflexive = true;
+			soundId = 0;
+			inclusiveFilter = 0;
+			volumeRange = 16711680;
+			delay = 0;
+			subjectOverride = -1;
+			persistence = -520093696;
+			directOverride = -1;
+			owner = 0;
+			type = "play sound";
+			exclusiveFilter = 0;
+			soundRange = 34013184;
+		};
+		[266] = {
+			velocityRelative = true;
+			distanceRange = 0;
+			reflexive = true;
+			min = 1;
+			inclusiveFilter = 0;
+			directionRelative = true;
+			delay = 0;
+			subjectOverride = -1;
+			range = 0;
+			baseType = 163;
+			directOverride = -1;
+			owner = 0;
+			type = "create object";
+			exclusiveFilter = 0;
+		};
+		[267] = {
+			reflexive = true;
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = -1;
+			range = 4;
+			minimum = 18;
+			directOverride = -1;
+			owner = 0;
+			type = "alter hidden";
+			exclusiveFilter = 0;
+		};
+		[268] = {
+			reflexive = true;
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = -1;
+			range = 4;
+			minimum = 28;
+			directOverride = -1;
+			owner = 0;
+			type = "alter hidden";
+			exclusiveFilter = 0;
+		};
+		[269] = {
+			volume = 3473408;
+			priority = 3;
+			isAbsolute = true;
+			reflexive = true;
+			soundId = 0;
+			inclusiveFilter = 0;
+			volumeRange = 16711680;
+			delay = 0;
+			subjectOverride = -1;
+			persistence = 1660944384;
+			directOverride = -1;
+			owner = 0;
+			type = "play sound";
+			exclusiveFilter = 0;
+			soundRange = 34078720;
+		};
+		[270] = {
+			velocityRelative = false;
+			distanceRange = 0;
+			reflexive = true;
+			min = 1;
+			inclusiveFilter = 0;
+			directionRelative = true;
+			delay = 0;
+			subjectOverride = -1;
+			range = 0;
+			baseType = 165;
+			directOverride = -1;
+			owner = 0;
+			type = "create object";
+			exclusiveFilter = 0;
+		};
+		[271] = {
+			velocityRelative = true;
+			distanceRange = 0;
+			reflexive = true;
+			min = 1;
+			inclusiveFilter = 0;
+			directionRelative = true;
+			delay = 0;
+			subjectOverride = -1;
+			range = 0;
+			baseType = 170;
+			directOverride = -1;
+			owner = 0;
+			type = "create object";
+			exclusiveFilter = 0;
+		};
+		[272] = {
+			volume = 4194304;
+			priority = 3;
+			isAbsolute = true;
+			reflexive = true;
+			soundId = 0;
+			inclusiveFilter = 0;
+			volumeRange = 16711680;
+			delay = 0;
+			subjectOverride = -1;
+			persistence = 1610612736;
+			directOverride = -1;
+			owner = 0;
+			type = "play sound";
+			exclusiveFilter = 0;
+			soundRange = 35586048;
+		};
+		[273] = {
+			volume = 3670016;
+			priority = 3;
+			isAbsolute = true;
+			reflexive = true;
+			soundId = 0;
+			inclusiveFilter = 0;
+			volumeRange = 16711680;
+			delay = 0;
+			subjectOverride = -1;
+			persistence = 0;
+			directOverride = -1;
+			owner = 0;
+			type = "play sound";
+			exclusiveFilter = 0;
+			soundRange = 35782656;
+		};
+		[274] = {
+			velocityRelative = true;
+			distanceRange = 0;
+			reflexive = true;
+			min = 1;
+			inclusiveFilter = 0;
+			directionRelative = true;
+			delay = 0;
+			subjectOverride = -1;
+			range = 0;
+			baseType = 172;
+			directOverride = -1;
+			owner = 0;
+			type = "create object";
+			exclusiveFilter = 0;
+		};
+		[275] = {
+			reflexive = false;
+			inclusiveFilter = 4029677568;
+			value = 0;
+			delay = 0;
+			subjectOverride = -1;
+			useObjectsOwner = true;
+			directOverride = -1;
+			owner = -1;
+			type = "alter owner";
+			exclusiveFilter = 4294967295;
+		};
+		[276] = {
+			reflexive = true;
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = -1;
+			amount = 1;
+			score = 0;
+			directOverride = -1;
+			plsyer = 0;
+			owner = 0;
+			type = "change score";
+			exclusiveFilter = 0;
+		};
+		[277] = {
+			reflexive = true;
+			inclusiveFilter = 0;
+			value = 0;
+			delay = 0;
+			subjectOverride = 0;
+			useObjectsOwner = false;
+			directOverride = -1;
+			owner = 0;
+			type = "alter owner";
+			exclusiveFilter = 0;
+		};
+		[278] = {
+			reflexive = false;
+			player = 0;
+			inclusiveFilter = 0;
+			value = 2560000;
+			delay = 0;
+			subjectOverride = -1;
+			useObjectsOwner = false;
+			directOverride = -1;
+			owner = 0;
+			type = "alter absolute cash";
+			exclusiveFilter = 0;
+		};
+		[279] = {
+			volume = 11534336;
+			priority = 3;
+			isAbsolute = true;
+			reflexive = true;
+			soundId = 0;
+			inclusiveFilter = 0;
+			volumeRange = 16711680;
+			delay = 0;
+			subjectOverride = -1;
+			persistence = 0;
+			directOverride = -1;
+			owner = 0;
+			type = "play sound";
+			exclusiveFilter = 0;
+			soundRange = 35717120;
+		};
+		[280] = {
+			velocityRelative = true;
+			distanceRange = 0;
+			reflexive = true;
+			min = 1;
+			inclusiveFilter = 0;
+			directionRelative = true;
+			delay = 0;
+			subjectOverride = -1;
+			range = 0;
+			baseType = 176;
+			directOverride = -1;
+			owner = 0;
+			type = "create object";
+			exclusiveFilter = 0;
+		};
+		[281] = {
+			reflexive = true;
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = -1;
+			range = 3;
+			minimum = 31;
+			directOverride = -1;
+			owner = 0;
+			type = "alter hidden";
+			exclusiveFilter = 0;
+		};
+		[282] = {
+			velocityRelative = false;
+			distanceRange = 0;
+			reflexive = true;
+			min = 1;
+			inclusiveFilter = 0;
+			directionRelative = false;
+			delay = 0;
+			subjectOverride = -1;
+			range = 0;
+			baseType = 29;
+			directOverride = -1;
+			owner = 0;
+			type = "create object";
+			exclusiveFilter = 0;
+		};
+		[283] = {
+			reflexive = true;
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = -1;
+			amount = 1;
+			score = 0;
+			directOverride = -1;
+			plsyer = 0;
+			owner = 0;
+			type = "change score";
+			exclusiveFilter = 0;
+		};
+		[284] = {
+			reflexive = false;
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = 17;
+			directOverride = 6;
+			owner = 0;
+			type = "set destination";
+			exclusiveFilter = 0;
+		};
+		[285] = {
+			reflexive = false;
+			player = 0;
+			inclusiveFilter = 0;
+			text = 10301;
+			nextLevel = 5;
+			delay = 0;
+			subjectOverride = -1;
+			directOverride = -1;
+			owner = 0;
+			type = "declare winner";
+			exclusiveFilter = 0;
+		};
+		[286] = {
+			reflexive = false;
+			player = 1;
+			inclusiveFilter = 0;
+			text = 10302;
+			nextLevel = -1;
+			delay = 0;
+			subjectOverride = -1;
+			directOverride = -1;
+			owner = 0;
+			type = "declare winner";
+			exclusiveFilter = 0;
+		};
+		[287] = {
+			reflexive = false;
+			player = 0;
+			inclusiveFilter = 0;
+			text = 10801;
+			nextLevel = 11;
+			delay = 0;
+			subjectOverride = -1;
+			directOverride = -1;
+			owner = 0;
+			type = "declare winner";
+			exclusiveFilter = 0;
+		};
+		[288] = {
+			reflexive = false;
+			player = 1;
+			inclusiveFilter = 0;
+			text = 10802;
+			nextLevel = -1;
+			delay = 0;
+			subjectOverride = -1;
+			directOverride = -1;
+			owner = 0;
+			type = "declare winner";
+			exclusiveFilter = 0;
+		};
+		[289] = {
+			reflexive = false;
+			player = 1;
+			inclusiveFilter = 0;
+			text = 11001;
+			nextLevel = -1;
+			delay = 0;
+			subjectOverride = -1;
+			directOverride = -1;
+			owner = 0;
+			type = "declare winner";
+			exclusiveFilter = 0;
+		};
+		[290] = {
+			reflexive = false;
+			player = 0;
+			inclusiveFilter = 0;
+			text = 11002;
+			nextLevel = 13;
+			delay = 0;
+			subjectOverride = -1;
+			directOverride = -1;
+			owner = 0;
+			type = "declare winner";
+			exclusiveFilter = 0;
+		};
+		[291] = {
+			reflexive = false;
+			player = 1;
+			inclusiveFilter = 0;
+			text = 11101;
+			nextLevel = -1;
+			delay = 0;
+			subjectOverride = -1;
+			directOverride = -1;
+			owner = 0;
+			type = "declare winner";
+			exclusiveFilter = 0;
+		};
+		[292] = {
+			reflexive = false;
+			player = 0;
+			inclusiveFilter = 0;
+			text = 4065;
+			nextLevel = 14;
+			delay = 0;
+			subjectOverride = -1;
+			directOverride = -1;
+			owner = 0;
+			type = "declare winner";
+			exclusiveFilter = 0;
+		};
+		[293] = {
+			reflexive = false;
+			player = 0;
+			inclusiveFilter = 0;
+			text = 11501;
+			nextLevel = 18;
+			delay = 0;
+			subjectOverride = -1;
+			directOverride = -1;
+			owner = 0;
+			type = "declare winner";
+			exclusiveFilter = 0;
+		};
+		[294] = {
+			reflexive = false;
+			player = 1;
+			inclusiveFilter = 0;
+			text = 10401;
+			nextLevel = -1;
+			delay = 0;
+			subjectOverride = -1;
+			directOverride = -1;
+			owner = 0;
+			type = "declare winner";
+			exclusiveFilter = 0;
+		};
+		[295] = {
+			reflexive = false;
+			player = 0;
+			inclusiveFilter = 0;
+			text = 10402;
+			nextLevel = 7;
+			delay = 0;
+			subjectOverride = -1;
+			directOverride = -1;
+			owner = 0;
+			type = "declare winner";
+			exclusiveFilter = 0;
+		};
+		[296] = {
+			reflexive = false;
+			player = 1;
+			inclusiveFilter = 0;
+			text = 10501;
+			nextLevel = -1;
+			delay = 0;
+			subjectOverride = -1;
+			directOverride = -1;
+			owner = 0;
+			type = "declare winner";
+			exclusiveFilter = 0;
+		};
+		[297] = {
+			reflexive = false;
+			player = 1;
+			inclusiveFilter = 0;
+			text = 10502;
+			nextLevel = -1;
+			delay = 0;
+			subjectOverride = -1;
+			directOverride = -1;
+			owner = 0;
+			type = "declare winner";
+			exclusiveFilter = 0;
+		};
+		[298] = {
+			reflexive = false;
+			player = 1;
+			inclusiveFilter = 0;
+			text = 10601;
+			nextLevel = -1;
+			delay = 0;
+			subjectOverride = -1;
+			directOverride = -1;
+			owner = 0;
+			type = "declare winner";
+			exclusiveFilter = 0;
+		};
+		[299] = {
+			reflexive = false;
+			player = 0;
+			inclusiveFilter = 0;
+			text = 10602;
+			nextLevel = 9;
+			delay = 0;
+			subjectOverride = -1;
+			directOverride = -1;
+			owner = 0;
+			type = "declare winner";
+			exclusiveFilter = 0;
+		};
+		[300] = {
+			reflexive = false;
+			player = 1;
+			inclusiveFilter = 0;
+			text = 10701;
+			nextLevel = -1;
+			delay = 0;
+			subjectOverride = -1;
+			directOverride = -1;
+			owner = 0;
+			type = "declare winner";
+			exclusiveFilter = 0;
+		};
+		[301] = {
+			reflexive = false;
+			player = 0;
+			inclusiveFilter = 0;
+			text = 10702;
+			nextLevel = 10;
+			delay = 0;
+			subjectOverride = -1;
+			directOverride = -1;
+			owner = 0;
+			type = "declare winner";
+			exclusiveFilter = 0;
+		};
+		[302] = {
+			reflexive = false;
+			player = 1;
+			inclusiveFilter = 0;
+			text = 11301;
+			nextLevel = -1;
+			delay = 0;
+			subjectOverride = -1;
+			directOverride = -1;
+			owner = 0;
+			type = "declare winner";
+			exclusiveFilter = 0;
+		};
+		[303] = {
+			reflexive = false;
+			player = 0;
+			inclusiveFilter = 0;
+			text = 11302;
+			nextLevel = 16;
+			delay = 0;
+			subjectOverride = -1;
+			directOverride = -1;
+			owner = 0;
+			type = "declare winner";
+			exclusiveFilter = 0;
+		};
+		[304] = {
+			reflexive = false;
+			player = 0;
+			inclusiveFilter = 0;
+			text = 10201;
+			nextLevel = 3;
+			delay = 0;
+			subjectOverride = -1;
+			directOverride = -1;
+			owner = 0;
+			type = "declare winner";
+			exclusiveFilter = 0;
+		};
+		[305] = {
+			reflexive = false;
+			player = 1;
+			inclusiveFilter = 0;
+			text = 11601;
+			nextLevel = -1;
+			delay = 0;
+			subjectOverride = -1;
+			directOverride = -1;
+			owner = 0;
+			type = "declare winner";
+			exclusiveFilter = 0;
+		};
+		[306] = {
+			reflexive = false;
+			player = 0;
+			inclusiveFilter = 0;
+			text = 11602;
+			nextLevel = 19;
+			delay = 0;
+			subjectOverride = -1;
+			directOverride = -1;
+			owner = 0;
+			type = "declare winner";
+			exclusiveFilter = 0;
+		};
+		[307] = {
+			velocityRelative = false;
+			distanceRange = 256;
+			reflexive = true;
+			min = 1;
+			inclusiveFilter = 0;
+			directionRelative = false;
+			delay = 0;
+			subjectOverride = -1;
+			range = 0;
+			baseType = 7;
+			directOverride = -1;
+			owner = 0;
+			type = "create object";
+			exclusiveFilter = 0;
+		};
+		[308] = {
+			reflexive = true;
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = -1;
+			directOverride = -1;
+			owner = 0;
+			type = "set destination";
+			exclusiveFilter = 0;
+		};
+		[309] = {
+			relative = false;
+			reflexive = true;
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = -1;
+			range = 0;
+			minimum = 0;
+			directOverride = -1;
+			owner = 0;
+			type = "alter velocity";
+			exclusiveFilter = 0;
+		};
+		[310] = {
+			velocityRelative = false;
+			distanceRange = 0;
+			reflexive = true;
+			min = 1;
+			inclusiveFilter = 0;
+			directionRelative = false;
+			delay = 0;
+			subjectOverride = -1;
+			range = 0;
+			baseType = 183;
+			directOverride = -1;
+			owner = 0;
+			type = "create object";
+			exclusiveFilter = 0;
+		};
+		[311] = {
+			reflexive = true;
+			inclusiveFilter = 0;
+			speed = 128;
+			delay = 0;
+			subjectOverride = -1;
+			directOverride = -1;
+			owner = 0;
+			type = "land at";
+			exclusiveFilter = 0;
+		};
+		[312] = {
+			reflexive = true;
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = -1;
+			directOverride = -1;
+			owner = 0;
+			type = "alter base type";
+			id = 224;
+			exclusiveFilter = 0;
+			retainAmmmoCount = false;
+		};
+		[313] = {
+			reflexive = true;
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = -1;
+			amount = 80000;
+			directOverride = -1;
+			owner = 0;
+			type = "alter health";
+			exclusiveFilter = 0;
+		};
+		[314] = {
+			reflexive = true;
+			inclusiveFilter = 0;
+			page = 1;
+			delay = 60;
+			subjectOverride = -1;
+			directOverride = -1;
+			owner = 0;
+			type = "display message";
+			id = 5520;
+			exclusiveFilter = 0;
+		};
+		[315] = {
+			velocityRelative = true;
+			distanceRange = 1024;
+			reflexive = true;
+			min = 1;
+			inclusiveFilter = 0;
+			directionRelative = true;
+			delay = 0;
+			subjectOverride = -1;
+			range = 2;
+			baseType = 184;
+			directOverride = -1;
+			owner = 0;
+			type = "create object";
+			exclusiveFilter = 0;
+		};
+		[316] = {
+			velocityRelative = true;
+			distanceRange = 1024;
+			reflexive = true;
+			min = -4;
+			inclusiveFilter = 0;
+			directionRelative = true;
+			delay = 0;
+			subjectOverride = -1;
+			range = 6;
+			baseType = 195;
+			directOverride = -1;
+			owner = 0;
+			type = "create object";
+			exclusiveFilter = 0;
+		};
+		[317] = {
+			relative = true;
+			reflexive = true;
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = -1;
+			range = 512;
+			minimum = 0;
+			directOverride = -1;
+			owner = 0;
+			type = "alter velocity";
+			exclusiveFilter = 0;
+		};
+		[318] = {
+			velocityRelative = true;
+			distanceRange = 2;
+			reflexive = true;
+			min = -10;
+			inclusiveFilter = 0;
+			directionRelative = true;
+			delay = 0;
+			subjectOverride = -1;
+			range = 12;
+			baseType = 189;
+			directOverride = -1;
+			owner = 0;
+			type = "create object";
+			exclusiveFilter = 0;
+		};
+		[319] = {
+			reflexive = true;
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = -1;
+			directOverride = -1;
+			owner = 0;
+			type = "activate special";
+			exclusiveFilter = 0;
+		};
+		[320] = {
+			velocityRelative = false;
+			distanceRange = 256;
+			reflexive = true;
+			min = 0;
+			inclusiveFilter = 0;
+			directionRelative = false;
+			delay = 0;
+			subjectOverride = -1;
+			range = 2;
+			baseType = 7;
+			directOverride = -1;
+			owner = 0;
+			type = "create object";
+			exclusiveFilter = 0;
+		};
+		[321] = {
+			velocityRelative = false;
+			distanceRange = 256;
+			reflexive = true;
+			min = 0;
+			inclusiveFilter = 0;
+			directionRelative = false;
+			delay = 0;
+			subjectOverride = -1;
+			range = 2;
+			baseType = 14;
+			directOverride = -1;
+			owner = 0;
+			type = "create object";
+			exclusiveFilter = 0;
+		};
+		[322] = {
+			velocityRelative = false;
+			distanceRange = 256;
+			reflexive = true;
+			min = 0;
+			inclusiveFilter = 0;
+			directionRelative = false;
+			delay = 0;
+			subjectOverride = -1;
+			range = 2;
+			baseType = 59;
+			directOverride = -1;
+			owner = 0;
+			type = "create object";
+			exclusiveFilter = 0;
+		};
+		[323] = {
+			reflexive = true;
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = -1;
+			range = 2;
+			minimum = 1;
+			directOverride = -1;
+			owner = 0;
+			type = "alter hidden";
+			exclusiveFilter = 0;
+		};
+		[324] = {
+			reflexive = true;
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = -1;
+			range = 2;
+			minimum = 4;
+			directOverride = -1;
+			owner = 0;
+			type = "alter hidden";
+			exclusiveFilter = 0;
+		};
+		[325] = {
+			reflexive = true;
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = -1;
+			range = 0;
+			minimum = 7;
+			directOverride = -1;
+			owner = 0;
+			type = "alter hidden";
+			exclusiveFilter = 0;
+		};
+		[326] = {
+			relative = false;
+			reflexive = true;
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = 0;
+			range = 0;
+			minimum = 0;
+			directOverride = -1;
+			owner = 0;
+			type = "alter velocity";
+			exclusiveFilter = 0;
+		};
+		[327] = {
+			reflexive = false;
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = -1;
+			range = 15360;
+			minimum = 0;
+			directOverride = -1;
+			owner = -1;
+			type = "alter offline";
+			exclusiveFilter = 0;
+		};
+		[328] = {
+			volume = 16580608;
+			priority = 3;
+			isAbsolute = true;
+			reflexive = true;
+			soundId = 0;
+			inclusiveFilter = 0;
+			volumeRange = 16711680;
+			delay = 0;
+			subjectOverride = -1;
+			persistence = 0;
+			directOverride = -1;
+			owner = 0;
+			type = "play sound";
+			exclusiveFilter = 0;
+			soundRange = 35848192;
+		};
+		[329] = {
+			relative = false;
+			reflexive = true;
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = -1;
+			range = 180;
+			minimum = 180;
+			directOverride = -1;
+			owner = 0;
+			type = "alter age";
+			exclusiveFilter = 0;
+		};
+		[330] = {
+			velocityRelative = false;
+			distanceRange = 2;
+			reflexive = true;
+			min = -1;
+			inclusiveFilter = 0;
+			directionRelative = false;
+			delay = 120;
+			subjectOverride = -1;
+			range = 4;
+			baseType = 200;
+			directOverride = -1;
+			owner = 0;
+			type = "create object";
+			exclusiveFilter = 0;
+		};
+		[331] = {
+			velocityRelative = true;
+			distanceRange = 0;
+			reflexive = true;
+			min = 1;
+			inclusiveFilter = 0;
+			directionRelative = true;
+			delay = 0;
+			subjectOverride = -1;
+			range = 0;
+			baseType = 257;
+			directOverride = -1;
+			owner = 0;
+			type = "create object";
+			exclusiveFilter = 0;
+		};
+		[332] = {
+			velocityRelative = true;
+			distanceRange = 0;
+			reflexive = true;
+			min = 2;
+			inclusiveFilter = 0;
+			directionRelative = true;
+			delay = 0;
+			subjectOverride = -1;
+			range = 2;
+			baseType = 190;
+			directOverride = -1;
+			owner = 0;
+			type = "create object";
+			exclusiveFilter = 0;
+		};
+		[333] = {
+			velocityRelative = true;
+			distanceRange = 0;
+			reflexive = true;
+			min = 2;
+			inclusiveFilter = 0;
+			directionRelative = true;
+			delay = 0;
+			subjectOverride = -1;
+			range = 2;
+			baseType = 191;
+			directOverride = -1;
+			owner = 0;
+			type = "create object";
+			exclusiveFilter = 0;
+		};
+		[334] = {
+			velocityRelative = false;
+			distanceRange = 0;
+			reflexive = true;
+			min = 1;
+			inclusiveFilter = 0;
+			directionRelative = false;
+			delay = 0;
+			subjectOverride = -1;
+			range = 0;
+			baseType = 35;
+			directOverride = -1;
+			owner = 0;
+			type = "create object";
+			exclusiveFilter = 0;
+		};
+		[335] = {
+			velocityRelative = true;
+			distanceRange = 0;
+			reflexive = true;
+			min = 1;
+			inclusiveFilter = 0;
+			directionRelative = true;
+			delay = 0;
+			subjectOverride = -1;
+			range = 0;
+			baseType = 193;
+			directOverride = -1;
+			owner = 0;
+			type = "create object";
+			exclusiveFilter = 0;
+		};
+		[336] = {
+			volume = 0;
+			priority = 3;
+			isAbsolute = true;
+			reflexive = true;
+			soundId = 0;
+			inclusiveFilter = 0;
+			volumeRange = 16711680;
+			delay = 0;
+			subjectOverride = -1;
+			persistence = -2130706432;
+			directOverride = -1;
+			owner = 0;
+			type = "play sound";
+			exclusiveFilter = 0;
+			soundRange = 35651584;
+		};
+		[337] = {
+			velocityRelative = false;
+			distanceRange = 0;
+			reflexive = true;
+			min = 1;
+			inclusiveFilter = 0;
+			directionRelative = false;
+			delay = 0;
+			subjectOverride = -1;
+			range = 0;
+			baseType = 194;
+			directOverride = -1;
+			owner = 0;
+			type = "create object";
+			exclusiveFilter = 0;
+		};
+		[338] = {
+			relative = false;
+			reflexive = false;
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = -1;
+			range = 2560;
+			minimum = 5120;
+			directOverride = -1;
+			owner = 0;
+			type = "alter velocity";
+			exclusiveFilter = 0;
+		};
+		[339] = {
+			reflexive = true;
+			how = "plain";
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = -1;
+			directOverride = -1;
+			owner = 0;
+			type = "die";
+			exclusiveFilter = 0;
+		};
+		[340] = {
+			velocityRelative = false;
+			distanceRange = 0;
+			reflexive = true;
+			min = 1;
+			inclusiveFilter = 0;
+			directionRelative = false;
+			delay = 0;
+			subjectOverride = -1;
+			range = 0;
+			baseType = 52;
+			directOverride = -1;
+			owner = 0;
+			type = "create object";
+			exclusiveFilter = 0;
+		};
+		[341] = {
+			reflexive = true;
+			how = "destroy";
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = -1;
+			directOverride = -1;
+			owner = 0;
+			type = "die";
+			exclusiveFilter = 0;
+		};
+		[342] = {
+			velocityRelative = true;
+			distanceRange = 1024;
+			reflexive = true;
+			min = 1;
+			inclusiveFilter = 0;
+			directionRelative = true;
+			delay = 0;
+			subjectOverride = -1;
+			range = 1;
+			baseType = 195;
+			directOverride = -1;
+			owner = 0;
+			type = "create object";
+			exclusiveFilter = 0;
+		};
+		[343] = {
+			relative = true;
+			reflexive = false;
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = -1;
+			range = 0;
+			minimum = 25600;
+			directOverride = -1;
+			owner = 0;
+			type = "alter velocity";
+			exclusiveFilter = 0;
+		};
+		[344] = {
+			velocityRelative = false;
+			distanceRange = 0;
+			reflexive = true;
+			min = 1;
+			inclusiveFilter = 0;
+			directionRelative = false;
+			delay = 0;
+			subjectOverride = -1;
+			range = 0;
+			baseType = 79;
+			directOverride = -1;
+			owner = 0;
+			type = "create object";
+			exclusiveFilter = 0;
+		};
+		[345] = {
+			reflexive = true;
+			how = "expire";
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = -1;
+			directOverride = -1;
+			owner = 0;
+			type = "die";
+			exclusiveFilter = 0;
+		};
+		[346] = {
+			reflexive = false;
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = -1;
+			range = 0;
+			minimum = 10240;
+			directOverride = -1;
+			owner = 0;
+			type = "alter offline";
+			exclusiveFilter = 0;
+		};
+		[347] = {
+			velocityRelative = true;
+			distanceRange = 0;
+			reflexive = true;
+			min = 1;
+			inclusiveFilter = 0;
+			directionRelative = true;
+			delay = 0;
+			subjectOverride = -1;
+			range = 0;
+			baseType = 199;
+			directOverride = -1;
+			owner = 0;
+			type = "create object";
+			exclusiveFilter = 0;
+		};
+		[348] = {
+			volume = 16711680;
+			priority = 3;
+			isAbsolute = true;
+			reflexive = true;
+			soundId = 0;
+			inclusiveFilter = 0;
+			volumeRange = 11796480;
+			delay = 0;
+			subjectOverride = -1;
+			persistence = 0;
+			directOverride = -1;
+			owner = 0;
+			type = "play sound";
+			exclusiveFilter = 0;
+			soundRange = 35979264;
+		};
+		[349] = {
+			velocityRelative = false;
+			distanceRange = 0;
+			reflexive = true;
+			min = 1;
+			inclusiveFilter = 0;
+			directionRelative = false;
+			delay = 0;
+			subjectOverride = -1;
+			range = 0;
+			baseType = 35;
+			directOverride = -1;
+			owner = 0;
+			type = "create object";
+			exclusiveFilter = 0;
+		};
+		[350] = {
+			volume = 0;
+			priority = 3;
+			isAbsolute = true;
+			reflexive = true;
+			soundId = 0;
+			inclusiveFilter = 0;
+			volumeRange = 16711680;
+			delay = 0;
+			subjectOverride = -1;
+			persistence = 16777216;
+			directOverride = -1;
+			owner = 0;
+			type = "play sound";
+			exclusiveFilter = 0;
+			soundRange = 35913728;
+		};
+		[351] = {
+			reflexive = true;
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = -1;
+			amount = 250;
+			directOverride = -1;
+			owner = 0;
+			type = "alter health";
+			exclusiveFilter = 0;
+		};
+		[352] = {
+			reflexive = true;
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = -1;
+			directOverride = -1;
+			owner = 0;
+			type = "alter base type";
+			id = 201;
+			exclusiveFilter = 0;
+			retainAmmmoCount = false;
+		};
+		[353] = {
+			volume = 392364032;
+			priority = 4;
+			isAbsolute = true;
+			reflexive = true;
+			soundId = 0;
+			inclusiveFilter = 0;
+			volumeRange = 16711680;
+			delay = 0;
+			subjectOverride = -1;
+			persistence = -1577058304;
+			directOverride = -1;
+			owner = 0;
+			type = "play sound";
+			exclusiveFilter = 0;
+			soundRange = 36110336;
+		};
+		[354] = {
+			volume = 196608;
+			priority = 3;
+			isAbsolute = true;
+			reflexive = true;
+			soundId = 0;
+			inclusiveFilter = 0;
+			volumeRange = 16711680;
+			delay = 360;
+			subjectOverride = -1;
+			persistence = -1560281088;
+			directOverride = -1;
+			owner = 0;
+			type = "play sound";
+			exclusiveFilter = 0;
+			soundRange = 34406400;
+		};
+		[355] = {
+			reflexive = true;
+			inclusiveFilter = 0;
+			delay = 60;
+			subjectOverride = -1;
+			directOverride = -1;
+			owner = 0;
+			type = "alter base type";
+			id = 188;
+			exclusiveFilter = 0;
+			retainAmmmoCount = false;
+		};
+		[356] = {
+			reflexive = true;
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = -1;
+			range = 0;
+			minimum = 13;
+			directOverride = -1;
+			owner = 0;
+			type = "alter active condition";
+			exclusiveFilter = 0;
+			conditionTrue = false;
+		};
+		[357] = {
+			reflexive = true;
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = -1;
+			range = 0;
+			minimum = 14;
+			directOverride = -1;
+			owner = 0;
+			type = "alter active condition";
+			exclusiveFilter = 0;
+			conditionTrue = true;
+		};
+		[358] = {
+			reflexive = true;
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = -1;
+			range = 2;
+			minimum = 15;
+			directOverride = -1;
+			owner = 0;
+			type = "alter active condition";
+			exclusiveFilter = 0;
+			conditionTrue = false;
+		};
+		[359] = {
+			reflexive = true;
+			inclusiveFilter = 0;
+			page = 1;
+			delay = 0;
+			subjectOverride = -1;
+			directOverride = -1;
+			owner = 0;
+			type = "display message";
+			id = 5500;
+			exclusiveFilter = 0;
+		};
+		[360] = {
+			reflexive = true;
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = -1;
+			range = 0;
+			minimum = 0;
+			directOverride = -1;
+			owner = 0;
+			type = "alter active condition";
+			exclusiveFilter = 0;
+			conditionTrue = true;
+		};
+		[361] = {
+			reflexive = true;
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = -1;
+			range = 0;
+			minimum = 1;
+			directOverride = -1;
+			owner = 0;
+			type = "alter active condition";
+			exclusiveFilter = 0;
+			conditionTrue = true;
+		};
+		[362] = {
+			reflexive = true;
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = -1;
+			range = 0;
+			minimum = 11;
+			directOverride = -1;
+			owner = 0;
+			type = "alter active condition";
+			exclusiveFilter = 0;
+			conditionTrue = false;
+		};
+		[363] = {
+			reflexive = true;
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = -1;
+			range = 0;
+			minimum = 12;
+			directOverride = -1;
+			owner = 0;
+			type = "alter active condition";
+			exclusiveFilter = 0;
+			conditionTrue = false;
+		};
+		[364] = {
+			reflexive = true;
+			inclusiveFilter = 0;
+			page = 1;
+			delay = 0;
+			subjectOverride = -1;
+			directOverride = -1;
+			owner = 0;
+			type = "display message";
+			id = 5501;
+			exclusiveFilter = 0;
+		};
+		[365] = {
+			reflexive = true;
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = -1;
+			range = 0;
+			minimum = 8;
+			directOverride = -1;
+			owner = 0;
+			type = "alter active condition";
+			exclusiveFilter = 0;
+			conditionTrue = true;
+		};
+		[366] = {
+			reflexive = true;
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = -1;
+			range = 0;
+			minimum = 4;
+			directOverride = -1;
+			owner = 0;
+			type = "alter active condition";
+			exclusiveFilter = 0;
+			conditionTrue = false;
+		};
+		[367] = {
+			reflexive = true;
+			inclusiveFilter = 0;
+			page = 1;
+			delay = 0;
+			subjectOverride = -1;
+			directOverride = -1;
+			owner = 0;
+			type = "display message";
+			id = 5502;
+			exclusiveFilter = 0;
+		};
+		[368] = {
+			reflexive = true;
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = -1;
+			range = 0;
+			minimum = 9;
+			directOverride = -1;
+			owner = 0;
+			type = "alter active condition";
+			exclusiveFilter = 0;
+			conditionTrue = true;
+		};
+		[369] = {
+			reflexive = true;
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = -1;
+			range = 0;
+			minimum = 5;
+			directOverride = -1;
+			owner = 0;
+			type = "alter active condition";
+			exclusiveFilter = 0;
+			conditionTrue = false;
+		};
+		[370] = {
+			reflexive = true;
+			inclusiveFilter = 0;
+			page = 1;
+			delay = 0;
+			subjectOverride = -1;
+			directOverride = -1;
+			owner = 0;
+			type = "display message";
+			id = 5503;
+			exclusiveFilter = 0;
+		};
+		[371] = {
+			reflexive = true;
+			inclusiveFilter = 0;
+			page = 1;
+			delay = 0;
+			subjectOverride = -1;
+			directOverride = -1;
+			owner = 0;
+			type = "display message";
+			id = 5503;
+			exclusiveFilter = 0;
+		};
+		[372] = {
+			reflexive = true;
+			inclusiveFilter = 0;
+			page = 1;
+			delay = 0;
+			subjectOverride = -1;
+			directOverride = -1;
+			owner = 0;
+			type = "display message";
+			id = 5504;
+			exclusiveFilter = 0;
+		};
+		[373] = {
+			reflexive = true;
+			inclusiveFilter = 0;
+			page = 1;
+			delay = 0;
+			subjectOverride = -1;
+			directOverride = -1;
+			owner = 0;
+			type = "display message";
+			id = 5504;
+			exclusiveFilter = 0;
+		};
+		[374] = {
+			reflexive = true;
+			inclusiveFilter = 0;
+			page = 1;
+			delay = 0;
+			subjectOverride = -1;
+			directOverride = -1;
+			owner = 0;
+			type = "display message";
+			id = 5505;
+			exclusiveFilter = 0;
+		};
+		[375] = {
+			reflexive = true;
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = -1;
+			range = 0;
+			minimum = 10;
+			directOverride = -1;
+			owner = 0;
+			type = "alter active condition";
+			exclusiveFilter = 0;
+			conditionTrue = false;
+		};
+		[376] = {
+			reflexive = true;
+			inclusiveFilter = 0;
+			page = 1;
+			delay = 0;
+			subjectOverride = -1;
+			directOverride = -1;
+			owner = 0;
+			type = "display message";
+			id = 5505;
+			exclusiveFilter = 0;
+		};
+		[377] = {
+			reflexive = true;
+			inclusiveFilter = 0;
+			page = 1;
+			delay = 0;
+			subjectOverride = -1;
+			directOverride = -1;
+			owner = 0;
+			type = "display message";
+			id = 5503;
+			exclusiveFilter = 0;
+		};
+		[378] = {
+			reflexive = true;
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = -1;
+			range = 0;
+			minimum = 3;
+			directOverride = -1;
+			owner = 0;
+			type = "alter active condition";
+			exclusiveFilter = 0;
+			conditionTrue = false;
+		};
+		[379] = {
+			reflexive = true;
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = -1;
+			range = 0;
+			minimum = 9;
+			directOverride = -1;
+			owner = 0;
+			type = "alter active condition";
+			exclusiveFilter = 0;
+			conditionTrue = false;
+		};
+		[380] = {
+			reflexive = true;
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = -1;
+			range = 0;
+			minimum = 12;
+			directOverride = -1;
+			owner = 0;
+			type = "alter active condition";
+			exclusiveFilter = 0;
+			conditionTrue = true;
+		};
+		[381] = {
+			reflexive = true;
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = -1;
+			range = 0;
+			minimum = 7;
+			directOverride = -1;
+			owner = 0;
+			type = "alter active condition";
+			exclusiveFilter = 0;
+			conditionTrue = false;
+		};
+		[382] = {
+			reflexive = true;
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = -1;
+			range = 0;
+			minimum = 2;
+			directOverride = -1;
+			owner = 0;
+			type = "alter active condition";
+			exclusiveFilter = 0;
+			conditionTrue = false;
+		};
+		[383] = {
+			reflexive = true;
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = -1;
+			range = 0;
+			minimum = 8;
+			directOverride = -1;
+			owner = 0;
+			type = "alter active condition";
+			exclusiveFilter = 0;
+			conditionTrue = false;
+		};
+		[384] = {
+			reflexive = true;
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = -1;
+			range = 0;
+			minimum = 6;
+			directOverride = -1;
+			owner = 0;
+			type = "alter active condition";
+			exclusiveFilter = 0;
+			conditionTrue = false;
+		};
+		[385] = {
+			reflexive = true;
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = -1;
+			range = 0;
+			minimum = 11;
+			directOverride = -1;
+			owner = 0;
+			type = "alter active condition";
+			exclusiveFilter = 0;
+			conditionTrue = true;
+		};
+		[386] = {
+			reflexive = true;
+			inclusiveFilter = 0;
+			page = 1;
+			delay = 360;
+			subjectOverride = -1;
+			directOverride = -1;
+			owner = 0;
+			type = "display message";
+			id = 5508;
+			exclusiveFilter = 0;
+		};
+		[387] = {
+			reflexive = false;
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = -1;
+			directOverride = 5;
+			owner = 0;
+			type = "set destination";
+			exclusiveFilter = 0;
+		};
+		[388] = {
+			reflexive = false;
+			inclusiveFilter = 0;
+			speed = 128;
+			delay = 120;
+			subjectOverride = -1;
+			directOverride = 5;
+			owner = 0;
+			type = "land at";
+			exclusiveFilter = 0;
+		};
+		[389] = {
+			reflexive = true;
+			inclusiveFilter = 0;
+			delay = 2400;
+			subjectOverride = -1;
+			range = 0;
+			minimum = 13;
+			directOverride = -1;
+			owner = 0;
+			type = "alter active condition";
+			exclusiveFilter = 0;
+			conditionTrue = false;
+		};
+		[390] = {
+			reflexive = true;
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = -1;
+			range = 1;
+			minimum = 0;
+			directOverride = -1;
+			owner = 0;
+			type = "alter active condition";
+			exclusiveFilter = 0;
+			conditionTrue = false;
+		};
+		[391] = {
+			reflexive = true;
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = -1;
+			range = 10;
+			minimum = 2;
+			directOverride = -1;
+			owner = 0;
+			type = "alter active condition";
+			exclusiveFilter = 0;
+			conditionTrue = true;
+		};
+		[392] = {
+			reflexive = true;
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = -1;
+			range = 2;
+			minimum = 15;
+			directOverride = -1;
+			owner = 0;
+			type = "alter active condition";
+			exclusiveFilter = 0;
+			conditionTrue = false;
+		};
+		[393] = {
+			reflexive = true;
+			inclusiveFilter = 0;
+			page = 1;
+			delay = 0;
+			subjectOverride = -1;
+			directOverride = -1;
+			owner = 0;
+			type = "display message";
+			id = 5506;
+			exclusiveFilter = 0;
+		};
+		[394] = {
+			reflexive = true;
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = -1;
+			range = 0;
+			minimum = 14;
+			directOverride = -1;
+			owner = 0;
+			type = "alter active condition";
+			exclusiveFilter = 0;
+			conditionTrue = false;
+		};
+		[395] = {
+			reflexive = true;
+			inclusiveFilter = 0;
+			page = 1;
+			delay = 0;
+			subjectOverride = -1;
+			directOverride = -1;
+			owner = 0;
+			type = "display message";
+			id = 5507;
+			exclusiveFilter = 0;
+		};
+		[396] = {
+			reflexive = true;
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = -1;
+			range = 1;
+			minimum = 0;
+			directOverride = -1;
+			owner = 0;
+			type = "alter active condition";
+			exclusiveFilter = 0;
+			conditionTrue = false;
+		};
+		[397] = {
+			reflexive = true;
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = -1;
+			range = 10;
+			minimum = 2;
+			directOverride = -1;
+			owner = 0;
+			type = "alter active condition";
+			exclusiveFilter = 0;
+			conditionTrue = true;
+		};
+		[398] = {
+			reflexive = true;
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = -1;
+			range = 0;
+			minimum = 13;
+			directOverride = -1;
+			owner = 0;
+			type = "alter active condition";
+			exclusiveFilter = 0;
+			conditionTrue = false;
+		};
+		[399] = {
+			reflexive = true;
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = -1;
+			range = 0;
+			minimum = 14;
+			directOverride = -1;
+			owner = 0;
+			type = "alter active condition";
+			exclusiveFilter = 0;
+			conditionTrue = true;
+		};
+		[400] = {
+			reflexive = true;
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = -1;
+			range = 0;
+			minimum = 15;
+			directOverride = -1;
+			owner = 0;
+			type = "alter active condition";
+			exclusiveFilter = 0;
+			conditionTrue = false;
+		};
+		[401] = {
+			reflexive = true;
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = -1;
+			range = 0;
+			minimum = 17;
+			directOverride = -1;
+			owner = 0;
+			type = "alter active condition";
+			exclusiveFilter = 0;
+			conditionTrue = false;
+		};
+		[402] = {
+			reflexive = true;
+			inclusiveFilter = 0;
+			page = 1;
+			delay = 0;
+			subjectOverride = -1;
+			directOverride = -1;
+			owner = 0;
+			type = "display message";
+			id = 5510;
+			exclusiveFilter = 0;
+		};
+		[403] = {
+			reflexive = true;
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = -1;
+			range = 1;
+			minimum = 0;
+			directOverride = -1;
+			owner = 0;
+			type = "alter active condition";
+			exclusiveFilter = 0;
+			conditionTrue = false;
+		};
+		[404] = {
+			reflexive = true;
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = -1;
+			range = 10;
+			minimum = 2;
+			directOverride = -1;
+			owner = 0;
+			type = "alter active condition";
+			exclusiveFilter = 0;
+			conditionTrue = true;
+		};
+		[405] = {
+			reflexive = true;
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = -1;
+			range = 0;
+			minimum = 13;
+			directOverride = -1;
+			owner = 0;
+			type = "alter active condition";
+			exclusiveFilter = 0;
+			conditionTrue = false;
+		};
+		[406] = {
+			reflexive = true;
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = -1;
+			range = 0;
+			minimum = 14;
+			directOverride = -1;
+			owner = 0;
+			type = "alter active condition";
+			exclusiveFilter = 0;
+			conditionTrue = true;
+		};
+		[407] = {
+			reflexive = true;
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = -1;
+			range = 0;
+			minimum = 15;
+			directOverride = -1;
+			owner = 0;
+			type = "alter active condition";
+			exclusiveFilter = 0;
+			conditionTrue = false;
+		};
+		[408] = {
+			reflexive = true;
+			inclusiveFilter = 0;
+			page = 3;
+			delay = 0;
+			subjectOverride = -1;
+			directOverride = -1;
+			owner = 0;
+			type = "display message";
+			id = 5511;
+			exclusiveFilter = 0;
+		};
+		[409] = {
+			reflexive = true;
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = -1;
+			range = 1;
+			minimum = 0;
+			directOverride = -1;
+			owner = 0;
+			type = "alter active condition";
+			exclusiveFilter = 0;
+			conditionTrue = false;
+		};
+		[410] = {
+			reflexive = true;
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = -1;
+			range = 10;
+			minimum = 2;
+			directOverride = -1;
+			owner = 0;
+			type = "alter active condition";
+			exclusiveFilter = 0;
+			conditionTrue = true;
+		};
+		[411] = {
+			reflexive = true;
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = -1;
+			range = 0;
+			minimum = 13;
+			directOverride = -1;
+			owner = 0;
+			type = "alter active condition";
+			exclusiveFilter = 0;
+			conditionTrue = false;
+		};
+		[412] = {
+			reflexive = true;
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = -1;
+			range = 0;
+			minimum = 14;
+			directOverride = -1;
+			owner = 0;
+			type = "alter active condition";
+			exclusiveFilter = 0;
+			conditionTrue = true;
+		};
+		[413] = {
+			reflexive = true;
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = -1;
+			range = 1;
+			minimum = 16;
+			directOverride = -1;
+			owner = 0;
+			type = "alter active condition";
+			exclusiveFilter = 0;
+			conditionTrue = false;
+		};
+		[414] = {
+			reflexive = true;
+			inclusiveFilter = 0;
+			page = 1;
+			delay = 0;
+			subjectOverride = -1;
+			directOverride = -1;
+			owner = 0;
+			type = "display message";
+			id = 5509;
+			exclusiveFilter = 0;
+		};
+		[415] = {
+			reflexive = true;
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = -1;
+			amount = 1000;
+			directOverride = -1;
+			owner = 0;
+			type = "alter health";
+			exclusiveFilter = 0;
+		};
+		[416] = {
+			volume = 11534336;
+			priority = 4;
+			isAbsolute = true;
+			reflexive = true;
+			soundId = 0;
+			inclusiveFilter = 0;
+			volumeRange = 16711680;
+			delay = -1;
+			subjectOverride = 0;
+			persistence = 16777216;
+			directOverride = 0;
+			owner = 0;
+			type = "play sound";
+			exclusiveFilter = 0;
+			soundRange = 36110336;
+		};
+		[417] = {
+			reflexive = true;
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = -1;
+			directOverride = -1;
+			owner = 0;
+			type = "alter base type";
+			id = 204;
+			exclusiveFilter = 0;
+			retainAmmmoCount = false;
+		};
+		[418] = {
+			reflexive = true;
+			inclusiveFilter = 0;
+			delay = 360;
+			subjectOverride = -1;
+			directOverride = -1;
+			owner = 0;
+			type = "alter base type";
+			id = 203;
+			exclusiveFilter = 0;
+			retainAmmmoCount = false;
+		};
+		[419] = {
+			reflexive = true;
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = -1;
+			range = 0;
+			minimum = 22;
+			directOverride = -1;
+			owner = 0;
+			type = "alter hidden";
+			exclusiveFilter = 0;
+		};
+		[420] = {
+			reflexive = true;
+			player = 0;
+			inclusiveFilter = 0;
+			text = 10101;
+			nextLevel = 2;
+			delay = 60;
+			subjectOverride = -1;
+			directOverride = -1;
+			owner = 0;
+			type = "declare winner";
+			exclusiveFilter = 0;
+		};
+		[421] = {
+			reflexive = false;
+			inclusiveFilter = 3758096384;
+			delay = 0;
+			subjectOverride = -1;
+			amount = 1;
+			score = 0;
+			directOverride = -1;
+			plsyer = 0;
+			owner = 0;
+			type = "change score";
+			exclusiveFilter = 4294967295;
+		};
+		[422] = {
+			reflexive = false;
+			how = "expire";
+			inclusiveFilter = 3758096384;
+			delay = 0;
+			subjectOverride = -1;
+			directOverride = -1;
+			owner = 0;
+			type = "die";
+			exclusiveFilter = 4294967295;
+		};
+		[423] = {
+			reflexive = true;
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = 1;
+			directOverride = -1;
+			owner = 0;
+			type = "alter base type";
+			id = 129;
+			exclusiveFilter = 0;
+			retainAmmmoCount = true;
+		};
+		[424] = {
+			reflexive = false;
+			inclusiveFilter = 0;
+			delay = 3;
+			subjectOverride = -1;
+			directOverride = 0;
+			owner = 0;
+			type = "set destination";
+			exclusiveFilter = 0;
+		};
+		[425] = {
+			reflexive = true;
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = -1;
+			range = 0;
+			minimum = 2;
+			directOverride = -1;
+			owner = 0;
+			type = "alter active condition";
+			exclusiveFilter = 0;
+			conditionTrue = false;
+		};
+		[426] = {
+			velocityRelative = true;
+			distanceRange = 0;
+			reflexive = true;
+			min = 1;
+			inclusiveFilter = 0;
+			directionRelative = true;
+			delay = 0;
+			subjectOverride = -1;
+			range = 0;
+			baseType = 207;
+			directOverride = -1;
+			owner = 0;
+			type = "create object";
+			exclusiveFilter = 0;
+		};
+		[427] = {
+			reflexive = true;
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = -1;
+			amount = -1;
+			score = 0;
+			directOverride = -1;
+			plsyer = 0;
+			owner = 0;
+			type = "change score";
+			exclusiveFilter = 0;
+		};
+		[428] = {
+			reflexive = true;
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = -1;
+			range = 0;
+			minimum = 0;
+			directOverride = -1;
+			owner = 0;
+			type = "alter active condition";
+			exclusiveFilter = 0;
+			conditionTrue = false;
+		};
+		[429] = {
+			reflexive = true;
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = 1;
+			directOverride = -1;
+			owner = 0;
+			type = "alter base type";
+			id = 206;
+			exclusiveFilter = 0;
+			retainAmmmoCount = true;
+		};
+		[430] = {
+			reflexive = true;
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = -1;
+			range = 0;
+			minimum = 2;
+			directOverride = -1;
+			owner = 0;
+			type = "alter active condition";
+			exclusiveFilter = 0;
+			conditionTrue = true;
+		};
+		[431] = {
+			reflexive = true;
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = -1;
+			range = 0;
+			minimum = 7;
+			directOverride = -1;
+			owner = 0;
+			type = "alter active condition";
+			exclusiveFilter = 0;
+			conditionTrue = true;
+		};
+		[432] = {
+			reflexive = true;
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = -1;
+			range = 15360;
+			minimum = -7680;
+			directOverride = -1;
+			owner = 0;
+			type = "alter offline";
+			exclusiveFilter = 0;
+		};
+		[433] = {
+			reflexive = true;
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = -1;
+			range = 256;
+			minimum = -256;
+			directOverride = -1;
+			owner = 0;
+			type = "alter current turn rate";
+			exclusiveFilter = 0;
+		};
+		[434] = {
+			relative = true;
+			reflexive = true;
+			inclusiveFilter = 0;
+			delay = 20;
+			subjectOverride = -1;
+			range = 128;
+			minimum = 128;
+			directOverride = -1;
+			owner = 0;
+			type = "alter velocity";
+			exclusiveFilter = 0;
+		};
+		[435] = {
+			reflexive = true;
+			inclusiveFilter = 0;
+			delay = 270;
+			subjectOverride = -1;
+			directOverride = -1;
+			owner = 0;
+			type = "alter base type";
+			id = 208;
+			exclusiveFilter = 0;
+			retainAmmmoCount = true;
+		};
+		[436] = {
+			reflexive = true;
+			inclusiveFilter = 0;
+			delay = 270;
+			subjectOverride = -1;
+			directOverride = -1;
+			owner = 0;
+			type = "alter base type";
+			id = 205;
+			exclusiveFilter = 0;
+			retainAmmmoCount = true;
+		};
+		[437] = {
+			velocityRelative = false;
+			distanceRange = 0;
+			reflexive = true;
+			min = 1;
+			inclusiveFilter = 0;
+			directionRelative = false;
+			delay = 0;
+			subjectOverride = -1;
+			range = 0;
+			baseType = 211;
+			directOverride = -1;
+			owner = 0;
+			type = "create object";
+			exclusiveFilter = 0;
+		};
+		[438] = {
+			velocityRelative = false;
+			distanceRange = 16;
+			reflexive = true;
+			min = 10;
+			inclusiveFilter = 0;
+			directionRelative = false;
+			delay = 0;
+			subjectOverride = -1;
+			range = 0;
+			baseType = 205;
+			directOverride = -1;
+			owner = 0;
+			type = "create object";
+			exclusiveFilter = 0;
+		};
+		[439] = {
+			reflexive = true;
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = -1;
+			directOverride = -1;
+			owner = 0;
+			type = "alter base type";
+			id = 209;
+			exclusiveFilter = 0;
+			retainAmmmoCount = false;
+		};
+		[440] = {
+			volume = 10485760;
+			priority = 3;
+			isAbsolute = true;
+			reflexive = false;
+			soundId = 0;
+			inclusiveFilter = 1610612736;
+			volumeRange = 16711680;
+			delay = 0;
+			subjectOverride = -1;
+			persistence = 0;
+			directOverride = -1;
+			owner = 0;
+			type = "play sound";
+			exclusiveFilter = 4294967295;
+			soundRange = 2096431104;
+		};
+		[441] = {
+			reflexive = false;
+			inclusiveFilter = 1610612736;
+			delay = 0;
+			subjectOverride = -1;
+			amount = 1;
+			score = 1;
+			directOverride = -1;
+			plsyer = 0;
+			owner = 0;
+			type = "change score";
+			exclusiveFilter = 4294967295;
+		};
+		[442] = {
+			reflexive = false;
+			how = "expire";
+			inclusiveFilter = 1610612736;
+			delay = 0;
+			subjectOverride = -1;
+			directOverride = -1;
+			owner = 0;
+			type = "die";
+			exclusiveFilter = 4294967295;
+		};
+		[443] = {
+			reflexive = true;
+			player = 0;
+			inclusiveFilter = 0;
+			text = 11201;
+			nextLevel = 15;
+			delay = 0;
+			subjectOverride = -1;
+			directOverride = -1;
+			owner = 0;
+			type = "declare winner";
+			exclusiveFilter = 0;
+		};
+		[444] = {
+			reflexive = true;
+			inclusiveFilter = 0;
+			value = -1;
+			delay = 0;
+			subjectOverride = -1;
+			useObjectsOwner = false;
+			directOverride = -1;
+			owner = 0;
+			type = "alter owner";
+			exclusiveFilter = 0;
+		};
+		[445] = {
+			reflexive = true;
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = 1;
+			directOverride = -1;
+			owner = 0;
+			type = "alter base type";
+			id = 88;
+			exclusiveFilter = 0;
+			retainAmmmoCount = true;
+		};
+		[446] = {
+			reflexive = true;
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = -1;
+			range = 0;
+			minimum = 2;
+			directOverride = -1;
+			owner = 0;
+			type = "alter active condition";
+			exclusiveFilter = 0;
+			conditionTrue = false;
+		};
+		[447] = {
+			velocityRelative = true;
+			distanceRange = 0;
+			reflexive = true;
+			min = 1;
+			inclusiveFilter = 0;
+			directionRelative = true;
+			delay = 0;
+			subjectOverride = -1;
+			range = 0;
+			baseType = 214;
+			directOverride = -1;
+			owner = 0;
+			type = "create object";
+			exclusiveFilter = 0;
+		};
+		[448] = {
+			reflexive = true;
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = -1;
+			amount = -1;
+			score = 0;
+			directOverride = -1;
+			plsyer = 0;
+			owner = 0;
+			type = "change score";
+			exclusiveFilter = 0;
+		};
+		[449] = {
+			reflexive = true;
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = -1;
+			range = 0;
+			minimum = 0;
+			directOverride = -1;
+			owner = 0;
+			type = "alter active condition";
+			exclusiveFilter = 0;
+			conditionTrue = false;
+		};
+		[450] = {
+			reflexive = true;
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = 6;
+			directOverride = -1;
+			owner = 0;
+			type = "activate special";
+			exclusiveFilter = 0;
+		};
+		[451] = {
+			reflexive = true;
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = 1;
+			directOverride = -1;
+			owner = 0;
+			type = "alter base type";
+			id = 217;
+			exclusiveFilter = 0;
+			retainAmmmoCount = true;
+		};
+		[452] = {
+			reflexive = true;
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = -1;
+			range = 0;
+			minimum = 2;
+			directOverride = -1;
+			owner = 0;
+			type = "alter active condition";
+			exclusiveFilter = 0;
+			conditionTrue = true;
+		};
+		[453] = {
+			reflexive = true;
+			player = 0;
+			inclusiveFilter = 0;
+			text = 10502;
+			nextLevel = 8;
+			delay = 0;
+			subjectOverride = -1;
+			directOverride = -1;
+			owner = 0;
+			type = "declare winner";
+			exclusiveFilter = 0;
+		};
+		[454] = {
+			reflexive = true;
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = -1;
+			range = 15360;
+			minimum = -7680;
+			directOverride = -1;
+			owner = 0;
+			type = "alter offline";
+			exclusiveFilter = 0;
+		};
+		[455] = {
+			reflexive = true;
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = -1;
+			range = 256;
+			minimum = -256;
+			directOverride = -1;
+			owner = 0;
+			type = "alter current turn rate";
+			exclusiveFilter = 0;
+		};
+		[456] = {
+			relative = true;
+			reflexive = true;
+			inclusiveFilter = 0;
+			delay = 20;
+			subjectOverride = -1;
+			range = 128;
+			minimum = 128;
+			directOverride = -1;
+			owner = 0;
+			type = "alter velocity";
+			exclusiveFilter = 0;
+		};
+		[457] = {
+			reflexive = true;
+			inclusiveFilter = 0;
+			delay = 270;
+			subjectOverride = -1;
+			directOverride = -1;
+			owner = 0;
+			type = "alter base type";
+			id = 213;
+			exclusiveFilter = 0;
+			retainAmmmoCount = true;
+		};
+		[458] = {
+			reflexive = true;
+			inclusiveFilter = 0;
+			delay = 270;
+			subjectOverride = -1;
+			directOverride = -1;
+			owner = 0;
+			type = "alter base type";
+			id = 212;
+			exclusiveFilter = 0;
+			retainAmmmoCount = true;
+		};
+		[459] = {
+			velocityRelative = false;
+			distanceRange = 0;
+			reflexive = true;
+			min = 1;
+			inclusiveFilter = 0;
+			directionRelative = false;
+			delay = 0;
+			subjectOverride = -1;
+			range = 0;
+			baseType = 211;
+			directOverride = -1;
+			owner = 0;
+			type = "create object";
+			exclusiveFilter = 0;
+		};
+		[460] = {
+			velocityRelative = false;
+			distanceRange = 16;
+			reflexive = true;
+			min = 5;
+			inclusiveFilter = 0;
+			directionRelative = false;
+			delay = 0;
+			subjectOverride = -1;
+			range = 0;
+			baseType = 212;
+			directOverride = -1;
+			owner = 0;
+			type = "create object";
+			exclusiveFilter = 0;
+		};
+		[461] = {
+			reflexive = true;
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = 7;
+			directOverride = -1;
+			owner = 0;
+			type = "activate special";
+			exclusiveFilter = 0;
+		};
+		[462] = {
+			reflexive = true;
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = -1;
+			directOverride = -1;
+			owner = 0;
+			type = "alter base type";
+			id = 215;
+			exclusiveFilter = 0;
+			retainAmmmoCount = false;
+		};
+		[463] = {
+			velocityRelative = true;
+			distanceRange = 256;
+			reflexive = true;
+			min = 1;
+			inclusiveFilter = 0;
+			directionRelative = false;
+			delay = 0;
+			subjectOverride = -1;
+			range = 2;
+			baseType = 37;
+			directOverride = -1;
+			owner = 0;
+			type = "create object";
+			exclusiveFilter = 0;
+		};
+		[464] = {
+			velocityRelative = false;
+			distanceRange = 256;
+			reflexive = true;
+			min = 1;
+			inclusiveFilter = 0;
+			directionRelative = false;
+			delay = 0;
+			subjectOverride = -1;
+			range = 4;
+			baseType = 38;
+			directOverride = -1;
+			owner = 0;
+			type = "create object";
+			exclusiveFilter = 0;
+		};
+		[465] = {
+			reflexive = false;
+			player = 0;
+			inclusiveFilter = 0;
+			text = 10901;
+			nextLevel = 12;
+			delay = 0;
+			subjectOverride = -1;
+			directOverride = -1;
+			owner = 0;
+			type = "declare winner";
+			exclusiveFilter = 0;
+		};
+		[466] = {
+			reflexive = true;
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = -1;
+			directOverride = -1;
+			owner = 0;
+			type = "alter base type";
+			id = 220;
+			exclusiveFilter = 0;
+			retainAmmmoCount = false;
+		};
+		[467] = {
+			velocityRelative = true;
+			distanceRange = 128;
+			reflexive = true;
+			min = 0;
+			inclusiveFilter = 0;
+			directionRelative = false;
+			delay = 0;
+			subjectOverride = -1;
+			range = 3;
+			baseType = 29;
+			directOverride = -1;
+			owner = 0;
+			type = "create object";
+			exclusiveFilter = 0;
+		};
+		[468] = {
+			velocityRelative = true;
+			distanceRange = 128;
+			reflexive = true;
+			min = 0;
+			inclusiveFilter = 0;
+			directionRelative = false;
+			delay = 20;
+			subjectOverride = -1;
+			range = 2;
+			baseType = 52;
+			directOverride = -1;
+			owner = 0;
+			type = "create object";
+			exclusiveFilter = 0;
+		};
+		[469] = {
+			velocityRelative = true;
+			distanceRange = 128;
+			reflexive = true;
+			min = 0;
+			inclusiveFilter = 0;
+			directionRelative = false;
+			delay = 20;
+			subjectOverride = -1;
+			range = 4;
+			baseType = 34;
+			directOverride = -1;
+			owner = 0;
+			type = "create object";
+			exclusiveFilter = 0;
+		};
+		[470] = {
+			velocityRelative = true;
+			distanceRange = 128;
+			reflexive = true;
+			min = 0;
+			inclusiveFilter = 0;
+			directionRelative = false;
+			delay = 20;
+			subjectOverride = -1;
+			range = 4;
+			baseType = 8;
+			directOverride = -1;
+			owner = 0;
+			type = "create object";
+			exclusiveFilter = 0;
+		};
+		[471] = {
+			reflexive = true;
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = -1;
+			range = 7;
+			minimum = 4;
+			directOverride = -1;
+			owner = 0;
+			type = "alter hidden";
+			exclusiveFilter = 0;
+		};
+		[472] = {
+			volume = 720896;
+			priority = 4;
+			isAbsolute = true;
+			reflexive = true;
+			soundId = 0;
+			inclusiveFilter = 0;
+			volumeRange = 16711680;
+			delay = 0;
+			subjectOverride = -1;
+			persistence = 0;
+			directOverride = -1;
+			owner = 0;
+			type = "play sound";
+			exclusiveFilter = 0;
+			soundRange = 33751040;
+		};
+		[473] = {
+			velocityRelative = false;
+			distanceRange = 0;
+			reflexive = true;
+			min = 11;
+			inclusiveFilter = 0;
+			directionRelative = false;
+			delay = 0;
+			subjectOverride = -1;
+			range = 0;
+			baseType = 221;
+			directOverride = -1;
+			owner = 0;
+			type = "create object";
+			exclusiveFilter = 0;
+		};
+		[474] = {
+			reflexive = true;
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = -1;
+			range = 0;
+			minimum = 1;
+			directOverride = -1;
+			owner = 0;
+			type = "alter active condition";
+			exclusiveFilter = 0;
+			conditionTrue = false;
+		};
+		[475] = {
+			reflexive = true;
+			inclusiveFilter = 0;
+			shade = 15;
+			duration = 128;
+			delay = 0;
+			subjectOverride = -1;
+			color = 2;
+			directOverride = -1;
+			owner = 0;
+			type = "color flash";
+			exclusiveFilter = 0;
+		};
+		[476] = {
+			reflexive = true;
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = -1;
+			range = 0;
+			minimum = 1;
+			directOverride = -1;
+			owner = 0;
+			type = "alter active condition";
+			exclusiveFilter = 0;
+			conditionTrue = false;
+		};
+		[477] = {
+			reflexive = true;
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = -1;
+			range = 0;
+			minimum = 2;
+			directOverride = -1;
+			owner = 0;
+			type = "alter active condition";
+			exclusiveFilter = 0;
+			conditionTrue = false;
+		};
+		[478] = {
+			reflexive = true;
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = -1;
+			range = 0;
+			minimum = 4;
+			directOverride = -1;
+			owner = 0;
+			type = "alter active condition";
+			exclusiveFilter = 0;
+			conditionTrue = false;
+		};
+		[479] = {
+			reflexive = true;
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = -1;
+			range = 0;
+			minimum = 3;
+			directOverride = -1;
+			owner = 0;
+			type = "alter active condition";
+			exclusiveFilter = 0;
+			conditionTrue = false;
+		};
+		[480] = {
+			reflexive = true;
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = -1;
+			range = 0;
+			minimum = 5;
+			directOverride = -1;
+			owner = 0;
+			type = "alter active condition";
+			exclusiveFilter = 0;
+			conditionTrue = false;
+		};
+		[481] = {
+			reflexive = true;
+			player = 0;
+			inclusiveFilter = 0;
+			text = 12001;
+			nextLevel = 23;
+			delay = 0;
+			subjectOverride = -1;
+			directOverride = -1;
+			owner = 0;
+			type = "declare winner";
+			exclusiveFilter = 0;
+		};
+		[482] = {
+			reflexive = true;
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = -1;
+			range = 1;
+			minimum = 2;
+			directOverride = -1;
+			owner = 0;
+			type = "alter active condition";
+			exclusiveFilter = 0;
+			conditionTrue = true;
+		};
+		[483] = {
+			reflexive = true;
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = -1;
+			range = 0;
+			minimum = 1;
+			directOverride = -1;
+			owner = 0;
+			type = "alter active condition";
+			exclusiveFilter = 0;
+			conditionTrue = false;
+		};
+		[484] = {
+			reflexive = true;
+			player = 1;
+			inclusiveFilter = 0;
+			text = 12002;
+			nextLevel = -1;
+			delay = 0;
+			subjectOverride = -1;
+			directOverride = -1;
+			owner = 0;
+			type = "declare winner";
+			exclusiveFilter = 0;
+		};
+		[485] = {
+			reflexive = true;
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = -1;
+			amount = 1;
+			score = 2;
+			directOverride = -1;
+			plsyer = 0;
+			owner = 0;
+			type = "change score";
+			exclusiveFilter = 0;
+		};
+		[486] = {
+			reflexive = true;
+			player = 1;
+			inclusiveFilter = 0;
+			text = 10501;
+			nextLevel = -1;
+			delay = 0;
+			subjectOverride = -1;
+			directOverride = -1;
+			owner = 0;
+			type = "declare winner";
+			exclusiveFilter = 0;
+		};
+		[487] = {
+			reflexive = true;
+			player = 1;
+			inclusiveFilter = 0;
+			text = 11202;
+			nextLevel = -1;
+			delay = 0;
+			subjectOverride = -1;
+			directOverride = -1;
+			owner = 0;
+			type = "declare winner";
+			exclusiveFilter = 0;
+		};
+		[488] = {
+			velocityRelative = false;
+			distanceRange = 0;
+			reflexive = true;
+			min = 1;
+			inclusiveFilter = 0;
+			directionRelative = false;
+			delay = -1;
+			subjectOverride = 0;
+			range = 0;
+			baseType = 29;
+			directOverride = 0;
+			owner = 0;
+			type = "create object";
+			exclusiveFilter = 0;
+		};
+		[489] = {
+			reflexive = true;
+			player = 1;
+			inclusiveFilter = 0;
+			text = 11802;
+			nextLevel = -1;
+			delay = 0;
+			subjectOverride = -1;
+			directOverride = -1;
+			owner = 0;
+			type = "declare winner";
+			exclusiveFilter = 0;
+		};
+		[490] = {
+			velocityRelative = false;
+			distanceRange = 0;
+			reflexive = true;
+			min = 1;
+			inclusiveFilter = 0;
+			directionRelative = false;
+			delay = 0;
+			subjectOverride = -1;
+			range = 0;
+			baseType = 29;
+			directOverride = -1;
+			owner = 0;
+			type = "create object";
+			exclusiveFilter = 0;
+		};
+		[491] = {
+			reflexive = true;
+			player = 1;
+			inclusiveFilter = 0;
+			text = 11403;
+			nextLevel = -1;
+			delay = 0;
+			subjectOverride = -1;
+			directOverride = -1;
+			owner = 0;
+			type = "declare winner";
+			exclusiveFilter = 0;
+		};
+		[492] = {
+			velocityRelative = false;
+			distanceRange = 0;
+			reflexive = true;
+			min = 1;
+			inclusiveFilter = 0;
+			directionRelative = false;
+			delay = 0;
+			subjectOverride = -1;
+			range = 0;
+			baseType = 29;
+			directOverride = -1;
+			owner = 0;
+			type = "create object";
+			exclusiveFilter = 0;
+		};
+		[493] = {
+			reflexive = true;
+			player = 1;
+			inclusiveFilter = 0;
+			text = 11402;
+			nextLevel = -1;
+			delay = 0;
+			subjectOverride = -1;
+			directOverride = -1;
+			owner = 0;
+			type = "declare winner";
+			exclusiveFilter = 0;
+		};
+		[494] = {
+			volume = 13107200;
+			priority = 3;
+			isAbsolute = true;
+			reflexive = true;
+			soundId = 0;
+			inclusiveFilter = 0;
+			volumeRange = 16711680;
+			delay = 0;
+			subjectOverride = -1;
+			persistence = 0;
+			directOverride = -1;
+			owner = 0;
+			type = "play sound";
+			exclusiveFilter = 0;
+			soundRange = 35651584;
+		};
+		[495] = {
+			velocityRelative = true;
+			distanceRange = 4;
+			reflexive = true;
+			min = 1;
+			inclusiveFilter = 0;
+			directionRelative = true;
+			delay = 0;
+			subjectOverride = -1;
+			range = 0;
+			baseType = 227;
+			directOverride = -1;
+			owner = 0;
+			type = "create object";
+			exclusiveFilter = 0;
+		};
+		[496] = {
+			reflexive = true;
+			player = 0;
+			inclusiveFilter = 0;
+			text = 11702;
+			nextLevel = 20;
+			delay = 0;
+			subjectOverride = -1;
+			directOverride = -1;
+			owner = 0;
+			type = "declare winner";
+			exclusiveFilter = 0;
+		};
+		[497] = {
+			reflexive = true;
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = -1;
+			range = 1;
+			minimum = 6;
+			directOverride = -1;
+			owner = 0;
+			type = "alter hidden";
+			exclusiveFilter = 0;
+		};
+		[498] = {
+			relative = true;
+			reflexive = false;
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = -1;
+			range = 0;
+			minimum = -12;
+			directOverride = -1;
+			owner = 0;
+			type = "alter velocity";
+			exclusiveFilter = 0;
+		};
+		[499] = {
+			velocityRelative = false;
+			distanceRange = 0;
+			reflexive = true;
+			min = 1;
+			inclusiveFilter = 0;
+			directionRelative = true;
+			delay = 0;
+			subjectOverride = -1;
+			range = 0;
+			baseType = 53;
+			directOverride = -1;
+			owner = 0;
+			type = "create object";
+			exclusiveFilter = 0;
+		};
+		[500] = {
+			reflexive = true;
+			how = "plain";
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = -1;
+			directOverride = -1;
+			owner = 0;
+			type = "die";
+			exclusiveFilter = 0;
+		};
+		[501] = {
+			velocityRelative = true;
+			distanceRange = 1024;
+			reflexive = true;
+			min = -2;
+			inclusiveFilter = 0;
+			directionRelative = true;
+			delay = 0;
+			subjectOverride = -1;
+			range = 5;
+			baseType = 184;
+			directOverride = -1;
+			owner = 0;
+			type = "create object";
+			exclusiveFilter = 0;
+		};
+		[502] = {
+			velocityRelative = true;
+			distanceRange = 1024;
+			reflexive = true;
+			min = -12;
+			inclusiveFilter = 0;
+			directionRelative = true;
+			delay = 0;
+			subjectOverride = -1;
+			range = 14;
+			baseType = 195;
+			directOverride = -1;
+			owner = 0;
+			type = "create object";
+			exclusiveFilter = 0;
+		};
+		[503] = {
+			volume = 13107200;
+			priority = 3;
+			isAbsolute = true;
+			reflexive = true;
+			soundId = 0;
+			inclusiveFilter = 0;
+			volumeRange = 16711680;
+			delay = 0;
+			subjectOverride = -1;
+			persistence = 0;
+			directOverride = -1;
+			owner = 0;
+			type = "play sound";
+			exclusiveFilter = 0;
+			soundRange = 36175872;
+		};
+		[504] = {
+			count = 2;
+			reflexive = true;
+			inclusiveFilter = 0;
+			velocityRange = 3.0;
+			delay = 0;
+			subjectOverride = -1;
+			color = 2;
+			directOverride = -1;
+			veloctiy = 20;
+			owner = 0;
+			type = "make sparks";
+			exclusiveFilter = 0;
+		};
+		[505] = {
+			reflexive = true;
+			how = "plain";
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = -1;
+			directOverride = -1;
+			owner = 0;
+			type = "die";
+			exclusiveFilter = 0;
+		};
+		[506] = {
+			reflexive = true;
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = 2;
+			amount = -10000;
+			directOverride = -1;
+			owner = 0;
+			type = "alter health";
+			exclusiveFilter = 0;
+		};
+		[507] = {
+			reflexive = true;
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = 3;
+			amount = -10000;
+			directOverride = -1;
+			owner = 0;
+			type = "alter health";
+			exclusiveFilter = 0;
+		};
+		[508] = {
+			reflexive = true;
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = 4;
+			amount = -10000;
+			directOverride = -1;
+			owner = 0;
+			type = "alter health";
+			exclusiveFilter = 0;
+		};
+		[509] = {
+			reflexive = true;
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = 5;
+			amount = -10000;
+			directOverride = -1;
+			owner = 0;
+			type = "alter health";
+			exclusiveFilter = 0;
+		};
+		[510] = {
+			reflexive = true;
+			inclusiveFilter = 0;
+			page = 1;
+			delay = 0;
+			subjectOverride = -1;
+			directOverride = -1;
+			owner = 0;
+			type = "display message";
+			id = 6123;
+			exclusiveFilter = 0;
+		};
+		[511] = {
+			volume = 6553600;
+			priority = 3;
+			isAbsolute = true;
+			reflexive = true;
+			soundId = 0;
+			inclusiveFilter = 0;
+			volumeRange = 16711680;
+			delay = 0;
+			subjectOverride = -1;
+			persistence = -1073741824;
+			directOverride = -1;
+			owner = 0;
+			type = "play sound";
+			exclusiveFilter = 0;
+			soundRange = 36306944;
+		};
+		[512] = {
+			velocityRelative = false;
+			distanceRange = 0;
+			reflexive = true;
+			min = 1;
+			inclusiveFilter = 0;
+			directionRelative = true;
+			delay = 0;
+			subjectOverride = -1;
+			range = 0;
+			baseType = 232;
+			directOverride = -1;
+			owner = 0;
+			type = "create object";
+			exclusiveFilter = 0;
+		};
+		[513] = {
+			count = 20;
+			reflexive = false;
+			inclusiveFilter = 0;
+			velocityRange = 5.0;
+			delay = 0;
+			subjectOverride = -1;
+			color = 9;
+			directOverride = -1;
+			veloctiy = 8;
+			owner = 0;
+			type = "make sparks";
+			exclusiveFilter = 0;
+		};
+		[514] = {
+			volume = 7602176;
+			priority = 1;
+			isAbsolute = true;
+			reflexive = true;
+			soundId = 0;
+			inclusiveFilter = 0;
+			volumeRange = 16711680;
+			delay = 0;
+			subjectOverride = -1;
+			persistence = 1627389952;
+			directOverride = -1;
+			owner = 0;
+			type = "play sound";
+			exclusiveFilter = 0;
+			soundRange = 35520512;
+		};
+		[515] = {
+			velocityRelative = true;
+			distanceRange = 0;
+			reflexive = true;
+			min = 1;
+			inclusiveFilter = 0;
+			directionRelative = true;
+			delay = 0;
+			subjectOverride = -1;
+			range = 0;
+			baseType = 233;
+			directOverride = -1;
+			owner = 0;
+			type = "create object";
+			exclusiveFilter = 0;
+		};
+		[516] = {
+			reflexive = true;
+			how = "expire";
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = -1;
+			directOverride = -1;
+			owner = 0;
+			type = "die";
+			exclusiveFilter = 0;
+		};
+		[517] = {
+			volume = 6881280;
+			priority = 3;
+			isAbsolute = true;
+			reflexive = true;
+			soundId = 0;
+			inclusiveFilter = 0;
+			volumeRange = 16711680;
+			delay = 0;
+			subjectOverride = -1;
+			persistence = -1694498816;
+			directOverride = -1;
+			owner = 0;
+			type = "play sound";
+			exclusiveFilter = 0;
+			soundRange = 36569088;
+		};
+		[518] = {
+			velocityRelative = true;
+			distanceRange = 0;
+			reflexive = true;
+			min = 1;
+			inclusiveFilter = 0;
+			directionRelative = true;
+			delay = 0;
+			subjectOverride = -1;
+			range = 0;
+			baseType = 236;
+			directOverride = -1;
+			owner = 0;
+			type = "create object";
+			exclusiveFilter = 0;
+		};
+		[519] = {
+			volume = 6488064;
+			priority = 101;
+			isAbsolute = true;
+			reflexive = true;
+			soundId = 0;
+			inclusiveFilter = 0;
+			volumeRange = 16711680;
+			delay = 0;
+			subjectOverride = -1;
+			persistence = 1811939328;
+			directOverride = -1;
+			owner = 0;
+			type = "play sound";
+			exclusiveFilter = 0;
+			soundRange = 36438016;
+		};
+		[520] = {
+			velocityRelative = true;
+			distanceRange = 8;
+			reflexive = true;
+			min = 1;
+			inclusiveFilter = 0;
+			directionRelative = true;
+			delay = 0;
+			subjectOverride = -1;
+			range = 0;
+			baseType = 239;
+			directOverride = -1;
+			owner = 0;
+			type = "create object";
+			exclusiveFilter = 0;
+		};
+		[521] = {
+			volume = 6881280;
+			priority = 3;
+			isAbsolute = true;
+			reflexive = true;
+			soundId = 0;
+			inclusiveFilter = 0;
+			volumeRange = 16711680;
+			delay = 0;
+			subjectOverride = -1;
+			persistence = -1711276032;
+			directOverride = -1;
+			owner = 0;
+			type = "play sound";
+			exclusiveFilter = 0;
+			soundRange = 36503552;
+		};
+		[522] = {
+			velocityRelative = true;
+			distanceRange = 0;
+			reflexive = true;
+			min = 1;
+			inclusiveFilter = 0;
+			directionRelative = true;
+			delay = 0;
+			subjectOverride = -1;
+			range = 0;
+			baseType = 242;
+			directOverride = -1;
+			owner = 0;
+			type = "create object";
+			exclusiveFilter = 0;
+		};
+		[523] = {
+			volume = 6881280;
+			priority = 3;
+			isAbsolute = true;
+			reflexive = true;
+			soundId = 0;
+			inclusiveFilter = 0;
+			volumeRange = 16711680;
+			delay = 0;
+			subjectOverride = -1;
+			persistence = 1191182336;
+			directOverride = -1;
+			owner = 0;
+			type = "play sound";
+			exclusiveFilter = 0;
+			soundRange = 36634624;
+		};
+		[524] = {
+			velocityRelative = true;
+			distanceRange = 0;
+			reflexive = true;
+			min = 1;
+			inclusiveFilter = 0;
+			directionRelative = true;
+			delay = 0;
+			subjectOverride = -1;
+			range = 0;
+			baseType = 245;
+			directOverride = -1;
+			owner = 0;
+			type = "create object";
+			exclusiveFilter = 0;
+		};
+		[525] = {
+			volume = 393216;
+			priority = 3;
+			isAbsolute = true;
+			reflexive = true;
+			soundId = 0;
+			inclusiveFilter = 0;
+			volumeRange = 16711680;
+			delay = 0;
+			subjectOverride = -1;
+			persistence = 0;
+			directOverride = -1;
+			owner = 0;
+			type = "play sound";
+			exclusiveFilter = 0;
+			soundRange = 37093376;
+		};
+		[526] = {
+			velocityRelative = true;
+			distanceRange = 0;
+			reflexive = true;
+			min = 6;
+			inclusiveFilter = 0;
+			directionRelative = true;
+			delay = 0;
+			subjectOverride = -1;
+			range = 0;
+			baseType = 248;
+			directOverride = -1;
+			owner = 0;
+			type = "create object set destination";
+			exclusiveFilter = 0;
+		};
+		[527] = {
+			volume = 655360;
+			priority = 3;
+			isAbsolute = false;
+			reflexive = true;
+			soundId = 0;
+			inclusiveFilter = 0;
+			volumeRange = 16711680;
+			delay = 0;
+			subjectOverride = -1;
+			persistence = 64512;
+			directOverride = -1;
+			owner = 0;
+			type = "play sound";
+			exclusiveFilter = 0;
+			soundRange = 37289984;
+		};
+		[528] = {
+			velocityRelative = false;
+			distanceRange = 4;
+			reflexive = true;
+			min = 10;
+			inclusiveFilter = 0;
+			directionRelative = false;
+			delay = 0;
+			subjectOverride = -1;
+			range = 0;
+			baseType = 252;
+			directOverride = -1;
+			owner = 0;
+			type = "create object set destination";
+			exclusiveFilter = 0;
+		};
+		[529] = {
+			volume = 393216;
+			priority = 3;
+			isAbsolute = true;
+			reflexive = true;
+			soundId = 0;
+			inclusiveFilter = 0;
+			volumeRange = 16711680;
+			delay = 0;
+			subjectOverride = -1;
+			persistence = 0;
+			directOverride = -1;
+			owner = 0;
+			type = "play sound";
+			exclusiveFilter = 0;
+			soundRange = 37224448;
+		};
+		[530] = {
+			velocityRelative = true;
+			distanceRange = 0;
+			reflexive = true;
+			min = 6;
+			inclusiveFilter = 0;
+			directionRelative = true;
+			delay = 0;
+			subjectOverride = -1;
+			range = 0;
+			baseType = 253;
+			directOverride = -1;
+			owner = 0;
+			type = "create object set destination";
+			exclusiveFilter = 0;
+		};
+		[531] = {
+			velocityRelative = false;
+			distanceRange = 16;
+			reflexive = true;
+			min = 1;
+			inclusiveFilter = 0;
+			directionRelative = false;
+			delay = 0;
+			subjectOverride = -1;
+			range = 2;
+			baseType = 255;
+			directOverride = -1;
+			owner = 0;
+			type = "create object";
+			exclusiveFilter = 0;
+		};
+		[532] = {
+			volume = 262144;
+			priority = 3;
+			isAbsolute = true;
+			reflexive = true;
+			soundId = 0;
+			inclusiveFilter = 0;
+			volumeRange = 16711680;
+			delay = 0;
+			subjectOverride = -1;
+			persistence = 0;
+			directOverride = -1;
+			owner = 0;
+			type = "play sound";
+			exclusiveFilter = 0;
+			soundRange = 36765696;
+		};
+		[533] = {
+			reflexive = true;
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = -1;
+			directOverride = -1;
+			owner = 0;
+			type = "alter base type";
+			id = 72;
+			exclusiveFilter = 0;
+			retainAmmmoCount = true;
+		};
+		[534] = {
+			volume = 65536;
+			priority = 3;
+			isAbsolute = true;
+			reflexive = false;
+			soundId = 0;
+			inclusiveFilter = 0;
+			volumeRange = 16711680;
+			delay = 0;
+			subjectOverride = -1;
+			persistence = 0;
+			directOverride = -1;
+			owner = 0;
+			type = "play sound";
+			exclusiveFilter = 0;
+			soundRange = 36896768;
+		};
+		[535] = {
+			velocityRelative = false;
+			distanceRange = 0;
+			reflexive = true;
+			min = 1;
+			inclusiveFilter = 0;
+			directionRelative = true;
+			delay = 0;
+			subjectOverride = -1;
+			range = 0;
+			baseType = 258;
+			directOverride = -1;
+			owner = 0;
+			type = "create object";
+			exclusiveFilter = 0;
+		};
+		[536] = {
+			volume = 0;
+			priority = 3;
+			isAbsolute = true;
+			reflexive = true;
+			soundId = 0;
+			inclusiveFilter = 0;
+			volumeRange = 16711680;
+			delay = 0;
+			subjectOverride = -1;
+			persistence = 1845493760;
+			directOverride = -1;
+			owner = 0;
+			type = "play sound";
+			exclusiveFilter = 0;
+			soundRange = 36962304;
+		};
+		[537] = {
+			velocityRelative = false;
+			distanceRange = 0;
+			reflexive = true;
+			min = 1;
+			inclusiveFilter = 0;
+			directionRelative = true;
+			delay = 0;
+			subjectOverride = -1;
+			range = 0;
+			baseType = 260;
+			directOverride = -1;
+			owner = 0;
+			type = "create object";
+			exclusiveFilter = 0;
+		};
+		[538] = {
+			velocityRelative = false;
+			distanceRange = 0;
+			reflexive = true;
+			min = 1;
+			inclusiveFilter = 0;
+			directionRelative = true;
+			delay = 0;
+			subjectOverride = -1;
+			range = 0;
+			baseType = 262;
+			directOverride = -1;
+			owner = 0;
+			type = "create object";
+			exclusiveFilter = 0;
+		};
+		[539] = {
+			velocityRelative = true;
+			distanceRange = 0;
+			reflexive = true;
+			min = 1;
+			inclusiveFilter = 0;
+			directionRelative = true;
+			delay = 0;
+			subjectOverride = -1;
+			range = 0;
+			baseType = 263;
+			directOverride = -1;
+			owner = 0;
+			type = "create object";
+			exclusiveFilter = 0;
+		};
+		[540] = {
+			volume = 8978432;
+			priority = 3;
+			isAbsolute = true;
+			reflexive = true;
+			soundId = 0;
+			inclusiveFilter = 0;
+			volumeRange = 16711680;
+			delay = 0;
+			subjectOverride = -1;
+			persistence = 1694498816;
+			directOverride = -1;
+			owner = 0;
+			type = "play sound";
+			exclusiveFilter = 0;
+			soundRange = 37027840;
+		};
+		[541] = {
+			velocityRelative = true;
+			distanceRange = 4096;
+			reflexive = true;
+			min = 1;
+			inclusiveFilter = 0;
+			directionRelative = true;
+			delay = 0;
+			subjectOverride = -1;
+			range = 2;
+			baseType = 265;
+			directOverride = -1;
+			owner = 0;
+			type = "create object";
+			exclusiveFilter = 0;
+		};
+		[542] = {
+			velocityRelative = false;
+			distanceRange = 4096;
+			reflexive = true;
+			min = -4;
+			inclusiveFilter = 0;
+			directionRelative = true;
+			delay = 0;
+			subjectOverride = -1;
+			range = 5;
+			baseType = 195;
+			directOverride = -1;
+			owner = 0;
+			type = "create object";
+			exclusiveFilter = 0;
+		};
+		[543] = {
+			reflexive = true;
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = -1;
+			range = 6;
+			minimum = 5;
+			directOverride = -1;
+			owner = 0;
+			type = "alter hidden";
+			exclusiveFilter = 0;
+		};
+		[544] = {
+			reflexive = true;
+			inclusiveFilter = 0;
+			value = 0;
+			delay = 0;
+			subjectOverride = 2;
+			useObjectsOwner = false;
+			directOverride = -1;
+			owner = 0;
+			type = "alter owner";
+			exclusiveFilter = 0;
+		};
+		[545] = {
+			reflexive = true;
+			inclusiveFilter = 0;
+			value = 1;
+			delay = 0;
+			subjectOverride = 3;
+			useObjectsOwner = false;
+			directOverride = -1;
+			owner = 0;
+			type = "alter owner";
+			exclusiveFilter = 0;
+		};
+		[546] = {
+			reflexive = false;
+			player = 1;
+			inclusiveFilter = 0;
+			value = 2560000;
+			delay = 0;
+			subjectOverride = 3;
+			useObjectsOwner = false;
+			directOverride = -1;
+			owner = 0;
+			type = "alter absolute cash";
+			exclusiveFilter = 0;
+		};
+		[547] = {
+			reflexive = true;
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = -1;
+			range = 1;
+			minimum = 9;
+			directOverride = -1;
+			owner = 0;
+			type = "alter hidden";
+			exclusiveFilter = 0;
+		};
+		[548] = {
+			reflexive = false;
+			player = 1;
+			inclusiveFilter = 0;
+			text = 11802;
+			nextLevel = -1;
+			delay = 0;
+			subjectOverride = -1;
+			directOverride = -1;
+			owner = 0;
+			type = "declare winner";
+			exclusiveFilter = 0;
+		};
+		[549] = {
+			reflexive = true;
+			player = 0;
+			inclusiveFilter = 0;
+			text = 11801;
+			nextLevel = 21;
+			delay = 0;
+			subjectOverride = -1;
+			directOverride = -1;
+			owner = 0;
+			type = "declare winner";
+			exclusiveFilter = 0;
+		};
+		[550] = {
+			reflexive = true;
+			inclusiveFilter = 0;
+			page = 1;
+			delay = 0;
+			subjectOverride = -1;
+			directOverride = -1;
+			owner = 0;
+			type = "display message";
+			id = 5170;
+			exclusiveFilter = 0;
+		};
+		[551] = {
+			reflexive = true;
+			inclusiveFilter = 0;
+			page = 1;
+			delay = 360;
+			subjectOverride = -1;
+			directOverride = -1;
+			owner = 0;
+			type = "display message";
+			id = 5171;
+			exclusiveFilter = 0;
+		};
+		[552] = {
+			reflexive = true;
+			inclusiveFilter = 0;
+			delay = 360;
+			subjectOverride = -1;
+			range = 20;
+			minimum = 12;
+			directOverride = -1;
+			owner = 0;
+			type = "alter hidden";
+			exclusiveFilter = 0;
+		};
+		[553] = {
+			reflexive = true;
+			player = 0;
+			inclusiveFilter = 0;
+			text = 12101;
+			nextLevel = -1;
+			delay = 0;
+			subjectOverride = -1;
+			directOverride = -1;
+			owner = 0;
+			type = "declare winner";
+			exclusiveFilter = 0;
+		};
+		[554] = {
+			reflexive = false;
+			player = 0;
+			inclusiveFilter = 0;
+			text = 11901;
+			nextLevel = 22;
+			delay = 0;
+			subjectOverride = -1;
+			directOverride = -1;
+			owner = 0;
+			type = "declare winner";
+			exclusiveFilter = 0;
+		};
+		[555] = {
+			reflexive = false;
+			inclusiveFilter = 4029677568;
+			speed = 32;
+			delay = 0;
+			subjectOverride = -1;
+			directOverride = -1;
+			owner = 0;
+			type = "land at";
+			exclusiveFilter = 4294967295;
+		};
+		[556] = {
+			volume = 16777216;
+			priority = 5;
+			isAbsolute = true;
+			reflexive = false;
+			soundId = 0;
+			inclusiveFilter = 4029677568;
+			volumeRange = 16711680;
+			delay = 0;
+			subjectOverride = -1;
+			persistence = 0;
+			directOverride = -1;
+			owner = 0;
+			type = "play sound";
+			exclusiveFilter = 4294967295;
+			soundRange = 33619968;
+		};
+		[557] = {
+			volume = 0;
+			priority = 3;
+			isAbsolute = true;
+			reflexive = true;
+			soundId = 0;
+			inclusiveFilter = 0;
+			volumeRange = 16711680;
+			delay = 0;
+			subjectOverride = -1;
+			persistence = -1073741824;
+			directOverride = -1;
+			owner = 0;
+			type = "play sound";
+			exclusiveFilter = 0;
+			soundRange = 37421056;
+		};
+		[558] = {
+			relative = true;
+			reflexive = true;
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = -1;
+			range = 0;
+			minimum = 600;
+			directOverride = 3;
+			owner = 0;
+			type = "alter location";
+			exclusiveFilter = 0;
+		};
+		[559] = {
+			reflexive = true;
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = -1;
+			amount = 1000;
+			directOverride = -1;
+			owner = 0;
+			type = "alter health";
+			exclusiveFilter = 0;
+		};
+		[560] = {
+			relative = false;
+			reflexive = true;
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = -1;
+			range = 0;
+			minimum = 0;
+			directOverride = -1;
+			owner = 0;
+			type = "alter velocity";
+			exclusiveFilter = 0;
+		};
+		[561] = {
+			reflexive = true;
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = -1;
+			directOverride = -1;
+			owner = 0;
+			type = "alter base type";
+			id = 280;
+			exclusiveFilter = 0;
+			retainAmmmoCount = false;
+		};
+		[562] = {
+			reflexive = true;
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = -1;
+			amount = 1000;
+			directOverride = -1;
+			owner = 0;
+			type = "alter health";
+			exclusiveFilter = 0;
+		};
+		[563] = {
+			reflexive = true;
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = -1;
+			directOverride = -1;
+			owner = 0;
+			type = "alter base type";
+			id = 279;
+			exclusiveFilter = 0;
+			retainAmmmoCount = false;
+		};
+		[564] = {
+			reflexive = false;
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = -1;
+			directOverride = -1;
+			owner = 0;
+			type = "alter base type";
+			id = 272;
+			exclusiveFilter = 0;
+			retainAmmmoCount = false;
+		};
+		[565] = {
+			volume = 0;
+			priority = 5;
+			isAbsolute = true;
+			reflexive = false;
+			soundId = 0;
+			inclusiveFilter = 0;
+			volumeRange = 16711680;
+			delay = 0;
+			subjectOverride = -1;
+			persistence = 0;
+			directOverride = -1;
+			owner = 0;
+			type = "play sound";
+			exclusiveFilter = 0;
+			soundRange = 36110336;
+		};
+		[566] = {
+			reflexive = true;
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = -1;
+			directOverride = -1;
+			owner = 0;
+			type = "nil target";
+			exclusiveFilter = 0;
+		};
+		[567] = {
+			relative = false;
+			reflexive = true;
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = -1;
+			range = 0;
+			minimum = -1;
+			directOverride = -1;
+			owner = 0;
+			type = "alter age";
+			exclusiveFilter = 0;
+		};
+		[568] = {
+			reflexive = true;
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = -1;
+			directOverride = -1;
+			owner = 0;
+			type = "alter base type";
+			id = 278;
+			exclusiveFilter = 0;
+			retainAmmmoCount = false;
+		};
+		[569] = {
+			reflexive = false;
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = -1;
+			directOverride = -1;
+			owner = 0;
+			type = "alter base type";
+			id = 273;
+			exclusiveFilter = 0;
+			retainAmmmoCount = false;
+		};
+		[570] = {
+			volume = 0;
+			priority = 5;
+			isAbsolute = true;
+			reflexive = false;
+			soundId = 0;
+			inclusiveFilter = 0;
+			volumeRange = 16711680;
+			delay = 0;
+			subjectOverride = -1;
+			persistence = 0;
+			directOverride = -1;
+			owner = 0;
+			type = "play sound";
+			exclusiveFilter = 0;
+			soundRange = 36110336;
+		};
+		[571] = {
+			reflexive = true;
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = -1;
+			directOverride = -1;
+			owner = 0;
+			type = "nil target";
+			exclusiveFilter = 0;
+		};
+		[572] = {
+			volume = 0;
+			priority = 3;
+			isAbsolute = true;
+			reflexive = true;
+			soundId = 0;
+			inclusiveFilter = 0;
+			volumeRange = 16711680;
+			delay = 0;
+			subjectOverride = -1;
+			persistence = 436207616;
+			directOverride = -1;
+			owner = 0;
+			type = "play sound";
+			exclusiveFilter = 0;
+			soundRange = 37421056;
+		};
+		[573] = {
+			relative = true;
+			reflexive = true;
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = -1;
+			range = 0;
+			minimum = 600;
+			directOverride = 2;
+			owner = 0;
+			type = "alter location";
+			exclusiveFilter = 0;
+		};
+		[574] = {
+			reflexive = true;
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = -1;
+			amount = 1000;
+			directOverride = -1;
+			owner = 0;
+			type = "alter health";
+			exclusiveFilter = 0;
+		};
+		[575] = {
+			relative = false;
+			reflexive = true;
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = -1;
+			range = 0;
+			minimum = 0;
+			directOverride = -1;
+			owner = 0;
+			type = "alter velocity";
+			exclusiveFilter = 0;
+		};
+		[576] = {
+			reflexive = true;
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = -1;
+			directOverride = -1;
+			owner = 0;
+			type = "alter base type";
+			id = 281;
+			exclusiveFilter = 0;
+			retainAmmmoCount = false;
+		};
+		[577] = {
+			reflexive = true;
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = -1;
+			amount = 1000;
+			directOverride = -1;
+			owner = 0;
+			type = "alter health";
+			exclusiveFilter = 0;
+		};
+		[578] = {
+			reflexive = true;
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = -1;
+			directOverride = -1;
+			owner = 0;
+			type = "alter base type";
+			id = 277;
+			exclusiveFilter = 0;
+			retainAmmmoCount = false;
+		};
+		[579] = {
+			relative = false;
+			reflexive = true;
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = -1;
+			range = 0;
+			minimum = -1;
+			directOverride = -1;
+			owner = 0;
+			type = "alter age";
+			exclusiveFilter = 0;
+		};
+		[580] = {
+			reflexive = true;
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = -1;
+			directOverride = -1;
+			owner = 0;
+			type = "alter base type";
+			id = 276;
+			exclusiveFilter = 0;
+			retainAmmmoCount = false;
+		};
+		[581] = {
+			reflexive = true;
+			player = 1;
+			inclusiveFilter = 0;
+			text = 11203;
+			nextLevel = -1;
+			delay = 0;
+			subjectOverride = -1;
+			directOverride = -1;
+			owner = 0;
+			type = "declare winner";
+			exclusiveFilter = 0;
+		};
+		[582] = {
+			reflexive = true;
+			inclusiveFilter = 0;
+			value = -1;
+			delay = 0;
+			subjectOverride = -1;
+			useObjectsOwner = true;
+			directOverride = -1;
+			owner = 0;
+			type = "alter owner";
+			exclusiveFilter = 0;
+		};
+		[583] = {
+			reflexive = true;
+			player = 1;
+			inclusiveFilter = 0;
+			text = 6251;
+			nextLevel = -1;
+			delay = 0;
+			subjectOverride = -1;
+			directOverride = -1;
+			owner = 0;
+			type = "declare winner";
+			exclusiveFilter = 0;
+		};
+		[584] = {
+			reflexive = true;
+			player = 0;
+			inclusiveFilter = 0;
+			text = 6250;
+			nextLevel = -1;
+			delay = 0;
+			subjectOverride = -1;
+			directOverride = -1;
+			owner = 0;
+			type = "declare winner";
+			exclusiveFilter = 0;
+		};
+		[585] = {
+			reflexive = true;
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = -1;
+			amount = 1;
+			score = 0;
+			directOverride = -1;
+			plsyer = 0;
+			owner = 0;
+			type = "change score";
+			exclusiveFilter = 0;
+		};
+		[586] = {
+			reflexive = true;
+			inclusiveFilter = 0;
+			delay = 360;
+			subjectOverride = -1;
+			range = 0;
+			minimum = 0;
+			directOverride = -1;
+			owner = 0;
+			type = "alter hidden";
+			exclusiveFilter = 0;
+		};
+		[587] = {
+			reflexive = false;
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = -1;
+			range = 0;
+			minimum = 0;
+			directOverride = -1;
+			owner = 0;
+			type = "alter active condition";
+			exclusiveFilter = 0;
+			conditionTrue = false;
+		};
+		[588] = {
+			reflexive = true;
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = -1;
+			amount = 1;
+			score = 0;
+			directOverride = -1;
+			plsyer = 1;
+			owner = 0;
+			type = "change score";
+			exclusiveFilter = 0;
+		};
+		[589] = {
+			reflexive = true;
+			inclusiveFilter = 0;
+			delay = 360;
+			subjectOverride = -1;
+			range = 0;
+			minimum = 1;
+			directOverride = -1;
+			owner = 0;
+			type = "alter hidden";
+			exclusiveFilter = 0;
+		};
+		[590] = {
+			reflexive = true;
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = -1;
+			range = 0;
+			minimum = 1;
+			directOverride = -1;
+			owner = 0;
+			type = "alter active condition";
+			exclusiveFilter = 0;
+			conditionTrue = false;
+		};
+		[591] = {
+			reflexive = true;
+			player = 1;
+			inclusiveFilter = 0;
+			text = 6351;
+			nextLevel = -1;
+			delay = 0;
+			subjectOverride = -1;
+			directOverride = -1;
+			owner = 0;
+			type = "declare winner";
+			exclusiveFilter = 0;
+		};
+		[592] = {
+			reflexive = true;
+			player = 0;
+			inclusiveFilter = 0;
+			text = 6350;
+			nextLevel = -1;
+			delay = 0;
+			subjectOverride = -1;
+			directOverride = -1;
+			owner = 0;
+			type = "declare winner";
+			exclusiveFilter = 0;
+		};
+		[593] = {
+			volume = 10223616;
+			priority = 3;
+			isAbsolute = true;
+			reflexive = true;
+			soundId = 0;
+			inclusiveFilter = 0;
+			volumeRange = 16711680;
+			delay = 0;
+			subjectOverride = -1;
+			persistence = -1073741824;
+			directOverride = -1;
+			owner = 0;
+			type = "play sound";
+			exclusiveFilter = 0;
+			soundRange = 36503552;
+		};
+		[594] = {
+			velocityRelative = false;
+			distanceRange = 0;
+			reflexive = true;
+			min = 1;
+			inclusiveFilter = 0;
+			directionRelative = false;
+			delay = 0;
+			subjectOverride = -1;
+			range = 0;
+			baseType = 242;
+			directOverride = -1;
+			owner = 0;
+			type = "create object";
+			exclusiveFilter = 0;
+		};
+		[595] = {
+			reflexive = true;
+			player = 0;
+			inclusiveFilter = 0;
+			text = 6300;
+			nextLevel = -1;
+			delay = 0;
+			subjectOverride = -1;
+			directOverride = -1;
+			owner = 0;
+			type = "declare winner";
+			exclusiveFilter = 0;
+		};
+		[596] = {
+			reflexive = true;
+			player = 1;
+			inclusiveFilter = 0;
+			text = 6301;
+			nextLevel = 188;
+			delay = 0;
+			subjectOverride = -1;
+			directOverride = -1;
+			owner = 0;
+			type = "declare winner";
+			exclusiveFilter = 0;
+		};
+		[597] = {
+			reflexive = true;
+			player = 1;
+			inclusiveFilter = 0;
+			text = 6151;
+			nextLevel = -1;
+			delay = 0;
+			subjectOverride = -1;
+			directOverride = -1;
+			owner = 0;
+			type = "declare winner";
+			exclusiveFilter = 0;
+		};
+		[598] = {
+			reflexive = true;
+			player = 0;
+			inclusiveFilter = 0;
+			text = 6150;
+			nextLevel = -1;
+			delay = 0;
+			subjectOverride = -1;
+			directOverride = -1;
+			owner = 0;
+			type = "declare winner";
+			exclusiveFilter = 0;
+		};
+		[599] = {
+			reflexive = true;
+			player = 1;
+			inclusiveFilter = 0;
+			text = 6101;
+			nextLevel = -1;
+			delay = 0;
+			subjectOverride = -1;
+			directOverride = -1;
+			owner = 0;
+			type = "declare winner";
+			exclusiveFilter = 0;
+		};
+		[600] = {
+			reflexive = true;
+			player = 0;
+			inclusiveFilter = 0;
+			text = 6100;
+			nextLevel = -1;
+			delay = 0;
+			subjectOverride = -1;
+			directOverride = -1;
+			owner = 0;
+			type = "declare winner";
+			exclusiveFilter = 0;
+		};
+		[601] = {
+			keyMask = 4177559551;
+			reflexive = false;
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = -1;
+			directOverride = -1;
+			owner = 0;
+			type = "disable keys";
+			exclusiveFilter = 0;
+		};
+		[602] = {
+			reflexive = false;
+			inclusiveFilter = 0;
+			value = 1;
+			delay = 0;
+			subjectOverride = -1;
+			directOverride = -1;
+			owner = 0;
+			type = "set zoom level";
+			exclusiveFilter = 0;
+		};
+		[603] = {
+			relative = false;
+			reflexive = true;
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = 0;
+			range = 0;
+			minimum = 0;
+			directOverride = -1;
+			owner = 0;
+			type = "alter velocity";
+			exclusiveFilter = 0;
+		};
+		[604] = {
+			reflexive = false;
+			inclusiveFilter = 0;
+			page = 1;
+			delay = 0;
+			subjectOverride = -1;
+			directOverride = -1;
+			owner = 0;
+			type = "display message";
+			id = 5700;
+			exclusiveFilter = 0;
+		};
+		[605] = {
+			reflexive = false;
+			inclusiveFilter = 0;
+			page = 3;
+			delay = 0;
+			subjectOverride = -1;
+			directOverride = -1;
+			owner = 0;
+			type = "display message";
+			id = 5701;
+			exclusiveFilter = 0;
+		};
+		[606] = {
+			reflexive = false;
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = -1;
+			range = 0;
+			minimum = 3;
+			directOverride = -1;
+			owner = 0;
+			type = "alter active condition";
+			exclusiveFilter = 0;
+			conditionTrue = false;
+		};
+		[607] = {
+			reflexive = false;
+			inclusiveFilter = 0;
+			page = 1;
+			delay = 0;
+			subjectOverride = -1;
+			directOverride = -1;
+			owner = 0;
+			type = "display message";
+			id = 5750;
+			exclusiveFilter = 0;
+		};
+		[608] = {
+			keyMask = 2485616640;
+			reflexive = false;
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = -1;
+			directOverride = -1;
+			owner = 0;
+			type = "enable keys";
+			exclusiveFilter = 0;
+		};
+		[609] = {
+			reflexive = false;
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = -1;
+			range = 0;
+			minimum = 22;
+			directOverride = -1;
+			owner = 0;
+			type = "alter active condition";
+			exclusiveFilter = 0;
+			conditionTrue = false;
+		};
+		[610] = {
+			reflexive = false;
+			inclusiveFilter = 0;
+			value = 3;
+			delay = 0;
+			subjectOverride = -1;
+			directOverride = -1;
+			owner = 0;
+			type = "set zoom level";
+			exclusiveFilter = 0;
+		};
+		[611] = {
+			reflexive = false;
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = -1;
+			range = 0;
+			minimum = 5;
+			directOverride = -1;
+			owner = 0;
+			type = "alter active condition";
+			exclusiveFilter = 0;
+			conditionTrue = false;
+		};
+		[612] = {
+			keyMask = 373841920;
+			reflexive = false;
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = -1;
+			directOverride = -1;
+			owner = 0;
+			type = "enable keys";
+			exclusiveFilter = 0;
+		};
+		[613] = {
+			reflexive = false;
+			inclusiveFilter = 0;
+			page = 4;
+			delay = 0;
+			subjectOverride = -1;
+			directOverride = -1;
+			owner = 0;
+			type = "display message";
+			id = 5711;
+			exclusiveFilter = 0;
+		};
+		[614] = {
+			reflexive = false;
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = 5;
+			directOverride = 0;
+			owner = 0;
+			type = "set destination";
+			exclusiveFilter = 0;
+		};
+		[615] = {
+			reflexive = false;
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = -1;
+			range = 0;
+			minimum = 7;
+			directOverride = -1;
+			owner = 0;
+			type = "alter active condition";
+			exclusiveFilter = 0;
+			conditionTrue = false;
+		};
+		[616] = {
+			reflexive = false;
+			inclusiveFilter = 0;
+			value = 5;
+			delay = 0;
+			subjectOverride = -1;
+			directOverride = -1;
+			owner = 0;
+			type = "set zoom level";
+			exclusiveFilter = 0;
+		};
+		[617] = {
+			reflexive = false;
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = 5;
+			directOverride = 4;
+			owner = 0;
+			type = "set destination";
+			exclusiveFilter = 0;
+		};
+		[618] = {
+			reflexive = false;
+			inclusiveFilter = 0;
+			delay = 120;
+			subjectOverride = -1;
+			range = 0;
+			minimum = 8;
+			directOverride = -1;
+			owner = 0;
+			type = "alter active condition";
+			exclusiveFilter = 0;
+			conditionTrue = false;
+		};
+		[619] = {
+			reflexive = false;
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = 5;
+			directOverride = 0;
+			owner = 0;
+			type = "set destination";
+			exclusiveFilter = 0;
+		};
+		[620] = {
+			reflexive = false;
+			inclusiveFilter = 0;
+			delay = 120;
+			subjectOverride = -1;
+			range = 0;
+			minimum = 7;
+			directOverride = -1;
+			owner = 0;
+			type = "alter active condition";
+			exclusiveFilter = 0;
+			conditionTrue = false;
+		};
+		[621] = {
+			reflexive = true;
+			how = "plain";
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = 5;
+			directOverride = -1;
+			owner = 0;
+			type = "die";
+			exclusiveFilter = 0;
+		};
+		[622] = {
+			reflexive = false;
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = -1;
+			range = 0;
+			minimum = 10;
+			directOverride = -1;
+			owner = 0;
+			type = "alter active condition";
+			exclusiveFilter = 0;
+			conditionTrue = false;
+		};
+		[623] = {
+			reflexive = true;
+			inclusiveFilter = 0;
+			page = 6;
+			delay = 0;
+			subjectOverride = -1;
+			directOverride = -1;
+			owner = 0;
+			type = "display message";
+			id = 5715;
+			exclusiveFilter = 0;
+		};
+		[624] = {
+			keyMask = 2828558336;
+			reflexive = false;
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = -1;
+			directOverride = -1;
+			owner = 0;
+			type = "disable keys";
+			exclusiveFilter = 0;
+		};
+		[625] = {
+			reflexive = false;
+			inclusiveFilter = 0;
+			value = 7;
+			delay = 0;
+			subjectOverride = -1;
+			directOverride = -1;
+			owner = 0;
+			type = "set zoom level";
+			exclusiveFilter = 0;
+		};
+		[626] = {
+			reflexive = true;
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = 2;
+			amount = -249;
+			directOverride = -1;
+			owner = 0;
+			type = "alter health";
+			exclusiveFilter = 0;
+		};
+		[627] = {
+			reflexive = false;
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = -1;
+			range = 0;
+			minimum = 14;
+			directOverride = -1;
+			owner = 0;
+			type = "alter active condition";
+			exclusiveFilter = 0;
+			conditionTrue = false;
+		};
+		[628] = {
+			keyMask = 374890496;
+			reflexive = false;
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = -1;
+			directOverride = -1;
+			owner = 0;
+			type = "enable keys";
+			exclusiveFilter = 0;
+		};
+		[629] = {
+			reflexive = false;
+			inclusiveFilter = 0;
+			page = 21;
+			delay = 0;
+			subjectOverride = -1;
+			directOverride = -1;
+			owner = 0;
+			type = "display message";
+			id = 5721;
+			exclusiveFilter = 0;
+		};
+		[630] = {
+			keyMask = 12582924;
+			reflexive = false;
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = -1;
+			directOverride = -1;
+			owner = 0;
+			type = "enable keys";
+			exclusiveFilter = 0;
+		};
+		[631] = {
+			keyMask = 131;
+			reflexive = false;
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = -1;
+			directOverride = -1;
+			owner = 0;
+			type = "enable keys";
+			exclusiveFilter = 0;
+		};
+		[632] = {
+			reflexive = false;
+			inclusiveFilter = 0;
+			value = 1;
+			delay = 0;
+			subjectOverride = -1;
+			directOverride = -1;
+			owner = 0;
+			type = "set zoom level";
+			exclusiveFilter = 0;
+		};
+		[633] = {
+			reflexive = false;
+			inclusiveFilter = 0;
+			value = 4;
+			delay = 0;
+			subjectOverride = -1;
+			directOverride = -1;
+			owner = 0;
+			type = "set zoom level";
+			exclusiveFilter = 0;
+		};
+		[634] = {
+			keyMask = 112;
+			reflexive = true;
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = -1;
+			directOverride = -1;
+			owner = 0;
+			type = "enable keys";
+			exclusiveFilter = 0;
+		};
+		[635] = {
+			reflexive = false;
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = -1;
+			range = 1;
+			minimum = 7;
+			directOverride = -1;
+			owner = 0;
+			type = "alter hidden";
+			exclusiveFilter = 0;
+		};
+		[636] = {
+			reflexive = true;
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = 8;
+			directOverride = -1;
+			owner = 0;
+			type = "alter cloak";
+			exclusiveFilter = 0;
+		};
+		[637] = {
+			reflexive = true;
+			inclusiveFilter = 0;
+			value = 0;
+			delay = 0;
+			subjectOverride = 8;
+			directOverride = -1;
+			owner = 0;
+			type = "alter max velocity";
+			exclusiveFilter = 0;
+		};
+		[638] = {
+			reflexive = true;
+			inclusiveFilter = 0;
+			value = 0;
+			delay = 0;
+			subjectOverride = 7;
+			directOverride = -1;
+			owner = 0;
+			type = "alter max velocity";
+			exclusiveFilter = 0;
+		};
+		[639] = {
+			reflexive = true;
+			inclusiveFilter = 0;
+			value = 0;
+			delay = 0;
+			subjectOverride = 4;
+			useObjectsOwner = false;
+			directOverride = -1;
+			owner = 0;
+			type = "alter owner";
+			exclusiveFilter = 0;
+		};
+		[640] = {
+			reflexive = false;
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = -1;
+			range = 0;
+			minimum = 20;
+			directOverride = -1;
+			owner = 0;
+			type = "alter active condition";
+			exclusiveFilter = 0;
+			conditionTrue = false;
+		};
+		[641] = {
+			reflexive = false;
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = -1;
+			range = 0;
+			minimum = 21;
+			directOverride = -1;
+			owner = 0;
+			type = "alter active condition";
+			exclusiveFilter = 0;
+			conditionTrue = false;
+		};
+		[642] = {
+			reflexive = true;
+			player = 0;
+			inclusiveFilter = 0;
+			text = 7050;
+			nextLevel = 2;
+			delay = 0;
+			subjectOverride = -1;
+			directOverride = -1;
+			owner = 0;
+			type = "declare winner";
+			exclusiveFilter = 0;
+		};
+		[643] = {
+			reflexive = false;
+			inclusiveFilter = 0;
+			page = 3;
+			delay = 0;
+			subjectOverride = -1;
+			directOverride = -1;
+			owner = 0;
+			type = "display message";
+			id = 5800;
+			exclusiveFilter = 0;
+		};
+		[644] = {
+			relative = false;
+			reflexive = true;
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = 0;
+			range = 0;
+			minimum = 0;
+			directOverride = -1;
+			owner = 0;
+			type = "alter velocity";
+			exclusiveFilter = 0;
+		};
+		[645] = {
+			relative = false;
+			reflexive = true;
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = 1;
+			range = 0;
+			minimum = 0;
+			directOverride = -1;
+			owner = 0;
+			type = "alter velocity";
+			exclusiveFilter = 0;
+		};
+		[646] = {
+			keyMask = 2015395827;
+			reflexive = false;
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = -1;
+			directOverride = -1;
+			owner = 0;
+			type = "disable keys";
+			exclusiveFilter = 0;
+		};
+		[647] = {
+			reflexive = false;
+			inclusiveFilter = 0;
+			value = 2;
+			delay = 0;
+			subjectOverride = -1;
+			directOverride = -1;
+			owner = 0;
+			type = "set zoom level";
+			exclusiveFilter = 0;
+		};
+		[648] = {
+			reflexive = true;
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = -1;
+			range = 0;
+			minimum = 2;
+			directOverride = -1;
+			owner = 0;
+			type = "alter active condition";
+			exclusiveFilter = 0;
+			conditionTrue = false;
+		};
+		[649] = {
+			reflexive = false;
+			inclusiveFilter = 0;
+			page = 8;
+			delay = 0;
+			subjectOverride = -1;
+			directOverride = -1;
+			owner = 0;
+			type = "display message";
+			id = 5803;
+			exclusiveFilter = 0;
+		};
+		[650] = {
+			reflexive = false;
+			inclusiveFilter = 0;
+			page = 2;
+			delay = 0;
+			subjectOverride = -1;
+			directOverride = -1;
+			owner = 0;
+			type = "display message";
+			id = 5811;
+			exclusiveFilter = 0;
+		};
+		[651] = {
+			reflexive = false;
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = -1;
+			range = 3;
+			minimum = 2;
+			directOverride = -1;
+			owner = 0;
+			type = "alter hidden";
+			exclusiveFilter = 0;
+		};
+		[652] = {
+			reflexive = true;
+			inclusiveFilter = 0;
+			value = 7;
+			delay = 0;
+			subjectOverride = -1;
+			directOverride = -1;
+			owner = 0;
+			type = "set zoom level";
+			exclusiveFilter = 0;
+		};
+		[653] = {
+			reflexive = true;
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = -1;
+			range = 0;
+			minimum = 6;
+			directOverride = -1;
+			owner = 0;
+			type = "alter active condition";
+			exclusiveFilter = 0;
+			conditionTrue = false;
+		};
+		[654] = {
+			reflexive = true;
+			inclusiveFilter = 0;
+			page = 2;
+			delay = 0;
+			subjectOverride = -1;
+			directOverride = -1;
+			owner = 0;
+			type = "display message";
+			id = 5813;
+			exclusiveFilter = 0;
+		};
+		[655] = {
+			reflexive = true;
+			how = "plain";
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = 2;
+			directOverride = -1;
+			owner = 0;
+			type = "die";
+			exclusiveFilter = 0;
+		};
+		[656] = {
+			reflexive = true;
+			how = "plain";
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = 3;
+			directOverride = -1;
+			owner = 0;
+			type = "die";
+			exclusiveFilter = 0;
+		};
+		[657] = {
+			reflexive = true;
+			how = "plain";
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = 4;
+			directOverride = -1;
+			owner = 0;
+			type = "die";
+			exclusiveFilter = 0;
+		};
+		[658] = {
+			reflexive = true;
+			how = "plain";
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = 5;
+			directOverride = -1;
+			owner = 0;
+			type = "die";
+			exclusiveFilter = 0;
+		};
+		[659] = {
+			reflexive = false;
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = 5;
+			range = 0;
+			minimum = 8;
+			directOverride = -1;
+			owner = 0;
+			type = "alter active condition";
+			exclusiveFilter = 0;
+			conditionTrue = false;
+		};
+		[660] = {
+			reflexive = true;
+			inclusiveFilter = 0;
+			value = 2;
+			delay = 0;
+			subjectOverride = -1;
+			directOverride = -1;
+			owner = 0;
+			type = "set zoom level";
+			exclusiveFilter = 0;
+		};
+		[661] = {
+			keyMask = 1792;
+			reflexive = true;
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = -1;
+			directOverride = -1;
+			owner = 0;
+			type = "enable keys";
+			exclusiveFilter = 0;
+		};
+		[662] = {
+			keyMask = 2147483648;
+			reflexive = true;
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = -1;
+			directOverride = -1;
+			owner = 0;
+			type = "disable keys";
+			exclusiveFilter = 0;
+		};
+		[663] = {
+			reflexive = false;
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = -1;
+			range = 0;
+			minimum = 4;
+			directOverride = -1;
+			owner = 0;
+			type = "alter active condition";
+			exclusiveFilter = 0;
+			conditionTrue = false;
+		};
+		[664] = {
+			reflexive = false;
+			inclusiveFilter = 0;
+			page = 1;
+			delay = 0;
+			subjectOverride = -1;
+			directOverride = -1;
+			owner = 0;
+			type = "display message";
+			id = 5751;
+			exclusiveFilter = 0;
+		};
+		[665] = {
+			reflexive = false;
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = -1;
+			range = 0;
+			minimum = 23;
+			directOverride = -1;
+			owner = 0;
+			type = "alter active condition";
+			exclusiveFilter = 0;
+			conditionTrue = false;
+		};
+		[666] = {
+			reflexive = false;
+			inclusiveFilter = 0;
+			page = 7;
+			delay = 0;
+			subjectOverride = -1;
+			directOverride = -1;
+			owner = 0;
+			type = "display message";
+			id = 5704;
+			exclusiveFilter = 0;
+		};
+		[667] = {
+			reflexive = false;
+			inclusiveFilter = 0;
+			page = 2;
+			delay = 0;
+			subjectOverride = -1;
+			directOverride = -1;
+			owner = 0;
+			type = "display message";
+			id = 5815;
+			exclusiveFilter = 0;
+		};
+		[668] = {
+			reflexive = false;
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = -1;
+			range = 3;
+			minimum = 2;
+			directOverride = -1;
+			owner = 0;
+			type = "alter hidden";
+			exclusiveFilter = 0;
+		};
+		[669] = {
+			reflexive = true;
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = 2;
+			directOverride = -1;
+			owner = 0;
+			exclusiveFilter = 0;
+		};
+		[670] = {
+			reflexive = true;
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = 3;
+			directOverride = -1;
+			owner = 0;
+			exclusiveFilter = 0;
+		};
+		[671] = {
+			reflexive = true;
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = 4;
+			directOverride = -1;
+			owner = 0;
+			exclusiveFilter = 0;
+		};
+		[672] = {
+			reflexive = true;
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = 5;
+			directOverride = -1;
+			owner = 0;
+			exclusiveFilter = 0;
+		};
+		[673] = {
+			reflexive = false;
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = -1;
+			range = 0;
+			minimum = 10;
+			directOverride = -1;
+			owner = 0;
+			type = "alter active condition";
+			exclusiveFilter = 0;
+			conditionTrue = false;
+		};
+		[674] = {
+			reflexive = true;
+			inclusiveFilter = 0;
+			value = 3;
+			delay = 0;
+			subjectOverride = -1;
+			directOverride = -1;
+			owner = 0;
+			type = "set zoom level";
+			exclusiveFilter = 0;
+		};
+		[675] = {
+			reflexive = false;
+			inclusiveFilter = 0;
+			page = 2;
+			delay = 0;
+			subjectOverride = -1;
+			directOverride = -1;
+			owner = 0;
+			type = "display message";
+			id = 5817;
+			exclusiveFilter = 0;
+		};
+		[676] = {
+			reflexive = false;
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = -1;
+			range = 0;
+			minimum = 12;
+			directOverride = -1;
+			owner = 0;
+			type = "alter active condition";
+			exclusiveFilter = 0;
+			conditionTrue = false;
+		};
+		[677] = {
+			reflexive = true;
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = 2;
+			directOverride = -1;
+			owner = 0;
+			exclusiveFilter = 0;
+		};
+		[678] = {
+			reflexive = true;
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = 3;
+			directOverride = -1;
+			owner = 0;
+			exclusiveFilter = 0;
+		};
+		[679] = {
+			reflexive = true;
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = 4;
+			directOverride = -1;
+			owner = 0;
+			exclusiveFilter = 0;
+		};
+		[680] = {
+			reflexive = true;
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = 5;
+			directOverride = -1;
+			owner = 0;
+			exclusiveFilter = 0;
+		};
+		[681] = {
+			reflexive = true;
+			inclusiveFilter = 0;
+			value = 7;
+			delay = 0;
+			subjectOverride = -1;
+			directOverride = -1;
+			owner = 0;
+			type = "set zoom level";
+			exclusiveFilter = 0;
+		};
+		[682] = {
+			reflexive = false;
+			inclusiveFilter = 0;
+			page = 4;
+			delay = 0;
+			subjectOverride = -1;
+			directOverride = -1;
+			owner = 0;
+			type = "display message";
+			id = 5819;
+			exclusiveFilter = 0;
+		};
+		[683] = {
+			reflexive = true;
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = 2;
+			directOverride = -1;
+			owner = 0;
+			exclusiveFilter = 0;
+		};
+		[684] = {
+			reflexive = true;
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = 3;
+			directOverride = -1;
+			owner = 0;
+			exclusiveFilter = 0;
+		};
+		[685] = {
+			reflexive = true;
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = 4;
+			directOverride = -1;
+			owner = 0;
+			exclusiveFilter = 0;
+		};
+		[686] = {
+			reflexive = true;
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = 5;
+			directOverride = -1;
+			owner = 0;
+			exclusiveFilter = 0;
+		};
+		[687] = {
+			reflexive = true;
+			inclusiveFilter = 0;
+			value = 1;
+			delay = 0;
+			subjectOverride = -1;
+			directOverride = -1;
+			owner = 0;
+			type = "set zoom level";
+			exclusiveFilter = 0;
+		};
+		[688] = {
+			reflexive = true;
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = -1;
+			range = 0;
+			minimum = 15;
+			directOverride = -1;
+			owner = 0;
+			type = "alter active condition";
+			exclusiveFilter = 0;
+			conditionTrue = false;
+		};
+		[689] = {
+			reflexive = true;
+			inclusiveFilter = 0;
+			page = 2;
+			delay = 0;
+			subjectOverride = -1;
+			directOverride = -1;
+			owner = 0;
+			type = "display message";
+			id = 5823;
+			exclusiveFilter = 0;
+		};
+		[690] = {
+			reflexive = true;
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = -1;
+			range = 0;
+			minimum = 17;
+			directOverride = -1;
+			owner = 0;
+			type = "alter active condition";
+			exclusiveFilter = 0;
+			conditionTrue = false;
+		};
+		[691] = {
+			reflexive = true;
+			inclusiveFilter = 0;
+			page = 2;
+			delay = 0;
+			subjectOverride = -1;
+			directOverride = -1;
+			owner = 0;
+			type = "display message";
+			id = 5825;
+			exclusiveFilter = 0;
+		};
+		[692] = {
+			reflexive = true;
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = -1;
+			range = 0;
+			minimum = 19;
+			directOverride = -1;
+			owner = 0;
+			type = "alter active condition";
+			exclusiveFilter = 0;
+			conditionTrue = false;
+		};
+		[693] = {
+			keyMask = 1792;
+			reflexive = true;
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = -1;
+			directOverride = -1;
+			owner = 0;
+			type = "disable keys";
+			exclusiveFilter = 0;
+		};
+		[694] = {
+			keyMask = 2147485696;
+			reflexive = true;
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = -1;
+			directOverride = -1;
+			owner = 0;
+			type = "enable keys";
+			exclusiveFilter = 0;
+		};
+		[695] = {
+			reflexive = true;
+			inclusiveFilter = 0;
+			value = 2;
+			delay = 0;
+			subjectOverride = -1;
+			directOverride = -1;
+			owner = 0;
+			type = "set zoom level";
+			exclusiveFilter = 0;
+		};
+		[696] = {
+			reflexive = true;
+			inclusiveFilter = 0;
+			page = 4;
+			delay = 0;
+			subjectOverride = -1;
+			directOverride = -1;
+			owner = 0;
+			type = "display message";
+			id = 5827;
+			exclusiveFilter = 0;
+		};
+		[697] = {
+			reflexive = false;
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = -1;
+			range = 0;
+			minimum = 21;
+			directOverride = -1;
+			owner = 0;
+			type = "alter active condition";
+			exclusiveFilter = 0;
+			conditionTrue = false;
+		};
+		[698] = {
+			reflexive = true;
+			inclusiveFilter = 0;
+			page = 2;
+			delay = 0;
+			subjectOverride = -1;
+			directOverride = -1;
+			owner = 0;
+			type = "display message";
+			id = 5831;
+			exclusiveFilter = 0;
+		};
+		[699] = {
+			reflexive = true;
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = -1;
+			range = 0;
+			minimum = 7;
+			directOverride = -1;
+			owner = 0;
+			type = "alter hidden";
+			exclusiveFilter = 0;
+		};
+		[700] = {
+			reflexive = false;
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = -1;
+			range = 0;
+			minimum = 23;
+			directOverride = -1;
+			owner = 0;
+			type = "alter active condition";
+			exclusiveFilter = 0;
+			conditionTrue = false;
+		};
+		[701] = {
+			reflexive = true;
+			inclusiveFilter = 0;
+			page = 2;
+			delay = 0;
+			subjectOverride = -1;
+			directOverride = -1;
+			owner = 0;
+			type = "display message";
+			id = 5833;
+			exclusiveFilter = 0;
+		};
+		[702] = {
+			reflexive = true;
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = -1;
+			range = 0;
+			minimum = 25;
+			directOverride = -1;
+			owner = 0;
+			type = "alter active condition";
+			exclusiveFilter = 0;
+			conditionTrue = false;
+		};
+		[703] = {
+			keyMask = 2147483648;
+			reflexive = true;
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = -1;
+			directOverride = -1;
+			owner = 0;
+			type = "disable keys";
+			exclusiveFilter = 0;
+		};
+		[704] = {
+			keyMask = 1792;
+			reflexive = true;
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = -1;
+			directOverride = -1;
+			owner = 0;
+			type = "enable keys";
+			exclusiveFilter = 0;
+		};
+		[705] = {
+			reflexive = false;
+			inclusiveFilter = 0;
+			page = 1;
+			delay = 0;
+			subjectOverride = -1;
+			directOverride = -1;
+			owner = 0;
+			type = "display message";
+			id = 5835;
+			exclusiveFilter = 0;
+		};
+		[706] = {
+			reflexive = false;
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = -1;
+			range = 0;
+			minimum = 27;
+			directOverride = -1;
+			owner = 0;
+			type = "alter active condition";
+			exclusiveFilter = 0;
+			conditionTrue = false;
+		};
+		[707] = {
+			reflexive = false;
+			inclusiveFilter = 0;
+			page = 1;
+			delay = 0;
+			subjectOverride = -1;
+			directOverride = -1;
+			owner = 0;
+			type = "display message";
+			id = 5836;
+			exclusiveFilter = 0;
+		};
+		[708] = {
+			reflexive = false;
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = -1;
+			range = 0;
+			minimum = 29;
+			directOverride = -1;
+			owner = 0;
+			type = "alter active condition";
+			exclusiveFilter = 0;
+			conditionTrue = false;
+		};
+		[709] = {
+			reflexive = false;
+			inclusiveFilter = 0;
+			page = 3;
+			delay = 0;
+			subjectOverride = -1;
+			directOverride = -1;
+			owner = 0;
+			type = "display message";
+			id = 5837;
+			exclusiveFilter = 0;
+		};
+		[710] = {
+			keyMask = 2147483776;
+			reflexive = false;
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = -1;
+			directOverride = -1;
+			owner = 0;
+			type = "enable keys";
+			exclusiveFilter = 0;
+		};
+		[711] = {
+			reflexive = false;
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = -1;
+			range = 0;
+			minimum = 31;
+			directOverride = -1;
+			owner = 0;
+			type = "alter active condition";
+			exclusiveFilter = 0;
+			conditionTrue = false;
+		};
+		[712] = {
+			reflexive = false;
+			inclusiveFilter = 0;
+			page = 1;
+			delay = 0;
+			subjectOverride = -1;
+			directOverride = -1;
+			owner = 0;
+			type = "display message";
+			id = 5840;
+			exclusiveFilter = 0;
+		};
+		[713] = {
+			reflexive = false;
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = -1;
+			range = 0;
+			minimum = 33;
+			directOverride = -1;
+			owner = 0;
+			type = "alter active condition";
+			exclusiveFilter = 0;
+			conditionTrue = false;
+		};
+		[714] = {
+			reflexive = false;
+			inclusiveFilter = 0;
+			page = 1;
+			delay = 0;
+			subjectOverride = -1;
+			directOverride = -1;
+			owner = 0;
+			type = "display message";
+			id = 5841;
+			exclusiveFilter = 0;
+		};
+		[715] = {
+			reflexive = true;
+			inclusiveFilter = 0;
+			value = 6;
+			delay = 0;
+			subjectOverride = 1;
+			directOverride = 5;
+			owner = 0;
+			type = "set zoom level";
+			exclusiveFilter = 0;
+		};
+		[716] = {
+			reflexive = false;
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = -1;
+			range = 0;
+			minimum = 34;
+			directOverride = -1;
+			owner = 0;
+			type = "alter active condition";
+			exclusiveFilter = 0;
+			conditionTrue = false;
+		};
+		[717] = {
+			keyMask = 3758129151;
+			reflexive = false;
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = -1;
+			directOverride = -1;
+			owner = 0;
+			type = "disable keys";
+			exclusiveFilter = 0;
+		};
+		[718] = {
+			reflexive = false;
+			inclusiveFilter = 0;
+			delay = 120;
+			subjectOverride = 1;
+			directOverride = 5;
+			owner = 0;
+			type = "set destination";
+			exclusiveFilter = 0;
+		};
+		[719] = {
+			reflexive = false;
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = -1;
+			range = 0;
+			minimum = 34;
+			directOverride = -1;
+			owner = 0;
+			type = "alter active condition";
+			exclusiveFilter = 0;
+			conditionTrue = false;
+		};
+		[720] = {
+			reflexive = false;
+			inclusiveFilter = 0;
+			page = 1;
+			delay = 0;
+			subjectOverride = -1;
+			directOverride = -1;
+			owner = 0;
+			type = "display message";
+			id = 5842;
+			exclusiveFilter = 0;
+		};
+		[721] = {
+			keyMask = 2684383119;
+			reflexive = false;
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = 0;
+			directOverride = -1;
+			owner = 0;
+			type = "enable keys";
+			exclusiveFilter = 0;
+		};
+		[722] = {
+			reflexive = false;
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = 0;
+			range = 0;
+			minimum = 36;
+			directOverride = -1;
+			owner = 0;
+			type = "alter active condition";
+			exclusiveFilter = 0;
+			conditionTrue = false;
+		};
+		[723] = {
+			reflexive = false;
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = -1;
+			range = 0;
+			minimum = 35;
+			directOverride = -1;
+			owner = 0;
+			type = "alter active condition";
+			exclusiveFilter = 0;
+			conditionTrue = false;
+		};
+		[724] = {
+			reflexive = false;
+			player = 0;
+			inclusiveFilter = 0;
+			text = 7051;
+			nextLevel = 4;
+			delay = 0;
+			subjectOverride = 0;
+			directOverride = 0;
+			owner = 0;
+			type = "declare winner";
+			exclusiveFilter = 0;
+		};
+		[725] = {
+			keyMask = 1073741827;
+			reflexive = false;
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = -1;
+			directOverride = -1;
+			owner = 0;
+			type = "disable keys";
+			exclusiveFilter = 0;
+		};
+		[726] = {
+			relative = false;
+			reflexive = true;
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = 0;
+			range = 0;
+			minimum = 0;
+			directOverride = -1;
+			owner = 0;
+			type = "alter velocity";
+			exclusiveFilter = 0;
+		};
+		[727] = {
+			reflexive = false;
+			inclusiveFilter = 0;
+			page = 1;
+			delay = 0;
+			subjectOverride = -1;
+			directOverride = -1;
+			owner = 0;
+			type = "display message";
+			id = 5843;
+			exclusiveFilter = 0;
+		};
+		[728] = {
+			reflexive = false;
+			inclusiveFilter = 0;
+			page = 1;
+			delay = 0;
+			subjectOverride = -1;
+			directOverride = -1;
+			owner = 0;
+			type = "display message";
+			id = 5843;
+			exclusiveFilter = 0;
+		};
+		[729] = {
+			relative = false;
+			reflexive = false;
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = 0;
+			range = 0;
+			minimum = 0;
+			directOverride = -1;
+			owner = 0;
+			type = "alter velocity";
+			exclusiveFilter = 0;
+		};
+		[730] = {
+			keyMask = 1476399347;
+			reflexive = false;
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = -1;
+			directOverride = -1;
+			owner = 0;
+			type = "disable keys";
+			exclusiveFilter = 0;
+		};
+		[731] = {
+			reflexive = false;
+			inclusiveFilter = 0;
+			value = 2;
+			delay = 0;
+			subjectOverride = -1;
+			directOverride = -1;
+			owner = 0;
+			type = "set zoom level";
+			exclusiveFilter = 0;
+		};
+		[732] = {
+			reflexive = false;
+			player = 0;
+			inclusiveFilter = 0;
+			value = 640000;
+			delay = 0;
+			subjectOverride = -1;
+			useObjectsOwner = false;
+			directOverride = -1;
+			owner = 0;
+			type = "alter absolute cash";
+			exclusiveFilter = 0;
+		};
+		[733] = {
+			reflexive = false;
+			inclusiveFilter = 0;
+			page = 2;
+			delay = 0;
+			subjectOverride = -1;
+			directOverride = -1;
+			owner = 0;
+			type = "display message";
+			id = 5900;
+			exclusiveFilter = 0;
+		};
+		[734] = {
+			reflexive = true;
+			inclusiveFilter = 0;
+			value = 0;
+			delay = 160;
+			subjectOverride = 1;
+			useObjectsOwner = false;
+			directOverride = -1;
+			owner = 0;
+			type = "alter owner";
+			exclusiveFilter = 0;
+		};
+		[735] = {
+			reflexive = false;
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = -1;
+			range = 0;
+			minimum = 2;
+			directOverride = -1;
+			owner = 0;
+			type = "alter active condition";
+			exclusiveFilter = 0;
+			conditionTrue = false;
+		};
+		[736] = {
+			reflexive = false;
+			inclusiveFilter = 0;
+			page = 3;
+			delay = 0;
+			subjectOverride = -1;
+			directOverride = -1;
+			owner = 0;
+			type = "display message";
+			id = 5905;
+			exclusiveFilter = 0;
+		};
+		[737] = {
+			reflexive = false;
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = -1;
+			range = 0;
+			minimum = 4;
+			directOverride = -1;
+			owner = 0;
+			type = "alter active condition";
+			exclusiveFilter = 0;
+			conditionTrue = false;
+		};
+		[738] = {
+			reflexive = false;
+			inclusiveFilter = 0;
+			page = 10;
+			delay = 0;
+			subjectOverride = -1;
+			directOverride = -1;
+			owner = 0;
+			type = "display message";
+			id = 5910;
+			exclusiveFilter = 0;
+		};
+		[739] = {
+			reflexive = false;
+			player = 0;
+			inclusiveFilter = 0;
+			value = 6000000;
+			delay = 0;
+			subjectOverride = -1;
+			useObjectsOwner = false;
+			directOverride = -1;
+			owner = 0;
+			type = "alter absolute cash";
+			exclusiveFilter = 0;
+		};
+		[740] = {
+			reflexive = false;
+			player = 0;
+			inclusiveFilter = 0;
+			value = -6000000;
+			delay = 0;
+			subjectOverride = 0;
+			useObjectsOwner = false;
+			directOverride = 0;
+			owner = 0;
+			type = "alter absolute cash";
+			exclusiveFilter = 0;
+		};
+		[741] = {
+			reflexive = false;
+			inclusiveFilter = 0;
+			screen = 2;
+			delay = 0;
+			subjectOverride = -1;
+			directOverride = -1;
+			owner = 0;
+			line = 3;
+			type = "computer select";
+			exclusiveFilter = 0;
+		};
+		[742] = {
+			reflexive = false;
+			inclusiveFilter = 0;
+			screen = 2;
+			delay = 0;
+			subjectOverride = -1;
+			directOverride = -1;
+			owner = 0;
+			line = 2;
+			type = "computer select";
+			exclusiveFilter = 0;
+		};
+		[743] = {
+			keyMask = 268435456;
+			reflexive = false;
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = -1;
+			directOverride = -1;
+			owner = 0;
+			type = "enable keys";
+			exclusiveFilter = 0;
+		};
+		[744] = {
+			reflexive = false;
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = -1;
+			range = 1;
+			minimum = 9;
+			directOverride = -1;
+			owner = 0;
+			type = "alter active condition";
+			exclusiveFilter = 0;
+			conditionTrue = false;
+		};
+		[745] = {
+			reflexive = false;
+			inclusiveFilter = 0;
+			page = 1;
+			delay = 0;
+			subjectOverride = -1;
+			directOverride = -1;
+			owner = 0;
+			type = "display message";
+			id = 5925;
+			exclusiveFilter = 0;
+		};
+		[746] = {
+			keyMask = 268435456;
+			reflexive = false;
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = -1;
+			directOverride = -1;
+			owner = 0;
+			type = "disable keys";
+			exclusiveFilter = 0;
+		};
+		[747] = {
+			reflexive = false;
+			inclusiveFilter = 0;
+			page = 2;
+			delay = 0;
+			subjectOverride = -1;
+			directOverride = -1;
+			owner = 0;
+			type = "display message";
+			id = 5930;
+			exclusiveFilter = 0;
+		};
+		[748] = {
+			reflexive = false;
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = -1;
+			range = 0;
+			minimum = 11;
+			directOverride = -1;
+			owner = 0;
+			type = "alter active condition";
+			exclusiveFilter = 0;
+			conditionTrue = false;
+		};
+		[749] = {
+			reflexive = true;
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = -1;
+			directOverride = -1;
+			owner = 0;
+			type = "assume initial object";
+			id = 5;
+			exclusiveFilter = 0;
+		};
+		[750] = {
+			reflexive = true;
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = -1;
+			amount = 1;
+			score = 0;
+			directOverride = -1;
+			plsyer = 0;
+			owner = 0;
+			type = "change score";
+			exclusiveFilter = 0;
+		};
+		[751] = {
+			reflexive = false;
+			inclusiveFilter = 0;
+			page = 3;
+			delay = 0;
+			subjectOverride = -1;
+			directOverride = -1;
+			owner = 0;
+			type = "display message";
+			id = 5935;
+			exclusiveFilter = 0;
+		};
+		[752] = {
+			reflexive = false;
+			inclusiveFilter = 0;
+			value = 7;
+			delay = 0;
+			subjectOverride = -1;
+			directOverride = -1;
+			owner = 0;
+			type = "set zoom level";
+			exclusiveFilter = 0;
+		};
+		[753] = {
+			reflexive = false;
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = -1;
+			range = 0;
+			minimum = 13;
+			directOverride = -1;
+			owner = 0;
+			type = "alter active condition";
+			exclusiveFilter = 0;
+			conditionTrue = false;
+		};
+		[754] = {
+			reflexive = false;
+			inclusiveFilter = 0;
+			page = 1;
+			delay = 0;
+			subjectOverride = -1;
+			directOverride = -1;
+			owner = 0;
+			type = "display message";
+			id = 5940;
+			exclusiveFilter = 0;
+		};
+		[755] = {
+			reflexive = false;
+			inclusiveFilter = 0;
+			value = 2;
+			delay = 0;
+			subjectOverride = -1;
+			directOverride = -1;
+			owner = 0;
+			type = "set zoom level";
+			exclusiveFilter = 0;
+		};
+		[756] = {
+			reflexive = false;
+			inclusiveFilter = 0;
+			screen = 2;
+			delay = 0;
+			subjectOverride = -1;
+			directOverride = -1;
+			owner = 0;
+			line = 3;
+			type = "computer select";
+			exclusiveFilter = 0;
+		};
+		[757] = {
+			reflexive = false;
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = -1;
+			range = 0;
+			minimum = 14;
+			directOverride = -1;
+			owner = 0;
+			type = "alter active condition";
+			exclusiveFilter = 0;
+			conditionTrue = false;
+		};
+		[758] = {
+			keyMask = 2147485440;
+			reflexive = false;
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = -1;
+			directOverride = -1;
+			owner = 0;
+			type = "disable keys";
+			exclusiveFilter = 0;
+		};
+		[759] = {
+			keyMask = 268435456;
+			reflexive = false;
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = -1;
+			directOverride = -1;
+			owner = 0;
+			type = "enable keys";
+			exclusiveFilter = 0;
+		};
+		[760] = {
+			reflexive = false;
+			inclusiveFilter = 0;
+			page = 3;
+			delay = 0;
+			subjectOverride = -1;
+			directOverride = -1;
+			owner = 0;
+			type = "display message";
+			id = 5945;
+			exclusiveFilter = 0;
+		};
+		[761] = {
+			reflexive = false;
+			inclusiveFilter = 0;
+			value = 7;
+			delay = 0;
+			subjectOverride = -1;
+			directOverride = -1;
+			owner = 0;
+			type = "set zoom level";
+			exclusiveFilter = 0;
+		};
+		[762] = {
+			reflexive = false;
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = -1;
+			range = 0;
+			minimum = 17;
+			directOverride = -1;
+			owner = 0;
+			type = "alter active condition";
+			exclusiveFilter = 0;
+			conditionTrue = false;
+		};
+		[763] = {
+			keyMask = 2147485440;
+			reflexive = false;
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = -1;
+			directOverride = -1;
+			owner = 0;
+			type = "enable keys";
+			exclusiveFilter = 0;
+		};
+		[764] = {
+			reflexive = false;
+			inclusiveFilter = 0;
+			page = 1;
+			delay = 0;
+			subjectOverride = -1;
+			directOverride = -1;
+			owner = 0;
+			type = "display message";
+			id = 5950;
+			exclusiveFilter = 0;
+		};
+		[765] = {
+			reflexive = false;
+			inclusiveFilter = 0;
+			value = 2;
+			delay = 0;
+			subjectOverride = -1;
+			directOverride = -1;
+			owner = 0;
+			type = "set zoom level";
+			exclusiveFilter = 0;
+		};
+		[766] = {
+			reflexive = false;
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = -1;
+			range = 0;
+			minimum = 18;
+			directOverride = -1;
+			owner = 0;
+			type = "alter active condition";
+			exclusiveFilter = 0;
+			conditionTrue = false;
+		};
+		[767] = {
+			reflexive = false;
+			inclusiveFilter = 0;
+			page = 3;
+			delay = 0;
+			subjectOverride = -1;
+			directOverride = -1;
+			owner = 0;
+			type = "display message";
+			id = 5955;
+			exclusiveFilter = 0;
+		};
+		[768] = {
+			reflexive = false;
+			inclusiveFilter = 0;
+			value = 7;
+			delay = 0;
+			subjectOverride = -1;
+			directOverride = -1;
+			owner = 0;
+			type = "set zoom level";
+			exclusiveFilter = 0;
+		};
+		[769] = {
+			reflexive = false;
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = -1;
+			range = 0;
+			minimum = 19;
+			directOverride = -1;
+			owner = 0;
+			type = "alter active condition";
+			exclusiveFilter = 0;
+			conditionTrue = false;
+		};
+		[770] = {
+			keyMask = 4096;
+			reflexive = false;
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = -1;
+			directOverride = -1;
+			owner = 0;
+			type = "enable keys";
+			exclusiveFilter = 0;
+		};
+		[771] = {
+			reflexive = false;
+			inclusiveFilter = 0;
+			page = 2;
+			delay = 0;
+			subjectOverride = -1;
+			directOverride = -1;
+			owner = 0;
+			type = "display message";
+			id = 5960;
+			exclusiveFilter = 0;
+		};
+		[772] = {
+			reflexive = false;
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = -1;
+			range = 0;
+			minimum = 20;
+			directOverride = -1;
+			owner = 0;
+			type = "alter active condition";
+			exclusiveFilter = 0;
+			conditionTrue = false;
+		};
+		[773] = {
+			reflexive = false;
+			inclusiveFilter = 0;
+			page = 1;
+			delay = 0;
+			subjectOverride = -1;
+			directOverride = -1;
+			owner = 0;
+			type = "display message";
+			id = 5965;
+			exclusiveFilter = 0;
+		};
+		[774] = {
+			reflexive = false;
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = -1;
+			range = 0;
+			minimum = 21;
+			directOverride = -1;
+			owner = 0;
+			type = "alter active condition";
+			exclusiveFilter = 0;
+			conditionTrue = false;
+		};
+		[775] = {
+			reflexive = false;
+			inclusiveFilter = 0;
+			page = 4;
+			delay = 0;
+			subjectOverride = -1;
+			directOverride = -1;
+			owner = 0;
+			type = "display message";
+			id = 5970;
+			exclusiveFilter = 0;
+		};
+		[776] = {
+			reflexive = true;
+			inclusiveFilter = 0;
+			value = 1;
+			delay = 0;
+			subjectOverride = 1;
+			useObjectsOwner = false;
+			directOverride = -1;
+			owner = 0;
+			type = "alter owner";
+			exclusiveFilter = 0;
+		};
+		[777] = {
+			reflexive = true;
+			inclusiveFilter = 0;
+			value = 4;
+			delay = 0;
+			subjectOverride = 1;
+			directOverride = -1;
+			owner = 0;
+			type = "set zoom level";
+			exclusiveFilter = 0;
+		};
+		[778] = {
+			reflexive = false;
+			player = 1;
+			inclusiveFilter = 0;
+			value = -3276800;
+			delay = 0;
+			subjectOverride = -1;
+			useObjectsOwner = false;
+			directOverride = -1;
+			owner = 0;
+			type = "alter absolute cash";
+			exclusiveFilter = 0;
+		};
+		[779] = {
+			reflexive = false;
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = -1;
+			range = 0;
+			minimum = 3;
+			directOverride = -1;
+			owner = 0;
+			type = "alter hidden";
+			exclusiveFilter = 0;
+		};
+		[780] = {
+			reflexive = false;
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = -1;
+			range = 0;
+			minimum = 23;
+			directOverride = -1;
+			owner = 0;
+			type = "alter active condition";
+			exclusiveFilter = 0;
+			conditionTrue = false;
+		};
+		[781] = {
+			reflexive = false;
+			inclusiveFilter = 0;
+			page = 2;
+			delay = 280;
+			subjectOverride = -1;
+			directOverride = -1;
+			owner = 0;
+			type = "display message";
+			id = 5975;
+			exclusiveFilter = 0;
+		};
+		[782] = {
+			reflexive = false;
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = -1;
+			range = 0;
+			minimum = 4;
+			directOverride = -1;
+			owner = 0;
+			type = "alter hidden";
+			exclusiveFilter = 0;
+		};
+		[783] = {
+			reflexive = false;
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = -1;
+			range = 0;
+			minimum = 25;
+			directOverride = -1;
+			owner = 0;
+			type = "alter active condition";
+			exclusiveFilter = 0;
+			conditionTrue = false;
+		};
+		[784] = {
+			reflexive = false;
+			inclusiveFilter = 0;
+			page = 1;
+			delay = 0;
+			subjectOverride = -1;
+			directOverride = -1;
+			owner = 0;
+			type = "display message";
+			id = 5980;
+			exclusiveFilter = 0;
+		};
+		[785] = {
+			reflexive = false;
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = -1;
+			range = 0;
+			minimum = 26;
+			directOverride = -1;
+			owner = 0;
+			type = "alter active condition";
+			exclusiveFilter = 0;
+			conditionTrue = false;
+		};
+		[786] = {
+			reflexive = false;
+			inclusiveFilter = 0;
+			page = 1;
+			delay = 0;
+			subjectOverride = -1;
+			directOverride = -1;
+			owner = 0;
+			type = "display message";
+			id = 5985;
+			exclusiveFilter = 0;
+		};
+		[787] = {
+			reflexive = false;
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = -1;
+			range = 0;
+			minimum = 27;
+			directOverride = -1;
+			owner = 0;
+			type = "alter active condition";
+			exclusiveFilter = 0;
+			conditionTrue = false;
+		};
+		[788] = {
+			reflexive = false;
+			inclusiveFilter = 0;
+			page = 1;
+			delay = 0;
+			subjectOverride = -1;
+			directOverride = -1;
+			owner = 0;
+			type = "display message";
+			id = 5990;
+			exclusiveFilter = 0;
+		};
+		[789] = {
+			reflexive = false;
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = -1;
+			range = 0;
+			minimum = 28;
+			directOverride = -1;
+			owner = 0;
+			type = "alter active condition";
+			exclusiveFilter = 0;
+			conditionTrue = false;
+		};
+		[790] = {
+			reflexive = false;
+			inclusiveFilter = 0;
+			page = 1;
+			delay = 0;
+			subjectOverride = -1;
+			directOverride = -1;
+			owner = 0;
+			type = "display message";
+			id = 5995;
+			exclusiveFilter = 0;
+		};
+		[791] = {
+			reflexive = false;
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = -1;
+			range = 0;
+			minimum = 29;
+			directOverride = -1;
+			owner = 0;
+			type = "alter active condition";
+			exclusiveFilter = 0;
+			conditionTrue = false;
+		};
+		[792] = {
+			reflexive = false;
+			inclusiveFilter = 0;
+			page = 2;
+			delay = 0;
+			subjectOverride = -1;
+			directOverride = -1;
+			owner = 0;
+			type = "display message";
+			id = 7000;
+			exclusiveFilter = 0;
+		};
+		[793] = {
+			keyMask = 2147483648;
+			reflexive = false;
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = -1;
+			directOverride = -1;
+			owner = 0;
+			type = "disable keys";
+			exclusiveFilter = 0;
+		};
+		[794] = {
+			reflexive = false;
+			inclusiveFilter = 0;
+			value = 1;
+			delay = 0;
+			subjectOverride = -1;
+			directOverride = -1;
+			owner = 0;
+			type = "set zoom level";
+			exclusiveFilter = 0;
+		};
+		[795] = {
+			reflexive = false;
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = -1;
+			range = 0;
+			minimum = 31;
+			directOverride = -1;
+			owner = 0;
+			type = "alter active condition";
+			exclusiveFilter = 0;
+			conditionTrue = false;
+		};
+		[796] = {
+			reflexive = false;
+			inclusiveFilter = 0;
+			page = 1;
+			delay = 0;
+			subjectOverride = -1;
+			directOverride = -1;
+			owner = 0;
+			type = "display message";
+			id = 7005;
+			exclusiveFilter = 0;
+		};
+		[797] = {
+			reflexive = false;
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = -1;
+			range = 0;
+			minimum = 32;
+			directOverride = -1;
+			owner = 0;
+			type = "alter active condition";
+			exclusiveFilter = 0;
+			conditionTrue = false;
+		};
+		[798] = {
+			keyMask = 2147483648;
+			reflexive = false;
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = -1;
+			directOverride = -1;
+			owner = 0;
+			type = "enable keys";
+			exclusiveFilter = 0;
+		};
+		[799] = {
+			reflexive = false;
+			inclusiveFilter = 0;
+			value = 7;
+			delay = 0;
+			subjectOverride = -1;
+			directOverride = -1;
+			owner = 0;
+			type = "set zoom level";
+			exclusiveFilter = 0;
+		};
+		[800] = {
+			reflexive = false;
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = -1;
+			range = 0;
+			minimum = 33;
+			directOverride = -1;
+			owner = 0;
+			type = "alter active condition";
+			exclusiveFilter = 0;
+			conditionTrue = false;
+		};
+		[801] = {
+			reflexive = false;
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = -1;
+			range = 0;
+			minimum = 34;
+			directOverride = -1;
+			owner = 0;
+			type = "alter active condition";
+			exclusiveFilter = 0;
+			conditionTrue = false;
+		};
+		[802] = {
+			reflexive = false;
+			inclusiveFilter = 0;
+			page = 3;
+			delay = 0;
+			subjectOverride = -1;
+			directOverride = -1;
+			owner = 0;
+			type = "display message";
+			id = 7010;
+			exclusiveFilter = 0;
+		};
+		[803] = {
+			reflexive = false;
+			inclusiveFilter = 0;
+			screen = 1;
+			delay = 0;
+			subjectOverride = -1;
+			directOverride = -1;
+			owner = 0;
+			line = 4;
+			type = "computer select";
+			exclusiveFilter = 0;
+		};
+		[804] = {
+			reflexive = false;
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = -1;
+			range = 0;
+			minimum = 36;
+			directOverride = -1;
+			owner = 0;
+			type = "alter active condition";
+			exclusiveFilter = 0;
+			conditionTrue = false;
+		};
+		[805] = {
+			reflexive = false;
+			inclusiveFilter = 0;
+			screen = 1;
+			delay = 0;
+			subjectOverride = -1;
+			directOverride = -1;
+			owner = 0;
+			line = 2;
+			type = "computer select";
+			exclusiveFilter = 0;
+		};
+		[806] = {
+			reflexive = false;
+			inclusiveFilter = 0;
+			page = 2;
+			delay = 0;
+			subjectOverride = -1;
+			directOverride = -1;
+			owner = 0;
+			type = "display message";
+			id = 7015;
+			exclusiveFilter = 0;
+		};
+		[807] = {
+			reflexive = false;
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = -1;
+			range = 0;
+			minimum = 38;
+			directOverride = -1;
+			owner = 0;
+			type = "alter active condition";
+			exclusiveFilter = 0;
+			conditionTrue = false;
+		};
+		[808] = {
+			reflexive = false;
+			inclusiveFilter = 0;
+			page = 1;
+			delay = 0;
+			subjectOverride = -1;
+			directOverride = -1;
+			owner = 0;
+			type = "display message";
+			id = 7020;
+			exclusiveFilter = 0;
+		};
+		[809] = {
+			keyMask = 134217728;
+			reflexive = false;
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = -1;
+			directOverride = -1;
+			owner = 0;
+			type = "enable keys";
+			exclusiveFilter = 0;
+		};
+		[810] = {
+			reflexive = false;
+			inclusiveFilter = 0;
+			screen = 3;
+			delay = 0;
+			subjectOverride = -1;
+			directOverride = -1;
+			owner = 0;
+			line = 1;
+			type = "computer select";
+			exclusiveFilter = 0;
+		};
+		[811] = {
+			reflexive = false;
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = -1;
+			range = 0;
+			minimum = 39;
+			directOverride = -1;
+			owner = 0;
+			type = "alter active condition";
+			exclusiveFilter = 0;
+			conditionTrue = false;
+		};
+		[812] = {
+			reflexive = false;
+			inclusiveFilter = 0;
+			page = 5;
+			delay = 0;
+			subjectOverride = -1;
+			directOverride = -1;
+			owner = 0;
+			type = "display message";
+			id = 7025;
+			exclusiveFilter = 0;
+		};
+		[813] = {
+			reflexive = false;
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = -1;
+			range = 9;
+			minimum = 7;
+			directOverride = -1;
+			owner = 0;
+			type = "alter hidden";
+			exclusiveFilter = 0;
+		};
+		[814] = {
+			reflexive = false;
+			inclusiveFilter = 0;
+			delay = 360;
+			subjectOverride = -1;
+			range = 0;
+			minimum = 42;
+			directOverride = -1;
+			owner = 0;
+			type = "alter active condition";
+			exclusiveFilter = 0;
+			conditionTrue = false;
+		};
+		[815] = {
+			keyMask = 4228382719;
+			reflexive = false;
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = -1;
+			directOverride = -1;
+			owner = 0;
+			type = "enable keys";
+			exclusiveFilter = 0;
+		};
+		[816] = {
+			reflexive = false;
+			inclusiveFilter = 0;
+			value = 5;
+			delay = 0;
+			subjectOverride = -1;
+			directOverride = -1;
+			owner = 0;
+			type = "set zoom level";
+			exclusiveFilter = 0;
+		};
+		[817] = {
+			reflexive = false;
+			player = 0;
+			inclusiveFilter = 0;
+			text = 7052;
+			nextLevel = 6;
+			delay = 0;
+			subjectOverride = -1;
+			directOverride = -1;
+			owner = 0;
+			type = "declare winner";
+			exclusiveFilter = 0;
+		};
+		[818] = {
+			reflexive = false;
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = -1;
+			range = 0;
+			minimum = 7;
+			directOverride = -1;
+			owner = 0;
+			type = "alter active condition";
+			exclusiveFilter = 0;
+			conditionTrue = false;
+		};
+		[819] = {
+			reflexive = false;
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = 0;
+			directOverride = 0;
+			owner = 0;
+			type = "none";
+			exclusiveFilter = 0;
+		};
+		[820] = {
+			reflexive = false;
+			inclusiveFilter = 0;
+			delay = 0;
+			subjectOverride = 0;
+			directOverride = 0;
+			owner = 0;
+			type = "none";
+			exclusiveFilter = 0;
+		};
+	};
+	scenarios = {
+		[0] = {
+			par = {
+				losses = 0;
+				ratio = 0.0;
+				kills = 10;
+				time = 120;
+			};
+			starmap = {
+				y = 393;
+				x = 282;
+			};
+			playerNum = 2;
+			scoreString = {
+				[0] = "-Destroy all 4";
+				[1] = "_-relay dishes.";
+			};
+			movie = nil;
+			isTraining = false;
+			startTime = 0;
+			name = "\\i Tutorial Lesson 3\r\\iThe Complete IdiotÕs Guide to Commanding a Space Armada";
+			players = {
+				[1] = {
+					netRaceFlags = 0;
+					earningPower = 0.00390625;
+					race = 100;
+					type = "single";
+					name = "The Cantharan Order";
+				};
+				[2] = {
+					netRaceFlags = 0;
+					earningPower = 0.0;
+					race = 300;
+					type = "cpu";
+					name = "The Prophets of Salril";
+				};
+			};
+			netRaceFlags = 0;
+			prologueId = nil;
+			initialObjects = {
+				count = 19;
+				first = 0;
+			};
+			epilogueId = nil;
+			angle = 0;
+			briefing = {
+				count = 9;
+				first = 1;
+			};
+			conditions = {
+				count = 3;
+				first = 0;
+			};
+			id = 4;
+			songId = 5001;
+		};
+		[1] = {
+			par = {
+				losses = 0;
+				ratio = 0.0;
+				kills = 2;
+				time = 180;
+			};
+			starmap = {
+				y = 401;
+				x = 224;
+			};
+			playerNum = 2;
+			scoreString = {
+				[0] = "-Collect 4";
+				[1] = "_-asteroid samples";
+			};
+			movie = ":Ares Data Ä:Part 3";
+			isTraining = false;
+			startTime = 0;
+			name = "\\i Chapter 8 \r\\iAstrotrash Plus!";
+			players = {
+				[1] = {
+					netRaceFlags = -18392;
+					earningPower = 0.0;
+					race = 100;
+					type = "single";
+					name = "The Cantharan Order";
+				};
+				[2] = {
+					netRaceFlags = 0;
+					earningPower = 0.0;
+					race = 200;
+					type = "cpu";
+					name = "The Gaitori Union";
+				};
+			};
+			netRaceFlags = 0;
+			prologueId = nil;
+			initialObjects = {
+				count = 10;
+				first = 19;
+			};
+			epilogueId = nil;
+			angle = 0;
+			briefing = {
+				count = 8;
+				first = 11;
+			};
+			conditions = {
+				count = 4;
+				first = 3;
+			};
+			id = 10;
+			songId = 5001;
+		};
+		[2] = {
+			par = {
+				losses = 8;
+				ratio = 0.0;
+				kills = 14;
+				time = 960;
+			};
+			starmap = {
+				y = 368;
+				x = 201;
+			};
+			playerNum = 2;
+			scoreString = {
+				[0] = "-Capture Proteus";
+			};
+			movie = nil;
+			isTraining = false;
+			startTime = 0;
+			name = "\\i Chapter 10 \r\\iAssassin";
+			players = {
+				[1] = {
+					netRaceFlags = 0;
+					earningPower = 1.0;
+					race = 100;
+					type = "single";
+					name = "The Cantharan Order";
+				};
+				[2] = {
+					netRaceFlags = 1;
+					earningPower = 1.25;
+					race = 200;
+					type = "cpu";
+					name = "The Gaitori Union";
+				};
+			};
+			netRaceFlags = 0;
+			prologueId = nil;
+			initialObjects = {
+				count = 7;
+				first = 29;
+			};
+			epilogueId = nil;
+			angle = 0;
+			briefing = {
+				count = 10;
+				first = 19;
+			};
+			conditions = {
+				count = 3;
+				first = 7;
+			};
+			id = 12;
+			songId = 5003;
+		};
+		[3] = {
+			par = {
+				losses = 25;
+				ratio = 0.0;
+				kills = 10;
+				time = 120;
+			};
+			starmap = {
+				y = 311;
+				x = 192;
+			};
+			playerNum = 2;
+			scoreString = {
+				[0] = "-Destroy all";
+			};
+			movie = nil;
+			isTraining = false;
+			startTime = 0;
+			name = "\\i Chapter 11 \r\\iShoplifter 2";
+			players = {
+				[1] = {
+					netRaceFlags = 0;
+					earningPower = 0.0;
+					race = 100;
+					type = "single";
+					name = "The Cantharan Order";
+				};
+				[2] = {
+					netRaceFlags = 0;
+					earningPower = 0.0078125;
+					race = 200;
+					type = "cpu";
+					name = "The Gaitori Union";
+				};
+			};
+			netRaceFlags = 0;
+			prologueId = nil;
+			initialObjects = {
+				count = 25;
+				first = 36;
+			};
+			epilogueId = nil;
+			angle = 0;
+			briefing = {
+				count = 4;
+				first = 29;
+			};
+			conditions = {
+				count = 2;
+				first = 11;
+			};
+			id = 13;
+			songId = 5004;
+		};
+		[4] = {
+			par = {
+				losses = 30;
+				ratio = 0.0;
+				kills = 95;
+				time = 1320;
+			};
+			starmap = {
+				y = 222;
+				x = 130;
+			};
+			playerNum = 2;
+			scoreString = {
+				[0] = "-Capture Bokleo";
+				[1] = "_-Gamma";
+				[2] = "-Free Bazidanese";
+			};
+			movie = nil;
+			isTraining = false;
+			startTime = 0;
+			name = "\\i Chapter 15 \r\\iThe Left Hand";
+			players = {
+				[1] = {
+					netRaceFlags = 34;
+					earningPower = 1.0;
+					race = 100;
+					type = "single";
+					name = "The Cantharan Order";
+				};
+				[2] = {
+					netRaceFlags = 34;
+					earningPower = 1.25;
+					race = 200;
+					type = "cpu";
+					name = "The Gaitori Union";
+				};
+			};
+			netRaceFlags = 34;
+			prologueId = nil;
+			initialObjects = {
+				count = 18;
+				first = 61;
+			};
+			epilogueId = nil;
+			angle = 0;
+			briefing = {
+				count = 13;
+				first = 34;
+			};
+			conditions = {
+				count = 6;
+				first = 13;
+			};
+			id = 17;
+			songId = 5003;
+		};
+		[5] = {
+			par = {
+				losses = 4;
+				ratio = 0.0;
+				kills = 16;
+				time = 180;
+			};
+			starmap = {
+				y = 354;
+				x = 271;
+			};
+			playerNum = 2;
+			scoreString = {
+				[0] = "-Capture Demeter";
+			};
+			movie = nil;
+			isTraining = false;
+			startTime = 0;
+			name = "\\i Chapter 4 \r\\iShoplifter 1";
+			players = {
+				[1] = {
+					netRaceFlags = 172;
+					earningPower = 1.0;
+					race = 100;
+					type = "single";
+					name = "The Cantharan Order";
+				};
+				[2] = {
+					netRaceFlags = 0;
+					earningPower = 0.84765625;
+					race = 300;
+					type = "cpu";
+					name = "The Prophets of Salril";
+				};
+			};
+			netRaceFlags = 0;
+			prologueId = nil;
+			initialObjects = {
+				count = 6;
+				first = 79;
+			};
+			epilogueId = nil;
+			angle = 0;
+			briefing = {
+				count = 7;
+				first = 59;
+			};
+			conditions = {
+				count = 3;
+				first = 56;
+			};
+			id = 6;
+			songId = 5002;
+		};
+		[6] = {
+			par = {
+				losses = 0;
+				ratio = 0.0;
+				kills = 25;
+				time = 720;
+			};
+			starmap = {
+				y = 460;
+				x = 259;
+			};
+			playerNum = 2;
+			scoreString = {
+				[0] = "-Rescue 11";
+				[1] = "_-Obiards";
+				[2] = "2\\0\\0\\0\\f\\t\\In transport: \\/5";
+			};
+			movie = nil;
+			isTraining = false;
+			startTime = 0;
+			name = "\\i Chapter 5 \r\\iOut of the Frying Pan...";
+			players = {
+				[1] = {
+					netRaceFlags = 0;
+					earningPower = 1.0;
+					race = 100;
+					type = "single";
+					name = "The Cantharan Order";
+				};
+				[2] = {
+					netRaceFlags = 202;
+					earningPower = 1.5;
+					race = 300;
+					type = "cpu";
+					name = "The Prophets of Salril";
+				};
+			};
+			netRaceFlags = 0;
+			prologueId = nil;
+			initialObjects = {
+				count = 17;
+				first = 403;
+			};
+			epilogueId = nil;
+			angle = 0;
+			briefing = {
+				count = 9;
+				first = 160;
+			};
+			conditions = {
+				count = 6;
+				first = 91;
+			};
+			id = 7;
+			songId = 5003;
+		};
+		[7] = {
+			par = {
+				losses = 15;
+				ratio = 0.0;
+				kills = 15;
+				time = 420;
+			};
+			starmap = {
+				y = 366;
+				x = 250;
+			};
+			playerNum = 2;
+			scoreString = {
+				[0] = "-Capture Aeneas";
+			};
+			movie = nil;
+			isTraining = false;
+			startTime = 0;
+			name = "\\i Chapter 6 \r\\i...Into the Fire";
+			players = {
+				[1] = {
+					netRaceFlags = 172;
+					earningPower = 1.0;
+					race = 100;
+					type = "single";
+					name = "The Cantharan Order";
+				};
+				[2] = {
+					netRaceFlags = 202;
+					earningPower = 1.5;
+					race = 300;
+					type = "cpu";
+					name = "The Prophets of Salril";
+				};
+			};
+			netRaceFlags = 0;
+			prologueId = nil;
+			initialObjects = {
+				count = 9;
+				first = 101;
+			};
+			epilogueId = nil;
+			angle = 0;
+			briefing = {
+				count = 8;
+				first = 73;
+			};
+			conditions = {
+				count = 2;
+				first = 33;
+			};
+			id = 8;
+			songId = 5004;
+		};
+		[8] = {
+			par = {
+				losses = 12;
+				ratio = 0.0;
+				kills = 45;
+				time = 450;
+			};
+			starmap = {
+				y = 431;
+				x = 237;
+			};
+			playerNum = 2;
+			scoreString = {
+				[0] = "-Capture Hades";
+			};
+			movie = nil;
+			isTraining = false;
+			startTime = 0;
+			name = "\\i Chapter 7 \r\\iOn the Rocks";
+			players = {
+				[1] = {
+					netRaceFlags = 172;
+					earningPower = 1.0;
+					race = 100;
+					type = "single";
+					name = "The Cantharan Order";
+				};
+				[2] = {
+					netRaceFlags = 176;
+					earningPower = 1.25;
+					race = 300;
+					type = "cpu";
+					name = "The Prophets of Salril";
+				};
+			};
+			netRaceFlags = 0;
+			prologueId = nil;
+			initialObjects = {
+				count = 16;
+				first = 110;
+			};
+			epilogueId = nil;
+			angle = 0;
+			briefing = {
+				count = 9;
+				first = 81;
+			};
+			conditions = {
+				count = 2;
+				first = 35;
+			};
+			id = 9;
+			songId = 5000;
+		};
+		[9] = {
+			par = {
+				losses = 0;
+				ratio = 0.0;
+				kills = 8;
+				time = 435;
+			};
+			starmap = {
+				y = 160;
+				x = 179;
+			};
+			playerNum = 2;
+			scoreString = {
+				[0] = "-Rescue 21";
+				[1] = "_-humans";
+				[2] = "2\\0\\0\\0\\f\\t\\On board: \\/5";
+			};
+			movie = nil;
+			isTraining = false;
+			startTime = 0;
+			name = "\\i Chapter 12 \r\\iMake Way";
+			players = {
+				[1] = {
+					netRaceFlags = 229;
+					earningPower = 0.00390625;
+					race = 100;
+					type = "single";
+					name = "The Cantharan Order";
+				};
+				[2] = {
+					netRaceFlags = 0;
+					earningPower = 0.0;
+					race = 200;
+					type = "cpu";
+					name = "The Audemedon Axis";
+				};
+			};
+			netRaceFlags = 0;
+			prologueId = nil;
+			initialObjects = {
+				count = 15;
+				first = 388;
+			};
+			epilogueId = nil;
+			angle = 0;
+			briefing = {
+				count = 8;
+				first = 126;
+			};
+			conditions = {
+				count = 8;
+				first = 83;
+			};
+			id = 14;
+			songId = 5000;
+		};
+		[10] = {
+			par = {
+				losses = 20;
+				ratio = 1.19921875;
+				kills = 10;
+				time = 900;
+			};
+			starmap = {
+				y = 259;
+				x = 158;
+			};
+			playerNum = 2;
+			scoreString = {
+				[0] = "-Capture Fansi";
+				[1] = "_-Beta";
+				[2] = "-Ensure safety";
+				[3] = "_-of 5 cargo ships";
+				[4] = "-";
+			};
+			movie = nil;
+			isTraining = false;
+			startTime = 307;
+			name = "\\i Chapter 13 \r\\iYo Ho Ho";
+			players = {
+				[1] = {
+					netRaceFlags = 0;
+					earningPower = 1.0;
+					race = 100;
+					type = "single";
+					name = "The Cantharan Order";
+				};
+				[2] = {
+					netRaceFlags = 172;
+					earningPower = 3.0;
+					race = 200;
+					type = "cpu";
+					name = "The Gaitori Union";
+				};
+			};
+			netRaceFlags = 0;
+			prologueId = nil;
+			initialObjects = {
+				count = 17;
+				first = 138;
+			};
+			epilogueId = nil;
+			angle = 0;
+			briefing = {
+				count = 12;
+				first = 47;
+			};
+			conditions = {
+				count = 4;
+				first = 29;
+			};
+			id = 15;
+			songId = 5001;
+		};
+		[11] = {
+			par = {
+				losses = 0;
+				ratio = 0.0;
+				kills = 9;
+				time = 120;
+			};
+			starmap = {
+				y = 330;
+				x = 287;
+			};
+			playerNum = 2;
+			scoreString = {
+				[0] = "-Destroy all 5";
+				[1] = "_-transports.";
+			};
+			movie = ":Ares Data Ä:Part 2";
+			isTraining = false;
+			startTime = 0;
+			name = "\\i Tutorial Lesson 2\r\\iSection on Selection";
+			players = {
+				[1] = {
+					netRaceFlags = 256;
+					earningPower = 1.0;
+					race = 100;
+					type = "single";
+					name = "The Cantharan Order";
+				};
+				[2] = {
+					netRaceFlags = 16516;
+					earningPower = 1.0;
+					race = 300;
+					type = "cpu";
+					name = "The Prophets of Salril";
+				};
+			};
+			netRaceFlags = 0;
+			prologueId = nil;
+			initialObjects = {
+				count = 18;
+				first = 294;
+			};
+			epilogueId = nil;
+			angle = 0;
+			briefing = {
+				count = 5;
+				first = 121;
+			};
+			conditions = {
+				count = 2;
+				first = 54;
+			};
+			id = 2;
+			songId = 5000;
+		};
+		[12] = {
+			par = {
+				losses = 1;
+				ratio = 0.0;
+				kills = 6;
+				time = 270;
+			};
+			starmap = {
+				y = 286;
+				x = 211;
+			};
+			playerNum = 2;
+			scoreString = {
+				[0] = "-Collect 10";
+				[1] = "_-asteroid samples";
+			};
+			movie = nil;
+			isTraining = false;
+			startTime = 0;
+			name = "\\i Chapter 9 \r\\iHand Over Fist";
+			players = {
+				[1] = {
+					netRaceFlags = 0;
+					earningPower = 1.0;
+					race = 100;
+					type = "single";
+					name = "The Cantharan Order";
+				};
+				[2] = {
+					netRaceFlags = 172;
+					earningPower = 1.0;
+					race = 200;
+					type = "cpu";
+					name = "The Gaitori Union";
+				};
+			};
+			netRaceFlags = 0;
+			prologueId = nil;
+			initialObjects = {
+				count = 8;
+				first = 357;
+			};
+			epilogueId = nil;
+			angle = 0;
+			briefing = {
+				count = 4;
+				first = 117;
+			};
+			conditions = {
+				count = 4;
+				first = 60;
+			};
+			id = 11;
+			songId = 5002;
+		};
+		[13] = {
+			par = {
+				losses = 0;
+				ratio = 0.0;
+				kills = -1;
+				time = -1;
+			};
+			starmap = {
+				y = 288;
+				x = 302;
+			};
+			playerNum = 2;
+			movie = nil;
+			isTraining = false;
+			startTime = 0;
+			name = "";
+			players = {
+				[1] = {
+					netRaceFlags = 0;
+					earningPower = 0.5;
+					race = 100;
+					type = "single";
+					name = "The Cantharan Order";
+				};
+				[2] = {
+					netRaceFlags = 1536;
+					earningPower = 0.0;
+					race = 100;
+					type = "cpu";
+					name = "The Cantharan Order";
+				};
+			};
+			netRaceFlags = 0;
+			prologueId = nil;
+			initialObjects = {
+				count = 23;
+				first = 365;
+			};
+			epilogueId = nil;
+			angle = 0;
+			briefing = {
+				count = 6;
+				first = 111;
+			};
+			conditions = {
+				count = 19;
+				first = 64;
+			};
+			id = 31;
+			songId = 5001;
+		};
+		[14] = {
+			par = {
+				losses = 35;
+				ratio = 0.0;
+				kills = 50;
+				time = 780;
+			};
+			starmap = {
+				y = 241;
+				x = 53;
+			};
+			playerNum = 2;
+			scoreString = {
+				[0] = "_-Capture Pictoris";
+				[1] = "Beta, 1 & 2";
+				[2] = "-Destroy hostile";
+			};
+			movie = nil;
+			isTraining = false;
+			startTime = 0;
+			name = "\\i Chapter 20 \r\\iThe Mothership Connection";
+			players = {
+				[1] = {
+					netRaceFlags = 26816;
+					earningPower = 1.0;
+					race = 900;
+					type = "single";
+					name = "The Elejeetian Empire";
+				};
+				[2] = {
+					netRaceFlags = 0;
+					earningPower = 1.0;
+					race = 200;
+					type = "cpu";
+					name = "The Gaitori Union";
+				};
+			};
+			netRaceFlags = 0;
+			prologueId = nil;
+			initialObjects = {
+				count = 12;
+				first = 312;
+			};
+			epilogueId = nil;
+			angle = 0;
+			briefing = {
+				count = 7;
+				first = 134;
+			};
+			conditions = {
+				count = 7;
+				first = 97;
+			};
+			id = 22;
+			songId = 5003;
+		};
+		[15] = {
+			par = {
+				losses = 30;
+				ratio = 0.0;
+				kills = 45;
+				time = 960;
+			};
+			starmap = {
+				y = 156;
+				x = 81;
+			};
+			playerNum = 2;
+			scoreString = {
+				[0] = "-Capture Lalande";
+			};
+			movie = nil;
+			isTraining = false;
+			startTime = 0;
+			name = "\\i Chapter 18 \r\\iBlood, Toil, Tears, and Sweat";
+			players = {
+				[1] = {
+					netRaceFlags = 0;
+					earningPower = 1.0;
+					race = 100;
+					type = "single";
+					name = "The Cantharan Order";
+				};
+				[2] = {
+					netRaceFlags = 0;
+					earningPower = 1.0;
+					race = 700;
+					type = "cpu";
+					name = "The UNS Resistance";
+				};
+			};
+			netRaceFlags = 0;
+			prologueId = nil;
+			initialObjects = {
+				count = 14;
+				first = 474;
+			};
+			epilogueId = nil;
+			angle = 0;
+			briefing = {
+				count = 6;
+				first = 154;
+			};
+			conditions = {
+				count = 3;
+				first = 109;
+			};
+			id = 20;
+			songId = 5001;
+		};
+		[16] = {
+			par = {
+				losses = 0;
+				ratio = 0.0;
+				kills = 11;
+				time = 300;
+			};
+			starmap = {
+				y = 194;
+				x = 145;
+			};
+			playerNum = 2;
+			scoreString = {
+				[0] = "1\\0\\0\\0\\Retrieve escape\\Escort tractor";
+				[1] = "_1\\0\\0\\0\\pods\\tug";
+				[2] = "2\\1\\0\\0\\f\\t\\Rescued: \\/6";
+			};
+			movie = ":Ares Data Ä:Placeholder Movie";
+			isTraining = false;
+			startTime = 0;
+			name = "\\i Chapter 14 \r\\iCaptivating";
+			players = {
+				[1] = {
+					netRaceFlags = 0;
+					earningPower = 1.0;
+					race = 100;
+					type = "single";
+					name = "The Cantharan Order";
+				};
+				[2] = {
+					netRaceFlags = 0;
+					earningPower = 1.0;
+					race = 600;
+					type = "cpu";
+					name = "The Audemedon Axis";
+				};
+			};
+			netRaceFlags = 0;
+			prologueId = nil;
+			initialObjects = {
+				count = 21;
+				first = 155;
+			};
+			epilogueId = nil;
+			angle = 0;
+			briefing = {
+				count = 7;
+				first = 90;
+			};
+			conditions = {
+				count = 3;
+				first = 37;
+			};
+			id = 16;
+			songId = 5002;
+		};
+		[17] = {
+			par = {
+				losses = 17;
+				ratio = 0.0;
+				kills = 56;
+				time = 435;
+			};
+			starmap = {
+				y = 150;
+				x = 120;
+			};
+			playerNum = 2;
+			scoreString = {
+				[0] = "-Capture Thasero";
+			};
+			movie = nil;
+			isTraining = false;
+			startTime = 0;
+			name = "\\i Chapter 16 \r\\iHornet's Nest";
+			players = {
+				[1] = {
+					netRaceFlags = 172;
+					earningPower = 1.0;
+					race = 100;
+					type = "single";
+					name = "The Cantharan Order";
+				};
+				[2] = {
+					netRaceFlags = 0;
+					earningPower = 2.0;
+					race = 600;
+					type = "cpu";
+					name = "The Audemedon Axis";
+				};
+			};
+			netRaceFlags = 0;
+			prologueId = nil;
+			initialObjects = {
+				count = 10;
+				first = 176;
+			};
+			epilogueId = nil;
+			angle = 0;
+			briefing = {
+				count = 9;
+				first = 97;
+			};
+			conditions = {
+				count = 3;
+				first = 40;
+			};
+			id = 18;
+			songId = 5004;
+		};
+		[18] = {
+			par = {
+				losses = 23;
+				ratio = 0.0;
+				kills = 42;
+				time = 210;
+			};
+			starmap = {
+				y = 104;
+				x = 98;
+			};
+			playerNum = 2;
+			scoreString = {
+				[0] = "1\\2\\0\\0\\Protect science\\Destroy jumpgate\\\\";
+				[1] = "1\\2\\0\\0\\vessel\\inhibitor\\\\";
+				[2] = "1\\3\\0\\0\\\\DESTROYED\\\\";
+				[3] = "1\\3\\0\\0\\\\Destroy all\\\\";
+			};
+			movie = nil;
+			isTraining = false;
+			startTime = 0;
+			name = "\\i Chapter 17 \r\\i...And It Feels So Good";
+			players = {
+				[1] = {
+					netRaceFlags = 171;
+					earningPower = 1.0;
+					race = 100;
+					type = "single";
+					name = "The Cantharan Order";
+				};
+				[2] = {
+					netRaceFlags = 202;
+					earningPower = 1.0;
+					race = 700;
+					type = "cpu";
+					name = "The UNS Resistance";
+				};
+			};
+			netRaceFlags = 0;
+			prologueId = nil;
+			initialObjects = {
+				count = 25;
+				first = 186;
+			};
+			epilogueId = nil;
+			angle = 0;
+			briefing = {
+				count = 5;
+				first = 106;
+			};
+			conditions = {
+				count = 5;
+				first = 43;
+			};
+			id = 19;
+			songId = 5000;
+		};
+		[19] = {
+			par = {
+				losses = 34;
+				ratio = 0.0;
+				kills = 29;
+				time = 375;
+			};
+			starmap = {
+				y = 182;
+				x = 62;
+			};
+			playerNum = 2;
+			scoreString = {
+				[0] = "-Capture Proxima";
+			};
+			movie = nil;
+			isTraining = false;
+			startTime = 0;
+			name = "\\i Chapter 19 \r\\iYou Should Have Seen the One that Got Away";
+			players = {
+				[1] = {
+					netRaceFlags = 172;
+					earningPower = 1.0;
+					race = 900;
+					type = "single";
+					name = "The Elejeetian Empire";
+				};
+				[2] = {
+					netRaceFlags = 202;
+					earningPower = 1.0;
+					race = 700;
+					type = "cpu";
+					name = "The UNS Resistance";
+				};
+			};
+			netRaceFlags = 0;
+			prologueId = nil;
+			initialObjects = {
+				count = 35;
+				first = 259;
+			};
+			epilogueId = nil;
+			angle = 0;
+			briefing = {
+				count = 7;
+				first = 147;
+			};
+			conditions = {
+				count = 3;
+				first = 51;
+			};
+			id = 21;
+			songId = 5002;
+		};
+		[20] = {
+			par = {
+				losses = 0;
+				ratio = 0.0;
+				kills = 50;
+				time = 600;
+			};
+			starmap = {
+				y = 284;
+				x = 43;
+			};
+			playerNum = 2;
+			scoreString = {
+				[0] = "-Destroy hostile";
+			};
+			movie = nil;
+			isTraining = false;
+			startTime = 0;
+			name = "\\i Between a Rock and a Rock \r\\i ";
+			players = {
+				[1] = {
+					netRaceFlags = 3;
+					earningPower = 1.0;
+					race = 100;
+					type = "single";
+					name = "The Cantharan Order";
+				};
+				[2] = {
+					netRaceFlags = 181;
+					earningPower = 1.0;
+					race = 200;
+					type = "cpu";
+					name = "The Gaitori Union";
+				};
+			};
+			netRaceFlags = 0;
+			prologueId = nil;
+			initialObjects = {
+				count = 33;
+				first = 324;
+			};
+			epilogueId = nil;
+			angle = 0;
+			briefing = {
+				count = 6;
+				first = 141;
+			};
+			conditions = {
+				count = 3;
+				first = 115;
+			};
+			id = 23;
+			songId = 5004;
+		};
+		[21] = {
+			par = {
+				losses = 0;
+				ratio = 0.0;
+				kills = 0;
+				time = -1;
+			};
+			starmap = {
+				y = 200;
+				x = 200;
+			};
+			playerNum = 2;
+			movie = nil;
+			isTraining = false;
+			startTime = 0;
+			name = "\\i **DEV-23** \r\\i ";
+			players = {
+				[1] = {
+					netRaceFlags = 483;
+					earningPower = 1.0;
+					race = 100;
+					type = "net";
+					name = "The Cantharan Order";
+				};
+				[2] = {
+					netRaceFlags = 483;
+					earningPower = 1.0;
+					race = 100;
+					type = "net";
+					name = "The Cantharan Order";
+				};
+			};
+			netRaceFlags = 483;
+			prologueId = nil;
+			initialObjects = {
+				count = 8;
+				first = 420;
+			};
+			epilogueId = nil;
+			angle = 0;
+			briefing = {
+				count = 1;
+				first = 0;
+			};
+			conditions = {
+				count = 3;
+				first = 104;
+			};
+			id = 24;
+			songId = 5002;
+		};
+		[22] = {
+			par = {
+				losses = 0;
+				ratio = 0.0;
+				kills = 0;
+				time = -1;
+			};
+			starmap = {
+				y = 100;
+				x = 100;
+			};
+			playerNum = 3;
+			movie = nil;
+			isTraining = false;
+			startTime = 0;
+			name = "\\i Space Race, the Musical! \\i ";
+			players = {
+				[1] = {
+					netRaceFlags = 0;
+					race = 100;
+					earningPower = 1.0;
+					name = "The Cantharan Order";
+				};
+				[2] = {
+					netRaceFlags = 0;
+					race = 100;
+					earningPower = 1.0;
+					name = "The Cantharan Order";
+				};
+				[3] = {
+					netRaceFlags = 0;
+					earningPower = 2.0;
+					race = 700;
+					type = "cpu";
+					name = "The UNS Resistance";
+				};
+			};
+			netRaceFlags = 0;
+			prologueId = nil;
+			initialObjects = {
+				count = 6;
+				first = 428;
+			};
+			epilogueId = nil;
+			angle = 0;
+			briefing = {
+				count = 1;
+				first = 0;
+			};
+			conditions = {
+				count = 0;
+				first = -1;
+			};
+			id = 25;
+			songId = 5002;
+		};
+		[23] = {
+			par = {
+				losses = 0;
+				ratio = 1.0;
+				kills = 0;
+				time = 1;
+			};
+			starmap = {
+				y = -1;
+				x = -1;
+			};
+			playerNum = 2;
+			movie = nil;
+			isTraining = false;
+			startTime = 256;
+			name = "\\i Scratching Post \r\\i ";
+			players = {
+				[1] = {
+					netRaceFlags = 0;
+					earningPower = 1.0;
+					race = 100;
+					type = "single";
+					name = "The Cantharan Order";
+				};
+				[2] = {
+					netRaceFlags = 0;
+					earningPower = 1.0;
+					race = 300;
+					type = "cpu";
+					name = "The Prophets of Salril";
+				};
+			};
+			netRaceFlags = 0;
+			prologueId = nil;
+			initialObjects = {
+				count = 40;
+				first = 434;
+			};
+			epilogueId = nil;
+			angle = 0;
+			briefing = {
+				count = 1;
+				first = 0;
+			};
+			conditions = {
+				count = 0;
+				first = -1;
+			};
+			id = 26;
+			songId = 5003;
+		};
+		[24] = {
+			par = {
+				losses = 0;
+				ratio = 0.0;
+				kills = 0;
+				time = -1;
+			};
+			starmap = {
+				y = 100;
+				x = 100;
+			};
+			playerNum = 2;
+			movie = nil;
+			isTraining = false;
+			startTime = 0;
+			name = "\\i Capture the Flagpod \r\\i ";
+			players = {
+				[1] = {
+					netRaceFlags = 483;
+					earningPower = 1.0;
+					race = 100;
+					type = "net";
+					name = "The Elejeetian Empire";
+				};
+				[2] = {
+					netRaceFlags = 483;
+					earningPower = 1.0;
+					race = 100;
+					type = "net";
+					name = "The Gaitori Union";
+				};
+			};
+			netRaceFlags = 483;
+			prologueId = nil;
+			initialObjects = {
+				count = 11;
+				first = 488;
+			};
+			epilogueId = nil;
+			angle = 0;
+			briefing = {
+				count = 1;
+				first = 0;
+			};
+			conditions = {
+				count = 3;
+				first = 112;
+			};
+			id = 27;
+			songId = 5000;
+		};
+		[25] = {
+			par = {
+				losses = 0;
+				ratio = 0.0;
+				kills = 0;
+				time = -1;
+			};
+			starmap = {
+				y = -1;
+				x = -1;
+			};
+			playerNum = 2;
+			movie = nil;
+			isTraining = false;
+			startTime = 0;
+			name = "\\i Spaze Warz \r\\i ";
+			players = {
+				[1] = {
+					netRaceFlags = 512;
+					earningPower = 0.0;
+					race = 1100;
+					type = "net";
+					name = "The Cantharan Order";
+				};
+				[2] = {
+					netRaceFlags = 512;
+					earningPower = 0.0;
+					race = 1100;
+					type = "net";
+					name = "The Cantharan Order";
+				};
+			};
+			netRaceFlags = 512;
+			prologueId = nil;
+			initialObjects = {
+				count = 22;
+				first = 212;
+			};
+			epilogueId = nil;
+			angle = 0;
+			briefing = {
+				count = 0;
+				first = -1;
+			};
+			conditions = {
+				count = 2;
+				first = 118;
+			};
+			id = 28;
+			songId = 5001;
+		};
+		[26] = {
+			par = {
+				losses = 0;
+				ratio = 0.0;
+				kills = 0;
+				time = -1;
+			};
+			starmap = {
+				y = -1;
+				x = -1;
+			};
+			playerNum = 2;
+			movie = nil;
+			isTraining = false;
+			startTime = 0;
+			name = "\\i Location, Location, Location \r\\i ";
+			players = {
+				[1] = {
+					netRaceFlags = 512;
+					earningPower = 0.0;
+					race = 1100;
+					type = "net";
+					name = "The Cantharan Order";
+				};
+				[2] = {
+					netRaceFlags = 512;
+					earningPower = 0.0;
+					race = 1100;
+					type = "net";
+					name = "The Gaitori Union";
+				};
+			};
+			netRaceFlags = 512;
+			prologueId = nil;
+			initialObjects = {
+				count = 5;
+				first = 85;
+			};
+			epilogueId = nil;
+			angle = 0;
+			briefing = {
+				count = 0;
+				first = -1;
+			};
+			conditions = {
+				count = 4;
+				first = 120;
+			};
+			id = 29;
+			songId = 5003;
+		};
+		[27] = {
+			par = {
+				losses = 0;
+				ratio = 0.0;
+				kills = 0;
+				time = -1;
+			};
+			starmap = {
+				y = -1;
+				x = -1;
+			};
+			playerNum = 2;
+			movie = nil;
+			isTraining = false;
+			startTime = 0;
+			name = "";
+			players = {
+				[1] = {
+					netRaceFlags = 98;
+					earningPower = 1.0;
+					race = 100;
+					type = "net";
+					name = "The Cantharan Order";
+				};
+				[2] = {
+					netRaceFlags = 98;
+					earningPower = 1.0;
+					race = 100;
+					type = "net";
+					name = "";
+				};
+			};
+			netRaceFlags = 98;
+			prologueId = nil;
+			initialObjects = {
+				count = 19;
+				first = 234;
+			};
+			epilogueId = nil;
+			angle = 0;
+			briefing = {
+				count = 0;
+				first = -1;
+			};
+			conditions = {
+				count = 2;
+				first = 124;
+			};
+			id = 30;
+			songId = 5004;
+		};
+		[28] = {
+			par = {
+				losses = 0;
+				ratio = 0.0;
+				kills = 9;
+				time = 120;
+			};
+			starmap = {
+				y = 330;
+				x = 287;
+			};
+			playerNum = 2;
+			scoreString = {
+				[0] = "-Destroy all 5";
+				[1] = "_-transports.";
+			};
+			movie = nil;
+			isTraining = false;
+			startTime = 0;
+			name = "\\i Chapter 1 \r\\iEasy Street";
+			players = {
+				[1] = {
+					netRaceFlags = 0;
+					earningPower = 0.0078125;
+					race = 100;
+					type = "single";
+					name = "The Cantharan Order";
+				};
+				[2] = {
+					netRaceFlags = 0;
+					earningPower = 1.0;
+					race = 200;
+					type = "cpu";
+					name = "The Gaitori Union";
+				};
+			};
+			netRaceFlags = 0;
+			prologueId = nil;
+			initialObjects = {
+				count = 9;
+				first = 500;
+			};
+			epilogueId = nil;
+			angle = 5;
+			briefing = {
+				count = 0;
+				first = 0;
+			};
+			conditions = {
+				count = 24;
+				first = 126;
+			};
+			id = 1;
+			songId = 4002;
+		};
+		[29] = {
+			par = {
+				losses = -1;
+				ratio = -1.0;
+				kills = -1;
+				time = -1;
+			};
+			starmap = {
+				y = 330;
+				x = 287;
+			};
+			playerNum = 2;
+			scoreString = {
+				[0] = "-Destroy all 5";
+				[1] = "_-transports.";
+			};
+			movie = nil;
+			isTraining = false;
+			startTime = 32512;
+			name = "\\i Chapter 2 \r\\iThe Stars Have Ears";
+			players = {
+				[1] = {
+					netRaceFlags = 0;
+					earningPower = 0.0078125;
+					race = 100;
+					type = "single";
+					name = "The Cantharan Order";
+				};
+				[2] = {
+					netRaceFlags = 0;
+					earningPower = 1.0;
+					race = 200;
+					type = "cpu";
+					name = "The Gaitori Union";
+				};
+			};
+			netRaceFlags = 0;
+			prologueId = nil;
+			initialObjects = {
+				count = 8;
+				first = 509;
+			};
+			epilogueId = nil;
+			angle = 5;
+			briefing = {
+				count = 0;
+				first = 0;
+			};
+			conditions = {
+				count = 37;
+				first = 150;
+			};
+			id = 3;
+			songId = 4002;
+		};
+		[30] = {
+			par = {
+				losses = -1;
+				ratio = -1.0;
+				kills = -1;
+				time = -1;
+			};
+			starmap = {
+				y = 330;
+				x = 287;
+			};
+			playerNum = 2;
+			scoreString = {
+				[0] = "-Destroy all 5";
+				[1] = "_-transports.";
+			};
+			movie = nil;
+			isTraining = false;
+			startTime = 32512;
+			name = "\\i Chapter 3 \r\\iWhile The Iron Is Hot";
+			players = {
+				[1] = {
+					netRaceFlags = 0;
+					earningPower = 0.0078125;
+					race = 100;
+					type = "single";
+					name = "The Cantharan Order";
+				};
+				[2] = {
+					netRaceFlags = 0;
+					earningPower = 0.0078125;
+					race = 200;
+					type = "cpu";
+					name = "The Gaitori Union";
+				};
+			};
+			netRaceFlags = 0;
+			prologueId = nil;
+			initialObjects = {
+				count = 17;
+				first = 517;
+			};
+			epilogueId = nil;
+			angle = 5;
+			briefing = {
+				count = 0;
+				first = 0;
+			};
+			conditions = {
+				count = 44;
+				first = 187;
+			};
+			id = 5;
+			songId = 4002;
+		};
+	};
 	objects = {
 		[0] = {
 			layer = 2;
@@ -54517,14729 +69242,4237 @@ data = {
 			buildRatio = 0.0;
 		};
 	};
-	briefings = {
+	conditions = {
 		[0] = {
-			content = 4103;
-			kind = "freestanding";
-			range = {
-				y = 0;
-				x = 0;
+			count = 1;
+			counter = {
+				player = 0;
+				amount = 4;
+				counter = 0;
 			};
-			title = "The Gaitori";
+			direct = -1;
+			start = 285;
+			flags = {
+				hasBeenTrue = false;
+				hex = 0x0;
+				initiallyTrue = false;
+				trueOnlyOnce = false;
+			};
+			type = "counter";
+			subject = -1;
 		};
 		[1] = {
-			kind = "object";
-			title = "Myrmidon";
-			content = 4100;
-			visible = true;
-			range = {
-				y = 0;
-				x = 0;
+			count = 1;
+			direct = -1;
+			value = 1;
+			start = 286;
+			flags = {
+				hasBeenTrue = false;
+				hex = 0x1;
+				initiallyTrue = false;
+				trueOnlyOnce = true;
 			};
-			objectId = 15;
+			type = "destruction";
+			subject = -1;
 		};
 		[2] = {
-			kind = "object";
-			title = "Cruiser";
-			content = 4104;
-			visible = true;
-			range = {
-				y = 0;
-				x = 0;
+			count = 3;
+			direct = -1;
+			value = 17;
+			start = 99;
+			flags = {
+				hasBeenTrue = false;
+				hex = 0x1;
+				initiallyTrue = false;
+				trueOnlyOnce = true;
 			};
-			objectId = 1;
+			type = "destruction";
+			subject = -1;
 		};
 		[3] = {
-			kind = "object";
-			title = "Relay Dish 1";
-			content = 4101;
-			visible = true;
-			range = {
-				y = 0;
-				x = 0;
+			count = 1;
+			direct = -1;
+			value = 180;
+			start = 48;
+			flags = {
+				hasBeenTrue = false;
+				hex = 0x1;
+				initiallyTrue = false;
+				trueOnlyOnce = true;
 			};
-			objectId = 0;
+			type = "time";
+			subject = -1;
 		};
 		[4] = {
-			kind = "object";
-			title = "Cruiser";
-			content = 4102;
-			visible = true;
-			range = {
-				y = 0;
-				x = 0;
+			count = 2;
+			counter = {
+				player = 0;
+				amount = 1;
+				counter = 1;
 			};
-			objectId = 2;
+			direct = -1;
+			start = 82;
+			flags = {
+				hasBeenTrue = false;
+				hex = 0x1;
+				initiallyTrue = false;
+				trueOnlyOnce = true;
+			};
+			type = "counter";
+			subject = -1;
 		};
 		[5] = {
-			kind = "object";
-			title = "Relay Dish 2";
-			content = 4105;
-			visible = true;
-			range = {
-				y = 0;
-				x = 0;
+			count = 1;
+			counter = {
+				player = 0;
+				amount = 4;
+				counter = 1;
 			};
-			objectId = 16;
+			direct = -1;
+			start = 287;
+			flags = {
+				hasBeenTrue = false;
+				hex = 0x1;
+				initiallyTrue = false;
+				trueOnlyOnce = true;
+			};
+			type = "counter";
+			subject = -1;
 		};
 		[6] = {
-			kind = "object";
-			title = "Relay Dish 3";
-			content = 4106;
-			visible = true;
-			range = {
-				y = 0;
-				x = 0;
+			count = 1;
+			counter = {
+				player = 1;
+				amount = 7;
+				counter = 1;
 			};
-			objectId = 17;
+			direct = -1;
+			start = 288;
+			flags = {
+				hasBeenTrue = false;
+				hex = 0x0;
+				initiallyTrue = false;
+				trueOnlyOnce = false;
+			};
+			type = "counter";
+			subject = -1;
 		};
 		[7] = {
-			kind = "object";
-			title = "Relay Dish 4";
-			content = 4108;
-			visible = true;
-			range = {
-				y = 0;
-				x = 0;
+			count = 2;
+			direct = -1;
+			value = 1200;
+			start = 124;
+			flags = {
+				hasBeenTrue = false;
+				hex = 0x1;
+				initiallyTrue = false;
+				trueOnlyOnce = true;
 			};
-			objectId = 18;
+			type = "time";
+			subject = -1;
 		};
 		[8] = {
-			kind = "object";
-			title = "Myrmidon Station";
-			content = 4107;
-			visible = true;
-			range = {
-				y = 0;
-				x = 0;
+			count = 1;
+			direct = -1;
+			value = 1;
+			start = 289;
+			flags = {
+				hasBeenTrue = false;
+				hex = 0x0;
+				initiallyTrue = false;
+				trueOnlyOnce = false;
 			};
-			objectId = 14;
+			type = "owner";
+			subject = 0;
 		};
 		[9] = {
-			content = 4109;
-			kind = "freestanding";
-			range = {
-				y = 0;
-				x = 0;
+			count = 1;
+			direct = -1;
+			value = 0;
+			start = 290;
+			flags = {
+				hasBeenTrue = false;
+				hex = 0x0;
+				initiallyTrue = false;
+				trueOnlyOnce = false;
 			};
-			title = "Obish Escorts";
+			type = "owner";
+			subject = 5;
 		};
 		[10] = {
-			content = 4013;
-			kind = "freestanding";
-			range = {
-				y = 0;
-				x = 0;
+			count = 2;
+			direct = -1;
+			value = 3600;
+			start = 195;
+			flags = {
+				hasBeenTrue = false;
+				hex = 0x1;
+				initiallyTrue = false;
+				trueOnlyOnce = true;
 			};
-			title = "Philemon";
+			type = "time";
+			subject = -1;
 		};
 		[11] = {
-			kind = "object";
-			title = "Asteroid IR7-7e";
-			content = 4030;
-			visible = true;
-			range = {
-				y = 0;
-				x = 0;
+			count = 1;
+			direct = -1;
+			value = 6;
+			start = 291;
+			flags = {
+				hasBeenTrue = false;
+				hex = 0x1;
+				initiallyTrue = false;
+				trueOnlyOnce = true;
 			};
-			objectId = 2;
+			type = "destruction";
+			subject = 0;
 		};
 		[12] = {
-			kind = "object";
-			title = "Asteroid IR7-7e";
-			content = 4037;
-			visible = true;
-			range = {
-				y = 0;
-				x = 0;
+			count = 1;
+			direct = -1;
+			value = 17;
+			start = 292;
+			flags = {
+				hasBeenTrue = false;
+				hex = 0x1;
+				initiallyTrue = false;
+				trueOnlyOnce = true;
 			};
-			objectId = 2;
+			type = "destruction";
+			subject = -1;
 		};
 		[13] = {
-			kind = "object";
-			title = "Asteroid IR7-7e";
-			content = 4031;
-			visible = true;
-			range = {
-				y = 0;
-				x = 0;
+			count = 1;
+			counter = {
+				player = 0;
+				amount = 3;
+				counter = 0;
 			};
-			objectId = 2;
+			direct = 1;
+			start = 112;
+			flags = {
+				hasBeenTrue = false;
+				hex = 0x1;
+				initiallyTrue = false;
+				trueOnlyOnce = true;
+			};
+			type = "counter";
+			subject = 1;
 		};
 		[14] = {
-			kind = "object";
-			title = "Astrominer";
-			content = 4032;
-			visible = true;
-			range = {
-				y = 0;
-				x = 0;
+			count = 2;
+			direct = 7;
+			value = 0;
+			start = 113;
+			flags = {
+				hasBeenTrue = false;
+				hex = 0x1;
+				initiallyTrue = false;
+				trueOnlyOnce = true;
 			};
-			objectId = 1;
+			type = "owner";
+			subject = 6;
 		};
 		[15] = {
-			kind = "object";
-			title = "Philemon Beta";
-			content = 4033;
-			visible = true;
-			range = {
-				y = 0;
-				x = 0;
+			count = 2;
+			direct = 7;
+			value = 1;
+			start = 84;
+			flags = {
+				hasBeenTrue = false;
+				hex = 0x1;
+				initiallyTrue = false;
+				trueOnlyOnce = true;
 			};
-			objectId = 5;
+			type = "owner";
+			subject = 6;
 		};
 		[16] = {
-			kind = "object";
-			title = "Schooner";
-			content = 4034;
-			visible = true;
-			range = {
-				y = 0;
-				x = 0;
+			count = 3;
+			direct = -1;
+			value = 7200;
+			start = 58;
+			flags = {
+				hasBeenTrue = false;
+				hex = 0x1;
+				initiallyTrue = false;
+				trueOnlyOnce = true;
 			};
-			objectId = 6;
+			type = "time";
+			subject = -1;
 		};
 		[17] = {
-			kind = "object";
-			title = "Heavy Cruiser";
-			content = 4035;
-			visible = true;
-			range = {
-				y = 0;
-				x = 0;
+			count = 1;
+			direct = -1;
+			value = 0;
+			start = 293;
+			flags = {
+				hasBeenTrue = false;
+				hex = 0x0;
+				initiallyTrue = false;
+				trueOnlyOnce = false;
 			};
-			objectId = 0;
+			type = "owner";
+			subject = 8;
 		};
 		[18] = {
-			content = 4036;
-			kind = "freestanding";
-			range = {
-				y = 0;
-				x = 0;
+			count = 1;
+			direct = -1;
+			value = 1;
+			start = 294;
+			flags = {
+				hasBeenTrue = false;
+				hex = 0x0;
+				initiallyTrue = false;
+				trueOnlyOnce = false;
 			};
-			title = "Philemon";
+			type = "owner";
+			subject = 9;
 		};
 		[19] = {
-			content = 4020;
-			kind = "freestanding";
-			range = {
-				y = 0;
-				x = 0;
+			count = 4;
+			direct = 5;
+			start = 126;
+			flags = {
+				hasBeenTrue = false;
+				hex = 0x1;
+				initiallyTrue = false;
+				trueOnlyOnce = true;
 			};
-			title = "Proteus";
+			location = 565.685424949;
+			type = "proximity";
+			subject = 7;
 		};
 		[20] = {
-			kind = "object";
-			title = "Proteus Alpha";
-			content = 4021;
-			visible = true;
-			range = {
-				y = 0;
-				x = 0;
+			count = 6;
+			direct = 5;
+			start = 130;
+			flags = {
+				hasBeenTrue = false;
+				hex = 0x1;
+				initiallyTrue = false;
+				trueOnlyOnce = true;
 			};
-			objectId = 0;
+			location = 565.685424949;
+			type = "proximity";
+			subject = 9;
 		};
 		[21] = {
-			kind = "object";
-			title = "Proteus Alpha";
-			content = 4022;
-			visible = true;
-			range = {
-				y = 0;
-				x = 0;
+			count = 7;
+			direct = 15;
+			start = 136;
+			flags = {
+				hasBeenTrue = false;
+				hex = 0x1;
+				initiallyTrue = false;
+				trueOnlyOnce = true;
 			};
-			objectId = 0;
+			location = 1600.0;
+			type = "proximity";
+			subject = 7;
 		};
 		[22] = {
-			kind = "object";
-			title = "Proteus Alpha";
-			content = 4023;
-			visible = true;
-			range = {
-				y = 0;
-				x = 0;
+			count = 1;
+			direct = -1;
+			value = 5;
+			start = 296;
+			flags = {
+				hasBeenTrue = false;
+				hex = 0x1;
+				initiallyTrue = false;
+				trueOnlyOnce = true;
 			};
-			objectId = 0;
+			type = "destruction";
+			subject = -1;
 		};
 		[23] = {
-			kind = "object";
-			title = "Philemon Beta";
-			content = 4024;
-			visible = true;
-			range = {
-				y = 0;
-				x = 0;
+			count = 1;
+			direct = -1;
+			value = 10;
+			start = 297;
+			flags = {
+				hasBeenTrue = false;
+				hex = 0x1;
+				initiallyTrue = false;
+				trueOnlyOnce = true;
 			};
-			objectId = 4;
+			type = "destruction";
+			subject = -1;
 		};
 		[24] = {
-			kind = "object";
-			title = "Proteus Gamma";
-			content = 4025;
-			visible = true;
-			range = {
-				y = 0;
-				x = 0;
+			count = 2;
+			direct = 6;
+			start = 202;
+			flags = {
+				hasBeenTrue = false;
+				hex = 0x1;
+				initiallyTrue = false;
+				trueOnlyOnce = true;
 			};
-			objectId = 5;
+			location = 565.685424949;
+			type = "proximity";
+			subject = 10;
 		};
 		[25] = {
-			kind = "object";
-			title = "Proteus Gamma";
-			content = 4026;
-			visible = true;
-			range = {
-				y = 0;
-				x = 0;
+			count = 2;
+			direct = -1;
+			value = 360;
+			start = 169;
+			flags = {
+				hasBeenTrue = false;
+				hex = 0x1;
+				initiallyTrue = false;
+				trueOnlyOnce = true;
 			};
-			objectId = 5;
+			type = "time";
+			subject = -1;
 		};
 		[26] = {
-			kind = "object";
-			title = "Proteus Gamma";
-			content = 4027;
-			visible = true;
-			range = {
-				y = 0;
-				x = 0;
+			count = 4;
+			direct = 0;
+			start = 171;
+			flags = {
+				hasBeenTrue = false;
+				hex = 0x1;
+				initiallyTrue = false;
+				trueOnlyOnce = true;
 			};
-			objectId = 5;
+			location = 565.685424949;
+			type = "proximity";
+			subject = 4;
 		};
 		[27] = {
-			kind = "object";
-			title = "Proteus Gamma";
-			content = 4028;
-			visible = true;
-			range = {
-				y = 0;
-				x = 0;
+			count = 3;
+			direct = 2;
+			start = 175;
+			flags = {
+				hasBeenTrue = false;
+				hex = 0x1;
+				initiallyTrue = false;
+				trueOnlyOnce = true;
 			};
-			objectId = 5;
+			location = 565.685424949;
+			type = "proximity";
+			subject = 4;
 		};
 		[28] = {
-			content = 4029;
-			kind = "freestanding";
-			range = {
-				y = 0;
-				x = 0;
+			count = 5;
+			direct = 3;
+			start = 178;
+			flags = {
+				hasBeenTrue = false;
+				hex = 0x1;
+				initiallyTrue = false;
+				trueOnlyOnce = true;
 			};
-			title = "Proteus Gamma";
+			location = 565.685424949;
+			type = "proximity";
+			subject = 4;
 		};
 		[29] = {
-			content = 4040;
-			kind = "freestanding";
-			range = {
-				y = 0;
-				x = 0;
+			count = 6;
+			direct = -1;
+			value = 18000;
+			start = 187;
+			flags = {
+				hasBeenTrue = false;
+				hex = 0x1;
+				initiallyTrue = false;
+				trueOnlyOnce = true;
 			};
-			title = "Sprist System";
+			type = "time";
+			subject = -1;
 		};
 		[30] = {
-			kind = "object";
-			title = "";
-			content = 4041;
-			visible = true;
-			range = {
-				y = 0;
-				x = 0;
+			count = 2;
+			counter = {
+				player = 0;
+				amount = 5;
+				counter = 0;
 			};
-			objectId = 17;
+			direct = -1;
+			start = 193;
+			flags = {
+				hasBeenTrue = false;
+				hex = 0x1;
+				initiallyTrue = false;
+				trueOnlyOnce = true;
+			};
+			type = "counter";
+			subject = -1;
 		};
 		[31] = {
-			kind = "object";
-			title = "The Open Eye of Zom";
-			content = 4042;
-			visible = false;
-			range = {
-				y = 0;
-				x = 0;
+			count = 1;
+			direct = -1;
+			value = 1;
+			start = 302;
+			flags = {
+				hasBeenTrue = false;
+				hex = 0x1;
+				initiallyTrue = false;
+				trueOnlyOnce = true;
 			};
-			objectId = 16;
+			type = "owner";
+			subject = 9;
 		};
 		[32] = {
-			kind = "object";
-			title = "ISN 2020187";
-			content = 4043;
-			visible = false;
-			range = {
-				y = 0;
-				x = 0;
+			count = 1;
+			direct = -1;
+			value = 0;
+			start = 303;
+			flags = {
+				hasBeenTrue = false;
+				hex = 0x1;
+				initiallyTrue = false;
+				trueOnlyOnce = true;
 			};
-			objectId = 6;
+			type = "owner";
+			subject = 10;
 		};
 		[33] = {
-			content = 4003;
-			kind = "absolute";
-			range = {
-				y = 0;
-				x = 0;
+			count = 1;
+			direct = -1;
+			value = 1;
+			start = 298;
+			flags = {
+				hasBeenTrue = false;
+				hex = 0x1;
+				initiallyTrue = false;
+				trueOnlyOnce = true;
 			};
-			title = "The Gaitori";
+			type = "owner";
+			subject = 1;
 		};
 		[34] = {
-			content = 4050;
-			kind = "freestanding";
-			range = {
-				y = 0;
-				x = 0;
+			count = 1;
+			direct = -1;
+			value = 0;
+			start = 299;
+			flags = {
+				hasBeenTrue = false;
+				hex = 0x1;
+				initiallyTrue = false;
+				trueOnlyOnce = true;
 			};
-			title = "Bokleo Alpha";
+			type = "owner";
+			subject = 8;
 		};
 		[35] = {
-			kind = "object";
-			title = "Bazidanese";
-			content = 4051;
-			visible = false;
-			range = {
-				y = 0;
-				x = 0;
+			count = 1;
+			direct = -1;
+			value = 1;
+			start = 300;
+			flags = {
+				hasBeenTrue = false;
+				hex = 0x1;
+				initiallyTrue = false;
+				trueOnlyOnce = true;
 			};
-			objectId = 1;
+			type = "owner";
+			subject = 12;
 		};
 		[36] = {
-			kind = "object";
-			title = "Tractor Moor";
-			content = 4052;
-			visible = true;
-			range = {
-				y = 0;
-				x = 0;
+			count = 1;
+			direct = -1;
+			value = 0;
+			start = 301;
+			flags = {
+				hasBeenTrue = false;
+				hex = 0x1;
+				initiallyTrue = false;
+				trueOnlyOnce = true;
 			};
-			objectId = 2;
+			type = "owner";
+			subject = 13;
 		};
 		[37] = {
-			kind = "object";
-			title = "Border Drone";
-			content = 4053;
-			visible = true;
-			range = {
-				y = 0;
-				x = 0;
+			count = 3;
+			counter = {
+				player = 0;
+				amount = 6;
+				counter = 1;
 			};
-			objectId = 7;
+			direct = -1;
+			start = 204;
+			flags = {
+				hasBeenTrue = false;
+				hex = 0x1;
+				initiallyTrue = false;
+				trueOnlyOnce = true;
+			};
+			type = "counter";
+			subject = -1;
 		};
 		[38] = {
-			kind = "object";
-			title = "Bokleo Beta";
-			content = 4054;
-			visible = true;
-			range = {
-				y = 0;
-				x = 0;
+			count = 6;
+			direct = 10;
+			start = 209;
+			flags = {
+				hasBeenTrue = false;
+				hex = 0x1;
+				initiallyTrue = false;
+				trueOnlyOnce = true;
 			};
-			objectId = 6;
+			location = 223.60679775;
+			type = "proximity";
+			subject = 0;
 		};
 		[39] = {
-			kind = "object";
-			title = "Bokleo Gamma";
-			content = 4055;
-			visible = true;
-			range = {
-				y = 0;
-				x = 0;
+			count = 3;
+			direct = 7;
+			start = 223;
+			flags = {
+				hasBeenTrue = false;
+				hex = 0x3;
+				initiallyTrue = true;
+				trueOnlyOnce = true;
 			};
-			objectId = 8;
+			location = 223.60679775;
+			type = "proximity";
+			subject = 10;
 		};
 		[40] = {
-			kind = "object";
-			title = "Bokleo Alpha";
-			content = 4056;
-			visible = true;
-			range = {
-				y = 0;
-				x = 0;
+			count = 2;
+			direct = 3;
+			start = 221;
+			flags = {
+				hasBeenTrue = false;
+				hex = 0x1;
+				initiallyTrue = false;
+				trueOnlyOnce = true;
 			};
-			objectId = 9;
+			location = 223.60679775;
+			type = "proximity";
+			subject = 2;
 		};
 		[41] = {
-			kind = "object";
-			title = "ISN 8738810";
-			content = 4057;
-			visible = true;
-			range = {
-				y = 0;
-				x = 0;
+			count = 1;
+			direct = -1;
+			value = 1;
+			start = 305;
+			flags = {
+				hasBeenTrue = false;
+				hex = 0x1;
+				initiallyTrue = false;
+				trueOnlyOnce = true;
 			};
-			objectId = 10;
+			type = "owner";
+			subject = 0;
 		};
 		[42] = {
-			kind = "object";
-			title = "ISN 2020187";
-			content = 4058;
-			visible = true;
-			range = {
-				y = 0;
-				x = 0;
+			count = 1;
+			direct = -1;
+			value = 0;
+			start = 306;
+			flags = {
+				hasBeenTrue = false;
+				hex = 0x1;
+				initiallyTrue = false;
+				trueOnlyOnce = true;
 			};
-			objectId = 11;
+			type = "owner";
+			subject = 1;
 		};
 		[43] = {
-			kind = "object";
-			title = "The Gentle Fingers of Zom";
-			content = 4059;
-			visible = true;
-			range = {
-				y = 0;
-				x = 0;
+			count = 3;
+			direct = -1;
+			value = 1;
+			start = 241;
+			flags = {
+				hasBeenTrue = false;
+				hex = 0x1;
+				initiallyTrue = false;
+				trueOnlyOnce = true;
 			};
-			objectId = 12;
+			type = "destruction";
+			subject = -1;
 		};
 		[44] = {
-			kind = "object";
-			title = "The Chaste Dream of Doz";
-			content = 4060;
-			visible = true;
-			range = {
-				y = 0;
-				x = 0;
+			count = 1;
+			direct = -1;
+			value = 60;
+			start = 244;
+			flags = {
+				hasBeenTrue = false;
+				hex = 0x1;
+				initiallyTrue = false;
+				trueOnlyOnce = true;
 			};
-			objectId = 13;
+			type = "time";
+			subject = -1;
 		};
 		[45] = {
-			kind = "object";
-			title = "The Silent Question of Doz";
-			content = 4061;
-			visible = true;
-			range = {
-				y = 0;
-				x = 0;
+			count = 4;
+			direct = -1;
+			value = 2400;
+			start = 245;
+			flags = {
+				hasBeenTrue = false;
+				hex = 0x1;
+				initiallyTrue = false;
+				trueOnlyOnce = true;
 			};
-			objectId = 14;
+			type = "time";
+			subject = -1;
 		};
 		[46] = {
-			kind = "object";
-			title = "Heavy Cruiser";
-			content = 4062;
-			visible = true;
-			range = {
-				y = 0;
-				x = 0;
+			count = 7;
+			direct = -1;
+			value = 0;
+			start = 249;
+			flags = {
+				hasBeenTrue = false;
+				hex = 0x1;
+				initiallyTrue = false;
+				trueOnlyOnce = true;
 			};
-			objectId = 0;
+			type = "destruction";
+			subject = -1;
 		};
 		[47] = {
-			content = 4300;
-			kind = "absolute";
-			range = {
-				y = 0;
-				x = 0;
-			};
-			title = "Fansi";
-		};
-		[48] = {
-			kind = "object";
-			title = "Orbital Shipyard";
-			content = 4310;
-			visible = false;
-			range = {
-				y = 0;
-				x = 0;
-			};
-			objectId = 0;
-		};
-		[49] = {
-			kind = "object";
-			title = "Cargo Ship";
-			content = 4320;
-			visible = true;
-			range = {
-				y = 0;
-				x = 0;
-			};
-			objectId = 11;
-		};
-		[50] = {
-			kind = "object";
-			title = "Flak Drone";
-			content = 4330;
-			visible = false;
-			range = {
-				y = 0;
-				x = 0;
-			};
-			objectId = 13;
-		};
-		[51] = {
-			kind = "object";
-			title = "Bunker Station 1";
-			content = 4340;
-			visible = true;
-			range = {
-				y = 0;
-				x = 0;
-			};
-			objectId = 11;
-		};
-		[52] = {
-			kind = "object";
-			title = "Bunker Station 2";
-			content = 4350;
-			visible = true;
-			range = {
-				y = 0;
-				x = 0;
-			};
-			objectId = 4;
-		};
-		[53] = {
-			kind = "object";
-			title = "Fansi Alpha";
-			content = 4360;
-			visible = true;
-			range = {
-				y = 0;
-				x = 0;
-			};
-			objectId = 9;
-		};
-		[54] = {
-			kind = "object";
-			title = "Engineer Pod";
-			content = 4370;
-			visible = true;
-			range = {
-				y = 0;
-				x = 0;
-			};
-			objectId = 9;
-		};
-		[55] = {
-			kind = "object";
-			title = "Assault Transport";
-			content = 4380;
-			visible = true;
-			range = {
-				y = 0;
-				x = 0;
-			};
-			objectId = 9;
-		};
-		[56] = {
-			kind = "object";
-			title = "Fansi Beta";
-			content = 4390;
-			visible = true;
-			range = {
-				y = 0;
-				x = 0;
-			};
-			objectId = 10;
-		};
-		[57] = {
-			kind = "object";
-			title = "Engineer Pod";
-			content = 4400;
-			visible = false;
-			range = {
-				y = 0;
-				x = 0;
-			};
-			objectId = 10;
-		};
-		[58] = {
-			kind = "object";
-			title = "Carrier";
-			content = 4410;
-			visible = true;
-			range = {
-				y = 0;
-				x = 0;
-			};
-			objectId = 12;
-		};
-		[59] = {
-			content = 4070;
-			kind = "freestanding";
-			range = {
-				y = 0;
-				x = 0;
-			};
-			title = "Demeter";
-		};
-		[60] = {
-			kind = "object";
-			title = "Cruiser";
-			content = 4071;
-			visible = true;
-			range = {
-				y = 0;
-				x = 0;
-			};
-			objectId = 1;
-		};
-		[61] = {
-			kind = "object";
-			title = "Demeter Alpha";
-			content = 4072;
-			visible = true;
-			range = {
-				y = 0;
-				x = 0;
-			};
-			objectId = 0;
-		};
-		[62] = {
-			kind = "object";
-			title = "Demeter Alpha";
-			content = 4073;
-			visible = true;
-			range = {
-				y = 0;
-				x = 0;
-			};
-			objectId = 0;
-		};
-		[63] = {
-			kind = "object";
-			title = "Demeter Beta";
-			content = 4074;
-			visible = true;
-			range = {
-				y = 0;
-				x = 0;
-			};
-			objectId = 5;
-		};
-		[64] = {
-			kind = "object";
-			title = "Demeter Beta";
-			content = 4075;
-			visible = true;
-			range = {
-				y = 0;
-				x = 0;
-			};
-			objectId = 5;
-		};
-		[65] = {
-			kind = "object";
-			title = "Demeter Beta";
-			content = 4076;
-			visible = true;
-			range = {
-				y = 0;
-				x = 0;
-			};
-			objectId = 5;
-		};
-		[66] = {
-			content = 4150;
-			kind = "freestanding";
-			range = {
-				y = 0;
-				x = 0;
-			};
-			title = "Elysium System";
-		};
-		[67] = {
-			content = 4151;
-			kind = "freestanding";
-			range = {
-				y = 0;
-				x = 0;
-			};
-			title = "Elysium System";
-		};
-		[68] = {
-			kind = "object";
-			title = "Cruiser";
-			content = 4152;
-			visible = true;
-			range = {
-				y = 0;
-				x = 0;
-			};
-			objectId = 0;
-		};
-		[69] = {
-			kind = "object";
-			title = "Transport";
-			content = 4153;
-			visible = true;
-			range = {
-				y = 0;
-				x = 0;
-			};
-			objectId = 5;
-		};
-		[70] = {
-			kind = "object";
-			title = "Transport";
-			content = 4156;
-			visible = true;
-			range = {
-				y = 0;
-				x = 0;
-			};
-			objectId = 7;
-		};
-		[71] = {
-			kind = "object";
-			title = "Battlecruiser";
-			content = 4155;
-			visible = true;
-			range = {
-				y = 0;
-				x = 0;
-			};
-			objectId = 6;
-		};
-		[72] = {
-			kind = "object";
-			title = "Transport";
-			content = 4154;
-			visible = true;
-			range = {
-				y = 0;
-				x = 0;
-			};
-			objectId = 9;
-		};
-		[73] = {
-			content = 4250;
-			kind = "freestanding";
-			range = {
-				y = 0;
-				x = 0;
-			};
-			title = "Aeneas System";
-		};
-		[74] = {
-			kind = "object";
-			title = "Cruiser";
-			content = 4255;
-			visible = false;
-			range = {
-				y = 0;
-				x = 0;
-			};
-			objectId = 0;
-		};
-		[75] = {
-			kind = "object";
-			title = "Aeneas Beta";
-			content = 4251;
-			visible = false;
-			range = {
-				y = 0;
-				x = 0;
-			};
-			objectId = 8;
-		};
-		[76] = {
-			kind = "object";
-			title = "Aeneas Alpha";
-			content = 4256;
-			visible = false;
-			range = {
-				y = 0;
-				x = 0;
-			};
-			objectId = 1;
-		};
-		[77] = {
-			kind = "object";
-			title = "Aeneas Alpha";
-			content = 4252;
-			visible = false;
-			range = {
-				y = 0;
-				x = 0;
-			};
-			objectId = 1;
-		};
-		[78] = {
-			kind = "object";
-			title = "Aeneas Beta";
-			content = 4253;
-			visible = true;
-			range = {
-				y = 0;
-				x = 0;
-			};
-			objectId = 8;
-		};
-		[79] = {
-			kind = "object";
-			title = "Flak Drone";
-			content = 4254;
-			visible = false;
-			range = {
-				y = 0;
-				x = 0;
-			};
-			objectId = 6;
-		};
-		[80] = {
-			kind = "object";
-			title = "Heavy Destroyer";
-			content = 4257;
-			visible = false;
-			range = {
-				y = 0;
-				x = 0;
-			};
-			objectId = 5;
-		};
-		[81] = {
-			content = 4450;
-			kind = "no point";
-			range = {
-				y = 0;
-				x = 0;
-			};
-			title = "Hades System";
-		};
-		[82] = {
-			kind = "object";
-			title = "Hades Alpha";
-			content = 4451;
-			visible = false;
-			range = {
-				y = 0;
-				x = 0;
-			};
-			objectId = 12;
-		};
-		[83] = {
-			kind = "object";
-			title = "Power Station O-1";
-			content = 4452;
-			visible = true;
-			range = {
-				y = 0;
-				x = 0;
-			};
-			objectId = 2;
-		};
-		[84] = {
-			kind = "object";
-			title = "Power Station O-2";
-			content = 4453;
-			visible = true;
-			range = {
-				y = 0;
-				x = 0;
-			};
-			objectId = 0;
-		};
-		[85] = {
-			kind = "object";
-			title = "Power Station O-3";
-			content = 4454;
-			visible = true;
-			range = {
-				y = 0;
-				x = 0;
-			};
-			objectId = 1;
-		};
-		[86] = {
-			kind = "object";
-			title = "Hades Beta";
-			content = 4455;
-			visible = true;
-			range = {
-				y = 0;
-				x = 0;
-			};
-			objectId = 13;
-		};
-		[87] = {
-			kind = "object";
-			title = "Power Station G-1";
-			content = 4456;
-			visible = true;
-			range = {
-				y = 0;
-				x = 0;
-			};
-			objectId = 5;
-		};
-		[88] = {
-			kind = "object";
-			title = "Power Station G-2";
-			content = 4457;
-			visible = true;
-			range = {
-				y = 0;
-				x = 0;
-			};
-			objectId = 3;
-		};
-		[89] = {
-			kind = "object";
-			title = "Power Station G-3";
-			content = 4458;
-			visible = true;
-			range = {
-				y = 0;
-				x = 0;
-			};
-			objectId = 4;
-		};
-		[90] = {
-			content = 4500;
-			kind = "freestanding";
-			range = {
-				y = 0;
-				x = 0;
-			};
-			title = "EACSR Banadee";
-		};
-		[91] = {
-			content = 4506;
-			kind = "freestanding";
-			range = {
-				y = 0;
-				x = 0;
-			};
-			title = "EACSR Banadee";
-		};
-		[92] = {
-			kind = "object";
-			title = "Heavy Destroyer";
-			content = 4501;
-			visible = true;
-			range = {
-				y = 0;
-				x = 0;
-			};
-			objectId = 11;
-		};
-		[93] = {
-			content = 4502;
-			kind = "freestanding";
-			range = {
-				y = 0;
-				x = 0;
-			};
-			title = "Secorem";
-		};
-		[94] = {
-			content = 4503;
-			kind = "freestanding";
-			range = {
-				y = 0;
-				x = 0;
-			};
-			title = "Escape Pod";
-		};
-		[95] = {
-			kind = "object";
-			title = "Secorem Jump Gate";
-			content = 4504;
-			visible = true;
-			range = {
-				y = 0;
-				x = 0;
-			};
-			objectId = 7;
-		};
-		[96] = {
-			content = 4505;
-			kind = "freestanding";
-			range = {
-				y = 0;
-				x = 0;
-			};
-			title = "Secorem";
-		};
-		[97] = {
-			content = 4550;
-			kind = "freestanding";
-			range = {
-				y = 0;
-				x = 0;
-			};
-			title = "Thasero Station";
-		};
-		[98] = {
-			kind = "object";
-			title = "Thasero Alpha";
-			content = 4551;
-			visible = true;
-			range = {
-				y = 0;
-				x = 0;
-			};
-			objectId = 0;
-		};
-		[99] = {
-			kind = "object";
-			title = "Heavy Destroyer";
-			content = 4552;
-			visible = true;
-			range = {
-				y = 0;
-				x = 0;
-			};
-			objectId = 3;
-		};
-		[100] = {
-			kind = "object";
-			title = "Carrier";
-			content = 4553;
-			visible = false;
-			range = {
-				y = 0;
-				x = 0;
-			};
-			objectId = 5;
-		};
-		[101] = {
-			kind = "object";
-			title = "Battleship";
-			content = 4554;
-			visible = true;
-			range = {
-				y = 0;
-				x = 0;
-			};
-			objectId = 6;
-		};
-		[102] = {
-			kind = "object";
-			title = "Thasero Station";
-			content = 4556;
-			visible = false;
-			range = {
-				y = 0;
-				x = 0;
-			};
-			objectId = 2;
-		};
-		[103] = {
-			kind = "object";
-			title = "Thasero Beta";
-			content = 4557;
-			visible = false;
-			range = {
-				y = 0;
-				x = 0;
-			};
-			objectId = 1;
-		};
-		[104] = {
-			kind = "object";
-			title = "Thasero Beta";
-			content = 4558;
-			visible = true;
-			range = {
-				y = 0;
-				x = 0;
-			};
-			objectId = 1;
-		};
-		[105] = {
-			content = 4559;
-			kind = "freestanding";
-			range = {
-				y = 0;
-				x = 0;
-			};
-			title = "The Actualizer";
-		};
-		[106] = {
-			content = 4600;
-			kind = "freestanding";
-			range = {
-				y = 0;
-				x = 0;
-			};
-			title = "Ser System";
-		};
-		[107] = {
-			content = 4601;
-			kind = "freestanding";
-			range = {
-				y = 0;
-				x = 0;
-			};
-			title = "Ser System";
-		};
-		[108] = {
-			kind = "object";
-			title = "Research Vessel";
-			content = 4602;
-			visible = true;
-			range = {
-				y = 0;
-				x = 0;
-			};
-			objectId = 1;
-		};
-		[109] = {
-			kind = "object";
-			title = "Cruiser";
-			content = 4603;
-			visible = true;
-			range = {
-				y = 0;
-				x = 0;
-			};
-			objectId = 2;
-		};
-		[110] = {
-			kind = "object";
-			title = "Heavy Destroyer";
-			content = 4604;
-			visible = true;
-			range = {
-				y = 0;
-				x = 0;
-			};
-			objectId = 3;
-		};
-		[111] = {
-			kind = "object";
-			title = "Omisha Station";
-			content = 4650;
-			visible = false;
-			range = {
-				y = 0;
-				x = 0;
-			};
-			objectId = 0;
-		};
-		[112] = {
-			kind = "object";
-			title = "Command Buoy A";
-			content = 4655;
-			visible = true;
-			range = {
-				y = 0;
-				x = 0;
-			};
-			objectId = 1;
-		};
-		[113] = {
-			kind = "object";
-			title = "Build Moon";
-			content = 4652;
-			visible = true;
-			range = {
-				y = 0;
-				x = 0;
-			};
-			objectId = 5;
-		};
-		[114] = {
-			kind = "object";
-			title = "Combat Buoy A";
-			content = 4653;
-			visible = false;
-			range = {
-				y = 0;
-				x = 0;
-			};
-			objectId = 6;
-		};
-		[115] = {
-			kind = "object";
-			title = "Extra Ships";
-			content = 4654;
-			visible = true;
-			range = {
-				y = 0;
-				x = 0;
-			};
-			objectId = 15;
-		};
-		[116] = {
-			kind = "object";
-			title = "Omisha Jump Gate";
-			content = 4656;
-			visible = true;
-			range = {
-				y = 0;
-				x = 0;
-			};
-			objectId = 18;
-		};
-		[117] = {
-			content = 4700;
-			kind = "freestanding";
-			range = {
-				y = 0;
-				x = 0;
-			};
-			title = "Palyos Belt";
-		};
-		[118] = {
-			kind = "object";
-			title = "Heavy Cruiser";
-			content = 4701;
-			visible = false;
-			range = {
-				y = 0;
-				x = 0;
-			};
-			objectId = 0;
-		};
-		[119] = {
-			kind = "object";
-			title = "Astrominer";
-			content = 4702;
-			visible = false;
-			range = {
-				y = 0;
-				x = 0;
-			};
-			objectId = 4;
-		};
-		[120] = {
-			content = 4703;
-			kind = "freestanding";
-			range = {
-				y = 0;
-				x = 0;
-			};
-			title = "Asteroid";
-		};
-		[121] = {
-			content = 4800;
-			kind = "freestanding";
-			range = {
-				y = 0;
-				x = 0;
-			};
-			title = "Charon System";
-		};
-		[122] = {
-			kind = "object";
-			title = "Cruiser";
-			content = 4801;
-			visible = false;
-			range = {
-				y = 0;
-				x = 0;
-			};
-			objectId = 6;
-		};
-		[123] = {
-			kind = "object";
-			title = "Transport";
-			content = 4802;
-			visible = true;
-			range = {
-				y = 0;
-				x = 0;
-			};
-			objectId = 1;
-		};
-		[124] = {
-			kind = "object";
-			title = "Fighter";
-			content = 4803;
-			visible = true;
-			range = {
-				y = 0;
-				x = 0;
-			};
-			objectId = 7;
-		};
-		[125] = {
-			kind = "object";
-			title = "Charon Station";
-			content = 4804;
-			visible = true;
-			range = {
-				y = 0;
-				x = 0;
-			};
-			objectId = 0;
-		};
-		[126] = {
-			content = 4900;
-			kind = "freestanding";
-			range = {
-				y = 0;
-				x = 0;
-			};
-			title = "Heshac System";
-		};
-		[127] = {
-			content = 4901;
-			kind = "freestanding";
-			range = {
-				y = 0;
-				x = 0;
-			};
-			title = "Heshac System";
-		};
-		[128] = {
-			kind = "object";
-			title = "Heavy Destroyer";
-			content = 4902;
-			visible = false;
-			range = {
-				y = 0;
-				x = 0;
-			};
-			objectId = 1;
-		};
-		[129] = {
-			kind = "object";
-			title = "";
-			content = 4903;
-			visible = true;
-			range = {
-				y = 0;
-				x = 0;
-			};
-			objectId = 0;
-		};
-		[130] = {
-			kind = "object";
-			title = "Lab";
-			content = 4904;
-			visible = false;
-			range = {
-				y = 0;
-				x = 0;
-			};
-			objectId = 2;
-		};
-		[131] = {
-			kind = "object";
-			title = "Heavy Destroyer";
-			content = 4905;
-			visible = false;
-			range = {
-				y = 0;
-				x = 0;
-			};
-			objectId = 1;
-		};
-		[132] = {
-			kind = "object";
-			title = "Cruiser";
-			content = 4906;
-			visible = true;
-			range = {
-				y = 0;
-				x = 0;
-			};
-			objectId = 12;
-		};
-		[133] = {
-			content = 4907;
-			kind = "freestanding";
-			range = {
-				y = 0;
-				x = 0;
-			};
-			title = "Heshac System";
-		};
-		[134] = {
-			content = 5100;
-			kind = "freestanding";
-			range = {
-				y = 0;
-				x = 0;
-			};
-			title = "Beta Pictoris";
-		};
-		[135] = {
-			kind = "object";
-			title = "Gate Ship";
-			content = 5101;
-			visible = true;
-			range = {
-				y = 0;
-				x = 0;
-			};
-			objectId = 7;
-		};
-		[136] = {
-			kind = "object";
-			title = "Pictoris Alpha";
-			content = 5102;
-			visible = true;
-			range = {
-				y = 0;
-				x = 0;
-			};
-			objectId = 0;
-		};
-		[137] = {
-			kind = "object";
-			title = "Pictoris Alpha 1";
-			content = 5103;
-			visible = true;
-			range = {
-				y = 0;
-				x = 0;
-			};
-			objectId = 1;
-		};
-		[138] = {
-			kind = "object";
-			title = "Power Station BP1";
-			content = 5104;
-			visible = true;
-			range = {
-				y = 0;
-				x = 0;
-			};
-			objectId = 2;
-		};
-		[139] = {
-			kind = "object";
-			title = "Pictoris Beta";
-			content = 5105;
-			visible = false;
-			range = {
-				y = 0;
-				x = 0;
-			};
-			objectId = 5;
-		};
-		[140] = {
-			kind = "object";
-			title = "Gate Ship";
-			content = 5106;
-			visible = false;
-			range = {
-				y = 0;
-				x = 0;
-			};
-			objectId = 7;
-		};
-		[141] = {
-			content = 5150;
-			kind = "freestanding";
-			range = {
-				y = 0;
-				x = 0;
-			};
-			title = "Sol";
-		};
-		[142] = {
-			content = 5151;
-			kind = "freestanding";
-			range = {
-				y = 0;
-				x = 0;
-			};
-			title = "Sol";
-		};
-		[143] = {
-			kind = "object";
-			title = "Modified Cruiser";
-			content = 5152;
-			visible = true;
-			range = {
-				y = 0;
-				x = 0;
-			};
-			objectId = 0;
-		};
-		[144] = {
-			content = 5153;
-			kind = "freestanding";
-			range = {
-				y = 0;
-				x = 0;
-			};
-			title = "Sol";
-		};
-		[145] = {
-			kind = "object";
-			title = "Gate Ship";
-			content = 5154;
-			visible = false;
-			range = {
-				y = 0;
-				x = 0;
-			};
-			objectId = 2;
-		};
-		[146] = {
-			content = 5155;
-			kind = "freestanding";
-			range = {
-				y = 0;
-				x = 0;
-			};
-			title = "Sol";
-		};
-		[147] = {
-			content = 5050;
-			kind = "freestanding";
-			range = {
-				y = 0;
-				x = 0;
-			};
-			title = "Proxima Centauri System";
-		};
-		[148] = {
-			kind = "object";
-			title = "Gunship";
-			content = 5051;
-			visible = false;
-			range = {
-				y = 0;
-				x = 0;
-			};
-			objectId = 2;
-		};
-		[149] = {
-			kind = "object";
-			title = "Transport";
-			content = 5052;
-			visible = true;
-			range = {
-				y = 0;
-				x = 0;
-			};
-			objectId = 8;
-		};
-		[150] = {
-			kind = "object";
-			title = "Carrier";
-			content = 5053;
-			visible = true;
-			range = {
-				y = 0;
-				x = 0;
-			};
-			objectId = 24;
-		};
-		[151] = {
-			kind = "object";
-			title = "Transport";
-			content = 5054;
-			visible = true;
-			range = {
-				y = 0;
-				x = 0;
-			};
-			objectId = 3;
-		};
-		[152] = {
-			kind = "object";
-			title = "Carrier";
-			content = 5055;
-			visible = false;
-			range = {
-				y = 0;
-				x = 0;
-			};
-			objectId = 9;
-		};
-		[153] = {
-			kind = "object";
-			title = "Proxima Beta";
-			content = 5056;
-			visible = false;
-			range = {
-				y = 0;
-				x = 0;
-			};
-			objectId = 1;
-		};
-		[154] = {
-			content = 5000;
-			kind = "freestanding";
-			range = {
-				y = 0;
-				x = 0;
-			};
-			title = "Lalande";
-		};
-		[155] = {
-			kind = "object";
-			title = "Heavy Destroyer";
-			content = 5001;
-			visible = true;
-			range = {
-				y = 0;
-				x = 0;
-			};
-			objectId = 5;
-		};
-		[156] = {
-			kind = "object";
-			title = "Cruiser";
-			content = 5002;
-			visible = false;
-			range = {
-				y = 0;
-				x = 0;
-			};
-			objectId = 6;
-		};
-		[157] = {
-			kind = "object";
-			title = "Bunker Station";
-			content = 5003;
-			visible = true;
-			range = {
-				y = 0;
-				x = 0;
-			};
-			objectId = 4;
-		};
-		[158] = {
-			kind = "object";
-			title = "Outpost 1";
-			content = 5004;
-			visible = true;
-			range = {
-				y = 0;
-				x = 0;
-			};
-			objectId = 12;
-		};
-		[159] = {
-			kind = "object";
-			title = "Lalande Beta";
-			content = 5005;
-			visible = true;
-			range = {
-				y = 0;
-				x = 0;
-			};
-			objectId = 3;
-		};
-		[160] = {
-			content = 4750;
-			kind = "freestanding";
-			range = {
-				y = 0;
-				x = 0;
-			};
-			title = "Elysium System";
-		};
-		[161] = {
-			content = 4751;
-			kind = "freestanding";
-			range = {
-				y = 0;
-				x = 0;
-			};
-			title = "Elysium System";
-		};
-		[162] = {
-			kind = "object";
-			title = "Heavy Cruiser";
-			content = 4752;
-			visible = true;
-			range = {
-				y = 0;
-				x = 0;
-			};
-			objectId = 5;
-		};
-		[163] = {
-			kind = "object";
-			title = "Transport";
-			content = 4753;
-			visible = true;
-			range = {
-				y = 0;
-				x = 0;
-			};
-			objectId = 1;
-		};
-		[164] = {
-			kind = "object";
-			title = "Cell 1";
-			content = 4754;
-			visible = false;
-			range = {
-				y = 0;
-				x = 0;
-			};
-			objectId = 3;
-		};
-		[165] = {
-			kind = "object";
-			title = "Passenger Liner";
-			content = 4755;
-			visible = false;
-			range = {
-				y = 0;
-				x = 0;
-			};
-			objectId = 0;
-		};
-		[166] = {
-			content = 4756;
-			kind = "freestanding";
-			range = {
-				y = 0;
-				x = 0;
-			};
-			title = "Elysium System";
-		};
-		[167] = {
-			kind = "object";
-			title = "Escort";
-			content = 4757;
-			visible = false;
-			range = {
-				y = 0;
-				x = 0;
-			};
-			objectId = 6;
-		};
-		[168] = {
-			content = 4758;
-			kind = "freestanding";
-			range = {
-				y = 0;
-				x = 0;
-			};
-			title = "Elysium System";
-		};
-		[169] = {
-			content = -1;
-			kind = "no point";
-			range = {
-				y = 0;
-				x = 0;
-			};
-			title = "";
-		};
-		[170] = {
-			content = -1;
-			kind = "no point";
-			range = {
-				y = 0;
-				x = 0;
-			};
-			title = "";
-		};
-		[171] = {
-			content = -1;
-			kind = "no point";
-			range = {
-				y = 0;
-				x = 0;
-			};
-			title = "";
-		};
-		[172] = {
-			content = -1;
-			kind = "no point";
-			range = {
-				y = 0;
-				x = 0;
-			};
-			title = "";
-		};
-		[173] = {
-			content = -1;
-			kind = "no point";
-			range = {
-				y = 0;
-				x = 0;
-			};
-			title = "";
-		};
-		[174] = {
-			content = -1;
-			kind = "no point";
-			range = {
-				y = 0;
-				x = 0;
-			};
-			title = "";
-		};
-		[175] = {
-			content = -1;
-			kind = "no point";
-			range = {
-				y = 0;
-				x = 0;
-			};
-			title = "";
-		};
-		[176] = {
-			content = -1;
-			kind = "no point";
-			range = {
-				y = 0;
-				x = 0;
-			};
-			title = "";
-		};
-		[177] = {
-			content = -1;
-			kind = "no point";
-			range = {
-				y = 0;
-				x = 0;
-			};
-			title = "";
-		};
-		[178] = {
-			content = -1;
-			kind = "no point";
-			range = {
-				y = 0;
-				x = 0;
-			};
-			title = "";
-		};
-		[179] = {
-			content = -1;
-			kind = "no point";
-			range = {
-				y = 0;
-				x = 0;
-			};
-			title = "";
-		};
-		[180] = {
-			content = -1;
-			kind = "no point";
-			range = {
-				y = 0;
-				x = 0;
-			};
-			title = "";
-		};
-		[181] = {
-			content = -1;
-			kind = "no point";
-			range = {
-				y = 0;
-				x = 0;
-			};
-			title = "";
-		};
-		[182] = {
-			content = -1;
-			kind = "no point";
-			range = {
-				y = 0;
-				x = 0;
-			};
-			title = "";
-		};
-		[183] = {
-			content = -1;
-			kind = "no point";
-			range = {
-				y = 0;
-				x = 0;
-			};
-			title = "";
-		};
-		[184] = {
-			content = -1;
-			kind = "no point";
-			range = {
-				y = 0;
-				x = 0;
-			};
-			title = "";
-		};
-		[185] = {
-			content = -1;
-			kind = "no point";
-			range = {
-				y = 0;
-				x = 0;
-			};
-			title = "";
-		};
-		[186] = {
-			content = -1;
-			kind = "no point";
-			range = {
-				y = 0;
-				x = 0;
-			};
-			title = "";
-		};
-		[187] = {
-			content = -1;
-			kind = "no point";
-			range = {
-				y = 0;
-				x = 0;
-			};
-			title = "";
-		};
-		[188] = {
-			content = -1;
-			kind = "no point";
-			range = {
-				y = 0;
-				x = 0;
-			};
-			title = "";
-		};
-		[189] = {
-			content = -1;
-			kind = "no point";
-			range = {
-				y = 0;
-				x = 0;
-			};
-			title = "";
-		};
-		[190] = {
-			content = -1;
-			kind = "no point";
-			range = {
-				y = 0;
-				x = 0;
-			};
-			title = "";
-		};
-		[191] = {
-			content = -1;
-			kind = "no point";
-			range = {
-				y = 0;
-				x = 0;
-			};
-			title = "";
-		};
-		[192] = {
-			content = -1;
-			kind = "no point";
-			range = {
-				y = 0;
-				x = 0;
-			};
-			title = "";
-		};
-		[193] = {
-			content = -1;
-			kind = "no point";
-			range = {
-				y = 0;
-				x = 0;
-			};
-			title = "";
-		};
-		[194] = {
-			content = -1;
-			kind = "no point";
-			range = {
-				y = 0;
-				x = 0;
-			};
-			title = "";
-		};
-		[195] = {
-			content = -1;
-			kind = "no point";
-			range = {
-				y = 0;
-				x = 0;
-			};
-			title = "";
-		};
-		[196] = {
-			content = -1;
-			kind = "no point";
-			range = {
-				y = 0;
-				x = 0;
-			};
-			title = "";
-		};
-		[197] = {
-			content = -1;
-			kind = "no point";
-			range = {
-				y = 0;
-				x = 0;
-			};
-			title = "";
-		};
-		[198] = {
-			content = -1;
-			kind = "no point";
-			range = {
-				y = 0;
-				x = 0;
-			};
-			title = "";
-		};
-		[199] = {
-			content = -1;
-			kind = "no point";
-			range = {
-				y = 0;
-				x = 0;
-			};
-			title = "";
-		};
-	};
-	actions = {
-		[0] = {
-			velocityRelative = false;
-			distanceRange = 0;
-			reflexive = true;
-			min = 1;
-			inclusiveFilter = 0;
-			directionRelative = true;
-			delay = 0;
-			subjectOverride = -1;
-			range = 0;
-			baseType = 29;
-			directOverride = -1;
-			owner = 0;
-			type = "create object";
-			exclusiveFilter = 0;
-		};
-		[1] = {
-			velocityRelative = true;
-			distanceRange = 0;
-			reflexive = true;
-			min = 1;
-			inclusiveFilter = 0;
-			directionRelative = true;
-			delay = 0;
-			subjectOverride = -1;
-			range = 0;
-			baseType = 2;
-			directOverride = -1;
-			owner = 0;
-			type = "create object";
-			exclusiveFilter = 0;
-		};
-		[2] = {
-			volume = 16711680;
-			priority = 3;
-			isAbsolute = true;
-			reflexive = true;
-			soundId = 0;
-			inclusiveFilter = 0;
-			volumeRange = 16711680;
-			delay = 0;
-			subjectOverride = -1;
-			persistence = -1392508928;
-			directOverride = -1;
-			owner = 0;
-			type = "play sound";
-			exclusiveFilter = 0;
-			soundRange = 32768000;
-		};
-		[3] = {
-			reflexive = true;
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = -1;
-			range = 15360;
-			minimum = -7680;
-			directOverride = -1;
-			owner = -1;
-			type = "alter offline";
-			exclusiveFilter = 0;
-		};
-		[4] = {
-			relative = true;
-			reflexive = true;
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = -1;
-			range = 0;
-			minimum = 12;
-			directOverride = -1;
-			owner = -1;
-			type = "alter thrust";
-			exclusiveFilter = 0;
-		};
-		[5] = {
-			reflexive = true;
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = -1;
-			range = 1024;
-			minimum = -512;
-			directOverride = -1;
-			owner = -1;
-			type = "alter current turn rate";
-			exclusiveFilter = 0;
-		};
-		[6] = {
-			velocityRelative = false;
-			distanceRange = 0;
-			reflexive = true;
-			min = 1;
-			inclusiveFilter = 0;
-			directionRelative = true;
-			delay = 0;
-			subjectOverride = -1;
-			range = 0;
-			baseType = 53;
-			directOverride = -1;
-			owner = 0;
-			type = "create object";
-			exclusiveFilter = 0;
-		};
-		[7] = {
-			reflexive = true;
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = -1;
-			directOverride = -1;
-			owner = 0;
-			type = "die";
-			exclusiveFilter = 0;
-		};
-		[8] = {
-			volume = 0;
-			priority = 3;
-			isAbsolute = true;
-			reflexive = true;
-			soundId = 0;
-			inclusiveFilter = 0;
-			volumeRange = 16711680;
-			delay = 0;
-			subjectOverride = -1;
-			persistence = 2046820352;
-			directOverride = -1;
-			owner = 0;
-			type = "play sound";
-			exclusiveFilter = 0;
-			soundRange = 32899072;
-		};
-		[9] = {
-			velocityRelative = false;
-			distanceRange = 0;
-			reflexive = true;
-			min = 1;
-			inclusiveFilter = 0;
-			directionRelative = true;
-			delay = 0;
-			subjectOverride = -1;
-			range = 0;
-			baseType = 53;
-			directOverride = -1;
-			owner = 0;
-			type = "create object";
-			exclusiveFilter = 0;
-		};
-		[10] = {
-			reflexive = true;
-			how = "expire";
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = -1;
-			directOverride = -1;
-			owner = 0;
-			type = "die";
-			exclusiveFilter = 0;
-		};
-		[11] = {
-			velocityRelative = true;
-			distanceRange = 0;
-			reflexive = true;
-			min = 1;
-			inclusiveFilter = 0;
-			directionRelative = true;
-			delay = 0;
-			subjectOverride = -1;
-			range = 0;
-			baseType = 3;
-			directOverride = -1;
-			owner = 0;
-			type = "create object";
-			exclusiveFilter = 0;
-		};
-		[12] = {
-			velocityRelative = false;
-			distanceRange = 0;
-			reflexive = true;
-			min = 1;
-			inclusiveFilter = 0;
-			directionRelative = true;
-			delay = 0;
-			subjectOverride = -1;
-			range = 0;
-			baseType = 8;
-			directOverride = -1;
-			owner = 0;
-			type = "create object";
-			exclusiveFilter = 0;
-		};
-		[13] = {
-			reflexive = true;
-			how = "expire";
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = -1;
-			directOverride = -1;
-			owner = 0;
-			type = "die";
-			exclusiveFilter = 0;
-		};
-		[14] = {
-			velocityRelative = true;
-			distanceRange = 0;
-			reflexive = true;
-			min = 1;
-			inclusiveFilter = 0;
-			directionRelative = true;
-			delay = 0;
-			subjectOverride = -1;
-			range = 0;
-			baseType = 9;
-			directOverride = -1;
-			owner = 0;
-			type = "create object";
-			exclusiveFilter = 0;
-		};
-		[15] = {
-			velocityRelative = false;
-			distanceRange = 0;
-			reflexive = true;
-			min = 1;
-			inclusiveFilter = 0;
-			directionRelative = true;
-			delay = 0;
-			subjectOverride = -1;
-			range = 0;
-			baseType = 29;
-			directOverride = -1;
-			owner = 0;
-			type = "create object";
-			exclusiveFilter = 0;
-		};
-		[16] = {
-			volume = 0;
-			priority = 3;
-			isAbsolute = true;
-			reflexive = true;
-			soundId = 0;
-			inclusiveFilter = 0;
-			volumeRange = 16711680;
-			delay = 0;
-			subjectOverride = -1;
-			persistence = 0;
-			directOverride = -1;
-			owner = 0;
-			type = "play sound";
-			exclusiveFilter = 0;
-			soundRange = 32964608;
-		};
-		[17] = {
-			count = 10;
-			reflexive = true;
-			inclusiveFilter = 0;
-			velocityRange = 2.0;
-			delay = 0;
-			subjectOverride = -1;
-			color = 1;
-			directOverride = -1;
-			veloctiy = 20;
-			owner = 0;
-			type = "make sparks";
-			exclusiveFilter = 0;
-		};
-		[18] = {
-			velocityRelative = true;
-			distanceRange = 0;
-			reflexive = true;
-			min = 2;
-			inclusiveFilter = 0;
-			directionRelative = true;
-			delay = 0;
-			subjectOverride = -1;
-			range = 3;
-			baseType = 26;
-			directOverride = -1;
-			owner = 0;
-			type = "create object";
-			exclusiveFilter = 0;
-		};
-		[19] = {
-			volume = 11796480;
-			priority = 3;
-			isAbsolute = true;
-			reflexive = true;
-			soundId = 0;
-			inclusiveFilter = 0;
-			volumeRange = 16711680;
-			delay = 0;
-			subjectOverride = -1;
-			persistence = 50331648;
-			directOverride = -1;
-			owner = 0;
-			type = "play sound";
-			exclusiveFilter = 0;
-			soundRange = 33095680;
-		};
-		[20] = {
-			velocityRelative = false;
-			distanceRange = 0;
-			reflexive = true;
-			min = 1;
-			inclusiveFilter = 0;
-			directionRelative = true;
-			delay = 0;
-			subjectOverride = -1;
-			range = 0;
-			baseType = 34;
-			directOverride = -1;
-			owner = 0;
-			type = "create object";
-			exclusiveFilter = 0;
-		};
-		[21] = {
-			relative = true;
-			reflexive = false;
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = -1;
-			range = 6144;
-			minimum = 6144;
-			directOverride = -1;
-			owner = 0;
-			type = "alter velocity";
-			exclusiveFilter = 0;
-		};
-		[22] = {
-			reflexive = false;
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = -1;
-			range = 1024;
-			minimum = -512;
-			directOverride = -1;
-			owner = 0;
-			type = "alter offline";
-			exclusiveFilter = 0;
-		};
-		[23] = {
-			reflexive = true;
-			how = "expire";
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = -1;
-			directOverride = -1;
-			owner = 0;
-			type = "die";
-			exclusiveFilter = 0;
-		};
-		[24] = {
-			volume = 1310720;
-			priority = 5;
-			isAbsolute = true;
-			reflexive = true;
-			soundId = 0;
-			inclusiveFilter = 0;
-			volumeRange = 16711680;
-			delay = 0;
-			subjectOverride = -1;
-			persistence = 520093696;
-			directOverride = -1;
-			owner = 0;
-			type = "play sound";
-			exclusiveFilter = 0;
-			soundRange = 32833536;
-		};
-		[25] = {
-			velocityRelative = false;
-			distanceRange = 32;
-			reflexive = true;
-			min = 1;
-			inclusiveFilter = 0;
-			directionRelative = true;
-			delay = 0;
-			subjectOverride = -1;
-			range = 2;
-			baseType = 11;
-			directOverride = -1;
-			owner = 0;
-			type = "create object";
-			exclusiveFilter = 0;
-		};
-		[26] = {
-			velocityRelative = false;
-			distanceRange = 32;
-			reflexive = true;
-			min = 1;
-			inclusiveFilter = 0;
-			directionRelative = true;
-			delay = 0;
-			subjectOverride = -1;
-			range = 2;
-			baseType = 12;
-			directOverride = -1;
-			owner = 0;
-			type = "create object";
-			exclusiveFilter = 0;
-		};
-		[27] = {
-			velocityRelative = false;
-			distanceRange = 0;
-			reflexive = true;
-			min = 1;
-			inclusiveFilter = 0;
-			directionRelative = true;
-			delay = 0;
-			subjectOverride = -1;
-			range = 0;
-			baseType = 8;
-			directOverride = -1;
-			owner = 0;
-			type = "create object";
-			exclusiveFilter = 0;
-		};
-		[28] = {
-			reflexive = true;
-			how = "expire";
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = -1;
-			directOverride = -1;
-			owner = 0;
-			type = "die";
-			exclusiveFilter = 0;
-		};
-		[29] = {
-			velocityRelative = false;
-			distanceRange = 0;
-			reflexive = true;
-			min = 1;
-			inclusiveFilter = 0;
-			directionRelative = true;
-			delay = 0;
-			subjectOverride = -1;
-			range = 0;
-			baseType = 79;
-			directOverride = -1;
-			owner = 0;
-			type = "create object";
-			exclusiveFilter = 0;
-		};
-		[30] = {
-			reflexive = true;
-			how = "expire";
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = -1;
-			directOverride = -1;
-			owner = 0;
-			type = "die";
-			exclusiveFilter = 0;
-		};
-		[31] = {
-			velocityRelative = false;
-			distanceRange = 0;
-			reflexive = true;
-			min = 1;
-			inclusiveFilter = 0;
-			directionRelative = true;
-			delay = 0;
-			subjectOverride = -1;
-			range = 0;
-			baseType = 35;
-			directOverride = -1;
-			owner = 0;
-			type = "create object";
-			exclusiveFilter = 0;
-		};
-		[32] = {
-			velocityRelative = false;
-			distanceRange = 0;
-			reflexive = true;
-			min = 1;
-			inclusiveFilter = 0;
-			directionRelative = true;
-			delay = 0;
-			subjectOverride = -1;
-			range = 0;
-			baseType = 35;
-			directOverride = -1;
-			owner = 0;
-			type = "create object";
-			exclusiveFilter = 0;
-		};
-		[33] = {
-			velocityRelative = true;
-			distanceRange = 0;
-			reflexive = true;
-			min = 1;
-			inclusiveFilter = 0;
-			directionRelative = true;
-			delay = 0;
-			subjectOverride = -1;
-			range = 0;
-			baseType = 16;
-			directOverride = -1;
-			owner = 0;
-			type = "create object";
-			exclusiveFilter = 0;
-		};
-		[34] = {
-			volume = 15990784;
-			priority = 3;
-			isAbsolute = true;
-			reflexive = true;
-			soundId = 0;
-			inclusiveFilter = 0;
-			volumeRange = 16711680;
-			delay = 0;
-			subjectOverride = -1;
-			persistence = -1392508928;
-			directOverride = -1;
-			owner = 0;
-			type = "play sound";
-			exclusiveFilter = 0;
-			soundRange = 33030144;
-		};
-		[35] = {
-			reflexive = true;
-			how = "expire";
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = -1;
-			directOverride = -1;
-			owner = 0;
-			type = "die";
-			exclusiveFilter = 0;
-		};
-		[36] = {
-			velocityRelative = false;
-			distanceRange = 0;
-			reflexive = true;
-			min = 1;
-			inclusiveFilter = 0;
-			directionRelative = true;
-			delay = 0;
-			subjectOverride = -1;
-			range = 0;
-			baseType = 52;
-			directOverride = -1;
-			owner = 0;
-			type = "create object";
-			exclusiveFilter = 0;
-		};
-		[37] = {
-			velocityRelative = true;
-			distanceRange = 0;
-			reflexive = true;
-			min = 1;
-			inclusiveFilter = 0;
-			directionRelative = true;
-			delay = 0;
-			subjectOverride = -1;
-			range = 0;
-			baseType = 5;
-			directOverride = -1;
-			owner = 0;
-			type = "create object";
-			exclusiveFilter = 0;
-		};
-		[38] = {
-			velocityRelative = true;
-			distanceRange = 0;
-			reflexive = true;
-			min = 1;
-			inclusiveFilter = 0;
-			directionRelative = true;
-			delay = 0;
-			subjectOverride = -1;
-			range = 0;
-			baseType = 21;
-			directOverride = -1;
-			owner = 0;
-			type = "create object";
-			exclusiveFilter = 0;
-		};
-		[39] = {
-			volume = 15204352;
-			priority = 3;
-			isAbsolute = true;
-			reflexive = true;
-			soundId = 0;
-			inclusiveFilter = 0;
-			volumeRange = 16711680;
-			delay = 0;
-			subjectOverride = -1;
-			persistence = -1392508928;
-			directOverride = -1;
-			owner = 0;
-			type = "play sound";
-			exclusiveFilter = 0;
-			soundRange = 33554432;
-		};
-		[40] = {
-			velocityRelative = false;
-			distanceRange = 0;
-			reflexive = true;
-			min = 1;
-			inclusiveFilter = 0;
-			directionRelative = true;
-			delay = 0;
-			subjectOverride = -1;
-			range = 0;
-			baseType = 8;
-			directOverride = -1;
-			owner = 0;
-			type = "create object";
-			exclusiveFilter = 0;
-		};
-		[41] = {
-			reflexive = true;
-			how = "expire";
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = -1;
-			directOverride = -1;
-			owner = 0;
-			type = "die";
-			exclusiveFilter = 0;
-		};
-		[42] = {
-			volume = 0;
-			priority = 3;
-			isAbsolute = true;
-			reflexive = true;
-			soundId = 0;
-			inclusiveFilter = 0;
-			volumeRange = 16711680;
-			delay = 0;
-			subjectOverride = -1;
-			persistence = 0;
-			directOverride = -1;
-			owner = 0;
-			type = "play sound";
-			exclusiveFilter = 0;
-			soundRange = 33882112;
-		};
-		[43] = {
-			volume = 65536;
-			priority = 3;
-			isAbsolute = true;
-			reflexive = true;
-			soundId = 0;
-			inclusiveFilter = 0;
-			volumeRange = 16711680;
-			delay = 0;
-			subjectOverride = -1;
-			persistence = 0;
-			directOverride = -1;
-			owner = 0;
-			type = "play sound";
-			exclusiveFilter = 0;
-			soundRange = 33947648;
-		};
-		[44] = {
-			reflexive = false;
-			inclusiveFilter = 4029677568;
-			speed = 32;
-			delay = 0;
-			subjectOverride = -1;
-			directOverride = -1;
-			owner = -1;
-			type = "land at";
-			exclusiveFilter = 4294967295;
-		};
-		[45] = {
-			volume = 24313856;
-			priority = 5;
-			isAbsolute = true;
-			reflexive = false;
-			soundId = 0;
-			inclusiveFilter = 4029677568;
-			volumeRange = 16711680;
-			delay = 0;
-			subjectOverride = -1;
-			persistence = 1593835520;
-			directOverride = -1;
-			owner = -1;
-			type = "play sound";
-			exclusiveFilter = 4294967295;
-			soundRange = 33619968;
-		};
-		[46] = {
-			velocityRelative = true;
-			distanceRange = 0;
-			reflexive = true;
-			min = 1;
-			inclusiveFilter = 0;
-			directionRelative = true;
-			delay = 0;
-			subjectOverride = -1;
-			range = 0;
-			baseType = 81;
-			directOverride = -1;
-			owner = 0;
-			type = "create object";
-			exclusiveFilter = 0;
-		};
-		[47] = {
-			volume = 16711680;
-			priority = 3;
-			isAbsolute = true;
-			reflexive = true;
-			soundId = 0;
-			inclusiveFilter = 0;
-			volumeRange = 16711680;
-			delay = 0;
-			subjectOverride = -1;
-			persistence = 0;
-			directOverride = -1;
-			owner = 0;
-			type = "play sound";
-			exclusiveFilter = 0;
-			soundRange = 34996224;
-		};
-		[48] = {
-			reflexive = false;
-			inclusiveFilter = 0;
-			page = 1;
-			delay = 0;
-			subjectOverride = -1;
-			directOverride = -1;
-			owner = 0;
-			type = "display message";
-			id = 4220;
-			exclusiveFilter = 0;
-		};
-		[49] = {
-			reflexive = true;
-			how = "expire";
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = -1;
-			directOverride = -1;
-			owner = 0;
-			type = "die";
-			exclusiveFilter = 0;
-		};
-		[50] = {
-			reflexive = false;
-			inclusiveFilter = 1024;
-			value = 150;
-			delay = 0;
-			subjectOverride = -1;
-			directOverride = -1;
-			owner = 0;
-			type = "alter energy";
-			exclusiveFilter = 0;
-		};
-		[51] = {
-			reflexive = false;
-			how = "expire";
-			inclusiveFilter = 1024;
-			delay = 0;
-			subjectOverride = -1;
-			directOverride = -1;
-			owner = 0;
-			type = "die";
-			exclusiveFilter = 0;
-		};
-		[52] = {
-			volume = 0;
-			priority = 3;
-			isAbsolute = true;
-			reflexive = false;
-			soundId = 0;
-			inclusiveFilter = 1024;
-			volumeRange = 16711680;
-			delay = 0;
-			subjectOverride = -1;
-			persistence = 0;
-			directOverride = -1;
-			owner = 0;
-			type = "play sound";
-			exclusiveFilter = 0;
-			soundRange = 33685504;
-		};
-		[53] = {
-			volume = 7077888;
-			priority = 4;
-			isAbsolute = true;
-			reflexive = true;
-			soundId = 0;
-			inclusiveFilter = 0;
-			volumeRange = 16711680;
-			delay = 0;
-			subjectOverride = -1;
-			persistence = -117440512;
-			directOverride = -1;
-			owner = 0;
-			type = "play sound";
-			exclusiveFilter = 0;
-			soundRange = 33751040;
-		};
-		[54] = {
-			velocityRelative = false;
-			distanceRange = 0;
-			reflexive = true;
-			min = 1;
-			inclusiveFilter = 0;
-			directionRelative = true;
-			delay = 0;
-			subjectOverride = -1;
-			range = 2;
-			baseType = 11;
-			directOverride = -1;
-			owner = 0;
-			type = "create object";
-			exclusiveFilter = 0;
-		};
-		[55] = {
-			velocityRelative = false;
-			distanceRange = 0;
-			reflexive = true;
-			min = 1;
-			inclusiveFilter = 0;
-			directionRelative = true;
-			delay = 0;
-			subjectOverride = -1;
-			range = 2;
-			baseType = 22;
-			directOverride = -1;
-			owner = 0;
-			type = "create object";
-			exclusiveFilter = 0;
-		};
-		[56] = {
-			reflexive = false;
-			inclusiveFilter = 1024;
-			delay = 0;
-			subjectOverride = -1;
-			directOverride = -1;
-			owner = 0;
-			type = "alter special weapon";
-			id = 6;
-			exclusiveFilter = 0;
-		};
-		[57] = {
-			reflexive = true;
-			how = "expire";
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = -1;
-			directOverride = -1;
-			owner = 0;
-			type = "die";
-			exclusiveFilter = 0;
-		};
-		[58] = {
-			reflexive = true;
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = -1;
-			range = 0;
-			minimum = 15;
-			directOverride = -1;
-			owner = 0;
-			type = "alter hidden";
-			exclusiveFilter = 0;
-		};
-		[59] = {
-			reflexive = true;
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = -1;
-			range = 0;
-			minimum = 16;
-			directOverride = -1;
-			owner = 0;
-			type = "alter hidden";
-			exclusiveFilter = 0;
-		};
-		[60] = {
-			reflexive = true;
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = -1;
-			range = 0;
-			minimum = 17;
-			directOverride = -1;
-			owner = 0;
-			type = "alter hidden";
-			exclusiveFilter = 0;
-		};
-		[61] = {
-			volume = 2097152;
-			priority = 3;
-			isAbsolute = true;
-			reflexive = true;
-			soundId = 0;
-			inclusiveFilter = 0;
-			volumeRange = 16711680;
-			delay = 0;
-			subjectOverride = -1;
-			persistence = -1392508928;
-			directOverride = -1;
-			owner = 0;
-			type = "play sound";
-			exclusiveFilter = 0;
-			soundRange = 32833536;
-		};
-		[62] = {
-			count = 10;
-			reflexive = true;
-			inclusiveFilter = 0;
-			velocityRange = 2.0;
-			delay = 0;
-			subjectOverride = -1;
-			color = 1;
-			directOverride = -1;
-			veloctiy = 20;
-			owner = 0;
-			type = "make sparks";
-			exclusiveFilter = 0;
-		};
-		[63] = {
-			volume = 6291456;
-			priority = 3;
-			isAbsolute = true;
-			reflexive = true;
-			soundId = 0;
-			inclusiveFilter = 0;
-			volumeRange = 16711680;
-			delay = 0;
-			subjectOverride = -1;
-			persistence = 0;
-			directOverride = -1;
-			owner = 0;
-			type = "play sound";
-			exclusiveFilter = 0;
-			soundRange = 32833536;
-		};
-		[64] = {
-			velocityRelative = false;
-			distanceRange = 0;
-			reflexive = true;
-			min = 1;
-			inclusiveFilter = 0;
-			directionRelative = true;
-			delay = 0;
-			subjectOverride = -1;
-			range = 0;
-			baseType = 29;
-			directOverride = -1;
-			owner = 0;
-			type = "create object";
-			exclusiveFilter = 0;
-		};
-		[65] = {
-			reflexive = true;
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = -1;
-			amount = 1;
-			score = 0;
-			directOverride = -1;
-			plsyer = 0;
-			owner = 0;
-			type = "change score";
-			exclusiveFilter = 0;
-		};
-		[66] = {
-			velocityRelative = false;
-			distanceRange = 0;
-			reflexive = true;
-			min = 1;
-			inclusiveFilter = 0;
-			directionRelative = true;
-			delay = 0;
-			subjectOverride = -1;
-			range = 0;
-			baseType = 29;
-			directOverride = -1;
-			owner = 0;
-			type = "create object";
-			exclusiveFilter = 0;
-		};
-		[67] = {
-			velocityRelative = false;
-			distanceRange = 0;
-			reflexive = true;
-			min = 1;
-			inclusiveFilter = 0;
-			directionRelative = true;
-			delay = 0;
-			subjectOverride = -1;
-			range = 0;
-			baseType = 35;
-			directOverride = -1;
-			owner = 0;
-			type = "create object";
-			exclusiveFilter = 0;
-		};
-		[68] = {
-			velocityRelative = true;
-			distanceRange = 0;
-			reflexive = true;
-			min = 1;
-			inclusiveFilter = 0;
-			directionRelative = true;
-			delay = 0;
-			subjectOverride = -1;
-			range = 0;
-			baseType = 40;
-			directOverride = -1;
-			owner = 0;
-			type = "create object";
-			exclusiveFilter = 0;
-		};
-		[69] = {
-			volume = 65536;
-			priority = 0;
-			isAbsolute = true;
-			reflexive = true;
-			soundId = 0;
-			inclusiveFilter = 0;
-			volumeRange = 16711680;
-			delay = 0;
-			subjectOverride = -1;
-			persistence = 0;
-			directOverride = -1;
-			owner = 0;
-			type = "play sound";
-			exclusiveFilter = 0;
-			soundRange = 36044800;
-		};
-		[70] = {
-			velocityRelative = true;
-			distanceRange = 0;
-			reflexive = true;
-			min = 1;
-			inclusiveFilter = 0;
-			directionRelative = true;
-			delay = 0;
-			subjectOverride = -1;
-			range = 0;
-			baseType = 124;
-			directOverride = -1;
-			owner = 0;
-			type = "create object";
-			exclusiveFilter = 0;
-		};
-		[71] = {
-			velocityRelative = false;
-			distanceRange = 0;
-			reflexive = true;
-			min = 1;
-			inclusiveFilter = 0;
-			directionRelative = true;
-			delay = 0;
-			subjectOverride = -1;
-			range = 0;
-			baseType = 8;
-			directOverride = -1;
-			owner = 0;
-			type = "create object";
-			exclusiveFilter = 0;
-		};
-		[72] = {
-			reflexive = true;
-			how = "expire";
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = -1;
-			directOverride = -1;
-			owner = 0;
-			type = "die";
-			exclusiveFilter = 0;
-		};
-		[73] = {
-			velocityRelative = false;
-			distanceRange = 0;
-			reflexive = true;
-			min = 1;
-			inclusiveFilter = 0;
-			directionRelative = true;
-			delay = 0;
-			subjectOverride = -1;
-			range = 0;
-			baseType = 29;
-			directOverride = -1;
-			owner = 0;
-			type = "create object";
-			exclusiveFilter = 0;
-		};
-		[74] = {
-			reflexive = false;
-			inclusiveFilter = 1048576;
-			speed = 32;
-			delay = 0;
-			subjectOverride = -1;
-			directOverride = -1;
-			owner = -1;
-			type = "land at";
-			exclusiveFilter = 0;
-		};
-		[75] = {
-			volume = 16777216;
-			priority = 5;
-			isAbsolute = true;
-			reflexive = false;
-			soundId = 0;
-			inclusiveFilter = 1048576;
-			volumeRange = 16711680;
-			delay = 0;
-			subjectOverride = -1;
-			persistence = 0;
-			directOverride = -1;
-			owner = -1;
-			type = "play sound";
-			exclusiveFilter = 0;
-			soundRange = 33619968;
-		};
-		[76] = {
-			velocityRelative = false;
-			distanceRange = 0;
-			reflexive = true;
-			min = 1;
-			inclusiveFilter = 0;
-			directionRelative = true;
-			delay = 0;
-			subjectOverride = -1;
-			range = 0;
-			baseType = 29;
-			directOverride = -1;
-			owner = 0;
-			type = "create object";
-			exclusiveFilter = 0;
-		};
-		[77] = {
-			volume = 0;
-			priority = 3;
-			isAbsolute = true;
-			reflexive = true;
-			soundId = 0;
-			inclusiveFilter = 0;
-			volumeRange = 16711680;
-			delay = 0;
-			subjectOverride = -1;
-			persistence = 0;
-			directOverride = -1;
-			owner = 0;
-			type = "play sound";
-			exclusiveFilter = 0;
-			soundRange = 34013184;
-		};
-		[78] = {
-			reflexive = true;
-			how = "expire";
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = -1;
-			directOverride = -1;
-			owner = 0;
-			type = "die";
-			exclusiveFilter = 0;
-		};
-		[79] = {
-			velocityRelative = true;
-			distanceRange = 0;
-			reflexive = true;
-			min = 2;
-			inclusiveFilter = 0;
-			directionRelative = true;
-			delay = 0;
-			subjectOverride = -1;
-			range = 0;
-			baseType = 43;
-			directOverride = -1;
-			owner = 0;
-			type = "create object";
-			exclusiveFilter = 0;
-		};
-		[80] = {
-			reflexive = false;
-			player = 0;
-			inclusiveFilter = 0;
-			text = 9000;
-			nextLevel = 3;
-			delay = 0;
-			subjectOverride = -1;
-			directOverride = -1;
-			owner = 0;
-			type = "declare winner";
-			exclusiveFilter = 0;
-		};
-		[81] = {
-			reflexive = false;
+			count = 1;
+			start = 496;
+			direct = -1;
 			player = 1;
-			inclusiveFilter = 0;
-			text = 10203;
-			nextLevel = -1;
-			delay = 0;
-			subjectOverride = -1;
-			directOverride = -1;
-			owner = 0;
-			type = "declare winner";
-			exclusiveFilter = 0;
+			flags = {
+				hasBeenTrue = false;
+				hex = 0x3;
+				initiallyTrue = true;
+				trueOnlyOnce = true;
+			};
+			type = "no ships left";
+			subject = -1;
+		};
+		[48] = {
+			count = 7;
+			direct = -1;
+			value = 3600;
+			start = 256;
+			flags = {
+				hasBeenTrue = false;
+				hex = 0x1;
+				initiallyTrue = false;
+				trueOnlyOnce = true;
+			};
+			type = "time";
+			subject = -1;
+		};
+		[49] = {
+			count = 2;
+			direct = -1;
+			value = 16;
+			start = 267;
+			flags = {
+				hasBeenTrue = false;
+				hex = 0x1;
+				initiallyTrue = false;
+				trueOnlyOnce = true;
+			};
+			type = "destruction";
+			subject = -1;
+		};
+		[50] = {
+			count = 1;
+			counter = {
+				player = 0;
+				amount = 5;
+				counter = 0;
+			};
+			direct = -1;
+			start = 306;
+			flags = {
+				hasBeenTrue = false;
+				hex = 0x1;
+				initiallyTrue = false;
+				trueOnlyOnce = true;
+			};
+			type = "counter";
+			subject = -1;
+		};
+		[51] = {
+			count = 2;
+			counter = {
+				player = 0;
+				amount = 2;
+				counter = 0;
+			};
+			direct = -1;
+			start = 277;
+			flags = {
+				hasBeenTrue = false;
+				hex = 0x1;
+				initiallyTrue = false;
+				trueOnlyOnce = true;
+			};
+			type = "counter";
+			subject = -1;
+		};
+		[52] = {
+			count = 1;
+			direct = -1;
+			value = 28167;
+			start = 281;
+			flags = {
+				hasBeenTrue = false;
+				hex = 0x1;
+				initiallyTrue = false;
+				trueOnlyOnce = true;
+			};
+			type = "time";
+			subject = -1;
+		};
+		[53] = {
+			count = 1;
+			direct = -1;
+			value = 0;
+			start = 554;
+			flags = {
+				hasBeenTrue = false;
+				hex = 0x1;
+				initiallyTrue = false;
+				trueOnlyOnce = true;
+			};
+			type = "owner";
+			subject = 1;
+		};
+		[54] = {
+			count = 1;
+			counter = {
+				player = 0;
+				amount = 2;
+				counter = 0;
+			};
+			direct = -1;
+			start = 284;
+			flags = {
+				hasBeenTrue = false;
+				hex = 0x1;
+				initiallyTrue = false;
+				trueOnlyOnce = true;
+			};
+			type = "counter";
+			subject = -1;
+		};
+		[55] = {
+			count = 1;
+			counter = {
+				player = 0;
+				amount = 5;
+				counter = 0;
+			};
+			direct = -1;
+			start = 304;
+			flags = {
+				hasBeenTrue = false;
+				hex = 0x1;
+				initiallyTrue = false;
+				trueOnlyOnce = true;
+			};
+			type = "counter";
+			subject = -1;
+		};
+		[56] = {
+			count = 1;
+			direct = -1;
+			value = 1;
+			start = 294;
+			flags = {
+				hasBeenTrue = false;
+				hex = 0x1;
+				initiallyTrue = false;
+				trueOnlyOnce = true;
+			};
+			type = "owner";
+			subject = 0;
+		};
+		[57] = {
+			count = 1;
+			direct = -1;
+			value = 0;
+			start = 295;
+			flags = {
+				hasBeenTrue = false;
+				hex = 0x1;
+				initiallyTrue = false;
+				trueOnlyOnce = true;
+			};
+			type = "owner";
+			subject = 5;
+		};
+		[58] = {
+			count = 2;
+			direct = -1;
+			value = 3600;
+			start = 195;
+			flags = {
+				hasBeenTrue = false;
+				hex = 0x1;
+				initiallyTrue = false;
+				trueOnlyOnce = true;
+			};
+			type = "time";
+			subject = -1;
+		};
+		[59] = {
+			count = 7;
+			direct = -1;
+			start = 308;
+			flags = {
+				hasBeenTrue = false;
+				hex = 0x1;
+				initiallyTrue = false;
+				trueOnlyOnce = true;
+			};
+			type = "half health";
+			subject = 1;
+		};
+		[60] = {
+			count = 2;
+			direct = -1;
+			value = 4760;
+			start = 323;
+			flags = {
+				hasBeenTrue = false;
+				hex = 0x1;
+				initiallyTrue = false;
+				trueOnlyOnce = true;
+			};
+			type = "time";
+			subject = -1;
+		};
+		[61] = {
+			count = 1;
+			direct = -1;
+			value = 5500;
+			start = 325;
+			flags = {
+				hasBeenTrue = false;
+				hex = 0x1;
+				initiallyTrue = false;
+				trueOnlyOnce = true;
+			};
+			type = "time";
+			subject = -1;
+		};
+		[62] = {
+			count = 1;
+			direct = -1;
+			value = 3;
+			start = 326;
+			flags = {
+				hasBeenTrue = false;
+				hex = 0x1;
+				initiallyTrue = false;
+				trueOnlyOnce = true;
+			};
+			type = "time";
+			subject = -1;
+		};
+		[63] = {
+			count = 1;
+			counter = {
+				player = 0;
+				amount = 10;
+				counter = 1;
+			};
+			direct = -1;
+			start = 465;
+			flags = {
+				hasBeenTrue = false;
+				hex = 0x0;
+				initiallyTrue = false;
+				trueOnlyOnce = false;
+			};
+			type = "counter greater";
+			subject = -1;
+		};
+		[64] = {
+			count = 8;
+			direct = 1;
+			start = 356;
+			flags = {
+				hasBeenTrue = false;
+				hex = 0x1;
+				initiallyTrue = false;
+				trueOnlyOnce = true;
+			};
+			location = 223.60679775;
+			type = "proximity";
+			subject = -2;
+		};
+		[65] = {
+			count = 8;
+			direct = 2;
+			start = 356;
+			flags = {
+				hasBeenTrue = false;
+				hex = 0x1;
+				initiallyTrue = false;
+				trueOnlyOnce = true;
+			};
+			location = 223.60679775;
+			type = "proximity";
+			subject = -2;
+		};
+		[66] = {
+			count = 3;
+			direct = -1;
+			start = 364;
+			flags = {
+				hasBeenTrue = false;
+				hex = 0x3;
+				initiallyTrue = true;
+				trueOnlyOnce = true;
+			};
+			type = "is auxiliary";
+			subject = 3;
+		};
+		[67] = {
+			count = 3;
+			direct = -1;
+			start = 367;
+			flags = {
+				hasBeenTrue = false;
+				hex = 0x3;
+				initiallyTrue = true;
+				trueOnlyOnce = true;
+			};
+			type = "is auxiliary";
+			subject = 3;
+		};
+		[68] = {
+			count = 1;
+			direct = -1;
+			start = 370;
+			flags = {
+				hasBeenTrue = false;
+				hex = 0x3;
+				initiallyTrue = true;
+				trueOnlyOnce = true;
+			};
+			type = "is target";
+			subject = 1;
+		};
+		[69] = {
+			count = 1;
+			direct = -1;
+			start = 371;
+			flags = {
+				hasBeenTrue = false;
+				hex = 0x3;
+				initiallyTrue = true;
+				trueOnlyOnce = true;
+			};
+			type = "is target";
+			subject = 2;
+		};
+		[70] = {
+			count = 1;
+			direct = 1;
+			start = 372;
+			flags = {
+				hasBeenTrue = false;
+				hex = 0x3;
+				initiallyTrue = true;
+				trueOnlyOnce = true;
+			};
+			location = 223.60679775;
+			type = "proximity";
+			subject = 3;
+		};
+		[71] = {
+			count = 1;
+			direct = 2;
+			start = 373;
+			flags = {
+				hasBeenTrue = false;
+				hex = 0x3;
+				initiallyTrue = true;
+				trueOnlyOnce = true;
+			};
+			location = 223.60679775;
+			type = "proximity";
+			subject = 3;
+		};
+		[72] = {
+			count = 2;
+			direct = -1;
+			start = 374;
+			flags = {
+				hasBeenTrue = false;
+				hex = 0x3;
+				initiallyTrue = true;
+				trueOnlyOnce = true;
+			};
+			type = "is target";
+			subject = 1;
+		};
+		[73] = {
+			count = 2;
+			direct = -1;
+			start = 375;
+			flags = {
+				hasBeenTrue = false;
+				hex = 0x3;
+				initiallyTrue = true;
+				trueOnlyOnce = true;
+			};
+			type = "is target";
+			subject = 2;
+		};
+		[74] = {
+			count = 1;
+			direct = -1;
+			start = 377;
+			flags = {
+				hasBeenTrue = false;
+				hex = 0x3;
+				initiallyTrue = true;
+				trueOnlyOnce = true;
+			};
+			type = "is auxiliary";
+			subject = 3;
+		};
+		[75] = {
+			count = 4;
+			direct = 1;
+			start = 378;
+			flags = {
+				hasBeenTrue = false;
+				hex = 0x3;
+				initiallyTrue = true;
+				trueOnlyOnce = true;
+			};
+			location = 223.60679775;
+			type = "proximity";
+			subject = 3;
+		};
+		[76] = {
+			count = 4;
+			direct = 2;
+			start = 382;
+			flags = {
+				hasBeenTrue = false;
+				hex = 0x3;
+				initiallyTrue = true;
+				trueOnlyOnce = true;
+			};
+			location = 223.60679775;
+			type = "proximity";
+			subject = 3;
+		};
+		[77] = {
+			count = 5;
+			direct = 5;
+			start = 390;
+			flags = {
+				hasBeenTrue = false;
+				hex = 0x1;
+				initiallyTrue = false;
+				trueOnlyOnce = true;
+			};
+			location = 223.60679775;
+			type = "proximity";
+			subject = -2;
+		};
+		[78] = {
+			count = 1;
+			direct = -1;
+			start = 395;
+			flags = {
+				hasBeenTrue = false;
+				hex = 0x3;
+				initiallyTrue = true;
+				trueOnlyOnce = true;
+			};
+			type = "is auxiliary";
+			subject = 5;
+		};
+		[79] = {
+			count = 6;
+			direct = 6;
+			start = 409;
+			flags = {
+				hasBeenTrue = false;
+				hex = 0x1;
+				initiallyTrue = false;
+				trueOnlyOnce = true;
+			};
+			location = 223.60679775;
+			type = "proximity";
+			subject = -2;
+		};
+		[80] = {
+			count = 7;
+			direct = 15;
+			start = 396;
+			flags = {
+				hasBeenTrue = false;
+				hex = 0x1;
+				initiallyTrue = false;
+				trueOnlyOnce = true;
+			};
+			location = 223.60679775;
+			type = "proximity";
+			subject = -2;
+		};
+		[81] = {
+			count = 6;
+			direct = 0;
+			start = 403;
+			flags = {
+				hasBeenTrue = false;
+				hex = 0x1;
+				initiallyTrue = false;
+				trueOnlyOnce = true;
+			};
+			location = 223.60679775;
+			type = "proximity";
+			subject = -2;
 		};
 		[82] = {
-			reflexive = false;
-			inclusiveFilter = 0;
-			page = 1;
-			delay = 120;
-			subjectOverride = -1;
-			directOverride = -1;
-			owner = 0;
-			type = "display message";
-			id = 4221;
-			exclusiveFilter = 0;
+			count = 2;
+			direct = 18;
+			start = 419;
+			flags = {
+				hasBeenTrue = false;
+				hex = 0x1;
+				initiallyTrue = false;
+				trueOnlyOnce = true;
+			};
+			location = 316.227766017;
+			type = "proximity";
+			subject = -2;
 		};
 		[83] = {
-			reflexive = false;
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = -1;
-			range = 2;
-			minimum = 7;
-			directOverride = -1;
-			owner = 0;
-			type = "alter hidden";
-			exclusiveFilter = 0;
+			count = 1;
+			counter = {
+				player = 0;
+				amount = 5;
+				counter = 0;
+			};
+			direct = -1;
+			start = 423;
+			flags = {
+				hasBeenTrue = false;
+				hex = 0x1;
+				initiallyTrue = false;
+				trueOnlyOnce = true;
+			};
+			type = "counter";
+			subject = -1;
 		};
 		[84] = {
-			reflexive = true;
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = -1;
-			range = 0;
-			minimum = 1;
-			directOverride = -1;
-			owner = 0;
-			type = "alter active condition";
-			exclusiveFilter = 0;
-			conditionTrue = false;
+			count = 1;
+			direct = 0;
+			start = 818;
+			flags = {
+				hasBeenTrue = false;
+				hex = 0x0;
+				initiallyTrue = false;
+				trueOnlyOnce = false;
+			};
+			location = 223.60679775;
+			type = "proximity";
+			subject = 1;
 		};
 		[85] = {
-			reflexive = false;
-			inclusiveFilter = 0;
-			value = 1;
-			delay = 0;
-			subjectOverride = -1;
-			useObjectsOwner = false;
-			directOverride = -1;
-			owner = 0;
-			type = "alter owner";
-			exclusiveFilter = 0;
+			count = 4;
+			counter = {
+				player = 0;
+				amount = 1;
+				counter = 0;
+			};
+			direct = -1;
+			start = 426;
+			flags = {
+				hasBeenTrue = false;
+				hex = 0x3;
+				initiallyTrue = true;
+				trueOnlyOnce = true;
+			};
+			type = "counter greater";
+			subject = 1;
 		};
 		[86] = {
-			volume = 65536;
-			priority = 3;
-			isAbsolute = true;
-			reflexive = true;
-			soundId = 0;
-			inclusiveFilter = 0;
-			volumeRange = 16711680;
-			delay = 0;
-			subjectOverride = -1;
-			persistence = 0;
-			directOverride = -1;
-			owner = 0;
-			type = "play sound";
-			exclusiveFilter = 0;
-			soundRange = 34078720;
+			count = 2;
+			direct = 0;
+			value = 50000;
+			start = 430;
+			flags = {
+				hasBeenTrue = false;
+				hex = 0x0;
+				initiallyTrue = false;
+				trueOnlyOnce = false;
+			};
+			type = "distance greater";
+			subject = 1;
 		};
 		[87] = {
-			velocityRelative = false;
-			distanceRange = 0;
-			reflexive = true;
-			min = 1;
-			inclusiveFilter = 0;
-			directionRelative = true;
-			delay = 0;
-			subjectOverride = -1;
-			range = 0;
-			baseType = 14;
-			directOverride = -1;
-			owner = 0;
-			type = "create object";
-			exclusiveFilter = 0;
+			count = 1;
+			counter = {
+				player = 0;
+				amount = 21;
+				counter = 1;
+			};
+			direct = -1;
+			start = 443;
+			flags = {
+				hasBeenTrue = false;
+				hex = 0x1;
+				initiallyTrue = false;
+				trueOnlyOnce = true;
+			};
+			type = "counter";
+			subject = -1;
 		};
 		[88] = {
-			volume = 65536;
-			priority = 2;
-			isAbsolute = true;
-			reflexive = true;
-			soundId = 0;
-			inclusiveFilter = 0;
-			volumeRange = 16711680;
-			delay = 0;
-			subjectOverride = -1;
-			persistence = 0;
-			directOverride = -1;
-			owner = 0;
-			type = "play sound";
-			exclusiveFilter = 0;
-			soundRange = 34078720;
+			count = 1;
+			counter = {
+				player = 0;
+				amount = 10;
+				counter = 2;
+			};
+			direct = -1;
+			start = 487;
+			flags = {
+				hasBeenTrue = false;
+				hex = 0x1;
+				initiallyTrue = false;
+				trueOnlyOnce = true;
+			};
+			type = "counter";
+			subject = -1;
 		};
 		[89] = {
-			velocityRelative = false;
-			distanceRange = 0;
-			reflexive = true;
-			min = 1;
-			inclusiveFilter = 0;
-			directionRelative = true;
-			delay = 0;
-			subjectOverride = -1;
-			range = 0;
-			baseType = 13;
-			directOverride = -1;
-			owner = 0;
-			type = "create object";
-			exclusiveFilter = 0;
+			count = 1;
+			direct = -1;
+			value = 1;
+			start = 581;
+			flags = {
+				hasBeenTrue = false;
+				hex = 0x1;
+				initiallyTrue = false;
+				trueOnlyOnce = true;
+			};
+			type = "destruction";
+			subject = -1;
 		};
 		[90] = {
-			volume = 65536;
-			priority = 0;
-			isAbsolute = true;
-			reflexive = true;
-			soundId = 0;
-			inclusiveFilter = 0;
-			volumeRange = 16711680;
-			delay = 0;
-			subjectOverride = -1;
-			persistence = 0;
-			directOverride = -1;
-			owner = 0;
-			type = "play sound";
-			exclusiveFilter = 0;
-			soundRange = 34144256;
+			count = 1;
+			direct = -1;
+			value = 1280;
+			start = 425;
+			flags = {
+				hasBeenTrue = false;
+				hex = 0x1;
+				initiallyTrue = false;
+				trueOnlyOnce = true;
+			};
+			type = "velocity less than or equal";
+			subject = 1;
 		};
 		[91] = {
-			velocityRelative = false;
-			distanceRange = 0;
-			reflexive = true;
-			min = 1;
-			inclusiveFilter = 0;
-			directionRelative = true;
-			delay = 0;
-			subjectOverride = -1;
-			range = 3;
-			baseType = 49;
-			directOverride = -1;
-			owner = 0;
-			type = "create object";
-			exclusiveFilter = 0;
+			count = 1;
+			counter = {
+				player = 0;
+				amount = 5;
+				counter = 0;
+			};
+			direct = -1;
+			start = 445;
+			flags = {
+				hasBeenTrue = false;
+				hex = 0x1;
+				initiallyTrue = false;
+				trueOnlyOnce = true;
+			};
+			type = "counter";
+			subject = -1;
 		};
 		[92] = {
-			volume = 786432;
-			priority = 4;
-			isAbsolute = true;
-			reflexive = true;
-			soundId = 0;
-			inclusiveFilter = 0;
-			volumeRange = 16711680;
-			delay = 0;
-			subjectOverride = -1;
-			persistence = 0;
-			directOverride = -1;
-			owner = 0;
-			type = "play sound";
-			exclusiveFilter = 0;
-			soundRange = 33751040;
+			count = 1;
+			direct = 0;
+			start = 446;
+			flags = {
+				hasBeenTrue = false;
+				hex = 0x0;
+				initiallyTrue = false;
+				trueOnlyOnce = false;
+			};
+			location = 223.60679775;
+			type = "proximity";
+			subject = 1;
 		};
 		[93] = {
-			velocityRelative = false;
-			distanceRange = 0;
-			reflexive = true;
-			min = 8;
-			inclusiveFilter = 0;
-			directionRelative = true;
-			delay = 0;
-			subjectOverride = -1;
-			range = 8;
-			baseType = 11;
-			directOverride = -1;
-			owner = 0;
-			type = "create object";
-			exclusiveFilter = 0;
+			count = 5;
+			counter = {
+				player = 0;
+				amount = 1;
+				counter = 0;
+			};
+			direct = -1;
+			start = 447;
+			flags = {
+				hasBeenTrue = false;
+				hex = 0x3;
+				initiallyTrue = true;
+				trueOnlyOnce = true;
+			};
+			type = "counter greater";
+			subject = 1;
 		};
 		[94] = {
-			velocityRelative = false;
-			distanceRange = 0;
-			reflexive = true;
-			min = 8;
-			inclusiveFilter = 0;
-			directionRelative = false;
-			delay = 0;
-			subjectOverride = -1;
-			range = 8;
-			baseType = 12;
-			directOverride = -1;
-			owner = 0;
-			type = "create object";
-			exclusiveFilter = 0;
+			count = 1;
+			direct = 0;
+			value = 50000;
+			start = 452;
+			flags = {
+				hasBeenTrue = false;
+				hex = 0x0;
+				initiallyTrue = false;
+				trueOnlyOnce = false;
+			};
+			type = "distance greater";
+			subject = 1;
 		};
 		[95] = {
-			velocityRelative = true;
-			distanceRange = 0;
-			reflexive = true;
-			min = 8;
-			inclusiveFilter = 0;
-			directionRelative = false;
-			delay = 0;
-			subjectOverride = -1;
-			range = 8;
-			baseType = 51;
-			directOverride = -1;
-			owner = 0;
-			type = "create object";
-			exclusiveFilter = 0;
+			count = 1;
+			counter = {
+				player = 0;
+				amount = 11;
+				counter = 1;
+			};
+			direct = -1;
+			start = 453;
+			flags = {
+				hasBeenTrue = false;
+				hex = 0x1;
+				initiallyTrue = false;
+				trueOnlyOnce = true;
+			};
+			type = "counter";
+			subject = -1;
 		};
 		[96] = {
-			reflexive = true;
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = -1;
-			range = -63594;
-			minimum = 1;
-			directOverride = -1;
-			owner = 0;
-			type = "alter hidden";
-			exclusiveFilter = 0;
+			count = 1;
+			counter = {
+				player = 0;
+				amount = 5;
+				counter = 2;
+			};
+			direct = -1;
+			start = 486;
+			flags = {
+				hasBeenTrue = false;
+				hex = 0x1;
+				initiallyTrue = false;
+				trueOnlyOnce = true;
+			};
+			type = "counter";
+			subject = -1;
 		};
 		[97] = {
-			reflexive = true;
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = -1;
-			directOverride = -1;
-			owner = 0;
-			type = "alter cloak";
-			exclusiveFilter = 0;
+			count = 1;
+			direct = -1;
+			value = 7;
+			start = 476;
+			flags = {
+				hasBeenTrue = false;
+				hex = 0x1;
+				initiallyTrue = false;
+				trueOnlyOnce = true;
+			};
+			type = "destruction";
+			subject = -1;
 		};
 		[98] = {
-			velocityRelative = true;
-			distanceRange = 0;
-			reflexive = true;
-			min = 1;
-			inclusiveFilter = 0;
-			directionRelative = true;
-			delay = 0;
-			subjectOverride = -1;
-			range = 0;
-			baseType = 43;
-			directOverride = -1;
-			owner = 0;
-			type = "create object";
-			exclusiveFilter = 0;
+			count = 2;
+			direct = -1;
+			value = 0;
+			start = 477;
+			flags = {
+				hasBeenTrue = false;
+				hex = 0x3;
+				initiallyTrue = true;
+				trueOnlyOnce = true;
+			};
+			type = "owner";
+			subject = 3;
 		};
 		[99] = {
-			reflexive = true;
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = -1;
-			range = 0;
-			minimum = 12;
-			directOverride = -1;
-			owner = 0;
-			type = "alter hidden";
-			exclusiveFilter = 0;
+			count = 2;
+			direct = -1;
+			value = 0;
+			start = 479;
+			flags = {
+				hasBeenTrue = false;
+				hex = 0x3;
+				initiallyTrue = true;
+				trueOnlyOnce = true;
+			};
+			type = "owner";
+			subject = 4;
 		};
 		[100] = {
-			reflexive = true;
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = -1;
-			range = 0;
-			minimum = 13;
-			directOverride = -1;
-			owner = 0;
-			type = "alter hidden";
-			exclusiveFilter = 0;
+			count = 1;
+			direct = -1;
+			value = 0;
+			start = 481;
+			flags = {
+				hasBeenTrue = false;
+				hex = 0x3;
+				initiallyTrue = true;
+				trueOnlyOnce = true;
+			};
+			type = "owner";
+			subject = 5;
 		};
 		[101] = {
-			reflexive = true;
-			inclusiveFilter = 0;
-			page = 1;
-			delay = 120;
-			subjectOverride = -1;
-			directOverride = -1;
-			owner = 0;
-			type = "display message";
-			id = 4210;
-			exclusiveFilter = 0;
+			count = 2;
+			direct = -1;
+			value = 1;
+			start = 482;
+			flags = {
+				hasBeenTrue = false;
+				hex = 0x3;
+				initiallyTrue = true;
+				trueOnlyOnce = true;
+			};
+			type = "owner";
+			subject = 3;
 		};
 		[102] = {
-			velocityRelative = true;
-			distanceRange = 0;
-			reflexive = true;
-			min = 1;
-			inclusiveFilter = 0;
-			directionRelative = true;
-			delay = 0;
-			subjectOverride = -1;
-			range = 0;
-			baseType = 66;
-			directOverride = -1;
-			owner = 0;
-			type = "create object";
-			exclusiveFilter = 0;
+			count = 2;
+			direct = -1;
+			value = 1;
+			start = 482;
+			flags = {
+				hasBeenTrue = false;
+				hex = 0x3;
+				initiallyTrue = true;
+				trueOnlyOnce = true;
+			};
+			type = "owner";
+			subject = 4;
 		};
 		[103] = {
-			reflexive = false;
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = -1;
-			range = 5;
-			minimum = 0;
-			directOverride = -1;
-			owner = -1;
-			type = "alter offline";
-			exclusiveFilter = 0;
+			count = 1;
+			direct = -1;
+			value = 1;
+			start = 484;
+			flags = {
+				hasBeenTrue = false;
+				hex = 0x1;
+				initiallyTrue = false;
+				trueOnlyOnce = true;
+			};
+			type = "owner";
+			subject = 0;
 		};
 		[104] = {
-			velocityRelative = false;
-			distanceRange = 0;
-			reflexive = true;
-			min = 1;
-			inclusiveFilter = 0;
-			directionRelative = false;
-			delay = 0;
-			subjectOverride = -1;
-			range = 0;
-			baseType = 8;
-			directOverride = -1;
-			owner = 0;
-			type = "create object";
-			exclusiveFilter = 0;
+			count = 1;
+			direct = -1;
+			value = 4780;
+			start = 497;
+			flags = {
+				hasBeenTrue = false;
+				hex = 0x1;
+				initiallyTrue = false;
+				trueOnlyOnce = true;
+			};
+			type = "time";
+			subject = -1;
 		};
 		[105] = {
-			reflexive = true;
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = -1;
-			directOverride = -1;
-			owner = 0;
-			type = "die";
-			exclusiveFilter = 0;
+			count = 1;
+			direct = -1;
+			value = 1;
+			start = 599;
+			flags = {
+				hasBeenTrue = false;
+				hex = 0x1;
+				initiallyTrue = false;
+				trueOnlyOnce = true;
+			};
+			type = "owner";
+			subject = 2;
 		};
 		[106] = {
-			volume = 5505024;
-			priority = 3;
-			isAbsolute = true;
-			reflexive = true;
-			soundId = 0;
-			inclusiveFilter = 0;
-			volumeRange = 16711680;
-			delay = 0;
-			subjectOverride = -1;
-			persistence = -1392508928;
-			directOverride = -1;
-			owner = 0;
-			type = "play sound";
-			exclusiveFilter = 0;
-			soundRange = 34734080;
+			count = 1;
+			direct = -1;
+			value = 0;
+			start = 600;
+			flags = {
+				hasBeenTrue = false;
+				hex = 0x1;
+				initiallyTrue = false;
+				trueOnlyOnce = true;
+			};
+			type = "owner";
+			subject = 3;
 		};
 		[107] = {
-			volume = 0;
-			priority = 3;
-			isAbsolute = true;
-			reflexive = true;
-			soundId = 0;
-			inclusiveFilter = 0;
-			volumeRange = 16711680;
-			delay = 0;
-			subjectOverride = -1;
-			persistence = -1392508928;
-			directOverride = -1;
-			owner = 0;
-			type = "play sound";
-			exclusiveFilter = 0;
-			soundRange = 34799616;
+			count = 4;
+			direct = -1;
+			value = 51000;
+			start = 506;
+			flags = {
+				hasBeenTrue = false;
+				hex = 0x1;
+				initiallyTrue = false;
+				trueOnlyOnce = true;
+			};
+			type = "time";
+			subject = -1;
 		};
 		[108] = {
-			velocityRelative = true;
-			distanceRange = 0;
-			reflexive = true;
-			min = 1;
-			inclusiveFilter = 0;
-			directionRelative = true;
-			delay = 0;
-			subjectOverride = -1;
-			range = 0;
-			baseType = 71;
-			directOverride = -1;
-			owner = 0;
-			type = "create object";
-			exclusiveFilter = 0;
+			count = 1;
+			direct = -1;
+			value = 46800;
+			start = 510;
+			flags = {
+				hasBeenTrue = false;
+				hex = 0x1;
+				initiallyTrue = false;
+				trueOnlyOnce = true;
+			};
+			type = "time";
+			subject = -1;
 		};
 		[109] = {
-			velocityRelative = true;
-			distanceRange = 0;
-			reflexive = true;
-			min = 1;
-			inclusiveFilter = 0;
-			directionRelative = true;
-			delay = 0;
-			subjectOverride = -1;
-			range = 0;
-			baseType = 69;
-			directOverride = -1;
-			owner = 0;
-			type = "create object";
-			exclusiveFilter = 0;
+			count = 4;
+			direct = -1;
+			value = 4780;
+			start = 543;
+			flags = {
+				hasBeenTrue = false;
+				hex = 0x1;
+				initiallyTrue = false;
+				trueOnlyOnce = true;
+			};
+			type = "time";
+			subject = -1;
 		};
 		[110] = {
-			velocityRelative = true;
-			distanceRange = 0;
-			reflexive = true;
-			min = 1;
-			inclusiveFilter = 0;
-			directionRelative = true;
-			delay = 0;
-			subjectOverride = -1;
-			range = 0;
-			baseType = 72;
-			directOverride = -1;
-			owner = 0;
-			type = "create object";
-			exclusiveFilter = 0;
+			count = 1;
+			direct = -1;
+			value = 1;
+			start = 548;
+			flags = {
+				hasBeenTrue = false;
+				hex = 0x1;
+				initiallyTrue = false;
+				trueOnlyOnce = true;
+			};
+			type = "owner";
+			subject = 2;
 		};
 		[111] = {
-			volume = 0;
-			priority = 3;
-			isAbsolute = true;
-			reflexive = true;
-			soundId = 0;
-			inclusiveFilter = 0;
-			volumeRange = 16711680;
-			delay = 0;
-			subjectOverride = -1;
-			persistence = 0;
-			directOverride = -1;
-			owner = 0;
-			type = "play sound";
-			exclusiveFilter = 0;
-			soundRange = 34930688;
+			count = 1;
+			direct = -1;
+			value = 0;
+			start = 549;
+			flags = {
+				hasBeenTrue = false;
+				hex = 0x1;
+				initiallyTrue = false;
+				trueOnlyOnce = true;
+			};
+			type = "owner";
+			subject = 3;
 		};
 		[112] = {
-			reflexive = true;
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = -1;
-			directOverride = -1;
-			owner = 0;
-			type = "alter base type";
-			id = 67;
-			exclusiveFilter = 0;
-			retainAmmmoCount = false;
+			count = 1;
+			direct = -1;
+			value = 4780;
+			start = 547;
+			flags = {
+				hasBeenTrue = false;
+				hex = 0x1;
+				initiallyTrue = false;
+				trueOnlyOnce = true;
+			};
+			type = "time";
+			subject = -1;
 		};
 		[113] = {
-			reflexive = true;
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = -1;
-			range = 0;
-			minimum = 2;
-			directOverride = -1;
-			owner = 0;
-			type = "alter active condition";
-			exclusiveFilter = 0;
-			conditionTrue = false;
+			count = 1;
+			direct = -1;
+			value = 1;
+			start = 597;
+			flags = {
+				hasBeenTrue = false;
+				hex = 0x1;
+				initiallyTrue = false;
+				trueOnlyOnce = true;
+			};
+			type = "owner";
+			subject = 2;
 		};
 		[114] = {
-			reflexive = false;
-			inclusiveFilter = 0;
+			count = 1;
+			direct = -1;
 			value = 0;
-			delay = 0;
-			subjectOverride = -1;
-			useObjectsOwner = false;
-			directOverride = -1;
-			owner = 0;
-			type = "alter owner";
-			exclusiveFilter = 0;
+			start = 598;
+			flags = {
+				hasBeenTrue = false;
+				hex = 0x1;
+				initiallyTrue = false;
+				trueOnlyOnce = true;
+			};
+			type = "owner";
+			subject = 3;
 		};
 		[115] = {
-			volume = 0;
-			priority = 4;
-			isAbsolute = true;
-			reflexive = true;
-			soundId = 0;
-			inclusiveFilter = 0;
-			volumeRange = 16711680;
-			delay = 0;
-			subjectOverride = -1;
-			persistence = 1711276032;
-			directOverride = -1;
-			owner = 0;
-			type = "play sound";
-			exclusiveFilter = 0;
-			soundRange = 34865152;
+			count = 1;
+			direct = -1;
+			start = 550;
+			flags = {
+				hasBeenTrue = false;
+				hex = 0x1;
+				initiallyTrue = false;
+				trueOnlyOnce = true;
+			};
+			type = "half health";
+			subject = 2;
 		};
 		[116] = {
-			velocityRelative = false;
-			distanceRange = 0;
-			reflexive = true;
-			min = 1;
-			inclusiveFilter = 0;
-			directionRelative = false;
-			delay = 0;
-			subjectOverride = -1;
-			range = 0;
-			baseType = 257;
-			directOverride = -1;
-			owner = 0;
-			type = "create object";
-			exclusiveFilter = 0;
+			count = 2;
+			start = 551;
+			direct = -1;
+			player = 1;
+			flags = {
+				hasBeenTrue = false;
+				hex = 0x3;
+				initiallyTrue = true;
+				trueOnlyOnce = true;
+			};
+			type = "no ships left";
+			subject = -1;
 		};
 		[117] = {
-			velocityRelative = true;
-			distanceRange = 0;
-			reflexive = true;
-			min = 3;
-			inclusiveFilter = 0;
-			directionRelative = true;
-			delay = 0;
-			subjectOverride = -1;
-			range = 0;
-			baseType = 84;
-			directOverride = -1;
-			owner = 0;
-			type = "create object";
-			exclusiveFilter = 0;
+			count = 1;
+			direct = -1;
+			value = 0;
+			start = 553;
+			flags = {
+				hasBeenTrue = false;
+				hex = 0x1;
+				initiallyTrue = false;
+				trueOnlyOnce = true;
+			};
+			type = "owner";
+			subject = 1;
 		};
 		[118] = {
-			velocityRelative = false;
-			distanceRange = 0;
-			reflexive = true;
-			min = 1;
-			inclusiveFilter = 0;
-			directionRelative = false;
-			delay = 0;
-			subjectOverride = -1;
-			range = 0;
-			baseType = 35;
-			directOverride = -1;
-			owner = 0;
-			type = "create object";
-			exclusiveFilter = 0;
+			count = 1;
+			direct = 1;
+			start = 583;
+			flags = {
+				hasBeenTrue = false;
+				hex = 0x1;
+				initiallyTrue = false;
+				trueOnlyOnce = true;
+			};
+			location = 223.60679775;
+			type = "proximity";
+			subject = 4;
 		};
 		[119] = {
-			velocityRelative = true;
-			distanceRange = 0;
-			reflexive = true;
-			min = 3;
-			inclusiveFilter = 0;
-			directionRelative = true;
-			delay = 0;
-			subjectOverride = -1;
-			range = 0;
-			baseType = 85;
-			directOverride = -1;
-			owner = 0;
-			type = "create object";
-			exclusiveFilter = 0;
+			count = 1;
+			direct = 0;
+			start = 584;
+			flags = {
+				hasBeenTrue = false;
+				hex = 0x1;
+				initiallyTrue = false;
+				trueOnlyOnce = true;
+			};
+			location = 223.60679775;
+			type = "proximity";
+			subject = 5;
 		};
 		[120] = {
-			velocityRelative = false;
-			distanceRange = 0;
-			reflexive = true;
-			min = 1;
-			inclusiveFilter = 0;
-			directionRelative = false;
-			delay = 0;
-			subjectOverride = -1;
-			range = 0;
-			baseType = 35;
-			directOverride = -1;
-			owner = 0;
-			type = "create object";
-			exclusiveFilter = 0;
+			count = 3;
+			direct = -1;
+			value = 0;
+			start = 585;
+			flags = {
+				hasBeenTrue = false;
+				hex = 0x1;
+				initiallyTrue = false;
+				trueOnlyOnce = true;
+			};
+			type = "destruction";
+			subject = -1;
 		};
 		[121] = {
-			reflexive = false;
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = -1;
-			amount = 1;
-			score = 1;
-			directOverride = -1;
-			plsyer = 0;
-			owner = 0;
-			type = "change score";
-			exclusiveFilter = 0;
+			count = 3;
+			direct = -1;
+			value = 1;
+			start = 588;
+			flags = {
+				hasBeenTrue = false;
+				hex = 0x1;
+				initiallyTrue = false;
+				trueOnlyOnce = true;
+			};
+			type = "destruction";
+			subject = -1;
 		};
 		[122] = {
-			volume = 7864320;
-			priority = 3;
-			isAbsolute = true;
-			reflexive = true;
-			soundId = 0;
-			inclusiveFilter = 0;
-			volumeRange = 16711680;
-			delay = 0;
-			subjectOverride = -1;
-			persistence = -2113929216;
-			directOverride = -1;
-			owner = 0;
-			type = "play sound";
-			exclusiveFilter = 0;
-			soundRange = 33685504;
+			count = 1;
+			counter = {
+				player = 0;
+				amount = 3;
+				counter = 0;
+			};
+			direct = -1;
+			start = 591;
+			flags = {
+				hasBeenTrue = false;
+				hex = 0x1;
+				initiallyTrue = false;
+				trueOnlyOnce = true;
+			};
+			type = "counter greater";
+			subject = -1;
 		};
 		[123] = {
-			reflexive = true;
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = -1;
-			directOverride = -1;
-			owner = 0;
-			type = "die";
-			exclusiveFilter = 0;
+			count = 1;
+			counter = {
+				player = 1;
+				amount = 3;
+				counter = 0;
+			};
+			direct = -1;
+			start = 592;
+			flags = {
+				hasBeenTrue = false;
+				hex = 0x0;
+				initiallyTrue = false;
+				trueOnlyOnce = false;
+			};
+			type = "counter greater";
+			subject = -1;
 		};
 		[124] = {
-			reflexive = true;
-			inclusiveFilter = 0;
-			page = 2;
-			delay = 0;
-			subjectOverride = -1;
-			directOverride = -1;
-			owner = 0;
-			type = "display message";
-			id = 4200;
-			exclusiveFilter = 0;
+			count = 1;
+			direct = -1;
+			value = 0;
+			start = 595;
+			flags = {
+				hasBeenTrue = false;
+				hex = 0x1;
+				initiallyTrue = false;
+				trueOnlyOnce = true;
+			};
+			type = "owner";
+			subject = 8;
 		};
 		[125] = {
-			reflexive = false;
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = -1;
-			range = 0;
-			minimum = 1;
-			directOverride = -1;
-			owner = 0;
-			type = "alter hidden";
-			exclusiveFilter = 0;
+			count = 1;
+			direct = -1;
+			value = 1;
+			start = 596;
+			flags = {
+				hasBeenTrue = false;
+				hex = 0x1;
+				initiallyTrue = false;
+				trueOnlyOnce = true;
+			};
+			type = "owner";
+			subject = 8;
 		};
 		[126] = {
-			reflexive = true;
-			inclusiveFilter = 0;
-			page = 1;
-			delay = 120;
-			subjectOverride = -1;
-			directOverride = -1;
-			owner = 0;
-			type = "display message";
-			id = 5320;
-			exclusiveFilter = 0;
+			count = 4;
+			direct = -1;
+			value = 0;
+			start = 601;
+			flags = {
+				hasBeenTrue = false;
+				hex = 0x1;
+				initiallyTrue = false;
+				trueOnlyOnce = true;
+			};
+			type = "time";
+			subject = -1;
 		};
 		[127] = {
-			reflexive = false;
-			inclusiveFilter = 0;
-			delay = 480;
-			subjectOverride = 5;
-			directOverride = 9;
-			owner = 0;
-			type = "set destination";
-			exclusiveFilter = 0;
+			count = 1;
+			screen = 4;
+			direct = -1;
+			start = 605;
+			flags = {
+				hasBeenTrue = false;
+				hex = 0x1;
+				initiallyTrue = false;
+				trueOnlyOnce = true;
+			};
+			line = -1;
+			type = "current computer selection";
+			subject = -1;
 		};
 		[128] = {
-			reflexive = true;
-			inclusiveFilter = 0;
-			page = 1;
-			delay = 360;
-			subjectOverride = -1;
-			directOverride = -1;
-			owner = 0;
-			type = "display message";
-			id = 5330;
-			exclusiveFilter = 0;
+			count = 1;
+			direct = -1;
+			page = 3;
+			start = 606;
+			flags = {
+				hasBeenTrue = false;
+				hex = 0x1;
+				initiallyTrue = false;
+				trueOnlyOnce = true;
+			};
+			type = "current message";
+			id = 5701;
+			subject = -1;
 		};
 		[129] = {
-			reflexive = true;
-			inclusiveFilter = 0;
-			delay = 120;
-			subjectOverride = -1;
-			range = 0;
-			minimum = 15;
-			directOverride = -1;
-			owner = 0;
-			type = "alter hidden";
-			exclusiveFilter = 0;
+			count = 3;
+			screen = 1;
+			direct = -1;
+			start = 607;
+			flags = {
+				hasBeenTrue = false;
+				hex = 0x3;
+				initiallyTrue = true;
+				trueOnlyOnce = true;
+			};
+			line = -1;
+			type = "current computer selection";
+			subject = -1;
 		};
 		[130] = {
-			reflexive = false;
-			inclusiveFilter = 0;
-			delay = 360;
-			subjectOverride = 10;
-			directOverride = 6;
-			owner = 0;
-			type = "set destination";
-			exclusiveFilter = 0;
+			count = 3;
+			direct = -1;
+			page = 6;
+			start = 610;
+			flags = {
+				hasBeenTrue = false;
+				hex = 0x1;
+				initiallyTrue = false;
+				trueOnlyOnce = true;
+			};
+			type = "current message";
+			id = 5704;
+			subject = -1;
 		};
 		[131] = {
-			reflexive = false;
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = 3;
-			directOverride = 10;
-			owner = 0;
-			type = "set destination";
-			exclusiveFilter = 0;
+			count = 1;
+			direct = -1;
+			value = 0;
+			start = 613;
+			flags = {
+				hasBeenTrue = false;
+				hex = 0x3;
+				initiallyTrue = true;
+				trueOnlyOnce = true;
+			};
+			type = "zoom level";
+			subject = -1;
 		};
 		[132] = {
-			reflexive = false;
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = 4;
-			directOverride = 10;
-			owner = 0;
-			type = "set destination";
-			exclusiveFilter = 0;
+			count = 3;
+			direct = -1;
+			page = 2;
+			start = 614;
+			flags = {
+				hasBeenTrue = false;
+				hex = 0x1;
+				initiallyTrue = false;
+				trueOnlyOnce = true;
+			};
+			type = "current message";
+			id = 5711;
+			subject = -1;
 		};
 		[133] = {
-			reflexive = false;
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = 8;
-			directOverride = 10;
-			owner = 0;
-			type = "set destination";
-			exclusiveFilter = 0;
+			count = 2;
+			direct = 5;
+			start = 617;
+			flags = {
+				hasBeenTrue = false;
+				hex = 0x3;
+				initiallyTrue = true;
+				trueOnlyOnce = true;
+			};
+			location = 223.60679775;
+			type = "proximity";
+			subject = 0;
 		};
 		[134] = {
-			reflexive = true;
-			inclusiveFilter = 0;
-			page = 1;
-			delay = 360;
-			subjectOverride = -1;
-			directOverride = -1;
-			owner = 0;
-			type = "display message";
-			id = 5360;
-			exclusiveFilter = 0;
+			count = 2;
+			direct = 5;
+			start = 619;
+			flags = {
+				hasBeenTrue = false;
+				hex = 0x3;
+				initiallyTrue = true;
+				trueOnlyOnce = true;
+			};
+			location = 223.60679775;
+			type = "proximity";
+			subject = 4;
 		};
 		[135] = {
-			reflexive = true;
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = -1;
-			range = 3;
-			minimum = 11;
-			directOverride = -1;
-			owner = 0;
-			type = "alter hidden";
-			exclusiveFilter = 0;
+			count = 2;
+			direct = -1;
+			page = 4;
+			start = 621;
+			flags = {
+				hasBeenTrue = false;
+				hex = 0x1;
+				initiallyTrue = false;
+				trueOnlyOnce = true;
+			};
+			type = "current message";
+			id = 5711;
+			subject = -1;
 		};
 		[136] = {
-			reflexive = true;
-			inclusiveFilter = 0;
-			value = 1;
-			delay = 0;
-			subjectOverride = 7;
-			useObjectsOwner = false;
-			directOverride = 7;
-			owner = 0;
-			type = "alter owner";
-			exclusiveFilter = 0;
+			count = 1;
+			direct = -1;
+			value = 7;
+			start = 623;
+			flags = {
+				hasBeenTrue = false;
+				hex = 0x3;
+				initiallyTrue = true;
+				trueOnlyOnce = true;
+			};
+			type = "zoom level";
+			subject = -1;
 		};
 		[137] = {
-			reflexive = true;
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = -1;
-			amount = 5000;
-			directOverride = -1;
-			owner = 0;
-			type = "alter health";
-			exclusiveFilter = 0;
+			count = 2;
+			direct = -1;
+			page = 1;
+			start = 624;
+			flags = {
+				hasBeenTrue = false;
+				hex = 0x1;
+				initiallyTrue = false;
+				trueOnlyOnce = true;
+			};
+			type = "current message";
+			id = 5715;
+			subject = -1;
 		};
 		[138] = {
-			reflexive = true;
-			inclusiveFilter = 0;
-			page = 1;
-			delay = 180;
-			subjectOverride = -1;
-			directOverride = -1;
-			owner = 0;
-			type = "display message";
-			id = 5340;
-			exclusiveFilter = 0;
+			count = 1;
+			direct = -1;
+			page = 3;
+			start = 626;
+			flags = {
+				hasBeenTrue = false;
+				hex = 0x1;
+				initiallyTrue = false;
+				trueOnlyOnce = true;
+			};
+			type = "current message";
+			id = 5715;
+			subject = -1;
 		};
 		[139] = {
-			volume = 1310720;
-			priority = 5;
-			isAbsolute = true;
-			reflexive = true;
-			soundId = 0;
-			inclusiveFilter = 0;
-			volumeRange = 16711680;
-			delay = 0;
-			subjectOverride = -1;
-			persistence = 0;
-			directOverride = -1;
-			owner = 0;
-			type = "play sound";
-			exclusiveFilter = 0;
-			soundRange = 1140719616;
+			count = 2;
+			direct = -1;
+			page = 6;
+			start = 627;
+			flags = {
+				hasBeenTrue = false;
+				hex = 0x1;
+				initiallyTrue = false;
+				trueOnlyOnce = true;
+			};
+			type = "current message";
+			id = 5715;
+			subject = -1;
 		};
 		[140] = {
-			velocityRelative = true;
-			distanceRange = 0;
-			reflexive = true;
-			min = 20;
-			inclusiveFilter = 0;
-			directionRelative = false;
-			delay = 180;
-			subjectOverride = -1;
-			range = 10;
-			baseType = 90;
-			directOverride = -1;
-			owner = 0;
-			type = "create object";
-			exclusiveFilter = 0;
+			count = 1;
+			direct = -1;
+			value = 1;
+			start = 629;
+			flags = {
+				hasBeenTrue = false;
+				hex = 0x3;
+				initiallyTrue = true;
+				trueOnlyOnce = true;
+			};
+			type = "zoom level";
+			subject = -1;
 		};
 		[141] = {
-			reflexive = true;
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = -1;
-			amount = -100000;
-			directOverride = -1;
-			owner = 0;
-			type = "alter health";
-			exclusiveFilter = 0;
+			count = 1;
+			direct = -1;
+			page = 2;
+			start = 630;
+			flags = {
+				hasBeenTrue = false;
+				hex = 0x1;
+				initiallyTrue = false;
+				trueOnlyOnce = true;
+			};
+			type = "current message";
+			id = 5721;
+			subject = -1;
 		};
 		[142] = {
-			reflexive = true;
-			inclusiveFilter = 0;
-			page = 1;
-			delay = 120;
-			subjectOverride = -1;
-			directOverride = -1;
-			owner = 0;
-			type = "display message";
-			id = 5350;
-			exclusiveFilter = 0;
+			count = 2;
+			direct = -1;
+			page = 4;
+			start = 631;
+			flags = {
+				hasBeenTrue = false;
+				hex = 0x1;
+				initiallyTrue = false;
+				trueOnlyOnce = true;
+			};
+			type = "current message";
+			id = 5721;
+			subject = -1;
 		};
 		[143] = {
-			velocityRelative = true;
-			distanceRange = 0;
-			reflexive = true;
-			min = 20;
-			inclusiveFilter = 0;
-			directionRelative = true;
-			delay = 0;
-			subjectOverride = -1;
-			range = 10;
-			baseType = 90;
-			directOverride = -1;
-			owner = 0;
-			type = "create object";
-			exclusiveFilter = 0;
+			count = 1;
+			direct = -1;
+			page = 3;
+			start = 633;
+			flags = {
+				hasBeenTrue = false;
+				hex = 0x1;
+				initiallyTrue = false;
+				trueOnlyOnce = true;
+			};
+			type = "current message";
+			id = 5721;
+			subject = -1;
 		};
 		[144] = {
-			velocityRelative = false;
-			distanceRange = 0;
-			reflexive = true;
-			min = 1;
-			inclusiveFilter = 0;
-			directionRelative = true;
-			delay = 0;
-			subjectOverride = -1;
-			range = 0;
-			baseType = 79;
-			directOverride = -1;
-			owner = 0;
-			type = "create object";
-			exclusiveFilter = 0;
+			count = 1;
+			direct = -1;
+			page = 11;
+			start = 634;
+			flags = {
+				hasBeenTrue = false;
+				hex = 0x1;
+				initiallyTrue = false;
+				trueOnlyOnce = true;
+			};
+			type = "current message";
+			id = 5721;
+			subject = -1;
 		};
 		[145] = {
-			reflexive = true;
-			how = "expire";
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = -1;
-			directOverride = -1;
-			owner = 0;
-			type = "die";
-			exclusiveFilter = 0;
+			count = 6;
+			direct = -1;
+			page = 17;
+			start = 635;
+			flags = {
+				hasBeenTrue = false;
+				hex = 0x1;
+				initiallyTrue = false;
+				trueOnlyOnce = true;
+			};
+			type = "current message";
+			id = 5721;
+			subject = -1;
 		};
 		[146] = {
-			reflexive = false;
-			how = "destroy";
-			inclusiveFilter = 2;
-			delay = 0;
-			subjectOverride = -1;
-			directOverride = -1;
-			owner = -1;
-			type = "die";
-			exclusiveFilter = 0;
+			count = 1;
+			direct = -1;
+			value = 7;
+			start = 641;
+			flags = {
+				hasBeenTrue = false;
+				hex = 0x3;
+				initiallyTrue = true;
+				trueOnlyOnce = true;
+			};
+			type = "destruction";
+			subject = -1;
 		};
 		[147] = {
-			volume = 4128768;
-			priority = 3;
-			isAbsolute = true;
-			reflexive = true;
-			soundId = 0;
-			inclusiveFilter = 0;
-			volumeRange = 16711680;
-			delay = 0;
-			subjectOverride = -1;
-			persistence = 1610612736;
-			directOverride = -1;
-			owner = 0;
-			type = "play sound";
-			exclusiveFilter = 0;
-			soundRange = 34078720;
+			count = 1;
+			direct = -1;
+			value = 8;
+			start = 642;
+			flags = {
+				hasBeenTrue = false;
+				hex = 0x3;
+				initiallyTrue = true;
+				trueOnlyOnce = true;
+			};
+			type = "destruction";
+			subject = -1;
 		};
 		[148] = {
-			velocityRelative = true;
-			distanceRange = 0;
-			reflexive = true;
-			min = 1;
-			inclusiveFilter = 0;
-			directionRelative = true;
-			delay = 0;
-			subjectOverride = -1;
-			range = 0;
-			baseType = 38;
-			directOverride = -1;
-			owner = 0;
-			type = "create object";
-			exclusiveFilter = 0;
+			count = 2;
+			screen = 1;
+			direct = -1;
+			start = 664;
+			flags = {
+				hasBeenTrue = false;
+				hex = 0x3;
+				initiallyTrue = true;
+				trueOnlyOnce = true;
+			};
+			line = 3;
+			type = "current computer selection";
+			subject = -1;
 		};
 		[149] = {
-			relative = false;
-			reflexive = true;
-			inclusiveFilter = 1342177280;
-			delay = 0;
-			subjectOverride = -1;
-			range = 0;
-			minimum = 0;
-			directOverride = -1;
-			owner = -1;
-			type = "alter velocity";
-			exclusiveFilter = 4294967295;
+			count = 1;
+			screen = 4;
+			direct = -1;
+			start = 666;
+			flags = {
+				hasBeenTrue = false;
+				hex = 0x3;
+				initiallyTrue = true;
+				trueOnlyOnce = true;
+			};
+			line = -1;
+			type = "current computer selection";
+			subject = -1;
 		};
 		[150] = {
-			reflexive = true;
-			inclusiveFilter = 1342177280;
+			count = 5;
+			direct = -1;
 			value = 0;
-			delay = 0;
-			subjectOverride = -1;
-			directOverride = -1;
-			owner = -1;
-			type = "alter max velocity";
-			exclusiveFilter = 4294967295;
+			start = 643;
+			flags = {
+				hasBeenTrue = false;
+				hex = 0x1;
+				initiallyTrue = false;
+				trueOnlyOnce = true;
+			};
+			type = "time";
+			subject = -1;
 		};
 		[151] = {
-			volume = 0;
-			priority = 3;
-			isAbsolute = true;
-			reflexive = true;
-			soundId = 0;
-			inclusiveFilter = 1342177280;
-			volumeRange = 16711680;
-			delay = 0;
-			subjectOverride = -1;
-			persistence = 0;
-			directOverride = -1;
-			owner = -1;
-			type = "play sound";
-			exclusiveFilter = 4294967295;
-			soundRange = 37355520;
+			count = 1;
+			direct = -1;
+			page = 3;
+			start = 648;
+			flags = {
+				hasBeenTrue = false;
+				hex = 0x1;
+				initiallyTrue = false;
+				trueOnlyOnce = true;
+			};
+			type = "current message";
+			id = 5800;
+			subject = -1;
 		};
 		[152] = {
-			reflexive = false;
-			how = "expire";
-			inclusiveFilter = 1342177280;
-			delay = 160;
-			subjectOverride = -1;
-			directOverride = -1;
-			owner = -1;
-			type = "die";
-			exclusiveFilter = 4294967295;
+			count = 1;
+			direct = -1;
+			start = 649;
+			flags = {
+				hasBeenTrue = false;
+				hex = 0x3;
+				initiallyTrue = true;
+				trueOnlyOnce = true;
+			};
+			type = "is auxiliary";
+			subject = 1;
 		};
 		[153] = {
-			reflexive = false;
-			inclusiveFilter = 1342177280;
-			value = 0;
-			delay = 0;
-			subjectOverride = -1;
-			useObjectsOwner = true;
-			directOverride = -1;
-			owner = -1;
-			type = "alter owner";
-			exclusiveFilter = 4294967295;
+			count = 1;
+			direct = -1;
+			page = 8;
+			start = 663;
+			flags = {
+				hasBeenTrue = false;
+				hex = 0x1;
+				initiallyTrue = false;
+				trueOnlyOnce = true;
+			};
+			type = "current message";
+			id = 5803;
+			subject = -1;
 		};
 		[154] = {
-			reflexive = true;
-			inclusiveFilter = 0;
-			value = -1;
-			delay = 0;
-			subjectOverride = -1;
-			directOverride = -1;
-			owner = 0;
-			type = "alter max velocity";
-			exclusiveFilter = 0;
+			count = 2;
+			direct = -1;
+			start = 650;
+			flags = {
+				hasBeenTrue = false;
+				hex = 0x3;
+				initiallyTrue = true;
+				trueOnlyOnce = true;
+			};
+			type = "is auxiliary";
+			subject = 6;
 		};
 		[155] = {
-			velocityRelative = true;
-			distanceRange = 0;
-			reflexive = true;
-			min = 1;
-			inclusiveFilter = 0;
-			directionRelative = true;
-			delay = 0;
-			subjectOverride = -1;
-			range = 0;
-			baseType = 97;
-			directOverride = -1;
-			owner = 0;
-			type = "create object";
-			exclusiveFilter = 0;
+			count = 3;
+			direct = -1;
+			page = 2;
+			start = 651;
+			flags = {
+				hasBeenTrue = false;
+				hex = 0x1;
+				initiallyTrue = false;
+				trueOnlyOnce = true;
+			};
+			type = "current message";
+			id = 5811;
+			subject = -1;
 		};
 		[156] = {
-			volume = 327680;
-			priority = 4;
-			isAbsolute = true;
-			reflexive = true;
-			soundId = 0;
-			inclusiveFilter = 0;
-			volumeRange = 16711680;
-			delay = 0;
-			subjectOverride = -1;
-			persistence = 0;
-			directOverride = -1;
-			owner = 0;
-			type = "play sound";
-			exclusiveFilter = 0;
-			soundRange = 675807232;
+			count = 1;
+			direct = -1;
+			start = 654;
+			flags = {
+				hasBeenTrue = false;
+				hex = 0x3;
+				initiallyTrue = true;
+				trueOnlyOnce = true;
+			};
+			type = "is auxiliary";
+			subject = 5;
 		};
 		[157] = {
-			velocityRelative = true;
-			distanceRange = 0;
-			reflexive = true;
-			min = 6;
-			inclusiveFilter = 0;
-			directionRelative = true;
-			delay = 0;
-			subjectOverride = -1;
-			range = 0;
-			baseType = 99;
-			directOverride = -1;
-			owner = 0;
-			type = "create object set destination";
-			exclusiveFilter = 0;
+			count = 8;
+			direct = -1;
+			page = 2;
+			start = 655;
+			flags = {
+				hasBeenTrue = false;
+				hex = 0x1;
+				initiallyTrue = false;
+				trueOnlyOnce = true;
+			};
+			type = "current message";
+			id = 5813;
+			subject = -1;
 		};
 		[158] = {
-			reflexive = false;
-			how = "expire";
-			inclusiveFilter = 2684354560;
-			delay = 0;
-			subjectOverride = -1;
-			directOverride = -1;
-			owner = -1;
-			type = "die";
-			exclusiveFilter = 4294967295;
+			count = 1;
+			direct = -1;
+			start = 667;
+			flags = {
+				hasBeenTrue = false;
+				hex = 0x3;
+				initiallyTrue = true;
+				trueOnlyOnce = true;
+			};
+			type = "is auxiliary";
+			subject = 1;
 		};
 		[159] = {
-			volume = 16777216;
-			priority = 4;
-			isAbsolute = true;
-			reflexive = false;
-			soundId = 0;
-			inclusiveFilter = 2684354560;
-			volumeRange = 16711680;
-			delay = 0;
-			subjectOverride = -1;
-			persistence = 16777216;
-			directOverride = -1;
-			owner = -1;
-			type = "play sound";
-			exclusiveFilter = 4294967295;
-			soundRange = 2096431104;
+			count = 7;
+			direct = -1;
+			page = 2;
+			start = 668;
+			flags = {
+				hasBeenTrue = false;
+				hex = 0x1;
+				initiallyTrue = false;
+				trueOnlyOnce = true;
+			};
+			type = "current message";
+			id = 5815;
+			subject = -1;
 		};
 		[160] = {
-			reflexive = false;
-			inclusiveFilter = 2684354560;
-			value = 1;
-			delay = 0;
-			subjectOverride = -1;
-			directOverride = -1;
-			owner = -1;
-			type = "alter occupation";
-			exclusiveFilter = 4294967295;
+			count = 1;
+			direct = -1;
+			start = 675;
+			flags = {
+				hasBeenTrue = false;
+				hex = 0x3;
+				initiallyTrue = true;
+				trueOnlyOnce = true;
+			};
+			type = "is auxiliary";
+			subject = 5;
 		};
 		[161] = {
-			reflexive = false;
-			inclusiveFilter = 2684354560;
-			delay = 0;
-			subjectOverride = -1;
-			directOverride = -1;
-			owner = -1;
-			type = "activate special";
-			exclusiveFilter = 4294967295;
+			count = 6;
+			direct = -1;
+			page = 2;
+			start = 676;
+			flags = {
+				hasBeenTrue = false;
+				hex = 0x1;
+				initiallyTrue = false;
+				trueOnlyOnce = true;
+			};
+			type = "current message";
+			id = 5817;
+			subject = -1;
 		};
 		[162] = {
-			velocityRelative = false;
-			distanceRange = 0;
-			reflexive = true;
-			min = 1;
-			inclusiveFilter = 0;
-			directionRelative = false;
-			delay = 0;
-			subjectOverride = -1;
-			range = 0;
-			baseType = 29;
-			directOverride = -1;
-			owner = 0;
-			type = "create object";
-			exclusiveFilter = 0;
+			count = 1;
+			direct = -1;
+			start = 682;
+			flags = {
+				hasBeenTrue = false;
+				hex = 0x3;
+				initiallyTrue = true;
+				trueOnlyOnce = true;
+			};
+			type = "is auxiliary";
+			subject = 2;
 		};
 		[163] = {
-			volume = 13172736;
-			priority = 3;
-			isAbsolute = true;
-			reflexive = false;
-			soundId = 0;
-			inclusiveFilter = 0;
-			volumeRange = 16711680;
-			delay = 0;
-			subjectOverride = -1;
-			persistence = -1610612736;
-			directOverride = -1;
-			owner = 0;
-			type = "play sound";
-			exclusiveFilter = 0;
-			soundRange = 823001088;
+			count = 4;
+			direct = -1;
+			page = 2;
+			start = 683;
+			flags = {
+				hasBeenTrue = false;
+				hex = 0x1;
+				initiallyTrue = false;
+				trueOnlyOnce = true;
+			};
+			type = "current message";
+			id = 5819;
+			subject = -1;
 		};
 		[164] = {
-			velocityRelative = false;
-			distanceRange = 0;
-			reflexive = true;
-			min = 1;
-			inclusiveFilter = 0;
-			directionRelative = false;
-			delay = 0;
-			subjectOverride = -1;
-			range = 0;
-			baseType = 35;
-			directOverride = -1;
-			owner = 0;
-			type = "create object";
-			exclusiveFilter = 0;
+			count = 2;
+			direct = -1;
+			page = 4;
+			start = 687;
+			flags = {
+				hasBeenTrue = false;
+				hex = 0x1;
+				initiallyTrue = false;
+				trueOnlyOnce = true;
+			};
+			type = "current message";
+			id = 5819;
+			subject = -1;
 		};
 		[165] = {
-			volume = 1638400;
-			priority = 3;
-			isAbsolute = true;
-			reflexive = true;
-			soundId = 0;
-			inclusiveFilter = 0;
-			volumeRange = 16711680;
-			delay = 0;
-			subjectOverride = -1;
-			persistence = 1677721600;
-			directOverride = -1;
-			owner = 0;
-			type = "play sound";
-			exclusiveFilter = 0;
-			soundRange = 35127296;
+			count = 1;
+			direct = -1;
+			start = 689;
+			flags = {
+				hasBeenTrue = false;
+				hex = 0x3;
+				initiallyTrue = true;
+				trueOnlyOnce = true;
+			};
+			type = "is auxiliary";
+			subject = 5;
 		};
 		[166] = {
-			velocityRelative = false;
-			distanceRange = 0;
-			reflexive = true;
-			min = 8;
-			inclusiveFilter = 0;
-			directionRelative = false;
-			delay = 0;
-			subjectOverride = -1;
-			range = 4;
-			baseType = 107;
-			directOverride = -1;
-			owner = 0;
-			type = "create object";
-			exclusiveFilter = 0;
+			count = 1;
+			direct = -1;
+			page = 2;
+			start = 690;
+			flags = {
+				hasBeenTrue = false;
+				hex = 0x1;
+				initiallyTrue = false;
+				trueOnlyOnce = true;
+			};
+			type = "current message";
+			id = 5823;
+			subject = -1;
 		};
 		[167] = {
-			velocityRelative = false;
-			distanceRange = 0;
-			reflexive = true;
-			min = 1;
-			inclusiveFilter = 0;
-			directionRelative = true;
-			delay = 0;
-			subjectOverride = -1;
-			range = 0;
-			baseType = 106;
-			directOverride = -1;
-			owner = 0;
-			type = "create object";
-			exclusiveFilter = 0;
+			count = 1;
+			direct = -1;
+			start = 691;
+			flags = {
+				hasBeenTrue = false;
+				hex = 0x3;
+				initiallyTrue = true;
+				trueOnlyOnce = true;
+			};
+			type = "is auxiliary";
+			subject = 6;
 		};
 		[168] = {
-			velocityRelative = true;
-			distanceRange = 0;
-			reflexive = true;
-			min = 1;
-			inclusiveFilter = 0;
-			directionRelative = true;
-			delay = 0;
-			subjectOverride = -1;
-			range = 2;
-			baseType = 105;
-			directOverride = -1;
-			owner = 0;
-			type = "create object";
-			exclusiveFilter = 0;
+			count = 4;
+			direct = -1;
+			page = 2;
+			start = 692;
+			flags = {
+				hasBeenTrue = false;
+				hex = 0x1;
+				initiallyTrue = false;
+				trueOnlyOnce = true;
+			};
+			type = "current message";
+			id = 5825;
+			subject = -1;
 		};
 		[169] = {
-			reflexive = true;
-			inclusiveFilter = 0;
-			page = 1;
-			delay = 0;
-			subjectOverride = -1;
-			directOverride = -1;
-			owner = 0;
-			type = "display message";
-			id = 6200;
-			exclusiveFilter = 0;
+			count = 1;
+			direct = -1;
+			start = 696;
+			flags = {
+				hasBeenTrue = false;
+				hex = 0x3;
+				initiallyTrue = true;
+				trueOnlyOnce = true;
+			};
+			type = "is target";
+			subject = 1;
 		};
 		[170] = {
-			reflexive = false;
-			inclusiveFilter = 0;
-			delay = 120;
-			subjectOverride = 4;
-			directOverride = 0;
-			owner = 0;
-			type = "set destination";
-			exclusiveFilter = 0;
+			count = 1;
+			direct = -1;
+			page = 4;
+			start = 697;
+			flags = {
+				hasBeenTrue = false;
+				hex = 0x1;
+				initiallyTrue = false;
+				trueOnlyOnce = true;
+			};
+			type = "current message";
+			id = 5827;
+			subject = -1;
 		};
 		[171] = {
-			volume = 4456448;
-			priority = 5;
-			isAbsolute = true;
-			reflexive = false;
-			soundId = 0;
-			inclusiveFilter = 0;
-			volumeRange = 16711680;
-			delay = 0;
-			subjectOverride = -1;
-			persistence = 939524096;
-			directOverride = -1;
-			owner = -1;
-			type = "play sound";
-			exclusiveFilter = 0;
-			soundRange = 1140719616;
+			count = 1;
+			direct = -1;
+			start = 698;
+			flags = {
+				hasBeenTrue = false;
+				hex = 0x3;
+				initiallyTrue = true;
+				trueOnlyOnce = true;
+			};
+			type = "is target";
+			subject = 6;
 		};
 		[172] = {
-			reflexive = true;
-			inclusiveFilter = 0;
-			page = 1;
-			delay = 360;
-			subjectOverride = -1;
-			directOverride = -1;
-			owner = 0;
-			type = "display message";
-			id = 6200;
-			exclusiveFilter = 0;
+			count = 2;
+			direct = -1;
+			page = 2;
+			start = 699;
+			flags = {
+				hasBeenTrue = false;
+				hex = 0x1;
+				initiallyTrue = false;
+				trueOnlyOnce = true;
+			};
+			type = "current message";
+			id = 5831;
+			subject = -1;
 		};
 		[173] = {
-			reflexive = false;
-			inclusiveFilter = 0;
-			delay = 120;
-			subjectOverride = 4;
-			directOverride = 2;
-			owner = 0;
-			type = "set destination";
-			exclusiveFilter = 0;
+			count = 1;
+			direct = 1;
+			start = 701;
+			flags = {
+				hasBeenTrue = false;
+				hex = 0x3;
+				initiallyTrue = true;
+				trueOnlyOnce = true;
+			};
+			type = "is target";
+			subject = 7;
 		};
 		[174] = {
-			reflexive = true;
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = -1;
-			range = 0;
-			minimum = 6;
-			directOverride = -1;
-			owner = 0;
-			type = "alter hidden";
-			exclusiveFilter = 0;
+			count = 3;
+			direct = -1;
+			page = 2;
+			start = 702;
+			flags = {
+				hasBeenTrue = false;
+				hex = 0x0;
+				initiallyTrue = false;
+				trueOnlyOnce = false;
+			};
+			type = "current message";
+			id = 5833;
+			subject = -1;
 		};
 		[175] = {
-			volume = 120848384;
-			priority = 5;
-			isAbsolute = true;
-			reflexive = true;
-			soundId = 0;
-			inclusiveFilter = 0;
-			volumeRange = 16711680;
-			delay = 0;
-			subjectOverride = -1;
-			persistence = 2063597568;
-			directOverride = -1;
-			owner = 0;
-			type = "play sound";
-			exclusiveFilter = 0;
-			soundRange = 1140719616;
+			count = 1;
+			direct = -1;
+			start = 705;
+			flags = {
+				hasBeenTrue = false;
+				hex = 0x3;
+				initiallyTrue = true;
+				trueOnlyOnce = true;
+			};
+			type = "is target";
+			subject = 1;
 		};
 		[176] = {
-			reflexive = true;
-			inclusiveFilter = 0;
+			count = 1;
+			direct = -1;
 			page = 1;
-			delay = 360;
-			subjectOverride = -1;
-			directOverride = -1;
-			owner = 0;
-			type = "display message";
-			id = 6200;
-			exclusiveFilter = 0;
+			start = 706;
+			flags = {
+				hasBeenTrue = false;
+				hex = 0x0;
+				initiallyTrue = false;
+				trueOnlyOnce = false;
+			};
+			type = "current message";
+			id = 5835;
+			subject = -1;
 		};
 		[177] = {
-			reflexive = false;
-			inclusiveFilter = 0;
-			delay = 120;
-			subjectOverride = 4;
-			directOverride = 3;
-			owner = 0;
-			type = "set destination";
-			exclusiveFilter = 0;
+			count = 1;
+			direct = -1;
+			start = 707;
+			flags = {
+				hasBeenTrue = false;
+				hex = 0x3;
+				initiallyTrue = true;
+				trueOnlyOnce = true;
+			};
+			type = "is target";
+			subject = 6;
 		};
 		[178] = {
-			volume = -600768512;
-			priority = 5;
-			isAbsolute = true;
-			reflexive = true;
-			soundId = 0;
-			inclusiveFilter = 0;
-			volumeRange = 16711680;
-			delay = 0;
-			subjectOverride = -1;
-			persistence = 0;
-			directOverride = -1;
-			owner = 0;
-			type = "play sound";
-			exclusiveFilter = 0;
-			soundRange = 1140719616;
+			count = 1;
+			direct = -1;
+			page = 1;
+			start = 708;
+			flags = {
+				hasBeenTrue = false;
+				hex = 0x0;
+				initiallyTrue = false;
+				trueOnlyOnce = false;
+			};
+			type = "current message";
+			id = 5836;
+			subject = -1;
 		};
 		[179] = {
-			reflexive = true;
-			inclusiveFilter = 0;
-			page = 1;
-			delay = 360;
-			subjectOverride = -1;
-			directOverride = -1;
-			owner = 0;
-			type = "display message";
-			id = 6200;
-			exclusiveFilter = 0;
+			count = 1;
+			direct = -1;
+			start = 709;
+			flags = {
+				hasBeenTrue = false;
+				hex = 0x3;
+				initiallyTrue = true;
+				trueOnlyOnce = true;
+			};
+			type = "is target";
+			subject = 7;
 		};
 		[180] = {
-			reflexive = true;
-			inclusiveFilter = 0;
-			page = 1;
-			delay = 360;
-			subjectOverride = -1;
-			directOverride = -1;
-			owner = 0;
-			type = "display message";
-			id = 6200;
-			exclusiveFilter = 0;
+			count = 2;
+			direct = -1;
+			page = 3;
+			start = 710;
+			flags = {
+				hasBeenTrue = false;
+				hex = 0x1;
+				initiallyTrue = false;
+				trueOnlyOnce = true;
+			};
+			type = "current message";
+			id = 5837;
+			subject = -1;
 		};
 		[181] = {
-			reflexive = true;
-			inclusiveFilter = 0;
-			delay = 180;
-			subjectOverride = -1;
-			range = 4;
-			minimum = 7;
-			directOverride = -1;
-			owner = 0;
-			type = "alter hidden";
-			exclusiveFilter = 0;
+			count = 1;
+			direct = -1;
+			start = 712;
+			flags = {
+				hasBeenTrue = false;
+				hex = 0x3;
+				initiallyTrue = true;
+				trueOnlyOnce = true;
+			};
+			type = "is target";
+			subject = 1;
 		};
 		[182] = {
-			reflexive = false;
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = 4;
-			directOverride = 0;
-			owner = 0;
-			type = "set destination";
-			exclusiveFilter = 0;
+			count = 1;
+			direct = -1;
+			page = 1;
+			start = 713;
+			flags = {
+				hasBeenTrue = false;
+				hex = 0x1;
+				initiallyTrue = false;
+				trueOnlyOnce = true;
+			};
+			type = "current message";
+			id = 5840;
+			subject = -1;
 		};
 		[183] = {
-			reflexive = false;
-			inclusiveFilter = 1610612736;
-			delay = 0;
-			subjectOverride = -1;
-			amount = 1;
-			score = 0;
-			directOverride = -1;
-			plsyer = 0;
-			owner = 0;
-			type = "change score";
-			exclusiveFilter = 4294967295;
+			count = 6;
+			direct = -1;
+			start = 714;
+			flags = {
+				hasBeenTrue = false;
+				hex = 0x3;
+				initiallyTrue = true;
+				trueOnlyOnce = true;
+			};
+			type = "autopilot";
+			subject = -1;
 		};
 		[184] = {
-			reflexive = false;
-			how = "expire";
-			inclusiveFilter = 1610612736;
-			delay = 0;
-			subjectOverride = -1;
-			directOverride = -1;
-			owner = 0;
-			type = "die";
-			exclusiveFilter = 4294967295;
+			count = 4;
+			direct = 5;
+			start = 720;
+			flags = {
+				hasBeenTrue = false;
+				hex = 0x3;
+				initiallyTrue = true;
+				trueOnlyOnce = true;
+			};
+			location = 223.60679775;
+			type = "proximity";
+			subject = 1;
 		};
 		[185] = {
-			velocityRelative = false;
-			distanceRange = 0;
-			reflexive = true;
-			min = 2;
-			inclusiveFilter = 0;
-			directionRelative = false;
-			delay = 0;
-			subjectOverride = -1;
-			range = 0;
-			baseType = 61;
-			directOverride = -1;
-			owner = 0;
-			type = "create object";
-			exclusiveFilter = 0;
+			count = 1;
+			direct = 6;
+			start = 724;
+			flags = {
+				hasBeenTrue = false;
+				hex = 0x3;
+				initiallyTrue = true;
+				trueOnlyOnce = true;
+			};
+			location = 223.60679775;
+			type = "proximity";
+			subject = -2;
 		};
 		[186] = {
-			velocityRelative = false;
-			distanceRange = 0;
-			reflexive = true;
-			min = 1;
-			inclusiveFilter = 0;
-			directionRelative = false;
-			delay = 0;
-			subjectOverride = -1;
-			range = 0;
-			baseType = 117;
-			directOverride = -1;
-			owner = 0;
-			type = "create object";
-			exclusiveFilter = 0;
+			count = 3;
+			direct = -1;
+			start = 725;
+			flags = {
+				hasBeenTrue = false;
+				hex = 0x3;
+				initiallyTrue = true;
+				trueOnlyOnce = true;
+			};
+			type = "not autopilot";
+			subject = -1;
 		};
 		[187] = {
-			reflexive = true;
-			inclusiveFilter = 0;
-			page = 1;
-			delay = 0;
-			subjectOverride = -1;
-			directOverride = -1;
-			owner = 0;
-			type = "display message";
-			id = 5300;
-			exclusiveFilter = 0;
+			count = 6;
+			direct = -1;
+			value = 0;
+			start = 729;
+			flags = {
+				hasBeenTrue = false;
+				hex = 0x1;
+				initiallyTrue = false;
+				trueOnlyOnce = true;
+			};
+			type = "time";
+			subject = -1;
 		};
 		[188] = {
-			reflexive = true;
-			inclusiveFilter = 0;
-			delay = 1200;
-			subjectOverride = -1;
-			range = 0;
-			minimum = 3;
-			directOverride = -1;
-			owner = 0;
-			type = "alter hidden";
-			exclusiveFilter = 0;
+			count = 1;
+			direct = -1;
+			page = 2;
+			start = 735;
+			flags = {
+				hasBeenTrue = false;
+				hex = 0x1;
+				initiallyTrue = false;
+				trueOnlyOnce = true;
+			};
+			type = "current message";
+			id = 5900;
+			subject = 1;
 		};
 		[189] = {
-			reflexive = true;
-			inclusiveFilter = 0;
-			delay = 1200;
-			subjectOverride = -1;
-			range = 0;
-			minimum = 5;
-			directOverride = -1;
-			owner = 0;
-			type = "alter hidden";
-			exclusiveFilter = 0;
+			count = 1;
+			direct = -1;
+			start = 736;
+			flags = {
+				hasBeenTrue = false;
+				hex = 0x3;
+				initiallyTrue = true;
+				trueOnlyOnce = true;
+			};
+			type = "is auxiliary";
+			subject = 1;
 		};
 		[190] = {
-			reflexive = true;
-			inclusiveFilter = 0;
-			delay = 1200;
-			subjectOverride = -1;
-			range = 0;
-			minimum = 6;
-			directOverride = -1;
-			owner = 0;
-			type = "alter hidden";
-			exclusiveFilter = 0;
+			count = 1;
+			direct = -1;
+			page = 3;
+			start = 737;
+			flags = {
+				hasBeenTrue = false;
+				hex = 0x1;
+				initiallyTrue = false;
+				trueOnlyOnce = true;
+			};
+			type = "current message";
+			id = 5905;
+			subject = -1;
 		};
 		[191] = {
-			reflexive = true;
-			inclusiveFilter = 0;
-			delay = 1200;
-			subjectOverride = -1;
-			range = 0;
-			minimum = 7;
-			directOverride = -1;
-			owner = 0;
-			type = "alter hidden";
-			exclusiveFilter = 0;
+			count = 1;
+			screen = 2;
+			direct = -1;
+			start = 738;
+			flags = {
+				hasBeenTrue = false;
+				hex = 0x3;
+				initiallyTrue = true;
+				trueOnlyOnce = true;
+			};
+			line = -1;
+			type = "current computer selection";
+			subject = -1;
 		};
 		[192] = {
-			reflexive = true;
-			inclusiveFilter = 0;
-			delay = 1200;
-			subjectOverride = -1;
-			range = 0;
-			minimum = 8;
-			directOverride = -1;
-			owner = 0;
-			type = "alter hidden";
-			exclusiveFilter = 0;
+			count = 1;
+			direct = -1;
+			page = 5;
+			start = 739;
+			flags = {
+				hasBeenTrue = false;
+				hex = 0x1;
+				initiallyTrue = false;
+				trueOnlyOnce = true;
+			};
+			type = "current message";
+			id = 5910;
+			subject = -1;
 		};
 		[193] = {
-			reflexive = true;
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = -1;
-			range = 0;
-			minimum = 1;
-			directOverride = -1;
-			owner = 0;
-			type = "alter hidden";
-			exclusiveFilter = 0;
+			count = 2;
+			direct = -1;
+			page = 6;
+			start = 740;
+			flags = {
+				hasBeenTrue = false;
+				hex = 0x1;
+				initiallyTrue = false;
+				trueOnlyOnce = true;
+			};
+			type = "current message";
+			id = 5910;
+			subject = -1;
 		};
 		[194] = {
-			reflexive = true;
-			inclusiveFilter = 0;
-			page = 1;
-			delay = 0;
-			subjectOverride = -1;
-			directOverride = -1;
-			owner = 0;
-			type = "display message";
-			id = 5301;
-			exclusiveFilter = 0;
+			count = 1;
+			direct = -1;
+			page = 8;
+			start = 742;
+			flags = {
+				hasBeenTrue = false;
+				hex = 0x1;
+				initiallyTrue = false;
+				trueOnlyOnce = true;
+			};
+			type = "current message";
+			id = 5910;
+			subject = -1;
 		};
 		[195] = {
-			reflexive = true;
-			inclusiveFilter = 0;
-			page = 1;
-			delay = 0;
-			subjectOverride = -1;
-			directOverride = -1;
-			owner = 0;
-			type = "display message";
-			id = 5310;
-			exclusiveFilter = 0;
+			count = 2;
+			direct = -1;
+			page = 10;
+			start = 743;
+			flags = {
+				hasBeenTrue = false;
+				hex = 0x1;
+				initiallyTrue = false;
+				trueOnlyOnce = true;
+			};
+			type = "current message";
+			id = 5910;
+			subject = -1;
 		};
 		[196] = {
-			reflexive = true;
-			inclusiveFilter = 0;
-			delay = 400;
-			subjectOverride = -1;
-			range = 0;
-			minimum = 4;
-			directOverride = -1;
-			owner = 0;
-			type = "alter hidden";
-			exclusiveFilter = 0;
+			count = 2;
+			direct = -1;
+			start = 745;
+			flags = {
+				hasBeenTrue = false;
+				hex = 0x3;
+				initiallyTrue = true;
+				trueOnlyOnce = true;
+			};
+			type = "object being built";
+			subject = -1;
 		};
 		[197] = {
-			volume = 393216;
-			priority = 3;
-			isAbsolute = true;
-			reflexive = true;
-			soundId = 0;
-			inclusiveFilter = 0;
-			volumeRange = 16711680;
-			delay = 0;
-			subjectOverride = -1;
-			persistence = 0;
-			directOverride = -1;
-			owner = 0;
-			type = "play sound";
-			exclusiveFilter = 0;
-			soundRange = 37158912;
+			count = 2;
+			counter = {
+				player = 0;
+				amount = 1;
+				counter = 0;
+			};
+			direct = -1;
+			start = 747;
+			flags = {
+				hasBeenTrue = false;
+				hex = 0x3;
+				initiallyTrue = true;
+				trueOnlyOnce = true;
+			};
+			type = "counter greater";
+			subject = -1;
 		};
 		[198] = {
-			velocityRelative = true;
-			distanceRange = 0;
-			reflexive = true;
-			min = 6;
-			inclusiveFilter = 0;
-			directionRelative = true;
-			delay = 0;
-			subjectOverride = -1;
-			range = 0;
-			baseType = 121;
-			directOverride = -1;
-			owner = 0;
-			type = "create object set destination";
-			exclusiveFilter = 0;
+			count = 1;
+			direct = -1;
+			start = 751;
+			flags = {
+				hasBeenTrue = false;
+				hex = 0x3;
+				initiallyTrue = true;
+				trueOnlyOnce = true;
+			};
+			type = "is auxiliary";
+			subject = 5;
 		};
 		[199] = {
-			volume = 0;
-			priority = 3;
-			isAbsolute = true;
-			reflexive = true;
-			soundId = 0;
-			inclusiveFilter = 0;
-			volumeRange = 16711680;
-			delay = 0;
-			subjectOverride = -1;
-			persistence = 16777216;
-			directOverride = -1;
-			owner = 0;
-			type = "play sound";
-			exclusiveFilter = 0;
-			soundRange = 34340864;
+			count = 2;
+			direct = -1;
+			page = 3;
+			start = 752;
+			flags = {
+				hasBeenTrue = false;
+				hex = 0x1;
+				initiallyTrue = false;
+				trueOnlyOnce = true;
+			};
+			type = "current message";
+			id = 5935;
+			subject = -1;
 		};
 		[200] = {
-			relative = false;
-			reflexive = true;
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = -1;
-			range = 0;
-			minimum = -3840;
-			directOverride = -1;
-			owner = 0;
-			type = "alter velocity";
-			exclusiveFilter = 0;
+			count = 6;
+			direct = -1;
+			start = 754;
+			flags = {
+				hasBeenTrue = false;
+				hex = 0x1;
+				initiallyTrue = false;
+				trueOnlyOnce = true;
+			};
+			type = "is target";
+			subject = 2;
 		};
 		[201] = {
-			relative = false;
-			reflexive = true;
-			inclusiveFilter = 0;
-			delay = 7;
-			subjectOverride = -1;
-			range = 0;
-			minimum = 0;
-			directOverride = -1;
-			owner = 0;
-			type = "alter velocity";
-			exclusiveFilter = 0;
+			count = 1;
+			counter = {
+				player = 0;
+				amount = 2;
+				counter = 0;
+			};
+			direct = -1;
+			start = 760;
+			flags = {
+				hasBeenTrue = false;
+				hex = 0x1;
+				initiallyTrue = false;
+				trueOnlyOnce = true;
+			};
+			type = "counter";
+			subject = -1;
 		};
 		[202] = {
-			reflexive = true;
-			inclusiveFilter = 0;
-			page = 1;
-			delay = 0;
-			subjectOverride = -1;
-			directOverride = -1;
-			owner = 0;
-			type = "display message";
-			id = 5370;
-			exclusiveFilter = 0;
+			count = 1;
+			direct = -1;
+			page = 2;
+			start = 761;
+			flags = {
+				hasBeenTrue = false;
+				hex = 0x1;
+				initiallyTrue = false;
+				trueOnlyOnce = true;
+			};
+			type = "current message";
+			id = 5945;
+			subject = -1;
 		};
 		[203] = {
-			reflexive = false;
-			player = 0;
-			inclusiveFilter = 0;
-			text = 10503;
-			nextLevel = 8;
-			delay = 360;
-			subjectOverride = -1;
-			directOverride = -1;
-			owner = 0;
-			type = "declare winner";
-			exclusiveFilter = 0;
+			count = 2;
+			direct = -1;
+			page = 3;
+			start = 762;
+			flags = {
+				hasBeenTrue = false;
+				hex = 0x1;
+				initiallyTrue = false;
+				trueOnlyOnce = true;
+			};
+			type = "current message";
+			id = 5945;
+			subject = -1;
 		};
 		[204] = {
-			reflexive = true;
-			inclusiveFilter = 0;
-			delay = 90;
-			subjectOverride = -1;
-			range = 0;
-			minimum = 10;
-			directOverride = -1;
-			owner = 0;
-			type = "alter hidden";
-			exclusiveFilter = 0;
+			count = 3;
+			direct = -1;
+			start = 764;
+			flags = {
+				hasBeenTrue = false;
+				hex = 0x3;
+				initiallyTrue = true;
+				trueOnlyOnce = true;
+			};
+			type = "is auxiliary";
+			subject = 2;
 		};
 		[205] = {
-			reflexive = true;
-			inclusiveFilter = 0;
-			page = 1;
-			delay = 30;
-			subjectOverride = -1;
-			directOverride = -1;
-			owner = 0;
-			type = "display message";
-			id = 5400;
-			exclusiveFilter = 0;
+			count = 4;
+			direct = -1;
+			start = 767;
+			flags = {
+				hasBeenTrue = false;
+				hex = 0x3;
+				initiallyTrue = true;
+				trueOnlyOnce = true;
+			};
+			type = "is target";
+			subject = 1;
 		};
 		[206] = {
-			reflexive = true;
-			inclusiveFilter = 0;
-			delay = 900;
-			subjectOverride = -1;
-			range = 2;
-			minimum = 16;
-			directOverride = -1;
-			owner = 0;
-			type = "alter hidden";
-			exclusiveFilter = 0;
+			count = 2;
+			direct = 2;
+			start = 771;
+			flags = {
+				hasBeenTrue = false;
+				hex = 0x3;
+				initiallyTrue = true;
+				trueOnlyOnce = true;
+			};
+			location = 223.60679775;
+			type = "proximity";
+			subject = 1;
 		};
 		[207] = {
-			volume = 2097152;
-			priority = 3;
-			isAbsolute = true;
-			reflexive = true;
-			soundId = 0;
-			inclusiveFilter = 0;
-			volumeRange = 16711680;
-			delay = 0;
-			subjectOverride = -1;
-			persistence = 0;
-			directOverride = -1;
-			owner = 0;
-			type = "play sound";
-			exclusiveFilter = 0;
-			soundRange = 34013184;
+			count = 2;
+			direct = -1;
+			start = 773;
+			flags = {
+				hasBeenTrue = false;
+				hex = 0x3;
+				initiallyTrue = true;
+				trueOnlyOnce = true;
+			};
+			type = "is auxiliary";
+			subject = 6;
 		};
 		[208] = {
-			velocityRelative = true;
-			distanceRange = 0;
-			reflexive = true;
-			min = 1;
-			inclusiveFilter = 0;
-			directionRelative = true;
-			delay = 0;
-			subjectOverride = -1;
-			range = 0;
-			baseType = 131;
-			directOverride = -1;
-			owner = 0;
-			type = "create object";
-			exclusiveFilter = 0;
+			count = 1;
+			direct = 1;
+			start = 775;
+			flags = {
+				hasBeenTrue = false;
+				hex = 0x3;
+				initiallyTrue = true;
+				trueOnlyOnce = true;
+			};
+			type = "direct is subject target";
+			subject = 6;
 		};
 		[209] = {
-			reflexive = true;
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = 0;
-			directOverride = -1;
-			owner = 0;
-			type = "alter base type";
-			id = 126;
-			exclusiveFilter = 0;
-			retainAmmmoCount = false;
+			count = 5;
+			direct = -1;
+			page = 3;
+			start = 776;
+			flags = {
+				hasBeenTrue = false;
+				hex = 0x1;
+				initiallyTrue = false;
+				trueOnlyOnce = true;
+			};
+			type = "current message";
+			id = 5970;
+			subject = -1;
 		};
 		[210] = {
-			volume = 131072;
-			priority = 4;
-			isAbsolute = true;
-			reflexive = true;
-			soundId = 0;
-			inclusiveFilter = 0;
-			volumeRange = 16711680;
-			delay = 0;
-			subjectOverride = -1;
-			persistence = -1560281088;
-			directOverride = -1;
-			owner = 0;
-			type = "play sound";
-			exclusiveFilter = 0;
-			soundRange = 1140719616;
+			count = 2;
+			direct = -1;
+			value = 0;
+			start = 781;
+			flags = {
+				hasBeenTrue = false;
+				hex = 0x3;
+				initiallyTrue = true;
+				trueOnlyOnce = true;
+			};
+			type = "owner";
+			subject = 1;
 		};
 		[211] = {
-			reflexive = true;
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = -1;
-			range = 0;
-			minimum = 2;
-			directOverride = -1;
-			owner = 0;
-			type = "alter active condition";
-			exclusiveFilter = 0;
-			conditionTrue = false;
+			count = 1;
+			direct = -1;
+			page = 2;
+			start = 783;
+			flags = {
+				hasBeenTrue = false;
+				hex = 0x1;
+				initiallyTrue = false;
+				trueOnlyOnce = true;
+			};
+			type = "current message";
+			id = 5975;
+			subject = -1;
 		};
 		[212] = {
-			reflexive = false;
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = 0;
-			directOverride = 10;
-			owner = 0;
-			type = "set destination";
-			exclusiveFilter = 0;
+			count = 2;
+			direct = -1;
+			start = 784;
+			flags = {
+				hasBeenTrue = false;
+				hex = 0x3;
+				initiallyTrue = true;
+				trueOnlyOnce = true;
+			};
+			type = "is auxiliary";
+			subject = 6;
 		};
 		[213] = {
-			reflexive = true;
-			inclusiveFilter = 0;
-			page = 1;
-			delay = 0;
-			subjectOverride = -1;
-			directOverride = -1;
-			owner = 0;
-			type = "display message";
-			id = 5401;
-			exclusiveFilter = 0;
+			count = 2;
+			direct = -1;
+			start = 786;
+			flags = {
+				hasBeenTrue = false;
+				hex = 0x3;
+				initiallyTrue = true;
+				trueOnlyOnce = true;
+			};
+			type = "is target";
+			subject = 4;
 		};
 		[214] = {
-			reflexive = false;
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = 10;
-			directOverride = 7;
-			owner = 0;
-			type = "set destination";
-			exclusiveFilter = 0;
+			count = 2;
+			direct = 4;
+			start = 788;
+			flags = {
+				hasBeenTrue = false;
+				hex = 0x3;
+				initiallyTrue = true;
+				trueOnlyOnce = true;
+			};
+			type = "direct is subject target";
+			subject = 6;
 		};
 		[215] = {
-			volume = 1310720;
-			priority = 3;
-			isAbsolute = true;
-			reflexive = true;
-			soundId = 0;
-			inclusiveFilter = 0;
-			volumeRange = 16711680;
-			delay = 0;
-			subjectOverride = -1;
-			persistence = 33554432;
-			directOverride = -1;
-			owner = 0;
-			type = "play sound";
-			exclusiveFilter = 0;
-			soundRange = 34078720;
+			count = 2;
+			direct = 4;
+			start = 790;
+			flags = {
+				hasBeenTrue = false;
+				hex = 0x3;
+				initiallyTrue = true;
+				trueOnlyOnce = true;
+			};
+			type = "direct is subject target";
+			subject = 5;
 		};
 		[216] = {
-			velocityRelative = true;
-			distanceRange = 0;
-			reflexive = true;
-			min = 1;
-			inclusiveFilter = 0;
-			directionRelative = true;
-			delay = 0;
-			subjectOverride = -1;
-			range = 0;
-			baseType = 112;
-			directOverride = -1;
-			owner = 0;
-			type = "create object";
-			exclusiveFilter = 0;
+			count = 1;
+			direct = 4;
+			start = 792;
+			flags = {
+				hasBeenTrue = false;
+				hex = 0x3;
+				initiallyTrue = true;
+				trueOnlyOnce = true;
+			};
+			type = "direct is subject target";
+			subject = 2;
 		};
 		[217] = {
-			volume = 3670016;
-			priority = 3;
-			isAbsolute = true;
-			reflexive = true;
-			soundId = 0;
-			inclusiveFilter = 0;
-			volumeRange = 16711680;
-			delay = 0;
-			subjectOverride = -1;
-			persistence = 2130706432;
-			directOverride = -1;
-			owner = 0;
-			type = "play sound";
-			exclusiveFilter = 0;
-			soundRange = 1835466752;
+			count = 3;
+			direct = -1;
+			page = 2;
+			start = 793;
+			flags = {
+				hasBeenTrue = false;
+				hex = 0x1;
+				initiallyTrue = false;
+				trueOnlyOnce = true;
+			};
+			type = "current message";
+			id = 7000;
+			subject = -1;
 		};
 		[218] = {
-			velocityRelative = true;
-			distanceRange = 0;
-			reflexive = true;
-			min = 1;
-			inclusiveFilter = 0;
-			directionRelative = true;
-			delay = 0;
-			subjectOverride = -1;
-			range = 0;
-			baseType = 133;
-			directOverride = -1;
-			owner = 0;
-			type = "create object";
-			exclusiveFilter = 0;
+			count = 4;
+			direct = -1;
+			start = 796;
+			flags = {
+				hasBeenTrue = false;
+				hex = 0x3;
+				initiallyTrue = true;
+				trueOnlyOnce = true;
+			};
+			type = "is target";
+			subject = 0;
 		};
 		[219] = {
-			volume = 15204352;
-			priority = 3;
-			isAbsolute = true;
-			reflexive = true;
-			soundId = 0;
-			inclusiveFilter = 0;
-			volumeRange = 16711680;
-			delay = 0;
-			subjectOverride = -1;
-			persistence = 0;
-			directOverride = -1;
-			owner = 0;
-			type = "play sound";
-			exclusiveFilter = 0;
-			soundRange = 1890910208;
+			count = 1;
+			direct = 0;
+			start = 800;
+			flags = {
+				hasBeenTrue = false;
+				hex = 0x3;
+				initiallyTrue = true;
+				trueOnlyOnce = true;
+			};
+			type = "direct is subject target";
+			subject = 2;
 		};
 		[220] = {
-			velocityRelative = true;
-			distanceRange = 0;
-			reflexive = true;
-			min = 1;
-			inclusiveFilter = 0;
-			directionRelative = true;
-			delay = 0;
-			subjectOverride = -1;
-			range = 0;
-			baseType = 136;
-			directOverride = -1;
-			owner = 0;
-			type = "create object";
-			exclusiveFilter = 0;
+			count = 1;
+			direct = 0;
+			start = 801;
+			flags = {
+				hasBeenTrue = false;
+				hex = 0x3;
+				initiallyTrue = true;
+				trueOnlyOnce = true;
+			};
+			type = "direct is subject target";
+			subject = 5;
 		};
 		[221] = {
-			reflexive = true;
-			inclusiveFilter = 0;
-			page = 1;
-			delay = 120;
-			subjectOverride = -1;
-			directOverride = -1;
-			owner = 0;
-			type = "display message";
-			id = 4570;
-			exclusiveFilter = 0;
+			count = 2;
+			direct = 0;
+			start = 802;
+			flags = {
+				hasBeenTrue = false;
+				hex = 0x3;
+				initiallyTrue = true;
+				trueOnlyOnce = true;
+			};
+			type = "direct is subject target";
+			subject = 6;
 		};
 		[222] = {
-			reflexive = true;
-			inclusiveFilter = 0;
-			delay = 180;
-			subjectOverride = -1;
-			range = 2;
-			minimum = 7;
-			directOverride = -1;
-			owner = 0;
-			type = "alter hidden";
-			exclusiveFilter = 0;
+			count = 2;
+			direct = -1;
+			page = 3;
+			start = 804;
+			flags = {
+				hasBeenTrue = false;
+				hex = 0x1;
+				initiallyTrue = false;
+				trueOnlyOnce = true;
+			};
+			type = "current message";
+			id = 7010;
+			subject = -1;
 		};
 		[223] = {
-			reflexive = false;
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = 0;
-			directOverride = 7;
-			owner = 0;
-			type = "set destination";
-			exclusiveFilter = 0;
+			count = 1;
+			screen = 3;
+			direct = -1;
+			start = 806;
+			flags = {
+				hasBeenTrue = false;
+				hex = 0x3;
+				initiallyTrue = true;
+				trueOnlyOnce = true;
+			};
+			line = -1;
+			type = "current computer selection";
+			subject = -1;
 		};
 		[224] = {
-			reflexive = true;
-			inclusiveFilter = 0;
-			speed = 128;
-			delay = 60;
-			subjectOverride = 0;
-			directOverride = 7;
-			owner = 0;
-			type = "land at";
-			exclusiveFilter = 0;
+			count = 1;
+			direct = -1;
+			page = 2;
+			start = 807;
+			flags = {
+				hasBeenTrue = false;
+				hex = 0x1;
+				initiallyTrue = false;
+				trueOnlyOnce = true;
+			};
+			type = "current message";
+			id = 7015;
+			subject = -1;
 		};
 		[225] = {
-			reflexive = true;
-			inclusiveFilter = 0;
-			delay = 10;
-			subjectOverride = -1;
-			range = 0;
-			minimum = 19;
-			directOverride = -1;
-			owner = 0;
-			type = "alter hidden";
-			exclusiveFilter = 0;
+			count = 4;
+			direct = -1;
+			start = 808;
+			flags = {
+				hasBeenTrue = false;
+				hex = 0x3;
+				initiallyTrue = true;
+				trueOnlyOnce = true;
+			};
+			type = "is auxiliary";
+			subject = 2;
 		};
 		[226] = {
-			reflexive = true;
-			player = 0;
-			inclusiveFilter = 0;
-			text = 11401;
-			nextLevel = 17;
-			delay = 0;
-			subjectOverride = -1;
-			directOverride = -1;
-			owner = 0;
-			type = "declare winner";
-			exclusiveFilter = 0;
+			count = 1;
+			direct = -1;
+			start = 812;
+			flags = {
+				hasBeenTrue = false;
+				hex = 0x3;
+				initiallyTrue = true;
+				trueOnlyOnce = true;
+			};
+			type = "subject is player";
+			subject = 2;
 		};
 		[227] = {
-			volume = 1310720;
-			priority = 4;
-			isAbsolute = true;
-			reflexive = true;
-			soundId = 0;
-			inclusiveFilter = 0;
-			volumeRange = 16711680;
-			delay = 0;
-			subjectOverride = -1;
-			persistence = 0;
-			directOverride = -1;
-			owner = 0;
-			type = "play sound";
-			exclusiveFilter = 0;
-			soundRange = 642252800;
+			count = 1;
+			direct = -1;
+			page = 4;
+			start = 799;
+			flags = {
+				hasBeenTrue = false;
+				hex = 0x1;
+				initiallyTrue = false;
+				trueOnlyOnce = true;
+			};
+			type = "current message";
+			id = 5970;
+			subject = -1;
 		};
 		[228] = {
-			volume = 3407872;
-			priority = 3;
-			isAbsolute = true;
-			reflexive = true;
-			soundId = 0;
-			inclusiveFilter = 0;
-			volumeRange = 16711680;
-			delay = 0;
-			subjectOverride = -1;
-			persistence = 2113929216;
-			directOverride = -1;
-			owner = 0;
-			type = "play sound";
-			exclusiveFilter = 0;
-			soundRange = 35258368;
+			count = 4;
+			direct = -1;
+			page = 5;
+			start = 813;
+			flags = {
+				hasBeenTrue = false;
+				hex = 0x1;
+				initiallyTrue = false;
+				trueOnlyOnce = true;
+			};
+			type = "current message";
+			id = 7025;
+			subject = -1;
 		};
 		[229] = {
-			velocityRelative = true;
-			distanceRange = 0;
-			reflexive = true;
-			min = 1;
-			inclusiveFilter = 0;
-			directionRelative = true;
-			delay = 0;
-			subjectOverride = -1;
-			range = 0;
-			baseType = 144;
-			directOverride = -1;
-			owner = 0;
-			type = "create object";
-			exclusiveFilter = 0;
+			count = 1;
+			start = 817;
+			direct = -1;
+			player = 1;
+			flags = {
+				hasBeenTrue = false;
+				hex = 0x3;
+				initiallyTrue = true;
+				trueOnlyOnce = true;
+			};
+			type = "no ships left";
+			subject = -1;
 		};
 		[230] = {
-			volume = 5570560;
-			priority = 3;
-			isAbsolute = true;
-			reflexive = true;
-			soundId = 0;
-			inclusiveFilter = 0;
-			volumeRange = 16711680;
-			delay = 0;
-			subjectOverride = -1;
-			persistence = -1610612736;
-			directOverride = -1;
-			owner = 0;
-			type = "play sound";
-			exclusiveFilter = 0;
-			soundRange = 35192832;
+			count = 0;
+			direct = 0;
+			start = 0;
+			flags = {
+				hasBeenTrue = false;
+				hex = 0x0;
+				initiallyTrue = false;
+				trueOnlyOnce = false;
+			};
+			type = "none";
+			subject = 0;
 		};
 		[231] = {
-			velocityRelative = true;
-			distanceRange = 0;
-			reflexive = true;
-			min = 1;
-			inclusiveFilter = 0;
-			directionRelative = true;
-			delay = 0;
-			subjectOverride = -1;
-			range = 0;
-			baseType = 146;
-			directOverride = -1;
-			owner = 0;
-			type = "create object";
-			exclusiveFilter = 0;
+			count = 0;
+			direct = 0;
+			start = 0;
+			flags = {
+				hasBeenTrue = false;
+				hex = 0x0;
+				initiallyTrue = false;
+				trueOnlyOnce = false;
+			};
+			type = "none";
+			subject = 0;
 		};
 		[232] = {
-			volume = 983040;
-			priority = 3;
-			isAbsolute = true;
-			reflexive = true;
-			soundId = 0;
-			inclusiveFilter = 0;
-			volumeRange = 16711680;
-			delay = 0;
-			subjectOverride = -1;
-			persistence = 0;
-			directOverride = -1;
-			owner = 0;
-			type = "play sound";
-			exclusiveFilter = 0;
-			soundRange = 34078720;
+			count = 0;
+			direct = 0;
+			start = 0;
+			flags = {
+				hasBeenTrue = false;
+				hex = 0x0;
+				initiallyTrue = false;
+				trueOnlyOnce = false;
+			};
+			type = "none";
+			subject = 0;
 		};
 		[233] = {
-			velocityRelative = true;
-			distanceRange = 0;
-			reflexive = true;
-			min = 1;
-			inclusiveFilter = 0;
-			directionRelative = true;
-			delay = 0;
-			subjectOverride = -1;
-			range = 0;
-			baseType = 147;
-			directOverride = -1;
-			owner = 0;
-			type = "create object";
-			exclusiveFilter = 0;
+			count = 0;
+			direct = 0;
+			start = 0;
+			flags = {
+				hasBeenTrue = false;
+				hex = 0x0;
+				initiallyTrue = false;
+				trueOnlyOnce = false;
+			};
+			type = "none";
+			subject = 0;
 		};
 		[234] = {
-			volume = 7864320;
-			priority = 3;
-			isAbsolute = true;
-			reflexive = true;
-			soundId = 0;
-			inclusiveFilter = 0;
-			volumeRange = 16711680;
-			delay = 0;
-			subjectOverride = -1;
-			persistence = 2113929216;
-			directOverride = -1;
-			owner = 0;
-			type = "play sound";
-			exclusiveFilter = 0;
-			soundRange = 35389440;
+			count = 0;
+			direct = 0;
+			start = 0;
+			flags = {
+				hasBeenTrue = false;
+				hex = 0x0;
+				initiallyTrue = false;
+				trueOnlyOnce = false;
+			};
+			type = "none";
+			subject = 0;
 		};
 		[235] = {
-			velocityRelative = true;
-			distanceRange = 0;
-			reflexive = true;
-			min = 1;
-			inclusiveFilter = 0;
-			directionRelative = true;
-			delay = 0;
-			subjectOverride = -1;
-			range = 0;
-			baseType = 153;
-			directOverride = -1;
-			owner = 0;
-			type = "create object";
-			exclusiveFilter = 0;
+			count = 0;
+			direct = 0;
+			start = 0;
+			flags = {
+				hasBeenTrue = false;
+				hex = 0x0;
+				initiallyTrue = false;
+				trueOnlyOnce = false;
+			};
+			type = "none";
+			subject = 0;
 		};
 		[236] = {
-			volume = 65536;
-			priority = 3;
-			isAbsolute = true;
-			reflexive = true;
-			soundId = 0;
-			inclusiveFilter = 0;
-			volumeRange = 16711680;
-			delay = 0;
-			subjectOverride = -1;
-			persistence = -2113929216;
-			directOverride = -1;
-			owner = 0;
-			type = "play sound";
-			exclusiveFilter = 0;
-			soundRange = 35323904;
+			count = 0;
+			direct = 0;
+			start = 0;
+			flags = {
+				hasBeenTrue = false;
+				hex = 0x0;
+				initiallyTrue = false;
+				trueOnlyOnce = false;
+			};
+			type = "none";
+			subject = 0;
 		};
 		[237] = {
-			velocityRelative = true;
-			distanceRange = 0;
-			reflexive = true;
-			min = 1;
-			inclusiveFilter = 0;
-			directionRelative = true;
-			delay = 0;
-			subjectOverride = -1;
-			range = 0;
-			baseType = 155;
-			directOverride = -1;
-			owner = 0;
-			type = "create object";
-			exclusiveFilter = 0;
+			count = 0;
+			direct = 0;
+			start = 0;
+			flags = {
+				hasBeenTrue = false;
+				hex = 0x0;
+				initiallyTrue = false;
+				trueOnlyOnce = false;
+			};
+			type = "none";
+			subject = 0;
 		};
 		[238] = {
-			volume = 9961472;
-			priority = 3;
-			isAbsolute = true;
-			reflexive = true;
-			soundId = 0;
-			inclusiveFilter = 0;
-			volumeRange = 16711680;
-			delay = 0;
-			subjectOverride = -1;
-			persistence = 0;
-			directOverride = -1;
-			owner = 0;
-			type = "play sound";
-			exclusiveFilter = 0;
-			soundRange = 34930688;
+			count = 0;
+			direct = 0;
+			start = 0;
+			flags = {
+				hasBeenTrue = false;
+				hex = 0x0;
+				initiallyTrue = false;
+				trueOnlyOnce = false;
+			};
+			type = "none";
+			subject = 0;
 		};
 		[239] = {
-			velocityRelative = true;
-			distanceRange = 0;
-			reflexive = true;
-			min = 1;
-			inclusiveFilter = 0;
-			directionRelative = true;
-			delay = 0;
-			subjectOverride = -1;
-			range = 0;
-			baseType = 156;
-			directOverride = -1;
-			owner = 0;
-			type = "create object";
-			exclusiveFilter = 0;
+			count = 0;
+			direct = 0;
+			start = 0;
+			flags = {
+				hasBeenTrue = false;
+				hex = 0x0;
+				initiallyTrue = false;
+				trueOnlyOnce = false;
+			};
+			type = "none";
+			subject = 0;
 		};
 		[240] = {
-			velocityRelative = true;
-			distanceRange = 0;
-			reflexive = true;
-			min = 1;
-			inclusiveFilter = 0;
-			directionRelative = true;
-			delay = 0;
-			subjectOverride = -1;
-			range = 2;
-			baseType = 158;
-			directOverride = -1;
-			owner = 0;
-			type = "create object";
-			exclusiveFilter = 0;
+			count = 0;
+			direct = 0;
+			start = 0;
+			flags = {
+				hasBeenTrue = false;
+				hex = 0x0;
+				initiallyTrue = false;
+				trueOnlyOnce = false;
+			};
+			type = "none";
+			subject = 0;
 		};
 		[241] = {
-			reflexive = true;
-			player = 1;
-			inclusiveFilter = 0;
-			text = 11701;
-			nextLevel = -1;
-			delay = 0;
-			subjectOverride = -1;
-			directOverride = -1;
-			owner = 0;
-			type = "declare winner";
-			exclusiveFilter = 0;
+			count = 0;
+			direct = 0;
+			start = 0;
+			flags = {
+				hasBeenTrue = false;
+				hex = 0x0;
+				initiallyTrue = false;
+				trueOnlyOnce = false;
+			};
+			type = "none";
+			subject = 0;
 		};
 		[242] = {
-			reflexive = true;
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = -1;
-			range = 0;
-			minimum = 1;
-			directOverride = -1;
-			owner = 0;
-			type = "alter active condition";
-			exclusiveFilter = 0;
-			conditionTrue = true;
+			count = 0;
+			direct = 0;
+			start = 0;
+			flags = {
+				hasBeenTrue = false;
+				hex = 0x0;
+				initiallyTrue = false;
+				trueOnlyOnce = false;
+			};
+			type = "none";
+			subject = 0;
 		};
 		[243] = {
-			reflexive = true;
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = -1;
-			range = 0;
-			minimum = 2;
-			directOverride = -1;
-			owner = 0;
-			type = "alter active condition";
-			exclusiveFilter = 0;
-			conditionTrue = true;
+			count = 0;
+			direct = 0;
+			start = 0;
+			flags = {
+				hasBeenTrue = false;
+				hex = 0x0;
+				initiallyTrue = false;
+				trueOnlyOnce = false;
+			};
+			type = "none";
+			subject = 0;
 		};
 		[244] = {
-			reflexive = true;
-			inclusiveFilter = 0;
-			page = 1;
-			delay = 0;
-			subjectOverride = -1;
-			directOverride = -1;
-			owner = 0;
-			type = "display message";
-			id = 5240;
-			exclusiveFilter = 0;
+			count = 0;
+			direct = 0;
+			start = 0;
+			flags = {
+				hasBeenTrue = false;
+				hex = 0x0;
+				initiallyTrue = false;
+				trueOnlyOnce = false;
+			};
+			type = "none";
+			subject = 0;
 		};
 		[245] = {
-			reflexive = true;
-			inclusiveFilter = 0;
-			page = 2;
-			delay = 0;
-			subjectOverride = -1;
-			directOverride = -1;
-			owner = 0;
-			type = "display message";
-			id = 5241;
-			exclusiveFilter = 0;
+			count = 0;
+			direct = 0;
+			start = 0;
+			flags = {
+				hasBeenTrue = false;
+				hex = 0x0;
+				initiallyTrue = false;
+				trueOnlyOnce = false;
+			};
+			type = "none";
+			subject = 0;
 		};
 		[246] = {
-			reflexive = true;
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = -1;
-			range = 0;
-			minimum = 0;
-			directOverride = -1;
-			owner = 0;
-			type = "alter active condition";
-			exclusiveFilter = 0;
-			conditionTrue = true;
+			count = 0;
+			direct = 0;
+			start = 0;
+			flags = {
+				hasBeenTrue = false;
+				hex = 0x0;
+				initiallyTrue = false;
+				trueOnlyOnce = false;
+			};
+			type = "none";
+			subject = 0;
 		};
 		[247] = {
-			reflexive = false;
-			inclusiveFilter = 0;
-			delay = 1200;
-			subjectOverride = 3;
-			directOverride = 0;
-			owner = 0;
-			type = "set destination";
-			exclusiveFilter = 0;
+			count = 0;
+			direct = 0;
+			start = 0;
+			flags = {
+				hasBeenTrue = false;
+				hex = 0x0;
+				initiallyTrue = false;
+				trueOnlyOnce = false;
+			};
+			type = "none";
+			subject = 0;
 		};
 		[248] = {
-			reflexive = false;
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = 4;
-			directOverride = 0;
-			owner = 0;
-			type = "set destination";
-			exclusiveFilter = 0;
+			count = 0;
+			direct = 0;
+			start = 0;
+			flags = {
+				hasBeenTrue = false;
+				hex = 0x0;
+				initiallyTrue = false;
+				trueOnlyOnce = false;
+			};
+			type = "none";
+			subject = 0;
 		};
 		[249] = {
-			reflexive = true;
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = -1;
-			range = 0;
-			minimum = 0;
-			directOverride = -1;
-			owner = 0;
-			type = "alter active condition";
-			exclusiveFilter = 0;
-			conditionTrue = true;
+			count = 0;
+			direct = 0;
+			start = 0;
+			flags = {
+				hasBeenTrue = false;
+				hex = 0x0;
+				initiallyTrue = false;
+				trueOnlyOnce = false;
+			};
+			type = "none";
+			subject = 0;
 		};
 		[250] = {
-			reflexive = true;
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = -1;
-			range = 0;
-			minimum = 1;
-			directOverride = -1;
-			owner = 0;
-			type = "alter active condition";
-			exclusiveFilter = 0;
-			conditionTrue = true;
+			count = 0;
+			direct = 0;
+			start = 0;
+			flags = {
+				hasBeenTrue = false;
+				hex = 0x0;
+				initiallyTrue = false;
+				trueOnlyOnce = false;
+			};
+			type = "none";
+			subject = 0;
 		};
 		[251] = {
-			reflexive = true;
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = -1;
-			range = 0;
-			minimum = 2;
-			directOverride = -1;
-			owner = 0;
-			type = "alter active condition";
-			exclusiveFilter = 0;
-			conditionTrue = true;
+			count = 0;
+			direct = 0;
+			start = 0;
+			flags = {
+				hasBeenTrue = false;
+				hex = 0x0;
+				initiallyTrue = false;
+				trueOnlyOnce = false;
+			};
+			type = "none";
+			subject = 0;
 		};
 		[252] = {
-			reflexive = true;
-			inclusiveFilter = 0;
-			page = 1;
-			delay = 360;
-			subjectOverride = -1;
-			directOverride = -1;
-			owner = 0;
-			type = "display message";
-			id = 5243;
-			exclusiveFilter = 0;
+			count = 0;
+			direct = 0;
+			start = 0;
+			flags = {
+				hasBeenTrue = false;
+				hex = 0x0;
+				initiallyTrue = false;
+				trueOnlyOnce = false;
+			};
+			type = "none";
+			subject = 0;
 		};
 		[253] = {
-			reflexive = true;
-			inclusiveFilter = 0;
-			delay = 360;
-			subjectOverride = -1;
-			range = 4;
-			minimum = 20;
-			directOverride = -1;
-			owner = 0;
-			type = "alter hidden";
-			exclusiveFilter = 0;
+			count = 0;
+			direct = 0;
+			start = 0;
+			flags = {
+				hasBeenTrue = false;
+				hex = 0x0;
+				initiallyTrue = false;
+				trueOnlyOnce = false;
+			};
+			type = "none";
+			subject = 0;
 		};
 		[254] = {
-			reflexive = true;
-			inclusiveFilter = 0;
-			delay = 360;
-			subjectOverride = -1;
-			range = 5;
-			minimum = 14;
-			directOverride = -1;
-			owner = 0;
-			type = "alter hidden";
-			exclusiveFilter = 0;
+			count = 0;
+			direct = 0;
+			start = 0;
+			flags = {
+				hasBeenTrue = false;
+				hex = 0x0;
+				initiallyTrue = false;
+				trueOnlyOnce = false;
+			};
+			type = "none";
+			subject = 0;
 		};
 		[255] = {
-			reflexive = true;
-			inclusiveFilter = 0;
-			delay = 360;
-			subjectOverride = -1;
-			range = 0;
-			minimum = 4;
-			directOverride = -1;
-			owner = 0;
-			type = "alter active condition";
-			exclusiveFilter = 0;
-			conditionTrue = false;
+			count = 0;
+			direct = 0;
+			start = 0;
+			flags = {
+				hasBeenTrue = false;
+				hex = 0x0;
+				initiallyTrue = false;
+				trueOnlyOnce = false;
+			};
+			type = "none";
+			subject = 0;
 		};
 		[256] = {
-			reflexive = true;
-			inclusiveFilter = 0;
-			page = 1;
-			delay = 0;
-			subjectOverride = -1;
-			directOverride = -1;
-			owner = 0;
-			type = "display message";
-			id = 6200;
-			exclusiveFilter = 0;
+			count = 0;
+			direct = 0;
+			start = 0;
+			flags = {
+				hasBeenTrue = false;
+				hex = 0x0;
+				initiallyTrue = false;
+				trueOnlyOnce = false;
+			};
+			type = "none";
+			subject = 0;
 		};
 		[257] = {
-			reflexive = true;
-			inclusiveFilter = 0;
-			delay = 600;
-			subjectOverride = -1;
-			range = 4;
-			minimum = 23;
-			directOverride = -1;
-			owner = 0;
-			type = "alter hidden";
-			exclusiveFilter = 0;
+			count = 0;
+			direct = 0;
+			start = 0;
+			flags = {
+				hasBeenTrue = false;
+				hex = 0x0;
+				initiallyTrue = false;
+				trueOnlyOnce = false;
+			};
+			type = "none";
+			subject = 0;
 		};
 		[258] = {
-			reflexive = true;
-			inclusiveFilter = 0;
-			delay = 1200;
-			subjectOverride = -1;
-			range = 1;
-			minimum = 5;
-			directOverride = -1;
-			owner = 0;
-			type = "alter hidden";
-			exclusiveFilter = 0;
+			count = 0;
+			direct = 0;
+			start = 0;
+			flags = {
+				hasBeenTrue = false;
+				hex = 0x0;
+				initiallyTrue = false;
+				trueOnlyOnce = false;
+			};
+			type = "none";
+			subject = 0;
 		};
 		[259] = {
-			reflexive = true;
-			inclusiveFilter = 0;
-			delay = 1200;
-			subjectOverride = -1;
-			range = 1;
-			minimum = 7;
-			directOverride = -1;
-			owner = 0;
-			type = "alter hidden";
-			exclusiveFilter = 0;
+			count = 0;
+			direct = 0;
+			start = 0;
+			flags = {
+				hasBeenTrue = false;
+				hex = 0x0;
+				initiallyTrue = false;
+				trueOnlyOnce = false;
+			};
+			type = "none";
+			subject = 0;
 		};
 		[260] = {
-			reflexive = true;
-			inclusiveFilter = 0;
-			delay = 1200;
-			subjectOverride = -1;
-			range = 1;
-			minimum = 9;
-			directOverride = -1;
-			owner = 0;
-			type = "alter hidden";
-			exclusiveFilter = 0;
+			count = 0;
+			direct = 0;
+			start = 0;
+			flags = {
+				hasBeenTrue = false;
+				hex = 0x0;
+				initiallyTrue = false;
+				trueOnlyOnce = false;
+			};
+			type = "none";
+			subject = 0;
 		};
 		[261] = {
-			reflexive = true;
-			inclusiveFilter = 0;
-			delay = 1200;
-			subjectOverride = -1;
-			range = 1;
-			minimum = 11;
-			directOverride = -1;
-			owner = 0;
-			type = "alter hidden";
-			exclusiveFilter = 0;
+			count = 0;
+			direct = 0;
+			start = 0;
+			flags = {
+				hasBeenTrue = false;
+				hex = 0x0;
+				initiallyTrue = false;
+				trueOnlyOnce = false;
+			};
+			type = "none";
+			subject = 0;
 		};
 		[262] = {
-			reflexive = true;
-			inclusiveFilter = 0;
-			delay = 1200;
-			subjectOverride = -1;
-			range = 1;
-			minimum = 13;
-			directOverride = -1;
-			owner = 0;
-			type = "alter hidden";
-			exclusiveFilter = 0;
+			count = 0;
+			direct = 0;
+			start = 0;
+			flags = {
+				hasBeenTrue = false;
+				hex = 0x0;
+				initiallyTrue = false;
+				trueOnlyOnce = false;
+			};
+			type = "none";
+			subject = 0;
 		};
 		[263] = {
-			velocityRelative = false;
-			distanceRange = 0;
-			reflexive = false;
-			min = 1;
-			inclusiveFilter = 805306368;
-			directionRelative = false;
-			delay = 0;
-			subjectOverride = -1;
-			range = 0;
-			baseType = 117;
-			directOverride = -1;
-			owner = 0;
-			type = "create object";
-			exclusiveFilter = 4294967295;
+			count = 0;
+			direct = 0;
+			start = 0;
+			flags = {
+				hasBeenTrue = false;
+				hex = 0x0;
+				initiallyTrue = false;
+				trueOnlyOnce = false;
+			};
+			type = "none";
+			subject = 0;
 		};
 		[264] = {
-			reflexive = false;
-			inclusiveFilter = 805306368;
-			speed = 80;
-			delay = 120;
-			subjectOverride = -1;
-			directOverride = -1;
-			owner = 0;
-			type = "land at";
-			exclusiveFilter = 4294967295;
+			count = 0;
+			direct = 0;
+			start = 0;
+			flags = {
+				hasBeenTrue = false;
+				hex = 0x0;
+				initiallyTrue = false;
+				trueOnlyOnce = false;
+			};
+			type = "none";
+			subject = 0;
 		};
 		[265] = {
-			volume = 16252928;
-			priority = 3;
-			isAbsolute = true;
-			reflexive = true;
-			soundId = 0;
-			inclusiveFilter = 0;
-			volumeRange = 16711680;
-			delay = 0;
-			subjectOverride = -1;
-			persistence = -520093696;
-			directOverride = -1;
-			owner = 0;
-			type = "play sound";
-			exclusiveFilter = 0;
-			soundRange = 34013184;
+			count = 0;
+			direct = 0;
+			start = 0;
+			flags = {
+				hasBeenTrue = false;
+				hex = 0x0;
+				initiallyTrue = false;
+				trueOnlyOnce = false;
+			};
+			type = "none";
+			subject = 0;
 		};
 		[266] = {
-			velocityRelative = true;
-			distanceRange = 0;
-			reflexive = true;
-			min = 1;
-			inclusiveFilter = 0;
-			directionRelative = true;
-			delay = 0;
-			subjectOverride = -1;
-			range = 0;
-			baseType = 163;
-			directOverride = -1;
-			owner = 0;
-			type = "create object";
-			exclusiveFilter = 0;
+			count = 0;
+			direct = 0;
+			start = 0;
+			flags = {
+				hasBeenTrue = false;
+				hex = 0x0;
+				initiallyTrue = false;
+				trueOnlyOnce = false;
+			};
+			type = "none";
+			subject = 0;
 		};
 		[267] = {
-			reflexive = true;
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = -1;
-			range = 4;
-			minimum = 18;
-			directOverride = -1;
-			owner = 0;
-			type = "alter hidden";
-			exclusiveFilter = 0;
+			count = 0;
+			direct = 0;
+			start = 0;
+			flags = {
+				hasBeenTrue = false;
+				hex = 0x0;
+				initiallyTrue = false;
+				trueOnlyOnce = false;
+			};
+			type = "none";
+			subject = 0;
 		};
 		[268] = {
-			reflexive = true;
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = -1;
-			range = 4;
-			minimum = 28;
-			directOverride = -1;
-			owner = 0;
-			type = "alter hidden";
-			exclusiveFilter = 0;
+			count = 0;
+			direct = 0;
+			start = 0;
+			flags = {
+				hasBeenTrue = false;
+				hex = 0x0;
+				initiallyTrue = false;
+				trueOnlyOnce = false;
+			};
+			type = "none";
+			subject = 0;
 		};
 		[269] = {
-			volume = 3473408;
-			priority = 3;
-			isAbsolute = true;
-			reflexive = true;
-			soundId = 0;
-			inclusiveFilter = 0;
-			volumeRange = 16711680;
-			delay = 0;
-			subjectOverride = -1;
-			persistence = 1660944384;
-			directOverride = -1;
-			owner = 0;
-			type = "play sound";
-			exclusiveFilter = 0;
-			soundRange = 34078720;
+			count = 0;
+			direct = 0;
+			start = 0;
+			flags = {
+				hasBeenTrue = false;
+				hex = 0x0;
+				initiallyTrue = false;
+				trueOnlyOnce = false;
+			};
+			type = "none";
+			subject = 0;
 		};
 		[270] = {
-			velocityRelative = false;
-			distanceRange = 0;
-			reflexive = true;
-			min = 1;
-			inclusiveFilter = 0;
-			directionRelative = true;
-			delay = 0;
-			subjectOverride = -1;
-			range = 0;
-			baseType = 165;
-			directOverride = -1;
-			owner = 0;
-			type = "create object";
-			exclusiveFilter = 0;
+			count = 0;
+			direct = 0;
+			start = 0;
+			flags = {
+				hasBeenTrue = false;
+				hex = 0x0;
+				initiallyTrue = false;
+				trueOnlyOnce = false;
+			};
+			type = "none";
+			subject = 0;
 		};
 		[271] = {
-			velocityRelative = true;
-			distanceRange = 0;
-			reflexive = true;
-			min = 1;
-			inclusiveFilter = 0;
-			directionRelative = true;
-			delay = 0;
-			subjectOverride = -1;
-			range = 0;
-			baseType = 170;
-			directOverride = -1;
-			owner = 0;
-			type = "create object";
-			exclusiveFilter = 0;
+			count = 0;
+			direct = 0;
+			start = 0;
+			flags = {
+				hasBeenTrue = false;
+				hex = 0x0;
+				initiallyTrue = false;
+				trueOnlyOnce = false;
+			};
+			type = "none";
+			subject = 0;
 		};
 		[272] = {
-			volume = 4194304;
-			priority = 3;
-			isAbsolute = true;
-			reflexive = true;
-			soundId = 0;
-			inclusiveFilter = 0;
-			volumeRange = 16711680;
-			delay = 0;
-			subjectOverride = -1;
-			persistence = 1610612736;
-			directOverride = -1;
-			owner = 0;
-			type = "play sound";
-			exclusiveFilter = 0;
-			soundRange = 35586048;
+			count = 0;
+			direct = 0;
+			start = 0;
+			flags = {
+				hasBeenTrue = false;
+				hex = 0x0;
+				initiallyTrue = false;
+				trueOnlyOnce = false;
+			};
+			type = "none";
+			subject = 0;
 		};
 		[273] = {
-			volume = 3670016;
-			priority = 3;
-			isAbsolute = true;
-			reflexive = true;
-			soundId = 0;
-			inclusiveFilter = 0;
-			volumeRange = 16711680;
-			delay = 0;
-			subjectOverride = -1;
-			persistence = 0;
-			directOverride = -1;
-			owner = 0;
-			type = "play sound";
-			exclusiveFilter = 0;
-			soundRange = 35782656;
+			count = 0;
+			direct = 0;
+			start = 0;
+			flags = {
+				hasBeenTrue = false;
+				hex = 0x0;
+				initiallyTrue = false;
+				trueOnlyOnce = false;
+			};
+			type = "none";
+			subject = 0;
 		};
 		[274] = {
-			velocityRelative = true;
-			distanceRange = 0;
-			reflexive = true;
-			min = 1;
-			inclusiveFilter = 0;
-			directionRelative = true;
-			delay = 0;
-			subjectOverride = -1;
-			range = 0;
-			baseType = 172;
-			directOverride = -1;
-			owner = 0;
-			type = "create object";
-			exclusiveFilter = 0;
+			count = 0;
+			direct = 0;
+			start = 0;
+			flags = {
+				hasBeenTrue = false;
+				hex = 0x0;
+				initiallyTrue = false;
+				trueOnlyOnce = false;
+			};
+			type = "none";
+			subject = 0;
 		};
 		[275] = {
-			reflexive = false;
-			inclusiveFilter = 4029677568;
-			value = 0;
-			delay = 0;
-			subjectOverride = -1;
-			useObjectsOwner = true;
-			directOverride = -1;
-			owner = -1;
-			type = "alter owner";
-			exclusiveFilter = 4294967295;
+			count = 0;
+			direct = 0;
+			start = 0;
+			flags = {
+				hasBeenTrue = false;
+				hex = 0x0;
+				initiallyTrue = false;
+				trueOnlyOnce = false;
+			};
+			type = "none";
+			subject = 0;
 		};
 		[276] = {
-			reflexive = true;
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = -1;
-			amount = 1;
-			score = 0;
-			directOverride = -1;
-			plsyer = 0;
-			owner = 0;
-			type = "change score";
-			exclusiveFilter = 0;
+			count = 0;
+			direct = 0;
+			start = 0;
+			flags = {
+				hasBeenTrue = false;
+				hex = 0x0;
+				initiallyTrue = false;
+				trueOnlyOnce = false;
+			};
+			type = "none";
+			subject = 0;
 		};
 		[277] = {
-			reflexive = true;
-			inclusiveFilter = 0;
-			value = 0;
-			delay = 0;
-			subjectOverride = 0;
-			useObjectsOwner = false;
-			directOverride = -1;
-			owner = 0;
-			type = "alter owner";
-			exclusiveFilter = 0;
+			count = 0;
+			direct = 0;
+			start = 0;
+			flags = {
+				hasBeenTrue = false;
+				hex = 0x0;
+				initiallyTrue = false;
+				trueOnlyOnce = false;
+			};
+			type = "none";
+			subject = 0;
 		};
 		[278] = {
-			reflexive = false;
-			player = 0;
-			inclusiveFilter = 0;
-			value = 2560000;
-			delay = 0;
-			subjectOverride = -1;
-			useObjectsOwner = false;
-			directOverride = -1;
-			owner = 0;
-			type = "alter absolute cash";
-			exclusiveFilter = 0;
+			count = 0;
+			direct = 0;
+			start = 0;
+			flags = {
+				hasBeenTrue = false;
+				hex = 0x0;
+				initiallyTrue = false;
+				trueOnlyOnce = false;
+			};
+			type = "none";
+			subject = 0;
 		};
 		[279] = {
-			volume = 11534336;
-			priority = 3;
-			isAbsolute = true;
-			reflexive = true;
-			soundId = 0;
-			inclusiveFilter = 0;
-			volumeRange = 16711680;
-			delay = 0;
-			subjectOverride = -1;
-			persistence = 0;
-			directOverride = -1;
-			owner = 0;
-			type = "play sound";
-			exclusiveFilter = 0;
-			soundRange = 35717120;
+			count = 0;
+			direct = 0;
+			start = 0;
+			flags = {
+				hasBeenTrue = false;
+				hex = 0x0;
+				initiallyTrue = false;
+				trueOnlyOnce = false;
+			};
+			type = "none";
+			subject = 0;
 		};
 		[280] = {
-			velocityRelative = true;
-			distanceRange = 0;
-			reflexive = true;
-			min = 1;
-			inclusiveFilter = 0;
-			directionRelative = true;
-			delay = 0;
-			subjectOverride = -1;
-			range = 0;
-			baseType = 176;
-			directOverride = -1;
-			owner = 0;
-			type = "create object";
-			exclusiveFilter = 0;
+			count = 0;
+			direct = 0;
+			start = 0;
+			flags = {
+				hasBeenTrue = false;
+				hex = 0x0;
+				initiallyTrue = false;
+				trueOnlyOnce = false;
+			};
+			type = "none";
+			subject = 0;
 		};
 		[281] = {
-			reflexive = true;
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = -1;
-			range = 3;
-			minimum = 31;
-			directOverride = -1;
-			owner = 0;
-			type = "alter hidden";
-			exclusiveFilter = 0;
+			count = 0;
+			direct = 0;
+			start = 0;
+			flags = {
+				hasBeenTrue = false;
+				hex = 0x0;
+				initiallyTrue = false;
+				trueOnlyOnce = false;
+			};
+			type = "none";
+			subject = 0;
 		};
 		[282] = {
-			velocityRelative = false;
-			distanceRange = 0;
-			reflexive = true;
-			min = 1;
-			inclusiveFilter = 0;
-			directionRelative = false;
-			delay = 0;
-			subjectOverride = -1;
-			range = 0;
-			baseType = 29;
-			directOverride = -1;
-			owner = 0;
-			type = "create object";
-			exclusiveFilter = 0;
+			count = 0;
+			direct = 0;
+			start = 0;
+			flags = {
+				hasBeenTrue = false;
+				hex = 0x0;
+				initiallyTrue = false;
+				trueOnlyOnce = false;
+			};
+			type = "none";
+			subject = 0;
 		};
 		[283] = {
-			reflexive = true;
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = -1;
-			amount = 1;
-			score = 0;
-			directOverride = -1;
-			plsyer = 0;
-			owner = 0;
-			type = "change score";
-			exclusiveFilter = 0;
+			count = 0;
+			direct = 0;
+			start = 0;
+			flags = {
+				hasBeenTrue = false;
+				hex = 0x0;
+				initiallyTrue = false;
+				trueOnlyOnce = false;
+			};
+			type = "none";
+			subject = 0;
 		};
 		[284] = {
-			reflexive = false;
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = 17;
-			directOverride = 6;
-			owner = 0;
-			type = "set destination";
-			exclusiveFilter = 0;
+			count = 0;
+			direct = 0;
+			start = 0;
+			flags = {
+				hasBeenTrue = false;
+				hex = 0x0;
+				initiallyTrue = false;
+				trueOnlyOnce = false;
+			};
+			type = "none";
+			subject = 0;
 		};
 		[285] = {
-			reflexive = false;
-			player = 0;
-			inclusiveFilter = 0;
-			text = 10301;
-			nextLevel = 5;
-			delay = 0;
-			subjectOverride = -1;
-			directOverride = -1;
-			owner = 0;
-			type = "declare winner";
-			exclusiveFilter = 0;
+			count = 0;
+			direct = 0;
+			start = 0;
+			flags = {
+				hasBeenTrue = false;
+				hex = 0x0;
+				initiallyTrue = false;
+				trueOnlyOnce = false;
+			};
+			type = "none";
+			subject = 0;
 		};
 		[286] = {
-			reflexive = false;
-			player = 1;
-			inclusiveFilter = 0;
-			text = 10302;
-			nextLevel = -1;
-			delay = 0;
-			subjectOverride = -1;
-			directOverride = -1;
-			owner = 0;
-			type = "declare winner";
-			exclusiveFilter = 0;
+			count = 0;
+			direct = 0;
+			start = 0;
+			flags = {
+				hasBeenTrue = false;
+				hex = 0x0;
+				initiallyTrue = false;
+				trueOnlyOnce = false;
+			};
+			type = "none";
+			subject = 0;
 		};
 		[287] = {
-			reflexive = false;
-			player = 0;
-			inclusiveFilter = 0;
-			text = 10801;
-			nextLevel = 11;
-			delay = 0;
-			subjectOverride = -1;
-			directOverride = -1;
-			owner = 0;
-			type = "declare winner";
-			exclusiveFilter = 0;
+			count = 0;
+			direct = 0;
+			start = 0;
+			flags = {
+				hasBeenTrue = false;
+				hex = 0x0;
+				initiallyTrue = false;
+				trueOnlyOnce = false;
+			};
+			type = "none";
+			subject = 0;
 		};
 		[288] = {
-			reflexive = false;
-			player = 1;
-			inclusiveFilter = 0;
-			text = 10802;
-			nextLevel = -1;
-			delay = 0;
-			subjectOverride = -1;
-			directOverride = -1;
-			owner = 0;
-			type = "declare winner";
-			exclusiveFilter = 0;
+			count = 0;
+			direct = 0;
+			start = 0;
+			flags = {
+				hasBeenTrue = false;
+				hex = 0x0;
+				initiallyTrue = false;
+				trueOnlyOnce = false;
+			};
+			type = "none";
+			subject = 0;
 		};
 		[289] = {
-			reflexive = false;
-			player = 1;
-			inclusiveFilter = 0;
-			text = 11001;
-			nextLevel = -1;
-			delay = 0;
-			subjectOverride = -1;
-			directOverride = -1;
-			owner = 0;
-			type = "declare winner";
-			exclusiveFilter = 0;
+			count = 0;
+			direct = 0;
+			start = 0;
+			flags = {
+				hasBeenTrue = false;
+				hex = 0x0;
+				initiallyTrue = false;
+				trueOnlyOnce = false;
+			};
+			type = "none";
+			subject = 0;
 		};
 		[290] = {
-			reflexive = false;
-			player = 0;
-			inclusiveFilter = 0;
-			text = 11002;
-			nextLevel = 13;
-			delay = 0;
-			subjectOverride = -1;
-			directOverride = -1;
-			owner = 0;
-			type = "declare winner";
-			exclusiveFilter = 0;
+			count = 0;
+			direct = 0;
+			start = 0;
+			flags = {
+				hasBeenTrue = false;
+				hex = 0x0;
+				initiallyTrue = false;
+				trueOnlyOnce = false;
+			};
+			type = "none";
+			subject = 0;
 		};
 		[291] = {
-			reflexive = false;
-			player = 1;
-			inclusiveFilter = 0;
-			text = 11101;
-			nextLevel = -1;
-			delay = 0;
-			subjectOverride = -1;
-			directOverride = -1;
-			owner = 0;
-			type = "declare winner";
-			exclusiveFilter = 0;
+			count = 0;
+			direct = 0;
+			start = 0;
+			flags = {
+				hasBeenTrue = false;
+				hex = 0x0;
+				initiallyTrue = false;
+				trueOnlyOnce = false;
+			};
+			type = "none";
+			subject = 0;
 		};
 		[292] = {
-			reflexive = false;
-			player = 0;
-			inclusiveFilter = 0;
-			text = 4065;
-			nextLevel = 14;
-			delay = 0;
-			subjectOverride = -1;
-			directOverride = -1;
-			owner = 0;
-			type = "declare winner";
-			exclusiveFilter = 0;
+			count = 0;
+			direct = 0;
+			start = 0;
+			flags = {
+				hasBeenTrue = false;
+				hex = 0x0;
+				initiallyTrue = false;
+				trueOnlyOnce = false;
+			};
+			type = "none";
+			subject = 0;
 		};
 		[293] = {
-			reflexive = false;
-			player = 0;
-			inclusiveFilter = 0;
-			text = 11501;
-			nextLevel = 18;
-			delay = 0;
-			subjectOverride = -1;
-			directOverride = -1;
-			owner = 0;
-			type = "declare winner";
-			exclusiveFilter = 0;
+			count = 0;
+			direct = 0;
+			start = 0;
+			flags = {
+				hasBeenTrue = false;
+				hex = 0x0;
+				initiallyTrue = false;
+				trueOnlyOnce = false;
+			};
+			type = "none";
+			subject = 0;
 		};
 		[294] = {
-			reflexive = false;
-			player = 1;
-			inclusiveFilter = 0;
-			text = 10401;
-			nextLevel = -1;
-			delay = 0;
-			subjectOverride = -1;
-			directOverride = -1;
-			owner = 0;
-			type = "declare winner";
-			exclusiveFilter = 0;
+			count = 0;
+			direct = 0;
+			start = 0;
+			flags = {
+				hasBeenTrue = false;
+				hex = 0x0;
+				initiallyTrue = false;
+				trueOnlyOnce = false;
+			};
+			type = "none";
+			subject = 0;
 		};
 		[295] = {
-			reflexive = false;
-			player = 0;
-			inclusiveFilter = 0;
-			text = 10402;
-			nextLevel = 7;
-			delay = 0;
-			subjectOverride = -1;
-			directOverride = -1;
-			owner = 0;
-			type = "declare winner";
-			exclusiveFilter = 0;
+			count = 0;
+			direct = 0;
+			start = 0;
+			flags = {
+				hasBeenTrue = false;
+				hex = 0x0;
+				initiallyTrue = false;
+				trueOnlyOnce = false;
+			};
+			type = "none";
+			subject = 0;
 		};
 		[296] = {
-			reflexive = false;
-			player = 1;
-			inclusiveFilter = 0;
-			text = 10501;
-			nextLevel = -1;
-			delay = 0;
-			subjectOverride = -1;
-			directOverride = -1;
-			owner = 0;
-			type = "declare winner";
-			exclusiveFilter = 0;
+			count = 0;
+			direct = 0;
+			start = 0;
+			flags = {
+				hasBeenTrue = false;
+				hex = 0x0;
+				initiallyTrue = false;
+				trueOnlyOnce = false;
+			};
+			type = "none";
+			subject = 0;
 		};
 		[297] = {
-			reflexive = false;
-			player = 1;
-			inclusiveFilter = 0;
-			text = 10502;
-			nextLevel = -1;
-			delay = 0;
-			subjectOverride = -1;
-			directOverride = -1;
-			owner = 0;
-			type = "declare winner";
-			exclusiveFilter = 0;
+			count = 0;
+			direct = 0;
+			start = 0;
+			flags = {
+				hasBeenTrue = false;
+				hex = 0x0;
+				initiallyTrue = false;
+				trueOnlyOnce = false;
+			};
+			type = "none";
+			subject = 0;
 		};
 		[298] = {
-			reflexive = false;
-			player = 1;
-			inclusiveFilter = 0;
-			text = 10601;
-			nextLevel = -1;
-			delay = 0;
-			subjectOverride = -1;
-			directOverride = -1;
-			owner = 0;
-			type = "declare winner";
-			exclusiveFilter = 0;
+			count = 0;
+			direct = 0;
+			start = 0;
+			flags = {
+				hasBeenTrue = false;
+				hex = 0x0;
+				initiallyTrue = false;
+				trueOnlyOnce = false;
+			};
+			type = "none";
+			subject = 0;
 		};
 		[299] = {
-			reflexive = false;
-			player = 0;
-			inclusiveFilter = 0;
-			text = 10602;
-			nextLevel = 9;
-			delay = 0;
-			subjectOverride = -1;
-			directOverride = -1;
-			owner = 0;
-			type = "declare winner";
-			exclusiveFilter = 0;
-		};
-		[300] = {
-			reflexive = false;
-			player = 1;
-			inclusiveFilter = 0;
-			text = 10701;
-			nextLevel = -1;
-			delay = 0;
-			subjectOverride = -1;
-			directOverride = -1;
-			owner = 0;
-			type = "declare winner";
-			exclusiveFilter = 0;
-		};
-		[301] = {
-			reflexive = false;
-			player = 0;
-			inclusiveFilter = 0;
-			text = 10702;
-			nextLevel = 10;
-			delay = 0;
-			subjectOverride = -1;
-			directOverride = -1;
-			owner = 0;
-			type = "declare winner";
-			exclusiveFilter = 0;
-		};
-		[302] = {
-			reflexive = false;
-			player = 1;
-			inclusiveFilter = 0;
-			text = 11301;
-			nextLevel = -1;
-			delay = 0;
-			subjectOverride = -1;
-			directOverride = -1;
-			owner = 0;
-			type = "declare winner";
-			exclusiveFilter = 0;
-		};
-		[303] = {
-			reflexive = false;
-			player = 0;
-			inclusiveFilter = 0;
-			text = 11302;
-			nextLevel = 16;
-			delay = 0;
-			subjectOverride = -1;
-			directOverride = -1;
-			owner = 0;
-			type = "declare winner";
-			exclusiveFilter = 0;
-		};
-		[304] = {
-			reflexive = false;
-			player = 0;
-			inclusiveFilter = 0;
-			text = 10201;
-			nextLevel = 3;
-			delay = 0;
-			subjectOverride = -1;
-			directOverride = -1;
-			owner = 0;
-			type = "declare winner";
-			exclusiveFilter = 0;
-		};
-		[305] = {
-			reflexive = false;
-			player = 1;
-			inclusiveFilter = 0;
-			text = 11601;
-			nextLevel = -1;
-			delay = 0;
-			subjectOverride = -1;
-			directOverride = -1;
-			owner = 0;
-			type = "declare winner";
-			exclusiveFilter = 0;
-		};
-		[306] = {
-			reflexive = false;
-			player = 0;
-			inclusiveFilter = 0;
-			text = 11602;
-			nextLevel = 19;
-			delay = 0;
-			subjectOverride = -1;
-			directOverride = -1;
-			owner = 0;
-			type = "declare winner";
-			exclusiveFilter = 0;
-		};
-		[307] = {
-			velocityRelative = false;
-			distanceRange = 256;
-			reflexive = true;
-			min = 1;
-			inclusiveFilter = 0;
-			directionRelative = false;
-			delay = 0;
-			subjectOverride = -1;
-			range = 0;
-			baseType = 7;
-			directOverride = -1;
-			owner = 0;
-			type = "create object";
-			exclusiveFilter = 0;
-		};
-		[308] = {
-			reflexive = true;
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = -1;
-			directOverride = -1;
-			owner = 0;
-			type = "set destination";
-			exclusiveFilter = 0;
-		};
-		[309] = {
-			relative = false;
-			reflexive = true;
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = -1;
-			range = 0;
-			minimum = 0;
-			directOverride = -1;
-			owner = 0;
-			type = "alter velocity";
-			exclusiveFilter = 0;
-		};
-		[310] = {
-			velocityRelative = false;
-			distanceRange = 0;
-			reflexive = true;
-			min = 1;
-			inclusiveFilter = 0;
-			directionRelative = false;
-			delay = 0;
-			subjectOverride = -1;
-			range = 0;
-			baseType = 183;
-			directOverride = -1;
-			owner = 0;
-			type = "create object";
-			exclusiveFilter = 0;
-		};
-		[311] = {
-			reflexive = true;
-			inclusiveFilter = 0;
-			speed = 128;
-			delay = 0;
-			subjectOverride = -1;
-			directOverride = -1;
-			owner = 0;
-			type = "land at";
-			exclusiveFilter = 0;
-		};
-		[312] = {
-			reflexive = true;
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = -1;
-			directOverride = -1;
-			owner = 0;
-			type = "alter base type";
-			id = 224;
-			exclusiveFilter = 0;
-			retainAmmmoCount = false;
-		};
-		[313] = {
-			reflexive = true;
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = -1;
-			amount = 80000;
-			directOverride = -1;
-			owner = 0;
-			type = "alter health";
-			exclusiveFilter = 0;
-		};
-		[314] = {
-			reflexive = true;
-			inclusiveFilter = 0;
-			page = 1;
-			delay = 60;
-			subjectOverride = -1;
-			directOverride = -1;
-			owner = 0;
-			type = "display message";
-			id = 5520;
-			exclusiveFilter = 0;
-		};
-		[315] = {
-			velocityRelative = true;
-			distanceRange = 1024;
-			reflexive = true;
-			min = 1;
-			inclusiveFilter = 0;
-			directionRelative = true;
-			delay = 0;
-			subjectOverride = -1;
-			range = 2;
-			baseType = 184;
-			directOverride = -1;
-			owner = 0;
-			type = "create object";
-			exclusiveFilter = 0;
-		};
-		[316] = {
-			velocityRelative = true;
-			distanceRange = 1024;
-			reflexive = true;
-			min = -4;
-			inclusiveFilter = 0;
-			directionRelative = true;
-			delay = 0;
-			subjectOverride = -1;
-			range = 6;
-			baseType = 195;
-			directOverride = -1;
-			owner = 0;
-			type = "create object";
-			exclusiveFilter = 0;
-		};
-		[317] = {
-			relative = true;
-			reflexive = true;
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = -1;
-			range = 512;
-			minimum = 0;
-			directOverride = -1;
-			owner = 0;
-			type = "alter velocity";
-			exclusiveFilter = 0;
-		};
-		[318] = {
-			velocityRelative = true;
-			distanceRange = 2;
-			reflexive = true;
-			min = -10;
-			inclusiveFilter = 0;
-			directionRelative = true;
-			delay = 0;
-			subjectOverride = -1;
-			range = 12;
-			baseType = 189;
-			directOverride = -1;
-			owner = 0;
-			type = "create object";
-			exclusiveFilter = 0;
-		};
-		[319] = {
-			reflexive = true;
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = -1;
-			directOverride = -1;
-			owner = 0;
-			type = "activate special";
-			exclusiveFilter = 0;
-		};
-		[320] = {
-			velocityRelative = false;
-			distanceRange = 256;
-			reflexive = true;
-			min = 0;
-			inclusiveFilter = 0;
-			directionRelative = false;
-			delay = 0;
-			subjectOverride = -1;
-			range = 2;
-			baseType = 7;
-			directOverride = -1;
-			owner = 0;
-			type = "create object";
-			exclusiveFilter = 0;
-		};
-		[321] = {
-			velocityRelative = false;
-			distanceRange = 256;
-			reflexive = true;
-			min = 0;
-			inclusiveFilter = 0;
-			directionRelative = false;
-			delay = 0;
-			subjectOverride = -1;
-			range = 2;
-			baseType = 14;
-			directOverride = -1;
-			owner = 0;
-			type = "create object";
-			exclusiveFilter = 0;
-		};
-		[322] = {
-			velocityRelative = false;
-			distanceRange = 256;
-			reflexive = true;
-			min = 0;
-			inclusiveFilter = 0;
-			directionRelative = false;
-			delay = 0;
-			subjectOverride = -1;
-			range = 2;
-			baseType = 59;
-			directOverride = -1;
-			owner = 0;
-			type = "create object";
-			exclusiveFilter = 0;
-		};
-		[323] = {
-			reflexive = true;
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = -1;
-			range = 2;
-			minimum = 1;
-			directOverride = -1;
-			owner = 0;
-			type = "alter hidden";
-			exclusiveFilter = 0;
-		};
-		[324] = {
-			reflexive = true;
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = -1;
-			range = 2;
-			minimum = 4;
-			directOverride = -1;
-			owner = 0;
-			type = "alter hidden";
-			exclusiveFilter = 0;
-		};
-		[325] = {
-			reflexive = true;
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = -1;
-			range = 0;
-			minimum = 7;
-			directOverride = -1;
-			owner = 0;
-			type = "alter hidden";
-			exclusiveFilter = 0;
-		};
-		[326] = {
-			relative = false;
-			reflexive = true;
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = 0;
-			range = 0;
-			minimum = 0;
-			directOverride = -1;
-			owner = 0;
-			type = "alter velocity";
-			exclusiveFilter = 0;
-		};
-		[327] = {
-			reflexive = false;
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = -1;
-			range = 15360;
-			minimum = 0;
-			directOverride = -1;
-			owner = -1;
-			type = "alter offline";
-			exclusiveFilter = 0;
-		};
-		[328] = {
-			volume = 16580608;
-			priority = 3;
-			isAbsolute = true;
-			reflexive = true;
-			soundId = 0;
-			inclusiveFilter = 0;
-			volumeRange = 16711680;
-			delay = 0;
-			subjectOverride = -1;
-			persistence = 0;
-			directOverride = -1;
-			owner = 0;
-			type = "play sound";
-			exclusiveFilter = 0;
-			soundRange = 35848192;
-		};
-		[329] = {
-			relative = false;
-			reflexive = true;
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = -1;
-			range = 180;
-			minimum = 180;
-			directOverride = -1;
-			owner = 0;
-			type = "alter age";
-			exclusiveFilter = 0;
-		};
-		[330] = {
-			velocityRelative = false;
-			distanceRange = 2;
-			reflexive = true;
-			min = -1;
-			inclusiveFilter = 0;
-			directionRelative = false;
-			delay = 120;
-			subjectOverride = -1;
-			range = 4;
-			baseType = 200;
-			directOverride = -1;
-			owner = 0;
-			type = "create object";
-			exclusiveFilter = 0;
-		};
-		[331] = {
-			velocityRelative = true;
-			distanceRange = 0;
-			reflexive = true;
-			min = 1;
-			inclusiveFilter = 0;
-			directionRelative = true;
-			delay = 0;
-			subjectOverride = -1;
-			range = 0;
-			baseType = 257;
-			directOverride = -1;
-			owner = 0;
-			type = "create object";
-			exclusiveFilter = 0;
-		};
-		[332] = {
-			velocityRelative = true;
-			distanceRange = 0;
-			reflexive = true;
-			min = 2;
-			inclusiveFilter = 0;
-			directionRelative = true;
-			delay = 0;
-			subjectOverride = -1;
-			range = 2;
-			baseType = 190;
-			directOverride = -1;
-			owner = 0;
-			type = "create object";
-			exclusiveFilter = 0;
-		};
-		[333] = {
-			velocityRelative = true;
-			distanceRange = 0;
-			reflexive = true;
-			min = 2;
-			inclusiveFilter = 0;
-			directionRelative = true;
-			delay = 0;
-			subjectOverride = -1;
-			range = 2;
-			baseType = 191;
-			directOverride = -1;
-			owner = 0;
-			type = "create object";
-			exclusiveFilter = 0;
-		};
-		[334] = {
-			velocityRelative = false;
-			distanceRange = 0;
-			reflexive = true;
-			min = 1;
-			inclusiveFilter = 0;
-			directionRelative = false;
-			delay = 0;
-			subjectOverride = -1;
-			range = 0;
-			baseType = 35;
-			directOverride = -1;
-			owner = 0;
-			type = "create object";
-			exclusiveFilter = 0;
-		};
-		[335] = {
-			velocityRelative = true;
-			distanceRange = 0;
-			reflexive = true;
-			min = 1;
-			inclusiveFilter = 0;
-			directionRelative = true;
-			delay = 0;
-			subjectOverride = -1;
-			range = 0;
-			baseType = 193;
-			directOverride = -1;
-			owner = 0;
-			type = "create object";
-			exclusiveFilter = 0;
-		};
-		[336] = {
-			volume = 0;
-			priority = 3;
-			isAbsolute = true;
-			reflexive = true;
-			soundId = 0;
-			inclusiveFilter = 0;
-			volumeRange = 16711680;
-			delay = 0;
-			subjectOverride = -1;
-			persistence = -2130706432;
-			directOverride = -1;
-			owner = 0;
-			type = "play sound";
-			exclusiveFilter = 0;
-			soundRange = 35651584;
-		};
-		[337] = {
-			velocityRelative = false;
-			distanceRange = 0;
-			reflexive = true;
-			min = 1;
-			inclusiveFilter = 0;
-			directionRelative = false;
-			delay = 0;
-			subjectOverride = -1;
-			range = 0;
-			baseType = 194;
-			directOverride = -1;
-			owner = 0;
-			type = "create object";
-			exclusiveFilter = 0;
-		};
-		[338] = {
-			relative = false;
-			reflexive = false;
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = -1;
-			range = 2560;
-			minimum = 5120;
-			directOverride = -1;
-			owner = 0;
-			type = "alter velocity";
-			exclusiveFilter = 0;
-		};
-		[339] = {
-			reflexive = true;
-			how = "plain";
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = -1;
-			directOverride = -1;
-			owner = 0;
-			type = "die";
-			exclusiveFilter = 0;
-		};
-		[340] = {
-			velocityRelative = false;
-			distanceRange = 0;
-			reflexive = true;
-			min = 1;
-			inclusiveFilter = 0;
-			directionRelative = false;
-			delay = 0;
-			subjectOverride = -1;
-			range = 0;
-			baseType = 52;
-			directOverride = -1;
-			owner = 0;
-			type = "create object";
-			exclusiveFilter = 0;
-		};
-		[341] = {
-			reflexive = true;
-			how = "destroy";
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = -1;
-			directOverride = -1;
-			owner = 0;
-			type = "die";
-			exclusiveFilter = 0;
-		};
-		[342] = {
-			velocityRelative = true;
-			distanceRange = 1024;
-			reflexive = true;
-			min = 1;
-			inclusiveFilter = 0;
-			directionRelative = true;
-			delay = 0;
-			subjectOverride = -1;
-			range = 1;
-			baseType = 195;
-			directOverride = -1;
-			owner = 0;
-			type = "create object";
-			exclusiveFilter = 0;
-		};
-		[343] = {
-			relative = true;
-			reflexive = false;
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = -1;
-			range = 0;
-			minimum = 25600;
-			directOverride = -1;
-			owner = 0;
-			type = "alter velocity";
-			exclusiveFilter = 0;
-		};
-		[344] = {
-			velocityRelative = false;
-			distanceRange = 0;
-			reflexive = true;
-			min = 1;
-			inclusiveFilter = 0;
-			directionRelative = false;
-			delay = 0;
-			subjectOverride = -1;
-			range = 0;
-			baseType = 79;
-			directOverride = -1;
-			owner = 0;
-			type = "create object";
-			exclusiveFilter = 0;
-		};
-		[345] = {
-			reflexive = true;
-			how = "expire";
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = -1;
-			directOverride = -1;
-			owner = 0;
-			type = "die";
-			exclusiveFilter = 0;
-		};
-		[346] = {
-			reflexive = false;
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = -1;
-			range = 0;
-			minimum = 10240;
-			directOverride = -1;
-			owner = 0;
-			type = "alter offline";
-			exclusiveFilter = 0;
-		};
-		[347] = {
-			velocityRelative = true;
-			distanceRange = 0;
-			reflexive = true;
-			min = 1;
-			inclusiveFilter = 0;
-			directionRelative = true;
-			delay = 0;
-			subjectOverride = -1;
-			range = 0;
-			baseType = 199;
-			directOverride = -1;
-			owner = 0;
-			type = "create object";
-			exclusiveFilter = 0;
-		};
-		[348] = {
-			volume = 16711680;
-			priority = 3;
-			isAbsolute = true;
-			reflexive = true;
-			soundId = 0;
-			inclusiveFilter = 0;
-			volumeRange = 11796480;
-			delay = 0;
-			subjectOverride = -1;
-			persistence = 0;
-			directOverride = -1;
-			owner = 0;
-			type = "play sound";
-			exclusiveFilter = 0;
-			soundRange = 35979264;
-		};
-		[349] = {
-			velocityRelative = false;
-			distanceRange = 0;
-			reflexive = true;
-			min = 1;
-			inclusiveFilter = 0;
-			directionRelative = false;
-			delay = 0;
-			subjectOverride = -1;
-			range = 0;
-			baseType = 35;
-			directOverride = -1;
-			owner = 0;
-			type = "create object";
-			exclusiveFilter = 0;
-		};
-		[350] = {
-			volume = 0;
-			priority = 3;
-			isAbsolute = true;
-			reflexive = true;
-			soundId = 0;
-			inclusiveFilter = 0;
-			volumeRange = 16711680;
-			delay = 0;
-			subjectOverride = -1;
-			persistence = 16777216;
-			directOverride = -1;
-			owner = 0;
-			type = "play sound";
-			exclusiveFilter = 0;
-			soundRange = 35913728;
-		};
-		[351] = {
-			reflexive = true;
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = -1;
-			amount = 250;
-			directOverride = -1;
-			owner = 0;
-			type = "alter health";
-			exclusiveFilter = 0;
-		};
-		[352] = {
-			reflexive = true;
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = -1;
-			directOverride = -1;
-			owner = 0;
-			type = "alter base type";
-			id = 201;
-			exclusiveFilter = 0;
-			retainAmmmoCount = false;
-		};
-		[353] = {
-			volume = 392364032;
-			priority = 4;
-			isAbsolute = true;
-			reflexive = true;
-			soundId = 0;
-			inclusiveFilter = 0;
-			volumeRange = 16711680;
-			delay = 0;
-			subjectOverride = -1;
-			persistence = -1577058304;
-			directOverride = -1;
-			owner = 0;
-			type = "play sound";
-			exclusiveFilter = 0;
-			soundRange = 36110336;
-		};
-		[354] = {
-			volume = 196608;
-			priority = 3;
-			isAbsolute = true;
-			reflexive = true;
-			soundId = 0;
-			inclusiveFilter = 0;
-			volumeRange = 16711680;
-			delay = 360;
-			subjectOverride = -1;
-			persistence = -1560281088;
-			directOverride = -1;
-			owner = 0;
-			type = "play sound";
-			exclusiveFilter = 0;
-			soundRange = 34406400;
-		};
-		[355] = {
-			reflexive = true;
-			inclusiveFilter = 0;
-			delay = 60;
-			subjectOverride = -1;
-			directOverride = -1;
-			owner = 0;
-			type = "alter base type";
-			id = 188;
-			exclusiveFilter = 0;
-			retainAmmmoCount = false;
-		};
-		[356] = {
-			reflexive = true;
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = -1;
-			range = 0;
-			minimum = 13;
-			directOverride = -1;
-			owner = 0;
-			type = "alter active condition";
-			exclusiveFilter = 0;
-			conditionTrue = false;
-		};
-		[357] = {
-			reflexive = true;
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = -1;
-			range = 0;
-			minimum = 14;
-			directOverride = -1;
-			owner = 0;
-			type = "alter active condition";
-			exclusiveFilter = 0;
-			conditionTrue = true;
-		};
-		[358] = {
-			reflexive = true;
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = -1;
-			range = 2;
-			minimum = 15;
-			directOverride = -1;
-			owner = 0;
-			type = "alter active condition";
-			exclusiveFilter = 0;
-			conditionTrue = false;
-		};
-		[359] = {
-			reflexive = true;
-			inclusiveFilter = 0;
-			page = 1;
-			delay = 0;
-			subjectOverride = -1;
-			directOverride = -1;
-			owner = 0;
-			type = "display message";
-			id = 5500;
-			exclusiveFilter = 0;
-		};
-		[360] = {
-			reflexive = true;
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = -1;
-			range = 0;
-			minimum = 0;
-			directOverride = -1;
-			owner = 0;
-			type = "alter active condition";
-			exclusiveFilter = 0;
-			conditionTrue = true;
-		};
-		[361] = {
-			reflexive = true;
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = -1;
-			range = 0;
-			minimum = 1;
-			directOverride = -1;
-			owner = 0;
-			type = "alter active condition";
-			exclusiveFilter = 0;
-			conditionTrue = true;
-		};
-		[362] = {
-			reflexive = true;
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = -1;
-			range = 0;
-			minimum = 11;
-			directOverride = -1;
-			owner = 0;
-			type = "alter active condition";
-			exclusiveFilter = 0;
-			conditionTrue = false;
-		};
-		[363] = {
-			reflexive = true;
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = -1;
-			range = 0;
-			minimum = 12;
-			directOverride = -1;
-			owner = 0;
-			type = "alter active condition";
-			exclusiveFilter = 0;
-			conditionTrue = false;
-		};
-		[364] = {
-			reflexive = true;
-			inclusiveFilter = 0;
-			page = 1;
-			delay = 0;
-			subjectOverride = -1;
-			directOverride = -1;
-			owner = 0;
-			type = "display message";
-			id = 5501;
-			exclusiveFilter = 0;
-		};
-		[365] = {
-			reflexive = true;
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = -1;
-			range = 0;
-			minimum = 8;
-			directOverride = -1;
-			owner = 0;
-			type = "alter active condition";
-			exclusiveFilter = 0;
-			conditionTrue = true;
-		};
-		[366] = {
-			reflexive = true;
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = -1;
-			range = 0;
-			minimum = 4;
-			directOverride = -1;
-			owner = 0;
-			type = "alter active condition";
-			exclusiveFilter = 0;
-			conditionTrue = false;
-		};
-		[367] = {
-			reflexive = true;
-			inclusiveFilter = 0;
-			page = 1;
-			delay = 0;
-			subjectOverride = -1;
-			directOverride = -1;
-			owner = 0;
-			type = "display message";
-			id = 5502;
-			exclusiveFilter = 0;
-		};
-		[368] = {
-			reflexive = true;
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = -1;
-			range = 0;
-			minimum = 9;
-			directOverride = -1;
-			owner = 0;
-			type = "alter active condition";
-			exclusiveFilter = 0;
-			conditionTrue = true;
-		};
-		[369] = {
-			reflexive = true;
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = -1;
-			range = 0;
-			minimum = 5;
-			directOverride = -1;
-			owner = 0;
-			type = "alter active condition";
-			exclusiveFilter = 0;
-			conditionTrue = false;
-		};
-		[370] = {
-			reflexive = true;
-			inclusiveFilter = 0;
-			page = 1;
-			delay = 0;
-			subjectOverride = -1;
-			directOverride = -1;
-			owner = 0;
-			type = "display message";
-			id = 5503;
-			exclusiveFilter = 0;
-		};
-		[371] = {
-			reflexive = true;
-			inclusiveFilter = 0;
-			page = 1;
-			delay = 0;
-			subjectOverride = -1;
-			directOverride = -1;
-			owner = 0;
-			type = "display message";
-			id = 5503;
-			exclusiveFilter = 0;
-		};
-		[372] = {
-			reflexive = true;
-			inclusiveFilter = 0;
-			page = 1;
-			delay = 0;
-			subjectOverride = -1;
-			directOverride = -1;
-			owner = 0;
-			type = "display message";
-			id = 5504;
-			exclusiveFilter = 0;
-		};
-		[373] = {
-			reflexive = true;
-			inclusiveFilter = 0;
-			page = 1;
-			delay = 0;
-			subjectOverride = -1;
-			directOverride = -1;
-			owner = 0;
-			type = "display message";
-			id = 5504;
-			exclusiveFilter = 0;
-		};
-		[374] = {
-			reflexive = true;
-			inclusiveFilter = 0;
-			page = 1;
-			delay = 0;
-			subjectOverride = -1;
-			directOverride = -1;
-			owner = 0;
-			type = "display message";
-			id = 5505;
-			exclusiveFilter = 0;
-		};
-		[375] = {
-			reflexive = true;
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = -1;
-			range = 0;
-			minimum = 10;
-			directOverride = -1;
-			owner = 0;
-			type = "alter active condition";
-			exclusiveFilter = 0;
-			conditionTrue = false;
-		};
-		[376] = {
-			reflexive = true;
-			inclusiveFilter = 0;
-			page = 1;
-			delay = 0;
-			subjectOverride = -1;
-			directOverride = -1;
-			owner = 0;
-			type = "display message";
-			id = 5505;
-			exclusiveFilter = 0;
-		};
-		[377] = {
-			reflexive = true;
-			inclusiveFilter = 0;
-			page = 1;
-			delay = 0;
-			subjectOverride = -1;
-			directOverride = -1;
-			owner = 0;
-			type = "display message";
-			id = 5503;
-			exclusiveFilter = 0;
-		};
-		[378] = {
-			reflexive = true;
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = -1;
-			range = 0;
-			minimum = 3;
-			directOverride = -1;
-			owner = 0;
-			type = "alter active condition";
-			exclusiveFilter = 0;
-			conditionTrue = false;
-		};
-		[379] = {
-			reflexive = true;
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = -1;
-			range = 0;
-			minimum = 9;
-			directOverride = -1;
-			owner = 0;
-			type = "alter active condition";
-			exclusiveFilter = 0;
-			conditionTrue = false;
-		};
-		[380] = {
-			reflexive = true;
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = -1;
-			range = 0;
-			minimum = 12;
-			directOverride = -1;
-			owner = 0;
-			type = "alter active condition";
-			exclusiveFilter = 0;
-			conditionTrue = true;
-		};
-		[381] = {
-			reflexive = true;
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = -1;
-			range = 0;
-			minimum = 7;
-			directOverride = -1;
-			owner = 0;
-			type = "alter active condition";
-			exclusiveFilter = 0;
-			conditionTrue = false;
-		};
-		[382] = {
-			reflexive = true;
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = -1;
-			range = 0;
-			minimum = 2;
-			directOverride = -1;
-			owner = 0;
-			type = "alter active condition";
-			exclusiveFilter = 0;
-			conditionTrue = false;
-		};
-		[383] = {
-			reflexive = true;
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = -1;
-			range = 0;
-			minimum = 8;
-			directOverride = -1;
-			owner = 0;
-			type = "alter active condition";
-			exclusiveFilter = 0;
-			conditionTrue = false;
-		};
-		[384] = {
-			reflexive = true;
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = -1;
-			range = 0;
-			minimum = 6;
-			directOverride = -1;
-			owner = 0;
-			type = "alter active condition";
-			exclusiveFilter = 0;
-			conditionTrue = false;
-		};
-		[385] = {
-			reflexive = true;
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = -1;
-			range = 0;
-			minimum = 11;
-			directOverride = -1;
-			owner = 0;
-			type = "alter active condition";
-			exclusiveFilter = 0;
-			conditionTrue = true;
-		};
-		[386] = {
-			reflexive = true;
-			inclusiveFilter = 0;
-			page = 1;
-			delay = 360;
-			subjectOverride = -1;
-			directOverride = -1;
-			owner = 0;
-			type = "display message";
-			id = 5508;
-			exclusiveFilter = 0;
-		};
-		[387] = {
-			reflexive = false;
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = -1;
-			directOverride = 5;
-			owner = 0;
-			type = "set destination";
-			exclusiveFilter = 0;
-		};
-		[388] = {
-			reflexive = false;
-			inclusiveFilter = 0;
-			speed = 128;
-			delay = 120;
-			subjectOverride = -1;
-			directOverride = 5;
-			owner = 0;
-			type = "land at";
-			exclusiveFilter = 0;
-		};
-		[389] = {
-			reflexive = true;
-			inclusiveFilter = 0;
-			delay = 2400;
-			subjectOverride = -1;
-			range = 0;
-			minimum = 13;
-			directOverride = -1;
-			owner = 0;
-			type = "alter active condition";
-			exclusiveFilter = 0;
-			conditionTrue = false;
-		};
-		[390] = {
-			reflexive = true;
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = -1;
-			range = 1;
-			minimum = 0;
-			directOverride = -1;
-			owner = 0;
-			type = "alter active condition";
-			exclusiveFilter = 0;
-			conditionTrue = false;
-		};
-		[391] = {
-			reflexive = true;
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = -1;
-			range = 10;
-			minimum = 2;
-			directOverride = -1;
-			owner = 0;
-			type = "alter active condition";
-			exclusiveFilter = 0;
-			conditionTrue = true;
-		};
-		[392] = {
-			reflexive = true;
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = -1;
-			range = 2;
-			minimum = 15;
-			directOverride = -1;
-			owner = 0;
-			type = "alter active condition";
-			exclusiveFilter = 0;
-			conditionTrue = false;
-		};
-		[393] = {
-			reflexive = true;
-			inclusiveFilter = 0;
-			page = 1;
-			delay = 0;
-			subjectOverride = -1;
-			directOverride = -1;
-			owner = 0;
-			type = "display message";
-			id = 5506;
-			exclusiveFilter = 0;
-		};
-		[394] = {
-			reflexive = true;
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = -1;
-			range = 0;
-			minimum = 14;
-			directOverride = -1;
-			owner = 0;
-			type = "alter active condition";
-			exclusiveFilter = 0;
-			conditionTrue = false;
-		};
-		[395] = {
-			reflexive = true;
-			inclusiveFilter = 0;
-			page = 1;
-			delay = 0;
-			subjectOverride = -1;
-			directOverride = -1;
-			owner = 0;
-			type = "display message";
-			id = 5507;
-			exclusiveFilter = 0;
-		};
-		[396] = {
-			reflexive = true;
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = -1;
-			range = 1;
-			minimum = 0;
-			directOverride = -1;
-			owner = 0;
-			type = "alter active condition";
-			exclusiveFilter = 0;
-			conditionTrue = false;
-		};
-		[397] = {
-			reflexive = true;
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = -1;
-			range = 10;
-			minimum = 2;
-			directOverride = -1;
-			owner = 0;
-			type = "alter active condition";
-			exclusiveFilter = 0;
-			conditionTrue = true;
-		};
-		[398] = {
-			reflexive = true;
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = -1;
-			range = 0;
-			minimum = 13;
-			directOverride = -1;
-			owner = 0;
-			type = "alter active condition";
-			exclusiveFilter = 0;
-			conditionTrue = false;
-		};
-		[399] = {
-			reflexive = true;
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = -1;
-			range = 0;
-			minimum = 14;
-			directOverride = -1;
-			owner = 0;
-			type = "alter active condition";
-			exclusiveFilter = 0;
-			conditionTrue = true;
-		};
-		[400] = {
-			reflexive = true;
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = -1;
-			range = 0;
-			minimum = 15;
-			directOverride = -1;
-			owner = 0;
-			type = "alter active condition";
-			exclusiveFilter = 0;
-			conditionTrue = false;
-		};
-		[401] = {
-			reflexive = true;
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = -1;
-			range = 0;
-			minimum = 17;
-			directOverride = -1;
-			owner = 0;
-			type = "alter active condition";
-			exclusiveFilter = 0;
-			conditionTrue = false;
-		};
-		[402] = {
-			reflexive = true;
-			inclusiveFilter = 0;
-			page = 1;
-			delay = 0;
-			subjectOverride = -1;
-			directOverride = -1;
-			owner = 0;
-			type = "display message";
-			id = 5510;
-			exclusiveFilter = 0;
-		};
-		[403] = {
-			reflexive = true;
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = -1;
-			range = 1;
-			minimum = 0;
-			directOverride = -1;
-			owner = 0;
-			type = "alter active condition";
-			exclusiveFilter = 0;
-			conditionTrue = false;
-		};
-		[404] = {
-			reflexive = true;
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = -1;
-			range = 10;
-			minimum = 2;
-			directOverride = -1;
-			owner = 0;
-			type = "alter active condition";
-			exclusiveFilter = 0;
-			conditionTrue = true;
-		};
-		[405] = {
-			reflexive = true;
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = -1;
-			range = 0;
-			minimum = 13;
-			directOverride = -1;
-			owner = 0;
-			type = "alter active condition";
-			exclusiveFilter = 0;
-			conditionTrue = false;
-		};
-		[406] = {
-			reflexive = true;
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = -1;
-			range = 0;
-			minimum = 14;
-			directOverride = -1;
-			owner = 0;
-			type = "alter active condition";
-			exclusiveFilter = 0;
-			conditionTrue = true;
-		};
-		[407] = {
-			reflexive = true;
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = -1;
-			range = 0;
-			minimum = 15;
-			directOverride = -1;
-			owner = 0;
-			type = "alter active condition";
-			exclusiveFilter = 0;
-			conditionTrue = false;
-		};
-		[408] = {
-			reflexive = true;
-			inclusiveFilter = 0;
-			page = 3;
-			delay = 0;
-			subjectOverride = -1;
-			directOverride = -1;
-			owner = 0;
-			type = "display message";
-			id = 5511;
-			exclusiveFilter = 0;
-		};
-		[409] = {
-			reflexive = true;
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = -1;
-			range = 1;
-			minimum = 0;
-			directOverride = -1;
-			owner = 0;
-			type = "alter active condition";
-			exclusiveFilter = 0;
-			conditionTrue = false;
-		};
-		[410] = {
-			reflexive = true;
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = -1;
-			range = 10;
-			minimum = 2;
-			directOverride = -1;
-			owner = 0;
-			type = "alter active condition";
-			exclusiveFilter = 0;
-			conditionTrue = true;
-		};
-		[411] = {
-			reflexive = true;
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = -1;
-			range = 0;
-			minimum = 13;
-			directOverride = -1;
-			owner = 0;
-			type = "alter active condition";
-			exclusiveFilter = 0;
-			conditionTrue = false;
-		};
-		[412] = {
-			reflexive = true;
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = -1;
-			range = 0;
-			minimum = 14;
-			directOverride = -1;
-			owner = 0;
-			type = "alter active condition";
-			exclusiveFilter = 0;
-			conditionTrue = true;
-		};
-		[413] = {
-			reflexive = true;
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = -1;
-			range = 1;
-			minimum = 16;
-			directOverride = -1;
-			owner = 0;
-			type = "alter active condition";
-			exclusiveFilter = 0;
-			conditionTrue = false;
-		};
-		[414] = {
-			reflexive = true;
-			inclusiveFilter = 0;
-			page = 1;
-			delay = 0;
-			subjectOverride = -1;
-			directOverride = -1;
-			owner = 0;
-			type = "display message";
-			id = 5509;
-			exclusiveFilter = 0;
-		};
-		[415] = {
-			reflexive = true;
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = -1;
-			amount = 1000;
-			directOverride = -1;
-			owner = 0;
-			type = "alter health";
-			exclusiveFilter = 0;
-		};
-		[416] = {
-			volume = 11534336;
-			priority = 4;
-			isAbsolute = true;
-			reflexive = true;
-			soundId = 0;
-			inclusiveFilter = 0;
-			volumeRange = 16711680;
-			delay = -1;
-			subjectOverride = 0;
-			persistence = 16777216;
-			directOverride = 0;
-			owner = 0;
-			type = "play sound";
-			exclusiveFilter = 0;
-			soundRange = 36110336;
-		};
-		[417] = {
-			reflexive = true;
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = -1;
-			directOverride = -1;
-			owner = 0;
-			type = "alter base type";
-			id = 204;
-			exclusiveFilter = 0;
-			retainAmmmoCount = false;
-		};
-		[418] = {
-			reflexive = true;
-			inclusiveFilter = 0;
-			delay = 360;
-			subjectOverride = -1;
-			directOverride = -1;
-			owner = 0;
-			type = "alter base type";
-			id = 203;
-			exclusiveFilter = 0;
-			retainAmmmoCount = false;
-		};
-		[419] = {
-			reflexive = true;
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = -1;
-			range = 0;
-			minimum = 22;
-			directOverride = -1;
-			owner = 0;
-			type = "alter hidden";
-			exclusiveFilter = 0;
-		};
-		[420] = {
-			reflexive = true;
-			player = 0;
-			inclusiveFilter = 0;
-			text = 10101;
-			nextLevel = 2;
-			delay = 60;
-			subjectOverride = -1;
-			directOverride = -1;
-			owner = 0;
-			type = "declare winner";
-			exclusiveFilter = 0;
-		};
-		[421] = {
-			reflexive = false;
-			inclusiveFilter = 3758096384;
-			delay = 0;
-			subjectOverride = -1;
-			amount = 1;
-			score = 0;
-			directOverride = -1;
-			plsyer = 0;
-			owner = 0;
-			type = "change score";
-			exclusiveFilter = 4294967295;
-		};
-		[422] = {
-			reflexive = false;
-			how = "expire";
-			inclusiveFilter = 3758096384;
-			delay = 0;
-			subjectOverride = -1;
-			directOverride = -1;
-			owner = 0;
-			type = "die";
-			exclusiveFilter = 4294967295;
-		};
-		[423] = {
-			reflexive = true;
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = 1;
-			directOverride = -1;
-			owner = 0;
-			type = "alter base type";
-			id = 129;
-			exclusiveFilter = 0;
-			retainAmmmoCount = true;
-		};
-		[424] = {
-			reflexive = false;
-			inclusiveFilter = 0;
-			delay = 3;
-			subjectOverride = -1;
-			directOverride = 0;
-			owner = 0;
-			type = "set destination";
-			exclusiveFilter = 0;
-		};
-		[425] = {
-			reflexive = true;
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = -1;
-			range = 0;
-			minimum = 2;
-			directOverride = -1;
-			owner = 0;
-			type = "alter active condition";
-			exclusiveFilter = 0;
-			conditionTrue = false;
-		};
-		[426] = {
-			velocityRelative = true;
-			distanceRange = 0;
-			reflexive = true;
-			min = 1;
-			inclusiveFilter = 0;
-			directionRelative = true;
-			delay = 0;
-			subjectOverride = -1;
-			range = 0;
-			baseType = 207;
-			directOverride = -1;
-			owner = 0;
-			type = "create object";
-			exclusiveFilter = 0;
-		};
-		[427] = {
-			reflexive = true;
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = -1;
-			amount = -1;
-			score = 0;
-			directOverride = -1;
-			plsyer = 0;
-			owner = 0;
-			type = "change score";
-			exclusiveFilter = 0;
-		};
-		[428] = {
-			reflexive = true;
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = -1;
-			range = 0;
-			minimum = 0;
-			directOverride = -1;
-			owner = 0;
-			type = "alter active condition";
-			exclusiveFilter = 0;
-			conditionTrue = false;
-		};
-		[429] = {
-			reflexive = true;
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = 1;
-			directOverride = -1;
-			owner = 0;
-			type = "alter base type";
-			id = 206;
-			exclusiveFilter = 0;
-			retainAmmmoCount = true;
-		};
-		[430] = {
-			reflexive = true;
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = -1;
-			range = 0;
-			minimum = 2;
-			directOverride = -1;
-			owner = 0;
-			type = "alter active condition";
-			exclusiveFilter = 0;
-			conditionTrue = true;
-		};
-		[431] = {
-			reflexive = true;
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = -1;
-			range = 0;
-			minimum = 7;
-			directOverride = -1;
-			owner = 0;
-			type = "alter active condition";
-			exclusiveFilter = 0;
-			conditionTrue = true;
-		};
-		[432] = {
-			reflexive = true;
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = -1;
-			range = 15360;
-			minimum = -7680;
-			directOverride = -1;
-			owner = 0;
-			type = "alter offline";
-			exclusiveFilter = 0;
-		};
-		[433] = {
-			reflexive = true;
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = -1;
-			range = 256;
-			minimum = -256;
-			directOverride = -1;
-			owner = 0;
-			type = "alter current turn rate";
-			exclusiveFilter = 0;
-		};
-		[434] = {
-			relative = true;
-			reflexive = true;
-			inclusiveFilter = 0;
-			delay = 20;
-			subjectOverride = -1;
-			range = 128;
-			minimum = 128;
-			directOverride = -1;
-			owner = 0;
-			type = "alter velocity";
-			exclusiveFilter = 0;
-		};
-		[435] = {
-			reflexive = true;
-			inclusiveFilter = 0;
-			delay = 270;
-			subjectOverride = -1;
-			directOverride = -1;
-			owner = 0;
-			type = "alter base type";
-			id = 208;
-			exclusiveFilter = 0;
-			retainAmmmoCount = true;
-		};
-		[436] = {
-			reflexive = true;
-			inclusiveFilter = 0;
-			delay = 270;
-			subjectOverride = -1;
-			directOverride = -1;
-			owner = 0;
-			type = "alter base type";
-			id = 205;
-			exclusiveFilter = 0;
-			retainAmmmoCount = true;
-		};
-		[437] = {
-			velocityRelative = false;
-			distanceRange = 0;
-			reflexive = true;
-			min = 1;
-			inclusiveFilter = 0;
-			directionRelative = false;
-			delay = 0;
-			subjectOverride = -1;
-			range = 0;
-			baseType = 211;
-			directOverride = -1;
-			owner = 0;
-			type = "create object";
-			exclusiveFilter = 0;
-		};
-		[438] = {
-			velocityRelative = false;
-			distanceRange = 16;
-			reflexive = true;
-			min = 10;
-			inclusiveFilter = 0;
-			directionRelative = false;
-			delay = 0;
-			subjectOverride = -1;
-			range = 0;
-			baseType = 205;
-			directOverride = -1;
-			owner = 0;
-			type = "create object";
-			exclusiveFilter = 0;
-		};
-		[439] = {
-			reflexive = true;
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = -1;
-			directOverride = -1;
-			owner = 0;
-			type = "alter base type";
-			id = 209;
-			exclusiveFilter = 0;
-			retainAmmmoCount = false;
-		};
-		[440] = {
-			volume = 10485760;
-			priority = 3;
-			isAbsolute = true;
-			reflexive = false;
-			soundId = 0;
-			inclusiveFilter = 1610612736;
-			volumeRange = 16711680;
-			delay = 0;
-			subjectOverride = -1;
-			persistence = 0;
-			directOverride = -1;
-			owner = 0;
-			type = "play sound";
-			exclusiveFilter = 4294967295;
-			soundRange = 2096431104;
-		};
-		[441] = {
-			reflexive = false;
-			inclusiveFilter = 1610612736;
-			delay = 0;
-			subjectOverride = -1;
-			amount = 1;
-			score = 1;
-			directOverride = -1;
-			plsyer = 0;
-			owner = 0;
-			type = "change score";
-			exclusiveFilter = 4294967295;
-		};
-		[442] = {
-			reflexive = false;
-			how = "expire";
-			inclusiveFilter = 1610612736;
-			delay = 0;
-			subjectOverride = -1;
-			directOverride = -1;
-			owner = 0;
-			type = "die";
-			exclusiveFilter = 4294967295;
-		};
-		[443] = {
-			reflexive = true;
-			player = 0;
-			inclusiveFilter = 0;
-			text = 11201;
-			nextLevel = 15;
-			delay = 0;
-			subjectOverride = -1;
-			directOverride = -1;
-			owner = 0;
-			type = "declare winner";
-			exclusiveFilter = 0;
-		};
-		[444] = {
-			reflexive = true;
-			inclusiveFilter = 0;
-			value = -1;
-			delay = 0;
-			subjectOverride = -1;
-			useObjectsOwner = false;
-			directOverride = -1;
-			owner = 0;
-			type = "alter owner";
-			exclusiveFilter = 0;
-		};
-		[445] = {
-			reflexive = true;
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = 1;
-			directOverride = -1;
-			owner = 0;
-			type = "alter base type";
-			id = 88;
-			exclusiveFilter = 0;
-			retainAmmmoCount = true;
-		};
-		[446] = {
-			reflexive = true;
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = -1;
-			range = 0;
-			minimum = 2;
-			directOverride = -1;
-			owner = 0;
-			type = "alter active condition";
-			exclusiveFilter = 0;
-			conditionTrue = false;
-		};
-		[447] = {
-			velocityRelative = true;
-			distanceRange = 0;
-			reflexive = true;
-			min = 1;
-			inclusiveFilter = 0;
-			directionRelative = true;
-			delay = 0;
-			subjectOverride = -1;
-			range = 0;
-			baseType = 214;
-			directOverride = -1;
-			owner = 0;
-			type = "create object";
-			exclusiveFilter = 0;
-		};
-		[448] = {
-			reflexive = true;
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = -1;
-			amount = -1;
-			score = 0;
-			directOverride = -1;
-			plsyer = 0;
-			owner = 0;
-			type = "change score";
-			exclusiveFilter = 0;
-		};
-		[449] = {
-			reflexive = true;
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = -1;
-			range = 0;
-			minimum = 0;
-			directOverride = -1;
-			owner = 0;
-			type = "alter active condition";
-			exclusiveFilter = 0;
-			conditionTrue = false;
-		};
-		[450] = {
-			reflexive = true;
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = 6;
-			directOverride = -1;
-			owner = 0;
-			type = "activate special";
-			exclusiveFilter = 0;
-		};
-		[451] = {
-			reflexive = true;
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = 1;
-			directOverride = -1;
-			owner = 0;
-			type = "alter base type";
-			id = 217;
-			exclusiveFilter = 0;
-			retainAmmmoCount = true;
-		};
-		[452] = {
-			reflexive = true;
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = -1;
-			range = 0;
-			minimum = 2;
-			directOverride = -1;
-			owner = 0;
-			type = "alter active condition";
-			exclusiveFilter = 0;
-			conditionTrue = true;
-		};
-		[453] = {
-			reflexive = true;
-			player = 0;
-			inclusiveFilter = 0;
-			text = 10502;
-			nextLevel = 8;
-			delay = 0;
-			subjectOverride = -1;
-			directOverride = -1;
-			owner = 0;
-			type = "declare winner";
-			exclusiveFilter = 0;
-		};
-		[454] = {
-			reflexive = true;
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = -1;
-			range = 15360;
-			minimum = -7680;
-			directOverride = -1;
-			owner = 0;
-			type = "alter offline";
-			exclusiveFilter = 0;
-		};
-		[455] = {
-			reflexive = true;
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = -1;
-			range = 256;
-			minimum = -256;
-			directOverride = -1;
-			owner = 0;
-			type = "alter current turn rate";
-			exclusiveFilter = 0;
-		};
-		[456] = {
-			relative = true;
-			reflexive = true;
-			inclusiveFilter = 0;
-			delay = 20;
-			subjectOverride = -1;
-			range = 128;
-			minimum = 128;
-			directOverride = -1;
-			owner = 0;
-			type = "alter velocity";
-			exclusiveFilter = 0;
-		};
-		[457] = {
-			reflexive = true;
-			inclusiveFilter = 0;
-			delay = 270;
-			subjectOverride = -1;
-			directOverride = -1;
-			owner = 0;
-			type = "alter base type";
-			id = 213;
-			exclusiveFilter = 0;
-			retainAmmmoCount = true;
-		};
-		[458] = {
-			reflexive = true;
-			inclusiveFilter = 0;
-			delay = 270;
-			subjectOverride = -1;
-			directOverride = -1;
-			owner = 0;
-			type = "alter base type";
-			id = 212;
-			exclusiveFilter = 0;
-			retainAmmmoCount = true;
-		};
-		[459] = {
-			velocityRelative = false;
-			distanceRange = 0;
-			reflexive = true;
-			min = 1;
-			inclusiveFilter = 0;
-			directionRelative = false;
-			delay = 0;
-			subjectOverride = -1;
-			range = 0;
-			baseType = 211;
-			directOverride = -1;
-			owner = 0;
-			type = "create object";
-			exclusiveFilter = 0;
-		};
-		[460] = {
-			velocityRelative = false;
-			distanceRange = 16;
-			reflexive = true;
-			min = 5;
-			inclusiveFilter = 0;
-			directionRelative = false;
-			delay = 0;
-			subjectOverride = -1;
-			range = 0;
-			baseType = 212;
-			directOverride = -1;
-			owner = 0;
-			type = "create object";
-			exclusiveFilter = 0;
-		};
-		[461] = {
-			reflexive = true;
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = 7;
-			directOverride = -1;
-			owner = 0;
-			type = "activate special";
-			exclusiveFilter = 0;
-		};
-		[462] = {
-			reflexive = true;
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = -1;
-			directOverride = -1;
-			owner = 0;
-			type = "alter base type";
-			id = 215;
-			exclusiveFilter = 0;
-			retainAmmmoCount = false;
-		};
-		[463] = {
-			velocityRelative = true;
-			distanceRange = 256;
-			reflexive = true;
-			min = 1;
-			inclusiveFilter = 0;
-			directionRelative = false;
-			delay = 0;
-			subjectOverride = -1;
-			range = 2;
-			baseType = 37;
-			directOverride = -1;
-			owner = 0;
-			type = "create object";
-			exclusiveFilter = 0;
-		};
-		[464] = {
-			velocityRelative = false;
-			distanceRange = 256;
-			reflexive = true;
-			min = 1;
-			inclusiveFilter = 0;
-			directionRelative = false;
-			delay = 0;
-			subjectOverride = -1;
-			range = 4;
-			baseType = 38;
-			directOverride = -1;
-			owner = 0;
-			type = "create object";
-			exclusiveFilter = 0;
-		};
-		[465] = {
-			reflexive = false;
-			player = 0;
-			inclusiveFilter = 0;
-			text = 10901;
-			nextLevel = 12;
-			delay = 0;
-			subjectOverride = -1;
-			directOverride = -1;
-			owner = 0;
-			type = "declare winner";
-			exclusiveFilter = 0;
-		};
-		[466] = {
-			reflexive = true;
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = -1;
-			directOverride = -1;
-			owner = 0;
-			type = "alter base type";
-			id = 220;
-			exclusiveFilter = 0;
-			retainAmmmoCount = false;
-		};
-		[467] = {
-			velocityRelative = true;
-			distanceRange = 128;
-			reflexive = true;
-			min = 0;
-			inclusiveFilter = 0;
-			directionRelative = false;
-			delay = 0;
-			subjectOverride = -1;
-			range = 3;
-			baseType = 29;
-			directOverride = -1;
-			owner = 0;
-			type = "create object";
-			exclusiveFilter = 0;
-		};
-		[468] = {
-			velocityRelative = true;
-			distanceRange = 128;
-			reflexive = true;
-			min = 0;
-			inclusiveFilter = 0;
-			directionRelative = false;
-			delay = 20;
-			subjectOverride = -1;
-			range = 2;
-			baseType = 52;
-			directOverride = -1;
-			owner = 0;
-			type = "create object";
-			exclusiveFilter = 0;
-		};
-		[469] = {
-			velocityRelative = true;
-			distanceRange = 128;
-			reflexive = true;
-			min = 0;
-			inclusiveFilter = 0;
-			directionRelative = false;
-			delay = 20;
-			subjectOverride = -1;
-			range = 4;
-			baseType = 34;
-			directOverride = -1;
-			owner = 0;
-			type = "create object";
-			exclusiveFilter = 0;
-		};
-		[470] = {
-			velocityRelative = true;
-			distanceRange = 128;
-			reflexive = true;
-			min = 0;
-			inclusiveFilter = 0;
-			directionRelative = false;
-			delay = 20;
-			subjectOverride = -1;
-			range = 4;
-			baseType = 8;
-			directOverride = -1;
-			owner = 0;
-			type = "create object";
-			exclusiveFilter = 0;
-		};
-		[471] = {
-			reflexive = true;
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = -1;
-			range = 7;
-			minimum = 4;
-			directOverride = -1;
-			owner = 0;
-			type = "alter hidden";
-			exclusiveFilter = 0;
-		};
-		[472] = {
-			volume = 720896;
-			priority = 4;
-			isAbsolute = true;
-			reflexive = true;
-			soundId = 0;
-			inclusiveFilter = 0;
-			volumeRange = 16711680;
-			delay = 0;
-			subjectOverride = -1;
-			persistence = 0;
-			directOverride = -1;
-			owner = 0;
-			type = "play sound";
-			exclusiveFilter = 0;
-			soundRange = 33751040;
-		};
-		[473] = {
-			velocityRelative = false;
-			distanceRange = 0;
-			reflexive = true;
-			min = 11;
-			inclusiveFilter = 0;
-			directionRelative = false;
-			delay = 0;
-			subjectOverride = -1;
-			range = 0;
-			baseType = 221;
-			directOverride = -1;
-			owner = 0;
-			type = "create object";
-			exclusiveFilter = 0;
-		};
-		[474] = {
-			reflexive = true;
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = -1;
-			range = 0;
-			minimum = 1;
-			directOverride = -1;
-			owner = 0;
-			type = "alter active condition";
-			exclusiveFilter = 0;
-			conditionTrue = false;
-		};
-		[475] = {
-			reflexive = true;
-			inclusiveFilter = 0;
-			shade = 15;
-			duration = 128;
-			delay = 0;
-			subjectOverride = -1;
-			color = 2;
-			directOverride = -1;
-			owner = 0;
-			type = "color flash";
-			exclusiveFilter = 0;
-		};
-		[476] = {
-			reflexive = true;
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = -1;
-			range = 0;
-			minimum = 1;
-			directOverride = -1;
-			owner = 0;
-			type = "alter active condition";
-			exclusiveFilter = 0;
-			conditionTrue = false;
-		};
-		[477] = {
-			reflexive = true;
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = -1;
-			range = 0;
-			minimum = 2;
-			directOverride = -1;
-			owner = 0;
-			type = "alter active condition";
-			exclusiveFilter = 0;
-			conditionTrue = false;
-		};
-		[478] = {
-			reflexive = true;
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = -1;
-			range = 0;
-			minimum = 4;
-			directOverride = -1;
-			owner = 0;
-			type = "alter active condition";
-			exclusiveFilter = 0;
-			conditionTrue = false;
-		};
-		[479] = {
-			reflexive = true;
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = -1;
-			range = 0;
-			minimum = 3;
-			directOverride = -1;
-			owner = 0;
-			type = "alter active condition";
-			exclusiveFilter = 0;
-			conditionTrue = false;
-		};
-		[480] = {
-			reflexive = true;
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = -1;
-			range = 0;
-			minimum = 5;
-			directOverride = -1;
-			owner = 0;
-			type = "alter active condition";
-			exclusiveFilter = 0;
-			conditionTrue = false;
-		};
-		[481] = {
-			reflexive = true;
-			player = 0;
-			inclusiveFilter = 0;
-			text = 12001;
-			nextLevel = 23;
-			delay = 0;
-			subjectOverride = -1;
-			directOverride = -1;
-			owner = 0;
-			type = "declare winner";
-			exclusiveFilter = 0;
-		};
-		[482] = {
-			reflexive = true;
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = -1;
-			range = 1;
-			minimum = 2;
-			directOverride = -1;
-			owner = 0;
-			type = "alter active condition";
-			exclusiveFilter = 0;
-			conditionTrue = true;
-		};
-		[483] = {
-			reflexive = true;
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = -1;
-			range = 0;
-			minimum = 1;
-			directOverride = -1;
-			owner = 0;
-			type = "alter active condition";
-			exclusiveFilter = 0;
-			conditionTrue = false;
-		};
-		[484] = {
-			reflexive = true;
-			player = 1;
-			inclusiveFilter = 0;
-			text = 12002;
-			nextLevel = -1;
-			delay = 0;
-			subjectOverride = -1;
-			directOverride = -1;
-			owner = 0;
-			type = "declare winner";
-			exclusiveFilter = 0;
-		};
-		[485] = {
-			reflexive = true;
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = -1;
-			amount = 1;
-			score = 2;
-			directOverride = -1;
-			plsyer = 0;
-			owner = 0;
-			type = "change score";
-			exclusiveFilter = 0;
-		};
-		[486] = {
-			reflexive = true;
-			player = 1;
-			inclusiveFilter = 0;
-			text = 10501;
-			nextLevel = -1;
-			delay = 0;
-			subjectOverride = -1;
-			directOverride = -1;
-			owner = 0;
-			type = "declare winner";
-			exclusiveFilter = 0;
-		};
-		[487] = {
-			reflexive = true;
-			player = 1;
-			inclusiveFilter = 0;
-			text = 11202;
-			nextLevel = -1;
-			delay = 0;
-			subjectOverride = -1;
-			directOverride = -1;
-			owner = 0;
-			type = "declare winner";
-			exclusiveFilter = 0;
-		};
-		[488] = {
-			velocityRelative = false;
-			distanceRange = 0;
-			reflexive = true;
-			min = 1;
-			inclusiveFilter = 0;
-			directionRelative = false;
-			delay = -1;
-			subjectOverride = 0;
-			range = 0;
-			baseType = 29;
-			directOverride = 0;
-			owner = 0;
-			type = "create object";
-			exclusiveFilter = 0;
-		};
-		[489] = {
-			reflexive = true;
-			player = 1;
-			inclusiveFilter = 0;
-			text = 11802;
-			nextLevel = -1;
-			delay = 0;
-			subjectOverride = -1;
-			directOverride = -1;
-			owner = 0;
-			type = "declare winner";
-			exclusiveFilter = 0;
-		};
-		[490] = {
-			velocityRelative = false;
-			distanceRange = 0;
-			reflexive = true;
-			min = 1;
-			inclusiveFilter = 0;
-			directionRelative = false;
-			delay = 0;
-			subjectOverride = -1;
-			range = 0;
-			baseType = 29;
-			directOverride = -1;
-			owner = 0;
-			type = "create object";
-			exclusiveFilter = 0;
-		};
-		[491] = {
-			reflexive = true;
-			player = 1;
-			inclusiveFilter = 0;
-			text = 11403;
-			nextLevel = -1;
-			delay = 0;
-			subjectOverride = -1;
-			directOverride = -1;
-			owner = 0;
-			type = "declare winner";
-			exclusiveFilter = 0;
-		};
-		[492] = {
-			velocityRelative = false;
-			distanceRange = 0;
-			reflexive = true;
-			min = 1;
-			inclusiveFilter = 0;
-			directionRelative = false;
-			delay = 0;
-			subjectOverride = -1;
-			range = 0;
-			baseType = 29;
-			directOverride = -1;
-			owner = 0;
-			type = "create object";
-			exclusiveFilter = 0;
-		};
-		[493] = {
-			reflexive = true;
-			player = 1;
-			inclusiveFilter = 0;
-			text = 11402;
-			nextLevel = -1;
-			delay = 0;
-			subjectOverride = -1;
-			directOverride = -1;
-			owner = 0;
-			type = "declare winner";
-			exclusiveFilter = 0;
-		};
-		[494] = {
-			volume = 13107200;
-			priority = 3;
-			isAbsolute = true;
-			reflexive = true;
-			soundId = 0;
-			inclusiveFilter = 0;
-			volumeRange = 16711680;
-			delay = 0;
-			subjectOverride = -1;
-			persistence = 0;
-			directOverride = -1;
-			owner = 0;
-			type = "play sound";
-			exclusiveFilter = 0;
-			soundRange = 35651584;
-		};
-		[495] = {
-			velocityRelative = true;
-			distanceRange = 4;
-			reflexive = true;
-			min = 1;
-			inclusiveFilter = 0;
-			directionRelative = true;
-			delay = 0;
-			subjectOverride = -1;
-			range = 0;
-			baseType = 227;
-			directOverride = -1;
-			owner = 0;
-			type = "create object";
-			exclusiveFilter = 0;
-		};
-		[496] = {
-			reflexive = true;
-			player = 0;
-			inclusiveFilter = 0;
-			text = 11702;
-			nextLevel = 20;
-			delay = 0;
-			subjectOverride = -1;
-			directOverride = -1;
-			owner = 0;
-			type = "declare winner";
-			exclusiveFilter = 0;
-		};
-		[497] = {
-			reflexive = true;
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = -1;
-			range = 1;
-			minimum = 6;
-			directOverride = -1;
-			owner = 0;
-			type = "alter hidden";
-			exclusiveFilter = 0;
-		};
-		[498] = {
-			relative = true;
-			reflexive = false;
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = -1;
-			range = 0;
-			minimum = -12;
-			directOverride = -1;
-			owner = 0;
-			type = "alter velocity";
-			exclusiveFilter = 0;
-		};
-		[499] = {
-			velocityRelative = false;
-			distanceRange = 0;
-			reflexive = true;
-			min = 1;
-			inclusiveFilter = 0;
-			directionRelative = true;
-			delay = 0;
-			subjectOverride = -1;
-			range = 0;
-			baseType = 53;
-			directOverride = -1;
-			owner = 0;
-			type = "create object";
-			exclusiveFilter = 0;
-		};
-		[500] = {
-			reflexive = true;
-			how = "plain";
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = -1;
-			directOverride = -1;
-			owner = 0;
-			type = "die";
-			exclusiveFilter = 0;
-		};
-		[501] = {
-			velocityRelative = true;
-			distanceRange = 1024;
-			reflexive = true;
-			min = -2;
-			inclusiveFilter = 0;
-			directionRelative = true;
-			delay = 0;
-			subjectOverride = -1;
-			range = 5;
-			baseType = 184;
-			directOverride = -1;
-			owner = 0;
-			type = "create object";
-			exclusiveFilter = 0;
-		};
-		[502] = {
-			velocityRelative = true;
-			distanceRange = 1024;
-			reflexive = true;
-			min = -12;
-			inclusiveFilter = 0;
-			directionRelative = true;
-			delay = 0;
-			subjectOverride = -1;
-			range = 14;
-			baseType = 195;
-			directOverride = -1;
-			owner = 0;
-			type = "create object";
-			exclusiveFilter = 0;
-		};
-		[503] = {
-			volume = 13107200;
-			priority = 3;
-			isAbsolute = true;
-			reflexive = true;
-			soundId = 0;
-			inclusiveFilter = 0;
-			volumeRange = 16711680;
-			delay = 0;
-			subjectOverride = -1;
-			persistence = 0;
-			directOverride = -1;
-			owner = 0;
-			type = "play sound";
-			exclusiveFilter = 0;
-			soundRange = 36175872;
-		};
-		[504] = {
-			count = 2;
-			reflexive = true;
-			inclusiveFilter = 0;
-			velocityRange = 3.0;
-			delay = 0;
-			subjectOverride = -1;
-			color = 2;
-			directOverride = -1;
-			veloctiy = 20;
-			owner = 0;
-			type = "make sparks";
-			exclusiveFilter = 0;
-		};
-		[505] = {
-			reflexive = true;
-			how = "plain";
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = -1;
-			directOverride = -1;
-			owner = 0;
-			type = "die";
-			exclusiveFilter = 0;
-		};
-		[506] = {
-			reflexive = true;
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = 2;
-			amount = -10000;
-			directOverride = -1;
-			owner = 0;
-			type = "alter health";
-			exclusiveFilter = 0;
-		};
-		[507] = {
-			reflexive = true;
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = 3;
-			amount = -10000;
-			directOverride = -1;
-			owner = 0;
-			type = "alter health";
-			exclusiveFilter = 0;
-		};
-		[508] = {
-			reflexive = true;
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = 4;
-			amount = -10000;
-			directOverride = -1;
-			owner = 0;
-			type = "alter health";
-			exclusiveFilter = 0;
-		};
-		[509] = {
-			reflexive = true;
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = 5;
-			amount = -10000;
-			directOverride = -1;
-			owner = 0;
-			type = "alter health";
-			exclusiveFilter = 0;
-		};
-		[510] = {
-			reflexive = true;
-			inclusiveFilter = 0;
-			page = 1;
-			delay = 0;
-			subjectOverride = -1;
-			directOverride = -1;
-			owner = 0;
-			type = "display message";
-			id = 6123;
-			exclusiveFilter = 0;
-		};
-		[511] = {
-			volume = 6553600;
-			priority = 3;
-			isAbsolute = true;
-			reflexive = true;
-			soundId = 0;
-			inclusiveFilter = 0;
-			volumeRange = 16711680;
-			delay = 0;
-			subjectOverride = -1;
-			persistence = -1073741824;
-			directOverride = -1;
-			owner = 0;
-			type = "play sound";
-			exclusiveFilter = 0;
-			soundRange = 36306944;
-		};
-		[512] = {
-			velocityRelative = false;
-			distanceRange = 0;
-			reflexive = true;
-			min = 1;
-			inclusiveFilter = 0;
-			directionRelative = true;
-			delay = 0;
-			subjectOverride = -1;
-			range = 0;
-			baseType = 232;
-			directOverride = -1;
-			owner = 0;
-			type = "create object";
-			exclusiveFilter = 0;
-		};
-		[513] = {
-			count = 20;
-			reflexive = false;
-			inclusiveFilter = 0;
-			velocityRange = 5.0;
-			delay = 0;
-			subjectOverride = -1;
-			color = 9;
-			directOverride = -1;
-			veloctiy = 8;
-			owner = 0;
-			type = "make sparks";
-			exclusiveFilter = 0;
-		};
-		[514] = {
-			volume = 7602176;
-			priority = 1;
-			isAbsolute = true;
-			reflexive = true;
-			soundId = 0;
-			inclusiveFilter = 0;
-			volumeRange = 16711680;
-			delay = 0;
-			subjectOverride = -1;
-			persistence = 1627389952;
-			directOverride = -1;
-			owner = 0;
-			type = "play sound";
-			exclusiveFilter = 0;
-			soundRange = 35520512;
-		};
-		[515] = {
-			velocityRelative = true;
-			distanceRange = 0;
-			reflexive = true;
-			min = 1;
-			inclusiveFilter = 0;
-			directionRelative = true;
-			delay = 0;
-			subjectOverride = -1;
-			range = 0;
-			baseType = 233;
-			directOverride = -1;
-			owner = 0;
-			type = "create object";
-			exclusiveFilter = 0;
-		};
-		[516] = {
-			reflexive = true;
-			how = "expire";
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = -1;
-			directOverride = -1;
-			owner = 0;
-			type = "die";
-			exclusiveFilter = 0;
-		};
-		[517] = {
-			volume = 6881280;
-			priority = 3;
-			isAbsolute = true;
-			reflexive = true;
-			soundId = 0;
-			inclusiveFilter = 0;
-			volumeRange = 16711680;
-			delay = 0;
-			subjectOverride = -1;
-			persistence = -1694498816;
-			directOverride = -1;
-			owner = 0;
-			type = "play sound";
-			exclusiveFilter = 0;
-			soundRange = 36569088;
-		};
-		[518] = {
-			velocityRelative = true;
-			distanceRange = 0;
-			reflexive = true;
-			min = 1;
-			inclusiveFilter = 0;
-			directionRelative = true;
-			delay = 0;
-			subjectOverride = -1;
-			range = 0;
-			baseType = 236;
-			directOverride = -1;
-			owner = 0;
-			type = "create object";
-			exclusiveFilter = 0;
-		};
-		[519] = {
-			volume = 6488064;
-			priority = 101;
-			isAbsolute = true;
-			reflexive = true;
-			soundId = 0;
-			inclusiveFilter = 0;
-			volumeRange = 16711680;
-			delay = 0;
-			subjectOverride = -1;
-			persistence = 1811939328;
-			directOverride = -1;
-			owner = 0;
-			type = "play sound";
-			exclusiveFilter = 0;
-			soundRange = 36438016;
-		};
-		[520] = {
-			velocityRelative = true;
-			distanceRange = 8;
-			reflexive = true;
-			min = 1;
-			inclusiveFilter = 0;
-			directionRelative = true;
-			delay = 0;
-			subjectOverride = -1;
-			range = 0;
-			baseType = 239;
-			directOverride = -1;
-			owner = 0;
-			type = "create object";
-			exclusiveFilter = 0;
-		};
-		[521] = {
-			volume = 6881280;
-			priority = 3;
-			isAbsolute = true;
-			reflexive = true;
-			soundId = 0;
-			inclusiveFilter = 0;
-			volumeRange = 16711680;
-			delay = 0;
-			subjectOverride = -1;
-			persistence = -1711276032;
-			directOverride = -1;
-			owner = 0;
-			type = "play sound";
-			exclusiveFilter = 0;
-			soundRange = 36503552;
-		};
-		[522] = {
-			velocityRelative = true;
-			distanceRange = 0;
-			reflexive = true;
-			min = 1;
-			inclusiveFilter = 0;
-			directionRelative = true;
-			delay = 0;
-			subjectOverride = -1;
-			range = 0;
-			baseType = 242;
-			directOverride = -1;
-			owner = 0;
-			type = "create object";
-			exclusiveFilter = 0;
-		};
-		[523] = {
-			volume = 6881280;
-			priority = 3;
-			isAbsolute = true;
-			reflexive = true;
-			soundId = 0;
-			inclusiveFilter = 0;
-			volumeRange = 16711680;
-			delay = 0;
-			subjectOverride = -1;
-			persistence = 1191182336;
-			directOverride = -1;
-			owner = 0;
-			type = "play sound";
-			exclusiveFilter = 0;
-			soundRange = 36634624;
-		};
-		[524] = {
-			velocityRelative = true;
-			distanceRange = 0;
-			reflexive = true;
-			min = 1;
-			inclusiveFilter = 0;
-			directionRelative = true;
-			delay = 0;
-			subjectOverride = -1;
-			range = 0;
-			baseType = 245;
-			directOverride = -1;
-			owner = 0;
-			type = "create object";
-			exclusiveFilter = 0;
-		};
-		[525] = {
-			volume = 393216;
-			priority = 3;
-			isAbsolute = true;
-			reflexive = true;
-			soundId = 0;
-			inclusiveFilter = 0;
-			volumeRange = 16711680;
-			delay = 0;
-			subjectOverride = -1;
-			persistence = 0;
-			directOverride = -1;
-			owner = 0;
-			type = "play sound";
-			exclusiveFilter = 0;
-			soundRange = 37093376;
-		};
-		[526] = {
-			velocityRelative = true;
-			distanceRange = 0;
-			reflexive = true;
-			min = 6;
-			inclusiveFilter = 0;
-			directionRelative = true;
-			delay = 0;
-			subjectOverride = -1;
-			range = 0;
-			baseType = 248;
-			directOverride = -1;
-			owner = 0;
-			type = "create object set destination";
-			exclusiveFilter = 0;
-		};
-		[527] = {
-			volume = 655360;
-			priority = 3;
-			isAbsolute = false;
-			reflexive = true;
-			soundId = 0;
-			inclusiveFilter = 0;
-			volumeRange = 16711680;
-			delay = 0;
-			subjectOverride = -1;
-			persistence = 64512;
-			directOverride = -1;
-			owner = 0;
-			type = "play sound";
-			exclusiveFilter = 0;
-			soundRange = 37289984;
-		};
-		[528] = {
-			velocityRelative = false;
-			distanceRange = 4;
-			reflexive = true;
-			min = 10;
-			inclusiveFilter = 0;
-			directionRelative = false;
-			delay = 0;
-			subjectOverride = -1;
-			range = 0;
-			baseType = 252;
-			directOverride = -1;
-			owner = 0;
-			type = "create object set destination";
-			exclusiveFilter = 0;
-		};
-		[529] = {
-			volume = 393216;
-			priority = 3;
-			isAbsolute = true;
-			reflexive = true;
-			soundId = 0;
-			inclusiveFilter = 0;
-			volumeRange = 16711680;
-			delay = 0;
-			subjectOverride = -1;
-			persistence = 0;
-			directOverride = -1;
-			owner = 0;
-			type = "play sound";
-			exclusiveFilter = 0;
-			soundRange = 37224448;
-		};
-		[530] = {
-			velocityRelative = true;
-			distanceRange = 0;
-			reflexive = true;
-			min = 6;
-			inclusiveFilter = 0;
-			directionRelative = true;
-			delay = 0;
-			subjectOverride = -1;
-			range = 0;
-			baseType = 253;
-			directOverride = -1;
-			owner = 0;
-			type = "create object set destination";
-			exclusiveFilter = 0;
-		};
-		[531] = {
-			velocityRelative = false;
-			distanceRange = 16;
-			reflexive = true;
-			min = 1;
-			inclusiveFilter = 0;
-			directionRelative = false;
-			delay = 0;
-			subjectOverride = -1;
-			range = 2;
-			baseType = 255;
-			directOverride = -1;
-			owner = 0;
-			type = "create object";
-			exclusiveFilter = 0;
-		};
-		[532] = {
-			volume = 262144;
-			priority = 3;
-			isAbsolute = true;
-			reflexive = true;
-			soundId = 0;
-			inclusiveFilter = 0;
-			volumeRange = 16711680;
-			delay = 0;
-			subjectOverride = -1;
-			persistence = 0;
-			directOverride = -1;
-			owner = 0;
-			type = "play sound";
-			exclusiveFilter = 0;
-			soundRange = 36765696;
-		};
-		[533] = {
-			reflexive = true;
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = -1;
-			directOverride = -1;
-			owner = 0;
-			type = "alter base type";
-			id = 72;
-			exclusiveFilter = 0;
-			retainAmmmoCount = true;
-		};
-		[534] = {
-			volume = 65536;
-			priority = 3;
-			isAbsolute = true;
-			reflexive = false;
-			soundId = 0;
-			inclusiveFilter = 0;
-			volumeRange = 16711680;
-			delay = 0;
-			subjectOverride = -1;
-			persistence = 0;
-			directOverride = -1;
-			owner = 0;
-			type = "play sound";
-			exclusiveFilter = 0;
-			soundRange = 36896768;
-		};
-		[535] = {
-			velocityRelative = false;
-			distanceRange = 0;
-			reflexive = true;
-			min = 1;
-			inclusiveFilter = 0;
-			directionRelative = true;
-			delay = 0;
-			subjectOverride = -1;
-			range = 0;
-			baseType = 258;
-			directOverride = -1;
-			owner = 0;
-			type = "create object";
-			exclusiveFilter = 0;
-		};
-		[536] = {
-			volume = 0;
-			priority = 3;
-			isAbsolute = true;
-			reflexive = true;
-			soundId = 0;
-			inclusiveFilter = 0;
-			volumeRange = 16711680;
-			delay = 0;
-			subjectOverride = -1;
-			persistence = 1845493760;
-			directOverride = -1;
-			owner = 0;
-			type = "play sound";
-			exclusiveFilter = 0;
-			soundRange = 36962304;
-		};
-		[537] = {
-			velocityRelative = false;
-			distanceRange = 0;
-			reflexive = true;
-			min = 1;
-			inclusiveFilter = 0;
-			directionRelative = true;
-			delay = 0;
-			subjectOverride = -1;
-			range = 0;
-			baseType = 260;
-			directOverride = -1;
-			owner = 0;
-			type = "create object";
-			exclusiveFilter = 0;
-		};
-		[538] = {
-			velocityRelative = false;
-			distanceRange = 0;
-			reflexive = true;
-			min = 1;
-			inclusiveFilter = 0;
-			directionRelative = true;
-			delay = 0;
-			subjectOverride = -1;
-			range = 0;
-			baseType = 262;
-			directOverride = -1;
-			owner = 0;
-			type = "create object";
-			exclusiveFilter = 0;
-		};
-		[539] = {
-			velocityRelative = true;
-			distanceRange = 0;
-			reflexive = true;
-			min = 1;
-			inclusiveFilter = 0;
-			directionRelative = true;
-			delay = 0;
-			subjectOverride = -1;
-			range = 0;
-			baseType = 263;
-			directOverride = -1;
-			owner = 0;
-			type = "create object";
-			exclusiveFilter = 0;
-		};
-		[540] = {
-			volume = 8978432;
-			priority = 3;
-			isAbsolute = true;
-			reflexive = true;
-			soundId = 0;
-			inclusiveFilter = 0;
-			volumeRange = 16711680;
-			delay = 0;
-			subjectOverride = -1;
-			persistence = 1694498816;
-			directOverride = -1;
-			owner = 0;
-			type = "play sound";
-			exclusiveFilter = 0;
-			soundRange = 37027840;
-		};
-		[541] = {
-			velocityRelative = true;
-			distanceRange = 4096;
-			reflexive = true;
-			min = 1;
-			inclusiveFilter = 0;
-			directionRelative = true;
-			delay = 0;
-			subjectOverride = -1;
-			range = 2;
-			baseType = 265;
-			directOverride = -1;
-			owner = 0;
-			type = "create object";
-			exclusiveFilter = 0;
-		};
-		[542] = {
-			velocityRelative = false;
-			distanceRange = 4096;
-			reflexive = true;
-			min = -4;
-			inclusiveFilter = 0;
-			directionRelative = true;
-			delay = 0;
-			subjectOverride = -1;
-			range = 5;
-			baseType = 195;
-			directOverride = -1;
-			owner = 0;
-			type = "create object";
-			exclusiveFilter = 0;
-		};
-		[543] = {
-			reflexive = true;
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = -1;
-			range = 6;
-			minimum = 5;
-			directOverride = -1;
-			owner = 0;
-			type = "alter hidden";
-			exclusiveFilter = 0;
-		};
-		[544] = {
-			reflexive = true;
-			inclusiveFilter = 0;
-			value = 0;
-			delay = 0;
-			subjectOverride = 2;
-			useObjectsOwner = false;
-			directOverride = -1;
-			owner = 0;
-			type = "alter owner";
-			exclusiveFilter = 0;
-		};
-		[545] = {
-			reflexive = true;
-			inclusiveFilter = 0;
-			value = 1;
-			delay = 0;
-			subjectOverride = 3;
-			useObjectsOwner = false;
-			directOverride = -1;
-			owner = 0;
-			type = "alter owner";
-			exclusiveFilter = 0;
-		};
-		[546] = {
-			reflexive = false;
-			player = 1;
-			inclusiveFilter = 0;
-			value = 2560000;
-			delay = 0;
-			subjectOverride = 3;
-			useObjectsOwner = false;
-			directOverride = -1;
-			owner = 0;
-			type = "alter absolute cash";
-			exclusiveFilter = 0;
-		};
-		[547] = {
-			reflexive = true;
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = -1;
-			range = 1;
-			minimum = 9;
-			directOverride = -1;
-			owner = 0;
-			type = "alter hidden";
-			exclusiveFilter = 0;
-		};
-		[548] = {
-			reflexive = false;
-			player = 1;
-			inclusiveFilter = 0;
-			text = 11802;
-			nextLevel = -1;
-			delay = 0;
-			subjectOverride = -1;
-			directOverride = -1;
-			owner = 0;
-			type = "declare winner";
-			exclusiveFilter = 0;
-		};
-		[549] = {
-			reflexive = true;
-			player = 0;
-			inclusiveFilter = 0;
-			text = 11801;
-			nextLevel = 21;
-			delay = 0;
-			subjectOverride = -1;
-			directOverride = -1;
-			owner = 0;
-			type = "declare winner";
-			exclusiveFilter = 0;
-		};
-		[550] = {
-			reflexive = true;
-			inclusiveFilter = 0;
-			page = 1;
-			delay = 0;
-			subjectOverride = -1;
-			directOverride = -1;
-			owner = 0;
-			type = "display message";
-			id = 5170;
-			exclusiveFilter = 0;
-		};
-		[551] = {
-			reflexive = true;
-			inclusiveFilter = 0;
-			page = 1;
-			delay = 360;
-			subjectOverride = -1;
-			directOverride = -1;
-			owner = 0;
-			type = "display message";
-			id = 5171;
-			exclusiveFilter = 0;
-		};
-		[552] = {
-			reflexive = true;
-			inclusiveFilter = 0;
-			delay = 360;
-			subjectOverride = -1;
-			range = 20;
-			minimum = 12;
-			directOverride = -1;
-			owner = 0;
-			type = "alter hidden";
-			exclusiveFilter = 0;
-		};
-		[553] = {
-			reflexive = true;
-			player = 0;
-			inclusiveFilter = 0;
-			text = 12101;
-			nextLevel = -1;
-			delay = 0;
-			subjectOverride = -1;
-			directOverride = -1;
-			owner = 0;
-			type = "declare winner";
-			exclusiveFilter = 0;
-		};
-		[554] = {
-			reflexive = false;
-			player = 0;
-			inclusiveFilter = 0;
-			text = 11901;
-			nextLevel = 22;
-			delay = 0;
-			subjectOverride = -1;
-			directOverride = -1;
-			owner = 0;
-			type = "declare winner";
-			exclusiveFilter = 0;
-		};
-		[555] = {
-			reflexive = false;
-			inclusiveFilter = 4029677568;
-			speed = 32;
-			delay = 0;
-			subjectOverride = -1;
-			directOverride = -1;
-			owner = 0;
-			type = "land at";
-			exclusiveFilter = 4294967295;
-		};
-		[556] = {
-			volume = 16777216;
-			priority = 5;
-			isAbsolute = true;
-			reflexive = false;
-			soundId = 0;
-			inclusiveFilter = 4029677568;
-			volumeRange = 16711680;
-			delay = 0;
-			subjectOverride = -1;
-			persistence = 0;
-			directOverride = -1;
-			owner = 0;
-			type = "play sound";
-			exclusiveFilter = 4294967295;
-			soundRange = 33619968;
-		};
-		[557] = {
-			volume = 0;
-			priority = 3;
-			isAbsolute = true;
-			reflexive = true;
-			soundId = 0;
-			inclusiveFilter = 0;
-			volumeRange = 16711680;
-			delay = 0;
-			subjectOverride = -1;
-			persistence = -1073741824;
-			directOverride = -1;
-			owner = 0;
-			type = "play sound";
-			exclusiveFilter = 0;
-			soundRange = 37421056;
-		};
-		[558] = {
-			relative = true;
-			reflexive = true;
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = -1;
-			range = 0;
-			minimum = 600;
-			directOverride = 3;
-			owner = 0;
-			type = "alter location";
-			exclusiveFilter = 0;
-		};
-		[559] = {
-			reflexive = true;
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = -1;
-			amount = 1000;
-			directOverride = -1;
-			owner = 0;
-			type = "alter health";
-			exclusiveFilter = 0;
-		};
-		[560] = {
-			relative = false;
-			reflexive = true;
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = -1;
-			range = 0;
-			minimum = 0;
-			directOverride = -1;
-			owner = 0;
-			type = "alter velocity";
-			exclusiveFilter = 0;
-		};
-		[561] = {
-			reflexive = true;
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = -1;
-			directOverride = -1;
-			owner = 0;
-			type = "alter base type";
-			id = 280;
-			exclusiveFilter = 0;
-			retainAmmmoCount = false;
-		};
-		[562] = {
-			reflexive = true;
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = -1;
-			amount = 1000;
-			directOverride = -1;
-			owner = 0;
-			type = "alter health";
-			exclusiveFilter = 0;
-		};
-		[563] = {
-			reflexive = true;
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = -1;
-			directOverride = -1;
-			owner = 0;
-			type = "alter base type";
-			id = 279;
-			exclusiveFilter = 0;
-			retainAmmmoCount = false;
-		};
-		[564] = {
-			reflexive = false;
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = -1;
-			directOverride = -1;
-			owner = 0;
-			type = "alter base type";
-			id = 272;
-			exclusiveFilter = 0;
-			retainAmmmoCount = false;
-		};
-		[565] = {
-			volume = 0;
-			priority = 5;
-			isAbsolute = true;
-			reflexive = false;
-			soundId = 0;
-			inclusiveFilter = 0;
-			volumeRange = 16711680;
-			delay = 0;
-			subjectOverride = -1;
-			persistence = 0;
-			directOverride = -1;
-			owner = 0;
-			type = "play sound";
-			exclusiveFilter = 0;
-			soundRange = 36110336;
-		};
-		[566] = {
-			reflexive = true;
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = -1;
-			directOverride = -1;
-			owner = 0;
-			type = "nil target";
-			exclusiveFilter = 0;
-		};
-		[567] = {
-			relative = false;
-			reflexive = true;
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = -1;
-			range = 0;
-			minimum = -1;
-			directOverride = -1;
-			owner = 0;
-			type = "alter age";
-			exclusiveFilter = 0;
-		};
-		[568] = {
-			reflexive = true;
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = -1;
-			directOverride = -1;
-			owner = 0;
-			type = "alter base type";
-			id = 278;
-			exclusiveFilter = 0;
-			retainAmmmoCount = false;
-		};
-		[569] = {
-			reflexive = false;
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = -1;
-			directOverride = -1;
-			owner = 0;
-			type = "alter base type";
-			id = 273;
-			exclusiveFilter = 0;
-			retainAmmmoCount = false;
-		};
-		[570] = {
-			volume = 0;
-			priority = 5;
-			isAbsolute = true;
-			reflexive = false;
-			soundId = 0;
-			inclusiveFilter = 0;
-			volumeRange = 16711680;
-			delay = 0;
-			subjectOverride = -1;
-			persistence = 0;
-			directOverride = -1;
-			owner = 0;
-			type = "play sound";
-			exclusiveFilter = 0;
-			soundRange = 36110336;
-		};
-		[571] = {
-			reflexive = true;
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = -1;
-			directOverride = -1;
-			owner = 0;
-			type = "nil target";
-			exclusiveFilter = 0;
-		};
-		[572] = {
-			volume = 0;
-			priority = 3;
-			isAbsolute = true;
-			reflexive = true;
-			soundId = 0;
-			inclusiveFilter = 0;
-			volumeRange = 16711680;
-			delay = 0;
-			subjectOverride = -1;
-			persistence = 436207616;
-			directOverride = -1;
-			owner = 0;
-			type = "play sound";
-			exclusiveFilter = 0;
-			soundRange = 37421056;
-		};
-		[573] = {
-			relative = true;
-			reflexive = true;
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = -1;
-			range = 0;
-			minimum = 600;
-			directOverride = 2;
-			owner = 0;
-			type = "alter location";
-			exclusiveFilter = 0;
-		};
-		[574] = {
-			reflexive = true;
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = -1;
-			amount = 1000;
-			directOverride = -1;
-			owner = 0;
-			type = "alter health";
-			exclusiveFilter = 0;
-		};
-		[575] = {
-			relative = false;
-			reflexive = true;
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = -1;
-			range = 0;
-			minimum = 0;
-			directOverride = -1;
-			owner = 0;
-			type = "alter velocity";
-			exclusiveFilter = 0;
-		};
-		[576] = {
-			reflexive = true;
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = -1;
-			directOverride = -1;
-			owner = 0;
-			type = "alter base type";
-			id = 281;
-			exclusiveFilter = 0;
-			retainAmmmoCount = false;
-		};
-		[577] = {
-			reflexive = true;
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = -1;
-			amount = 1000;
-			directOverride = -1;
-			owner = 0;
-			type = "alter health";
-			exclusiveFilter = 0;
-		};
-		[578] = {
-			reflexive = true;
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = -1;
-			directOverride = -1;
-			owner = 0;
-			type = "alter base type";
-			id = 277;
-			exclusiveFilter = 0;
-			retainAmmmoCount = false;
-		};
-		[579] = {
-			relative = false;
-			reflexive = true;
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = -1;
-			range = 0;
-			minimum = -1;
-			directOverride = -1;
-			owner = 0;
-			type = "alter age";
-			exclusiveFilter = 0;
-		};
-		[580] = {
-			reflexive = true;
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = -1;
-			directOverride = -1;
-			owner = 0;
-			type = "alter base type";
-			id = 276;
-			exclusiveFilter = 0;
-			retainAmmmoCount = false;
-		};
-		[581] = {
-			reflexive = true;
-			player = 1;
-			inclusiveFilter = 0;
-			text = 11203;
-			nextLevel = -1;
-			delay = 0;
-			subjectOverride = -1;
-			directOverride = -1;
-			owner = 0;
-			type = "declare winner";
-			exclusiveFilter = 0;
-		};
-		[582] = {
-			reflexive = true;
-			inclusiveFilter = 0;
-			value = -1;
-			delay = 0;
-			subjectOverride = -1;
-			useObjectsOwner = true;
-			directOverride = -1;
-			owner = 0;
-			type = "alter owner";
-			exclusiveFilter = 0;
-		};
-		[583] = {
-			reflexive = true;
-			player = 1;
-			inclusiveFilter = 0;
-			text = 6251;
-			nextLevel = -1;
-			delay = 0;
-			subjectOverride = -1;
-			directOverride = -1;
-			owner = 0;
-			type = "declare winner";
-			exclusiveFilter = 0;
-		};
-		[584] = {
-			reflexive = true;
-			player = 0;
-			inclusiveFilter = 0;
-			text = 6250;
-			nextLevel = -1;
-			delay = 0;
-			subjectOverride = -1;
-			directOverride = -1;
-			owner = 0;
-			type = "declare winner";
-			exclusiveFilter = 0;
-		};
-		[585] = {
-			reflexive = true;
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = -1;
-			amount = 1;
-			score = 0;
-			directOverride = -1;
-			plsyer = 0;
-			owner = 0;
-			type = "change score";
-			exclusiveFilter = 0;
-		};
-		[586] = {
-			reflexive = true;
-			inclusiveFilter = 0;
-			delay = 360;
-			subjectOverride = -1;
-			range = 0;
-			minimum = 0;
-			directOverride = -1;
-			owner = 0;
-			type = "alter hidden";
-			exclusiveFilter = 0;
-		};
-		[587] = {
-			reflexive = false;
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = -1;
-			range = 0;
-			minimum = 0;
-			directOverride = -1;
-			owner = 0;
-			type = "alter active condition";
-			exclusiveFilter = 0;
-			conditionTrue = false;
-		};
-		[588] = {
-			reflexive = true;
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = -1;
-			amount = 1;
-			score = 0;
-			directOverride = -1;
-			plsyer = 1;
-			owner = 0;
-			type = "change score";
-			exclusiveFilter = 0;
-		};
-		[589] = {
-			reflexive = true;
-			inclusiveFilter = 0;
-			delay = 360;
-			subjectOverride = -1;
-			range = 0;
-			minimum = 1;
-			directOverride = -1;
-			owner = 0;
-			type = "alter hidden";
-			exclusiveFilter = 0;
-		};
-		[590] = {
-			reflexive = true;
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = -1;
-			range = 0;
-			minimum = 1;
-			directOverride = -1;
-			owner = 0;
-			type = "alter active condition";
-			exclusiveFilter = 0;
-			conditionTrue = false;
-		};
-		[591] = {
-			reflexive = true;
-			player = 1;
-			inclusiveFilter = 0;
-			text = 6351;
-			nextLevel = -1;
-			delay = 0;
-			subjectOverride = -1;
-			directOverride = -1;
-			owner = 0;
-			type = "declare winner";
-			exclusiveFilter = 0;
-		};
-		[592] = {
-			reflexive = true;
-			player = 0;
-			inclusiveFilter = 0;
-			text = 6350;
-			nextLevel = -1;
-			delay = 0;
-			subjectOverride = -1;
-			directOverride = -1;
-			owner = 0;
-			type = "declare winner";
-			exclusiveFilter = 0;
-		};
-		[593] = {
-			volume = 10223616;
-			priority = 3;
-			isAbsolute = true;
-			reflexive = true;
-			soundId = 0;
-			inclusiveFilter = 0;
-			volumeRange = 16711680;
-			delay = 0;
-			subjectOverride = -1;
-			persistence = -1073741824;
-			directOverride = -1;
-			owner = 0;
-			type = "play sound";
-			exclusiveFilter = 0;
-			soundRange = 36503552;
-		};
-		[594] = {
-			velocityRelative = false;
-			distanceRange = 0;
-			reflexive = true;
-			min = 1;
-			inclusiveFilter = 0;
-			directionRelative = false;
-			delay = 0;
-			subjectOverride = -1;
-			range = 0;
-			baseType = 242;
-			directOverride = -1;
-			owner = 0;
-			type = "create object";
-			exclusiveFilter = 0;
-		};
-		[595] = {
-			reflexive = true;
-			player = 0;
-			inclusiveFilter = 0;
-			text = 6300;
-			nextLevel = -1;
-			delay = 0;
-			subjectOverride = -1;
-			directOverride = -1;
-			owner = 0;
-			type = "declare winner";
-			exclusiveFilter = 0;
-		};
-		[596] = {
-			reflexive = true;
-			player = 1;
-			inclusiveFilter = 0;
-			text = 6301;
-			nextLevel = 188;
-			delay = 0;
-			subjectOverride = -1;
-			directOverride = -1;
-			owner = 0;
-			type = "declare winner";
-			exclusiveFilter = 0;
-		};
-		[597] = {
-			reflexive = true;
-			player = 1;
-			inclusiveFilter = 0;
-			text = 6151;
-			nextLevel = -1;
-			delay = 0;
-			subjectOverride = -1;
-			directOverride = -1;
-			owner = 0;
-			type = "declare winner";
-			exclusiveFilter = 0;
-		};
-		[598] = {
-			reflexive = true;
-			player = 0;
-			inclusiveFilter = 0;
-			text = 6150;
-			nextLevel = -1;
-			delay = 0;
-			subjectOverride = -1;
-			directOverride = -1;
-			owner = 0;
-			type = "declare winner";
-			exclusiveFilter = 0;
-		};
-		[599] = {
-			reflexive = true;
-			player = 1;
-			inclusiveFilter = 0;
-			text = 6101;
-			nextLevel = -1;
-			delay = 0;
-			subjectOverride = -1;
-			directOverride = -1;
-			owner = 0;
-			type = "declare winner";
-			exclusiveFilter = 0;
-		};
-		[600] = {
-			reflexive = true;
-			player = 0;
-			inclusiveFilter = 0;
-			text = 6100;
-			nextLevel = -1;
-			delay = 0;
-			subjectOverride = -1;
-			directOverride = -1;
-			owner = 0;
-			type = "declare winner";
-			exclusiveFilter = 0;
-		};
-		[601] = {
-			keyMask = 4177559551;
-			reflexive = false;
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = -1;
-			directOverride = -1;
-			owner = 0;
-			type = "disable keys";
-			exclusiveFilter = 0;
-		};
-		[602] = {
-			reflexive = false;
-			inclusiveFilter = 0;
-			value = 1;
-			delay = 0;
-			subjectOverride = -1;
-			directOverride = -1;
-			owner = 0;
-			type = "set zoom level";
-			exclusiveFilter = 0;
-		};
-		[603] = {
-			relative = false;
-			reflexive = true;
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = 0;
-			range = 0;
-			minimum = 0;
-			directOverride = -1;
-			owner = 0;
-			type = "alter velocity";
-			exclusiveFilter = 0;
-		};
-		[604] = {
-			reflexive = false;
-			inclusiveFilter = 0;
-			page = 1;
-			delay = 0;
-			subjectOverride = -1;
-			directOverride = -1;
-			owner = 0;
-			type = "display message";
-			id = 5700;
-			exclusiveFilter = 0;
-		};
-		[605] = {
-			reflexive = false;
-			inclusiveFilter = 0;
-			page = 3;
-			delay = 0;
-			subjectOverride = -1;
-			directOverride = -1;
-			owner = 0;
-			type = "display message";
-			id = 5701;
-			exclusiveFilter = 0;
-		};
-		[606] = {
-			reflexive = false;
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = -1;
-			range = 0;
-			minimum = 3;
-			directOverride = -1;
-			owner = 0;
-			type = "alter active condition";
-			exclusiveFilter = 0;
-			conditionTrue = false;
-		};
-		[607] = {
-			reflexive = false;
-			inclusiveFilter = 0;
-			page = 1;
-			delay = 0;
-			subjectOverride = -1;
-			directOverride = -1;
-			owner = 0;
-			type = "display message";
-			id = 5750;
-			exclusiveFilter = 0;
-		};
-		[608] = {
-			keyMask = 2485616640;
-			reflexive = false;
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = -1;
-			directOverride = -1;
-			owner = 0;
-			type = "enable keys";
-			exclusiveFilter = 0;
-		};
-		[609] = {
-			reflexive = false;
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = -1;
-			range = 0;
-			minimum = 22;
-			directOverride = -1;
-			owner = 0;
-			type = "alter active condition";
-			exclusiveFilter = 0;
-			conditionTrue = false;
-		};
-		[610] = {
-			reflexive = false;
-			inclusiveFilter = 0;
-			value = 3;
-			delay = 0;
-			subjectOverride = -1;
-			directOverride = -1;
-			owner = 0;
-			type = "set zoom level";
-			exclusiveFilter = 0;
-		};
-		[611] = {
-			reflexive = false;
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = -1;
-			range = 0;
-			minimum = 5;
-			directOverride = -1;
-			owner = 0;
-			type = "alter active condition";
-			exclusiveFilter = 0;
-			conditionTrue = false;
-		};
-		[612] = {
-			keyMask = 373841920;
-			reflexive = false;
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = -1;
-			directOverride = -1;
-			owner = 0;
-			type = "enable keys";
-			exclusiveFilter = 0;
-		};
-		[613] = {
-			reflexive = false;
-			inclusiveFilter = 0;
-			page = 4;
-			delay = 0;
-			subjectOverride = -1;
-			directOverride = -1;
-			owner = 0;
-			type = "display message";
-			id = 5711;
-			exclusiveFilter = 0;
-		};
-		[614] = {
-			reflexive = false;
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = 5;
-			directOverride = 0;
-			owner = 0;
-			type = "set destination";
-			exclusiveFilter = 0;
-		};
-		[615] = {
-			reflexive = false;
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = -1;
-			range = 0;
-			minimum = 7;
-			directOverride = -1;
-			owner = 0;
-			type = "alter active condition";
-			exclusiveFilter = 0;
-			conditionTrue = false;
-		};
-		[616] = {
-			reflexive = false;
-			inclusiveFilter = 0;
-			value = 5;
-			delay = 0;
-			subjectOverride = -1;
-			directOverride = -1;
-			owner = 0;
-			type = "set zoom level";
-			exclusiveFilter = 0;
-		};
-		[617] = {
-			reflexive = false;
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = 5;
-			directOverride = 4;
-			owner = 0;
-			type = "set destination";
-			exclusiveFilter = 0;
-		};
-		[618] = {
-			reflexive = false;
-			inclusiveFilter = 0;
-			delay = 120;
-			subjectOverride = -1;
-			range = 0;
-			minimum = 8;
-			directOverride = -1;
-			owner = 0;
-			type = "alter active condition";
-			exclusiveFilter = 0;
-			conditionTrue = false;
-		};
-		[619] = {
-			reflexive = false;
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = 5;
-			directOverride = 0;
-			owner = 0;
-			type = "set destination";
-			exclusiveFilter = 0;
-		};
-		[620] = {
-			reflexive = false;
-			inclusiveFilter = 0;
-			delay = 120;
-			subjectOverride = -1;
-			range = 0;
-			minimum = 7;
-			directOverride = -1;
-			owner = 0;
-			type = "alter active condition";
-			exclusiveFilter = 0;
-			conditionTrue = false;
-		};
-		[621] = {
-			reflexive = true;
-			how = "plain";
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = 5;
-			directOverride = -1;
-			owner = 0;
-			type = "die";
-			exclusiveFilter = 0;
-		};
-		[622] = {
-			reflexive = false;
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = -1;
-			range = 0;
-			minimum = 10;
-			directOverride = -1;
-			owner = 0;
-			type = "alter active condition";
-			exclusiveFilter = 0;
-			conditionTrue = false;
-		};
-		[623] = {
-			reflexive = true;
-			inclusiveFilter = 0;
-			page = 6;
-			delay = 0;
-			subjectOverride = -1;
-			directOverride = -1;
-			owner = 0;
-			type = "display message";
-			id = 5715;
-			exclusiveFilter = 0;
-		};
-		[624] = {
-			keyMask = 2828558336;
-			reflexive = false;
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = -1;
-			directOverride = -1;
-			owner = 0;
-			type = "disable keys";
-			exclusiveFilter = 0;
-		};
-		[625] = {
-			reflexive = false;
-			inclusiveFilter = 0;
-			value = 7;
-			delay = 0;
-			subjectOverride = -1;
-			directOverride = -1;
-			owner = 0;
-			type = "set zoom level";
-			exclusiveFilter = 0;
-		};
-		[626] = {
-			reflexive = true;
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = 2;
-			amount = -249;
-			directOverride = -1;
-			owner = 0;
-			type = "alter health";
-			exclusiveFilter = 0;
-		};
-		[627] = {
-			reflexive = false;
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = -1;
-			range = 0;
-			minimum = 14;
-			directOverride = -1;
-			owner = 0;
-			type = "alter active condition";
-			exclusiveFilter = 0;
-			conditionTrue = false;
-		};
-		[628] = {
-			keyMask = 374890496;
-			reflexive = false;
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = -1;
-			directOverride = -1;
-			owner = 0;
-			type = "enable keys";
-			exclusiveFilter = 0;
-		};
-		[629] = {
-			reflexive = false;
-			inclusiveFilter = 0;
-			page = 21;
-			delay = 0;
-			subjectOverride = -1;
-			directOverride = -1;
-			owner = 0;
-			type = "display message";
-			id = 5721;
-			exclusiveFilter = 0;
-		};
-		[630] = {
-			keyMask = 12582924;
-			reflexive = false;
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = -1;
-			directOverride = -1;
-			owner = 0;
-			type = "enable keys";
-			exclusiveFilter = 0;
-		};
-		[631] = {
-			keyMask = 131;
-			reflexive = false;
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = -1;
-			directOverride = -1;
-			owner = 0;
-			type = "enable keys";
-			exclusiveFilter = 0;
-		};
-		[632] = {
-			reflexive = false;
-			inclusiveFilter = 0;
-			value = 1;
-			delay = 0;
-			subjectOverride = -1;
-			directOverride = -1;
-			owner = 0;
-			type = "set zoom level";
-			exclusiveFilter = 0;
-		};
-		[633] = {
-			reflexive = false;
-			inclusiveFilter = 0;
-			value = 4;
-			delay = 0;
-			subjectOverride = -1;
-			directOverride = -1;
-			owner = 0;
-			type = "set zoom level";
-			exclusiveFilter = 0;
-		};
-		[634] = {
-			keyMask = 112;
-			reflexive = true;
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = -1;
-			directOverride = -1;
-			owner = 0;
-			type = "enable keys";
-			exclusiveFilter = 0;
-		};
-		[635] = {
-			reflexive = false;
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = -1;
-			range = 1;
-			minimum = 7;
-			directOverride = -1;
-			owner = 0;
-			type = "alter hidden";
-			exclusiveFilter = 0;
-		};
-		[636] = {
-			reflexive = true;
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = 8;
-			directOverride = -1;
-			owner = 0;
-			type = "alter cloak";
-			exclusiveFilter = 0;
-		};
-		[637] = {
-			reflexive = true;
-			inclusiveFilter = 0;
-			value = 0;
-			delay = 0;
-			subjectOverride = 8;
-			directOverride = -1;
-			owner = 0;
-			type = "alter max velocity";
-			exclusiveFilter = 0;
-		};
-		[638] = {
-			reflexive = true;
-			inclusiveFilter = 0;
-			value = 0;
-			delay = 0;
-			subjectOverride = 7;
-			directOverride = -1;
-			owner = 0;
-			type = "alter max velocity";
-			exclusiveFilter = 0;
-		};
-		[639] = {
-			reflexive = true;
-			inclusiveFilter = 0;
-			value = 0;
-			delay = 0;
-			subjectOverride = 4;
-			useObjectsOwner = false;
-			directOverride = -1;
-			owner = 0;
-			type = "alter owner";
-			exclusiveFilter = 0;
-		};
-		[640] = {
-			reflexive = false;
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = -1;
-			range = 0;
-			minimum = 20;
-			directOverride = -1;
-			owner = 0;
-			type = "alter active condition";
-			exclusiveFilter = 0;
-			conditionTrue = false;
-		};
-		[641] = {
-			reflexive = false;
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = -1;
-			range = 0;
-			minimum = 21;
-			directOverride = -1;
-			owner = 0;
-			type = "alter active condition";
-			exclusiveFilter = 0;
-			conditionTrue = false;
-		};
-		[642] = {
-			reflexive = true;
-			player = 0;
-			inclusiveFilter = 0;
-			text = 7050;
-			nextLevel = 2;
-			delay = 0;
-			subjectOverride = -1;
-			directOverride = -1;
-			owner = 0;
-			type = "declare winner";
-			exclusiveFilter = 0;
-		};
-		[643] = {
-			reflexive = false;
-			inclusiveFilter = 0;
-			page = 3;
-			delay = 0;
-			subjectOverride = -1;
-			directOverride = -1;
-			owner = 0;
-			type = "display message";
-			id = 5800;
-			exclusiveFilter = 0;
-		};
-		[644] = {
-			relative = false;
-			reflexive = true;
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = 0;
-			range = 0;
-			minimum = 0;
-			directOverride = -1;
-			owner = 0;
-			type = "alter velocity";
-			exclusiveFilter = 0;
-		};
-		[645] = {
-			relative = false;
-			reflexive = true;
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = 1;
-			range = 0;
-			minimum = 0;
-			directOverride = -1;
-			owner = 0;
-			type = "alter velocity";
-			exclusiveFilter = 0;
-		};
-		[646] = {
-			keyMask = 2015395827;
-			reflexive = false;
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = -1;
-			directOverride = -1;
-			owner = 0;
-			type = "disable keys";
-			exclusiveFilter = 0;
-		};
-		[647] = {
-			reflexive = false;
-			inclusiveFilter = 0;
-			value = 2;
-			delay = 0;
-			subjectOverride = -1;
-			directOverride = -1;
-			owner = 0;
-			type = "set zoom level";
-			exclusiveFilter = 0;
-		};
-		[648] = {
-			reflexive = true;
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = -1;
-			range = 0;
-			minimum = 2;
-			directOverride = -1;
-			owner = 0;
-			type = "alter active condition";
-			exclusiveFilter = 0;
-			conditionTrue = false;
-		};
-		[649] = {
-			reflexive = false;
-			inclusiveFilter = 0;
-			page = 8;
-			delay = 0;
-			subjectOverride = -1;
-			directOverride = -1;
-			owner = 0;
-			type = "display message";
-			id = 5803;
-			exclusiveFilter = 0;
-		};
-		[650] = {
-			reflexive = false;
-			inclusiveFilter = 0;
-			page = 2;
-			delay = 0;
-			subjectOverride = -1;
-			directOverride = -1;
-			owner = 0;
-			type = "display message";
-			id = 5811;
-			exclusiveFilter = 0;
-		};
-		[651] = {
-			reflexive = false;
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = -1;
-			range = 3;
-			minimum = 2;
-			directOverride = -1;
-			owner = 0;
-			type = "alter hidden";
-			exclusiveFilter = 0;
-		};
-		[652] = {
-			reflexive = true;
-			inclusiveFilter = 0;
-			value = 7;
-			delay = 0;
-			subjectOverride = -1;
-			directOverride = -1;
-			owner = 0;
-			type = "set zoom level";
-			exclusiveFilter = 0;
-		};
-		[653] = {
-			reflexive = true;
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = -1;
-			range = 0;
-			minimum = 6;
-			directOverride = -1;
-			owner = 0;
-			type = "alter active condition";
-			exclusiveFilter = 0;
-			conditionTrue = false;
-		};
-		[654] = {
-			reflexive = true;
-			inclusiveFilter = 0;
-			page = 2;
-			delay = 0;
-			subjectOverride = -1;
-			directOverride = -1;
-			owner = 0;
-			type = "display message";
-			id = 5813;
-			exclusiveFilter = 0;
-		};
-		[655] = {
-			reflexive = true;
-			how = "plain";
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = 2;
-			directOverride = -1;
-			owner = 0;
-			type = "die";
-			exclusiveFilter = 0;
-		};
-		[656] = {
-			reflexive = true;
-			how = "plain";
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = 3;
-			directOverride = -1;
-			owner = 0;
-			type = "die";
-			exclusiveFilter = 0;
-		};
-		[657] = {
-			reflexive = true;
-			how = "plain";
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = 4;
-			directOverride = -1;
-			owner = 0;
-			type = "die";
-			exclusiveFilter = 0;
-		};
-		[658] = {
-			reflexive = true;
-			how = "plain";
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = 5;
-			directOverride = -1;
-			owner = 0;
-			type = "die";
-			exclusiveFilter = 0;
-		};
-		[659] = {
-			reflexive = false;
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = 5;
-			range = 0;
-			minimum = 8;
-			directOverride = -1;
-			owner = 0;
-			type = "alter active condition";
-			exclusiveFilter = 0;
-			conditionTrue = false;
-		};
-		[660] = {
-			reflexive = true;
-			inclusiveFilter = 0;
-			value = 2;
-			delay = 0;
-			subjectOverride = -1;
-			directOverride = -1;
-			owner = 0;
-			type = "set zoom level";
-			exclusiveFilter = 0;
-		};
-		[661] = {
-			keyMask = 1792;
-			reflexive = true;
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = -1;
-			directOverride = -1;
-			owner = 0;
-			type = "enable keys";
-			exclusiveFilter = 0;
-		};
-		[662] = {
-			keyMask = 2147483648;
-			reflexive = true;
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = -1;
-			directOverride = -1;
-			owner = 0;
-			type = "disable keys";
-			exclusiveFilter = 0;
-		};
-		[663] = {
-			reflexive = false;
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = -1;
-			range = 0;
-			minimum = 4;
-			directOverride = -1;
-			owner = 0;
-			type = "alter active condition";
-			exclusiveFilter = 0;
-			conditionTrue = false;
-		};
-		[664] = {
-			reflexive = false;
-			inclusiveFilter = 0;
-			page = 1;
-			delay = 0;
-			subjectOverride = -1;
-			directOverride = -1;
-			owner = 0;
-			type = "display message";
-			id = 5751;
-			exclusiveFilter = 0;
-		};
-		[665] = {
-			reflexive = false;
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = -1;
-			range = 0;
-			minimum = 23;
-			directOverride = -1;
-			owner = 0;
-			type = "alter active condition";
-			exclusiveFilter = 0;
-			conditionTrue = false;
-		};
-		[666] = {
-			reflexive = false;
-			inclusiveFilter = 0;
-			page = 7;
-			delay = 0;
-			subjectOverride = -1;
-			directOverride = -1;
-			owner = 0;
-			type = "display message";
-			id = 5704;
-			exclusiveFilter = 0;
-		};
-		[667] = {
-			reflexive = false;
-			inclusiveFilter = 0;
-			page = 2;
-			delay = 0;
-			subjectOverride = -1;
-			directOverride = -1;
-			owner = 0;
-			type = "display message";
-			id = 5815;
-			exclusiveFilter = 0;
-		};
-		[668] = {
-			reflexive = false;
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = -1;
-			range = 3;
-			minimum = 2;
-			directOverride = -1;
-			owner = 0;
-			type = "alter hidden";
-			exclusiveFilter = 0;
-		};
-		[669] = {
-			reflexive = true;
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = 2;
-			directOverride = -1;
-			owner = 0;
-			exclusiveFilter = 0;
-		};
-		[670] = {
-			reflexive = true;
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = 3;
-			directOverride = -1;
-			owner = 0;
-			exclusiveFilter = 0;
-		};
-		[671] = {
-			reflexive = true;
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = 4;
-			directOverride = -1;
-			owner = 0;
-			exclusiveFilter = 0;
-		};
-		[672] = {
-			reflexive = true;
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = 5;
-			directOverride = -1;
-			owner = 0;
-			exclusiveFilter = 0;
-		};
-		[673] = {
-			reflexive = false;
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = -1;
-			range = 0;
-			minimum = 10;
-			directOverride = -1;
-			owner = 0;
-			type = "alter active condition";
-			exclusiveFilter = 0;
-			conditionTrue = false;
-		};
-		[674] = {
-			reflexive = true;
-			inclusiveFilter = 0;
-			value = 3;
-			delay = 0;
-			subjectOverride = -1;
-			directOverride = -1;
-			owner = 0;
-			type = "set zoom level";
-			exclusiveFilter = 0;
-		};
-		[675] = {
-			reflexive = false;
-			inclusiveFilter = 0;
-			page = 2;
-			delay = 0;
-			subjectOverride = -1;
-			directOverride = -1;
-			owner = 0;
-			type = "display message";
-			id = 5817;
-			exclusiveFilter = 0;
-		};
-		[676] = {
-			reflexive = false;
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = -1;
-			range = 0;
-			minimum = 12;
-			directOverride = -1;
-			owner = 0;
-			type = "alter active condition";
-			exclusiveFilter = 0;
-			conditionTrue = false;
-		};
-		[677] = {
-			reflexive = true;
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = 2;
-			directOverride = -1;
-			owner = 0;
-			exclusiveFilter = 0;
-		};
-		[678] = {
-			reflexive = true;
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = 3;
-			directOverride = -1;
-			owner = 0;
-			exclusiveFilter = 0;
-		};
-		[679] = {
-			reflexive = true;
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = 4;
-			directOverride = -1;
-			owner = 0;
-			exclusiveFilter = 0;
-		};
-		[680] = {
-			reflexive = true;
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = 5;
-			directOverride = -1;
-			owner = 0;
-			exclusiveFilter = 0;
-		};
-		[681] = {
-			reflexive = true;
-			inclusiveFilter = 0;
-			value = 7;
-			delay = 0;
-			subjectOverride = -1;
-			directOverride = -1;
-			owner = 0;
-			type = "set zoom level";
-			exclusiveFilter = 0;
-		};
-		[682] = {
-			reflexive = false;
-			inclusiveFilter = 0;
-			page = 4;
-			delay = 0;
-			subjectOverride = -1;
-			directOverride = -1;
-			owner = 0;
-			type = "display message";
-			id = 5819;
-			exclusiveFilter = 0;
-		};
-		[683] = {
-			reflexive = true;
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = 2;
-			directOverride = -1;
-			owner = 0;
-			exclusiveFilter = 0;
-		};
-		[684] = {
-			reflexive = true;
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = 3;
-			directOverride = -1;
-			owner = 0;
-			exclusiveFilter = 0;
-		};
-		[685] = {
-			reflexive = true;
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = 4;
-			directOverride = -1;
-			owner = 0;
-			exclusiveFilter = 0;
-		};
-		[686] = {
-			reflexive = true;
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = 5;
-			directOverride = -1;
-			owner = 0;
-			exclusiveFilter = 0;
-		};
-		[687] = {
-			reflexive = true;
-			inclusiveFilter = 0;
-			value = 1;
-			delay = 0;
-			subjectOverride = -1;
-			directOverride = -1;
-			owner = 0;
-			type = "set zoom level";
-			exclusiveFilter = 0;
-		};
-		[688] = {
-			reflexive = true;
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = -1;
-			range = 0;
-			minimum = 15;
-			directOverride = -1;
-			owner = 0;
-			type = "alter active condition";
-			exclusiveFilter = 0;
-			conditionTrue = false;
-		};
-		[689] = {
-			reflexive = true;
-			inclusiveFilter = 0;
-			page = 2;
-			delay = 0;
-			subjectOverride = -1;
-			directOverride = -1;
-			owner = 0;
-			type = "display message";
-			id = 5823;
-			exclusiveFilter = 0;
-		};
-		[690] = {
-			reflexive = true;
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = -1;
-			range = 0;
-			minimum = 17;
-			directOverride = -1;
-			owner = 0;
-			type = "alter active condition";
-			exclusiveFilter = 0;
-			conditionTrue = false;
-		};
-		[691] = {
-			reflexive = true;
-			inclusiveFilter = 0;
-			page = 2;
-			delay = 0;
-			subjectOverride = -1;
-			directOverride = -1;
-			owner = 0;
-			type = "display message";
-			id = 5825;
-			exclusiveFilter = 0;
-		};
-		[692] = {
-			reflexive = true;
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = -1;
-			range = 0;
-			minimum = 19;
-			directOverride = -1;
-			owner = 0;
-			type = "alter active condition";
-			exclusiveFilter = 0;
-			conditionTrue = false;
-		};
-		[693] = {
-			keyMask = 1792;
-			reflexive = true;
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = -1;
-			directOverride = -1;
-			owner = 0;
-			type = "disable keys";
-			exclusiveFilter = 0;
-		};
-		[694] = {
-			keyMask = 2147485696;
-			reflexive = true;
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = -1;
-			directOverride = -1;
-			owner = 0;
-			type = "enable keys";
-			exclusiveFilter = 0;
-		};
-		[695] = {
-			reflexive = true;
-			inclusiveFilter = 0;
-			value = 2;
-			delay = 0;
-			subjectOverride = -1;
-			directOverride = -1;
-			owner = 0;
-			type = "set zoom level";
-			exclusiveFilter = 0;
-		};
-		[696] = {
-			reflexive = true;
-			inclusiveFilter = 0;
-			page = 4;
-			delay = 0;
-			subjectOverride = -1;
-			directOverride = -1;
-			owner = 0;
-			type = "display message";
-			id = 5827;
-			exclusiveFilter = 0;
-		};
-		[697] = {
-			reflexive = false;
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = -1;
-			range = 0;
-			minimum = 21;
-			directOverride = -1;
-			owner = 0;
-			type = "alter active condition";
-			exclusiveFilter = 0;
-			conditionTrue = false;
-		};
-		[698] = {
-			reflexive = true;
-			inclusiveFilter = 0;
-			page = 2;
-			delay = 0;
-			subjectOverride = -1;
-			directOverride = -1;
-			owner = 0;
-			type = "display message";
-			id = 5831;
-			exclusiveFilter = 0;
-		};
-		[699] = {
-			reflexive = true;
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = -1;
-			range = 0;
-			minimum = 7;
-			directOverride = -1;
-			owner = 0;
-			type = "alter hidden";
-			exclusiveFilter = 0;
-		};
-		[700] = {
-			reflexive = false;
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = -1;
-			range = 0;
-			minimum = 23;
-			directOverride = -1;
-			owner = 0;
-			type = "alter active condition";
-			exclusiveFilter = 0;
-			conditionTrue = false;
-		};
-		[701] = {
-			reflexive = true;
-			inclusiveFilter = 0;
-			page = 2;
-			delay = 0;
-			subjectOverride = -1;
-			directOverride = -1;
-			owner = 0;
-			type = "display message";
-			id = 5833;
-			exclusiveFilter = 0;
-		};
-		[702] = {
-			reflexive = true;
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = -1;
-			range = 0;
-			minimum = 25;
-			directOverride = -1;
-			owner = 0;
-			type = "alter active condition";
-			exclusiveFilter = 0;
-			conditionTrue = false;
-		};
-		[703] = {
-			keyMask = 2147483648;
-			reflexive = true;
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = -1;
-			directOverride = -1;
-			owner = 0;
-			type = "disable keys";
-			exclusiveFilter = 0;
-		};
-		[704] = {
-			keyMask = 1792;
-			reflexive = true;
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = -1;
-			directOverride = -1;
-			owner = 0;
-			type = "enable keys";
-			exclusiveFilter = 0;
-		};
-		[705] = {
-			reflexive = false;
-			inclusiveFilter = 0;
-			page = 1;
-			delay = 0;
-			subjectOverride = -1;
-			directOverride = -1;
-			owner = 0;
-			type = "display message";
-			id = 5835;
-			exclusiveFilter = 0;
-		};
-		[706] = {
-			reflexive = false;
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = -1;
-			range = 0;
-			minimum = 27;
-			directOverride = -1;
-			owner = 0;
-			type = "alter active condition";
-			exclusiveFilter = 0;
-			conditionTrue = false;
-		};
-		[707] = {
-			reflexive = false;
-			inclusiveFilter = 0;
-			page = 1;
-			delay = 0;
-			subjectOverride = -1;
-			directOverride = -1;
-			owner = 0;
-			type = "display message";
-			id = 5836;
-			exclusiveFilter = 0;
-		};
-		[708] = {
-			reflexive = false;
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = -1;
-			range = 0;
-			minimum = 29;
-			directOverride = -1;
-			owner = 0;
-			type = "alter active condition";
-			exclusiveFilter = 0;
-			conditionTrue = false;
-		};
-		[709] = {
-			reflexive = false;
-			inclusiveFilter = 0;
-			page = 3;
-			delay = 0;
-			subjectOverride = -1;
-			directOverride = -1;
-			owner = 0;
-			type = "display message";
-			id = 5837;
-			exclusiveFilter = 0;
-		};
-		[710] = {
-			keyMask = 2147483776;
-			reflexive = false;
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = -1;
-			directOverride = -1;
-			owner = 0;
-			type = "enable keys";
-			exclusiveFilter = 0;
-		};
-		[711] = {
-			reflexive = false;
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = -1;
-			range = 0;
-			minimum = 31;
-			directOverride = -1;
-			owner = 0;
-			type = "alter active condition";
-			exclusiveFilter = 0;
-			conditionTrue = false;
-		};
-		[712] = {
-			reflexive = false;
-			inclusiveFilter = 0;
-			page = 1;
-			delay = 0;
-			subjectOverride = -1;
-			directOverride = -1;
-			owner = 0;
-			type = "display message";
-			id = 5840;
-			exclusiveFilter = 0;
-		};
-		[713] = {
-			reflexive = false;
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = -1;
-			range = 0;
-			minimum = 33;
-			directOverride = -1;
-			owner = 0;
-			type = "alter active condition";
-			exclusiveFilter = 0;
-			conditionTrue = false;
-		};
-		[714] = {
-			reflexive = false;
-			inclusiveFilter = 0;
-			page = 1;
-			delay = 0;
-			subjectOverride = -1;
-			directOverride = -1;
-			owner = 0;
-			type = "display message";
-			id = 5841;
-			exclusiveFilter = 0;
-		};
-		[715] = {
-			reflexive = true;
-			inclusiveFilter = 0;
-			value = 6;
-			delay = 0;
-			subjectOverride = 1;
-			directOverride = 5;
-			owner = 0;
-			type = "set zoom level";
-			exclusiveFilter = 0;
-		};
-		[716] = {
-			reflexive = false;
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = -1;
-			range = 0;
-			minimum = 34;
-			directOverride = -1;
-			owner = 0;
-			type = "alter active condition";
-			exclusiveFilter = 0;
-			conditionTrue = false;
-		};
-		[717] = {
-			keyMask = 3758129151;
-			reflexive = false;
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = -1;
-			directOverride = -1;
-			owner = 0;
-			type = "disable keys";
-			exclusiveFilter = 0;
-		};
-		[718] = {
-			reflexive = false;
-			inclusiveFilter = 0;
-			delay = 120;
-			subjectOverride = 1;
-			directOverride = 5;
-			owner = 0;
-			type = "set destination";
-			exclusiveFilter = 0;
-		};
-		[719] = {
-			reflexive = false;
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = -1;
-			range = 0;
-			minimum = 34;
-			directOverride = -1;
-			owner = 0;
-			type = "alter active condition";
-			exclusiveFilter = 0;
-			conditionTrue = false;
-		};
-		[720] = {
-			reflexive = false;
-			inclusiveFilter = 0;
-			page = 1;
-			delay = 0;
-			subjectOverride = -1;
-			directOverride = -1;
-			owner = 0;
-			type = "display message";
-			id = 5842;
-			exclusiveFilter = 0;
-		};
-		[721] = {
-			keyMask = 2684383119;
-			reflexive = false;
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = 0;
-			directOverride = -1;
-			owner = 0;
-			type = "enable keys";
-			exclusiveFilter = 0;
-		};
-		[722] = {
-			reflexive = false;
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = 0;
-			range = 0;
-			minimum = 36;
-			directOverride = -1;
-			owner = 0;
-			type = "alter active condition";
-			exclusiveFilter = 0;
-			conditionTrue = false;
-		};
-		[723] = {
-			reflexive = false;
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = -1;
-			range = 0;
-			minimum = 35;
-			directOverride = -1;
-			owner = 0;
-			type = "alter active condition";
-			exclusiveFilter = 0;
-			conditionTrue = false;
-		};
-		[724] = {
-			reflexive = false;
-			player = 0;
-			inclusiveFilter = 0;
-			text = 7051;
-			nextLevel = 4;
-			delay = 0;
-			subjectOverride = 0;
-			directOverride = 0;
-			owner = 0;
-			type = "declare winner";
-			exclusiveFilter = 0;
-		};
-		[725] = {
-			keyMask = 1073741827;
-			reflexive = false;
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = -1;
-			directOverride = -1;
-			owner = 0;
-			type = "disable keys";
-			exclusiveFilter = 0;
-		};
-		[726] = {
-			relative = false;
-			reflexive = true;
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = 0;
-			range = 0;
-			minimum = 0;
-			directOverride = -1;
-			owner = 0;
-			type = "alter velocity";
-			exclusiveFilter = 0;
-		};
-		[727] = {
-			reflexive = false;
-			inclusiveFilter = 0;
-			page = 1;
-			delay = 0;
-			subjectOverride = -1;
-			directOverride = -1;
-			owner = 0;
-			type = "display message";
-			id = 5843;
-			exclusiveFilter = 0;
-		};
-		[728] = {
-			reflexive = false;
-			inclusiveFilter = 0;
-			page = 1;
-			delay = 0;
-			subjectOverride = -1;
-			directOverride = -1;
-			owner = 0;
-			type = "display message";
-			id = 5843;
-			exclusiveFilter = 0;
-		};
-		[729] = {
-			relative = false;
-			reflexive = false;
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = 0;
-			range = 0;
-			minimum = 0;
-			directOverride = -1;
-			owner = 0;
-			type = "alter velocity";
-			exclusiveFilter = 0;
-		};
-		[730] = {
-			keyMask = 1476399347;
-			reflexive = false;
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = -1;
-			directOverride = -1;
-			owner = 0;
-			type = "disable keys";
-			exclusiveFilter = 0;
-		};
-		[731] = {
-			reflexive = false;
-			inclusiveFilter = 0;
-			value = 2;
-			delay = 0;
-			subjectOverride = -1;
-			directOverride = -1;
-			owner = 0;
-			type = "set zoom level";
-			exclusiveFilter = 0;
-		};
-		[732] = {
-			reflexive = false;
-			player = 0;
-			inclusiveFilter = 0;
-			value = 640000;
-			delay = 0;
-			subjectOverride = -1;
-			useObjectsOwner = false;
-			directOverride = -1;
-			owner = 0;
-			type = "alter absolute cash";
-			exclusiveFilter = 0;
-		};
-		[733] = {
-			reflexive = false;
-			inclusiveFilter = 0;
-			page = 2;
-			delay = 0;
-			subjectOverride = -1;
-			directOverride = -1;
-			owner = 0;
-			type = "display message";
-			id = 5900;
-			exclusiveFilter = 0;
-		};
-		[734] = {
-			reflexive = true;
-			inclusiveFilter = 0;
-			value = 0;
-			delay = 160;
-			subjectOverride = 1;
-			useObjectsOwner = false;
-			directOverride = -1;
-			owner = 0;
-			type = "alter owner";
-			exclusiveFilter = 0;
-		};
-		[735] = {
-			reflexive = false;
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = -1;
-			range = 0;
-			minimum = 2;
-			directOverride = -1;
-			owner = 0;
-			type = "alter active condition";
-			exclusiveFilter = 0;
-			conditionTrue = false;
-		};
-		[736] = {
-			reflexive = false;
-			inclusiveFilter = 0;
-			page = 3;
-			delay = 0;
-			subjectOverride = -1;
-			directOverride = -1;
-			owner = 0;
-			type = "display message";
-			id = 5905;
-			exclusiveFilter = 0;
-		};
-		[737] = {
-			reflexive = false;
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = -1;
-			range = 0;
-			minimum = 4;
-			directOverride = -1;
-			owner = 0;
-			type = "alter active condition";
-			exclusiveFilter = 0;
-			conditionTrue = false;
-		};
-		[738] = {
-			reflexive = false;
-			inclusiveFilter = 0;
-			page = 10;
-			delay = 0;
-			subjectOverride = -1;
-			directOverride = -1;
-			owner = 0;
-			type = "display message";
-			id = 5910;
-			exclusiveFilter = 0;
-		};
-		[739] = {
-			reflexive = false;
-			player = 0;
-			inclusiveFilter = 0;
-			value = 6000000;
-			delay = 0;
-			subjectOverride = -1;
-			useObjectsOwner = false;
-			directOverride = -1;
-			owner = 0;
-			type = "alter absolute cash";
-			exclusiveFilter = 0;
-		};
-		[740] = {
-			reflexive = false;
-			player = 0;
-			inclusiveFilter = 0;
-			value = -6000000;
-			delay = 0;
-			subjectOverride = 0;
-			useObjectsOwner = false;
-			directOverride = 0;
-			owner = 0;
-			type = "alter absolute cash";
-			exclusiveFilter = 0;
-		};
-		[741] = {
-			reflexive = false;
-			inclusiveFilter = 0;
-			screen = 2;
-			delay = 0;
-			subjectOverride = -1;
-			directOverride = -1;
-			owner = 0;
-			line = 3;
-			type = "computer select";
-			exclusiveFilter = 0;
-		};
-		[742] = {
-			reflexive = false;
-			inclusiveFilter = 0;
-			screen = 2;
-			delay = 0;
-			subjectOverride = -1;
-			directOverride = -1;
-			owner = 0;
-			line = 2;
-			type = "computer select";
-			exclusiveFilter = 0;
-		};
-		[743] = {
-			keyMask = 268435456;
-			reflexive = false;
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = -1;
-			directOverride = -1;
-			owner = 0;
-			type = "enable keys";
-			exclusiveFilter = 0;
-		};
-		[744] = {
-			reflexive = false;
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = -1;
-			range = 1;
-			minimum = 9;
-			directOverride = -1;
-			owner = 0;
-			type = "alter active condition";
-			exclusiveFilter = 0;
-			conditionTrue = false;
-		};
-		[745] = {
-			reflexive = false;
-			inclusiveFilter = 0;
-			page = 1;
-			delay = 0;
-			subjectOverride = -1;
-			directOverride = -1;
-			owner = 0;
-			type = "display message";
-			id = 5925;
-			exclusiveFilter = 0;
-		};
-		[746] = {
-			keyMask = 268435456;
-			reflexive = false;
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = -1;
-			directOverride = -1;
-			owner = 0;
-			type = "disable keys";
-			exclusiveFilter = 0;
-		};
-		[747] = {
-			reflexive = false;
-			inclusiveFilter = 0;
-			page = 2;
-			delay = 0;
-			subjectOverride = -1;
-			directOverride = -1;
-			owner = 0;
-			type = "display message";
-			id = 5930;
-			exclusiveFilter = 0;
-		};
-		[748] = {
-			reflexive = false;
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = -1;
-			range = 0;
-			minimum = 11;
-			directOverride = -1;
-			owner = 0;
-			type = "alter active condition";
-			exclusiveFilter = 0;
-			conditionTrue = false;
-		};
-		[749] = {
-			reflexive = true;
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = -1;
-			directOverride = -1;
-			owner = 0;
-			type = "assume initial object";
-			id = 5;
-			exclusiveFilter = 0;
-		};
-		[750] = {
-			reflexive = true;
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = -1;
-			amount = 1;
-			score = 0;
-			directOverride = -1;
-			plsyer = 0;
-			owner = 0;
-			type = "change score";
-			exclusiveFilter = 0;
-		};
-		[751] = {
-			reflexive = false;
-			inclusiveFilter = 0;
-			page = 3;
-			delay = 0;
-			subjectOverride = -1;
-			directOverride = -1;
-			owner = 0;
-			type = "display message";
-			id = 5935;
-			exclusiveFilter = 0;
-		};
-		[752] = {
-			reflexive = false;
-			inclusiveFilter = 0;
-			value = 7;
-			delay = 0;
-			subjectOverride = -1;
-			directOverride = -1;
-			owner = 0;
-			type = "set zoom level";
-			exclusiveFilter = 0;
-		};
-		[753] = {
-			reflexive = false;
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = -1;
-			range = 0;
-			minimum = 13;
-			directOverride = -1;
-			owner = 0;
-			type = "alter active condition";
-			exclusiveFilter = 0;
-			conditionTrue = false;
-		};
-		[754] = {
-			reflexive = false;
-			inclusiveFilter = 0;
-			page = 1;
-			delay = 0;
-			subjectOverride = -1;
-			directOverride = -1;
-			owner = 0;
-			type = "display message";
-			id = 5940;
-			exclusiveFilter = 0;
-		};
-		[755] = {
-			reflexive = false;
-			inclusiveFilter = 0;
-			value = 2;
-			delay = 0;
-			subjectOverride = -1;
-			directOverride = -1;
-			owner = 0;
-			type = "set zoom level";
-			exclusiveFilter = 0;
-		};
-		[756] = {
-			reflexive = false;
-			inclusiveFilter = 0;
-			screen = 2;
-			delay = 0;
-			subjectOverride = -1;
-			directOverride = -1;
-			owner = 0;
-			line = 3;
-			type = "computer select";
-			exclusiveFilter = 0;
-		};
-		[757] = {
-			reflexive = false;
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = -1;
-			range = 0;
-			minimum = 14;
-			directOverride = -1;
-			owner = 0;
-			type = "alter active condition";
-			exclusiveFilter = 0;
-			conditionTrue = false;
-		};
-		[758] = {
-			keyMask = 2147485440;
-			reflexive = false;
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = -1;
-			directOverride = -1;
-			owner = 0;
-			type = "disable keys";
-			exclusiveFilter = 0;
-		};
-		[759] = {
-			keyMask = 268435456;
-			reflexive = false;
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = -1;
-			directOverride = -1;
-			owner = 0;
-			type = "enable keys";
-			exclusiveFilter = 0;
-		};
-		[760] = {
-			reflexive = false;
-			inclusiveFilter = 0;
-			page = 3;
-			delay = 0;
-			subjectOverride = -1;
-			directOverride = -1;
-			owner = 0;
-			type = "display message";
-			id = 5945;
-			exclusiveFilter = 0;
-		};
-		[761] = {
-			reflexive = false;
-			inclusiveFilter = 0;
-			value = 7;
-			delay = 0;
-			subjectOverride = -1;
-			directOverride = -1;
-			owner = 0;
-			type = "set zoom level";
-			exclusiveFilter = 0;
-		};
-		[762] = {
-			reflexive = false;
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = -1;
-			range = 0;
-			minimum = 17;
-			directOverride = -1;
-			owner = 0;
-			type = "alter active condition";
-			exclusiveFilter = 0;
-			conditionTrue = false;
-		};
-		[763] = {
-			keyMask = 2147485440;
-			reflexive = false;
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = -1;
-			directOverride = -1;
-			owner = 0;
-			type = "enable keys";
-			exclusiveFilter = 0;
-		};
-		[764] = {
-			reflexive = false;
-			inclusiveFilter = 0;
-			page = 1;
-			delay = 0;
-			subjectOverride = -1;
-			directOverride = -1;
-			owner = 0;
-			type = "display message";
-			id = 5950;
-			exclusiveFilter = 0;
-		};
-		[765] = {
-			reflexive = false;
-			inclusiveFilter = 0;
-			value = 2;
-			delay = 0;
-			subjectOverride = -1;
-			directOverride = -1;
-			owner = 0;
-			type = "set zoom level";
-			exclusiveFilter = 0;
-		};
-		[766] = {
-			reflexive = false;
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = -1;
-			range = 0;
-			minimum = 18;
-			directOverride = -1;
-			owner = 0;
-			type = "alter active condition";
-			exclusiveFilter = 0;
-			conditionTrue = false;
-		};
-		[767] = {
-			reflexive = false;
-			inclusiveFilter = 0;
-			page = 3;
-			delay = 0;
-			subjectOverride = -1;
-			directOverride = -1;
-			owner = 0;
-			type = "display message";
-			id = 5955;
-			exclusiveFilter = 0;
-		};
-		[768] = {
-			reflexive = false;
-			inclusiveFilter = 0;
-			value = 7;
-			delay = 0;
-			subjectOverride = -1;
-			directOverride = -1;
-			owner = 0;
-			type = "set zoom level";
-			exclusiveFilter = 0;
-		};
-		[769] = {
-			reflexive = false;
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = -1;
-			range = 0;
-			minimum = 19;
-			directOverride = -1;
-			owner = 0;
-			type = "alter active condition";
-			exclusiveFilter = 0;
-			conditionTrue = false;
-		};
-		[770] = {
-			keyMask = 4096;
-			reflexive = false;
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = -1;
-			directOverride = -1;
-			owner = 0;
-			type = "enable keys";
-			exclusiveFilter = 0;
-		};
-		[771] = {
-			reflexive = false;
-			inclusiveFilter = 0;
-			page = 2;
-			delay = 0;
-			subjectOverride = -1;
-			directOverride = -1;
-			owner = 0;
-			type = "display message";
-			id = 5960;
-			exclusiveFilter = 0;
-		};
-		[772] = {
-			reflexive = false;
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = -1;
-			range = 0;
-			minimum = 20;
-			directOverride = -1;
-			owner = 0;
-			type = "alter active condition";
-			exclusiveFilter = 0;
-			conditionTrue = false;
-		};
-		[773] = {
-			reflexive = false;
-			inclusiveFilter = 0;
-			page = 1;
-			delay = 0;
-			subjectOverride = -1;
-			directOverride = -1;
-			owner = 0;
-			type = "display message";
-			id = 5965;
-			exclusiveFilter = 0;
-		};
-		[774] = {
-			reflexive = false;
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = -1;
-			range = 0;
-			minimum = 21;
-			directOverride = -1;
-			owner = 0;
-			type = "alter active condition";
-			exclusiveFilter = 0;
-			conditionTrue = false;
-		};
-		[775] = {
-			reflexive = false;
-			inclusiveFilter = 0;
-			page = 4;
-			delay = 0;
-			subjectOverride = -1;
-			directOverride = -1;
-			owner = 0;
-			type = "display message";
-			id = 5970;
-			exclusiveFilter = 0;
-		};
-		[776] = {
-			reflexive = true;
-			inclusiveFilter = 0;
-			value = 1;
-			delay = 0;
-			subjectOverride = 1;
-			useObjectsOwner = false;
-			directOverride = -1;
-			owner = 0;
-			type = "alter owner";
-			exclusiveFilter = 0;
-		};
-		[777] = {
-			reflexive = true;
-			inclusiveFilter = 0;
-			value = 4;
-			delay = 0;
-			subjectOverride = 1;
-			directOverride = -1;
-			owner = 0;
-			type = "set zoom level";
-			exclusiveFilter = 0;
-		};
-		[778] = {
-			reflexive = false;
-			player = 1;
-			inclusiveFilter = 0;
-			value = -3276800;
-			delay = 0;
-			subjectOverride = -1;
-			useObjectsOwner = false;
-			directOverride = -1;
-			owner = 0;
-			type = "alter absolute cash";
-			exclusiveFilter = 0;
-		};
-		[779] = {
-			reflexive = false;
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = -1;
-			range = 0;
-			minimum = 3;
-			directOverride = -1;
-			owner = 0;
-			type = "alter hidden";
-			exclusiveFilter = 0;
-		};
-		[780] = {
-			reflexive = false;
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = -1;
-			range = 0;
-			minimum = 23;
-			directOverride = -1;
-			owner = 0;
-			type = "alter active condition";
-			exclusiveFilter = 0;
-			conditionTrue = false;
-		};
-		[781] = {
-			reflexive = false;
-			inclusiveFilter = 0;
-			page = 2;
-			delay = 280;
-			subjectOverride = -1;
-			directOverride = -1;
-			owner = 0;
-			type = "display message";
-			id = 5975;
-			exclusiveFilter = 0;
-		};
-		[782] = {
-			reflexive = false;
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = -1;
-			range = 0;
-			minimum = 4;
-			directOverride = -1;
-			owner = 0;
-			type = "alter hidden";
-			exclusiveFilter = 0;
-		};
-		[783] = {
-			reflexive = false;
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = -1;
-			range = 0;
-			minimum = 25;
-			directOverride = -1;
-			owner = 0;
-			type = "alter active condition";
-			exclusiveFilter = 0;
-			conditionTrue = false;
-		};
-		[784] = {
-			reflexive = false;
-			inclusiveFilter = 0;
-			page = 1;
-			delay = 0;
-			subjectOverride = -1;
-			directOverride = -1;
-			owner = 0;
-			type = "display message";
-			id = 5980;
-			exclusiveFilter = 0;
-		};
-		[785] = {
-			reflexive = false;
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = -1;
-			range = 0;
-			minimum = 26;
-			directOverride = -1;
-			owner = 0;
-			type = "alter active condition";
-			exclusiveFilter = 0;
-			conditionTrue = false;
-		};
-		[786] = {
-			reflexive = false;
-			inclusiveFilter = 0;
-			page = 1;
-			delay = 0;
-			subjectOverride = -1;
-			directOverride = -1;
-			owner = 0;
-			type = "display message";
-			id = 5985;
-			exclusiveFilter = 0;
-		};
-		[787] = {
-			reflexive = false;
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = -1;
-			range = 0;
-			minimum = 27;
-			directOverride = -1;
-			owner = 0;
-			type = "alter active condition";
-			exclusiveFilter = 0;
-			conditionTrue = false;
-		};
-		[788] = {
-			reflexive = false;
-			inclusiveFilter = 0;
-			page = 1;
-			delay = 0;
-			subjectOverride = -1;
-			directOverride = -1;
-			owner = 0;
-			type = "display message";
-			id = 5990;
-			exclusiveFilter = 0;
-		};
-		[789] = {
-			reflexive = false;
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = -1;
-			range = 0;
-			minimum = 28;
-			directOverride = -1;
-			owner = 0;
-			type = "alter active condition";
-			exclusiveFilter = 0;
-			conditionTrue = false;
-		};
-		[790] = {
-			reflexive = false;
-			inclusiveFilter = 0;
-			page = 1;
-			delay = 0;
-			subjectOverride = -1;
-			directOverride = -1;
-			owner = 0;
-			type = "display message";
-			id = 5995;
-			exclusiveFilter = 0;
-		};
-		[791] = {
-			reflexive = false;
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = -1;
-			range = 0;
-			minimum = 29;
-			directOverride = -1;
-			owner = 0;
-			type = "alter active condition";
-			exclusiveFilter = 0;
-			conditionTrue = false;
-		};
-		[792] = {
-			reflexive = false;
-			inclusiveFilter = 0;
-			page = 2;
-			delay = 0;
-			subjectOverride = -1;
-			directOverride = -1;
-			owner = 0;
-			type = "display message";
-			id = 7000;
-			exclusiveFilter = 0;
-		};
-		[793] = {
-			keyMask = 2147483648;
-			reflexive = false;
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = -1;
-			directOverride = -1;
-			owner = 0;
-			type = "disable keys";
-			exclusiveFilter = 0;
-		};
-		[794] = {
-			reflexive = false;
-			inclusiveFilter = 0;
-			value = 1;
-			delay = 0;
-			subjectOverride = -1;
-			directOverride = -1;
-			owner = 0;
-			type = "set zoom level";
-			exclusiveFilter = 0;
-		};
-		[795] = {
-			reflexive = false;
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = -1;
-			range = 0;
-			minimum = 31;
-			directOverride = -1;
-			owner = 0;
-			type = "alter active condition";
-			exclusiveFilter = 0;
-			conditionTrue = false;
-		};
-		[796] = {
-			reflexive = false;
-			inclusiveFilter = 0;
-			page = 1;
-			delay = 0;
-			subjectOverride = -1;
-			directOverride = -1;
-			owner = 0;
-			type = "display message";
-			id = 7005;
-			exclusiveFilter = 0;
-		};
-		[797] = {
-			reflexive = false;
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = -1;
-			range = 0;
-			minimum = 32;
-			directOverride = -1;
-			owner = 0;
-			type = "alter active condition";
-			exclusiveFilter = 0;
-			conditionTrue = false;
-		};
-		[798] = {
-			keyMask = 2147483648;
-			reflexive = false;
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = -1;
-			directOverride = -1;
-			owner = 0;
-			type = "enable keys";
-			exclusiveFilter = 0;
-		};
-		[799] = {
-			reflexive = false;
-			inclusiveFilter = 0;
-			value = 7;
-			delay = 0;
-			subjectOverride = -1;
-			directOverride = -1;
-			owner = 0;
-			type = "set zoom level";
-			exclusiveFilter = 0;
-		};
-		[800] = {
-			reflexive = false;
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = -1;
-			range = 0;
-			minimum = 33;
-			directOverride = -1;
-			owner = 0;
-			type = "alter active condition";
-			exclusiveFilter = 0;
-			conditionTrue = false;
-		};
-		[801] = {
-			reflexive = false;
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = -1;
-			range = 0;
-			minimum = 34;
-			directOverride = -1;
-			owner = 0;
-			type = "alter active condition";
-			exclusiveFilter = 0;
-			conditionTrue = false;
-		};
-		[802] = {
-			reflexive = false;
-			inclusiveFilter = 0;
-			page = 3;
-			delay = 0;
-			subjectOverride = -1;
-			directOverride = -1;
-			owner = 0;
-			type = "display message";
-			id = 7010;
-			exclusiveFilter = 0;
-		};
-		[803] = {
-			reflexive = false;
-			inclusiveFilter = 0;
-			screen = 1;
-			delay = 0;
-			subjectOverride = -1;
-			directOverride = -1;
-			owner = 0;
-			line = 4;
-			type = "computer select";
-			exclusiveFilter = 0;
-		};
-		[804] = {
-			reflexive = false;
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = -1;
-			range = 0;
-			minimum = 36;
-			directOverride = -1;
-			owner = 0;
-			type = "alter active condition";
-			exclusiveFilter = 0;
-			conditionTrue = false;
-		};
-		[805] = {
-			reflexive = false;
-			inclusiveFilter = 0;
-			screen = 1;
-			delay = 0;
-			subjectOverride = -1;
-			directOverride = -1;
-			owner = 0;
-			line = 2;
-			type = "computer select";
-			exclusiveFilter = 0;
-		};
-		[806] = {
-			reflexive = false;
-			inclusiveFilter = 0;
-			page = 2;
-			delay = 0;
-			subjectOverride = -1;
-			directOverride = -1;
-			owner = 0;
-			type = "display message";
-			id = 7015;
-			exclusiveFilter = 0;
-		};
-		[807] = {
-			reflexive = false;
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = -1;
-			range = 0;
-			minimum = 38;
-			directOverride = -1;
-			owner = 0;
-			type = "alter active condition";
-			exclusiveFilter = 0;
-			conditionTrue = false;
-		};
-		[808] = {
-			reflexive = false;
-			inclusiveFilter = 0;
-			page = 1;
-			delay = 0;
-			subjectOverride = -1;
-			directOverride = -1;
-			owner = 0;
-			type = "display message";
-			id = 7020;
-			exclusiveFilter = 0;
-		};
-		[809] = {
-			keyMask = 134217728;
-			reflexive = false;
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = -1;
-			directOverride = -1;
-			owner = 0;
-			type = "enable keys";
-			exclusiveFilter = 0;
-		};
-		[810] = {
-			reflexive = false;
-			inclusiveFilter = 0;
-			screen = 3;
-			delay = 0;
-			subjectOverride = -1;
-			directOverride = -1;
-			owner = 0;
-			line = 1;
-			type = "computer select";
-			exclusiveFilter = 0;
-		};
-		[811] = {
-			reflexive = false;
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = -1;
-			range = 0;
-			minimum = 39;
-			directOverride = -1;
-			owner = 0;
-			type = "alter active condition";
-			exclusiveFilter = 0;
-			conditionTrue = false;
-		};
-		[812] = {
-			reflexive = false;
-			inclusiveFilter = 0;
-			page = 5;
-			delay = 0;
-			subjectOverride = -1;
-			directOverride = -1;
-			owner = 0;
-			type = "display message";
-			id = 7025;
-			exclusiveFilter = 0;
-		};
-		[813] = {
-			reflexive = false;
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = -1;
-			range = 9;
-			minimum = 7;
-			directOverride = -1;
-			owner = 0;
-			type = "alter hidden";
-			exclusiveFilter = 0;
-		};
-		[814] = {
-			reflexive = false;
-			inclusiveFilter = 0;
-			delay = 360;
-			subjectOverride = -1;
-			range = 0;
-			minimum = 42;
-			directOverride = -1;
-			owner = 0;
-			type = "alter active condition";
-			exclusiveFilter = 0;
-			conditionTrue = false;
-		};
-		[815] = {
-			keyMask = 4228382719;
-			reflexive = false;
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = -1;
-			directOverride = -1;
-			owner = 0;
-			type = "enable keys";
-			exclusiveFilter = 0;
-		};
-		[816] = {
-			reflexive = false;
-			inclusiveFilter = 0;
-			value = 5;
-			delay = 0;
-			subjectOverride = -1;
-			directOverride = -1;
-			owner = 0;
-			type = "set zoom level";
-			exclusiveFilter = 0;
-		};
-		[817] = {
-			reflexive = false;
-			player = 0;
-			inclusiveFilter = 0;
-			text = 7052;
-			nextLevel = 6;
-			delay = 0;
-			subjectOverride = -1;
-			directOverride = -1;
-			owner = 0;
-			type = "declare winner";
-			exclusiveFilter = 0;
-		};
-		[818] = {
-			reflexive = false;
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = -1;
-			range = 0;
-			minimum = 7;
-			directOverride = -1;
-			owner = 0;
-			type = "alter active condition";
-			exclusiveFilter = 0;
-			conditionTrue = false;
-		};
-		[819] = {
-			reflexive = false;
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = 0;
-			directOverride = 0;
-			owner = 0;
+			count = 0;
+			direct = 0;
+			start = 0;
+			flags = {
+				hasBeenTrue = false;
+				hex = 0x0;
+				initiallyTrue = false;
+				trueOnlyOnce = false;
+			};
 			type = "none";
-			exclusiveFilter = 0;
-		};
-		[820] = {
-			reflexive = false;
-			inclusiveFilter = 0;
-			delay = 0;
-			subjectOverride = 0;
-			directOverride = 0;
-			owner = 0;
-			type = "none";
-			exclusiveFilter = 0;
-		};
-	};
-	scenarios = {
-		[0] = {
-			par = {
-				losses = 0;
-				ratio = 0.0;
-				kills = 10;
-				time = 120;
-			};
-			starmap = {
-				y = 393;
-				x = 282;
-			};
-			playerNum = 2;
-			scoreString = {
-				[0] = "-Destroy all 4";
-				[1] = "_-relay dishes.";
-			};
-			movie = nil;
-			isTraining = false;
-			startTime = 0;
-			name = "\\i Tutorial Lesson 3\r\\iThe Complete IdiotÕs Guide to Commanding a Space Armada";
-			players = {
-				[1] = {
-					netRaceFlags = 0;
-					earningPower = 0.00390625;
-					race = 100;
-					type = "single";
-					name = "The Cantharan Order";
-				};
-				[2] = {
-					netRaceFlags = 0;
-					earningPower = 0.0;
-					race = 300;
-					type = "cpu";
-					name = "The Prophets of Salril";
-				};
-			};
-			netRaceFlags = 0;
-			prologueId = nil;
-			initialObjects = {
-				count = 19;
-				first = 0;
-			};
-			epilogueId = nil;
-			angle = 0;
-			briefing = {
-				count = 9;
-				first = 1;
-			};
-			conditions = {
-				count = 3;
-				first = 0;
-			};
-			id = 4;
-			songId = 5001;
-		};
-		[1] = {
-			par = {
-				losses = 0;
-				ratio = 0.0;
-				kills = 2;
-				time = 180;
-			};
-			starmap = {
-				y = 401;
-				x = 224;
-			};
-			playerNum = 2;
-			scoreString = {
-				[0] = "-Collect 4";
-				[1] = "_-asteroid samples";
-			};
-			movie = ":Ares Data Ä:Part 3";
-			isTraining = false;
-			startTime = 0;
-			name = "\\i Chapter 8 \r\\iAstrotrash Plus!";
-			players = {
-				[1] = {
-					netRaceFlags = -18392;
-					earningPower = 0.0;
-					race = 100;
-					type = "single";
-					name = "The Cantharan Order";
-				};
-				[2] = {
-					netRaceFlags = 0;
-					earningPower = 0.0;
-					race = 200;
-					type = "cpu";
-					name = "The Gaitori Union";
-				};
-			};
-			netRaceFlags = 0;
-			prologueId = nil;
-			initialObjects = {
-				count = 10;
-				first = 19;
-			};
-			epilogueId = nil;
-			angle = 0;
-			briefing = {
-				count = 8;
-				first = 11;
-			};
-			conditions = {
-				count = 4;
-				first = 3;
-			};
-			id = 10;
-			songId = 5001;
-		};
-		[2] = {
-			par = {
-				losses = 8;
-				ratio = 0.0;
-				kills = 14;
-				time = 960;
-			};
-			starmap = {
-				y = 368;
-				x = 201;
-			};
-			playerNum = 2;
-			scoreString = {
-				[0] = "-Capture Proteus";
-			};
-			movie = nil;
-			isTraining = false;
-			startTime = 0;
-			name = "\\i Chapter 10 \r\\iAssassin";
-			players = {
-				[1] = {
-					netRaceFlags = 0;
-					earningPower = 1.0;
-					race = 100;
-					type = "single";
-					name = "The Cantharan Order";
-				};
-				[2] = {
-					netRaceFlags = 1;
-					earningPower = 1.25;
-					race = 200;
-					type = "cpu";
-					name = "The Gaitori Union";
-				};
-			};
-			netRaceFlags = 0;
-			prologueId = nil;
-			initialObjects = {
-				count = 7;
-				first = 29;
-			};
-			epilogueId = nil;
-			angle = 0;
-			briefing = {
-				count = 10;
-				first = 19;
-			};
-			conditions = {
-				count = 3;
-				first = 7;
-			};
-			id = 12;
-			songId = 5003;
-		};
-		[3] = {
-			par = {
-				losses = 25;
-				ratio = 0.0;
-				kills = 10;
-				time = 120;
-			};
-			starmap = {
-				y = 311;
-				x = 192;
-			};
-			playerNum = 2;
-			scoreString = {
-				[0] = "-Destroy all";
-			};
-			movie = nil;
-			isTraining = false;
-			startTime = 0;
-			name = "\\i Chapter 11 \r\\iShoplifter 2";
-			players = {
-				[1] = {
-					netRaceFlags = 0;
-					earningPower = 0.0;
-					race = 100;
-					type = "single";
-					name = "The Cantharan Order";
-				};
-				[2] = {
-					netRaceFlags = 0;
-					earningPower = 0.0078125;
-					race = 200;
-					type = "cpu";
-					name = "The Gaitori Union";
-				};
-			};
-			netRaceFlags = 0;
-			prologueId = nil;
-			initialObjects = {
-				count = 25;
-				first = 36;
-			};
-			epilogueId = nil;
-			angle = 0;
-			briefing = {
-				count = 4;
-				first = 29;
-			};
-			conditions = {
-				count = 2;
-				first = 11;
-			};
-			id = 13;
-			songId = 5004;
-		};
-		[4] = {
-			par = {
-				losses = 30;
-				ratio = 0.0;
-				kills = 95;
-				time = 1320;
-			};
-			starmap = {
-				y = 222;
-				x = 130;
-			};
-			playerNum = 2;
-			scoreString = {
-				[0] = "-Capture Bokleo";
-				[1] = "_-Gamma";
-				[2] = "-Free Bazidanese";
-			};
-			movie = nil;
-			isTraining = false;
-			startTime = 0;
-			name = "\\i Chapter 15 \r\\iThe Left Hand";
-			players = {
-				[1] = {
-					netRaceFlags = 34;
-					earningPower = 1.0;
-					race = 100;
-					type = "single";
-					name = "The Cantharan Order";
-				};
-				[2] = {
-					netRaceFlags = 34;
-					earningPower = 1.25;
-					race = 200;
-					type = "cpu";
-					name = "The Gaitori Union";
-				};
-			};
-			netRaceFlags = 34;
-			prologueId = nil;
-			initialObjects = {
-				count = 18;
-				first = 61;
-			};
-			epilogueId = nil;
-			angle = 0;
-			briefing = {
-				count = 13;
-				first = 34;
-			};
-			conditions = {
-				count = 6;
-				first = 13;
-			};
-			id = 17;
-			songId = 5003;
-		};
-		[5] = {
-			par = {
-				losses = 4;
-				ratio = 0.0;
-				kills = 16;
-				time = 180;
-			};
-			starmap = {
-				y = 354;
-				x = 271;
-			};
-			playerNum = 2;
-			scoreString = {
-				[0] = "-Capture Demeter";
-			};
-			movie = nil;
-			isTraining = false;
-			startTime = 0;
-			name = "\\i Chapter 4 \r\\iShoplifter 1";
-			players = {
-				[1] = {
-					netRaceFlags = 172;
-					earningPower = 1.0;
-					race = 100;
-					type = "single";
-					name = "The Cantharan Order";
-				};
-				[2] = {
-					netRaceFlags = 0;
-					earningPower = 0.84765625;
-					race = 300;
-					type = "cpu";
-					name = "The Prophets of Salril";
-				};
-			};
-			netRaceFlags = 0;
-			prologueId = nil;
-			initialObjects = {
-				count = 6;
-				first = 79;
-			};
-			epilogueId = nil;
-			angle = 0;
-			briefing = {
-				count = 7;
-				first = 59;
-			};
-			conditions = {
-				count = 3;
-				first = 56;
-			};
-			id = 6;
-			songId = 5002;
-		};
-		[6] = {
-			par = {
-				losses = 0;
-				ratio = 0.0;
-				kills = 25;
-				time = 720;
-			};
-			starmap = {
-				y = 460;
-				x = 259;
-			};
-			playerNum = 2;
-			scoreString = {
-				[0] = "-Rescue 11";
-				[1] = "_-Obiards";
-				[2] = "2\\0\\0\\0\\f\\t\\In transport: \\/5";
-			};
-			movie = nil;
-			isTraining = false;
-			startTime = 0;
-			name = "\\i Chapter 5 \r\\iOut of the Frying Pan...";
-			players = {
-				[1] = {
-					netRaceFlags = 0;
-					earningPower = 1.0;
-					race = 100;
-					type = "single";
-					name = "The Cantharan Order";
-				};
-				[2] = {
-					netRaceFlags = 202;
-					earningPower = 1.5;
-					race = 300;
-					type = "cpu";
-					name = "The Prophets of Salril";
-				};
-			};
-			netRaceFlags = 0;
-			prologueId = nil;
-			initialObjects = {
-				count = 17;
-				first = 403;
-			};
-			epilogueId = nil;
-			angle = 0;
-			briefing = {
-				count = 9;
-				first = 160;
-			};
-			conditions = {
-				count = 6;
-				first = 91;
-			};
-			id = 7;
-			songId = 5003;
-		};
-		[7] = {
-			par = {
-				losses = 15;
-				ratio = 0.0;
-				kills = 15;
-				time = 420;
-			};
-			starmap = {
-				y = 366;
-				x = 250;
-			};
-			playerNum = 2;
-			scoreString = {
-				[0] = "-Capture Aeneas";
-			};
-			movie = nil;
-			isTraining = false;
-			startTime = 0;
-			name = "\\i Chapter 6 \r\\i...Into the Fire";
-			players = {
-				[1] = {
-					netRaceFlags = 172;
-					earningPower = 1.0;
-					race = 100;
-					type = "single";
-					name = "The Cantharan Order";
-				};
-				[2] = {
-					netRaceFlags = 202;
-					earningPower = 1.5;
-					race = 300;
-					type = "cpu";
-					name = "The Prophets of Salril";
-				};
-			};
-			netRaceFlags = 0;
-			prologueId = nil;
-			initialObjects = {
-				count = 9;
-				first = 101;
-			};
-			epilogueId = nil;
-			angle = 0;
-			briefing = {
-				count = 8;
-				first = 73;
-			};
-			conditions = {
-				count = 2;
-				first = 33;
-			};
-			id = 8;
-			songId = 5004;
-		};
-		[8] = {
-			par = {
-				losses = 12;
-				ratio = 0.0;
-				kills = 45;
-				time = 450;
-			};
-			starmap = {
-				y = 431;
-				x = 237;
-			};
-			playerNum = 2;
-			scoreString = {
-				[0] = "-Capture Hades";
-			};
-			movie = nil;
-			isTraining = false;
-			startTime = 0;
-			name = "\\i Chapter 7 \r\\iOn the Rocks";
-			players = {
-				[1] = {
-					netRaceFlags = 172;
-					earningPower = 1.0;
-					race = 100;
-					type = "single";
-					name = "The Cantharan Order";
-				};
-				[2] = {
-					netRaceFlags = 176;
-					earningPower = 1.25;
-					race = 300;
-					type = "cpu";
-					name = "The Prophets of Salril";
-				};
-			};
-			netRaceFlags = 0;
-			prologueId = nil;
-			initialObjects = {
-				count = 16;
-				first = 110;
-			};
-			epilogueId = nil;
-			angle = 0;
-			briefing = {
-				count = 9;
-				first = 81;
-			};
-			conditions = {
-				count = 2;
-				first = 35;
-			};
-			id = 9;
-			songId = 5000;
-		};
-		[9] = {
-			par = {
-				losses = 0;
-				ratio = 0.0;
-				kills = 8;
-				time = 435;
-			};
-			starmap = {
-				y = 160;
-				x = 179;
-			};
-			playerNum = 2;
-			scoreString = {
-				[0] = "-Rescue 21";
-				[1] = "_-humans";
-				[2] = "2\\0\\0\\0\\f\\t\\On board: \\/5";
-			};
-			movie = nil;
-			isTraining = false;
-			startTime = 0;
-			name = "\\i Chapter 12 \r\\iMake Way";
-			players = {
-				[1] = {
-					netRaceFlags = 229;
-					earningPower = 0.00390625;
-					race = 100;
-					type = "single";
-					name = "The Cantharan Order";
-				};
-				[2] = {
-					netRaceFlags = 0;
-					earningPower = 0.0;
-					race = 200;
-					type = "cpu";
-					name = "The Audemedon Axis";
-				};
-			};
-			netRaceFlags = 0;
-			prologueId = nil;
-			initialObjects = {
-				count = 15;
-				first = 388;
-			};
-			epilogueId = nil;
-			angle = 0;
-			briefing = {
-				count = 8;
-				first = 126;
-			};
-			conditions = {
-				count = 8;
-				first = 83;
-			};
-			id = 14;
-			songId = 5000;
-		};
-		[10] = {
-			par = {
-				losses = 20;
-				ratio = 1.19921875;
-				kills = 10;
-				time = 900;
-			};
-			starmap = {
-				y = 259;
-				x = 158;
-			};
-			playerNum = 2;
-			scoreString = {
-				[0] = "-Capture Fansi";
-				[1] = "_-Beta";
-				[2] = "-Ensure safety";
-				[3] = "_-of 5 cargo ships";
-				[4] = "-";
-			};
-			movie = nil;
-			isTraining = false;
-			startTime = 307;
-			name = "\\i Chapter 13 \r\\iYo Ho Ho";
-			players = {
-				[1] = {
-					netRaceFlags = 0;
-					earningPower = 1.0;
-					race = 100;
-					type = "single";
-					name = "The Cantharan Order";
-				};
-				[2] = {
-					netRaceFlags = 172;
-					earningPower = 3.0;
-					race = 200;
-					type = "cpu";
-					name = "The Gaitori Union";
-				};
-			};
-			netRaceFlags = 0;
-			prologueId = nil;
-			initialObjects = {
-				count = 17;
-				first = 138;
-			};
-			epilogueId = nil;
-			angle = 0;
-			briefing = {
-				count = 12;
-				first = 47;
-			};
-			conditions = {
-				count = 4;
-				first = 29;
-			};
-			id = 15;
-			songId = 5001;
-		};
-		[11] = {
-			par = {
-				losses = 0;
-				ratio = 0.0;
-				kills = 9;
-				time = 120;
-			};
-			starmap = {
-				y = 330;
-				x = 287;
-			};
-			playerNum = 2;
-			scoreString = {
-				[0] = "-Destroy all 5";
-				[1] = "_-transports.";
-			};
-			movie = ":Ares Data Ä:Part 2";
-			isTraining = false;
-			startTime = 0;
-			name = "\\i Tutorial Lesson 2\r\\iSection on Selection";
-			players = {
-				[1] = {
-					netRaceFlags = 256;
-					earningPower = 1.0;
-					race = 100;
-					type = "single";
-					name = "The Cantharan Order";
-				};
-				[2] = {
-					netRaceFlags = 16516;
-					earningPower = 1.0;
-					race = 300;
-					type = "cpu";
-					name = "The Prophets of Salril";
-				};
-			};
-			netRaceFlags = 0;
-			prologueId = nil;
-			initialObjects = {
-				count = 18;
-				first = 294;
-			};
-			epilogueId = nil;
-			angle = 0;
-			briefing = {
-				count = 5;
-				first = 121;
-			};
-			conditions = {
-				count = 2;
-				first = 54;
-			};
-			id = 2;
-			songId = 5000;
-		};
-		[12] = {
-			par = {
-				losses = 1;
-				ratio = 0.0;
-				kills = 6;
-				time = 270;
-			};
-			starmap = {
-				y = 286;
-				x = 211;
-			};
-			playerNum = 2;
-			scoreString = {
-				[0] = "-Collect 10";
-				[1] = "_-asteroid samples";
-			};
-			movie = nil;
-			isTraining = false;
-			startTime = 0;
-			name = "\\i Chapter 9 \r\\iHand Over Fist";
-			players = {
-				[1] = {
-					netRaceFlags = 0;
-					earningPower = 1.0;
-					race = 100;
-					type = "single";
-					name = "The Cantharan Order";
-				};
-				[2] = {
-					netRaceFlags = 172;
-					earningPower = 1.0;
-					race = 200;
-					type = "cpu";
-					name = "The Gaitori Union";
-				};
-			};
-			netRaceFlags = 0;
-			prologueId = nil;
-			initialObjects = {
-				count = 8;
-				first = 357;
-			};
-			epilogueId = nil;
-			angle = 0;
-			briefing = {
-				count = 4;
-				first = 117;
-			};
-			conditions = {
-				count = 4;
-				first = 60;
-			};
-			id = 11;
-			songId = 5002;
-		};
-		[13] = {
-			par = {
-				losses = 0;
-				ratio = 0.0;
-				kills = -1;
-				time = -1;
-			};
-			starmap = {
-				y = 288;
-				x = 302;
-			};
-			playerNum = 2;
-			movie = nil;
-			isTraining = false;
-			startTime = 0;
-			name = "";
-			players = {
-				[1] = {
-					netRaceFlags = 0;
-					earningPower = 0.5;
-					race = 100;
-					type = "single";
-					name = "The Cantharan Order";
-				};
-				[2] = {
-					netRaceFlags = 1536;
-					earningPower = 0.0;
-					race = 100;
-					type = "cpu";
-					name = "The Cantharan Order";
-				};
-			};
-			netRaceFlags = 0;
-			prologueId = nil;
-			initialObjects = {
-				count = 23;
-				first = 365;
-			};
-			epilogueId = nil;
-			angle = 0;
-			briefing = {
-				count = 6;
-				first = 111;
-			};
-			conditions = {
-				count = 19;
-				first = 64;
-			};
-			id = 31;
-			songId = 5001;
-		};
-		[14] = {
-			par = {
-				losses = 35;
-				ratio = 0.0;
-				kills = 50;
-				time = 780;
-			};
-			starmap = {
-				y = 241;
-				x = 53;
-			};
-			playerNum = 2;
-			scoreString = {
-				[0] = "_-Capture Pictoris";
-				[1] = "Beta, 1 & 2";
-				[2] = "-Destroy hostile";
-			};
-			movie = nil;
-			isTraining = false;
-			startTime = 0;
-			name = "\\i Chapter 20 \r\\iThe Mothership Connection";
-			players = {
-				[1] = {
-					netRaceFlags = 26816;
-					earningPower = 1.0;
-					race = 900;
-					type = "single";
-					name = "The Elejeetian Empire";
-				};
-				[2] = {
-					netRaceFlags = 0;
-					earningPower = 1.0;
-					race = 200;
-					type = "cpu";
-					name = "The Gaitori Union";
-				};
-			};
-			netRaceFlags = 0;
-			prologueId = nil;
-			initialObjects = {
-				count = 12;
-				first = 312;
-			};
-			epilogueId = nil;
-			angle = 0;
-			briefing = {
-				count = 7;
-				first = 134;
-			};
-			conditions = {
-				count = 7;
-				first = 97;
-			};
-			id = 22;
-			songId = 5003;
-		};
-		[15] = {
-			par = {
-				losses = 30;
-				ratio = 0.0;
-				kills = 45;
-				time = 960;
-			};
-			starmap = {
-				y = 156;
-				x = 81;
-			};
-			playerNum = 2;
-			scoreString = {
-				[0] = "-Capture Lalande";
-			};
-			movie = nil;
-			isTraining = false;
-			startTime = 0;
-			name = "\\i Chapter 18 \r\\iBlood, Toil, Tears, and Sweat";
-			players = {
-				[1] = {
-					netRaceFlags = 0;
-					earningPower = 1.0;
-					race = 100;
-					type = "single";
-					name = "The Cantharan Order";
-				};
-				[2] = {
-					netRaceFlags = 0;
-					earningPower = 1.0;
-					race = 700;
-					type = "cpu";
-					name = "The UNS Resistance";
-				};
-			};
-			netRaceFlags = 0;
-			prologueId = nil;
-			initialObjects = {
-				count = 14;
-				first = 474;
-			};
-			epilogueId = nil;
-			angle = 0;
-			briefing = {
-				count = 6;
-				first = 154;
-			};
-			conditions = {
-				count = 3;
-				first = 109;
-			};
-			id = 20;
-			songId = 5001;
-		};
-		[16] = {
-			par = {
-				losses = 0;
-				ratio = 0.0;
-				kills = 11;
-				time = 300;
-			};
-			starmap = {
-				y = 194;
-				x = 145;
-			};
-			playerNum = 2;
-			scoreString = {
-				[0] = "1\\0\\0\\0\\Retrieve escape\\Escort tractor";
-				[1] = "_1\\0\\0\\0\\pods\\tug";
-				[2] = "2\\1\\0\\0\\f\\t\\Rescued: \\/6";
-			};
-			movie = ":Ares Data Ä:Placeholder Movie";
-			isTraining = false;
-			startTime = 0;
-			name = "\\i Chapter 14 \r\\iCaptivating";
-			players = {
-				[1] = {
-					netRaceFlags = 0;
-					earningPower = 1.0;
-					race = 100;
-					type = "single";
-					name = "The Cantharan Order";
-				};
-				[2] = {
-					netRaceFlags = 0;
-					earningPower = 1.0;
-					race = 600;
-					type = "cpu";
-					name = "The Audemedon Axis";
-				};
-			};
-			netRaceFlags = 0;
-			prologueId = nil;
-			initialObjects = {
-				count = 21;
-				first = 155;
-			};
-			epilogueId = nil;
-			angle = 0;
-			briefing = {
-				count = 7;
-				first = 90;
-			};
-			conditions = {
-				count = 3;
-				first = 37;
-			};
-			id = 16;
-			songId = 5002;
-		};
-		[17] = {
-			par = {
-				losses = 17;
-				ratio = 0.0;
-				kills = 56;
-				time = 435;
-			};
-			starmap = {
-				y = 150;
-				x = 120;
-			};
-			playerNum = 2;
-			scoreString = {
-				[0] = "-Capture Thasero";
-			};
-			movie = nil;
-			isTraining = false;
-			startTime = 0;
-			name = "\\i Chapter 16 \r\\iHornet's Nest";
-			players = {
-				[1] = {
-					netRaceFlags = 172;
-					earningPower = 1.0;
-					race = 100;
-					type = "single";
-					name = "The Cantharan Order";
-				};
-				[2] = {
-					netRaceFlags = 0;
-					earningPower = 2.0;
-					race = 600;
-					type = "cpu";
-					name = "The Audemedon Axis";
-				};
-			};
-			netRaceFlags = 0;
-			prologueId = nil;
-			initialObjects = {
-				count = 10;
-				first = 176;
-			};
-			epilogueId = nil;
-			angle = 0;
-			briefing = {
-				count = 9;
-				first = 97;
-			};
-			conditions = {
-				count = 3;
-				first = 40;
-			};
-			id = 18;
-			songId = 5004;
-		};
-		[18] = {
-			par = {
-				losses = 23;
-				ratio = 0.0;
-				kills = 42;
-				time = 210;
-			};
-			starmap = {
-				y = 104;
-				x = 98;
-			};
-			playerNum = 2;
-			scoreString = {
-				[0] = "1\\2\\0\\0\\Protect science\\Destroy jumpgate\\\\";
-				[1] = "1\\2\\0\\0\\vessel\\inhibitor\\\\";
-				[2] = "1\\3\\0\\0\\\\DESTROYED\\\\";
-				[3] = "1\\3\\0\\0\\\\Destroy all\\\\";
-			};
-			movie = nil;
-			isTraining = false;
-			startTime = 0;
-			name = "\\i Chapter 17 \r\\i...And It Feels So Good";
-			players = {
-				[1] = {
-					netRaceFlags = 171;
-					earningPower = 1.0;
-					race = 100;
-					type = "single";
-					name = "The Cantharan Order";
-				};
-				[2] = {
-					netRaceFlags = 202;
-					earningPower = 1.0;
-					race = 700;
-					type = "cpu";
-					name = "The UNS Resistance";
-				};
-			};
-			netRaceFlags = 0;
-			prologueId = nil;
-			initialObjects = {
-				count = 25;
-				first = 186;
-			};
-			epilogueId = nil;
-			angle = 0;
-			briefing = {
-				count = 5;
-				first = 106;
-			};
-			conditions = {
-				count = 5;
-				first = 43;
-			};
-			id = 19;
-			songId = 5000;
-		};
-		[19] = {
-			par = {
-				losses = 34;
-				ratio = 0.0;
-				kills = 29;
-				time = 375;
-			};
-			starmap = {
-				y = 182;
-				x = 62;
-			};
-			playerNum = 2;
-			scoreString = {
-				[0] = "-Capture Proxima";
-			};
-			movie = nil;
-			isTraining = false;
-			startTime = 0;
-			name = "\\i Chapter 19 \r\\iYou Should Have Seen the One that Got Away";
-			players = {
-				[1] = {
-					netRaceFlags = 172;
-					earningPower = 1.0;
-					race = 900;
-					type = "single";
-					name = "The Elejeetian Empire";
-				};
-				[2] = {
-					netRaceFlags = 202;
-					earningPower = 1.0;
-					race = 700;
-					type = "cpu";
-					name = "The UNS Resistance";
-				};
-			};
-			netRaceFlags = 0;
-			prologueId = nil;
-			initialObjects = {
-				count = 35;
-				first = 259;
-			};
-			epilogueId = nil;
-			angle = 0;
-			briefing = {
-				count = 7;
-				first = 147;
-			};
-			conditions = {
-				count = 3;
-				first = 51;
-			};
-			id = 21;
-			songId = 5002;
-		};
-		[20] = {
-			par = {
-				losses = 0;
-				ratio = 0.0;
-				kills = 50;
-				time = 600;
-			};
-			starmap = {
-				y = 284;
-				x = 43;
-			};
-			playerNum = 2;
-			scoreString = {
-				[0] = "-Destroy hostile";
-			};
-			movie = nil;
-			isTraining = false;
-			startTime = 0;
-			name = "\\i Between a Rock and a Rock \r\\i ";
-			players = {
-				[1] = {
-					netRaceFlags = 3;
-					earningPower = 1.0;
-					race = 100;
-					type = "single";
-					name = "The Cantharan Order";
-				};
-				[2] = {
-					netRaceFlags = 181;
-					earningPower = 1.0;
-					race = 200;
-					type = "cpu";
-					name = "The Gaitori Union";
-				};
-			};
-			netRaceFlags = 0;
-			prologueId = nil;
-			initialObjects = {
-				count = 33;
-				first = 324;
-			};
-			epilogueId = nil;
-			angle = 0;
-			briefing = {
-				count = 6;
-				first = 141;
-			};
-			conditions = {
-				count = 3;
-				first = 115;
-			};
-			id = 23;
-			songId = 5004;
-		};
-		[21] = {
-			par = {
-				losses = 0;
-				ratio = 0.0;
-				kills = 0;
-				time = -1;
-			};
-			starmap = {
-				y = 200;
-				x = 200;
-			};
-			playerNum = 2;
-			movie = nil;
-			isTraining = false;
-			startTime = 0;
-			name = "\\i **DEV-23** \r\\i ";
-			players = {
-				[1] = {
-					netRaceFlags = 483;
-					earningPower = 1.0;
-					race = 100;
-					type = "net";
-					name = "The Cantharan Order";
-				};
-				[2] = {
-					netRaceFlags = 483;
-					earningPower = 1.0;
-					race = 100;
-					type = "net";
-					name = "The Cantharan Order";
-				};
-			};
-			netRaceFlags = 483;
-			prologueId = nil;
-			initialObjects = {
-				count = 8;
-				first = 420;
-			};
-			epilogueId = nil;
-			angle = 0;
-			briefing = {
-				count = 1;
-				first = 0;
-			};
-			conditions = {
-				count = 3;
-				first = 104;
-			};
-			id = 24;
-			songId = 5002;
-		};
-		[22] = {
-			par = {
-				losses = 0;
-				ratio = 0.0;
-				kills = 0;
-				time = -1;
-			};
-			starmap = {
-				y = 100;
-				x = 100;
-			};
-			playerNum = 3;
-			movie = nil;
-			isTraining = false;
-			startTime = 0;
-			name = "\\i Space Race, the Musical! \\i ";
-			players = {
-				[1] = {
-					netRaceFlags = 0;
-					race = 100;
-					earningPower = 1.0;
-					name = "The Cantharan Order";
-				};
-				[2] = {
-					netRaceFlags = 0;
-					race = 100;
-					earningPower = 1.0;
-					name = "The Cantharan Order";
-				};
-				[3] = {
-					netRaceFlags = 0;
-					earningPower = 2.0;
-					race = 700;
-					type = "cpu";
-					name = "The UNS Resistance";
-				};
-			};
-			netRaceFlags = 0;
-			prologueId = nil;
-			initialObjects = {
-				count = 6;
-				first = 428;
-			};
-			epilogueId = nil;
-			angle = 0;
-			briefing = {
-				count = 1;
-				first = 0;
-			};
-			conditions = {
-				count = 0;
-				first = -1;
-			};
-			id = 25;
-			songId = 5002;
-		};
-		[23] = {
-			par = {
-				losses = 0;
-				ratio = 1.0;
-				kills = 0;
-				time = 1;
-			};
-			starmap = {
-				y = -1;
-				x = -1;
-			};
-			playerNum = 2;
-			movie = nil;
-			isTraining = false;
-			startTime = 256;
-			name = "\\i Scratching Post \r\\i ";
-			players = {
-				[1] = {
-					netRaceFlags = 0;
-					earningPower = 1.0;
-					race = 100;
-					type = "single";
-					name = "The Cantharan Order";
-				};
-				[2] = {
-					netRaceFlags = 0;
-					earningPower = 1.0;
-					race = 300;
-					type = "cpu";
-					name = "The Prophets of Salril";
-				};
-			};
-			netRaceFlags = 0;
-			prologueId = nil;
-			initialObjects = {
-				count = 40;
-				first = 434;
-			};
-			epilogueId = nil;
-			angle = 0;
-			briefing = {
-				count = 1;
-				first = 0;
-			};
-			conditions = {
-				count = 0;
-				first = -1;
-			};
-			id = 26;
-			songId = 5003;
-		};
-		[24] = {
-			par = {
-				losses = 0;
-				ratio = 0.0;
-				kills = 0;
-				time = -1;
-			};
-			starmap = {
-				y = 100;
-				x = 100;
-			};
-			playerNum = 2;
-			movie = nil;
-			isTraining = false;
-			startTime = 0;
-			name = "\\i Capture the Flagpod \r\\i ";
-			players = {
-				[1] = {
-					netRaceFlags = 483;
-					earningPower = 1.0;
-					race = 100;
-					type = "net";
-					name = "The Elejeetian Empire";
-				};
-				[2] = {
-					netRaceFlags = 483;
-					earningPower = 1.0;
-					race = 100;
-					type = "net";
-					name = "The Gaitori Union";
-				};
-			};
-			netRaceFlags = 483;
-			prologueId = nil;
-			initialObjects = {
-				count = 11;
-				first = 488;
-			};
-			epilogueId = nil;
-			angle = 0;
-			briefing = {
-				count = 1;
-				first = 0;
-			};
-			conditions = {
-				count = 3;
-				first = 112;
-			};
-			id = 27;
-			songId = 5000;
-		};
-		[25] = {
-			par = {
-				losses = 0;
-				ratio = 0.0;
-				kills = 0;
-				time = -1;
-			};
-			starmap = {
-				y = -1;
-				x = -1;
-			};
-			playerNum = 2;
-			movie = nil;
-			isTraining = false;
-			startTime = 0;
-			name = "\\i Spaze Warz \r\\i ";
-			players = {
-				[1] = {
-					netRaceFlags = 512;
-					earningPower = 0.0;
-					race = 1100;
-					type = "net";
-					name = "The Cantharan Order";
-				};
-				[2] = {
-					netRaceFlags = 512;
-					earningPower = 0.0;
-					race = 1100;
-					type = "net";
-					name = "The Cantharan Order";
-				};
-			};
-			netRaceFlags = 512;
-			prologueId = nil;
-			initialObjects = {
-				count = 22;
-				first = 212;
-			};
-			epilogueId = nil;
-			angle = 0;
-			briefing = {
-				count = 0;
-				first = -1;
-			};
-			conditions = {
-				count = 2;
-				first = 118;
-			};
-			id = 28;
-			songId = 5001;
-		};
-		[26] = {
-			par = {
-				losses = 0;
-				ratio = 0.0;
-				kills = 0;
-				time = -1;
-			};
-			starmap = {
-				y = -1;
-				x = -1;
-			};
-			playerNum = 2;
-			movie = nil;
-			isTraining = false;
-			startTime = 0;
-			name = "\\i Location, Location, Location \r\\i ";
-			players = {
-				[1] = {
-					netRaceFlags = 512;
-					earningPower = 0.0;
-					race = 1100;
-					type = "net";
-					name = "The Cantharan Order";
-				};
-				[2] = {
-					netRaceFlags = 512;
-					earningPower = 0.0;
-					race = 1100;
-					type = "net";
-					name = "The Gaitori Union";
-				};
-			};
-			netRaceFlags = 512;
-			prologueId = nil;
-			initialObjects = {
-				count = 5;
-				first = 85;
-			};
-			epilogueId = nil;
-			angle = 0;
-			briefing = {
-				count = 0;
-				first = -1;
-			};
-			conditions = {
-				count = 4;
-				first = 120;
-			};
-			id = 29;
-			songId = 5003;
-		};
-		[27] = {
-			par = {
-				losses = 0;
-				ratio = 0.0;
-				kills = 0;
-				time = -1;
-			};
-			starmap = {
-				y = -1;
-				x = -1;
-			};
-			playerNum = 2;
-			movie = nil;
-			isTraining = false;
-			startTime = 0;
-			name = "";
-			players = {
-				[1] = {
-					netRaceFlags = 98;
-					earningPower = 1.0;
-					race = 100;
-					type = "net";
-					name = "The Cantharan Order";
-				};
-				[2] = {
-					netRaceFlags = 98;
-					earningPower = 1.0;
-					race = 100;
-					type = "net";
-					name = "";
-				};
-			};
-			netRaceFlags = 98;
-			prologueId = nil;
-			initialObjects = {
-				count = 19;
-				first = 234;
-			};
-			epilogueId = nil;
-			angle = 0;
-			briefing = {
-				count = 0;
-				first = -1;
-			};
-			conditions = {
-				count = 2;
-				first = 124;
-			};
-			id = 30;
-			songId = 5004;
-		};
-		[28] = {
-			par = {
-				losses = 0;
-				ratio = 0.0;
-				kills = 9;
-				time = 120;
-			};
-			starmap = {
-				y = 330;
-				x = 287;
-			};
-			playerNum = 2;
-			scoreString = {
-				[0] = "-Destroy all 5";
-				[1] = "_-transports.";
-			};
-			movie = nil;
-			isTraining = false;
-			startTime = 0;
-			name = "\\i Chapter 1 \r\\iEasy Street";
-			players = {
-				[1] = {
-					netRaceFlags = 0;
-					earningPower = 0.0078125;
-					race = 100;
-					type = "single";
-					name = "The Cantharan Order";
-				};
-				[2] = {
-					netRaceFlags = 0;
-					earningPower = 1.0;
-					race = 200;
-					type = "cpu";
-					name = "The Gaitori Union";
-				};
-			};
-			netRaceFlags = 0;
-			prologueId = nil;
-			initialObjects = {
-				count = 9;
-				first = 500;
-			};
-			epilogueId = nil;
-			angle = 5;
-			briefing = {
-				count = 0;
-				first = 0;
-			};
-			conditions = {
-				count = 24;
-				first = 126;
-			};
-			id = 1;
-			songId = 4002;
-		};
-		[29] = {
-			par = {
-				losses = -1;
-				ratio = -1.0;
-				kills = -1;
-				time = -1;
-			};
-			starmap = {
-				y = 330;
-				x = 287;
-			};
-			playerNum = 2;
-			scoreString = {
-				[0] = "-Destroy all 5";
-				[1] = "_-transports.";
-			};
-			movie = nil;
-			isTraining = false;
-			startTime = 32512;
-			name = "\\i Chapter 2 \r\\iThe Stars Have Ears";
-			players = {
-				[1] = {
-					netRaceFlags = 0;
-					earningPower = 0.0078125;
-					race = 100;
-					type = "single";
-					name = "The Cantharan Order";
-				};
-				[2] = {
-					netRaceFlags = 0;
-					earningPower = 1.0;
-					race = 200;
-					type = "cpu";
-					name = "The Gaitori Union";
-				};
-			};
-			netRaceFlags = 0;
-			prologueId = nil;
-			initialObjects = {
-				count = 8;
-				first = 509;
-			};
-			epilogueId = nil;
-			angle = 5;
-			briefing = {
-				count = 0;
-				first = 0;
-			};
-			conditions = {
-				count = 37;
-				first = 150;
-			};
-			id = 3;
-			songId = 4002;
-		};
-		[30] = {
-			par = {
-				losses = -1;
-				ratio = -1.0;
-				kills = -1;
-				time = -1;
-			};
-			starmap = {
-				y = 330;
-				x = 287;
-			};
-			playerNum = 2;
-			scoreString = {
-				[0] = "-Destroy all 5";
-				[1] = "_-transports.";
-			};
-			movie = nil;
-			isTraining = false;
-			startTime = 32512;
-			name = "\\i Chapter 3 \r\\iWhile The Iron Is Hot";
-			players = {
-				[1] = {
-					netRaceFlags = 0;
-					earningPower = 0.0078125;
-					race = 100;
-					type = "single";
-					name = "The Cantharan Order";
-				};
-				[2] = {
-					netRaceFlags = 0;
-					earningPower = 0.0078125;
-					race = 200;
-					type = "cpu";
-					name = "The Gaitori Union";
-				};
-			};
-			netRaceFlags = 0;
-			prologueId = nil;
-			initialObjects = {
-				count = 17;
-				first = 517;
-			};
-			epilogueId = nil;
-			angle = 5;
-			briefing = {
-				count = 0;
-				first = 0;
-			};
-			conditions = {
-				count = 44;
-				first = 187;
-			};
-			id = 5;
-			songId = 4002;
-		};
-	};
-	race = {
-		[0] = {
-			advantage = 1.3984375;
-			singular = "Human";
-			military = "UNS Resistance";
-			homeWorld = "Earth";
-			plural = "Humans";
-			id = 900;
-		};
-		[1] = {
-			advantage = 2.1484375;
-			singular = "Ishiman";
-			military = "Ishiman Protectorate";
-			homeWorld = "Ishima";
-			plural = "Ishimans";
-			id = 100;
-		};
-		[2] = {
-			advantage = 3.0;
-			singular = "Elejeetian";
-			military = "Elejeetian Empire";
-			homeWorld = "Elejee";
-			plural = "Elejeetians";
-			id = 800;
-		};
-		[3] = {
-			advantage = 1.75;
-			singular = "Obish";
-			military = "Free Worlds of Obain";
-			homeWorld = "Obain";
-			plural = "Obiards";
-			id = 400;
-		};
-		[4] = {
-			advantage = 1.75;
-			singular = "Bazidanese";
-			military = "Bazidanese Star League";
-			homeWorld = "Bazidan";
-			plural = "Bazidanese";
-			id = 500;
-		};
-		[5] = {
-			advantage = 2.0;
-			singular = "Cantharan";
-			military = "Cantharan Order";
-			homeWorld = "Cantharis";
-			plural = "Cantharans";
-			id = 200;
-		};
-		[6] = {
-			advantage = 1.0;
-			singular = "Gaitori";
-			military = "Gaitori Union";
-			homeWorld = "Gaitor";
-			plural = "Gaitori";
-			id = 300;
-		};
-		[7] = {
-			advantage = 2.5;
-			singular = "Salrilian";
-			military = "Prophets of Salril";
-			homeWorld = "Salril";
-			plural = "Salrilians";
-			id = 600;
-		};
-		[8] = {
-			advantage = 2.75;
-			singular = "Audemedon";
-			military = "Audemedon Axis";
-			homeWorld = "Axis";
-			plural = "Audemedons";
-			id = 700;
-		};
-		[9] = {
-			advantage = 0.5;
-			singular = "Grolk";
-			military = "Grolk";
-			homeWorld = "Space Force of Grolk";
-			plural = "Grolk";
-			id = 1100;
-		};
-		[10] = {
-			advantage = 1.0;
-			singular = "Unused Race 1";
-			military = "Military";
-			homeWorld = "Homeworld";
-			plural = "Plural";
-			id = 1200;
-		};
-		[11] = {
-			advantage = 2.0;
-			singular = "Unused Race 2";
-			military = "Military";
-			homeWorld = "Homeworld";
-			plural = "Plural";
-			id = 1300;
-		};
-		[12] = {
-			advantage = 3.0;
-			singular = "Unused Race 3";
-			military = "Military";
-			homeWorld = "Homeworld";
-			plural = "Plural";
-			id = 1400;
-		};
-		[13] = {
-			advantage = 4.0;
-			singular = "Unused Race 4";
-			military = "Military";
-			homeWorld = "Homeworld";
-			plural = "Plural";
-			id = 1500;
-		};
-		[14] = {
-			advantage = 5.0;
-			singular = "Unused Race 5";
-			military = "Military";
-			homeWorld = "Homeworld";
-			plural = "Plural";
-			id = 1600;
-		};
-		[15] = {
-			advantage = 6.0;
-			singular = "Unused Race 6";
-			military = "Military";
-			homeWorld = "Homeworld";
-			plural = "Plural";
-			id = 1700;
+			subject = 0;
 		};
 	};
 	sprites = {
