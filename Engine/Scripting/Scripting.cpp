@@ -1,5 +1,6 @@
 #include "Scripting.h"
 #include "ResourceManager.h"
+#include "ModeManager.h"
 #include "Engine/Logging.h"
 #include "Compile.h"
 
@@ -34,6 +35,9 @@ static void luaHandleError ( lua_State* L )
 {
     const char* message = lua_tostring(L, -1);
     LOG("Scripting::Driver", LOG_WARNING, "Script error: %s", message);
+#ifndef NDEBUG
+	QuitEngine();
+#endif
     lua_pop(L, 1);
 }
 
