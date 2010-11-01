@@ -1,18 +1,20 @@
 function LoadScenario(id)
-	local scen = deepcopy(data.scenarios[id])
-	scen.objects = {}
-	scen.effects = {flash = {}}
+	local scen = {
+		base = data.scenarios[id];
+		objects = {};
+		effects = {flash = {}};
+	}
 
-	local max = scen.initialObjects.first + scen.initialObjects.count - 1
+	local max = scen.base.initialObjects.first + scen.base.initialObjects.count - 1
 	
-	for id = scen.initialObjects.first, max do
+	for id = scen.base.initialObjects.first, max do
 		local state = data.initials[id]
 		local new = NewObject(state.type)
 
 		new.physics.position = state.position
 		new.ai.owner = state.owner
 
-		if state.attributes.initialPlayerShip == true then
+		if state.attributes.isPlayerShip == true then
 			if scen.playerShip == nil then
 				scen.playerShip = new
 				scen.playerShipId = new.physics.object_id
@@ -52,12 +54,11 @@ function InitConditions(scen)
 		end
 	end
 
-
-	local max = scen.condition.id + scen.condition.count - 1
-	for idx = scen.condition.id , max do
+	local max = scen.base.conditions.first + scen.base.conditions.count - 1
+	for idx = scen.base.conditions.first, max do
 		local cond = deepcopy(data.conditions[idx])
 
-		if cond["condition-flags"]["initially-true"] ~= true then
+		if cond.flags.initiallyTrue ~= true then
 				cond.active = true
 					cond.isTrue = true
 			else
@@ -72,11 +73,11 @@ end
 function ParseScoreStrings(scen)
 	lines = {}
 
-	if scen["score-string"] == nil then
-		scen["score-string"] = {}
-	end
+--	if scen.scoreString == nil then
+	scen.scoreString = {}
+--	end
 
-	for i, s in ipairs(scen["score-string"]) do
+	for i, s in ipairs(scen.scoreString) do
 		local c = string.sub(s,1,1)
 		local start = 1
 		local line = {}

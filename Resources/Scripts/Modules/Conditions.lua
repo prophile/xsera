@@ -5,7 +5,7 @@ function TestConditions(scen)
 			cond.isTrue = Test[type](cond)
 			if cond.isTrue == true then
 				CallAction(cond.action)
-				if cond["condition-flags"]["true-only-once"] == true then
+				if cond.flags.trueOnlyOnce == true then
 					cond.active = false
 				end
 			end

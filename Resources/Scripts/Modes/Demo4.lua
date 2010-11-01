@@ -141,7 +141,7 @@ function update()
 				elseif o.base.beam.mode == "direct" then
 					local from = o.gfx.offset + o.gfx.source.position
 					local dir = NormalizeVec(o.gfx.target.position - o.gfx.source.position)
-					local len = math.min(o.base.beam.range,hypot2(from,o.gfx.target.position))
+					local len = math.min(o.base.beam.range, hypot2(from,o.gfx.target.position))
 					
 					o.physics.position = dir * len
 				end
@@ -169,11 +169,11 @@ function update()
 				if o.weapons ~= nil then
 					for wid,weap in pairs(o.weapons) do
 						if weap.ammo ~= -1
-						and weap.base.device["restock-cost"] > 0
+						and weap.base.device.restockCost > 0
 						and weap.ammo < weap.base.device.ammo / 2
-						and weap.lastRestock + weap.base.device["restock-cost"] * BASE_RECHARGE_RATE * WEAPON_RESTOCK_RATE / TIME_FACTOR <= realTime
-						and o.status.energy >= weap.base.device["restock-cost"] * WEAPON_RESTOCK_RATIO then
-							o.status.energy = o.status.energy - weap.base.device["restock-cost"] * WEAPON_RESTOCK_RATIO
+						and weap.lastRestock + weap.base.device.restockCost * BASE_RECHARGE_RATE * WEAPON_RESTOCK_RATE / TIME_FACTOR <= realTime
+						and o.status.energy >= weap.base.device.restockCost * WEAPON_RESTOCK_RATIO then
+							o.status.energy = o.status.energy - weap.base.device.restockCost * WEAPON_RESTOCK_RATIO
 							weap.ammo = weap.ammo + 1
 							weap.lastRestock = realTime
 						end
@@ -225,8 +225,8 @@ function update()
 			Warp(o)
 
 			local rvel
-			if o.base.attributes["can-turn"] == true then
-				rvel = o.base.rotation["max-turn-rate"]
+			if o.base.attributes.canTurn == true then
+				rvel = o.base.rotation.turnTate
 			else
 				rvel = DEFAULT_ROTATION_RATE
 			end
@@ -239,39 +239,37 @@ function update()
 				o.physics.angularVelocity = 0
 			end
 
-			if o.base["max-thrust"] ~= nil then
-				if o.warp.stage < WARP_RUNNING then
-					if o.control.accel == true then
-						-- apply a forward force in the direction the ship is facing
-						local angle = o.physics.angle
-						local thrust = o.base["max-thrust"] * SPEED_FACTOR
-						local force = vec(thrust * math.cos(angle), thrust * math.sin(angle))
-						Physics.ApplyImpulse(o.physics, force)
-					end
+			if o.warp.stage < WARP_RUNNING then
+				if o.control.accel == true then
+					-- apply a forward force in the direction the ship is facing
+					local angle = o.physics.angle
+					local thrust = o.base.thrust * SPEED_FACTOR
+					local force = vec(thrust * math.cos(angle), thrust * math.sin(angle))
+					Physics.ApplyImpulse(o.physics, force)
+				end
 
-					if o.control.decel == true
-						or hypot1(o.physics.velocity) >= o.base["max-velocity"] * SPEED_FACTOR then
-						-- apply a reverse force in the direction opposite the direction the ship is MOVING
-						local thrust = o.base["max-thrust"] * SPEED_FACTOR
-						local force = o.physics.velocity
-						if force.x ~= 0 or force.y ~= 0 then
-							if hypot1(o.physics.velocity) <= 10 then
+				if o.control.decel == true
+					or hypot1(o.physics.velocity) >= o.base.maxVelocity * SPEED_FACTOR then
+					-- apply a reverse force in the direction opposite the direction the ship is MOVING
+					local thrust = o.base.thrust * SPEED_FACTOR
+					local force = o.physics.velocity
+					if force.x ~= 0 or force.y ~= 0 then
+						if hypot1(o.physics.velocity) <= 10 then
+							o.physics.velocity = vec(0, 0)
+						else
+							local velocityMag = hypot1(force)
+							force = -force * thrust / velocityMag
+							if dt * velocityMag / o.physics.mass > velocityMag then
 								o.physics.velocity = vec(0, 0)
 							else
-								local velocityMag = hypot1(force)
-								force = -force * thrust / velocityMag
-								if dt * velocityMag / o.physics.mass > velocityMag then
-									o.physics.velocity = vec(0, 0)
-								else
-									Physics.ApplyImpulse(o.physics, force)
-								end
+								Physics.ApplyImpulse(o.physics, force)
 							end
 						end
 					end
-				elseif o.base["warp-speed"] ~= nil then
-					local velocityMag = math.max(o.warp.factor * o.base["warp-speed"], o.base["max-velocity"]) * SPEED_FACTOR
-					o.physics.velocity = PolarVec(velocityMag, o.physics.angle)
 				end
+			elseif o.base.warpSpeed ~= nil then
+				local velocityMag = math.max(o.warp.factor * o.base.warpSpeed, o.base.maxVelocity) * SPEED_FACTOR
+				o.physics.velocity = PolarVec(velocityMag, o.physics.angle)
 			end
 		end
 		
@@ -436,8 +434,8 @@ momentMag = dist * m1/(m1+m2)
 v1 = Polar2Rect(1,angle) * dist * m1 / (m1 + m2)
 v2 = Polar2Rect(1,angle+180) * dist * m2 / (m1 + m2)
 --]]
-	if o.base.attributes["occupies-space"]
-	and other.base.attributes["occupies-space"] then
+	if o.base.attributes.occupiesSpace
+	and other.base.attributes.occupiesSpace then
 		local p = o.physics
 		local p2 = other.physics
 		v1 = p.velocity
@@ -555,15 +553,15 @@ function DrawObject(o)
 
 			local iconScale = 1.0/cameraRatio.current
 			if o.base["tiny-shape"] == "solid-square" then
-				graphics.draw_rbox(o.physics.position, o.base["tiny-size"] * iconScale, color)
+				graphics.draw_rbox(o.physics.position, o.base.iconSize * iconScale, color)
 			elseif o.base["tiny-shape"] == "plus" then
-				graphics.draw_rplus(o.physics.position, o.base["tiny-size"] * iconScale, color)
+				graphics.draw_rplus(o.physics.position, o.base.iconSize * iconScale, color)
 			elseif o.base["tiny-shape"] == "triangle" then
-				graphics.draw_rtri(o.physics.position, o.base["tiny-size"] * iconScale, color)
+				graphics.draw_rtri(o.physics.position, o.base.iconSize * iconScale, color)
 			elseif o.base["tiny-shape"] == "diamond" then
-				graphics.draw_rdia(o.physics.position, o.base["tiny-size"] * iconScale, color)
+				graphics.draw_rdia(o.physics.position, o.base.iconSize * iconScale, color)
 			elseif o.base["tiny-shape"] == "framed-square" then --NOT IMPLEMENTED
-				graphics.draw_rbox(o.physics.position, o.base["tiny-size"] * iconScale, color)
+				graphics.draw_rbox(o.physics.position, o.base.iconSize * iconScale, color)
 			end
 		end
 	end
