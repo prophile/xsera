@@ -2445,8 +2445,8 @@ data = {
 			subjectOverride = -1;
 			color = 1;
 			directOverride = -1;
-			veloctiy = 20;
 			owner = 0;
+			velocity = 20;
 			type = "make sparks";
 			exclusiveFilter = 0;
 		};
@@ -3096,8 +3096,8 @@ data = {
 			subjectOverride = -1;
 			color = 1;
 			directOverride = -1;
-			veloctiy = 20;
 			owner = 0;
+			velocity = 20;
 			type = "make sparks";
 			exclusiveFilter = 0;
 		};
@@ -9112,8 +9112,8 @@ data = {
 			subjectOverride = -1;
 			color = 2;
 			directOverride = -1;
-			veloctiy = 20;
 			owner = 0;
+			velocity = 20;
 			type = "make sparks";
 			exclusiveFilter = 0;
 		};
@@ -9226,8 +9226,8 @@ data = {
 			subjectOverride = -1;
 			color = 9;
 			directOverride = -1;
-			veloctiy = 8;
 			owner = 0;
+			velocity = 8;
 			type = "make sparks";
 			exclusiveFilter = 0;
 		};
