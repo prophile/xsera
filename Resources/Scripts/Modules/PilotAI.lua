@@ -8,11 +8,11 @@ function Think(object)
 	local dist
 	if target ~= nil then
 		dist = hypot2(object.physics.position, target.physics.position)
-		if object.base.attributes["is-guided"] == true then
+		if object.base.attributes.isGuided == true then
 			object.ai.mode = "goto"
 		elseif dist < 350
 		and target.ai.owner ~= object.ai.owner
-		and target.base.attributes["hated"] == true then
+		and target.base.attributes.hated == true then
 			object.ai.mode = "engage"
 		elseif dist > 200 and object.ai.mode == "wait" then
 			object.ai.mode = "goto"

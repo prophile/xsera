@@ -246,7 +246,7 @@ end
 --actionTable["create object set destination"] = noAction
 actionTable["declare winner"] = function(action, source, direct)
 	Win()
-	print("The winner is: " .. action["which-player"])
+	print("The winner is: " .. action.player)
 end
 
 actionTable["die"] = function(action, source, direct)
