@@ -103,13 +103,13 @@ end
 
 --MARK: WARPING KEY FUNCTIONS
 function DoWarp()
-	if scen.playerShip.base["warp-speed"] ~= nil then
+	if scen.playerShip.base.warpSpeed ~= nil then
 		scen.playerShip.control.warp = true
 	end
 end
 
 function StopWarp()
-	if scen.playerShip.base["warp-speed"] ~= nil then
+	if scen.playerShip.base.warpSpeed ~= nil then
 		scen.playerShip.control.warp = false
 		if scen.playerShip.warp.stage == WARP_SPOOLING then
 			scen.playerShip.warp.stage = WARP_ABORTING
