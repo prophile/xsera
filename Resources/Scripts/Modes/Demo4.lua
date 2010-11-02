@@ -226,7 +226,7 @@ function update()
 
 			local rvel
 			if o.base.attributes.canTurn == true then
-				rvel = o.base.rotation.turnTate
+				rvel = o.base.rotation.turnRate
 			else
 				rvel = DEFAULT_ROTATION_RATE
 			end
@@ -517,21 +517,23 @@ end
 
 function DrawObject(o)
 	if o.type == "beam" then
-		if o.base.beam.kind == "kinetic" then
+		--[[
+			BITS	HEX	FLAG
+			001	0x1	RELATIVE
+			010	0x2	STATIC
+			100	0x4	BOLT
+		--]]
+		if o.base.beam.hex > 0 then
+			local from = o.gfx.source.position + o.gfx.offset
+			if o.base.beam.hex == "bolt" then
+				graphics.draw_lightning(from, o.physics.position, 1.0, 10.0, false,ClutColour(o.base.beam.color))
+			elseif o.base.beam.type == "static" then
+				graphics.draw_line(from, o.physics.position, 3.0, ClutColour(o.base.beam.color))
+			end
+		else --kinetic
 			local p1 = o.physics.position
 			local p2 = PolarVec(BEAM_LENGTH,o.physics.angle)
 			graphics.draw_line(p1, p1 + p2, 1, ClutColour(o.base.beam.color))
-		else
-			local from = o.gfx.source.position + o.gfx.offset
-			if o.base.beam.kind == "bolt-relative" then
-				graphics.draw_lightning(from, o.physics.position, 1.0, 10.0, false,ClutColour(o.base.beam.color))
-			elseif o.base.beam.kind == "bolt-to-object" then
-				graphics.draw_lightning(from, o.physics.position, 1.0, 10.0, false,ClutColour(o.base.beam.color))
-			elseif o.base.beam.kind == "static-relative" then
-				graphics.draw_line(from, o.physics.position, 3.0, ClutColour(o.base.beam.color))
-			elseif o.base.beam.kind == "static-to-object" then
-				graphics.draw_line(from, o.physics.position, 3.0, ClutColour(o.base.beam.color))
-			end
 		end
 	else
 		if cameraRatio.current >= 1 / 4 then

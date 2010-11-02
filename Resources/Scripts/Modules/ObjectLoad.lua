@@ -60,7 +60,7 @@ function NewObject(id)
 		LogError("UNKNOWN OBJECT CLASS")
 	end
 	
-	if base.spriteId ~= nil then
+	if base.spriteId ~= -1 then
 		object.gfx.sprite = "Id/"..base.spriteId;
 		
 		local dim = graphics.sprite_dimensions(object.gfx.sprite)
@@ -89,7 +89,7 @@ function NewObject(id)
 			local weap = {
 				base = wbase;
 				lastPos = 1;
-				positions = weapon.position;
+				positions = weapon.positions;
 				ammo = wbase.device.ammo;
 				lastActivated = -wbase.device.reload / TIME_FACTOR;
 				lastRestock = realTime
