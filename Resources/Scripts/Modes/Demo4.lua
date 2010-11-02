@@ -554,15 +554,15 @@ function DrawObject(o)
 			end
 
 			local iconScale = 1.0/cameraRatio.current
-			if o.base["tiny-shape"] == "solid-square" then
+			if o.base.iconShape == "square" then
 				graphics.draw_rbox(o.physics.position, o.base.iconSize * iconScale, color)
-			elseif o.base["tiny-shape"] == "plus" then
+			elseif o.base.iconShape == "plus" then
 				graphics.draw_rplus(o.physics.position, o.base.iconSize * iconScale, color)
-			elseif o.base["tiny-shape"] == "triangle" then
+			elseif o.base.iconShape == "triangle" then
 				graphics.draw_rtri(o.physics.position, o.base.iconSize * iconScale, color)
-			elseif o.base["tiny-shape"] == "diamond" then
+			elseif o.base.iconShape == "diamond" then
 				graphics.draw_rdia(o.physics.position, o.base.iconSize * iconScale, color)
-			elseif o.base["tiny-shape"] == "framed-square" then --NOT IMPLEMENTED
+			elseif o.base.iconShape == "framed square" then --NOT IMPLEMENTED
 				graphics.draw_rbox(o.physics.position, o.base.iconSize * iconScale, color)
 			end
 		end

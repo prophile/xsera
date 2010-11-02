@@ -14730,7 +14730,7 @@ data = {
 			energy = 1000;
 			shortName = "CRUISER";
 			initialDirection = 0;
-			iconSize = 20;
+			iconSize = 4;
 			shieldColor = 0;
 			warpOutDistance = 9734400;
 			spriteId = 501;
@@ -14913,6 +14913,7 @@ data = {
 				isGuided = false;
 			};
 			buildRatio = 1.0;
+			iconShape = "triangle";
 		};
 		[1] = {
 			layer = 0;
@@ -15094,6 +15095,7 @@ data = {
 				isGuided = false;
 			};
 			buildRatio = 0.0;
+			iconShape = "square";
 		};
 		[2] = {
 			layer = 0;
@@ -15269,6 +15271,7 @@ data = {
 				isGuided = false;
 			};
 			buildRatio = 0.0;
+			iconShape = "square";
 		};
 		[3] = {
 			layer = 3;
@@ -15442,6 +15445,7 @@ data = {
 				isGuided = false;
 			};
 			buildRatio = 0.0;
+			iconShape = "square";
 		};
 		[4] = {
 			layer = 0;
@@ -15623,6 +15627,7 @@ data = {
 				isGuided = false;
 			};
 			buildRatio = 0.0;
+			iconShape = "square";
 		};
 		[5] = {
 			layer = 3;
@@ -15800,6 +15805,7 @@ data = {
 				isGuided = false;
 			};
 			buildRatio = 0.0;
+			iconShape = "square";
 		};
 		[6] = {
 			layer = 0;
@@ -15981,13 +15987,14 @@ data = {
 				isGuided = false;
 			};
 			buildRatio = 0.0;
+			iconShape = "square";
 		};
 		[7] = {
 			layer = 2;
 			energy = 1000;
 			shortName = "CRUISER";
 			initialDirection = 0;
-			iconSize = 20;
+			iconSize = 4;
 			shieldColor = 8;
 			warpOutDistance = 9734400;
 			spriteId = 502;
@@ -16170,6 +16177,7 @@ data = {
 				isGuided = false;
 			};
 			buildRatio = 1.0;
+			iconShape = "triangle";
 		};
 		[8] = {
 			layer = 3;
@@ -16347,6 +16355,7 @@ data = {
 				isGuided = false;
 			};
 			buildRatio = 0.0;
+			iconShape = "square";
 		};
 		[9] = {
 			layer = 3;
@@ -16524,6 +16533,7 @@ data = {
 				isGuided = false;
 			};
 			buildRatio = 0.0;
+			iconShape = "square";
 		};
 		[10] = {
 			layer = 3;
@@ -16701,6 +16711,7 @@ data = {
 				isGuided = false;
 			};
 			buildRatio = 0.0;
+			iconShape = "square";
 		};
 		[11] = {
 			layer = 2;
@@ -16878,6 +16889,7 @@ data = {
 				isGuided = false;
 			};
 			buildRatio = 0.0;
+			iconShape = "square";
 		};
 		[12] = {
 			layer = 2;
@@ -17055,13 +17067,14 @@ data = {
 				isGuided = false;
 			};
 			buildRatio = 0.0;
+			iconShape = "square";
 		};
 		[13] = {
 			layer = 2;
 			energy = 600;
 			shortName = "FIGHTER";
 			initialDirection = 0;
-			iconSize = 19;
+			iconSize = 3;
 			shieldColor = 0;
 			warpOutDistance = 0;
 			spriteId = 510;
@@ -17244,13 +17257,14 @@ data = {
 				isGuided = false;
 			};
 			buildRatio = 0.75;
+			iconShape = "triangle";
 		};
 		[14] = {
 			layer = 2;
 			energy = 600;
 			shortName = "FIGHTER";
 			initialDirection = 0;
-			iconSize = 19;
+			iconSize = 3;
 			shieldColor = 8;
 			warpOutDistance = 0;
 			spriteId = 512;
@@ -17429,6 +17443,7 @@ data = {
 				isGuided = false;
 			};
 			buildRatio = 0.75;
+			iconShape = "triangle";
 		};
 		[15] = {
 			layer = 0;
@@ -17610,6 +17625,7 @@ data = {
 				isGuided = false;
 			};
 			buildRatio = 0.0;
+			iconShape = "square";
 		};
 		[16] = {
 			layer = 0;
@@ -17785,13 +17801,14 @@ data = {
 				isGuided = false;
 			};
 			buildRatio = 0.0;
+			iconShape = "square";
 		};
 		[17] = {
 			layer = 2;
 			energy = 2000;
 			shortName = "GUNSHIP";
 			initialDirection = 0;
-			iconSize = 21;
+			iconSize = 5;
 			shieldColor = 8;
 			warpOutDistance = 9734400;
 			spriteId = 506;
@@ -17970,6 +17987,7 @@ data = {
 				isGuided = false;
 			};
 			buildRatio = 0.34765625;
+			iconShape = "triangle";
 		};
 		[18] = {
 			layer = 0;
@@ -18151,13 +18169,14 @@ data = {
 				isGuided = false;
 			};
 			buildRatio = 0.0;
+			iconShape = "square";
 		};
 		[19] = {
 			layer = 2;
 			energy = 2000;
 			shortName = "GUNSHIP";
 			initialDirection = 0;
-			iconSize = 21;
+			iconSize = 5;
 			shieldColor = 0;
 			warpOutDistance = 9734400;
 			spriteId = 509;
@@ -18344,6 +18363,7 @@ data = {
 				isGuided = false;
 			};
 			buildRatio = 0.34765625;
+			iconShape = "triangle";
 		};
 		[20] = {
 			layer = 0;
@@ -18525,6 +18545,7 @@ data = {
 				isGuided = false;
 			};
 			buildRatio = 0.0;
+			iconShape = "square";
 		};
 		[21] = {
 			layer = 0;
@@ -18700,13 +18721,14 @@ data = {
 				isGuided = false;
 			};
 			buildRatio = 0.0;
+			iconShape = "square";
 		};
 		[22] = {
 			layer = 2;
 			energy = 0;
 			shortName = "CREW";
 			initialDirection = 0;
-			iconSize = 65;
+			iconSize = 1;
 			shieldColor = 255;
 			warpOutDistance = 0;
 			spriteId = 513;
@@ -18873,13 +18895,14 @@ data = {
 				isGuided = false;
 			};
 			buildRatio = 0.0;
+			iconShape = "framed square";
 		};
 		[23] = {
 			layer = 1;
 			energy = -1;
 			shortName = "PLANET";
 			initialDirection = 0;
-			iconSize = 72;
+			iconSize = 8;
 			shieldColor = 255;
 			warpOutDistance = 0;
 			spriteId = 1001;
@@ -19050,13 +19073,14 @@ data = {
 				isGuided = false;
 			};
 			buildRatio = 0.0;
+			iconShape = "framed square";
 		};
 		[24] = {
 			layer = 2;
 			energy = 1000;
 			shortName = "TRANSPRT";
 			initialDirection = 0;
-			iconSize = 53;
+			iconSize = 5;
 			shieldColor = 0;
 			warpOutDistance = 9734400;
 			spriteId = 515;
@@ -19235,13 +19259,14 @@ data = {
 				isGuided = false;
 			};
 			buildRatio = 0.69921875;
+			iconShape = nil;
 		};
 		[25] = {
 			layer = 2;
 			energy = 800;
 			shortName = "TRANSPRT";
 			initialDirection = 0;
-			iconSize = 53;
+			iconSize = 5;
 			shieldColor = 8;
 			warpOutDistance = 9734400;
 			spriteId = 514;
@@ -19420,6 +19445,7 @@ data = {
 				isGuided = false;
 			};
 			buildRatio = 0.69921875;
+			iconShape = nil;
 		};
 		[26] = {
 			layer = 3;
@@ -19597,13 +19623,14 @@ data = {
 				isGuided = false;
 			};
 			buildRatio = 0.0;
+			iconShape = "square";
 		};
 		[27] = {
 			layer = 1;
 			energy = 0;
 			shortName = "SUN";
 			initialDirection = 0;
-			iconSize = 73;
+			iconSize = 9;
 			shieldColor = 255;
 			warpOutDistance = 0;
 			spriteId = 516;
@@ -19774,6 +19801,7 @@ data = {
 				isGuided = false;
 			};
 			buildRatio = 0.0;
+			iconShape = "framed square";
 		};
 		[28] = {
 			layer = 3;
@@ -19951,6 +19979,7 @@ data = {
 				isGuided = false;
 			};
 			buildRatio = 0.0;
+			iconShape = "square";
 		};
 		[29] = {
 			layer = 3;
@@ -20128,6 +20157,7 @@ data = {
 				isGuided = false;
 			};
 			buildRatio = 0.0;
+			iconShape = "square";
 		};
 		[30] = {
 			layer = 3;
@@ -20305,6 +20335,7 @@ data = {
 				isGuided = false;
 			};
 			buildRatio = 0.0;
+			iconShape = "square";
 		};
 		[31] = {
 			layer = 0;
@@ -20486,6 +20517,7 @@ data = {
 				isGuided = false;
 			};
 			buildRatio = 0.0;
+			iconShape = "square";
 		};
 		[32] = {
 			layer = 3;
@@ -20663,6 +20695,7 @@ data = {
 				isGuided = false;
 			};
 			buildRatio = 0.0;
+			iconShape = "square";
 		};
 		[33] = {
 			layer = 3;
@@ -20840,6 +20873,7 @@ data = {
 				isGuided = false;
 			};
 			buildRatio = 0.0;
+			iconShape = "square";
 		};
 		[34] = {
 			layer = 3;
@@ -21017,6 +21051,7 @@ data = {
 				isGuided = false;
 			};
 			buildRatio = 0.0;
+			iconShape = "square";
 		};
 		[35] = {
 			layer = 3;
@@ -21194,13 +21229,14 @@ data = {
 				isGuided = false;
 			};
 			buildRatio = 0.0;
+			iconShape = "square";
 		};
 		[36] = {
 			layer = 1;
 			energy = 0;
 			shortName = "RLAYSTTN";
 			initialDirection = 0;
-			iconSize = 70;
+			iconSize = 6;
 			shieldColor = 14;
 			warpOutDistance = 0;
 			spriteId = 552;
@@ -21371,13 +21407,14 @@ data = {
 				isGuided = false;
 			};
 			buildRatio = 0.0;
+			iconShape = "framed square";
 		};
 		[37] = {
 			layer = 2;
 			energy = 1000;
 			shortName = "CRUISER";
 			initialDirection = 0;
-			iconSize = 20;
+			iconSize = 4;
 			shieldColor = 14;
 			warpOutDistance = 9734400;
 			spriteId = 550;
@@ -21560,13 +21597,14 @@ data = {
 				isGuided = false;
 			};
 			buildRatio = 1.0;
+			iconShape = "triangle";
 		};
 		[38] = {
 			layer = 2;
 			energy = 600;
 			shortName = "FIGHTER";
 			initialDirection = 0;
-			iconSize = 19;
+			iconSize = 3;
 			shieldColor = 14;
 			warpOutDistance = 0;
 			spriteId = 551;
@@ -21749,6 +21787,7 @@ data = {
 				isGuided = false;
 			};
 			buildRatio = 0.5;
+			iconShape = "triangle";
 		};
 		[39] = {
 			layer = 0;
@@ -21930,6 +21969,7 @@ data = {
 				isGuided = false;
 			};
 			buildRatio = 0.0;
+			iconShape = "square";
 		};
 		[40] = {
 			layer = 0;
@@ -22105,13 +22145,14 @@ data = {
 				isGuided = false;
 			};
 			buildRatio = 0.0;
+			iconShape = "square";
 		};
 		[41] = {
 			layer = 2;
 			energy = 1000;
 			shortName = "TRANSPRT";
 			initialDirection = 0;
-			iconSize = 53;
+			iconSize = 5;
 			shieldColor = 0;
 			warpOutDistance = 0;
 			spriteId = 515;
@@ -22290,13 +22331,14 @@ data = {
 				isGuided = false;
 			};
 			buildRatio = 0.09765625;
+			iconShape = nil;
 		};
 		[42] = {
 			layer = 2;
 			energy = 1500;
 			shortName = "ESCORT";
 			initialDirection = 0;
-			iconSize = 20;
+			iconSize = 4;
 			shieldColor = 0;
 			warpOutDistance = 9734400;
 			spriteId = 532;
@@ -22479,6 +22521,7 @@ data = {
 				isGuided = false;
 			};
 			buildRatio = 0.75;
+			iconShape = "triangle";
 		};
 		[43] = {
 			layer = 3;
@@ -22656,6 +22699,7 @@ data = {
 				isGuided = false;
 			};
 			buildRatio = 0.0;
+			iconShape = "square";
 		};
 		[44] = {
 			layer = 0;
@@ -22837,13 +22881,14 @@ data = {
 				isGuided = false;
 			};
 			buildRatio = 0.0;
+			iconShape = "square";
 		};
 		[45] = {
 			layer = 2;
 			energy = 5000;
 			shortName = "CARRIER";
 			initialDirection = 0;
-			iconSize = 40;
+			iconSize = 8;
 			shieldColor = 8;
 			warpOutDistance = 22503164;
 			spriteId = 524;
@@ -23022,6 +23067,7 @@ data = {
 				isGuided = false;
 			};
 			buildRatio = 0.09765625;
+			iconShape = "diamond";
 		};
 		[46] = {
 			layer = 0;
@@ -23203,13 +23249,14 @@ data = {
 				isGuided = false;
 			};
 			buildRatio = 0.0;
+			iconShape = "square";
 		};
 		[47] = {
 			layer = 2;
 			energy = 5000;
 			shortName = "CARRIER";
 			initialDirection = 0;
-			iconSize = 40;
+			iconSize = 8;
 			shieldColor = 0;
 			warpOutDistance = 22503164;
 			spriteId = 525;
@@ -23388,6 +23435,7 @@ data = {
 				isGuided = false;
 			};
 			buildRatio = 0.09765625;
+			iconShape = "diamond";
 		};
 		[48] = {
 			layer = 0;
@@ -23569,6 +23617,7 @@ data = {
 				isGuided = false;
 			};
 			buildRatio = 0.0;
+			iconShape = "square";
 		};
 		[49] = {
 			layer = 3;
@@ -23746,6 +23795,7 @@ data = {
 				isGuided = false;
 			};
 			buildRatio = 0.0;
+			iconShape = "square";
 		};
 		[50] = {
 			layer = 0;
@@ -23927,6 +23977,7 @@ data = {
 				isGuided = false;
 			};
 			buildRatio = 0.0;
+			iconShape = "square";
 		};
 		[51] = {
 			layer = 2;
@@ -24104,6 +24155,7 @@ data = {
 				isGuided = false;
 			};
 			buildRatio = 0.0;
+			iconShape = "square";
 		};
 		[52] = {
 			layer = 3;
@@ -24281,6 +24333,7 @@ data = {
 				isGuided = false;
 			};
 			buildRatio = 0.0;
+			iconShape = "square";
 		};
 		[53] = {
 			layer = 3;
@@ -24458,13 +24511,14 @@ data = {
 				isGuided = false;
 			};
 			buildRatio = 0.0;
+			iconShape = "square";
 		};
 		[54] = {
 			layer = 2;
 			energy = 1000;
 			shortName = "DEFDRONE";
 			initialDirection = 0;
-			iconSize = 19;
+			iconSize = 3;
 			shieldColor = 0;
 			warpOutDistance = 0;
 			spriteId = 527;
@@ -24643,6 +24697,7 @@ data = {
 				isGuided = false;
 			};
 			buildRatio = 0.5;
+			iconShape = "triangle";
 		};
 		[55] = {
 			layer = 0;
@@ -24824,13 +24879,14 @@ data = {
 				isGuided = false;
 			};
 			buildRatio = 0.0;
+			iconShape = "square";
 		};
 		[56] = {
 			layer = 2;
 			energy = 1000;
 			shortName = "DEFDRONE";
 			initialDirection = 0;
-			iconSize = 19;
+			iconSize = 3;
 			shieldColor = 8;
 			warpOutDistance = 0;
 			spriteId = 529;
@@ -25009,6 +25065,7 @@ data = {
 				isGuided = false;
 			};
 			buildRatio = 0.5;
+			iconShape = "triangle";
 		};
 		[57] = {
 			layer = 0;
@@ -25190,13 +25247,14 @@ data = {
 				isGuided = false;
 			};
 			buildRatio = 0.0;
+			iconShape = "square";
 		};
 		[58] = {
 			layer = 2;
 			energy = 1000;
 			shortName = "SCHOONER";
 			initialDirection = 0;
-			iconSize = 20;
+			iconSize = 4;
 			shieldColor = 0;
 			warpOutDistance = 9734400;
 			spriteId = 534;
@@ -25371,13 +25429,14 @@ data = {
 				isGuided = false;
 			};
 			buildRatio = 0.75;
+			iconShape = "triangle";
 		};
 		[59] = {
 			layer = 2;
 			energy = 1000;
 			shortName = "SCHOONER";
 			initialDirection = 0;
-			iconSize = 20;
+			iconSize = 4;
 			shieldColor = 0;
 			warpOutDistance = 9734400;
 			spriteId = 533;
@@ -25552,6 +25611,7 @@ data = {
 				isGuided = false;
 			};
 			buildRatio = 0.75;
+			iconShape = "triangle";
 		};
 		[60] = {
 			layer = 0;
@@ -25733,13 +25793,14 @@ data = {
 				isGuided = false;
 			};
 			buildRatio = 0.0;
+			iconShape = "square";
 		};
 		[61] = {
 			layer = 2;
 			energy = 1000;
 			shortName = "HVCRUISR";
 			initialDirection = 0;
-			iconSize = 20;
+			iconSize = 4;
 			shieldColor = 0;
 			warpOutDistance = 13505625;
 			spriteId = 521;
@@ -25922,13 +25983,14 @@ data = {
 				isGuided = false;
 			};
 			buildRatio = 0.796875;
+			iconShape = "triangle";
 		};
 		[62] = {
 			layer = 2;
 			energy = 1000;
 			shortName = "HVCRUISR";
 			initialDirection = 0;
-			iconSize = 20;
+			iconSize = 4;
 			shieldColor = 8;
 			warpOutDistance = 9734400;
 			spriteId = 523;
@@ -26111,6 +26173,7 @@ data = {
 				isGuided = false;
 			};
 			buildRatio = 0.796875;
+			iconShape = "triangle";
 		};
 		[63] = {
 			layer = 0;
@@ -26292,13 +26355,14 @@ data = {
 				isGuided = false;
 			};
 			buildRatio = 0.0;
+			iconShape = "square";
 		};
 		[64] = {
 			layer = 2;
 			energy = 1000;
 			shortName = "GUNSHIP";
 			initialDirection = 0;
-			iconSize = 21;
+			iconSize = 5;
 			shieldColor = 14;
 			warpOutDistance = 9734400;
 			spriteId = 553;
@@ -26481,6 +26545,7 @@ data = {
 				isGuided = false;
 			};
 			buildRatio = 0.25;
+			iconShape = "triangle";
 		};
 		[65] = {
 			layer = 0;
@@ -26662,6 +26727,7 @@ data = {
 				isGuided = false;
 			};
 			buildRatio = 0.0;
+			iconShape = "square";
 		};
 		[66] = {
 			layer = 3;
@@ -26839,13 +26905,14 @@ data = {
 				isGuided = true;
 			};
 			buildRatio = 0.0;
+			iconShape = "square";
 		};
 		[67] = {
 			layer = 2;
 			energy = 6500;
 			shortName = "BTTLSHIP";
 			initialDirection = 0;
-			iconSize = 40;
+			iconSize = 8;
 			shieldColor = 0;
 			warpOutDistance = 21709776;
 			spriteId = 535;
@@ -27024,6 +27091,7 @@ data = {
 				isGuided = false;
 			};
 			buildRatio = 0.09765625;
+			iconShape = "diamond";
 		};
 		[68] = {
 			layer = 0;
@@ -27205,6 +27273,7 @@ data = {
 				isGuided = false;
 			};
 			buildRatio = 0.0;
+			iconShape = "square";
 		};
 		[69] = {
 			layer = 3;
@@ -27382,6 +27451,7 @@ data = {
 				isGuided = true;
 			};
 			buildRatio = 0.0;
+			iconShape = "square";
 		};
 		[70] = {
 			layer = 0;
@@ -27563,6 +27633,7 @@ data = {
 				isGuided = false;
 			};
 			buildRatio = 0.0;
+			iconShape = "square";
 		};
 		[71] = {
 			layer = 0;
@@ -27738,6 +27809,7 @@ data = {
 				isGuided = false;
 			};
 			buildRatio = 0.0;
+			iconShape = "square";
 		};
 		[72] = {
 			layer = 3;
@@ -27911,6 +27983,7 @@ data = {
 				isGuided = true;
 			};
 			buildRatio = 0.0;
+			iconShape = "square";
 		};
 		[73] = {
 			layer = 0;
@@ -28092,6 +28165,7 @@ data = {
 				isGuided = false;
 			};
 			buildRatio = 0.0;
+			iconShape = "square";
 		};
 		[74] = {
 			layer = 0;
@@ -28273,13 +28347,14 @@ data = {
 				isGuided = false;
 			};
 			buildRatio = 0.0;
+			iconShape = "square";
 		};
 		[75] = {
 			layer = 1;
 			energy = 0;
 			shortName = "MOOR";
 			initialDirection = 0;
-			iconSize = 51;
+			iconSize = 3;
 			shieldColor = 15;
 			warpOutDistance = 0;
 			spriteId = 540;
@@ -28450,6 +28525,7 @@ data = {
 				isGuided = false;
 			};
 			buildRatio = 0.0;
+			iconShape = nil;
 		};
 		[76] = {
 			layer = 0;
@@ -28631,13 +28707,14 @@ data = {
 				isGuided = false;
 			};
 			buildRatio = 0.0;
+			iconShape = "square";
 		};
 		[77] = {
 			layer = 2;
 			energy = 6500;
 			shortName = "BTTLSHIP";
 			initialDirection = 0;
-			iconSize = 41;
+			iconSize = 9;
 			shieldColor = 0;
 			warpOutDistance = 9734400;
 			spriteId = 535;
@@ -28816,13 +28893,14 @@ data = {
 				isGuided = false;
 			};
 			buildRatio = 0.0;
+			iconShape = "diamond";
 		};
 		[78] = {
 			layer = 2;
 			energy = 1000;
 			shortName = "BRDRDRNE";
 			initialDirection = 0;
-			iconSize = 67;
+			iconSize = 3;
 			shieldColor = 8;
 			warpOutDistance = 0;
 			spriteId = 542;
@@ -29001,6 +29079,7 @@ data = {
 				isGuided = false;
 			};
 			buildRatio = 0.0;
+			iconShape = "framed square";
 		};
 		[79] = {
 			layer = 3;
@@ -29178,13 +29257,14 @@ data = {
 				isGuided = false;
 			};
 			buildRatio = 0.0;
+			iconShape = "square";
 		};
 		[80] = {
 			layer = 2;
 			energy = 2000;
 			shortName = "ASTROMNR";
 			initialDirection = 0;
-			iconSize = 53;
+			iconSize = 5;
 			shieldColor = 0;
 			warpOutDistance = 9734400;
 			spriteId = 546;
@@ -29371,6 +29451,7 @@ data = {
 				isGuided = false;
 			};
 			buildRatio = 0.0;
+			iconShape = nil;
 		};
 		[81] = {
 			layer = 3;
@@ -29548,6 +29629,7 @@ data = {
 				isGuided = false;
 			};
 			buildRatio = 0.0;
+			iconShape = "square";
 		};
 		[82] = {
 			layer = 0;
@@ -29729,13 +29811,14 @@ data = {
 				isGuided = false;
 			};
 			buildRatio = 0.0;
+			iconShape = "square";
 		};
 		[83] = {
 			layer = 2;
 			energy = 0;
 			shortName = "ASTEROID";
 			initialDirection = 0;
-			iconSize = 68;
+			iconSize = 4;
 			shieldColor = 255;
 			warpOutDistance = 0;
 			spriteId = 543;
@@ -29906,13 +29989,14 @@ data = {
 				isGuided = false;
 			};
 			buildRatio = 0.0;
+			iconShape = "framed square";
 		};
 		[84] = {
 			layer = 2;
 			energy = 0;
 			shortName = "ASTRFRGM";
 			initialDirection = 0;
-			iconSize = 67;
+			iconSize = 3;
 			shieldColor = 255;
 			warpOutDistance = 0;
 			spriteId = 544;
@@ -30083,13 +30167,14 @@ data = {
 				isGuided = false;
 			};
 			buildRatio = 0.0;
+			iconShape = "framed square";
 		};
 		[85] = {
 			layer = 2;
 			energy = 0;
 			shortName = "ASTRDBRS";
 			initialDirection = 0;
-			iconSize = 66;
+			iconSize = 2;
 			shieldColor = 255;
 			warpOutDistance = 0;
 			spriteId = 545;
@@ -30260,13 +30345,14 @@ data = {
 				isGuided = false;
 			};
 			buildRatio = 0.0;
+			iconShape = "framed square";
 		};
 		[86] = {
 			layer = 2;
 			energy = 800;
 			shortName = "TRANSPRT";
 			initialDirection = 0;
-			iconSize = 53;
+			iconSize = 5;
 			shieldColor = 8;
 			warpOutDistance = 9734400;
 			spriteId = 563;
@@ -30445,13 +30531,14 @@ data = {
 				isGuided = false;
 			};
 			buildRatio = 0.69921875;
+			iconShape = nil;
 		};
 		[87] = {
 			layer = 2;
 			energy = 5000;
 			shortName = "CARRIER";
 			initialDirection = 0;
-			iconSize = 40;
+			iconSize = 8;
 			shieldColor = 8;
 			warpOutDistance = 22503164;
 			spriteId = 560;
@@ -30630,13 +30717,14 @@ data = {
 				isGuided = false;
 			};
 			buildRatio = 0.09765625;
+			iconShape = "diamond";
 		};
 		[88] = {
 			layer = 2;
 			energy = 1000;
 			shortName = "TRANSPRT";
 			initialDirection = 0;
-			iconSize = 53;
+			iconSize = 5;
 			shieldColor = 0;
 			warpOutDistance = 9734400;
 			spriteId = 567;
@@ -30815,13 +30903,14 @@ data = {
 				isGuided = false;
 			};
 			buildRatio = 0.69921875;
+			iconShape = nil;
 		};
 		[89] = {
 			layer = 2;
 			energy = 6500;
 			shortName = "BTTLCRSR";
 			initialDirection = 0;
-			iconSize = 39;
+			iconSize = 7;
 			shieldColor = 0;
 			warpOutDistance = 9734400;
 			spriteId = 565;
@@ -31000,6 +31089,7 @@ data = {
 				isGuided = false;
 			};
 			buildRatio = 0.09765625;
+			iconShape = "diamond";
 		};
 		[90] = {
 			layer = 3;
@@ -31177,6 +31267,7 @@ data = {
 				isGuided = false;
 			};
 			buildRatio = 0.0;
+			iconShape = "square";
 		};
 		[91] = {
 			layer = 2;
@@ -31366,6 +31457,7 @@ data = {
 				isGuided = false;
 			};
 			buildRatio = 0.5;
+			iconShape = "square";
 		};
 		[92] = {
 			layer = 0;
@@ -31547,13 +31639,14 @@ data = {
 				isGuided = false;
 			};
 			buildRatio = 0.0;
+			iconShape = "square";
 		};
 		[93] = {
 			layer = 2;
 			energy = 1000;
 			shortName = "FLCKDRON";
 			initialDirection = 0;
-			iconSize = 67;
+			iconSize = 3;
 			shieldColor = 8;
 			warpOutDistance = 0;
 			spriteId = 542;
@@ -31732,13 +31825,14 @@ data = {
 				isGuided = false;
 			};
 			buildRatio = 0.0;
+			iconShape = "framed square";
 		};
 		[94] = {
 			layer = 2;
 			energy = 200;
 			shortName = "ENGINEER";
 			initialDirection = 0;
-			iconSize = 52;
+			iconSize = 4;
 			shieldColor = 8;
 			warpOutDistance = 9734400;
 			spriteId = 561;
@@ -31917,13 +32011,14 @@ data = {
 				isGuided = false;
 			};
 			buildRatio = 0.69921875;
+			iconShape = nil;
 		};
 		[95] = {
 			layer = 2;
 			energy = 200;
 			shortName = "ENGINEER";
 			initialDirection = 0;
-			iconSize = 52;
+			iconSize = 4;
 			shieldColor = 8;
 			warpOutDistance = 9734400;
 			spriteId = 562;
@@ -32102,6 +32197,7 @@ data = {
 				isGuided = false;
 			};
 			buildRatio = 0.69921875;
+			iconShape = nil;
 		};
 		[96] = {
 			layer = 0;
@@ -32283,6 +32379,7 @@ data = {
 				isGuided = false;
 			};
 			buildRatio = 0.0;
+			iconShape = "square";
 		};
 		[97] = {
 			layer = 0;
@@ -32458,6 +32555,7 @@ data = {
 				isGuided = false;
 			};
 			buildRatio = 0.0;
+			iconShape = "square";
 		};
 		[98] = {
 			layer = 0;
@@ -32639,13 +32737,14 @@ data = {
 				isGuided = false;
 			};
 			buildRatio = 0.0;
+			iconShape = "square";
 		};
 		[99] = {
 			layer = 2;
 			energy = 50;
 			shortName = "EVATROOP";
 			initialDirection = 0;
-			iconSize = 17;
+			iconSize = 1;
 			shieldColor = 0;
 			warpOutDistance = 0;
 			spriteId = 549;
@@ -32828,13 +32927,14 @@ data = {
 				isGuided = false;
 			};
 			buildRatio = 0.0;
+			iconShape = "triangle";
 		};
 		[100] = {
 			layer = 1;
 			energy = -1;
 			shortName = "STATION";
 			initialDirection = 0;
-			iconSize = 71;
+			iconSize = 7;
 			shieldColor = 255;
 			warpOutDistance = 0;
 			spriteId = 1001;
@@ -33005,13 +33105,14 @@ data = {
 				isGuided = false;
 			};
 			buildRatio = 0.0;
+			iconShape = "framed square";
 		};
 		[101] = {
 			layer = 2;
 			energy = 800;
 			shortName = "ASLTTRAN";
 			initialDirection = 0;
-			iconSize = 53;
+			iconSize = 5;
 			shieldColor = 8;
 			warpOutDistance = 9734400;
 			spriteId = 559;
@@ -33194,6 +33295,7 @@ data = {
 				isGuided = false;
 			};
 			buildRatio = 0.69921875;
+			iconShape = nil;
 		};
 		[102] = {
 			layer = 0;
@@ -33375,6 +33477,7 @@ data = {
 				isGuided = false;
 			};
 			buildRatio = 0.0;
+			iconShape = "square";
 		};
 		[103] = {
 			layer = 0;
@@ -33550,13 +33653,14 @@ data = {
 				isGuided = false;
 			};
 			buildRatio = 0.0;
+			iconShape = "square";
 		};
 		[104] = {
 			layer = 1;
 			energy = 1000;
 			shortName = "STATION";
 			initialDirection = 0;
-			iconSize = 71;
+			iconSize = 7;
 			shieldColor = 255;
 			warpOutDistance = 0;
 			spriteId = 643;
@@ -33727,6 +33831,7 @@ data = {
 				isGuided = false;
 			};
 			buildRatio = 0.0;
+			iconShape = "framed square";
 		};
 		[105] = {
 			layer = 3;
@@ -33904,6 +34009,7 @@ data = {
 				isGuided = false;
 			};
 			buildRatio = 0.0;
+			iconShape = "square";
 		};
 		[106] = {
 			layer = 3;
@@ -34081,6 +34187,7 @@ data = {
 				isGuided = false;
 			};
 			buildRatio = 0.0;
+			iconShape = "square";
 		};
 		[107] = {
 			layer = 3;
@@ -34258,6 +34365,7 @@ data = {
 				isGuided = false;
 			};
 			buildRatio = 0.0;
+			iconShape = "square";
 		};
 		[108] = {
 			layer = 0;
@@ -34439,13 +34547,14 @@ data = {
 				isGuided = false;
 			};
 			buildRatio = 0.0;
+			iconShape = "square";
 		};
 		[109] = {
 			layer = 2;
 			energy = 1000;
 			shortName = "RESEARCH";
 			initialDirection = 0;
-			iconSize = 55;
+			iconSize = 7;
 			shieldColor = 0;
 			warpOutDistance = 9734400;
 			spriteId = 585;
@@ -34624,13 +34733,14 @@ data = {
 				isGuided = false;
 			};
 			buildRatio = 0.69921875;
+			iconShape = nil;
 		};
 		[110] = {
 			layer = 2;
 			energy = 1000;
 			shortName = "CRUISER";
 			initialDirection = 0;
-			iconSize = 20;
+			iconSize = 4;
 			shieldColor = 8;
 			warpOutDistance = 9734400;
 			spriteId = 530;
@@ -34813,13 +34923,14 @@ data = {
 				isGuided = false;
 			};
 			buildRatio = 1.0;
+			iconShape = "triangle";
 		};
 		[111] = {
 			layer = 1;
 			energy = -1;
 			shortName = "MOON";
 			initialDirection = 0;
-			iconSize = 70;
+			iconSize = 6;
 			shieldColor = 255;
 			warpOutDistance = 0;
 			spriteId = 1001;
@@ -34990,13 +35101,14 @@ data = {
 				isGuided = false;
 			};
 			buildRatio = 0.0;
+			iconShape = "framed square";
 		};
 		[112] = {
 			layer = 2;
 			energy = 600;
 			shortName = "FIGHTER";
 			initialDirection = 0;
-			iconSize = 19;
+			iconSize = 3;
 			shieldColor = 8;
 			warpOutDistance = 0;
 			spriteId = 566;
@@ -35175,13 +35287,14 @@ data = {
 				isGuided = false;
 			};
 			buildRatio = 0.75;
+			iconShape = "triangle";
 		};
 		[113] = {
 			layer = 2;
 			energy = 6500;
 			shortName = "CARRIER";
 			initialDirection = 0;
-			iconSize = 40;
+			iconSize = 8;
 			shieldColor = 0;
 			warpOutDistance = 9734400;
 			spriteId = 648;
@@ -35360,13 +35473,14 @@ data = {
 				isGuided = false;
 			};
 			buildRatio = 0.09765625;
+			iconShape = "diamond";
 		};
 		[114] = {
 			layer = 1;
 			energy = 0;
 			shortName = "POWERSTN";
 			initialDirection = 0;
-			iconSize = 70;
+			iconSize = 6;
 			shieldColor = 15;
 			warpOutDistance = 0;
 			spriteId = 564;
@@ -35537,13 +35651,14 @@ data = {
 				isGuided = false;
 			};
 			buildRatio = 0.0;
+			iconShape = "framed square";
 		};
 		[115] = {
 			layer = 3;
 			energy = 0;
 			shortName = "ORBTYARD";
 			initialDirection = 0;
-			iconSize = 71;
+			iconSize = 7;
 			shieldColor = 255;
 			warpOutDistance = 0;
 			spriteId = 641;
@@ -35714,13 +35829,14 @@ data = {
 				isGuided = false;
 			};
 			buildRatio = 0.0;
+			iconShape = "framed square";
 		};
 		[116] = {
 			layer = 2;
 			energy = 6500;
 			shortName = "BTTLSHIP";
 			initialDirection = 0;
-			iconSize = 41;
+			iconSize = 9;
 			shieldColor = 0;
 			warpOutDistance = 9734400;
 			spriteId = 636;
@@ -35899,13 +36015,14 @@ data = {
 				isGuided = false;
 			};
 			buildRatio = 0.09765625;
+			iconShape = "diamond";
 		};
 		[117] = {
 			layer = 1;
 			energy = 0;
 			shortName = "JUMPGATE";
 			initialDirection = 0;
-			iconSize = 65535;
+			iconSize = 15;
 			shieldColor = 255;
 			warpOutDistance = 0;
 			spriteId = 558;
@@ -36076,13 +36193,14 @@ data = {
 				isGuided = false;
 			};
 			buildRatio = 0.0;
+			iconShape = nil;
 		};
 		[118] = {
 			layer = 2;
 			energy = 1000;
 			shortName = "CARGO";
 			initialDirection = 0;
-			iconSize = 54;
+			iconSize = 6;
 			shieldColor = 0;
 			warpOutDistance = 9734400;
 			spriteId = 640;
@@ -36261,13 +36379,14 @@ data = {
 				isGuided = false;
 			};
 			buildRatio = 0.69921875;
+			iconShape = nil;
 		};
 		[119] = {
 			layer = 2;
 			energy = 800;
 			shortName = "ASLTTRAN";
 			initialDirection = 0;
-			iconSize = 53;
+			iconSize = 5;
 			shieldColor = 8;
 			warpOutDistance = 9734400;
 			spriteId = 637;
@@ -36450,13 +36569,14 @@ data = {
 				isGuided = false;
 			};
 			buildRatio = 0.69921875;
+			iconShape = nil;
 		};
 		[120] = {
 			layer = 2;
 			energy = 200;
 			shortName = "ENGINEER";
 			initialDirection = 0;
-			iconSize = 52;
+			iconSize = 4;
 			shieldColor = 8;
 			warpOutDistance = 9734400;
 			spriteId = 642;
@@ -36635,13 +36755,14 @@ data = {
 				isGuided = false;
 			};
 			buildRatio = 0.69921875;
+			iconShape = nil;
 		};
 		[121] = {
 			layer = 2;
 			energy = 50;
 			shortName = "EVATROOP";
 			initialDirection = 0;
-			iconSize = 17;
+			iconSize = 1;
 			shieldColor = 0;
 			warpOutDistance = 0;
 			spriteId = 638;
@@ -36824,6 +36945,7 @@ data = {
 				isGuided = false;
 			};
 			buildRatio = 0.0;
+			iconShape = "triangle";
 		};
 		[122] = {
 			layer = 0;
@@ -37005,6 +37127,7 @@ data = {
 				isGuided = false;
 			};
 			buildRatio = 0.0;
+			iconShape = "square";
 		};
 		[123] = {
 			layer = 0;
@@ -37186,13 +37309,14 @@ data = {
 				isGuided = false;
 			};
 			buildRatio = 0.0;
+			iconShape = "square";
 		};
 		[124] = {
 			layer = 3;
 			energy = 0;
 			shortName = "GUNSMOKE";
 			initialDirection = 0;
-			iconSize = 65535;
+			iconSize = 15;
 			shieldColor = 255;
 			warpOutDistance = 0;
 			spriteId = 645;
@@ -37359,13 +37483,14 @@ data = {
 				isGuided = false;
 			};
 			buildRatio = 0.0;
+			iconShape = nil;
 		};
 		[125] = {
 			layer = 2;
 			energy = 1000;
 			shortName = "LUXLINER";
 			initialDirection = 0;
-			iconSize = 55;
+			iconSize = 7;
 			shieldColor = 0;
 			warpOutDistance = 0;
 			spriteId = 647;
@@ -37544,13 +37669,14 @@ data = {
 				isGuided = false;
 			};
 			buildRatio = 0.69921875;
+			iconShape = nil;
 		};
 		[126] = {
 			layer = 2;
 			energy = 1000;
 			shortName = "LUXLINER";
 			initialDirection = 0;
-			iconSize = 55;
+			iconSize = 7;
 			shieldColor = 0;
 			warpOutDistance = 0;
 			spriteId = 647;
@@ -37729,13 +37855,14 @@ data = {
 				isGuided = false;
 			};
 			buildRatio = 0.69921875;
+			iconShape = nil;
 		};
 		[127] = {
 			layer = 2;
 			energy = 2000;
 			shortName = "TUG";
 			initialDirection = 0;
-			iconSize = 53;
+			iconSize = 5;
 			shieldColor = 0;
 			warpOutDistance = 0;
 			spriteId = 546;
@@ -37922,13 +38049,14 @@ data = {
 				isGuided = false;
 			};
 			buildRatio = 0.0;
+			iconShape = nil;
 		};
 		[128] = {
 			layer = 2;
 			energy = 1000;
 			shortName = "ESCPEPOD";
 			initialDirection = 0;
-			iconSize = 51;
+			iconSize = 3;
 			shieldColor = 0;
 			warpOutDistance = 0;
 			spriteId = 568;
@@ -38111,13 +38239,14 @@ data = {
 				isGuided = false;
 			};
 			buildRatio = 0.69921875;
+			iconShape = nil;
 		};
 		[129] = {
 			layer = 2;
 			energy = 2000;
 			shortName = "HVDSTRYR";
 			initialDirection = 0;
-			iconSize = 22;
+			iconSize = 6;
 			shieldColor = 0;
 			warpOutDistance = 22503164;
 			spriteId = 646;
@@ -38304,6 +38433,7 @@ data = {
 				isGuided = false;
 			};
 			buildRatio = 0.09765625;
+			iconShape = "triangle";
 		};
 		[130] = {
 			layer = 0;
@@ -38485,6 +38615,7 @@ data = {
 				isGuided = false;
 			};
 			buildRatio = 0.0;
+			iconShape = "square";
 		};
 		[131] = {
 			layer = 3;
@@ -38662,6 +38793,7 @@ data = {
 				isGuided = false;
 			};
 			buildRatio = 0.0;
+			iconShape = "square";
 		};
 		[132] = {
 			layer = 0;
@@ -38843,6 +38975,7 @@ data = {
 				isGuided = false;
 			};
 			buildRatio = 0.0;
+			iconShape = "square";
 		};
 		[133] = {
 			layer = 0;
@@ -39018,6 +39151,7 @@ data = {
 				isGuided = false;
 			};
 			buildRatio = 0.0;
+			iconShape = "square";
 		};
 		[134] = {
 			layer = 0;
@@ -39199,6 +39333,7 @@ data = {
 				isGuided = false;
 			};
 			buildRatio = 0.0;
+			iconShape = "square";
 		};
 		[135] = {
 			layer = 0;
@@ -39380,6 +39515,7 @@ data = {
 				isGuided = false;
 			};
 			buildRatio = 0.0;
+			iconShape = "square";
 		};
 		[136] = {
 			layer = 3;
@@ -39557,6 +39693,7 @@ data = {
 				isGuided = true;
 			};
 			buildRatio = 0.0;
+			iconShape = "square";
 		};
 		[137] = {
 			layer = 1;
@@ -39734,13 +39871,14 @@ data = {
 				isGuided = false;
 			};
 			buildRatio = 0.0;
+			iconShape = "square";
 		};
 		[138] = {
 			layer = 2;
 			energy = 1000;
 			shortName = "GUNSHIP";
 			initialDirection = 0;
-			iconSize = 21;
+			iconSize = 5;
 			shieldColor = 14;
 			warpOutDistance = 9734400;
 			spriteId = 569;
@@ -39923,13 +40061,14 @@ data = {
 				isGuided = false;
 			};
 			buildRatio = 0.25;
+			iconShape = "triangle";
 		};
 		[139] = {
 			layer = 2;
 			energy = 800;
 			shortName = "ASLTTRAN";
 			initialDirection = 0;
-			iconSize = 53;
+			iconSize = 5;
 			shieldColor = 8;
 			warpOutDistance = 9734400;
 			spriteId = 600;
@@ -40112,13 +40251,14 @@ data = {
 				isGuided = false;
 			};
 			buildRatio = 0.69921875;
+			iconShape = nil;
 		};
 		[140] = {
 			layer = 2;
 			energy = 800;
 			shortName = "TRANSPRT";
 			initialDirection = 0;
-			iconSize = 53;
+			iconSize = 5;
 			shieldColor = 8;
 			warpOutDistance = 9734400;
 			spriteId = 571;
@@ -40297,6 +40437,7 @@ data = {
 				isGuided = false;
 			};
 			buildRatio = 0.69921875;
+			iconShape = nil;
 		};
 		[141] = {
 			layer = 1;
@@ -40474,13 +40615,14 @@ data = {
 				isGuided = false;
 			};
 			buildRatio = 0.0;
+			iconShape = "square";
 		};
 		[142] = {
 			layer = 2;
 			energy = 1000;
 			shortName = "CRUISER";
 			initialDirection = 0;
-			iconSize = 20;
+			iconSize = 4;
 			shieldColor = 6;
 			warpOutDistance = 32972718;
 			spriteId = 578;
@@ -40663,6 +40805,7 @@ data = {
 				isGuided = false;
 			};
 			buildRatio = 1.0;
+			iconShape = "triangle";
 		};
 		[143] = {
 			layer = 0;
@@ -40844,6 +40987,7 @@ data = {
 				isGuided = false;
 			};
 			buildRatio = 0.0;
+			iconShape = "square";
 		};
 		[144] = {
 			layer = 3;
@@ -41021,6 +41165,7 @@ data = {
 				isGuided = false;
 			};
 			buildRatio = 0.0;
+			iconShape = "square";
 		};
 		[145] = {
 			layer = 0;
@@ -41202,6 +41347,7 @@ data = {
 				isGuided = false;
 			};
 			buildRatio = 0.0;
+			iconShape = "square";
 		};
 		[146] = {
 			layer = 0;
@@ -41377,13 +41523,14 @@ data = {
 				isGuided = false;
 			};
 			buildRatio = 0.0;
+			iconShape = "square";
 		};
 		[147] = {
 			layer = 2;
 			energy = 600;
 			shortName = "FIGHTER";
 			initialDirection = 0;
-			iconSize = 19;
+			iconSize = 3;
 			shieldColor = 6;
 			warpOutDistance = 0;
 			spriteId = 577;
@@ -41562,13 +41709,14 @@ data = {
 				isGuided = false;
 			};
 			buildRatio = 0.75;
+			iconShape = "triangle";
 		};
 		[148] = {
 			layer = 2;
 			energy = 6500;
 			shortName = "Carrier";
 			initialDirection = 0;
-			iconSize = 40;
+			iconSize = 8;
 			shieldColor = 6;
 			warpOutDistance = 53002380;
 			spriteId = 576;
@@ -41747,13 +41895,14 @@ data = {
 				isGuided = false;
 			};
 			buildRatio = 0.09765625;
+			iconShape = "diamond";
 		};
 		[149] = {
 			layer = 2;
 			energy = 1000;
 			shortName = "GUNSHIP";
 			initialDirection = 0;
-			iconSize = 21;
+			iconSize = 5;
 			shieldColor = 6;
 			warpOutDistance = 40977500;
 			spriteId = 579;
@@ -41936,6 +42085,7 @@ data = {
 				isGuided = false;
 			};
 			buildRatio = 0.25;
+			iconShape = "triangle";
 		};
 		[150] = {
 			layer = 0;
@@ -42117,13 +42267,14 @@ data = {
 				isGuided = false;
 			};
 			buildRatio = 0.0;
+			iconShape = "square";
 		};
 		[151] = {
 			layer = 2;
 			energy = 1000;
 			shortName = "CRUISER";
 			initialDirection = 0;
-			iconSize = 20;
+			iconSize = 4;
 			shieldColor = 13;
 			warpOutDistance = 32972718;
 			spriteId = 582;
@@ -42306,6 +42457,7 @@ data = {
 				isGuided = false;
 			};
 			buildRatio = 1.0;
+			iconShape = "triangle";
 		};
 		[152] = {
 			layer = 0;
@@ -42487,6 +42639,7 @@ data = {
 				isGuided = false;
 			};
 			buildRatio = 0.0;
+			iconShape = "square";
 		};
 		[153] = {
 			layer = 3;
@@ -42664,6 +42817,7 @@ data = {
 				isGuided = false;
 			};
 			buildRatio = 0.0;
+			iconShape = "square";
 		};
 		[154] = {
 			layer = 0;
@@ -42845,6 +42999,7 @@ data = {
 				isGuided = false;
 			};
 			buildRatio = 0.0;
+			iconShape = "square";
 		};
 		[155] = {
 			layer = 0;
@@ -43020,6 +43175,7 @@ data = {
 				isGuided = false;
 			};
 			buildRatio = 0.0;
+			iconShape = "square";
 		};
 		[156] = {
 			layer = 3;
@@ -43193,6 +43349,7 @@ data = {
 				isGuided = true;
 			};
 			buildRatio = 0.0;
+			iconShape = "square";
 		};
 		[157] = {
 			layer = 0;
@@ -43374,13 +43531,14 @@ data = {
 				isGuided = false;
 			};
 			buildRatio = 0.0;
+			iconShape = "square";
 		};
 		[158] = {
 			layer = 2;
 			energy = 1000;
 			shortName = "HOLODCOY";
 			initialDirection = 0;
-			iconSize = 20;
+			iconSize = 4;
 			shieldColor = 8;
 			warpOutDistance = 32972718;
 			spriteId = 578;
@@ -43563,6 +43721,7 @@ data = {
 				isGuided = false;
 			};
 			buildRatio = 1.0;
+			iconShape = "triangle";
 		};
 		[159] = {
 			layer = 0;
@@ -43744,13 +43903,14 @@ data = {
 				isGuided = false;
 			};
 			buildRatio = 0.0;
+			iconShape = "square";
 		};
 		[160] = {
 			layer = 1;
 			energy = 0;
 			shortName = "MASSDVCE";
 			initialDirection = 0;
-			iconSize = 71;
+			iconSize = 7;
 			shieldColor = 6;
 			warpOutDistance = 0;
 			spriteId = 586;
@@ -43921,13 +44081,14 @@ data = {
 				isGuided = false;
 			};
 			buildRatio = 0.0;
+			iconShape = "framed square";
 		};
 		[161] = {
 			layer = 2;
 			energy = 1000;
 			shortName = "TRNSPORT";
 			initialDirection = 0;
-			iconSize = 53;
+			iconSize = 5;
 			shieldColor = 0;
 			warpOutDistance = 9734400;
 			spriteId = 587;
@@ -44106,6 +44267,7 @@ data = {
 				isGuided = false;
 			};
 			buildRatio = 0.69921875;
+			iconShape = nil;
 		};
 		[162] = {
 			layer = 0;
@@ -44287,6 +44449,7 @@ data = {
 				isGuided = false;
 			};
 			buildRatio = 0.0;
+			iconShape = "square";
 		};
 		[163] = {
 			layer = 3;
@@ -44464,13 +44627,14 @@ data = {
 				isGuided = false;
 			};
 			buildRatio = 0.0;
+			iconShape = "square";
 		};
 		[164] = {
 			layer = 2;
 			energy = 1000;
 			shortName = "CRUISER";
 			initialDirection = 0;
-			iconSize = 20;
+			iconSize = 4;
 			shieldColor = 0;
 			warpOutDistance = 1122275;
 			spriteId = 650;
@@ -44653,13 +44817,14 @@ data = {
 				isGuided = false;
 			};
 			buildRatio = 1.0;
+			iconShape = "triangle";
 		};
 		[165] = {
 			layer = 2;
 			energy = 600;
 			shortName = "FIGHTER";
 			initialDirection = 0;
-			iconSize = 19;
+			iconSize = 3;
 			shieldColor = 0;
 			warpOutDistance = 0;
 			spriteId = 651;
@@ -44842,13 +45007,14 @@ data = {
 				isGuided = false;
 			};
 			buildRatio = 0.75;
+			iconShape = "triangle";
 		};
 		[166] = {
 			layer = 2;
 			energy = 2000;
 			shortName = "GUNSHIP";
 			initialDirection = 0;
-			iconSize = 21;
+			iconSize = 5;
 			shieldColor = 0;
 			warpOutDistance = 1167412;
 			spriteId = 652;
@@ -45035,13 +45201,14 @@ data = {
 				isGuided = false;
 			};
 			buildRatio = 0.34765625;
+			iconShape = "triangle";
 		};
 		[167] = {
 			layer = 2;
 			energy = 5000;
 			shortName = "CARRIER";
 			initialDirection = 0;
-			iconSize = 40;
+			iconSize = 8;
 			shieldColor = 0;
 			warpOutDistance = 1406447;
 			spriteId = 649;
@@ -45228,6 +45395,7 @@ data = {
 				isGuided = false;
 			};
 			buildRatio = 0.09765625;
+			iconShape = "diamond";
 		};
 		[168] = {
 			layer = 0;
@@ -45409,6 +45577,7 @@ data = {
 				isGuided = false;
 			};
 			buildRatio = 0.0;
+			iconShape = "square";
 		};
 		[169] = {
 			layer = 0;
@@ -45590,6 +45759,7 @@ data = {
 				isGuided = false;
 			};
 			buildRatio = 0.0;
+			iconShape = "square";
 		};
 		[170] = {
 			layer = 0;
@@ -45765,6 +45935,7 @@ data = {
 				isGuided = false;
 			};
 			buildRatio = 0.0;
+			iconShape = "square";
 		};
 		[171] = {
 			layer = 0;
@@ -45946,6 +46117,7 @@ data = {
 				isGuided = false;
 			};
 			buildRatio = 0.0;
+			iconShape = "square";
 		};
 		[172] = {
 			layer = 3;
@@ -46123,6 +46295,7 @@ data = {
 				isGuided = false;
 			};
 			buildRatio = 0.0;
+			iconShape = "square";
 		};
 		[173] = {
 			layer = 0;
@@ -46304,13 +46477,14 @@ data = {
 				isGuided = false;
 			};
 			buildRatio = 0.0;
+			iconShape = "square";
 		};
 		[174] = {
 			layer = 2;
 			energy = 1000;
 			shortName = "TRANSPRT";
 			initialDirection = 0;
-			iconSize = 53;
+			iconSize = 5;
 			shieldColor = 0;
 			warpOutDistance = 9734400;
 			spriteId = 587;
@@ -46489,6 +46663,7 @@ data = {
 				isGuided = false;
 			};
 			buildRatio = 0.69921875;
+			iconShape = nil;
 		};
 		[175] = {
 			layer = 0;
@@ -46670,6 +46845,7 @@ data = {
 				isGuided = false;
 			};
 			buildRatio = 0.0;
+			iconShape = "square";
 		};
 		[176] = {
 			layer = 0;
@@ -46845,13 +47021,14 @@ data = {
 				isGuided = false;
 			};
 			buildRatio = 0.0;
+			iconShape = "square";
 		};
 		[177] = {
 			layer = 2;
 			energy = 800;
 			shortName = "TRANSPRT";
 			initialDirection = 0;
-			iconSize = 53;
+			iconSize = 5;
 			shieldColor = 8;
 			warpOutDistance = 9734400;
 			spriteId = 601;
@@ -47030,13 +47207,14 @@ data = {
 				isGuided = false;
 			};
 			buildRatio = 0.69921875;
+			iconShape = nil;
 		};
 		[178] = {
 			layer = 2;
 			energy = 1000;
 			shortName = "TRANSPRT";
 			initialDirection = 0;
-			iconSize = 53;
+			iconSize = 5;
 			shieldColor = 0;
 			warpOutDistance = 9734400;
 			spriteId = 587;
@@ -47215,13 +47393,14 @@ data = {
 				isGuided = false;
 			};
 			buildRatio = 0.69921875;
+			iconShape = nil;
 		};
 		[179] = {
 			layer = 2;
 			energy = 800;
 			shortName = "TRANSPRT";
 			initialDirection = 0;
-			iconSize = 53;
+			iconSize = 5;
 			shieldColor = 8;
 			warpOutDistance = 9734400;
 			spriteId = 563;
@@ -47400,13 +47579,14 @@ data = {
 				isGuided = false;
 			};
 			buildRatio = 0.69921875;
+			iconShape = nil;
 		};
 		[180] = {
 			layer = 2;
 			energy = 5000;
 			shortName = "GATESHIP";
 			initialDirection = 0;
-			iconSize = 42;
+			iconSize = 10;
 			shieldColor = 0;
 			warpOutDistance = 1406447;
 			spriteId = 604;
@@ -47593,13 +47773,14 @@ data = {
 				isGuided = false;
 			};
 			buildRatio = 0.09765625;
+			iconShape = "diamond";
 		};
 		[181] = {
 			layer = 2;
 			energy = 1000;
 			shortName = "MODCRSR";
 			initialDirection = 0;
-			iconSize = 20;
+			iconSize = 4;
 			shieldColor = 0;
 			warpOutDistance = 13505625;
 			spriteId = 521;
@@ -47782,6 +47963,7 @@ data = {
 				isGuided = false;
 			};
 			buildRatio = 0.796875;
+			iconShape = "triangle";
 		};
 		[182] = {
 			layer = 1;
@@ -47959,13 +48141,14 @@ data = {
 				isGuided = false;
 			};
 			buildRatio = 0.0;
+			iconShape = "square";
 		};
 		[183] = {
 			layer = 1;
 			energy = 0;
 			shortName = "JUMPGATE";
 			initialDirection = 0;
-			iconSize = 65535;
+			iconSize = 15;
 			shieldColor = 255;
 			warpOutDistance = 0;
 			spriteId = 558;
@@ -48136,13 +48319,14 @@ data = {
 				isGuided = false;
 			};
 			buildRatio = 0.0;
+			iconShape = nil;
 		};
 		[184] = {
 			layer = 2;
 			energy = 0;
 			shortName = "ASTEROID";
 			initialDirection = 0;
-			iconSize = 68;
+			iconSize = 4;
 			shieldColor = 255;
 			warpOutDistance = 0;
 			spriteId = 543;
@@ -48313,6 +48497,7 @@ data = {
 				isGuided = false;
 			};
 			buildRatio = 0.0;
+			iconShape = "framed square";
 		};
 		[185] = {
 			layer = 1;
@@ -48490,6 +48675,7 @@ data = {
 				isGuided = false;
 			};
 			buildRatio = 0.0;
+			iconShape = "square";
 		};
 		[186] = {
 			layer = 1;
@@ -48667,6 +48853,7 @@ data = {
 				isGuided = false;
 			};
 			buildRatio = 0.0;
+			iconShape = "square";
 		};
 		[187] = {
 			layer = 0;
@@ -48848,13 +49035,14 @@ data = {
 				isGuided = false;
 			};
 			buildRatio = 0.0;
+			iconShape = "square";
 		};
 		[188] = {
 			layer = 2;
 			energy = 600;
 			shortName = "TRGTDRNE";
 			initialDirection = 0;
-			iconSize = 19;
+			iconSize = 3;
 			shieldColor = 0;
 			warpOutDistance = 0;
 			spriteId = 588;
@@ -49041,13 +49229,14 @@ data = {
 				isGuided = false;
 			};
 			buildRatio = 0.75;
+			iconShape = "triangle";
 		};
 		[189] = {
 			layer = 2;
 			energy = 600;
 			shortName = "ZRBILITE";
 			initialDirection = 0;
-			iconSize = 18;
+			iconSize = 2;
 			shieldColor = 8;
 			warpOutDistance = 0;
 			spriteId = 589;
@@ -49230,13 +49419,14 @@ data = {
 				isGuided = false;
 			};
 			buildRatio = 0.75;
+			iconShape = "triangle";
 		};
 		[190] = {
 			layer = 2;
 			energy = 0;
 			shortName = "FRAGMENT";
 			initialDirection = 0;
-			iconSize = 67;
+			iconSize = 3;
 			shieldColor = 255;
 			warpOutDistance = 0;
 			spriteId = 544;
@@ -49407,13 +49597,14 @@ data = {
 				isGuided = false;
 			};
 			buildRatio = 0.0;
+			iconShape = "framed square";
 		};
 		[191] = {
 			layer = 2;
 			energy = 0;
 			shortName = "DEBRIS";
 			initialDirection = 0;
-			iconSize = 65;
+			iconSize = 1;
 			shieldColor = 255;
 			warpOutDistance = 0;
 			spriteId = 545;
@@ -49584,6 +49775,7 @@ data = {
 				isGuided = false;
 			};
 			buildRatio = 0.0;
+			iconShape = "framed square";
 		};
 		[192] = {
 			layer = 0;
@@ -49765,6 +49957,7 @@ data = {
 				isGuided = false;
 			};
 			buildRatio = 0.0;
+			iconShape = "square";
 		};
 		[193] = {
 			layer = 3;
@@ -49942,6 +50135,7 @@ data = {
 				isGuided = true;
 			};
 			buildRatio = 0.0;
+			iconShape = "square";
 		};
 		[194] = {
 			layer = 3;
@@ -50119,13 +50313,14 @@ data = {
 				isGuided = false;
 			};
 			buildRatio = 0.0;
+			iconShape = "square";
 		};
 		[195] = {
 			layer = 2;
 			energy = 2000;
 			shortName = "NASTROID";
 			initialDirection = 0;
-			iconSize = 40;
+			iconSize = 8;
 			shieldColor = 255;
 			warpOutDistance = 0;
 			spriteId = 590;
@@ -50296,6 +50491,7 @@ data = {
 				isGuided = false;
 			};
 			buildRatio = 0.0;
+			iconShape = "diamond";
 		};
 		[196] = {
 			layer = 1;
@@ -50473,6 +50669,7 @@ data = {
 				isGuided = false;
 			};
 			buildRatio = 0.0;
+			iconShape = "square";
 		};
 		[197] = {
 			layer = 0;
@@ -50654,6 +50851,7 @@ data = {
 				isGuided = false;
 			};
 			buildRatio = 0.0;
+			iconShape = "square";
 		};
 		[198] = {
 			layer = 0;
@@ -50835,6 +51033,7 @@ data = {
 				isGuided = false;
 			};
 			buildRatio = 0.0;
+			iconShape = "square";
 		};
 		[199] = {
 			layer = 0;
@@ -51010,13 +51209,14 @@ data = {
 				isGuided = false;
 			};
 			buildRatio = 0.0;
+			iconShape = "square";
 		};
 		[200] = {
 			layer = 2;
 			energy = 600;
 			shortName = "ZERBLITE";
 			initialDirection = 0;
-			iconSize = 17;
+			iconSize = 1;
 			shieldColor = 8;
 			warpOutDistance = 0;
 			spriteId = 589;
@@ -51199,13 +51399,14 @@ data = {
 				isGuided = false;
 			};
 			buildRatio = 0.75;
+			iconShape = "triangle";
 		};
 		[201] = {
 			layer = 2;
 			energy = 600;
 			shortName = "TRGTDRNE";
 			initialDirection = 0;
-			iconSize = 19;
+			iconSize = 3;
 			shieldColor = 0;
 			warpOutDistance = 0;
 			spriteId = 588;
@@ -51392,13 +51593,14 @@ data = {
 				isGuided = false;
 			};
 			buildRatio = 0.75;
+			iconShape = "triangle";
 		};
 		[202] = {
 			layer = 2;
 			energy = 600;
 			shortName = "PRCTCDRN";
 			initialDirection = 0;
-			iconSize = 52;
+			iconSize = 4;
 			shieldColor = 0;
 			warpOutDistance = 0;
 			spriteId = 588;
@@ -51585,13 +51787,14 @@ data = {
 				isGuided = false;
 			};
 			buildRatio = 0.75;
+			iconShape = nil;
 		};
 		[203] = {
 			layer = 2;
 			energy = 1000;
 			shortName = "CRUISER";
 			initialDirection = 0;
-			iconSize = 20;
+			iconSize = 4;
 			shieldColor = 0;
 			warpOutDistance = 9734400;
 			spriteId = 501;
@@ -51774,13 +51977,14 @@ data = {
 				isGuided = false;
 			};
 			buildRatio = 1.0;
+			iconShape = "triangle";
 		};
 		[204] = {
 			layer = 2;
 			energy = 1000;
 			shortName = "CRUISER";
 			initialDirection = 0;
-			iconSize = 20;
+			iconSize = 4;
 			shieldColor = 0;
 			warpOutDistance = 9734400;
 			spriteId = 501;
@@ -51963,13 +52167,14 @@ data = {
 				isGuided = false;
 			};
 			buildRatio = 1.0;
+			iconShape = "triangle";
 		};
 		[205] = {
 			layer = 2;
 			energy = 0;
 			shortName = "HUMAN";
 			initialDirection = 0;
-			iconSize = 50;
+			iconSize = 2;
 			shieldColor = 255;
 			warpOutDistance = 0;
 			spriteId = 593;
@@ -52136,13 +52341,14 @@ data = {
 				isGuided = false;
 			};
 			buildRatio = 0.0;
+			iconShape = nil;
 		};
 		[206] = {
 			layer = 2;
 			energy = 2000;
 			shortName = "DESTROYR";
 			initialDirection = 0;
-			iconSize = 22;
+			iconSize = 6;
 			shieldColor = 0;
 			warpOutDistance = 13505625;
 			spriteId = 646;
@@ -52329,13 +52535,14 @@ data = {
 				isGuided = false;
 			};
 			buildRatio = 0.09765625;
+			iconShape = "triangle";
 		};
 		[207] = {
 			layer = 2;
 			energy = 0;
 			shortName = "HUMAN";
 			initialDirection = 0;
-			iconSize = 50;
+			iconSize = 2;
 			shieldColor = 255;
 			warpOutDistance = 0;
 			spriteId = 549;
@@ -52502,13 +52709,14 @@ data = {
 				isGuided = false;
 			};
 			buildRatio = 0.0;
+			iconShape = nil;
 		};
 		[208] = {
 			layer = 2;
 			energy = 0;
 			shortName = "HUMAN";
 			initialDirection = 0;
-			iconSize = 50;
+			iconSize = 2;
 			shieldColor = 255;
 			warpOutDistance = 0;
 			spriteId = 594;
@@ -52679,13 +52887,14 @@ data = {
 				isGuided = false;
 			};
 			buildRatio = 0.0;
+			iconShape = nil;
 		};
 		[209] = {
 			layer = 1;
 			energy = 0;
 			shortName = "Lab";
 			initialDirection = 0;
-			iconSize = 70;
+			iconSize = 6;
 			shieldColor = 15;
 			warpOutDistance = 0;
 			spriteId = 592;
@@ -52856,13 +53065,14 @@ data = {
 				isGuided = false;
 			};
 			buildRatio = 0.0;
+			iconShape = "framed square";
 		};
 		[210] = {
 			layer = 1;
 			energy = 0;
 			shortName = "LAB";
 			initialDirection = 0;
-			iconSize = 70;
+			iconSize = 6;
 			shieldColor = 15;
 			warpOutDistance = 0;
 			spriteId = 592;
@@ -53033,6 +53243,7 @@ data = {
 				isGuided = false;
 			};
 			buildRatio = 0.0;
+			iconShape = "framed square";
 		};
 		[211] = {
 			layer = 3;
@@ -53210,13 +53421,14 @@ data = {
 				isGuided = false;
 			};
 			buildRatio = 0.0;
+			iconShape = "square";
 		};
 		[212] = {
 			layer = 2;
 			energy = 0;
 			shortName = "OBIARD";
 			initialDirection = 0;
-			iconSize = 49;
+			iconSize = 1;
 			shieldColor = 255;
 			warpOutDistance = 0;
 			spriteId = 596;
@@ -53383,13 +53595,14 @@ data = {
 				isGuided = false;
 			};
 			buildRatio = 0.0;
+			iconShape = nil;
 		};
 		[213] = {
 			layer = 2;
 			energy = 0;
 			shortName = "OBIARD";
 			initialDirection = 0;
-			iconSize = 49;
+			iconSize = 1;
 			shieldColor = 255;
 			warpOutDistance = 0;
 			spriteId = 597;
@@ -53560,13 +53773,14 @@ data = {
 				isGuided = false;
 			};
 			buildRatio = 0.0;
+			iconShape = nil;
 		};
 		[214] = {
 			layer = 2;
 			energy = 0;
 			shortName = "OBIARD";
 			initialDirection = 0;
-			iconSize = 49;
+			iconSize = 1;
 			shieldColor = 255;
 			warpOutDistance = 0;
 			spriteId = 596;
@@ -53733,13 +53947,14 @@ data = {
 				isGuided = false;
 			};
 			buildRatio = 0.0;
+			iconShape = nil;
 		};
 		[215] = {
 			layer = 1;
 			energy = 0;
 			shortName = "LAB";
 			initialDirection = 0;
-			iconSize = 70;
+			iconSize = 6;
 			shieldColor = 15;
 			warpOutDistance = 0;
 			spriteId = 595;
@@ -53910,13 +54125,14 @@ data = {
 				isGuided = false;
 			};
 			buildRatio = 0.0;
+			iconShape = "framed square";
 		};
 		[216] = {
 			layer = 1;
 			energy = 0;
 			shortName = "LAB";
 			initialDirection = 0;
-			iconSize = 70;
+			iconSize = 6;
 			shieldColor = 15;
 			warpOutDistance = 0;
 			spriteId = 595;
@@ -54087,13 +54303,14 @@ data = {
 				isGuided = false;
 			};
 			buildRatio = 0.0;
+			iconShape = "framed square";
 		};
 		[217] = {
 			layer = 2;
 			energy = 1000;
 			shortName = "TRANSPRT";
 			initialDirection = 0;
-			iconSize = 53;
+			iconSize = 5;
 			shieldColor = 0;
 			warpOutDistance = 0;
 			spriteId = 567;
@@ -54280,6 +54497,7 @@ data = {
 				isGuided = false;
 			};
 			buildRatio = 0.3984375;
+			iconShape = nil;
 		};
 		[218] = {
 			layer = 1;
@@ -54457,6 +54675,7 @@ data = {
 				isGuided = false;
 			};
 			buildRatio = 0.0;
+			iconShape = "square";
 		};
 		[219] = {
 			layer = 0;
@@ -54638,13 +54857,14 @@ data = {
 				isGuided = false;
 			};
 			buildRatio = 0.0;
+			iconShape = "square";
 		};
 		[220] = {
 			layer = 2;
 			energy = 5000;
 			shortName = "GATESHIP";
 			initialDirection = 0;
-			iconSize = 42;
+			iconSize = 10;
 			shieldColor = 0;
 			warpOutDistance = 1406447;
 			spriteId = 604;
@@ -54831,6 +55051,7 @@ data = {
 				isGuided = false;
 			};
 			buildRatio = 0.09765625;
+			iconShape = "diamond";
 		};
 		[221] = {
 			layer = 3;
@@ -55008,13 +55229,14 @@ data = {
 				isGuided = false;
 			};
 			buildRatio = 0.0;
+			iconShape = "square";
 		};
 		[222] = {
 			layer = 2;
 			energy = 5000;
 			shortName = "Carrier";
 			initialDirection = 0;
-			iconSize = 40;
+			iconSize = 8;
 			shieldColor = 0;
 			warpOutDistance = 1406447;
 			spriteId = 649;
@@ -55201,13 +55423,14 @@ data = {
 				isGuided = false;
 			};
 			buildRatio = 0.09765625;
+			iconShape = "diamond";
 		};
 		[223] = {
 			layer = 2;
 			energy = 5000;
 			shortName = "GATESHIP";
 			initialDirection = 0;
-			iconSize = 42;
+			iconSize = 10;
 			shieldColor = 0;
 			warpOutDistance = 1406447;
 			spriteId = 604;
@@ -55394,13 +55617,14 @@ data = {
 				isGuided = false;
 			};
 			buildRatio = 0.09765625;
+			iconShape = "diamond";
 		};
 		[224] = {
 			layer = 2;
 			energy = 5000;
 			shortName = "GATESHIP";
 			initialDirection = 0;
-			iconSize = 42;
+			iconSize = 10;
 			shieldColor = 0;
 			warpOutDistance = 1406447;
 			spriteId = 604;
@@ -55587,13 +55811,14 @@ data = {
 				isGuided = false;
 			};
 			buildRatio = 0.09765625;
+			iconShape = "diamond";
 		};
 		[225] = {
 			layer = 2;
 			energy = 0;
 			shortName = "LINER";
 			initialDirection = 0;
-			iconSize = 55;
+			iconSize = 7;
 			shieldColor = 255;
 			warpOutDistance = 0;
 			spriteId = 565;
@@ -55760,6 +55985,7 @@ data = {
 				isGuided = false;
 			};
 			buildRatio = 0.0;
+			iconShape = nil;
 		};
 		[226] = {
 			layer = 0;
@@ -55941,6 +56167,7 @@ data = {
 				isGuided = false;
 			};
 			buildRatio = 0.0;
+			iconShape = "square";
 		};
 		[227] = {
 			layer = 0;
@@ -56116,6 +56343,7 @@ data = {
 				isGuided = false;
 			};
 			buildRatio = 0.0;
+			iconShape = "square";
 		};
 		[228] = {
 			layer = 1;
@@ -56293,6 +56521,7 @@ data = {
 				isGuided = false;
 			};
 			buildRatio = 0.0;
+			iconShape = "square";
 		};
 		[229] = {
 			layer = 1;
@@ -56470,13 +56699,14 @@ data = {
 				isGuided = false;
 			};
 			buildRatio = 0.0;
+			iconShape = "square";
 		};
 		[230] = {
 			layer = 2;
 			energy = 2000;
 			shortName = "HVDSTRYR";
 			initialDirection = 0;
-			iconSize = 22;
+			iconSize = 6;
 			shieldColor = 8;
 			warpOutDistance = 22503164;
 			spriteId = 603;
@@ -56663,6 +56893,7 @@ data = {
 				isGuided = false;
 			};
 			buildRatio = 0.09765625;
+			iconShape = "triangle";
 		};
 		[231] = {
 			layer = 0;
@@ -56844,6 +57075,7 @@ data = {
 				isGuided = false;
 			};
 			buildRatio = 0.0;
+			iconShape = "square";
 		};
 		[232] = {
 			layer = 3;
@@ -57021,6 +57253,7 @@ data = {
 				isGuided = false;
 			};
 			buildRatio = 0.0;
+			iconShape = "square";
 		};
 		[233] = {
 			layer = 3;
@@ -57198,13 +57431,14 @@ data = {
 				isGuided = false;
 			};
 			buildRatio = 0.0;
+			iconShape = "square";
 		};
 		[234] = {
 			layer = 2;
 			energy = 2000;
 			shortName = "HVDSTRYR";
 			initialDirection = 0;
-			iconSize = 22;
+			iconSize = 6;
 			shieldColor = 6;
 			warpOutDistance = 43838884;
 			spriteId = 607;
@@ -57391,6 +57625,7 @@ data = {
 				isGuided = false;
 			};
 			buildRatio = 0.09765625;
+			iconShape = "triangle";
 		};
 		[235] = {
 			layer = 0;
@@ -57572,6 +57807,7 @@ data = {
 				isGuided = false;
 			};
 			buildRatio = 0.0;
+			iconShape = "square";
 		};
 		[236] = {
 			layer = 3;
@@ -57749,13 +57985,14 @@ data = {
 				isGuided = false;
 			};
 			buildRatio = 0.0;
+			iconShape = "square";
 		};
 		[237] = {
 			layer = 2;
 			energy = 2000;
 			shortName = "HVDSTRYR";
 			initialDirection = 0;
-			iconSize = 22;
+			iconSize = 6;
 			shieldColor = 0;
 			warpOutDistance = 22503164;
 			spriteId = 610;
@@ -57942,6 +58179,7 @@ data = {
 				isGuided = false;
 			};
 			buildRatio = 0.09765625;
+			iconShape = "triangle";
 		};
 		[238] = {
 			layer = 0;
@@ -58123,6 +58361,7 @@ data = {
 				isGuided = false;
 			};
 			buildRatio = 0.0;
+			iconShape = "square";
 		};
 		[239] = {
 			layer = 3;
@@ -58300,13 +58539,14 @@ data = {
 				isGuided = false;
 			};
 			buildRatio = 0.0;
+			iconShape = "square";
 		};
 		[240] = {
 			layer = 2;
 			energy = 2000;
 			shortName = "HVDSTRYR";
 			initialDirection = 0;
-			iconSize = 22;
+			iconSize = 6;
 			shieldColor = 0;
 			warpOutDistance = 22503164;
 			spriteId = 609;
@@ -58493,6 +58733,7 @@ data = {
 				isGuided = false;
 			};
 			buildRatio = 0.09765625;
+			iconShape = "triangle";
 		};
 		[241] = {
 			layer = 0;
@@ -58674,6 +58915,7 @@ data = {
 				isGuided = false;
 			};
 			buildRatio = 0.0;
+			iconShape = "square";
 		};
 		[242] = {
 			layer = 3;
@@ -58851,13 +59093,14 @@ data = {
 				isGuided = false;
 			};
 			buildRatio = 0.0;
+			iconShape = "square";
 		};
 		[243] = {
 			layer = 2;
 			energy = 2000;
 			shortName = "HVDSTRYR";
 			initialDirection = 0;
-			iconSize = 22;
+			iconSize = 6;
 			shieldColor = 0;
 			warpOutDistance = 22503164;
 			spriteId = 608;
@@ -59040,6 +59283,7 @@ data = {
 				isGuided = false;
 			};
 			buildRatio = 0.09765625;
+			iconShape = "triangle";
 		};
 		[244] = {
 			layer = 0;
@@ -59221,6 +59465,7 @@ data = {
 				isGuided = false;
 			};
 			buildRatio = 0.0;
+			iconShape = "square";
 		};
 		[245] = {
 			layer = 3;
@@ -59398,13 +59643,14 @@ data = {
 				isGuided = false;
 			};
 			buildRatio = 0.0;
+			iconShape = "square";
 		};
 		[246] = {
 			layer = 2;
 			energy = 800;
 			shortName = "ASLTTRAN";
 			initialDirection = 0;
-			iconSize = 53;
+			iconSize = 5;
 			shieldColor = 8;
 			warpOutDistance = 216090000;
 			spriteId = 616;
@@ -59587,6 +59833,7 @@ data = {
 				isGuided = false;
 			};
 			buildRatio = 0.69921875;
+			iconShape = nil;
 		};
 		[247] = {
 			layer = 0;
@@ -59768,13 +60015,14 @@ data = {
 				isGuided = false;
 			};
 			buildRatio = 0.0;
+			iconShape = "square";
 		};
 		[248] = {
 			layer = 2;
 			energy = 50;
 			shortName = "EVAT";
 			initialDirection = 0;
-			iconSize = 17;
+			iconSize = 1;
 			shieldColor = 0;
 			warpOutDistance = 0;
 			spriteId = 619;
@@ -59957,13 +60205,14 @@ data = {
 				isGuided = false;
 			};
 			buildRatio = 0.0;
+			iconShape = "triangle";
 		};
 		[249] = {
 			layer = 2;
 			energy = 800;
 			shortName = "ASLTTRAN";
 			initialDirection = 0;
-			iconSize = 53;
+			iconSize = 5;
 			shieldColor = 8;
 			warpOutDistance = 0;
 			spriteId = 617;
@@ -60146,13 +60395,14 @@ data = {
 				isGuided = false;
 			};
 			buildRatio = 0.69921875;
+			iconShape = nil;
 		};
 		[250] = {
 			layer = 2;
 			energy = 800;
 			shortName = "ASLTTRAN";
 			initialDirection = 0;
-			iconSize = 53;
+			iconSize = 5;
 			shieldColor = 6;
 			warpOutDistance = 0;
 			spriteId = 615;
@@ -60335,6 +60585,7 @@ data = {
 				isGuided = false;
 			};
 			buildRatio = 0.69921875;
+			iconShape = nil;
 		};
 		[251] = {
 			layer = 0;
@@ -60516,13 +60767,14 @@ data = {
 				isGuided = false;
 			};
 			buildRatio = 0.0;
+			iconShape = "square";
 		};
 		[252] = {
 			layer = 2;
 			energy = 200;
 			shortName = "EVAT";
 			initialDirection = 0;
-			iconSize = 17;
+			iconSize = 1;
 			shieldColor = 6;
 			warpOutDistance = 0;
 			spriteId = 618;
@@ -60705,13 +60957,14 @@ data = {
 				isGuided = false;
 			};
 			buildRatio = 0.0;
+			iconShape = "triangle";
 		};
 		[253] = {
 			layer = 2;
 			energy = 50;
 			shortName = "EVAT";
 			initialDirection = 0;
-			iconSize = 17;
+			iconSize = 1;
 			shieldColor = 0;
 			warpOutDistance = 0;
 			spriteId = 602;
@@ -60894,6 +61147,7 @@ data = {
 				isGuided = false;
 			};
 			buildRatio = 0.0;
+			iconShape = "triangle";
 		};
 		[254] = {
 			layer = 0;
@@ -61075,6 +61329,7 @@ data = {
 				isGuided = false;
 			};
 			buildRatio = 0.0;
+			iconShape = "square";
 		};
 		[255] = {
 			layer = 3;
@@ -61252,6 +61507,7 @@ data = {
 				isGuided = false;
 			};
 			buildRatio = 0.0;
+			iconShape = "square";
 		};
 		[256] = {
 			layer = 3;
@@ -61425,6 +61681,7 @@ data = {
 				isGuided = false;
 			};
 			buildRatio = 0.0;
+			iconShape = "square";
 		};
 		[257] = {
 			layer = 3;
@@ -61602,6 +61859,7 @@ data = {
 				isGuided = false;
 			};
 			buildRatio = 0.0;
+			iconShape = "square";
 		};
 		[258] = {
 			layer = 0;
@@ -61777,6 +62035,7 @@ data = {
 				isGuided = false;
 			};
 			buildRatio = 0.0;
+			iconShape = "square";
 		};
 		[259] = {
 			layer = 0;
@@ -61958,6 +62217,7 @@ data = {
 				isGuided = false;
 			};
 			buildRatio = 0.0;
+			iconShape = "square";
 		};
 		[260] = {
 			layer = 0;
@@ -62133,6 +62393,7 @@ data = {
 				isGuided = false;
 			};
 			buildRatio = 0.0;
+			iconShape = "square";
 		};
 		[261] = {
 			layer = 0;
@@ -62314,6 +62575,7 @@ data = {
 				isGuided = false;
 			};
 			buildRatio = 0.0;
+			iconShape = "square";
 		};
 		[262] = {
 			layer = 3;
@@ -62491,6 +62753,7 @@ data = {
 				isGuided = false;
 			};
 			buildRatio = 0.0;
+			iconShape = "square";
 		};
 		[263] = {
 			layer = 3;
@@ -62668,6 +62931,7 @@ data = {
 				isGuided = false;
 			};
 			buildRatio = 0.0;
+			iconShape = "square";
 		};
 		[264] = {
 			layer = 0;
@@ -62849,13 +63113,14 @@ data = {
 				isGuided = false;
 			};
 			buildRatio = 0.0;
+			iconShape = "square";
 		};
 		[265] = {
 			layer = 2;
 			energy = 0;
 			shortName = "Asteroid";
 			initialDirection = -45;
-			iconSize = 68;
+			iconSize = 4;
 			shieldColor = 255;
 			warpOutDistance = 0;
 			spriteId = 543;
@@ -63026,6 +63291,7 @@ data = {
 				isGuided = false;
 			};
 			buildRatio = 0.0;
+			iconShape = "framed square";
 		};
 		[266] = {
 			layer = 1;
@@ -63203,6 +63469,7 @@ data = {
 				isGuided = false;
 			};
 			buildRatio = 0.0;
+			iconShape = "square";
 		};
 		[267] = {
 			layer = 1;
@@ -63380,6 +63647,7 @@ data = {
 				isGuided = false;
 			};
 			buildRatio = 0.0;
+			iconShape = "square";
 		};
 		[268] = {
 			layer = 0;
@@ -63561,6 +63829,7 @@ data = {
 				isGuided = false;
 			};
 			buildRatio = 0.0;
+			iconShape = "square";
 		};
 		[269] = {
 			layer = 0;
@@ -63742,13 +64011,14 @@ data = {
 				isGuided = false;
 			};
 			buildRatio = 0.0;
+			iconShape = "square";
 		};
 		[270] = {
 			layer = 1;
 			energy = 1000;
 			shortName = "OUTPOST";
 			initialDirection = 0;
-			iconSize = 71;
+			iconSize = 7;
 			shieldColor = 255;
 			warpOutDistance = 0;
 			spriteId = 801;
@@ -63919,6 +64189,7 @@ data = {
 				isGuided = false;
 			};
 			buildRatio = 0.0;
+			iconShape = "framed square";
 		};
 		[271] = {
 			layer = 0;
@@ -64100,13 +64371,14 @@ data = {
 				isGuided = false;
 			};
 			buildRatio = 0.0;
+			iconShape = "square";
 		};
 		[272] = {
 			layer = 2;
 			energy = 1000;
 			shortName = "CRUISER";
 			initialDirection = 0;
-			iconSize = 20;
+			iconSize = 4;
 			shieldColor = 0;
 			warpOutDistance = 0;
 			spriteId = 657;
@@ -64293,13 +64565,14 @@ data = {
 				isGuided = false;
 			};
 			buildRatio = 1.0;
+			iconShape = "triangle";
 		};
 		[273] = {
 			layer = 2;
 			energy = 1000;
 			shortName = "CRUISER";
 			initialDirection = 0;
-			iconSize = 20;
+			iconSize = 4;
 			shieldColor = 0;
 			warpOutDistance = 0;
 			spriteId = 657;
@@ -64486,13 +64759,14 @@ data = {
 				isGuided = false;
 			};
 			buildRatio = 1.0;
+			iconShape = "triangle";
 		};
 		[274] = {
 			layer = 2;
 			energy = 1000;
 			shortName = "FLAG P1";
 			initialDirection = 0;
-			iconSize = 53;
+			iconSize = 5;
 			shieldColor = 0;
 			warpOutDistance = 1324297;
 			spriteId = 659;
@@ -64679,13 +64953,14 @@ data = {
 				isGuided = false;
 			};
 			buildRatio = 1.0;
+			iconShape = nil;
 		};
 		[275] = {
 			layer = 2;
 			energy = 1000;
 			shortName = "FLAG P2";
 			initialDirection = 0;
-			iconSize = 53;
+			iconSize = 5;
 			shieldColor = 0;
 			warpOutDistance = 1324297;
 			spriteId = 659;
@@ -64872,13 +65147,14 @@ data = {
 				isGuided = false;
 			};
 			buildRatio = 1.0;
+			iconShape = nil;
 		};
 		[276] = {
 			layer = 1;
 			energy = 0;
 			shortName = "MOOR 1 Y";
 			initialDirection = 0;
-			iconSize = 51;
+			iconSize = 3;
 			shieldColor = 15;
 			warpOutDistance = 0;
 			spriteId = 658;
@@ -65049,13 +65325,14 @@ data = {
 				isGuided = false;
 			};
 			buildRatio = 0.0;
+			iconShape = nil;
 		};
 		[277] = {
 			layer = 1;
 			energy = 0;
 			shortName = "MOOR 1 N";
 			initialDirection = 0;
-			iconSize = 51;
+			iconSize = 3;
 			shieldColor = 15;
 			warpOutDistance = 0;
 			spriteId = 658;
@@ -65230,13 +65507,14 @@ data = {
 				isGuided = false;
 			};
 			buildRatio = 0.0;
+			iconShape = nil;
 		};
 		[278] = {
 			layer = 1;
 			energy = 0;
 			shortName = "MOOR 2 Y";
 			initialDirection = 0;
-			iconSize = 51;
+			iconSize = 3;
 			shieldColor = 15;
 			warpOutDistance = 0;
 			spriteId = 658;
@@ -65407,13 +65685,14 @@ data = {
 				isGuided = false;
 			};
 			buildRatio = 0.0;
+			iconShape = nil;
 		};
 		[279] = {
 			layer = 1;
 			energy = 0;
 			shortName = "MOOR 2 N";
 			initialDirection = 0;
-			iconSize = 53;
+			iconSize = 5;
 			shieldColor = 15;
 			warpOutDistance = 0;
 			spriteId = 658;
@@ -65588,13 +65867,14 @@ data = {
 				isGuided = false;
 			};
 			buildRatio = 0.0;
+			iconShape = nil;
 		};
 		[280] = {
 			layer = 2;
 			energy = 1000;
 			shortName = "CRUISER";
 			initialDirection = 0;
-			iconSize = 20;
+			iconSize = 4;
 			shieldColor = 0;
 			warpOutDistance = 0;
 			spriteId = 657;
@@ -65781,13 +66061,14 @@ data = {
 				isGuided = false;
 			};
 			buildRatio = 1.0;
+			iconShape = "triangle";
 		};
 		[281] = {
 			layer = 2;
 			energy = 1000;
 			shortName = "CRUISER";
 			initialDirection = 0;
-			iconSize = 20;
+			iconSize = 4;
 			shieldColor = 0;
 			warpOutDistance = 0;
 			spriteId = 657;
@@ -65974,6 +66255,7 @@ data = {
 				isGuided = false;
 			};
 			buildRatio = 1.0;
+			iconShape = "triangle";
 		};
 		[282] = {
 			layer = 0;
@@ -66155,6 +66437,7 @@ data = {
 				isGuided = false;
 			};
 			buildRatio = 0.0;
+			iconShape = "square";
 		};
 		[283] = {
 			layer = 0;
@@ -66336,13 +66619,14 @@ data = {
 				isGuided = false;
 			};
 			buildRatio = 0.0;
+			iconShape = "square";
 		};
 		[284] = {
 			layer = 2;
 			energy = 1000;
 			shortName = "LGHTCRSR";
 			initialDirection = 0;
-			iconSize = 20;
+			iconSize = 4;
 			shieldColor = 0;
 			warpOutDistance = 0;
 			spriteId = 660;
@@ -66521,6 +66805,7 @@ data = {
 				isGuided = false;
 			};
 			buildRatio = 1.0;
+			iconShape = "triangle";
 		};
 		[285] = {
 			layer = 0;
@@ -66702,13 +66987,14 @@ data = {
 				isGuided = false;
 			};
 			buildRatio = 0.0;
+			iconShape = "square";
 		};
 		[286] = {
 			layer = 2;
 			energy = 0;
 			shortName = "UNSARES";
 			initialDirection = 0;
-			iconSize = 55;
+			iconSize = 7;
 			shieldColor = 255;
 			warpOutDistance = 0;
 			spriteId = 599;
@@ -66875,13 +67161,14 @@ data = {
 				isGuided = false;
 			};
 			buildRatio = 0.0;
+			iconShape = nil;
 		};
 		[287] = {
 			layer = 2;
 			energy = 800;
 			shortName = "TRANSPRT";
 			initialDirection = 0;
-			iconSize = 53;
+			iconSize = 5;
 			shieldColor = 8;
 			warpOutDistance = 9734400;
 			spriteId = 514;
@@ -67060,13 +67347,14 @@ data = {
 				isGuided = false;
 			};
 			buildRatio = 0.69921875;
+			iconShape = nil;
 		};
 		[288] = {
 			layer = 2;
 			energy = 1000;
 			shortName = "CRUISER";
 			initialDirection = 0;
-			iconSize = 20;
+			iconSize = 4;
 			shieldColor = 0;
 			warpOutDistance = 9734400;
 			spriteId = 501;
@@ -67249,6 +67537,7 @@ data = {
 				isGuided = false;
 			};
 			buildRatio = 1.0;
+			iconShape = "triangle";
 		};
 		[289] = {
 			layer = 0;
@@ -67430,6 +67719,7 @@ data = {
 				isGuided = false;
 			};
 			buildRatio = 0.0;
+			iconShape = "square";
 		};
 		[290] = {
 			layer = 0;
@@ -67611,6 +67901,7 @@ data = {
 				isGuided = false;
 			};
 			buildRatio = 0.0;
+			iconShape = "square";
 		};
 		[291] = {
 			layer = 0;
@@ -67792,6 +68083,7 @@ data = {
 				isGuided = false;
 			};
 			buildRatio = 0.0;
+			iconShape = "square";
 		};
 		[292] = {
 			layer = 0;
@@ -67973,6 +68265,7 @@ data = {
 				isGuided = false;
 			};
 			buildRatio = 0.0;
+			iconShape = "square";
 		};
 		[293] = {
 			layer = 0;
@@ -68154,6 +68447,7 @@ data = {
 				isGuided = false;
 			};
 			buildRatio = 0.0;
+			iconShape = "square";
 		};
 		[294] = {
 			layer = 0;
@@ -68335,6 +68629,7 @@ data = {
 				isGuided = false;
 			};
 			buildRatio = 0.0;
+			iconShape = "square";
 		};
 		[295] = {
 			layer = 0;
@@ -68516,6 +68811,7 @@ data = {
 				isGuided = false;
 			};
 			buildRatio = 0.0;
+			iconShape = "square";
 		};
 		[296] = {
 			layer = 0;
@@ -68697,6 +68993,7 @@ data = {
 				isGuided = false;
 			};
 			buildRatio = 0.0;
+			iconShape = "square";
 		};
 		[297] = {
 			layer = 0;
@@ -68878,6 +69175,7 @@ data = {
 				isGuided = false;
 			};
 			buildRatio = 0.0;
+			iconShape = "square";
 		};
 		[298] = {
 			layer = 0;
@@ -69059,6 +69357,7 @@ data = {
 				isGuided = false;
 			};
 			buildRatio = 0.0;
+			iconShape = "square";
 		};
 		[299] = {
 			layer = 0;
@@ -69240,6 +69539,7 @@ data = {
 				isGuided = false;
 			};
 			buildRatio = 0.0;
+			iconShape = "square";
 		};
 	};
 	sounds = {
