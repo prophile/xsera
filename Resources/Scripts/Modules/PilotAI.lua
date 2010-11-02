@@ -67,7 +67,7 @@ function Think(object)
 end
 
 function CanThink(attr)
-	return attr["can-engange"] or attr["can-evade"] or attr["can-accept-destination"]
+	return attr.canEngange or attr.canEvade or attr.canAcceptDestination
 end
 
 

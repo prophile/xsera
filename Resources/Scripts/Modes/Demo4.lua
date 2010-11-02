@@ -167,7 +167,7 @@ function update()
 				end
 				
 				if o.weapons ~= nil then
-					for wid,weap in pairs(o.weapons) do
+					for wid, weap in pairs(o.weapons) do
 						if weap.ammo ~= -1
 						and weap.base.device.restockCost > 0
 						and weap.ammo < weap.base.device.ammo / 2
