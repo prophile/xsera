@@ -164,9 +164,9 @@ function DoMoveOrder()
 	if selection.control ~= nil
 	and selection.control ~= selection.target
 	and selection.control ~= scen.playerShip
-	and selection.control.base.attributes["can-accept-destination"] == true
+	and selection.control.base.attributes.canAcceptDestination == true
 	and (selection.target == nil
-	or selection.target.base.attributes["can-be-destination"] == true) then
+	or selection.target.base.attributes.canBeDestination == true) then
 		selection.control.ai.objectives.dest = selection.target
 	end
 end
