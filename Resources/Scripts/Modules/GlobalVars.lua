@@ -1,6 +1,6 @@
 import('Math')
 import('AresCLUT')
-import('data')
+if data == nil then import('data') end
 import('Camera')
 
 RELEASE_BUILD = mode_manager.is_release()
