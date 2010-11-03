@@ -21,9 +21,10 @@ Physics = {
 				if system.gravityIsLoc then
 					local distX = o.position.x - system.gravity.x
 					local distY = o.position.y - system.gravity.y
+					local relativeGravityPosition = o.position - system.gravity
 					local hypot = hypot(distX, distY)
 					local grav = GRAVITY * (system.gravMass * o.mass) / (distX^2 + distY^2)
-					Physics.UpdateObject(o.physics, dt, { x = grav / hypot * distX, y = grav / hypot * distY } )
+					Physics.UpdateObject(o.physics, dt, rav/hypot*relativeGravityPosition)
 					-- the above line really needs to be tested
 				else
 					Physics.UpdateObject(o.physics, dt, system.gravity)

@@ -217,22 +217,14 @@ Actions["create object"] = function(action, source, direct)
 			new.physics.angle = RandomReal(0, 2.0 * math.pi)
 		end
 		
---		if new.base["initial-direction"] ~= nil then
-			new.physics.angle = new.physics.angle + math.pi * (new.base.initialDirection + math.random(0.0, new.base.initialDirectionRange))/180.0
---		end
+		new.physics.angle = new.physics.angle + math.pi * (new.base.initialDirection + math.random(0.0, new.base.initialDirectionRange))/180.0
 		
 		local iv = new.base.initialVelocity
 		
+		new.physics.velocity = PolarVec(SPEED_FACTOR * iv, new.physics.angle)
+
 		if action.velocityRelative == true then	
-			new.physics.velocity = {
-				x = srcMotion.velocity.x + SPEED_FACTOR * iv * math.cos(new.physics.angle);
-				y = srcMotion.velocity.y + SPEED_FACTOR * iv * math.sin(new.physics.angle);
-			}
-		else
-			new.physics.velocity = {
-				x =  SPEED_FACTOR * iv * math.cos(new.physics.angle);
-				y =  SPEED_FACTOR * iv * math.sin(new.physics.angle);
-			}	
+			new.physics.velocity = new.physics.velocity + srcMotion.velocity
 		end
 		
 		if new.base.attributes.isGuided == true then

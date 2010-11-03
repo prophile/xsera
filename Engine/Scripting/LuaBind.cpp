@@ -26,9 +26,15 @@ void lua_pushvec2(lua_State *L, vec2 val);
 	
 int VEC_new (lua_State* L)
 {
-	float x = luaL_checknumber(L, 1);
-	float y = luaL_checknumber(L, 2);
-	vec2 v = vec2(x,y);
+	vec2 v;
+	if (lua_istable(L, 1)) {
+		luaL_checkvec2(L, 1);
+	} else {
+		float x = luaL_checknumber(L, 1);
+		float y = luaL_checknumber(L, 2);
+		v = vec2(x,y);
+	}
+
 	lua_pushvec2(L, v);
 	return 1;
 }
