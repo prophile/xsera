@@ -15,66 +15,43 @@ end
 
 Test = {}
 
-setmetatable(Test, {__index = function (table, key) return function(cond) return false end end})
+setmetatable(Test, {__index = function (table, key)
+	print("[lua] Warning: Unimplented condition: " .. key)
+		return function(cond) return false end
+end})
 
--- Test["autopilot-condition"]
-Test["counter-condition"] = function(cond)
-	local player = cond["which-player"] + 1
-	local counter = cond["which-counter"]
-	local count = scen.counters[player][counter]
-	if count == cond.amount then
-		return true
-	else
-		return false
-	end
+-- Test["autopilot"]
+Test["counter"] = function(cond)
+	return scen.counters[cond.counter.player+1][cond.counter.id] == cond.counter.amount
 end
 
-Test["counter-greater-condition"] = function(cond)
-	local player = cond["which-player"] + 1
-	local counter = cond["which-counter"]
-	local count = scen.counters[player][counter]
-	if count > cond.amount then
-		return true
-	else
-		return false
-	end
+Test["counter greater"] = function(cond)
+	return scen.counters[cond.counter.player+1][cond.counter.id] > cond.amount
 end
 
--- Test["current-computer-condition"]
--- Test["current-message-condition"]
-Test["destruction-condition"] = function(cond)
-	if scen.objects[cond.value + 1] == nil then
-		return true
-	else
-		return false
-	end
+-- Test["current computer selection"]
+-- Test["current message"]
+Test["destruction"] = function(cond)
+	return scen.objects[cond.value + 1] == nil
 end
 
---Test["direct-is-subject-target-condition"]
-Test["distance-greater-condition"] = function(cond)
-	local subject = scen.objects[cond["subject-object"]+1]
-	local direct = scen.objects[cond["direct-object"]+1]
-	if hypot2(subject.physics.position, direct.physics.position) > math.sqrt(cond.value) then
-		return true
-	else
-		return false
-	end
+--Test["direct is subject target"]
+Test["distance greater"] = function(cond)
+	local subject = scen.objects[cond.subject+1]
+	local direct = scen.objects[cond.direct+1]
+	return hypot2(subject.physics.position, direct.physics.position) > math.sqrt(cond.value)
 end
 
-Test["half-health-condition"] = function(cond)
-	local objectStatus = scen.objects[cond["subject-object"]+1].status
-	if objectStatus.health * 2 <= objectStatus.healthMax then
-		return true
-	else
-		return false
-	end
+Test["half health"] = function(cond)
+	local objectStatus = scen.objects[cond.subject+1].status
+	return objectStatus.health * 2 <= objectStatus.healthMax
 end
 
--- Test["is-auxiliary-object-condition"]
--- Test["is-target-object-condition"]
--- Test["no-condition"]
-Test["no-ships-left-condition"] = function(cond)
-	local player = cond["which-player"]
+-- Test["is auxiliary"]
+-- Test["is target"]
+-- Test["none"]
+Test["no ships left"] = function(cond)
+	local player = cond.player
 	for i,o in pairs(scen.objects) do
 		if o.ai.owner == player then
 			return false
@@ -83,47 +60,29 @@ Test["no-ships-left-condition"] = function(cond)
 	return true
 end
 
--- Test["not-autopilot-condition"]
--- Test["object-is-being-built-condition"]
-Test["owner-condition"] = function(cond)
-	local player = cond.value
-	local object = scen.objects[cond["subject-object"] + 1]
-	if object.ai.owner == player then
-		return true
-	else
-		return false
-	end
+-- Test["not autopilot"]
+-- Test["object being built"]
+Test["owner"] = function(cond)
+	return scen.objects[cond.subject + 1].ai.owner == cond.value
 end
 
-Test["proximity-condition"] = function(cond)
-	local subject = scen.objects[cond["subject-object"]+1]
-	local direct = scen.objects[cond["direct-object"]+1]
-	if hypot2(subject.physics.position, direct.physics.position) > math.sqrt(cond.value) then
-		return true
-	else
-		return false
-	end
+Test["proximity"] = function(cond)
+	local subject = scen.objects[cond.subject+1]
+	local direct = scen.objects[cond.direct+1]
+	return hypot2(subject.physics.position, direct.physics.position) > cond.value
 end
 
--- Test["subject-is-player-condition"]
+-- Test["subject is player"]
 
-Test["time-condition"] = function(cond)
+Test["time"] = function(cond)
 	--[[
 	May need to measure from when the condition is first tested. Instead of scenario start.
 	--]]
-	if cond.value / TIME_FACTOR >= realtime then
-		return true
-	else
-		return false
-	end
+	return cond.value / TIME_FACTOR >= realtime
 end
 
-Test["velocity-less-than-equal-to-condition"] = function(cond)
-	if cond.value * SPEED_FACTOR >= hypot1(scen.objects[cond["subject-object"] + 1]) then
-		return true
-	else
-		return false
-	end
+Test["velocity less than equal"] = function(cond)
+	return cond.value * SPEED_FACTOR >= hypot1(scen.objects[cond.subject + 1])
 end
 
--- Test["zoom-level-condition"]
+-- Test["zoom level"]

@@ -69601,7 +69601,7 @@ data = {
 			counter = {
 				player = 0;
 				amount = 4;
-				counter = 0;
+				id = 0;
 			};
 			direct = -1;
 			start = 285;
@@ -69661,7 +69661,7 @@ data = {
 			counter = {
 				player = 0;
 				amount = 1;
-				counter = 1;
+				id = 1;
 			};
 			direct = -1;
 			start = 82;
@@ -69679,7 +69679,7 @@ data = {
 			counter = {
 				player = 0;
 				amount = 4;
-				counter = 1;
+				id = 1;
 			};
 			direct = -1;
 			start = 287;
@@ -69697,7 +69697,7 @@ data = {
 			counter = {
 				player = 1;
 				amount = 7;
-				counter = 1;
+				id = 1;
 			};
 			direct = -1;
 			start = 288;
@@ -69799,7 +69799,7 @@ data = {
 			counter = {
 				player = 0;
 				amount = 3;
-				counter = 0;
+				id = 0;
 			};
 			direct = 1;
 			start = 112;
@@ -70041,7 +70041,7 @@ data = {
 			counter = {
 				player = 0;
 				amount = 5;
-				counter = 0;
+				id = 0;
 			};
 			direct = -1;
 			start = 193;
@@ -70143,7 +70143,7 @@ data = {
 			counter = {
 				player = 0;
 				amount = 6;
-				counter = 1;
+				id = 1;
 			};
 			direct = -1;
 			start = 204;
@@ -70329,7 +70329,7 @@ data = {
 			counter = {
 				player = 0;
 				amount = 5;
-				counter = 0;
+				id = 0;
 			};
 			direct = -1;
 			start = 306;
@@ -70347,7 +70347,7 @@ data = {
 			counter = {
 				player = 0;
 				amount = 2;
-				counter = 0;
+				id = 0;
 			};
 			direct = -1;
 			start = 277;
@@ -70393,7 +70393,7 @@ data = {
 			counter = {
 				player = 0;
 				amount = 2;
-				counter = 0;
+				id = 0;
 			};
 			direct = -1;
 			start = 284;
@@ -70411,7 +70411,7 @@ data = {
 			counter = {
 				player = 0;
 				amount = 5;
-				counter = 0;
+				id = 0;
 			};
 			direct = -1;
 			start = 304;
@@ -70526,7 +70526,7 @@ data = {
 			counter = {
 				player = 0;
 				amount = 10;
-				counter = 1;
+				id = 1;
 			};
 			direct = -1;
 			start = 465;
@@ -70802,7 +70802,7 @@ data = {
 			counter = {
 				player = 0;
 				amount = 5;
-				counter = 0;
+				id = 0;
 			};
 			direct = -1;
 			start = 423;
@@ -70834,7 +70834,7 @@ data = {
 			counter = {
 				player = 0;
 				amount = 1;
-				counter = 0;
+				id = 0;
 			};
 			direct = -1;
 			start = 426;
@@ -70866,7 +70866,7 @@ data = {
 			counter = {
 				player = 0;
 				amount = 21;
-				counter = 1;
+				id = 1;
 			};
 			direct = -1;
 			start = 443;
@@ -70884,7 +70884,7 @@ data = {
 			counter = {
 				player = 0;
 				amount = 10;
-				counter = 2;
+				id = 2;
 			};
 			direct = -1;
 			start = 487;
@@ -70930,7 +70930,7 @@ data = {
 			counter = {
 				player = 0;
 				amount = 5;
-				counter = 0;
+				id = 0;
 			};
 			direct = -1;
 			start = 445;
@@ -70962,7 +70962,7 @@ data = {
 			counter = {
 				player = 0;
 				amount = 1;
-				counter = 0;
+				id = 0;
 			};
 			direct = -1;
 			start = 447;
@@ -70994,7 +70994,7 @@ data = {
 			counter = {
 				player = 0;
 				amount = 11;
-				counter = 1;
+				id = 1;
 			};
 			direct = -1;
 			start = 453;
@@ -71012,7 +71012,7 @@ data = {
 			counter = {
 				player = 0;
 				amount = 5;
-				counter = 2;
+				id = 2;
 			};
 			direct = -1;
 			start = 486;
@@ -71379,7 +71379,7 @@ data = {
 			counter = {
 				player = 0;
 				amount = 3;
-				counter = 0;
+				id = 0;
 			};
 			direct = -1;
 			start = 591;
@@ -71397,7 +71397,7 @@ data = {
 			counter = {
 				player = 1;
 				amount = 3;
-				counter = 0;
+				id = 0;
 			};
 			direct = -1;
 			start = 592;
@@ -72458,7 +72458,7 @@ data = {
 			counter = {
 				player = 0;
 				amount = 1;
-				counter = 0;
+				id = 0;
 			};
 			direct = -1;
 			start = 747;
@@ -72517,7 +72517,7 @@ data = {
 			counter = {
 				player = 0;
 				amount = 2;
-				counter = 0;
+				id = 0;
 			};
 			direct = -1;
 			start = 760;
