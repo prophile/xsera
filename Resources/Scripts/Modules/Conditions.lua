@@ -15,7 +15,7 @@ end
 
 Test = {}
 
-setmetatable(Test, {__index = function (table, key)
+setmetatable(Test, {__index = function(table, key)
 	print("[lua] Warning: Unimplented condition: " .. key)
 		return function(cond) return false end
 end})

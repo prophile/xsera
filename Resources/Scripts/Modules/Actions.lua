@@ -1,6 +1,6 @@
 --import('Math')
 
-local actionTable = {}
+local Actions = {}
 
 function ActivateTrigger(sender, owner)
 	if owner == nil then
@@ -55,24 +55,28 @@ function CallAction(trigger, source, direct)
 		local max = trigger.id + trigger.count - 1
 		for id = trigger.id, max do
 			local action = data.actions[id]
-			actionTable[action.type](action, source, direct)
+			Actions[action.type](action, source, direct)
 		end
 	end
 end
 
 -- set a metatable so that an unknown action will return an action which does nothing
-setmetatable(actionTable, {__index = function(table, key) return function(action, source, direct) end end})
+setmetatable(Actions, {__index = function(table, key)
+	print("[lua] Warning: Unimplented action " .. key)
+	return function(action, source, direct) end
+end})
+
 
 --local function noAction(action, source, direct) end
 
--- actionTable["activate special"]         = noAction
--- actionTable["alter absolute cash"]      = noAction
--- actionTable["alter absolute location"]  = noAction
--- actionTable["alter age"]                = noAction
--- actionTable["alter base type"]          = noAction
--- actionTable["alter cloak"]              = noAction
--- actionTable["alter active condition"] = noAction
-actionTable["alter health"] = function(action, source, direct)
+-- Actions["activate special"]         = noAction
+-- Actions["alter absolute cash"]      = noAction
+-- Actions["alter absolute location"]  = noAction
+-- Actions["alter age"]                = noAction
+-- Actions["alter base type"]          = noAction
+-- Actions["alter cloak"]              = noAction
+-- Actions["alter active condition"] = noAction
+Actions["alter health"] = function(action, source, direct)
 	local p
 	if action.subjectOverride ~= nil then
 		p = scen.objects[action.subjectOverride]
@@ -89,7 +93,7 @@ actionTable["alter health"] = function(action, source, direct)
 		end
 	end
 end
-actionTable["alter energy"] = function(action, source, direct)
+Actions["alter energy"] = function(action, source, direct)
 	local p
 	if action.subjectOverride ~= nil then
 		p = scen.objects[action.subjectOverride]
@@ -106,18 +110,18 @@ actionTable["alter energy"] = function(action, source, direct)
 		end
 	end
 end
--- actionTable["alter hidden"]       = noAction
--- actionTable["alter-location-action"]     = noAction
--- actionTable["alter max velocity"] = noAction
--- actionTable["alter occupation"]   = noAction
--- actionTable["alter offline"]      = noAction
--- actionTable["alter owner"]        = noAction
--- actionTable["alter special weapon"]      = noAction
--- actionTable["alter beam weapon"]      = noAction
--- actionTable["alter pulse weapon"]      = noAction
--- actionTable["alter spin"]         = noAction
--- actionTable["alter thrust"]       = noAction
-actionTable["alter velocity"] = function(action, source, direct)
+-- Actions["alter hidden"]       = noAction
+-- Actions["alter-location-action"]     = noAction
+-- Actions["alter max velocity"] = noAction
+-- Actions["alter occupation"]   = noAction
+-- Actions["alter offline"]      = noAction
+-- Actions["alter owner"]        = noAction
+-- Actions["alter special weapon"]      = noAction
+-- Actions["alter beam weapon"]      = noAction
+-- Actions["alter pulse weapon"]      = noAction
+-- Actions["alter spin"]         = noAction
+-- Actions["alter thrust"]       = noAction
+Actions["alter velocity"] = function(action, source, direct)
 	local p
 	local angle = source.physics.angle
 	local delta = PolarVec(math.sqrt(action.minimum)+math.random(0.0,math.sqrt(action.range)), angle)
@@ -134,16 +138,16 @@ actionTable["alter velocity"] = function(action, source, direct)
 		p.velocity = delta
 	end
 end
--- actionTable["assume initial object"] = noAction
-actionTable["change score"] = function(action, source, direct)
+-- Actions["assume initial object"] = noAction
+Actions["change score"] = function(action, source, direct)
 	local player = action.player + 1
 	local counter = action.score or 0
 	local count = scen.counters[player][counter]
 	scen.counters[player][counter] = count + action.amount
 end
---actionTable["color flash"]     = noAction
---actionTable["computer select"] = noAction
-actionTable["create object"] = function(action, source, direct)
+--Actions["color flash"]     = noAction
+--Actions["computer select"] = noAction
+Actions["create object"] = function(action, source, direct)
 	--Aquire parent data
 	local srcMotion
 	local offset = vec(0,0)
@@ -243,13 +247,13 @@ actionTable["create object"] = function(action, source, direct)
 	end
 end
 
---actionTable["create object set destination"] = noAction
-actionTable["declare winner"] = function(action, source, direct)
+--Actions["create object set destination"] = noAction
+Actions["declare winner"] = function(action, source, direct)
 	Win()
 	print("The winner is: " .. action.player)
 end
 
-actionTable["die"] = function(action, source, direct)
+Actions["die"] = function(action, source, direct)
 	if action.reflexive == true then
 		source.status.dead = true
 	else
@@ -257,11 +261,11 @@ actionTable["die"] = function(action, source, direct)
 	end
 end
 
--- actionTable["disable keys"]    = noAction
--- actionTable["display message"] = noAction
--- actionTable["enable keys"]     = noAction
--- actionTable["land at"]         = noAction
-actionTable["make sparks"] = function(action, source, direct)
+-- Actions["disable keys"]    = noAction
+-- Actions["display message"] = noAction
+-- Actions["enable keys"]     = noAction
+-- Actions["land at"]         = noAction
+Actions["make sparks"] = function(action, source, direct)
 	--Aquire parent
 	local parent
 	if action.reflexive == true then
@@ -278,9 +282,9 @@ actionTable["make sparks"] = function(action, source, direct)
 	graphics.add_particles("Sparks", action.count, parent.physics.position, {x = math.cos(theta) * speed, y = math.sin(theta) * speed}, {x = range, y = range}, {x = 0, y = 0}, 0.5, 0.4)
 end
 
---actionTable["nil target"] = noAction
---actionTable["none"] = noAction
-actionTable["play sound"] = function(action, source, direct)
+--Actions["nil target"] = noAction
+--Actions["none"] = noAction
+Actions["play sound"] = function(action, source, direct)
 	local rsound = data.sounds[action.soundId]
 	local parent
 	if action.reflexive == true then
@@ -300,5 +304,5 @@ actionTable["play sound"] = function(action, source, direct)
 	end
 end
 
---actionTable["set destination"] = noAction
---actionTable["set zoom level"]        = noAction
+--Actions["set destination"] = noAction
+--Actions["set zoom level"]        = noAction
