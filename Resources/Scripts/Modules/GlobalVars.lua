@@ -1,6 +1,6 @@
 import('Math')
 import('AresCLUT')
-import('data')
+if data == nil then import('data') end
 import('Camera')
 
 --[[
@@ -56,7 +56,7 @@ MOUSE_RADIUS = 15
 SLOW_FROM_WARP = 5 / 3
 WARP_SOUND_LENGTH = 0.3
 
-demoLevel = 25
+demoLevel = 23
 shipSeek = false
 blinkMode = "triangle"
 

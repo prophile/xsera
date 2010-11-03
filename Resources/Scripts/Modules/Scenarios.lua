@@ -1,18 +1,20 @@
 function LoadScenario(id)
-	local scen = deepcopy(gameData.Scenarios[id])
-	scen.objects = {}
-	scen.effects = {flash = {}}
+	local scen = {
+		base = data.scenarios[id];
+		objects = {};
+		effects = {flash = {}};
+	}
 
-	local max = scen.initial.id + scen.initial.count - 1
+	local max = scen.base.initialObjects.first + scen.base.initialObjects.count - 1
 	
-	for id = scen.initial.id, max do
-		local state = gameData["InitialObject"][id]
+	for id = scen.base.initialObjects.first, max do
+		local state = data.initials[id]
 		local new = NewObject(state.type)
 
-		new.physics.position = state.location
+		new.physics.position = state.position
 		new.ai.owner = state.owner
 
-		if state.attributes == 512 then
+		if state.attributes.isPlayerShip == true then
 			if scen.playerShip == nil then
 				scen.playerShip = new
 				scen.playerShipId = new.physics.object_id
@@ -21,14 +23,14 @@ function LoadScenario(id)
 			end
 		end
 		
-		if state["sprite-id-override"] ~= nil then
-			new.sprite = state["sprite-id-override"]
+		if state.spriteIdOverride ~= -1 then
+			new.sprite = state.spriteIdOverride
 			new.spriteDim = graphics.sprite_dimensions("Id/" .. new.sprite)
 		end
 		
-		if state["initial-destination"] ~= -1 then
+		if state.initialDestination ~= -1 then
 			--Convert from 0 based indexes to 1 based indexes
-			new.ai.objectives.dest = scen.objects[state["initial-destination"]+1]
+			new.ai.objectives.dest = scen.objects[state.initialDestination + 1]
 		end
 		
 		scen.objects[new.physics.object_id] = new
@@ -52,12 +54,11 @@ function InitConditions(scen)
 		end
 	end
 
+	local max = scen.base.conditions.first + scen.base.conditions.count - 1
+	for idx = scen.base.conditions.first, max do
+		local cond = deepcopy(data.conditions[idx])
 
-	local max = scen.condition.id + scen.condition.count - 1
-	for idx = scen.condition.id , max do
-		local cond = deepcopy(gameData["Conditions"][idx])
-
-		if cond["condition-flags"]["initially-true"] ~= true then
+		if cond.flags.initiallyTrue ~= true then
 				cond.active = true
 					cond.isTrue = true
 			else
@@ -72,11 +73,11 @@ end
 function ParseScoreStrings(scen)
 	lines = {}
 
-	if scen["score-string"] == nil then
-		scen["score-string"] = {}
-	end
+--	if scen.scoreString == nil then
+	scen.scoreString = {}
+--	end
 
-	for i, s in ipairs(scen["score-string"]) do
+	for i, s in ipairs(scen.scoreString) do
 		local c = string.sub(s,1,1)
 		local start = 1
 		local line = {}

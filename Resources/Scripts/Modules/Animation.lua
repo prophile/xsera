@@ -8,15 +8,15 @@ function Animate(object)
 		local anim = object.base.animation
 
 		local framesPassed = (realTime - object.gfx.startTime) / object.gfx.frameTime
-		local frameCount = anim["last-shape"] - anim["first-shape"]
+		local frameCount = anim.lastShape - anim.firstShape
 		
-		if object.base.attributes["animation-cycle"] ~= true
+		if object.base.attributes.animationCycle ~= true
 		and framesPassed > frameCount then
 			ExpireTrigger(object)
 			object.status.dead = true
 		end
 		
-		local frameNumber = (framesPassed+anim["frame-shape"]-anim["first-shape"])%(frameCount)+anim["first-shape"]
+		local frameNumber = (framesPassed+anim.shape-anim.firstShape)%(frameCount)+anim.firstShape
 		
 		return frameNumber
 	end

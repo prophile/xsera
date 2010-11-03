@@ -2,11 +2,11 @@
 --import('Actions')
 
 function NewObject(id)
-	local base = gameData["Objects"][id]
+	local base = data.objects[id]
 	
 	local object = {
-		name = base["short-name"];
-		short = base["short-name"];
+		name = base.shortName;
+		short = base.shortName;
 		
 		base = base;
 		control = {
@@ -52,19 +52,20 @@ function NewObject(id)
 	elseif base.animation ~= nil then
 		object.type = "animation"
 		object.gfx.startTime = realTime
-		object.gfx.frameTime = base.animation["frame-speed"] / TIME_FACTOR / 30
+		--implement speed range
+		object.gfx.frameTime = base.animation.speed / TIME_FACTOR / 30
 	elseif base.beam ~= nil then
 		object.type = "beam"
 	else
 		LogError("UNKNOWN OBJECT CLASS")
 	end
 	
-	if base["sprite-id"] ~= nil then
-		object.gfx.sprite = "Id/"..base["sprite-id"];
+	if base.spriteId ~= -1 then
+		object.gfx.sprite = "Id/"..base.spriteId;
 		
 		local dim = graphics.sprite_dimensions(object.gfx.sprite)
 		
-		object.gfx.dimensions = dim * (base["natural-scale"] or 1.0)
+		object.gfx.dimensions = dim * (base.scale/4096 or 1.0)
 		
 		object.physics.collision_radius = hypot1(object.gfx.dimensions) / 4.0
 	else
@@ -72,40 +73,31 @@ function NewObject(id)
 	end
 	
 	
-	if base["initial-age"] ~= nil then
+	if base.initialAge ~= -1 then
 		object.age = {
 			created = realTime;
-			lifeSpan = (base["initial-age"] + math.random(0, base["initial-age"] or 0)) / TIME_FACTOR;
+			lifeSpan = (base.initialAge + math.random(0, base.initialAgeRange)) / TIME_FACTOR;
 		}
 	end
 
 	--Prepare devices
-	if base.weapon ~= nil then
-		object.weapons = {}
-		
-		for wid = 1, #base.weapon do
-			if object.weapons[base.weapon[wid].type] ~= nil then
-				LogError("More than one weapon of type '" .. newObj.weapon[wid].type .. "' defined.")
-			end
-			
-			local wbase = gameData["Objects"][base.weapon[wid].id]
+	object.weapons = {}
+
+	for key, weapon in pairs(object.base.weapons) do
+		if weapon.id ~= -1 then
+			local wbase = data.objects[weapon.id]
 			local weap = {
 				base = wbase;
 				lastPos = 1;
-				positions = base.weapon[wid].position;
+				positions = weapon.positions;
 				ammo = wbase.device.ammo;
-				lastActivated = -wbase.device["fire-time"] / TIME_FACTOR;
+				lastActivated = -wbase.device.reload / TIME_FACTOR;
 				lastRestock = realTime
 			}
-			
 			CopyActions(weap)
-
-			object.weapons[base.weapon[wid].type] = weap
-		
-		
+			object.weapons[key] = weap
 		end
 	end
-	
 	CopyActions(object)
 	return object
 end

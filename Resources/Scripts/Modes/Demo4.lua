@@ -99,8 +99,8 @@ function update()
 			local a = scen.objects[pair[1] ]
 			local b = scen.objects[pair[2] ]
 
-			if a.base.attributes["can-collide"] == true
-			and b.base.attributes["can-collide"] == true
+			if a.base.attributes.canCollide == true
+			and b.base.attributes.canCollide == true
 			and a.ai.owner ~= b.ai.owner then
 				Collide(a,b)
 			end
@@ -111,10 +111,10 @@ function update()
 		for ai, a in pairs(scen.objects) do
 			for bi, b in pairs(scen.objects) do
 				if ai > bi then
-					if a.base.attributes["can-collide"] == true
-					and b.base.attributes["can-collide"] == true
+					if a.base.attributes.canCollide == true
+					and b.base.attributes.canCollide == true
 					and a.ai.owner ~= b.ai.owner
-					and hypot2(a.physics.position,b.physics.position) <= (a.physics.collision_radius + b.physics.collision_radius) then
+					and hypot2(a.physics.position, b.physics.position) <= (a.physics.collision_radius + b.physics.collision_radius) then
 						Collide(a,b)
 					end
 				end
@@ -123,8 +123,13 @@ function update()
 
 		for i, o in pairs(scen.objects) do
 			if o.type == "beam" then
-				if o.base.beam.kind == "bolt-relative"
-				or o.base.beam.kind == "static-relative" then
+				--[[
+				BITS	HEX	FLAG
+				001	0x1	RELATIVE
+				010	0x2	STATIC
+				100	0x4	BOLT
+				--]]
+				if o.base.beam.mode == "relative" then
 					local src = o.gfx.source.position
 					local off = o.gfx.offset
 					local rel = o.gfx.relative
@@ -133,11 +138,10 @@ function update()
 					a = a + rel
 					o.physics.position = src + off + rel
 					
-				elseif o.base.beam.kind == "bolt-to-object"
-					or o.base.beam.kind == "static-to-object" then
+				elseif o.base.beam.mode == "direct" then
 					local from = o.gfx.offset + o.gfx.source.position
 					local dir = NormalizeVec(o.gfx.target.position - o.gfx.source.position)
-					local len = math.min(o.base.beam.range,hypot2(from,o.gfx.target.position))
+					local len = math.min(o.base.beam.range, hypot2(from,o.gfx.target.position))
 					
 					o.physics.position = dir * len
 				end
@@ -163,13 +167,13 @@ function update()
 				end
 				
 				if o.weapons ~= nil then
-					for wid,weap in pairs(o.weapons) do
+					for wid, weap in pairs(o.weapons) do
 						if weap.ammo ~= -1
-						and weap.base.device["restock-cost"] > 0
+						and weap.base.device.restockCost > 0
 						and weap.ammo < weap.base.device.ammo / 2
-						and weap.lastRestock + weap.base.device["restock-cost"] * BASE_RECHARGE_RATE * WEAPON_RESTOCK_RATE / TIME_FACTOR <= realTime
-						and o.status.energy >= weap.base.device["restock-cost"] * WEAPON_RESTOCK_RATIO then
-							o.status.energy = o.status.energy - weap.base.device["restock-cost"] * WEAPON_RESTOCK_RATIO
+						and weap.lastRestock + weap.base.device.restockCost * BASE_RECHARGE_RATE * WEAPON_RESTOCK_RATE / TIME_FACTOR <= realTime
+						and o.status.energy >= weap.base.device.restockCost * WEAPON_RESTOCK_RATIO then
+							o.status.energy = o.status.energy - weap.base.device.restockCost * WEAPON_RESTOCK_RATIO
 							weap.ammo = weap.ammo + 1
 							weap.lastRestock = realTime
 						end
@@ -221,8 +225,8 @@ function update()
 			Warp(o)
 
 			local rvel
-			if o.base.attributes["can-turn"] == true then
-				rvel = o.base.rotation["max-turn-rate"]
+			if o.base.attributes.canTurn == true then
+				rvel = o.base.rotation.turnRate
 			else
 				rvel = DEFAULT_ROTATION_RATE
 			end
@@ -235,39 +239,37 @@ function update()
 				o.physics.angularVelocity = 0
 			end
 
-			if o.base["max-thrust"] ~= nil then
-				if o.warp.stage < WARP_RUNNING then
-					if o.control.accel == true then
-						-- apply a forward force in the direction the ship is facing
-						local angle = o.physics.angle
-						local thrust = o.base["max-thrust"] * SPEED_FACTOR
-						local force = vec(thrust * math.cos(angle), thrust * math.sin(angle))
-						Physics.ApplyImpulse(o.physics, force)
-					end
+			if o.warp.stage < WARP_RUNNING then
+				if o.control.accel == true then
+					-- apply a forward force in the direction the ship is facing
+					local angle = o.physics.angle
+					local thrust = o.base.thrust * SPEED_FACTOR
+					local force = vec(thrust * math.cos(angle), thrust * math.sin(angle))
+					Physics.ApplyImpulse(o.physics, force)
+				end
 
-					if o.control.decel == true
-						or hypot1(o.physics.velocity) >= o.base["max-velocity"] * SPEED_FACTOR then
-						-- apply a reverse force in the direction opposite the direction the ship is MOVING
-						local thrust = o.base["max-thrust"] * SPEED_FACTOR
-						local force = o.physics.velocity
-						if force.x ~= 0 or force.y ~= 0 then
-							if hypot1(o.physics.velocity) <= 10 then
+				if o.control.decel == true
+					or hypot1(o.physics.velocity) >= o.base.maxVelocity * SPEED_FACTOR then
+					-- apply a reverse force in the direction opposite the direction the ship is MOVING
+					local thrust = o.base.thrust * SPEED_FACTOR
+					local force = o.physics.velocity
+					if force.x ~= 0 or force.y ~= 0 then
+						if hypot1(o.physics.velocity) <= 10 then
+							o.physics.velocity = vec(0, 0)
+						else
+							local velocityMag = hypot1(force)
+							force = -force * thrust / velocityMag
+							if dt * velocityMag / o.physics.mass > velocityMag then
 								o.physics.velocity = vec(0, 0)
 							else
-								local velocityMag = hypot1(force)
-								force = -force * thrust / velocityMag
-								if dt * velocityMag / o.physics.mass > velocityMag then
-									o.physics.velocity = vec(0, 0)
-								else
-									Physics.ApplyImpulse(o.physics, force)
-								end
+								Physics.ApplyImpulse(o.physics, force)
 							end
 						end
 					end
-				elseif o.base["warp-speed"] ~= nil then
-					local velocityMag = math.max(o.warp.factor * o.base["warp-speed"], o.base["max-velocity"]) * SPEED_FACTOR
-					o.physics.velocity = PolarVec(velocityMag, o.physics.angle)
 				end
+			elseif o.base.warpSpeed ~= nil then
+				local velocityMag = math.max(o.warp.factor * o.base.warpSpeed, o.base.maxVelocity) * SPEED_FACTOR
+				o.physics.velocity = PolarVec(velocityMag, o.physics.angle)
 			end
 		end
 		
@@ -433,8 +435,8 @@ momentMag = dist * m1/(m1+m2)
 v1 = Polar2Rect(1,angle) * dist * m1 / (m1 + m2)
 v2 = Polar2Rect(1,angle+180) * dist * m2 / (m1 + m2)
 --]]
-	if o.base.attributes["occupies-space"]
-	and other.base.attributes["occupies-space"] then
+	if o.base.attributes.occupiesSpace
+	and other.base.attributes.occupiesSpace then
 		local p = o.physics
 		local p2 = other.physics
 		v1 = p.velocity
@@ -516,21 +518,23 @@ end
 
 function DrawObject(o)
 	if o.type == "beam" then
-		if o.base.beam.kind == "kinetic" then
+		--[[
+			BITS	HEX	FLAG
+			001	0x1	RELATIVE
+			010	0x2	STATIC
+			100	0x4	BOLT
+		--]]
+		if o.base.beam.hex > 0 then
+			local from = o.gfx.source.position + o.gfx.offset
+			if o.base.beam.hex == "bolt" then
+				graphics.draw_lightning(from, o.physics.position, 1.0, 10.0, false,ClutColour(o.base.beam.color))
+			elseif o.base.beam.type == "static" then
+				graphics.draw_line(from, o.physics.position, 3.0, ClutColour(o.base.beam.color))
+			end
+		else --kinetic
 			local p1 = o.physics.position
 			local p2 = PolarVec(BEAM_LENGTH,o.physics.angle)
 			graphics.draw_line(p1, p1 + p2, 1, ClutColour(o.base.beam.color))
-		else
-			local from = o.gfx.source.position + o.gfx.offset
-			if o.base.beam.kind == "bolt-relative" then
-				graphics.draw_lightning(from, o.physics.position, 1.0, 10.0, false,ClutColour(o.base.beam.color))
-			elseif o.base.beam.kind == "bolt-to-object" then
-				graphics.draw_lightning(from, o.physics.position, 1.0, 10.0, false,ClutColour(o.base.beam.color))
-			elseif o.base.beam.kind == "static-relative" then
-				graphics.draw_line(from, o.physics.position, 3.0, ClutColour(o.base.beam.color))
-			elseif o.base.beam.kind == "static-to-object" then
-				graphics.draw_line(from, o.physics.position, 3.0, ClutColour(o.base.beam.color))
-			end
 		end
 	else
 		if cameraRatio.current >= 1 / 4 then
@@ -550,17 +554,17 @@ function DrawObject(o)
 				color = ClutColour(16,1)
 			end
 
-			local iconScale = 1.0 / cameraRatio.current
-			if o.base["tiny-shape"] == "solid-square" then
-				graphics.draw_rbox(o.physics.position, o.base["tiny-size"] * iconScale, color)
-			elseif o.base["tiny-shape"] == "plus" then
-				graphics.draw_rplus(o.physics.position, o.base["tiny-size"] * iconScale, color)
-			elseif o.base["tiny-shape"] == "triangle" then
-				graphics.draw_rtri(o.physics.position, o.base["tiny-size"] * iconScale, color)
-			elseif o.base["tiny-shape"] == "diamond" then
-				graphics.draw_rdia(o.physics.position, o.base["tiny-size"] * iconScale, color)
-			elseif o.base["tiny-shape"] == "framed-square" then --NOT IMPLEMENTED
-				graphics.draw_rbox(o.physics.position, o.base["tiny-size"] * iconScale, color)
+			local iconScale = 1.0/cameraRatio.current
+			if o.base.iconShape == "square" then
+				graphics.draw_rbox(o.physics.position, o.base.iconSize * iconScale, color)
+			elseif o.base.iconShape == "plus" then
+				graphics.draw_rplus(o.physics.position, o.base.iconSize * iconScale, color)
+			elseif o.base.iconShape == "triangle" then
+				graphics.draw_rtri(o.physics.position, o.base.iconSize * iconScale, color)
+			elseif o.base.iconShape == "diamond" then
+				graphics.draw_rdia(o.physics.position, o.base.iconSize * iconScale, color)
+			elseif o.base.iconShape == "framed square" then --NOT IMPLEMENTED
+				graphics.draw_rbox(o.physics.position, o.base.iconSize * iconScale, color)
 			end
 		end
 	end

@@ -388,8 +388,8 @@
 				496A24AB0F0EB37900C53BA1 /* Input.h */,
 				496A24AC0F0EB37900C53BA1 /* Net */,
 				496A24B70F0EB37900C53BA1 /* Scripting */,
-				496A24BD0F0EB37900C53BA1 /* Sound */,
 				496A24C00F0EB37900C53BA1 /* Utilities */,
+				496A24BD0F0EB37900C53BA1 /* Sound */,
 			);
 			name = Source;
 			sourceTree = "<group>";
