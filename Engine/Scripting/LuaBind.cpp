@@ -1702,9 +1702,9 @@ int XNet_Create ( lua_State* L )
         return 0;
     }
     // what is a SocketProvider?
-    SocketProvider socketProvider();
+    //SocketProvider socketProvider();
     
-    XNet::Peer peer(socketProvider, port);
+    //XNet::Peer peer(socketProvider, port);
     
     
     return 1;
@@ -1714,7 +1714,7 @@ luaL_Reg registryXnet[] =
 {
     "create", XNet_Create,
     NULL, NULL
-}
+};
 
 int import ( lua_State* L )
 {

@@ -73,7 +73,7 @@ end
 
 function TurnAway(object, target)
 	local ang = find_angle(target.physics.position,object.physics.position) - object.physics.angle
-	ang = radian_range(ang)
+	ang = normalizeAngle(ang)
 	
 	if ang <= 0.95 * math.pi then
 		object.control.left = false
@@ -91,7 +91,7 @@ function TurnToward(object, target)
 
 	local ang = AimFixed(object.physics,target.physics, hypot1(object.physics.velocity)) - object.physics.angle
 
-	ang = radian_range(ang)
+	ang = normalizeAngle(ang)
 	
 	if math.abs(ang-math.pi) >= math.pi * 0.95 then
 		object.control.left = false
