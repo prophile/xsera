@@ -72,6 +72,7 @@ function NewObject(id)
 		object.physics.collision_radius = 1
 	end
 	
+	object.gfx.cycle = 0
 	
 	if base.initialAge ~= -1 then
 		object.age = {

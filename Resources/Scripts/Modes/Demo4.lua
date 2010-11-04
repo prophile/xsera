@@ -517,6 +517,7 @@ function Warp(object)
 end
 
 function DrawObject(o)
+	o.gfx.cycle = o.gfx.cycle + dt
 	if o.type == "beam" then
 		--[[
 			BITS	HEX	FLAG
@@ -544,15 +545,20 @@ function DrawObject(o)
 				graphics.draw_sprite(o.gfx.sprite, o.physics.position, o.gfx.dimensions, o.physics.angle)
 			end
 		else
+			local cscale = 1
+			if o.status.health <= o.status.healthMax / 2 then
+				cscale = math.ceil((math.sin(o.gfx.cycle*4) + 1)*7)
+			end
 			local color
 
 			if o.ai.owner == -1 then
-				color = ClutColour(4,1)
+				color = ClutColour(4,cscale)
 			elseif o.ai.owner == scen.playerShip.ai.owner then
-				color = ClutColour(5,1)
+				color = ClutColour(5,cscale)
 			else
-				color = ClutColour(16,1)
+				color = ClutColour(16,cscale)
 			end
+
 
 			local iconScale = 1.0/cameraRatio.current
 			if o.base.iconShape == "square" then
