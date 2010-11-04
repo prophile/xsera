@@ -282,12 +282,12 @@ function update()
 	end
 end
 
-function Win()
-	print("_  _              __    ______     ____   _ ")
+function Win() -- this may look ugly, but you need the double backslashes to make it work
+	print("__             __    ______     ___   _ ")
 	print("\\ \\     /\\    / /   |__  __|   |   \\ | |")
-	print(" \\ \\   /  \\  / /       | |     | |\ \\| |")
-	print("  \\ \\_/ /\ \\/ /     ___| |__   | | \    |")
-	print("   \\____/  \___/      |______|   |_|  \\__|")
+	print(" \\ \\   /  \\  / /       | |     | |\\ \\| |")
+	print("  \\ \\_/ /\\ \\/ /      __| |_    | | \\   |")
+	print("   \\___/  \\__/      |______|   |_|  \\__|")
 end
 
 function render()

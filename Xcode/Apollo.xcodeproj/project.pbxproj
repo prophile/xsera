@@ -336,6 +336,7 @@
 		57DFB0C811E3993700941E61 /* MachinePower.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MachinePower.cpp; sourceTree = "<group>"; };
 		57FCA50910ACDF9D002D6A9E /* Object3D.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Object3D.cpp; sourceTree = "<group>"; };
 		57FCA50A10ACDF9D002D6A9E /* Object3D.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Object3D.h; sourceTree = "<group>"; };
+		7A5DD996126D7B860037B298 /* untitled */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = untitled; sourceTree = "<group>"; };
 		D221494011652EA4009575A0 /* bit.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = bit.c; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -615,6 +616,7 @@
 		57A29D9F11963F680074B901 /* XNet */ = {
 			isa = PBXGroup;
 			children = (
+				7A5DD996126D7B860037B298 /* untitled */,
 				57A29DD211963F940074B901 /* System */,
 				57A29DB511963F8D0074B901 /* Plugins */,
 				57A29DA011963F790074B901 /* DataSerialiser.cpp */,
