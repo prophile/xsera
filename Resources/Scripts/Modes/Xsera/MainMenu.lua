@@ -55,7 +55,7 @@ end
 function render ()
     graphics.begin_frame()
     
-	graphics.set_camera(-240 * aspectRatio, -240, 240 * aspectRatio, 240)
+    graphics.set_camera(-240 * aspectRatio, -240, 240 * aspectRatio, 240)
     graphics.draw_image("Bootloader/Xsera", vec(0, 0), { x = 480 * aspectRatio, y = 480 })
     for id, ship in ipairs(ships) do
         local sz = graphics.sprite_dimensions("Ships/" .. ship[3], goodSpriteSheetX, goodSpriteSheetY)
@@ -66,46 +66,46 @@ function render ()
     graphics.draw_text("C - Credits", MAIN_FONT, "left", { x = -240 * aspectRatio + 30, y = -50 }, 45)
     
     graphics.draw_text(versionInformation, MAIN_FONT, "left", { x = -240 * aspectRatio + 10, y = -220 }, 20)
-	
-	graphics.draw_text("Level selected: " .. demoLevel .. " (" .. data.scenarios[demoLevel].name ..")", MAIN_FONT, "right", { x = 240 * aspectRatio - 10, y = 220 }, 30)
+    
+    graphics.draw_text("Level selected: " .. demoLevel .. " (" .. data.scenarios[demoLevel].name ..")", MAIN_FONT, "right", { x = 240 * aspectRatio - 10, y = 220 }, 30)
     graphics.end_frame()
 end
 
 function key ( k )
-	if RELEASE_BUILD == true then
-		if k == "x" then
-			mode_manager.switch("Ares/Splash")
-		end
-	else -- debug build utilities / tests
-		if k == "x" then
-			mode_manager.switch("Xsera/ConsoleDrawer")
-		elseif k == "t" then
-			mode_manager.switch("../Tests/TurretTest")
-		elseif k == "1" then
-			mode_manager.switch("../Tests/CSTest")
-		elseif k == "2" then  -- this does not work. [ALISTAIR] You said you thought of a different way to do this?
-			print("CALLING SPECIAL SWITCH")
-			tabl = { "THIS", "IS", "XSERAAAAAAAAAAAAA" }
-			mode_manager.switch("../Tests/CSTest", tabl)
-		elseif k == "3" then
-			mode_manager.switch("../Tests/WindowTest")
-		elseif k == "4" then
-			mode_manager.switch("../Tests/TextTests")
-		elseif k == "5" then
-			mode_manager.switch("Ares/Splash")
-		elseif k == "6" then
-			mode_manager.switch("../Tests/PreferenceTest")
-		elseif k == "7" then
-			mode_manager.switch("../Tests/PhysicsTest")
-		elseif k == "8" then
-			mode_manager.switch("../Tests/Bits")
-		elseif k == "9" then
-			mode_manager.switch("../Tests/3DTest")
-		elseif k == "0" then
-			mode_manager.switch("../Tests/XNetTest")
-		end
-	end
-	
+    if RELEASE_BUILD == true then
+        if k == "x" then
+            mode_manager.switch("Ares/Splash")
+        end
+    else -- debug build utilities / tests
+        if k == "x" then
+            mode_manager.switch("Xsera/ConsoleDrawer")
+        elseif k == "t" then
+            mode_manager.switch("../Tests/TurretTest")
+        elseif k == "1" then
+            mode_manager.switch("../Tests/CSTest")
+        elseif k == "2" then  -- this does not work. [ALISTAIR] You said you thought of a different way to do this?
+            print("CALLING SPECIAL SWITCH")
+            tabl = { "THIS", "IS", "XSERAAAAAAAAAAAAA" }
+            mode_manager.switch("../Tests/CSTest", tabl)
+        elseif k == "3" then
+            mode_manager.switch("../Tests/WindowTest")
+        elseif k == "4" then
+            mode_manager.switch("../Tests/TextTests")
+        elseif k == "5" then
+            mode_manager.switch("Ares/Splash")
+        elseif k == "6" then
+            mode_manager.switch("../Tests/PreferenceTest")
+        elseif k == "7" then
+            mode_manager.switch("../Tests/PhysicsTest")
+        elseif k == "8" then
+            mode_manager.switch("../Tests/Bits")
+        elseif k == "9" then
+            mode_manager.switch("../Tests/3DTest")
+        elseif k == "0" then
+            mode_manager.switch("../Tests/XNetTest")
+        end
+    end
+    
     if k == "i" then
         timeFactor = timeFactor + 0.05
     elseif k == "u" then
@@ -121,7 +121,7 @@ function key ( k )
     elseif k == "tab" then
         mode_manager.switch("Ares/Splash")
     elseif k == "escape" then
-		mode_manager.quit()
+        mode_manager.quit()
     else
         print("Uninterpreted keystroke " .. k)
     end
@@ -166,9 +166,9 @@ function init ()
         print("Signed off by: " .. versionData[3][1])
     end
     lastTime = mode_manager.time()
-	print(sound.current_music())
-	if sound.current_music() ~= "Doomtroopers" then
-		sound.play_music("FRED")
-	end
+    print(sound.current_music())
+    if sound.current_music() ~= "Doomtroopers" then
+        sound.play_music("FRED")
+    end
 end
 

@@ -1,3 +1,4 @@
+#!/usr/bin/env ruby
 # Detabify.rb
 # A tool by Adam Hintz
 # The source code in this file is available under the following license (MIT):
