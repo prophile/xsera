@@ -20,8 +20,7 @@ do
 	originalPrint = print
 	newPrint = function(...)
 		local bigTable = {...}
-		i = 1
-		while bigTable[i] ~= nil do
+		for i = 1, #bigTable do
 			ConsoleAdd(tostring(bigTable[i]))
 			i = i + 1
 		end
