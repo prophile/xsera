@@ -24,7 +24,7 @@ firstArg = true
 ARGV.each do |arg|
   if firstArg then
     firstArg = false
-    continue
+    next
   end
   
   newFile = Array.new
