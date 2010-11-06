@@ -284,7 +284,7 @@ function update ()
 		while wNum <= playerShip.special.max_projectiles do
 			if playerShip.specialWeap[wNum] ~= nil then
 				if playerShip.specialWeap[wNum].isSeeking == true then
-					playerShip.specialWeap[wNum].theta = find_angle(playerShip.specialWeap[wNum].physicsObject.position, playerShip.special.dest)
+					playerShip.specialWeap[wNum].theta = findAngle(playerShip.specialWeap[wNum].physicsObject.position, playerShip.special.dest)
 					if playerShip.specialWeap[wNum].physicsObject.angle ~= playerShip.specialWeap[wNum].theta then
 						playerShip.specialWeap[wNum].delta = playerShip.specialWeap[wNum].theta - playerShip.specialWeap[wNum].physicsObject.angle
 						if math.abs(playerShip.specialWeap[wNum].delta) > math.pi then -- need to go through 0

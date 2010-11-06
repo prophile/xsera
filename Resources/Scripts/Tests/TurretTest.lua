@@ -1,4 +1,4 @@
-import('Math')
+import('Physics')
 
 lastTime = 0
 keys = {
@@ -22,16 +22,17 @@ bulletSpeed = 650
 bulletRadius = 5.0
 pigeonRadius = 10.0
 
-turnRate = 2*math.pi
+turnRate = 2 * math.pi
 powerUpRate = 50.0
 
 
 
 function init()
-	lastTime = mode_manager.time()
---	turret = physics.new_object(1.0)
---	launcher = physics.new_object(1.0)
-	physics.open(1.0)
+    lastTime = mode_manager.time()
+--  turret = physics.new_object(1.0)
+--  launcher = physics.new_object(1.0)
+--  physics.open(1.0)
+    Physics.NewSystem()
 end
 
 function update()
@@ -49,7 +50,7 @@ function update()
 	elseif keys.down == true then
 		power = power - powerUpRate * dt
 	end
-	physics.update(dt)
+	Physics.UpdateSystem(dt)
 end
 
 function render()
@@ -57,16 +58,16 @@ function render()
 	graphics.set_camera(-512,-384,512,384)
 	
 	local endPoint = PolarVec(power,angle)
-	graphics.draw_line({x=0,y=0},endPoint,1.0,{r=0,g=1,b=0,a=1})
+	graphics.draw_line({x=0, y=0}, endPoint, 1.0, {r=0, g=1, b=0, a=1})
 	
-	graphics.draw_circle(turret,25,4,{r=1,g=0,b=0,a=1})
+	graphics.draw_circle(turret, 25, 4, {r=1, g=0, b=0, a=1})
 	
 	for i,o in pairs(projectiles) do
 		if o.type == "p" then
-			graphics.draw_circle(o.p.position,pigeonRadius,1,{r=1.0,g=0.3;b=0,a=1})
-			graphics.draw_circle(o.p.position,pigeonRadius*0.75,1,{r=1.0,g=0.3;b=0,a=1})
+			graphics.draw_circle(o.p.position, pigeonRadius, 1, {r=1.0, g=0.3, b=0, a=1})
+			graphics.draw_circle(o.p.position, pigeonRadius * 0.75, 1, {r=1.0, g=0.3, b=0, a=1})
 		else
-			graphics.draw_circle(o.p.position,bulletRadius,1,{r=1,g=1,b=1,a=1})
+			graphics.draw_circle(o.p.position, bulletRadius, 1, {r=1, g=1, b=1, a=1})
 		end
 	end
 	

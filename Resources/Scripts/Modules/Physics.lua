@@ -1,33 +1,32 @@
 import('Math')
 
 Physics = {
-	system = { gravity, gravityIsLoc, gravMass },
+	system = { gravity, gravityIsLoc, gravityMass }, -- this is quite static'd up, to use a Java term
 	GRAVITY = 6.6742e-11,
 	ID = 0,
 	
-	NewSystem = function(gravity, gravityIsLoc, gravMass)
-		if gravity == nil then
-			gravity = vec(0, 0)
-			gravityIsLoc = false
-		end
-		
-		system = { gravity = gravity, gravityIsLoc = gravityIsLoc, gravMass = gravMass }
+	NewSystem = function(gravity, gravityIsLoc, gravityMass)
+		Physics.system.gravity = gravity or vec(0, 0)
+        Physics.system.gravityIsLoc = gravityIsLoc or false
+        Physics.system.gravityMass = gravityMass
 	end,
 	
 	UpdateSystem = function(dt, objects)
 		if physicsObjects ~= {} then
-			for i, o in pairs(objects) do
-			--	printTable(o)
-				if system.gravityIsLoc then
-					local distX = o.position.x - system.gravity.x
-					local distY = o.position.y - system.gravity.y
-					local relativeGravityPosition = o.position - system.gravity
-					local hypot = hypot(distX, distY)
-					local grav = GRAVITY * (system.gravMass * o.mass) / (distX^2 + distY^2)
-					Physics.UpdateObject(o.physics, dt, rav/hypot*relativeGravityPosition)
-					-- the above line really needs to be tested
-				else
-					Physics.UpdateObject(o.physics, dt, system.gravity)
+            if objects ~= nil then
+                for i, o in pairs(objects) do
+			        -- printTable(o)
+				    if system.gravityIsLoc then
+                        local distX = o.position.x - system.gravity.x
+					    local distY = o.position.y - system.gravity.y
+					    local relativeGravityPosition = o.position - system.gravity
+                        local hypot = hypot(distX, distY)
+                        local grav = GRAVITY * (system.gravityMass * o.mass) / (distX^2 + distY^2)
+                        Physics.UpdateObject(o.physics, dt, rav/hypot*relativeGravityPosition)
+                        -- the above line really needs to be tested
+                    else
+                        Physics.UpdateObject(o.physics, dt, system.gravity)
+                    end
 				end
 			end
 		end

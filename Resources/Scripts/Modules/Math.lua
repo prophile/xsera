@@ -60,12 +60,12 @@ function normalize(comp1, comp2)
 	return comp1 / hypot(comp1, comp2)
 end
 
-function find_angle(origin, dest)
+function findAngle(origin, dest)
 	local angle = normalizeAngle(math.atan2(origin.y - dest.y, origin.x - dest.x))
 	return angle
 end
 
-function RandomReal (min, max)
+function RandomReal(min, max)
     return (math.random() * (max - min)) + min
 end
 

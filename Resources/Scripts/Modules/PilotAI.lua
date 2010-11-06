@@ -72,7 +72,7 @@ end
 
 
 function TurnAway(object, target)
-	local ang = find_angle(target.physics.position,object.physics.position) - object.physics.angle
+	local ang = findAngle(target.physics.position,object.physics.position) - object.physics.angle
 	ang = normalizeAngle(ang)
 	
 	if ang <= 0.95 * math.pi then

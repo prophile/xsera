@@ -456,7 +456,7 @@ v2 = Polar2Rect(1,angle+180) * dist * m2 / (m1 + m2)
 --]]
 
 		local dist = hypot2(v1, v2)
-		local angle = find_angle(p.position,p2.position)
+		local angle = findAngle(p.position,p2.position)
 		p.velocity = PolarVec(dist * m1 / (m1+m2), angle)
 		p2.velocity = PolarVec(dist * m2 / (m1+m2), angle+math.pi)
 	end

@@ -101,6 +101,8 @@ function key ( k )
 			mode_manager.switch("../Tests/Bits")
 		elseif k == "9" then
 			mode_manager.switch("../Tests/3DTest")
+		elseif k == "0" then
+			mode_manager.switch("../Tests/XNetTest")
 		end
 	end
 	

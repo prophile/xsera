@@ -209,7 +209,7 @@ Actions["create object"] = function(action, source, direct)
 				local vel = (new.base.initialVelocity or 0) * SPEED_FACTOR
 				new.physics.angle = AimTurret(srcMotion, targ, vel)
 			else
-				new.physics.angle = find_angle(targ.position, new.physics.position)
+				new.physics.angle = findAngle(targ.position, new.physics.position)
 			end
 		elseif action.directionRelative == true then
 			new.physics.angle = srcMotion.angle
