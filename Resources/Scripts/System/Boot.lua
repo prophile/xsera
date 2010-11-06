@@ -2,7 +2,7 @@
 import("data")
 
 for idx, name in pairs(data.sounds) do
-	sound.preload(name)
+    sound.preload(name)
 end
 -- graphics.preload_font("prototype")
 -- graphics.preload_font("sneakout")

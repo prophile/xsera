@@ -10,7 +10,9 @@
 # to use, copy, modify, merge, publish, distribute, sublicense, and/or sell 
 # copies of the Software, and to permit persons to whom the Software is 
 # furnished to do so, subject to the following conditions:
-# The above copyright notice and this permission notice shall be included in # all copies or substantial portions of the Software.
+# The above copyright notice and this permission notice shall be included in 
+# all copies or substantial portions of the Software.
+
 # THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR 
 # IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, 
 # FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE 
@@ -21,22 +23,31 @@
 
 numSpaces = ARGV[0]
 
-firstArg = true
-ARGV.each do |arg|
-  if firstArg then
-    firstArg = false
-    next
-  end
-  
+(args = Array.new ARGV).delete_at 0
+
+args.each do |arg|
   newFile = Array.new
-  File.open(arg, "r").each do |line|
-    newFile << line.gsub(/\t/, "    ")
+  if File.directory?(arg) then
+    dirContents = Dir.entries(arg)
+    dirContents.delete(".")
+    dirContents.delete("..")
+    dirContents.collect! do |dirContent|
+      puts (arg + ", " + dirContent)
+      arg + "/" + dirContent
+    end
+    
+    (args << dirContents).flatten!
+  else
+    puts "Modifying file " + arg
+    File.open(arg, "r").each do |line|
+      newFile << line.gsub(/\t/, "    ")
+    end
+    
+    outFile = File.open(arg, "w")
+    newFile.each do |line|
+      outFile.write line
+    end
+    outFile.close
   end
-  
-  outFile = File.open(arg, "w")
-  newFile.each do |line|
-    outFile.write line
-  end
-  
 end
 

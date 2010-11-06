@@ -5,5 +5,5 @@
 -- Tests should be named test_<name>
 
 function TestLuaWorks ()
-	print("Yes, Lua works")
+    print("Yes, Lua works")
 end
