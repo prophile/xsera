@@ -1,4 +1,5 @@
 import('Physics')
+import('PilotAI')
 
 lastTime = 0
 keys = {
@@ -29,9 +30,6 @@ powerUpRate = 50.0
 
 function init()
     lastTime = mode_manager.time()
---  turret = physics.new_object(1.0)
---  launcher = physics.new_object(1.0)
---  physics.open(1.0)
     Physics.NewSystem()
 end
 
@@ -50,12 +48,12 @@ function update()
     elseif keys.down == true then
         power = power - powerUpRate * dt
     end
-    Physics.UpdateSystem(dt)
+    Physics.UpdateSystem(dt, projectiles)
 end
 
 function render()
     graphics.begin_frame()
-    graphics.set_camera(-512,-384,512,384)
+    graphics.set_camera(-512, -384, 512, 384)
     
     local endPoint = PolarVec(power,angle)
     graphics.draw_line({x=0, y=0}, endPoint, 1.0, {r=0, g=1, b=0, a=1})
@@ -64,10 +62,10 @@ function render()
     
     for i,o in pairs(projectiles) do
         if o.type == "p" then
-            graphics.draw_circle(o.p.position, pigeonRadius, 1, {r=1.0, g=0.3, b=0, a=1})
-            graphics.draw_circle(o.p.position, pigeonRadius * 0.75, 1, {r=1.0, g=0.3, b=0, a=1})
+            graphics.draw_circle(o.physics.position, pigeonRadius, 1, {r=1.0, g=0.3, b=0, a=1})
+            graphics.draw_circle(o.physics.position, pigeonRadius * 0.75, 1, {r=1.0, g=0.3, b=0, a=1})
         else
-            graphics.draw_circle(o.p.position, bulletRadius, 1, {r=1, g=1, b=1, a=1})
+            graphics.draw_circle(o.physics.position, bulletRadius, 1, {r=1, g=1, b=1, a=1})
         end
     end
     
@@ -79,14 +77,14 @@ function key(k)
     or k == "q" then
         mode_manager.switch("Xsera/MainMenu")
     elseif k == " " then
-        local pigeon = physics.new_object(1)
+        local pigeon = Physics.NewObject(1)
         pigeon.collision_radius= pigeonRadius
         pigeon.angle = angle
         pigeon.velocity = PolarVec(power*2,angle)
-        projectiles[pigeon.object_id] = {type="p";p = pigeon}
+        projectiles[pigeon.object_id] = {type = "p"; physics = pigeon}
         
         
-        local bullet = physics.new_object(1)
+        local bullet = Physics.NewObject(1)
         bullet.collision_radius = bulletRadius
         bullet.angle = AimTurret(
             {
@@ -99,7 +97,7 @@ function key(k)
         bullet.position = turret
         bullet.velocity = PolarVec(bulletSpeed, bullet.angle)
         
-        projectiles[bullet.object_id] = {type="b";p = bullet}
+        projectiles[bullet.object_id] = {type = "b"; physics = bullet}
         
     elseif keys[k] ~= nil then
         keys[k] = true

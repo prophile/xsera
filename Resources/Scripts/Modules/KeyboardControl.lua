@@ -417,23 +417,23 @@ keyboard = { { "Ship",
 ---------------------------------]]--
 
 function ReassignKey(name, key)
-    for i = 1, #keyboard do
-        for j = 2, #keyboard[i] do
-            if keyboard[i][j].key == key then
-                keyboard[i][j].key = nil
+    for _, i in ipairs(keyboard) do
+        for _, j in ipairs(i) do
+            if j.key == key then
+                j.key = nil
             end
-            if keyboard[i][j].menu == menu then
-                keyboard[i][j].key = key
+            if j.menu == menu then
+                j.key = key
             end
         end
     end
 end
 
 function KeyIsUnassigned()
-    for i = 1, #keyboard do
-        for j = 2, #keyboard[i] do
-            if keyboard[i][j].key == nil then
-                return true, keyboard[i][j].name
+    for _, i in ipairs(keyboard) do
+        for _, j in ipairs(i) do
+            if j.key == nil then
+                return true, j.name
             end
         end
     end
@@ -441,10 +441,10 @@ function KeyIsUnassigned()
 end
 
 function KeyActivate(key)
-    for i = 1, #keyboard do
-        for j = 2, #keyboard[i] do
-            if keyboard[i][j].key == key then
-                keyboard[i][j].active = true
+    for _, i in ipairs(keyboard) do
+        for _, j in ipairs(i) do
+            if j.key == key then
+                j.active = true
                 return
             end
         end
@@ -452,10 +452,10 @@ function KeyActivate(key)
 end
 
 function ActionActivate(name)
-    for i = 1, #keyboard do
-        for j = 2, #keyboard[i] do
-            if keyboard[i][j].name == name then
-                keyboard[i][j].active = true
+    for _, i in ipairs(keyboard) do
+        for _, j in ipairs(i) do
+            if j.name == name then
+                j.active = true
                 return
             end
         end
@@ -463,12 +463,12 @@ function ActionActivate(name)
 end
 
 function KeyDeactivate(key)
-    for i = 1, #keyboard do
-        for j = 2, #keyboard[i] do
-            if keyboard[i][j].key == key then
-                keyboard[i][j].active = false
-                if keyboard[i][j].deaction ~= nil then
-                    keyboard[i][j].deaction()
+    for _, i in ipairs(keyboard) do
+        for _, j in ipairs(i) do
+            if j.key == key then
+                j.active = false
+                if j.deaction ~= nil then
+                    j.deaction()
                 end
                 return
             end
@@ -477,12 +477,12 @@ function KeyDeactivate(key)
 end
 
 function ActionDeactivate(name)
-    for i = 1, #keyboard do
-        for j = 2, #keyboard[i] do
-            if keyboard[i][j].name == name then
-                keyboard[i][j].active = false
-                if keyboard[i][j].deaction ~= nil then
-                    keyboard[i][j].deaction()
+    for _, i in ipairs(keyboard) do
+        for _, j in ipairs(i) do
+            if j.name == name then
+                j.active = false
+                if j.deaction ~= nil then
+                    j.deaction()
                 end
                 return
             end
@@ -491,11 +491,11 @@ function ActionDeactivate(name)
 end
 
 function KeyDoActivated()
-    for i = 1, #keyboard do
-        for j = 2, #keyboard[i] do
-            if keyboard[i][j].active == true then
-                if keyboard[i][j].action ~= nil then
-                    keyboard[i][j].action()
+    for _, i in ipairs(keyboard) do
+        for _, j in ipairs(i) do
+            if j.active == true then
+                if j.action ~= nil then
+                    j.action()
                 end
             end
         end
@@ -515,10 +515,10 @@ end
 --]]
 
 function KeyToName(key)
-    for i = 1, #keyboard do
-        for j = 2, #keyboard[i] do
-            if keyboard[i][j].key == key then
-                return keyboard[i][j].name
+    for _, i in ipairs(keyboard) do
+        for _, j in ipairs(i) do
+            if j.key == key then
+                return j.name
             end
         end
     end
@@ -537,10 +537,10 @@ end
 --]]
 
 function NameToKey(name)
-    for i = 1, #keyboard do
-        for j = 2, #keyboard[i] do
-            if keyboard[i][j].name == name then
-                return keyboard[i][j].key
+    for _, i in ipairs(keyboard) do
+        for _, j in ipairs(i) do
+            if j.name == name then
+                return j.key
             end
         end
     end
