@@ -1,5 +1,6 @@
 -- client-server tests. If you add tests, please put descriptions of what the test does
 
+import('GlobalVars')
 import('Networking')
 
 -- this test checks very basic local message functionality using strings as messages.

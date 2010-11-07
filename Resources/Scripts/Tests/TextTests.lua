@@ -29,24 +29,6 @@ end
 function key(k)
     if k == "1" then
         test1()
-    elseif k == "2" then
-        test2()
-    elseif k == "3" then
-        test3()
-    elseif k == "4" then
-        test4()
-    elseif k == "5" then
-        test5()
-    elseif k == "6" then
-        test6()
-    elseif k == "7" then
-        test7()
-    elseif k == "8" then
-        test8()
-    elseif k == "9" then
-        test9()
-    elseif k == "0" then
-        test0()
     elseif k == "escape" then
         mode_manager.switch('Xsera/MainMenu')
     end
