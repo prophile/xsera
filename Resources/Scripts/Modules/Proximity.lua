@@ -61,7 +61,7 @@ function GetFurthestObject(subject)
 			local tempDist = hypot2(pos, other.physics.position)
 
 			if dist < tempDist
-			or furthest == nil then
+    		or furthest == nil then
 				furthest = other
 				dist = tempDist
 			end
@@ -69,4 +69,27 @@ function GetFurthestObject(subject)
 	end
 
 	return furthest, dist
+end
+
+
+function NextTargetUnderCursor(startId, target)
+
+	local cursorId = startId
+	local cursor = nil
+	repeat
+		cursorId, cursor = next(scen.objects, cursorId)
+		if cursor ~= nil then
+			if (hypot2(GetMouseCoords(), cursor.physics.position) <= (cursor.physics.collision_radius + 15.0/cameraRatio.current)) then
+				if not target then
+					if cursor.ai.owner == scen.playerShip.ai.owner then
+						break
+					end
+				else
+					break
+				end
+			end
+		end
+	until cursorId == startId
+
+	return cursorId, cursor
 end

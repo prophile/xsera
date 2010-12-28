@@ -28,7 +28,9 @@ function init()
 	scen = LoadScenario(demoLevel)
 
 	selection.control = scen.playership
+	selection.controlId = scen.playerShipId
 	selection.target = nil
+	selection.targetId = nil
 	
 	window.mouse_toggle()
 end
@@ -323,7 +325,7 @@ function render()
 	DrawArrow()
 	DrawMouse1()
 	DrawPanels()
-	
+
 	local cam = CameraToWindow()
 	graphics.set_camera(cam[1], cam[2], cam[3], cam[4])
 	DrawMouse2()
@@ -352,18 +354,12 @@ end
 
 function mouse_up()
 	mdown = false
-
+	print(cameraRatio.current)
 	local mousePos = GetMouseCoords()
-	for i, o in pairs(scen.objects) do
-		if hypot2(o.physics.position, mousePos) <= o.physics.collision_radius + mrad == true then
-			if keyboard[2][5].active == true then
-				print("TARGET SELECT")
-				selection.target = scen.objects[i]
-			else
-				print("CONTROL SELECT")
-				selection.control = scen.objects[i]
-			end
-		end
+	if keyboard[2][5].active == true then -- TARGET
+		selection.targetId, selection.target = NextTargetUnderCursor(selection.targetId, true)
+	else
+		selection.controlId, selection.control = NextTargetUnderCursor(selection.targetId, false)
 	end
 end
 
