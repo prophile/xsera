@@ -358,8 +358,8 @@ function mouse_up()
 	local mousePos = GetMouseCoords()
 	if keyboard[2][5].active == true then -- TARGET
 		selection.targetId, selection.target = NextTargetUnderCursor(selection.targetId, true)
-	else
-		selection.controlId, selection.control = NextTargetUnderCursor(selection.targetId, false)
+	else -- CONTROL
+		selection.controlId, selection.control = NextTargetUnderCursor(selection.controlId, false)
 	end
 end
 
