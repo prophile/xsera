@@ -145,3 +145,11 @@ end
 function xor(p,q)
 	return (p and not q) or (not p and q)
 end
+
+math.sign = function(x)
+	return math.abs(x)/x
+end
+
+function ValuePasses(x, plus, y)
+	return math.sign(x - y) ~= math.sign(x + plus - y)
+end

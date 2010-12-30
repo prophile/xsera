@@ -60,9 +60,17 @@ function CameraInterpolate(dt)
 		zoomGoal = CAMERA_RATIO_OPTIONS[cameraRatio.target]()
 	end
 
-	local zoomTime = math.max(math.abs(math.log(zoomGoal/cameraRatio.current)/math.log(2)),1)
-	if zoomTime ~= 0 then
-	cameraRatio.current = cameraRatio.current + (zoomGoal-cameraRatio.current)*(zoomTime*dt)
+	local goalExponent = math.log(zoomGoal)/math.log(2)
+	local currExponent = math.log(oldRatio)/math.log(2)
+	local diff = goalExponent - currExponent
+	local dir = math.sign(diff)
+	local dz = dir * dt * 2
+	if diff ~= 0 then
+		if not ValuePasses(currExponent, dz, goalExponent) then
+			cameraRatio.current = math.pow(2, currExponent + dz)
+		else
+			cameraRatio.current = math.pow(2, goalExponent)
+		end
 	end
 
 	if (cameraRatio.current < 1 / 4 and oldRatio > 1 / 4)
