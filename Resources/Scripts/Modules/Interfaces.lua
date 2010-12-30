@@ -697,12 +697,17 @@ function DrawTargetBox(object, isControl)
 	
 	-- display the beam and pulse weapons
 	-- [INCOMPLETE]
+	off = off - 4
 	if object.base.weapons.beam.id ~= -1 then
 		graphics.draw_text(data.objects[object.base.weapons.beam.id].shortName, MAIN_FONT, "left", { x = panels.left.center.x - 6, y = 20 - off }, 14)
 	end
 	if object.base.weapons.pulse.id ~= -1 then
 		graphics.draw_text(data.objects[object.base.weapons.pulse.id].shortName, MAIN_FONT, "left", { x = panels.left.center.x - 6, y = 30 - off }, 14)
 	end
+	if object.base.weapons.special.id ~= -1 then
+		graphics.draw_text(data.objects[object.base.weapons.special.id].shortName, MAIN_FONT, "left", { x = panels.left.center.x - 6, y = 10 - off }, 14)
+	end
+	off = off + 4
 	
 	-- mini energy bar
 	if object.status.energy ~= nil then
