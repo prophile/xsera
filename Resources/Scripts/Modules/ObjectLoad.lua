@@ -81,56 +81,56 @@ function NewObject(id)
 		}
 	end
 
-	--Prepare devices
-	object.weapons = {}
+    --Prepare devices
+    object.weapons = {}
 
-	for key, weapon in pairs(object.base.weapons) do
-		if weapon.id ~= -1 then
-			local wbase = data.objects[weapon.id]
-			local weap = {
-				base = wbase;
-				lastPos = 1;
-				positions = weapon.positions;
-				ammo = wbase.device.ammo;
-				lastActivated = -wbase.device.reload / TIME_FACTOR;
-				lastRestock = realTime
-			}
-			CopyActions(weap)
-			object.weapons[key] = weap
-		end
-	end
-	CopyActions(object)
-	return object
+    for key, weapon in pairs(object.base.weapons) do
+        if weapon.id ~= -1 then
+            local wbase = data.objects[weapon.id]
+            local weap = {
+                base = wbase;
+                lastPos = 1;
+                positions = weapon.positions;
+                ammo = wbase.device.ammo;
+                lastActivated = -wbase.device.reload / TIME_FACTOR;
+                lastRestock = realTime
+            }
+            CopyActions(weap)
+            object.weapons[key] = weap
+        end
+    end
+    CopyActions(object)
+    return object
 end
 
 
 
 function CopyActions(object)
-	local base = object.base
-	object.triggers = {}
-	
-	if base.action ~= nil then
-		for id = 1, #base.action do
-			if base.action[id] ~= nil then
-				object.triggers[base.action[id].trigger] = base.action[id]
-			end
-		end
-	end
-	
-	if object.triggers.activate ~= nil
-	and object.triggers.activate.count > 255 then
-		local activate = object.triggers.activate
-		local periodic = {
-			interval = bit.rshift(activate.count,24);
-			range = bit.band(bit.rshift(activate.count,16),0xff) / TIME_FACTOR;
-		}
-		
-		periodic.next = realTime + periodic.interval + math.random(0, periodic.range)
+    local base = object.base
+    object.triggers = {}
+    
+    if base.action ~= nil then
+        for id = 1, #base.action do
+            if base.action[id] ~= nil then
+                object.triggers[base.action[id].trigger] = base.action[id]
+            end
+        end
+    end
+    
+    if object.triggers.activate ~= nil
+    and object.triggers.activate.count > 255 then
+        local activate = object.triggers.activate
+        local periodic = {
+            interval = bit.rshift(activate.count,24);
+            range = bit.band(bit.rshift(activate.count,16),0xff) / TIME_FACTOR;
+        }
+        
+        periodic.next = realTime + periodic.interval + math.random(0, periodic.range)
 
---		math.floor(c/2^7)%7 --No discernable use. But do not delete!
+--        math.floor(c/2^7)%7 --No discernable use. But do not delete!
 
-		object.triggers.activate.count = bit.band(activate.count,0xff)
-		
-		object.triggers.periodic = periodic
-	end
+        object.triggers.activate.count = bit.band(activate.count,0xff)
+        
+        object.triggers.periodic = periodic
+    end
 end

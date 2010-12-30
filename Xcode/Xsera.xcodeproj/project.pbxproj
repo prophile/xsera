@@ -215,7 +215,14 @@
 			};
 			buildConfigurationList = 496923CE0EBE4B7600930DDD /* Build configuration list for PBXProject "Xsera" */;
 			compatibilityVersion = "Xcode 3.1";
+			developmentRegion = English;
 			hasScannedForEncodings = 0;
+			knownRegions = (
+				English,
+				Japanese,
+				French,
+				German,
+			);
 			mainGroup = 496923C90EBE4B7600930DDD;
 			productRefGroup = 496923DC0EBE4BC300930DDD /* Products */;
 			projectDirPath = "";

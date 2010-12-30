@@ -11,6 +11,7 @@
 #include "TinyXML/tinyxml.h"
 #include "Net/Net.h"
 #include "Utilities/GameTime.h"
+#include "XNet.h"
 
 extern "C"
 {
@@ -1691,6 +1692,30 @@ luaL_Reg registryInput[] =
 	NULL, NULL
 };
 
+int XNet_Create ( lua_State* L )
+{
+    int port = luaL_checknumber(L, 1);
+    
+    if (port < 0)
+    {
+        luaL_argerror(L, 1, "Port number must be a positive integer.");
+        return 0;
+    }
+    // what is a SocketProvider?
+    //SocketProvider socketProvider();
+    
+    //XNet::Peer peer(socketProvider, port);
+    
+    
+    return 1;
+}
+
+luaL_Reg registryXnet[] =
+{
+    "create", XNet_Create,
+    NULL, NULL
+};
+
 int import ( lua_State* L )
 {
 	const char* modulename = luaL_checkstring(L, 1);
@@ -1758,4 +1783,5 @@ void __LuaBind ( lua_State* L )
 	luaL_register(L, "preferences", registryPreferences);
 	luaL_register(L, "net_server", registryNetServer);
 	luaL_register(L, "window", registryWindowManager);
+    luaL_register(L, "xnet", registryXnet);
 }
