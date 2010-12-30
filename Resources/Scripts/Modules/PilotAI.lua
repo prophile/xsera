@@ -2,74 +2,72 @@
 --import('GlobalVars')
 
 function Think(object)
-	
 	if CanThink(object.base.attributes) then
-	local target = object.ai.objectives.target or object.ai.objectives.dest
-	local dist
-	if target ~= nil then
-		dist = hypot2(object.physics.position, target.physics.position)
-		if object.base.attributes.isGuided == true then
-			object.ai.mode = "goto"
-		elseif dist < 350
-		and target.ai.owner ~= object.ai.owner
-		and target.base.attributes.hated == true then
-			object.ai.mode = "engage"
-		elseif dist > 200 and object.ai.mode == "wait" then
-			object.ai.mode = "goto"
-		elseif dist < 150 and object.ai.mode == "goto" then
-			object.ai.mode = "wait"
-		end
-	else
-		object.ai.mode = "wait"
-	end
-	
-	if object.ai.mode ~= "engage" then
-		object.control.beam = false
-		object.control.pulse = false
-		object.control.special = false
-	end
-	
-	if object.ai.mode == "wait" then
-		object.control.accel = false
-		object.control.decel = true
-		object.control.left = false
-		object.control.right = false
-	elseif object.ai.mode == "goto" then
-		object.control.accel = true
-		object.control.decel = false
-		TurnToward(object,target)
-	elseif object.ai.mode == "evade" then
-		TurnAway(object, target)
-	elseif object.ai.mode == "engage" then
+		local target = object.ai.objectives.target or object.ai.objectives.dest
+		local dist
 		if target ~= nil then
-			TurnToward(object, target)
-			if dist > 200 then
-				object.control.accel = true
-				object.control.decel = false
-			else
-				object.control.accel = false
-				object.control.decel = true
+			dist = hypot2(object.physics.position, target.physics.position)
+			if object.base.attributes.isGuided == true then
+				object.ai.mode = "goto"
+			elseif dist < 350
+			and target.ai.owner ~= object.ai.owner
+			and target.base.attributes.hated == true then
+				object.ai.mode = "engage"
+			elseif dist > 200 and object.ai.mode == "wait" then
+				object.ai.mode = "goto"
+			elseif dist < 150 and object.ai.mode == "goto" then
+				object.ai.mode = "wait"
 			end
 		else
+			object.ai.mode = "wait"
+		end
+
+		if object.ai.mode ~= "engage" then
+			object.control.beam = false
+			object.control.pulse = false
+			object.control.special = false
+		end
+
+		if object.ai.mode == "wait" then
+			object.control.accel = false
+			object.control.decel = true
+			object.control.left = false
+			object.control.right = false
+		elseif object.ai.mode == "goto" then
 			object.control.accel = true
 			object.control.decel = false
+			TurnToward(object,target)
+		elseif object.ai.mode == "evade" then
+			TurnAway(object, target)
+		elseif object.ai.mode == "engage" then
+			if target ~= nil then
+				TurnToward(object, target)
+				if dist > 200 then
+					object.control.accel = true
+					object.control.decel = false
+				else
+					object.control.accel = false
+					object.control.decel = true
+				end
+			else
+				object.control.accel = true
+				object.control.decel = false
+			end
+
+			object.control.beam = true
+			object.control.pulse = true
+			object.control.special = true
 		end
-	
 		
-		object.control.beam = true
-		object.control.pulse = true
-		object.control.special = true
-	end
-	
-	if object.ai.mode == "goto" then
-		if dist >= math.sqrt(object.base.warpOutDistance) * 1.1
-		or target.control.warp
-		then
-			object.control.warp = true
-		else
-			object.control.warp = false
+		if object.ai.mode == "goto" then
+			if dist >= math.sqrt(object.base.warpOutDistance) * 1.1
+			or target.control.warp
+			then
+				object.control.warp = true
+			else
+				object.control.warp = false
+			end
 		end
-	end
 
 	else
 		object.control.accel = true
