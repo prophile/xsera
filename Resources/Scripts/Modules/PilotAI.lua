@@ -61,6 +61,16 @@ function Think(object)
 		object.control.special = true
 	end
 	
+	if object.ai.mode == "goto" then
+		if dist >= math.sqrt(object.base.warpOutDistance) * 1.1
+		or target.control.warp
+		then
+			object.control.warp = true
+		else
+			object.control.warp = false
+		end
+	end
+
 	else
 		object.control.accel = true
 	end
