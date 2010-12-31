@@ -33,9 +33,16 @@ function LoadScenario(id)
             new.ai.objectives.dest = scen.objects[state.initialDestination + 1]
         end
         
-        scen.objects[new.physics.object_id] = new
+        scen.objects[#scen.objects + 1] = new
+        for i = #scen.objects, 2, -1 do
+            if scen.objects[i].layer >= scen.objects[i - 1].layer then
+                break
+            end
+            
+            scen.objects[i], scen.objects[i - 1] = scen.objects[i - 1], scen.objects[i]
+        end
     end
-
+    
     InitConditions(scen)
     ParseScoreStrings(scen)
     GenerateStatusLines(scen)

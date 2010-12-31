@@ -42,7 +42,8 @@ function NewObject(id)
 			battery = base.energy and base.energy * 5;
 			batteryMax = base.energy and base.energy * 5;
 			dead = false;
-		}
+		},
+        layer = base.layer
 	}
 	
 	setmetatable(object.ai.objectives, weak)
