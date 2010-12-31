@@ -78,6 +78,10 @@ function key ( k )
         end
     else -- debug build utilities / tests
         if k == "x" then
+            mode_manager.switch("../Tests/TestMenu")
+        end
+        --[[
+        if k == "x" then
             mode_manager.switch("Xsera/ConsoleDrawer")
         elseif k == "t" then
             mode_manager.switch("../Tests/TurretTest")
@@ -104,6 +108,7 @@ function key ( k )
         elseif k == "0" then
             mode_manager.switch("../Tests/XNetTest")
         end
+        --]]
     end
     
     if k == "i" then
