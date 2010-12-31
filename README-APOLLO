@@ -1,0 +1,20 @@
+                     ___
+    ^               | | |      
+   / \   _ __   ___ | | | ___  
+  / ^ \ | '_ \ / _ \| | |/ _ \ 
+ / /_\ \| |_) | (_) | | | (_) |
+/_/   \_\ .__/ \___/|_|_|\___/ 
+        | |                    
+        |_|                    
+
+A Brainpen Production
+
+An open-source, top-down, real-time engine.
+
+Apollo is open-source software under the MIT license (see accompanying LICENSE file).
+
+Apollo was created for use with Xsera, a top-down shooter / real-time strategy hybrid game based on an old RTS game named Ares. Ares was created by Nathan Lamont and published by Ambrosia Software, but no longer runs on modern operating systems. Some fans of Ares decided to re-create the game in their free time, and Apollo was born out of that.
+
+Apollo is intended for use in a variety of ways - it can be used in top-down 2D games, side-scrollers, and beyond. Xsera's engine supports 2D sprites and restricted three dimensional renderings (I hesitate to use the buzzword "2.5D"). Ares was a real-time strategy game, so Apollo's development makes it a strong choice as an RTS engine, but it is not restricted to RTS games alone by any means.
+
+Apollo is written in C++, with the addition of Lua scripting for non-engine content. Apollo uses SDL and OpenGL for graphics and cross-platform compatibility, meaning that any game built on Apollo can run on Windows, Mac OS X, and Linux. 
