@@ -353,14 +353,16 @@ function mouse(button, x, y)
 end
 
 function mouse_up()
-	mdown = false
-	print(cameraRatio.current)
-	local mousePos = GetMouseCoords()
-	if keyboard[2][5].active == true then -- TARGET
-		selection.targetId, selection.target = NextTargetUnderCursor(selection.targetId, true)
-	else -- CONTROL
-		selection.controlId, selection.control = NextTargetUnderCursor(selection.controlId, false)
-	end
+	if mdown then
+        print(cameraRatio.current)
+        local mousePos = GetMouseCoords()
+        if keyboard[2][5].active == true then -- TARGET
+            selection.targetId, selection.target = NextTargetUnderCursor(selection.targetId, true)
+        else -- CONTROL
+            selection.controlId, selection.control = NextTargetUnderCursor(selection.controlId, false)
+        end
+    end
+    mdown = false
 end
 
 function shutdown()
@@ -565,7 +567,7 @@ function DrawObject(o)
 				graphics.draw_rtri(o.physics.position, o.base.iconSize * iconScale, color)
 			elseif o.base.iconShape == "diamond" then
 				graphics.draw_rdia(o.physics.position, o.base.iconSize * iconScale, color)
-			elseif o.base.iconShape == "framed square" then --NOT IMPLEMENTED
+			elseif o.base.iconShape == "framed square" then --NOT IMPLEMENTED [TODO]
 				graphics.draw_rbox(o.physics.position, o.base.iconSize * iconScale, color)
 			end
 		end

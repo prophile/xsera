@@ -78,6 +78,7 @@ function update()
     
     -- mouse button handling
     if mup then
+        --[[
         mup = false
         mousePos = input.mouse_position()
         mousePos.x = mousePos.x * 480 * aspectRatio - 240 * aspectRatio
@@ -88,6 +89,7 @@ function update()
         -- button there (that's one of the keyboard bindings) then I need to pop
         -- up a dialogue to tell the user to press the new key for that function
         ChangeSpecialByLoc(mousePos, nil, currPanel)
+        --]]
     elseif mdown then
         mousePos = input.mouse_position()
         mousePos.x = mousePos.x * 480 * aspectRatio - 240 * aspectRatio
