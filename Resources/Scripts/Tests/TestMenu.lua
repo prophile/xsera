@@ -1,6 +1,7 @@
 import('GlobalVars')
 
 options = {
+            { key = "escape", name = "Return", loc = "Xsera/MainMenu" },
             { key = "x", name = "Console", loc = "Xsera/ConsoleDrawer" },
             { key = "t", name = "Turret Test", loc = "../Tests/TurretTest" },
             { key = "s", name = "Ares Splash", loc = "Ares/Splash" },
