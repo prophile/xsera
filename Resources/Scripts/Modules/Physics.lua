@@ -69,7 +69,7 @@ Physics = {
         obj.angularVelocity = obj.angularVelocity + (obj.torque * dt)
         obj.angle = obj.angle + (obj.angularVelocity * dt)
         
-        normalizeAngle(obj.angle)
+        obj.angle = normalizeAngle(obj.angle)
         
         obj.torque = 0
         obj.force = vec(0, 0)
