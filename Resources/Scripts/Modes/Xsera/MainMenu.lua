@@ -72,46 +72,13 @@ function render ()
 end
 
 function key ( k )
-    if RELEASE_BUILD == true then
-        if k == "x" then
+    if k == "x" then
+        if RELEASE_BUILD == true then
             mode_manager.switch("Ares/Splash")
-        end
-    else -- debug build utilities / tests
-        if k == "x" then
+        else -- debug build tests
             mode_manager.switch("../Tests/TestMenu")
         end
-        --[[
-        if k == "x" then
-            mode_manager.switch("Xsera/ConsoleDrawer")
-        elseif k == "t" then
-            mode_manager.switch("../Tests/TurretTest")
-        elseif k == "1" then
-            mode_manager.switch("../Tests/CSTest")
-        elseif k == "2" then  -- this does not work. [ALISTAIR] You said you thought of a different way to do this?
-            print("CALLING SPECIAL SWITCH")
-            tabl = { "THIS", "IS", "XSERAAAAAAAAAAAAA" }
-            mode_manager.switch("../Tests/CSTest", tabl)
-        elseif k == "3" then
-            mode_manager.switch("../Tests/WindowTest")
-        elseif k == "4" then
-            mode_manager.switch("../Tests/TextTests")
-        elseif k == "5" then
-            mode_manager.switch("Ares/Splash")
-        elseif k == "6" then
-            mode_manager.switch("../Tests/PreferenceTest")
-        elseif k == "7" then
-            mode_manager.switch("../Tests/PhysicsTest")
-        elseif k == "8" then
-            mode_manager.switch("../Tests/Bits")
-        elseif k == "9" then
-            mode_manager.switch("../Tests/3DTest")
-        elseif k == "0" then
-            mode_manager.switch("../Tests/XNetTest")
-        end
-        --]]
-    end
-    
-    if k == "i" then
+    elseif k == "i" then
         timeFactor = timeFactor + 0.05
     elseif k == "u" then
         timeFactor = timeFactor - 0.05
