@@ -60,7 +60,8 @@ function Think(object)
 		end
 		
 		if object.ai.mode == "goto" then
-			if dist >= math.sqrt(object.base.warpOutDistance) * 1.1
+			if object.base.warpSpeed > 0.0
+			and dist >= math.sqrt(object.base.warpOutDistance) * 1.1
 			or target.control.warp
 			then
 				object.control.warp = true
