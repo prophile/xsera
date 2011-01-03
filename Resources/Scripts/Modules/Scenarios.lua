@@ -1,3 +1,5 @@
+import('ShipBuilding')
+
 function LoadScenario(id)
     local scen = {
         base = data.scenarios[id];
@@ -31,6 +33,16 @@ function LoadScenario(id)
         if state.initialDestination ~= -1 then
             --Convert from 0 based indexes to 1 based indexes
             new.ai.objectives.dest = scen.objects[state.initialDestination + 1]
+        end
+        
+        if new.base.attributes.canAcceptBuild then
+            new.building = {
+                classes = state.builds;
+                ids = {};
+                --more building data like id and time of object being built [SCOTT]
+            }
+            
+            CalculateBuildables(new, scen)
         end
         
         scen.objects[#scen.objects + 1] = new
