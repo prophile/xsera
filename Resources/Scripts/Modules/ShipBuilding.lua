@@ -23,9 +23,11 @@ function StopBuilding(planet)
 end
 
 function GetCash(player)
+    return scen.players[player].cash
 end
 
 function AddCash(player, cash)
+    return scen.players[player].cash = scen.players[player].cash + cash
 end
 
 function GetBuildPercent(planet)
