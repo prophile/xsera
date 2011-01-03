@@ -27,7 +27,8 @@ function GetCash(player)
 end
 
 function AddCash(player, cash)
-    return scen.players[player].cash = scen.players[player].cash + cash
+    scen.players[player].cash = scen.players[player].cash + cash
+    return scen.players[player].cash
 end
 
 function GetBuildPercent(planet)
