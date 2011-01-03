@@ -5,7 +5,16 @@ function LoadScenario(id)
         base = data.scenarios[id];
         objects = {};
         effects = {flash = {}};
+        players = {}
     }
+    
+    for pid = 0, MAX_PLAYERS - 1 do
+        scen.players[pid] = {
+            cash = 0;
+            kills = 0;
+            losses = 0;
+        }
+    end
 
     local max = scen.base.initialObjects.first + scen.base.initialObjects.count - 1
     
