@@ -77,22 +77,6 @@ endGameData = nil
 
 menuLevel = menuOptions
 
---tempvars
-resources = 0
-resourceBars = 0
-resourceTime = 0.0
-rechargeTimer = 0.0
-cash = 1000
--- the above "tempvars" aren't really temporary, but they belong to the player
--- (and are not greatly used ATM)
-
--- the below "tempvars" deal with ship building, which will be necessary, but
--- also will belong to the player. I don't believe they are used much if at all.
-buildTimerRunning = false
-shipToBuild = nil
-shipBuilding = { n, p, r, c, t }
---/tempvars
-
 arrowLength = ARROW_LENGTH
 arrowVar = ARROW_VAR
 arrowDist = ARROW_DIST
