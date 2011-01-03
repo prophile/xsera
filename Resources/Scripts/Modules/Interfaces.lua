@@ -484,54 +484,6 @@ function DrawPanels()
     end
 end
 
-function change_menu(menu, direction)
-    local num = 2
-    if direction == "i" then
-        while menu[num][2] ~= true do
-            num = num + 1
-        end
-        if num ~= 2 then
-            menu[num][2] = false
-            num = num - 1
-            menu[num][2] = true
-            if menu == menuShipyard then
-                shipQuerying.p = menuShipyard[num][4][1]
-                shipQuerying.n = menuShipyard[num][4][2]
-                shipQuerying.r = menuShipyard[num][4][3]
-                shipQuerying.c = scen.planet.buildCost[num - 1]
-                shipQuerying.t = scen.planet.buildTime[num - 1]
-            end
-        end
-    elseif direction == "k" then
-        while menu[num][2] ~= true do
-            num = num + 1
-        end
-        if menu[num + 1] ~= nil then
-            menu[num][2] = false
-            num = num + 1
-            menu[num][2] = true
-            if menu == menuShipyard then
-                shipQuerying.p = menuShipyard[num][4][1]
-                shipQuerying.n = menuShipyard[num][4][2]
-                shipQuerying.r = menuShipyard[num][4][3]
-                shipQuerying.c = scen.planet.buildCost[num - 1]
-                shipQuerying.t = scen.planet.buildTime[num - 1]
-            end
-        end
-    elseif direction == "j" then
-        if menu ~= menuOptions then
-            menuLevel = menuOptions
-        end
-    elseif direction == "l" then
-        while menu[num][2] ~= true do
-            num = num + 1
-        end
-        if menu[num][3] ~= nil then
-            menu[num][3]()
-        end
-    end
-end
-
 function DrawDialogueBox(text)
     local cam = CameraToWindow()
     local length = cam[3] * 2 - panels.left.width - panels.right.width - 20

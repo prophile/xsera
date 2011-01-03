@@ -90,7 +90,6 @@ cash = 1000
 -- also will belong to the player. I don't believe they are used much if at all.
 buildTimerRunning = false
 shipToBuild = nil
--- shipQuerying = { n, p, r, c, t }
 shipBuilding = { n, p, r, c, t }
 --/tempvars
 
