@@ -39,7 +39,9 @@ function LoadScenario(id)
             new.building = {
                 classes = state.builds;
                 ids = {};
-                --more building data like id and time of object being built [SCOTT]
+                earning = state.earning;
+                constructionId = nil;
+                constructionState = 0;
             }
             
             CalculateBuildables(new, scen)

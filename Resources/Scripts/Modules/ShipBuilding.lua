@@ -14,3 +14,22 @@ function CalculateBuildables(object, scen)--[HACK]
         ].race)
     end
 end
+
+
+function BeginBuilding(planet, class)
+end
+
+function StopBuilding(planet)
+end
+
+function GetCash(player)
+end
+
+function AddCash(player, cash)
+end
+
+function GetBuildPercent(planet)
+end`
+
+function UpdatePlanet(planet, dt)
+end
