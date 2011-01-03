@@ -213,8 +213,9 @@ function DoComputerNext()
 end
 
 function DoComputerAccept()
-    if menuItemSelected ~= 0 and menuLevel.items[menuItemSelected].action ~= nil then
-        menuLevel.items[menuItemSelected].action()
+    local item = menuLevel.items[menuItemSelected]
+    if menuItemSelected ~= 0 and item.action ~= nil then
+        item.action(item.context)
         menuItemSelected = 1
         if menuLevel == menuStatus then
             menuItemSelected = 0
