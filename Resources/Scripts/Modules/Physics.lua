@@ -13,23 +13,21 @@ Physics = {
     end,
     
     UpdateSystem = function(dt, objects)
-        if physicsObjects ~= nil and next(physicsObjects) ~= nil then
-            if objects ~= nil and next(objects) ~= nil then
-                for i, o in pairs(objects) do
-                    if o.physics == nil then
-                        printTable(o)
-                    end
-                    if Physics.system.gravityIsLoc then
-                        local distX = o.position.x - Physics.system.gravity.x
-                        local distY = o.position.y - physics.system.gravity.y
-                        local relativeGravityPosition = o.position - Physics.system.gravity
-                        local hypot = hypot(distX, distY)
-                        local grav = GRAVITY * (Physics.system.gravityMass * o.mass) / (distX^2 + distY^2)
-                        Physics.UpdateObject(o.physics, dt, grav / hypot * relativeGravityPosition)
-                        -- the above line really needs to be tested
-                    else
-                        Physics.UpdateObject(o.physics, dt, Physics.system.gravity)
-                    end
+        if objects ~= nil and next(objects) ~= nil then
+            for _, o in pairs(objects) do
+                if o.physics == nil then
+                    printTable(o)
+                end
+                if Physics.system.gravityIsLoc then
+                    local distX = o.position.x - Physics.system.gravity.x
+                    local distY = o.position.y - physics.system.gravity.y
+                    local relativeGravityPosition = o.position - Physics.system.gravity
+                    local hypot = hypot(distX, distY)
+                    local grav = GRAVITY * (Physics.system.gravityMass * o.mass) / (distX^2 + distY^2)
+                    Physics.UpdateObject(o.physics, dt, grav / hypot * relativeGravityPosition)
+                    -- the above line really needs to be tested
+                else
+                    Physics.UpdateObject(o.physics, dt, Physics.system.gravity)
                 end
             end
         end
