@@ -366,8 +366,7 @@ function mouse_up()
 end
 
 function shutdown()
---  physics.close() -- what would I do in a closing physics function? [ADAM] [CLEANUP]
---It was because the old physics system needed to be explicitly cleared when changing modes.
+
 end
 
 function RemoveDead()

@@ -128,7 +128,7 @@ function update ()
     Camera Code
 ------------------]]--
     
-    --[[ plan for hostile zoom [ADAM]
+    --[[ plan for hostile zoom
     
     set cameraChanging = "constant" if the ratio of the change that needs to be made is small enough (start it off at around 0.5 - or half as big - and test)
     make an elseif under "if cameraChanging == true then": "elseif cameraChanging == "constant" then"
