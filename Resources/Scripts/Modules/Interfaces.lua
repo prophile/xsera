@@ -356,6 +356,7 @@ function DrawPanels()
 --    Factory resources (green - mostly)
     count = 1 -- [HARDCODED] <-- ?
 --    shipQuerying = { c = 5000 } -- HARDCODED for test
+    --[=[
     if shipQuerying ~= nil then
         if cash >= shipQuerying.c then
             local drawGreen = math.floor((cash - shipQuerying.c) / 200)
@@ -424,7 +425,7 @@ function DrawPanels()
         graphics.draw_box(230, panels.right.center.x - 6, 204, panels.right.center.x + 5, 0, ClutColour(13, 9))
         graphics.draw_box(25 * (100 - 30) / 100 + 204, panels.right.center.x - 6, 204, panels.right.center.x + 5, 0, ClutColour(13, 5))
 --    end -- commented out until planet implemented
-    
+    --]=]
 --[[------------------
     Left Panel
 ------------------]]--
