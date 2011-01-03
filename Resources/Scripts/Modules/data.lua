@@ -74045,9 +74045,9 @@ data = {
 				range = 360;
 				minumum = 0;
 			};
-			foo = "Relay Dish 2";
 			type = 36;
 			earning = 1.0;
+			nameOverride = "Relay Dish 2";
 		};
 		[1] = {
 			distanceRange = 500;
@@ -74396,9 +74396,9 @@ data = {
 				range = 360;
 				minumum = 0;
 			};
-			foo = "Relay Dish 1";
 			type = 104;
 			earning = 1.0;
+			nameOverride = "Relay Dish 1";
 		};
 		[15] = {
 			distanceRange = 500;
@@ -74422,9 +74422,9 @@ data = {
 				range = 360;
 				minumum = 0;
 			};
-			foo = "Myrmidon Station";
 			type = 27;
 			earning = 0.0;
+			nameOverride = "Myrmidon Station";
 		};
 		[16] = {
 			distanceRange = 500;
@@ -74448,9 +74448,9 @@ data = {
 				range = 360;
 				minumum = 0;
 			};
-			foo = "Relay Dish 3";
 			type = 36;
 			earning = 1.0;
+			nameOverride = "Relay Dish 3";
 		};
 		[17] = {
 			distanceRange = 500;
@@ -74474,9 +74474,9 @@ data = {
 				range = 360;
 				minumum = 0;
 			};
-			foo = "Sprist";
 			type = 36;
 			earning = 1.0;
+			nameOverride = "Sprist";
 		};
 		[18] = {
 			distanceRange = 500;
@@ -74500,9 +74500,9 @@ data = {
 				range = 360;
 				minumum = 0;
 			};
-			foo = "Elysium System";
 			type = 36;
 			earning = 1.0;
+			nameOverride = "Elysium System";
 		};
 		[19] = {
 			distanceRange = 500;
@@ -74576,9 +74576,9 @@ data = {
 				range = 360;
 				minumum = 0;
 			};
-			foo = "Fansi";
 			type = 83;
 			earning = 1.0;
+			nameOverride = "Fansi";
 		};
 		[22] = {
 			distanceRange = 500;
@@ -74602,9 +74602,9 @@ data = {
 				range = 360;
 				minumum = 0;
 			};
-			foo = "Myrmidon";
 			type = 23;
 			earning = 1.0;
+			nameOverride = "Myrmidon";
 		};
 		[23] = {
 			distanceRange = 500;
@@ -74628,9 +74628,9 @@ data = {
 				range = 360;
 				minumum = 0;
 			};
-			foo = "Philemon Alpha";
 			type = 27;
 			earning = 0.0;
+			nameOverride = "Philemon Alpha";
 		};
 		[24] = {
 			distanceRange = 500;
@@ -74784,9 +74784,9 @@ data = {
 				range = 360;
 				minumum = 0;
 			};
-			foo = "Proteus Beta";
 			type = 23;
 			earning = 1.0;
+			nameOverride = "Proteus Beta";
 		};
 		[30] = {
 			distanceRange = 500;
@@ -74886,9 +74886,9 @@ data = {
 				range = 360;
 				minumum = 0;
 			};
-			foo = "Proteus Gamma";
 			type = 23;
 			earning = 1.0;
+			nameOverride = "Proteus Gamma";
 		};
 		[34] = {
 			distanceRange = 500;
@@ -74917,9 +74917,9 @@ data = {
 				range = 360;
 				minumum = 0;
 			};
-			foo = "Philemon";
 			type = 23;
 			earning = 1.0;
+			nameOverride = "Philemon";
 		};
 		[35] = {
 			distanceRange = 500;
@@ -74943,9 +74943,9 @@ data = {
 				range = 360;
 				minumum = 0;
 			};
-			foo = "Proteus Alpha";
 			type = 27;
 			earning = 0.0;
+			nameOverride = "Proteus Alpha";
 		};
 		[36] = {
 			distanceRange = 0;
@@ -75344,9 +75344,9 @@ data = {
 				range = 360;
 				minumum = 0;
 			};
-			foo = "Bokleo Alpha";
 			type = 23;
 			earning = 1.0;
+			nameOverride = "Bokleo Alpha";
 		};
 		[52] = {
 			distanceRange = 0;
@@ -75745,9 +75745,9 @@ data = {
 				range = 0;
 				minumum = 0;
 			};
-			foo = "Bokleo Gamma";
 			type = 23;
 			earning = 1.0;
+			nameOverride = "Bokleo Gamma";
 		};
 		[68] = {
 			distanceRange = 0;
@@ -75801,9 +75801,9 @@ data = {
 				range = 0;
 				minumum = 0;
 			};
-			foo = "Asteroid IR7-7e";
 			type = 23;
 			earning = 1.0;
+			nameOverride = "Asteroid IR7-7e";
 		};
 		[70] = {
 			distanceRange = 0;
@@ -75830,9 +75830,9 @@ data = {
 				range = 0;
 				minumum = 0;
 			};
-			foo = "Bokleo Beta";
 			type = 23;
 			earning = 1.0;
+			nameOverride = "Bokleo Beta";
 		};
 		[71] = {
 			distanceRange = 0;
@@ -75856,9 +75856,9 @@ data = {
 				range = 0;
 				minumum = 0;
 			};
-			foo = "EACSR Banadee";
 			type = 47;
 			earning = 0.0;
+			nameOverride = "EACSR Banadee";
 		};
 		[72] = {
 			distanceRange = 0;
@@ -75882,9 +75882,9 @@ data = {
 				range = 0;
 				minumum = 0;
 			};
-			foo = "ISN 8738810";
 			type = 47;
 			earning = 0.0;
+			nameOverride = "ISN 8738810";
 		};
 		[73] = {
 			distanceRange = 0;
@@ -75908,9 +75908,9 @@ data = {
 				range = 0;
 				minumum = 0;
 			};
-			foo = "The Open Eye of Zom";
 			type = 45;
 			earning = 0.0;
+			nameOverride = "The Open Eye of Zom";
 		};
 		[74] = {
 			distanceRange = 0;
@@ -75934,9 +75934,9 @@ data = {
 				range = 0;
 				minumum = 0;
 			};
-			foo = "The Silent Question of Doz";
 			type = 45;
 			earning = 0.0;
+			nameOverride = "The Silent Question of Doz";
 		};
 		[75] = {
 			distanceRange = 0;
@@ -75960,9 +75960,9 @@ data = {
 				range = 0;
 				minumum = 0;
 			};
-			foo = "EXPLSN";
 			type = 45;
 			earning = 0.0;
+			nameOverride = "EXPLSN";
 		};
 		[76] = {
 			distanceRange = 0;
@@ -76064,9 +76064,9 @@ data = {
 				range = 0;
 				minumum = 0;
 			};
-			foo = "Demeter Beta";
 			type = 23;
 			earning = 1.0;
+			nameOverride = "Demeter Beta";
 		};
 		[80] = {
 			distanceRange = 0;
@@ -76115,9 +76115,9 @@ data = {
 				range = 0;
 				minumum = 0;
 			};
-			foo = "Demeter Alpha";
 			type = 27;
 			earning = 0.0;
+			nameOverride = "Demeter Alpha";
 		};
 		[82] = {
 			distanceRange = 0;
@@ -76195,9 +76195,9 @@ data = {
 				range = 0;
 				minumum = 0;
 			};
-			foo = "Relay Dish 4";
 			type = 23;
 			earning = 1.0;
+			nameOverride = "Relay Dish 4";
 		};
 		[85] = {
 			distanceRange = 0;
@@ -76446,9 +76446,9 @@ data = {
 				range = 0;
 				minumum = 0;
 			};
-			foo = "Placeholder 2";
 			type = -1;
 			earning = 0.0;
+			nameOverride = "Placeholder 2";
 		};
 		[95] = {
 			distanceRange = 0;
@@ -76651,9 +76651,9 @@ data = {
 				range = 0;
 				minumum = 0;
 			};
-			foo = "Aeneas Beta";
 			type = 23;
 			earning = 1.0;
+			nameOverride = "Aeneas Beta";
 		};
 		[103] = {
 			distanceRange = 0;
@@ -76831,9 +76831,9 @@ data = {
 				range = 0;
 				minumum = 0;
 			};
-			foo = "Hades System";
 			type = 23;
 			earning = 1.0;
+			nameOverride = "Hades System";
 		};
 		[110] = {
 			distanceRange = 0;
@@ -76857,9 +76857,9 @@ data = {
 				range = 0;
 				minumum = 0;
 			};
-			foo = "Power Station O-3";
 			type = 114;
 			earning = 1.0;
+			nameOverride = "Power Station O-3";
 		};
 		[111] = {
 			distanceRange = 0;
@@ -76883,9 +76883,9 @@ data = {
 				range = 0;
 				minumum = 0;
 			};
-			foo = "Power Station G-1";
 			type = 114;
 			earning = 1.0;
+			nameOverride = "Power Station G-1";
 		};
 		[112] = {
 			distanceRange = 0;
@@ -76909,9 +76909,9 @@ data = {
 				range = 0;
 				minumum = 0;
 			};
-			foo = "Power Station O-2";
 			type = 114;
 			earning = 1.0;
+			nameOverride = "Power Station O-2";
 		};
 		[113] = {
 			distanceRange = 0;
@@ -76935,9 +76935,9 @@ data = {
 				range = 0;
 				minumum = 0;
 			};
-			foo = "Power Station G-3";
 			type = 114;
 			earning = 1.0;
+			nameOverride = "Power Station G-3";
 		};
 		[114] = {
 			distanceRange = 0;
@@ -76961,9 +76961,9 @@ data = {
 				range = 0;
 				minumum = 0;
 			};
-			foo = "Secorem Jump Gate";
 			type = 114;
 			earning = 1.0;
+			nameOverride = "Secorem Jump Gate";
 		};
 		[115] = {
 			distanceRange = 0;
@@ -76987,9 +76987,9 @@ data = {
 				range = 0;
 				minumum = 0;
 			};
-			foo = "Power Station G-2";
 			type = 114;
 			earning = 1.0;
+			nameOverride = "Power Station G-2";
 		};
 		[116] = {
 			distanceRange = 0;
@@ -77167,9 +77167,9 @@ data = {
 				range = 0;
 				minumum = 0;
 			};
-			foo = "Hades Beta";
 			type = 23;
 			earning = 1.0;
+			nameOverride = "Hades Beta";
 		};
 		[123] = {
 			distanceRange = 0;
@@ -77198,9 +77198,9 @@ data = {
 				range = 0;
 				minumum = 0;
 			};
-			foo = "Power Station O-1";
 			type = 111;
 			earning = 1.0;
+			nameOverride = "Power Station O-1";
 		};
 		[124] = {
 			distanceRange = 0;
@@ -77274,9 +77274,9 @@ data = {
 				range = 0;
 				minumum = 0;
 			};
-			foo = "Placeholder 2";
 			type = -1;
 			earning = 1.0;
+			nameOverride = "Placeholder 2";
 		};
 		[127] = {
 			distanceRange = 0;
@@ -77300,9 +77300,9 @@ data = {
 				range = 0;
 				minumum = 0;
 			};
-			foo = "Placeholder 3";
 			type = -1;
 			earning = 1.0;
+			nameOverride = "Placeholder 3";
 		};
 		[128] = {
 			distanceRange = 0;
@@ -77576,9 +77576,9 @@ data = {
 				range = 0;
 				minumum = 0;
 			};
-			foo = "Demeter";
 			type = 115;
 			earning = 0.0;
+			nameOverride = "Demeter";
 		};
 		[139] = {
 			distanceRange = 0;
@@ -77677,9 +77677,9 @@ data = {
 				range = 0;
 				minumum = 0;
 			};
-			foo = "Orbital Shipyard";
 			type = 104;
 			earning = 0.75;
+			nameOverride = "Orbital Shipyard";
 		};
 		[143] = {
 			distanceRange = 0;
@@ -77809,9 +77809,9 @@ data = {
 				range = 0;
 				minumum = 0;
 			};
-			foo = "Fansi Beta";
 			type = 23;
 			earning = 1.0;
+			nameOverride = "Fansi Beta";
 		};
 		[148] = {
 			distanceRange = 0;
@@ -77841,9 +77841,9 @@ data = {
 				range = 0;
 				minumum = 0;
 			};
-			foo = "Bunker Station 1";
 			type = 23;
 			earning = 1.0;
+			nameOverride = "Bunker Station 1";
 		};
 		[149] = {
 			distanceRange = 0;
@@ -77867,9 +77867,9 @@ data = {
 				range = 0;
 				minumum = 0;
 			};
-			foo = "Bunker Station 2";
 			type = 104;
 			earning = 0.75;
+			nameOverride = "Bunker Station 2";
 		};
 		[150] = {
 			distanceRange = 0;
@@ -78193,9 +78193,9 @@ data = {
 				range = 0;
 				minumum = 0;
 			};
-			foo = "Secorem";
 			type = 137;
 			earning = 1.0;
+			nameOverride = "Secorem";
 		};
 		[163] = {
 			distanceRange = 0;
@@ -78549,9 +78549,9 @@ data = {
 				range = 0;
 				minumum = 0;
 			};
-			foo = "Thasero Beta";
 			type = 23;
 			earning = 1.0;
+			nameOverride = "Thasero Beta";
 		};
 		[177] = {
 			distanceRange = 0;
@@ -78580,9 +78580,9 @@ data = {
 				range = 0;
 				minumum = 0;
 			};
-			foo = "Thasero Station";
 			type = 23;
 			earning = 1.0;
+			nameOverride = "Thasero Station";
 		};
 		[178] = {
 			distanceRange = 0;
@@ -78606,9 +78606,9 @@ data = {
 				range = 0;
 				minumum = 0;
 			};
-			foo = "Lalande";
 			type = 104;
 			earning = 1.0;
+			nameOverride = "Lalande";
 		};
 		[179] = {
 			distanceRange = 0;
@@ -78807,9 +78807,9 @@ data = {
 				range = 0;
 				minumum = 0;
 			};
-			foo = "Transport";
 			type = 160;
 			earning = 1.0;
+			nameOverride = "Transport";
 		};
 		[187] = {
 			distanceRange = 0;
@@ -79433,9 +79433,9 @@ data = {
 				range = 0;
 				minumum = 0;
 			};
-			foo = "Placeholder 2";
 			type = -1;
 			earning = 1.0;
+			nameOverride = "Placeholder 2";
 		};
 		[212] = {
 			distanceRange = 0;
@@ -79459,9 +79459,9 @@ data = {
 				range = 0;
 				minumum = 0;
 			};
-			foo = "Retak Beta";
 			type = 23;
 			earning = 1.0;
+			nameOverride = "Retak Beta";
 		};
 		[213] = {
 			distanceRange = 0;
@@ -80016,9 +80016,9 @@ data = {
 				range = 0;
 				minumum = 0;
 			};
-			foo = "Xamer Beta";
 			type = 23;
 			earning = 1.0;
+			nameOverride = "Xamer Beta";
 		};
 		[235] = {
 			distanceRange = 0;
@@ -80048,9 +80048,9 @@ data = {
 				range = 0;
 				minumum = 0;
 			};
-			foo = "Outpost Alpha";
 			type = 23;
 			earning = 1.0;
+			nameOverride = "Outpost Alpha";
 		};
 		[236] = {
 			distanceRange = 0;
@@ -80224,9 +80224,9 @@ data = {
 				range = 0;
 				minumum = 0;
 			};
-			foo = "Outpost C1";
 			type = 270;
 			earning = 0.25;
+			nameOverride = "Outpost C1";
 		};
 		[243] = {
 			distanceRange = 0;
@@ -80250,9 +80250,9 @@ data = {
 				range = 0;
 				minumum = 0;
 			};
-			foo = "Outpost C2";
 			type = 270;
 			earning = 0.25;
+			nameOverride = "Outpost C2";
 		};
 		[244] = {
 			distanceRange = 0;
@@ -80276,9 +80276,9 @@ data = {
 				range = 0;
 				minumum = 0;
 			};
-			foo = "Outpost C3";
 			type = 270;
 			earning = 0.25;
+			nameOverride = "Outpost C3";
 		};
 		[245] = {
 			distanceRange = 0;
@@ -80302,9 +80302,9 @@ data = {
 				range = 0;
 				minumum = 0;
 			};
-			foo = "Outpost C4";
 			type = 270;
 			earning = 0.25;
+			nameOverride = "Outpost C4";
 		};
 		[246] = {
 			distanceRange = 0;
@@ -80328,9 +80328,9 @@ data = {
 				range = 0;
 				minumum = 0;
 			};
-			foo = "Retak Alpha";
 			type = 270;
 			earning = 0.25;
+			nameOverride = "Retak Alpha";
 		};
 		[247] = {
 			distanceRange = 0;
@@ -80455,9 +80455,9 @@ data = {
 				range = 0;
 				minumum = 0;
 			};
-			foo = "Outpost Beta";
 			type = 270;
 			earning = 0.25;
+			nameOverride = "Outpost Beta";
 		};
 		[252] = {
 			distanceRange = 0;
@@ -80482,9 +80482,9 @@ data = {
 				range = 0;
 				minumum = 0;
 			};
-			foo = "Bunker Station";
 			type = 270;
 			earning = 0.25;
+			nameOverride = "Bunker Station";
 		};
 		[253] = {
 			distanceRange = 0;
@@ -80662,9 +80662,9 @@ data = {
 				range = 0;
 				minumum = 0;
 			};
-			foo = "Proxima Beta";
 			type = 23;
 			earning = 1.0;
+			nameOverride = "Proxima Beta";
 		};
 		[260] = {
 			distanceRange = 0;
@@ -80692,9 +80692,9 @@ data = {
 				range = 0;
 				minumum = 0;
 			};
-			foo = "Power Station PC1";
 			type = 23;
 			earning = 1.0;
+			nameOverride = "Power Station PC1";
 		};
 		[261] = {
 			distanceRange = 0;
@@ -81543,9 +81543,9 @@ data = {
 				range = 0;
 				minumum = 0;
 			};
-			foo = "Proxima Centauri System";
 			type = 23;
 			earning = 1.0;
+			nameOverride = "Proxima Centauri System";
 		};
 		[295] = {
 			distanceRange = 0;
@@ -81998,9 +81998,9 @@ data = {
 				range = 0;
 				minumum = 0;
 			};
-			foo = "Pictoris Beta";
 			type = 23;
 			earning = 1.0;
+			nameOverride = "Pictoris Beta";
 		};
 		[313] = {
 			distanceRange = 0;
@@ -82026,9 +82026,9 @@ data = {
 				range = 0;
 				minumum = 0;
 			};
-			foo = "Pictoris Beta 1";
 			type = 111;
 			earning = 1.0;
+			nameOverride = "Pictoris Beta 1";
 		};
 		[314] = {
 			distanceRange = 0;
@@ -82052,9 +82052,9 @@ data = {
 				range = 0;
 				minumum = 0;
 			};
-			foo = "Pictoris Alpha 1";
 			type = 114;
 			earning = 1.0;
+			nameOverride = "Pictoris Alpha 1";
 		};
 		[315] = {
 			distanceRange = 0;
@@ -82080,9 +82080,9 @@ data = {
 				range = 0;
 				minumum = 0;
 			};
-			foo = "Pictoris Beta 2";
 			type = 111;
 			earning = 1.0;
+			nameOverride = "Pictoris Beta 2";
 		};
 		[316] = {
 			distanceRange = 0;
@@ -82108,9 +82108,9 @@ data = {
 				range = 0;
 				minumum = 0;
 			};
-			foo = "Charon System";
 			type = 111;
 			earning = 1.0;
+			nameOverride = "Charon System";
 		};
 		[317] = {
 			distanceRange = 0;
@@ -82138,9 +82138,9 @@ data = {
 				range = 0;
 				minumum = 0;
 			};
-			foo = "Power Station BP1";
 			type = 23;
 			earning = 1.0;
+			nameOverride = "Power Station BP1";
 		};
 		[318] = {
 			distanceRange = 0;
@@ -82339,9 +82339,9 @@ data = {
 				range = 0;
 				minumum = 0;
 			};
-			foo = "Ser System";
 			type = 23;
 			earning = 1.0;
+			nameOverride = "Ser System";
 		};
 		[326] = {
 			distanceRange = 0;
@@ -83340,9 +83340,9 @@ data = {
 				range = 0;
 				minumum = 0;
 			};
-			foo = "Command Buoy A";
 			type = 23;
 			earning = 1.0;
+			nameOverride = "Command Buoy A";
 		};
 		[366] = {
 			distanceRange = 0;
@@ -83366,9 +83366,9 @@ data = {
 				range = 0;
 				minumum = 0;
 			};
-			foo = "Command Buoy B";
 			type = 111;
 			earning = 1.0;
+			nameOverride = "Command Buoy B";
 		};
 		[367] = {
 			distanceRange = 0;
@@ -83392,9 +83392,9 @@ data = {
 				range = 0;
 				minumum = 0;
 			};
-			foo = "Combat Buoy A";
 			type = 111;
 			earning = 1.0;
+			nameOverride = "Combat Buoy A";
 		};
 		[368] = {
 			distanceRange = 0;
@@ -83469,9 +83469,9 @@ data = {
 				range = 0;
 				minumum = 0;
 			};
-			foo = "Extra Ships";
 			type = 111;
 			earning = 1.0;
+			nameOverride = "Extra Ships";
 		};
 		[371] = {
 			distanceRange = 0;
@@ -83495,9 +83495,9 @@ data = {
 				range = 0;
 				minumum = 0;
 			};
-			foo = "Combat Buoy B";
 			type = 111;
 			earning = 1.0;
+			nameOverride = "Combat Buoy B";
 		};
 		[372] = {
 			distanceRange = 0;
@@ -83546,9 +83546,9 @@ data = {
 				range = 0;
 				minumum = 0;
 			};
-			foo = "Combat Buoy C";
 			type = 111;
 			earning = 1.0;
+			nameOverride = "Combat Buoy C";
 		};
 		[374] = {
 			distanceRange = 0;
@@ -83622,9 +83622,9 @@ data = {
 				range = 0;
 				minumum = 0;
 			};
-			foo = "Build Moon";
 			type = 111;
 			earning = 1.0;
+			nameOverride = "Build Moon";
 		};
 		[377] = {
 			distanceRange = 0;
@@ -83723,9 +83723,9 @@ data = {
 				range = 0;
 				minumum = 0;
 			};
-			foo = "Omisha Jump Gate";
 			type = 111;
 			earning = 1.0;
+			nameOverride = "Omisha Jump Gate";
 		};
 		[381] = {
 			distanceRange = 0;
@@ -83799,9 +83799,9 @@ data = {
 				range = 0;
 				minumum = 0;
 			};
-			foo = "Palyos Belt";
 			type = 137;
 			earning = 1.0;
+			nameOverride = "Palyos Belt";
 		};
 		[384] = {
 			distanceRange = 0;
@@ -83975,9 +83975,9 @@ data = {
 				range = 0;
 				minumum = 0;
 			};
-			foo = "Simlab 2";
 			type = 210;
 			earning = 1.0;
+			nameOverride = "Simlab 2";
 		};
 		[391] = {
 			distanceRange = 0;
@@ -84001,9 +84001,9 @@ data = {
 				range = 0;
 				minumum = 0;
 			};
-			foo = "Simlab 3";
 			type = 210;
 			earning = 1.0;
+			nameOverride = "Simlab 3";
 		};
 		[392] = {
 			distanceRange = 0;
@@ -84027,9 +84027,9 @@ data = {
 				range = 0;
 				minumum = 0;
 			};
-			foo = "Cell 1";
 			type = 210;
 			earning = 1.0;
+			nameOverride = "Cell 1";
 		};
 		[393] = {
 			distanceRange = 0;
@@ -84303,9 +84303,9 @@ data = {
 				range = 0;
 				minumum = 0;
 			};
-			foo = "ISN 8738810";
 			type = 225;
 			earning = 0.0;
+			nameOverride = "ISN 8738810";
 		};
 		[404] = {
 			distanceRange = 0;
@@ -84354,9 +84354,9 @@ data = {
 				range = 0;
 				minumum = 0;
 			};
-			foo = "Cell 2";
 			type = 216;
 			earning = 1.0;
+			nameOverride = "Cell 2";
 		};
 		[406] = {
 			distanceRange = 0;
@@ -84380,9 +84380,9 @@ data = {
 				range = 0;
 				minumum = 0;
 			};
-			foo = "Cell 3";
 			type = 216;
 			earning = 1.0;
+			nameOverride = "Cell 3";
 		};
 		[407] = {
 			distanceRange = 0;
@@ -84406,9 +84406,9 @@ data = {
 				range = 0;
 				minumum = 0;
 			};
-			foo = "Lalande Alpha";
 			type = 216;
 			earning = 1.0;
+			nameOverride = "Lalande Alpha";
 		};
 		[408] = {
 			distanceRange = 0;
@@ -84788,9 +84788,9 @@ data = {
 				range = 0;
 				minumum = 0;
 			};
-			foo = "Proteus Beta";
 			type = 23;
 			earning = 1.0;
+			nameOverride = "Proteus Beta";
 		};
 		[423] = {
 			distanceRange = 0;
@@ -84820,9 +84820,9 @@ data = {
 				range = 0;
 				minumum = 0;
 			};
-			foo = "Proteus Gamma";
 			type = 23;
 			earning = 1.0;
+			nameOverride = "Proteus Gamma";
 		};
 		[424] = {
 			distanceRange = 0;
@@ -84846,9 +84846,9 @@ data = {
 				range = 0;
 				minumum = 0;
 			};
-			foo = "Bunker Station 2";
 			type = 104;
 			earning = 1.0;
+			nameOverride = "Bunker Station 2";
 		};
 		[425] = {
 			distanceRange = 0;
@@ -84872,9 +84872,9 @@ data = {
 				range = 0;
 				minumum = 0;
 			};
-			foo = "Orbital Shipyard";
 			type = 104;
 			earning = 1.0;
+			nameOverride = "Orbital Shipyard";
 		};
 		[426] = {
 			distanceRange = 0;
@@ -84954,9 +84954,9 @@ data = {
 				range = 0;
 				minumum = 0;
 			};
-			foo = "Proteus Beta";
 			type = 23;
 			earning = 1.0;
+			nameOverride = "Proteus Beta";
 		};
 		[429] = {
 			distanceRange = 0;
@@ -84986,9 +84986,9 @@ data = {
 				range = 0;
 				minumum = 0;
 			};
-			foo = "Proteus Gamma";
 			type = 23;
 			earning = 1.0;
+			nameOverride = "Proteus Gamma";
 		};
 		[430] = {
 			distanceRange = 0;
@@ -85017,9 +85017,9 @@ data = {
 				range = 0;
 				minumum = 0;
 			};
-			foo = "Philemon";
 			type = 23;
 			earning = 1.0;
+			nameOverride = "Philemon";
 		};
 		[431] = {
 			distanceRange = 0;
@@ -86174,9 +86174,9 @@ data = {
 				range = 0;
 				minumum = 0;
 			};
-			foo = "Lalande Beta";
 			type = 23;
 			earning = 1.0;
+			nameOverride = "Lalande Beta";
 		};
 		[477] = {
 			distanceRange = 0;
@@ -86206,9 +86206,9 @@ data = {
 				range = 0;
 				minumum = 0;
 			};
-			foo = "Outpost 1";
 			type = 23;
 			earning = 1.0;
+			nameOverride = "Outpost 1";
 		};
 		[478] = {
 			distanceRange = 0;
@@ -86232,9 +86232,9 @@ data = {
 				range = 0;
 				minumum = 0;
 			};
-			foo = "Outpost 3";
 			type = 104;
 			earning = 1.0;
+			nameOverride = "Outpost 3";
 		};
 		[479] = {
 			distanceRange = 0;
@@ -86433,9 +86433,9 @@ data = {
 				range = 0;
 				minumum = 0;
 			};
-			foo = "Outpost 2";
 			type = 270;
 			earning = 0.5;
+			nameOverride = "Outpost 2";
 		};
 		[487] = {
 			distanceRange = 0;
@@ -86459,9 +86459,9 @@ data = {
 				range = 0;
 				minumum = 0;
 			};
-			foo = "Bunker Station";
 			type = 270;
 			earning = 0.5;
+			nameOverride = "Bunker Station";
 		};
 		[488] = {
 			distanceRange = 0;
@@ -86541,9 +86541,9 @@ data = {
 				range = 0;
 				minumum = 0;
 			};
-			foo = "Lalande Beta";
 			type = 23;
 			earning = 1.0;
+			nameOverride = "Lalande Beta";
 		};
 		[491] = {
 			distanceRange = 0;
@@ -86573,9 +86573,9 @@ data = {
 				range = 0;
 				minumum = 0;
 			};
-			foo = "Outpost 1";
 			type = 23;
 			earning = 1.0;
+			nameOverride = "Outpost 1";
 		};
 		[492] = {
 			distanceRange = 0;
@@ -86599,9 +86599,9 @@ data = {
 				range = 0;
 				minumum = 0;
 			};
-			foo = "Outpost 2";
 			type = 270;
 			earning = 0.25;
+			nameOverride = "Outpost 2";
 		};
 		[493] = {
 			distanceRange = 0;
@@ -86625,9 +86625,9 @@ data = {
 				range = 0;
 				minumum = 0;
 			};
-			foo = "Bunker Station";
 			type = 270;
 			earning = 0.25;
+			nameOverride = "Bunker Station";
 		};
 		[494] = {
 			distanceRange = 0;
@@ -86651,9 +86651,9 @@ data = {
 				range = 0;
 				minumum = 0;
 			};
-			foo = "Outpost 4";
 			type = 270;
 			earning = 0.25;
+			nameOverride = "Outpost 4";
 		};
 		[495] = {
 			distanceRange = 0;
@@ -86677,9 +86677,9 @@ data = {
 				range = 0;
 				minumum = 0;
 			};
-			foo = "Sol";
 			type = 270;
 			earning = 0.25;
+			nameOverride = "Sol";
 		};
 		[496] = {
 			distanceRange = 0;
@@ -86703,9 +86703,9 @@ data = {
 				range = 0;
 				minumum = 0;
 			};
-			foo = "Outpost 3";
 			type = 104;
 			earning = 1.0;
+			nameOverride = "Outpost 3";
 		};
 		[497] = {
 			distanceRange = 0;
