@@ -386,6 +386,13 @@ function DrawPanels()
             end
         --    print(count, drawRed)
         end
+    else
+        local drawGreen = math.floor(cash / 200)
+    --    print(count, "=>", drawGreen, "-[", (cash / 200), "]-")
+        while count <= drawGreen do
+            graphics.draw_box(196 - 4 * count, panels.right.center.x + 9, 193 - 4 * count, panels.right.center.x + 12, 0, ClutColour(12, 3))
+            count = count + 1
+        end
     end
     while count <= 100 do
         if count > resources then
