@@ -366,7 +366,7 @@ function mouse_up()
             selection.controlId, selection.control = NextTargetUnderCursor(selection.controlId, false)
             if selection.control.base.attributes.canAcceptBuild then
                 selection.lastPlanet = selection.control
-                CalculateBuildables(object, scen)
+                CalculateBuildables(selection.lastPlanet, scen)
             end
         end
     end
