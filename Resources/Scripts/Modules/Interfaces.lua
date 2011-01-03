@@ -6,7 +6,7 @@ import('TextManip')
 selection = {
     control = {},
     target = {},
-    lastPlanet = {}
+    lastPlanet = nil
 }
 
 setmetatable(selection, weak)
@@ -25,13 +25,13 @@ menuBuild = { name = "BUILD",
 function UpdateBuildMenu()
     menuLevel.planet = lastPlanet
     for _, id in ipairs(lastPlanet.building.ids) do
-       menuLevel.items[#menuLevel.items + 1] = { [data.objects[id].name] = function() BuildShip(id) end } -- [PSEUDOCODE]
+        menuLevel.items[#menuLevel.items + 1] = { title = data.objects[id].name, action = function() BuildShip(id) end } -- [PSEUDOCODE]
     end
     menuSelected = 1
 end
 
 function UpdateMissionStatus()
-    -- [TODO] grab the mission objectives and show their status
+    -- [TODO] grab the mission objectives and show their status (a function has been created for this purpose)
 end
 
 menuSpecial = { name = "SPECIAL ORDERS",
@@ -58,17 +58,18 @@ menuStatus = { name = "MISSION STATUS",
 }
 
 function ShowBuildMenu()
-    if selection.lastPlanet == {} then
-        -- make naughty beep noise
-    else
-        if menuLevel.planet ~= lastPlanet then
-            UpdateBuildMenu()
-        end
-        -- [TODO] [ADAM] now show the stats for the selected ship
-        menuLevel = menuBuild
+    print("Running ShowBuildMenu")
+    if menuLevel.planet ~= lastPlanet then
+        UpdateBuildMenu()
     end
+    if menuLevel.planet == nil then
+        sound.play("NaughtyBeep")
+        menuLevel = menuOptions
+        return
+    end
+    -- [TODO] [ADAM] now show the stats for the selected ship
+    menuLevel = menuBuild
 end
-
 
 menuOptions = { name = "MAIN MENU",
     items = {
@@ -354,7 +355,7 @@ function DrawPanels()
     end
 --    Factory resources (green - mostly)
     count = 1 -- [HARDCODED] <-- ?
---    shipQuerying = { c = 500 } -- HARDCODED for test (the rest of the commented code)
+--    shipQuerying = { c = 5000 } -- HARDCODED for test
     if shipQuerying ~= nil then
         if cash >= shipQuerying.c then
             local drawGreen = math.floor((cash - shipQuerying.c) / 200)

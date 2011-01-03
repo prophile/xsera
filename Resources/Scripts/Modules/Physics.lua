@@ -13,8 +13,8 @@ Physics = {
     end,
     
     UpdateSystem = function(dt, objects)
-        if physicsObjects ~= {} then
-            if objects ~= nil and objects ~= {} then
+        if physicsObjects ~= nil and next(physicsObjects) ~= nil then
+            if objects ~= nil and next(objects) ~= nil then
                 for i, o in pairs(objects) do
                     if o.physics == nil then
                         printTable(o)

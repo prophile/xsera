@@ -18,7 +18,7 @@ function addMessage(msg)
 end
 
 function addObject(obj)
-    if objects ~= {} then
+    if next(objects) ~= nil then
         objects[#objects + 1] = obj
     else
         objects = { obj }

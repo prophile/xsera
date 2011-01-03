@@ -48,7 +48,7 @@ function switchTabs()
         else
             yShift = 9
         end
-        if currPanel ~= nil and currPanel ~= {} then
+        if currPanel ~= nil and next(currPanel) ~= nil then
             currPanel[#currPanel + 1] = {
                 xCoord = xCoord, yCoord = (math.ceil((#keyboard[keyboardNum] + 1) / 4) - (num - 1 - adjust)) * 36 + yShift,
                 length = 245,
