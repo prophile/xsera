@@ -29,7 +29,7 @@ function AddCash(player, cash)
 end
 
 function GetBuildPercent(planet)
-end`
+end
 
 function UpdatePlanet(planet, dt)
 end
