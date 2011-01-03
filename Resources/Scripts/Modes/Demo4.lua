@@ -273,6 +273,10 @@ function update()
                 local velocityMag = math.max(o.warp.factor * o.base.warpSpeed, o.base.maxVelocity) * SPEED_FACTOR
                 o.physics.velocity = PolarVec(velocityMag, o.physics.angle)
             end
+            
+            if o.base.attributes.canAcceptBuild then
+                UpdatePlanet(o, dt)
+            end
         end
         
         RemoveDead()
@@ -360,6 +364,10 @@ function mouse_up()
             selection.targetId, selection.target = NextTargetUnderCursor(selection.targetId, true)
         else -- CONTROL
             selection.controlId, selection.control = NextTargetUnderCursor(selection.controlId, false)
+            if selection.control.base.attributes.canAcceptBuild then
+                selection.lastPlanet = selection.control
+                CalculateBuildables(object, scen)
+            end
         end
     end
     mdown = false
