@@ -57,7 +57,7 @@ function LoadScenario(id)
     
     InitConditions(scen)
     ParseScoreStrings(scen)
-    GenerateStatusLines(scen)
+    --GenerateStatusLines(scen) -- not properly implemented due to configuration change
     return scen
 end
 

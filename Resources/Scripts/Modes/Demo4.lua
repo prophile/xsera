@@ -277,7 +277,7 @@ function update()
         
         RemoveDead()
         TestConditions(scen)
-        GenerateStatusLines(scen)
+        --GenerateStatusLines(scen) -- not properly implemented due to configuration change
         
         UpdateEffects(dt)
         Physics.UpdateSystem(dt, scen.objects)

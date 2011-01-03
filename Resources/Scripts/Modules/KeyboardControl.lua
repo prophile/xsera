@@ -1,6 +1,7 @@
 import('GlobalVars')
 import('Interfaces')
 import('Console')
+
 --[[-----------------------
     --{{---------------
         Key In Menu
@@ -186,22 +187,47 @@ function DoScaleOut()
 end
 
 function DoComputerPrevious()
-    change_menu(menuLevel, "i")
+    if menuItemSelected ~= 1 and menuItemSelected ~= 0 then
+        menuItemSelected = menuItemSelected - 1
+        if menuLevel == menuBuild then
+            if menuLevel.planet ~= lastPlanet then
+                UpdateBuildMenu()
+            end
+            -- [TODO] [ADAM] now show the stats for the selected ship
+        end
+    end
     keyboard[2][9].active = false
 end
 
 function DoComputerNext()
-    change_menu(menuLevel, "k")
+    if menuItemSelected ~= #menuLevel.items and menuItemSelected ~= 0 then
+        menuItemSelected = menuItemSelected + 1
+        if menuLevel == menuBuild then
+            if menuLevel.planet ~= lastPlanet then
+                UpdateBuildMenu()
+            end
+            -- [TODO] [ADAM] now show the stats for the selected ship
+        end
+    end
     keyboard[2][10].active = false
 end
 
 function DoComputerAccept()
-    change_menu(menuLevel, "l")
+    if menuLevel.items[menuItemSelected].action ~= nil then
+        menuLevel.items[menuItemSelected].action()
+        menuItemSelected = 1
+        if menuLevel == menuStatus then
+            menuItemSelected = 0
+        end
+    end
     keyboard[2][11].active = false
 end
 
 function DoComputerBack()
-    change_menu(menuLevel, "j")
+    if menu ~= menuOptions then
+        menuLevel = menuOptions
+        menuItemSelected = 1
+    end
     keyboard[2][12].active = false
 end
 
@@ -375,10 +401,10 @@ keyboard = { { "Ship",
                 { key = "MctrlL", key_display = "CtrlL", name = "Move Order", action = DoMoveOrder, active = false }, 
                 { key = "=", name = "Scale In", action = DoScaleIn, active = false }, 
                 { key = "-", name = "Scale Out", action = DoScaleOut, active = false }, 
-                { key = "up", key_display = "UP", name = "Computer Previous", action = DoComputerPrevious, active = false }, 
-                { key = "down", key_display = "DOWN", name = "Computer Next", action = DoComputerNext, active = false }, 
-                { key = "right", key_display = "RGHT", name = "Computer Accept/Select/Do", action = DoComputerAccept, active = false }, 
-                { key = "left", key_display = "LEFT", name = "Computer Cancel/Back Up", action = DoComputerBack, active = false } },
+                { key = "up", key_display = "i", name = "Computer Previous", action = DoComputerPrevious, active = false }, 
+                { key = "down", key_display = "k", name = "Computer Next", action = DoComputerNext, active = false }, 
+                { key = "right", key_display = "l", name = "Computer Accept/Select/Do", action = DoComputerAccept, active = false }, 
+                { key = "left", key_display = "j", name = "Computer Cancel/Back Up", action = DoComputerBack, active = false } },
             { "Shortcuts",
                 { key = "F8", name = "Transfer Control", action = DoTransferControl, active = false }, 
                 { key = "F9", name = "Zoom to 1:1", action = DoZoom1_1, active = false }, 

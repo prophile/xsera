@@ -1,11 +1,12 @@
+import('GlobalVars')
 import('BoxDrawing')
 import('Camera')
-import('GlobalVars')
 import('TextManip')
 
 selection = {
     control = {},
-    target = {}
+    target = {},
+    lastPlanet = {}
 }
 
 setmetatable(selection, weak)
@@ -13,87 +14,71 @@ setmetatable(selection, weak)
 menuShift = 54
 topOfMenu = -87
 menuStride = -13
-shipSelected = false
-menuShipyard = { "BUILD", {} }
+menuItemSelected = 1
 
-function MakeShip()
-    shipBuilding = { p = shipQuerying.p, n = shipQuerying.n, r = shipQuerying.r, c = shipQuerying.c, t = shipQuerying.t }
-    if shipBuilding.c > cash or scen.planet.buildqueue.percent ~= 100 then
-        sound.play("NaughtyBeep")
-        return
+menuBuild = { name = "BUILD",
+    items = {},
+    planet = nil -- this is used to check (if planet ~= lastPlanet,
+                 -- we need to update the data in the items table)
+}
+
+function UpdateBuildMenu()
+    menuLevel.planet = lastPlanet
+    for _, id in ipairs(lastPlanet.building.ids) do
+       menuLevel.items[#menuLevel.items + 1] = { [data.objects[id].name] = function() BuildShip(id) end } -- [PSEUDOCODE]
     end
-    scen.planet.buildqueue.factor = shipBuilding.t
-    scen.planet.buildqueue.time = realTime
-    scen.planet.buildqueue.current = realTime - scen.planet.buildqueue.time
-    cash = cash - shipBuilding.c
-    buildTimerRunning = true
+    menuSelected = 1
 end
 
-function Shipyard()
-    menuLevel = menuShipyard
-    local num = 1
-    while scen.planet.build[num] ~= nil do
-        menuShipyard[num + 1] = {}
-        menuShipyard[num + 1][1] = scen.planet.build[num]:gsub("(%w+)/(%w+)", "%2")
-        if num ~= 1 then
-            menuShipyard[num + 1][2] = false
-        else
-            menuShipyard[num + 1][2] = true
-            shipSelected = true
-            shipQuerying.p = scen.planet
-            shipQuerying.n = scen.planet.build[num]:gsub("(%w+)/(%w+)", "%2")
-            shipQuerying.r = scen.planet.build[num]:gsub("(%w+)/(%w+)", "%1")
-            shipQuerying.c = scen.planet.buildCost[num]
-            shipQuerying.t = scen.planet.buildTime[num]
+function UpdateMissionStatus()
+    -- [TODO] grab the mission objectives and show their status
+end
+
+menuSpecial = { name = "SPECIAL ORDERS",
+    items = {
+        { title = "Transfer Control",  action = DoTransferControl }, -- from KeyboardControl.lua
+        { title = "Hold Position",     action = nil },
+        { title = "Go To My Position", action = nil },
+        { title = "Fire Weapon 1",     action = nil },
+        { title = "Fire Weapon 2",     action = nil },
+        { title = "Fire Special",      action = nil }
+    }
+}
+
+menuMessages = { name = "MESSAGES",
+    items = {
+        { title = "Next Page/Clear", action = nil },
+        { title = "Previous Page",   action = nil },
+        { title = "Last Message",    action = nil }
+    }
+}
+
+menuStatus = { name = "MISSION STATUS",
+    items = {}
+}
+
+function ShowBuildMenu()
+    if selection.lastPlanet == {} then
+        -- make naughty beep noise
+    else
+        if menuLevel.planet ~= lastPlanet then
+            UpdateBuildMenu()
         end
-        menuShipyard[num + 1][3] = MakeShip
-        menuShipyard[num + 1][4] = {}
-        menuShipyard[num + 1][4][1] = scen.planet
-        menuShipyard[num + 1][4][2] = scen.planet.build[num]:gsub("(%w+)/(%w+)", "%2")
-        menuShipyard[num + 1][4][3] = scen.planet.build[num]:gsub("(%w+)/(%w+)", "%1")
-        num = num + 1
+        -- [TODO] [ADAM] now show the stats for the selected ship
+        menuLevel = menuBuild
     end
-    shipSelected = true
 end
 
-menuSpecial = { "SPECIAL ORDERS",
-    { "Transfer Control", true, DoTransferControl },
-    { "Hold Position", false, nil },
-    { "Go To My Position", false, nil },
-    { "Fire Weapon 1", false, nil },
-    { "Fire Weapon 2", false, nil },
-    { "Fire Special", false, nil }
+
+menuOptions = { name = "MAIN MENU",
+    items = {
+        { title = "<Build>",          action = ShowBuildMenu },
+        { title = "<Special Orders>", action = function() menuLevel = menuSpecial end },
+        { title = "<Messages>",       action = function() menuLevel = menuMessages end },
+        { title = "<Mission Status>", action = function() menuLevel = menuStatus end }
+    }
 }
 
-function Special()
-    menuLevel = menuSpecial
-end
-
-menuMessages = { "MESSAGES",
-    { "Next Page/Clear", true, nil },
-    { "Previous Page", false, nil },
-    { "Last Message", false, nil }
-}
-
-function Messages()
-    menuLevel = menuMessages
-end
-
-menuStatus = { "MISSION STATUS",
---    { "", false },
-    
-}
-
-function MissionStatus()
-    menuLevel = menuStatus
-end
-
-menuOptions = { "MAIN MENU",
-    { "<Build>", true, Shipyard },
-    { "<Special Orders>", false, Special },
-    { "<Messages>", false, Messages },
-    { "<Mission Status>", false, MissionStatus }
-}
 menuLevel = menuOptions
 
 function InterfaceDisplay(dt)
@@ -337,8 +322,6 @@ function DrawRadar()
     end
 end
 
-menuLevel = menuOptions
-
 function DrawPanels()
     UpdateWindow()
     local cam = CameraToWindow()
@@ -370,8 +353,8 @@ function DrawPanels()
         graphics.draw_box(scen.playerShip.status.health / scen.playerShip.status.healthMax * 100 - 219, panels.right.center.x - 11, -219, panels.right.center.x, 0, ClutColour(14, 6))
     end
 --    Factory resources (green - mostly)
-    count = 1
---    shipQuerying = { c = 500 } -- HARDCODED for test
+    count = 1 -- [HARDCODED] <-- ?
+--    shipQuerying = { c = 500 } -- HARDCODED for test (the rest of the commented code)
     if shipQuerying ~= nil then
         if cash >= shipQuerying.c then
             local drawGreen = math.floor((cash - shipQuerying.c) / 200)
@@ -444,25 +427,16 @@ function DrawPanels()
     graphics.draw_box(-80, panels.left.center.x - 55, -200, panels.left.center.x + 57, 0, ClutColour(5, 11))
     graphics.draw_line({ x = panels.left.center.x - 55, y = -94 }, { x = panels.left.center.x + 57, y = -94 }, 1, ClutColour(12, 3))
 --    Menu drawing
-    local shift = 1
-    local num = 1
-    graphics.draw_text(menuLevel[1], MAIN_FONT, "left", { x = panels.left.center.x - menuShift, y = topOfMenu }, 15)
-    while menuLevel[num] ~= nil do
-        if menuLevel[num][1] ~= nil then
-            if menuLevel[num][2] == true then
-                graphics.draw_box(topOfMenu + menuStride * shift + 6, panels.left.center.x - menuShift, topOfMenu + menuStride * shift - 7, panels.left.center.x - menuShift + 112, 0, ClutColour(12, 10))
-            end
-            graphics.draw_text(menuLevel[num][1], MAIN_FONT, "left", { x = panels.left.center.x - menuShift, y = topOfMenu + menuStride * shift }, 15)
-            shift = shift + 1
-        end
-        num = num + 1
+    graphics.draw_text(menuLevel.name, MAIN_FONT, "left", { x = panels.left.center.x - menuShift, y = topOfMenu }, 15)
+    if menuItemSelected ~= 0 then
+        graphics.draw_box(topOfMenu + menuStride * menuItemSelected + 6, panels.left.center.x - menuShift, topOfMenu + menuStride * menuItemSelected - 7, panels.left.center.x - menuShift + 112, 0, ClutColour(12, 10))
     end
-    if text_being_drawn == true then
-        graphics.draw_text(scen.text[textnum], MAIN_FONT, "center", { x = 0, y = -250 }, 30)
+    for i = 1, #menuLevel.items do
+        graphics.draw_text(menuLevel.items[i].title, MAIN_FONT, "left", { x = panels.left.center.x - menuShift, y = topOfMenu + menuStride * i }, 15)
     end
     
 --    Weapon ammo count
---OFFSET = 32 PIXELS <= ?
+--OFFSET = 32 PIXELS -- [WHAT]
     if scen.playerShip.weapons ~= nil then
         if scen.playerShip.weapons.pulse ~= nil
         and scen.playerShip.weapons.pulse.ammo ~= -1 then
@@ -539,7 +513,6 @@ function change_menu(menu, direction)
     elseif direction == "j" then
         if menu ~= menuOptions then
             menuLevel = menuOptions
-            shipSelected = false
         end
     elseif direction == "l" then
         while menu[num][2] ~= true do
@@ -642,41 +615,39 @@ function DrawArrow()
 end
 
 function DrawGrid()
-    do
-        local i = 0
-        while i * GRID_DIST_BLUE - 10 < camera.w + 10 + GRID_DIST_BLUE do
-            local grid_x = math.floor((i * GRID_DIST_BLUE + scen.playerShip.physics.position.x - (camera.w / 2.0)) / GRID_DIST_BLUE) * GRID_DIST_BLUE
-            
-            if grid_x % GRID_DIST_LIGHT_BLUE == 0 then
-                if grid_x % GRID_DIST_GREEN == 0 then
-                    graphics.draw_line({ x = grid_x, y = scen.playerShip.physics.position.y - (camera.h / 2.0) }, { x = grid_x, y = scen.playerShip.physics.position.y + (camera.h / 2.0) }, 1, ClutColour(5, 1))
-                else
-                    graphics.draw_line({ x = grid_x, y = scen.playerShip.physics.position.y - (camera.h / 2.0) }, { x = grid_x, y = scen.playerShip.physics.position.y + (camera.h / 2.0) }, 1, ClutColour(14, 9))
-                end
-            else
-                if cameraRatio.current > 1 / 8 then
-                    graphics.draw_line({ x = grid_x, y = scen.playerShip.physics.position.y - (camera.h / 2.0) }, { x = grid_x, y = scen.playerShip.physics.position.y + (camera.h / 2.0) }, 1, ClutColour(4, 11))
-                end
-            end
-            i = i + 1
-        end
+    local i = 0
+    while i * GRID_DIST_BLUE - 10 < camera.w + 10 + GRID_DIST_BLUE do
+        local grid_x = math.floor((i * GRID_DIST_BLUE + scen.playerShip.physics.position.x - (camera.w / 2.0)) / GRID_DIST_BLUE) * GRID_DIST_BLUE
         
-        i = 0
-        while i * GRID_DIST_BLUE - 10 < camera.h + 10 + GRID_DIST_BLUE do
-            local grid_y = math.floor((i * GRID_DIST_BLUE + scen.playerShip.physics.position.y - (camera.h / 2.0)) / GRID_DIST_BLUE) * GRID_DIST_BLUE
-            if grid_y % GRID_DIST_LIGHT_BLUE == 0 then
-                if grid_y % GRID_DIST_GREEN == 0 then
-                    graphics.draw_line({ x = scen.playerShip.physics.position.x - shipAdjust - (camera.w / 2.0), y = grid_y }, { x = scen.playerShip.physics.position.x - shipAdjust + (camera.w / 2.0), y = grid_y }, 1, ClutColour(5, 1))
-                else
-                    graphics.draw_line({ x = scen.playerShip.physics.position.x - shipAdjust - (camera.w / 2.0), y = grid_y }, { x = scen.playerShip.physics.position.x - shipAdjust + (camera.w / 2.0), y = grid_y }, 1, ClutColour(14, 9))
-                end
+        if grid_x % GRID_DIST_LIGHT_BLUE == 0 then
+            if grid_x % GRID_DIST_GREEN == 0 then
+                graphics.draw_line({ x = grid_x, y = scen.playerShip.physics.position.y - (camera.h / 2.0) }, { x = grid_x, y = scen.playerShip.physics.position.y + (camera.h / 2.0) }, 1, ClutColour(5, 1))
             else
-                if cameraRatio.current > 1 / 8 then
-                    graphics.draw_line({ x = scen.playerShip.physics.position.x - shipAdjust - (camera.w / 2.0), y = grid_y }, { x = scen.playerShip.physics.position.x - shipAdjust + (camera.w / 2.0), y = grid_y }, 1, ClutColour(4, 11))
-                end
+                graphics.draw_line({ x = grid_x, y = scen.playerShip.physics.position.y - (camera.h / 2.0) }, { x = grid_x, y = scen.playerShip.physics.position.y + (camera.h / 2.0) }, 1, ClutColour(14, 9))
             end
-            i = i + 1
+        else
+            if cameraRatio.current > 1 / 8 then
+                graphics.draw_line({ x = grid_x, y = scen.playerShip.physics.position.y - (camera.h / 2.0) }, { x = grid_x, y = scen.playerShip.physics.position.y + (camera.h / 2.0) }, 1, ClutColour(4, 11))
+            end
         end
+        i = i + 1
+    end
+    
+    i = 0
+    while i * GRID_DIST_BLUE - 10 < camera.h + 10 + GRID_DIST_BLUE do
+        local grid_y = math.floor((i * GRID_DIST_BLUE + scen.playerShip.physics.position.y - (camera.h / 2.0)) / GRID_DIST_BLUE) * GRID_DIST_BLUE
+        if grid_y % GRID_DIST_LIGHT_BLUE == 0 then
+            if grid_y % GRID_DIST_GREEN == 0 then
+                graphics.draw_line({ x = scen.playerShip.physics.position.x - shipAdjust - (camera.w / 2.0), y = grid_y }, { x = scen.playerShip.physics.position.x - shipAdjust + (camera.w / 2.0), y = grid_y }, 1, ClutColour(5, 1))
+            else
+                graphics.draw_line({ x = scen.playerShip.physics.position.x - shipAdjust - (camera.w / 2.0), y = grid_y }, { x = scen.playerShip.physics.position.x - shipAdjust + (camera.w / 2.0), y = grid_y }, 1, ClutColour(14, 9))
+            end
+        else
+            if cameraRatio.current > 1 / 8 then
+                graphics.draw_line({ x = scen.playerShip.physics.position.x - shipAdjust - (camera.w / 2.0), y = grid_y }, { x = scen.playerShip.physics.position.x - shipAdjust + (camera.w / 2.0), y = grid_y }, 1, ClutColour(4, 11))
+            end
+        end
+        i = i + 1
     end
 end
 
@@ -689,7 +660,7 @@ function DrawTargetBox(object, isControl)
 	graphics.draw_text((isControl and "CONTROL" or "TARGET"), MAIN_FONT, "left", { x = panels.left.center.x - 53, y = 56 - off }, 14, ClutColour(1, 17))
 	graphics.draw_text(object.name, MAIN_FONT, "left", { x = panels.left.center.x - 53, y = 44 - off }, 14)
 	
-	local isFriendly = false
+	local isFriendly = false -- [HARDCODED]
 	if object.ai.objectives.dest ~= nil then
 		local col = isFriendly and ClutColour(5, 11) or ClutColour(16, 4)
 		graphics.draw_text(object.ai.objectives.dest.name, MAIN_FONT, "left", { x = panels.left.center.x - 53, y = 4 - off }, 14, col)
