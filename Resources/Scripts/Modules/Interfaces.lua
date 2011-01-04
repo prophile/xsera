@@ -368,11 +368,12 @@ function DrawPanels()
     else
         selectedShipCost = 0
     end
-   
+    
+    local BARMAX = 100
     if selectedShipCost ~= 0 then
         if cash >= selectedShipCost then
-            local drawGreen = math.floor((cash - selectedShipCost) / 200)
-            local drawBlue = math.ceil(selectedShipCost / 200) + drawGreen
+            local drawGreen = math.min(math.floor((cash - selectedShipCost) / 200), BARMAX)
+            local drawBlue = math.min(math.ceil(selectedShipCost / 200) + drawGreen, BARMAX)
             while count <= drawGreen do
                 graphics.draw_box(196 - 4 * count, panels.right.center.x + 9, 193 - 4 * count, panels.right.center.x + 12, 0, ClutColour(12, 3))
                 count = count + 1
@@ -382,8 +383,8 @@ function DrawPanels()
                 count = count + 1
             end
         else
-            local drawGreen = math.floor(cash / 200)
-            local drawRed = math.ceil(selectedShipCost / 200)
+            local drawGreen = math.min(math.floor(cash / 200), BARMAX)
+            local drawRed = math.min(math.ceil(selectedShipCost / 200), BARMAX)
             while count <= drawGreen do
                 graphics.draw_box(196 - 4 * count, panels.right.center.x + 9, 193 - 4 * count, panels.right.center.x + 12, 0, ClutColour(12, 3))
                 count = count + 1
@@ -394,7 +395,7 @@ function DrawPanels()
             end
         end
     else
-        local drawGreen = math.floor(cash / 200)
+        local drawGreen = math.min(math.floor(cash / 200), BARMAX)
         while count <= drawGreen do
             graphics.draw_box(196 - 4 * count, panels.right.center.x + 9, 193 - 4 * count, panels.right.center.x + 12, 0, ClutColour(12, 3))
             count = count + 1
@@ -410,13 +411,12 @@ function DrawPanels()
     end
 --    Factory resource bars (yellow)
     --200 Per segment, 100 segments per bar
-    for count = 1, math.floor(cash/(200*100)) do
-        if count <= resourceBars then
-            graphics.draw_box(198 - 6 * count, panels.right.center.x - 4, 193 - 6 * count, panels.right.center.x + 7, 0, ClutColour(3, 3))
-        else
-            graphics.draw_box(198 - 6 * count, panels.right.center.x - 4, 193 - 6 * count, panels.right.center.x + 7, 0, ClutColour(9, 13))
-        end
-        count = count + 1
+    local segmentCount = math.floor(cash/(200*100))
+    for count = 1, segmentCount + 1 do
+        graphics.draw_box(198 - 6 * count, panels.right.center.x - 4, 193 - 6 * count, panels.right.center.x + 7, 0, ClutColour(3, 3))
+    end
+    for count = segmentCount + 1, 7 do
+        graphics.draw_box(198 - 6 * count, panels.right.center.x - 4, 193 - 6 * count, panels.right.center.x + 7, 0, ClutColour(9, 13))
     end
 --   Factory build bar (purple)
     planet = selection.lastPlanet
