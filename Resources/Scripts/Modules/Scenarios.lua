@@ -188,3 +188,24 @@ function GenerateStatusLines(scen)
         menuStatus[i + 1] = out
     end
 end
+
+function ObjectIterator(list)
+    local function jaggedListIterator(list, index)
+        if index[2] == nil then
+            index[1] = next(list, index[1])
+            if index[1] == nil then
+                return nil
+            end
+        end
+        local i, k = next(list[index[1]], index[2])
+        index[2] = i
+        return index, k
+    end
+    return jaggedListIterator, list, {nil, nil}
+end
+
+function AddObject(obj, scen)
+    local list = scen.objects[obj.layer]
+    list[#list + 1] = obj
+    return {obj.layer, #list}
+end
