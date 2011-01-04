@@ -28,8 +28,8 @@ function NewObject(id)
 			owner = nil;
 			mode = "wait";
 			objectives = {
-				target = nil;
-				dest = nil;
+				target = nil;--Short term
+				dest = nil;--Long term
 			};
 		};
 		physics = Physics.NewObject(base.mass or 1.0);

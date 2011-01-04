@@ -32,9 +32,6 @@ function GetCash(player)
 end
 
 function AddCash(player, cash)
-    if cash < 0 then
-        print("Giving Player: " .. player .. "Cash:" .. cash)
-    end
     scen.players[player].cash = scen.players[player].cash + cash
     return scen.players[player].cash
 end
@@ -48,14 +45,21 @@ function UpdatePlanet(planet, dt)
     local build = planet.building
     if build.constructionId ~= nil then
         build.constructionState = build.constructionState + CONSTRUCTION_POINTS_PER_TICK * dt
-        print("BP: " .. GetBuildPercent(planet))
         if GetBuildPercent(planet) >= 1.0 then
 
             local newObj = NewObject(build.constructionId)
-            newObj.physics.location = planet.physics.location
-            --[ADD]inherit owner
-            --[ADD]set target
-            --[ADD]initial angle/vel
+            newObj.physics.position = planet.physics.position
+            newObj.ai.owner = planet.ai.owner
+            if newObj.ai.owner == 0
+            and selection.target ~= nil then
+                newObj.ai.objectives.dest = selection.target
+            else
+                newObj.ai.objectives.dest = planet
+            end
+
+            newObj.physics.angle = newObj.base.initialDirection + math.random(0, newObj.base.initialDirectionRange)
+            newObj.physics.velocity = PolarVec(SPEED_FACTOR * (newObj.base.initialVelocity + math.random(0, newObj.base.initialVelocity)), newObj.physics.angle)
+
             scen.objects[#scen.objects + 1] = newObj
             for i = #scen.objects, 2, -1 do
                 if scen.objects[i].layer >= scen.objects[i - 1].layer then
