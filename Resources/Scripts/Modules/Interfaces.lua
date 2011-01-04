@@ -16,6 +16,7 @@ topOfMenu = -87
 menuStride = -13
 menuItemSelected = 1
 
+
 menuBuild = { name = "BUILD",
     items = {},
     planet = nil -- this is used to check (if planet ~= lastPlanet,
@@ -360,48 +361,47 @@ function DrawPanels()
     end
 --    Factory resources (green - mostly)
     count = 1 -- [HARDCODED] <-- ?
---    shipQuerying = { c = 5000 } -- HARDCODED for test
-    --[=[
-    if shipQuerying ~= nil then
-        if cash >= shipQuerying.c then
-            local drawGreen = math.floor((cash - shipQuerying.c) / 200)
-            local drawBlue = math.ceil((shipQuerying.c) / 200) + drawGreen
-        --    print(count, "=>", drawGreen, "-[", ((cash - shipQuerying.c) / 200), "]-")
+    local cash = scen.players[0].cash
+    local selectedShipCost
+    if menuSelected == 1 then
+        selectedShipCost = data.objects[selection.lastPlanet.building.ids[menuItemSelected]].price
+    else
+        selectedShipCost = 0
+    end
+   
+    if selectedShipCost ~= 0 then
+        if cash >= selectedShipCost then
+            local drawGreen = math.floor((cash - selectedShipCost) / 200)
+            local drawBlue = math.ceil(selectedShipCost / 200) + drawGreen
             while count <= drawGreen do
                 graphics.draw_box(196 - 4 * count, panels.right.center.x + 9, 193 - 4 * count, panels.right.center.x + 12, 0, ClutColour(12, 3))
                 count = count + 1
             end
-        --    print(count, drawGreen, drawBlue)
             while count <= drawBlue do
                 graphics.draw_box(196 - 4 * count, panels.right.center.x + 9, 193 - 4 * count, panels.right.center.x + 12, 0, ClutColour(14, 5))
                 count = count + 1
             end
-        --    print(count, drawBlue)
         else
             local drawGreen = math.floor(cash / 200)
-            local drawRed = math.ceil(shipQuerying.c / 200)
-        --    print(count, "=>", drawGreen, "-[", (cash / 200), "]-")
+            local drawRed = math.ceil(selectedShipCost / 200)
             while count <= drawGreen do
                 graphics.draw_box(196 - 4 * count, panels.right.center.x + 9, 193 - 4 * count, panels.right.center.x + 12, 0, ClutColour(12, 3))
                 count = count + 1
             end
-        --    print(count, drawGreen, drawRed)
             while count <= drawRed do
                 graphics.draw_box(196 - 4 * count, panels.right.center.x + 9, 193 - 4 * count, panels.right.center.x + 12, 0, ClutColour(2, 9))
                 count = count + 1
             end
-        --    print(count, drawRed)
         end
     else
         local drawGreen = math.floor(cash / 200)
-    --    print(count, "=>", drawGreen, "-[", (cash / 200), "]-")
         while count <= drawGreen do
             graphics.draw_box(196 - 4 * count, panels.right.center.x + 9, 193 - 4 * count, panels.right.center.x + 12, 0, ClutColour(12, 3))
             count = count + 1
         end
     end
     while count <= 100 do
-        if count > resources then
+        if count > 1 then
             graphics.draw_box(196 - 4 * count, panels.right.center.x + 9, 193 - 4 * count, panels.right.center.x + 12, 0, ClutColour(12, 14))
         else
             graphics.draw_box(196 - 4 * count, panels.right.center.x + 9, 193 - 4 * count, panels.right.center.x + 12, 0, ClutColour(12, 3))
@@ -409,8 +409,8 @@ function DrawPanels()
         count = count + 1
     end
 --    Factory resource bars (yellow)
-    count = 1
-    while count <= 7 do
+    --200 Per segment, 100 segments per bar
+    for count = 1, math.floor(cash/(200*100)) do
         if count <= resourceBars then
             graphics.draw_box(198 - 6 * count, panels.right.center.x - 4, 193 - 6 * count, panels.right.center.x + 7, 0, ClutColour(3, 3))
         else
@@ -418,9 +418,9 @@ function DrawPanels()
         end
         count = count + 1
     end
---    Factory build bar (purple)
---    planet = scen.planet -- commented out until planet implemented
---    if planet ~= nil then -- commented out until planet implemented
+--   Factory build bar (purple)
+    planet = selection.lastPlanet
+    if planet ~= nil then
         graphics.draw_line({ x = panels.right.center.x - 8, y = 232 }, { x = panels.right.center.x + 7, y = 232 }, 1, ClutColour(13, 9))
         graphics.draw_line({ x = panels.right.center.x - 7, y = 232 }, { x = panels.right.center.x - 7, y = 228 }, 1, ClutColour(13, 9))
         graphics.draw_line({ x = panels.right.center.x + 7, y = 228 }, { x = panels.right.center.x + 7, y = 232 }, 1, ClutColour(13, 9))
@@ -428,9 +428,10 @@ function DrawPanels()
         graphics.draw_line({ x = panels.right.center.x - 7, y = 205 }, { x = panels.right.center.x - 7, y = 201 }, 1, ClutColour(13, 9))
         graphics.draw_line({ x = panels.right.center.x + 7, y = 201 }, { x = panels.right.center.x + 7, y = 205 }, 1, ClutColour(13, 9))
         graphics.draw_box(230, panels.right.center.x - 6, 204, panels.right.center.x + 5, 0, ClutColour(13, 9))
-        graphics.draw_box(25 * (100 - 30) / 100 + 204, panels.right.center.x - 6, 204, panels.right.center.x + 5, 0, ClutColour(13, 5))
---    end -- commented out until planet implemented
-    --]=]
+        graphics.draw_box(25 * GetBuildPercent(planet) + 204, panels.right.center.x - 6, 204, panels.right.center.x + 5, 0, ClutColour(13, 5))
+    end
+
+    
 --[[------------------
     Left Panel
 ------------------]]--

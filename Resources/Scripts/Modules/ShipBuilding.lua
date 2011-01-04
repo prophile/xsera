@@ -37,7 +37,11 @@ function AddCash(player, cash)
 end
 
 function GetBuildPercent(planet)
- return planet.building.constructionState/data.objects[planet.building.constructionId].buildTime
+    if planet.building.constructionId ~= nil then
+        return planet.building.constructionState/data.objects[planet.building.constructionId].buildTime
+    else
+        return 0
+    end
 end
 
 function UpdatePlanet(planet, dt)
