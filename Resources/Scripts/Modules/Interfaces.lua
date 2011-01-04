@@ -23,9 +23,14 @@ menuBuild = { name = "BUILD",
 }
 
 function UpdateBuildMenu()
-    menuLevel.planet = lastPlanet
-    for _, id in ipairs(lastPlanet.building.ids) do
-        menuLevel.items[#menuLevel.items + 1] = { title = data.objects[id].name, action = function() BuildShip(id) end } -- [PSEUDOCODE]
+printTable(selection.lastPlanet.building.classes)
+    menuLevel.planet = selection.lastPlanet
+    for _, id in pairs(selection.lastPlanet.building.ids) do
+        menuBuild.items[_] = {
+            title = data.objects[id].name,
+            action = DoBuildAction,
+            context = {["id"] = id, planet = selection.lastPlanet}
+        }
     end
     menuSelected = 1
 end
@@ -59,7 +64,7 @@ menuStatus = { name = "MISSION STATUS",
 
 function ShowBuildMenu()
     print("Running ShowBuildMenu")
-    if menuLevel.planet ~= lastPlanet then
+    if menuLevel.planet ~= selection.lastPlanet then
         UpdateBuildMenu()
     end
     if menuLevel.planet == nil then

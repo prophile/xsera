@@ -1,5 +1,5 @@
 function LookupBuildId(class, race)
-    for id, obj in ipairs(data.objects) do
+    for id, obj in pairs(data.objects) do
         if class == obj.class and race == obj.race then
             return id
         end
@@ -7,14 +7,14 @@ function LookupBuildId(class, race)
 end
 
 function CalculateBuildables(object, scen)--[HACK]
+    local race = scen.base.players[object.ai.owner+1].race
     for idx, class in ipairs(object.building.classes) do
-        object.building.ids[idx] = LookupBuildId(class, 
-        scen.base.players[
-        object.ai.owner+1
-        ].race)
+        object.building.ids[idx] = LookupBuildId(class, race) 
     end
 end
 
+function DoBuildAction(context)
+end
 
 function BeginBuilding(planet, class)
 end
