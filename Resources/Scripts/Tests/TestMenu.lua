@@ -6,7 +6,7 @@ options = {
             { key = "t",      name = "Turret Test",         loc = "../Tests/TurretTest"                                 },
             { key = "s",      name = "Ares Splash",         loc = "Ares/Splash"                                         },
             { key = "1",      name = "Client-Server Tests", loc = "../Tests/CSTest",         status = "Non-operational" },
-            { key = "2",      name = "<blank>",             loc = nil                                                   },
+            { key = "2",      name = "Jagged List Test",    loc = "../Tests/JaggedList"                                                   },
             { key = "3",      name = "Window Test",         loc = "../Tests/WindowTest",     status = "Incomplete"      },
             { key = "4",      name = "Text Test",           loc = "../Tests/TextTest"                                   },
             { key = "5",      name = "<blank>",             loc = nil                                                   },
@@ -14,8 +14,8 @@ options = {
             { key = "7",      name = "Physics Test",        loc = "../Tests/PhysicsTest",    status = "Broken"          },
             { key = "8",      name = "Bit Test",            loc = "../Tests/Bits"                                       },
             { key = "9",      name = "3D Test",             loc = "../Tests/3DTest"                                     },
-            { key = "0",      name = "XNet Test",           loc = "../Tests/XNetTest",       status = "Non-operational" }
-          }
+            { key = "0",      name = "XNet Test",           loc = "../Tests/XNetTest",       status = "Non-operational" },
+    }
 
 function init ()
     local camera = { w = 800, h = 600 }
