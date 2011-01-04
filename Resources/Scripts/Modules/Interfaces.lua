@@ -361,7 +361,7 @@ function DrawPanels()
     end
 --    Factory resources (green - mostly)
     count = 1 -- [HARDCODED] <-- ?
-    local cash = scen.players[0].cash
+    local cash = GetCash(0)
     local selectedShipCost
     if menuSelected == 1 then
         selectedShipCost = data.objects[selection.lastPlanet.building.ids[menuItemSelected]].price

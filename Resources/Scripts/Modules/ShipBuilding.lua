@@ -14,7 +14,12 @@ function CalculateBuildables(object, scen)--[HACK]
 end
 
 function DoBuildAction(context)
-    BeginBuilding(context.planet, context.id)
+    if GetCash(0) >= data.objects[context.id].price
+    and context.planet.constructionId == nil then
+        BeginBuilding(context.planet, context.id)
+    else
+        sound.play("NaughtyBeep")
+    end
 end
 
 function BeginBuilding(planet, id)
@@ -72,6 +77,7 @@ function UpdatePlanet(planet, dt)
             
             scen.objects[i], scen.objects[i - 1] = scen.objects[i - 1], scen.objects[i]
             end
+            sound.play("ComboBeep")
             StopBuilding(planet)
         end
     end
