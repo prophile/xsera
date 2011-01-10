@@ -11,7 +11,6 @@ Copyright 1997-2001, 2008
 Adam Hintz
 Alistair Lynn
 Scott McClaugherty
-Andrew Moscoe
 
 *Ares Data Extraction
 Chris Pickel
