@@ -23,8 +23,8 @@ int soundSourceIndex = 0;
 
 void Quit()
 {
-	alureUpdateInterval(0);
 	StopMusic();
+    alureUpdateInterval(0);
 	alureSleep(0.1f);
 	alureShutdownDevice();
 }
@@ -144,8 +144,7 @@ static void MusicEndCallback(void* ud, ALuint source)
 
 void PlayMusic(const std::string& name)
 {
-	if (currentMusicStream)
-		alureStopSource(musicSource, AL_TRUE);
+	StopMusic();
 	size_t length;
 	ALubyte* data = GetSoundData("Music/" + name, length);
 	currentMusicName = name;
